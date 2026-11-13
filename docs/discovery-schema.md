@@ -17,6 +17,7 @@
 | `verification_status` | string | `verified` or `needs verification`. |
 | `paper_url` | URL | Paper or preprint; may be empty. |
 | `relevance` | object | `impact`, `validation`, `novelty`: integer scores 1–5. |
+| `evidence` | object | Optional, pilot only. `publication_status` (`Peer-reviewed paper`, `Preprint`, `Announcement only`, `Not reported`), `tested`, `unknown`, `ai_role` (short text, `Not reported` allowed) and `evidence_urls` (https pages actually read). Everything must be stated by those sources; it is never inferred from the website, keywords or the relevance score and does not change the score. |
 
 Categories: `biology`, `chemistry`, `medicine`, `materials`, `climate`, `mathematics`, `physics`, `computer science`, `humanities`, `multidisciplinary`, `other`.
 

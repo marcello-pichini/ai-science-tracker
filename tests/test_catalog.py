@@ -31,7 +31,13 @@ class CatalogTests(unittest.TestCase):
                 'verification_status', 'paper_url', 'relevance'}
         for d in discoveries:
             with self.subTest(discovery=d['id']):
-                self.assertEqual(set(d), keys)
+                self.assertIn(set(d), (keys, keys | {'evidence'}))
+                if 'evidence' in d:
+                    e = d['evidence']
+                    self.assertEqual(set(e), {'publication_status', 'tested', 'unknown', 'ai_role', 'evidence_urls'})
+                    self.assertIn(e['publication_status'], {'Peer-reviewed paper', 'Preprint', 'Announcement only', 'Not reported'})
+                    self.assertTrue(all(isinstance(e[k], str) and e[k] for k in ('tested', 'unknown', 'ai_role')))
+                    self.assertTrue(e['evidence_urls'] and all(u.startswith('https://') for u in e['evidence_urls']))
                 self.assertIn(d['field'], FIELDS)
                 self.assertTrue(d['title'] and d['summary'] and d['organization'])
                 self.assertIn(d['source_type'], {'press release', 'blog', 'paper', 'other'})

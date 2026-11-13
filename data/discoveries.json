@@ -1,5 +1,24 @@
 [
   {
+    "id": "2026-11-optimal-scenario-design-climate-emulation",
+    "title": "Unrealistic emissions scenarios help AI climate models prepare for unfamiliar futures",
+    "summary": "MIT researchers with Imperial College London designed a small synthetic set of deliberately unrealistic emissions scenarios to train climate emulators, which normally need six to eight full Earth system model runs that each take months. The method needs only one model run, and the emulator predicted unseen scenarios and local pollutant-control effects where traditional emulators failed. It was validated with a simple climate model rather than a full Earth system model, and the article reports no quantitative accuracy metrics.",
+    "field": "climate",
+    "ai_technology": "Climate emulator trained on optimized synthetic scenarios",
+    "organization": "MIT; Imperial College London",
+    "source_url": "https://news.mit.edu/2026/new-research-could-lead-faster-trustworthy-ai-models-climate-prediction-1112",
+    "source_type": "press release",
+    "publication_date": "2026-11-12",
+    "added_date": "2026-11-13",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    }
+  },
+  {
     "id": "2026-11-ipertensione-smartwatch",
     "title": "Signs of hypertension detected by a smartwatch",
     "summary": "Prospective study of 196 people at five US sites, compared with 24-hour ambulatory blood pressure measurement: 65.8% sensitivity and 90.0% specificity for screening, and 78.4% and 90.9% in the confirmatory test (48 participants). A feasibility study; it does not replace the cuff, and many cases are missed.",
@@ -53,6 +72,44 @@
     "relevance": {
       "impact": 2,
       "validation": 1,
+      "novelty": 3
+    }
+  },
+  {
+    "id": "2026-11-herculaneum-pherc-306b-first-letters",
+    "title": "Writing seen in PHerc. 306B for the first time in 2000 years",
+    "summary": "Vesuvius Challenge awarded a $50K First Letters Prize for scroll PHerc. 306B, where the winning submission reached the 10-character target and the papyrology team agreed on a reading, tentatively a Greek phrase with parallels in Aristotle and Philodemus. Ink was detected by multiplying two models (TRACE v3B and a fine-tuned A-hn). Letters remain faint, the readable area is small, and the work relied on hundreds of hours of manual labeling.",
+    "field": "humanities",
+    "ai_technology": "ML ink-detection models (TRACE v3B, A-hn) with VC3D GrowPatch",
+    "organization": "Vesuvius Challenge",
+    "source_url": "https://scrollprize.substack.com/p/writing-seen-in-pherc-306b-for-the",
+    "source_type": "blog",
+    "publication_date": "2026-11-02",
+    "added_date": "2026-11-13",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    }
+  },
+  {
+    "id": "2026-10-evo2-in-context-enhancers",
+    "title": "Evo 2 uses in-context learning to design de novo regulatory sequences with only tens of examples",
+    "summary": "Arc Institute reports that Evo 2 designs functional regulatory sequences from 4 to 64 in-context examples without extra training, with 30-50% yield. Of nine AI-designed enhancers delivered by AAV to mice, seven drove detectable expression and two labeled layer 5 extratelencephalic neurons with 73% and 95% specificity. Results are bioRxiv preprints; in vivo work covers only layer 5 enhancers, and other designs (proteins, CRISPR loci, antibodies, phage genomes) are computational only.",
+    "field": "biology",
+    "ai_technology": "Evo 2 (genomic language model); in-context learning; reinforcement learning post-training",
+    "organization": "Arc Institute; Stanford University",
+    "source_url": "https://arcinstitute.org/news/evo-2-in-context-learning",
+    "source_type": "press release",
+    "publication_date": "2026-10-29",
+    "added_date": "2026-11-13",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
       "novelty": 3
     }
   },
@@ -627,6 +684,25 @@
     }
   },
   {
+    "id": "2026-06-electrolytegpt-battery-formulations",
+    "title": "ElectrolyteGPT can generate new formulations for battery development",
+    "summary": "University of Chicago researchers trained a GPT model with a new notation (fLine) to generate complete battery electrolyte formulations, including solvent ratios, salt concentrations and temperature. Several AI-proposed compositions were synthesized and, per the release, performed on par with the state of the art in lithium metal batteries. No cycling or capacity figures are given, the work is early, and generated candidates still need experimental verification.",
+    "field": "materials",
+    "ai_technology": "ElectrolyteGPT (GPT with fLine notation)",
+    "organization": "University of Chicago Pritzker School of Molecular Engineering",
+    "source_url": "https://news.uchicago.edu/story/electrolytegpt-can-generate-new-formulations-battery-development",
+    "source_type": "press release",
+    "publication_date": "2026-06-03",
+    "added_date": "2026-11-13",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    }
+  },
+  {
     "id": "2026-05-openai-distanza-unitaria",
     "title": "OpenAI presents a disproof of the unit-distance conjecture",
     "summary": "OpenAI presents a construction of planar point configurations with more unit-distance pairs than predicted by the Erdős conjecture. The announcement says mathematicians outside the team checked it and provides a complementary explanation; this record checks the source, not an independent reconstruction of the proof.",
@@ -1194,6 +1270,15 @@
       "impact": 3,
       "validation": 3,
       "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Not reported",
+      "unknown": "OpenAI states GPT-5 often produced plausible but flawed arguments; its restructuring suggestion was not correct as written. The proof was developed and written by Ryu. Whether peer review will confirm it is not reported.",
+      "ai_role": "Per OpenAI, GPT-5 suggested approaches and restructured equations; Ryu checked each idea and wrote the final proof. About twelve hours over three days and nearly a dozen approaches. GPT-5 is not a co-author.",
+      "evidence_urls": [
+        "https://openai.com/index/gpt-5-mathematical-discovery/"
+      ]
     }
   },
   {
@@ -1213,6 +1298,15 @@
       "impact": 3,
       "validation": 3,
       "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Not reported",
+      "tested": "The OpenAI page lists case studies, for example a mannose rescue experiment in T cells whose results matched GPT-5 predictions, and Erdos Problem 848, where authors turned a GPT-5 density estimate into a full proof.",
+      "unknown": "OpenAI says the cases are curated illustrations, not a systematic sample. GPT-5 can invent citations, mechanisms or proofs, and expert oversight is essential. One case reproduced an earlier published proof without citing it.",
+      "ai_role": "GPT-5 suggested ideas, mechanisms, literature links and experiments; scientists set questions, verified results and ran lab work. OpenAI says the model is not autonomous.",
+      "evidence_urls": [
+        "https://openai.com/index/accelerating-science-gpt-5/"
+      ]
     }
   },
   {
@@ -1422,6 +1516,15 @@
       "impact": 4,
       "validation": 3,
       "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Generative models screened more than 10^7 chemical fragments in silico against N. gonorrhoeae or S. aureus, plus unconstrained design. Of 24 synthesized compounds, seven showed selective antibacterial activity; two leads reduced bacterial burden in mouse infection models.",
+      "unknown": "Mouse results only; no human testing is stated. The paper's abstract was read, not the full text.",
+      "ai_role": "Genetic algorithms and variational autoencoders generated fragment-based and de novo compounds; researchers synthesized and tested selected compounds.",
+      "evidence_urls": [
+        "https://www.cell.com/cell/abstract/S0092-8674(25)00855-4"
+      ]
     }
   },
   {
@@ -1479,6 +1582,16 @@
       "impact": 4,
       "validation": 3,
       "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Compared against traditional methods and other AI mapping systems on land-use identification and surface-property estimation; average error 24% lower than the models tested, storage 16 times lower. Over 50 organizations tested the dataset; no sample sizes given.",
+      "unknown": "The page states no limitations; it says the team is still exploring time-based capabilities and that embeddings may be more useful combined with reasoning LLM agents.",
+      "ai_role": "The model turns satellite and Earth observation data into compact embeddings; scientists and partners use them to create maps and classify ecosystems.",
+      "evidence_urls": [
+        "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/",
+        "https://arxiv.org/abs/2507.22291"
+      ]
     }
   },
   {
@@ -1498,6 +1611,15 @@
       "impact": 4,
       "validation": 4,
       "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The Virtual Lab designed 92 nanobodies; experiments (multiplexed ELISA) showed a range of functional binders. Two showed improved binding to JN.1 or KP.3 while keeping strong binding to the ancestral spike protein.",
+      "unknown": "The two are called candidates for further investigation. Neutralization and clinical use not reported in the abstract. Full text is paywalled; counts of tested designs beyond 92 and binding values were not read.",
+      "ai_role": "An LLM principal investigator agent guided LLM scientist agents through meetings, with human feedback; they built a pipeline using ESM, AlphaFold-Multimer and Rosetta. Humans ran the experiments.",
+      "evidence_urls": [
+        "https://doi.org/10.1038/s41586-025-09442-9"
+      ]
     }
   },
   {
@@ -1555,6 +1677,15 @@
       "impact": 4,
       "validation": 4,
       "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Corpus of 176,861 Latin inscriptions. Aeneas: 72% geographical accuracy over 62 provinces; dating within 13 years on average; restoration character error rate 40.5% with known length. 23 historians on 60 inscriptions, solo versus with Aeneas parallels and predictions.",
+      "unknown": "The paper notes a small dataset, survival bias, only about 5% of inscriptions with images, and weaker results where data are scarce. Training data include earlier editors' restorations. Other languages are suggested, not tested.",
+      "ai_role": "Aeneas restored text, attributed provinces, estimated dates and retrieved parallels; historians evaluated outputs and combined them with their own knowledge.",
+      "evidence_urls": [
+        "https://doi.org/10.1038/s41586-025-09292-5"
+      ]
     }
   },
   {
@@ -1916,6 +2047,15 @@
       "impact": 3,
       "validation": 3,
       "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Elo auto-evaluation over 203 research goals; 15 expert-curated goals; blinded experts rated 11 goals (preference rank 2.36). In vitro on four AML cell lines: binimetinib, pacritinib, cerivastatin reduced viability; KIRA6 IC50 10 nM in KG-1a versus 180 nM in TK6. Seven combinations tested.",
+      "unknown": "The paper calls validation preliminary and in vitro only. KIRA6 was far less effective in MOLM-13 and HL-60. Expert evaluation was small and subjective; Elo is not ground truth. Liver fibrosis and AMR details are summarized only.",
+      "ai_role": "A Gemini-based multi-agent system generated, debated and ranked hypotheses; experts selected candidates and prioritized lab experiments.",
+      "evidence_urls": [
+        "https://doi.org/10.1038/s41586-026-10644-y"
+      ]
     }
   },
   {
@@ -2087,6 +2227,15 @@
       "impact": 3,
       "validation": 3,
       "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "On Sycamore data, logical error per round was 2.901e-2 (distance 3) and 2.748e-2 (distance 5), versus 3.028e-2 and 2.915e-2 for a tensor-network decoder. Simulations to distance 11 (241 qubits); correlated matching was 1.25 to 1.4 times worse.",
+      "unknown": "Throughput is slower than the 1 microsecond per round target. Training at distance 11 needs more data. Accuracy beyond distance 11 and logical computations remain future work. Larger-distance results are simulated.",
+      "ai_role": "A recurrent transformer neural network decodes surface-code syndromes to predict logical errors; it is the method under test.",
+      "evidence_urls": [
+        "https://doi.org/10.1038/s41586-024-08148-8"
+      ]
     }
   },
   {
@@ -2258,6 +2407,15 @@
       "impact": 3,
       "validation": 3,
       "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Active learning guided solubility measurements of 2,1,3-benzothiadiazole in binary solvents: 218 measurements from 2,101 candidates found 18 mixtures above 6.20 M; best 6.50 M. On a 98-solvent set, Bayesian optimization needed 17 ± 11 trials versus about 50 ± 27 random.",
+      "unknown": "Tested one solute, binary solvents only; solubility is not the only property and viscosity, conductivity and stability were not optimized. Model accuracy on 40 test solvents was R2 = 0.63. Real battery performance not reported.",
+      "ai_role": "A Gaussian process model with an expected-improvement rule chose which solvents to measure; a robotic platform prepared samples and NMR measured solubility; humans selected features and candidate lists.",
+      "evidence_urls": [
+        "https://doi.org/10.1038/s41467-024-47070-5"
+      ]
     }
   },
   {
@@ -2942,6 +3100,16 @@
       "impact": 3,
       "validation": 2,
       "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "MEG recordings from healthy volunteers viewing images were decoded at each time point; several pretrained image models were compared (signals aligned best with DINOv2), and MEG decoding was compared with fMRI. Participant and image counts not stated on the blog.",
+      "unknown": "Generated images are imperfect: high-level features are often kept but low-level features are often wrong. MEG decoding is less precise than fMRI decoding.",
+      "ai_role": "AI models built the image representations and generated the output images; volunteers supplied the brain recordings.",
+      "evidence_urls": [
+        "https://ai.meta.com/blog/brain-ai-image-decoding-meg-magnetoencephalography/",
+        "https://arxiv.org/abs/2310.19812"
+      ]
     }
   },
   {
@@ -3189,6 +3357,15 @@
       "impact": 4,
       "validation": 4,
       "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "AlphaDev found sort 3 and sort 5 routines with fewer instructions than human benchmarks, matched sort 4, and had lower latency on variable sorts. Libc++ versions were up to 70% faster for five elements and about 1.7% faster above 250,000 elements.",
+      "unknown": "Hashing result (30% faster) not seen in the text read. Search is at assembly level; the paper reports optimality proof only for sort 3 (17 instructions). Results cover tested CPUs: ARMv8, Intel Skylake, AMD Zen 2.",
+      "ai_role": "AlphaDev, an AlphaZero-based reinforcement learning agent with a transformer encoder, built assembly programs instruction by instruction, rewarded for correctness and latency; the team translated results to C++.",
+      "evidence_urls": [
+        "https://doi.org/10.1038/s41586-023-06004-9"
+      ]
     }
   },
   {
@@ -3512,6 +3689,16 @@
       "impact": 3,
       "validation": 3,
       "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Workflow found 505 candidate carbon structures; a neural network trained on 273 phases, test error 37.1 meV/atom. Diamond-anvil laser-heating experiments on graphite with electron microscopy were used to compare predicted metastable phases, including n-diamond.",
+      "unknown": "The search is not guaranteed exhaustive; the paper calls cubic-diaphite a candidate structure for n-diamond. The model had higher errors at high pressure; kinetics are only partly covered. Argonne synthesis of unreported phases was not seen in the paper text read.",
+      "ai_role": "A deep neural network predicted Gibbs free energy; a support vector machine drew phase boundaries; an evolutionary search proposed structures. Humans ran the experiments.",
+      "evidence_urls": [
+        "https://doi.org/10.1038/s41467-022-30820-8",
+        "https://www.alcf.anl.gov/news/scientists-use-machine-learning-accelerate-materials-discovery"
+      ]
     }
   },
   {

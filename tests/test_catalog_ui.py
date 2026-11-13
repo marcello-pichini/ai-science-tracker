@@ -85,3 +85,11 @@ const r = u => ({source_url:u});
 const s = ui.sourceConcentration([r('https://www.a.org/1'), r('https://a.org/2'), r('https://b.org/x'), r('not a url')], 1);
 assert.deepEqual(s, {top:1, entries:2, total:4, websites:2});
 ''')
+
+    def test_evidence_block_is_optional_and_escaped(self):
+        self.run_js('''
+const base = {verification_status:'verified', source_type:'blog', paper_url:'', relevance:{impact:3,validation:3,novelty:3}};
+assert.ok(!ui.sourceDetails(base).includes('Evidence context'));
+const html = ui.sourceDetails({...base, evidence:{publication_status:'Preprint', tested:'12 <b>samples</b>', unknown:'Not reported', ai_role:'Not reported', evidence_urls:['https://e.org']}});
+assert.ok(html.includes('Evidence context') && html.includes('12 &lt;b&gt;samples&lt;/b&gt;') && html.includes('Preprint'));
+''')

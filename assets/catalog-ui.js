@@ -6,7 +6,17 @@ globalThis.CatalogUI = {
     return `<details class="source-details"><summary>${checked ? 'Source checked' : 'Needs source check'} · editorial details</summary>
       <p>${checked ? 'The source page was checked against this entry.' : 'The source has not been fully checked or contains conflicting information.'} Independent confirmation is not assessed by this label.</p>
       <p>Source type: ${esc(record.source_type)}. Paper: ${record.paper_url ? 'linked separately' : 'not linked in this catalog; this does not mean no paper exists'}.</p>
+      ${this.evidenceBlock(record)}
       <p>Editorial assessment: Impact ${esc(record.relevance.impact)}/5 · Validation ${esc(record.relevance.validation)}/5 · Novelty ${esc(record.relevance.novelty)}/5. These are editorial judgments, not an evidence grade. <a href="methodology.html">Scoring criteria</a>.</p></details>`;
+  },
+  // Optional, source-stated context for pilot records; absent for most entries. It never feeds the relevance score.
+  evidenceBlock(record) {
+    const e = record.evidence;
+    if (!e) return '';
+    const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const rows = [['Publication status', e.publication_status], ['Tested', e.tested], ['Still unknown', e.unknown], ['AI role', e.ai_role]]
+      .map(([label, value]) => `<li><b>${label}:</b> ${esc(value)}</li>`).join('');
+    return `<p><b>Evidence context</b> (pilot; stated by the cited sources, not an editorial judgment):</p><ul class="evidence-context">${rows}</ul>`;
   },
   correctionUrl(record) {
     const query = new URLSearchParams({template:'correction.yml', title:`[Correction] ${record.id}`, record_id:record.id,
