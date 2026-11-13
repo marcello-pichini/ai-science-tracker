@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = [ROOT / n for n in ('index.html', 'models.html', 'methodology.html', 'profile.html')]
+PAGES = [ROOT / n for n in ('index.html', 'models.html', 'methodology.html', 'profile.html', 'guide.html')]
 COLOR = re.compile(r'#[0-9a-fA-F]{3,8}\b|rgba?\(')
 
 
@@ -28,7 +28,7 @@ class DesignTests(unittest.TestCase):
                 self.assertIn('og:image', text)
                 self.assertIn('rel="canonical"', text)
                 self.assertRegex(text, r'<title>[^<]*AI Science Tracker</title>')
-                for nav in ('index.html', 'models.html', 'methodology.html'):
+                for nav in ('index.html', 'models.html', 'methodology.html', 'guide.html'):
                     self.assertIn(f'href="{nav}"', text)
 
     def test_no_hard_coded_colors_in_stylesheet(self):

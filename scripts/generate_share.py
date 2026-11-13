@@ -144,7 +144,7 @@ def write_sitemap(items, models):
     orgs = sorted({lead_org(d['organization']) for d in items})
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
     newest = max(d['publication_date'] for d in items)
-    urls = ['', 'index.html', 'models.html', 'methodology.html', 'profile.html']
+    urls = ['', 'index.html', 'models.html', 'methodology.html', 'guide.html', 'profile.html']
     urls += [f'profile.html?org={quote(o)}' for o in orgs] + [f'profile.html?family={quote(f)}' for f in fams]
     rows = ''.join(f'<url><loc>{esc(BASE + u)}</loc><lastmod>{newest}</lastmod></url>\n' for u in urls)
     (ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
