@@ -46,3 +46,21 @@ class SharePageTests(unittest.TestCase):
         self.assertIn(g.BASE + 'security.html', urls)
         self.assertIn(g.BASE + 'share/test-discovery.html', urls)
         self.assertEqual(len(root.findall('s:url/s:lastmod', ns)), 0)
+
+    def test_static_profiles_are_indexable_and_sitemap_uses_them(self):
+        g = self.generator
+        models = {'families': [{'id': 'fam-x', 'name': 'Fam X', 'discoveries': ['test-discovery']}], 'models': [{'name': 'M1', 'date': '2024-01-02', 'family': 'fam-x', 'link': 'https://example.org', 'access': 'API'}]}
+        self.record['organization'] = 'Org & Co and Other'
+        pages = g.write_profile_pages([self.record], models)
+        self.assertEqual(sorted(pages), ['profiles/family-fam-x.html', 'profiles/index.html', 'profiles/org-org-co.html'])
+        org = (g.ROOT / 'profiles/org-org-co.html').read_text()
+        self.assertIn('A complete summary with &lt;markup&gt; escaped.', org)
+        self.assertIn('rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/profiles/org-org-co.html"', org)
+        self.assertNotIn('noindex', org)
+        self.assertIn('profile.html?org=Org%20%26%20Co', org)
+        self.assertIn('M1', (g.ROOT / 'profiles/family-fam-x.html').read_text())
+        g.write_sitemap([self.record], models)
+        text = (g.ROOT / 'sitemap.xml').read_text()
+        self.assertIn(g.BASE + 'profiles/org-org-co.html', text)
+        self.assertNotIn('profile.html?org=', text)
+
