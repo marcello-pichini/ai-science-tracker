@@ -323,3 +323,6 @@ main { padding:0 0 72px; }
 .heat-cell[aria-pressed="true"] { outline:2px solid var(--ink); outline-offset:1px; }
 .heat-zero { color:var(--muted); font-weight:400; }
 @media print { .heat-cell { border:0; background:none; } }
+
+/* Keyboard focus on chart points needs a shape cue, not only the fill change. */
+.pannello .pt:focus-visible { stroke:var(--ink); stroke-width:3; }

@@ -183,7 +183,7 @@ PAGE = """<!doctype html>
 
 <main>
   <section class="sez"><div class="wrap">
-    <div class="piatto">{article}</div>
+    {h2}<div class="piatto">{article}</div>
     <p class="sez-sub">{more}</p>
   </div></section>{extra}
 </main>
@@ -241,7 +241,7 @@ def write_discovery_pages(items, models, images):
         lead = f'{esc(d["organization"])} &middot; {esc(nice_date(d["publication_date"]))} &middot; {esc(d["field"])}'
         page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(clip(d['summary'], 200)), base=BASE,
                            path=f'share/{d["id"]}.html', img=d['id'] if images else 'default',
-                           more=f'<a href="index.html#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.', extra='',
+                           h2='<h2 class="vis-nascosto">Discovery</h2>', more=f'<a href="index.html#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.', extra='',
                            header=header, footer=footer, lead=lead, article=article)
         (out / f'{d["id"]}.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
 
@@ -287,7 +287,8 @@ def write_profile_pages(items, models):
         articles = ''.join(discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']]) for d in rows)
         more = f'<a href="{interactive}">Open the interactive profile</a> for the timeline, or <a href="profiles/index.html">browse all organizations and model families</a>.'
         page = PAGE.format(title=esc(title), site=SITE, desc=esc(desc), base=BASE, path=path, img='default',
-                           header=header, footer=footer, lead=lead, article=articles, more=more, extra=extra)
+                           header=header, footer=footer, lead=lead, article=articles, more=more, extra=extra,
+                           h2='<h2 class="vis-nascosto">Discoveries</h2>')
         (ROOT / path).write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
         pages.append(path)
 
@@ -311,7 +312,7 @@ def write_profile_pages(items, models):
     page = PAGE.format(title='Labs and model families', site=SITE, desc='Organizations and model families with at least one tracked AI-enabled discovery.', base=BASE,
                        path='profiles/index.html', img='default', header=header, footer=footer,
                        lead=f'{len(by_org)} organizations and {len([f for f in models["families"] if f["discoveries"]])} model families', article=directory,
-                       more='<a href="profile.html">Open the interactive directory</a>.', extra='')
+                       more='<a href="profile.html">Open the interactive directory</a>.', extra='', h2='')
     (ROOT / 'profiles/index.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
     pages.append('profiles/index.html')
     return pages
