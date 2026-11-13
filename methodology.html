@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology · AI Science Tracker</title>
+<meta name="description" content="How we select and verify tracked discoveries.">
+<link rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/methodology.html">
+<meta property="og:site_name" content="AI Science Tracker">
+<meta name="theme-color" content="#12367e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="testata">
+  <div class="wrap">
+    <a class="marchio" href="index.html" aria-label="AI Science Tracker, home page">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <span>AI Science Tracker</span>
+    </a>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="methodology.html" aria-current="page">Methodology</a></nav>
+  </div>
+</header>
+
+<section class="banda banda-bassa" aria-labelledby="titolo-pagina">
+  <div class="wrap">
+    <h1 id="titolo-pagina">How we select and verify entries</h1>
+    <p class="lead">This site tracks scientific results achieved with AI since 2020, starting from official announcements by the organizations that achieved them.</p>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+    <article class="prosa">
+      <h2>What we include</h2>
+  <ul>
+    <li>A concrete result in a scientific field (biology, medicine, mathematics, climate, and others), announced by the organization that achieved it.</li>
+    <li>An official page with a date and figures: lab and company blogs (DeepMind, Google Research, Microsoft Research, Meta AI, OpenAI, Anthropic, and others), or announcements from universities and institutes (such as MIT).</li>
+    <li>Tools and models only when accompanied by a verifiable result (a structure, compound, proof, or field test).</li>
+  </ul>
+
+  <h2>What we exclude</h2>
+  <ul>
+    <li>Product launches and benchmark comparisons without a scientific result. Model releases are tracked separately on the <a href="models.html">Models</a> page and do not count as discoveries.</li>
+    <li>Awards and recognition (such as the 2024 Nobel Prize): these judge a discovery; they are not the discovery itself.</li>
+    <li>Newsletters, aggregators, and third-party articles as the primary source.</li>
+    <li>Announcements without results yet (funding, collaborations, interviews).</li>
+  </ul>
+
+  <h2>The models page</h2>
+  <p>The <a href="models.html">Models</a> page answers a different question: which model families are linked by name to catalog discoveries. It lists releases from leading labs since 2020, plus models from any date linked to a discovery.</p>
+  <p>We do not collect model names, labs, dates, domains, parameter counts, or access information ourselves. They come from the database <a href="https://epoch.ai/data/ai-models" rel="noopener">Data on AI models</a> from Epoch AI, republished under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>. Their stated limitations apply: the list is not exhaustive, and compute and parameter figures are estimates.</p>
+  <p>We make model-to-discovery links by name: we compare the technology field and each discovery title with model and family names. A match indicates the likely family, not necessarily the exact version used in an experiment. A discovery made with a model that the source does not name will not appear as linked. Some catalog technologies, such as those developed within a single study, have no Epoch AI record; the family can still appear without linked releases.</p>
+
+  <h2>What “verified” means</h2>
+  <p>We have read the official page and checked that the title, date, organization, and figures in the summary match it. This does not mean others have independently confirmed the result: figures are reported by sources and are often “up to” values or results from controlled conditions. The summary reports limits stated by the source (lab-only, mice-only, not clinically validated, or preprint).</p>
+  <p>An entry marked “needs verification” has a source that has not been read in full, or contains conflicting information.</p>
+
+  <h2>Relevance score</h2>
+  <p>Each entry has a score from 0 to 100: the average of three criteria, each scored from 1 to 5, multiplied by 20. This is an editorial judgment, not an objective measure. It helps sort entries and compare categories; hover over a score to see its three criteria.</p>
+  <div class="tabella-scorre"><table>
+    <tr><th>Criterion</th><th>1</th><th>3</th><th>5</th></tr>
+    <tr><td>Impact</td><td>niche result</td><td>useful to a field or defined population</td><td>changes how an entire field works</td></tr>
+    <tr><td>Validation</td><td>computational only or announcement</td><td>confirmed in a lab, in the field, or on limited cases</td><td>independent evaluation, broad use, or external recognition</td></tr>
+    <tr><td>Novelty</td><td>incremental improvement</td><td>first result of its kind in a field</td><td>paradigm shift</td></tr>
+  </table></div>
+  <p>A category average is the mean score of its entries. With only one or two entries, the average is not very informative.</p>
+
+  <h2>How we choose the date</h2>
+  <p>We use the date of the first official announcement. If a journal publication comes later, it remains in the summary. When a page’s date conflicts with its text, we use the date consistent with the facts and note the discrepancy (for example, DeepMind’s post about the first 350,000 AlphaFold Database structures is dated 2022 but describes events in 2021).</p>
+
+  <h2>Data structure</h2>
+  <p>Each entry is a record in <code>data/discoveries.json</code>:</p>
+  <div class="tabella-scorre"><table>
+    <tr><th>Field</th><th>Contents</th></tr>
+    <tr><td><code>id</code>, <code>title</code></td><td>stable identifier and title</td></tr>
+    <tr><td><code>summary</code></td><td>2–4 sentences in English, including stated limitations</td></tr>
+    <tr><td><code>field</code></td><td>biology, chemistry, medicine, materials, climate, mathematics, physics, computer science, humanities, multidisciplinary, or other</td></tr>
+    <tr><td><code>ai_technology</code>, <code>organization</code></td><td>technology used and announcing organization</td></tr>
+    <tr><td><code>source_url</code>, <code>source_type</code></td><td>official source link and type</td></tr>
+    <tr><td><code>publication_date</code>, <code>added_date</code></td><td>announcement date and date added to the catalog</td></tr>
+    <tr><td><code>verification_status</code></td><td>verified or needs verification</td></tr>
+    <tr><td><code>paper_url</code></td><td>peer-reviewed paper or preprint, when available</td></tr>
+    <tr><td><code>relevance</code></td><td><code>impact</code>, <code>validation</code>, and <code>novelty</code>, each scored from 1 to 5; overall score = average × 20</td></tr>
+  </table></div>
+
+  <h2>Limitations</h2>
+  <ul>
+    <li>Collection is manual and not exhaustive; selection depends on the sources reviewed so far.</li>
+    <li>Companies describe their own results, so the tone may be promotional and claims are not independently assessed.</li>
+    <li>Organizations listed together (for example, two labs) are counted under the first one named in charts.</li>
+  </ul>
+    </article>
+  </div>
+</main>
+
+<footer class="piede">
+  <div class="wrap">
+    <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
+    <p><a href="index.html">Back to discoveries</a></p>
+  </div>
+</footer>
+</body>
+</html>

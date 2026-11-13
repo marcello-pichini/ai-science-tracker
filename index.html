@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Science Tracker</title>
+<meta name="description" content="Scientific discoveries enabled by AI, sourced from official announcements.">
+<meta property="og:title" content="AI Science Tracker">
+<meta property="og:description" content="Scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/index.html">
+<meta property="og:site_name" content="AI Science Tracker">
+<meta name="theme-color" content="#12367e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="testata">
+  <div class="wrap">
+    <a class="marchio" href="index.html" aria-label="AI Science Tracker, home page">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <span>AI Science Tracker</span>
+    </a>
+    <nav class="menu" aria-label="Site sections"><a href="index.html" aria-current="page">Discoveries</a><a href="models.html">Models</a><a href="methodology.html">Methodology</a></nav>
+  </div>
+</header>
+
+<section class="banda" aria-labelledby="titolo-pagina">
+  <div class="wrap">
+    <h1 id="titolo-pagina">Scientific discoveries enabled by AI</h1>
+    <p class="lead" id="lead">Loading the catalog…</p>
+    <figure class="figura">
+      <div id="spettro"></div>
+      <figcaption class="nota">Hover over a mark to preview a discovery, or click to open it. Keyboard: left and right arrows, then Enter.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<main>
+  <section class="sez" id="categorie" aria-labelledby="t-fields">
+    <div class="wrap">
+      <h2 id="t-fields">Explore by field</h2>
+      <p class="sez-sub">The number beside each field is its discovery count.</p>
+      <nav class="ambiti" id="cat" aria-label="Fields"></nav>
+    </div>
+  </section>
+
+  <section class="sez" aria-labelledby="t-numeri">
+    <div class="wrap">
+      <h2 id="t-numeri">By the numbers</h2>
+      <p class="sez-sub">Click a row or year to filter the list below; click again to clear the filter.</p>
+      <div class="pannelli" id="charts"></div>
+    </div>
+  </section>
+
+  <section class="sez" id="elenco" aria-labelledby="t-elenco">
+    <div class="wrap">
+      <h2 id="t-elenco">All discoveries</h2>
+      <p class="sez-sub">Each entry links to the original announcement. Figures are reported by the sources.</p>
+    </div>
+    <div class="filtri">
+      <div class="wrap">
+        <div class="campi">
+          <input id="q" type="search" placeholder="Search titles, summaries, or technology" aria-label="Search entries">
+          <select id="org" aria-label="Organization"></select>
+          <select id="ord" aria-label="Sort order"><option value="desc">Newest first</option><option value="asc">Oldest first</option><option value="relevance">Highest relevance first</option></select>
+          <button id="reset" type="button">Clear filters</button>
+        </div>
+        <div class="riepilogo"><span id="conta" aria-live="polite"></span></div>
+      </div>
+    </div>
+    <div class="wrap"><div id="lista">Loading…</div></div>
+  </section>
+</main>
+
+<footer class="piede">
+  <div class="wrap">
+    <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
+    <p><a href="methodology.html">How we select and verify entries</a></p>
+  </div>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl = u => /^https?:\/\//.test(u) ? u : "#";
+const state = { q:"", field:"", org:"", anno:"", ord:"desc" };
+const ridotto = matchMedia("(prefers-reduced-motion: reduce)");
+let items = [], famDi = {};
+let ancora = decodeURIComponent(location.hash).startsWith("#discovery=") ? decodeURIComponent(location.hash).slice(11) : decodeURIComponent(location.hash).startsWith("#scoperta=") ? decodeURIComponent(location.hash).slice(10) : null;
+
+// Organizations listed together (e.g. "Google DeepMind and Google Research") are counted under the first one named.
+const orgDi = s => s.organization.split(/,| and /i)[0].trim();
+// Relevance 0-100: average of impact, validation, and novelty (each scored 1–5) × 20. Editorial judgment; see methodology.html.
+const punteggio = s => Math.round((s.relevance.impact + s.relevance.validation + s.relevance.novelty) / 3 * 20);
+const media = arr => Math.round(arr.reduce((a, s) => a + punteggio(s), 0) / arr.length);
+const conta = (arr, f) => { const m = {}; arr.forEach(x => { const k = f(x); m[k] = (m[k] || 0) + 1; }); return m; };
+const ordina = m => Object.entries(m).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+const fmtD = new Intl.DateTimeFormat("en-GB", { day:"numeric", month:"short", year:"numeric" });
+const fmtData = d => fmtD.format(new Date(d + "T12:00:00"));
+const passa = s => {
+  const q = state.q.toLowerCase();
+  return (!state.field || s.field === state.field) && (!state.org || orgDi(s) === state.org) &&
+    (!state.anno || s.publication_date.startsWith(state.anno)) &&
+    (!q || [s.title, s.summary, s.ai_technology, s.organization].join(" ").toLowerCase().includes(q));
+};
+const filtroAttivo = () => !!(state.q || state.field || state.org || state.anno);
+
+/* One tooltip element; insert text with textContent. */
+const tip = document.createElement("div"); tip.className = "tip"; tip.setAttribute("aria-hidden", "true"); document.body.append(tip);
+function mostraTip(righe, x, y) {
+  tip.replaceChildren();
+  righe.forEach((r, i) => { const el = document.createElement(i ? "span" : "b"); el.textContent = r; if (i > 1) tip.append(document.createElement("br")); tip.append(el); });
+  tip.classList.add("on");
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  let L = x + 16, T = y - h - 16;
+  if (L + w > innerWidth - 8) L = Math.max(8, x - w - 16);
+  if (T < 8) T = y + 20;
+  tip.style.left = L + "px"; tip.style.top = T + "px";
+}
+const nascondiTip = () => tip.classList.remove("on");
+
+/* Discovery timeline: one mark per discovery; height represents relevance. */
+const SP = { x0:40, x1:992, base:196, alto:168, W:1000 };
+let primaVolta = true;
+let sp = [], spOrd = [], spCur = -1, spSvg = null;
+function spettro() {
+  SP.W = Math.max(320, Math.round($("spettro").clientWidth || 1000)); SP.x0 = SP.W < 560 ? 30 : 40; SP.x1 = SP.W - 8;
+  const t0 = Date.UTC(2020, 0, 1);
+  const tMax = Math.max(...items.map(s => Date.parse(s.publication_date)));
+  const t1 = tMax + 25 * 864e5;
+  const X = t => SP.x0 + (t - t0) / (t1 - t0) * (SP.x1 - SP.x0);
+  let g = "";
+  [0, 50, 100].forEach(v => { const y = SP.base - v / 100 * SP.alto;
+    g += `<line class="asse" x1="${SP.x0}" x2="${SP.x1}" y1="${y}" y2="${y}"/><text class="tick y" x="${SP.x0 - 10}" y="${y + 4}">${v}</text>`; });
+  for (let a = 2020; a <= new Date(tMax).getUTCFullYear(); a++) { const x = X(Date.UTC(a, 0, 1));
+    g += `<line class="asse" x1="${x}" x2="${x}" y1="${SP.base}" y2="${SP.base + 8}"/><text class="tick" x="${x + 5}" y="${SP.base + 24}">${a}</text>`; }
+  sp = items.map(s => ({ s, x: X(Date.parse(s.publication_date)), h: Math.max(4, punteggio(s) / 100 * SP.alto) }));
+  spOrd = sp.map((_, i) => i).sort((a, b) => sp[a].x - sp[b].x);
+  const tratti = sp.map((p, i) => `<line class="tratto" data-i="${i}" x1="${p.x.toFixed(1)}" x2="${p.x.toFixed(1)}" y1="${SP.base}" y2="${(SP.base - p.h).toFixed(1)}" style="--d:${Math.round((p.x - SP.x0) / (SP.x1 - SP.x0) * 1100)}ms"/>`).join("");
+  $("spettro").innerHTML = `<svg viewBox="0 0 ${SP.W} 228" class="${primaVolta ? "" : "fermo"}" tabindex="0" role="group" aria-label="Discovery timeline: ${items.length} marks, one per discovery, from 2020 to today; height represents relevance from 0 to 100. The full list appears below.">${g}<g>${tratti}</g><rect x="${SP.x0 - 6}" y="0" width="${SP.x1 - SP.x0 + 12}" height="${SP.base + 10}" fill="transparent"/></svg>`;
+  spSvg = $("spettro").firstElementChild;
+  spSvg.addEventListener("pointermove", e => {
+    const p = spSvg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
+    const v = p.matrixTransform(spSvg.getScreenCTM().inverse());
+    let best = -1, bd = Infinity;
+    sp.forEach((q, i) => { const pen = filtroAttivo() && !passa(q.s) ? 14 : 0; const d = Math.abs(q.x - v.x) + pen; if (d < bd) { bd = d; best = i; } });
+    if (best >= 0 && bd < 24) spEvid(best, e.clientX, e.clientY); else spSpegni();
+  });
+  spSvg.addEventListener("pointerleave", spSpegni);
+  spSvg.addEventListener("click", () => { if (spCur >= 0) vaiA(sp[spCur].s.id); });
+  spSvg.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+      e.preventDefault();
+      const pos = spCur < 0 ? (e.key === "ArrowRight" ? -1 : spOrd.length) : spOrd.indexOf(spCur);
+      const n = Math.min(spOrd.length - 1, Math.max(0, pos + (e.key === "ArrowRight" ? 1 : -1)));
+      const el = spSvg.querySelector(`[data-i="${spOrd[n]}"]`).getBoundingClientRect();
+      spEvid(spOrd[n], el.left + el.width / 2, el.top);
+    } else if (e.key === "Enter" && spCur >= 0) { e.preventDefault(); vaiA(sp[spCur].s.id); }
+    else if (e.key === "Escape") spSpegni();
+  });
+  spSvg.addEventListener("blur", spSpegni);
+  primaVolta = false;
+  spAggiorna();
+}
+function spEvid(i, x, y) {
+  if (spCur !== i) {
+    spSvg.querySelector(".tratto.su")?.classList.remove("su");
+    spSvg.querySelector(`[data-i="${i}"]`).classList.add("su");
+    spCur = i;
+  }
+  const s = sp[i].s;
+  mostraTip([s.title, `${fmtData(s.publication_date)}, ${s.organization}`, `Relevance ${punteggio(s)}, ${s.field}`], x, y);
+}
+function spSpegni() { spSvg?.querySelector(".tratto.su")?.classList.remove("su"); spCur = -1; nascondiTip(); }
+function spAggiorna() {
+  if (!spSvg) return;
+  const att = filtroAttivo();
+  spSvg.querySelectorAll(".tratto").forEach(l => l.classList.toggle("spento", att && !passa(sp[+l.dataset.i].s)));
+}
+
+function vaiA(id) {
+  if (!document.getElementById(id)) { state.q = state.field = state.org = state.anno = ""; $("q").value = ""; lista(); grafici(); }
+  const el = document.getElementById(id); if (!el) return;
+  document.querySelectorAll(".voce.evid").forEach(v => v.classList.remove("evid"));
+  el.classList.add("evid");
+  el.scrollIntoView({ block:"center", behavior: ridotto.matches ? "auto" : "smooth" });
+  history.replaceState(null, "", "#discovery=" + encodeURIComponent(id));
+}
+
+/* Charts */
+function righe(key, voci, max, extra) {
+  return `<div class="righe">` + voci.map(([v, n]) => {
+    const m = extra ? extra[v] : null;
+    return `<button class="riga" type="button" data-k="${key}" data-v="${esc(v)}" aria-pressed="${state[key] === v}" aria-label="${esc(v)}: ${n} ${n === 1 ? "discovery" : "discoveries"}${m != null ? ", average relevance " + m : ""}">
+      <span class="et" title="${esc(v)}">${esc(v)}</span>
+      <span class="bin"><span class="bar" style="width:${(n / max * 100).toFixed(1)}%"></span></span>
+      <span class="val">${n}${m != null ? `<small>average ${m}</small>` : ""}</span></button>`; }).join("") + `</div>`;
+}
+const tondo = v => { if (v <= 0) return 10; const p = 10 ** Math.floor(Math.log10(v)); return Math.ceil(v / p * 2) / 2 * p; };
+function grafici() {
+  const fields = ordina(conta(items, s => s.field));
+  const medie = Object.fromEntries(Object.entries(Object.groupBy(items, s => s.field)).map(([v, a]) => [v, media(a)]));
+  const org = ordina(conta(items, orgDi));
+  const perYear = Object.groupBy(items, s => s.publication_date.slice(0, 4));
+  const anni = Object.keys(perYear).sort();
+  const somma = a => (perYear[a] || []).reduce((n, s) => n + punteggio(s), 0);
+  const top = tondo(Math.max(...anni.map(somma)));
+  const W = Math.max(300, Math.round(($("charts").clientWidth || 1000) - 46));
+  const L = { x0:52, x1:W - 22, base:214, alto:180 };
+  const X = i => L.x0 + i / Math.max(1, anni.length - 1) * (L.x1 - L.x0);
+  const Y = v => L.base - v / top * L.alto;
+  const pts = anni.map((a, i) => [X(i), Y(somma(a))]);
+  const iMax = anni.reduce((b, a, i) => somma(a) > somma(anni[b]) ? i : b, 0), iUlt = anni.length - 1;
+  const passo = (L.x1 - L.x0) / Math.max(1, anni.length - 1);
+  let svg = [0, top / 2, top].map(v => `<line class="${v ? "griglia" : "base"}" x1="${L.x0}" x2="${L.x1}" y1="${Y(v)}" y2="${Y(v)}"/><text class="ax" x="${L.x0 - 10}" y="${Y(v) + 4}" text-anchor="end">${v.toLocaleString("en-GB")}</text>`).join("");
+  svg += `<path class="area" d="M${pts[0][0]},${L.base} ${pts.map(p => "L" + p.join(",")).join(" ")} L${pts[iUlt][0]},${L.base} Z"/>`;
+  svg += `<polyline class="linea" points="${pts.map(p => p.join(",")).join(" ")}"/>`;
+  svg += anni.map((a, i) => `<rect data-k="anno" data-v="${a}" data-anno="${a}" x="${Math.max(L.x0 - 20, X(i) - passo / 2)}" y="0" width="${passo}" height="${L.base + 30}" fill="transparent" style="cursor:pointer"/>`).join("");
+  svg += anni.map((a, i) => `<circle class="pt" cx="${pts[i][0]}" cy="${pts[i][1]}" r="5.5" tabindex="0" role="button" data-k="anno" data-v="${a}" aria-pressed="${state.anno === a}" aria-label="${a}: ${somma(a)} points, ${perYear[a].length} discoveries"/><text class="ax" x="${X(i)}" y="${L.base + 22}" text-anchor="middle">${a}</text>`).join("");
+  [iMax, iUlt].filter((v, j, arr) => arr.indexOf(v) === j).forEach(i => { svg += `<text class="lab" x="${pts[i][0]}" y="${pts[i][1] - 14}" text-anchor="middle">${somma(anni[i]).toLocaleString("en-GB")}</text>`; });
+  const tabella = `<details><summary>View data as a table</summary><table class="tab-mini"><tr><th>Year</th><th>Points</th><th>Discoveries</th></tr>${anni.map(a => `<tr><td>${a}</td><td>${somma(a).toLocaleString("en-GB")}</td><td>${perYear[a].length}</td></tr>`).join("")}</table></details>`;
+  $("charts").innerHTML =
+    `<div class="pannello"><h3>By field</h3><p class="descr">Number of discoveries and average relevance, from 0 to 100.</p>${righe("field", fields, fields[0][1], medie)}</div>` +
+    `<div class="pannello"><h3>By organization</h3><p class="descr">${org.length > 8 ? `Top 8 of ${org.length}; organizations listed together are counted under the first one named.` : "Organizations listed together are counted under the first one named."}</p>${righe("org", org.slice(0, 8), org[0][1])}</div>` +
+    `<div class="pannello largo"><h3>Weighted relevance by year</h3><p class="descr">Sum of discovery relevance scores per year. It rises with both the number and importance of discoveries.${anni[iUlt] == new Date().getFullYear() ? ` ${anni[iUlt]} is still in progress.` : ""}</p><svg viewBox="0 0 ${W} 244" id="linea-anni" role="group" aria-label="Weighted relevance by year, from ${anni[0]} to ${anni[iUlt]}">${svg}</svg>${tabella}</div>`;
+  const ls = $("linea-anni");
+  ls.querySelectorAll("rect[data-anno]").forEach(r => {
+    r.addEventListener("pointerenter", e => { const a = r.dataset.anno; ls.querySelector(`circle[data-v="${a}"]`).classList.add("su"); mostraTip([`${a}`, `${somma(a).toLocaleString("en-GB")} points`, `${perYear[a].length} discoveries`], e.clientX, e.clientY); });
+    r.addEventListener("pointermove", e => { const a = r.dataset.anno; mostraTip([`${a}`, `${somma(a).toLocaleString("en-GB")} points`, `${perYear[a].length} discoveries`], e.clientX, e.clientY); });
+    r.addEventListener("pointerleave", () => { ls.querySelectorAll(".pt.su").forEach(c => c.classList.remove("su")); nascondiTip(); });
+  });
+}
+
+function riepilogo() {
+  const nAmb = new Set(items.map(s => s.field)).size, nOrg = new Set(items.map(orgDi)).size;
+  $("lead").innerHTML = `<b>${items.length} discoveries</b> in ${nAmb} fields and ${nOrg} organizations since 2020. Each mark below represents one discovery; taller means more relevant.`;
+}
+
+function riempi(sel, etichetta, valori) {
+  sel.innerHTML = `<option value="">${etichetta}</option>` + valori.map(v => `<option>${esc(v)}</option>`).join("");
+}
+
+function voce(s) {
+  const p = punteggio(s), lungo = s.summary.length > 240, f = famDi[s.id];
+  return `<article class="voce" id="${esc(s.id)}">
+    <div class="voce-meta"><time datetime="${esc(s.publication_date)}">${esc(fmtData(s.publication_date))}</time><span>${esc(s.organization)}</span></div>
+    <h3>${esc(s.title)}</h3>
+    <p class="sommario${lungo ? " chiuso" : ""}">${esc(s.summary)}</p>
+    ${lungo ? `<button class="piu" type="button" aria-expanded="false">Read more</button>` : ""}
+    ${s.ai_technology ? `<p class="tech"><span>Technology:</span> ${esc(s.ai_technology)}</p>` : ""}
+    ${f ? `<p class="modello"><a href="models.html#fam-${esc(f.id)}">Family ${esc(f.name)} on the models page</a></p>` : ""}
+    <div class="voce-piede">
+      <span class="punteggio" title="Impact ${s.relevance.impact}/5, validation ${s.relevance.validation}/5, novelty ${s.relevance.novelty}/5">Relevance ${p}<span class="metro" aria-hidden="true"><i style="width:${p}%"></i></span></span>
+      <span class="etich">${esc(s.field)}</span>
+      <span class="etich${s.verification_status === "verified" ? " ok" : ""}">${esc(s.verification_status)}</span>
+      <span class="collegamenti"><a href="${esc(safeUrl(s.source_url))}" rel="noopener">Original source</a>${s.paper_url ? `<a href="${esc(safeUrl(s.paper_url))}" rel="noopener">Paper</a>` : ""}<button class="copia" type="button" data-id="${esc(s.id)}">Copy link</button></span>
+    </div>
+  </article>`;
+}
+
+function lista() {
+  let out = items.filter(passa);
+  $("conta").textContent = `${out.length} of ${items.length} discoveries`;
+  if (state.ord === "asc") out = out.slice().reverse(); // items are already sorted newest first
+  if (state.ord === "relevance") out = out.slice().sort((a, b) => punteggio(b) - punteggio(a) || b.publication_date.localeCompare(a.publication_date));
+  let html = "";
+  if (!out.length) html = `<p class="vuoto">No discoveries match these filters. Try removing a filter or click “Clear filters”.</p>`;
+  else if (state.ord === "relevance") html = `<div class="piatto">${out.map(voce).join("")}</div>`;
+  else {
+    const gruppi = [];
+    out.forEach(s => { const a = s.publication_date.slice(0, 4); if (!gruppi.length || gruppi.at(-1)[0] !== a) gruppi.push([a, []]); gruppi.at(-1)[1].push(s); });
+    html = gruppi.map(([a, v]) => `<section class="annata" aria-label="${a}"><h3 class="anno-tit"><b>${a}</b><span>${v.length} ${v.length === 1 ? "discovery" : "discoveries"}</span></h3><div>${v.map(voce).join("")}</div></section>`).join("");
+  }
+  $("lista").innerHTML = html;
+  $("org").value = state.org;
+  document.querySelectorAll("#cat button").forEach(b => b.setAttribute("aria-pressed", (b.dataset.v || "") === state.field));
+  if (ancora) { // Preserve the anchor on the first render after opening a discovery link.
+    const el = document.getElementById(ancora);
+    if (el) { el.classList.add("evid"); el.scrollIntoView({ block:"center" }); }
+    ancora = null;
+  } else history.replaceState(null, "", state.field ? "#" + encodeURIComponent(state.field) : location.pathname + location.search);
+  document.querySelectorAll("[data-k]").forEach(b => b.setAttribute("aria-pressed", state[b.dataset.k] === b.dataset.v));
+  spAggiorna();
+}
+
+Promise.all([
+  fetch("data/discoveries.json", { cache:"no-store" }).then(r => r.json()),
+  fetch("data/models.json", { cache:"no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)
+]).then(([dati, modelli]) => {
+  items = dati.sort((a, b) => b.publication_date.localeCompare(a.publication_date));
+  if (modelli) modelli.families.forEach(f => f.discoveries.forEach(id => { if (!famDi[id]) famDi[id] = f; }));
+  riepilogo(); spettro(); grafici();
+  const perAmb = ordina(conta(items, s => s.field));
+  $("cat").innerHTML = [["", "All", items.length], ...perAmb.map(([v, n]) => [v, v, n])]
+    .map(([v, l, n]) => `<button type="button" data-v="${esc(v)}" aria-pressed="false" aria-label="${esc(l)}: ${n} ${n === 1 ? "discovery" : "discoveries"}"><em>${esc(l)}</em> <span>${n}</span></button>`).join("");
+  riempi($("org"), "All organizations", [...new Set(items.map(orgDi))].sort((a, b) => a.localeCompare(b, "en")));
+  const legacy = { biologia:"biology", chimica:"chemistry", medicina:"medicine", materiali:"materials", clima:"climate", matematica:"mathematics", fisica:"physics", informatica:"computer science", "scienze umane":"humanities", multidisciplinare:"multidisciplinary", altro:"other" };
+  const h = decodeURIComponent(location.hash.slice(1));
+  if (perAmb.some(([v]) => v === h)) state.field = h; else if (legacy[h] && perAmb.some(([v]) => v === legacy[h])) state.field = legacy[h];
+  lista();
+}).catch(() => { $("lista").textContent = "Could not load data. Open this page from a local server (python3 -m http.server)."; $("lead").textContent = ""; });
+
+let largh = innerWidth, tRes;
+addEventListener("resize", () => { clearTimeout(tRes); tRes = setTimeout(() => { if (items.length && innerWidth !== largh) { largh = innerWidth; spettro(); grafici(); } }, 150); });
+$("q").addEventListener("input", e => { state.q = e.target.value; lista(); });
+$("ord").addEventListener("change", e => { state.ord = e.target.value; lista(); });
+$("lista").addEventListener("click", e => {
+  const c = e.target.closest(".copia");
+  if (c) {
+    const url = location.origin + location.pathname + "#discovery=" + encodeURIComponent(c.dataset.id);
+    const fatto = () => { c.textContent = "Link copied"; setTimeout(() => { c.textContent = "Copy link"; }, 1500); };
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(fatto, () => prompt("Copy this link:", url));
+    return;
+  }
+  const b = e.target.closest(".piu"); if (!b) return;
+  const aperto = b.previousElementSibling.classList.toggle("chiuso") === false;
+  b.setAttribute("aria-expanded", aperto); b.textContent = aperto ? "Show less" : "Read more";
+});
+$("cat").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  state.field = b.dataset.v; lista(); grafici();
+});
+$("org").addEventListener("change", e => { state.org = e.target.value; lista(); grafici(); });
+$("reset").addEventListener("click", () => { state.q = state.field = state.org = state.anno = ""; $("q").value = ""; lista(); grafici(); });
+$("charts").addEventListener("click", e => {
+  const b = e.target.closest("[data-k]"); if (!b) return;
+  state[b.dataset.k] = state[b.dataset.k] === b.dataset.v ? "" : b.dataset.v; nascondiTip(); lista(); grafici();
+});
+$("charts").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { const p = e.target.closest(".pt"); if (p) { e.preventDefault(); p.dispatchEvent(new MouseEvent("click", { bubbles:true })); } } });
+</script>
+</body>
+</html>

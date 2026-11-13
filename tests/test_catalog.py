@@ -1,0 +1,81 @@
+import datetime
+import json
+import unittest
+from html.parser import HTMLParser
+from pathlib import Path
+from urllib.parse import unquote, urlsplit
+
+
+ROOT = Path(__file__).resolve().parents[1]
+FIELDS = {'biology', 'chemistry', 'medicine', 'materials', 'climate',
+          'mathematics', 'physics', 'computer science', 'humanities',
+          'multidisciplinary', 'other'}
+
+
+class Links(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.urls = []
+
+    def handle_starttag(self, tag, attrs):
+        self.urls.extend(v for k, v in attrs if k in ('href', 'src') and v)
+
+
+class CatalogTests(unittest.TestCase):
+    def test_discovery_schema(self):
+        discoveries = json.loads((ROOT / 'data/discoveries.json').read_text())
+        self.assertTrue(discoveries)
+        self.assertEqual(len(discoveries), len({d['id'] for d in discoveries}))
+        keys = {'id', 'title', 'summary', 'field', 'ai_technology', 'organization',
+                'source_url', 'source_type', 'publication_date', 'added_date',
+                'verification_status', 'paper_url', 'relevance'}
+        for d in discoveries:
+            with self.subTest(discovery=d['id']):
+                self.assertEqual(set(d), keys)
+                self.assertIn(d['field'], FIELDS)
+                self.assertTrue(d['title'] and d['summary'] and d['organization'])
+                self.assertIn(d['source_type'], {'press release', 'blog', 'paper', 'other'})
+                self.assertIn(d['verification_status'], {'verified', 'needs verification'})
+                for key in ('publication_date', 'added_date'):
+                    datetime.date.fromisoformat(d[key])
+                for key in ('source_url', 'paper_url'):
+                    if d[key]:
+                        self.assertIn(urlsplit(d[key]).scheme, {'http', 'https'})
+                self.assertEqual(set(d['relevance']), {'impact', 'validation', 'novelty'})
+                self.assertTrue(all(type(n) is int and 1 <= n <= 5
+                                    for n in d['relevance'].values()))
+
+    def test_model_links_and_attribution(self):
+        data = json.loads((ROOT / 'data/models.json').read_text())
+        ids = {d['id'] for d in json.loads((ROOT / 'data/discoveries.json').read_text())}
+        self.assertEqual(set(data), {'generated', 'source', 'models', 'families', 'linked_discoveries'})
+        self.assertEqual(data['source']['url'], 'https://epoch.ai/data/ai-models')
+        self.assertEqual(data['source']['license'], 'CC BY 4.0')
+        linked = set()
+        family_ids = {f['id'] for f in data['families']}
+        for f in data['families']:
+            self.assertLessEqual(set(f['discoveries']), ids)
+            self.assertEqual(f['discovery_count'], len(f['discoveries']))
+            self.assertEqual(f['model_count'], len(f['models']))
+            self.assertEqual(f['models'], [m['name'] for m in data['models'] if m['family'] == f['id']])
+            linked.update(f['discoveries'])
+        self.assertEqual(set(data['linked_discoveries']), linked)
+        self.assertTrue(all(m['family'] is None or m['family'] in family_ids for m in data['models']))
+
+    def test_english_pages_and_local_assets(self):
+        for name in ('index.html', 'models.html', 'methodology.html'):
+            text = (ROOT / name).read_text()
+            self.assertIn('lang="en"', text)
+            self.assertIn('AI Science Tracker', text)
+            self.assertNotIn('Discovery Atlas', text)
+            links = Links()
+            links.feed(text)
+            for url in links.urls:
+                parts = urlsplit(url)
+                if not parts.scheme and not parts.netloc and parts.path:
+                    self.assertFalse(parts.path.startswith('/'), url)
+                    self.assertTrue((ROOT / unquote(parts.path)).is_file(), url)
+
+
+if __name__ == '__main__':
+    unittest.main()
