@@ -67,4 +67,4 @@ GitHub Pages serves this repository's `main` branch from the root. There is no b
 
 ## License and citation
 
-Catalog content (`data/discoveries.json`, `data/vulnerabilities.json`, summaries, editorial scores, documentation) is licensed under [CC BY 4.0](LICENSE). Epoch AI model data keeps its own CC BY 4.0 attribution, the font keeps the SIL OFL, and linked sources keep their own terms. No separate licence is set for the site code. GitHub's "Cite this repository" uses `CITATION.cff`; it cites the catalog, not the underlying scientific papers.
+Catalog content (`data/discoveries.json`, `data/vulnerabilities.json`, summaries, editorial scores, documentation) is licensed under [CC BY 4.0](LICENSE). Epoch AI model data keeps its own CC BY 4.0 attribution, the font keeps the SIL OFL, and linked sources keep their own terms. The site code (HTML, CSS, JavaScript, Python scripts) is licensed under the [MIT License](LICENSE-CODE). GitHub's "Cite this repository" uses `CITATION.cff`; it cites the catalog, not the underlying scientific papers.
