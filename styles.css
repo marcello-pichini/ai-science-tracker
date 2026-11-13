@@ -305,3 +305,21 @@ main { padding:0 0 72px; }
   .source-details { break-inside:avoid; }
   .trend-control, .correction-link { display:none; }
 }
+
+/* Selection export row and field-by-year grid (IMP-002, IMP-008). Cell shade is data-driven via --v; the count is always printed too. */
+.filtri .campi-3 { margin-top:8px; grid-template-columns:auto auto 1fr; align-items:center; }
+.nota-filtri { color:var(--muted); font-size:.8125rem; }
+@media (max-width:860px) { .filtri .campi-3 { grid-template-columns:1fr 1fr; } .nota-filtri { grid-column:1/-1; } }
+@media (max-width:520px) { .filtri .campi-3 { grid-template-columns:1fr; } }
+.heat-wrap { overflow-x:auto; }
+.heat { border-collapse:separate; border-spacing:3px; font-size:.875rem; min-width:420px; width:100%; }
+.heat th { color:var(--ink-2); font-weight:600; text-align:left; padding:4px 6px; white-space:nowrap; }
+.heat thead th { text-align:center; }
+.heat tbody th::first-letter { text-transform:uppercase; }
+.heat td { padding:0; text-align:center; }
+.heat-cell, .heat-zero { display:block; width:100%; min-width:34px; padding:6px 0; border-radius:8px; font:600 .875rem var(--font); font-variant-numeric:tabular-nums; }
+.heat-cell { border:1px solid var(--line-2); background:color-mix(in srgb, var(--accent) calc(var(--v) * 45%), var(--sheet)); color:var(--ink); cursor:pointer; }
+.heat-cell:hover { border-color:var(--accent); }
+.heat-cell[aria-pressed="true"] { outline:2px solid var(--ink); outline-offset:1px; }
+.heat-zero { color:var(--muted); font-weight:400; }
+@media print { .heat-cell { border:0; background:none; } }

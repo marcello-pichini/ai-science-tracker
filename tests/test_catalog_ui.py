@@ -59,3 +59,22 @@ assert.ok(html.includes('&lt;img'));
 assert.ok(ui.sourceDetails({...d,verification_status:'needs verification'}).includes('Needs source check'));
 assert.ok(!ui.sourceDetails({...d,paper_url:'https://example.org/preprint'}).includes('peer-reviewed'));
 ''')
+
+    def test_csv_export_escapes_and_blocks_formula_cells(self):
+        self.run_js('''
+const r = {id:'a', title:'=HYPERLINK("x")', summary:'one, "two"\\nthree', field:'biology', ai_technology:'', organization:'Org', source_url:'https://e.org', source_type:'blog', publication_date:'2025-01-02', added_date:'2025-01-03', verification_status:'verified', paper_url:'', relevance:{impact:5,validation:4,novelty:3}};
+const lines = ui.toCsv([r]);
+assert.ok(lines.startsWith(ui.csvColumns.join(',') + '\\r\\n'));
+assert.ok(lines.includes("'=HYPERLINK(\\"\\"x\\"\\")"));
+assert.ok(lines.includes('"one, ""two""\\nthree"'));
+assert.ok(lines.includes('#discovery=a'));
+''')
+
+    def test_reference_has_no_invented_metadata_and_field_year_counts(self):
+        self.run_js('''
+const r = {id:'x y', title:'T', organization:'O', publication_date:'2025-02-03', source_url:'https://e.org/s'};
+const text = ui.reference(r, '13 Nov 2026');
+assert.equal(text, 'T. O, announced 3 Feb 2025. Source: https://e.org/s. Catalog entry: AI Science Tracker, https://marcello-pichini.github.io/ai-science-tracker/index.html#discovery=x%20y (accessed 13 Nov 2026).');
+const m = ui.fieldYear([{field:'b', publication_date:'2021-01-01'}, {field:'b', publication_date:'2021-05-01'}, {field:'c', publication_date:'2020-01-01'}]);
+assert.equal(m.cells['b|2021'], 2); assert.deepEqual(m.fields, ['b','c']); assert.deepEqual(m.years, ['2020','2021']);
+''')

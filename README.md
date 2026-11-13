@@ -44,7 +44,7 @@ The CSV and research working files are excluded from Git. After updating the inp
 
 ## Sharing, filters and printing
 
-- Filters are kept in the query string: `index.html?q=&field=&org=&year=&family=&min=&sort=`. The "Copy filter link" button copies the current view.
+- Filters are kept in the query string: `index.html?q=&field=&org=&year=&family=&min=&sort=`. The "Copy filter link" button copies the current view; "Download selection" saves the listed entries as JSON or CSV, and each entry has "Copy link" and "Copy reference" buttons.
 - "Copy link" on a discovery copies `share/ID.html`, a generated full, self-canonical static discovery page with Open Graph tags and a 1200x630 card (`og/ID.png`); its full text is readable without JavaScript, with a link back to `index.html#discovery=ID`.
 - After changing discoveries or the design, run `python3 scripts/generate_share.py` (add `--force` to redraw every card; it needs Google Chrome, or set `CHROME=/path/to/chrome`) and commit the generated files.
 - Printing or "Save as PDF" from `index.html` produces a light, control-free list with full summaries and source URLs.

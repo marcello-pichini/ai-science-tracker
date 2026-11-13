@@ -45,6 +45,7 @@
 </section>
 
 <main>
+  <noscript><div class="wrap"><p class="vuoto">This catalog needs JavaScript to filter and chart entries. Without it you can still read each entry on its <a href="share/2020-02-halicin.html">static discovery page</a> (listed in the <a href="sitemap.xml">sitemap</a>), open the <a href="data/discoveries.json">raw data</a>, or read the <a href="methodology.html">methodology</a>.</p></div></noscript>
   <section class="sez" id="categorie" aria-labelledby="t-fields">
     <div class="wrap">
       <h2 id="t-fields">Explore by field</h2>
@@ -72,7 +73,7 @@
         <div class="campi">
           <input id="q" type="search" placeholder="Search titles, summaries, or technology" aria-label="Search entries">
           <select id="org" aria-label="Organization"></select>
-          <select id="ord" aria-label="Sort order"><option value="desc">Newest first</option><option value="asc">Oldest first</option><option value="relevance">Highest relevance first</option></select>
+          <select id="ord" aria-label="Sort order"><option value="desc">Newest first</option><option value="asc">Oldest first</option><option value="relevance">Highest relevance first</option><option value="added">Recently added</option></select>
           <button id="reset" type="button">Clear filters</button>
         </div>
         <div class="campi campi-2">
@@ -80,6 +81,11 @@
           <select id="family" aria-label="Model family"></select>
           <select id="min" aria-label="Minimum relevance"><option value="0">Any relevance</option><option value="40">Relevance 40 or more</option><option value="60">Relevance 60 or more</option><option value="80">Relevance 80 or more</option></select>
           <button id="copy-filters" type="button">Copy filter link</button>
+        </div>
+        <div class="campi campi-3">
+          <button id="dl-json" type="button">Download selection (JSON)</button>
+          <button id="dl-csv" type="button">Download selection (CSV)</button>
+          <span class="nota-filtri">Exports the entries currently listed, with sources, dates and editorial scores. Reuse terms for the catalog text are not yet defined; the original sources keep their own terms.</span>
         </div>
         <div class="riepilogo"><span id="conta" aria-live="polite"></span></div>
       </div>
@@ -245,6 +251,9 @@ function grafici() {
     `<div class="pannello"><h3>By field</h3><p class="descr">Number of discoveries and average relevance, from 0 to 100.</p>${righe("field", fields, fields[0][1], medie)}</div>` +
     `<div class="pannello"><h3>By organization</h3><p class="descr">${org.length > 8 ? `Top 8 of ${org.length}; organizations listed together are counted under the first one named.` : "Organizations listed together are counted under the first one named."}</p>${righe("org", org.slice(0, 8), org[0][1])}</div>` +
     `<div class="pannello largo"><h3>Catalog entries and editorial relevance by year</h3><label class="trend-control">Show <select id="trend-metric"><option value="count"${trendMetric === "count" ? " selected" : ""}>Catalog entries</option><option value="mean"${trendMetric === "mean" ? " selected" : ""}>Mean editorial relevance (0–100)</option></select></label><p class="descr">This selected collection is incomplete; counts do not measure worldwide discovery rates. Each mean is based on the annual number of entries shown in the table, and small samples can be misleading.${anni[iUlt] == new Date().getFullYear() ? ` ${anni[iUlt]} is still in progress.` : ""}</p><svg viewBox="0 0 ${W} 244" id="linea-anni" role="group" aria-label="${trendMetric === "count" ? "Catalog entries" : "Mean editorial relevance"} by year, from ${anni[0]} to ${anni[iUlt]}">${svg}</svg>${tabella}</div>`;
+  const fy = CatalogUI.fieldYear(items), fyMax = Math.max(...Object.values(fy.cells));
+  const heat = `<div class="heat-wrap"><table class="heat"><caption class="vis-nascosto">Discoveries per field and year; select a cell to filter the list.</caption><thead><tr><th scope="col">Field</th>${fy.years.map(y => `<th scope="col">${y}</th>`).join("")}</tr></thead><tbody>${fy.fields.map(f => `<tr><th scope="row">${esc(f)}</th>${fy.years.map(y => { const n = fy.cells[f + "|" + y] || 0; return n ? `<td><button type="button" class="heat-cell" data-field="${esc(f)}" data-year="${y}" style="--v:${(n / fyMax).toFixed(2)}" aria-pressed="${state.field === f && state.anno === y}" aria-label="${esc(f)}, ${y}: ${n} ${n === 1 ? "discovery" : "discoveries"}">${n}</button></td>` : `<td><span class="heat-zero" aria-label="${esc(f)}, ${y}: none">0</span></td>`; }).join("")}</tr>`).join("")}</tbody></table></div>`;
+  $("charts").insertAdjacentHTML("beforeend", `<div class="pannello largo"><h3>Fields by year</h3><p class="descr">Number of catalog entries per field and year; darker cells have more entries. The collection is selected, not exhaustive, so empty cells do not mean no AI-enabled work existed.</p>${heat}</div>`);
   const sourceCounts = ordina(conta(items, record => record.source_type));
   $("coverage").textContent = `Full catalog: ${items.length} entries; primary sources: ${sourceCounts.map(([type, n]) => `${type}: ${n}`).join(", ")}. Most recent catalog addition: ${fmtData(items.map(record => record.added_date).sort().at(-1))}. This is not a last-review date.`;
   const ls = $("linea-anni");
@@ -267,7 +276,7 @@ function riempi(sel, etichetta, valori) {
 function voce(s) {
   const p = punteggio(s), lungo = s.summary.length > 240, f = famDi[s.id];
   return `<article class="voce" id="${esc(s.id)}">
-    <div class="voce-meta"><time datetime="${esc(s.publication_date)}">${esc(fmtData(s.publication_date))}</time><a href="profile.html?org=${encodeURIComponent(orgDi(s))}">${esc(s.organization)}</a></div>
+    <div class="voce-meta"><time datetime="${esc(s.publication_date)}">${esc(fmtData(s.publication_date))}</time><a href="profile.html?org=${encodeURIComponent(orgDi(s))}">${esc(s.organization)}</a><span>Added ${esc(fmtData(s.added_date))}</span></div>
     <h3>${esc(s.title)}</h3>
     <p class="sommario${lungo ? " chiuso" : ""}">${esc(s.summary)}</p>
     ${lungo ? `<button class="piu" type="button" aria-expanded="false">Read more</button>` : ""}
@@ -276,13 +285,13 @@ function voce(s) {
     <div class="voce-footer">
       <span class="punteggio" title="Impact ${s.relevance.impact}/5, validation ${s.relevance.validation}/5, novelty ${s.relevance.novelty}/5">Relevance ${p}<span class="metro" aria-hidden="true"><i style="width:${p}%"></i></span></span>
       <span class="etich">${esc(s.field)}</span>
-      <span class="collegamenti"><a href="${esc(safeUrl(s.source_url))}" rel="noopener">Original source</a>${s.paper_url ? `<a href="${esc(safeUrl(s.paper_url))}" rel="noopener">Paper</a>` : ""}<button class="copia" type="button" data-id="${esc(s.id)}">Copy link</button> <a class="correction-link" href="${esc(CatalogUI.correctionUrl(s))}" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="${esc(safeUrl(s.source_url))}" rel="noopener">Original source</a>${s.paper_url ? `<a href="${esc(safeUrl(s.paper_url))}" rel="noopener">Paper</a>` : ""}<button class="copia" type="button" data-id="${esc(s.id)}">Copy link</button> <button class="copia riferimento" type="button" data-id="${esc(s.id)}">Copy reference</button> <a class="correction-link" href="${esc(CatalogUI.correctionUrl(s))}" rel="noopener">Suggest a correction</a></span>
     </div>
     ${CatalogUI.sourceDetails(s)}
   </article>`;
 }
 
-const SORTS = ["desc", "asc", "relevance"];
+const SORTS = ["desc", "asc", "relevance", "added"];
 function filterQuery() {
   const q = new URLSearchParams();
   [["q", state.q], ["field", state.field], ["org", state.org], ["year", state.anno], ["family", state.family], ["min", state.min || ""], ["sort", state.ord === "desc" ? "" : state.ord]]
@@ -301,10 +310,11 @@ function lista() {
   let out = items.filter(passa);
   $("conta").textContent = `${out.length} of ${items.length} discoveries`;
   if (state.ord === "asc") out = out.slice().reverse(); // items are already sorted newest first
+  if (state.ord === "added") out = out.slice().sort((a, b) => b.added_date.localeCompare(a.added_date) || b.publication_date.localeCompare(a.publication_date));
   if (state.ord === "relevance") out = out.slice().sort((a, b) => punteggio(b) - punteggio(a) || b.publication_date.localeCompare(a.publication_date));
   let html = "";
   if (!out.length) html = `<p class="vuoto">No discoveries match these filters. Try removing a filter or click “Clear filters”.</p>`;
-  else if (state.ord === "relevance") html = `<div class="piatto">${out.map(voce).join("")}</div>`;
+  else if (state.ord === "relevance" || state.ord === "added") html = `<div class="piatto">${out.map(voce).join("")}</div>`;
   else {
     const gruppi = [];
     out.forEach(s => { const a = s.publication_date.slice(0, 4); if (!gruppi.length || gruppi.at(-1)[0] !== a) gruppi.push([a, []]); gruppi.at(-1)[1].push(s); });
@@ -342,14 +352,21 @@ Promise.all([
   const h = decodeURIComponent(location.hash.slice(1)); // legacy category links such as #biology
   if (!state.field) { if (perAmb.some(([v]) => v === h)) state.field = h; else if (legacy[h] && perAmb.some(([v]) => v === legacy[h])) state.field = legacy[h]; }
   lista();
-}).catch(() => { $("lista").textContent = "Could not load data. Open this page from a local server (python3 -m http.server)."; $("lead").textContent = ""; });
+}).catch(() => { $("lista").textContent = "Could not load the catalog data. Reload the page, or open the raw data directly."; $("lead").innerHTML = `The catalog data could not be loaded. You can read the <a href="data/discoveries.json">raw data</a> or the <a href="methodology.html">methodology</a> meanwhile.`; });
 
 let largh = innerWidth, tRes;
 addEventListener("resize", () => { clearTimeout(tRes); tRes = setTimeout(() => { if (items.length && innerWidth !== largh) { largh = innerWidth; spettro(); grafici(); } }, 150); });
 $("q").addEventListener("input", e => { state.q = e.target.value; lista(); });
 $("ord").addEventListener("change", e => { state.ord = e.target.value; lista(); });
 $("lista").addEventListener("click", e => {
-  const c = e.target.closest(".copia");
+  const r = e.target.closest(".riferimento");
+  if (r) {
+    const text = CatalogUI.reference(items.find(x => x.id === r.dataset.id), fmtData(new Date().toISOString().slice(0, 10)));
+    const fatto = () => { r.textContent = "Reference copied"; setTimeout(() => { r.textContent = "Copy reference"; }, 1500); };
+    (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(fatto, () => prompt("Copy this reference:", text));
+    return;
+  }
+  const c = e.target.closest(".copia:not(.riferimento)");
   if (c) {
     const url = new URL("share/" + encodeURIComponent(c.dataset.id) + ".html", location.href).href; // generated stub with Open Graph image, redirects here
     const fatto = () => { c.textContent = "Link copied"; setTimeout(() => { c.textContent = "Copy link"; }, 1500); };
@@ -369,6 +386,13 @@ $("reset").addEventListener("click", () => { clearFilters(); lista(); grafici();
 $("year").addEventListener("change", e => { state.anno = e.target.value; lista(); grafici(); });
 $("family").addEventListener("change", e => { state.family = e.target.value; lista(); });
 $("min").addEventListener("change", e => { state.min = +e.target.value; lista(); });
+const scarica = (nome, tipo, testo) => {
+  const a = document.createElement("a"), url = URL.createObjectURL(new Blob([testo], { type: tipo }));
+  a.href = url; a.download = nome; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
+const selezione = () => { const out = items.filter(passa); return state.ord === "added" ? out.slice().sort((a, b) => b.added_date.localeCompare(a.added_date)) : out; };
+$("dl-json").addEventListener("click", () => scarica("ai-science-tracker-selection.json", "application/json", JSON.stringify(selezione(), null, 2) + "\n"));
+$("dl-csv").addEventListener("click", () => scarica("ai-science-tracker-selection.csv", "text/csv;charset=utf-8", CatalogUI.toCsv(selezione())));
 $("copy-filters").addEventListener("click", e => {
   const b = e.currentTarget, done = () => { b.textContent = "Link copied"; setTimeout(() => { b.textContent = "Copy filter link"; }, 1500); };
   (navigator.clipboard ? navigator.clipboard.writeText(location.href) : Promise.reject()).then(done, () => prompt("Copy this link:", location.href));
@@ -379,6 +403,11 @@ $("charts").addEventListener("change", e => {
   grafici(); $("trend-metric").focus({ preventScroll:true });
 });
 $("charts").addEventListener("click", e => {
+  const h = e.target.closest(".heat-cell");
+  if (h) {
+    const same = state.field === h.dataset.field && state.anno === h.dataset.year;
+    state.field = same ? "" : h.dataset.field; state.anno = same ? "" : h.dataset.year; lista(); grafici(); return;
+  }
   const b = e.target.closest("[data-k]"); if (!b) return;
   state[b.dataset.k] = state[b.dataset.k] === b.dataset.v ? "" : b.dataset.v; nascondiTip(); lista(); grafici();
 });
