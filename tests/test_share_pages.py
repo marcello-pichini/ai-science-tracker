@@ -44,6 +44,8 @@ class SharePageTests(unittest.TestCase):
         ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
         urls = [node.text for node in root.findall('s:url/s:loc', ns)]
         self.assertIn(g.BASE + 'security.html', urls)
+        self.assertNotIn(g.BASE, urls)
+        self.assertIn(g.BASE + 'index.html', urls)
         self.assertIn(g.BASE + 'share/test-discovery.html', urls)
         self.assertEqual(len(root.findall('s:url/s:lastmod', ns)), 0)
 

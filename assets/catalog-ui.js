@@ -42,6 +42,17 @@ globalThis.CatalogUI = {
     }
     return {cells, fields:[...fields].sort(), years:[...years].sort()};
   },
+  // Counts entries per source website (host without "www."); top is the number of busiest hosts to total.
+  sourceConcentration(records, top = 8) {
+    const hosts = {};
+    for (const record of records) {
+      let host = '';
+      try { host = new URL(record.source_url).hostname.replace(/^www\./, ''); } catch { host = ''; }
+      if (host) hosts[host] = (hosts[host] || 0) + 1;
+    }
+    const counts = Object.values(hosts).sort((a, b) => b - a);
+    return {top: Math.min(top, counts.length), entries: counts.slice(0, top).reduce((sum, n) => sum + n, 0), total: records.length, websites: counts.length};
+  },
   annualStats(records) {
     const years = {};
     for (const record of records) {

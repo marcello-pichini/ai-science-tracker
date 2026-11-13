@@ -78,3 +78,10 @@ assert.equal(text, 'T. O, announced 3 Feb 2025. Source: https://e.org/s. Catalog
 const m = ui.fieldYear([{field:'b', publication_date:'2021-01-01'}, {field:'b', publication_date:'2021-05-01'}, {field:'c', publication_date:'2020-01-01'}]);
 assert.equal(m.cells['b|2021'], 2); assert.deepEqual(m.fields, ['b','c']); assert.deepEqual(m.years, ['2020','2021']);
 ''')
+
+    def test_source_concentration_counts_hosts_without_www(self):
+        self.run_js('''
+const r = u => ({source_url:u});
+const s = ui.sourceConcentration([r('https://www.a.org/1'), r('https://a.org/2'), r('https://b.org/x'), r('not a url')], 1);
+assert.deepEqual(s, {top:1, entries:2, total:4, websites:2});
+''')

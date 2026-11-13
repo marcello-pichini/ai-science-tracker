@@ -40,7 +40,9 @@ python3 scripts/generate_models.py
 python3 -m unittest discover -s tests
 ```
 
-The CSV and research working files are excluded from Git. After updating the input snapshot, update its download date in the generator. Review generated family links before publishing; they are based on names, not independent attribution.
+The CSV and research working files are excluded from Git. After updating the input snapshot, update its download date in the generator. The pages let browsers cache the JSON files (GitHub Pages sends `max-age=600`), so a data update can take up to 10 minutes to show for a returning reader. Review generated family links before publishing; they are based on names, not independent attribution.
+
+A GitHub Actions workflow (`.github/workflows/check.yml`, read-only permissions) runs the tests on every push and pull request, then reruns `python3 scripts/generate_share.py` and fails if `share/`, `profiles/`, `sitemap.xml` or `robots.txt` differ from what is committed. After changing data or the generator, rerun the generator and commit its output.
 
 ## Sharing, filters and printing
 

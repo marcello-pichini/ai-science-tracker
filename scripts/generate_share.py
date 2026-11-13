@@ -35,6 +35,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://marcello-pichini.github.io/ai-science-tracker/'
 CHROME = os.environ.get('CHROME', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
 SITE = 'AI Science Tracker'
+DEFAULT_ALT = 'Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.'
 NOT_ROOT_RELATIVE = re.compile(r'^(https?:|data:|mailto:|#|\.\./)')
 
 
@@ -165,6 +166,8 @@ PAGE = """<!doctype html>
 <meta property="og:image" content="{base}og/{img}.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{imgalt}">
+<meta name="twitter:image:alt" content="{imgalt}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -202,7 +205,7 @@ def safe_url(u):
     return u if re.match(r'^https?://', u or '') else '#'
 
 
-def discovery_article(d, fam, ui):
+def discovery_article(d, fam, ui, link_title=False):
     """Same fields and markup as index.html's voce(), minus JS-only controls (the "Read
     more" truncation toggle and the "Copy link" button) that cannot work without script."""
     p = score(d)
@@ -210,9 +213,10 @@ def discovery_article(d, fam, ui):
               f'&middot; <a href="models.html#fam-{esc(fam["id"])}">models page</a></p>') if fam else ''
     tech = f'<p class="tech"><span>Technology:</span> {esc(d["ai_technology"])}</p>' if d['ai_technology'] else ''
     paper = f'<a href="{esc(safe_url(d["paper_url"]))}" rel="noopener">Paper</a>' if d['paper_url'] else ''
+    title_html = f'<a href="share/{esc(d["id"])}.html">{esc(d["title"])}</a>' if link_title else esc(d['title'])
     return f"""<article class="voce" id="{esc(d['id'])}">
     <div class="voce-meta"><time datetime="{esc(d['publication_date'])}">{esc(nice_date(d['publication_date']))}</time><a href="profiles/org-{slug(lead_org(d['organization']))}.html">{esc(d['organization'])}</a></div>
-    <h3>{esc(d['title'])}</h3>
+    <h3>{title_html}</h3>
     <p class="sommario">{esc(d['summary'])}</p>
     {tech}
     {family}
@@ -223,6 +227,23 @@ def discovery_article(d, fam, ui):
     </div>
     {ui['details']}
   </article>"""
+
+
+def related_section(d, items):
+    """Plain anchors to a few newer-first siblings, so every discovery page has inbound links
+    from other pages (not only the sitemap). Capped at 3 per list to avoid near-duplicate blocks."""
+    def block(title, rows):
+        rows = rows[:3]
+        if not rows:
+            return ''
+        lis = ''.join(f'<li><a href="share/{esc(r["id"])}.html">{esc(r["title"])}</a> &middot; {esc(nice_date(r["publication_date"]))}</li>' for r in rows)
+        return f'<h2>{title}</h2><ul>{lis}</ul>'
+    newest = sorted((r for r in items if r['id'] != d['id']), key=lambda r: r['publication_date'], reverse=True)
+    org = lead_org(d['organization'])
+    same_org = [r for r in newest if lead_org(r['organization']) == org]
+    same_field = [r for r in newest if r['field'] == d['field'] and r not in same_org[:3]]
+    body = block(f'More from {esc(org)}', same_org) + block(f'More in {esc(d["field"])}', same_field)
+    return f'\n  <section class="sez"><div class="wrap"><div class="prosa">{body}</div></div></section>' if body else ''
 
 
 def write_discovery_pages(items, models, images):
@@ -241,7 +262,8 @@ def write_discovery_pages(items, models, images):
         lead = f'{esc(d["organization"])} &middot; {esc(nice_date(d["publication_date"]))} &middot; {esc(d["field"])}'
         page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(clip(d['summary'], 200)), base=BASE,
                            path=f'share/{d["id"]}.html', img=d['id'] if images else 'default',
-                           h2='<h2 class="vis-nascosto">Discovery</h2>', more=f'<a href="index.html#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.', extra='',
+                           imgalt=esc(f'Preview card: {d["title"]}') if images else DEFAULT_ALT,
+                           h2='<h2 class="vis-nascosto">Discovery</h2>', more=f'<a href="index.html#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.', extra=related_section(d, items),
                            header=header, footer=footer, lead=lead, article=article)
         (out / f'{d["id"]}.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
 
@@ -284,9 +306,9 @@ def write_profile_pages(items, models):
         return f'{n} {one if n == 1 else many}'
 
     def emit(name, title, lead, desc, rows, path, interactive, extra=''):
-        articles = ''.join(discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']]) for d in rows)
+        articles = ''.join(discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']], link_title=True) for d in rows)
         more = f'<a href="{interactive}">Open the interactive profile</a> for the timeline, or <a href="profiles/index.html">browse all organizations and model families</a>.'
-        page = PAGE.format(title=esc(title), site=SITE, desc=esc(desc), base=BASE, path=path, img='default',
+        page = PAGE.format(title=esc(title), site=SITE, desc=esc(desc), base=BASE, path=path, img='default', imgalt=DEFAULT_ALT,
                            header=header, footer=footer, lead=lead, article=articles, more=more, extra=extra,
                            h2='<h2 class="vis-nascosto">Discoveries</h2>')
         (ROOT / path).write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
@@ -310,7 +332,7 @@ def write_profile_pages(items, models):
     fams = ''.join(f'<li><a href="profiles/family-{quote(f["id"])}.html">{esc(f["name"])}</a> ({len(f["discoveries"])})</li>' for f in sorted(models['families'], key=lambda f: (-len(f['discoveries']), f['name'])) if f['discoveries'])
     directory = f'<h2>Organizations</h2><ul class="elenco-profili">{labs}</ul><h2>Model families</h2><ul class="elenco-profili">{fams}</ul>'
     page = PAGE.format(title='Labs and model families', site=SITE, desc='Organizations and model families with at least one tracked AI-enabled discovery.', base=BASE,
-                       path='profiles/index.html', img='default', header=header, footer=footer,
+                       path='profiles/index.html', img='default', imgalt=DEFAULT_ALT, header=header, footer=footer,
                        lead=f'{len(by_org)} organizations and {len([f for f in models["families"] if f["discoveries"]])} model families', article=directory,
                        more='<a href="profile.html">Open the interactive directory</a>.', extra='', h2='')
     (ROOT / 'profiles/index.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
@@ -322,7 +344,7 @@ def write_sitemap(items, models):
     orgs = sorted({lead_org(d['organization']) for d in items})
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
     # Announcement dates are not page-modification dates; omit lastmod until tracked.
-    urls = ['', 'index.html', 'models.html', 'methodology.html', 'guide.html', 'profile.html', 'security.html']
+    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'profile.html', 'security.html']
     urls += ['profiles/index.html']
     urls += [f'profiles/org-{slug(o)}.html' for o in orgs]
     urls += [f'profiles/family-{quote(f)}.html' for f in fams]

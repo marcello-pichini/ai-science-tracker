@@ -11,6 +11,8 @@
 <meta property="og:image" content="https://marcello-pichini.github.io/ai-science-tracker/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/index.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -97,7 +99,7 @@
 <footer class="footer">
   <div class="wrap">
     <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
-    <p><a href="methodology.html">How we select and verify entries</a></p>
+    <p><a href="methodology.html">How we select and verify entries</a> · <a href="profiles/index.html">All organizations and model families</a></p>
     <p><a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=discovery.yml">Suggest a discovery</a>. Reports are public, require GitHub sign-in, and are reviewed before catalog changes.</p>
   </div>
 </footer>
@@ -255,7 +257,8 @@ function grafici() {
   const heat = `<div class="heat-wrap"><table class="heat"><caption class="vis-nascosto">Discoveries per field and year; select a cell to filter the list.</caption><thead><tr><th scope="col">Field</th>${fy.years.map(y => `<th scope="col">${y}</th>`).join("")}</tr></thead><tbody>${fy.fields.map(f => `<tr><th scope="row">${esc(f)}</th>${fy.years.map(y => { const n = fy.cells[f + "|" + y] || 0; return n ? `<td><button type="button" class="heat-cell" data-field="${esc(f)}" data-year="${y}" style="--v:${(n / fyMax).toFixed(2)}" aria-pressed="${state.field === f && state.anno === y}" aria-label="${esc(f)}, ${y}: ${n} ${n === 1 ? "discovery" : "discoveries"}">${n}</button></td>` : `<td><span class="heat-zero" aria-label="${esc(f)}, ${y}: none">0</span></td>`; }).join("")}</tr>`).join("")}</tbody></table></div>`;
   $("charts").insertAdjacentHTML("beforeend", `<div class="pannello largo"><h3>Fields by year</h3><p class="descr">Number of catalog entries per field and year; darker cells have more entries. The collection is selected, not exhaustive, so empty cells do not mean no AI-enabled work existed.</p>${heat}</div>`);
   const sourceCounts = ordina(conta(items, record => record.source_type));
-  $("coverage").textContent = `Full catalog: ${items.length} entries; primary sources: ${sourceCounts.map(([type, n]) => `${type}: ${n}`).join(", ")}. Most recent catalog addition: ${fmtData(items.map(record => record.added_date).sort().at(-1))}. This is not a last-review date.`;
+  const sc = CatalogUI.sourceConcentration(items);
+  $("coverage").textContent = `Full catalog: ${items.length} entries; primary sources: ${sourceCounts.map(([type, n]) => `${type}: ${n}`).join(", ")}. Most recent catalog addition: ${fmtData(items.map(record => record.added_date).sort().at(-1))}. This is not a last-review date. Source concentration: the ${sc.top} most frequent source websites account for ${sc.entries} of ${sc.total} entries, out of ${sc.websites} websites in total.`;
   const ls = $("linea-anni");
   ls.querySelectorAll("rect[data-anno]").forEach(r => {
     r.addEventListener("pointerenter", e => { const a = r.dataset.anno; ls.querySelector(`circle[data-v="${a}"]`).classList.add("su"); mostraTip([`${a}`, `${annual[a].count} catalog entries`, `Mean editorial relevance ${annual[a].mean}/100`], e.clientX, e.clientY); });
@@ -333,8 +336,8 @@ function lista() {
 }
 
 Promise.all([
-  fetch("data/discoveries.json", { cache:"no-store" }).then(r => r.json()),
-  fetch("data/models.json", { cache:"no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)
+  fetch("data/discoveries.json").then(r => r.json()),
+  fetch("data/models.json").then(r => r.ok ? r.json() : null).catch(() => null)
 ]).then(([dati, modelli]) => {
   items = dati.sort((a, b) => b.publication_date.localeCompare(a.publication_date));
   if (modelli) modelli.families.forEach(f => f.discoveries.forEach(id => { if (!famDi[id]) famDi[id] = f; (famIds[id] ||= []).push(f.id); }));

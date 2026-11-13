@@ -11,6 +11,8 @@
 <meta property="og:image" content="https://marcello-pichini.github.io/ai-science-tracker/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/profile.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -46,7 +48,7 @@
 <footer class="footer">
   <div class="wrap">
     <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified. Model data: <a href="https://epoch.ai/data/ai-models">Epoch AI</a>, CC BY 4.0.</p>
-    <p><a href="methodology.html">How we select and verify entries</a></p>
+    <p><a href="methodology.html">How we select and verify entries</a> · <a href="profiles/index.html">All organizations and model families</a></p>
     <p><a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=discovery.yml">Suggest a discovery</a>. Reports are public, require GitHub sign-in, and are reviewed before catalog changes.</p>
   </div>
 </footer>
@@ -222,8 +224,8 @@ function render() {
 }
 
 Promise.all([
-  fetch("data/discoveries.json", { cache:"no-store" }).then(r => r.json()),
-  fetch("data/models.json", { cache:"no-store" }).then(r => r.json())
+  fetch("data/discoveries.json").then(r => r.json()),
+  fetch("data/models.json").then(r => r.json())
 ]).then(([discoveries, models]) => { data = { discoveries, models }; render(); })
   .catch(() => { $("lead").textContent = "Could not load data. Open this page from a local server (python3 -m http.server)."; });
 
