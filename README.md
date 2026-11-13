@@ -64,3 +64,7 @@ Model data: [Epoch AI, Data on AI models](https://epoch.ai/data/ai-models), used
 Font: Schibsted Grotesk, distributed under the SIL Open Font License in `assets/fonts/OFL.txt`.
 
 GitHub Pages serves this repository's `main` branch from the root. There is no build step or external JavaScript dependency. Published claims and editorial scores have the limitations described on the methodology page; coverage is manual and incomplete.
+
+## License and citation
+
+Catalog content (`data/discoveries.json`, `data/vulnerabilities.json`, summaries, editorial scores, documentation) is licensed under [CC BY 4.0](LICENSE). Epoch AI model data keeps its own CC BY 4.0 attribution, the font keeps the SIL OFL, and linked sources keep their own terms. No separate licence is set for the site code. GitHub's "Cite this repository" uses `CITATION.cff`; it cites the catalog, not the underlying scientific papers.
