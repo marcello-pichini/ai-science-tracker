@@ -8,6 +8,10 @@
 <meta property="og:title" content="AI Science Tracker">
 <meta property="og:description" content="Scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://marcello-pichini.github.io/ai-science-tracker/og/default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/index.html">
 <meta property="og:site_name" content="AI Science Tracker">
 <meta name="theme-color" content="#12367e">
@@ -16,7 +20,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="testata">
+<header class="header">
   <div class="wrap">
     <a class="marchio" href="index.html" aria-label="AI Science Tracker, home page">
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
@@ -67,6 +71,12 @@
           <select id="ord" aria-label="Sort order"><option value="desc">Newest first</option><option value="asc">Oldest first</option><option value="relevance">Highest relevance first</option></select>
           <button id="reset" type="button">Clear filters</button>
         </div>
+        <div class="campi campi-2">
+          <select id="year" aria-label="Year"></select>
+          <select id="family" aria-label="Model family"></select>
+          <select id="min" aria-label="Minimum relevance"><option value="0">Any relevance</option><option value="40">Relevance 40 or more</option><option value="60">Relevance 60 or more</option><option value="80">Relevance 80 or more</option></select>
+          <button id="copy-filters" type="button">Copy filter link</button>
+        </div>
         <div class="riepilogo"><span id="conta" aria-live="polite"></span></div>
       </div>
     </div>
@@ -74,7 +84,7 @@
   </section>
 </main>
 
-<footer class="piede">
+<footer class="footer">
   <div class="wrap">
     <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
     <p><a href="methodology.html">How we select and verify entries</a></p>
@@ -85,9 +95,10 @@
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeUrl = u => /^https?:\/\//.test(u) ? u : "#";
-const state = { q:"", field:"", org:"", anno:"", ord:"desc" };
+const state = { q:"", field:"", org:"", anno:"", ord:"desc", min:0, family:"" };
+const clearFilters = () => { Object.assign(state, { q:"", field:"", org:"", anno:"", min:0, family:"" }); $("q").value = ""; };
 const ridotto = matchMedia("(prefers-reduced-motion: reduce)");
-let items = [], famDi = {};
+let items = [], famDi = {}, famIds = {};
 let ancora = decodeURIComponent(location.hash).startsWith("#discovery=") ? decodeURIComponent(location.hash).slice(11) : decodeURIComponent(location.hash).startsWith("#scoperta=") ? decodeURIComponent(location.hash).slice(10) : null;
 
 // Organizations listed together (e.g. "Google DeepMind and Google Research") are counted under the first one named.
@@ -103,9 +114,10 @@ const passa = s => {
   const q = state.q.toLowerCase();
   return (!state.field || s.field === state.field) && (!state.org || orgDi(s) === state.org) &&
     (!state.anno || s.publication_date.startsWith(state.anno)) &&
+    (!state.min || punteggio(s) >= state.min) && (!state.family || (famIds[s.id] || []).includes(state.family)) &&
     (!q || [s.title, s.summary, s.ai_technology, s.organization].join(" ").toLowerCase().includes(q));
 };
-const filtroAttivo = () => !!(state.q || state.field || state.org || state.anno);
+const filtroAttivo = () => !!(state.q || state.field || state.org || state.anno || state.min || state.family);
 
 /* One tooltip element; insert text with textContent. */
 const tip = document.createElement("div"); tip.className = "tip"; tip.setAttribute("aria-hidden", "true"); document.body.append(tip);
@@ -181,7 +193,7 @@ function spAggiorna() {
 }
 
 function vaiA(id) {
-  if (!document.getElementById(id)) { state.q = state.field = state.org = state.anno = ""; $("q").value = ""; lista(); grafici(); }
+  if (!document.getElementById(id)) { clearFilters(); lista(); grafici(); }
   const el = document.getElementById(id); if (!el) return;
   document.querySelectorAll(".voce.evid").forEach(v => v.classList.remove("evid"));
   el.classList.add("evid");
@@ -245,13 +257,13 @@ function riempi(sel, etichetta, valori) {
 function voce(s) {
   const p = punteggio(s), lungo = s.summary.length > 240, f = famDi[s.id];
   return `<article class="voce" id="${esc(s.id)}">
-    <div class="voce-meta"><time datetime="${esc(s.publication_date)}">${esc(fmtData(s.publication_date))}</time><span>${esc(s.organization)}</span></div>
+    <div class="voce-meta"><time datetime="${esc(s.publication_date)}">${esc(fmtData(s.publication_date))}</time><a href="profile.html?org=${encodeURIComponent(orgDi(s))}">${esc(s.organization)}</a></div>
     <h3>${esc(s.title)}</h3>
     <p class="sommario${lungo ? " chiuso" : ""}">${esc(s.summary)}</p>
     ${lungo ? `<button class="piu" type="button" aria-expanded="false">Read more</button>` : ""}
     ${s.ai_technology ? `<p class="tech"><span>Technology:</span> ${esc(s.ai_technology)}</p>` : ""}
-    ${f ? `<p class="modello"><a href="models.html#fam-${esc(f.id)}">Family ${esc(f.name)} on the models page</a></p>` : ""}
-    <div class="voce-piede">
+    ${f ? `<p class="modello">Family ${esc(f.name)}: <a href="profile.html?family=${encodeURIComponent(f.id)}">profile</a> · <a href="models.html#fam-${esc(f.id)}">models page</a></p>` : ""}
+    <div class="voce-footer">
       <span class="punteggio" title="Impact ${s.relevance.impact}/5, validation ${s.relevance.validation}/5, novelty ${s.relevance.novelty}/5">Relevance ${p}<span class="metro" aria-hidden="true"><i style="width:${p}%"></i></span></span>
       <span class="etich">${esc(s.field)}</span>
       <span class="etich${s.verification_status === "verified" ? " ok" : ""}">${esc(s.verification_status)}</span>
@@ -260,6 +272,21 @@ function voce(s) {
   </article>`;
 }
 
+const SORTS = ["desc", "asc", "relevance"];
+function filterQuery() {
+  const q = new URLSearchParams();
+  [["q", state.q], ["field", state.field], ["org", state.org], ["year", state.anno], ["family", state.family], ["min", state.min || ""], ["sort", state.ord === "desc" ? "" : state.ord]]
+    .forEach(([k, v]) => { if (v) q.set(k, v); });
+  return q.size ? "?" + q : "";
+}
+/* Filters live in the query string (?q=&field=&org=&year=&family=&min=&sort=) so any view can be shared. */
+function readFilters(fields, orgs, years, families) {
+  const q = new URLSearchParams(location.search), pick = (k, ok) => ok.includes(q.get(k)) ? q.get(k) : "";
+  state.q = q.get("q") || ""; state.field = pick("field", fields); state.org = pick("org", orgs); state.anno = pick("year", years);
+  state.family = pick("family", families); state.min = [40, 60, 80].includes(+q.get("min")) ? +q.get("min") : 0;
+  state.ord = SORTS.includes(q.get("sort")) ? q.get("sort") : "desc";
+  $("q").value = state.q; $("ord").value = state.ord;
+}
 function lista() {
   let out = items.filter(passa);
   $("conta").textContent = `${out.length} of ${items.length} discoveries`;
@@ -274,13 +301,13 @@ function lista() {
     html = gruppi.map(([a, v]) => `<section class="annata" aria-label="${a}"><h3 class="anno-tit"><b>${a}</b><span>${v.length} ${v.length === 1 ? "discovery" : "discoveries"}</span></h3><div>${v.map(voce).join("")}</div></section>`).join("");
   }
   $("lista").innerHTML = html;
-  $("org").value = state.org;
+  $("org").value = state.org; $("year").value = state.anno; $("family").value = state.family; $("min").value = state.min;
   document.querySelectorAll("#cat button").forEach(b => b.setAttribute("aria-pressed", (b.dataset.v || "") === state.field));
   if (ancora) { // Preserve the anchor on the first render after opening a discovery link.
     const el = document.getElementById(ancora);
     if (el) { el.classList.add("evid"); el.scrollIntoView({ block:"center" }); }
     ancora = null;
-  } else history.replaceState(null, "", state.field ? "#" + encodeURIComponent(state.field) : location.pathname + location.search);
+  } else history.replaceState(null, "", location.pathname + filterQuery());
   document.querySelectorAll("[data-k]").forEach(b => b.setAttribute("aria-pressed", state[b.dataset.k] === b.dataset.v));
   spAggiorna();
 }
@@ -290,15 +317,20 @@ Promise.all([
   fetch("data/models.json", { cache:"no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)
 ]).then(([dati, modelli]) => {
   items = dati.sort((a, b) => b.publication_date.localeCompare(a.publication_date));
-  if (modelli) modelli.families.forEach(f => f.discoveries.forEach(id => { if (!famDi[id]) famDi[id] = f; }));
+  if (modelli) modelli.families.forEach(f => f.discoveries.forEach(id => { if (!famDi[id]) famDi[id] = f; (famIds[id] ||= []).push(f.id); }));
   riepilogo(); spettro(); grafici();
   const perAmb = ordina(conta(items, s => s.field));
   $("cat").innerHTML = [["", "All", items.length], ...perAmb.map(([v, n]) => [v, v, n])]
     .map(([v, l, n]) => `<button type="button" data-v="${esc(v)}" aria-pressed="false" aria-label="${esc(l)}: ${n} ${n === 1 ? "discovery" : "discoveries"}"><em>${esc(l)}</em> <span>${n}</span></button>`).join("");
   riempi($("org"), "All organizations", [...new Set(items.map(orgDi))].sort((a, b) => a.localeCompare(b, "en")));
   const legacy = { biologia:"biology", chimica:"chemistry", medicina:"medicine", materiali:"materials", clima:"climate", matematica:"mathematics", fisica:"physics", informatica:"computer science", "scienze umane":"humanities", multidisciplinare:"multidisciplinary", altro:"other" };
-  const h = decodeURIComponent(location.hash.slice(1));
-  if (perAmb.some(([v]) => v === h)) state.field = h; else if (legacy[h] && perAmb.some(([v]) => v === legacy[h])) state.field = legacy[h];
+  const years = [...new Set(items.map(s => s.publication_date.slice(0, 4)))].sort().reverse();
+  const families = modelli ? modelli.families.filter(f => f.discoveries.length).sort((a, b) => a.name.localeCompare(b.name, "en")) : [];
+  $("year").innerHTML = `<option value="">All years</option>` + years.map(y => `<option>${y}</option>`).join("");
+  $("family").innerHTML = `<option value="">All model families</option>` + families.map(f => `<option value="${esc(f.id)}">${esc(f.name)}</option>`).join("");
+  readFilters(perAmb.map(([v]) => v), [...new Set(items.map(orgDi))], years, families.map(f => f.id));
+  const h = decodeURIComponent(location.hash.slice(1)); // legacy category links such as #biology
+  if (!state.field) { if (perAmb.some(([v]) => v === h)) state.field = h; else if (legacy[h] && perAmb.some(([v]) => v === legacy[h])) state.field = legacy[h]; }
   lista();
 }).catch(() => { $("lista").textContent = "Could not load data. Open this page from a local server (python3 -m http.server)."; $("lead").textContent = ""; });
 
@@ -309,7 +341,7 @@ $("ord").addEventListener("change", e => { state.ord = e.target.value; lista(); 
 $("lista").addEventListener("click", e => {
   const c = e.target.closest(".copia");
   if (c) {
-    const url = location.origin + location.pathname + "#discovery=" + encodeURIComponent(c.dataset.id);
+    const url = new URL("share/" + encodeURIComponent(c.dataset.id) + ".html", location.href).href; // generated stub with Open Graph image, redirects here
     const fatto = () => { c.textContent = "Link copied"; setTimeout(() => { c.textContent = "Copy link"; }, 1500); };
     (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(fatto, () => prompt("Copy this link:", url));
     return;
@@ -323,7 +355,14 @@ $("cat").addEventListener("click", e => {
   state.field = b.dataset.v; lista(); grafici();
 });
 $("org").addEventListener("change", e => { state.org = e.target.value; lista(); grafici(); });
-$("reset").addEventListener("click", () => { state.q = state.field = state.org = state.anno = ""; $("q").value = ""; lista(); grafici(); });
+$("reset").addEventListener("click", () => { clearFilters(); lista(); grafici(); });
+$("year").addEventListener("change", e => { state.anno = e.target.value; lista(); grafici(); });
+$("family").addEventListener("change", e => { state.family = e.target.value; lista(); });
+$("min").addEventListener("change", e => { state.min = +e.target.value; lista(); });
+$("copy-filters").addEventListener("click", e => {
+  const b = e.currentTarget, done = () => { b.textContent = "Link copied"; setTimeout(() => { b.textContent = "Copy filter link"; }, 1500); };
+  (navigator.clipboard ? navigator.clipboard.writeText(location.href) : Promise.reject()).then(done, () => prompt("Copy this link:", location.href));
+});
 $("charts").addEventListener("click", e => {
   const b = e.target.closest("[data-k]"); if (!b) return;
   state[b.dataset.k] = state[b.dataset.k] === b.dataset.v ? "" : b.dataset.v; nascondiTip(); lista(); grafici();
