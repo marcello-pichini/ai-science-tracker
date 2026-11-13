@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security · AI Science Tracker</title>
+<meta name="description" content="Publicly disclosed vulnerabilities discovered with AI, with original sources and documented remediation.">
+<link rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/security.html">
+<meta property="og:title" content="Security · AI Science Tracker">
+<meta property="og:description" content="Publicly disclosed vulnerabilities discovered with AI, with original sources and documented remediation.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://marcello-pichini.github.io/ai-science-tracker/og/default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:site_name" content="AI Science Tracker">
+<meta name="theme-color" content="#12367e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header">
+  <div class="wrap">
+    <a class="marchio" href="index.html" aria-label="AI Science Tracker, home page">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <span>AI Science Tracker</span>
+    </a>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a><a href="security.html" aria-current="page">Security</a></nav>
+  </div>
+</header>
+
+<section class="banda banda-bassa" aria-labelledby="page-title">
+  <div class="wrap">
+    <h1 id="page-title">AI-discovered vulnerabilities</h1>
+    <p class="lead">Public disclosures, zero-day context and documented fixes. Only findings with an original source establishing AI involvement are included.</p>
+  </div>
+</section>
+<main>
+  <section class="sez" aria-labelledby="t-disclosures">
+    <div class="wrap">
+      <h2 id="t-disclosures">Tracked disclosures</h2>
+      <p id="coverage" class="coverage-note" aria-live="polite">Loading disclosures…</p>
+    </div>
+    <div class="filtri"><div class="wrap">
+      <div class="campi">
+        <input id="q" type="search" placeholder="Search CVE, product, AI system or finding" aria-label="Search vulnerability disclosures">
+        <select id="product" aria-label="Product"><option value="">All products</option></select>
+        <select id="context" aria-label="Discovery context"><option value="">All discovery contexts</option><option value="undisclosed">Undisclosed at discovery (source report)</option><option value="pre-release">Pre-release findings</option><option value="disclosure">Other vulnerability disclosures</option></select>
+        <button id="reset" type="button">Clear filters</button>
+      </div>
+      <div class="riepilogo"><span id="count" aria-live="polite"></span></div>
+    </div></div>
+    <div class="wrap"><div id="cases">Loading…</div></div>
+  </section>
+  <section class="sez" aria-labelledby="t-context"><div class="wrap prosa">
+    <h2 id="t-context">What the labels mean</h2>
+    <p>This is a manually selected collection of public cases, separate from the scientific-discovery count. Each record covers one identifiable finding; aggregate model claims and benchmarks do not become individual vulnerabilities.</p>
+    <p><strong>Undisclosed at discovery (source report)</strong> preserves a source's account of a flaw unknown to defenders at that time. It provides zero-day context, not independent proof of exploitation. <strong>Pre-release finding</strong> means the cited source says it was caught before an official release. Other disclosures are not automatically classified as zero-days.</p>
+    <p><strong>Fix documented</strong> means a cited source records a correction or fixed release. It does not show which users installed it, whether a product is currently safe, or whether an attack occurred. Disclosure, AI-attribution and source-check dates are shown separately.</p>
+    <p>A missing CVE means no identifier is established by the cited evidence here. Findings remain attributed to the named researchers and AI systems; source checking does not independently reproduce the result. This tracker is not a live vulnerability inventory.</p>
+    <p><a href="data/vulnerabilities.json">Download the source records (JSON)</a> · <a href="methodology.html">Catalog methodology</a></p>
+  </div></section>
+</main>
+<footer class="footer"><div class="wrap">
+  <p>Original disclosures and documented remediation, with AI involvement attributed to sources.</p>
+  <p><a href="index.html">Scientific discoveries</a> · <a href="guide.html">Site guide</a></p>
+</div></footer>
+<script src="assets/catalog-ui.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl = value => /^https:\/\//.test(value) ? value : "#";
+const date = value => new Intl.DateTimeFormat("en-GB", {day:"numeric",month:"short",year:"numeric"}).format(new Date(value + "T12:00:00"));
+const labels = {undisclosed:"Undisclosed at discovery (source report)", "pre-release":"Pre-release finding", disclosure:"Vulnerability disclosure"};
+let cases = [];
+function render() {
+  const query = $("q").value.trim().toLowerCase();
+  const selected = cases.filter(record => (!$("product").value || record.product === $("product").value) &&
+    (!$("context").value || record.classification === $("context").value) &&
+    (!query || [record.title,record.product,record.ai_system,record.organization,record.summary,...record.cves].join(" ").toLowerCase().includes(query)));
+  $("count").textContent = `${selected.length} of ${cases.length} tracked cases`;
+  $("cases").innerHTML = selected.map(record => `<article class="voce" id="${esc(record.id)}">
+    <div class="voce-meta"><time datetime="${esc(record.disclosure_date)}">Disclosed ${esc(date(record.disclosure_date))}</time><span>${esc(record.organization)}</span></div>
+    <h3><a href="#${esc(record.id)}">${esc(record.title)}</a></h3>
+    <p class="sommario">${esc(record.summary)}</p>
+    <p class="tech"><span>AI system:</span> ${esc(record.ai_system)} · <span>Product:</span> ${esc(record.product)}</p>
+    <p>${record.cves.length ? record.cves.map(esc).join(", ") : "CVE: not established in this catalog"}</p>
+    <div class="voce-footer"><span class="etich">${esc(labels[record.classification])}</span><span class="etich">${esc(record.remediation)}</span>
+      <span class="collegamenti"><a href="${esc(safeUrl(record.source_url))}" rel="noopener">Original disclosure</a><a href="${esc(safeUrl(record.ai_source_url))}" rel="noopener">AI attribution</a><a href="${esc(safeUrl(record.advisory_url))}" rel="noopener">Advisory / fix evidence</a></span></div>
+    <details class="source-details"><summary>AI contribution, context and remediation</summary>
+      <p><strong>AI contribution:</strong> ${esc(record.ai_role)}</p>
+      <p><strong>Discovery context:</strong> ${esc(record.classification_note)}</p>
+      <p><strong>Remediation:</strong> ${esc(record.remediation_note)}</p>
+      <p>AI attribution dated ${esc(date(record.ai_attribution_date))}. Sources checked ${esc(date(record.checked_date))}; this is not a live patch-status check.</p>
+    </details>
+  </article>`).join("") || '<p class="vuoto">No disclosures match these filters. Try clearing a filter.</p>';
+}
+fetch("data/vulnerabilities.json", {cache:"no-store"}).then(response => {
+  if (!response.ok) throw new Error("Disclosure data unavailable");
+  return response.json();
+}).then(records => {
+  if (!Array.isArray(records)) throw new Error("Invalid disclosure data");
+  cases = records.sort((a,b) => b.disclosure_date.localeCompare(a.disclosure_date));
+  const products = [...new Set(cases.map(record => record.product))].sort();
+  $("product").innerHTML += products.map(product => `<option>${esc(product)}</option>`).join("");
+  const cves = new Set(cases.flatMap(record => record.cves));
+  $("coverage").textContent = `${cases.length} selected cases, ${cves.size} named CVEs, ${products.length} products. Manual and non-exhaustive; case counts are not totals of every vulnerability reported by each model.`;
+  render();
+  if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+}).catch(() => {
+  $("coverage").textContent = "Disclosure data could not be loaded.";
+  $("cases").innerHTML = '<p><a href="data/vulnerabilities.json">Open the disclosure dataset</a> or reload the page.</p>';
+});
+["q","product","context"].forEach(id => $(id).addEventListener("input",render));
+$("reset").addEventListener("click",()=>{["q","product","context"].forEach(id=>$(id).value="");render();});
+</script>
+</body>
+</html>

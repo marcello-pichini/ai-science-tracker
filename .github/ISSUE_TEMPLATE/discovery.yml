@@ -1,0 +1,28 @@
+name: Suggest a discovery
+description: Suggest a concrete AI-enabled scientific result with an original source.
+title: "[Discovery] "
+body:
+  - type: markdown
+    attributes:
+      value: "Check the catalog and methodology for duplicates and selection criteria first. Reports are public and require a GitHub account. Do not include personal information. Suggestions are reviewed before inclusion; no response time or acceptance is promised."
+  - type: input
+    id: source
+    attributes:
+      label: Original source URL
+      description: Institutional announcement or original paper, not an aggregator.
+    validations:
+      required: true
+  - type: input
+    id: announcement_date
+    attributes:
+      label: Announcement date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Scientific result and AI contribution
+      description: Describe what was actually demonstrated, the role of AI, and the stated evidence limitations. Link supporting sources.
+    validations:
+      required: true

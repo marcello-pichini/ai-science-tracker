@@ -47,7 +47,7 @@ a:hover { text-decoration-thickness:2px; }
 .header .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:64px; }
 .marchio { display:inline-flex; align-items:center; gap:10px; color:inherit; text-decoration:none; font-weight:800; letter-spacing:-.02em; font-size:1.0625rem; }
 .marchio svg { width:26px; height:26px; flex:none; }
-.menu { display:flex; gap:4px; }
+.menu { display:flex; flex-wrap:wrap; gap:4px; }
 .menu a { color:var(--on-prussia-2); text-decoration:none; font-weight:600; font-size:.9375rem; padding:8px 12px; border-radius:999px; }
 .menu a:hover { color:var(--on-prussia); background:var(--prussia-line); }
 .menu a[aria-current="page"] { color:var(--prussia); background:var(--on-prussia); }
@@ -235,6 +235,7 @@ main { padding:0 0 72px; }
 @media (max-width:520px) {
   .header .wrap { min-height:56px; }
   .marchio span { display:none; }
+  .menu { justify-content:flex-end; }
   .menu a { padding:7px 10px; font-size:.875rem; }
   .filtri { position:static; }
   .filtri .campi { grid-template-columns:1fr; }
@@ -291,4 +292,16 @@ main { padding:0 0 72px; }
   .voce a[href^="http"]::after { content:" (" attr(href) ")"; color:var(--muted); font-size:8pt; word-break:break-all; }
   .footer { border:0; }
   a { color:inherit; }
+}
+
+/* Source disclosures and trend controls share the catalog palette and native focus behavior. */
+.source-details { margin-top:12px; color:var(--ink-2); font-size:.875rem; }
+.source-details summary { color:var(--accent); cursor:pointer; font-weight:600; }
+.source-details p { max-width:72ch; margin:8px 0; }
+.trend-control { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:12px 0; font-size:.875rem; }
+.trend-control select { max-width:100%; min-width:0; font:inherit; padding:8px; border:1px solid var(--line-2); border-radius:var(--r); background:var(--sheet); color:var(--ink); }
+.coverage-note { max-width:78ch; color:var(--muted); font-size:.875rem; }
+@media print {
+  .source-details { break-inside:avoid; }
+  .trend-control, .correction-link { display:none; }
 }

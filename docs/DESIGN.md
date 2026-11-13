@@ -18,7 +18,7 @@ Every page, script and generated asset must look and behave like one product. Th
 
 ## Page skeleton
 
-Every page has the same frame, in this order: shared `<head>` (charset, viewport, title `Page · AI Science Tracker`, description, Open Graph, canonical, theme color, icon, font preload, `styles.css`), the header with the four-item menu (Discoveries, Models, Methodology, Guide) plus the page's own `aria-current="page"`, a blue banner with one `<h1>`, `<main>` with sections that each have an `<h2>`, and the footer. Copy the frame from an existing page; do not retype it.
+Every page has the same frame, in this order: shared `<head>` (charset, viewport, title `Page · AI Science Tracker`, description, Open Graph, canonical, theme color, icon, font preload, `styles.css`), the header with the five-item menu (Discoveries, Models, Methodology, Guide, Security) plus the page's own `aria-current="page"`, a blue banner with one `<h1>`, `<main>` with sections that each have an `<h2>`, and the footer. Copy the frame from an existing page; do not retype it.
 
 ## Charts and interaction
 

@@ -63,7 +63,7 @@ class CatalogTests(unittest.TestCase):
         self.assertTrue(all(m['family'] is None or m['family'] in family_ids for m in data['models']))
 
     def test_english_pages_and_local_assets(self):
-        for name in ('index.html', 'models.html', 'methodology.html'):
+        for name in ('index.html', 'models.html', 'methodology.html', 'security.html'):
             text = (ROOT / name).read_text()
             self.assertIn('lang="en"', text)
             self.assertIn('AI Science Tracker', text)

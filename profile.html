@@ -26,7 +26,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a><a href="security.html">Security</a></nav>
   </div>
 </header>
 
@@ -47,9 +47,11 @@
   <div class="wrap">
     <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified. Model data: <a href="https://epoch.ai/data/ai-models">Epoch AI</a>, CC BY 4.0.</p>
     <p><a href="methodology.html">How we select and verify entries</a></p>
+    <p><a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=discovery.yml">Suggest a discovery</a>. Reports are public, require GitHub sign-in, and are reviewed before catalog changes.</p>
   </div>
 </footer>
 
+<script src="assets/catalog-ui.js"></script>
 <script>
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -137,8 +139,8 @@ function entry(s) {
     <div class="voce-footer">
       <span class="punteggio" title="Impact ${s.relevance.impact}/5, validation ${s.relevance.validation}/5, novelty ${s.relevance.novelty}/5">Relevance ${p}<span class="metro" aria-hidden="true"><i style="width:${p}%"></i></span></span>
       <span class="etich">${esc(s.field)}</span>
-      <span class="collegamenti"><a href="${esc(safeUrl(s.source_url))}" rel="noopener">Original source</a>${s.paper_url ? `<a href="${esc(safeUrl(s.paper_url))}" rel="noopener">Paper</a>` : ""}</span>
-    </div></article>`;
+      <span class="collegamenti"><a href="${esc(safeUrl(s.source_url))}" rel="noopener">Original source</a>${s.paper_url ? `<a href="${esc(safeUrl(s.paper_url))}" rel="noopener">Paper</a>` : ""} <a class="correction-link" href="${esc(CatalogUI.correctionUrl(s))}" rel="noopener">Suggest a correction</a></span>
+    </div>${CatalogUI.sourceDetails(s)}</article>`;
 }
 const discoveriesSection = items => `<section class="sez" aria-labelledby="t-discoveries"><div class="wrap">
   <h2 id="t-discoveries">${plural(items.length, "discovery", "discoveries")}</h2>

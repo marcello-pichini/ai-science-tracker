@@ -1,0 +1,33 @@
+name: Correct a discovery
+description: Report a factual error or missing caveat in a catalog entry.
+title: "[Correction] "
+body:
+  - type: markdown
+    attributes:
+      value: "Reports are public and require a GitHub account. Include source evidence, not personal information. Reports are reviewed before any catalog change; submission does not publish a correction automatically."
+  - type: input
+    id: record_id
+    attributes:
+      label: Discovery ID
+    validations:
+      required: true
+  - type: input
+    id: entry
+    attributes:
+      label: Catalog entry URL
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Original source URL
+      description: Link to the institutional announcement or original paper.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What should be corrected and why?
+      description: Quote or identify the relevant passage and give the evidence, including any additional source URL. Preserve study limitations.
+    validations:
+      required: true

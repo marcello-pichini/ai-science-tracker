@@ -26,7 +26,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="methodology.html">Methodology</a><a href="guide.html" aria-current="page">Guide</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="methodology.html">Methodology</a><a href="guide.html" aria-current="page">Guide</a><a href="security.html">Security</a></nav>
   </div>
 </header>
 
@@ -45,6 +45,7 @@
         <li><a href="index.html">Discoveries</a>: the catalog of AI-enabled scientific results, with charts, filters and a list by year.</li>
         <li><a href="models.html">Models</a>: model releases from leading labs and the model families named in discoveries.</li>
         <li><a href="profile.html">Labs and families</a>: one profile per organization or model family, with its timeline, discoveries and releases.</li>
+        <li><a href="security.html">Security</a>: public vulnerability discoveries with documented AI involvement, disclosure context and fix evidence. This is separate from the scientific catalog and is not a live patch inventory.</li>
         <li><a href="methodology.html">Methodology</a>: what is included, how entries are verified and how relevance is scored.</li>
       </ul>
 
@@ -61,11 +62,17 @@
 
       <h2>Read an entry</h2>
       <ul>
-        <li>Each entry gives the date, the organization, a summary with the evidence limits, the AI technology and a relevance score from 0 to 100 (hover over it to see impact, validation and novelty).</li>
+        <li>Each entry gives the date, the organization, a summary with the evidence limits, the AI technology and a relevance score from 0 to 100 (open the source and editorial details to see impact, validation and novelty).</li>
         <li>“Original source” opens the announcement; “Paper” opens the paper when there is one. Figures are reported by sources and are not independently verified.</li>
-        <li>“Verified” means we checked the source page, not that the finding was replicated.</li>
+        <li>“Source checked” means we checked the source page, not that the finding was replicated. The expandable details work with touch and keyboard, show the source type and editorial subscores, and are included when printing. A missing paper link does not mean no paper exists.</li>
         <li>The organization name and the family line lead to profiles; the family line also links to the Models page.</li>
       </ul>
+
+      <h2>Read the annual chart</h2>
+      <p>Choose catalog-entry counts or mean editorial relevance. The accompanying table shows both and the annual sample size. These figures describe this selected, incomplete collection, not worldwide discovery rates. The most recent catalog addition is not a scientific review date.</p>
+
+      <h2>Suggest a correction or discovery</h2>
+      <p>“Suggest a correction” on an entry opens a GitHub draft with its ID and source. “Suggest a discovery” in the catalog and profile footers opens a separate form requiring an original source and announcement date. GitHub sign-in is required and submitted reports are public: do not include personal information. Every suggestion is reviewed before any catalog change; opening a form does not submit it.</p>
 
       <h2>Models and profiles</h2>
       <p>On <a href="models.html">Models</a>, click a year or lab to filter releases, or a family to open its card. A family is linked to a discovery when the discovery names it, so the link identifies a family, not the exact version used. On <a href="profile.html">Labs and families</a>, pick any row to see that profile.</p>

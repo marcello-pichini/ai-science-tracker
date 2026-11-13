@@ -26,7 +26,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="methodology.html" aria-current="page">Methodology</a><a href="guide.html">Guide</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="methodology.html" aria-current="page">Methodology</a><a href="guide.html">Guide</a><a href="security.html">Security</a></nav>
   </div>
 </header>
 
@@ -60,8 +60,12 @@
   <p>We do not collect model names, labs, dates, domains, parameter counts, or access information ourselves. They come from the database <a href="https://epoch.ai/data/ai-models" rel="noopener">Data on AI models</a> from Epoch AI, republished under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>. Their stated limitations apply: the list is not exhaustive, and compute and parameter figures are estimates.</p>
   <p>We make model-to-discovery links by name: we compare the technology field and each discovery title with model and family names. A match indicates the likely family, not necessarily the exact version used in an experiment. A discovery made with a model that the source does not name will not appear as linked. Some catalog technologies, such as those developed within a single study, have no Epoch AI record; the family can still appear without linked releases.</p>
 
-  <h2>What “verified” means</h2>
-  <p>We have read the official page and checked that the title, date, organization, and figures in the summary match it. This does not mean others have independently confirmed the result: figures are reported by sources and are often “up to” values or results from controlled conditions. The summary reports limits stated by the source (lab-only, mice-only, not clinically validated, or preprint).</p>
+  <h2>AI-discovered vulnerabilities</h2>
+  <p>The separate <a href="security.html">Security</a> page includes publicly disclosed individual vulnerabilities only when original sources establish an AI contribution. It does not include every security news item or convert aggregate bug counts into individual findings. These records are excluded from the scientific-discovery count.</p>
+  <p>Discovery context, public disclosure, AI attribution and documented remediation are distinct. A previously unknown pre-release bug is not automatically an exploited zero-day. Zero-day context remains attributed to the cited account, and documented fixes do not establish deployment or current safety. No attack is inferred from a vulnerability announcement.</p>
+
+  <h2>What “Source checked” means</h2>
+  <p>The stored verification status “verified” is displayed as “Source checked.” We have read the official page and checked that the title, date, organization, and figures in the summary match it. This does not mean others have independently confirmed the result: figures are reported by sources and are often “up to” values or results from controlled conditions. The summary reports limits stated by the source (lab-only, mice-only, not clinically validated, or preprint).</p>
   <p>An entry marked “needs verification” has a source that has not been read in full, or contains conflicting information.</p>
 
   <h2>Relevance score</h2>
@@ -73,6 +77,10 @@
     <tr><td>Novelty</td><td>incremental improvement</td><td>first result of its kind in a field</td><td>paradigm shift</td></tr>
   </table></div>
   <p>A category average is the mean score of its entries. With only one or two entries, the average is not very informative.</p>
+
+  <h2>Reading the catalog statistics</h2>
+  <p>The annual chart offers the number of catalog entries and their mean editorial relevance. Means use the rounded 0–100 scores displayed on individual entries, then round the annual average to an integer. Annual sample sizes appear in the table; small samples and the incomplete current year require caution. These are descriptions of a selected collection, not worldwide discovery rates or measures of scientific progress.</p>
+  <p>The source composition counts each entry by its primary source type, not by evidence quality. “Most recent catalog addition” uses the addition date; it does not indicate the last scientific review or follow-up check.</p>
 
   <h2>How we choose the date</h2>
   <p>We use the date of the first official announcement. If a journal publication comes later, it remains in the summary. When a page’s date conflicts with its text, we use the date consistent with the facts and note the discrepancy (for example, DeepMind’s post about the first 350,000 AlphaFold Database structures is dated 2022 but describes events in 2021).</p>

@@ -1,0 +1,88 @@
+[
+  {
+    "id": "cve-2026-2796",
+    "title": "Claude-assisted discovery of a Firefox WebAssembly JIT flaw",
+    "product": "Firefox",
+    "ai_system": "Claude",
+    "organization": "Mozilla and Anthropic",
+    "summary": "Mozilla disclosed a WebAssembly JIT miscompilation vulnerability and credited researchers using Claude. Its advisory rates the impact high and lists Firefox 148 as the fixed release. This record covers one CVE, not the total findings in the Mozilla collaboration.",
+    "ai_role": "Mozilla explicitly credits Claude-assisted researchers. Anthropic describes human validation and coordinated reporting in the wider collaboration.",
+    "disclosure_date": "2026-02-24",
+    "ai_attribution_date": "2026-02-24",
+    "classification": "disclosure",
+    "classification_note": "The cited advisory establishes an AI-assisted vulnerability finding. It does not establish exploitation in the wild or a zero-day incident.",
+    "cves": [
+      "CVE-2026-2796"
+    ],
+    "source_url": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-13/#CVE-2026-2796",
+    "ai_source_url": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-13/#CVE-2026-2796",
+    "remediation": "fix documented",
+    "remediation_note": "Mozilla lists Firefox 148 as fixing the issue in its 24 February 2026 advisory.",
+    "advisory_url": "https://www.mozilla.org/en-US/security/advisories/mfsa2026-13/",
+    "checked_date": "2026-11-13"
+  },
+  {
+    "id": "cve-2025-6965",
+    "title": "Big Sleep identifies an undisclosed SQLite vulnerability",
+    "product": "SQLite",
+    "ai_system": "Big Sleep",
+    "organization": "Google Project Zero, Google DeepMind and Google Threat Intelligence",
+    "summary": "Google reports that Big Sleep, guided by threat intelligence, identified CVE-2025-6965 while the flaw was known to threat actors and at risk of exploitation. Google says its intervention prevented the anticipated use; this is not evidence of an observed successful hack.",
+    "ai_role": "An AI agent combined code analysis with indicators supplied by human threat-intelligence researchers.",
+    "disclosure_date": "2025-07-15",
+    "ai_attribution_date": "2025-07-15",
+    "classification": "undisclosed",
+    "classification_note": "Google describes a flaw known only to threat actors before its intervention. This is attributed zero-day context, not an independent finding of active exploitation.",
+    "cves": [
+      "CVE-2025-6965"
+    ],
+    "source_url": "https://blog.google/innovation-and-ai/technology/safety-security/cybersecurity-updates-summer-2025/",
+    "ai_source_url": "https://blog.google/innovation-and-ai/technology/safety-security/cybersecurity-updates-summer-2025/",
+    "remediation": "fix documented",
+    "remediation_note": "SQLite records a fix on 27 June 2025 and lists release 3.50.2, dated 28 June 2025. The later Google post describes the AI contribution, not the patch date.",
+    "advisory_url": "https://www.sqlite.org/cves.html",
+    "checked_date": "2026-11-13"
+  },
+  {
+    "id": "2024-big-sleep-sqlite-prerelease",
+    "title": "Big Sleep finds a SQLite memory-safety bug before release",
+    "product": "SQLite",
+    "ai_system": "Big Sleep",
+    "organization": "Google Project Zero and Google DeepMind",
+    "summary": "The team reports an AI-agent finding in development code that maintainers corrected on the reporting day. Project Zero states that the defect never reached an official SQLite release, so released users were not affected.",
+    "ai_role": "Big Sleep performed variant analysis with a starting point selected by researchers. Human researchers verified and reported the finding.",
+    "disclosure_date": "2024-11-01",
+    "ai_attribution_date": "2024-11-01",
+    "classification": "pre-release",
+    "classification_note": "Previously unknown does not automatically mean an exploited production zero-day. This case was fixed before an official release; no CVE is asserted here.",
+    "cves": [],
+    "source_url": "https://projectzero.google/2024/10/from-naptime-to-big-sleep.html",
+    "ai_source_url": "https://projectzero.google/2024/10/from-naptime-to-big-sleep.html",
+    "remediation": "fix documented",
+    "remediation_note": "Project Zero reports a same-day upstream correction in early October 2024, before an official release; this record does not invent a precise reporting day.",
+    "advisory_url": "https://projectzero.google/2024/10/from-naptime-to-big-sleep.html",
+    "checked_date": "2026-11-13"
+  },
+  {
+    "id": "cve-2024-9143",
+    "title": "AI-generated fuzzing reveals an OpenSSL memory-access flaw",
+    "product": "OpenSSL",
+    "ai_system": "OSS-Fuzz-Gen",
+    "organization": "Google Open Source Security Team and OpenSSL",
+    "summary": "An AI-generated fuzz target revealed an issue in low-level elliptic-curve handling. OpenSSL rates it low severity because vulnerable application use is considered unlikely and the problematic inputs do not arise in ordinary X.509 certificate processing.",
+    "ai_role": "Google attributes the finding to LLM-generated fuzz targets; OpenSSL credits Google OSS-Fuzz-Gen for the report.",
+    "disclosure_date": "2024-10-16",
+    "ai_attribution_date": "2024-11-20",
+    "classification": "disclosure",
+    "classification_note": "The sources document an AI-assisted discovery and public advisory. They do not establish a zero-day exploitation incident.",
+    "cves": [
+      "CVE-2024-9143"
+    ],
+    "source_url": "https://openssl-library.org/news/secadv/20241016.txt",
+    "ai_source_url": "https://security.googleblog.com/2024/11/leveling-up-fuzzing-finding-more.html?m=1",
+    "remediation": "fix documented",
+    "remediation_note": "The 16 October advisory lists corrective commits and planned branch releases; it explicitly did not issue immediate new releases because severity was low. Patch availability is not the same as deployment to users.",
+    "advisory_url": "https://openssl-library.org/news/secadv/20241016.txt",
+    "checked_date": "2026-11-13"
+  }
+]
