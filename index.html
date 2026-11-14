@@ -49,6 +49,14 @@
 
 <main>
   <noscript><div class="wrap"><p class="vuoto">This catalog needs JavaScript to filter and chart entries. Without it you can still read each entry on its <a href="share/2020-02-halicin.html">static discovery page</a> (listed in the <a href="sitemap.xml">sitemap</a>), open the <a href="data/discoveries.json">raw data</a>, or read the <a href="methodology.html">methodology</a>.</p></div></noscript>
+  <section class="sez" id="featured" aria-labelledby="t-featured">
+    <div class="wrap">
+      <h2 id="t-featured">Latest and most relevant</h2>
+      <p class="sez-sub">The newest entries and the highest editorial scores of the past twelve months. <a href="#elenco">Browse all discoveries</a>.</p>
+      <div class="pannelli" id="featured-list"></div>
+    </div>
+  </section>
+
   <section class="sez" id="categorie" aria-labelledby="t-fields">
     <div class="wrap">
       <h2 id="t-fields">Explore by field</h2>
@@ -273,6 +281,18 @@ function riepilogo() {
   $("lead").innerHTML = `<b>${items.length} discoveries</b> in ${nAmb} fields and ${nOrg} organizations since 2020. Each mark below represents one discovery; taller means more relevant.`;
 }
 
+/* Featured: three newest entries and the three highest scores of the twelve months before the newest one. */
+function featured() {
+  const from = new Date(Date.parse(items[0].publication_date) - 365 * 864e5).toISOString().slice(0, 10);
+  const newest = items.slice(0, 3);
+  const best = items.filter(s => s.publication_date >= from && !newest.includes(s)).sort((a, b) => punteggio(b) - punteggio(a)).slice(0, 3);
+  const link = s => `<a class="inev" href="#discovery=${encodeURIComponent(s.id)}" data-id="${esc(s.id)}"><b>${esc(s.title)}</b><span>${esc(fmtData(s.publication_date))} · ${esc(orgDi(s))} · ${esc(s.field)} · relevance ${punteggio(s)}</span></a>`;
+  $("featured-list").innerHTML =
+    `<div class="pannello"><h3>Newest</h3><p class="descr">By date of the original announcement.</p>${newest.map(link).join("")}</div>` +
+    `<div class="pannello"><h3>Highest relevance, past twelve months</h3><p class="descr">Editorial score from 0 to 100; see the methodology.</p>${best.map(link).join("")}</div>`;
+}
+$("featured-list").addEventListener("click", e => { const a = e.target.closest("a[data-id]"); if (a) { e.preventDefault(); vaiA(a.dataset.id); } });
+
 function riempi(sel, etichetta, valori) {
   sel.innerHTML = `<option value="">${etichetta}</option>` + valori.map(v => `<option>${esc(v)}</option>`).join("");
 }
@@ -355,7 +375,7 @@ Promise.all([
   readFilters(perAmb.map(([v]) => v), [...new Set(items.map(orgDi))], years, families.map(f => f.id));
   const h = decodeURIComponent(location.hash.slice(1)); // legacy category links such as #biology
   if (!state.field) { if (perAmb.some(([v]) => v === h)) state.field = h; else if (legacy[h] && perAmb.some(([v]) => v === legacy[h])) state.field = legacy[h]; }
-  lista();
+  lista(); featured();
 }).catch(() => { $("lista").textContent = "Could not load the catalog data. Reload the page, or open the raw data directly."; $("lead").innerHTML = `The catalog data could not be loaded. You can read the <a href="data/discoveries.json">raw data</a> or the <a href="methodology.html">methodology</a> meanwhile.`; });
 
 let largh = innerWidth, tRes;

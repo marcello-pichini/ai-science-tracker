@@ -41,6 +41,11 @@
 </section>
 <main>
   <noscript><div class="wrap"><p class="vuoto">This page draws its cases with JavaScript. Without it you can read the <a href="data/vulnerabilities.json">raw case data</a> with its source links, or the <a href="methodology.html">methodology</a> for what is included.</p></div></noscript>
+  <section class="sez" aria-labelledby="t-numbers"><div class="wrap">
+    <h2 id="t-numbers">By the numbers</h2>
+    <p class="sez-sub">Click a row to filter the list below; click again to clear the filter. The collection is selected, not exhaustive.</p>
+    <div class="pannelli" id="charts"></div>
+  </div></section>
   <section class="sez" aria-labelledby="t-disclosures">
     <div class="wrap">
       <h2 id="t-disclosures">Tracked disclosures</h2>
@@ -77,10 +82,29 @@ const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;",
 const safeUrl = value => /^https:\/\//.test(value) ? value : "#";
 const date = value => new Intl.DateTimeFormat("en-GB", {day:"numeric",month:"short",year:"numeric"}).format(new Date(value + "T12:00:00"));
 const labels = {undisclosed:"Undisclosed at discovery (source report)", "pre-release":"Pre-release finding", disclosure:"Vulnerability disclosure"};
-let cases = [];
+let cases = [], year = "";
+/* Bar rows reuse the catalog chart classes; a row toggles the year filter or the context select. */
+function rows(key, entries) {
+  const max = Math.max(...entries.map(entry => entry[2]));
+  return `<div class="righe">` + entries.map(([value, label, n]) => `<button class="riga" type="button" data-k="${key}" data-v="${esc(value)}" aria-pressed="false" aria-label="${esc(label)}: ${n} ${n === 1 ? "case" : "cases"}"><span class="et" title="${esc(label)}">${esc(label)}</span><span class="bin"><span class="bar" style="width:${(n / max * 100).toFixed(1)}%"></span></span><span class="val">${n}</span></button>`).join("") + `</div>`;
+}
+function charts() {
+  const count = key => cases.reduce((m, record) => { m[key(record)] = (m[key(record)] || 0) + 1; return m; }, {});
+  const years = Object.entries(count(record => record.disclosure_date.slice(0, 4))).sort().map(([y, n]) => [y, y, n]);
+  const contexts = Object.entries(count(record => record.classification)).sort((a, b) => b[1] - a[1]).map(([c, n]) => [c, labels[c], n]);
+  $("charts").innerHTML = `<div class="pannello"><h3>By disclosure year</h3><p class="descr">Tracked cases per year of public disclosure.</p>${rows("year", years)}</div>` +
+    `<div class="pannello"><h3>By discovery context</h3><p class="descr">Labels follow the cited sources; definitions are below.</p>${rows("context", contexts)}</div>`;
+}
+$("charts").addEventListener("click", e => {
+  const b = e.target.closest(".riga"); if (!b) return;
+  if (b.dataset.k === "year") year = year === b.dataset.v ? "" : b.dataset.v;
+  else $("context").value = $("context").value === b.dataset.v ? "" : b.dataset.v;
+  render();
+});
 function render() {
   const query = $("q").value.trim().toLowerCase();
-  const selected = cases.filter(record => (!$("product").value || record.product === $("product").value) &&
+  document.querySelectorAll("#charts .riga").forEach(b => b.setAttribute("aria-pressed", (b.dataset.k === "year" ? year : $("context").value) === b.dataset.v));
+  const selected = cases.filter(record => (!year || record.disclosure_date.startsWith(year)) && (!$("product").value || record.product === $("product").value) &&
     (!$("context").value || record.classification === $("context").value) &&
     (!query || [record.title,record.product,record.ai_system,record.organization,record.summary,...record.cves].join(" ").toLowerCase().includes(query)));
   $("count").textContent = `${selected.length} of ${cases.length} tracked cases`;
@@ -110,14 +134,14 @@ fetch("data/vulnerabilities.json").then(response => {
   $("product").innerHTML += products.map(product => `<option>${esc(product)}</option>`).join("");
   const cves = new Set(cases.flatMap(record => record.cves));
   $("coverage").textContent = `${cases.length} selected cases, ${cves.size} named CVEs, ${products.length} products. Manual and non-exhaustive; case counts are not totals of every vulnerability reported by each model.`;
-  render();
+  charts(); render();
   if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
 }).catch(() => {
   $("coverage").textContent = "Disclosure data could not be loaded.";
   $("cases").innerHTML = '<p><a href="data/vulnerabilities.json">Open the disclosure dataset</a> or reload the page.</p>';
 });
 ["q","product","context"].forEach(id => $(id).addEventListener("input",render));
-$("reset").addEventListener("click",()=>{["q","product","context"].forEach(id=>$(id).value="");render();});
+$("reset").addEventListener("click",()=>{["q","product","context"].forEach(id=>$(id).value="");year="";render();});
 </script>
 </body>
 </html>
