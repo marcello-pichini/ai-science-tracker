@@ -25,6 +25,7 @@ import html
 import json
 import os
 import re
+import csv
 import subprocess
 import sys
 import tempfile
@@ -395,6 +396,7 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [models.json]({BASE}data/models.json): model releases and families
 - [vulnerabilities.json]({BASE}data/vulnerabilities.json): vulnerability cases
 - [sitemap.xml]({BASE}sitemap.xml): every static page
+- [dataset.html]({BASE}dataset.html): downloads (JSON, CSV), schemas and the read-only static API at {BASE}api/v1/index.json
 - [feed.xml]({BASE}feed.xml): Atom feed of the newest discoveries and vulnerability cases
 - Each discovery has its own page at {BASE}share/ID.html
 
@@ -409,7 +411,7 @@ def write_sitemap(items, models):
     orgs = sorted({lead_org(d['organization']) for d in items})
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
     # Announcement dates are not page-modification dates; omit lastmod until tracked.
-    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'profile.html', 'security.html']
+    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'profile.html', 'security.html', 'dataset.html']
     urls += ['profiles/index.html']
     urls += [f'profiles/org-{slug(o)}.html' for o in orgs]
     urls += [f'profiles/family-{quote(f)}.html' for f in fams]
@@ -443,6 +445,51 @@ def write_feed(items, vulns, limit=40):
         f'<updated>{rows[0][0]}T00:00:00Z</updated><author><name>{SITE}</name></author>\n{entries}</feed>\n')
 
 
+CSV_DISCOVERY = ['id', 'title', 'summary', 'field', 'ai_technology', 'organization', 'source_url', 'source_type', 'publication_date',
+                 'added_date', 'verification_status', 'paper_url', 'impact', 'validation', 'novelty', 'catalog_entry_url']
+CSV_VULN = ['id', 'title', 'product', 'ai_system', 'organization', 'disclosure_date', 'classification', 'cves', 'source_url',
+            'ai_source_url', 'advisory_url', 'remediation', 'checked_date', 'summary', 'ai_role']
+
+
+def write_csv(path, columns, rows):
+    with (ROOT / path).open('w', newline='', encoding='utf-8') as f:
+        w = csv.writer(f, lineterminator='\r\n')
+        w.writerow(columns)
+        w.writerows([[row[c] for c in columns] for row in rows])
+
+
+def write_exports(items, vulns):
+    """Flat CSV copies of the JSON data, same columns as the in-page download. Evidence pilot fields are JSON-only."""
+    write_csv('data/discoveries.csv', CSV_DISCOVERY, [
+        dict(d, **d['relevance'], catalog_entry_url=f'{BASE}share/{d["id"]}.html') for d in items])
+    write_csv('data/vulnerabilities.csv', CSV_VULN, [dict(v, cves=';'.join(v['cves'])) for v in vulns])
+
+
+def write_api(items, vulns):
+    """Read-only static API: api/v1/index.json plus one JSON file per record. The full lists stay in data/*.json."""
+    for kind, rows in (('discoveries', items), ('vulnerabilities', vulns)):
+        out = ROOT / 'api/v1' / kind
+        out.mkdir(parents=True, exist_ok=True)
+        for old in out.glob('*.json'):
+            old.unlink()
+        for r in rows:
+            (out / f'{r["id"]}.json').write_text(json.dumps(r, indent=2, ensure_ascii=False) + '\n')
+    api = BASE + 'api/v1/'
+    index = {
+        'name': SITE, 'api_version': 'v1', 'license': 'CC BY 4.0 (catalog content); Epoch AI model data keeps its own CC BY 4.0 attribution',
+        'license_url': 'https://creativecommons.org/licenses/by/4.0/', 'cite': 'https://doi.org/10.5281/zenodo.24217686',
+        'data_version_date': max(d['added_date'] for d in items),
+        'counts': {'discoveries': len(items), 'vulnerabilities': len(vulns)},
+        'endpoints': {
+            'discoveries_list': BASE + 'data/discoveries.json', 'discovery': api + 'discoveries/{id}.json',
+            'vulnerabilities_list': BASE + 'data/vulnerabilities.json', 'vulnerability': api + 'vulnerabilities/{id}.json',
+            'models_list': BASE + 'data/models.json'},
+        'downloads': {'discoveries_csv': BASE + 'data/discoveries.csv', 'vulnerabilities_csv': BASE + 'data/vulnerabilities.csv'},
+        'schemas': {'discoveries': BASE + 'schema/discoveries.schema.json', 'vulnerabilities': BASE + 'schema/vulnerabilities.schema.json'},
+        'documentation': BASE + 'dataset.html'}
+    (ROOT / 'api/v1/index.json').write_text(json.dumps(index, indent=2) + '\n')
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--force', action='store_true')
@@ -457,7 +504,10 @@ def main():
     write_profile_pages(items, models)
     write_llms_txt(items, models)
     write_sitemap(items, models)
-    write_feed(items, json.loads((ROOT / 'data/vulnerabilities.json').read_text()))
+    vulns = json.loads((ROOT / 'data/vulnerabilities.json').read_text())
+    write_feed(items, vulns)
+    write_exports(items, vulns)
+    write_api(items, vulns)
     print(f'{len(items)} share pages, profile pages, sitemap.xml, feed.xml and robots.txt written')
 
 

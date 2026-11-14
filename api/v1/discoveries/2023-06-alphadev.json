@@ -1,0 +1,28 @@
+{
+  "id": "2023-06-alphadev",
+  "title": "AlphaDev: reinforcement learning discovers faster sorting routines",
+  "summary": "Working at the assembly-instruction level, the system found sorting routines up to 70% faster for sequences of 3–5 elements and about 1.7% faster for sequences over 250,000 elements; they were adopted in the LLVM libc++ standard library. A hashing algorithm 30% faster was added to Abseil. The largest gains are for short sequences.",
+  "field": "computer science",
+  "ai_technology": "AlphaDev (reinforcement learning)",
+  "organization": "Google DeepMind",
+  "source_url": "https://deepmind.google/blog/alphadev-discovers-faster-sorting-algorithms/",
+  "source_type": "blog",
+  "publication_date": "2023-06-07",
+  "added_date": "2026-11-11",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41586-023-06004-9",
+  "relevance": {
+    "impact": 4,
+    "validation": 4,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "AlphaDev found sort 3 and sort 5 routines with fewer instructions than human benchmarks, matched sort 4, and had lower latency on variable sorts. Libc++ versions were up to 70% faster for five elements and about 1.7% faster above 250,000 elements.",
+    "unknown": "Hashing result (30% faster) not seen in the text read. Search is at assembly level; the paper reports optimality proof only for sort 3 (17 instructions). Results cover tested CPUs: ARMv8, Intel Skylake, AMD Zen 2.",
+    "ai_role": "AlphaDev, an AlphaZero-based reinforcement learning agent with a transformer encoder, built assembly programs instruction by instruction, rewarded for correctness and latency; the team translated results to C++.",
+    "evidence_urls": [
+      "https://doi.org/10.1038/s41586-023-06004-9"
+    ]
+  }
+}

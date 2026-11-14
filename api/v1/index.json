@@ -1,0 +1,28 @@
+{
+  "name": "AI Science Tracker",
+  "api_version": "v1",
+  "license": "CC BY 4.0 (catalog content); Epoch AI model data keeps its own CC BY 4.0 attribution",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "cite": "https://doi.org/10.5281/zenodo.24217686",
+  "data_version_date": "2026-11-14",
+  "counts": {
+    "discoveries": 245,
+    "vulnerabilities": 8
+  },
+  "endpoints": {
+    "discoveries_list": "https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json",
+    "discovery": "https://marcello-pichini.github.io/ai-science-tracker/api/v1/discoveries/{id}.json",
+    "vulnerabilities_list": "https://marcello-pichini.github.io/ai-science-tracker/data/vulnerabilities.json",
+    "vulnerability": "https://marcello-pichini.github.io/ai-science-tracker/api/v1/vulnerabilities/{id}.json",
+    "models_list": "https://marcello-pichini.github.io/ai-science-tracker/data/models.json"
+  },
+  "downloads": {
+    "discoveries_csv": "https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.csv",
+    "vulnerabilities_csv": "https://marcello-pichini.github.io/ai-science-tracker/data/vulnerabilities.csv"
+  },
+  "schemas": {
+    "discoveries": "https://marcello-pichini.github.io/ai-science-tracker/schema/discoveries.schema.json",
+    "vulnerabilities": "https://marcello-pichini.github.io/ai-science-tracker/schema/vulnerabilities.schema.json"
+  },
+  "documentation": "https://marcello-pichini.github.io/ai-science-tracker/dataset.html"
+}

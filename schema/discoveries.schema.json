@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://marcello-pichini.github.io/ai-science-tracker/schema/discoveries.schema.json",
+  "title": "AI Science Tracker discovery records",
+  "description": "Array of curated discovery records. Field meanings: docs/discovery-schema.md. Licensed CC BY 4.0.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "title",
+      "summary",
+      "field",
+      "ai_technology",
+      "organization",
+      "source_url",
+      "source_type",
+      "publication_date",
+      "added_date",
+      "verification_status",
+      "paper_url",
+      "relevance"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9_-]*$"
+      },
+      "title": {
+        "type": "string",
+        "minLength": 1
+      },
+      "summary": {
+        "type": "string",
+        "minLength": 1
+      },
+      "field": {
+        "type": "string",
+        "enum": [
+          "biology",
+          "chemistry",
+          "medicine",
+          "materials",
+          "climate",
+          "mathematics",
+          "physics",
+          "computer science",
+          "humanities",
+          "multidisciplinary",
+          "other"
+        ]
+      },
+      "ai_technology": {
+        "type": "string"
+      },
+      "organization": {
+        "type": "string",
+        "minLength": 1
+      },
+      "source_url": {
+        "type": "string",
+        "pattern": "^https://\\S+$"
+      },
+      "source_type": {
+        "type": "string",
+        "enum": [
+          "press release",
+          "blog",
+          "paper",
+          "other"
+        ]
+      },
+      "publication_date": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "added_date": {
+        "type": "string",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "verification_status": {
+        "type": "string",
+        "enum": [
+          "verified",
+          "needs verification"
+        ]
+      },
+      "paper_url": {
+        "type": "string",
+        "pattern": "^(https://\\S+)?$",
+        "description": "Empty when no paper link is established."
+      },
+      "relevance": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "impact",
+          "validation",
+          "novelty"
+        ],
+        "properties": {
+          "impact": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "validation": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          },
+          "novelty": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5
+          }
+        }
+      },
+      "evidence": {
+        "type": "object",
+        "additionalProperties": false,
+        "description": "Optional, pilot only.",
+        "required": [
+          "publication_status",
+          "tested",
+          "unknown",
+          "ai_role",
+          "evidence_urls"
+        ],
+        "properties": {
+          "publication_status": {
+            "type": "string",
+            "enum": [
+              "Peer-reviewed paper",
+              "Preprint",
+              "Announcement only",
+              "Not reported"
+            ]
+          },
+          "tested": {
+            "type": "string"
+          },
+          "unknown": {
+            "type": "string"
+          },
+          "ai_role": {
+            "type": "string"
+          },
+          "evidence_urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^https://\\S+$"
+            }
+          }
+        }
+      }
+    }
+  }
+}

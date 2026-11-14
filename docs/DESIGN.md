@@ -40,7 +40,7 @@ Every page has the same frame, in this order: shared `<head>` (charset, viewport
 ## Links and sharing
 
 - Discovery link: `index.html#discovery=ID`. Shareable (social preview) link: `share/ID.html`, generated. Profiles: `profile.html?org=NAME` and `profile.html?family=ID`. Filters live in the query string of `index.html`.
-- Generated files (`share/`, `og/`, `sitemap.xml`, `llms.txt`, `data/models.json`) are never edited by hand: change the generator and rerun it.
+- Generated files (`share/`, `og/`, `api/`, `feed.xml`, `data/*.csv`, `sitemap.xml`, `llms.txt`, `data/models.json`) are never edited by hand: change the generator and rerun it.
 
 ## Before you finish
 

@@ -1,0 +1,28 @@
+{
+  "id": "2025-07-aeneas",
+  "title": "Aeneas: restoration, dating, and provenance of Latin inscriptions",
+  "summary": "The model restores texts with 73% top-20 accuracy for gaps up to ten characters (58% when length is unknown), attributes provenance with 72% accuracy across 62 Roman provinces, and dates inscriptions within 13 years; it was trained on over 176,000 inscriptions. In a study with 23 historians on 60 inscriptions, results were best when parallels and predictions were used together. Published in Nature.",
+  "field": "humanities",
+  "ai_technology": "Aeneas",
+  "organization": "Google DeepMind",
+  "source_url": "https://deepmind.google/discover/blog/aeneas-transforms-how-historians-connect-the-past/",
+  "source_type": "blog",
+  "publication_date": "2025-07-23",
+  "added_date": "2026-11-11",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41586-025-09292-5",
+  "relevance": {
+    "impact": 4,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Corpus of 176,861 Latin inscriptions. Aeneas: 72% geographical accuracy over 62 provinces; dating within 13 years on average; restoration character error rate 40.5% with known length. 23 historians on 60 inscriptions, solo versus with Aeneas parallels and predictions.",
+    "unknown": "The paper notes a small dataset, survival bias, only about 5% of inscriptions with images, and weaker results where data are scarce. Training data include earlier editors' restorations. Other languages are suggested, not tested.",
+    "ai_role": "Aeneas restored text, attributed provinces, estimated dates and retrieved parallels; historians evaluated outputs and combined them with their own knowledge.",
+    "evidence_urls": [
+      "https://doi.org/10.1038/s41586-025-09292-5"
+    ]
+  }
+}

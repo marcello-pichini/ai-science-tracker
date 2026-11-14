@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dataset and API · AI Science Tracker</title>
+<meta name="description" content="Download the AI Science Tracker catalog as JSON or CSV, with schemas and a read-only static API.">
+<link rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/dataset.html">
+<meta property="og:title" content="Dataset and API · AI Science Tracker">
+<meta property="og:description" content="Download the AI Science Tracker catalog as JSON or CSV, with schemas and a read-only static API.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://marcello-pichini.github.io/ai-science-tracker/og/default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:site_name" content="AI Science Tracker">
+<meta name="theme-color" content="#12367e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker catalog","description":"Curated records of scientific discoveries enabled by AI and of AI-assisted vulnerability findings, with original sources and dates.","url":"https://marcello-pichini.github.io/ai-science-tracker/dataset.html","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","identifier":"https://doi.org/10.5281/zenodo.24217686","keywords":["artificial intelligence","scientific discovery","AI for science"],"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.csv"},{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/vulnerabilities.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/vulnerabilities.csv"}]}
+</script>
+</head>
+<body>
+<header class="header">
+  <div class="wrap">
+    <a class="marchio" href="index.html" aria-label="AI Science Tracker, home page">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <span>AI Science Tracker</span>
+    </a>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="methodology.html">Methodology</a><a href="security.html">Vuln discoveries</a><a href="guide.html">Guide</a></nav>
+  </div>
+</header>
+
+<section class="banda banda-bassa" aria-labelledby="titolo-pagina">
+  <div class="wrap">
+    <h1 id="titolo-pagina">Dataset and API</h1>
+    <p class="lead">The catalog is open data: download it as JSON or CSV, validate it against a schema, or read single records through a static, read-only API.</p>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+    <article class="prosa">
+      <h2>Downloads</h2>
+      <ul>
+        <li>Discoveries: <a href="data/discoveries.json">discoveries.json</a> (full records, including the optional evidence pilot) and <a href="data/discoveries.csv">discoveries.csv</a> (flat columns, no evidence fields).</li>
+        <li>AI-found vulnerabilities: <a href="data/vulnerabilities.json">vulnerabilities.json</a> and <a href="data/vulnerabilities.csv">vulnerabilities.csv</a> (CVE identifiers separated by semicolons). These cases are separate from the scientific count.</li>
+        <li>Models: <a href="data/models.json">models.json</a>, generated from Epoch AI data, which keeps its own CC BY 4.0 attribution.</li>
+        <li>Every file is also available from the repository, whose releases are archived on Zenodo.</li>
+      </ul>
+
+      <h2>Static API</h2>
+      <p>There is no server: the API is a set of static JSON files, regenerated with the site, so responses are cached by GitHub Pages for about ten minutes and allow cross-origin reads. Filtering is done by the client.</p>
+      <ul>
+        <li><a href="api/v1/index.json">api/v1/index.json</a>: counts, data version date, license, citation and the address of every endpoint below.</li>
+        <li><code>api/v1/discoveries/ID.json</code> and <code>api/v1/vulnerabilities/ID.json</code>: one record per file. Example: <a href="api/v1/discoveries/2020-02-halicin.json">api/v1/discoveries/2020-02-halicin.json</a>.</li>
+        <li>The complete lists are the JSON files under Downloads. IDs are permanent, including historical slugs.</li>
+        <li>The version in the path changes only if a field is removed or renamed.</li>
+      </ul>
+
+      <h2>Schemas</h2>
+      <p>Records follow JSON Schema (draft 2020-12): <a href="schema/discoveries.schema.json">discoveries.schema.json</a> and <a href="schema/vulnerabilities.schema.json">vulnerabilities.schema.json</a>. Field meanings are described in the repository documents <code>docs/discovery-schema.md</code> and <code>docs/vulnerability-schema.md</code>. An empty <code>paper_url</code> means no paper link is established, not that none exists.</p>
+
+      <h2>Examples</h2>
+      <ul>
+        <li>Shell: <code>curl -s https://marcello-pichini.github.io/ai-science-tracker/api/v1/index.json</code></li>
+        <li>Python: <code>pandas.read_csv("https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.csv")</code></li>
+        <li>JavaScript: <code>fetch("https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json").then(r =&gt; r.json())</code></li>
+      </ul>
+
+      <h2>License and citation</h2>
+      <p>Catalog content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>: credit “AI Science Tracker” with a link. Cite the archived catalog as <a href="https://doi.org/10.5281/zenodo.24217686">doi:10.5281/zenodo.24217686</a>; this cites the catalog, not the underlying scientific papers, which you should cite from each record’s source. Figures are reported by sources and have not been independently verified, and coverage is manual and incomplete. See the <a href="methodology.html">methodology</a> for what is included.</p>
+
+      <h2>Changes</h2>
+      <p>The <a href="https://github.com/marcello-pichini/ai-science-tracker/blob/main/CHANGELOG.md">changelog</a> lists data and format changes, and the <a href="feed.xml">Atom feed</a> lists the newest records.</p>
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
+    <p><a href="index.html">Back to discoveries</a> · <a href="profiles/index.html">All organizations and model families</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "id": "2023-10-meg-immagini",
+  "title": "Meta AI: near-real-time image decoding from brain activity",
+  "summary": "A three-part system (image encoder, brain encoder, decoder) reconstructs viewed images from magnetoencephalography signals at each time point, with signals better aligned to DINOv2 than the other models compared. Images remain imperfect; fMRI decodes better; the page gives no numerical metrics; preprint.",
+  "field": "biology",
+  "ai_technology": "Magnetoencephalography decoder",
+  "organization": "Meta AI",
+  "source_url": "https://ai.meta.com/blog/brain-ai-image-decoding-meg-magnetoencephalography/",
+  "source_type": "blog",
+  "publication_date": "2023-10-18",
+  "added_date": "2026-11-11",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2310.19812",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "MEG recordings from healthy volunteers viewing images were decoded at each time point; several pretrained image models were compared (signals aligned best with DINOv2), and MEG decoding was compared with fMRI. Participant and image counts not stated on the blog.",
+    "unknown": "Generated images are imperfect: high-level features are often kept but low-level features are often wrong. MEG decoding is less precise than fMRI decoding.",
+    "ai_role": "AI models built the image representations and generated the output images; volunteers supplied the brain recordings.",
+    "evidence_urls": [
+      "https://ai.meta.com/blog/brain-ai-image-decoding-meg-magnetoencephalography/",
+      "https://arxiv.org/abs/2310.19812"
+    ]
+  }
+}
