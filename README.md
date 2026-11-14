@@ -4,6 +4,8 @@ Scientific discoveries and artificial intelligence models.
 
 An English-language catalog of scientific results enabled by AI since 2020, with original sources, dates, evidence caveats and editorial relevance scores. A separate model catalog uses Epoch AI data and connects model families to discoveries by name. A family match does not establish which model version was used.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24217686.svg)](https://doi.org/10.5281/zenodo.24217686)
+
 [Browse the site](https://marcello-pichini.github.io/ai-science-tracker/) · [Methodology](https://marcello-pichini.github.io/ai-science-tracker/methodology.html)
 
 ## Run locally
@@ -69,4 +71,4 @@ GitHub Pages serves this repository's `main` branch from the root. There is no b
 
 ## License and citation
 
-Catalog content (`data/discoveries.json`, `data/vulnerabilities.json`, summaries, editorial scores, documentation) is licensed under [CC BY 4.0](LICENSE). Epoch AI model data keeps its own CC BY 4.0 attribution, the font keeps the SIL OFL, and linked sources keep their own terms. The site code (HTML, CSS, JavaScript, Python scripts) is licensed under the [MIT License](LICENSE-CODE). GitHub's "Cite this repository" uses `CITATION.cff`; it cites the catalog, not the underlying scientific papers.
+Catalog content (`data/discoveries.json`, `data/vulnerabilities.json`, summaries, editorial scores, documentation) is licensed under [CC BY 4.0](LICENSE). Epoch AI model data keeps its own CC BY 4.0 attribution, the font keeps the SIL OFL, and linked sources keep their own terms. The site code (HTML, CSS, JavaScript, Python scripts) is licensed under the [MIT License](LICENSE-CODE). GitHub's "Cite this repository" uses `CITATION.cff`; it cites the catalog, not the underlying scientific papers. Releases are archived on [Zenodo](https://doi.org/10.5281/zenodo.24217686).
