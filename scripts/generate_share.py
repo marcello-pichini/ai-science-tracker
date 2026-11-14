@@ -395,6 +395,7 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [models.json]({BASE}data/models.json): model releases and families
 - [vulnerabilities.json]({BASE}data/vulnerabilities.json): vulnerability cases
 - [sitemap.xml]({BASE}sitemap.xml): every static page
+- [feed.xml]({BASE}feed.xml): Atom feed of the newest discoveries and vulnerability cases
 - Each discovery has its own page at {BASE}share/ID.html
 
 ## Notes
@@ -419,6 +420,29 @@ def write_sitemap(items, models):
     (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n')
 
 
+def write_feed(items, vulns, limit=40):
+    """Atom feed of the newest catalog additions. `updated` is the date a record was added or its sources were checked,
+    never the announcement date, so subscribers see entries when they appeared in the catalog."""
+    rows = []
+    for d in items:
+        rows.append((d['added_date'], d['publication_date'], f'share/{quote(d["id"])}.html', d['title'], d['summary'],
+                     f'Discovery - {d["organization"]}'))
+    for v in vulns:
+        rows.append((v['checked_date'], v['disclosure_date'], f'security.html#{quote(v["id"])}', v['title'], v['summary'],
+                     f'Vulnerability - {v["organization"]}'))
+    rows = sorted(rows, reverse=True)[:limit]
+    entries = ''.join(
+        f'<entry><id>{esc(BASE + path)}</id><title>{esc(title)}</title><link href="{esc(BASE + path)}"/>'
+        f'<updated>{added}T00:00:00Z</updated><category term="{esc(cat.split(" - ")[0].lower())}"/>'
+        f'<summary>{esc(clip(summary, 300))} ({esc(cat)}; announced {announced})</summary></entry>\n'
+        for added, announced, path, title, summary, cat in rows)
+    (ROOT / 'feed.xml').write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n'
+        f'<id>{BASE}feed.xml</id><title>{SITE}: latest additions</title>'
+        f'<link rel="self" href="{BASE}feed.xml"/><link href="{BASE}"/>'
+        f'<updated>{rows[0][0]}T00:00:00Z</updated><author><name>{SITE}</name></author>\n{entries}</feed>\n')
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--force', action='store_true')
@@ -433,7 +457,8 @@ def main():
     write_profile_pages(items, models)
     write_llms_txt(items, models)
     write_sitemap(items, models)
-    print(f'{len(items)} share pages, profile pages, sitemap.xml and robots.txt written')
+    write_feed(items, json.loads((ROOT / 'data/vulnerabilities.json').read_text()))
+    print(f'{len(items)} share pages, profile pages, sitemap.xml, feed.xml and robots.txt written')
 
 
 if __name__ == '__main__':

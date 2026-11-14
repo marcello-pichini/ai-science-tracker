@@ -37,6 +37,18 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('Source checked', text)
         self.assertFalse(any(line.rstrip() != line for line in text.splitlines()))
 
+    def test_feed_lists_newest_records_with_catalog_dates(self):
+        g = self.generator
+        vuln = {'id': 'v1', 'title': 'V & flaw', 'summary': 's', 'organization': 'Org', 'checked_date': '2999-01-01', 'disclosure_date': '2998-01-01'}
+        g.write_feed([self.record], [vuln], limit=5)
+        root = ET.fromstring((g.ROOT / 'feed.xml').read_text())
+        ns = {'a': 'http://www.w3.org/2005/Atom'}
+        entries = root.findall('a:entry', ns)
+        self.assertEqual(len(entries), 2)
+        self.assertEqual(entries[0].find('a:title', ns).text, 'V & flaw')
+        self.assertTrue(entries[0].find('a:updated', ns).text.startswith('2999-01-01'))
+        self.assertEqual(root.find('a:updated', ns).text, '2999-01-01T00:00:00Z')
+
     def test_sitemap_includes_static_discoveries_and_security_without_false_dates(self):
         g = self.generator
         g.write_sitemap([self.record], {'families': []})
