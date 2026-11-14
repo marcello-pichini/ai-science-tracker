@@ -216,7 +216,10 @@ function spAggiorna() {
 }
 
 function vaiA(id) {
-  if (!document.getElementById(id)) { clearFilters(); lista(); grafici(); }
+  if (!document.getElementById(id)) { // hidden by a filter, or beyond the entries shown so far
+    if (!items.filter(passa).some(s => s.id === id)) { clearFilters(); grafici(); }
+    ancora = id; lista();
+  }
   const el = document.getElementById(id); if (!el) return;
   document.querySelectorAll(".voce.evid").forEach(v => v.classList.remove("evid"));
   el.classList.add("evid");
@@ -316,6 +319,9 @@ function voce(s) {
 }
 
 const SORTS = ["desc", "asc", "relevance", "added"];
+/* The list renders in pages; any change of filters or sort starts again from the first page. */
+const PAGE = 40;
+let limite = PAGE, chiaveLista = "";
 function filterQuery() {
   const q = new URLSearchParams();
   [["q", state.q], ["field", state.field], ["org", state.org], ["year", state.anno], ["family", state.family], ["min", state.min || ""], ["sort", state.ord === "desc" ? "" : state.ord]]
@@ -336,6 +342,11 @@ function lista() {
   if (state.ord === "asc") out = out.slice().reverse(); // items are already sorted newest first
   if (state.ord === "added") out = out.slice().sort((a, b) => b.added_date.localeCompare(a.added_date) || b.publication_date.localeCompare(a.publication_date));
   if (state.ord === "relevance") out = out.slice().sort((a, b) => punteggio(b) - punteggio(a) || b.publication_date.localeCompare(a.publication_date));
+  const chiave = JSON.stringify(state);
+  if (chiave !== chiaveLista) { chiaveLista = chiave; limite = PAGE; }
+  if (ancora) { const i = out.findIndex(s => s.id === ancora); if (i >= limite) limite = i + 1; }
+  const tutte = out; out = out.slice(0, limite);
+  if (tutte.length > out.length) $("conta").textContent += `, ${out.length} shown`;
   let html = "";
   if (!out.length) html = `<p class="vuoto">No discoveries match these filters. Try removing a filter or click “Clear filters”.</p>`;
   else if (state.ord === "relevance" || state.ord === "added") html = `<div class="piatto">${out.map(voce).join("")}</div>`;
@@ -344,6 +355,8 @@ function lista() {
     out.forEach(s => { const a = s.publication_date.slice(0, 4); if (!gruppi.length || gruppi.at(-1)[0] !== a) gruppi.push([a, []]); gruppi.at(-1)[1].push(s); });
     html = gruppi.map(([a, v]) => `<section class="annata" aria-label="${a}"><h3 class="anno-tit"><b>${a}</b><span>${v.length} ${v.length === 1 ? "discovery" : "discoveries"}</span></h3><div>${v.map(voce).join("")}</div></section>`).join("");
   }
+  const resto = tutte.length - out.length;
+  if (resto) html += `<p class="altre"><button id="altre" type="button">Show ${Math.min(PAGE, resto)} more</button> <span>${resto} not shown yet</span></p>`;
   $("lista").innerHTML = html;
   $("org").value = state.org; $("year").value = state.anno; $("family").value = state.family; $("min").value = state.min;
   document.querySelectorAll("#cat button").forEach(b => b.setAttribute("aria-pressed", (b.dataset.v || "") === state.field));
@@ -382,7 +395,9 @@ let largh = innerWidth, tRes;
 addEventListener("resize", () => { clearTimeout(tRes); tRes = setTimeout(() => { if (items.length && innerWidth !== largh) { largh = innerWidth; spettro(); grafici(); } }, 150); });
 $("q").addEventListener("input", e => { state.q = e.target.value; lista(); });
 $("ord").addEventListener("change", e => { state.ord = e.target.value; lista(); });
+addEventListener("beforeprint", () => { limite = Infinity; lista(); });
 $("lista").addEventListener("click", e => {
+  if (e.target.id === "altre") { const prima = limite; limite += PAGE; lista(); document.querySelectorAll(".voce")[prima]?.querySelector("h3")?.setAttribute("tabindex", "-1"); document.querySelectorAll(".voce")[prima]?.querySelector("h3")?.focus(); return; }
   const r = e.target.closest(".riferimento");
   if (r) {
     const text = CatalogUI.reference(items.find(x => x.id === r.dataset.id), fmtData(new Date().toISOString().slice(0, 10)));

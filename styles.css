@@ -336,3 +336,9 @@ main { padding:0 0 72px; }
 .inev:hover { background:var(--accent-wash); }
 .inev b { display:block; font-weight:700; }
 .inev span { color:var(--muted); font-size:.875rem; }
+
+/* "Show more" row under the paged discovery list (index). */
+.altre { display:flex; flex-wrap:wrap; align-items:center; gap:12px; padding:24px 0 8px; color:var(--muted); font-size:.875rem; }
+.altre button { font:600 .9375rem var(--font); padding:9px 14px; border:1px solid var(--line-2); border-radius:10px; background:var(--sheet); color:var(--ink); cursor:pointer; }
+.altre button:hover { border-color:var(--accent); }
+@media print { .altre { display:none; } }
