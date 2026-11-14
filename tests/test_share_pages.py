@@ -66,3 +66,26 @@ class SharePageTests(unittest.TestCase):
         self.assertIn(g.BASE + 'profiles/org-org-co.html', text)
         self.assertNotIn('profile.html?org=', text)
 
+    def test_structured_data_is_valid_and_script_safe(self):
+        import re
+        g = self.generator
+        self.record['title'] = 'A </script><b>x</b> title'
+        g.write_discovery_pages([self.record], {'families': []}, False)
+        text = (g.ROOT / 'share/test-discovery.html').read_text()
+        blocks = re.findall(r'<script type="application/ld\+json">\n(.*?)\n</script>', text, re.S)
+        self.assertEqual(len(blocks), 1)
+        data = json.loads(blocks[0])
+        self.assertEqual(data['@type'], 'WebPage')
+        self.assertEqual(data['name'], self.record['title'])
+        self.assertEqual(data['isBasedOn'], self.record['source_url'])
+        self.assertEqual(data['url'], g.BASE + 'share/test-discovery.html')
+        self.assertNotIn('</script><b>', blocks[0])
+
+    def test_llms_txt_counts_come_from_the_data(self):
+        g = self.generator
+        g.write_llms_txt([self.record], {'families': []})
+        text = (g.ROOT / 'llms.txt').read_text()
+        self.assertTrue(text.startswith('# AI Science Tracker'))
+        self.assertIn('catalog of 1 scientific discoveries', text)
+        self.assertIn(g.BASE + 'data/discoveries.json', text)
+

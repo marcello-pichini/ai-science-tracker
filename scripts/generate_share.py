@@ -173,6 +173,7 @@ PAGE = """<!doctype html>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+{jsonld}
 </head>
 <body>
 {header}
@@ -195,6 +196,36 @@ PAGE = """<!doctype html>
 </body>
 </html>
 """
+
+
+CREATOR = {'@type': 'Person', 'name': 'Marcello Pichini', 'url': 'https://github.com/marcello-pichini'}
+LICENSE_URL = 'https://creativecommons.org/licenses/by/4.0/'
+
+
+def jsonld(data):
+    """Inline JSON-LD; '<' is escaped so record text can never close the script element."""
+    text = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+    return f'<script type="application/ld+json">\n{text}\n</script>'
+
+
+def discovery_jsonld(d):
+    # WebPage, not Article: the announcement date is not when this page was published.
+    data = {'@context': 'https://schema.org/', '@type': 'WebPage', 'name': d['title'], 'description': clip(d['summary'], 300),
+            'url': f'{BASE}share/{d["id"]}.html', 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR,
+            'isPartOf': {'@type': 'Dataset', 'name': 'AI Science Tracker discovery catalog', 'url': BASE},
+            'about': {'@type': 'Thing', 'name': d['title']}, 'isBasedOn': d['source_url']}
+    if d['paper_url']:
+        data['citation'] = d['paper_url']
+    return jsonld(data)
+
+
+def profile_jsonld(name, desc, path, organization=False):
+    data = {'@context': 'https://schema.org/', '@type': 'CollectionPage', 'name': name, 'description': desc,
+            'url': BASE + path, 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR,
+            'isPartOf': {'@type': 'Dataset', 'name': 'AI Science Tracker discovery catalog', 'url': BASE}}
+    if organization:
+        data['about'] = {'@type': 'Organization', 'name': name}
+    return jsonld(data)
 
 
 def slug(text):
@@ -262,7 +293,7 @@ def write_discovery_pages(items, models, images):
         lead = f'{esc(d["organization"])} &middot; {esc(nice_date(d["publication_date"]))} &middot; {esc(d["field"])}'
         page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(clip(d['summary'], 200)), base=BASE,
                            path=f'share/{d["id"]}.html', img=d['id'] if images else 'default',
-                           imgalt=esc(f'Preview card: {d["title"]}') if images else DEFAULT_ALT,
+                           imgalt=esc(f'Preview card: {d["title"]}') if images else DEFAULT_ALT, jsonld=discovery_jsonld(d),
                            h2='<h2 class="vis-nascosto">Discovery</h2>', more=f'<a href="index.html#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.', extra=related_section(d, items),
                            header=header, footer=footer, lead=lead, article=article)
         (out / f'{d["id"]}.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
@@ -305,12 +336,12 @@ def write_profile_pages(items, models):
     def plural(n, one, many):
         return f'{n} {one if n == 1 else many}'
 
-    def emit(name, title, lead, desc, rows, path, interactive, extra=''):
+    def emit(name, title, lead, desc, rows, path, interactive, extra='', organization=False):
         articles = ''.join(discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']], link_title=True) for d in rows)
         more = f'<a href="{interactive}">Open the interactive profile</a> for the timeline, or <a href="profiles/index.html">browse all organizations and model families</a>.'
         page = PAGE.format(title=esc(title), site=SITE, desc=esc(desc), base=BASE, path=path, img='default', imgalt=DEFAULT_ALT,
                            header=header, footer=footer, lead=lead, article=articles, more=more, extra=extra,
-                           h2='<h2 class="vis-nascosto">Discoveries</h2>')
+                           h2='<h2 class="vis-nascosto">Discoveries</h2>', jsonld=profile_jsonld(title, desc, path, organization))
         (ROOT / path).write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
         pages.append(path)
 
@@ -319,7 +350,7 @@ def write_profile_pages(items, models):
         assert slugs.setdefault(slug(name), name) == name, f'organization slug collision: {name}'
         emit(name, name, f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
              f'{plural(len(rows), "AI-enabled scientific discovery", "AI-enabled scientific discoveries")} tracked from {name}, with sources.',
-             rows, f'profiles/org-{slug(name)}.html', f'profile.html?org={quote(name)}')
+             rows, f'profiles/org-{slug(name)}.html', f'profile.html?org={quote(name)}', organization=True)
     for fam in sorted(models['families'], key=lambda f: f['id']):
         rows = sorted((by_id[i] for i in fam['discoveries'] if i in by_id), key=lambda d: d['publication_date'], reverse=True)
         if not rows:
@@ -333,11 +364,44 @@ def write_profile_pages(items, models):
     directory = f'<h2>Organizations</h2><ul class="elenco-profili">{labs}</ul><h2>Model families</h2><ul class="elenco-profili">{fams}</ul>'
     page = PAGE.format(title='Labs and model families', site=SITE, desc='Organizations and model families with at least one tracked AI-enabled discovery.', base=BASE,
                        path='profiles/index.html', img='default', imgalt=DEFAULT_ALT, header=header, footer=footer,
+                       jsonld=profile_jsonld('Labs and model families', 'Organizations and model families with at least one tracked AI-enabled discovery.', 'profiles/index.html'),
                        lead=f'{len(by_org)} organizations and {len([f for f in models["families"] if f["discoveries"]])} model families', article=directory,
                        more='<a href="profile.html">Open the interactive directory</a>.', extra='', h2='')
     (ROOT / 'profiles/index.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
     pages.append('profiles/index.html')
     return pages
+
+
+def write_llms_txt(items, models):
+    """llms.txt: a plain summary for language-model crawlers. Counts come from the data so it never goes stale."""
+    fields = len({d['field'] for d in items})
+    orgs = len({lead_org(d['organization']) for d in items})
+    newest = max(d['added_date'] for d in items)
+    (ROOT / 'llms.txt').write_text(f'''# {SITE}
+
+> A catalog of {len(items)} scientific discoveries enabled by AI across {fields} fields and {orgs} organizations since 2020. Each entry links to the original announcement by the organization that achieved the result. Figures are reported by the sources and are not independently verified; relevance scores are editorial judgments, not evidence grades.
+
+Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT. Model data comes from Epoch AI (CC BY 4.0). When citing a scientific claim, cite the original source linked on each entry, not this catalog.
+
+## Browse
+- [Discoveries]({BASE}index.html): filters, charts and the full list
+- [Organizations and model families]({BASE}profiles/index.html): static profile pages
+- [Models]({BASE}models.html): model releases linked to discoveries
+- [Vuln discoveries]({BASE}security.html): publicly disclosed vulnerabilities with documented AI involvement, kept separate from the scientific count
+- [Methodology]({BASE}methodology.html): what is included, how entries are verified and scored
+
+## Data
+- [discoveries.json]({BASE}data/discoveries.json): one record per discovery (schema: docs/discovery-schema.md in the repository)
+- [models.json]({BASE}data/models.json): model releases and families
+- [vulnerabilities.json]({BASE}data/vulnerabilities.json): vulnerability cases
+- [sitemap.xml]({BASE}sitemap.xml): every static page
+- Each discovery has its own page at {BASE}share/ID.html
+
+## Notes
+- Most recent catalog addition: {newest}. This is not a last-review date.
+- The collection is manual and not exhaustive; most sources are the announcing organizations' own pages.
+- Repository: https://github.com/marcello-pichini/ai-science-tracker
+''')
 
 
 def write_sitemap(items, models):
@@ -367,6 +431,7 @@ def main():
         render_cards(items, args.force)
     write_discovery_pages(items, models, not args.no_images)
     write_profile_pages(items, models)
+    write_llms_txt(items, models)
     write_sitemap(items, models)
     print(f'{len(items)} share pages, profile pages, sitemap.xml and robots.txt written')
 

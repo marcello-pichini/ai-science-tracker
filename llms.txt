@@ -1,0 +1,24 @@
+# AI Science Tracker
+
+> A catalog of 244 scientific discoveries enabled by AI across 11 fields and 104 organizations since 2020. Each entry links to the original announcement by the organization that achieved the result. Figures are reported by the sources and are not independently verified; relevance scores are editorial judgments, not evidence grades.
+
+Content is licensed CC BY 4.0 (attribute "AI Science Tracker" with a link); site code is MIT. Model data comes from Epoch AI (CC BY 4.0). When citing a scientific claim, cite the original source linked on each entry, not this catalog.
+
+## Browse
+- [Discoveries](https://marcello-pichini.github.io/ai-science-tracker/index.html): filters, charts and the full list
+- [Organizations and model families](https://marcello-pichini.github.io/ai-science-tracker/profiles/index.html): static profile pages
+- [Models](https://marcello-pichini.github.io/ai-science-tracker/models.html): model releases linked to discoveries
+- [Vuln discoveries](https://marcello-pichini.github.io/ai-science-tracker/security.html): publicly disclosed vulnerabilities with documented AI involvement, kept separate from the scientific count
+- [Methodology](https://marcello-pichini.github.io/ai-science-tracker/methodology.html): what is included, how entries are verified and scored
+
+## Data
+- [discoveries.json](https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json): one record per discovery (schema: docs/discovery-schema.md in the repository)
+- [models.json](https://marcello-pichini.github.io/ai-science-tracker/data/models.json): model releases and families
+- [vulnerabilities.json](https://marcello-pichini.github.io/ai-science-tracker/data/vulnerabilities.json): vulnerability cases
+- [sitemap.xml](https://marcello-pichini.github.io/ai-science-tracker/sitemap.xml): every static page
+- Each discovery has its own page at https://marcello-pichini.github.io/ai-science-tracker/share/ID.html
+
+## Notes
+- Most recent catalog addition: 2026-11-13. This is not a last-review date.
+- The collection is manual and not exhaustive; most sources are the announcing organizations' own pages.
+- Repository: https://github.com/marcello-pichini/ai-science-tracker
