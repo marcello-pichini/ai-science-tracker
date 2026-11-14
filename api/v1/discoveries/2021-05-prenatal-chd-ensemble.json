@@ -1,0 +1,28 @@
+{
+  "id": "2021-05-prenatal-chd-ensemble",
+  "title": "Neural network ensemble for prenatal detection of complex congenital heart disease",
+  "summary": "An ensemble of neural networks trained on 107,823 fetal ultrasound images reached an AUC of 0.99, 95% sensitivity and 96% specificity in an internal test set of 4,108 fetal surveys with 0.9% CHD. Its sensitivity was comparable to that of clinicians and it stayed robust on outside-hospital and lower-quality images. Caveat: retrospective study with a low-prevalence internal test set.",
+  "field": "medicine",
+  "ai_technology": "Ensemble of convolutional neural networks with segmentation models",
+  "organization": "University of California, San Francisco; Harvard Medical School",
+  "source_url": "https://www.nature.com/articles/s41591-021-01342-5",
+  "source_type": "paper",
+  "publication_date": "2021-05-14",
+  "added_date": "2026-11-14",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41591-021-01342-5",
+  "relevance": {
+    "impact": 4,
+    "validation": 4,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Trained on 107,823 images from 1,326 retrospective studies; on 4,108 fetal surveys (0.9% CHD), AUC 0.99, 95% sensitivity, 96% specificity, 100% negative predictive value; comparable to clinicians and robust on outside-hospital images.",
+    "unknown": "Prospective screening performance is not reported in the abstract.",
+    "ai_role": "An ensemble of neural networks identifies cardiac views and classifies normal versus complex congenital heart disease.",
+    "evidence_urls": [
+      "https://doi.org/10.1038/s41591-021-01342-5"
+    ]
+  }
+}

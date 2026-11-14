@@ -1,0 +1,28 @@
+{
+  "id": "2021-09-exam-federated-covid",
+  "title": "Federated learning model predicts oxygen needs in COVID-19 patients",
+  "summary": "The EXAM federated model, trained on data from 20 institutes without sharing patient data, achieved an average AUC above 0.92 for predicting oxygen requirements at 24 and 72 hours. At the largest independent test site it reached sensitivity 0.950 and specificity 0.882, with a 16% average AUC gain over single-site models. Caveat: retrospective data from the pandemic period and unharmonized sites.",
+  "field": "medicine",
+  "ai_technology": "EXAM federated learning model (EMR data and chest X-rays)",
+  "organization": "University of Toronto; NVIDIA; Icahn School of Medicine at Mount Sinai; NYU Grossman School of Medicine",
+  "source_url": "https://www.nature.com/articles/s41591-021-01506-3",
+  "source_type": "paper",
+  "publication_date": "2021-09-15",
+  "added_date": "2026-11-14",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41591-021-01506-3",
+  "relevance": {
+    "impact": 5,
+    "validation": 4,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Data from 20 institutes; average AUC above 0.92 for oxygen-requirement outcomes at 24 and 72 hours, 16% higher average AUC than single-site models; at the largest independent site, sensitivity 0.950 and specificity 0.882 for ventilation or death at 24 hours.",
+    "unknown": "Effect on patient care when used in practice is not reported in the abstract.",
+    "ai_role": "EXAM, a model trained by federated learning on vital signs, laboratory data and chest X-rays without exchanging data between sites.",
+    "evidence_urls": [
+      "https://doi.org/10.1038/s41591-021-01506-3"
+    ]
+  }
+}
