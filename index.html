@@ -125,7 +125,7 @@ let items = [], famDi = {}, famIds = {};
 let ancora = decodeURIComponent(location.hash).startsWith("#discovery=") ? decodeURIComponent(location.hash).slice(11) : decodeURIComponent(location.hash).startsWith("#scoperta=") ? decodeURIComponent(location.hash).slice(10) : null;
 
 // Organizations listed together (e.g. "Google DeepMind and Google Research") are counted under the first one named.
-const orgDi = s => s.organization.split(/,| and /i)[0].trim();
+const orgDi = s => s.organization.split(/[,;]| and /i)[0].trim();
 // Relevance 0-100: average of impact, validation, and novelty (each scored 1–5) × 20. Editorial judgment; see methodology.html.
 const punteggio = s => Math.round((s.relevance.impact + s.relevance.validation + s.relevance.novelty) / 3 * 20);
 const media = arr => Math.round(arr.reduce((a, s) => a + punteggio(s), 0) / arr.length);
@@ -224,7 +224,7 @@ function vaiA(id) {
   document.querySelectorAll(".voce.evid").forEach(v => v.classList.remove("evid"));
   el.classList.add("evid");
   el.scrollIntoView({ block:"center", behavior: ridotto.matches ? "auto" : "smooth" });
-  history.replaceState(null, "", "#discovery=" + encodeURIComponent(id));
+  history.replaceState(null, "", location.pathname + filterQuery() + "#discovery=" + encodeURIComponent(id));
 }
 
 /* Charts */
@@ -321,7 +321,7 @@ function voce(s) {
 const SORTS = ["desc", "asc", "relevance", "added"];
 /* The list renders in pages; any change of filters or sort starts again from the first page. */
 const PAGE = 40;
-let limite = PAGE, chiaveLista = "";
+let limite = PAGE, chiaveLista = "", printState = null;
 function filterQuery() {
   const q = new URLSearchParams();
   [["q", state.q], ["field", state.field], ["org", state.org], ["year", state.anno], ["family", state.family], ["min", state.min || ""], ["sort", state.ord === "desc" ? "" : state.ord]]
@@ -332,6 +332,10 @@ function filterQuery() {
 function readFilters(fields, orgs, years, families) {
   const q = new URLSearchParams(location.search), pick = (k, ok) => ok.includes(q.get(k)) ? q.get(k) : "";
   state.q = q.get("q") || ""; state.field = pick("field", fields); state.org = pick("org", orgs); state.anno = pick("year", years);
+  if (!state.org && q.get("org")) {
+    const legacy = items.find(s => s.organization.split(/,| and /i)[0].trim() === q.get("org"));
+    if (legacy) state.org = orgDi(legacy);
+  }
   state.family = pick("family", families); state.min = [40, 60, 80].includes(+q.get("min")) ? +q.get("min") : 0;
   state.ord = SORTS.includes(q.get("sort")) ? q.get("sort") : "desc";
   $("q").value = state.q; $("ord").value = state.ord;
@@ -364,7 +368,7 @@ function lista() {
     const el = document.getElementById(ancora);
     if (el) { el.classList.add("evid"); el.scrollIntoView({ block:"center" }); }
     ancora = null;
-  } else history.replaceState(null, "", location.pathname + filterQuery());
+  } else if (!printState) history.replaceState(null, "", location.pathname + filterQuery());
   document.querySelectorAll("[data-k]").forEach(b => b.setAttribute("aria-pressed", state[b.dataset.k] === b.dataset.v));
   spAggiorna();
 }
@@ -374,6 +378,12 @@ Promise.all([
   fetch("data/models.json").then(r => r.ok ? r.json() : null).catch(() => null)
 ]).then(([dati, modelli]) => {
   items = dati.sort((a, b) => b.publication_date.localeCompare(a.publication_date));
+  if (ancora && !items.some(s => s.id === ancora)) {
+    const id = ancora;
+    fetch("data/archived-discoveries.json").then(r => r.ok ? r.json() : []).then(archived => {
+      if (archived.some(s => s.id === id)) location.replace("share/" + encodeURIComponent(id) + ".html");
+    }).catch(() => {}); // An unavailable archive leaves unknown anchors on the active catalog.
+  }
   if (modelli) modelli.families.forEach(f => f.discoveries.forEach(id => { if (!famDi[id]) famDi[id] = f; (famIds[id] ||= []).push(f.id); }));
   riepilogo(); spettro(); grafici();
   const perAmb = ordina(conta(items, s => s.field));
@@ -395,7 +405,17 @@ let largh = innerWidth, tRes;
 addEventListener("resize", () => { clearTimeout(tRes); tRes = setTimeout(() => { if (items.length && innerWidth !== largh) { largh = innerWidth; spettro(); grafici(); } }, 150); });
 $("q").addEventListener("input", e => { state.q = e.target.value; lista(); });
 $("ord").addEventListener("change", e => { state.ord = e.target.value; lista(); });
-addEventListener("beforeprint", () => { limite = Infinity; lista(); });
+// The shared print handler renders first, opens disclosures, then restores the reader's original DOM state.
+CatalogUI.beforePrint = () => {
+  if (printState) return;
+  printState = { limit:limite, nodes:[...$("lista").childNodes], count:$("conta").textContent };
+  limite = Infinity; lista();
+};
+CatalogUI.afterPrint = () => {
+  if (!printState) return;
+  limite = printState.limit; $("lista").replaceChildren(...printState.nodes); $("conta").textContent = printState.count;
+  printState = null;
+};
 $("lista").addEventListener("click", e => {
   if (e.target.id === "altre") { const prima = limite; limite += PAGE; lista(); document.querySelectorAll(".voce")[prima]?.querySelector("h3")?.setAttribute("tabindex", "-1"); document.querySelectorAll(".voce")[prima]?.querySelector("h3")?.focus(); return; }
   const r = e.target.closest(".riferimento");

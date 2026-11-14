@@ -12,71 +12,7 @@ OUT = 'data/models.json'
 
 LAB = re.compile(r'^(openai|google deepmind|deepmind|google|google research|google brain|google cloud|google ai|anthropic|microsoft|microsoft research|microsoft research asia|meta ai|meta|facebook ai research|nvidia|baidu|alibaba|bytedance|deepseek|tencent|huawei|mistral ai|xai|ibm|amazon|z\.ai|moonshot|minimax|evolutionaryscale|apple|cohere)', re.I)
 
-# Model families: ID, display name, Epoch model regex, discovery technology regex.
-FAMILIES = [
- ('alphafold','AlphaFold', r'^alphafold($| 2|-multimer)', r'alphafold(?! 3)'),
- ('alphafold3','AlphaFold 3', r'^alphafold 3', r'alphafold 3'),
- ('alphagenome','AlphaGenome', r'alphagenome', r'alphagenome'),
- ('alphamissense','AlphaMissense', r'alphamissense', r'alphamissense'),
- ('alphaproteo','AlphaProteo', r'alphaproteo', r'alphaproteo'),
- ('alphaevolve','AlphaEvolve', r'alphaevolve', r'alphaevolve'),
- ('alphadev','AlphaDev', r'alphadev', r'alphadev'),
- ('alphageometry','AlphaGeometry', r'alphageometry', r'alphageometry'),
- ('alphatensor','AlphaTensor', r'alphatensor', r'alphatensor'),
- ('alphaqubit','AlphaQubit', r'alphaqubit', r'alphaqubit'),
- ('alphaproof','AlphaProof', r'alphaproof', r'alphaproof'),
- ('alphacode','AlphaCode', r'alphacode', r'alphacode'),
- ('funsearch','FunSearch', r'funsearch', r'funsearch'),
- ('gnome','GNoME', r'gnome', r'gnome'),
- ('graphcast','GraphCast', r'graphcast', r'graphcast'),
- ('gencast','GenCast', r'gencast', r'gencast'),
- ('weathernext','WeatherNext', r'weathernext', r'weathernext'),
- ('neuralgcm','NeuralGCM', r'neuralgcm', r'neuralgcm'),
- ('metnet','MetNet', r'^metnet', r'metnet'),
- ('fourcastnet','FourCastNet', r'fourcastnet', r'fourcastnet'),
- ('pangu','Pangu-Weather', r'pangu-weather', r'pangu'),
- ('corrdiff','CorrDiff', r'corrdiff', r'corrdiff'),
- ('fastnet','FastNet', r'^fastnet', r'fastnet'),
- ('aifs','AIFS (ECMWF)', r'^aifs', r'aifs'),
- ('mattergen','MatterGen', r'mattergen', r'mattergen'),
- ('mattersim','MatterSim', r'mattersim', r'mattersim'),
- ('coscientist','AI Co-Scientist', r'co-scientist', r'co-scientist'),
- ('gemini','Gemini', r'^gemini', r'gemini'),
- ('gpt4','GPT-4', r'^gpt-4', r'gpt-4(?!b)'),
- ('gpt5','GPT-5', r'^gpt-5', r'gpt-5'),
- ('gpt6','GPT-6', r'^gpt-6', r'gpt-6'),
- ('oserie','o1 / o3', r'^(o1|o3)\b', r'\bo1\b|\bo3\b'),
- ('codex','Codex', r'^codex|codex', r'codex'),
- ('claude','Claude', r'^claude', r'claude'),
- ('esm','ESM / ESMFold', r'^esm', r'\besm'),
- ('evo','Evo', r'^evo\b', r'\bevo\b|evo 2'),
- ('rfdiffusion','RFdiffusion', r'rfdiffusion', r'rfdiffusion'),
- ('proteinmpnn','ProteinMPNN', r'proteinmpnn', r'proteinmpnn'),
- ('rosettafold','RoseTTAFold', r'rosettafold', r'rosettafold'),
- ('trrosetta','trRosetta', r'trrosetta', r'trrosetta'),
- ('genslm','GenSLM', r'genslm', r'genslm'),
- ('lineardesign','LinearDesign', r'lineardesign', r'lineardesign'),
- ('retrochimera','RetroChimera', r'retrochimera', r'retrochimera'),
- ('boltz','Boltz', r'^boltz', r'boltz'),
- ('chroma','Chroma', r'^chroma', r'chroma'),
- ('enformer','Enformer', r'enformer', r'enformer'),
- ('deepconsensus','DeepConsensus', r'deepconsensus', r'deepconsensus'),
- ('medpalm','Med-PaLM', r'med-palm', r'med-palm'),
- ('txgemma','TxGemma', r'txgemma', r'txgemma'),
- ('dolphingemma','DolphinGemma', r'dolphingemma', r'dolphingemma'),
- ('aurora','Aurora', r'^aurora', r'\baurora\b'),
- ('skala','Skala', r'^skala', r'\bskala\b'),
- ('perch','Perch', r'^perch', r'\bperch\b'),
- ('synthidbio','SynthID Bio', r'synthid', r'synthid'),
- ('nucleotide','Nucleotide Transformer', r'nucleotide transformer', r'nucleotide transformer'),
- ('progen','ProGen', r'^progen', r'progen'),
- ('opencrispr','OpenCRISPR', r'opencrispr', r'opencrispr'),
- ('kosmos','Kosmos', r'^kosmos', r'\bkosmos\b'),
- ('grok','Grok', r'^grok', r'\bgrok\b'),
- ('llama','Llama', r'^llama', r'\bllama\b'),
- ('qwen','Qwen', r'^qwen', r'\bqwen\b'),
- ('deepseekm','DeepSeek', r'^deepseek', r'deepseek'),
-]
+from model_families import FAMILIES, discovery_links
 
 def num(s):
     try: return float(s)
@@ -85,8 +21,6 @@ def num(s):
 rows = list(csv.DictReader(open(CSV, encoding='utf-8')))
 discoveries = json.load(open(DISCOVERIES, encoding='utf-8'))
 
-def text(s):
-    return ' '.join([s.get('ai_technology',''), s.get('title','')]).lower()
 
 models = []
 for r in rows:
@@ -114,9 +48,10 @@ for r in rows:
 models.sort(key=lambda m: m['date'], reverse=True)
 
 families = []
+links = discovery_links(discoveries)
 linked = set()
 for fid, name, re_mod, re_sco in FAMILIES:
-    sc = [s['id'] for s in discoveries if re.search(re_sco, text(s), re.I)]
+    sc = links[fid]
     mods = [m['name'] for m in models if m['family'] == fid]
     if not sc and not mods:
         continue

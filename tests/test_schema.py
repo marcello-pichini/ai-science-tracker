@@ -52,6 +52,14 @@ class SchemaTests(unittest.TestCase):
     def test_vulnerabilities_match_schema(self):
         self.check('vulnerabilities')
 
+    def test_archived_discoveries_match_schema_and_are_not_active(self):
+        schema = json.loads((ROOT / 'schema/discoveries.schema.json').read_text())
+        archived = json.loads((ROOT / 'data/archived-discoveries.json').read_text())
+        active = json.loads((ROOT / 'data/discoveries.json').read_text())
+        self.assertEqual(errors(archived, schema), [])
+        self.assertEqual(len({r['id'] for r in archived}), len(archived))
+        self.assertFalse({r['id'] for r in archived} & {r['id'] for r in active})
+
     def test_validator_rejects_bad_records(self):
         schema = json.loads((ROOT / 'schema/discoveries.schema.json').read_text())
         bad = dict(json.loads((ROOT / 'data/discoveries.json').read_text())[0], field='cooking', extra=1)

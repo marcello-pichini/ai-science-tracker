@@ -79,11 +79,13 @@ globalThis.CatalogUI = {
 if (typeof window !== 'undefined') {
   let closedBeforePrint = [];
   window.addEventListener('beforeprint', () => {
+    CatalogUI.beforePrint?.();
     closedBeforePrint = [...document.querySelectorAll('.source-details:not([open])')];
     closedBeforePrint.forEach(details => { details.open = true; });
   });
   window.addEventListener('afterprint', () => {
     closedBeforePrint.forEach(details => { details.open = false; });
     closedBeforePrint = [];
+    CatalogUI.afterPrint?.();
   });
 }

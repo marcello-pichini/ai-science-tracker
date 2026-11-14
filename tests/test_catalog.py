@@ -1,5 +1,6 @@
 import datetime
 import json
+import sys
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
@@ -7,6 +8,9 @@ from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
+from model_families import discovery_links
+
 FIELDS = {'biology', 'chemistry', 'medicine', 'materials', 'climate',
           'mathematics', 'physics', 'computer science', 'humanities',
           'multidisciplinary', 'other'}
@@ -53,7 +57,11 @@ class CatalogTests(unittest.TestCase):
 
     def test_model_links_and_attribution(self):
         data = json.loads((ROOT / 'data/models.json').read_text())
-        ids = {d['id'] for d in json.loads((ROOT / 'data/discoveries.json').read_text())}
+        discoveries = json.loads((ROOT / 'data/discoveries.json').read_text())
+        ids = {d['id'] for d in discoveries}
+        expected = discovery_links(discoveries)
+        self.assertEqual({f['id']: f['discoveries'] for f in data['families'] if f['discoveries']},
+                         {fid: links for fid, links in expected.items() if links})
         self.assertEqual(set(data), {'generated', 'source', 'models', 'families', 'linked_discoveries'})
         self.assertEqual(data['source']['url'], 'https://epoch.ai/data/ai-models')
         self.assertEqual(data['source']['license'], 'CC BY 4.0')

@@ -46,7 +46,7 @@ def esc(s):
 
 def lead_org(name):
     """Same rule as index.html: organizations listed together count under the first one named."""
-    return name.replace(' and ', ',').split(',')[0].strip()
+    return re.split(r',|;| and ', name, flags=re.I)[0].strip()
 
 
 def score(d):
@@ -237,7 +237,7 @@ def safe_url(u):
     return u if re.match(r'^https?://', u or '') else '#'
 
 
-def discovery_article(d, fam, ui, link_title=False):
+def discovery_article(d, fam, ui, link_title=False, archived=False):
     """Same fields and markup as index.html's voce(), minus JS-only controls (the "Read
     more" truncation toggle and the "Copy link" button) that cannot work without script."""
     p = score(d)
@@ -246,8 +246,9 @@ def discovery_article(d, fam, ui, link_title=False):
     tech = f'<p class="tech"><span>Technology:</span> {esc(d["ai_technology"])}</p>' if d['ai_technology'] else ''
     paper = f'<a href="{esc(safe_url(d["paper_url"]))}" rel="noopener">Paper</a>' if d['paper_url'] else ''
     title_html = f'<a href="share/{esc(d["id"])}.html">{esc(d["title"])}</a>' if link_title else esc(d['title'])
+    organization = esc(d['organization']) if archived else f'<a href="profiles/org-{slug(lead_org(d["organization"]))}.html">{esc(d["organization"])}</a>'
     return f"""<article class="voce" id="{esc(d['id'])}">
-    <div class="voce-meta"><time datetime="{esc(d['publication_date'])}">{esc(nice_date(d['publication_date']))}</time><a href="profiles/org-{slug(lead_org(d['organization']))}.html">{esc(d['organization'])}</a></div>
+    <div class="voce-meta"><time datetime="{esc(d['publication_date'])}">{esc(nice_date(d['publication_date']))}</time>{organization}</div>
     <h3>{title_html}</h3>
     <p class="sommario">{esc(d['summary'])}</p>
     {tech}
@@ -278,7 +279,7 @@ def related_section(d, items):
     return f'\n  <section class="sez"><div class="wrap"><div class="prosa">{body}</div></div></section>' if body else ''
 
 
-def write_discovery_pages(items, models, images):
+def write_discovery_pages(items, models, images, archived=False):
     """Each page is a full, self-canonical page in the shared frame, indexable without
     JavaScript (IMP-011) — replacing the earlier noindex/meta-refresh stub."""
     out = ROOT / 'share'
@@ -290,12 +291,14 @@ def write_discovery_pages(items, models, images):
             fam_by_discovery.setdefault(did, f)
     ui = run_catalog_ui(items)
     for d in items:
-        article = discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']])
+        article = discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']], archived=archived)
+        more = ('<a href="index.html">Browse the current catalog</a>.' if archived else
+                f'<a href="index.html#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.')
         lead = f'{esc(d["organization"])} &middot; {esc(nice_date(d["publication_date"]))} &middot; {esc(d["field"])}'
         page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(clip(d['summary'], 200)), base=BASE,
                            path=f'share/{d["id"]}.html', img=d['id'] if images else 'default',
                            imgalt=esc(f'Preview card: {d["title"]}') if images else DEFAULT_ALT, jsonld=discovery_jsonld(d),
-                           h2='<h2 class="vis-nascosto">Discovery</h2>', more=f'<a href="index.html#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.', extra=related_section(d, items),
+                           h2='<h2 class="vis-nascosto">Discovery</h2>', more=more, extra=related_section(d, items),
                            header=header, footer=footer, lead=lead, article=article)
         (out / f'{d["id"]}.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
 
@@ -312,7 +315,7 @@ def releases_table(models):
   </div></section>""" if models else ''
 
 
-def write_profile_pages(items, models):
+def write_profile_pages(items, models, archived=()):
     """Static, indexable organization and model-family profiles (IMP-011 extension). Organization
     pages omit model releases: profile.html maps labs to Epoch organizations with an alias list
     that lives only in its script, and copying it here would let the two drift."""
@@ -329,6 +332,12 @@ def write_profile_pages(items, models):
     for d in sorted(items, key=lambda d: d['publication_date'], reverse=True):
         by_org.setdefault(lead_org(d['organization']), []).append(d)
     pages = []
+    aliases = {}
+    for d in items:
+        legacy = d['organization'].replace(' and ', ',').split(',')[0].strip()
+        old, new = slug(legacy), slug(lead_org(d['organization']))
+        if old != new:
+            assert aliases.setdefault(old, new) == new, f'legacy organization slug collision: {old}'
 
     def years(rows):
         ys = sorted(d['publication_date'][:4] for d in rows)
@@ -352,6 +361,24 @@ def write_profile_pages(items, models):
         emit(name, name, f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
              f'{plural(len(rows), "AI-enabled scientific discovery", "AI-enabled scientific discoveries")} tracked from {name}, with sources.',
              rows, f'profiles/org-{slug(name)}.html', f'profile.html?org={quote(name)}', organization=True)
+    for d in archived:
+        legacy = d['organization'].replace(' and ', ',').split(',')[0].strip()
+        old, new = slug(legacy), slug(lead_org(d['organization']))
+        target = new if new in slugs else f'../share/{quote(d["id"])}.html'
+        if old not in slugs:
+            assert aliases.setdefault(old, target) == target, f'legacy organization slug collision: {old}'
+    for old, new in sorted(aliases.items()):
+        if old in slugs:
+            continue
+        target = new if new.startswith('../share/') else f'org-{new}.html'
+        canonical = BASE + (target[3:] if target.startswith('../') else f'profiles/{target}')
+        path = out / f'org-{old}.html'
+        path.write_text(f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Organization profile moved</title>
+<link rel="canonical" href="{canonical}"><meta http-equiv="refresh" content="0; url={target}"></head>
+<body><p>This profile has moved to <a href="{target}">the preserved page</a>.</p></body></html>
+''')
+        pages.append(f'profiles/org-{old}.html')
     for fam in sorted(models['families'], key=lambda f: f['id']):
         rows = sorted((by_id[i] for i in fam['discoveries'] if i in by_id), key=lambda d: d['publication_date'], reverse=True)
         if not rows:
@@ -407,7 +434,7 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 ''')
 
 
-def write_sitemap(items, models):
+def write_sitemap(items, models, archived=()):
     orgs = sorted({lead_org(d['organization']) for d in items})
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
     # Announcement dates are not page-modification dates; omit lastmod until tracked.
@@ -415,7 +442,7 @@ def write_sitemap(items, models):
     urls += ['profiles/index.html']
     urls += [f'profiles/org-{slug(o)}.html' for o in orgs]
     urls += [f'profiles/family-{quote(f)}.html' for f in fams]
-    urls += [f'share/{quote(d["id"])}.html' for d in items]
+    urls += [f'share/{quote(d["id"])}.html' for d in [*items, *archived]]
     rows = ''.join(f'<url><loc>{esc(BASE + url)}</loc></url>\n' for url in urls)
     (ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
                                       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + rows + '</urlset>\n')
@@ -496,14 +523,17 @@ def main():
     ap.add_argument('--no-images', action='store_true')
     args = ap.parse_args()
     items = json.loads((ROOT / 'data/discoveries.json').read_text())
+    archive_path = ROOT / 'data/archived-discoveries.json'
+    archived = json.loads(archive_path.read_text()) if archive_path.exists() else []
     models = json.loads((ROOT / 'data/models.json').read_text())
     if not args.no_images:
         render_default(args.force)
-        render_cards(items, args.force)
+        render_cards(items + archived, args.force)
     write_discovery_pages(items, models, not args.no_images)
-    write_profile_pages(items, models)
+    write_discovery_pages(archived, models, not args.no_images, archived=True)
+    write_profile_pages(items, models, archived)
     write_llms_txt(items, models)
-    write_sitemap(items, models)
+    write_sitemap(items, models, archived)
     vulns = json.loads((ROOT / 'data/vulnerabilities.json').read_text())
     write_feed(items, vulns)
     write_exports(items, vulns)

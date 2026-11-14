@@ -2,6 +2,8 @@
 
 `data/discoveries.json` is an array of records. Text is in English; source titles may be translated. IDs are stable and may retain historical slugs.
 
+`data/archived-discoveries.json` uses the same record schema for entries excluded from the active catalog after editorial review. Its summaries explain the exclusion. Archived IDs must be unique and absent from the active array; their historical share pages remain available, but they do not contribute to discovery counts, profiles, model-family associations, feeds, CSV exports or the active API.
+
 | Field | Type | Description |
 | --- | --- | --- |
 | `id` | string | Unique, stable identifier. |
@@ -12,7 +14,7 @@
 | `organization` | string | Organization(s) announcing the result. |
 | `source_url` | URL | Original institutional announcement or paper. |
 | `source_type` | string | `press release`, `blog`, `paper` or `other`. |
-| `publication_date` | date | Announcement date, `YYYY-MM-DD`. |
+| `publication_date` | date | Documented announcement or paper-version publication date, `YYYY-MM-DD`; explain version differences in the summary. |
 | `added_date` | date | Date added to the catalog. |
 | `verification_status` | string | `verified` or `needs verification`. |
 | `paper_url` | URL | Paper or preprint; may be empty. |

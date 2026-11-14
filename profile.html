@@ -64,7 +64,7 @@ const fmtDate = d => fmt.format(new Date(d + "T12:00:00"));
 const reduced = matchMedia("(prefers-reduced-motion: reduce)");
 
 // Same rules as index.html: organizations listed together count under the first one named; relevance is 0-100.
-const leadOrg = s => s.organization.split(/,| and /i)[0].trim();
+const leadOrg = s => s.organization.split(/[,;]| and /i)[0].trim();
 const score = s => Math.round((s.relevance.impact + s.relevance.validation + s.relevance.novelty) / 3 * 20);
 const average = a => a.length ? Math.round(a.reduce((n, s) => n + score(s), 0) / a.length) : 0;
 const newestFirst = (a, b) => b.publication_date.localeCompare(a.publication_date);
@@ -188,8 +188,18 @@ function setMeta(title, description) {
 }
 
 function labView(name, discoveries, models) {
+  if (!discoveries.some(s => leadOrg(s) === name)) {
+    const legacy = discoveries.find(s => s.organization.split(/,| and /i)[0].trim() === name);
+    if (legacy) name = leadOrg(legacy);
+  }
   const items = discoveries.filter(s => leadOrg(s) === name).sort(newestFirst);
-  if (!items.length) return notFound("organization", name);
+  if (!items.length) {
+    fetch("data/archived-discoveries.json").then(r => r.ok ? r.json() : []).then(archived => {
+      const matches = archived.filter(s => s.organization.split(/,| and /i)[0].trim() === name);
+      if (matches.length === 1) location.replace("share/" + encodeURIComponent(matches[0].id) + ".html");
+    }).catch(() => {}); // Keep the existing not-found view when the archive is unavailable.
+    return notFound("organization", name);
+  }
   const aliases = modelOrgs(name), famName = Object.fromEntries(models.families.map(f => [f.id, f.name]));
   const releases = models.models.filter(m => aliases.includes((m.organization || "").toLowerCase())).sort((a, b) => b.date.localeCompare(a.date));
   const years = items.map(s => s.publication_date.slice(0, 4)).sort();

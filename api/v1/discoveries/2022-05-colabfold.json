@@ -1,7 +1,7 @@
 {
   "id": "2022-05-colabfold",
   "title": "ColabFold: free protein folding with AlphaFold2 or RoseTTAFold",
-  "summary": "ColabFold pairs AlphaFold2 or RoseTTAFold with fast MMseqs2 homology search and an extended sequence database, running free on Google Colab. The authors report it matches AlphaFold2 on CASP14 targets and matches AlphaFold-multimer on the ClusPro dataset. Caveat: the evidence is benchmark accuracy on established datasets, and this is a software tool paper rather than a new biological finding.",
+  "summary": "ColabFold pairs AlphaFold2 or RoseTTAFold with fast MMseqs2 homology search, running free on Google Colab. Beyond benchmark comparisons, the paper reports predicting structures for 1,762 Methanocaldococcus jannaschii proteins in 48 hours on one GPU and using predicted complexes to help determine the 120 MDa human nuclear-pore structure with cryo-electron microscopy. The proteome structures are computational predictions, not experimentally validated structures. The nuclear-pore application overlaps the separate nuclear-pore entry; this is a methodological contribution, not an additional independent biological finding.",
   "field": "biology",
   "ai_technology": "ColabFold (AlphaFold2, RoseTTAFold, MMseqs2)",
   "organization": "Max Planck Institute for Multidisciplinary Sciences; Seoul National University",

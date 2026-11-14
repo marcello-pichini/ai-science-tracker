@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ColabFold: free protein folding with AlphaFold2 or RoseTTAFold · AI Science Tracker</title>
-<meta name="description" content="ColabFold pairs AlphaFold2 or RoseTTAFold with fast MMseqs2 homology search and an extended sequence database, running free on Google Colab. The authors report it matches AlphaFold2 on CASP14…">
+<meta name="description" content="ColabFold pairs AlphaFold2 or RoseTTAFold with fast MMseqs2 homology search, running free on Google Colab. Beyond benchmark comparisons, the paper reports predicting structures for 1,762…">
 <link rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/share/2022-05-colabfold.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="AI Science Tracker">
 <meta property="og:title" content="ColabFold: free protein folding with AlphaFold2 or RoseTTAFold">
-<meta property="og:description" content="ColabFold pairs AlphaFold2 or RoseTTAFold with fast MMseqs2 homology search and an extended sequence database, running free on Google Colab. The authors report it matches AlphaFold2 on CASP14…">
+<meta property="og:description" content="ColabFold pairs AlphaFold2 or RoseTTAFold with fast MMseqs2 homology search, running free on Google Colab. Beyond benchmark comparisons, the paper reports predicting structures for 1,762…">
 <meta property="og:url" content="https://marcello-pichini.github.io/ai-science-tracker/share/2022-05-colabfold.html">
 <meta property="og:image" content="https://marcello-pichini.github.io/ai-science-tracker/og/2022-05-colabfold.png">
 <meta property="og:image:width" content="1200">
@@ -22,7 +22,7 @@
 <link rel="preload" href="../assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../styles.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"WebPage","name":"ColabFold: free protein folding with AlphaFold2 or RoseTTAFold","description":"ColabFold pairs AlphaFold2 or RoseTTAFold with fast MMseqs2 homology search and an extended sequence database, running free on Google Colab. The authors report it matches AlphaFold2 on CASP14 targets and matches AlphaFold-multimer on the ClusPro dataset. Caveat: the evidence is benchmark accuracy…","url":"https://marcello-pichini.github.io/ai-science-tracker/share/2022-05-colabfold.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"isPartOf":{"@type":"Dataset","name":"AI Science Tracker discovery catalog","url":"https://marcello-pichini.github.io/ai-science-tracker/"},"about":{"@type":"Thing","name":"ColabFold: free protein folding with AlphaFold2 or RoseTTAFold"},"isBasedOn":"https://www.nature.com/articles/s41592-022-01488-1","citation":"https://doi.org/10.1038/s41592-022-01488-1"}
+{"@context":"https://schema.org/","@type":"WebPage","name":"ColabFold: free protein folding with AlphaFold2 or RoseTTAFold","description":"ColabFold pairs AlphaFold2 or RoseTTAFold with fast MMseqs2 homology search, running free on Google Colab. Beyond benchmark comparisons, the paper reports predicting structures for 1,762 Methanocaldococcus jannaschii proteins in 48 hours on one GPU and using predicted complexes to help determine…","url":"https://marcello-pichini.github.io/ai-science-tracker/share/2022-05-colabfold.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"isPartOf":{"@type":"Dataset","name":"AI Science Tracker discovery catalog","url":"https://marcello-pichini.github.io/ai-science-tracker/"},"about":{"@type":"Thing","name":"ColabFold: free protein folding with AlphaFold2 or RoseTTAFold"},"isBasedOn":"https://www.nature.com/articles/s41592-022-01488-1","citation":"https://doi.org/10.1038/s41592-022-01488-1"}
 </script>
 </head>
 <body>
@@ -46,11 +46,11 @@
 <main>
   <section class="sez"><div class="wrap">
     <h2 class="vis-nascosto">Discovery</h2><div class="piatto"><article class="voce" id="2022-05-colabfold">
-    <div class="voce-meta"><time datetime="2022-05-30">30 May 2022</time><a href="../profiles/org-max-planck-institute-for-multidisciplinary-sciences-seoul-national-university.html">Max Planck Institute for Multidisciplinary Sciences; Seoul National University</a></div>
+    <div class="voce-meta"><time datetime="2022-05-30">30 May 2022</time><a href="../profiles/org-max-planck-institute-for-multidisciplinary-sciences.html">Max Planck Institute for Multidisciplinary Sciences; Seoul National University</a></div>
     <h3>ColabFold: free protein folding with AlphaFold2 or RoseTTAFold</h3>
-    <p class="sommario">ColabFold pairs AlphaFold2 or RoseTTAFold with fast MMseqs2 homology search and an extended sequence database, running free on Google Colab. The authors report it matches AlphaFold2 on CASP14 targets and matches AlphaFold-multimer on the ClusPro dataset. Caveat: the evidence is benchmark accuracy on established datasets, and this is a software tool paper rather than a new biological finding.</p>
+    <p class="sommario">ColabFold pairs AlphaFold2 or RoseTTAFold with fast MMseqs2 homology search, running free on Google Colab. Beyond benchmark comparisons, the paper reports predicting structures for 1,762 Methanocaldococcus jannaschii proteins in 48 hours on one GPU and using predicted complexes to help determine the 120 MDa human nuclear-pore structure with cryo-electron microscopy. The proteome structures are computational predictions, not experimentally validated structures. The nuclear-pore application overlaps the separate nuclear-pore entry; this is a methodological contribution, not an additional independent biological finding.</p>
     <p class="tech"><span>Technology:</span> ColabFold (AlphaFold2, RoseTTAFold, MMseqs2)</p>
-
+    <p class="modello">Family AlphaFold: <a href="../profiles/family-alphafold.html">profile</a> &middot; <a href="../models.html#fam-alphafold">models page</a></p>
     <div class="voce-footer">
       <span class="punteggio" title="Impact 4/5, validation 3/5, novelty 3/5">Relevance 67<span class="metro" aria-hidden="true"><i style="width:67%"></i></span></span>
       <span class="etich">biology</span>

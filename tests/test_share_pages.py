@@ -3,6 +3,7 @@ import json
 import shutil
 import tempfile
 import unittest
+from unittest.mock import patch
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -77,6 +78,47 @@ class SharePageTests(unittest.TestCase):
         text = (g.ROOT / 'sitemap.xml').read_text()
         self.assertIn(g.BASE + 'profiles/org-org-co.html', text)
         self.assertNotIn('profile.html?org=', text)
+
+    def test_legacy_organization_urls_redirect_to_current_profiles(self):
+        g = self.generator
+        self.record['organization'] = 'First Lab; Second Lab AND Third Lab'
+        g.write_profile_pages([self.record], {'families': []})
+        current = g.ROOT / 'profiles/org-first-lab.html'
+        legacy = g.ROOT / 'profiles/org-first-lab-second-lab-and-third-lab.html'
+        self.assertTrue(current.is_file())
+        self.assertTrue(legacy.is_file())
+        text = legacy.read_text()
+        self.assertIn('org-first-lab.html', text)
+        self.assertIn(f'rel="canonical" href="{g.BASE}profiles/org-first-lab.html"', text)
+        self.assertIn('href="org-first-lab.html"', text)
+        self.assertEqual(g.lead_org('First Lab AND Second Lab'), 'First Lab')
+        self.assertEqual(g.lead_org('First Lab, Second Lab'), 'First Lab')
+
+    def test_archived_discovery_has_a_page_but_does_not_enter_active_outputs(self):
+        g = self.generator
+        archived = dict(self.record, id='archived', organization='Former Lab; Partner', summary='Archived: outside the catalog scope.')
+        (g.ROOT / 'data').mkdir()
+        for name, value in [('discoveries', [self.record]), ('archived-discoveries', [archived]),
+                            ('models', {'families': [], 'models': []}), ('vulnerabilities', [])]:
+            (g.ROOT / f'data/{name}.json').write_text(json.dumps(value))
+        with patch('sys.argv', ['generate_share.py', '--no-images']):
+            g.main()
+        page = (g.ROOT / 'share/archived.html').read_text()
+        self.assertIn('Archived: outside the catalog scope.', page)
+        self.assertNotIn('#discovery=archived', page)
+        self.assertNotIn('org-former-lab.html', page)
+        self.assertIn('share/archived.html', (g.ROOT / 'sitemap.xml').read_text())
+        self.assertNotIn('org-former-lab.html', (g.ROOT / 'sitemap.xml').read_text())
+        self.assertNotIn('archived', (g.ROOT / 'feed.xml').read_text())
+        self.assertNotIn('archived', (g.ROOT / 'data/discoveries.csv').read_text())
+        api = json.loads((g.ROOT / 'api/v1/index.json').read_text())
+        self.assertEqual(api['counts']['discoveries'], 1)
+        self.assertFalse((g.ROOT / 'api/v1/discoveries/archived.json').exists())
+        self.assertNotIn('Former Lab', (g.ROOT / 'profiles/index.html').read_text())
+        legacy = (g.ROOT / 'profiles/org-former-lab-partner.html').read_text()
+        self.assertIn(f'rel="canonical" href="{g.BASE}share/archived.html"', legacy)
+        self.assertIn('content="0; url=../share/archived.html"', legacy)
+        self.assertIn('href="../share/archived.html"', legacy)
 
     def test_structured_data_is_valid_and_script_safe(self):
         import re

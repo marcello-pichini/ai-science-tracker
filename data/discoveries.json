@@ -4878,11 +4878,11 @@
   {
     "id": "2025-08-bindcraft",
     "title": "BindCraft designs protein binders in one shot",
-    "summary": "An open AlphaFold2-based hallucination pipeline designs binders with reported experimental success rates of 10-100% across targets, with nanomolar affinities. Nature version (27 August 2025); the preprint appeared in 2024. Abstract read; institutions and per-target results not checked.",
+    "summary": "An open AlphaFold2-based hallucination pipeline designs binders with reported experimental success rates of 10-100% across 12 targets, with affinities predominantly in the nanomolar range. The authors also demonstrated effects in cell assays and patient-derived samples; these are experimental results, not established clinical treatments. This entry uses the Nature publication date (27 August 2025); the preprint appeared in 2024.",
     "field": "biology",
     "ai_technology": "BindCraft (AlphaFold2-based design)",
     "organization": "EPFL; Swiss Institute of Bioinformatics",
-    "source_url": "https://pubmed.ncbi.nlm.nih.gov/39677777/",
+    "source_url": "https://www.nature.com/articles/s41586-025-09429-6",
     "source_type": "paper",
     "publication_date": "2025-08-27",
     "added_date": "2026-11-14",
@@ -5076,7 +5076,7 @@
     "source_type": "other",
     "publication_date": "2025-09-11",
     "added_date": "2026-11-14",
-    "verification_status": "verified",
+    "verification_status": "needs verification",
     "paper_url": "",
     "relevance": {
       "impact": 3,
@@ -5220,7 +5220,7 @@
   {
     "id": "2022-05-colabfold",
     "title": "ColabFold: free protein folding with AlphaFold2 or RoseTTAFold",
-    "summary": "ColabFold pairs AlphaFold2 or RoseTTAFold with fast MMseqs2 homology search and an extended sequence database, running free on Google Colab. The authors report it matches AlphaFold2 on CASP14 targets and matches AlphaFold-multimer on the ClusPro dataset. Caveat: the evidence is benchmark accuracy on established datasets, and this is a software tool paper rather than a new biological finding.",
+    "summary": "ColabFold pairs AlphaFold2 or RoseTTAFold with fast MMseqs2 homology search, running free on Google Colab. Beyond benchmark comparisons, the paper reports predicting structures for 1,762 Methanocaldococcus jannaschii proteins in 48 hours on one GPU and using predicted complexes to help determine the 120 MDa human nuclear-pore structure with cryo-electron microscopy. The proteome structures are computational predictions, not experimentally validated structures. The nuclear-pore application overlaps the separate nuclear-pore entry; this is a methodological contribution, not an additional independent biological finding.",
     "field": "biology",
     "ai_technology": "ColabFold (AlphaFold2, RoseTTAFold, MMseqs2)",
     "organization": "Max Planck Institute for Multidisciplinary Sciences; Seoul National University",
@@ -5552,7 +5552,7 @@
   {
     "id": "2026-03-chathea-hea-fuel-cell",
     "title": "ChatHEA assistant guides high-entropy alloy catalysts for fuel cells",
-    "summary": "ChatHEA, a domain-specific LLM assistant for high-entropy alloy electrocatalysis, guided synthesis and screening of 100 five-element alloy catalysts. The FeCoCuPtIr catalyst reached a peak power density of 0.789 W cm-2 in a fuel cell and outperformed commercial Pt/C in electrochemical tests. Evidence caveat: the press release gives no numeric activity values or the numeric DOE target it cites as exceeded, and the paper was not accessed.",
+    "summary": "ChatHEA, a domain-specific LLM assistant for high-entropy alloy electrocatalysis, guided synthesis and screening of 100 five-element alloy catalysts. The FeCoCuPtIr catalyst reached a peak power density of 0.789 W cm-2 in a fuel cell and outperformed commercial Pt/C in electrochemical tests. These figures are reported by the institutional press release; its numeric activity values and DOE target are not given. The catalog date is the paper's 14 March 2026 publication date, stated in the 8 July press release; the full paper was not reviewed.",
     "field": "chemistry",
     "ai_technology": "ChatHEA (LLM-based domain assistant)",
     "organization": "Tohoku University, Advanced Institute for Materials Research (AIMR)",
@@ -5571,12 +5571,12 @@
   {
     "id": "2026-05-cbnn-multimetallic-sac",
     "title": "Deep learning finds multimetallic single-atom catalysts across material families",
-    "summary": "The Crossbreeding Neural Network (CBNN), trained jointly on carbon-supported single-atom catalysts and perovskite oxides, screened 8,008 candidates. Its top W-Mo-Ru-Rh design on a perovskite support outperformed the comparison catalysts in synthesis and electrochemical tests, and the 12 predicted catalysts were ranked in line with experiment. Evidence caveat: the figures come from institutional coverage and the Nature Materials DOI from a secondary source; overpotential values were not checked.",
+    "summary": "The Crossbreeding Neural Network (CBNN), trained jointly on carbon-supported single-atom catalysts and perovskite oxides, screened 8,008 candidates. Its top W-Mo-Ru-Rh design on a perovskite support outperformed the comparison catalysts in electrochemical tests, and the activity ranking of 12 tested catalysts matched the predictions. These counts come from the IBS institutional release; the paper abstract confirms the experimental result but does not quantify the activity gain. The catalog date is the Nature Materials publication date, 28 May 2026.",
     "field": "chemistry",
     "ai_technology": "CBNN (Crossbreeding Neural Network)",
     "organization": "Institute for Basic Science (IBS) Center for Nanoparticle Research; Seoul National University",
-    "source_url": "https://www.nature.com/articles/s41563-026-02622-6",
-    "source_type": "paper",
+    "source_url": "https://www.ibs.re.kr/cop/bbs/BBSMSTR_000000000738/selectBoardArticle.do?nttId=26725&pageIndex=1&searchCnd=&searchWrd=",
+    "source_type": "press release",
     "publication_date": "2026-05-28",
     "added_date": "2026-11-14",
     "verification_status": "verified",
@@ -5704,7 +5704,7 @@
   {
     "id": "2025-04-sentinel2-methane-super-emitters",
     "title": "Deep transfer learning detects methane super-emitters in oil and gas fields from Sentinel-2",
-    "summary": "A two-part framework (adaptive artifact removal plus a deep subdomain adaptation network) was trained on 1,627 Sentinel-2 images from six known methane super-emitters. Applied to an unannotated oil field in Algeria, it flagged 34 anomalous emission events over one year, attributed to three super-emitters linked to production and transmission infrastructure. Reported transfer-task F1 is about 0.78, and detections were not independently verified in the field in the summary consulted.",
+    "summary": "A two-part framework (adaptive artifact removal plus a deep subdomain adaptation network) was trained on 1,627 Sentinel-2 images from six known methane super-emitters. Applied to an unannotated oil field in Algeria, it flagged 34 anomalous emission events over one year, attributed to three super-emitters linked to production and transmission infrastructure. DSAN achieved an average macro F1 of 0.86 on transfer tasks, versus 0.78 for the EfficientNet-V2L comparator; independent field verification is not reported in the abstract.",
     "field": "climate",
     "ai_technology": "Deep subdomain adaptation network (DSAN) with low-reflectance artifact detection (LRAD)",
     "organization": "Westlake University; Zhejiang University; Harvard University",
@@ -5925,25 +5925,6 @@
     "paper_url": "https://doi.org/10.1038/s41746-023-00986-6",
     "relevance": {
       "impact": 5,
-      "validation": 3,
-      "novelty": 4
-    }
-  },
-  {
-    "id": "2024-03-uni-pathology-foundation-model",
-    "title": "UNI: a general-purpose foundation model for computational pathology",
-    "summary": "UNI was pretrained on more than 100 million image patches from over 100,000 H&E whole-slide images across 20 major tissue types. Across 34 pathology tasks, including cancer classification and transplant-rejection assessment, it outperformed established pathology AI models. Evaluation is retrospective, and the weights are gated under a non-commercial academic licence.",
-    "field": "medicine",
-    "ai_technology": "UNI (self-supervised vision transformer foundation model for pathology)",
-    "organization": "Mass General Brigham; Harvard Medical School",
-    "source_url": "https://www.nature.com/articles/s41591-024-02857-3",
-    "source_type": "paper",
-    "publication_date": "2024-03-19",
-    "added_date": "2026-11-14",
-    "verification_status": "verified",
-    "paper_url": "https://doi.org/10.1038/s41591-024-02857-3",
-    "relevance": {
-      "impact": 4,
       "validation": 3,
       "novelty": 4
     }

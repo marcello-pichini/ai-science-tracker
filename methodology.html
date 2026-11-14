@@ -60,6 +60,8 @@
     <li>Announcements without results yet (funding, collaborations, interviews).</li>
   </ul>
 
+  <p>Entries that do not meet the discovery criteria can be archived while their historical pages remain available. Archived entries are excluded from discovery lists, counts and statistics. The <a href="share/2024-03-uni-pathology-foundation-model.html">UNI pathology model entry</a> is retained this way because it reports retrospective method benchmarks rather than a qualifying scientific discovery.</p>
+
   <h2>The models page</h2>
   <p>The <a href="models.html">Models</a> page answers a different question: which model families are linked by name to catalog discoveries. It lists releases from leading labs since 2020, plus models from any date linked to a discovery.</p>
   <p>We do not collect model names, labs, dates, domains, parameter counts, or access information ourselves. They come from the database <a href="https://epoch.ai/data/ai-models" rel="noopener">Data on AI models</a> from Epoch AI, republished under <a href="https://creativecommons.org/licenses/by/4.0/" rel="noopener">CC BY 4.0</a>. Their stated limitations apply: the list is not exhaustive, and compute and parameter figures are estimates.</p>
@@ -70,11 +72,11 @@
   <p>Discovery context, public disclosure, AI attribution and documented remediation are distinct. A previously unknown pre-release bug is not automatically an exploited zero-day. Zero-day context remains attributed to the cited account, and documented fixes do not establish deployment or current safety. No attack is inferred from a vulnerability announcement.</p>
 
   <h2>What “Source checked” means</h2>
-  <p>The stored verification status “verified” is displayed as “Source checked.” We have read the official page and checked that the title, date, organization, and figures in the summary match it. This does not mean others have independently confirmed the result: figures are reported by sources and are often “up to” values or results from controlled conditions. The summary reports limits stated by the source (lab-only, mice-only, not clinically validated, or preprint).</p>
-  <p>An entry marked “needs verification” has a source that has not been read in full, or contains conflicting information.</p>
+  <p>The stored verification status “verified” is displayed as “Source checked.” We have read the cited original source material and checked that it supports the title, date, organization, and figures reported in the summary. A paper abstract and its publication metadata can support a limited summary; this does not imply that we reviewed the full paper. Where review is limited to an abstract or an institutional announcement, the summary states that scope and does not treat missing details as established facts. This does not mean others have independently confirmed the result: figures are source-reported and may describe controlled conditions. The summary preserves stated limits such as lab-only, mice-only, not clinically validated, or preprint.</p>
+  <p>An entry marked “needs verification” has an unresolved source check, such as an unconfirmed date or organization, an unsupported reported figure, or conflicting information. A caveat does not turn an unresolved factual claim into a checked one; claims must be supported, corrected or removed before the status becomes “Source checked.”</p>
 
   <h2>Evidence context (pilot)</h2>
-  <p>A small pilot adds an optional &ldquo;Evidence context&rdquo; to the source details of 12 entries: publication status, what was tested, what the sources say is still unknown, and what the AI system did. Every statement comes from pages that were read for the annotation, which are listed in the data file; nothing is inferred from the website, keywords or the relevance score, and it does not change any score. Where a page could not be read, the field says &ldquo;Not reported&rdquo;. It is not a validation grade.</p>
+  <p>A small pilot adds an optional &ldquo;Evidence context&rdquo; to the source details of selected entries: publication status, what was tested, what the sources say is still unknown, and what the AI system did. Every statement comes from pages that were read for the annotation, which are listed in the data file; nothing is inferred from the website, keywords or the relevance score, and it does not change any score. Where a page could not be read, the field says &ldquo;Not reported&rdquo;. It is not a validation grade.</p>
 
   <h2>Relevance score</h2>
   <p>Each entry has a score from 0 to 100: the average of three criteria, each scored from 1 to 5, multiplied by 20. This is an editorial judgment, not an objective measure. It helps sort entries and compare categories; hover over a score to see its three criteria.</p>
@@ -92,7 +94,7 @@
   <p>The source composition counts each entry by its primary source type, not by evidence quality. “Most recent catalog addition” uses the addition date; it does not indicate the last scientific review or follow-up check.</p>
 
   <h2>How we choose the date</h2>
-  <p>We use the date of the first official announcement. If a journal publication comes later, it remains in the summary. When a page’s date conflicts with its text, we use the date consistent with the facts and note the discrepancy (for example, DeepMind’s post about the first 350,000 AlphaFold Database structures is dated 2022 but describes events in 2021).</p>
+  <p>We use the documented announcement or publication date of the result represented by the entry. For paper-based entries, this can be a preprint or journal publication date; the summary identifies the version when the distinction matters. A later institutional release can support an earlier paper date if it explicitly states it, and the summary distinguishes the two dates. These dates do not establish priority over every earlier version or announcement. When a page’s date conflicts with its text, we note the discrepancy (for example, DeepMind’s post about the first 350,000 AlphaFold Database structures is dated 2022 but describes events in 2021). Historical IDs remain stable when a date or source is corrected.</p>
 
   <h2>Data structure</h2>
   <p>Each entry is a record in <code>data/discoveries.json</code>:</p>
