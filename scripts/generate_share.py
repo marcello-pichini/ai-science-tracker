@@ -157,8 +157,8 @@ def render_cards(items, force):
             out = out_dir / f'{name}.png'
             if force or not out.exists() or hashes.get(name) != digest:
                 page.write_text(content)
-                screenshot(page, out)
                 print(f'card {name}', file=sys.stderr)
+                screenshot(page, out)
     manifest_path.write_text(json.dumps(updated, indent=2, sort_keys=True) + '\n')
 
 
