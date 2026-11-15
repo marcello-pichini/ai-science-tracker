@@ -1,5 +1,6 @@
 """Mechanical checks for docs/DESIGN.md: every page shares one frame and one stylesheet."""
 import re
+import hashlib
 import unittest
 from pathlib import Path
 
@@ -14,6 +15,15 @@ def css_outside_root(css):
 
 
 class DesignTests(unittest.TestCase):
+    def test_shared_script_urls_identify_the_current_content(self):
+        digest = hashlib.sha256((ROOT / 'assets/catalog-ui.js').read_bytes()).hexdigest()[:12]
+        for page in PAGES:
+            sources = re.findall(r'<script src="([^"]+)"', page.read_text())
+            for source in sources:
+                if source.startswith('assets/catalog-ui.js'):
+                    with self.subTest(page=page.name):
+                        self.assertEqual(source, f'assets/catalog-ui.js?v={digest}')
+
     def test_pages_share_the_frame(self):
         self.assertTrue(PAGES)
         for page in PAGES:
