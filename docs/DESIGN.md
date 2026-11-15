@@ -37,6 +37,7 @@ Every page has the same frame, in this order: shared `<head>` (charset, viewport
 - No external scripts, fonts, trackers or CDNs. The site is static files served by GitHub Pages; JSON is fetched from `data/`.
 - Pages must work at 320 px without horizontal scrolling.
 - Long record lists may defer offscreen layout with `content-visibility:auto`; keep the first four records eager, estimate only intrinsic height, and restore full layout in print. Initial catalog and model summaries are generated from the data to avoid loading shifts.
+- Navigation across deferred discovery records uses instant scrolling to keep the focused destination in view as estimated heights change.
 
 ## Links and sharing
 

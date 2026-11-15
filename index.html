@@ -218,7 +218,8 @@ function vaiA(id) {
   const el = document.getElementById(id); if (!el) return;
   document.querySelectorAll(".voce.evid").forEach(v => v.classList.remove("evid"));
   el.classList.add("evid");
-  CatalogUI.focusEntry(el, { block:"center", behavior: ridotto.matches ? "auto" : "smooth" });
+  // Deferred records change height as they enter view, shifting animated destinations.
+  CatalogUI.focusEntry(el, { block:"center", behavior:"instant" });
   history.replaceState(null, "", location.pathname + filterQuery() + "#discovery=" + encodeURIComponent(id));
 }
 

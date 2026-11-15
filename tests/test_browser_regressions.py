@@ -73,6 +73,16 @@ class BrowserRegressionTests(unittest.TestCase):
         result = subprocess.run(['node', '-e', HARNESS + code], cwd=ROOT, text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_discovery_navigation_does_not_animate_over_deferred_records(self):
+        self.run_js(r'''
+const p = page('index.html');
+p.run('items = ' + JSON.stringify(records) + '; grafici = () => {}; lista(); ridotto.matches = false;');
+p.run('CatalogUI.focusEntry = (entry, options) => { globalThis.navigation = {id:entry.id, ...options}; }; vaiA("d89");');
+assert.equal(p.run('navigation.id'), 'd89');
+assert.equal(p.run('navigation.block'), 'center');
+assert.equal(p.run('navigation.behavior'), 'instant', 'Estimated offscreen heights must not shift an animated destination');
+''')
+
     def test_print_opens_all_disclosures_and_restores_reader_state(self):
         self.run_js(r'''
 const p = page('index.html');
