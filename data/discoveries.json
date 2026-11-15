@@ -10918,7 +10918,7 @@
     "field": "medicine",
     "ai_technology": "CAIMAN (Colorectal AI Model for Abnormality Detection), a weakly supervised deep-learning whole-slide image classifier",
     "organization": "University of Warwick, University Hospitals Coventry and Warwickshire NHS Foundation Trust, collaborating UK hospitals and IMP Diagnostics (Portugal)",
-    "source_url": "https://wrap.warwick.ac.uk/id/eprint/180883/1/1-s2.0-S2589750023001486-main.pdf",
+    "source_url": "https://wrap.warwick.ac.uk/id/eprint/180883/",
     "source_type": "paper",
     "publication_date": "2023-10-25",
     "added_date": "2026-11-15",
@@ -10935,7 +10935,7 @@
       "unknown": "Retrospective validation on archived biopsies does not establish clinical deployment or improved patient outcomes. CAIMAN did not outperform IDaRS at 99% sensitivity in one of the three external validation cohorts; the authors call for larger multicentre validation and a clinical trial. The reported 99% sensitivity is paired with cohort-specific specificity, not a universal performance guarantee.",
       "ai_role": "AI learned biopsy-level histological patterns from slide-level diagnostic labels, then classified whole-slide images into typical, atypical non-neoplastic or atypical neoplastic classes. The trained frozen model was evaluated on three external cohorts; the reported finding is a specific retrospective clinical diagnostic-validation result.",
       "evidence_urls": [
-        "https://wrap.warwick.ac.uk/id/eprint/180883/1/1-s2.0-S2589750023001486-main.pdf"
+        "https://wrap.warwick.ac.uk/id/eprint/180883/"
       ]
     }
   },
@@ -11450,7 +11450,7 @@
     "field": "biology",
     "ai_technology": "CODA (Computational Optimization of DNA Activity) with Malinois deep neural network and AdaLead, simulated annealing, and Fast SeqProp sequence search/design algorithms",
     "organization": "Broad Institute of MIT and Harvard; The Jackson Laboratory; Yale University",
-    "source_url": "https://cbdm.hms.harvard.edu/assets/Articles/s41586-024-08070-z.pdf",
+    "source_url": "https://www.nature.com/articles/s41586-024-08070-z",
     "source_type": "paper",
     "publication_date": "2024-10-23",
     "added_date": "2026-11-15",
@@ -11467,7 +11467,7 @@
       "unknown": "The in-vitro work used three transformed human cell lines and reporter assays. In-vivo testing covered a small selected set: two of three liver-directed and two of three neuron-directed elements were active in zebrafish; mouse validation focused on neuronal synN1, with n=3 synN1 mice for postnatal cell-type analysis and n=6 for the 5-week cortical reporter assay. These are transgenic reporter results, not therapeutic delivery or evidence of clinical utility. Earlier synthetic enhancer studies existed; this paper’s counted result is its CODA/Malinois comparison against natural sequences plus selected vertebrate validation, not the general idea of AI-designed enhancers.",
       "ai_role": "Malinois predicted MPRA activity of candidate DNA sequences in K562, HepG2 and SK-N-SH cells; CODA iteratively optimized sequences for specified cell-type specificity. Researchers synthesized and experimentally measured the designs by MPRA, then tested selected CREs with reporter constructs in zebrafish and mice. The paper attributes the novel sequences and their measured expression specificity to this model-guided design loop.",
       "evidence_urls": [
-        "https://cbdm.hms.harvard.edu/assets/Articles/s41586-024-08070-z.pdf"
+        "https://www.nature.com/articles/s41586-024-08070-z"
       ]
     }
   },
@@ -18594,7 +18594,7 @@
     "field": "physics",
     "ai_technology": "ParticleNet mass-decorrelated graph neural network jet tagger",
     "organization": "CMS Collaboration",
-    "source_url": "https://cms-results.web.cern.ch/cms-results/publications/SMP-24-012/index.html",
+    "source_url": "https://cms-results.web.cern.ch/cms-results/public-results/publications/SMP-24-012/index.html",
     "source_type": "paper",
     "publication_date": "2026-03-20",
     "added_date": "2026-11-15",
@@ -18611,7 +18611,7 @@
       "unknown": "This is an all-jets boosted-W extraction with 0.55 GeV total uncertainty, much less precise than the CMS leptonic-channel W-mass result; the paper frames it as a first step toward future all-jets precision measurements and as a test of jet-substructure modeling. The earlier preliminary CMS result of 80.77 ± 0.57 GeV was superseded by this same paper’s published 80.83 ± 0.55 GeV result and is not counted separately. Jet tagging, QCD background estimation, unfolding, hadronization and jet-energy modeling contribute analysis dependence and uncertainties.",
       "ai_role": "The analysis uses ParticleNet as its main W-jet tagger. Its graph neural network treats jet constituents as an unordered particle cloud and classifies W→qq′ jets against QCD multijet backgrounds; its mass-decorrelated output defines the signal/control regions used for the primary measurement. The N₂ substructure observable is a separate cross-check.",
       "evidence_urls": [
-        "https://cms-results.web.cern.ch/cms-results/publications/SMP-24-012/index.html"
+        "https://cms-results.web.cern.ch/cms-results/public-results/publications/SMP-24-012/index.html"
       ]
     }
   },
