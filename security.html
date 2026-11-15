@@ -82,7 +82,7 @@ const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;",
 const safeUrl = value => /^https:\/\//.test(value) ? value : "#";
 const date = value => new Intl.DateTimeFormat("en-GB", {day:"numeric",month:"short",year:"numeric"}).format(new Date(value + "T12:00:00"));
 const labels = {undisclosed:"Undisclosed at discovery (source report)", "pre-release":"Pre-release finding", disclosure:"Vulnerability disclosure"};
-let cases = [], year = "";
+let cases = [], year = "", shown = 40;
 /* Bar rows reuse the catalog chart classes; a row toggles the year filter or the context select. */
 function rows(key, entries) {
   const max = Math.max(...entries.map(entry => entry[2]));
@@ -108,7 +108,7 @@ function render() {
     (!$("context").value || record.classification === $("context").value) &&
     (!query || [record.title,record.product,record.ai_system,record.organization,record.summary,...record.cves].join(" ").toLowerCase().includes(query)));
   $("count").textContent = `${selected.length} of ${cases.length} tracked cases`;
-  $("cases").innerHTML = selected.map(record => `<article class="voce" id="${esc(record.id)}">
+  $("cases").innerHTML = selected.slice(0, shown).map(record => `<article class="voce" id="${esc(record.id)}">
     <div class="voce-meta"><time datetime="${esc(record.disclosure_date)}">Disclosed ${esc(date(record.disclosure_date))}</time><span>${esc(record.organization)}</span></div>
     <h3><a href="#${esc(record.id)}">${esc(record.title)}</a></h3>
     <p class="sommario">${esc(record.summary)}</p>
@@ -122,8 +122,17 @@ function render() {
       <p><strong>Remediation:</strong> ${esc(record.remediation_note)}</p>
       <p>${record.ai_attribution_date ? `AI attribution dated ${esc(date(record.ai_attribution_date))}` : 'AI attribution date not established by the source'}. Sources checked ${esc(date(record.checked_date))}; this is not a live patch-status check.</p>
     </details>
-  </article>`).join("") || '<p class="vuoto">No disclosures match these filters. Try clearing a filter.</p>';
+  </article>`).join("") + (selected.length > shown ? `<p><button class="piu" id="more" type="button">Show 40 more of ${selected.length - shown} remaining</button></p>` : "")
+    || '<p class="vuoto">No disclosures match these filters. Try clearing a filter.</p>';
 }
+// A linked case beyond the first page is loaded before scrolling to it.
+function openHash() {
+  const id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
+  const i = cases.findIndex(record => record.id === id);
+  if (i >= shown) { shown = i + 1; render(); }
+  document.getElementById(id)?.scrollIntoView();
+}
+addEventListener("hashchange", openHash);
 fetch("data/vulnerabilities.json").then(response => {
   if (!response.ok) throw new Error("Disclosure data unavailable");
   return response.json();
@@ -135,13 +144,14 @@ fetch("data/vulnerabilities.json").then(response => {
   const cves = new Set(cases.flatMap(record => record.cves));
   $("coverage").textContent = `${cases.length} selected cases, ${cves.size} named CVEs, ${products.length} products. Manual and non-exhaustive; case counts are not totals of every vulnerability reported by each model.`;
   charts(); render();
-  if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+  openHash();
 }).catch(() => {
   $("coverage").textContent = "Disclosure data could not be loaded.";
   $("cases").innerHTML = '<p><a href="data/vulnerabilities.json">Open the disclosure dataset</a> or reload the page.</p>';
 });
-["q","product","context"].forEach(id => $(id).addEventListener("input",render));
-$("reset").addEventListener("click",()=>{["q","product","context"].forEach(id=>$(id).value="");year="";render();});
+["q","product","context"].forEach(id => $(id).addEventListener("input",()=>{shown=40;render();}));
+$("cases").addEventListener("click",e=>{if(e.target.id==="more"){shown+=40;render();}});
+$("reset").addEventListener("click",()=>{["q","product","context"].forEach(id=>$(id).value="");year="";shown=40;render();});
 </script>
 </body>
 </html>

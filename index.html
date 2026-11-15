@@ -115,6 +115,8 @@
 
 <script src="assets/catalog-ui.js?v=c3a8994f0fa4"></script>
 <script>
+// Object.groupBy is missing before Safari 17.4 and Chrome 117.
+Object.groupBy ??= (xs, f) => xs.reduce((o, x) => ((o[f(x)] ??= []).push(x), o), {});
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeUrl = u => /^https?:\/\//.test(u) ? u : "#";
