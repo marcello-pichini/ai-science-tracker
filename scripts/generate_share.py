@@ -189,7 +189,7 @@ PAGE = """<!doctype html>
 <link rel="stylesheet" href="styles.css">
 {jsonld}
 </head>
-<body>
+<body class="static-page">
 {header}
 
 <section class="banda banda-bassa" aria-labelledby="titolo-pagina">
@@ -610,6 +610,21 @@ def validate_inputs(items, archived, models, vulns):
 BROWSE_START, BROWSE_END = '<!-- browse:start -->', '<!-- browse:end -->'
 
 
+def write_page_summaries(items, models):
+    summaries = {
+        'index.html': (f'<b>{len(items)} discoveries</b> in {len({d["field"] for d in items})} fields and '
+                       f'{len({lead_org(d["organization"]) for d in items})} organizations since 2020. '
+                       'Each mark below represents one discovery; taller means more relevant.'),
+        'models.html': (f'<b>{len(models["models"])} releases</b> from leading labs since 2020, using Epoch AI data. '
+                        f'<b>{sum(f.get("discovery_count", 0) > 0 for f in models["families"])} families</b> of models are matched by name '
+                        f'to at least one of {len(items)} catalog discoveries, covering {len(models.get("linked_discoveries", []))} discoveries in total.')}
+    for name, summary in summaries.items():
+        path = ROOT / name
+        if path.exists():
+            path.write_text(re.sub(r'(<p class="lead" id="lead">).*?(</p>)',
+                                   lambda m: m[1] + summary + m[2], path.read_text(), flags=re.S))
+
+
 def write_home_browse(items):
     """Write plain links to every entry page into index.html, grouped by year, so search
     engines and readers without JavaScript reach each entry in one step from the home page."""
@@ -645,6 +660,7 @@ def main():
     models = json.loads((ROOT / 'data/models.json').read_text())
     vulns = json.loads((ROOT / 'data/vulnerabilities.json').read_text())
     validate_inputs(items, archived, models, vulns)
+    write_page_summaries(items, models)
     write_home_browse(items)
     if not args.no_images:
         render_cards(items + archived, args.force)

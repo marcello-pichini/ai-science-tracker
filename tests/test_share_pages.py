@@ -248,6 +248,17 @@ class SharePageTests(unittest.TestCase):
         self.assertEqual(profile['breadcrumb']['itemListElement'][-1]['item'], profile['url'])
         self.assertEqual(profile['isPartOf']['@id'], data['isPartOf']['@id'])
 
+    def test_generated_summaries_reserve_the_same_text_as_loaded_pages(self):
+        g = self.generator
+        for name in ('index.html', 'models.html'):
+            (g.ROOT / name).write_text('<p class="lead" id="lead">Loading…</p>')
+        models = {'models': [{}, {}], 'families': [{'discovery_count': 1}, {'discovery_count': 0}], 'linked_discoveries': ['test-discovery']}
+        g.write_page_summaries([self.record], models)
+        self.assertIn('<b>1 discoveries</b> in 1 fields and 1 organizations', (g.ROOT / 'index.html').read_text())
+        self.assertIn('<b>2 releases</b>', (g.ROOT / 'models.html').read_text())
+        self.assertIn('<b>1 families</b>', (g.ROOT / 'models.html').read_text())
+        self.assertIn('covering 1 discoveries in total.', (g.ROOT / 'models.html').read_text())
+
 
     def test_ambiguous_old_institution_profiles_do_not_pick_a_campus(self):
         g = self.generator

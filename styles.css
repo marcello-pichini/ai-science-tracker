@@ -60,6 +60,10 @@ a:hover { text-decoration-thickness:2px; }
 .banda .lead b { color:var(--on-prussia); font-weight:700; }
 .figura { margin:clamp(24px,4vw,44px) 0 0; position:relative; }
 .figura svg { display:block; width:100%; height:auto; overflow:visible; }
+/* Reserve chart space before the data arrives. */
+#spettro { min-height:228px; }
+#nuvola { min-height:360px; }
+@media (max-width:608px) { #nuvola { min-height:300px; } }
 .figura .asse { stroke:var(--prussia-line); stroke-width:1; vector-effect:non-scaling-stroke; }
 .figura .tick { fill:var(--on-prussia-2); font:500 12px var(--font); }
 .figura .tick.y { text-anchor:end; }
@@ -128,6 +132,11 @@ main { padding:0 0 72px; }
 .tab-mini { border-collapse:collapse; margin-top:8px; font-variant-numeric:tabular-nums; }
 .tab-mini th, .tab-mini td { padding:4px 16px 4px 0; text-align:left; border-bottom:1px solid var(--line); }
 .tab-mini td + td, .tab-mini th + th { text-align:right; }
+
+/* Keep distant records searchable while deferring their layout and paint. */
+.static-page .piatto > .voce:nth-of-type(n+5), #lista .voce:nth-of-type(n+5), #cases > .voce:nth-of-type(n+5) {
+  content-visibility:auto; contain-intrinsic-size:none auto 650px;
+}
 
 /* tooltip */
 .tip { position:fixed; z-index:50; pointer-events:none; background:var(--ink); color:var(--paper); border-radius:10px; padding:9px 12px; font-size:.8125rem; line-height:1.4; max-width:300px; box-shadow:0 8px 24px rgba(5,14,40,.28); opacity:0; transition:opacity .12s; }
@@ -251,6 +260,7 @@ main { padding:0 0 72px; }
   * { transition:none!important; scroll-behavior:auto!important; }
 }
 @media print {
+  .static-page .piatto > .voce, #lista .voce, #cases > .voce { content-visibility:visible!important; contain-intrinsic-size:none!important; }
   .header, .filtri, .tip, .menu { display:none; }
   .banda { background:none; color:#000; }
 }
