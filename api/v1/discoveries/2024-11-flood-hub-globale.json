@@ -13,7 +13,17 @@
   "paper_url": "https://doi.org/10.1038/s41586-024-07145-1",
   "relevance": {
     "impact": 4,
-    "validation": 4,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Announcement only",
+    "tested": "Gauged basins were checked with standard cross-validation, and ungauged locations were checked against Sentinel-1 radar inundation images; reliability was compared using Nash-Sutcliffe efficiency distributions across 3,079 basins.",
+    "unknown": "Ungauged validation covers only a fraction of locations, flash, urban and coastal floods are out of scope, and virtual-gauge forecasts are unverified.",
+    "ai_role": "An LSTM network takes meteorological time series and static catchment attributes, adds input from DeepMind's medium-range forecast model, and outputs a probabilistic streamflow distribution.",
+    "evidence_urls": [
+      "https://research.google/blog/a-flood-forecasting-ai-model-trained-and-evaluated-globally/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

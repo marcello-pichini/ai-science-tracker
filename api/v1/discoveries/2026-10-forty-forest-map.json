@@ -13,7 +13,17 @@
   "paper_url": "https://doi.org/10.1038/s41597-026-08299-5",
   "relevance": {
     "impact": 3,
-    "validation": 3,
+    "validation": 2,
     "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The map was validated at more than 9,000 random sites, where two trained experts checked high-resolution imagery to determine land type: correct forest type in 90% of cases and forest vs non-forest in 95%.",
+    "unknown": "Per-class accuracy and regional breakdowns are not reported, the time series is early-release without separate validation, and results depend on the probability threshold chosen.",
+    "ai_role": "A custom remote-sensing model trained on about 1.7 million labeled locations, using AlphaEarth embeddings, outputs probabilities for six forest and land-use classes.",
+    "evidence_urls": [
+      "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

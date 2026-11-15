@@ -13,7 +13,17 @@
   "paper_url": "https://arxiv.org/pdf/2510.06189v1",
   "relevance": {
     "impact": 3,
-    "validation": 3,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Generated systems algorithms were run against predefined workloads in real systems or simulators and compared with state-of-the-art human designs across case studies (cloud load balancing, MoE inference, LLM SQL queries, transaction scheduling). The abstract reports up to 5.0x runtime improvement or 50% cost reduction.",
+    "unknown": "The method assumes a reliable verifier, which the authors present as a precondition; the page has no dedicated limitations section and the work is a preprint.",
+    "ai_role": "An LLM-driven generate-evaluate-refine loop (penEvolve, an open-source ADRS instance) proposed the algorithms.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2510.06189"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

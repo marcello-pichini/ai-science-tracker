@@ -15,5 +15,15 @@
     "impact": 3,
     "validation": 2,
     "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Announcement only",
+    "tested": "Biomni's case studies (GWAS analysis, cloning design blind-evaluated against a postdoc, embryonic-tissue cell analysis) were checked by the Biomni team, citing a bioRxiv preprint; MozzareLLM was assessed qualitatively by its lab, with no quantitative benchmark.",
+    "unknown": "The article says the validation is not independent, some figures are estimates (such as the three-week human comparison), and Biomni cannot yet do everything out of the box.",
+    "ai_role": "A Claude-powered agent (Biomni) analysed GWAS and embryonic cell data and suggested transcription factors; a Claude-powered system (MozzareLLM) interprets gene clusters from CRISPR screens.",
+    "evidence_urls": [
+      "https://www.anthropic.com/news/accelerating-scientific-research"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

@@ -13,7 +13,17 @@
   "paper_url": "https://doi.org/10.1038/s41586-024-07744-y",
   "relevance": {
     "impact": 4,
-    "validation": 4,
+    "validation": 2,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Evaluated with the WeatherBench 2 benchmark against ECMWF-ENS (better in 95% of 2-15 day cases at 1.4 degrees) and against AMIP climate baselines for 1980-2020 temperature (0.25 vs 0.75 degrees C error).",
+    "unknown": "The model covers only the atmosphere and is not yet a complete climate model; oceans and the carbon cycle are future goals.",
+    "ai_role": "A neural network learns small-scale physics such as cloud formation, replacing hand-built parameterizations, coupled to a physics-based fluid dynamics solver.",
+    "evidence_urls": [
+      "https://research.google/blog/fast-accurate-climate-modeling-with-neuralgcm/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

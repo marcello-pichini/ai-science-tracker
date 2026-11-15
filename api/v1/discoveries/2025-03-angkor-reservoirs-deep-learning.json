@@ -13,7 +13,17 @@
   "paper_url": "https://pubmed.ncbi.nlm.nih.gov/40138322/",
   "relevance": {
     "impact": 3,
-    "validation": 3,
+    "validation": 2,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A DeepLabV3+ model trained on about 3,600 samples mapped Angkor-period reservoirs in satellite imagery and was compared with a trained human interpreter; the best F1 score was 45% in favourable regions.",
+    "unknown": "The abstract states no limitations; the authors present the model as a second opinion that requires human validation.",
+    "ai_role": "DeepLabV3+ semantic segmentation detected Angkor-period reservoirs in satellite imagery.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1371/journal.pone.0320452&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

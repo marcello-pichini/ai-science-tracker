@@ -13,7 +13,18 @@
   "paper_url": "https://arxiv.org/abs/2601.02484",
   "relevance": {
     "impact": 3,
-    "validation": 3,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Results are validated against EVENT2 Monte Carlo simulations, with analytic curves matching the histograms; the paper does not describe a comparison with experimental data, and the author checked each step, with GPT and Gemini cross-checking the written calculations.",
+    "unknown": "The paper does not describe comparison with experimental data (the author mentions a follow-up project for this); the author states that LLMs cannot yet do original theoretical physics autonomously and that the work needed expert evaluation.",
+    "ai_role": "Claude Opus 4.5, run through Claude Code, performed the calculations including the factorization derivation, numerical analysis, simulations and manuscript preparation, under physicist supervision.",
+    "evidence_urls": [
+      "https://www.anthropic.com/research/vibe-physics",
+      "https://arxiv.org/abs/2601.02484"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

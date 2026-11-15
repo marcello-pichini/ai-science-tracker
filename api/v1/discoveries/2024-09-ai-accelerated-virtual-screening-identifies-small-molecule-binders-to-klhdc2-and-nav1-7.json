@@ -13,7 +13,7 @@
   "paper_url": "https://doi.org/10.1038/s41467-024-52061-7",
   "relevance": {
     "impact": 3,
-    "validation": 4,
+    "validation": 3,
     "novelty": 3
   },
   "evidence": {
@@ -23,6 +23,7 @@
     "ai_role": "The target-specific neural network used docking-labeled data to guide which molecules were prioritized for additional expensive docking over iterative multi-billion-compound screens; RosettaVS/RosettaGenFF-VS performed physics-based docking and pose/affinity scoring. The AI-guided screen nominated molecules that were synthesized and experimentally tested. Experiments confirmed KLHDC2 degron displacement and a crystal structure matching the predicted pose, plus Naᵥ1.7 binding/inhibition in patch clamp. The paper attributes discovery to the combined AI-accelerated and physics-based workflow, not to a generative model alone.",
     "evidence_urls": [
       "https://www.nature.com/articles/s41467-024-52061-7.pdf"
-    ]
+    ],
+    "test_type": "direct test"
   }
 }

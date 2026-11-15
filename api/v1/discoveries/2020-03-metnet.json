@@ -15,5 +15,16 @@
     "impact": 3,
     "validation": 2,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Evaluated on a precipitation-rate forecasting benchmark against NWP (HRRR) and an optical-flow baseline, scored by F1 at 1.0 mm/h; outperforms NWP at forecasts up to about 7 to 8 hours.",
+    "unknown": "Demonstrated only for the continental US; the authors call it a small stepping stone; comparisons are author-run.",
+    "ai_role": "Deep neural network with axial self-attention forecasting precipitation probabilities from radar and satellite inputs, without physical equations.",
+    "evidence_urls": [
+      "https://research.google/blog/a-neural-weather-model-for-eight-hour-precipitation-forecasting/",
+      "https://arxiv.org/abs/2003.12140"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

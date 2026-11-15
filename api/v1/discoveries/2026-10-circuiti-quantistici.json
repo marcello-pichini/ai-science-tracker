@@ -13,7 +13,17 @@
   "paper_url": "https://arxiv.org/abs/2610.22367",
   "relevance": {
     "impact": 3,
-    "validation": 4,
+    "validation": 2,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "An automated evaluator checked each circuit for correctness and scored qubits times gates; results were compared with published designs, divsteps was checked by simulation and Lean, and decoder memory was measured over 403 million simulated decodings.",
+    "unknown": "The decoder memory shortcut fails about once in 10,000 runs; gains apply to individual primitives, not a full fault-tolerant machine; Claude was conservative and needed prompts to broaden its search.",
+    "ai_role": "Claude wrote circuits as Python code and revised them in a closed loop with evaluator feedback, with no human input between rounds, and reconstructed branch information to reduce memory.",
+    "evidence_urls": [
+      "https://www.anthropic.com/research/designing-efficient-quantum-circuits"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

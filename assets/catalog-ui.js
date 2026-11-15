@@ -1,5 +1,18 @@
 /* Shared source explanations, correction drafts and descriptive catalog metrics. */
 globalThis.CatalogUI = {
+  // Validation level of each source-stated test type (methodology.html, "Evidence level").
+  testLevels: {'not reported':1, 'retrospective or benchmark':2, 'direct test':3, 'prospective or independent check':4, 'replication or operational use':5},
+  // Relevance 20-100: mean of the three subscores x 20, but never more than one level above the evidence (validation + 1) x 20.
+  score(record) {
+    const r = record.relevance;
+    return Math.min(Math.round((r.impact + r.validation + r.novelty) / 3 * 20), (r.validation + 1) * 20);
+  },
+  citationLine(record) {
+    const c = record.citation;
+    if (!c) return '';
+    const band = c.top_1 ? 'in the top 1%' : c.top_10 ? 'in the top 10%' : `at percentile ${Math.round(c.percentile)}`;
+    return `<p>Citations: ${band} of works of the same type, year and subfield (OpenAlex, ${c.cited_by} citations). Attention, not a measure of correctness; not part of the score.</p>`;
+  },
   sourceDetails(record) {
     const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const checked = record.verification_status === 'verified';
@@ -7,14 +20,15 @@ globalThis.CatalogUI = {
       <p>${checked ? 'The source page was checked against this entry.' : 'The source has not been fully checked or contains conflicting information.'} Independent confirmation is not assessed by this label.</p>
       <p>Source type: ${esc(record.source_type)}. Paper: ${record.paper_url ? 'linked separately' : 'not linked in this catalog; this does not mean no paper exists'}.</p>
       ${this.evidenceBlock(record)}
-      <p>Editorial assessment: Impact ${esc(record.relevance.impact)}/5 · Validation ${esc(record.relevance.validation)}/5 · Novelty ${esc(record.relevance.novelty)}/5. These are editorial judgments, not an evidence grade. <a href="methodology.html">Scoring criteria</a>.</p></details>`;
+      ${this.citationLine(record)}
+      <p>Editorial assessment: Impact ${esc(record.relevance.impact)}/5 · Validation ${esc(record.relevance.validation)}/5 · Novelty ${esc(record.relevance.novelty)}/5. Impact and novelty are editorial judgments; validation follows the annotated test type where one exists. Not an evidence grade. <a href="methodology.html">Scoring criteria</a>.</p></details>`;
   },
   // Optional, source-stated context for pilot records; absent for most entries. It never feeds the relevance score.
   evidenceBlock(record) {
     const e = record.evidence;
     if (!e) return '';
     const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    const rows = [['Publication status', e.publication_status], ['Tested', e.tested], ['Still unknown', e.unknown], ['AI role', e.ai_role]]
+    const rows = [['Publication status', e.publication_status], ['Test type', e.test_type], ['Tested', e.tested], ['Still unknown', e.unknown], ['AI role', e.ai_role]]
       .map(([label, value]) => `<li><b>${label}:</b> ${esc(value)}</li>`).join('');
     const links = (e.evidence_urls || []).filter(url => {
       try { return /^https?:\/\//i.test(url) && ['http:', 'https:'].includes(new URL(url).protocol); } catch { return false; }
@@ -155,7 +169,7 @@ globalThis.CatalogUI = {
       const year = record.publication_date.slice(0, 4), r = record.relevance;
       const group = years[year] ||= {count:0, total:0};
       group.count++;
-      group.total += Math.round((r.impact + r.validation + r.novelty) / 3 * 20);
+      group.total += this.score(record);
     }
     return Object.keys(years).sort().map(year => ({year, count:years[year].count, mean:Math.round(years[year].total / years[year].count)}));
   }

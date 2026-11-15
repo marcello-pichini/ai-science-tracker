@@ -13,7 +13,17 @@
   "paper_url": "https://pubmed.ncbi.nlm.nih.gov/32339081/",
   "relevance": {
     "impact": 4,
-    "validation": 3,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A CT model was tested on an internal split and on an independent test set from separate hospitals, and six radiologists read cases unassisted and then with the model's probabilities.",
+    "unknown": "The abstract states no limitations section; performance on independent data was lower (87% vs 96% accuracy) and the sensitivity confidence interval is wide.",
+    "ai_role": "The AI classified COVID-19 versus other pneumonia on CT slices and its probabilities were shown to radiologists as decision support.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1148/radiol.2020201491&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

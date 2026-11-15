@@ -13,7 +13,17 @@
   "paper_url": "https://doi.org/10.1038/s41586-023-06747-5",
   "relevance": {
     "impact": 3,
-    "validation": 3,
+    "validation": 2,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "On the IMO-AG-30 benchmark of 30 Olympiad geometry problems, the system solved 25 versus 10 for the previous method, with each solution checked by computer.",
+    "unknown": "It covers geometry only, roughly a third of Olympiad problems, and approaches but does not match gold-medalist performance.",
+    "ai_role": "A language model proposes auxiliary constructions and a symbolic engine derives proofs, looping until a proof is found.",
+    "evidence_urls": [
+      "https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

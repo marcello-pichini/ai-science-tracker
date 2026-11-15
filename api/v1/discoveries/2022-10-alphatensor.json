@@ -13,7 +13,18 @@
   "paper_url": "https://doi.org/10.1038/s41586-022-05172-4",
   "relevance": {
     "impact": 3,
-    "validation": 4,
+    "validation": 2,
     "novelty": 5
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Algorithms are provably correct by construction and their multiplication counts are compared with known methods; hardware-targeted algorithms were benchmarked on V100 GPU and TPU v2.",
+    "unknown": "The page lists no formal limitations; it notes the search space is very large and the work is specific to matrix multiplication.",
+    "ai_role": "Reinforcement-learning agent searched for tensor decompositions giving new matrix-multiplication algorithms.",
+    "evidence_urls": [
+      "https://deepmind.google/blog/discovering-novel-algorithms-with-alphatensor/",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A10.1038/s41586-022-05172-4&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

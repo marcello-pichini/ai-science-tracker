@@ -15,5 +15,16 @@
     "impact": 3,
     "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Model trained on 4,256 subjects and tested on 1,064 held-out subjects from web-collected cough recordings, with results validated against official COVID-19 test outcomes; sensitivity 98.5% and specificity 94.2% overall, but 83.2% specificity in asymptomatic subjects.",
+    "unknown": "Not a diagnosis for symptomatic people and does not separate Covid from flu or asthma; status was self-reported; false-positive results for healthy participants not reported; app would need approval and a larger, more diverse dataset.",
+    "ai_role": "Neural networks trained on cough biomarkers (vocal cords, sentiment in speech, lung performance) combined with a muscular-degradation estimate to flag Covid-positive coughs.",
+    "evidence_urls": [
+      "https://news.mit.edu/2020/covid-19-cough-cellphone-detection-1029",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1109/OJEMB.2020.3026928&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

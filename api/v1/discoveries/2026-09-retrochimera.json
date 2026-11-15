@@ -13,7 +13,17 @@
   "paper_url": "https://www.nature.com/articles/s41586-026-11160-9",
   "relevance": {
     "impact": 3,
-    "validation": 4,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Blind tests by PhD-level chemists rated individual steps and complete routes for ten difficult targets: 90% of RetroChimera routes were accepted, and nine of ten targets were solved, versus 20-50% for the component models or baseline.",
+    "unknown": "The route-level evaluation covers only ten targets; one incorrect prediction invalidates a route; NeuralLoc is constrained on reactions outside its template library, and R-SMILES 2 may hallucinate.",
+    "ai_role": "An ensemble of a Transformer (R-SMILES 2) predicting precursors and a graph neural network (NeuralLoc) selecting templates, combined by a learned rank-dependent vote.",
+    "evidence_urls": [
+      "https://www.microsoft.com/en-us/research/blog/improving-synthesis-prediction-of-small-molecules-at-scale-with-retrochimera/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

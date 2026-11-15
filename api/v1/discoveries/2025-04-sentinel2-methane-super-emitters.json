@@ -13,7 +13,17 @@
   "paper_url": "https://doi.org/10.5194/acp-25-4035-2025",
   "relevance": {
     "impact": 3,
-    "validation": 3,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The model was tested on 36 cross-region transfer tasks (macro F1 0.86 for 1-to-1, 0.89 for 5-to-1) and 33 of 369 positive detections were manually verified as true methane plumes.",
+    "unknown": "Real-world macro F1 was 0.56 because of 336 false positives, the dataset covers only three countries, label confidence is hard to quantify, the detection limit is roughly 5000 kg/h, and the abstract and body differ on the event count (34 vs 33).",
+    "ai_role": "A ResNet-50 deep subdomain adaptation network classified plume presence in place of human inspection, after a band-threshold artifact-removal step.",
+    "evidence_urls": [
+      "https://acp.copernicus.org/articles/25/4035/2025/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

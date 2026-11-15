@@ -15,5 +15,15 @@
     "impact": 3,
     "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Not reported",
+    "tested": "Networks trained on simulated glasses predicted particle mobility and were checked against simulation ground truth, outperforming physics-inspired and state-of-the-art baselines (96% correlation at short timescales, 64% at relaxation time).",
+    "unknown": "The network's correlation length cannot be directly converted into a measurable physical quantity; it remains an open debate; the work models simulated glasses, not physical samples.",
+    "ai_role": "Graph neural networks predicted particle mobility and probed spatial correlations by perturbing particles in shells around a marked particle.",
+    "evidence_urls": [
+      "https://deepmind.google/blog/towards-understanding-glasses-with-graph-neural-networks/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

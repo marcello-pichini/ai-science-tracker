@@ -15,5 +15,15 @@
     "impact": 3,
     "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Announcement only",
+    "tested": "Accelerated models were checked against their downstream tasks (for example structure prediction) and FlashPairformer kernels were compared with cuEquivariance (2.7-2.9x faster on triangle attention); design results are in silico with internal comparisons.",
+    "unknown": "Design results have no wet-lab validation, large viral capsid predictions were incorrect, ColabFold kernels were not benchmarked, and the model is not reproducible.",
+    "ai_role": "Claude wrote custom FlashPairformer kernels, optimized more than 30 models, built a low-memory Big mode, and ran autonomous protein binder design.",
+    "evidence_urls": [
+      "https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

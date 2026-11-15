@@ -13,7 +13,17 @@
   "paper_url": "https://arxiv.org/abs/2609.03582",
   "relevance": {
     "impact": 4,
-    "validation": 3,
+    "validation": 2,
     "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Precipitation forecasts were scored with CRPS against baselines: gains of up to 60% over IMERG, 30% over MRMS and 10% over rain gauges for early lead times; independent live evaluations by Brightband ranked the model.",
+    "unknown": "The 'up to' figures lack full test setup, longer-range gains are largest where forecasts are weak, and the atmosphere retains unpredictability.",
+    "ai_role": "The model ingests live geostationary satellite data and historical analyses, trains on station observations and produces gridded fields, cyclone tracks and station-level forecasts.",
+    "evidence_urls": [
+      "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

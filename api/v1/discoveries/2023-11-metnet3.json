@@ -13,7 +13,18 @@
   "paper_url": "https://arxiv.org/abs/2306.06079",
   "relevance": {
     "impact": 4,
-    "validation": 5,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "MetNet-3 was benchmarked against HRRR and ENS over the contiguous US for forecasts up to 24 hours, scored with CRPS; a single January 2019 case study is also shown.",
+    "unknown": "The post has no limitations section; it notes operational coverage limited to the contiguous US and parts of Europe, hyperlocal wind results depend on test-station input, and the case study is a single example.",
+    "ai_role": "A neural model forecasts precipitation, temperature, wind and dew point up to 24 hours ahead, learning from about 1,000 stations.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2306.06079",
+      "https://research.google/blog/metnet-3-a-state-of-the-art-neural-weather-model-available-in-google-products/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

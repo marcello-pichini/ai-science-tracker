@@ -13,7 +13,17 @@
   "paper_url": "https://doi.org/10.1038/s41467-021-25343-7",
   "relevance": {
     "impact": 4,
-    "validation": 4,
+    "validation": 3,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The predicted Li3.3SnS3.3Cl0.7 phase was synthesized, and conductivity was measured by AC impedance from 25 to 125 C, with 400 hours of lithium plating/stripping.",
+    "unknown": "The VAE was trained only on positive examples, the target composition cannot be exactly reached, and the NMR-derived barrier differs from the impedance value.",
+    "ai_role": "An unsupervised variational autoencoder trained on ICSD phase fields ranked untested quaternary fields; crystal structure prediction then identified the composition region, and researchers made the final decisions.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8455628/"
+    ],
+    "test_type": "direct test"
   }
 }

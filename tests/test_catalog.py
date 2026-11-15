@@ -38,7 +38,11 @@ class CatalogTests(unittest.TestCase):
                 self.assertIn(set(d), (keys, keys | {'evidence'}))
                 if 'evidence' in d:
                     e = d['evidence']
-                    self.assertEqual(set(e), {'publication_status', 'tested', 'unknown', 'ai_role', 'evidence_urls'})
+                    self.assertEqual(set(e) - {'test_type'}, {'publication_status', 'tested', 'unknown', 'ai_role', 'evidence_urls'})
+                    if 'test_type' in e:
+                        levels = ['not reported', 'retrospective or benchmark', 'direct test', 'prospective or independent check', 'replication or operational use']
+                        self.assertIn(e['test_type'], levels)
+                        self.assertEqual(d['relevance']['validation'], levels.index(e['test_type']) + 1, 'validation follows the test type')
                     self.assertIn(e['publication_status'], {'Peer-reviewed paper', 'Preprint', 'Announcement only', 'Not reported'})
                     self.assertTrue(all(isinstance(e[k], str) and e[k] for k in ('tested', 'unknown', 'ai_role')))
                     self.assertTrue(e['evidence_urls'] and all(u.startswith('https://') for u in e['evidence_urls']))

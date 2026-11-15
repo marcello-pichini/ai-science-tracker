@@ -13,7 +13,17 @@
   "paper_url": "https://www.nature.com/articles/s41586-026-10759-2",
   "relevance": {
     "impact": 4,
-    "validation": 4,
+    "validation": 3,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "On the Willow chip, drift was injected artificially into control parameters; RL steering raised logical stability 3.5-fold, and a further 20% error reduction followed expert calibration; scalability was tested only in simulation.",
+    "unknown": "The drift was artificial rather than natural; scalability evidence is simulation-only; environmental decoherence cannot be fully prevented; fuller results need tighter integration.",
+    "ai_role": "An RL agent used error-detection events as a learning signal and adjusted frequencies, amplitudes and phases during the computation without stopping it for recalibration.",
+    "evidence_urls": [
+      "https://research.google/blog/towards-a-quantum-computer-that-learns-from-its-errors/"
+    ],
+    "test_type": "direct test"
   }
 }

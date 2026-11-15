@@ -13,7 +13,18 @@
   "paper_url": "https://arxiv.org/abs/2111.10009",
   "relevance": {
     "impact": 3,
-    "validation": 3,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "ExoMiner was evaluated on a test set (recall 0.936 at 99% precision in the arXiv abstract) and used to validate 301 new planets.",
+    "unknown": "Validation is statistical rather than confirmation, the article gives no false-positive rates, and none of the planets is Earth-like.",
+    "ai_role": "Deep learning classifier vetted transit signals from Kepler.",
+    "evidence_urls": [
+      "https://www.nasa.gov/missions/kepler/new-deep-learning-method-adds-301-planets-to-keplers-total-count/",
+      "https://arxiv.org/abs/2111.10009"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

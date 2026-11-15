@@ -13,7 +13,17 @@
   "paper_url": "",
   "relevance": {
     "impact": 2,
-    "validation": 1,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Announcement only",
+    "tested": "The source describes computational evaluation only: benchmarks of several machine learning architectures on four readouts with scaffold splits, and predicted potency; no synthesis or experimental validation is reported.",
+    "unknown": "Every proposed design must still be synthesized and validated; the data are sparse and assay noise is high; the designs are testable hypotheses, not finished drugs.",
+    "ai_role": "An agent searched literature for crizotinib and lorlatinib analogues, curated 568 compounds, ran matched molecular pair analysis, benchmarked models, and proposed macrocycles and synthesis routes.",
+    "evidence_urls": [
+      "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

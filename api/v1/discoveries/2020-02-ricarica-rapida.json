@@ -13,7 +13,17 @@
   "paper_url": "",
   "relevance": {
     "impact": 3,
-    "validation": 4,
+    "validation": 3,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "224 fast-charging protocols tested experimentally by measuring battery cycle life; high-cycle-life protocols identified in 16 days, versus an estimated 500+ days for exhaustive search without early prediction.",
+    "unknown": "The abstract lists no explicit limitations; generalization to other problems is suggested but not discussed; only the abstract was read.",
+    "ai_role": "An early-prediction model estimated final cycle life from the first cycles, and Bayesian optimization chose which protocols to test next.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41586-020-1994-5&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
   }
 }

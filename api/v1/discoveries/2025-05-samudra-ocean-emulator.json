@@ -13,7 +13,17 @@
   "paper_url": "https://arxiv.org/abs/2412.03795",
   "relevance": {
     "impact": 3,
-    "validation": 3,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Samudra was compared with the original climate model's ocean component: no drift relative to the truth, reproduction of depth structure and interannual variability, stability for centuries, and about 150 times faster.",
+    "unknown": "The authors state the emulator struggles to reproduce the correct magnitude of forcing trends while staying stable, and this needs further work.",
+    "ai_role": "A ConvNeXt-UNet-style emulator trained on the ocean component of a climate model to predict sea surface height, velocities, temperature and salinity.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2412.03795"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

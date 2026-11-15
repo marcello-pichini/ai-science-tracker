@@ -13,7 +13,18 @@
   "paper_url": "https://doi.org/10.1038/s41586-020-2824-5",
   "relevance": {
     "impact": 4,
-    "validation": 3,
+    "validation": 2,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Tree detections checked against manually annotated data and field data from the region; the abstract itself does not describe the validation method.",
+    "unknown": "The study counts trees but does not yet measure stored carbon; the method can mistake stones for trees and gets harder with more detail.",
+    "ai_role": "Deep learning (fully convolutional network trained on about 90,000 hand-marked trees) on submetre satellite imagery mapped the crowns of over 1.8 billion trees.",
+    "evidence_urls": [
+      "https://www.nasa.gov/centers-and-facilities/goddard/nasa-supercomputing-study-breaks-ground-for-tree-mapping-carbon-research/",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41586-020-2824-5&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

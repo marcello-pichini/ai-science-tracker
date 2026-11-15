@@ -13,7 +13,17 @@
   "paper_url": "https://doi.org/10.1038/s41586-024-07145-1",
   "relevance": {
     "impact": 4,
-    "validation": 4,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "F1 scores were compared with GloFAS v4 for 2-year return-period events across 2,092 watersheds (2014-2023); reliability at 4-5 day lead times was similar to or better than GloFAS at day zero.",
+    "unknown": "Coverage must expand to more locations, flash and urban floods are not yet covered, and the gain is average-level rather than uniform.",
+    "ai_role": "Two sequential LSTMs with a mixture density output produce probabilistic streamflow forecasts, trained on 5,680 gauges.",
+    "evidence_urls": [
+      "https://research.google/blog/using-ai-to-expand-global-access-to-reliable-flood-forecasts/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

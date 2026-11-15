@@ -15,5 +15,16 @@
     "impact": 4,
     "validation": 2,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Skala was evaluated on the W4-17 atomization benchmark, reaching 0.85 kcal/mol on the single-reference subset, and on GMTKN55, where it was competitive with hybrid functionals.",
+    "unknown": "Accuracy is claimed only within the training data chemical space, expansion to broader chemistry is at an early stage, and the functional was not yet public.",
+    "ai_role": "A deep-learning exchange-correlation functional learned from about 150,000 high-accuracy energy differences.",
+    "evidence_urls": [
+      "https://www.microsoft.com/en-us/research/blog/breaking-bonds-breaking-ground-advancing-the-accuracy-of-computational-chemistry-with-deep-learning/",
+      "https://arxiv.org/abs/2506.14665"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

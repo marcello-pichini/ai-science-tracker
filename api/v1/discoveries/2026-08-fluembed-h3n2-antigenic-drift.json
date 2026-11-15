@@ -13,7 +13,17 @@
   "paper_url": "https://doi.org/10.1371/journal.pcbi.1014628",
   "relevance": {
     "impact": 3,
-    "validation": 3,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "FluEmbed predictions from H3N2 sequences were correlated with existing hemagglutination inhibition titers (Spearman 0.67-0.80) and compared with Hamming, BLOSUM62 and phylogenetic baselines, with in-silico mutagenesis for escape potential.",
+    "unknown": "The abstract states no limitations and does not discuss generalization beyond H3N2 or beyond the data used; no wet-lab tests were run.",
+    "ai_role": "A protein language model framework predicted H3N2 antigenicity from RNA sequence.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1371/journal.pcbi.1014628&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

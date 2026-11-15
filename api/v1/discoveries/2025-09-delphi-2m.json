@@ -13,7 +13,18 @@
   "paper_url": "https://doi.org/10.1038/s41586-025-09529-3",
   "relevance": {
     "impact": 4,
-    "validation": 3,
+    "validation": 2,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Trained on about 0.4 million UK Biobank participants and tested, with no parameter changes, on 1.9 million Danish registry patients; a UK Biobank check found predicted risks matched observed case counts by age and sex.",
+    "unknown": "Stated as not ready for direct clinical use; less reliable for variable conditions such as mental health; shorter-term forecasts more accurate; demographic biases from gaps in training data.",
+    "ai_role": "Generative GPT-style transformer modeling disease histories as timed event sequences to forecast risk and timing for over 1,000 diseases.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41586-025-09529-3&resultType=core&format=json",
+      "https://www.embl.org/news/science/ai-model-forecasts-disease-risk-decades-in-advance/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

@@ -13,7 +13,18 @@
   "paper_url": "https://arxiv.org/abs/2509.14185",
   "relevance": {
     "impact": 3,
-    "validation": 3,
+    "validation": 2,
     "novelty": 5
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Physics-informed neural networks trained to near machine precision found unstable singularities, and the accuracy was assessed numerically against the governing equations.",
+    "unknown": "The source states the initial conditions must be tuned with extreme precision, the scaling formula is empirical, Navier-Stokes remains open, and supplementary information is not yet available.",
+    "ai_role": "Neural networks trained on the equation residuals, with a high-precision optimizer, located new families of unstable singularities, with humans supplying the mathematical insight.",
+    "evidence_urls": [
+      "https://deepmind.google/blog/discovering-new-solutions-to-century-old-problems-in-fluid-dynamics/",
+      "https://arxiv.org/abs/2509.14185"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

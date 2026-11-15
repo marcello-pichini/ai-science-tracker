@@ -15,5 +15,15 @@
     "impact": 4,
     "validation": 3,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The reinforcement-learning controller was tested in experiments on the DIII-D tokamak, where it kept the tearing likelihood below a threshold, including under unfavorable conditions.",
+    "unknown": "The abstract does not state the prediction horizon and lists no other limitations; tearing instability is hard to forecast.",
+    "ai_role": "A deep reinforcement learning controller, trained in a multimodal dynamic model of tearing instability, adjusted plasma operation to keep it stable.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41586-024-07024-9&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
   }
 }

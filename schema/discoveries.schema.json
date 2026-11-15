@@ -120,7 +120,7 @@
       "evidence": {
         "type": "object",
         "additionalProperties": false,
-        "description": "Optional, pilot only.",
+        "description": "Source-stated evidence context; test_type sets the validation subscore.",
         "required": [
           "publication_status",
           "tested",
@@ -153,6 +153,17 @@
               "type": "string",
               "pattern": "^https://\\S+$"
             }
+          },
+          "test_type": {
+            "type": "string",
+            "enum": [
+              "not reported",
+              "retrospective or benchmark",
+              "direct test",
+              "prospective or independent check",
+              "replication or operational use"
+            ],
+            "description": "Sets relevance.validation (1-5 in this order)."
           }
         }
       }

@@ -15,5 +15,16 @@
     "impact": 3,
     "validation": 3,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Applied to the LCLS X-ray free-electron laser; the abstract reports the Bayesian optimizer as sample-efficient and outperforming existing optimizers, and the press release estimates tuning three to five times faster.",
+    "unknown": "Speed and beam-quality gains are estimates; the method covers only part of the tuning process; results from three other accelerators are not reported.",
+    "ai_role": "Gaussian process model predicted the effect of magnet adjustments, chose which to try, and was trained on past machine data.",
+    "evidence_urls": [
+      "https://www6.slac.stanford.edu/news/2020-04-29-new-machine-learning-method-streamlines-particle-accelerator-operations",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1103/PhysRevLett.124.124801&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
   }
 }

@@ -113,7 +113,7 @@
   </div>
 </footer>
 
-<script src="assets/catalog-ui.js?v=c3a8994f0fa4"></script>
+<script src="assets/catalog-ui.js?v=3da758377e58"></script>
 <script>
 // Object.groupBy is missing before Safari 17.4 and Chrome 117.
 Object.groupBy ??= (xs, f) => xs.reduce((o, x) => ((o[f(x)] ??= []).push(x), o), {});
@@ -130,8 +130,8 @@ let ancora = fragment.startsWith("discovery=") ? fragment.slice(10) : fragment.s
 
 // Organizations listed together (e.g. "Google DeepMind and Google Research") are counted under the first one named.
 const orgDi = s => s.organization.split(/[,;]| and /i)[0].trim();
-// Relevance 20–100: average of impact, validation, and novelty (each scored 1–5) × 20. Editorial judgment; see methodology.html.
-const punteggio = s => Math.round((s.relevance.impact + s.relevance.validation + s.relevance.novelty) / 3 * 20);
+// Relevance 20–100, capped by the evidence level; see CatalogUI.score and methodology.html.
+const punteggio = s => CatalogUI.score(s);
 const media = arr => Math.round(arr.reduce((a, s) => a + punteggio(s), 0) / arr.length);
 const conta = (arr, f) => { const m = {}; arr.forEach(x => { const k = f(x); m[k] = (m[k] || 0) + 1; }); return m; };
 const ordina = m => Object.entries(m).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
@@ -353,8 +353,10 @@ function lista() {
 
 Promise.all([
   fetch("data/discoveries.json").then(r => r.json()),
-  fetch("data/models.json").then(r => r.ok ? r.json() : null).catch(() => null)
-]).then(([dati, modelli]) => {
+  fetch("data/models.json").then(r => r.ok ? r.json() : null).catch(() => null),
+  fetch("data/citations.json").then(r => r.ok ? r.json() : null).catch(() => null)
+]).then(([dati, modelli, citazioni]) => {
+  dati.forEach(s => { s.citation = citazioni?.records?.[s.id]; });
   items = dati.sort((a, b) => b.publication_date.localeCompare(a.publication_date));
   if (ancora && !items.some(s => s.id === ancora)) {
     const id = ancora;

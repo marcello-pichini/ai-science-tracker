@@ -107,3 +107,26 @@ assert.ok(!html.includes('javascript:') && !html.includes('href="//') && !html.i
 assert.ok(!html.includes('" onclick="'));
 assert.ok(!ui.evidenceBlock({evidence:{evidence_urls:[]}}).includes('Evidence sources:'));
 ''')
+
+    def test_score_is_capped_by_evidence_and_matches_the_generator(self):
+        self.run_js('''
+const r = (i, v, n) => ({relevance:{impact:i, validation:v, novelty:n}});
+assert.equal(ui.score(r(3, 3, 3)), 60);
+assert.equal(ui.score(r(5, 1, 5)), 40);
+assert.equal(ui.score(r(5, 2, 5)), 60);
+assert.equal(ui.score(r(5, 5, 5)), 100);
+''')
+        import json, sys
+        sys.path.insert(0, str(ROOT / 'scripts'))
+        from generate_share import score
+        records = json.loads((ROOT / 'data/discoveries.json').read_text())
+        js = subprocess.run(['node', '-e', "require('./assets/catalog-ui.js'); const d = require('./data/discoveries.json'); process.stdout.write(JSON.stringify(d.map(r => CatalogUI.score(r))));"],
+                            cwd=ROOT, text=True, capture_output=True, check=True).stdout
+        self.assertEqual(json.loads(js), [score(r) for r in records])
+
+    def test_citation_line_is_optional_and_never_a_score(self):
+        self.run_js('''
+assert.equal(ui.citationLine({}), '');
+assert.ok(ui.citationLine({citation:{top_1:true, top_10:true, percentile:99.9, cited_by:12}}).includes('top 1%'));
+assert.ok(ui.citationLine({citation:{top_1:false, top_10:false, percentile:41.6, cited_by:3}}).includes('percentile 42'));
+''')

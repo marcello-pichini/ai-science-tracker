@@ -13,7 +13,18 @@
   "paper_url": "https://doi.org/10.1038/s41587-025-02839-x",
   "relevance": {
     "impact": 3,
-    "validation": 3,
+    "validation": 2,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "DeepSomatic was benchmarked against SomaticSniper, MuTect2, Strelka2 and ClairS on the CASTLE cell-line dataset with held-out chromosomes and genomes, across Illumina, PacBio and other platforms.",
+    "unknown": "The benchmark uses research cell lines rather than patient tumors, the glioblastoma result rests on one sample, and the 10 new leukemia variants are not stated to be validated.",
+    "ai_role": "A convolutional neural network applied to sequencing data converted to images separated germline, somatic and error signals to call tumor variants.",
+    "evidence_urls": [
+      "https://research.google/blog/using-ai-to-identify-genetic-variants-in-tumors-with-deepsomatic/",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41587-025-02839-x&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

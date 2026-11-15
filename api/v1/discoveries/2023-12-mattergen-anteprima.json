@@ -15,5 +15,16 @@
     "impact": 3,
     "validation": 2,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Generated structures were checked with DFT calculations and compared with CDVAE and screening baselines (2.9 times more stable, novel and unique structures than CDVAE, per the blog); experimental verification is stated as not yet done.",
+    "unknown": "Limitations stated: DFT has known limitations and experimental verification remains the ultimate test; the arXiv abstract states no limitations.",
+    "ai_role": "A diffusion model generated new crystal structures conditioned on desired properties.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2312.03687",
+      "https://www.microsoft.com/en-us/research/blog/mattergen-property-guided-materials-design/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }

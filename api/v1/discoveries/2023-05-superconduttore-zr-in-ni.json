@@ -15,5 +15,16 @@
     "impact": 3,
     "validation": 3,
     "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Closed-loop ML predictions were tested experimentally: candidates were fabricated and measured, and results fed back to refine the model; a Zr-In-Ni superconductor with transition around 9 K was found in four cycles.",
+    "unknown": "The arXiv page states no limitations and omits synthesis, transition temperature and model accuracy details; the press release notes training-data human bias and chemically impossible generated compositions, and cites an npj Computational Materials paper that was not read.",
+    "ai_role": "Machine-learning models trained on public superconductor datasets predicted and ranked candidate compositions for fabrication.",
+    "evidence_urls": [
+      "https://www.jhuapl.edu/news/news-releases/230503-ai-discovers-novel-superconductor",
+      "https://arxiv.org/abs/2212.11855"
+    ],
+    "test_type": "direct test"
   }
 }

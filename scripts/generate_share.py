@@ -54,7 +54,8 @@ def lead_org(name):
 
 def score(d):
     r = d['relevance']
-    return round((r['impact'] + r['validation'] + r['novelty']) / 3 * 20)
+    # Same rule as CatalogUI.score: never more than one level above the evidence.
+    return min(round((r['impact'] + r['validation'] + r['novelty']) / 3 * 20), (r['validation'] + 1) * 20)
 
 
 def nice_date(iso):
@@ -94,6 +95,9 @@ def run_catalog_ui(items):
     """Render each record's source-check disclosure and correction-issue link with the same
     assets/catalog-ui.js the live pages use (one Node process for all records), so a discovery
     page never repeats that wording or that URL-building logic in a second, Python copy."""
+    cites_path = ROOT / 'data/citations.json'
+    cites = json.loads(cites_path.read_text())['records'] if cites_path.exists() else {}
+    items = [dict(r, citation=cites[r['id']]) if r['id'] in cites else r for r in items]
     script = ("require(process.argv[1]);"
               "const items = JSON.parse(require('fs').readFileSync(0, 'utf8'));"
               "const out = {};"

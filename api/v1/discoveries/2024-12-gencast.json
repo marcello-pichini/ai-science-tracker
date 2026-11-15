@@ -13,7 +13,17 @@
   "paper_url": "https://doi.org/10.1038/s41586-024-08252-9",
   "relevance": {
     "impact": 4,
-    "validation": 4,
+    "validation": 2,
     "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Not reported",
+    "tested": "Forecasts were compared with ECMWF ENS on held-out 2019 data (trained up to 2018) across 1,320 variable and lead-time combinations; GenCast was more accurate on 97.2% of targets.",
+    "unknown": "Forecasts are especially uncertain beyond a few days, the wind-power analysis is only a proof of principle, and physics-based models remain needed for training data and initial conditions.",
+    "ai_role": "A diffusion model generates an ensemble of 50 or more 15-day weather trajectories from the current weather state.",
+    "evidence_urls": [
+      "https://deepmind.google/blog/gencast-predicts-weather-and-the-risks-of-extreme-conditions-with-sota-accuracy/"
+    ],
+    "test_type": "retrospective or benchmark"
   }
 }
