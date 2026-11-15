@@ -246,8 +246,18 @@
     "paper_url": "",
     "relevance": {
       "impact": 5,
-      "validation": 1,
+      "validation": 4,
       "novelty": 5
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "The local-smoothing proof was formalized in Lean the day after the AI output; the refutation of the Exponential Time Hypothesis was verified in Lean and is being checked by an external group led by Impagliazzo, Paturi and Williams.",
+      "unknown": "The physics result was not released; the external groups had not reported conclusions on the page.",
+      "ai_role": "OpenAI internal models produced the proofs; external experts were asked to shepherd and explain the results.",
+      "evidence_urls": [
+        "https://openai.com/index/building-scientific-understanding-with-academic-communities/"
+      ],
+      "test_type": "prospective or independent check"
     }
   },
   {
@@ -354,6 +364,16 @@
       "impact": 3,
       "validation": 2,
       "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Thousands of GPT-Rosalind agents reanalyzed an existing whole-brain CRISPR atlas; they reproduced findings from human analyses, and their novelty and value assessments aligned with blinded human experts.",
+      "unknown": "The proposed biological mechanisms still need experiments to test them.",
+      "ai_role": "Each agent investigated one gene disruption, searched the literature and proposed explanations; reports were combined into a reasoning atlas.",
+      "evidence_urls": [
+        "https://openai.com/index/scaling-ai-research-for-complex-biological-data/"
+      ],
+      "test_type": "retrospective or benchmark"
     }
   },
   {
@@ -690,8 +710,18 @@
     "paper_url": "",
     "relevance": {
       "impact": 5,
-      "validation": 1,
+      "validation": 4,
       "novelty": 5
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "OpenAI shared an analytical proof and a Lean formalization that an initially smooth fluid at rest can develop a finite-time singularity under a smooth force with finite energy.",
+      "unknown": "Not stated in the reviewed material",
+      "ai_role": "An internal OpenAI model, described as more capable than GPT-6 Astra, produced the proof and the Lean formalization.",
+      "evidence_urls": [
+        "https://openai.com/index/navier-stokes-solution/"
+      ],
+      "test_type": "prospective or independent check"
     }
   },
   {
@@ -711,6 +741,16 @@
       "impact": 3,
       "validation": 3,
       "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "Connected to MIT EQuS lab software, GPT-5.6 Sol ran measurements on an uncalibrated six-qubit chip of a standard type, chose parameters, operated the hardware and analyzed results.",
+      "unknown": "Not assessed: the technical case study with the detailed results was not read.",
+      "ai_role": "GPT-5.6 Sol in Codex ran routine measurement workflows with measurement-specific skills provided by the researcher.",
+      "evidence_urls": [
+        "https://openai.com/index/codex-quantum-computing-experiments/"
+      ],
+      "test_type": "direct test"
     }
   },
   {
@@ -873,8 +913,18 @@
     "paper_url": "",
     "relevance": {
       "impact": 5,
-      "validation": 2,
+      "validation": 4,
       "novelty": 5
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "Each of the ten arguments was prepared into a manuscript by humans with the model and then formalized by the model in a Lean certificate.",
+      "unknown": "Not stated in the reviewed material",
+      "ai_role": "An internal version of Astra found the results; humans prepared the manuscripts with the same model.",
+      "evidence_urls": [
+        "https://openai.com/index/ten-advances-in-mathematics/"
+      ],
+      "test_type": "prospective or independent check"
     }
   },
   {
@@ -1011,6 +1061,16 @@
       "impact": 4,
       "validation": 3,
       "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "Over two cycles in an automated lab, yields improved for 88% of boronic acids and 83% of sulfonamides tested (mean 16.6% to 25.2%); human chemists repeated representative reactions at bench scale, with higher yields for 11 of 14 substrate pairs.",
+      "unknown": "Not stated in the reviewed material",
+      "ai_role": "GPT-5.4 connected to Molecule.one Maria proposed, designed and analyzed experiments; humans steered prompts, selected proposals, made limited corrections and validated the final result.",
+      "evidence_urls": [
+        "https://openai.com/index/ai-chemist-improves-reaction/"
+      ],
+      "test_type": "direct test"
     }
   },
   {
@@ -1060,6 +1120,16 @@
       "impact": 5,
       "validation": 4,
       "novelty": 5
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "The proof was checked by a group of external mathematicians, who also wrote a companion paper explaining the argument.",
+      "unknown": "Not stated in the reviewed material",
+      "ai_role": "A general-purpose internal OpenAI reasoning model produced the proof while being evaluated on Erdős problems.",
+      "evidence_urls": [
+        "https://openai.com/index/model-disproves-discrete-geometry-conjecture/"
+      ],
+      "test_type": "prospective or independent check"
     }
   },
   {
@@ -1342,6 +1412,16 @@
       "impact": 3,
       "validation": 4,
       "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "GPT-5.5 found a proof of an asymptotic fact about off-diagonal Ramsey numbers, later verified in Lean.",
+      "unknown": "Not stated in the reviewed material",
+      "ai_role": "An internal version of GPT-5.5 with a custom harness found the proof.",
+      "evidence_urls": [
+        "https://openai.com/index/introducing-gpt-5-5/"
+      ],
+      "test_type": "prospective or independent check"
     }
   },
   {
@@ -1391,6 +1471,16 @@
       "impact": 4,
       "validation": 3,
       "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The preprint derives explicit formulas for single-minus graviton tree amplitudes in the half-collinear regime and shows they follow from symmetry principles and recursion relations; no experimental test is described.",
+      "unknown": "The page calls it a small step towards reconciling quantum mechanics with general relativity.",
+      "ai_role": "Researchers used GPT-5.2 Pro to help find the result; the paper is authored by named physicists on behalf of OpenAI.",
+      "evidence_urls": [
+        "https://openai.com/index/extending-single-minus-amplitudes-to-gravitons/"
+      ],
+      "test_type": "direct test"
     }
   },
   {
@@ -1499,6 +1589,16 @@
       "impact": 4,
       "validation": 3,
       "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "Over six rounds in a cloud laboratory, the system tested more than 36,000 reaction compositions on 580 plates and reached a 40% lower protein production cost (57% lower reagent cost).",
+      "unknown": "Not stated in the reviewed material",
+      "ai_role": "GPT-5 proposed and analyzed experiments in a closed loop with Ginkgo Bioworks automation.",
+      "evidence_urls": [
+        "https://openai.com/index/gpt-5-lowers-protein-synthesis-cost/"
+      ],
+      "test_type": "direct test"
     }
   },
   {
@@ -1664,6 +1764,16 @@
       "impact": 3,
       "validation": 3,
       "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "Scientists carried out GPT-5-modified cloning protocols over several rounds; the final protocol recovered 79 times more sequence-verified clones for a fixed amount of input DNA than the baseline.",
+      "unknown": "The work used a benign experimental system with a limited task scope.",
+      "ai_role": "GPT-5 reasoned about the protocol and proposed modifications, including a RecA and gp32 mechanism; humans only ran the protocol and uploaded data.",
+      "evidence_urls": [
+        "https://openai.com/index/accelerating-biological-research-in-the-wet-lab/"
+      ],
+      "test_type": "direct test"
     }
   },
   {
@@ -7146,7 +7256,7 @@
   {
     "id": "2026-01-smrtnet",
     "title": "SMRTnet predicts small molecules that bind RNA",
-    "summary": "Across 10 disease-associated RNA targets the model yielded 40 hits with nanomolar to micromolar affinity; one compound was tested in three cancer cell lines. A press-release hit rate of 21.1% was not checked against the paper.",
+    "summary": "Across 10 disease-associated RNA targets the model yielded 40 hits with nanomolar to micromolar affinity; one compound was tested in three cancer cell lines.",
     "field": "biology",
     "ai_technology": "SMRTnet (language-model-based)",
     "organization": "Tsinghua University, Peking University and China Pharmaceutical University",
@@ -7164,7 +7274,7 @@
     "evidence": {
       "publication_status": "Peer-reviewed paper",
       "tested": "Predicted small molecules tested for binding to 10 disease-associated RNA targets, giving 40 hits with nanomolar to micromolar affinity; one compound tested in three cancer cell lines.",
-      "unknown": "Not reported",
+      "unknown": "Not assessed: a press-release hit rate of 21.1% was not checked against the paper.",
       "ai_role": "Deep learning model fusing two large language models with convolutional and graph attention networks to predict small molecule-RNA binding from RNA secondary structure.",
       "evidence_urls": [
         "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41587-025-02942-z&resultType=core&format=json"
@@ -7321,7 +7431,7 @@
   {
     "id": "2025-07-autonomous-enzyme-engineering",
     "title": "A closed-loop platform engineers enzymes with minimal human input",
-    "summary": "Machine learning and language models choosing variants, with a biofoundry running build and test, raised Arabidopsis halide methyltransferase substrate preference 90-fold (16-fold ethyltransferase activity) and Yersinia mollaretii phytase activity 26-fold at neutral pH, in four rounds over four weeks and under 500 variants per enzyme. Two enzymes only; the amount of human setup was not checked in the full text.",
+    "summary": "Machine learning and language models choosing variants, with a biofoundry running build and test, raised Arabidopsis halide methyltransferase substrate preference 90-fold (16-fold ethyltransferase activity) and Yersinia mollaretii phytase activity 26-fold at neutral pH, in four rounds over four weeks and under 500 variants per enzyme. Two enzymes only.",
     "field": "biology",
     "ai_technology": "Machine learning and LLM-guided variant design with biofoundry automation",
     "organization": "University of Illinois Urbana-Champaign (Zhao lab)",
@@ -7873,7 +7983,7 @@
   {
     "id": "2026-05-designed-generalist-binder-catalysis",
     "title": "A designed generalist binding protein evolves into a highly active designed enzyme",
-    "summary": "Crystallographic fragment screening found weak binders of a designed protein, which were then evolved into a catalyst that the authors describe as the most active designed enzyme to date. AI models were used in the redesign step, while the crystal structures and enzyme assays were experimental. Kinetic values and design counts were not checked in the primary paper, so the record claim rests on press statements.",
+    "summary": "Crystallographic fragment screening found weak binders of a designed protein, which were then evolved into a catalyst that the authors describe as the most active designed enzyme to date. AI models were used in the redesign step, while the crystal structures and enzyme assays were experimental.",
     "field": "biology",
     "ai_technology": "AI-guided protein redesign (specific models not verified)",
     "organization": "University of California, San Francisco (Fraser and DeGrado groups)",
@@ -7891,7 +8001,7 @@
     "evidence": {
       "publication_status": "Peer-reviewed paper",
       "tested": "Crystallographic fragment screening of a designed apixaban-binding helical bundle found weak complexes, which were evolved into new functions including a turn-on fluorophore binder and a Kemp eliminase.",
-      "unknown": "Not reported in the abstract read.",
+      "unknown": "Not assessed: kinetic values and design counts were not checked in the primary paper; the claim rests on press statements.",
       "ai_role": "Not stated in the abstract read; the abstract describes no AI role.",
       "evidence_urls": [
         "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41557-026-02125-6&resultType=core&format=json"
@@ -8291,8 +8401,18 @@
     "paper_url": "https://doi.org/10.1186/s40623-025-02241-6",
     "relevance": {
       "impact": 3,
-      "validation": 3,
+      "validation": 2,
       "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Deep-learning seismicity forecasts were compared with an epidemic-type aftershock sequence benchmark and a persistence null hypothesis on Southern California and Italy test datasets; they matched ETAS at much lower processing time.",
+      "unknown": "The abstract says performance depends on training data that represent the properties of earthquake sequences.",
+      "ai_role": "Deep neural networks learned short-term spatiotemporal seismicity rates from high-resolution catalogues.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1186/s40623-025-02241-6"
+      ],
+      "test_type": "retrospective or benchmark"
     }
   },
   {
@@ -8327,7 +8447,7 @@
   {
     "id": "2026-02-gpcr-exoframe-modulators",
     "title": "De novo designed proteins modulate GPCR signalling in the dopamine D1 receptor",
-    "summary": "Zhejiang University designed four de novo GPCR exoframe modulators (GEMs) that target the transmembrane domain of the dopamine D1 receptor. Functional assays showed they act as positive, negative or biased allosteric modulators, and one restored activity in loss-of-function receptor mutants. Design is computational; the exact assay numbers were not checked against the full paper, so use the paper for quantitative claims.",
+    "summary": "Zhejiang University designed four de novo GPCR exoframe modulators (GEMs) that target the transmembrane domain of the dopamine D1 receptor. Functional assays showed they act as positive, negative or biased allosteric modulators, and one restored activity in loss-of-function receptor mutants. Design is computational.",
     "field": "biology",
     "ai_technology": "Computational de novo protein design (AI-based protein design pipeline)",
     "organization": "Zhejiang University",
