@@ -1,7 +1,7 @@
 {
   "id": "2025-11-mind-captioning-fmri",
   "title": "Mind captioning: text descriptions of viewed videos decoded from fMRI",
-  "summary": "A language-model pipeline mapped fMRI activity from six participants to semantic signatures of 2,180 captioned videos and generated text matching them. The generated descriptions identified the correct video among 100 candidates about 50% of the time, against a chance level of about 1%, and the method worked for recalled clips and without the brain's language areas. Caveats: small participant group, needs extensive per-person data and cooperative subjects, and the authors note it cannot read private thoughts.",
+  "summary": "In six participants, a language-model pipeline translated fMRI responses to viewed videos into descriptions of their semantic content. Video identification reached about 50% among 100 candidates, compared with 1% chance. Results also extended to instructed video recall and persisted when the canonical language network was excluded, supporting a shared semantic representation beyond that network. The experiment used extensive participant-specific training; it was not unrestricted reading of private thoughts or a clinical aphasia trial.",
   "field": "medicine",
   "ai_technology": "Deep language model semantic-feature decoder with text generation search",
   "organization": "NTT Communication Science Laboratories",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2025-11-05",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 4,
@@ -18,11 +18,12 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Descriptions generated from brain activity induced by videos captured the viewed content and generalized to recalled content, even without relying on the canonical language network.",
-    "unknown": "Use with people who have aphasia is described as a potential, not tested in the abstract.",
-    "ai_role": "Linear decoders map brain activity to semantic features from a deep language model; candidate text is optimized to match them.",
+    "tested": "Video viewing and instructed recall in six participants; 2,180 unique videos in training and comparisons with analyses excluding the canonical language network.",
+    "unknown": "Small participant group and extensive per-person training. Clinical communication benefits and arbitrary private-thought decoding were not tested.",
+    "ai_role": "Linear decoders mapped fMRI signals to deep-language-model semantic features; a language model guided text optimization.",
     "evidence_urls": [
-      "https://doi.org/10.1126/sciadv.adw1464"
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12588295/",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1126%2Fsciadv.adw1464%22&resultType=core&format=json"
     ],
     "test_type": "retrospective or benchmark"
   }

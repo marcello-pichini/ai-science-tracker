@@ -1,15 +1,15 @@
 {
   "id": "2026-10-sik1-epilepsy-machine-learning",
   "title": "Machine learning identifies SIK1 as an epilepsy driver validated in rat models",
-  "summary": "Machine learning on LKB1-pathway genes from public GEO data ranked SIK1 as the top epilepsy risk gene. In a PTZ status epilepticus rat model, SIK1 knockdown shortened seizure duration and overexpression worsened seizures, with patch-clamp and Western blot support. The abstract does not state how the ML ranking was itself tested beyond the public dataset.",
+  "summary": "Machine-learning screening of LKB1-pathway genes in GEO data prioritized SIK1. In a PTZ-induced rat epilepsy model, SIK1 knockdown delayed seizures and shortened their duration, whereas overexpression worsened severity. The paper abstract also reports that restoring downstream NR4A2 counteracted SIK1-related effects in rescue and neuronal experiments. These are preclinical findings, not evidence of treatment efficacy in people. This summary is limited to the abstract and publication metadata.",
   "field": "medicine",
   "ai_technology": "Machine learning screening of LKB1 pathway genes on GEO dataset GSE143272",
-  "organization": "The First People's Hospital of Qinzhou",
+  "organization": "The First People's Hospital of Qinzhou; The First Affiliated Hospital of Guangxi Medical University",
   "source_url": "https://europepmc.org/article/MED/42991733",
   "source_type": "paper",
   "publication_date": "2026-10-22",
   "added_date": "2026-11-15",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "https://doi.org/10.3389/fcell.2026.1887268",
   "relevance": {
     "impact": 3,
@@ -18,11 +18,11 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "SIK1 knockdown and overexpression in vivo in a PTZ-induced rat model, with EEG, patch-clamp and Western blot readouts.",
-    "unknown": "Not stated in the reviewed material",
+    "tested": "Gene prioritization from GEO data followed by rat SIK1 perturbations, NR4A2 rescue and neuronal electrophysiology.",
+    "unknown": "Source checking does not establish independent confirmation. Review date: 2026-11-15.",
     "ai_role": "Machine learning screened LKB1 pathway genes and ranked SIK1 as the top epilepsy risk gene for experimental follow-up.",
     "evidence_urls": [
-      "https://europepmc.org/article/MED/42991733"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A42991733&resultType=core&format=json"
     ],
     "test_type": "direct test"
   }

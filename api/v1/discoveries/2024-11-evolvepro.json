@@ -1,16 +1,16 @@
 {
   "id": "2024-11-evolvepro",
   "title": "EVOLVEpro improves proteins up to 100-fold with few experiments",
-  "summary": "A protein language model combined with a regression model in an active-learning loop improved six proteins used in RNA production, genome editing and antibody binding, with up to 100-fold gains reported in the Science abstract. Online date taken from the November 2024 PubMed record (Europe PMC lists 24 January 2025); per-protein numbers not read.",
+  "summary": "For the January 2025 journal version indexed by PubMed and Europe PMC, the Science abstract reports that EVOLVEpro combines protein language models, regression and experimental feedback to improve six proteins used in RNA production, genome editing and antibody binding, with gains up to 100-fold in desired properties. A July 2024 preprint described five proteins. The date identifies the indexed journal version, not the first public announcement.",
   "field": "biology",
   "ai_technology": "EVOLVEpro (protein language model with active learning)",
-  "organization": "Broad Institute; and MIT",
-  "source_url": "https://pubmed.ncbi.nlm.nih.gov/39571002/",
+  "organization": "Mass General Brigham; Beth Israel Deaconess Medical Center; Harvard Medical School; Massachusetts Institute of Technology",
+  "source_url": "https://doi.org/10.1126/science.adr6006",
   "source_type": "paper",
-  "publication_date": "2024-11-21",
+  "publication_date": "2025-01-24",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
-  "paper_url": "https://doi.org/10.1126/science.adr6006",
+  "verification_status": "verified",
+  "paper_url": "https://pubmed.ncbi.nlm.nih.gov/39571002/",
   "relevance": {
     "impact": 4,
     "validation": 3,
@@ -18,12 +18,12 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Tested in the lab on six proteins across RNA production, genome editing and antibody binding, with up to 100-fold gains reported in the abstract.",
-    "unknown": "The abstract does not state limitations; it implies the method still needs some experimental data.",
-    "ai_role": "Few-shot active learning framework combining a protein language model with a regression model to choose protein variants.",
+    "tested": "Experimental engineering of proteins for RNA production, genome editing and antibody binding.",
+    "unknown": "Not assessed: full-paper per-protein data and generalization beyond the studied proteins.",
+    "ai_role": "Active learning used protein-language-model representations and regression to select variants.",
     "evidence_urls": [
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1126/science.adr6006&resultType=core&format=json",
-      "https://pubmed.ncbi.nlm.nih.gov/39571002/"
+      "https://pubmed.ncbi.nlm.nih.gov/39571002/",
+      "https://news.massgeneralbrigham.org/en/mgb-bidmc-unveil-ai-protein-engineer"
     ],
     "test_type": "direct test"
   }

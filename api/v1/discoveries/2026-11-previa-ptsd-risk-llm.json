@@ -1,7 +1,7 @@
 {
   "id": "2026-11-previa-ptsd-risk-llm",
   "title": "PREVIA: LLM ensemble predicts PTSD risk from emergency department trauma narratives",
-  "summary": "PREVIA, a clinically informed LLM ensemble, predicts PTSD one month after trauma from emergency department narratives in 145 patients at two New York City trauma centers. It reached AUROC 78.49% plus or minus 5.75% and performed comparably to a specialized clinician on 30 patients. The authors note the precision is about 47%, and the study is an ongoing single-region cohort.",
+  "summary": "In the journal abstract, PREVIA used trauma narratives from 145 patients at two New York City trauma centers to predict PTSD assessed one month later. Reported AUROC was 78.49% ± 5.75%, with precision 46.76% ± 8.66%. On 30 randomly selected patients, its performance was comparable to one PTSD-specialist emergency clinician. The authors describe these as initial findings requiring larger independent-cohort validation; prospective collection does not establish prospective evaluation of a locked model.",
   "field": "medicine",
   "ai_technology": "PREVIA clinically informed large language model ensemble",
   "organization": "New York University Grossman School of Medicine",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2026-11-09",
   "added_date": "2026-11-15",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 3,
@@ -18,11 +18,11 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Predicted PTSD at one month in 145 patients and compared the model with an emergency clinician on 30 random patients.",
-    "unknown": "Precision is about 47% (AUROC 78.49%) with wide standard deviations; the abstract describes an ongoing longitudinal study and a small sample.",
+    "tested": "One-month PTSD prediction in 145 trauma patients; comparison with a specialist emergency clinician on 30 selected patients.",
+    "unknown": "Abstract and metadata review only. Authors explicitly call for larger independent-cohort validation; full methods and timing of model selection relative to outcomes were not assessed.",
     "ai_role": "LLM ensemble extracts early post-traumatic stress symptoms, risk and protective factors from narratives and produces the risk forecast.",
     "evidence_urls": [
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41467-026-78768-3%22&resultType=core&format=json"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1038%2Fs41467-026-78768-3%22&resultType=core&format=json"
     ],
     "test_type": "retrospective or benchmark"
   }

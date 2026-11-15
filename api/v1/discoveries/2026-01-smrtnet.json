@@ -1,16 +1,16 @@
 {
   "id": "2026-01-smrtnet",
   "title": "SMRTnet predicts small molecules that bind RNA",
-  "summary": "Across 10 disease-associated RNA targets the model yielded 40 hits with nanomolar to micromolar affinity; one compound was tested in three cancer cell lines.",
+  "summary": "The January 2026 Nature Biotechnology abstract reports 40 small-molecule hits across ten disease-associated RNA targets, with nanomolar-to-micromolar binding. One predicted compound reduced MYC expression, inhibited proliferation and promoted apoptosis in three cancer cell lines. SMRTnet combines language models with convolutional and graph attention networks, using RNA secondary structure. These are laboratory results.",
   "field": "biology",
   "ai_technology": "SMRTnet (language-model-based)",
-  "organization": "Tsinghua University; Peking University and China Pharmaceutical University",
-  "source_url": "https://doi.org/10.1038/s41587-025-02942-z",
+  "organization": "Tsinghua University; Peking University; Southwest United Graduate School",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/41482542/",
   "source_type": "paper",
   "publication_date": "2026-01-02",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
-  "paper_url": "",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41587-025-02942-z",
   "relevance": {
     "impact": 3,
     "validation": 3,
@@ -18,11 +18,11 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Predicted small molecules tested for binding to 10 disease-associated RNA targets, giving 40 hits with nanomolar to micromolar affinity; one compound tested in three cancer cell lines.",
-    "unknown": "Not assessed: a press-release hit rate of 21.1% was not checked against the paper.",
-    "ai_role": "Deep learning model fusing two large language models with convolutional and graph attention networks to predict small molecule-RNA binding from RNA secondary structure.",
+    "tested": "RNA-binding assays and cancer-cell experiments.",
+    "unknown": "Not assessed: full-paper validation rates and therapeutic performance.",
+    "ai_role": "Multimodal deep learning predicted small molecule-RNA interactions.",
     "evidence_urls": [
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41587-025-02942-z&resultType=core&format=json"
+      "https://pubmed.ncbi.nlm.nih.gov/41482542/"
     ],
     "test_type": "direct test"
   }

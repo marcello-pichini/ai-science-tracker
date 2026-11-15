@@ -1,30 +1,30 @@
 {
   "id": "2026-11-ecg-biomarker-sudden-cardiac-death-deep-learning",
   "title": "Deep learning finds an ECG biomarker for sudden cardiac death",
-  "summary": "A deep learning model trained on about 440,000 Swedish ECGs linked to death certificates isolates a high-risk group (2.2% of the sample) with a 7.0% annual sudden cardiac death rate, versus 4.6% for reduced LVEF; 86.1% of its high-risk patients were not flagged by LVEF. It was externally validated in a US health system and a Taiwanese registry. The press release reports a 54.4% lower-than-expected mortality among high-risk patients with implanted defibrillators, read as a benefit; the paper was published in Nature with the press release dated 2026-11-12 (Europe PMC first-online date 2026-06-24).",
+  "summary": "The Nature paper, published online on 2026-06-24, reports a deep-learning ECG biomarker evaluated retrospectively in Swedish data and external US and Taiwanese datasets. Its high-risk group comprised 2.2% of the sample and had a 7.0% annual sudden-cardiac-death rate, versus 4.6% for reduced LVEF; 86.1% were not flagged by LVEF. Among high-risk patients with defibrillators, sudden cardiac death was 54.4% lower than model-expected, an observational association subject to confounding and not proof of benefit.",
   "field": "medicine",
   "ai_technology": "Deep learning ECG model with a generative ECG waveform model for visualization",
-  "organization": "UC Berkeley; Swedish region health data; US health system; Taiwanese hospital registry",
-  "source_url": "https://www.sciencedaily.com/releases/2026/11/261112230456.htm",
-  "source_type": "press release",
-  "publication_date": "2026-11-12",
+  "organization": "University of California, Berkeley; University of Chicago; Massachusetts Institute of Technology; Halmstad University; Region Halland; University of Gothenburg; Sahlgrenska University Hospital",
+  "source_url": "https://doi.org/10.1038/s41586-026-10674-6",
+  "source_type": "paper",
+  "publication_date": "2026-06-24",
   "added_date": "2026-11-15",
-  "verification_status": "needs verification",
-  "paper_url": "https://doi.org/10.1038/s41586-026-10674-6",
+  "verification_status": "verified",
+  "paper_url": "",
   "relevance": {
     "impact": 4,
-    "validation": 4,
+    "validation": 2,
     "novelty": 4
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Model trained on Swedish ECG-death linkage data, then evaluated in a US health system and a Taiwanese hospital registry for arrhythmic cardiac arrest prediction.",
-    "unknown": "Mortality benefit of defibrillators is an observational association, not a randomized result (press release framing). Not stated in the reviewed material for other limits.",
+    "tested": "Existing Swedish ECG/death-certificate data, a held-out lockbox created before analysis, external US ventricular-arrhythmia and Taiwanese arrhythmic-arrest evaluations; observational defibrillator associations.",
+    "unknown": "Main paper reviewed; supplementary attachments not read. The authors explicitly identify residual confounding and the need for randomized testing of defibrillator benefit in model-high-risk patients.",
     "ai_role": "Deep learning model discovered the predictive ECG waveform pattern; generative model used to visualize it.",
     "evidence_urls": [
-      "https://www.sciencedaily.com/releases/2026/11/261112230456.htm",
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41586-026-10674-6%22&resultType=core&format=json"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1038%2Fs41586-026-10674-6%22&resultType=core&format=json",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13323061/fullTextXML"
     ],
-    "test_type": "prospective or independent check"
+    "test_type": "retrospective or benchmark"
   }
 }

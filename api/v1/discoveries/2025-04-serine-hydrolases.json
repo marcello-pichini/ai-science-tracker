@@ -1,15 +1,15 @@
 {
   "id": "2025-04-serine-hydrolases",
   "title": "Serine hydrolases designed from scratch",
-  "summary": "RFdiffusion backbones and the PLACER network for catalytic-cycle ensembles produced de novo serine hydrolases with kcat/Km up to 4.3e3 M^-1 s^-1 and crystal structures within 1 Å of the designs, in five folds not seen in this enzyme family. Design success rates not checked.",
+  "summary": "The April 2025 Science version describes RFdiffusion enzyme backbones and PLACER assessment of catalytic-state ensembles. Laboratory characterization found catalytic efficiency up to 2.2 × 10^5 M^-1 s^-1, crystal structures with C-alpha RMSD below 1 angstrom, and catalysts in five folds different from natural serine hydrolases. This summary follows the abstract and figure descriptions; an earlier bioRxiv version was posted in August 2024.",
   "field": "biology",
   "ai_technology": "RFdiffusion and PLACER",
-  "organization": "University of Washington Institute for Protein Design; and UCLA",
+  "organization": "University of Washington; University of California, Los Angeles; Howard Hughes Medical Institute",
   "source_url": "https://pubmed.ncbi.nlm.nih.gov/39946508/",
   "source_type": "paper",
   "publication_date": "2025-04-18",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "https://doi.org/10.1126/science.adu2454",
   "relevance": {
     "impact": 4,
@@ -18,11 +18,10 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "De novo designed serine hydrolases characterized experimentally: best catalytic efficiency about 2.2 x 10^5 M^-1 s^-1, and crystal structures within 1 Angstrom of the design models in five new folds.",
-    "unknown": "The abstract states no limitations; design success rates were not checked in the text read.",
-    "ai_role": "RFdiffusion generated enzyme backbones from active-site descriptions; an ensemble-generation method (PLACER) assessed active-site preorganization across the reaction.",
+    "tested": "Enzyme activity assays and crystallographic comparison of designed catalysts.",
+    "unknown": "Not assessed: complete design success rates and supplementary data.",
+    "ai_role": "RFdiffusion generated backbones; PLACER assessed catalytic-state geometry.",
     "evidence_urls": [
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1126/science.adu2454&resultType=core&format=json",
       "https://pubmed.ncbi.nlm.nih.gov/39946508/"
     ],
     "test_type": "direct test"

@@ -1,16 +1,16 @@
 {
   "id": "2026-01-drugclip",
   "title": "DrugCLIP screens about 10,000 human proteins against 500 million compounds",
-  "summary": "Contrastive learning, reported up to 10 million times faster than docking, gave wet-lab hit rates of 15% for the norepinephrine transporter and 17.5% for thyroid hormone receptor interactor 12, with two inhibitor structures solved. Hit rates cover a small set of targets; most of the genome-wide screen is computational.",
+  "summary": "The January 2026 Science abstract reports DrugCLIP screening roughly 10,000 human proteins against 500 million compounds. Experimental hits included 15% for the norepinephrine transporter, with structures of two inhibitor complexes, and 17.5% for TRIP12 using AlphaFold2 structures. Most database results remain computational. The work also has a bioRxiv preprint first indexed in September 2024.",
   "field": "chemistry",
   "ai_technology": "DrugCLIP (deep contrastive learning)",
-  "organization": "Tsinghua University",
-  "source_url": "https://doi.org/10.1126/science.ads9530",
+  "organization": "Tsinghua University; Peking University; Beijing Academy of Artificial Intelligence",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/41505557/",
   "source_type": "paper",
   "publication_date": "2026-01-08",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
-  "paper_url": "",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1126/science.ads9530",
   "relevance": {
     "impact": 4,
     "validation": 3,
@@ -18,11 +18,11 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Wet-lab testing of computational hits: 15% hit rate for the norepinephrine transporter and 17.5% for thyroid hormone receptor interactor 12 using AlphaFold2 structures; two inhibitor structures solved.",
-    "unknown": "Wet-lab validation covers two targets; most of the genome-wide screen is computational; generalizability is an open question.",
-    "ai_role": "Contrastive learning framework for ultrafast virtual screening of about 10,000 human proteins against 500 million compounds.",
+    "tested": "Biochemical hit testing and structures of two NET inhibitor complexes.",
+    "unknown": "Not assessed: full assay denominators, uncertainty and genome-wide experimental coverage.",
+    "ai_role": "Contrastive learning ranked protein-compound pairs.",
     "evidence_urls": [
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1126/science.ads9530&resultType=core&format=json"
+      "https://pubmed.ncbi.nlm.nih.gov/41505557/"
     ],
     "test_type": "direct test"
   }

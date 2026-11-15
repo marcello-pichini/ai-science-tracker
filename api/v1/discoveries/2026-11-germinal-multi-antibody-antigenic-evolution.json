@@ -1,7 +1,7 @@
 {
   "id": "2026-11-germinal-multi-antibody-antigenic-evolution",
   "title": "Antibody design across observed and forecasted antigenic evolution",
-  "summary": "Germinal Multi jointly optimizes one antibody paratope against several antigen variants. Designs bound resistance-associated EGFR variants and neutralized historical SARS-CoV-2 variants, including variants withheld from design; redesign of BD55-1205 restored neutralization of a forecast escape variant. Successful candidates came from screening tens of designs per campaign.",
+  "summary": "The Germinal Multi preprint abstract reports antibodies designed against several antigen variants at once. Experimental screens of tens of designs per campaign found binders to resistance-associated EGFR variants and neutralizers of historical SARS-CoV-2 variants, including variants withheld from design. Redesign of BD55-1205 restored neutralization of a forecast-guided engineered escape variant while retaining parental-variant activity. The escape result concerns an engineered variant, not a demonstrated future circulating strain. Review is limited to the abstract and original-server metadata.",
   "field": "biology",
   "ai_technology": "Germinal Multi (computational antibody design framework); evolutionary forecasting model",
   "organization": "Stanford University",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2026-11-13",
   "added_date": "2026-11-15",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "https://doi.org/10.64898/2026.11.10.765734",
   "relevance": {
     "impact": 4,
@@ -19,11 +19,11 @@
   "evidence": {
     "publication_status": "Preprint",
     "tested": "Tens of designs per campaign were screened experimentally; designs bound EGFR variants and neutralized SARS-CoV-2 variants, including variants withheld from the design process.",
-    "unknown": "Not stated in the reviewed material beyond the abstract; the prospective escape variant result is described as a single redesign case in the abstract.",
-    "ai_role": "A computational framework designed antibodies de novo against multiple antigenic variants at once, and an evolutionary forecasting model guided redesign against a prospective escape variant.",
+    "unknown": "Review limited to the indexed abstract and publication metadata; full-paper methods and additional limitations were not assessed.",
+    "ai_role": "Germinal Multi computationally optimized one antibody paratope against multiple antigen variants, and an evolutionary forecasting model guided construction of an escape variant and antibody redesign.",
     "evidence_urls": [
-      "https://europepmc.org/article/PPR/PPR1367523",
-      "https://doi.org/10.64898/2026.11.10.765734"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.64898%2F2026.11.10.765734%22&resultType=core&format=json",
+      "https://api.biorxiv.org/details/biorxiv/10.64898/2026.11.10.765734"
     ],
     "test_type": "direct test"
   }

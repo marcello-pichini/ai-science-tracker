@@ -1,15 +1,15 @@
 {
   "id": "2026-10-agent-perrhenate-deoxydehydration-water-loss",
   "title": "AI agent maps proton-gated water loss in perrhenate-catalysed deoxydehydration",
-  "summary": "Authors posed mechanistic hypotheses and an AI agent located the corresponding transition states, which the authors validated. Microkinetic simulation on coupled-cluster-anchored energies predicts a proton-gated mechanism at the water-loss steps, with a claimed eightfold rate increase over the best proton-free pathway found. The predicted barrier falls within the 31.5-34.0 kcal/mol window derived from reported turnover, a comparison the authors describe as like-for-like with batch experiments.",
+  "summary": "The paper reports a computational mechanism for perrhenate-catalysed deoxydehydration: proton-assisted water loss enables ring closure and alcohol reduction. Under human-defined hypotheses, a Claude Code agent located transition states, which the authors validated. Coupled-cluster-anchored microkinetic modeling predicted a rate increase of about eight orders of magnitude over the best proton-free pathway. At matched conversion conditions, modeled barriers were consistent with the 31.5–34.0 kcal/mol window inferred from previously reported experimental turnover; this was not a new wet-lab demonstration.",
   "field": "chemistry",
-  "ai_technology": "AI agent for transition-state search within a reaction-network workflow, with microkinetic modelling",
+  "ai_technology": "Claude Code LLM agent for human-directed reaction-network and transition-state search, combined with electronic-structure calculations and microkinetic modeling",
   "organization": "KU Leuven",
   "source_url": "https://doi.org/10.1039/d6sc06865k",
   "source_type": "paper",
   "publication_date": "2026-10-27",
   "added_date": "2026-11-15",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 3,
@@ -18,11 +18,12 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "The predicted rate was compared with the reported turnover-derived barrier window from batch experiments. The authors validated the transition states the agent located.",
-    "unknown": "The abstract does not state experimental uncertainty; the comparison relies on energies from a computational model.",
-    "ai_role": "An AI agent located the transition states corresponding to the authors' mechanistic hypotheses.",
+    "tested": "Agent-located transition states verified by the authors; computed energetics, reaction-network and microkinetic consistency checks; comparisons to existing turnover-derived barrier estimates.",
+    "unknown": "Main paper reviewed; supplementary files were not read. The mechanism and rate changes are predictions compared with prior experimental kinetics, not a new experimental confirmation.",
+    "ai_role": "Claude Code carried out calculation/search/triage workflows for author-specified mechanistic hypotheses; authors validated the located stationary points.",
     "evidence_urls": [
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:42964542&resultType=core&format=json"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1039%2Fd6sc06865k%22&resultType=core&format=json",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13720772/fullTextXML"
     ],
     "test_type": "direct test"
   }

@@ -1,7 +1,7 @@
 {
   "id": "2021-09-element-selection-li-solid-electrolyte",
   "title": "Unsupervised machine learning guides discovery of a lithium solid electrolyte",
-  "summary": "Unsupervised machine learning of experimentally explored chemistry, combined with crystal structure prediction, selected element combinations for new inorganic solids. The approach predicted a novel quaternary lithium solid electrolyte that was then synthesized, and the group reports four new materials in total. The conductivity values of the synthesized compounds were not verified in this search.",
+  "summary": "A variational autoencoder ranked unexplored element combinations for lithium solid electrolytes. Researchers combined those rankings with crystal-structure prediction and synthesis to discover Li₃.₃SnS₃.₃Cl₀.₇, then characterized its structure and lithium-ion transport. Impedance, NMR and lithium-cell measurements supported a new transport pathway and compatibility with lithium metal.",
   "field": "materials",
   "ai_technology": "Unsupervised machine learning for element selection with crystal structure prediction",
   "organization": "University of Liverpool",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2021-09-21",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "https://doi.org/10.1038/s41467-021-25343-7",
   "relevance": {
     "impact": 4,
@@ -18,11 +18,12 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "The predicted Li3.3SnS3.3Cl0.7 phase was synthesized, and conductivity was measured by AC impedance from 25 to 125 C, with 400 hours of lithium plating/stripping.",
-    "unknown": "The VAE was trained only on positive examples, the target composition cannot be exactly reached, and the NMR-derived barrier differs from the impedance value.",
-    "ai_role": "An unsupervised variational autoencoder trained on ICSD phase fields ranked untested quaternary fields; crystal structure prediction then identified the composition region, and researchers made the final decisions.",
+    "tested": "Synthesis, diffraction, impedance and NMR characterization of the selected lithium solid electrolyte, with lithium plating/stripping measurements.",
+    "unknown": "This is a laboratory material study; full-battery performance and independent replication were not assessed.",
+    "ai_role": "An unsupervised variational autoencoder ranked chemical element combinations; human selection and crystal-structure calculations directed synthesis.",
     "evidence_urls": [
-      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8455628/"
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8455628/",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1038%2Fs41467-021-25343-7%22&resultType=core&format=json"
     ],
     "test_type": "direct test"
   }

@@ -1,30 +1,29 @@
 {
   "id": "2026-10-pact-healthy-neural-priors-bci",
   "title": "Healthy neural priors improve BCI decoding in patients with motor-cortex gliomas",
-  "summary": "A Pathology-Aware Consensus Training (PACT) decoder embeds biophysical constraints from healthy recordings into training. On gesture classification from high-density ECoG of glioma patients infiltrating motor cortex, accuracy rose by more than 10%, and the correlation of motor-command geometry with healthy references rose from r=0.66 to r=0.94. The authors frame it as a proof of concept for clinical-population BCIs.",
+  "summary": "PACT used healthy neural priors to decode hand gestures from recordings of patients with gliomas. In the reported comparison, decoding accuracy improved by more than 10%, and alignment with reference motor representations increased from r=0.66 to r=0.94. The study collected intraoperative ECoG from eight participants, four with motor-cortex gliomas and four with other gliomas. This proof of concept addresses a specific clinical population; offline decoding does not establish benefit from a deployed BCI. Review covered the abstract, affiliations and selected results.",
   "field": "biology",
   "ai_technology": "Pathology-Aware Consensus Training (PACT), a neural decoder trained with biophysical constraints",
-  "organization": "National Clinical Research Center for Geriatric",
+  "organization": "West China Hospital of Sichuan University; Sichuan University; KU Leuven; Imperial College London",
   "source_url": "https://europepmc.org/article/MED/42913013",
   "source_type": "paper",
   "publication_date": "2026-10-23",
   "added_date": "2026-11-15",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "https://doi.org/10.1126/sciadv.adx5564",
   "relevance": {
     "impact": 3,
-    "validation": 3,
+    "validation": 2,
     "novelty": 3
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Gesture classification from high-density ECoG of patients with gliomas infiltrating motor cortex, comparing PACT with conventional training.",
-    "unknown": "Proof of concept only; sample size, cross-patient generalization and clinical deployment are not stated in the reviewed material.",
+    "tested": "Offline gesture decoding on intraoperative recordings; selected results describe eight glioma participants.",
+    "unknown": "Source checking does not establish independent confirmation. Review date: 2026-11-15.",
     "ai_role": "PACT is the decoding model; it uses healthy neural recordings as priors and learns to suppress pathological noise and reweight spatial attention.",
     "evidence_urls": [
-      "https://europepmc.org/article/MED/42913013",
-      "https://doi.org/10.1126/sciadv.adx5564"
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13693691/"
     ],
-    "test_type": "direct test"
+    "test_type": "retrospective or benchmark"
   }
 }

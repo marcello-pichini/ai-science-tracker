@@ -1,15 +1,15 @@
 {
   "id": "2025-07-autonomous-enzyme-engineering",
   "title": "A closed-loop platform engineers enzymes with minimal human input",
-  "summary": "Machine learning and language models choosing variants, with a biofoundry running build and test, raised Arabidopsis halide methyltransferase substrate preference 90-fold (16-fold ethyltransferase activity) and Yersinia mollaretii phytase activity 26-fold at neutral pH, in four rounds over four weeks and under 500 variants per enzyme. Two enzymes only.",
+  "summary": "The July 2025 Nature Communications paper reports AI-guided biofoundry engineering of two enzymes in four rounds over four weeks, testing fewer than 500 variants per enzyme. Different AtHMT variants achieved about 90-fold greater ethyl-iodide substrate preference and 16-fold ethyltransferase activity; YmPhytase activity improved 26-fold at neutral pH. The system combines ML variant selection, language-model access and automated experiments; the authors describe conditional-to-high automation.",
   "field": "biology",
   "ai_technology": "Machine learning and LLM-guided variant design with biofoundry automation",
-  "organization": "University of Illinois Urbana-Champaign (Zhao lab)",
-  "source_url": "https://europepmc.org/articles/PMC12215622",
+  "organization": "University of Illinois Urbana-Champaign",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12215622/",
   "source_type": "paper",
   "publication_date": "2025-07-01",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "https://doi.org/10.1038/s41467-025-61209-y",
   "relevance": {
     "impact": 4,
@@ -18,11 +18,11 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Proof of concept on two enzymes over four rounds in four weeks, under 500 variants per enzyme: about 90-fold substrate preference gain for AtHMT and 26-fold activity gain for YmPhytase at neutral pH.",
-    "unknown": "Only two enzymes were tested; the abstract does not describe any remaining human role beyond the input sequence and fitness metric, and states no limitations.",
-    "ai_role": "Machine learning and language models chose protein variants, with biofoundry automation building and testing them.",
+    "tested": "Enzyme activity and purified-variant kinetic measurements in two campaigns.",
+    "unknown": "Not assessed: supplements; broad applicability beyond two enzymes. Authors classify automation between levels 3 and 4.",
+    "ai_role": "Protein models and regression selected variants; the biofoundry built and tested them.",
     "evidence_urls": [
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41467-025-61209-y&resultType=core&format=json"
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12215622/"
     ],
     "test_type": "direct test"
   }

@@ -1,16 +1,16 @@
 {
   "id": "2024-11-llm-rdf",
-  "title": "GPT-4 agents run an end-to-end chemical synthesis workflow",
-  "summary": "Six GPT-4-based agents (literature, experiment design, hardware, spectra, separation, interpretation) ran a Cu/TEMPO aerobic oxidation workflow with automated hardware and were validated on three further reactions. The abstract gives no yields or timings; full text not read.",
+  "title": "GPT-4 agents guide chemical synthesis development and purification",
+  "summary": "The November 2024 Nature Communications paper describes six GPT-4 agents guiding copper/TEMPO alcohol oxidation, from literature search through optimization and purification. An agent-assisted scale-up produced 915 mg of product at 86% isolated yield and above 98% purity. Additional reaction tasks were demonstrated. The workflow involved chemists: thin-layer chromatography was performed manually, so this was not fully autonomous synthesis.",
   "field": "chemistry",
   "ai_technology": "LLM-RDF (six GPT-4 agents)",
-  "organization": "Zhejiang University",
-  "source_url": "https://doi.org/10.1038/s41467-024-54457-x",
+  "organization": "Zhejiang University; Hong Kong University of Science and Technology; Suzhou Novartis Technical Development Co. Ltd.; Rezubio Pharmaceuticals Co. Ltd.",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11585555/",
   "source_type": "paper",
   "publication_date": "2024-11-23",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
-  "paper_url": "",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-024-54457-x",
   "relevance": {
     "impact": 3,
     "validation": 3,
@@ -18,11 +18,11 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Six GPT-4-based agents ran an end-to-end Cu/TEMPO aerobic oxidation workflow with automated hardware, and the framework was validated on three further reactions.",
-    "unknown": "The abstract gives no limitations, yields or timings; full text not read.",
-    "ai_role": "GPT-4-based agents handled literature search, experiment design, hardware execution, spectra analysis, separation and result interpretation.",
+    "tested": "Physical synthesis, optimization, scale-up and product purification.",
+    "unknown": "Not assessed: supplements; manual TLC and chemist participation are explicit in the paper.",
+    "ai_role": "Six GPT-4 agents supported literature, design, execution, analysis, separation and interpretation.",
     "evidence_urls": [
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41467-024-54457-x&resultType=core&format=json"
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11585555/"
     ],
     "test_type": "direct test"
   }

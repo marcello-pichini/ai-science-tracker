@@ -1,7 +1,7 @@
 {
   "id": "2020-05-self-driving-thin-film",
   "title": "Self-driving laboratory optimizes organic hole-transport thin films",
-  "summary": "A closed-loop robotic platform autonomously varied film composition and processing to maximize the hole mobility of organic hole-transport materials for perovskite solar cells. The optimization was demonstrated experimentally on the robot, and the paper is peer-reviewed in Science Advances. Numeric mobility gains were not verified, so the size of the improvement is unconfirmed.",
+  "summary": "A robotic laboratory used model-based optimization to select thin-film compositions and processing conditions, execute experiments and learn from their measured optical and electronic properties. The reported demonstration optimized hole mobility in organic hole-transport materials used in perovskite solar cells and electronics. This description is limited to the paper abstract; it does not assert a numerical mobility gain.",
   "field": "materials",
   "ai_technology": "Closed-loop self-driving laboratory with autonomous optimization",
   "organization": "University of British Columbia; Harvard University; University of Toronto",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2020-05-13",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 3,
@@ -18,11 +18,11 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "A closed-loop robotic platform varied film composition and processing and was demonstrated experimentally by maximizing hole mobility of organic hole-transport materials.",
-    "unknown": "Not reported in the abstract read.",
-    "ai_role": "A model-based optimization algorithm drove a closed loop of design, execution and learning.",
+    "tested": "Closed-loop composition and processing experiments on organic hole-transport thin films, with measured hole mobility as an optimization target.",
+    "unknown": "Abstract and publication metadata reviewed; detailed optimization history, baseline comparisons and durability were not assessed.",
+    "ai_role": "A model-based optimizer selected subsequent experiments using measurements from the robotic platform.",
     "evidence_urls": [
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1126/sciadv.aaz8867&resultType=core&format=json"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1126%2Fsciadv.aaz8867%22&resultType=core&format=json"
     ],
     "test_type": "direct test"
   }

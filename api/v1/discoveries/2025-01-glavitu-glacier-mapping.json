@@ -1,7 +1,7 @@
 {
   "id": "2025-01-glavitu-glacier-mapping",
-  "title": "GlaViTU maps glaciers worldwide close to expert accuracy",
-  "summary": "A convolutional-transformer model maps glacier outlines from open satellite imagery, with intersection over union above 0.85 on unseen images in most cases, above 0.75 in debris-rich areas such as High-Mountain Asia and above 0.90 where clean ice dominates. Compared with human expert uncertainty it approaches or matches expert delineation; adding radar data improves accuracy. A benchmark covering 9% of the world's glaciers is released.",
+  "title": "GlaViTU estimates decadal glacier-area decline from satellite imagery",
+  "summary": "GlaViTU combined convolutional and transformer models to map glacier outlines from satellite images. The original supplement applies it to the Aletsch complex between 1998 and 2023 and Hardangerjøkulen between 1996 and 2022, estimating area declines in both. The reported uncertainty bands are broad and overlap across dates. These are retrospective, model-derived geophysical estimates, not independent field measurements. Review covered the paper abstract, metadata, relevant main-text discussion and the first supplementary page.",
   "field": "climate",
   "ai_technology": "GlaViTU (Glacier-VisionTransformer-U-Net)",
   "organization": "University of Twente; University of Oslo",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2025-01-02",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 3,
@@ -18,11 +18,12 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Intersection over union above 0.85 on unseen images in most cases, above 0.75 in debris-rich areas and above 0.90 where clean ice dominates; approaches or matches expert delineation uncertainty.",
-    "unknown": "Whether it has been adopted in glacier inventories is not reported in the abstract.",
-    "ai_role": "GlaViTU, a convolutional-transformer model; a benchmark covering 9% of glaciers was released.",
+    "tested": "Retrospective satellite-image mapping and regional glacier-area estimates at two periods; model-generalization and expert-outline comparisons.",
+    "unknown": "Supplementary area estimates have broad, overlapping 95% uncertainty bands. Only the relevant first supplementary page was reviewed; no field campaign or independent glacier-area estimate was performed in this review.",
+    "ai_role": "GlaViTU mapped glacier outlines with convolutional-transformer models and inference-time bias optimization.",
     "evidence_urls": [
-      "https://doi.org/10.1038/s41467-024-54956-x"
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11695715/",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11695715/supplementaryFiles"
     ],
     "test_type": "retrospective or benchmark"
   }

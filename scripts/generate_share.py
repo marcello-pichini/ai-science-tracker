@@ -453,6 +453,10 @@ def write_profile_pages(items, models, archived=()):
                        more='<a href="profile.html">Open the interactive directory</a>.', extra='', h2='')
     (ROOT / 'profiles/index.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
     pages.append('profiles/index.html')
+    current = set(pages)
+    for old in out.glob('org-*.html'):
+        if f'profiles/{old.name}' not in current:
+            redirect(old.name, {'index.html'})
     return pages
 
 

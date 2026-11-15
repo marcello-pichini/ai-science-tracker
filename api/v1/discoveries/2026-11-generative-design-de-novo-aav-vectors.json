@@ -1,7 +1,7 @@
 {
   "id": "2026-11-generative-design-de-novo-aav-vectors",
   "title": "Generative design of de novo AAV vectors with unique serological profiles",
-  "summary": "A variational autoencoder trained on natural AAV sequences generated capsid proteins de novo; more than 255 designs were synthesized and tested in vitro. Seven designs transduced human cells at over 50% efficiency, and four of these avoided neutralization by all AAV-reactive human sera tested (NT50 < 1:50).",
+  "summary": "The preprint abstract reports a variational autoencoder trained on natural AAV sequences to generate capsids. More than 255 designs were synthesized and tested in vitro. Seven transduced human cells at over 50% efficiency; four of those avoided neutralization by every AAV-reactive human serum sample tested, at the reported NT50 threshold below 1:50. This establishes in-vitro capsid properties, not in-vivo delivery or clinical efficacy. Review is limited to the abstract and original-server metadata.",
   "field": "biology",
   "ai_technology": "Variational autoencoder (generative model of AAV capsid sequences)",
   "organization": "University of Toronto",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2026-11-09",
   "added_date": "2026-11-15",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "https://doi.org/10.64898/2026.11.06.764881",
   "relevance": {
     "impact": 4,
@@ -19,11 +19,11 @@
   "evidence": {
     "publication_status": "Preprint",
     "tested": "More than 255 AI-generated capsid designs were synthesized and tested in vitro; seven transduced human cells above 50% efficiency and four avoided neutralizing antibodies in all reactive human sera.",
-    "unknown": "Tested in vitro only; the in vivo performance and the full set of limits are not stated in the reviewed abstract.",
+    "unknown": "Review limited to the indexed abstract and publication metadata; full-paper methods and additional limitations were not assessed.",
     "ai_role": "A variational autoencoder learned AAV sequence constraints from natural sequences and generated functional capsid proteins de novo, with a second design campaign exploring uncertain regions.",
     "evidence_urls": [
-      "https://europepmc.org/article/PPR/PPR1363818",
-      "https://doi.org/10.64898/2026.11.06.764881"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.64898%2F2026.11.06.764881%22&resultType=core&format=json",
+      "https://api.biorxiv.org/details/biorxiv/10.64898/2026.11.06.764881"
     ],
     "test_type": "direct test"
   }

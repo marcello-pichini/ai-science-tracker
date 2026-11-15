@@ -1,27 +1,28 @@
 {
   "id": "2025-12-riff-diff-enzyme-design",
   "title": "Riff-Diff: computational enzyme design by catalytic motif scaffolding",
-  "summary": "Riff-Diff places catalytic motifs around an active centre and uses RFdiffusion to generate the full protein; 35 tested sequences yielded active enzymes for several reaction types, reported as significantly faster than earlier computational designs. Angstrom-level accuracy was checked against experimentally determined high-resolution structures, and almost all designs kept their fold up to about 90 degrees Celsius. Figures come from university press coverage; the Nature paper itself was not read directly.",
+  "summary": "The December 2025 Nature version reports Riff-Diff designs for retro-aldol and Morita-Baylis-Hillman reactions, with activities comparable to enzymes optimized by experimental evolution. Six high-resolution structures support near-atomic active-site placement. The abstract describes a hybrid of machine learning and atomistic modelling. The work also has a bioRxiv preprint first indexed in August 2024; the January 2026 journal issue is later than online publication.",
   "field": "biology",
   "ai_technology": "Riff-Diff (RFdiffusion with rotamer-based motif placement)",
-  "organization": "TU Graz; and University of Graz (Oberdorfer group)",
-  "source_url": "https://www.tugraz.at/en/news/article/enzyme-design-ai-riff-diff",
-  "source_type": "press release",
+  "organization": "Graz University of Technology; University of Graz; Weizmann Institute of Science; BioTechMed Graz",
+  "source_url": "https://doi.org/10.1038/s41586-025-09747-9",
+  "source_type": "paper",
   "publication_date": "2025-12-03",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
-  "paper_url": "https://doi.org/10.1038/s41586-025-09747-9",
+  "verification_status": "verified",
+  "paper_url": "",
   "relevance": {
     "impact": 4,
     "validation": 3,
     "novelty": 4
   },
   "evidence": {
-    "publication_status": "Announcement only",
-    "tested": "35 tested sequences were reported to yield active enzymes for several reaction types, with speed compared with earlier computer-aided designs and thermal stability up to about 90 degrees Celsius.",
-    "unknown": "The page lists no limitations and does not say how many of the 35 sequences were active.",
-    "ai_role": "RFdiffusion, a generative model, generated the complete protein structure from positioned catalytic motifs; other models refined the scaffold.",
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Designed-enzyme activity and six experimental high-resolution structures.",
+    "unknown": "Not assessed: full-paper success rates, thermal assays and supplementary data.",
+    "ai_role": "Riff-Diff combines learned protein generation and atomistic catalytic-motif scaffolding.",
     "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1038%2Fs41586-025-09747-9%22&resultType=core&format=json",
       "https://www.tugraz.at/en/news/article/enzyme-design-ai-riff-diff"
     ],
     "test_type": "direct test"

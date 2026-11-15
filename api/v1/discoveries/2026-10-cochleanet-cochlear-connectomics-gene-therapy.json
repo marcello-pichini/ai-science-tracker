@@ -1,10 +1,10 @@
 {
   "id": "2026-10-cochleanet-cochlear-connectomics-gene-therapy",
   "title": "CochleaNet: deep learning analysis of cochlear connectomics and gene therapy",
-  "summary": "CochleaNet segments the cochlea from light-sheet volumes of cleared, labelled tissue, including inner hair cells, spiral ganglion neurons and their synapses, and analyses tonotopy and gene expression. It was validated against manual analysis and outperformed prior segmentation methods. The authors used it to compare spiral ganglion neuron types and to assess different gene therapy products.",
+  "summary": "The journal abstract describes CochleaNet, a deep-learning framework for cleared-cochlea light-sheet images, covering hair cells, spiral ganglion neurons, synapses, tonotopy and gene expression. Trained on mouse data, it was applied to gerbil and lower-resolution mouse and marmoset data. The authors say they analyzed neuron types and validated gene-therapy products but the abstract does not identify the biological or therapy-comparison findings. The date represents the 2026-10-23 journal version; an earlier preprint appeared on 2025-11-17.",
   "field": "biology",
   "ai_technology": "CochleaNet: deep learning framework for volumetric image segmentation and analysis",
-  "organization": "University Medical Center Göttingen; University of Göttingen; Cluster of Excellence MBExC",
+  "organization": "University Medical Center Göttingen; University of Göttingen",
   "source_url": "https://europepmc.org/article/MED/42920300",
   "source_type": "paper",
   "publication_date": "2026-10-23",
@@ -18,12 +18,12 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Compared with manual image analysis and prior segmentation methods, then used to validate different gene therapy products in cochleae.",
-    "unknown": "Generalisation to other cochlear datasets or species is not stated in the reviewed material.",
+    "tested": "Manual-analysis and prior-segmentation comparisons; applications to neuron types, gene-therapy products, gerbil cochleae and lower-resolution mouse and marmoset imaging. The abstract does not state the specific biological outcomes.",
+    "unknown": "The journal body was not accessible through the publisher (HTTP 403), and the linked preprint full-text API returned HTTP 500. Original preprint abstract adds no specific gene-therapy result. Eligibility remains unresolved until the actual application finding is read.",
     "ai_role": "Deep learning framework that reconstructs the cochlea and segments hair cells, neurons and synapses, and quantifies tonotopy and gene expression.",
     "evidence_urls": [
-      "https://europepmc.org/article/MED/42920300",
-      "https://doi.org/10.1016/j.ymthe.2026.10.025"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1016%2Fj.ymthe.2026.10.025%22&resultType=core&format=json",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3APPR1120449&resultType=core&format=json"
     ],
     "test_type": "direct test"
   }

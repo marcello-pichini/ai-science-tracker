@@ -1,15 +1,15 @@
 {
   "id": "2025-09-delphi-2m",
   "title": "Delphi-2M forecasts the risk of more than 1,000 diseases",
-  "summary": "A generative transformer trained on about 0.4 million UK Biobank participants and validated on 1.9 million people in Danish registries predicts rates for more than 1,000 diseases and simulates health trajectories up to 20 years ahead. Reported accuracy is comparable to single-disease models. Retrospective analysis: not a clinical tool and not causal.",
+  "summary": "The September 2025 Nature version reports a GPT-style transformer trained on about 0.4 million UK Biobank participants and evaluated without retraining on 1.9 million Danish individuals. It models rates for more than 1,000 diseases and generates potential health trajectories up to 20 years ahead. This is retrospective risk modelling, with training-population biases; it does not establish a clinical benefit. The work also has a medRxiv preprint first indexed in June 2024.",
   "field": "medicine",
   "ai_technology": "Delphi-2M (GPT-style generative transformer)",
-  "organization": "DKFZ; EMBL-EBI and University of Copenhagen",
-  "source_url": "https://www.embl.org/news/science/ai-model-forecasts-disease-risk-decades-in-advance/",
-  "source_type": "press release",
+  "organization": "German Cancer Research Centre DKFZ; EMBL-EBI; University of Copenhagen",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12589094/",
+  "source_type": "paper",
   "publication_date": "2025-09-17",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "https://doi.org/10.1038/s41586-025-09529-3",
   "relevance": {
     "impact": 4,
@@ -18,12 +18,12 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Trained on about 0.4 million UK Biobank participants and tested, with no parameter changes, on 1.9 million Danish registry patients; a UK Biobank check found predicted risks matched observed case counts by age and sex.",
-    "unknown": "Stated as not ready for direct clinical use; less reliable for variable conditions such as mental health; shorter-term forecasts more accurate; demographic biases from gaps in training data.",
-    "ai_role": "Generative GPT-style transformer modeling disease histories as timed event sequences to forecast risk and timing for over 1,000 diseases.",
+    "tested": "Existing-record predictions in UK Biobank and Danish registries.",
+    "unknown": "Not assessed: supplementary analyses and clinical deployment; population biases are discussed in the paper.",
+    "ai_role": "A modified generative transformer models disease events and timing.",
     "evidence_urls": [
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41586-025-09529-3&resultType=core&format=json",
-      "https://www.embl.org/news/science/ai-model-forecasts-disease-risk-decades-in-advance/"
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12589094/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12657216/"
     ],
     "test_type": "retrospective or benchmark"
   }

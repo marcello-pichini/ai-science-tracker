@@ -1,15 +1,15 @@
 {
   "id": "2026-11-cross-state-allosteric-site-discovery",
   "title": "Cross-state representation learning enables prospective discovery of dynamic protein allosteric sites",
-  "summary": "AllositeUltra, a deep-learning framework for allosteric site detection, reached Top-3 site recovery of 65.2% on apo and 70.6% on substrate-bound structures, versus the best baselines. Prospective application to MAGI2 identified an interdomain allosteric pocket, validated by small-molecule screening and X-ray crystallography at atomic resolution.",
+  "summary": "The preprint abstract reports that AllositeUltra recovered allosteric sites among its top three predictions in 65.2% of apo structures and 70.6% of substrate-bound structures. More importantly, application to MAGI2 identified a previously unrecognized interdomain pocket, tested by small-molecule screening and X-ray crystallography. This within-study experimental finding qualifies separately from the benchmark. Review is limited to the abstract and original-server metadata.",
   "field": "biology",
   "ai_technology": "AllositeUltra (structure-aware protein language model combined with physical dynamics; residue-guided candidate supplementation)",
-  "organization": "Shanghai Jiao Tong University; Chinese Academy of Sciences",
+  "organization": "Shanghai Jiao Tong University",
   "source_url": "https://europepmc.org/article/PPR/PPR1363697",
   "source_type": "paper",
   "publication_date": "2026-11-10",
   "added_date": "2026-11-15",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "https://doi.org/10.64898/2026.11.09.765238",
   "relevance": {
     "impact": 3,
@@ -19,11 +19,11 @@
   "evidence": {
     "publication_status": "Preprint",
     "tested": "The predicted MAGI2 interdomain pocket was validated experimentally through small-molecule screening and X-ray crystallography; benchmark recovery was measured on apo and substrate-bound structures.",
-    "unknown": "Not stated in the reviewed material beyond the abstract; the number of prospective candidates tested is not given in the abstract.",
+    "unknown": "Review limited to the indexed abstract and publication metadata; full-paper methods and additional limitations were not assessed.",
     "ai_role": "A deep-learning model predicted allosteric sites on apo and substrate-bound structures and was applied prospectively to MAGI2 and proteome-wide.",
     "evidence_urls": [
-      "https://europepmc.org/article/PPR/PPR1363697",
-      "https://doi.org/10.64898/2026.11.09.765238"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.64898%2F2026.11.09.765238%22&resultType=core&format=json",
+      "https://api.biorxiv.org/details/biorxiv/10.64898/2026.11.09.765238"
     ],
     "test_type": "direct test"
   }

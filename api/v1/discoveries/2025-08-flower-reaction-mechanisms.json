@@ -1,15 +1,15 @@
 {
   "id": "2025-08-flower-reaction-mechanisms",
-  "title": "FlowER predicts reaction mechanisms while conserving mass and electrons",
-  "summary": "A flow-matching generative model represents reactions as electron redistribution in bond-electron matrices, so predicted products conserve both mass and electrons. The authors report that it avoids hallucinated atoms, recovers mechanistic steps for unseen substrate scaffolds and generalizes to new reaction classes with little fine-tuning. Computational results on reaction datasets; no new reactions were run in the lab.",
+  "title": "FlowER predicts ten-step pyrazole pathways consistent with known product selectivity",
+  "summary": "FlowER predicted two ten-step pathways to pyrazole products already reported in 2024 patents. Human researchers supplied acidic aqueous conditions omitted from the reaction database. Quantum-chemical calculations of intermediate energies favored the experimentally major product, consistent with the reported 8:2 product ratio; the kinetic interpretation assumes the Bell–Evans–Polanyi principle. This is a computational explanation of existing outcomes, with no new reaction experiment or claim of a previously unknown mechanism. Review covered the February 18, 2025 preprint results and the August 20 journal paper’s abstract, metadata and extended-data captions; the journal main text was not assessed.",
   "field": "chemistry",
   "ai_technology": "FlowER (flow matching on bond-electron matrices)",
-  "organization": "Massachusetts Institute of Technology",
+  "organization": "Massachusetts Institute of Technology; Kookmin University",
   "source_url": "https://doi.org/10.1038/s41586-025-09426-9",
   "source_type": "paper",
   "publication_date": "2025-08-20",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 3,
@@ -18,11 +18,12 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Exact mass and electron conservation, recovery of mechanistic sequences for unseen substrate scaffolds and generalization to out-of-domain reaction classes with little fine-tuning.",
-    "unknown": "No laboratory validation of new reactions is reported in the abstract.",
-    "ai_role": "FlowER, a flow-matching generative model on bond-electron matrices.",
+    "tested": "Specific pyrazole-pathway predictions compared with known patent products and supplemented by calculated intermediate free energies.",
+    "unknown": "No new experimental confirmation; mechanistic priority not established. The kinetic argument assumes Bell–Evans–Polanyi reasoning; intermediate free energies are not measured transition-state barriers.",
+    "ai_role": "FlowER generated candidate electron-redistribution pathways; authors supplied conditions and conducted quantum-chemical analysis.",
     "evidence_urls": [
-      "https://doi.org/10.1038/s41586-025-09426-9"
+      "https://arxiv.org/html/2502.12979v1",
+      "https://www.nature.com/articles/s41586-025-09426-9?error=cookies_not_supported"
     ],
     "test_type": "retrospective or benchmark"
   }

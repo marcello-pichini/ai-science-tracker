@@ -188,9 +188,18 @@ function labView(name, discoveries, models) {
   }
   const items = discoveries.filter(s => leadOrg(s) === name).sort(newestFirst);
   if (!items.length) {
+    const query = location.search;
     fetch("data/archived-discoveries.json").then(r => r.ok ? r.json() : []).then(archived => {
+      if (location.search !== query) return;
       const matches = archived.filter(s => leadOrg(s) === name || matchesLegacy(s));
       if (matches.length === 1) location.replace("share/" + encodeURIComponent(matches[0].id) + ".html");
+      else if (!matches.length) {
+        const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        const url = "profiles/org-" + slug + ".html";
+        fetch(url, {method:"HEAD"}).then(response => {
+          if (response.ok && location.search === query) location.replace(url);
+        }).catch(() => {});
+      }
     }).catch(() => {}); // Keep the existing not-found view when the archive is unavailable.
     return notFound("organization", name);
   }

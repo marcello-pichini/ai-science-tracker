@@ -1,16 +1,16 @@
 {
   "id": "2026-11-bionic-eye-deep-learning-visual-cortex-stimulation",
   "title": "Deep learning controls electrical stimulation patterns in human visual cortex",
-  "summary": "A deep learning framework (a learned inverse network and a gradient-based optimizer) chooses electrical stimulation patterns for a temporarily implanted visual cortex device in a blind participant. The source states both methods outperform conventional calibration, reach targets at lower currents and give more consistent perception. The Neuron paper was published online 2026-08-07 and announced by ScienceDaily on 2026-11-10.",
+  "summary": "The Neuron abstract reports a deep-learning framework trained on trial-resolved recordings from a bidirectional human visual-cortex implant. A learned inverse network and gradient-based optimizer shaped stimulation-evoked population activity, achieved targets at lower currents and elicited more consistent perception than conventional methods. This is an experimental neural-control result, not evidence of restored functional sight. The paper was first published online on 2026-08-07; review here is limited to its abstract and metadata.",
   "field": "medicine",
   "ai_technology": "Deep learning inverse network and gradient-based optimizer for neural stimulation",
-  "organization": "UC Santa Barbara",
-  "source_url": "https://www.sciencedaily.com/releases/2026/11/261110042553.htm",
-  "source_type": "press release",
-  "publication_date": "2026-11-10",
+  "organization": "University of Zurich; ETH Zurich; University of California, Santa Barbara; Miguel Hernández University",
+  "source_url": "https://doi.org/10.1016/j.neuron.2026.07.006",
+  "source_type": "paper",
+  "publication_date": "2026-08-07",
   "added_date": "2026-11-15",
-  "verification_status": "needs verification",
-  "paper_url": "https://doi.org/10.1016/j.neuron.2026.07.006",
+  "verification_status": "verified",
+  "paper_url": "",
   "relevance": {
     "impact": 3,
     "validation": 3,
@@ -18,12 +18,11 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Proof-of-concept experiments in one participant with a temporarily implanted bidirectional cortical implant in human visual cortex.",
-    "unknown": "Limited to a proof-of-concept study with one person, as framed by the source; long-term use not reported.",
+    "tested": "Within-study human visual-cortex stimulation experiments comparing two learned control approaches with conventional methods; lower currents and more consistent reported percepts.",
+    "unknown": "Complete abstract and metadata reviewed. Participant count, implant duration, long-term performance and functional-vision outcomes were not assessed; full-text XML retrieval returned HTTP 500.",
     "ai_role": "Deep learning model trained on trial-resolved neural recordings to synthesize and optimize stimulation patterns.",
     "evidence_urls": [
-      "https://www.sciencedaily.com/releases/2026/11/261110042553.htm",
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.neuron.2026.07.006%22&resultType=core&format=json"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1016%2Fj.neuron.2026.07.006%22&resultType=core&format=json"
     ],
     "test_type": "direct test"
   }

@@ -1,10 +1,10 @@
 {
   "id": "2026-10-depth-aware-fib-sem-porous-electrode-reconstruction",
   "title": "Depth-aware machine learning for 3D reconstruction of fibrous porous electrodes from FIB-SEM tomography",
-  "summary": "An annotation-free framework combining monocular depth estimation (trained on macroscale images) with unsupervised clustering separates in-plane polymer cross-sections from subsurface contributions in FIB-SEM tomography. On copper-coated electrospun PVDF-HFP fiber mats it preserves fiber morphology better than conventional supervised and unsupervised segmentation, with improved agreement on pore diameter, fiber volume ratio and Cu depth decrease. Validation used capillary flow porometry, pycnometry and wide-angle X-ray tomography on a single material system.",
+  "summary": "The October 25, 2026 paper applies depth-aware machine learning to copper-coated polymer-fiber mats and compares reconstructions with independent physical measurements. The abstract supports improved morphology agreement, but identifies no separate electrode-property or materials discovery beyond validating reconstruction quality. This source check is limited to the abstract, electronic publication date and affiliations; the full paper was not assessed.",
   "field": "materials",
   "ai_technology": "Depth-aware machine learning: monocular depth estimation plus unsupervised clustering",
-  "organization": "ETH Zurich; EPFL; Empa; European Synchrotron Radiation Facility",
+  "organization": "Empa, Swiss Federal Laboratories for Materials Science and Technology; EPFL; ETH Zürich; European Synchrotron Radiation Facility",
   "source_url": "https://europepmc.org/article/MED/42928641",
   "source_type": "paper",
   "publication_date": "2026-10-25",
@@ -18,12 +18,11 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Reconstructions of copper-coated electrospun PVDF-HFP fiber mats compared with conventional segmentation and with independent measurements (porometry, pycnometry, wide-angle X-ray CT).",
-    "unknown": "Generalisation beyond the tested fiber mat system is not stated in the reviewed material.",
+    "tested": "Reconstruction agreement with porometry, pycnometry and X-ray tomography for one fiber-mat material system.",
+    "unknown": "Admission review pending: primary full results needed to distinguish a specific scientific/application result from general method validation. Existing supported claims may be retained with bounded scope, but do not mark source checked until admission is resolved.",
     "ai_role": "Monocular depth estimation model, trained on macroscale images, plus unsupervised clustering to separate in-plane from subsurface material in FIB-SEM slices.",
     "evidence_urls": [
-      "https://europepmc.org/article/MED/42928641",
-      "https://doi.org/10.1002/smtd.71142"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A42928641&resultType=core&format=json"
     ],
     "test_type": "direct test"
   }

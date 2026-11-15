@@ -289,5 +289,154 @@
       ],
       "test_type": "retrospective or benchmark"
     }
+  },
+  {
+    "id": "2026-11-ald-precursor-surface-reactant-ml",
+    "title": "AJIN machine learning predicts atomic layer deposition outcomes from experimental precursor-substrate data",
+    "summary": "Archived as a method-development and transfer benchmark. AJIN predicts adsorption and deposition outcomes for atomic layer deposition. The November 5, 2026 preprint compares predictions with literature data and the authors’ laboratory cases, but the reviewed abstract and results section 3.7 do not identify a separate new material, deposition chemistry or scientific finding enabled by the model. Laboratory comparison alone does not turn this general prediction method into a qualifying discovery. The historical ID and source are retained outside discovery counts.",
+    "field": "materials",
+    "ai_technology": "AJIN (ALD Joint Interpretable Network) with graph-neural-network embeddings (CHGNet-MLP best model)",
+    "organization": "Incheon National University; Ulsan National Institute of Science and Technology",
+    "source_url": "https://arxiv.org/abs/2611.10024",
+    "source_type": "other",
+    "publication_date": "2026-11-05",
+    "added_date": "2026-11-15",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Literature-data classification and comparison with laboratory transfer cases; no separate new chemistry result identified in reviewed sections.",
+      "unknown": "Retained outside discovery counts as a historical method demonstration. This is an admission decision, not a claim that experiments were absent. Physical prediction-before-assay timing was not established.",
+      "ai_role": "Machine-learning framework predicting whether a precursor-substrate-reactant combination yields ALD, with SHAP and ablation analyses of the drivers.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.10024",
+        "https://arxiv.org/pdf/2611.10024"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-marsnet-learns-martian-atmosphere-from-observations",
+    "title": "MarsNet learns the Martian atmosphere from observations alone",
+    "summary": "Archived as a model-development and atmospheric-reanalysis benchmark. The November 9, 2026 MarsNet preprint evaluates temperature and pressure estimates against held-out Martian observations. The reviewed abstract and discussion describe improved near-surface estimation and possible future uses as a discovery tool, rather than a separate atmospheric finding. The authors note poorer performance aloft and that much temperature skill precedes neural training. The historical ID and source are retained outside discovery counts.",
+    "field": "physics",
+    "ai_technology": "MarsNet, a learned forecast-and-update model with a fixed physical structure and bounded Kalman update",
+    "organization": "Yale University",
+    "source_url": "https://arxiv.org/abs/2611.12787",
+    "source_type": "paper",
+    "publication_date": "2026-11-09",
+    "added_date": "2026-11-15",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Retrospective comparison with held-out Mars temperatures and pressures; no separate atmospheric discovery identified.",
+      "unknown": "Retained outside discovery counts; the exclusion does not dispute model skill. Held-out MY32 also informed run selection; no prospective field test established.",
+      "ai_role": "A neural network learns the forecast tendencies and the observation update jointly, inside a fixed physical structure, and the influence of each observation can be traced.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.12787",
+        "https://arxiv.org/html/2611.12787v1"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2026-11-claude-designs-three-working-electronics-prototypes",
+    "title": "Claude designs three working electronics prototypes built and tested by an external manufacturer",
+    "summary": "Archived as an engineering-capability demonstration without a separate scientific result. Anthropic’s November 9, 2026 announcement describes Claude Fable 5.2 designing three electronics prototypes assembled by collaborator Diode Computers. This source check covered the original announcement. The microphone-port example concerns the voice-assistant hub, not the speakerphone. Functional prototypes and design benchmarks do not by themselves establish a qualifying scientific discovery; commercial certification and durability were not established. The historical ID and source are retained outside discovery counts.",
+    "field": "other",
+    "ai_technology": "Claude Fable 5.2 (Anthropic) as electronics design agent",
+    "organization": "Anthropic; Diode Computers",
+    "source_url": "https://www.anthropic.com/research/claude-electronics-design",
+    "source_type": "blog",
+    "publication_date": "2026-11-09",
+    "added_date": "2026-11-15",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "Physical assembly and operation of three collaborator-built electronics prototypes; no separate scientific finding identified.",
+      "unknown": "Retained outside discovery counts. Diode is a collaborator, not independent replication. No certification or long-term outcome established.",
+      "ai_role": "Claude Fable 5.2 generated electronic and mechanical designs, firmware and assembly instructions; Diode built the prototypes.",
+      "evidence_urls": [
+        "https://www.anthropic.com/research/claude-electronics-design"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-autodna-ai-native-lab",
+    "title": "AutoDNA: an AI-native autonomous laboratory for biomolecular engineering",
+    "summary": "AutoDNA is an AI-native biomolecular laboratory platform from Shanghai Jiao Tong University. The 2026-11-04 journal abstract reports orchestration of more than 20 instrument types over more than 11,000 steps, expert-level DNA-synthesis yields, 3.2-fold faster concurrent protocol execution, exact recovery of DNA-stored digital content and detection/validation of a known KRAS G13D mutation. Archived as platform and workflow validation: the reviewed material identifies no separate new biological finding or clinical study result qualifying as a catalog discovery.",
+    "field": "biology",
+    "ai_technology": "AutoDNA AI-native autonomous laboratory (co-designed models, experiments and instruments)",
+    "organization": "Shanghai Jiao Tong University",
+    "source_url": "https://doi.org/10.1038/s41586-026-11228-6",
+    "source_type": "paper",
+    "publication_date": "2026-11-04",
+    "added_date": "2026-11-15",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 4,
+      "validation": 3,
+      "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Four platform demonstrations: enzymatic DNA synthesis, concurrent execution, DNA data storage and detection/validation of a known KRAS G13D mutation.",
+      "unknown": "Publisher main body is paywalled; scope was the abstract, affiliations, date, figure titles, captions and accessible back matter. No claim of full-paper review or absence of every possible application is made.",
+      "ai_role": "AI models co-designed with experiments and instruments orchestrate the end-to-end workflow autonomously.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1038%2Fs41586-026-11228-6%22&resultType=core&format=json",
+        "https://www.nature.com/articles/s41586-026-11228-6"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-lpt-agentic-protein-binder-design",
+    "title": "LPT: bounded agentic LLM loops for de novo protein binder design",
+    "summary": "The LPT preprint describes fixed, bounded LLM-agent stages with access to a literature database of about 14,000 papers. A database-backed model answered 41 of 48 benchmark questions, versus none without access. Three binder-design demonstrations targeted CALCRL/RAMP1, PD-1/PD-L1 and PVR–TIGIT, with evaluation by other folding models. Archived as a computational workflow/method benchmark: the reviewed abstract establishes no binding measurement or separately validated scientific result.",
+    "field": "biology",
+    "ai_technology": "LPT framework: fixed orchestration of bounded LLM agentic loops with literature database and design tools",
+    "organization": "Hubrecht Institute",
+    "source_url": "https://doi.org/10.64898/2026.10.29.762730",
+    "source_type": "paper",
+    "publication_date": "2026-10-30",
+    "added_date": "2026-11-15",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Question-answering benchmark and three computational binder-design campaigns checked using multiple structure-prediction models.",
+      "unknown": "Abstract and original-server metadata reviewed. No claim that the inaccessible full paper contains no experiments is made; the reviewed abstract reports only in-silico performance.",
+      "ai_role": "LLM stages identified the design intent, selected targets, structures and hotspot residues, and designed candidate binders.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.64898%2F2026.10.29.762730%22&resultType=core&format=json",
+        "https://api.biorxiv.org/details/biorxiv/10.64898/2026.10.29.762730"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
   }
 ]

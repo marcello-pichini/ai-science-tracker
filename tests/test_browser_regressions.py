@@ -50,7 +50,7 @@ function page(name, hash = "", archived = [], staticPages = []) {
     matchMedia:() => ({matches:true}), innerWidth:1280, addEventListener,
     window:{addEventListener}, Promise:{all:() => startup}, fetch:url => {
       requested.push(url);
-      if (url.startsWith('profiles/family-')) return Promise.resolve({ok:staticPages.includes(url)});
+      if (url.startsWith('profiles/family-') || url.startsWith('profiles/org-')) return Promise.resolve({ok:staticPages.includes(url)});
       return url === 'data/archived-discoveries.json' ? Promise.resolve({ok:true, json:() => Promise.resolve(archived)}) : pending;
     }});
   vm.runInContext(fs.readFileSync('assets/catalog-ui.js', 'utf8'), context);
@@ -81,6 +81,16 @@ p.run('CatalogUI.focusEntry = (entry, options) => { globalThis.navigation = {id:
 assert.equal(p.run('navigation.id'), 'd89');
 assert.equal(p.run('navigation.block'), 'center');
 assert.equal(p.run('navigation.behavior'), 'instant', 'Estimated offscreen heights must not shift an animated destination');
+''')
+
+    def test_corrected_organization_query_uses_preserved_static_profile(self):
+        self.run_js(r'''
+(async () => {
+  const p = page('profile.html', '?org=Old%20Lab', [], ['profiles/org-old-lab.html']);
+  p.load(records, {families:[], models:[]});
+  for (let i=0; i<8; i++) await Promise.resolve();
+  assert.deepEqual(p.redirects, ['profiles/org-old-lab.html']);
+})().catch(error => {console.error(error); process.exitCode=1;});
 ''')
 
     def test_print_opens_all_disclosures_and_restores_reader_state(self):

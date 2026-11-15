@@ -1,15 +1,15 @@
 {
   "id": "2026-11-ml-guided-activation-domain-design",
   "title": "Machine learning guided design of strong transcriptional activation domains",
-  "summary": "Computationally generated 500,000 candidate activation domains, scored them with neural-network models, and tested 18,750 in yeast; over 90% of 16,770 well-measured sequences functioned as activation domains. Sequences predicted active by several models were stronger, leading to the consensus predictor MADRIGAL; some designs kept activity in fungi, plants and human cells.",
+  "summary": "The preprint abstract reports computational generation of 500,000 candidate transcriptional activation domains and selection of 18,750 high-scoring sequences for yeast experiments using sequence-to-function models including three neural networks. More than 90% of 16,770 well-measured sequences functioned as activation domains. Some designed sequences retained activity in fungi, plants and human cells. Model agreement motivated the MADRIGAL consensus predictor. Review is limited to the abstract and original-server metadata.",
   "field": "biology",
   "ai_technology": "Neural-network sequence-to-function models (three networks); consensus predictor MADRIGAL",
-  "organization": "University of California, Berkeley; University of California, San Francisco; Chan Zuckerberg Biohub San Francisco",
+  "organization": "University of California, Berkeley",
   "source_url": "https://europepmc.org/article/PPR/PPR1355735",
   "source_type": "paper",
   "publication_date": "2026-11-02",
   "added_date": "2026-11-15",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "https://doi.org/10.64898/2026.10.30.763198",
   "relevance": {
     "impact": 3,
@@ -19,11 +19,11 @@
   "evidence": {
     "publication_status": "Preprint",
     "tested": "18,750 selected sequences were tested experimentally in yeast; over 90% of 16,770 well-measured sequences functioned as activation domains, and some retained function in fungi, plants and human cells.",
-    "unknown": "Not stated in the reviewed material beyond the abstract; functional retention across species is reported for only some designs.",
+    "unknown": "Review limited to the indexed abstract and publication metadata; full-paper methods and additional limitations were not assessed.",
     "ai_role": "Neural networks scored sequences generated from known activation-domain-like sequences; high-scoring sequences were selected for experimental validation and the consensus model MADRIGAL was developed.",
     "evidence_urls": [
-      "https://europepmc.org/article/PPR/PPR1355735",
-      "https://doi.org/10.64898/2026.10.30.763198"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.64898%2F2026.10.30.763198%22&resultType=core&format=json",
+      "https://api.biorxiv.org/details/biorxiv/10.64898/2026.10.30.763198"
     ],
     "test_type": "direct test"
   }

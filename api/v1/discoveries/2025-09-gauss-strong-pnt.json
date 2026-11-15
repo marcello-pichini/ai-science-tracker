@@ -1,7 +1,7 @@
 {
   "id": "2025-09-gauss-strong-pnt",
   "title": "Gauss formalizes the Strong Prime Number Theorem in Lean",
-  "summary": "Math Inc's autoformalization agent produced about 25,000 lines of Lean with over 1,000 theorems and definitions in roughly three weeks, on a project set by Terence Tao and Alex Kontorovich in 2024. Figures are company-reported; the project notes targeted human scaffolding and review of key lemmas. Announcement date unconfirmed: September 2025 is taken from the repository's single commit (11 September).",
+  "summary": "Math Inc reports that Gauss produced most statements and proofs for a Lean formalization of the strong Prime Number Theorem, with about 25,000 lines and 1,100 theorems/definitions in three weeks. Humans supplied mathematical scaffolding and reviewed strategies, and some files adapt prior work. The date follows the original project blueprint dated 11 September 2025, rather than an inferred announcement timestamp. This verifies a formalization of an existing theorem, not a new theorem.",
   "field": "mathematics",
   "ai_technology": "Gauss (Lean autoformalization agent)",
   "organization": "Math Inc",
@@ -9,7 +9,7 @@
   "source_type": "other",
   "publication_date": "2025-09-11",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 3,
@@ -18,11 +18,14 @@
   },
   "evidence": {
     "publication_status": "Announcement only",
-    "tested": "Formalization in Lean, a machine-checked proof of the stated claim, with targeted human scaffolding and review of key lemmas.",
-    "unknown": "Not reported",
-    "ai_role": "Gauss autoformalization agent produced most statements and proofs (about 25,000 lines of Lean) on the Strong Prime Number Theorem.",
+    "tested": "A published Lean formalization of the encoded theorem; this review did not compile it.",
+    "unknown": "The original dated blueprint and published project/verification context were checked; the Lean project was not rebuilt in this review.",
+    "ai_role": "Gauss generated most statements and proofs with human scaffolding and reuse of prior formalization.",
     "evidence_urls": [
-      "https://math-inc.github.io/strongpnt/"
+      "https://math-inc.github.io/strongpnt/",
+      "https://github.com/math-inc/strongpnt",
+      "https://www.math.inc/gauss",
+      "https://math-inc.github.io/strongpnt/blueprint.pdf"
     ],
     "test_type": "prospective or independent check"
   }

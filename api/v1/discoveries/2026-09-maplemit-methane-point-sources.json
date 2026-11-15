@@ -1,7 +1,7 @@
 {
   "id": "2026-09-maplemit-methane-point-sources",
   "title": "Global methane point sources mapped from EMIT imaging spectroscopy with a vision transformer",
-  "summary": "The MAPL-EMIT vision transformer uses full EMIT radiance spectra to jointly retrieve methane enhancements, plume outlines and source locations across global scenes, trained on 3.6 million synthetic plumes. The paper reports high recall and precision and better detection of weak plumes than matched-filter methods, but the abstract shows only synthetic evaluation; real-plume validation is not confirmed from the abstract.",
+  "summary": "MAPL-EMIT used a vision transformer trained on 3.6 million synthetic plumes embedded in EMIT radiance data to map methane sources. Beyond synthetic tests, the paper abstract reports recovery of 84% of known annotated plume complexes across 1,084 EMIT granules. Comparisons with airborne data, landfills and controlled releases supported previously uncaptured sources. This is source-reported validation, not an independent emissions audit.",
   "field": "climate",
   "ai_technology": "MAPL-EMIT (end-to-end vision transformer on EMIT hyperspectral radiance)",
   "organization": "Google Research; Carnegie Institution for Science; Jet Propulsion Laboratory, California Institute of Technology",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2026-09-01",
   "added_date": "2026-11-14",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 4,
@@ -18,11 +18,11 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "The model was evaluated on a test set of 1,084 EMIT granules, capturing 84% of hand-annotated NASA EMIT-L2B plume complexes, and on real-world benchmarks where it found about 1.5 times as many plausible plumes as human analysts.",
-    "unknown": "Not reported.",
-    "ai_role": "End-to-end vision transformer that jointly retrieves methane enhancements, plume outlines and source locations from EMIT radiance spectra, trained on 3.6 million synthetic plumes.",
+    "tested": "Synthetic tests plus known real plumes, coincident airborne observations, landfill comparisons and controlled-release data.",
+    "unknown": "Review scope: complete indexed abstract and metadata; full uncertainty budgets and individual source emissions were not assessed.",
+    "ai_role": "An end-to-end vision transformer jointly estimated methane enhancements, plume outlines and source locations from hyperspectral radiance.",
     "evidence_urls": [
-      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1073/pnas.2612145123&resultType=core&format=json"
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1073%2Fpnas.2612145123%22&resultType=core&format=json"
     ],
     "test_type": "retrospective or benchmark"
   }

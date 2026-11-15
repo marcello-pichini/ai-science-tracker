@@ -259,6 +259,15 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('<b>1 families</b>', (g.ROOT / 'models.html').read_text())
         self.assertIn('covering 1 discoveries in total.', (g.ROOT / 'models.html').read_text())
 
+    def test_corrected_organization_keeps_old_profile_without_stale_records(self):
+        g = self.generator
+        g.write_profile_pages([dict(self.record, organization='Old Lab')], {'families': []})
+        g.write_profile_pages([dict(self.record, organization='Corrected Lab')], {'families': []})
+        old = (g.ROOT / 'profiles/org-old-lab.html').read_text()
+        self.assertIn('http-equiv="refresh" content="0; url=index.html"', old)
+        self.assertNotIn(self.record['title'], old)
+        self.assertIn('A &lt;test&gt; &amp; result', (g.ROOT / 'profiles/org-corrected-lab.html').read_text())
+
 
     def test_ambiguous_old_institution_profiles_do_not_pick_a_campus(self):
         g = self.generator
