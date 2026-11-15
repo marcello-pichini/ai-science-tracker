@@ -19,7 +19,7 @@
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=aacb02c0db25">
 </head>
 <body>
 <header class="header">
@@ -28,7 +28,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html" aria-current="page">Models</a><a href="methodology.html">Methodology</a><a href="security.html">Vuln discoveries</a><a href="guide.html">Guide</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html" aria-current="page">Models</a><a href="security.html">Vuln discoveries</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a></nav>
   </div>
 </header>
 
@@ -49,7 +49,7 @@
   <section class="sez" aria-labelledby="t-numeri">
     <div class="wrap">
       <h2 id="t-numeri">By the numbers</h2>
-      <p class="sez-sub">Full-catalog aggregates remain unchanged by list filters. Click a year or lab to filter releases; click a family to open its profile.</p>
+      <p class="sez-sub">Full-catalog aggregates remain unchanged by list filters. Click a year or lab to filter releases; click a family to open its card.</p>
       <div class="pannelli" id="charts"></div>
     </div>
   </section>
@@ -102,14 +102,14 @@
   </div>
 </footer>
 
-<script src="assets/catalog-ui.js?v=3da758377e58"></script>
+<script src="assets/catalog-ui.js?v=75de9d87a94a"></script>
 <script>
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeUrl = u => /^https?:\/\//.test(u) ? u : "";
 const state = { q:"", lab:"", anno:"", solo:false };
 const ridotto = matchMedia("(prefers-reduced-motion: reduce)");
-let D = null, discoveries = {}, perFam = {}, famNome = {}, mostrati = 60, primaVolta = true;
+let D = null, discoveries = {}, perFam = {}, famNome = {}, mostrati = 60, primaVolta = true, printState = null;
 
 const fmtD = new Intl.DateTimeFormat("en-GB", { day:"numeric", month:"short", year:"numeric" });
 const fmtDate = d => fmtD.format(new Date(d + "T12:00:00"));
@@ -264,6 +264,20 @@ function render() {
   $("altro").innerHTML = ms.length > mostrati ? `<button type="button" id="piu-righe">Show ${Math.min(100, ms.length - mostrati)} of ${ms.length - mostrati}</button>` : "";
   aggiornaNuvola();
 }
+
+// Preserve the reader's original rows, pagination controls and keyboard focus while printing all matches.
+CatalogUI.beforePrint = () => {
+  if (printState || !D) return;
+  printState = { limit:mostrati, rows:[...$("lista").childNodes], more:[...$("altro").childNodes], count:$("conta").textContent, focus:document.activeElement };
+  mostrati = Infinity; render();
+};
+CatalogUI.afterPrint = () => {
+  if (!printState) return;
+  mostrati = printState.limit;
+  $("lista").replaceChildren(...printState.rows); $("altro").replaceChildren(...printState.more); $("conta").textContent = printState.count;
+  printState.focus?.focus({preventScroll:true});
+  printState = null;
+};
 
 Promise.all([
   fetch("data/models.json").then(r => r.json()),

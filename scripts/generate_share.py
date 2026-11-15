@@ -49,7 +49,7 @@ def esc(s):
 
 def lead_org(name):
     """Same rule as index.html: organizations listed together count under the first one named."""
-    return re.split(r',|;| and ', name, flags=re.I)[0].strip()
+    return name.split(';')[0].strip()
 
 
 def score(d):
@@ -73,6 +73,8 @@ def relocate(fragment):
     still resolve. Absolute, data:, mailto:, anchor and already-relocated links are left alone."""
     def fix(m):
         attr, quote_char, value = m.group(1), m.group(2), m.group(3)
+        if value == 'styles.css':
+            value += '?v=' + hashlib.sha256((ROOT / 'styles.css').read_bytes()).hexdigest()[:12]
         if NOT_ROOT_RELATIVE.match(value):
             return m.group(0)
         return f'{attr}={quote_char}../{value}{quote_char}'
@@ -96,8 +98,9 @@ def run_catalog_ui(items):
     assets/catalog-ui.js the live pages use (one Node process for all records), so a discovery
     page never repeats that wording or that URL-building logic in a second, Python copy."""
     cites_path = ROOT / 'data/citations.json'
-    cites = json.loads(cites_path.read_text())['records'] if cites_path.exists() else {}
-    items = [dict(r, citation=cites[r['id']]) if r['id'] in cites else r for r in items]
+    snapshot = json.loads(cites_path.read_text()) if cites_path.exists() else {}
+    cites = snapshot.get('records', {})
+    items = [dict(r, citation=dict(cites[r['id']], checked=snapshot.get('checked'))) if r['id'] in cites else r for r in items]
     script = ("require(process.argv[1]);"
               "const items = JSON.parse(require('fs').readFileSync(0, 'utf8'));"
               "const out = {};"
@@ -342,10 +345,13 @@ def write_profile_pages(items, models, archived=()):
     pages = []
     aliases = {}
     for d in items:
-        legacy = d['organization'].replace(' and ', ',').split(',')[0].strip()
-        old, new = slug(legacy), slug(lead_org(d['organization']))
-        if old != new:
-            assert aliases.setdefault(old, new) == new, f'legacy organization slug collision: {old}'
+        legacy_names = {d['organization'].replace(' and ', ',').split(',')[0].strip(),
+                        re.split(r'[,;]| and ', d['organization'], flags=re.I)[0].strip()}
+        new = slug(lead_org(d['organization']))
+        for legacy in legacy_names:
+            old = slug(legacy)
+            if old != new:
+                aliases.setdefault(old, set()).add(new)
 
     def years(rows):
         ys = sorted(d['publication_date'][:4] for d in rows)
@@ -372,14 +378,15 @@ def write_profile_pages(items, models, archived=()):
     archived_orgs = {}
     for d in archived:
         legacy = slug(d['organization'].replace(' and ', ',').split(',')[0].strip())
+        previous = slug(re.split(r'[,;]| and ', d['organization'], flags=re.I)[0].strip())
         lead = slug(lead_org(d['organization']))
-        for old in {legacy, lead}:
+        for old in {legacy, previous, lead}:
             if old not in slugs:
                 target = f'org-{lead}.html' if lead in slugs else f'../share/{quote(d["id"])}.html'
                 archived_orgs.setdefault(old, set()).add(target)
-    for old, new in aliases.items():
+    for old, targets in aliases.items():
         if old not in slugs:
-            archived_orgs.setdefault(old, set()).add(f'org-{new}.html')
+            archived_orgs.setdefault(old, set()).update(f'org-{new}.html' for new in targets)
 
     def redirect(path, targets):
         # A speculative legacy alias cannot have existed as a file beyond this limit.
@@ -552,7 +559,7 @@ def validate_inputs(items, archived, models, vulns):
         raise ValueError('At least one active discovery is required')
     for rows in (items + archived, vulns):
         ids = [r['id'] for r in rows]
-        if len(ids) != len(set(ids)) or any(not re.fullmatch(r'[a-z0-9-]+', value) for value in ids):
+        if len(ids) != len(set(ids)) or any(not re.fullmatch(r'[a-z0-9][a-z0-9_-]*', value) for value in ids):
             raise ValueError('Record IDs must be unique safe slugs')
     for d in items + archived:
         for key in CSV_DISCOVERY[:-4]:

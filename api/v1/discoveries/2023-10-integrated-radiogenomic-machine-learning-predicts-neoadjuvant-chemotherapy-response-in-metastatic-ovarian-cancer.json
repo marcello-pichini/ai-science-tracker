@@ -4,7 +4,7 @@
   "summary": "The IRON ensemble combined baseline clinical data, CA-125, ctDNA and CT radiomics from primary and metastatic lesions to estimate tumor-volume change during neoadjuvant chemotherapy for high-grade serous ovarian carcinoma. In an independent 42-patient Barts cohort, the integrated model achieved AUC 0.78 for RECIST 1.1 response classification versus 0.47 for a clinical-only model; radiomics-containing scores significantly correlated with volume change in internal holdout. The study also measured spatial heterogeneity, with omental lesions showing better response than pelvic/ovarian disease.",
   "field": "medicine",
   "ai_technology": "IRON ensemble combining elastic net, support-vector regression and random forest",
-  "organization": "University of Cambridge and Cambridge University Hospitals; Barts Health NHS Trust; Medical University of Vienna; collaborating institutions",
+  "organization": "University of Cambridge; and Cambridge University Hospitals; Barts Health NHS Trust; Medical University of Vienna; collaborating institutions",
   "source_url": "https://www.nature.com/articles/s41467-023-41820-7.pdf",
   "source_type": "paper",
   "publication_date": "2023-10-24",
@@ -13,17 +13,17 @@
   "paper_url": "https://doi.org/10.1038/s41467-023-41820-7",
   "relevance": {
     "impact": 3,
-    "validation": 4,
+    "validation": 2,
     "novelty": 3
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "In an independent 42-patient Barts cohort, the integrated model achieved AUC 0.78 for RECIST 1.1 response classification versus 0.47 for a clinical-only model; radiomics-containing scores significantly correlated with volume change in internal holdout.",
+    "tested": "In an independent 42-patient Barts cohort, the integrated model achieved AUC 0.78 for RECIST 1.1 response classification versus 0.47 for a clinical-only model; radiomics-containing scores significantly correlated with volume change in internal holdout. The model used historical Cambridge and Barts cohorts with baseline and post-treatment imaging, including an external retrospective test set.",
     "unknown": "Model analysis of two prospective observational cohorts (training n=72, internal holdout n=20, external n=42), not a decision trial. External ctDNA unavailable and imputed to training means. Sample size limits generalizability; treatment benefit from model-guided decisions was not tested.",
     "ai_role": "Pretreatment clinical, blood and multi-lesion radiomic features predicted volumetric response to neoadjuvant chemotherapy. Held-out and external evaluation showed radiomics added predictive information beyond clinical variables.",
     "evidence_urls": [
       "https://www.nature.com/articles/s41467-023-41820-7.pdf"
     ],
-    "test_type": "prospective or independent check"
+    "test_type": "retrospective or benchmark"
   }
 }

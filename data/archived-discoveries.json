@@ -112,5 +112,182 @@
       "validation": 3,
       "novelty": 4
     }
+  },
+  {
+    "id": "2026-05-co-scientist-sla",
+    "title": "Co-Scientist and ALS: hypotheses about RNA-based mechanisms",
+    "summary": "Archived from discovery counts: the represented announcement describes hypothesis generation and a research collaboration, without a reported experimental result. Two groups, at MIT (Ritu Raman) and Boston Children's Hospital (Ryan Flynn), used Co-Scientist to assess a conflicting literature, turn ideas into testable hypotheses, and rank them by feasibility, focusing on RNA-based mechanisms and drugs. The post reports no quantitative results or experimental validation; the research is ongoing.",
+    "field": "medicine",
+    "ai_technology": "Co-Scientist",
+    "organization": "Google DeepMind; MIT, and Boston Children's Hospital",
+    "source_url": "https://deepmind.google/blog/uniting-biological-toolkits-for-a-new-approach-to-als/",
+    "source_type": "blog",
+    "publication_date": "2026-05-19",
+    "added_date": "2026-11-11",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 1,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "No validation or experimental results are reported; Co-Scientist's ideas were ranked by feasibility and risk-reward and the research is described as ongoing.",
+      "unknown": "The post states that Co-Scientist cannot do science alone and that the best leads needed molecular expertise the team lacked; no formal limitations are listed.",
+      "ai_role": "Co-Scientist assessed the contradictory ALS literature, generated testable hypotheses and ranked research directions focused on RNA-based mechanisms.",
+      "evidence_urls": [
+        "https://deepmind.google/blog/uniting-biological-toolkits-for-a-new-approach-to-als/"
+      ],
+      "test_type": "not reported"
+    }
+  },
+  {
+    "id": "2026-05-co-scientist-interruttori-molecolari",
+    "title": "Co-Scientist and molecular switches in severe infectious diseases",
+    "summary": "Archived from discovery counts: the represented announcement describes hypotheses and cell lines still being prepared to test them, not a completed biological result. Clare Bryant (Cambridge) used Co-Scientist, which ranked hypotheses and pointed to a protein she had not considered down to individual amino acids, to study molecular switches behind diseases such as sepsis. The lab expects to build cell lines with those mutations in about six months instead of two or three years; the hypotheses are not yet validated.",
+    "field": "medicine",
+    "ai_technology": "Co-Scientist",
+    "organization": "Google DeepMind; and University of Cambridge",
+    "source_url": "https://deepmind.google/blog/finding-the-molecular-switches-behind-new-infectious-diseases/",
+    "source_type": "blog",
+    "publication_date": "2026-05-19",
+    "added_date": "2026-11-11",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 1,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "The hypotheses are not validated; the lab is building cell lines with the proposed amino acid mutations to test them, and the page reports no results.",
+      "unknown": "The page states only that the six-month estimate holds if the targets are right; the publication status is not stated.",
+      "ai_role": "Co-Scientist generated and ranked hypotheses from the grant proposal and narrowed candidate proteins to specific amino acids.",
+      "evidence_urls": [
+        "https://deepmind.google/blog/finding-the-molecular-switches-behind-new-infectious-diseases/"
+      ],
+      "test_type": "not reported"
+    }
+  },
+  {
+    "id": "2025-08-perch-bioacustica",
+    "title": "Perch: an open bioacoustics model to protect endangered species",
+    "summary": "Archived from discovery counts: the represented event updates a bioacoustics model; the application outcomes described concern its predecessor rather than a new result from this release. The updated Perch model, released openly, predicts bird species better than its predecessor and has nearly twice as much training data (birds, mammals, amphibians, and human noise). The post gives no numbers for the new model; results on Hawaiian honeycreeper detection are from the earlier model.",
+    "field": "biology",
+    "ai_technology": "Perch (bioacoustics model)",
+    "organization": "Google DeepMind",
+    "source_url": "https://deepmind.google/blog/how-ai-is-helping-advance-the-science-of-bioacoustics-to-save-endangered-species/",
+    "source_type": "blog",
+    "publication_date": "2025-08-07",
+    "added_date": "2026-11-11",
+    "verification_status": "verified",
+    "paper_url": "https://arxiv.org/abs/2508.04665",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Perch 2.0 was evaluated on the BirdSet and BEANS benchmarks and on marine transfer-learning tasks against specialized marine models.",
+      "unknown": "The abstract lists no explicit limitations, and its explanations for why the pre-training works are hypotheses.",
+      "ai_role": "An open bioacoustics model was trained on bird, mammal, amphibian and human-noise audio to classify species.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2508.04665"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2025-05-omol25-uma",
+    "title": "OMol25 and UMA: quantum-chemistry data and a universal model for atoms",
+    "summary": "Archived from discovery counts: the represented event releases a molecular dataset and an interatomic model, without identifying a specific new chemical finding or application outcome. Meta released Open Molecules 2025, which it calls the largest and most varied set of high-accuracy quantum calculations for biomolecules, metal complexes, and electrolytes (about six billion compute hours), and UMA, an interatomic potential trained on over 30 billion atoms. The post gives no numerical accuracy values.",
+    "field": "chemistry",
+    "ai_technology": "UMA (interatomic potential), OMol25",
+    "organization": "Meta AI",
+    "source_url": "https://ai.meta.com/blog/meta-fair-science-new-open-source-releases/",
+    "source_type": "blog",
+    "publication_date": "2025-05-14",
+    "added_date": "2026-11-11",
+    "verification_status": "verified",
+    "paper_url": "https://arxiv.org/abs/2505.08762",
+    "relevance": {
+      "impact": 4,
+      "validation": 1,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Not reported",
+      "unknown": "The post gives no numerical accuracy values or evaluation method, and no limitations are stated.",
+      "ai_role": "A machine learning interatomic potential (UMA) was trained on the OMol25 calculations and data from Meta's datasets.",
+      "evidence_urls": [
+        "https://ai.meta.com/blog/meta-fair-science-new-open-source-releases/",
+        "https://arxiv.org/abs/2505.08762"
+      ],
+      "test_type": "not reported"
+    }
+  },
+  {
+    "id": "2025-04-dolphingemma",
+    "title": "DolphinGemma: a model for finding patterns in dolphin sounds",
+    "summary": "Archived from discovery counts: the represented event introduces a model and planned field use, without establishing a new finding about dolphin communication. A model with about 400 million parameters, trained on decades of recordings of Atlantic spotted dolphins from the Wild Dolphin Project, predicts subsequent sounds to identify recurring patterns; it runs on Pixel phones used in the field. The patterns have not been confirmed to carry meaning.",
+    "field": "biology",
+    "ai_technology": "DolphinGemma (audio model with about 400M parameters)",
+    "organization": "Google; Georgia Tech, and Wild Dolphin Project",
+    "source_url": "https://blog.google/innovation-and-ai/products/dolphingemma/",
+    "source_type": "blog",
+    "publication_date": "2025-04-14",
+    "added_date": "2026-11-11",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 1,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "Not reported",
+      "unknown": "The source describes only early field testing with no quantitative metrics, the model is trained on one dolphin population, and the patterns are not confirmed to carry meaning.",
+      "ai_role": "A roughly 400M-parameter audio model predicted likely next dolphin sounds to find recurring patterns.",
+      "evidence_urls": [
+        "https://blog.google/innovation-and-ai/products/dolphingemma/"
+      ],
+      "test_type": "not reported"
+    }
+  },
+  {
+    "id": "2026-11-physics-based-differentiable-imaging-detects-51-eridani-b-in-a-jwst-band-where-standard-processing-did-not",
+    "title": "Physics-based differentiable imaging detects 51 Eridani b in a JWST band where standard processing did not",
+    "summary": "Archived from discovery counts: the lead researchers explicitly state that FLIP did not use AI. Its automatic-differentiation tools optimize a physics-based instrument model. A physics-based coronagraph model optimized with automatic differentiation and gradient descent recovered 51 Eridani b in JWST/NIRCam F430M images at 4.3 μm, where the published standard-processing result was a non-detection. The paper also reports two- to fifteen-fold sensitivity gains across its test observations.",
+    "field": "physics",
+    "ai_technology": "FLIP (Physics-based Learning for Imaging Planets), a differentiable instrument model optimized with automatic differentiation",
+    "organization": "Northwestern University; California Institute of Technology; Massachusetts Institute of Technology; Space Telescope Science Institute",
+    "source_url": "https://www.nature.com/articles/s41586-026-11213-z.pdf",
+    "source_type": "paper",
+    "publication_date": "2026-11-04",
+    "added_date": "2026-11-15",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41586-026-11213-z",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "A physics-based coronagraph model optimized with automatic differentiation and gradient descent recovered 51 Eridani b in JWST/NIRCam F430M images at 4.3 μm, where the published standard-processing result was a non-detection.",
+      "unknown": "The planet 51 Eridani b was already discovered by ground-based imaging in 2015; the new finding is its first JWST image in the 4.3 μm carbon-dioxide band, not discovery of a previously unknown planet. Performance estimates are based on a limited set of three target systems and should not be generalized to all JWST data.",
+      "ai_role": "The researchers state that this work did not use AI, although it used computational tools also used to train AI models. FLIP optimized a physics-based telescope model using automatic differentiation.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41586-026-11213-z.pdf",
+        "https://www.nature.com/articles/s41586-026-11213-z",
+        "https://ciera.northwestern.edu/2026/11/10/hidden-planet-emerges-from-the-glare/"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
   }
 ]

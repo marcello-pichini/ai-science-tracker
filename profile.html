@@ -19,7 +19,7 @@
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=aacb02c0db25">
 </head>
 <body>
 <header class="header">
@@ -28,7 +28,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="methodology.html">Methodology</a><a href="security.html">Vuln discoveries</a><a href="guide.html">Guide</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="security.html">Vuln discoveries</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a></nav>
   </div>
 </header>
 
@@ -53,7 +53,7 @@
   </div>
 </footer>
 
-<script src="assets/catalog-ui.js?v=3da758377e58"></script>
+<script src="assets/catalog-ui.js?v=75de9d87a94a"></script>
 <script>
 // Object.groupBy is missing before Safari 17.4 and Chrome 117.
 Object.groupBy ??= (xs, f) => xs.reduce((o, x) => ((o[f(x)] ??= []).push(x), o), {});
@@ -66,7 +66,7 @@ const fmtDate = d => fmt.format(new Date(d + "T12:00:00"));
 const reduced = matchMedia("(prefers-reduced-motion: reduce)");
 
 // Same rules as index.html: organizations listed together count under the first one named; editorial relevance is 20–100.
-const leadOrg = s => s.organization.split(/[,;]| and /i)[0].trim();
+const leadOrg = s => CatalogUI.leadOrganization(s.organization);
 const score = s => CatalogUI.score(s);
 const average = a => a.length ? Math.round(a.reduce((n, s) => n + score(s), 0) / a.length) : 0;
 const newestFirst = (a, b) => b.publication_date.localeCompare(a.publication_date);
@@ -171,14 +171,22 @@ function setMeta(title, description) {
 }
 
 function labView(name, discoveries, models) {
+  const matchesLegacy = s => s.organization === name || s.organization.split(/[,;]| and /i)[0].trim() === name;
   if (!discoveries.some(s => leadOrg(s) === name)) {
-    const legacy = discoveries.find(s => s.organization.split(/,| and /i)[0].trim() === name);
-    if (legacy) name = leadOrg(legacy);
+    const names = [...new Set(discoveries.filter(matchesLegacy).map(leadOrg))];
+    if (names.length > 1) {
+      $("page-title").textContent = "Choose an organization";
+      $("lead").textContent = `The historical name “${name}” matches more than one organization.`;
+      $("content").innerHTML = `<section class="sez"><div class="wrap"><h2>Matching organizations</h2><ul>${names.sort((a, b) => a.localeCompare(b, "en")).map(org => `<li><a href="profile.html?org=${encodeURIComponent(org)}">${esc(org)}</a></li>`).join("")}</ul></div></section>`;
+      setMeta("Choose an organization", $("lead").textContent);
+      return;
+    }
+    if (names.length === 1) name = names[0];
   }
   const items = discoveries.filter(s => leadOrg(s) === name).sort(newestFirst);
   if (!items.length) {
     fetch("data/archived-discoveries.json").then(r => r.ok ? r.json() : []).then(archived => {
-      const matches = archived.filter(s => s.organization.split(/,| and /i)[0].trim() === name);
+      const matches = archived.filter(s => leadOrg(s) === name || matchesLegacy(s));
       if (matches.length === 1) location.replace("share/" + encodeURIComponent(matches[0].id) + ".html");
     }).catch(() => {}); // Keep the existing not-found view when the archive is unavailable.
     return notFound("organization", name);
@@ -195,7 +203,13 @@ function labView(name, discoveries, models) {
 
 function familyView(id, discoveries, models) {
   const fam = models.families.find(f => f.id === id);
-  if (!fam) return notFound("model family", id);
+  if (!fam) {
+    const url = "profiles/family-" + encodeURIComponent(id) + ".html", query = location.search;
+    fetch(url, {method:"HEAD"}).then(response => {
+      if (response.ok && location.search === query) location.replace(url);
+    }).catch(() => {}); // Missing static aliases retain the not-found view.
+    return notFound("model family", id);
+  }
   const byId = Object.fromEntries(discoveries.map(s => [s.id, s]));
   const items = fam.discoveries.map(d => byId[d]).filter(Boolean).sort(newestFirst);
   const famName = Object.fromEntries(models.families.map(f => [f.id, f.name]));
@@ -221,7 +235,7 @@ Promise.all([
   fetch("data/models.json").then(r => r.json()),
   fetch("data/citations.json").then(r => r.ok ? r.json() : null).catch(() => null)
 ]).then(([discoveries, models, citations]) => {
-  discoveries.forEach(s => { s.citation = citations?.records?.[s.id]; });
+  discoveries.forEach(s => { const cited = citations?.records?.[s.id]; s.citation = cited ? {...cited, checked:citations.checked} : undefined; });
   data = { discoveries, models }; render(); })
   .catch(() => { $("lead").textContent = "The profile data could not be loaded."; $("content").innerHTML = `<section class="sez"><div class="wrap"><h2>Profile data unavailable</h2><p><a href="profile.html${esc(location.search)}">Reload this profile</a>, browse the <a href="profiles/index.html">static profiles</a>, or read the <a href="data/discoveries.json">discovery data</a> and <a href="data/models.json">model data</a>.</p></div></section>`; });
 

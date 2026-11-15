@@ -13,18 +13,18 @@
   "paper_url": "https://doi.org/10.1126/science.adg7492",
   "relevance": {
     "impact": 4,
-    "validation": 4,
+    "validation": 2,
     "novelty": 3
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "The model was validated on genetic and experimental benchmarks, and Genomics England cross-referenced its predictions with previously aggregated human variant pathogenicity data and found them consistent.",
+    "tested": "The model was validated on genetic and experimental benchmarks, and Genomics England cross-referenced its predictions with previously aggregated human variant pathogenicity data and found them consistent. The reported comparison uses previously collected pathogenicity and variant data; an independent data source is distinct from a new independent experimental replication.",
     "unknown": "The model does not predict structural or stability effects, the blog says predictions are not designed for direct clinical use, and the abstract describes no clinical validation.",
     "ai_role": "AlphaMissense, an AlphaFold adaptation fine-tuned on human and primate variant population frequency data, classified missense variants and released predictions for all possible human substitutions.",
     "evidence_urls": [
       "https://deepmind.google/blog/a-catalogue-of-genetic-mutations-to-help-pinpoint-the-cause-of-diseases/",
       "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1126/science.adg7492&resultType=core&format=json"
     ],
-    "test_type": "prospective or independent check"
+    "test_type": "retrospective or benchmark"
   }
 }

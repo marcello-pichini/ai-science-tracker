@@ -22,6 +22,7 @@ class SharePageTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.generator.ROOT = Path(self.temp.name)
         (self.generator.ROOT / 'assets').mkdir()
+        shutil.copyfile(ROOT / 'styles.css', self.generator.ROOT / 'styles.css')
         shutil.copyfile(ROOT / 'assets/catalog-ui.js', self.generator.ROOT / 'assets/catalog-ui.js')
         (self.generator.ROOT / 'index.html').write_text('<header class="header"><nav><a href="security.html" aria-current="page">Security</a></nav></header><footer class="footer"><a href="guide.html">Guide</a></footer>')
         self.record = dict(json.loads((ROOT / 'data/discoveries.json').read_text())[0], id='test-discovery', title='A <test> & result', summary='A complete summary with <markup> escaped.')
@@ -117,7 +118,7 @@ class SharePageTests(unittest.TestCase):
     def test_static_profiles_are_indexable_and_sitemap_uses_them(self):
         g = self.generator
         models = {'families': [{'id': 'fam-x', 'name': 'Fam X', 'discoveries': ['test-discovery']}], 'models': [{'name': 'M1', 'date': '2024-01-02', 'family': 'fam-x', 'link': 'https://example.org', 'access': 'API'}]}
-        self.record['organization'] = 'Org & Co and Other'
+        self.record['organization'] = 'Org & Co'
         pages = g.write_profile_pages([self.record], models)
         self.assertEqual(sorted(pages), ['profiles/family-fam-x.html', 'profiles/index.html', 'profiles/org-org-co.html'])
         org = (g.ROOT / 'profiles/org-org-co.html').read_text()
@@ -143,8 +144,8 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('org-first-lab.html', text)
         self.assertIn(f'rel="canonical" href="{g.BASE}profiles/org-first-lab.html"', text)
         self.assertIn('href="org-first-lab.html"', text)
-        self.assertEqual(g.lead_org('First Lab AND Second Lab'), 'First Lab')
-        self.assertEqual(g.lead_org('First Lab, Second Lab'), 'First Lab')
+        self.assertEqual(g.lead_org('First Lab AND Second Lab'), 'First Lab AND Second Lab')
+        self.assertEqual(g.lead_org('First Lab, Second Lab'), 'First Lab, Second Lab')
 
     def test_archive_only_profiles_redirect_without_overwriting_active_profiles(self):
         g = self.generator
@@ -232,3 +233,17 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('catalog of 1 entries about scientific results', text)
         self.assertIn(g.BASE + 'data/discoveries.json', text)
 
+
+    def test_ambiguous_old_institution_profiles_do_not_pick_a_campus(self):
+        g = self.generator
+        rows = [dict(self.record, id='campus-a', organization='University of California, Berkeley; Partner'),
+                dict(self.record, id='campus-b', organization='University of California, Davis; Partner')]
+        g.write_profile_pages(rows, {'families': []})
+        old = (g.ROOT / 'profiles/org-university-of-california.html').read_text()
+        self.assertIn('href="index.html"', old)
+        for campus in ('berkeley','davis'):
+            self.assertTrue((g.ROOT / f'profiles/org-university-of-california-{campus}.html').is_file())
+
+    def test_schema_safe_underscore_ids_generate_without_rejection(self):
+        g = self.generator
+        g.validate_inputs([dict(self.record,id='2026-01-valid_id')], [], {'models': [], 'families': []}, [])

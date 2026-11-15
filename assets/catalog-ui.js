@@ -1,6 +1,8 @@
 /* Shared source explanations, correction drafts and descriptive catalog metrics. */
 globalThis.CatalogUI = {
-  // Validation level of each source-stated test type (methodology.html, "Evidence level").
+  // Semicolons separate organizations; commas and conjunctions can belong to a name.
+  leadOrganization(name) { return name.split(';')[0].trim(); },
+  // Validation follows the catalog test category; definitions and precedence are in methodology.html.
   testLevels: {'not reported':1, 'retrospective or benchmark':2, 'direct test':3, 'prospective or independent check':4, 'replication or operational use':5},
   // Relevance 20-100: mean of the three subscores x 20, but never more than one level above the evidence (validation + 1) x 20.
   score(record) {
@@ -9,9 +11,16 @@ globalThis.CatalogUI = {
   },
   citationLine(record) {
     const c = record.citation;
-    if (!c) return '';
+    if (!c || !Number.isSafeInteger(c.cited_by) || c.cited_by < 0 ||
+        !Number.isFinite(c.percentile) || c.percentile < 0 || c.percentile > 100 ||
+        typeof c.top_1 !== 'boolean' || typeof c.top_10 !== 'boolean') return '';
+    const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const band = c.top_1 ? 'in the top 1%' : c.top_10 ? 'in the top 10%' : `at percentile ${Math.round(c.percentile)}`;
-    return `<p>Citations: ${band} of works of the same type, year and subfield (OpenAlex, ${c.cited_by} citations). Attention, not a measure of correctness; not part of the score.</p>`;
+    const checked = /^\d{4}-\d{2}-\d{2}$/.test(c.checked || '') && !Number.isNaN(Date.parse(c.checked));
+    const asOf = checked ? `as of ${new Intl.DateTimeFormat('en-GB', {day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(c.checked + 'T12:00:00Z'))}` : 'snapshot date unavailable';
+    const source = /^10\.\d{4,9}\/\S+$/.test(c.doi || '')
+      ? `<a href="${esc('https://api.openalex.org/works/https://doi.org/' + encodeURI(c.doi))}" rel="noopener">OpenAlex work metrics</a>` : 'OpenAlex';
+    return `<p>Citations: ${band} of works of the same type, year and subfield (${source}, ${esc(c.cited_by)} citations; ${asOf}). Attention, not a measure of correctness; not part of the score.</p>`;
   },
   sourceDetails(record) {
     const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -23,7 +32,7 @@ globalThis.CatalogUI = {
       ${this.citationLine(record)}
       <p>Editorial assessment: Impact ${esc(record.relevance.impact)}/5 · Validation ${esc(record.relevance.validation)}/5 · Novelty ${esc(record.relevance.novelty)}/5. Impact and novelty are editorial judgments; validation follows the annotated test type where one exists. Not an evidence grade. <a href="methodology.html">Scoring criteria</a>.</p></details>`;
   },
-  // Optional, source-stated context for pilot records; absent for most entries. It never feeds the relevance score.
+  // Source descriptions stay separate from the editorial test category that sets validation.
   evidenceBlock(record) {
     const e = record.evidence;
     if (!e) return '';
@@ -34,7 +43,7 @@ globalThis.CatalogUI = {
       try { return /^https?:\/\//i.test(url) && ['http:', 'https:'].includes(new URL(url).protocol); } catch { return false; }
     }).map(url => `<a href="${esc(url)}" rel="noopener">${esc(url)}</a>`);
     const legacy = [e.publication_status, e.tested, e.unknown, e.ai_role].includes('Not reported');
-    return `<p><b>Evidence context</b> (pilot; stated by the cited sources, not an editorial judgment):</p><ul class="evidence-context">${rows}</ul>${links.length ? `<p>Evidence sources: ${links.join(' · ')}</p>` : ''}${legacy ? '<p>The legacy label “Not reported” does not distinguish information absent from reviewed material from information not assessed. It is not a scientific finding of absence.</p>' : ''}`;
+    return `<p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><ul class="evidence-context">${rows}</ul>${links.length ? `<p>Evidence sources: ${links.join(' · ')}</p>` : ''}${legacy ? '<p>The legacy label “Not reported” does not distinguish information absent from reviewed material from information not assessed. It is not a scientific finding of absence.</p>' : ''}`;
   },
   correctionUrl(record) {
     const query = new URLSearchParams({template:'correction.yml', title:`[Correction] ${record.id}`, record_id:record.id,

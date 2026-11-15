@@ -4,7 +4,7 @@ Source: Epoch AI, Data on AI models, CC BY 4.0.
 Place the downloaded CSV at work/epoch/notable_ai_models.csv, then run from
 this repository root: python3 scripts/generate_models.py
 """
-import csv, json, re, datetime, hashlib
+import csv, json, re, datetime, hashlib, math, os, tempfile
 from pathlib import Path
 
 CSV = 'work/epoch/notable_ai_models.csv'
@@ -16,10 +16,19 @@ LAB = re.compile(r'^(openai|google deepmind|deepmind|google|google research|goog
 from model_families import FAMILIES, discovery_links
 
 def num(s):
-    try: return float(s)
-    except: return None
+    if not s or not s.strip():
+        return None
+    value = float(s)
+    if not math.isfinite(value):
+        raise ValueError(f'Non-finite numeric value: {s!r}')
+    return value
 
-rows = list(csv.DictReader(open(CSV, encoding='utf-8')))
+with open(CSV, encoding='utf-8') as source:
+    reader = csv.DictReader(source)
+    required = {'Model', 'Organization', 'Publication date'}
+    if not required.issubset(reader.fieldnames or []):
+        raise ValueError('Epoch CSV is missing required headers')
+    rows = list(reader)
 discoveries = json.load(open(DISCOVERIES, encoding='utf-8'))
 
 
@@ -30,6 +39,9 @@ for r in rows:
     date = (r.get('Publication date') or '').strip()
     if not name or not date:
         continue
+    if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', date):
+        raise ValueError(f'Invalid publication date: {date!r}')
+    datetime.date.fromisoformat(date)
     fam = next((f[0] for f in FAMILIES if re.search(f[2], name, re.I)), None)
     recent_lab = date >= '2020-01-01' and LAB.search(org)
     if not (recent_lab or fam):
@@ -37,18 +49,22 @@ for r in rows:
     link = (r.get('Link') or '').strip().split(' ')[0]
     if re.match(r'^arxiv\.org/abs/[^\s]+$', link, re.I):
         link = 'https://' + link
+    compute = (r.get('Training compute (FLOP)') or '').strip()
+    num(compute)
     models.append({
         'name': name,
         'organization': org,
         'date': date,
         'domain': (r.get('Domain') or '').strip(),
         'parameters': num(r.get('Parameters','')),
-        'compute_flop': (r.get('Training compute (FLOP)') or '').strip(),
+        'compute_flop': compute,
         'access': (r.get('Model accessibility') or '').strip(),
         'frontier': (r.get('Frontier model') or '').strip().lower() == 'true',
         'link': link,
         'family': fam,
     })
+if not models:
+    raise ValueError('Epoch CSV produced no eligible models')
 models.sort(key=lambda m: m['date'], reverse=True)
 
 families = []
@@ -78,7 +94,16 @@ out = {
  'families': families,
  'linked_discoveries': sorted(linked),
 }
-json.dump(out, open(OUT,'w',encoding='utf-8'), ensure_ascii=False, indent=1)
+serialized = json.dumps(out, ensure_ascii=False, indent=1, allow_nan=False)
+temporary = None
+try:
+    with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=Path(OUT).parent, delete=False) as target:
+        temporary = Path(target.name)
+        target.write(serialized)
+    os.replace(temporary, OUT)
+finally:
+    if temporary is not None:
+        temporary.unlink(missing_ok=True)
 print('models:', len(models))
 print('families:', len(families))
 print('linked discoveries:', len(linked), 'of', len(discoveries))

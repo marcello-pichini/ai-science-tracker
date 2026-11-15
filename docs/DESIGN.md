@@ -18,12 +18,12 @@ Every page, script and generated asset must look and behave like one product. Th
 
 ## Page skeleton
 
-Every page has the same frame, in this order: shared `<head>` (charset, viewport, title `Page · AI Science Tracker`, description, Open Graph, canonical, theme color, icon, font preload, `styles.css`), the header with the five-item menu (Discoveries, Models, Methodology, Vuln discoveries, Guide) plus the page's own `aria-current="page"`, a blue banner with one `<h1>`, `<main>` with sections that each have an `<h2>`, and the footer. Copy the frame from an existing page; do not retype it. `404.html` is the one exception to the shared `<head>` (no canonical or Open Graph, `noindex`, and a `<base href>` so it works from any URL depth); `tests/test_site_links.py` checks it instead of `PAGES`.
+Every page has the same frame, in this order: shared `<head>` (charset, viewport, title `Page · AI Science Tracker`, description, Open Graph, canonical, theme color, icon, font preload, `styles.css` with its content-hash query), the header with the five-item menu (Discoveries, Models, Vuln discoveries, Methodology, Guide) plus the page's own `aria-current="page"`, a blue banner with one `<h1>`, `<main>` with sections that each have an `<h2>`, and the footer. Copy the frame from an existing page; do not retype it. `404.html` is the one exception to the shared `<head>` (no canonical or Open Graph, `noindex`, and a `<base href>` so it works from any URL depth); `tests/test_site_links.py` checks it instead of `PAGES`.
 
 ## Charts and interaction
 
 - Charts are hand-written inline SVG, no libraries, using the existing chart classes. One mark per datum, a tooltip via the shared tip pattern, keyboard operation, and a text alternative (`aria-label` or a "View data as a table" block).
-- Clicking a chart element filters the list below; clicking again clears it. Keep that behavior everywhere.
+- Clicking a chart element filters the list below; clicking again clears it. Keep that behavior everywhere. Security charts use the existing bar-row component with fully wrapped source labels; its reading guide and chart panels are optional disclosures, with immediate banner links to cases and charts.
 - Motion is short and respects `prefers-reduced-motion`.
 
 ## Language and tone

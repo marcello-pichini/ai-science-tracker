@@ -24,13 +24,19 @@ class DesignTests(unittest.TestCase):
                     with self.subTest(page=page.name):
                         self.assertEqual(source, f'assets/catalog-ui.js?v={digest}')
 
+    def test_shared_stylesheet_urls_identify_the_current_content(self):
+        digest = hashlib.sha256((ROOT / 'styles.css').read_bytes()).hexdigest()[:12]
+        for page in PAGES + [ROOT / '404.html']:
+            href = re.search(r'<link rel="stylesheet" href="([^"]+)"', page.read_text()).group(1)
+            self.assertEqual(href, f'styles.css?v={digest}', page.name)
+
     def test_pages_share_the_frame(self):
         self.assertTrue(PAGES)
         for page in PAGES:
             text = page.read_text()
             with self.subTest(page=page.name):
                 self.assertIn('<html lang="en">', text)
-                self.assertIn('href="styles.css"', text)
+                self.assertRegex(text, r'href="styles.css\?v=[a-f0-9]{12}"')
                 self.assertIn('assets/fonts/schibsted-grotesk-latin.woff2', text)
                 self.assertNotIn('<style', text)
                 self.assertEqual(text.count('<h1'), 1)
@@ -38,6 +44,8 @@ class DesignTests(unittest.TestCase):
                 self.assertIn('og:image', text)
                 self.assertIn('rel="canonical"', text)
                 self.assertRegex(text, r'<title>[^<]*AI Science Tracker</title>')
+                menu = re.search(r'<nav class="menu".*?</nav>', text, re.S).group()
+                self.assertLess(menu.index('href="security.html"'), menu.index('href="methodology.html"'))
                 for nav in ('index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html'):
                     self.assertIn(f'href="{nav}"', text)
 

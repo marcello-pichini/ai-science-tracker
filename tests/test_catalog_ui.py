@@ -130,3 +130,22 @@ assert.equal(ui.citationLine({}), '');
 assert.ok(ui.citationLine({citation:{top_1:true, top_10:true, percentile:99.9, cited_by:12}}).includes('top 1%'));
 assert.ok(ui.citationLine({citation:{top_1:false, top_10:false, percentile:41.6, cited_by:3}}).includes('percentile 42'));
 ''')
+
+    def test_organization_delimiter_preserves_institution_names(self):
+        self.run_js("""
+assert.equal(ui.leadOrganization('Huazhong University of Science and Technology; Sichuan University'), 'Huazhong University of Science and Technology');
+assert.equal(ui.leadOrganization('University of California, Berkeley; MIT'), 'University of California, Berkeley');
+assert.equal(ui.leadOrganization('Washington and Lee University'), 'Washington and Lee University');
+""")
+
+    def test_citation_counts_are_numeric_and_snapshot_provenance_is_visible(self):
+        self.run_js("""
+const citation = {doi:'10.1234/example', cited_by:12, percentile:91.2, top_1:false, top_10:true, checked:'2026-11-15'};
+const html = ui.citationLine({citation});
+assert.ok(html.includes('15 Nov 2026'));
+assert.ok(html.includes('https://api.openalex.org/works/https://doi.org/10.1234/example'));
+assert.ok(html.includes('12 citations'));
+assert.equal(ui.citationLine({citation:{...citation,cited_by:'<b>12</b>'}}), '');
+assert.equal(ui.citationLine({citation:{...citation,percentile:Infinity}}), '');
+assert.equal(ui.citationLine({citation:{...citation,cited_by:-1}}), '');
+""")

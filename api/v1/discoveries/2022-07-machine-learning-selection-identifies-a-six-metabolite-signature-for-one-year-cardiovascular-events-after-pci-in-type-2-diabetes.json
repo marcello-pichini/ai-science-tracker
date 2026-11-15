@@ -13,17 +13,17 @@
   "paper_url": "https://doi.org/10.1186/s12933-022-01561-1",
   "relevance": {
     "impact": 3,
-    "validation": 4,
+    "validation": 2,
     "novelty": 3
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Random-forest and XGBoost models were tested in a nested case-control study and an independent prospective cohort of 301 patients; in the external cohort, reported AUCs were 0.92 and 0.94 for MACEs, respectively.",
+    "tested": "Random-forest and XGBoost models were tested in a nested case-control study and an independent prospective cohort of 301 patients; in the external cohort, reported AUCs were 0.92 and 0.94 for MACEs, respectively. For the prognostic panel, the external cohort was collected before the development cohort. Separate cell experiments support the reported pathway mechanism, not prospective clinical performance of the panel.",
     "unknown": "The discovery component was a matched nested case-control sample (108 cases and 108 controls) from a single center; external validation was in a separate Chinese cohort of 301 patients, so transportability to other populations is unknown. AUCs describe retrospective/prospective cohort validation, not demonstrated clinical utility or improved patient outcomes. HASMC experiments do not prove the metabolites cause clinical events, and the paper states further mechanistic work is needed.",
     "ai_role": "VSURF selected a six-metabolite feature set from serum metabolomic profiles. Random-forest and XGBoost models used that panel to predict one-year post-PCI outcomes; targeted metabolite testing evaluated the panel in a separate prospective cohort.",
     "evidence_urls": [
       "https://link.springer.com/article/10.1186/s12933-022-01561-1"
     ],
-    "test_type": "prospective or independent check"
+    "test_type": "retrospective or benchmark"
   }
 }

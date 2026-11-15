@@ -20,7 +20,7 @@
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="../assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../styles.css?v=aacb02c0db25">
 <script type="application/ld+json">
 {"@context":"https://schema.org/","@type":"CollectionPage","name":"AlphaQubit","description":"1 AI-enabled scientific discovery linked to the AlphaQubit model family.","url":"https://marcello-pichini.github.io/ai-science-tracker/profiles/family-alphaqubit.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"isPartOf":{"@type":"Dataset","name":"AI Science Tracker discovery catalog","url":"https://marcello-pichini.github.io/ai-science-tracker/"}}
 </script>
@@ -32,7 +32,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="../index.html">Discoveries</a><a href="../models.html">Models</a><a href="../methodology.html">Methodology</a><a href="../security.html">Vuln discoveries</a><a href="../guide.html">Guide</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="../index.html">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a></nav>
   </div>
 </header>
 
@@ -46,7 +46,7 @@
 <main>
   <section class="sez"><div class="wrap">
     <h2 class="vis-nascosto">Discoveries</h2><div class="piatto"><article class="voce" id="2024-11-alphaqubit">
-    <div class="voce-meta"><time datetime="2024-11-20">20 Nov 2024</time><a href="../profiles/org-google-deepmind.html">Google DeepMind and Google Quantum AI</a></div>
+    <div class="voce-meta"><time datetime="2024-11-20">20 Nov 2024</time><a href="../profiles/org-google-deepmind.html">Google DeepMind; and Google Quantum AI</a></div>
     <h3><a href="../share/2024-11-alphaqubit.html">AlphaQubit: a neural decoder for quantum error correction</a></h3>
     <p class="sommario">A Transformer-based decoder trained on data from a 49-qubit Sycamore processor made 6% fewer errors than tensor-network methods and 30% fewer than correlated matching in the largest experiments. It is too slow for real-time error correction on fast superconducting processors.</p>
     <p class="tech"><span>Technology:</span> AlphaQubit (Transformer)</p>
@@ -59,8 +59,8 @@
     <details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
       <p>Source type: blog. Paper: linked separately.</p>
-      <p><b>Evidence context</b> (pilot; stated by the cited sources, not an editorial judgment):</p><ul class="evidence-context"><li><b>Publication status:</b> Peer-reviewed paper</li><li><b>Test type:</b> retrospective or benchmark</li><li><b>Tested:</b> On Sycamore data, logical error per round was 2.901e-2 (distance 3) and 2.748e-2 (distance 5), versus 3.028e-2 and 2.915e-2 for a tensor-network decoder. Simulations to distance 11 (241 qubits); correlated matching was 1.25 to 1.4 times worse.</li><li><b>Still unknown:</b> Throughput is slower than the 1 microsecond per round target. Training at distance 11 needs more data. Accuracy beyond distance 11 and logical computations remain future work. Larger-distance results are simulated.</li><li><b>AI role:</b> A recurrent transformer neural network decodes surface-code syndromes to predict logical errors; it is the method under test.</li></ul><p>Evidence sources: <a href="https://doi.org/10.1038/s41586-024-08148-8" rel="noopener">https://doi.org/10.1038/s41586-024-08148-8</a></p>
-      <p>Citations: in the top 1% of works of the same type, year and subfield (OpenAlex, 195 citations). Attention, not a measure of correctness; not part of the score.</p>
+      <p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><ul class="evidence-context"><li><b>Publication status:</b> Peer-reviewed paper</li><li><b>Test type:</b> retrospective or benchmark</li><li><b>Tested:</b> On Sycamore data, logical error per round was 2.901e-2 (distance 3) and 2.748e-2 (distance 5), versus 3.028e-2 and 2.915e-2 for a tensor-network decoder. Simulations to distance 11 (241 qubits); correlated matching was 1.25 to 1.4 times worse.</li><li><b>Still unknown:</b> Throughput is slower than the 1 microsecond per round target. Training at distance 11 needs more data. Accuracy beyond distance 11 and logical computations remain future work. Larger-distance results are simulated.</li><li><b>AI role:</b> A recurrent transformer neural network decodes surface-code syndromes to predict logical errors; it is the method under test.</li></ul><p>Evidence sources: <a href="https://doi.org/10.1038/s41586-024-08148-8" rel="noopener">https://doi.org/10.1038/s41586-024-08148-8</a></p>
+      <p>Citations: in the top 1% of works of the same type, year and subfield (<a href="https://api.openalex.org/works/https://doi.org/10.1038/s41586-024-08148-8" rel="noopener">OpenAlex work metrics</a>, 195 citations; as of 15 Nov 2026). Attention, not a measure of correctness; not part of the score.</p>
       <p>Editorial assessment: Impact 3/5 · Validation 2/5 · Novelty 4/5. Impact and novelty are editorial judgments; validation follows the annotated test type where one exists. Not an evidence grade. <a href="../methodology.html">Scoring criteria</a>.</p></details>
   </article></div>
     <p class="sez-sub"><a href="../profile.html?family=alphaqubit">Open the interactive profile</a> for the timeline, or <a href="../profiles/index.html">browse all organizations and model families</a>.</p>

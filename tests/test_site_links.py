@@ -92,7 +92,7 @@ class CrawlableLinkTests(unittest.TestCase):
         index = (ROOT / 'index.html').read_text()
         self.assertIn('<base href="https://marcello-pichini.github.io/ai-science-tracker/">', page)
         self.assertIn('name="robots" content="noindex"', page)
-        self.assertIn('href="styles.css"', page)
+        self.assertRegex(page, r'href="styles.css\?v=[a-f0-9]{12}"')
         self.assertNotIn('<style', page)
         nav = lambda text: re.search(r'<nav class="menu".*?</nav>', text, re.S).group(0).replace(' aria-current="page"', '')
         self.assertEqual(nav(page), nav(index))

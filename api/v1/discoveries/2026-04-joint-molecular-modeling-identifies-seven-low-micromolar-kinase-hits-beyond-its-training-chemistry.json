@@ -13,17 +13,17 @@
   "paper_url": "https://doi.org/10.1038/s42256-026-01216-w",
   "relevance": {
     "impact": 2,
-    "validation": 4,
+    "validation": 3,
     "novelty": 3
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "The authors also evaluated the metric across 33 experimentally labelled bioactivity datasets.",
+    "tested": "The authors also evaluated the metric across 33 experimentally labelled bioactivity datasets. The reported wet-lab candidate assays directly test the molecular-model predictions within the study.",
     "unknown": "The kinase finding is a prospective in-vitro hit-identification result, not evidence of therapeutic efficacy. Seven low-micromolar hits were reported across PIM1 and CDK1; CDK1 was described as independent of the study’s earlier dataset analysis. The study screened only a small selected set per target after computational ranking. It does not establish the unfamiliarity measure as universally superior or demonstrate animal or clinical benefit.",
     "ai_role": "The model used reconstruction-based unfamiliarity alongside predicted bioactivity and prediction uncertainty to rank molecules for a prospective virtual screen. Researchers tested selected commercial compounds against PIM1 and CDK1; seven compounds showed low-micromolar potency. AI supported prioritization and selection, while wet-lab assays established activity.",
     "evidence_urls": [
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109061/"
     ],
-    "test_type": "prospective or independent check"
+    "test_type": "direct test"
   }
 }

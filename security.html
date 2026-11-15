@@ -20,7 +20,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/atom+xml" title="AI Science Tracker: additions and source checks" href="feed.xml">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=aacb02c0db25">
 </head>
 <body>
 <header class="header">
@@ -29,7 +29,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="methodology.html">Methodology</a><a href="security.html" aria-current="page">Vuln discoveries</a><a href="guide.html">Guide</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="security.html" aria-current="page">Vuln discoveries</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a></nav>
   </div>
 </header>
 
@@ -37,18 +37,35 @@
   <div class="wrap">
     <h1 id="page-title">AI-discovered vulnerabilities</h1>
     <p class="lead">Public disclosures, zero-day context and documented fixes. Only findings with an original source establishing AI involvement are included.</p>
+    <p class="security-tasks"><a href="#t-disclosures">Browse cases</a> · <a href="#chart-options" id="explore-charts">Explore charts</a></p>
   </div>
 </section>
 <main>
   <noscript><div class="wrap"><p class="vuoto">This page draws its cases with JavaScript. Without it you can read the <a href="data/vulnerabilities.json">raw case data</a> with its source links, or the <a href="methodology.html">methodology</a> for what is included.</p></div></noscript>
+  <section class="sez" aria-labelledby="t-reading"><div class="wrap prosa">
+    <h2 id="t-reading">Reading the evidence</h2>
+    <details class="security-options"><summary>How to read an AI vulnerability discovery</summary>
+    <p>A case connects a publicly disclosed flaw to a source describing AI involvement. Open <strong>AI contribution, context and remediation</strong> on any case to see what the system did, how researchers used its output and what the cited sources establish.</p>
+    <ul>
+      <li><strong>Follow the evidence:</strong> Original disclosure describes the finding; AI attribution documents the system's role; Advisory / fix evidence supplies the remediation context. These links can point to the same report when it covers all three.</li>
+      <li><strong>Read the dates separately:</strong> disclosure is the public report date, AI attribution is the dated account of AI involvement, and sources checked is this catalog's review date. None establishes when the flaw was introduced or first exploited. Unknown attribution dates remain explicit.</li>
+      <li><strong>Distinguish cases from identifiers:</strong> a case may group multiple CVEs, and some findings have no established CVE here. Case counts and unique CVE counts therefore measure different things.</li>
+      <li><strong>Check the remediation note:</strong> a documented fix is evidence about a cited correction or release. Use the vendor advisory to assess affected versions and upgrade guidance for your own installation.</li>
+    </ul>
+    <p>Explore cases by disclosure year, discovery context or product, or search for a CVE, AI system or finding. This selected collection cannot establish which AI system discovers the most vulnerabilities: source coverage, access and reporting practices differ.</p>
+    <p><a href="#t-disclosures">Browse tracked disclosures</a> · <a href="#t-context">Read the label definitions</a> · <a href="data/vulnerabilities.csv" download>Download cases (CSV)</a> · <a href="data/vulnerabilities.json">Source records (JSON)</a></p>
+    </details>
+  </div></section>
   <section class="sez" aria-labelledby="t-numbers"><div class="wrap">
-    <h2 id="t-numbers">By the numbers</h2>
-    <p class="sez-sub">Click a row to filter the list below; click again to clear the filter. The collection is selected, not exhaustive.</p>
+    <h2 id="t-numbers">Catalog charts</h2>
+    <details class="security-options" id="chart-options"><summary id="chart-summary">Explore six charts and filter cases</summary>
+    <p class="sez-sub">Click a row to filter the list below; click again to clear the filter. Chart counts describe the full selected catalog and stay fixed while filters narrow the list. They measure published coverage, not system effectiveness or product risk.</p>
     <div class="pannelli" id="charts"></div>
+    </details>
   </div></section>
   <section class="sez" aria-labelledby="t-disclosures">
     <div class="wrap">
-      <h2 id="t-disclosures">Tracked disclosures</h2>
+      <h2 id="t-disclosures" tabindex="-1">Tracked disclosures</h2>
       <p id="coverage" class="coverage-note" aria-live="polite">Loading disclosures…</p>
     </div>
     <div class="filtri"><div class="wrap">
@@ -56,6 +73,9 @@
         <input id="q" type="search" placeholder="Search CVE, product, AI system or finding" aria-label="Search vulnerability disclosures">
         <select id="product" aria-label="Product"><option value="">All products</option></select>
         <select id="context" aria-label="Discovery context"><option value="">All discovery contexts</option><option value="undisclosed">Undisclosed at discovery (source report)</option><option value="pre-release">Pre-release findings</option><option value="disclosure">Other vulnerability disclosures</option></select>
+        <select id="month" aria-label="Disclosure month"><option value="">All disclosure months</option></select>
+        <select id="ai_system" aria-label="AI system"><option value="">All AI systems</option></select>
+        <select id="remediation" aria-label="Remediation evidence"><option value="">All remediation evidence</option><option value="fix documented">Fix documented</option><option value="not established">Fix evidence not established</option></select>
         <button id="reset" type="button">Clear filters</button>
       </div>
       <div class="riepilogo"><span id="count" aria-live="polite"></span></div>
@@ -75,7 +95,7 @@
   <p>Original disclosures and documented remediation, with AI involvement attributed to sources.</p>
   <p><a href="index.html">Scientific discoveries</a> · <a href="guide.html">Site guide</a></p>
 </div></footer>
-<script src="assets/catalog-ui.js?v=3da758377e58"></script>
+<script src="assets/catalog-ui.js?v=75de9d87a94a"></script>
 <script>
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -83,32 +103,62 @@ const safeUrl = value => /^https:\/\//.test(value) ? value : "#";
 const date = value => new Intl.DateTimeFormat("en-GB", {day:"numeric",month:"short",year:"numeric"}).format(new Date(value + "T12:00:00"));
 const labels = {undisclosed:"Undisclosed at discovery (source report)", "pre-release":"Pre-release finding", disclosure:"Vulnerability disclosure"};
 let cases = [], year = "", shown = 40;
-/* Bar rows reuse the catalog chart classes; a row toggles the year filter or the context select. */
-function rows(key, entries) {
-  const max = Math.max(...entries.map(entry => entry[2]));
-  return `<div class="righe">` + entries.map(([value, label, n]) => `<button class="riga" type="button" data-k="${key}" data-v="${esc(value)}" aria-pressed="false" aria-label="${esc(label)}: ${n} ${n === 1 ? "case" : "cases"}"><span class="et" title="${esc(label)}">${esc(label)}</span><span class="bin"><span class="bar" style="width:${(n / max * 100).toFixed(1)}%"></span></span><span class="val">${n}</span></button>`).join("") + `</div>`;
+const filterIds = ["product", "context", "month", "ai_system", "remediation"];
+function rows(key, entries, max = Math.max(1, ...entries.map(entry => entry[2]))) {
+  return `<div class="righe">` + entries.map(([value, label, n]) => `<button class="riga" type="button" data-k="${key}" data-v="${esc(value)}" aria-pressed="false" aria-label="${esc(label)}: ${n} ${n === 1 ? "case" : "cases"}"><span class="et" title="${esc(label)}">${esc(label)}</span><span class="bin"><span class="bar" style="width:${(n / max * 100).toFixed(1)}%;min-width:${n ? 3 : 0}px"></span></span><span class="val">${n}</span></button>`).join("") + `</div>`;
+}
+function rankedRows(key, entries) {
+  const max = Math.max(1, ...entries.map(entry => entry[2]));
+  return rows(key, entries.slice(0, 10), max) + (entries.length > 10
+    ? `<details><summary>Show all ${entries.length} labels</summary>${rows(key, entries.slice(10), max)}</details>` : "");
 }
 function charts() {
-  const count = key => cases.reduce((m, record) => { m[key(record)] = (m[key(record)] || 0) + 1; return m; }, {});
+  const count = key => cases.reduce((m, record) => { const value = key(record); m[value] = (m[value] || 0) + 1; return m; }, Object.create(null));
+  const ranked = key => Object.entries(count(record => record[key])).sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([v,n]) => [v,v,n]);
   const years = Object.entries(count(record => record.disclosure_date.slice(0, 4))).sort().map(([y, n]) => [y, y, n]);
   const contexts = Object.entries(count(record => record.classification)).sort((a, b) => b[1] - a[1]).map(([c, n]) => [c, labels[c], n]);
-  $("charts").innerHTML = `<div class="pannello"><h3>By disclosure year</h3><p class="descr">Tracked cases per year of public disclosure.</p>${rows("year", years)}</div>` +
+  const monthly = count(record => record.disclosure_date.slice(0, 7));
+  const keys = Object.keys(monthly).sort(), months = [];
+  const currentMonth = new Date().toISOString().slice(0, 7);
+  if (keys.length) {
+    const cursor = new Date(keys[0] + "-01T12:00:00Z");
+    while (cursor.toISOString().slice(0, 7) <= keys[keys.length - 1]) {
+      const value = cursor.toISOString().slice(0, 7);
+      const label = new Intl.DateTimeFormat("en-GB", {month:"short", year:"numeric", timeZone:"UTC"}).format(cursor);
+      months.push([value, label + (value === currentMonth ? " (incomplete)" : ""), monthly[value] || 0]);
+      cursor.setUTCMonth(cursor.getUTCMonth() + 1);
+    }
+  }
+  $("month").innerHTML = '<option value="">All disclosure months</option>' + months.map(([value,label]) => `<option value="${value}">${esc(label)}</option>`).join("");
+  $("ai_system").innerHTML = '<option value="">All AI systems</option>' + Object.keys(count(record => record.ai_system)).sort().map(value => `<option>${esc(value)}</option>`).join("");
+  $("charts").innerHTML = `<div class="pannello"><h3>By disclosure month</h3><p class="descr">Public disclosures, including zero-count months between the first and last reports. The current month is incomplete; reporting patterns affect the trend.</p>${rows("month", months)}</div>` +
+    `<div class="pannello"><h3>By AI system cited</h3><p class="descr">Ten most frequent source labels, with the remainder below. Exact names may describe overlapping systems or unspecified versions; counts are not a performance ranking.</p>${rankedRows("ai_system", ranked("ai_system"))}</div>` +
+    `<div class="pannello"><h3>By product</h3><p class="descr">Ten most frequent product labels, with the remainder below. Catalog coverage is not a measure of a product's security.</p>${rankedRows("product", ranked("product"))}</div>` +
+    `<div class="pannello"><h3>By remediation evidence</h3><p class="descr">Cases with a source-documented fix versus cases where fix evidence is not established here. This does not measure patch deployment or current safety.</p>${rows("remediation", ranked("remediation").map(([v,label,n]) => [v,v === "not established" ? "Fix evidence not established" : "Fix documented",n]))}</div>` +
+    `<div class="pannello"><h3>By disclosure year</h3><p class="descr">Tracked cases per year of public disclosure.</p>${rows("year", years)}</div>` +
     `<div class="pannello"><h3>By discovery context</h3><p class="descr">Labels follow the cited sources; definitions are below.</p>${rows("context", contexts)}</div>`;
 }
 $("charts").addEventListener("click", e => {
   const b = e.target.closest(".riga"); if (!b) return;
   if (b.dataset.k === "year") year = year === b.dataset.v ? "" : b.dataset.v;
-  else $("context").value = $("context").value === b.dataset.v ? "" : b.dataset.v;
+  else $(b.dataset.k).value = $(b.dataset.k).value === b.dataset.v ? "" : b.dataset.v;
+  shown = 40;
   render();
+  $("t-disclosures").focus();
+  $("t-disclosures").scrollIntoView({block:"start"});
 });
 function render() {
+  const openDetails = new Set([...$("cases").querySelectorAll(".source-details[open]")].map(details => details.closest("article").id));
   const query = $("q").value.trim().toLowerCase();
-  document.querySelectorAll("#charts .riga").forEach(b => b.setAttribute("aria-pressed", (b.dataset.k === "year" ? year : $("context").value) === b.dataset.v));
+  document.querySelectorAll("#charts .riga").forEach(b => b.setAttribute("aria-pressed", (b.dataset.k === "year" ? year : $(b.dataset.k).value) === b.dataset.v));
   const selected = cases.filter(record => (!year || record.disclosure_date.startsWith(year)) && (!$("product").value || record.product === $("product").value) &&
     (!$("context").value || record.classification === $("context").value) &&
+    (!$("month").value || record.disclosure_date.startsWith($("month").value)) &&
+    (!$("ai_system").value || record.ai_system === $("ai_system").value) &&
+    (!$("remediation").value || record.remediation === $("remediation").value) &&
     (!query || [record.title,record.product,record.ai_system,record.organization,record.summary,...record.cves].join(" ").toLowerCase().includes(query)));
   $("count").textContent = `${selected.length} of ${cases.length} tracked cases`;
-  $("cases").innerHTML = selected.slice(0, shown).map(record => `<article class="voce" id="${esc(record.id)}">
+  $("cases").innerHTML = selected.slice(0, shown).map(record => `<article class="voce" id="${esc(record.id)}" tabindex="-1">
     <div class="voce-meta"><time datetime="${esc(record.disclosure_date)}">Disclosed ${esc(date(record.disclosure_date))}</time><span>${esc(record.organization)}</span></div>
     <h3><a href="#${esc(record.id)}">${esc(record.title)}</a></h3>
     <p class="sommario">${esc(record.summary)}</p>
@@ -116,7 +166,7 @@ function render() {
     <p>${record.cves.length ? record.cves.map(esc).join(", ") : "CVE: not established in this catalog"}</p>
     <div class="voce-footer"><span class="etich">${esc(labels[record.classification])}</span><span class="etich">${esc(record.remediation)}</span>
       <span class="collegamenti"><a href="${esc(safeUrl(record.source_url))}" rel="noopener">Original disclosure</a><a href="${esc(safeUrl(record.ai_source_url))}" rel="noopener">AI attribution</a><a href="${esc(safeUrl(record.advisory_url))}" rel="noopener">Advisory / fix evidence</a></span></div>
-    <details class="source-details"><summary>AI contribution, context and remediation</summary>
+    <details class="source-details"${openDetails.has(record.id) ? " open" : ""}><summary>AI contribution, context and remediation</summary>
       <p><strong>AI contribution:</strong> ${esc(record.ai_role)}</p>
       <p><strong>Discovery context:</strong> ${esc(record.classification_note)}</p>
       <p><strong>Remediation:</strong> ${esc(record.remediation_note)}</p>
@@ -124,14 +174,44 @@ function render() {
     </details>
   </article>`).join("") + (selected.length > shown ? `<p><button class="piu" id="more" type="button">Show 40 more of ${selected.length - shown} remaining</button></p>` : "")
     || '<p class="vuoto">No disclosures match these filters. Try clearing a filter.</p>';
+  return selected;
 }
-// A linked case beyond the first page is loaded before scrolling to it.
+function focusCase(id) {
+  const target = document.getElementById(id);
+  target?.focus({preventScroll:true});
+  target?.scrollIntoView({block:"start"});
+}
+// A valid case link must remain reachable even when filters hide it.
 function openHash() {
-  const id = decodeURIComponent(location.hash.slice(1)); if (!id) return;
+  let id;
+  try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+  if (!id) return;
   const i = cases.findIndex(record => record.id === id);
-  if (i >= shown) { shown = i + 1; render(); }
-  document.getElementById(id)?.scrollIntoView();
+  if (i < 0) return;
+  ["q",...filterIds].forEach(key => $(key).value = "");
+  year = "";
+  shown = Math.max(shown, i + 1);
+  render();
+  focusCase(id);
 }
+$("explore-charts").addEventListener("click", () => {
+  $("chart-options").open = true;
+  $("chart-summary").focus();
+});
+let printState = null;
+CatalogUI.beforePrint = () => {
+  if (printState) return;
+  printState = {nodes:[...$("cases").childNodes], shown, focus:document.activeElement};
+  shown = Infinity;
+  render();
+};
+CatalogUI.afterPrint = () => {
+  if (!printState) return;
+  $("cases").replaceChildren(...printState.nodes);
+  shown = printState.shown;
+  printState.focus?.focus({preventScroll:true});
+  printState = null;
+};
 addEventListener("hashchange", openHash);
 fetch("data/vulnerabilities.json").then(response => {
   if (!response.ok) throw new Error("Disclosure data unavailable");
@@ -149,9 +229,15 @@ fetch("data/vulnerabilities.json").then(response => {
   $("coverage").textContent = "Disclosure data could not be loaded.";
   $("cases").innerHTML = '<p><a href="data/vulnerabilities.json">Open the disclosure dataset</a> or reload the page.</p>';
 });
-["q","product","context"].forEach(id => $(id).addEventListener("input",()=>{shown=40;render();}));
-$("cases").addEventListener("click",e=>{if(e.target.id==="more"){shown+=40;render();}});
-$("reset").addEventListener("click",()=>{["q","product","context"].forEach(id=>$(id).value="");year="";shown=40;render();});
+["q",...filterIds].forEach(id => $(id).addEventListener("input",()=>{shown=40;render();}));
+$("cases").addEventListener("click", e => {
+  if (e.target.id !== "more") return;
+  const firstAdded = shown;
+  shown += 40;
+  const selected = render();
+  if (selected[firstAdded]) focusCase(selected[firstAdded].id);
+});
+$("reset").addEventListener("click",()=>{["q",...filterIds].forEach(id=>$(id).value="");year="";shown=40;render();});
 </script>
 </body>
 </html>

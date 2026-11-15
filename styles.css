@@ -352,3 +352,11 @@ main { padding:0 0 72px; }
 .altre button { font:600 .9375rem var(--font); padding:9px 14px; border:1px solid var(--line-2); border-radius:10px; background:var(--sheet); color:var(--ink); cursor:pointer; }
 .altre button:hover { border-color:var(--accent); }
 @media print { .altre { display:none; } }
+
+/* Security keeps evidence and charts optional while exposing exact source labels. */
+.security-tasks { margin:20px 0 0; font-weight:600; }
+.security-tasks a { color:var(--on-prussia); }
+.security-options > summary { color:var(--accent); cursor:pointer; font-weight:600; }
+.security-options > summary:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+#charts .riga .et { white-space:normal; overflow:visible; overflow-wrap:anywhere; }
+@media print { .security-tasks, .security-options { display:none; } }
