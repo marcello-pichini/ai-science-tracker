@@ -236,6 +236,18 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('catalog of 1 entries about scientific results', text)
         self.assertIn(g.BASE + 'data/discoveries.json', text)
 
+    def test_generated_metadata_uses_canonical_dataset_and_breadcrumb_urls(self):
+        g = self.generator
+        data = json.loads(g.discovery_jsonld(self.record).split('\n')[1])
+        self.assertEqual(data['isPartOf']['@id'], g.BASE + 'index.html#dataset')
+        crumbs = data['breadcrumb']['itemListElement']
+        self.assertEqual([c['position'] for c in crumbs], [1, 2])
+        self.assertEqual(crumbs[0]['item'], g.BASE + 'index.html')
+        self.assertEqual(crumbs[-1]['item'], data['url'])
+        profile = json.loads(g.profile_jsonld('Example Lab', 'Discoveries', 'profiles/org-example.html', True).split('\n')[1])
+        self.assertEqual(profile['breadcrumb']['itemListElement'][-1]['item'], profile['url'])
+        self.assertEqual(profile['isPartOf']['@id'], data['isPartOf']['@id'])
+
 
     def test_ambiguous_old_institution_profiles_do_not_pick_a_campus(self):
         g = self.generator

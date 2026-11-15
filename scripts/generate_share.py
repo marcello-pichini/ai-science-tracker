@@ -220,11 +220,18 @@ def jsonld(data):
     return f'<script type="application/ld+json">\n{text}\n</script>'
 
 
+def breadcrumb(name, path):
+    return {'@type': 'BreadcrumbList', 'itemListElement': [
+        {'@type': 'ListItem', 'position': 1, 'name': 'AI Science Tracker', 'item': BASE + 'index.html'},
+        {'@type': 'ListItem', 'position': 2, 'name': name, 'item': BASE + path}]}
+
+
 def discovery_jsonld(d):
     # WebPage, not Article: the announcement date is not when this page was published.
     data = {'@context': 'https://schema.org/', '@type': 'WebPage', 'name': d['title'], 'description': clip(d['summary'], 300),
             'url': f'{BASE}share/{d["id"]}.html', 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR,
-            'isPartOf': {'@type': 'Dataset', 'name': 'AI Science Tracker discovery catalog', 'url': BASE},
+            'isPartOf': {'@type': 'Dataset', '@id': BASE + 'index.html#dataset', 'name': 'AI Science Tracker discovery catalog', 'url': BASE + 'index.html'},
+            'breadcrumb': breadcrumb(d['title'], f'share/{d["id"]}.html'),
             'about': {'@type': 'Thing', 'name': d['title']}, 'isBasedOn': d['source_url']}
     if d['paper_url']:
         data['citation'] = d['paper_url']
@@ -234,7 +241,8 @@ def discovery_jsonld(d):
 def profile_jsonld(name, desc, path, organization=False):
     data = {'@context': 'https://schema.org/', '@type': 'CollectionPage', 'name': name, 'description': desc,
             'url': BASE + path, 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR,
-            'isPartOf': {'@type': 'Dataset', 'name': 'AI Science Tracker discovery catalog', 'url': BASE}}
+            'isPartOf': {'@type': 'Dataset', '@id': BASE + 'index.html#dataset', 'name': 'AI Science Tracker discovery catalog', 'url': BASE + 'index.html'},
+            'breadcrumb': breadcrumb(name, path)}
     if organization:
         data['about'] = {'@type': 'Organization', 'name': name}
     return jsonld(data)
