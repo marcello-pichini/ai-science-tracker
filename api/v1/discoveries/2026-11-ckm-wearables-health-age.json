@@ -1,0 +1,29 @@
+{
+  "id": "2026-11-ckm-wearables-health-age",
+  "title": "Wearable-based health age models for cardiovascular-kidney-metabolic risk profiling and coaching",
+  "summary": "A coachable health-age metric built from wearable signals predicted hypertension, cardiovascular disease and type 2 diabetes over eight years in All of Us (n = 22,748), and a world model pre-trained on about 2.28 million Fitbit person-weeks forecast 12-week responses to habit changes. In a blinded comparison, coaches preferred the counterfactual-grounded plans in 71.4% of 490 paired reviews, and physicians rated 97.6% of physiological claims accurate. The authors state that all evaluations were offline on retrospective cohorts, that the models are research prototypes, not clinical tools, and that prospective trials are needed.",
+  "field": "medicine",
+  "ai_technology": "Coachable health-age model, SensorWM action-conditioned world model, feasibility-constrained optimizer with a language model agent, multimodal CKM deviation model",
+  "organization": "Google Research; Fitbit",
+  "source_url": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/",
+  "source_type": "blog",
+  "publication_date": "2026-11-11",
+  "added_date": "2026-11-15",
+  "verification_status": "needs verification",
+  "paper_url": "https://arxiv.org/abs/2611.08568",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Retrospective prediction in All of Us (n = 22,748) and WEAR-ME (n = 819), a longitudinal Fitbit cohort (n = 1,464), and a blinded review of 49 coaching profiles by 5 coaches and 5 physicians (490 paired reviews).",
+    "unknown": "Prospective effect on habit change or long-term health not tested; authors say prospective trials are needed. The language model used for coaching text is not named in the source.",
+    "ai_role": "Built the health-age metric and multimodal CKM model from wearable and clinical markers, forecast physiological responses to habit changes with a world model, and filtered and converted simulated habit plans into coaching text with a language model agent.",
+    "evidence_urls": [
+      "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

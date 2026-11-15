@@ -1,0 +1,29 @@
+{
+  "id": "2026-10-iris-signaling-histories-single-cells",
+  "title": "IRIS model reconstructs signaling histories of single cells",
+  "summary": "IRIS, a neural network trained with transfer learning on thousands of human embryonic stem cells exposed to six signaling pathways, infers which pathways each cell received from its gene activity. In mouse gastrulation embryos it predicted pathway activity for heart, gut, muscle and spinal cord cells, and its prediction that one pathway would promote lung development was confirmed in mouse embryos. The article gives no accuracy metrics and describes stem cell, organoid and lung disease benefits only as prospective.",
+  "field": "biology",
+  "ai_technology": "IRIS (neural network with transfer learning)",
+  "organization": "MIT; Whitehead Institute for Biomedical Research",
+  "source_url": "https://news.mit.edu/2026/ai-model-decodes-language-cells-use-communicate-1015",
+  "source_type": "press release",
+  "publication_date": "2026-10-15",
+  "added_date": "2026-11-15",
+  "verification_status": "needs verification",
+  "paper_url": "https://www.nature.com/articles/s41592-026-03213-8",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Tested on single cells from mouse embryos during gastrulation, predicting when and where pathways were active; a pathway predicted to promote lung-specific development was confirmed experimentally in mouse embryos.",
+    "unknown": "No quantitative performance metrics given. Training data came from human stem cells while experimental validation was in mouse embryos; human embryo use is described only as a possibility. The journal paper is dated 2026-09-08, before the window; the window qualifies through the 2026-10-15 announcement.",
+    "ai_role": "IRIS learns consistent pathway fingerprints in gene activity across cell types, reconstructs signaling histories, and generated the lung-development prediction that was tested in mouse embryos.",
+    "evidence_urls": [
+      "https://news.mit.edu/2026/ai-model-decodes-language-cells-use-communicate-1015"
+    ],
+    "test_type": "direct test"
+  }
+}

@@ -24418,5 +24418,978 @@
       ],
       "test_type": "retrospective or benchmark"
     }
+  },
+  {
+    "id": "2026-10-provada-protein-steering",
+    "title": "ProVADA steers a protein generator to adapt proteins to non-native biological contexts",
+    "summary": "ProVADA, a test-time sampler that steers a pretrained protein generator, converted secreted human renin into an active, drug-inhibitable cytosolic protease and deimmunized two murine scFv fragments while retaining antigen recognition. ESCAPE-seq showed substantial depletion of HLA-I binder peptides, and deimmunized FMC63 variants kept CAR-T killing. The source states that broad sequence redesign can adapt functional proteins, but the reviewed abstract does not state wider limits.",
+    "field": "biology",
+    "ai_technology": "ProVADA (Mixture-Adaptation Directed Annealing sampler steering a pretrained protein generator)",
+    "organization": "Stanford University; Stanford Cancer Institute; University of Southern California",
+    "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13742580/fullTextXML",
+    "source_type": "paper",
+    "publication_date": "2026-10-18",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.1101/2025.07.11.664238",
+    "relevance": {
+      "impact": 4,
+      "validation": 3,
+      "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Renin conversion to a cytosolic protease tested with a drug inhibitor; two murine scFv deimmunized and checked for HLA visibility; FMC63 variants tested for CAR-T killing and binder count against a humanized comparator.",
+      "unknown": "Not stated in the reviewed material",
+      "ai_role": "A pretrained protein generator, steered by ProVADA's annealing sampler toward externally defined properties while preserving functional constraints.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13742580/fullTextXML"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-sik1-epilepsy-machine-learning",
+    "title": "Machine learning identifies SIK1 as an epilepsy driver validated in rat models",
+    "summary": "Machine learning on LKB1-pathway genes from public GEO data ranked SIK1 as the top epilepsy risk gene. In a PTZ status epilepticus rat model, SIK1 knockdown shortened seizure duration and overexpression worsened seizures, with patch-clamp and Western blot support. The abstract does not state how the ML ranking was itself tested beyond the public dataset.",
+    "field": "medicine",
+    "ai_technology": "Machine learning screening of LKB1 pathway genes on GEO dataset GSE143272",
+    "organization": "The First People's Hospital of Qinzhou",
+    "source_url": "https://europepmc.org/article/MED/42991733",
+    "source_type": "paper",
+    "publication_date": "2026-10-22",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.3389/fcell.2026.1887268",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "SIK1 knockdown and overexpression in vivo in a PTZ-induced rat model, with EEG, patch-clamp and Western blot readouts.",
+      "unknown": "Not stated in the reviewed material",
+      "ai_role": "Machine learning screened LKB1 pathway genes and ranked SIK1 as the top epilepsy risk gene for experimental follow-up.",
+      "evidence_urls": [
+        "https://europepmc.org/article/MED/42991733"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-takotsubo-ecg-deep-learning",
+    "title": "Deep learning ECG model separates Takotsubo syndrome from anterior STEMI, with a randomized reader study",
+    "summary": "A self-supervised three-architecture ensemble reached AUC 0.970 and 0.914 accuracy on external validation (95 participants from two institutions). In a randomized four-phase reader study with 70 readers, AI assistance raised the probability of correct diagnosis from 0.632 to 0.864 (OR 3.71); the source notes AI-assisted accuracy stayed below model accuracy.",
+    "field": "medicine",
+    "ai_technology": "Self-supervised deep learning ensemble with Grad-CAM explanations",
+    "organization": "Hiroshima City Asa Citizens Hospital",
+    "source_url": "https://doi.org/10.64898/2026.10.15.26365116",
+    "source_type": "other",
+    "publication_date": "2026-10-19",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 4,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "External validation on 95 participants from two institutions, and a four-phase reader study in which 70 readers were randomized to reference sheet, AI predictions, or AI with Grad-CAM.",
+      "unknown": "Exploratory reader-background analyses; preprint not yet peer reviewed; reader AI-assisted accuracy below model accuracy.",
+      "ai_role": "Ensemble classified 12-lead ECG images; its predictions and Grad-CAM maps were shown to readers.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=(%22artificial%20intelligence%22%20OR%20%22deep%20learning%22)%20AND%20(prospective%20OR%20randomized%20OR%20%22external%20validation%22)%20AND%20FIRST_PDATE:%5B2026-10-15%20TO%202026-11-15%5D&resultType=core&pageSize=50&format=json",
+        "https://doi.org/10.64898/2026.10.15.26365116"
+      ],
+      "test_type": "prospective or independent check"
+    }
+  },
+  {
+    "id": "2026-11-sars-cov-2-3cl-protease-foundation-model-fep",
+    "title": "Foundation model and generative AI yield 3CL protease inhibitors confirmed at sub-micromolar IC50",
+    "summary": "A workflow combining generative models, the MMELON foundation model and filters selected 249 molecules from about 5 million generated. Eighteen were checked with free energy perturbation, and five of those were tested experimentally: all five retained on-target inhibition with IC50 below 1 micromolar, and one showed stronger inhibition than its lead. MMELON reached Pearson R = 0.72 on a blind test.",
+    "field": "chemistry",
+    "ai_technology": "MMELON biomedical foundation model with generative molecular models",
+    "organization": "IBM Research",
+    "source_url": "https://doi.org/10.1007/s10822-026-00973-5",
+    "source_type": "paper",
+    "publication_date": "2026-11-13",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Five selected molecules were tested for 3CL protease inhibition, all retaining on-target inhibition with IC50 below 1 micromolar; 18 molecules were checked with free energy perturbation.",
+      "unknown": "Proprietary dataset used for thresholds; the abstract does not state the number of experimental replicates or the full set of tested compounds.",
+      "ai_role": "Generative models produced candidate molecules; the MMELON foundation model predicted activity and supported downselection.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:43024107"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-iam1363-brain-penetrant-her2-clinical-data",
+    "title": "AI-designed brain-penetrant HER2 inhibitor IAM1363 shows durable responses in Phase 1/1b",
+    "summary": "Iambic reported updated Phase 1/1b data for IAM1363, a selective brain-penetrant HER2 tyrosine kinase inhibitor, at ESMO 2026. Among 122 participants across Parts 1-4 (data cutoff 31 August 2026), the company reported low rates of Grade 3 or higher treatment-related adverse events, durable responses, and intracranial responses in patients previously treated with T-DXd and tucatinib. More than half of participants dosed at 960 mg remained on study.",
+    "field": "medicine",
+    "ai_technology": "Iambic molecular superintelligence platform",
+    "organization": "Iambic Therapeutics",
+    "source_url": "https://iambic.ai/post/iambic-presents-updated-iam1363-clinical-data-at-esmo-2026",
+    "source_type": "press release",
+    "publication_date": "2026-10-26",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "IAM1363 was given to 122 participants in a Phase 1/1b trial, with tolerability, response and intracranial response data reported.",
+      "unknown": "Company press release of a conference poster; efficacy numbers are company-reported, not peer reviewed; the stated AI contribution to the molecule is general and not detailed.",
+      "ai_role": "The molecule was 'designed using Iambic's molecular superintelligence platform' and progressed to clinic in about two years, as stated by the company.",
+      "evidence_urls": [
+        "https://iambic.ai/post/iambic-presents-updated-iam1363-clinical-data-at-esmo-2026"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-nir-ii-fluorophores-llm-virtual-screening",
+    "title": "LLM-based virtual screening identifies two NIR-II fluorophores tested in vitro and in vivo",
+    "summary": "Researchers built a dataset of fluorophores emitting from visible to NIR-II and trained a large language model to predict maximum emission wavelength, which was competitive with conventional machine-learning and deep-learning baselines. Model-guided virtual screening prioritized NIR-II candidates, and two were experimentally characterized with favorable in vitro and in vivo imaging performance. These are imaging probes, not therapeutics.",
+    "field": "chemistry",
+    "ai_technology": "Large language model for structure-property prediction, with virtual screening",
+    "organization": "State Key Laboratory of Drug Research",
+    "source_url": "https://doi.org/10.1002/smll.76251",
+    "source_type": "paper",
+    "publication_date": "2026-10-15",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Two model-prioritized NIR-II fluorophores were experimentally characterized for imaging performance in vitro and in vivo.",
+      "unknown": "Only two candidates were characterized; the abstract does not give quantitative brightness or penetration values; the work is about imaging agents, not drugs.",
+      "ai_role": "A large language model predicted emission wavelengths and guided virtual screening to choose candidates.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:42878370"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-ald-precursor-surface-reactant-ml",
+    "title": "AJIN machine learning predicts atomic layer deposition outcomes from experimental precursor-substrate data",
+    "summary": "AJIN, a graph-neural-network framework trained on 560 experimentally observed ALD and area-selective ALD outcomes (76 precursors, 27 substrates, 20 reactants, 25-620 C), reaches 79.2% balanced accuracy for adsorption and 84.8% for deposition. Tested against the authors' own laboratory ALD experiments, it correctly predicted 83% of new-substrate cases and 71% of new precursor-substrate adsorption cases.",
+    "field": "materials",
+    "ai_technology": "AJIN (ALD Joint Interpretable Network) with graph-neural-network embeddings (CHGNet-MLP best model)",
+    "organization": "Incheon National University; Ulsan National Institute of Science and Technology",
+    "source_url": "https://arxiv.org/abs/2611.10024",
+    "source_type": "other",
+    "publication_date": "2026-11-05",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Predicted adsorption and deposition outcomes for new substrates and new precursor-substrate pairs were compared with the authors' laboratory ALD experiments.",
+      "unknown": "Transfer to unseen precursors is only partial, according to the abstract; per-case details of the laboratory tests are not given in the reviewed material.",
+      "ai_role": "Machine-learning framework predicting whether a precursor-substrate-reactant combination yields ALD, with SHAP and ablation analyses of the drivers.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.10024"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-wenhai-e2e-global-eddy-resolving-ocean-forecast",
+    "title": "WenHai-E2E: end-to-end machine learning for global eddy-resolving ocean forecasts",
+    "summary": "WenHai-E2E produces global eddy-resolving ocean forecasts directly from multisource ocean observations, without initial conditions from a numerical forecast system. The authors state it outperforms a state-of-the-art numerical ocean forecast system (GOFS) in forecast accuracy; the abstract gives no numeric metrics. The full text was not accessible, so limits are not stated in the reviewed material.",
+    "field": "climate",
+    "ai_technology": "WenHai-E2E (end-to-end deep learning ocean forecast model)",
+    "organization": "Laoshan Laboratory; Ocean University of China; Shandong University; Qingdao Guoshi Technology Group",
+    "source_url": "https://doi.org/10.1126/sciadv.aeh9058",
+    "source_type": "paper",
+    "publication_date": "2026-11-13",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 4,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Forecast accuracy compared against a state-of-the-art numerical global ocean forecast system (GOFS), as stated in the abstract.",
+      "unknown": "Not stated in the reviewed material",
+      "ai_role": "Machine learning model produces the full eddy-resolving global ocean forecast from observations, replacing numerical initial conditions.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1126/sciadv.aeh9058&resultType=core&format=json"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2026-11-marsnet-learns-martian-atmosphere-from-observations",
+    "title": "MarsNet learns the Martian atmosphere from observations alone",
+    "summary": "A learned data-assimilation model, trained on Mars Years 24-31, matches or improves three reanalyses in the lowest atmospheric layers, with near-surface temperature RMSE of 4.2 K against 4.4-5.4 K. Its surface pressures are the most accurate of four products, with RMSE of 10 Pa against Curiosity in MY32. The authors state it is less accurate aloft and that training mainly improves surface pressure at some cost to dust.",
+    "field": "physics",
+    "ai_technology": "MarsNet, a learned forecast-and-update model with a fixed physical structure and bounded Kalman update",
+    "organization": "Yale University",
+    "source_url": "https://arxiv.org/abs/2611.12787",
+    "source_type": "paper",
+    "publication_date": "2026-11-09",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Evaluated on independent MGS radio-occultation temperatures, withheld Mars Climate Sounder profiles of MY32 and Curiosity surface pressures, compared with reanalyses and climatology.",
+      "unknown": "Less accurate than reanalyses aloft; much of the temperature skill appears before training; dust performance cost noted.",
+      "ai_role": "A neural network learns the forecast tendencies and the observation update jointly, inside a fixed physical structure, and the influence of each observation can be traced.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.12787"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2026-10-pact-healthy-neural-priors-bci",
+    "title": "Healthy neural priors improve BCI decoding in patients with motor-cortex gliomas",
+    "summary": "A Pathology-Aware Consensus Training (PACT) decoder embeds biophysical constraints from healthy recordings into training. On gesture classification from high-density ECoG of glioma patients infiltrating motor cortex, accuracy rose by more than 10%, and the correlation of motor-command geometry with healthy references rose from r=0.66 to r=0.94. The authors frame it as a proof of concept for clinical-population BCIs.",
+    "field": "biology",
+    "ai_technology": "Pathology-Aware Consensus Training (PACT), a neural decoder trained with biophysical constraints",
+    "organization": "National Clinical Research Center for Geriatric",
+    "source_url": "https://europepmc.org/article/MED/42913013",
+    "source_type": "paper",
+    "publication_date": "2026-10-23",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.1126/sciadv.adx5564",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Gesture classification from high-density ECoG of patients with gliomas infiltrating motor cortex, comparing PACT with conventional training.",
+      "unknown": "Proof of concept only; sample size, cross-patient generalization and clinical deployment are not stated in the reviewed material.",
+      "ai_role": "PACT is the decoding model; it uses healthy neural recordings as priors and learns to suppress pathological noise and reweight spatial attention.",
+      "evidence_urls": [
+        "https://europepmc.org/article/MED/42913013",
+        "https://doi.org/10.1126/sciadv.adx5564"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-llm-brain-low-rank-alignment",
+    "title": "A low-rank subspace of LLM representations carries most of their brain alignment",
+    "summary": "Ridge reduced-rank regression found that full linear encoding of neural responses during naturalistic listening is recovered with only 1-3% of LLM embedding dimensions. Across three intracranial and fMRI datasets and six model conditions, these subspaces generalize across held-out participants and, less well, across datasets. The brain-predictive directions differ from the main principal axes of the embeddings.",
+    "field": "biology",
+    "ai_technology": "Autoregressive and masked language models with ridge reduced-rank regression",
+    "organization": "Dartmouth College",
+    "source_url": "https://arxiv.org/abs/2610.40511",
+    "source_type": "paper",
+    "publication_date": "2026-10-29",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://arxiv.org/pdf/2610.40511",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Linear encoding of intracranial and fMRI responses from three naturalistic language-listening datasets, with held-out participants.",
+      "unknown": "Generalization across datasets is only partial, per the source; other tasks and species are not stated in the reviewed material.",
+      "ai_role": "LLM representations are the predictors of neural activity; reduced-rank regression identifies the brain-predictive subspace.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2610.40511",
+        "https://arxiv.org/pdf/2610.40511"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2026-11-ckm-wearables-health-age",
+    "title": "Wearable-based health age models for cardiovascular-kidney-metabolic risk profiling and coaching",
+    "summary": "A coachable health-age metric built from wearable signals predicted hypertension, cardiovascular disease and type 2 diabetes over eight years in All of Us (n = 22,748), and a world model pre-trained on about 2.28 million Fitbit person-weeks forecast 12-week responses to habit changes. In a blinded comparison, coaches preferred the counterfactual-grounded plans in 71.4% of 490 paired reviews, and physicians rated 97.6% of physiological claims accurate. The authors state that all evaluations were offline on retrospective cohorts, that the models are research prototypes, not clinical tools, and that prospective trials are needed.",
+    "field": "medicine",
+    "ai_technology": "Coachable health-age model, SensorWM action-conditioned world model, feasibility-constrained optimizer with a language model agent, multimodal CKM deviation model",
+    "organization": "Google Research; Fitbit",
+    "source_url": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/",
+    "source_type": "blog",
+    "publication_date": "2026-11-11",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://arxiv.org/abs/2611.08568",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Retrospective prediction in All of Us (n = 22,748) and WEAR-ME (n = 819), a longitudinal Fitbit cohort (n = 1,464), and a blinded review of 49 coaching profiles by 5 coaches and 5 physicians (490 paired reviews).",
+      "unknown": "Prospective effect on habit change or long-term health not tested; authors say prospective trials are needed. The language model used for coaching text is not named in the source.",
+      "ai_role": "Built the health-age metric and multimodal CKM model from wearable and clinical markers, forecast physiological responses to habit changes with a world model, and filtered and converted simulated habit plans into coaching text with a language model agent.",
+      "evidence_urls": [
+        "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2026-10-bolero-predicts-cell-state-specific-gene-regulation-across-species",
+    "title": "Bolero predicts cell-state-specific gene regulation from DNA across species",
+    "summary": "Bolero is a cell-state-conditioned DNA sequence model trained on 10.7 million cells from 33 datasets across six mammals, and its predictions were analyzed across 84 mammals. The abstract says it matches or exceeds specialised models, but gives no numerical benchmark values. A model trained only on human data correctly predicted which enhancers respond to the same AP-1 signal in mouse and macaque DNA, species it never saw during training.",
+    "field": "biology",
+    "ai_technology": "Bolero (cell-state-conditioned sequence-to-function Transformer)",
+    "organization": "Arc Institute; Harvard Medical School",
+    "source_url": "https://arcinstitute.org/news/bolero",
+    "source_type": "press release",
+    "publication_date": "2026-10-20",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.64898/2026.10.19.760026",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Predicted cell-state-specific transcript abundance and chromatin accessibility from DNA sequence, and AP-1 activity-driven accessibility changes in hippocampal neurons, checked against existing single-cell epigenome and multiomics data. Cross-species transfer was tested on mouse and macaque enhancers.",
+      "unknown": "No numerical performance metrics given for the core predictions, variant scoring or enhancer design. In silico DNA-insertion results are computational only, not wet-lab validated. The predicted AP-1 responses were less conserved than chromatin accessibility, with no effect sizes given.",
+      "ai_role": "Bolero, a Transformer conditioned on cell-state embeddings, predicts cell-state-specific gene regulation directly from DNA and estimates responses in unprofiled cell states.",
+      "evidence_urls": [
+        "https://arcinstitute.org/news/bolero",
+        "https://doi.org/10.64898/2026.10.19.760026",
+        "https://www.biorxiv.org/content/10.64898/2026.10.19.760026v1"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2026-11-claude-designs-three-working-electronics-prototypes",
+    "title": "Claude designs three working electronics prototypes built and tested by an external manufacturer",
+    "summary": "Claude wrote the specifications, schematics, board layouts, enclosures, firmware and parts lists for three prototype devices built by Diode Computers, and the boards were assembled from the design files with no manufacturing revision rounds. Claude shortened a speakerphone microphone port from about 25 mm to 10 mm, moving its resonance from about 3.4 kHz to about 8.9 kHz. The authors state the devices have no electrical validation, antenna tuning, thermal testing or certification, and are not designed for mass production.",
+    "field": "other",
+    "ai_technology": "Claude (Anthropic) as electronics design agent",
+    "organization": "Anthropic; Diode Computers",
+    "source_url": "https://www.anthropic.com/research/claude-electronics-design",
+    "source_type": "blog",
+    "publication_date": "2026-11-09",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "Three physically built prototypes (USB speakerphone, home voice-assistant hub, handheld virtual pet) were assembled and run by Diode engineers, and still worked after weeks of use. Benchmark scores were reported on the internal PCB Gym benchmark and the public BenchCAD 2.1 benchmark.",
+      "unknown": "No electrical validation, antenna tuning, thermal testing or certification; long-term durability unknown; Claude was not connected to test equipment or fabrication machines. Benchmark scores are reported without an independent check.",
+      "ai_role": "Claude wrote specifications, schematics, PCB layout, 3D-printable enclosure, firmware and parts list, and fixed six solder mask slivers and dismissed one false-positive ground connection error.",
+      "evidence_urls": [
+        "https://www.anthropic.com/research/claude-electronics-design"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-iris-signaling-histories-single-cells",
+    "title": "IRIS model reconstructs signaling histories of single cells",
+    "summary": "IRIS, a neural network trained with transfer learning on thousands of human embryonic stem cells exposed to six signaling pathways, infers which pathways each cell received from its gene activity. In mouse gastrulation embryos it predicted pathway activity for heart, gut, muscle and spinal cord cells, and its prediction that one pathway would promote lung development was confirmed in mouse embryos. The article gives no accuracy metrics and describes stem cell, organoid and lung disease benefits only as prospective.",
+    "field": "biology",
+    "ai_technology": "IRIS (neural network with transfer learning)",
+    "organization": "MIT; Whitehead Institute for Biomedical Research",
+    "source_url": "https://news.mit.edu/2026/ai-model-decodes-language-cells-use-communicate-1015",
+    "source_type": "press release",
+    "publication_date": "2026-10-15",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://www.nature.com/articles/s41592-026-03213-8",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Tested on single cells from mouse embryos during gastrulation, predicting when and where pathways were active; a pathway predicted to promote lung-specific development was confirmed experimentally in mouse embryos.",
+      "unknown": "No quantitative performance metrics given. Training data came from human stem cells while experimental validation was in mouse embryos; human embryo use is described only as a possibility. The journal paper is dated 2026-09-08, before the window; the window qualifies through the 2026-10-15 announcement.",
+      "ai_role": "IRIS learns consistent pathway fingerprints in gene activity across cell types, reconstructs signaling histories, and generated the lung-development prediction that was tested in mouse embryos.",
+      "evidence_urls": [
+        "https://news.mit.edu/2026/ai-model-decodes-language-cells-use-communicate-1015"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-human-in-loop-ai-copilot-structural-design",
+    "title": "Human-in-the-loop AI copilot improves topology-optimized structure design",
+    "summary": "A machine-learning model trained on a synthetic dataset of probable human feedback flags regions of a topology-optimized design that a designer would likely change. The article reports a 39 percent improvement in manufacturability and linear buckling load, adding about 15 seconds of design time compared with all-algorithmic methods. It states the feedback training data is synthetic, editing is limited to thickening or thinning regions, and the approach complements rather than replaces AI-only methods.",
+    "field": "other",
+    "ai_technology": "Human-in-the-loop AI copilot with topology optimization (machine-learning region-flagging model)",
+    "organization": "MIT; Georgia Institute of Technology",
+    "source_url": "https://news.mit.edu/2026/new-ai-copilot-helps-engineers-design-better-structures-1113",
+    "source_type": "press release",
+    "publication_date": "2026-11-13",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://www.nature.com/articles/s44172-026-00818-x",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Demonstrations compared the human-in-the-loop approach with all-algorithmic designs on manufacturability and linear buckling load.",
+      "unknown": "No physical testing or real-world construction described. Training feedback is synthetic rather than recorded from real designers.",
+      "ai_role": "A machine-learning model quickly identifies design regions a human would likely want to change, within a topology optimization workflow.",
+      "evidence_urls": [
+        "https://news.mit.edu/2026/new-ai-copilot-helps-engineers-design-better-structures-1113"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-depth-aware-fib-sem-porous-electrode-reconstruction",
+    "title": "Depth-aware machine learning for 3D reconstruction of fibrous porous electrodes from FIB-SEM tomography",
+    "summary": "An annotation-free framework combining monocular depth estimation (trained on macroscale images) with unsupervised clustering separates in-plane polymer cross-sections from subsurface contributions in FIB-SEM tomography. On copper-coated electrospun PVDF-HFP fiber mats it preserves fiber morphology better than conventional supervised and unsupervised segmentation, with improved agreement on pore diameter, fiber volume ratio and Cu depth decrease. Validation used capillary flow porometry, pycnometry and wide-angle X-ray tomography on a single material system.",
+    "field": "materials",
+    "ai_technology": "Depth-aware machine learning: monocular depth estimation plus unsupervised clustering",
+    "organization": "ETH Zurich; EPFL; Empa; European Synchrotron Radiation Facility",
+    "source_url": "https://europepmc.org/article/MED/42928641",
+    "source_type": "paper",
+    "publication_date": "2026-10-25",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.1002/smtd.71142",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Reconstructions of copper-coated electrospun PVDF-HFP fiber mats compared with conventional segmentation and with independent measurements (porometry, pycnometry, wide-angle X-ray CT).",
+      "unknown": "Generalisation beyond the tested fiber mat system is not stated in the reviewed material.",
+      "ai_role": "Monocular depth estimation model, trained on macroscale images, plus unsupervised clustering to separate in-plane from subsurface material in FIB-SEM slices.",
+      "evidence_urls": [
+        "https://europepmc.org/article/MED/42928641",
+        "https://doi.org/10.1002/smtd.71142"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-ai-ecg-detection-prediction-dilated-cardiomyopathy",
+    "title": "AI-enhanced electrocardiography for detection and prediction of dilated cardiomyopathy",
+    "summary": "A deep learning ECG model trained on over 330,000 ECG-echocardiogram pairs detects the echocardiographic dilated cardiomyopathy phenotype (AUROC 0.87-0.97) and predicts incident disease with a C-index of 0.80-0.87, comparable to echocardiography. In two familial cohorts (Antwerp, Maastricht) 5-year negative predictive values were 95.5% and 91.5%, with positive predictive values of 42.4% and 39.4%. Authors describe the model as supporting exclusion of short- to mid-term disease, not as a diagnostic replacement.",
+    "field": "medicine",
+    "ai_technology": "Explainable deep learning model applied to 12-lead ECG",
+    "organization": "Imperial College London; University of Antwerp and Antwerp University Hospital; Maastricht University Medical Center; Beth Israel Deaconess Medical Center; UK Biobank cohorts; Zhongshan Hospital of Fudan University",
+    "source_url": "https://europepmc.org/article/MED/43031488",
+    "source_type": "paper",
+    "publication_date": "2026-11-13",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.1093/eurheartj/ehag917",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Validated in UK Biobank, Zhongshan Hospital and Antwerp cohorts, and in two familial cohorts (Antwerp n=166, Maastricht n=177), compared with traditional ECG features and echocardiographic traits.",
+      "unknown": "Whether the model was locked and evaluated prospectively is not stated in the abstract; familial-cohort outcomes are reported as 5-year follow-up. Detailed limits not stated in the reviewed material.",
+      "ai_role": "Deep learning model trained to detect and predict the echocardiographic DCM phenotype from ECG; explainable AI-ECG outperformed traditional ECG parameters.",
+      "evidence_urls": [
+        "https://europepmc.org/article/MED/43031488",
+        "https://doi.org/10.1093/eurheartj/ehag917"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2026-10-cochleanet-cochlear-connectomics-gene-therapy",
+    "title": "CochleaNet: deep learning analysis of cochlear connectomics and gene therapy",
+    "summary": "CochleaNet segments the cochlea from light-sheet volumes of cleared, labelled tissue, including inner hair cells, spiral ganglion neurons and their synapses, and analyses tonotopy and gene expression. It was validated against manual analysis and outperformed prior segmentation methods. The authors used it to compare spiral ganglion neuron types and to assess different gene therapy products.",
+    "field": "biology",
+    "ai_technology": "CochleaNet: deep learning framework for volumetric image segmentation and analysis",
+    "organization": "University Medical Center Göttingen; University of Göttingen; Cluster of Excellence MBExC",
+    "source_url": "https://europepmc.org/article/MED/42920300",
+    "source_type": "paper",
+    "publication_date": "2026-10-23",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.1016/j.ymthe.2026.10.025",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Compared with manual image analysis and prior segmentation methods, then used to validate different gene therapy products in cochleae.",
+      "unknown": "Generalisation to other cochlear datasets or species is not stated in the reviewed material.",
+      "ai_role": "Deep learning framework that reconstructs the cochlea and segments hair cells, neurons and synapses, and quantifies tonotopy and gene expression.",
+      "evidence_urls": [
+        "https://europepmc.org/article/MED/42920300",
+        "https://doi.org/10.1016/j.ymthe.2026.10.025"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-language-model-species-distribution-alternative-stable-states",
+    "title": "A language-model approach to species distribution reveals alternative stable states",
+    "summary": "A generative, language-model-inspired framework trained on about 27,000 reef fish surveys predicts species and biomass sequentially, conditional on species already present. It generates multiple coherent community configurations under identical environmental conditions, including coral-associated and macroalgal-associated communities. It also improves occurrence and biomass prediction relative to a species-by-species XGBoost baseline and a multispecies MLP. The source frames the alternative states as consistent with ecological regimes described in the literature.",
+    "field": "biology",
+    "ai_technology": "Language-model-inspired generative model for ecological communities",
+    "organization": "Inria; Université de Montpellier; CNRS; Ifremer; IRD; University of Tasmania",
+    "source_url": "https://europepmc.org/article/MED/42913654",
+    "source_type": "paper",
+    "publication_date": "2026-10-22",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.1016/j.cub.2026.09.081",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Fitted on about 27,000 reef fish surveys; predictive skill compared with XGBoost and MLP baselines; multistability interpreted against described ecological regimes.",
+      "unknown": "Whether alternative states were confirmed by independent field data is not stated in the reviewed material.",
+      "ai_role": "Generative language-model-style model that predicts each species and its biomass conditional on previously assembled species, used to generate community configurations.",
+      "evidence_urls": [
+        "https://europepmc.org/article/MED/42913654",
+        "https://doi.org/10.1016/j.cub.2026.09.081"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2026-11-autodna-ai-native-lab",
+    "title": "AutoDNA: an AI-native autonomous laboratory for biomolecular engineering",
+    "summary": "AutoDNA orchestrates over 20 instrument types across more than 11,000 steps to run nucleic acid synthesis, transcription, amplification and sequencing with human input limited to hardware maintenance. The authors report four representative applications. Limits: the abstract does not give per-application metrics beyond the stated scope.",
+    "field": "biology",
+    "ai_technology": "AutoDNA AI-native autonomous laboratory (co-designed models, experiments and instruments)",
+    "organization": "Institute of Parallel and Distributed Systems",
+    "source_url": "https://doi.org/10.1038/s41586-026-11228-6",
+    "source_type": "paper",
+    "publication_date": "2026-11-04",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 4,
+      "validation": 3,
+      "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Autonomous execution of multi-objective nucleic acid experiments across diverse instruments, in four representative applications.",
+      "unknown": "Limits beyond the reported scope (human maintenance of reagents and labware) are not stated in the reviewed abstract.",
+      "ai_role": "AI models co-designed with experiments and instruments orchestrate the end-to-end workflow autonomously.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41586-026-11228-6%22&resultType=core&format=json"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-data-driven-mxene-discovery",
+    "title": "Machine-learning mining uncovers hidden MXenes, including 11 new rare-earth MXenes",
+    "summary": "Machine-learning-assisted database mining screened 33 previously synthesized but unrecognized MXene candidates. The team synthesized seven multilayer MXenes with a rapid self-propagating high-temperature method and 11 unexplored rare-earth MXenes, with experiments and modeling suggesting semiconducting behavior and diverse magnetic states.",
+    "field": "materials",
+    "ai_technology": "Machine-learning-assisted database mining for MXene candidates",
+    "organization": "Linköping University",
+    "source_url": "https://doi.org/10.1126/science.aeh5957",
+    "source_type": "paper",
+    "publication_date": "2026-10-29",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Seven multilayer MXenes were synthesized and 11 rare-earth MXenes realized; experiments and modeling assess electronic and magnetic behavior.",
+      "unknown": "Not stated in the reviewed material",
+      "ai_role": "Machine learning performed database mining to screen candidate MXene compositions.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1126/science.aeh5957%22&resultType=core&format=json"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-previa-ptsd-risk-llm",
+    "title": "PREVIA: LLM ensemble predicts PTSD risk from emergency department trauma narratives",
+    "summary": "PREVIA, a clinically informed LLM ensemble, predicts PTSD one month after trauma from emergency department narratives in 145 patients at two New York City trauma centers. It reached AUROC 78.49% plus or minus 5.75% and performed comparably to a specialized clinician on 30 patients. The authors note the precision is about 47%, and the study is an ongoing single-region cohort.",
+    "field": "medicine",
+    "ai_technology": "PREVIA clinically informed large language model ensemble",
+    "organization": "New York University Grossman School of Medicine",
+    "source_url": "https://doi.org/10.1038/s41467-026-78768-3",
+    "source_type": "paper",
+    "publication_date": "2026-11-09",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Predicted PTSD at one month in 145 patients and compared the model with an emergency clinician on 30 random patients.",
+      "unknown": "Precision is about 47% (AUROC 78.49%) with wide standard deviations; the abstract describes an ongoing longitudinal study and a small sample.",
+      "ai_role": "LLM ensemble extracts early post-traumatic stress symptoms, risk and protective factors from narratives and produces the risk forecast.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41467-026-78768-3%22&resultType=core&format=json"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2026-10-virtual-biotech-agents",
+    "title": "The Virtual Biotech: a multi-agent AI framework for drug development decisions",
+    "summary": "The Virtual Biotech is a multi-agent AI organization modeled on a drug-development company. It annotated outcomes from 55,984 trials and found that drugs targeting cell type-specific genes were 48% more likely to reach market with 32% fewer adverse events. It also proposed a lung cancer strategy and inferred failure mechanisms of a terminated ulcerative colitis trial. The authors state it is human-guided.",
+    "field": "medicine",
+    "ai_technology": "Virtual Biotech multi-agent AI framework (more than 37,000 agents)",
+    "organization": "Stanford University",
+    "source_url": "https://doi.org/10.1126/science.aeg6779",
+    "source_type": "paper",
+    "publication_date": "2026-10-22",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Trial-outcome annotation across 55,984 trials, a lung cancer therapeutic proposal and analysis of one terminated trial.",
+      "unknown": "Validation of the proposed lung cancer strategy and the inferred failure mechanism is not stated in the reviewed abstract; the framework is described as human-guided.",
+      "ai_role": "More than 37,000 AI agents annotated trial outcomes and integrated multimodal evidence to propose and analyze therapeutic decisions.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1126/science.aeg6779%22&resultType=core&format=json"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2026-11-ecg-biomarker-sudden-cardiac-death-deep-learning",
+    "title": "Deep learning finds an ECG biomarker for sudden cardiac death",
+    "summary": "A deep learning model trained on about 440,000 Swedish ECGs linked to death certificates isolates a high-risk group (2.2% of the sample) with a 7.0% annual sudden cardiac death rate, versus 4.6% for reduced LVEF; 86.1% of its high-risk patients were not flagged by LVEF. It was externally validated in a US health system and a Taiwanese registry. The press release reports a 54.4% lower-than-expected mortality among high-risk patients with implanted defibrillators, read as a benefit; the paper was published in Nature with the press release dated 2026-11-12 (Europe PMC first-online date 2026-06-24).",
+    "field": "medicine",
+    "ai_technology": "Deep learning ECG model with a generative ECG waveform model for visualization",
+    "organization": "UC Berkeley; Swedish region health data; US health system; Taiwanese hospital registry",
+    "source_url": "https://www.sciencedaily.com/releases/2026/11/261112230456.htm",
+    "source_type": "press release",
+    "publication_date": "2026-11-12",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.1038/s41586-026-10674-6",
+    "relevance": {
+      "impact": 4,
+      "validation": 4,
+      "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Model trained on Swedish ECG-death linkage data, then evaluated in a US health system and a Taiwanese hospital registry for arrhythmic cardiac arrest prediction.",
+      "unknown": "Mortality benefit of defibrillators is an observational association, not a randomized result (press release framing). Not stated in the reviewed material for other limits.",
+      "ai_role": "Deep learning model discovered the predictive ECG waveform pattern; generative model used to visualize it.",
+      "evidence_urls": [
+        "https://www.sciencedaily.com/releases/2026/11/261112230456.htm",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41586-026-10674-6%22&resultType=core&format=json"
+      ],
+      "test_type": "prospective or independent check"
+    }
+  },
+  {
+    "id": "2026-11-bionic-eye-deep-learning-visual-cortex-stimulation",
+    "title": "Deep learning controls electrical stimulation patterns in human visual cortex",
+    "summary": "A deep learning framework (a learned inverse network and a gradient-based optimizer) chooses electrical stimulation patterns for a temporarily implanted visual cortex device in a blind participant. The source states both methods outperform conventional calibration, reach targets at lower currents and give more consistent perception. The Neuron paper was published online 2026-08-07 and announced by ScienceDaily on 2026-11-10.",
+    "field": "medicine",
+    "ai_technology": "Deep learning inverse network and gradient-based optimizer for neural stimulation",
+    "organization": "UC Santa Barbara",
+    "source_url": "https://www.sciencedaily.com/releases/2026/11/261110042553.htm",
+    "source_type": "press release",
+    "publication_date": "2026-11-10",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.1016/j.neuron.2026.07.006",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Proof-of-concept experiments in one participant with a temporarily implanted bidirectional cortical implant in human visual cortex.",
+      "unknown": "Limited to a proof-of-concept study with one person, as framed by the source; long-term use not reported.",
+      "ai_role": "Deep learning model trained on trial-resolved neural recordings to synthesize and optimize stimulation patterns.",
+      "evidence_urls": [
+        "https://www.sciencedaily.com/releases/2026/11/261110042553.htm",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.neuron.2026.07.006%22&resultType=core&format=json"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-ml-guided-activation-domain-design",
+    "title": "Machine learning guided design of strong transcriptional activation domains",
+    "summary": "Computationally generated 500,000 candidate activation domains, scored them with neural-network models, and tested 18,750 in yeast; over 90% of 16,770 well-measured sequences functioned as activation domains. Sequences predicted active by several models were stronger, leading to the consensus predictor MADRIGAL; some designs kept activity in fungi, plants and human cells.",
+    "field": "biology",
+    "ai_technology": "Neural-network sequence-to-function models (three networks); consensus predictor MADRIGAL",
+    "organization": "University of California, Berkeley; University of California, San Francisco; Chan Zuckerberg Biohub San Francisco",
+    "source_url": "https://europepmc.org/article/PPR/PPR1355735",
+    "source_type": "paper",
+    "publication_date": "2026-11-02",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.64898/2026.10.30.763198",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "18,750 selected sequences were tested experimentally in yeast; over 90% of 16,770 well-measured sequences functioned as activation domains, and some retained function in fungi, plants and human cells.",
+      "unknown": "Not stated in the reviewed material beyond the abstract; functional retention across species is reported for only some designs.",
+      "ai_role": "Neural networks scored sequences generated from known activation-domain-like sequences; high-scoring sequences were selected for experimental validation and the consensus model MADRIGAL was developed.",
+      "evidence_urls": [
+        "https://europepmc.org/article/PPR/PPR1355735",
+        "https://doi.org/10.64898/2026.10.30.763198"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-cross-state-allosteric-site-discovery",
+    "title": "Cross-state representation learning enables prospective discovery of dynamic protein allosteric sites",
+    "summary": "AllositeUltra, a deep-learning framework for allosteric site detection, reached Top-3 site recovery of 65.2% on apo and 70.6% on substrate-bound structures, versus the best baselines. Prospective application to MAGI2 identified an interdomain allosteric pocket, validated by small-molecule screening and X-ray crystallography at atomic resolution.",
+    "field": "biology",
+    "ai_technology": "AllositeUltra (structure-aware protein language model combined with physical dynamics; residue-guided candidate supplementation)",
+    "organization": "Shanghai Jiao Tong University; Chinese Academy of Sciences",
+    "source_url": "https://europepmc.org/article/PPR/PPR1363697",
+    "source_type": "paper",
+    "publication_date": "2026-11-10",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.64898/2026.11.09.765238",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The predicted MAGI2 interdomain pocket was validated experimentally through small-molecule screening and X-ray crystallography; benchmark recovery was measured on apo and substrate-bound structures.",
+      "unknown": "Not stated in the reviewed material beyond the abstract; the number of prospective candidates tested is not given in the abstract.",
+      "ai_role": "A deep-learning model predicted allosteric sites on apo and substrate-bound structures and was applied prospectively to MAGI2 and proteome-wide.",
+      "evidence_urls": [
+        "https://europepmc.org/article/PPR/PPR1363697",
+        "https://doi.org/10.64898/2026.11.09.765238"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-generative-design-de-novo-aav-vectors",
+    "title": "Generative design of de novo AAV vectors with unique serological profiles",
+    "summary": "A variational autoencoder trained on natural AAV sequences generated capsid proteins de novo; more than 255 designs were synthesized and tested in vitro. Seven designs transduced human cells at over 50% efficiency, and four of these avoided neutralization by all AAV-reactive human sera tested (NT50 < 1:50).",
+    "field": "biology",
+    "ai_technology": "Variational autoencoder (generative model of AAV capsid sequences)",
+    "organization": "University of Toronto",
+    "source_url": "https://europepmc.org/article/PPR/PPR1363818",
+    "source_type": "paper",
+    "publication_date": "2026-11-09",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.64898/2026.11.06.764881",
+    "relevance": {
+      "impact": 4,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "More than 255 AI-generated capsid designs were synthesized and tested in vitro; seven transduced human cells above 50% efficiency and four avoided neutralizing antibodies in all reactive human sera.",
+      "unknown": "Tested in vitro only; the in vivo performance and the full set of limits are not stated in the reviewed abstract.",
+      "ai_role": "A variational autoencoder learned AAV sequence constraints from natural sequences and generated functional capsid proteins de novo, with a second design campaign exploring uncertain regions.",
+      "evidence_urls": [
+        "https://europepmc.org/article/PPR/PPR1363818",
+        "https://doi.org/10.64898/2026.11.06.764881"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-germinal-multi-antibody-antigenic-evolution",
+    "title": "Antibody design across observed and forecasted antigenic evolution",
+    "summary": "Germinal Multi jointly optimizes one antibody paratope against several antigen variants. Designs bound resistance-associated EGFR variants and neutralized historical SARS-CoV-2 variants, including variants withheld from design; redesign of BD55-1205 restored neutralization of a forecast escape variant. Successful candidates came from screening tens of designs per campaign.",
+    "field": "biology",
+    "ai_technology": "Germinal Multi (computational antibody design framework); evolutionary forecasting model",
+    "organization": "Stanford University",
+    "source_url": "https://europepmc.org/article/PPR/PPR1367523",
+    "source_type": "paper",
+    "publication_date": "2026-11-13",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.64898/2026.11.10.765734",
+    "relevance": {
+      "impact": 4,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Tens of designs per campaign were screened experimentally; designs bound EGFR variants and neutralized SARS-CoV-2 variants, including variants withheld from the design process.",
+      "unknown": "Not stated in the reviewed material beyond the abstract; the prospective escape variant result is described as a single redesign case in the abstract.",
+      "ai_role": "A computational framework designed antibodies de novo against multiple antigenic variants at once, and an evolutionary forecasting model guided redesign against a prospective escape variant.",
+      "evidence_urls": [
+        "https://europepmc.org/article/PPR/PPR1367523",
+        "https://doi.org/10.64898/2026.11.10.765734"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-apollai-prehospital-stroke-detection",
+    "title": "APOLLAI, a multimodal AI system, versus EMS personnel for prehospital detection of stroke-related deficits",
+    "summary": "In a prospective study of 295 suspected stroke patients recorded at Nîmes University Hospital, the APOLLAI multimodal AI (video and audio) was compared with EMS personnel against a seven-neurologist consensus reference for five NIHSS items. Performance was assessed by sensitivity, specificity and AUC; the abstract is cut before the final numbers.",
+    "field": "medicine",
+    "ai_technology": "APOLLAI (computer vision, audio deep learning and SVM fusion classifier)",
+    "organization": "Nîmes University Hospital",
+    "source_url": "https://europepmc.org/article/PPR/PPR1348415",
+    "source_type": "paper",
+    "publication_date": "2026-10-22",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "https://doi.org/10.64898/2026.10.16.26365784",
+    "relevance": {
+      "impact": 4,
+      "validation": 4,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "APOLLAI was evaluated prospectively on 295 patients with suspected stroke and compared with EMS personnel against an expert consensus reference.",
+      "unknown": "The final sensitivity, specificity and AUC values are not in the abstract read; generalizability beyond one hospital is not stated in the reviewed material.",
+      "ai_role": "A multimodal machine-learning system detected stroke-related neurological deficits from video and audio recordings and was compared with clinicians' assessments.",
+      "evidence_urls": [
+        "https://europepmc.org/article/PPR/PPR1348415",
+        "https://doi.org/10.64898/2026.10.16.26365784"
+      ],
+      "test_type": "prospective or independent check"
+    }
+  },
+  {
+    "id": "2026-10-agent-perrhenate-deoxydehydration-water-loss",
+    "title": "AI agent maps proton-gated water loss in perrhenate-catalysed deoxydehydration",
+    "summary": "Authors posed mechanistic hypotheses and an AI agent located the corresponding transition states, which the authors validated. Microkinetic simulation on coupled-cluster-anchored energies predicts a proton-gated mechanism at the water-loss steps, with a claimed eightfold rate increase over the best proton-free pathway found. The predicted barrier falls within the 31.5-34.0 kcal/mol window derived from reported turnover, a comparison the authors describe as like-for-like with batch experiments.",
+    "field": "chemistry",
+    "ai_technology": "AI agent for transition-state search within a reaction-network workflow, with microkinetic modelling",
+    "organization": "KU Leuven",
+    "source_url": "https://doi.org/10.1039/d6sc06865k",
+    "source_type": "paper",
+    "publication_date": "2026-10-27",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The predicted rate was compared with the reported turnover-derived barrier window from batch experiments. The authors validated the transition states the agent located.",
+      "unknown": "The abstract does not state experimental uncertainty; the comparison relies on energies from a computational model.",
+      "ai_role": "An AI agent located the transition states corresponding to the authors' mechanistic hypotheses.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID:42964542&resultType=core&format=json"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-lpt-agentic-protein-binder-design",
+    "title": "LPT: bounded agentic LLM loops for de novo protein binder design",
+    "summary": "LPT orchestrates fixed stages of LLM agents with a curated database of about 14,000 papers to design protein binders from one natural-language prompt. An LLM with database access answered 41 of 48 test questions correctly, versus none without access. Three end-to-end campaigns targeted CALCRL/RAMP1, PD-1/PD-L1 and PVR-TIGIT, with a high in silico success rate across several folding models. The results are computational; the abstract reports no experimental binding data.",
+    "field": "biology",
+    "ai_technology": "LPT framework: fixed orchestration of bounded LLM agentic loops with literature database and design tools",
+    "organization": "Hubrecht Institute for Developmental Biology and Stem Cell Research",
+    "source_url": "https://doi.org/10.64898/2026.10.29.762730",
+    "source_type": "other",
+    "publication_date": "2026-10-30",
+    "added_date": "2026-11-15",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The database-backed LLM answered 41 of 48 questions drawn from database key findings. Designed binders were cross-validated with multiple folding models.",
+      "unknown": "The abstract reports only in silico results and states no wet-lab validation.",
+      "ai_role": "LLM stages identified the design intent, selected targets, structures and hotspot residues, and designed candidate binders.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.10.29.762730%22&resultType=core&format=json"
+      ],
+      "test_type": "direct test"
+    }
   }
 ]

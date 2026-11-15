@@ -1,0 +1,30 @@
+{
+  "id": "2026-11-ai-ecg-detection-prediction-dilated-cardiomyopathy",
+  "title": "AI-enhanced electrocardiography for detection and prediction of dilated cardiomyopathy",
+  "summary": "A deep learning ECG model trained on over 330,000 ECG-echocardiogram pairs detects the echocardiographic dilated cardiomyopathy phenotype (AUROC 0.87-0.97) and predicts incident disease with a C-index of 0.80-0.87, comparable to echocardiography. In two familial cohorts (Antwerp, Maastricht) 5-year negative predictive values were 95.5% and 91.5%, with positive predictive values of 42.4% and 39.4%. Authors describe the model as supporting exclusion of short- to mid-term disease, not as a diagnostic replacement.",
+  "field": "medicine",
+  "ai_technology": "Explainable deep learning model applied to 12-lead ECG",
+  "organization": "Imperial College London; University of Antwerp and Antwerp University Hospital; Maastricht University Medical Center; Beth Israel Deaconess Medical Center; UK Biobank cohorts; Zhongshan Hospital of Fudan University",
+  "source_url": "https://europepmc.org/article/MED/43031488",
+  "source_type": "paper",
+  "publication_date": "2026-11-13",
+  "added_date": "2026-11-15",
+  "verification_status": "needs verification",
+  "paper_url": "https://doi.org/10.1093/eurheartj/ehag917",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Validated in UK Biobank, Zhongshan Hospital and Antwerp cohorts, and in two familial cohorts (Antwerp n=166, Maastricht n=177), compared with traditional ECG features and echocardiographic traits.",
+    "unknown": "Whether the model was locked and evaluated prospectively is not stated in the abstract; familial-cohort outcomes are reported as 5-year follow-up. Detailed limits not stated in the reviewed material.",
+    "ai_role": "Deep learning model trained to detect and predict the echocardiographic DCM phenotype from ECG; explainable AI-ECG outperformed traditional ECG parameters.",
+    "evidence_urls": [
+      "https://europepmc.org/article/MED/43031488",
+      "https://doi.org/10.1093/eurheartj/ehag917"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

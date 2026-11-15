@@ -1,0 +1,29 @@
+{
+  "id": "2026-10-lpt-agentic-protein-binder-design",
+  "title": "LPT: bounded agentic LLM loops for de novo protein binder design",
+  "summary": "LPT orchestrates fixed stages of LLM agents with a curated database of about 14,000 papers to design protein binders from one natural-language prompt. An LLM with database access answered 41 of 48 test questions correctly, versus none without access. Three end-to-end campaigns targeted CALCRL/RAMP1, PD-1/PD-L1 and PVR-TIGIT, with a high in silico success rate across several folding models. The results are computational; the abstract reports no experimental binding data.",
+  "field": "biology",
+  "ai_technology": "LPT framework: fixed orchestration of bounded LLM agentic loops with literature database and design tools",
+  "organization": "Hubrecht Institute for Developmental Biology and Stem Cell Research",
+  "source_url": "https://doi.org/10.64898/2026.10.29.762730",
+  "source_type": "other",
+  "publication_date": "2026-10-30",
+  "added_date": "2026-11-15",
+  "verification_status": "needs verification",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The database-backed LLM answered 41 of 48 questions drawn from database key findings. Designed binders were cross-validated with multiple folding models.",
+    "unknown": "The abstract reports only in silico results and states no wet-lab validation.",
+    "ai_role": "LLM stages identified the design intent, selected targets, structures and hotspot residues, and designed candidate binders.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.10.29.762730%22&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
+  }
+}

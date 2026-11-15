@@ -1,0 +1,31 @@
+{
+  "id": "2026-10-bolero-predicts-cell-state-specific-gene-regulation-across-species",
+  "title": "Bolero predicts cell-state-specific gene regulation from DNA across species",
+  "summary": "Bolero is a cell-state-conditioned DNA sequence model trained on 10.7 million cells from 33 datasets across six mammals, and its predictions were analyzed across 84 mammals. The abstract says it matches or exceeds specialised models, but gives no numerical benchmark values. A model trained only on human data correctly predicted which enhancers respond to the same AP-1 signal in mouse and macaque DNA, species it never saw during training.",
+  "field": "biology",
+  "ai_technology": "Bolero (cell-state-conditioned sequence-to-function Transformer)",
+  "organization": "Arc Institute; Harvard Medical School",
+  "source_url": "https://arcinstitute.org/news/bolero",
+  "source_type": "press release",
+  "publication_date": "2026-10-20",
+  "added_date": "2026-11-15",
+  "verification_status": "needs verification",
+  "paper_url": "https://doi.org/10.64898/2026.10.19.760026",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Predicted cell-state-specific transcript abundance and chromatin accessibility from DNA sequence, and AP-1 activity-driven accessibility changes in hippocampal neurons, checked against existing single-cell epigenome and multiomics data. Cross-species transfer was tested on mouse and macaque enhancers.",
+    "unknown": "No numerical performance metrics given for the core predictions, variant scoring or enhancer design. In silico DNA-insertion results are computational only, not wet-lab validated. The predicted AP-1 responses were less conserved than chromatin accessibility, with no effect sizes given.",
+    "ai_role": "Bolero, a Transformer conditioned on cell-state embeddings, predicts cell-state-specific gene regulation directly from DNA and estimates responses in unprofiled cell states.",
+    "evidence_urls": [
+      "https://arcinstitute.org/news/bolero",
+      "https://doi.org/10.64898/2026.10.19.760026",
+      "https://www.biorxiv.org/content/10.64898/2026.10.19.760026v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

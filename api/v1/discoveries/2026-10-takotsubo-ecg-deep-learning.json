@@ -1,0 +1,30 @@
+{
+  "id": "2026-10-takotsubo-ecg-deep-learning",
+  "title": "Deep learning ECG model separates Takotsubo syndrome from anterior STEMI, with a randomized reader study",
+  "summary": "A self-supervised three-architecture ensemble reached AUC 0.970 and 0.914 accuracy on external validation (95 participants from two institutions). In a randomized four-phase reader study with 70 readers, AI assistance raised the probability of correct diagnosis from 0.632 to 0.864 (OR 3.71); the source notes AI-assisted accuracy stayed below model accuracy.",
+  "field": "medicine",
+  "ai_technology": "Self-supervised deep learning ensemble with Grad-CAM explanations",
+  "organization": "Hiroshima City Asa Citizens Hospital",
+  "source_url": "https://doi.org/10.64898/2026.10.15.26365116",
+  "source_type": "other",
+  "publication_date": "2026-10-19",
+  "added_date": "2026-11-15",
+  "verification_status": "needs verification",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "External validation on 95 participants from two institutions, and a four-phase reader study in which 70 readers were randomized to reference sheet, AI predictions, or AI with Grad-CAM.",
+    "unknown": "Exploratory reader-background analyses; preprint not yet peer reviewed; reader AI-assisted accuracy below model accuracy.",
+    "ai_role": "Ensemble classified 12-lead ECG images; its predictions and Grad-CAM maps were shown to readers.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=(%22artificial%20intelligence%22%20OR%20%22deep%20learning%22)%20AND%20(prospective%20OR%20randomized%20OR%20%22external%20validation%22)%20AND%20FIRST_PDATE:%5B2026-10-15%20TO%202026-11-15%5D&resultType=core&pageSize=50&format=json",
+      "https://doi.org/10.64898/2026.10.15.26365116"
+    ],
+    "test_type": "prospective or independent check"
+  }
+}

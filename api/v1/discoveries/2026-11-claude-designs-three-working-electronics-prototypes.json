@@ -1,0 +1,29 @@
+{
+  "id": "2026-11-claude-designs-three-working-electronics-prototypes",
+  "title": "Claude designs three working electronics prototypes built and tested by an external manufacturer",
+  "summary": "Claude wrote the specifications, schematics, board layouts, enclosures, firmware and parts lists for three prototype devices built by Diode Computers, and the boards were assembled from the design files with no manufacturing revision rounds. Claude shortened a speakerphone microphone port from about 25 mm to 10 mm, moving its resonance from about 3.4 kHz to about 8.9 kHz. The authors state the devices have no electrical validation, antenna tuning, thermal testing or certification, and are not designed for mass production.",
+  "field": "other",
+  "ai_technology": "Claude (Anthropic) as electronics design agent",
+  "organization": "Anthropic; Diode Computers",
+  "source_url": "https://www.anthropic.com/research/claude-electronics-design",
+  "source_type": "blog",
+  "publication_date": "2026-11-09",
+  "added_date": "2026-11-15",
+  "verification_status": "needs verification",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Announcement only",
+    "tested": "Three physically built prototypes (USB speakerphone, home voice-assistant hub, handheld virtual pet) were assembled and run by Diode engineers, and still worked after weeks of use. Benchmark scores were reported on the internal PCB Gym benchmark and the public BenchCAD 2.1 benchmark.",
+    "unknown": "No electrical validation, antenna tuning, thermal testing or certification; long-term durability unknown; Claude was not connected to test equipment or fabrication machines. Benchmark scores are reported without an independent check.",
+    "ai_role": "Claude wrote specifications, schematics, PCB layout, 3D-printable enclosure, firmware and parts list, and fixed six solder mask slivers and dismissed one false-positive ground connection error.",
+    "evidence_urls": [
+      "https://www.anthropic.com/research/claude-electronics-design"
+    ],
+    "test_type": "direct test"
+  }
+}

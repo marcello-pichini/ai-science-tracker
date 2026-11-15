@@ -1,0 +1,29 @@
+{
+  "id": "2026-11-marsnet-learns-martian-atmosphere-from-observations",
+  "title": "MarsNet learns the Martian atmosphere from observations alone",
+  "summary": "A learned data-assimilation model, trained on Mars Years 24-31, matches or improves three reanalyses in the lowest atmospheric layers, with near-surface temperature RMSE of 4.2 K against 4.4-5.4 K. Its surface pressures are the most accurate of four products, with RMSE of 10 Pa against Curiosity in MY32. The authors state it is less accurate aloft and that training mainly improves surface pressure at some cost to dust.",
+  "field": "physics",
+  "ai_technology": "MarsNet, a learned forecast-and-update model with a fixed physical structure and bounded Kalman update",
+  "organization": "Yale University",
+  "source_url": "https://arxiv.org/abs/2611.12787",
+  "source_type": "paper",
+  "publication_date": "2026-11-09",
+  "added_date": "2026-11-15",
+  "verification_status": "needs verification",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Evaluated on independent MGS radio-occultation temperatures, withheld Mars Climate Sounder profiles of MY32 and Curiosity surface pressures, compared with reanalyses and climatology.",
+    "unknown": "Less accurate than reanalyses aloft; much of the temperature skill appears before training; dust performance cost noted.",
+    "ai_role": "A neural network learns the forecast tendencies and the observation update jointly, inside a fixed physical structure, and the influence of each observation can be traced.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.12787"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

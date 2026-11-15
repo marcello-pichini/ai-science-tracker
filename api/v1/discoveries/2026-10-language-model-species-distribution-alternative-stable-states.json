@@ -1,0 +1,30 @@
+{
+  "id": "2026-10-language-model-species-distribution-alternative-stable-states",
+  "title": "A language-model approach to species distribution reveals alternative stable states",
+  "summary": "A generative, language-model-inspired framework trained on about 27,000 reef fish surveys predicts species and biomass sequentially, conditional on species already present. It generates multiple coherent community configurations under identical environmental conditions, including coral-associated and macroalgal-associated communities. It also improves occurrence and biomass prediction relative to a species-by-species XGBoost baseline and a multispecies MLP. The source frames the alternative states as consistent with ecological regimes described in the literature.",
+  "field": "biology",
+  "ai_technology": "Language-model-inspired generative model for ecological communities",
+  "organization": "Inria; Université de Montpellier; CNRS; Ifremer; IRD; University of Tasmania",
+  "source_url": "https://europepmc.org/article/MED/42913654",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "added_date": "2026-11-15",
+  "verification_status": "needs verification",
+  "paper_url": "https://doi.org/10.1016/j.cub.2026.09.081",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Fitted on about 27,000 reef fish surveys; predictive skill compared with XGBoost and MLP baselines; multistability interpreted against described ecological regimes.",
+    "unknown": "Whether alternative states were confirmed by independent field data is not stated in the reviewed material.",
+    "ai_role": "Generative language-model-style model that predicts each species and its biomass conditional on previously assembled species, used to generate community configurations.",
+    "evidence_urls": [
+      "https://europepmc.org/article/MED/42913654",
+      "https://doi.org/10.1016/j.cub.2026.09.081"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

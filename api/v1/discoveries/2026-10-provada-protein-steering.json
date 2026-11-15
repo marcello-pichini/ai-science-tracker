@@ -1,0 +1,29 @@
+{
+  "id": "2026-10-provada-protein-steering",
+  "title": "ProVADA steers a protein generator to adapt proteins to non-native biological contexts",
+  "summary": "ProVADA, a test-time sampler that steers a pretrained protein generator, converted secreted human renin into an active, drug-inhibitable cytosolic protease and deimmunized two murine scFv fragments while retaining antigen recognition. ESCAPE-seq showed substantial depletion of HLA-I binder peptides, and deimmunized FMC63 variants kept CAR-T killing. The source states that broad sequence redesign can adapt functional proteins, but the reviewed abstract does not state wider limits.",
+  "field": "biology",
+  "ai_technology": "ProVADA (Mixture-Adaptation Directed Annealing sampler steering a pretrained protein generator)",
+  "organization": "Stanford University; Stanford Cancer Institute; University of Southern California",
+  "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13742580/fullTextXML",
+  "source_type": "paper",
+  "publication_date": "2026-10-18",
+  "added_date": "2026-11-15",
+  "verification_status": "needs verification",
+  "paper_url": "https://doi.org/10.1101/2025.07.11.664238",
+  "relevance": {
+    "impact": 4,
+    "validation": 3,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Renin conversion to a cytosolic protease tested with a drug inhibitor; two murine scFv deimmunized and checked for HLA visibility; FMC63 variants tested for CAR-T killing and binder count against a humanized comparator.",
+    "unknown": "Not stated in the reviewed material",
+    "ai_role": "A pretrained protein generator, steered by ProVADA's annealing sampler toward externally defined properties while preserving functional constraints.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13742580/fullTextXML"
+    ],
+    "test_type": "direct test"
+  }
+}
