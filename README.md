@@ -60,7 +60,7 @@ Entry details distinguish source checking from independent scientific confirmati
 
 Methodology includes live annual tables for evidence-annotation coverage and primary source composition. Missing annotations do not mean missing scientific evidence. Counts describe catalog entries, which can bundle or overlap results; the 20–100 relevance scale is a coarse editorial aid with thirteen possible values, not a cross-field quality ranking. Timeline and model charts support keyboard selection and announce the selected record; dense date groups can be opened through an entry chooser.
 
-Corrections and missing-result suggestions open public GitHub issue forms. They require GitHub sign-in, original sources and editorial review. The forms become available when `.github/ISSUE_TEMPLATE/` is published to the default branch. They never change the catalog automatically.
+Corrections and missing-result suggestions open public GitHub issue forms. They require GitHub sign-in, original sources and editorial review. The forms become available when `.github/ISSUE_TEMPLATE/` is published to the default branch. They never change the catalog automatically. See [CONTRIBUTING.md](CONTRIBUTING.md) for how to suggest, correct or review entries, and [Discussions](https://github.com/marcello-pichini/ai-science-tracker/discussions) for ideas.
 
 The shared UI helper is `assets/catalog-ui.js`. The test command also exercises its metric, disclosure and correction-link behavior using Node.js (no package installation needed).
 
