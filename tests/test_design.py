@@ -61,5 +61,14 @@ class DesignTests(unittest.TestCase):
                 self.assertNotRegex(text, r'style="[^"]*(#[0-9a-fA-F]{3,8}|rgb)')
 
 
+    def test_pages_declare_a_content_policy_and_prerender_rules(self):
+        generated = [next((ROOT / 'share').glob('*.html')), ROOT / 'profiles/index.html']
+        for page in PAGES + generated:
+            text = page.read_text()
+            with self.subTest(page=page.name):
+                self.assertIn("default-src 'self'", text)
+                self.assertIn("connect-src 'self'", text)
+                self.assertIn('<script type="speculationrules">', text)
+
 if __name__ == '__main__':
     unittest.main()
