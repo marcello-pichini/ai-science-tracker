@@ -120,7 +120,9 @@ class SharePageTests(unittest.TestCase):
         models = {'families': [{'id': 'fam-x', 'name': 'Fam X', 'discoveries': ['test-discovery']}], 'models': [{'name': 'M1', 'date': '2024-01-02', 'family': 'fam-x', 'link': 'https://example.org', 'access': 'API'}]}
         self.record['organization'] = 'Org & Co'
         pages = g.write_profile_pages([self.record], models)
-        self.assertEqual(sorted(pages), ['profiles/family-fam-x.html', 'profiles/index.html', 'profiles/org-org-co.html'])
+        year = self.record['publication_date'][:4]
+        self.assertEqual(sorted(pages), sorted(['profiles/family-fam-x.html', 'profiles/index.html', 'profiles/org-org-co.html',
+                                                f"profiles/field-{g.slug(self.record['field'])}.html", f'profiles/year-{year}.html']))
         org = (g.ROOT / 'profiles/org-org-co.html').read_text()
         self.assertIn('A complete summary with &lt;markup&gt; escaped.', org)
         self.assertIn('rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/profiles/org-org-co.html"', org)
@@ -130,6 +132,7 @@ class SharePageTests(unittest.TestCase):
         g.write_sitemap([self.record], models)
         text = (g.ROOT / 'sitemap.xml').read_text()
         self.assertIn(g.BASE + 'profiles/org-org-co.html', text)
+        self.assertIn(g.BASE + f'profiles/year-{year}.html', text)
         self.assertNotIn('profile.html?org=', text)
 
     def test_legacy_organization_urls_redirect_to_current_profiles(self):

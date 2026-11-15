@@ -360,9 +360,10 @@ def write_profile_pages(items, models, archived=()):
     def plural(n, one, many):
         return f'{n} {one if n == 1 else many}'
 
-    def emit(name, title, lead, desc, rows, path, interactive, extra='', organization=False):
+    def emit(name, title, lead, desc, rows, path, interactive, extra='', organization=False, label='interactive profile'):
         articles = ''.join(discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']], link_title=True) for d in rows)
-        more = f'<a href="{interactive}">Open the interactive profile</a> for the timeline, or <a href="profiles/index.html">browse all organizations and model families</a>.'
+        purpose = 'the timeline' if label == 'interactive profile' else 'charts and filters'
+        more = f'<a href="{interactive}">Open the {label}</a> for {purpose}, or <a href="profiles/index.html">browse all organizations and model families</a>.'
         page = PAGE.format(title=esc(title), site=SITE, desc=esc(desc), base=BASE, path=path, img='default', imgalt=DEFAULT_ALT,
                            header=header, footer=footer, lead=lead, article=articles, more=more, extra=extra,
                            h2='<h2 class="vis-nascosto">Discoveries</h2>', jsonld=profile_jsonld(title, desc, path, organization))
@@ -417,9 +418,24 @@ def write_profile_pages(items, models, archived=()):
     for fid, ids in discovery_links(archived).items():
         if ids and fid not in active_families:
             redirect(f'family-{quote(fid)}.html', {f'../share/{quote(did)}.html' for did in ids})
+    # Field and year collections answer searches such as "AI discoveries in biology" or "AI discoveries 2025".
+    by_field, by_year = {}, {}
+    for d in sorted(items, key=lambda d: d['publication_date'], reverse=True):
+        by_field.setdefault(d['field'], []).append(d)
+        by_year.setdefault(d['publication_date'][:4], []).append(d)
+    for field, rows in sorted(by_field.items()):
+        emit(field, f'AI discoveries in {field}', f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
+             f'{plural(len(rows), "scientific discovery", "scientific discoveries")} in {field} made with AI, {years(rows)}, each linked to its original source.',
+             rows, f'profiles/field-{slug(field)}.html', f'index.html?field={quote(field)}', label='filtered catalog')
+    for year, rows in sorted(by_year.items(), reverse=True):
+        emit(year, f'AI discoveries in {year}', f'{plural(len(rows), "discovery", "discoveries")} announced in {year}',
+             f'{plural(len(rows), "scientific discovery", "scientific discoveries")} made with AI and announced in {year}, each linked to its original source.',
+             rows, f'profiles/year-{year}.html', f'index.html?year={year}', label='filtered catalog')
+    topics = ''.join(f'<li><a href="profiles/field-{slug(f)}.html">{esc(f)}</a> ({len(r)})</li>' for f, r in sorted(by_field.items(), key=lambda kv: (-len(kv[1]), kv[0])))
+    yearly = ''.join(f'<li><a href="profiles/year-{y}.html">{y}</a> ({len(r)})</li>' for y, r in sorted(by_year.items(), reverse=True))
     labs = ''.join(f'<li><a href="profiles/org-{slug(n)}.html">{esc(n)}</a> ({len(r)})</li>' for n, r in sorted(by_org.items(), key=lambda kv: (-len(kv[1]), kv[0])))
     fams = ''.join(f'<li><a href="profiles/family-{quote(f["id"])}.html">{esc(f["name"])}</a> ({len(f["discoveries"])})</li>' for f in sorted(models['families'], key=lambda f: (-len(f['discoveries']), f['name'])) if f['discoveries'])
-    directory = f'<h2>Organizations</h2><ul class="elenco-profili">{labs}</ul><h2>Model families</h2><ul class="elenco-profili">{fams}</ul>'
+    directory = f'<h2>Fields</h2><ul class="elenco-profili">{topics}</ul><h2>Years</h2><ul class="elenco-profili">{yearly}</ul><h2>Organizations</h2><ul class="elenco-profili">{labs}</ul><h2>Model families</h2><ul class="elenco-profili">{fams}</ul>'
     page = PAGE.format(title='Labs and model families', site=SITE, desc='Organizations and model families with at least one tracked AI-enabled discovery.', base=BASE,
                        path='profiles/index.html', img='default', imgalt=DEFAULT_ALT, header=header, footer=footer,
                        jsonld=profile_jsonld('Labs and model families', 'Organizations and model families with at least one tracked AI-enabled discovery.', 'profiles/index.html'),
@@ -472,6 +488,8 @@ def write_sitemap(items, models, archived=()):
     urls += ['profiles/index.html']
     urls += [f'profiles/org-{slug(o)}.html' for o in orgs]
     urls += [f'profiles/family-{quote(f)}.html' for f in fams]
+    urls += [f'profiles/field-{slug(f)}.html' for f in sorted({d['field'] for d in items})]
+    urls += [f'profiles/year-{y}.html' for y in sorted({d['publication_date'][:4] for d in items}, reverse=True)]
     urls += [f'share/{quote(d["id"])}.html' for d in [*items, *archived]]
     rows = ''.join(f'<url><loc>{esc(BASE + url)}</loc></url>\n' for url in urls)
     (ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -592,13 +610,15 @@ def write_home_browse(items):
     years = {}
     for d in sorted(items, key=lambda d: d['publication_date'], reverse=True):
         years.setdefault(d['publication_date'][:4], []).append(d)
+    fields = ' · '.join(f'<a href="profiles/field-{slug(f)}.html">{esc(f)}</a>' for f in sorted({d['field'] for d in items}))
     blocks = ''.join(
-        f'    <details><summary>{y} ({len(rows)})</summary><ul>'
+        f'    <details><summary>{y} ({len(rows)}) · <a href="profiles/year-{y}.html">page for {y}</a></summary><ul>'
         + ''.join(f'<li><a href="share/{esc(d["id"])}.html">{esc(d["title"])}</a></li>' for d in rows)
         + '</ul></details>\n' for y, rows in years.items())
     section = (f'{BROWSE_START}\n  <section class="sez" aria-labelledby="t-browse"><div class="wrap prosa">\n'
                f'    <h2 id="t-browse">All entries by year</h2>\n'
                f'    <p>Plain links to the page of each of the {len(items)} entries, newest first.</p>\n'
+               f'    <p>By field: {fields}.</p>\n'
                f'{blocks}  </div></section>\n  {BROWSE_END}')
     start, end = page.index(BROWSE_START), page.index(BROWSE_END) + len(BROWSE_END)
     path.write_text(page[:start] + section + page[end:])
