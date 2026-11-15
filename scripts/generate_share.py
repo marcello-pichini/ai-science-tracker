@@ -579,6 +579,31 @@ def validate_inputs(items, archived, models, vulns):
     models['models']
 
 
+BROWSE_START, BROWSE_END = '<!-- browse:start -->', '<!-- browse:end -->'
+
+
+def write_home_browse(items):
+    """Write plain links to every entry page into index.html, grouped by year, so search
+    engines and readers without JavaScript reach each entry in one step from the home page."""
+    path = ROOT / 'index.html'
+    page = path.read_text()
+    if BROWSE_START not in page:
+        return
+    years = {}
+    for d in sorted(items, key=lambda d: d['publication_date'], reverse=True):
+        years.setdefault(d['publication_date'][:4], []).append(d)
+    blocks = ''.join(
+        f'    <details><summary>{y} ({len(rows)})</summary><ul>'
+        + ''.join(f'<li><a href="share/{esc(d["id"])}.html">{esc(d["title"])}</a></li>' for d in rows)
+        + '</ul></details>\n' for y, rows in years.items())
+    section = (f'{BROWSE_START}\n  <section class="sez" aria-labelledby="t-browse"><div class="wrap prosa">\n'
+               f'    <h2 id="t-browse">All entries by year</h2>\n'
+               f'    <p>Plain links to the page of each of the {len(items)} entries, newest first.</p>\n'
+               f'{blocks}  </div></section>\n  {BROWSE_END}')
+    start, end = page.index(BROWSE_START), page.index(BROWSE_END) + len(BROWSE_END)
+    path.write_text(page[:start] + section + page[end:])
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--force', action='store_true')
@@ -590,6 +615,7 @@ def main():
     models = json.loads((ROOT / 'data/models.json').read_text())
     vulns = json.loads((ROOT / 'data/vulnerabilities.json').read_text())
     validate_inputs(items, archived, models, vulns)
+    write_home_browse(items)
     if not args.no_images:
         render_cards(items + archived, args.force)
     write_discovery_pages(items, models, not args.no_images)
