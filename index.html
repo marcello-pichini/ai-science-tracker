@@ -19,7 +19,7 @@
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="alternate" type="application/atom+xml" title="AI Science Tracker: latest additions" href="feed.xml">
+<link rel="alternate" type="application/atom+xml" title="AI Science Tracker: additions and source checks" href="feed.xml">
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker discovery catalog","description":"Scientific discoveries enabled by AI and related model families, sourced from official announcements.","url":"https://marcello-pichini.github.io/ai-science-tracker/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"distribution":{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json"},"isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","keywords":["artificial intelligence","scientific discovery","AI for science"]}
@@ -42,7 +42,7 @@
     <p class="lead" id="lead">Loading the catalog…</p>
     <figure class="figura">
       <div id="spettro"></div>
-      <figcaption class="nota">Hover over a mark to preview a discovery, or click to open it. Keyboard: left and right arrows, then Enter.</figcaption>
+      <figcaption class="nota" id="spectrum-help">Hover to preview; click or tap to open an entry or choose among nearby entries, including entries on the same date. Keyboard: focus the chart, use left and right arrows, then Enter. Escape clears the selection.</figcaption>
     </figure>
   </div>
 </section>
@@ -68,7 +68,7 @@
   <section class="sez" aria-labelledby="t-numeri">
     <div class="wrap">
       <h2 id="t-numeri">By the numbers</h2>
-      <p class="sez-sub">Click a row or year to filter the list below; click again to clear the filter.</p>
+      <p class="sez-sub">Full-catalog aggregates remain unchanged by list filters. Counts measure catalog entries, which may describe overlapping results; <a href="methodology.html">see the counting policy</a>. Click a row or year to filter the list below; click again to clear the filter.</p>
       <div class="pannelli" id="charts"></div>
       <p id="coverage" class="coverage-note"></p>
     </div>
@@ -122,11 +122,13 @@ const state = { q:"", field:"", org:"", anno:"", ord:"desc", min:0, family:"" };
 const clearFilters = () => { Object.assign(state, { q:"", field:"", org:"", anno:"", min:0, family:"" }); $("q").value = ""; };
 const ridotto = matchMedia("(prefers-reduced-motion: reduce)");
 let items = [], famDi = {}, famIds = {};
-let ancora = decodeURIComponent(location.hash).startsWith("#discovery=") ? decodeURIComponent(location.hash).slice(11) : decodeURIComponent(location.hash).startsWith("#scoperta=") ? decodeURIComponent(location.hash).slice(10) : null;
+let fragment = "";
+try { fragment = decodeURIComponent(location.hash.slice(1)); } catch {} // Ignore malformed fragments while loading the catalog.
+let ancora = fragment.startsWith("discovery=") ? fragment.slice(10) : fragment.startsWith("scoperta=") ? fragment.slice(9) : null;
 
 // Organizations listed together (e.g. "Google DeepMind and Google Research") are counted under the first one named.
 const orgDi = s => s.organization.split(/[,;]| and /i)[0].trim();
-// Relevance 0-100: average of impact, validation, and novelty (each scored 1–5) × 20. Editorial judgment; see methodology.html.
+// Relevance 20–100: average of impact, validation, and novelty (each scored 1–5) × 20. Editorial judgment; see methodology.html.
 const punteggio = s => Math.round((s.relevance.impact + s.relevance.validation + s.relevance.novelty) / 3 * 20);
 const media = arr => Math.round(arr.reduce((a, s) => a + punteggio(s), 0) / arr.length);
 const conta = (arr, f) => { const m = {}; arr.forEach(x => { const k = f(x); m[k] = (m[k] || 0) + 1; }); return m; };
@@ -159,7 +161,7 @@ const nascondiTip = () => tip.classList.remove("on");
 /* Discovery timeline: one mark per discovery; height represents relevance. */
 const SP = { x0:40, x1:992, base:196, alto:168, W:1000 };
 let primaVolta = true;
-let sp = [], spOrd = [], spCur = -1, spSvg = null;
+let sp = [], spSvg = null;
 function spettro() {
   SP.W = Math.max(320, Math.round($("spettro").clientWidth || 1000)); SP.x0 = SP.W < 560 ? 30 : 40; SP.x1 = SP.W - 8;
   const t0 = Date.UTC(2020, 0, 1);
@@ -172,43 +174,17 @@ function spettro() {
   for (let a = 2020; a <= new Date(tMax).getUTCFullYear(); a++) { const x = X(Date.UTC(a, 0, 1));
     g += `<line class="asse" x1="${x}" x2="${x}" y1="${SP.base}" y2="${SP.base + 8}"/><text class="tick" x="${x + 5}" y="${SP.base + 24}">${a}</text>`; }
   sp = items.map(s => ({ s, x: X(Date.parse(s.publication_date)), h: Math.max(4, punteggio(s) / 100 * SP.alto) }));
-  spOrd = sp.map((_, i) => i).sort((a, b) => sp[a].x - sp[b].x);
   const tratti = sp.map((p, i) => `<line class="tratto" data-i="${i}" x1="${p.x.toFixed(1)}" x2="${p.x.toFixed(1)}" y1="${SP.base}" y2="${(SP.base - p.h).toFixed(1)}" style="--d:${Math.round((p.x - SP.x0) / (SP.x1 - SP.x0) * 1100)}ms"/>`).join("");
-  $("spettro").innerHTML = `<svg viewBox="0 0 ${SP.W} 228" class="${primaVolta ? "" : "fermo"}" tabindex="0" role="group" aria-label="Discovery timeline: ${items.length} marks, one per discovery, from 2020 to today; height represents relevance from 0 to 100. The full list appears below.">${g}<g>${tratti}</g><rect x="${SP.x0 - 6}" y="0" width="${SP.x1 - SP.x0 + 12}" height="${SP.base + 10}" fill="transparent"/></svg>`;
+  $("spettro").innerHTML = `<svg viewBox="0 0 ${SP.W} 228" class="${primaVolta ? "" : "fermo"}" tabindex="0" role="group" aria-describedby="spectrum-help" aria-label="Discovery timeline: ${items.length} marks, one per discovery, from 2020 to today; height represents editorial relevance from 20 to 100, in 13 coarse levels. The full list appears below.">${g}<g>${tratti}</g><rect x="${SP.x0 - 6}" y="0" width="${SP.x1 - SP.x0 + 12}" height="${SP.base + 10}" fill="transparent"/></svg>`;
   spSvg = $("spettro").firstElementChild;
-  spSvg.addEventListener("pointermove", e => {
-    const p = spSvg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
-    const v = p.matrixTransform(spSvg.getScreenCTM().inverse());
-    let best = -1, bd = Infinity;
-    sp.forEach((q, i) => { const pen = filtroAttivo() && !passa(q.s) ? 14 : 0; const d = Math.abs(q.x - v.x) + pen; if (d < bd) { bd = d; best = i; } });
-    if (best >= 0 && bd < 24) spEvid(best, e.clientX, e.clientY); else spSpegni();
+  CatalogUI.chartInteraction(spSvg, sp.map(p => ({...p, date:p.s.publication_date})), {
+    describe: p => [p.s.title, `${fmtData(p.s.publication_date)}, ${p.s.organization}`, `Editorial relevance ${punteggio(p.s)}, ${p.s.field}`],
+    open: p => vaiA(p.s.id), showTip:mostraTip, hideTip:nascondiTip,
+    penalty: p => filtroAttivo() && !passa(p.s) ? 14 : 0
   });
-  spSvg.addEventListener("pointerleave", spSpegni);
-  spSvg.addEventListener("click", () => { if (spCur >= 0) vaiA(sp[spCur].s.id); });
-  spSvg.addEventListener("keydown", e => {
-    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
-      e.preventDefault();
-      const pos = spCur < 0 ? (e.key === "ArrowRight" ? -1 : spOrd.length) : spOrd.indexOf(spCur);
-      const n = Math.min(spOrd.length - 1, Math.max(0, pos + (e.key === "ArrowRight" ? 1 : -1)));
-      const el = spSvg.querySelector(`[data-i="${spOrd[n]}"]`).getBoundingClientRect();
-      spEvid(spOrd[n], el.left + el.width / 2, el.top);
-    } else if (e.key === "Enter" && spCur >= 0) { e.preventDefault(); vaiA(sp[spCur].s.id); }
-    else if (e.key === "Escape") spSpegni();
-  });
-  spSvg.addEventListener("blur", spSpegni);
   primaVolta = false;
   spAggiorna();
 }
-function spEvid(i, x, y) {
-  if (spCur !== i) {
-    spSvg.querySelector(".tratto.su")?.classList.remove("su");
-    spSvg.querySelector(`[data-i="${i}"]`).classList.add("su");
-    spCur = i;
-  }
-  const s = sp[i].s;
-  mostraTip([s.title, `${fmtData(s.publication_date)}, ${s.organization}`, `Relevance ${punteggio(s)}, ${s.field}`], x, y);
-}
-function spSpegni() { spSvg?.querySelector(".tratto.su")?.classList.remove("su"); spCur = -1; nascondiTip(); }
 function spAggiorna() {
   if (!spSvg) return;
   const att = filtroAttivo();
@@ -223,7 +199,7 @@ function vaiA(id) {
   const el = document.getElementById(id); if (!el) return;
   document.querySelectorAll(".voce.evid").forEach(v => v.classList.remove("evid"));
   el.classList.add("evid");
-  el.scrollIntoView({ block:"center", behavior: ridotto.matches ? "auto" : "smooth" });
+  CatalogUI.focusEntry(el, { block:"center", behavior: ridotto.matches ? "auto" : "smooth" });
   history.replaceState(null, "", location.pathname + filterQuery() + "#discovery=" + encodeURIComponent(id));
 }
 
@@ -262,12 +238,12 @@ function grafici() {
   [iMax, iUlt].filter((v, j, arr) => arr.indexOf(v) === j).forEach(i => { svg += `<text class="lab" x="${pts[i][0]}" y="${pts[i][1] - 14}" text-anchor="middle">${yearValue(anni[i]).toLocaleString("en-GB")}</text>`; });
   const tabella = `<details><summary>View data as a table</summary><table class="tab-mini"><tr><th>Year</th><th>Catalog entries</th><th>Mean editorial relevance</th></tr>${anni.map(a => `<tr><td>${a}</td><td>${annual[a].count}</td><td>${annual[a].mean}</td></tr>`).join("")}</table></details>`;
   $("charts").innerHTML =
-    `<div class="pannello"><h3>By field</h3><p class="descr">Number of discoveries and average relevance, from 0 to 100.</p>${righe("field", fields, fields[0][1], medie)}</div>` +
+    `<div class="pannello"><h3>By field</h3><p class="descr">Number of catalog entries and mean editorial relevance. Individual scores range from 20 to 100 in 13 coarse levels.</p>${righe("field", fields, fields[0][1], medie)}</div>` +
     `<div class="pannello"><h3>By organization</h3><p class="descr">${org.length > 8 ? `Top 8 of ${org.length}; organizations listed together are counted under the first one named.` : "Organizations listed together are counted under the first one named."}</p>${righe("org", org.slice(0, 8), org[0][1])}</div>` +
-    `<div class="pannello largo"><h3>Catalog entries and editorial relevance by year</h3><label class="trend-control">Show <select id="trend-metric"><option value="count"${trendMetric === "count" ? " selected" : ""}>Catalog entries</option><option value="mean"${trendMetric === "mean" ? " selected" : ""}>Mean editorial relevance (0–100)</option></select></label><p class="descr">This selected collection is incomplete; counts do not measure worldwide discovery rates. Each mean is based on the annual number of entries shown in the table, and small samples can be misleading.${anni[iUlt] == new Date().getFullYear() ? ` ${anni[iUlt]} is still in progress.` : ""}</p><svg viewBox="0 0 ${W} 244" id="linea-anni" role="group" aria-label="${trendMetric === "count" ? "Catalog entries" : "Mean editorial relevance"} by year, from ${anni[0]} to ${anni[iUlt]}">${svg}</svg>${tabella}</div>`;
+    `<div class="pannello largo"><h3>Catalog entries and editorial relevance by year</h3><label class="trend-control">Show <select id="trend-metric"><option value="count"${trendMetric === "count" ? " selected" : ""}>Catalog entries</option><option value="mean"${trendMetric === "mean" ? " selected" : ""}>Mean editorial relevance (out of 100)</option></select></label><p class="descr">This selected collection is incomplete; counts do not measure worldwide discovery rates. Each mean is based on the annual number of entries shown in the table, and small samples can be misleading.${anni[iUlt] == new Date().getFullYear() ? ` ${anni[iUlt]} is still in progress.` : ""}</p><svg viewBox="0 0 ${W} 244" id="linea-anni" role="group" aria-label="${trendMetric === "count" ? "Catalog entries" : "Mean editorial relevance"} by year, from ${anni[0]} to ${anni[iUlt]}">${svg}</svg>${tabella}</div>`;
   const fy = CatalogUI.fieldYear(items), fyMax = Math.max(...Object.values(fy.cells));
   const heat = `<div class="heat-wrap"><table class="heat"><caption class="vis-nascosto">Discoveries per field and year; select a cell to filter the list.</caption><thead><tr><th scope="col">Field</th>${fy.years.map(y => `<th scope="col">${y}</th>`).join("")}</tr></thead><tbody>${fy.fields.map(f => `<tr><th scope="row">${esc(f)}</th>${fy.years.map(y => { const n = fy.cells[f + "|" + y] || 0; return n ? `<td><button type="button" class="heat-cell" data-field="${esc(f)}" data-year="${y}" style="--v:${(n / fyMax).toFixed(2)}" aria-pressed="${state.field === f && state.anno === y}" aria-label="${esc(f)}, ${y}: ${n} ${n === 1 ? "discovery" : "discoveries"}">${n}</button></td>` : `<td><span class="heat-zero" aria-label="${esc(f)}, ${y}: none">0</span></td>`; }).join("")}</tr>`).join("")}</tbody></table></div>`;
-  $("charts").insertAdjacentHTML("beforeend", `<div class="pannello largo"><h3>Fields by year</h3><p class="descr">Number of catalog entries per field and year; darker cells have more entries. The collection is selected, not exhaustive, so empty cells do not mean no AI-enabled work existed.</p>${heat}</div>`);
+  $("charts").insertAdjacentHTML("beforeend", `<div class="pannello largo"><h3>Fields by year</h3><p class="descr">Number of catalog entries per field and year; stronger color intensity indicates more entries, with exact counts in every cell. The collection is selected, not exhaustive, so empty cells do not mean no AI-enabled work existed.</p>${heat}</div>`);
   const sourceCounts = ordina(conta(items, record => record.source_type));
   const sc = CatalogUI.sourceConcentration(items);
   $("coverage").textContent = `Full catalog: ${items.length} entries; primary sources: ${sourceCounts.map(([type, n]) => `${type}: ${n}`).join(", ")}. Most recent catalog addition: ${fmtData(items.map(record => record.added_date).sort().at(-1))}. This is not a last-review date. Source concentration: the ${sc.top} most frequent source websites account for ${sc.entries} of ${sc.total} entries, out of ${sc.websites} websites in total.`;
@@ -292,7 +268,7 @@ function featured() {
   const link = s => `<a class="inev" href="#discovery=${encodeURIComponent(s.id)}" data-id="${esc(s.id)}"><b>${esc(s.title)}</b><span>${esc(fmtData(s.publication_date))} · ${esc(orgDi(s))} · ${esc(s.field)} · relevance ${punteggio(s)}</span></a>`;
   $("featured-list").innerHTML =
     `<div class="pannello"><h3>Newest</h3><p class="descr">By date of the original announcement.</p>${newest.map(link).join("")}</div>` +
-    `<div class="pannello"><h3>Highest relevance, past twelve months</h3><p class="descr">Editorial score from 0 to 100; see the methodology.</p>${best.map(link).join("")}</div>`;
+    `<div class="pannello"><h3>Highest relevance, past twelve months</h3><p class="descr">Editorial score from 20 to 100 in 13 coarse levels; see the methodology.</p>${best.map(link).join("")}</div>`;
 }
 $("featured-list").addEventListener("click", e => { const a = e.target.closest("a[data-id]"); if (a) { e.preventDefault(); vaiA(a.dataset.id); } });
 
@@ -396,7 +372,7 @@ Promise.all([
   $("year").innerHTML = `<option value="">All years</option>` + years.map(y => `<option>${y}</option>`).join("");
   $("family").innerHTML = `<option value="">All model families</option>` + families.map(f => `<option value="${esc(f.id)}">${esc(f.name)}</option>`).join("");
   readFilters(perAmb.map(([v]) => v), [...new Set(items.map(orgDi))], years, families.map(f => f.id));
-  const h = decodeURIComponent(location.hash.slice(1)); // legacy category links such as #biology
+  const h = fragment; // legacy category links such as #biology
   if (!state.field) { if (perAmb.some(([v]) => v === h)) state.field = h; else if (legacy[h] && perAmb.some(([v]) => v === legacy[h])) state.field = legacy[h]; }
   lista(); featured();
 }).catch(() => { $("lista").textContent = "Could not load the catalog data. Reload the page, or open the raw data directly."; $("lead").innerHTML = `The catalog data could not be loaded. You can read the <a href="data/discoveries.json">raw data</a> or the <a href="methodology.html">methodology</a> meanwhile.`; });
@@ -417,7 +393,7 @@ CatalogUI.afterPrint = () => {
   printState = null;
 };
 $("lista").addEventListener("click", e => {
-  if (e.target.id === "altre") { const prima = limite; limite += PAGE; lista(); document.querySelectorAll(".voce")[prima]?.querySelector("h3")?.setAttribute("tabindex", "-1"); document.querySelectorAll(".voce")[prima]?.querySelector("h3")?.focus(); return; }
+  if (e.target.id === "altre") { const prima = limite; limite += PAGE; lista(); CatalogUI.focusEntry(document.querySelectorAll(".voce")[prima], {block:"start"}); return; }
   const r = e.target.closest(".riferimento");
   if (r) {
     const text = CatalogUI.reference(items.find(x => x.id === r.dataset.id), fmtData(new Date().toISOString().slice(0, 10)));
@@ -465,10 +441,10 @@ $("charts").addEventListener("click", e => {
   const h = e.target.closest(".heat-cell");
   if (h) {
     const same = state.field === h.dataset.field && state.anno === h.dataset.year;
-    state.field = same ? "" : h.dataset.field; state.anno = same ? "" : h.dataset.year; lista(); grafici(); return;
+    state.field = same ? "" : h.dataset.field; state.anno = same ? "" : h.dataset.year; lista(); grafici(); CatalogUI.restoreChartFocus($("charts"), h); return;
   }
   const b = e.target.closest("[data-k]"); if (!b) return;
-  state[b.dataset.k] = state[b.dataset.k] === b.dataset.v ? "" : b.dataset.v; nascondiTip(); lista(); grafici();
+  state[b.dataset.k] = state[b.dataset.k] === b.dataset.v ? "" : b.dataset.v; nascondiTip(); lista(); grafici(); CatalogUI.restoreChartFocus($("charts"), b);
 });
 $("charts").addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { const p = e.target.closest(".pt"); if (p) { e.preventDefault(); p.dispatchEvent(new MouseEvent("click", { bubbles:true })); } } });
 </script>

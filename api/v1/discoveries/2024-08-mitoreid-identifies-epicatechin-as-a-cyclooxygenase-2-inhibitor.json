@@ -1,0 +1,28 @@
+{
+  "id": "2024-08-mitoreid-identifies-epicatechin-as-a-cyclooxygenase-2-inhibitor",
+  "title": "MitoReID identifies epicatechin as a cyclooxygenase-2 inhibitor",
+  "summary": "A deep-learning system called MitoReID classified drug mechanisms from time-resolved mitochondrial morphology and membrane-potential images. Among its natural-compound predictions, it nominated epicatechin as a COX-2 inhibitor; the authors report in-vitro follow-up including COX-2 activity, cellular thermal-shift and surface-plasmon-resonance assays. This is a target-mechanism finding, not evidence of clinical efficacy.",
+  "field": "chemistry",
+  "ai_technology": "MitoReID, deep-learning re-identification model using an Inflated 3D ResNet backbone on temporal mitochondrial images",
+  "organization": "Zhejiang University; Zhejiang Lab; Zhejiang Chinese Medical University; Harvard University; Karolinska Institute; Stanford University",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/39169261/",
+  "source_type": "paper",
+  "publication_date": "2024-08-21",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s43588-024-00679-4",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Among its natural-compound predictions, it nominated epicatechin as a COX-2 inhibitor; the authors report in-vitro follow-up including COX-2 activity, cellular thermal-shift and surface-plasmon-resonance assays.",
+    "unknown": "Evidence is biochemical/in-vitro and does not establish therapeutic efficacy or safety. MitoReID's six unseen-drug mechanism predictions are a separate task; the epicatechin COX-2 result is the specific new mechanistic finding recorded here. Full publisher page was cookie-blocked, but the primary PubMed record and publisher-indexed article text/extended-data caption were read.",
+    "ai_role": "Ranked mechanisms of action for compounds by matching learned time-dependent mitochondrial phenotypes against reference drugs; the model nominated COX-2 inhibition for epicatechin, which was tested in vitro.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/39169261/"
+    ]
+  }
+}

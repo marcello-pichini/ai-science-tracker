@@ -1,0 +1,28 @@
+{
+  "id": "2026-03-particlenet-enables-first-hadron-collider-w-boson-mass-measurement-from-hadronic-decays",
+  "title": "ParticleNet enables first hadron-collider W-boson mass measurement from hadronic decays",
+  "summary": "Using 138 fb⁻¹ of 13 TeV proton–proton data, CMS reports the first measurement of the W-boson mass in an all-jets final state at a hadron collider: 80.83 ± 0.55 GeV. The result comes from unfolded groomed jet-mass distributions for boosted hadronic W+jets events. The mass-decorrelated ParticleNet graph neural network tagger provides the main result by selecting the W-jet sample and suppressing quark/gluon multijet background; a non-neural N₂ tagger is used as a cross-check.",
+  "field": "physics",
+  "ai_technology": "ParticleNet mass-decorrelated graph neural network jet tagger",
+  "organization": "CMS Collaboration",
+  "source_url": "https://cms-results.web.cern.ch/cms-results/publications/SMP-24-012/index.html",
+  "source_type": "paper",
+  "publication_date": "2026-03-20",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2603.19963",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Using 138 fb⁻¹ of 13 TeV proton–proton data, CMS reports the first measurement of the W-boson mass in an all-jets final state at a hadron collider: 80.83 ± 0.55 GeV.",
+    "unknown": "This is an all-jets boosted-W extraction with 0.55 GeV total uncertainty, much less precise than the CMS leptonic-channel W-mass result; the paper frames it as a first step toward future all-jets precision measurements and as a test of jet-substructure modeling. The earlier preliminary CMS result of 80.77 ± 0.57 GeV was superseded by this same paper’s published 80.83 ± 0.55 GeV result and is not counted separately. Jet tagging, QCD background estimation, unfolding, hadronization and jet-energy modeling contribute analysis dependence and uncertainties.",
+    "ai_role": "The analysis uses ParticleNet as its main W-jet tagger. Its graph neural network treats jet constituents as an unordered particle cloud and classifies W→qq′ jets against QCD multijet backgrounds; its mass-decorrelated output defines the signal/control regions used for the primary measurement. The N₂ substructure observable is a separate cross-check.",
+    "evidence_urls": [
+      "https://cms-results.web.cern.ch/cms-results/publications/SMP-24-012/index.html"
+    ]
+  }
+}

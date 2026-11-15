@@ -1,0 +1,28 @@
+{
+  "id": "2026-10-recurrent-neural-network-reveals-near-critical-seeding-of-topological-defects-in-kibblezurek-simulations",
+  "title": "Recurrent neural network reveals near-critical seeding of topological defects in Kibble–Zurek simulations",
+  "summary": "In numerical simulations of a one-dimensional Landau–Ginzburg phase transition, a recurrent neural network predicted the final locations of topological defects from short sequences of order-parameter fluctuations during the Kibble–Zurek impulse regime, before freeze-out and before the defects were macroscopically visible. Prediction error across quench rates followed power-law scaling consistent with the Kibble–Zurek freeze-out time, indicating that information about the eventual defect pattern is encoded in near-critical fluctuations in this model.",
+  "field": "physics",
+  "ai_technology": "Recurrent neural network (RNN); LSTM and Transformer architectures were also checked",
+  "organization": "The University of Tokyo; Los Alamos National Laboratory",
+  "source_url": "https://journals.aps.org/prl/abstract/10.1103/fstv-lsvh",
+  "source_type": "paper",
+  "publication_date": "2026-10-05",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2508.20347",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In numerical simulations of a one-dimensional Landau–Ginzburg phase transition, a recurrent neural network predicted the final locations of topological defects from short sequences of order-parameter fluctuations during the Kibble–Zurek impulse regime, before freeze-out and before the defects were macroscopically visible.",
+    "unknown": "This is a computational result from a noisy one-dimensional Landau–Ginzburg model, not an experimental observation of defects in a material or cosmological system. The paper uses overdamped dynamics (η=1), low noise temperature θ=10⁻⁸, a finite periodic grid and simulated training/test samples; similar behavior at another noise setting is reported in supplementary material. The finding is consistent with the Kibble–Zurek mechanism and an earlier deconstruction of its dynamics; it does not establish that this prediction method applies unchanged to all phase transitions. The PRL article was published 2026-10-05; the original arXiv preprint was submitted 2025-08-28 and revised as v2 on 2026-09-10.",
+    "ai_role": "The RNN analyzed short time sequences from numerical order-parameter dynamics and inferred the final kink count and positions from small fluctuations during the impulse regime. This allowed the authors to identify when information about future defect positions becomes predictable, a quantity not directly provided by conventional Kibble–Zurek defect-density scaling. They report similar prediction behavior with LSTM and Transformer models, suggesting the result is not specific to one architecture.",
+    "evidence_urls": [
+      "https://journals.aps.org/prl/abstract/10.1103/fstv-lsvh"
+    ]
+  }
+}

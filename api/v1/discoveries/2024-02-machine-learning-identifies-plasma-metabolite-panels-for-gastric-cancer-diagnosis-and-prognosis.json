@@ -1,0 +1,28 @@
+{
+  "id": "2024-02-machine-learning-identifies-plasma-metabolite-panels-for-gastric-cancer-diagnosis-and-prognosis",
+  "title": "Machine learning identifies plasma metabolite panels for gastric-cancer diagnosis and prognosis",
+  "summary": "In a multicenter study of 702 participants, targeted plasma metabolomics and machine learning produced a 10-metabolite gastric-cancer diagnostic model and separate 28-metabolite survival-risk model. The diagnostic model was evaluated in an independent 95-person cohort (AUROC 0.920; sensitivity 0.905, specificity 0.75) and detected stage IA disease with AUROC 0.909. Among 181 patients followed for a median 40 months, the prognostic model achieved test-set concordance index 0.83. Succinate, uridine and lactate were among diagnostic features.",
+  "field": "medicine",
+  "ai_technology": "LASSO, random forest and random survival forest",
+  "organization": "Tsinghua University; National Cancer Center/National Clinical Research Center for Cancer, China; Harbin Medical University Cancer Hospital; collaborating Chinese cancer centers",
+  "source_url": "https://www.nature.com/articles/s41467-024-46043-y.pdf",
+  "source_type": "paper",
+  "publication_date": "2024-02-23",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-024-46043-y",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The diagnostic model was evaluated in an independent 95-person cohort (AUROC 0.920; sensitivity 0.905, specificity 0.75) and detected stage IA disease with AUROC 0.909.",
+    "unknown": "Case-control cohorts do not establish population screening performance. External diagnostic test n=95; prognosis cohort median follow-up 40 months with right-censored outcomes. The paper says direct clinical use is premature and requires quality-control samples. Associations are not causal and no model-guided benefit was tested.",
+    "ai_role": "LASSO selected ten plasma metabolites for a diagnostic model evaluated in internal and independent external cohorts. Random survival forest selected a 28-metabolite prognostic panel, evaluated in a held-out patient set.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-024-46043-y.pdf"
+    ]
+  }
+}

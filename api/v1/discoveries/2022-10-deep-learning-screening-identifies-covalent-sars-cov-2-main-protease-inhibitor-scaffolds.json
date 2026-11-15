@@ -1,0 +1,28 @@
+{
+  "id": "2022-10-deep-learning-screening-identifies-covalent-sars-cov-2-main-protease-inhibitor-scaffolds",
+  "title": "Deep-learning screening identifies covalent SARS-CoV-2 main-protease inhibitor scaffolds",
+  "summary": "A two-stage deep-learning screen selected cysteine-directed compounds for testing against SARS-CoV-2 3CL protease. Of 32 top-ranked compounds experimentally assayed, 12 inhibited the enzyme; six had IC₅₀ values below 12 μM, with the strongest reported at 1.4 μM. Five of those six exhibited time-dependent inhibition consistent with covalent binding.",
+  "field": "chemistry",
+  "ai_technology": "Deep-learning COVCL and NOVCL classifiers integrating a directed message-passing neural network and feed-forward network",
+  "organization": "Peking University BNLMS and Peking-Tsinghua Center for Life Sciences; Chinese Academy of Medical Sciences Research Unit of Drug Design Method",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/36209629/",
+  "source_type": "paper",
+  "publication_date": "2022-10-03",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.ejmech.2022.114803",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A two-stage deep-learning screen selected cysteine-directed compounds for testing against SARS-CoV-2 3CL protease.",
+    "unknown": "Evidence in the primary abstract is biochemical enzyme inhibition and inhibition-mechanism assays. It does not establish antiviral efficacy in cells/animals or clinical benefit. Potency values are for the reported enzyme assay; most tested compounds were inactive, and the six sub-12 μM hits are early leads.",
+    "ai_role": "The COVCL model first prioritized cysteine-targeted covalent candidates, then NOVCL ranked those candidates for predicted 3CL-protease inhibition. Researchers tested 32 selected molecules in enzyme assays and performed follow-up tests of time-dependent inhibition for active hits.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/36209629/"
+    ]
+  }
+}

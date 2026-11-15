@@ -1,0 +1,28 @@
+{
+  "id": "2024-04-progeni-predicts-candidate-melanoma-and-colorectal-cancer-targets-validated-in-cell-models",
+  "title": "Progeni predicts candidate melanoma and colorectal-cancer targets validated in cell models",
+  "summary": "Progeni combines a probabilistic knowledge graph with graph neural networks to rank disease-associated molecular targets. The authors selected six candidates lacking literature support and reported that knockdown of HSP90AB1 and MME reduced proliferation in a murine melanoma line, while knockdown of ADCY5, ADRA2A and EEF2 reduced proliferation in a murine colorectal-cancer line.",
+  "field": "biology",
+  "ai_technology": "Progeni probabilistic knowledge graph and graph neural network",
+  "organization": "Tsinghua University; Westlake University; Jilin University; Silexon AI Technology",
+  "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011945",
+  "source_type": "paper",
+  "publication_date": "2024-04-05",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1371/journal.pcbi.1011945",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The authors selected six candidates lacking literature support and reported that knockdown of HSP90AB1 and MME reduced proliferation in a murine melanoma line, while knockdown of ADCY5, ADRA2A and EEF2 reduced proliferation in a murine colorectal-cancer line.",
+    "unknown": "The functional validations were in B16F10 and MC38 murine cell lines, not human tumor samples or clinical settings. The paper evaluates a model and validates selected candidates; it does not establish these as clinically effective therapeutic targets.",
+    "ai_role": "The graph neural network ranked new target hypotheses from heterogeneous biological networks and literature co-occurrence evidence. Researchers then tested selected predictions by shRNA knockdown in representative murine cancer cell lines.",
+    "evidence_urls": [
+      "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1011945"
+    ]
+  }
+}

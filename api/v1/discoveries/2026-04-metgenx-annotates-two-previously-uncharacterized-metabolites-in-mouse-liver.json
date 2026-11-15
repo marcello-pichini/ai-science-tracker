@@ -1,0 +1,28 @@
+{
+  "id": "2026-04-metgenx-annotates-two-previously-uncharacterized-metabolites-in-mouse-liver",
+  "title": "MetGenX annotates two previously uncharacterized metabolites in mouse liver",
+  "summary": "MetGenX, a structure-informed neural-network workflow for generating structures from tandem mass spectra, was applied to untargeted mouse-liver metabolomics and reported two previously uncharacterized metabolites, adenosyl-cysteine and adenosine 5′-diphosphate 5′-inosine (Ap2I). The paper reports validation against chemical standards using retention time and MS2 spectral matches.",
+  "field": "chemistry",
+  "ai_technology": "MetGenX structure-informed encoder-decoder neural network with LightGBM reranking",
+  "organization": "Shanghai Institute of Organic Chemistry, Chinese Academy of Sciences, and collaborators",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/42009661/",
+  "source_type": "paper",
+  "publication_date": "2026-04-20",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-026-72149-6",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "MetGenX, a structure-informed neural-network workflow for generating structures from tandem mass spectra, was applied to untargeted mouse-liver metabolomics and reported two previously uncharacterized metabolites, adenosyl-cysteine and adenosine 5′-diphosphate 5′-inosine (Ap2I).",
+    "unknown": "The original Nature full-text route was inaccessible in this session; the primary-source PubMed article page provides the paper abstract and figure captions describing standard-based retention-time/MS2 matches for the two structures. The finding is metabolite annotation in mouse tissue, not evidence of human biological function. Independent replication was not checked.",
+    "ai_role": "The model generated and reranked candidate molecular structures from MS2 spectra; researchers applied a multi-step workflow to mouse-liver samples and compared the two reported metabolite candidates with standards. AI proposed annotations, while standard-based chromatographic and spectral matching supported the assignments.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/42009661/"
+    ]
+  }
+}

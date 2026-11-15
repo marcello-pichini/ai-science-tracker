@@ -1,0 +1,28 @@
+{
+  "id": "2025-05-deep-learning-maps-previously-unknown-disease-signals-in-ecgs-across-two-health-systems",
+  "title": "Deep learning maps previously unknown disease signals in ECGs across two health systems",
+  "summary": "Researchers independently trained PheWASNet on ECG and electronic health-record data from Stanford Health Care and Cedars-Sinai to assess 1,243 disease phenotypes. In held-out patient splits at both centers, the study reported previously unrecognized ECG associations for disorders including respiratory failure, neutropenia and menstrual disorders (AUCs 0.86, 0.83 and 0.84 at Stanford, respectively). Cross-condition model-output analysis found that 35 of 37 strongly detectable non-cardiac phenotypes shared signals with only four other disease outputs, and simple ECG measurement models explained some findings.",
+  "field": "medicine",
+  "ai_technology": "PheWASNet, a multi-task deep-learning model based on a one-dimensional EfficientNet architecture",
+  "organization": "Stanford University; Cedars-Sinai Medical Center; University of California, Los Angeles",
+  "source_url": "https://academic.oup.com/ehjdh/article/6/4/595/8126967",
+  "source_type": "paper",
+  "publication_date": "2025-05-08",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1093/ehjdh/ztaf047",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In held-out patient splits at both centers, the study reported previously unrecognized ECG associations for disorders including respiratory failure, neutropenia and menstrual disorders (AUCs 0.86, 0.83 and 0.84 at Stanford, respectively).",
+    "unknown": "This retrospective EHR-linked study establishes model-detectable associations, not causal physiology, screening benefit or clinical utility. The disease labels are diagnostic codes associated with ECGs within 30 days; results may reflect comorbidity or care context. The authors caution that generalization to other health systems and populations is not assured. Some detectable signals were explained by simple conventional ECG measurements, and the paper does not claim that deep learning is required for every association.",
+    "ai_role": "The researchers trained separate deep-learning models on raw 12-lead ECG waveforms linked to EHR diagnoses at two medical centers, then used held-out patient test sets to identify disease phenotypes whose signals were detectable from ECGs. Cross-phenotype prediction comparisons and simple-model analyses were used to characterize shared and interpretable signals.",
+    "evidence_urls": [
+      "https://academic.oup.com/ehjdh/article/6/4/595/8126967"
+    ]
+  }
+}

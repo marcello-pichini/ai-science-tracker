@@ -1,0 +1,28 @@
+{
+  "id": "2023-02-celloracle-guided-zebrafish-perturbations-identify-axial-mesoderm-effects-of-noto-and-lhx1a-loss",
+  "title": "CellOracle-guided zebrafish perturbations identify axial-mesoderm effects of noto and lhx1a loss",
+  "summary": "The CellOracle machine-learning workflow used single-cell gene-regulatory networks to prioritize transcription factors for perturbation in zebrafish development. CRISPR/Cas9 tests confirmed a model-predicted, previously unreported increase in prechordal-plate differentiation after loss of noto, alongside the known loss of notochord. Model-prioritized lhx1a loss also inhibited axial-mesoderm differentiation: single-cell RNA-seq found expansion of early notochord cells and reductions in later notochord and prechordal-plate populations; orthogonal RNA assays supported reduced notochord/prechordal markers.",
+  "field": "biology",
+  "ai_technology": "CellOracle, a machine-learning gene-regulatory-network model with in-silico transcription-factor perturbation",
+  "organization": "Washington University in St. Louis; collaborating institutions",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9946838/",
+  "source_type": "paper",
+  "publication_date": "2023-02-08",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41586-022-05688-9",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "CRISPR/Cas9 tests confirmed a model-predicted, previously unreported increase in prechordal-plate differentiation after loss of noto, alongside the known loss of notochord.",
+    "unknown": "Evidence is from zebrafish crispants during embryonic development, not stable mutants or mammalian/human systems; the authors report no gross morphological change despite transcriptomic/cell-population effects. The CellOracle model depends on inferred networks and makes cell-state-shift predictions, not direct causal proof of all inferred edges. A later unreviewed 2024 preprint raises implementation and benchmarking concerns, particularly about its use of ATAC-seq for distal regulatory interactions and comparisons with other GRN tools; this record relies only on the specific perturbation predictions tested experimentally and does not adopt the paper's broader benchmarking claims.",
+    "ai_role": "The model built context-specific networks from single-cell data, simulated transcription-factor loss, and prioritized noto and lhx1a for experimental follow-up. Researchers used CRISPR/Cas9 crispants, single-cell RNA-seq and marker assays to test the predicted zebrafish cell-fate effects; the prechordal-plate increase after noto loss was reported as previously unrecognized.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9946838/"
+    ]
+  }
+}

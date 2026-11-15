@@ -1,0 +1,28 @@
+{
+  "id": "2024-03-an-ml-generated-mine-homolog-restores-bacterial-cell-division-patterning-in-vivo",
+  "title": "An ML-generated MinE homolog restores bacterial cell division patterning in vivo",
+  "summary": "A machine-learning-generated MinE homolog, synMinEv25, restored Min oscillations and wild-type-like cell growth and morphology when substituted for the native minE gene in an E. coli strain lacking minDE. Researchers generated variants with a multiple-sequence-alignment variational autoencoder, used AlphaFold2-based structural scoring to select candidates, and screened them in synthetic-cell mimics before in-vivo testing. The validated variant is a distant homolog with less than 50% sequence identity to E. coli MinE.",
+  "field": "biology",
+  "ai_technology": "Multiple-sequence-alignment variational autoencoder (MSA-VAE), AlphaFold2 Multimer, and a structure-based divide-and-conquer scoring pipeline",
+  "organization": "Max Planck Institute of Biochemistry",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10914801/",
+  "source_type": "paper",
+  "publication_date": "2024-03-05",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-024-46203-0",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Researchers generated variants with a multiple-sequence-alignment variational autoencoder, used AlphaFold2-based structural scoring to select candidates, and screened them in synthetic-cell mimics before in-vivo testing.",
+    "unknown": "This is a proof-of-principle result in one engineered E. coli MinDE system, not a general demonstration that generated proteins can replace natural genes. The paper notes weak correlation between several in-silico scores and individual measured protein properties; it reports one best-performing variant and does not establish applications outside this assay.",
+    "ai_role": "The MSA-VAE generated MinE homolog sequences; structure-based scoring estimated membrane binding, MinD complex formation and dimerization to prioritize 48 candidates from 4,000 generated sequences. Cell-free synthetic-cell assays identified 14 variants with Min oscillations, and researchers tested these in E. coli; synMinEv25 restored oscillations, growth and morphology. AI generated and prioritized candidates, while wet-lab experiments established function.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10914801/"
+    ]
+  }
+}

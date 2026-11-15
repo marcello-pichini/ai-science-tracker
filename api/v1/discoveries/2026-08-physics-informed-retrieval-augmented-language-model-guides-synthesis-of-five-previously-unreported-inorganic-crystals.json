@@ -1,0 +1,28 @@
+{
+  "id": "2026-08-physics-informed-retrieval-augmented-language-model-guides-synthesis-of-five-previously-unreported-inorganic-crystals",
+  "title": "Physics-informed retrieval-augmented language model guides synthesis of five previously unreported inorganic crystals",
+  "summary": "Researchers built PIRAG-LM, which combines a structured knowledge base of experimental synthesis routes, physics-based chemical/structural/thermodynamic similarity retrieval, and LLM route reasoning. In prospective tests, it guided synthesis of five compounds previously unreported in experimental literature: BaMo0.3In0.7O2.95, BaNb0.4In0.6O2.9, Hg[B(CN)4]2, CoCo(CN)6 and SrNb2Fe2(PO4)6. Powder X-ray diffraction patterns were consistent with target phases. This is one paper-level synthesis-planning result, not five separate entries.",
+  "field": "materials",
+  "ai_technology": "PIRAG-LM, physics-informed retrieval-augmented language model, with DeepSeek-V4 used in the structured synthesis-knowledge-base extraction workflow",
+  "organization": "Soochow University; Zhengzhou University; Fudan University; Hefei National Laboratory",
+  "source_url": "https://arxiv.org/abs/2608.25392",
+  "source_type": "paper",
+  "publication_date": "2026-08-26",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Researchers built PIRAG-LM, which combines a structured knowledge base of experimental synthesis routes, physics-based chemical/structural/thermodynamic similarity retrieval, and LLM route reasoning.",
+    "unknown": "This is a source-checked preprint (not treated as peer-reviewed here). The reported new-compound claims refer to absence from experimental literature and prospective synthesis; PXRD matches support target phase formation, but the paper does not establish broad application performance or independent replication. Experts selected materials and adjusted operational conditions; the system did not autonomously run experiments. Five compounds remain bundled as one paper-level finding.",
+    "ai_role": "PIRAG-LM retrieved synthesis precedents by chemical, structural and thermodynamic similarity and proposed synthesis methods, precursors and processing conditions. Experts evaluated routes and refined practical parameters; researchers synthesized and characterized the five target phases. The final route class, precursor logic and main processing sequence generally followed model recommendations.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2608.25392"
+    ]
+  }
+}

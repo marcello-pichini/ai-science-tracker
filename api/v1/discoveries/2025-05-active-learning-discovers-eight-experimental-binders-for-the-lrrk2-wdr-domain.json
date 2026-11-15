@@ -1,0 +1,28 @@
+{
+  "id": "2025-05-active-learning-discovers-eight-experimental-binders-for-the-lrrk2-wdr-domain",
+  "title": "Active learning discovers eight experimental binders for the LRRK2 WDR domain",
+  "summary": "A free-energy molecular-dynamics and machine-learning active-learning workflow optimized compounds against the understudied LRRK2 WDR domain. Of 35 analogs experimentally tested, eight showed measurable binding confirmed by surface plasmon resonance and, for fluorinated compounds, an orthogonal 19F-NMR assay; measured dissociation constants ranged from 18 to 230 μM.",
+  "field": "chemistry",
+  "ai_technology": "Active-learning-guided relative-binding-free-energy (AL-RBFE) workflow using molecular-dynamics thermodynamic-integration calculations and an ML affinity-prediction model",
+  "organization": "Carnegie Mellon University; University of Toronto Structural Genomics Consortium; University of British Columbia; University of Ottawa and collaborators",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12152950/",
+  "source_type": "paper",
+  "publication_date": "2025-05-26",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1021/acs.jcim.5c00588",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Of 35 analogs experimentally tested, eight showed measurable binding confirmed by surface plasmon resonance and, for fluorinated compounds, an orthogonal 19F-NMR assay; measured dissociation constants ranged from 18 to 230 μM.",
+    "unknown": "The experiments establish ligand binding, not functional inhibition or a therapeutic effect. Confirmed Kd values (18–230 μM) indicate modest affinity, and the work is an optimization round around two previously confirmed challenge hits rather than an initial target hit discovery. This is not evidence of Parkinson’s disease efficacy.",
+    "ai_role": "An iterative ML model selected ligand analogs for expensive free-energy simulations, using resulting calculations to choose compounds for further rounds and experimental validation. Of 35 procured/tested compounds, eight were confirmed as binding to LRRK2 WDR by SPR, with 19F-NMR used for orthogonal confirmation of fluorinated molecules.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12152950/"
+    ]
+  }
+}

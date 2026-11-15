@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-hhg3-fxg7-3gxw",
+  "title": "Many color-profile associations cause excessive CPU during HEIF open",
+  "product": "libheif",
+  "ai_system": "Anthropic OSS Scanner (model not specified for this finding)",
+  "organization": "Anthropic and libheif maintainers",
+  "summary": "Opening a file regenerated and compared a color-profile property for every color-profile association, causing excessive CPU use.",
+  "ai_role": "The item-level libheif advisory explicitly attributes discovery to Anthropic's OSS Scanner as ANT-2026-H7YE4FE8. The release notes independently state that all listed security issues were found by the scanner. The Anthropic program sources establish model-based scanning, but no per-case model is identified.",
+  "disclosure_date": "2026-10-26",
+  "ai_attribution_date": "2026-10-26",
+  "classification": "disclosure",
+  "classification_note": "The primary advisory establishes a publicly disclosed security finding and direct Anthropic OSS Scanner attribution. No CVE had been assigned in the libheif release notes at the checked time; the distinct GHSA is used. No exploitation or zero-day status is asserted.",
+  "cves": [],
+  "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-hhg3-fxg7-3gxw",
+  "ai_source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-hhg3-fxg7-3gxw",
+  "remediation": "fix documented",
+  "remediation_note": "Reading and encoding now store color profiles separately so opening the file does not create new properties. Fixed in libheif 1.23.7. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
+  "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-hhg3-fxg7-3gxw",
+  "checked_date": "2026-11-14"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ghsl-2026-105",
+  "title": "Taskflow Agent finds cross-thread edit authorization flaw in Signal iOS",
+  "product": "Signal for iOS",
+  "ai_system": "GitHub Security Lab Taskflow Agent",
+  "organization": "GitHub Security Lab",
+  "summary": "Signal iOS versions from 6.28 allowed a removed group member to modify a previously sent group message on a recipient device because edit-message target lookup was not scoped to the routed thread.",
+  "ai_role": "GHSL credits its Taskflow Agent and verification by Jaroslav Lobačevski. Signal reported a collision with another report on 2026-04-15 and released a fix as version 8.7.0.1523 the same day; the advisory does not establish that the AI report was first. No CVE is listed.",
+  "disclosure_date": "2026-09-21",
+  "ai_attribution_date": "2026-09-21",
+  "classification": "disclosure",
+  "classification_note": "The advisory says the effect is limited to the targeted recipient’s local group view; it does not claim in-the-wild exploitation.",
+  "cves": [],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2026-105_Signal-iOS/",
+  "ai_source_url": "https://securitylab.github.com/advisories/GHSL-2026-105_Signal-iOS/",
+  "remediation": "fix documented",
+  "remediation_note": "Signal released the fix in 8.7.0.1523 on 2026-04-15. A collision with another report was recorded; no CVE is stated.",
+  "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-105_Signal-iOS/",
+  "checked_date": "2026-11-14"
+}

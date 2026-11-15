@@ -92,4 +92,18 @@ const base = {verification_status:'verified', source_type:'blog', paper_url:'', 
 assert.ok(!ui.sourceDetails(base).includes('Evidence context'));
 const html = ui.sourceDetails({...base, evidence:{publication_status:'Preprint', tested:'12 <b>samples</b>', unknown:'Not reported', ai_role:'Not reported', evidence_urls:['https://e.org']}});
 assert.ok(html.includes('Evidence context') && html.includes('12 &lt;b&gt;samples&lt;/b&gt;') && html.includes('Preprint'));
+assert.ok(html.includes('does not distinguish information absent from reviewed material from information not assessed'));
+assert.ok(html.includes('not a scientific finding of absence'));
+assert.ok(!ui.sourceDetails({...base, evidence:{publication_status:'Preprint', tested:'12 samples', unknown:'Long-term effects', ai_role:'Candidate selection'}}).includes('legacy label'));
+''')
+
+    def test_evidence_sources_link_only_valid_http_urls_and_escape_attributes(self):
+        self.run_js(r'''
+const html = ui.evidenceBlock({evidence:{publication_status:'Published', tested:'Samples', unknown:'Follow-up', ai_role:'Design',
+ evidence_urls:['https://doi.org/10.1038/test?x=1&y="quoted"', 'http://example.org/source', 'javascript:alert(1)', '//example.org', 'https://', 'https://example.org/\" onclick=\"bad']}});
+assert.ok(html.includes('href="https://doi.org/10.1038/test?x=1&amp;y=&quot;quoted&quot;"'));
+assert.ok(html.includes('href="http://example.org/source"'));
+assert.ok(!html.includes('javascript:') && !html.includes('href="//') && !html.includes('href="https://"'));
+assert.ok(!html.includes('" onclick="'));
+assert.ok(!ui.evidenceBlock({evidence:{evidence_urls:[]}}).includes('Evidence sources:'));
 ''')

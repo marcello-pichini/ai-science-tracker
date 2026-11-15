@@ -10,8 +10,8 @@ Outputs (all generated, never edit by hand; rerun this script instead):
                    catalog's content, not only the 6 top-level pages
 
 Usage:
-  python3 scripts/generate_share.py            # pages, sitemap, robots, and any missing cards
-  python3 scripts/generate_share.py --force    # also re-render every card (after a design or data change)
+  python3 scripts/generate_share.py            # pages, sitemap, robots, and changed cards
+  python3 scripts/generate_share.py --force    # re-render every card
   python3 scripts/generate_share.py --no-images  # skip Chrome (pages then point at og/default.png)
 
 Cards use styles.css and the self-hosted font, so they follow docs/DESIGN.md automatically.
@@ -22,6 +22,7 @@ retyped, so they automatically track any nav or footer change made there.
 import argparse
 import datetime
 import html
+import hashlib
 import json
 import os
 import re
@@ -31,6 +32,8 @@ import sys
 import tempfile
 from pathlib import Path
 from urllib.parse import quote
+
+from model_families import discovery_links
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://marcello-pichini.github.io/ai-science-tracker/'
@@ -123,32 +126,33 @@ def screenshot(page, out):
                    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
-def render_default(force):
-    """Generic card used by the site pages' og:image."""
-    out = ROOT / 'og' / 'default.png'
-    if out.exists() and not force:
-        return
-    (ROOT / 'og').mkdir(exist_ok=True)
+def render_cards(items, force):
+    out_dir = ROOT / 'og'
+    out_dir.mkdir(exist_ok=True)
+    manifest_path = out_dir / 'card-hashes.json'
+    hashes = json.loads(manifest_path.read_text()) if manifest_path.exists() else {}
+    assets = (ROOT / 'styles.css').read_bytes() + b''.join(
+        p.read_bytes() for p in sorted((ROOT / 'assets/fonts').glob('*.woff2')))
+    css = (ROOT / 'styles.css').as_uri()
+    cards = [('default', card_html(css, 'Scientific discoveries enabled by AI',
+                                   'Tracked from official announcements since 2020'))]
+    for d in items:
+        row = (f'<p class="og-score"><span class="metro"><i style="width:{score(d)}%"></i></span> '
+               f'Relevance {score(d)} · {esc(d["field"])}</p>')
+        cards.append((d['id'], card_html(css, esc(clip(d['title'], 150)),
+                      f'{esc(clip(d["organization"], 90))} · {nice_date(d["publication_date"])}', row)))
+    updated = {}
     with tempfile.TemporaryDirectory() as tmp:
         page = Path(tmp) / 'card.html'
-        page.write_text(card_html((ROOT / 'styles.css').as_uri(), 'Scientific discoveries enabled by AI',
-                                  'Tracked from official announcements since 2020'))
-        screenshot(page, out)
-
-
-def render_cards(items, force):
-    todo = [d for d in items if force or not (ROOT / 'og' / f'{d["id"]}.png').exists()]
-    (ROOT / 'og').mkdir(exist_ok=True)
-    css = (ROOT / 'styles.css').as_uri()
-    with tempfile.TemporaryDirectory() as tmp:
-        for n, d in enumerate(todo, 1):
-            page = Path(tmp) / 'card.html'
-            row = (f'<p class="og-score"><span class="metro"><i style="width:{score(d)}%"></i></span> '
-                   f'Relevance {score(d)} · {esc(d["field"])}</p>')
-            page.write_text(card_html(css, esc(clip(d['title'], 150)),
-                                      f'{esc(d["organization"])} · {nice_date(d["publication_date"])}', row))
-            screenshot(page, ROOT / 'og' / f'{d["id"]}.png')
-            print(f'card {n}/{len(todo)} {d["id"]}', file=sys.stderr)
+        for name, content in cards:
+            digest = hashlib.sha256(content.replace(css, 'styles.css').encode() + assets).hexdigest()
+            updated[name] = digest
+            out = out_dir / f'{name}.png'
+            if force or not out.exists() or hashes.get(name) != digest:
+                page.write_text(content)
+                screenshot(page, out)
+                print(f'card {name}', file=sys.stderr)
+    manifest_path.write_text(json.dumps(updated, indent=2, sort_keys=True) + '\n')
 
 
 PAGE = """<!doctype html>
@@ -361,32 +365,47 @@ def write_profile_pages(items, models, archived=()):
         emit(name, name, f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
              f'{plural(len(rows), "AI-enabled scientific discovery", "AI-enabled scientific discoveries")} tracked from {name}, with sources.',
              rows, f'profiles/org-{slug(name)}.html', f'profile.html?org={quote(name)}', organization=True)
+    archived_orgs = {}
     for d in archived:
-        legacy = d['organization'].replace(' and ', ',').split(',')[0].strip()
-        old, new = slug(legacy), slug(lead_org(d['organization']))
-        target = new if new in slugs else f'../share/{quote(d["id"])}.html'
+        legacy = slug(d['organization'].replace(' and ', ',').split(',')[0].strip())
+        lead = slug(lead_org(d['organization']))
+        for old in {legacy, lead}:
+            if old not in slugs:
+                target = f'org-{lead}.html' if lead in slugs else f'../share/{quote(d["id"])}.html'
+                archived_orgs.setdefault(old, set()).add(target)
+    for old, new in aliases.items():
         if old not in slugs:
-            assert aliases.setdefault(old, target) == target, f'legacy organization slug collision: {old}'
-    for old, new in sorted(aliases.items()):
-        if old in slugs:
-            continue
-        target = new if new.startswith('../share/') else f'org-{new}.html'
+            archived_orgs.setdefault(old, set()).add(f'org-{new}.html')
+
+    def redirect(path, targets):
+        # A speculative legacy alias cannot have existed as a file beyond this limit.
+        if len(path.encode('utf-8')) > 255:
+            return
+        target = next(iter(targets)) if len(targets) == 1 else 'index.html'
         canonical = BASE + (target[3:] if target.startswith('../') else f'profiles/{target}')
-        path = out / f'org-{old}.html'
-        path.write_text(f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Organization profile moved</title>
+        title = 'Organization profile moved' if path.startswith('org-') else 'Model family profile moved'
+        (out / path).write_text(f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>{title}</title>
 <link rel="canonical" href="{canonical}"><meta http-equiv="refresh" content="0; url={target}"></head>
 <body><p>This profile has moved to <a href="{target}">the preserved page</a>.</p></body></html>
 ''')
-        pages.append(f'profiles/org-{old}.html')
+        pages.append(f'profiles/{path}')
+
+    for old, targets in sorted(archived_orgs.items()):
+        redirect(f'org-{old}.html', targets)
+    active_families = set()
     for fam in sorted(models['families'], key=lambda f: f['id']):
         rows = sorted((by_id[i] for i in fam['discoveries'] if i in by_id), key=lambda d: d['publication_date'], reverse=True)
         if not rows:
             continue
+        active_families.add(fam['id'])
         rel = [m for m in models.get('models', []) if m.get('family') == fam['id']]
         emit(fam['name'], fam['name'], f'{plural(len(rows), "discovery", "discoveries")} name this family, {years(rows)}',
              f'{plural(len(rows), "AI-enabled scientific discovery", "AI-enabled scientific discoveries")} linked to the {fam["name"]} model family.',
              rows, f'profiles/family-{quote(fam["id"])}.html', f'profile.html?family={quote(fam["id"])}', releases_table(rel))
+    for fid, ids in discovery_links(archived).items():
+        if ids and fid not in active_families:
+            redirect(f'family-{quote(fid)}.html', {f'../share/{quote(did)}.html' for did in ids})
     labs = ''.join(f'<li><a href="profiles/org-{slug(n)}.html">{esc(n)}</a> ({len(r)})</li>' for n, r in sorted(by_org.items(), key=lambda kv: (-len(kv[1]), kv[0])))
     fams = ''.join(f'<li><a href="profiles/family-{quote(f["id"])}.html">{esc(f["name"])}</a> ({len(f["discoveries"])})</li>' for f in sorted(models['families'], key=lambda f: (-len(f['discoveries']), f['name'])) if f['discoveries'])
     directory = f'<h2>Organizations</h2><ul class="elenco-profili">{labs}</ul><h2>Model families</h2><ul class="elenco-profili">{fams}</ul>'
@@ -407,7 +426,7 @@ def write_llms_txt(items, models):
     newest = max(d['added_date'] for d in items)
     (ROOT / 'llms.txt').write_text(f'''# {SITE}
 
-> A catalog of {len(items)} scientific discoveries enabled by AI across {fields} fields and {orgs} organizations since 2020. Each entry links to the original announcement by the organization that achieved the result. Figures are reported by the sources and are not independently verified; relevance scores are editorial judgments, not evidence grades.
+> A catalog of {len(items)} entries about scientific results enabled by AI across {fields} fields and {orgs} organizations since 2020. Each entry links to an original paper, preprint or institutional announcement. Entry counts are not counts of independent findings: methodological contributions can overlap other entries, and one entry can describe several related results. Figures are reported by the sources and are not independently verified; relevance scores are coarse editorial judgments, not evidence grades.
 
 Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT. Model data comes from Epoch AI (CC BY 4.0). When citing a scientific claim, cite the original source linked on each entry, not this catalog.
 
@@ -419,12 +438,12 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [Methodology]({BASE}methodology.html): what is included, how entries are verified and scored
 
 ## Data
-- [discoveries.json]({BASE}data/discoveries.json): one record per discovery (schema: docs/discovery-schema.md in the repository)
+- [discoveries.json]({BASE}data/discoveries.json): active catalog entries (schema and counting unit: docs/discovery-schema.md in the repository)
 - [models.json]({BASE}data/models.json): model releases and families
 - [vulnerabilities.json]({BASE}data/vulnerabilities.json): vulnerability cases
 - [sitemap.xml]({BASE}sitemap.xml): every static page
 - [dataset.html]({BASE}dataset.html): downloads (JSON, CSV), schemas and the read-only static API at {BASE}api/v1/index.json
-- [feed.xml]({BASE}feed.xml): Atom feed of the newest discoveries and vulnerability cases
+- [feed.xml]({BASE}feed.xml): Atom feed of discovery additions and vulnerability source checks
 - Each discovery has its own page at {BASE}share/ID.html
 
 ## Notes
@@ -450,8 +469,7 @@ def write_sitemap(items, models, archived=()):
 
 
 def write_feed(items, vulns, limit=40):
-    """Atom feed of the newest catalog additions. `updated` is the date a record was added or its sources were checked,
-    never the announcement date, so subscribers see entries when they appeared in the catalog."""
+    """Order discoveries by addition date and vulnerabilities by source-check date."""
     rows = []
     for d in items:
         rows.append((d['added_date'], d['publication_date'], f'share/{quote(d["id"])}.html', d['title'], d['summary'],
@@ -467,7 +485,7 @@ def write_feed(items, vulns, limit=40):
         for added, announced, path, title, summary, cat in rows)
     (ROOT / 'feed.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n'
-        f'<id>{BASE}feed.xml</id><title>{SITE}: latest additions</title>'
+        f'<id>{BASE}feed.xml</id><title>{SITE}: additions and source checks</title>'
         f'<link rel="self" href="{BASE}feed.xml"/><link href="{BASE}"/>'
         f'<updated>{rows[0][0]}T00:00:00Z</updated><author><name>{SITE}</name></author>\n{entries}</feed>\n')
 
@@ -475,14 +493,17 @@ def write_feed(items, vulns, limit=40):
 CSV_DISCOVERY = ['id', 'title', 'summary', 'field', 'ai_technology', 'organization', 'source_url', 'source_type', 'publication_date',
                  'added_date', 'verification_status', 'paper_url', 'impact', 'validation', 'novelty', 'catalog_entry_url']
 CSV_VULN = ['id', 'title', 'product', 'ai_system', 'organization', 'disclosure_date', 'classification', 'cves', 'source_url',
-            'ai_source_url', 'advisory_url', 'remediation', 'checked_date', 'summary', 'ai_role']
+            'ai_source_url', 'advisory_url', 'remediation', 'checked_date', 'summary', 'ai_role',
+            'ai_attribution_date', 'classification_note', 'remediation_note']
 
 
 def write_csv(path, columns, rows):
     with (ROOT / path).open('w', newline='', encoding='utf-8') as f:
         w = csv.writer(f, lineterminator='\r\n')
         w.writerow(columns)
-        w.writerows([[row[c] for c in columns] for row in rows])
+        for row in rows:
+            cells = [str(row[c]) if row[c] is not None else '' for c in columns]
+            w.writerow(["'" + cell if cell.startswith(('=', '+', '-', '@', '\t', '\r')) else cell for cell in cells])
 
 
 def write_exports(items, vulns):
@@ -492,20 +513,24 @@ def write_exports(items, vulns):
     write_csv('data/vulnerabilities.csv', CSV_VULN, [dict(v, cves=';'.join(v['cves'])) for v in vulns])
 
 
-def write_api(items, vulns):
+def write_api(items, vulns, models=None, archived=()):
     """Read-only static API: api/v1/index.json plus one JSON file per record. The full lists stay in data/*.json."""
     for kind, rows in (('discoveries', items), ('vulnerabilities', vulns)):
         out = ROOT / 'api/v1' / kind
         out.mkdir(parents=True, exist_ok=True)
-        for old in out.glob('*.json'):
-            old.unlink()
         for r in rows:
             (out / f'{r["id"]}.json').write_text(json.dumps(r, indent=2, ensure_ascii=False) + '\n')
+        current = {f'{r["id"]}.json' for r in rows}
+        for old in out.glob('*.json'):
+            if old.name not in current:
+                old.unlink()
     api = BASE + 'api/v1/'
     index = {
         'name': SITE, 'api_version': 'v1', 'license': 'CC BY 4.0 (catalog content); Epoch AI model data keeps its own CC BY 4.0 attribution',
         'license_url': 'https://creativecommons.org/licenses/by/4.0/', 'cite': 'https://doi.org/10.5281/zenodo.24217686',
-        'data_version_date': max(d['added_date'] for d in items),
+        'data_version_date': max(d['added_date'] for d in items),  # Legacy alias for latest_discovery_addition_date.
+        'latest_discovery_addition_date': max(d['added_date'] for d in items),
+        'catalog_sha256': hashlib.sha256(json.dumps([items, vulns, models, list(archived)], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode('utf-8')).hexdigest(),
         'counts': {'discoveries': len(items), 'vulnerabilities': len(vulns)},
         'endpoints': {
             'discoveries_list': BASE + 'data/discoveries.json', 'discovery': api + 'discoveries/{id}.json',
@@ -517,6 +542,32 @@ def write_api(items, vulns):
     (ROOT / 'api/v1/index.json').write_text(json.dumps(index, indent=2) + '\n')
 
 
+
+def validate_inputs(items, archived, models, vulns):
+    if not items:
+        raise ValueError('At least one active discovery is required')
+    for rows in (items + archived, vulns):
+        ids = [r['id'] for r in rows]
+        if len(ids) != len(set(ids)) or any(not re.fullmatch(r'[a-z0-9-]+', value) for value in ids):
+            raise ValueError('Record IDs must be unique safe slugs')
+    for d in items + archived:
+        for key in CSV_DISCOVERY[:-4]:
+            d[key]
+        for key in ('impact', 'validation', 'novelty'):
+            d['relevance'][key]
+        for key in ('publication_date', 'added_date'):
+            datetime.date.fromisoformat(d[key])
+    for v in vulns:
+        for key in CSV_VULN:
+            v[key]
+        for key in ('disclosure_date', 'ai_attribution_date', 'checked_date'):
+            if key == 'ai_attribution_date' and v[key] is None:
+                continue
+            datetime.date.fromisoformat(v[key])
+    models['families']
+    models['models']
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--force', action='store_true')
@@ -526,18 +577,18 @@ def main():
     archive_path = ROOT / 'data/archived-discoveries.json'
     archived = json.loads(archive_path.read_text()) if archive_path.exists() else []
     models = json.loads((ROOT / 'data/models.json').read_text())
+    vulns = json.loads((ROOT / 'data/vulnerabilities.json').read_text())
+    validate_inputs(items, archived, models, vulns)
     if not args.no_images:
-        render_default(args.force)
         render_cards(items + archived, args.force)
     write_discovery_pages(items, models, not args.no_images)
     write_discovery_pages(archived, models, not args.no_images, archived=True)
     write_profile_pages(items, models, archived)
     write_llms_txt(items, models)
     write_sitemap(items, models, archived)
-    vulns = json.loads((ROOT / 'data/vulnerabilities.json').read_text())
     write_feed(items, vulns)
     write_exports(items, vulns)
-    write_api(items, vulns)
+    write_api(items, vulns, models, archived)
     print(f'{len(items)} share pages, profile pages, sitemap.xml, feed.xml and robots.txt written')
 
 

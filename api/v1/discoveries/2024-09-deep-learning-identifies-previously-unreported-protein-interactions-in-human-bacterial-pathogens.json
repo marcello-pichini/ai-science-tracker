@@ -1,0 +1,28 @@
+{
+  "id": "2024-09-deep-learning-identifies-previously-unreported-protein-interactions-in-human-bacterial-pathogens",
+  "title": "Deep learning identifies previously unreported protein interactions in human bacterial pathogens",
+  "summary": "A RoseTTAFold2-Lite pipeline combined residue coevolution, deep-learning complex prediction and AlphaFold modelling to screen protein pairs across 19 human bacterial pathogens. In a validation set selected using the deep-learning pipeline, co-immunoprecipitation detected four of six predicted interactions. Three pairs lacked prior direct interaction evidence: E. coli UbiE–YcaR, P. aeruginosa PA4105–PA4106, and P. aeruginosa WbpG–HisF2. The PA4105–PA4106 structural similarity to proteins in 3-thiaglutamate biosynthesis and the WbpG–HisF2 result provide functional hypotheses, not established native-pathogen mechanisms.",
+  "field": "biology",
+  "ai_technology": "RoseTTAFold2-Lite integrated with direct coupling analysis and AlphaFold complex modelling",
+  "organization": "University of Washington Institute for Protein Design; University of Texas Southwestern Medical Center; Broad Institute; Massachusetts General Hospital; University of Connecticut; Seoul National University; collaborating institutions",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11445079/",
+  "source_type": "paper",
+  "publication_date": "2024-09-18",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41564-024-01791-x",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In a validation set selected using the deep-learning pipeline, co-immunoprecipitation detected four of six predicted interactions.",
+    "unknown": "The positive interaction evidence comes from heterologous co-immunoprecipitation/pull-down assays, with two independent experiments per positive pair, rather than native-pathogen systems. The validation subset was small (four positives among six AI-selected candidates); most of the thousands of predicted interactions remain untested, and false positives and false negatives are expected. Proposed roles for PA4105–PA4106 and UbiE–YcaR remain hypotheses; this paper does not establish their physiological function or a therapeutic target.",
+    "ai_role": "RoseTTAFold2-Lite used residue–residue coevolution and predicted complex structures to rank candidate protein pairs in a proteome-wide screen. The authors selected six pairs from the final deep-learning pipeline for co-immunoprecipitation tests; four yielded positive interaction signals. Three were described as lacking previously reported direct interaction evidence, including UbiE–YcaR, PA4105–PA4106 and WbpG–HisF2. The models enabled the experimental target selection; they did not themselves establish physical interactions.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11445079/"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2026-04-llm-guided-alloy-design-yields-self-limiting-oxidation-behavior-at-900-c",
+  "title": "LLM-guided alloy design yields self-limiting oxidation behavior at 900 °C",
+  "summary": "A knowledge-enhanced AI workflow led to Co22Cr24Fe20Ni25Mo5Mn4, a non-equiatomic high-entropy alloy with experimentally observed single-phase FCC structure and self-limiting oxidation kinetics at 900 °C. After about 50 hours, the study reports a steady-state oxidation-rate constant of 1.41 × 10⁻⁸ mgⁿ cm⁻²ⁿ h⁻¹ (reaction order n = 45.35) and a Cr₂O₃/(Mn,Fe)Cr₂O₄ bilayer oxide scale. The proposed barrier–buffer explanation is the authors’ mechanistic interpretation.",
+  "field": "materials",
+  "ai_technology": "Physics-guided ML phase classifiers and LLM-assisted alloy-design workflow",
+  "organization": "Shanghai University",
+  "source_url": "https://www.nature.com/articles/s41524-026-02071-4",
+  "source_type": "paper",
+  "publication_date": "2026-04-13",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41524-026-02071-4",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A knowledge-enhanced AI workflow led to Co22Cr24Fe20Ni25Mo5Mn4, a non-equiatomic high-entropy alloy with experimentally observed single-phase FCC structure and self-limiting oxidation kinetics at 900 °C.",
+    "unknown": "The specific oxidation result is experimentally measured for one designed alloy under the paper’s 900 °C test conditions and time interval; it is not evidence of service lifetime or performance in a component. The bilayer-oxide barrier–buffer mechanism is the authors’ interpretation from characterization and kinetic behavior. The two additional non-equiatomic FCC/BCC alloys in the study validate phase predictions and remain bundled with the principal material result. The LLM reasoning-agent model is not identified clearly in the paper; DeepSeek-R1-671B is explicitly named for processing-text parsing.",
+    "ai_role": "The authors used random-forest and support-vector classifiers trained on physics-based descriptors to prioritize single-phase alloy compositions. DeepSeek-R1-671B parsed literature processing descriptions into structured features. Separately, their LLM-agent workflow synthesized oxidation literature and mechanism knowledge to propose composition changes, including increasing Cr and adding about 4 at.% Mn; this guided selection of Co22Cr24Fe20Ni25Mo5Mn4 for synthesis and oxidation experiments. The paper does not clearly identify the model used for the reasoning-agent stage, so that identity is left unspecified.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41524-026-02071-4"
+    ]
+  }
+}

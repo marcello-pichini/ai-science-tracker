@@ -1,0 +1,28 @@
+{
+  "id": "2026-01-ai-generated-virtual-spatial-proteomics-reveals-lung-cancer-tumorimmune-niches-associated-with-immunotherapy-response",
+  "title": "AI-generated virtual spatial proteomics reveals lung-cancer tumor–immune niches associated with immunotherapy response",
+  "summary": "HEX, a pathology-image AI model, predicts spatial expression of 40 protein biomarkers from routine H&E slides. In retrospective NSCLC cohorts, combining HEX-derived virtual spatial proteomics with histology improved prognosis prediction and, in a separate 148-patient immune-checkpoint-inhibitor cohort, improved response prediction over H&E-only and virtual-proteomics-only models. The authors interpreted virtual maps as showing co-localized T-helper and cytotoxic T-cell niches among responders and immunosuppressive macrophage/neutrophil aggregates among non-responders.",
+  "field": "medicine",
+  "ai_technology": "HEX (H&E to protein expression), using a pathology foundation-model backbone; MICA (multimodal integration via co-attention)",
+  "organization": "Stanford University and collaborating institutions",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12823406/",
+  "source_type": "paper",
+  "publication_date": "2026-01-05",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41591-025-04060-4",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In retrospective NSCLC cohorts, combining HEX-derived virtual spatial proteomics with histology improved prognosis prediction and, in a separate 148-patient immune-checkpoint-inhibitor cohort, improved response prediction over H&E-only and virtual-proteomics-only models.",
+    "unknown": "Retrospective observational cohorts; predictive associations do not establish causal mechanisms or improved patient outcomes from model-guided treatment. The 148-patient immunotherapy cohort is separate from the prognosis cohorts. The paper itself says extensive clinical validation remains necessary; do not describe the finding as a clinically validated diagnostic or prospective treatment-selection tool.",
+    "ai_role": "HEX predicts expression of 40 proteins and produces spatially resolved virtual proteomics from H&E images; MICA fuses the original image with AI-derived maps for outcome prediction. Researchers used predicted marker distributions to interpret therapy-associated tumor–immune spatial patterns. These are retrospective model analyses with cohort-based clinical associations, not prospective treatment evidence.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12823406/"
+    ]
+  }
+}

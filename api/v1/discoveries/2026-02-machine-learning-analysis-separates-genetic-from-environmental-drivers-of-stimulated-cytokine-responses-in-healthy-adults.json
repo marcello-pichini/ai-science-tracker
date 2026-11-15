@@ -1,0 +1,28 @@
+{
+  "id": "2026-02-machine-learning-analysis-separates-genetic-from-environmental-drivers-of-stimulated-cytokine-responses-in-healthy-adults",
+  "title": "Machine-learning analysis separates genetic from environmental drivers of stimulated cytokine responses in healthy adults",
+  "summary": "In 406 healthy GEOCODE cohort participants, whole-blood cytokine responses to Toll-like-receptor (TLR) and T-cell-receptor (TCR) stimulation varied across people, including high- and low-IL-6-response profiles associated with monocyte counts, sex and sampling season. Feature-importance analysis of machine-learning models found TCR-induced cytokine predictions were mainly driven by genetic features, whereas TLR-induced predictions were driven more by environmental and biological features. Combining genetic with biological and environmental data improved prediction by about 0.2 on average, and the reported findings were evaluated in the independent Milieu Intérieur cohort.",
+  "field": "biology",
+  "ai_technology": "Machine-learning models including random forest, gradient-boosted trees, artificial neural networks and elastic net; random forest feature-importance analysis",
+  "organization": "Université libre de Bruxelles; Hôpital Erasme; Milieu Intérieur cohort collaborators",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/41735307/",
+  "source_type": "paper",
+  "publication_date": "2026-02-24",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41540-026-00671-w",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In 406 healthy GEOCODE cohort participants, whole-blood cytokine responses to Toll-like-receptor (TLR) and T-cell-receptor (TCR) stimulation varied across people, including high- and low-IL-6-response profiles associated with monocyte counts, sex and sampling season.",
+    "unknown": "The discovery cohort was a selected healthy-adult sample (406 participants), and the correlations for TLR-induced response prediction were modest (average 0.27; TCR-induced 0.53). Genetic-only models may overestimate predictive accuracy, as the authors report. Feature importance identifies predictive contribution, not causal biological effects; results do not establish disease-specific immune mechanisms or treatment response.",
+    "ai_role": "Models predicted measured cytokine levels following TLR or TCR stimulation from genetic, biological and environmental participant features. Random-forest permutation importance identified which input categories contributed to predictions; the study also compared predictions across cross-validation and a separate Milieu Intérieur cohort. Feature importance is associational and does not establish that a feature causally regulates cytokine production.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/41735307/"
+    ]
+  }
+}

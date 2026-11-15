@@ -1,0 +1,20 @@
+{
+  "id": "ghsl-2026-082",
+  "title": "Taskflow Agent finds Signal Android admin-delete cross-thread authorization flaw",
+  "product": "Signal for Android",
+  "ai_system": "GitHub Security Lab Taskflow Agent",
+  "organization": "GitHub Security Lab",
+  "summary": "Signal Android’s Admin Delete handler validated the sender’s admin status in the claimed group but did not verify that the target message belonged to that same group, permitting deletion across conversations on a victim device.",
+  "ai_role": "GHSL directly credits discovery to Taskflow Agent and verification by Jaroslav Lobačevski. Reported 2026-03-13; fixed in source on 2026-03-14 and released as 8.3.2 on GitHub and 8.3.4 on Google Play. Signal declined to issue a CVE.",
+  "disclosure_date": "2026-04-02",
+  "ai_attribution_date": "2026-04-02",
+  "classification": "disclosure",
+  "classification_note": "The cited sources document the finding and remediation; they do not claim exploitation in the wild.",
+  "cves": [],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2026-082_Android_SignalApp/",
+  "ai_source_url": "https://securitylab.github.com/ai-agents/",
+  "remediation": "fix documented",
+  "remediation_note": "Signal disabled the server-side feature flag at disclosure time; the code fix shipped in 8.3.2 and later Google Play version 8.3.4. No CVE was assigned.",
+  "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-082_Android_SignalApp/",
+  "checked_date": "2026-11-14"
+}

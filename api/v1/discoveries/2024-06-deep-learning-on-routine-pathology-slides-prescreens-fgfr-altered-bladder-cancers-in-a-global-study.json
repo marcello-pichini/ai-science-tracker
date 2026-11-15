@@ -1,0 +1,28 @@
+{
+  "id": "2024-06-deep-learning-on-routine-pathology-slides-prescreens-fgfr-altered-bladder-cancers-in-a-global-study",
+  "title": "Deep learning on routine pathology slides prescreens FGFR-altered bladder cancers in a global study",
+  "summary": "A deep-learning device analyzed routine H&E whole-slide images to estimate whether advanced urothelial tumors carried selected FGFR2/FGFR3 alterations used for erdafitinib eligibility. In a separate 350-slide retrospective validation set, the device achieved 88.7% sensitivity and 31.8% specificity; it was also prospectively integrated into a non-interventional study spanning 89 sites in nine countries. The paper projected a 28.7% reduction in molecular tests assuming 15% biomarker prevalence; that estimate was simulated, not a measured population-level reduction.",
+  "field": "medicine",
+  "ai_technology": "FGFR Device, a multi-instance-learning attention model with a convolutional neural-network backbone",
+  "organization": "Janssen Research & Development, LLC (Johnson & Johnson)",
+  "source_url": "https://www.nature.com/articles/s41467-024-49153-9.pdf",
+  "source_type": "paper",
+  "publication_date": "2024-06-01",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-024-49153-9",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In a separate 350-slide retrospective validation set, the device achieved 88.7% sensitivity and 31.8% specificity; it was also prospectively integrated into a non-interventional study spanning 89 sites in nine countries.",
+    "unknown": "The 350-slide retrospective validation set was deliberately enriched (150 FGFR-positive and 200 negative; 43% prevalence), and the device fell slightly short of the prespecified 90% sensitivity target. Prospective real-time workflow validation covered only 17 samples in one month (15 predictions; two quality-control failures); production deployment reported 24 samples, with only 20 receiving molecular testing. The 28.7% test reduction is a simulation assuming 15% prevalence, not an observed clinical outcome. This is prescreening support, not a stand-alone diagnosis or evidence of patient benefit.",
+    "ai_role": "Trained on more than 3,000 urothelial-cancer slides with molecular test labels, the deep-learning model inferred selected FGFR alteration status from H&E images and returned a likelihood for prescreening before confirmatory molecular testing. The device was prospectively integrated into a non-interventional study workflow; molecular tests remained the reference standard.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-024-49153-9.pdf"
+    ]
+  }
+}

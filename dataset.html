@@ -48,22 +48,27 @@
       <h2>Downloads</h2>
       <ul>
         <li>Discoveries: <a href="data/discoveries.json">discoveries.json</a> (full records, including the optional evidence pilot) and <a href="data/discoveries.csv">discoveries.csv</a> (flat columns, no evidence fields).</li>
-        <li>AI-found vulnerabilities: <a href="data/vulnerabilities.json">vulnerabilities.json</a> and <a href="data/vulnerabilities.csv">vulnerabilities.csv</a> (CVE identifiers separated by semicolons). These cases are separate from the scientific count.</li>
+        <li>AI-found vulnerabilities: <a href="data/vulnerabilities.json">vulnerabilities.json</a> and <a href="data/vulnerabilities.csv">vulnerabilities.csv</a> (CVE identifiers separated by semicolons, with classification and remediation caveats). An unknown <code>ai_attribution_date</code> is <code>null</code> in JSON and an empty cell in CSV; consumers must handle this separately from a dated account. These cases are separate from the scientific count.</li>
         <li>Models: <a href="data/models.json">models.json</a>, generated from Epoch AI data, which keeps its own CC BY 4.0 attribution.</li>
         <li>Every file is also available from the repository, whose releases are archived on Zenodo.</li>
       </ul>
 
+      <p>CSV cells beginning with a spreadsheet formula character are prefixed with an apostrophe; JSON retains the original values.</p>
+
       <h2>Static API</h2>
       <p>There is no server: the API is a set of static JSON files, regenerated with the site, so responses are cached by GitHub Pages for about ten minutes and allow cross-origin reads. Filtering is done by the client.</p>
       <ul>
-        <li><a href="api/v1/index.json">api/v1/index.json</a>: counts, data version date, license, citation and the address of every endpoint below.</li>
+        <li><a href="api/v1/index.json">api/v1/index.json</a>: counts, a SHA-256 fingerprint of the active discoveries, vulnerabilities, models and archived discoveries, the latest discovery addition date, license, citation and endpoint addresses. The legacy <code>data_version_date</code> is an alias for that addition date, not a last-modified date.</li>
         <li><code>api/v1/discoveries/ID.json</code> and <code>api/v1/vulnerabilities/ID.json</code>: one record per file. Example: <a href="api/v1/discoveries/2020-02-halicin.json">api/v1/discoveries/2020-02-halicin.json</a>.</li>
-        <li>The complete lists are the JSON files under Downloads. IDs are permanent, including historical slugs.</li>
+        <li>The complete active lists are the JSON files under Downloads. IDs remain stable, including historical slugs, but archived discoveries are removed from the active API; their historical share pages remain available.</li>
         <li>The version in the path changes only if a field is removed or renamed.</li>
       </ul>
 
+      <p>The fingerprint hashes UTF-8 JSON containing those four datasets in that order, with sorted object keys, compact separators and original array order. It identifies content, not a review date.</p>
+
       <h2>Schemas</h2>
       <p>Records follow JSON Schema (draft 2020-12): <a href="schema/discoveries.schema.json">discoveries.schema.json</a> and <a href="schema/vulnerabilities.schema.json">vulnerabilities.schema.json</a>. Field meanings are described in the repository documents <code>docs/discovery-schema.md</code> and <code>docs/vulnerability-schema.md</code>. An empty <code>paper_url</code> means no paper link is established, not that none exists.</p>
+      <p>Counts describe catalog entries, which can overlap or bundle related results, rather than independent findings. See <a href="methodology.html#evidence-coverage">evidence annotation coverage and primary source composition by year</a> before interpreting missing annotations or comparing subsets.</p>
 
       <h2>Examples</h2>
       <ul>
@@ -76,7 +81,7 @@
       <p>Catalog content is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>: credit “AI Science Tracker” with a link. Cite the archived catalog as <a href="https://doi.org/10.5281/zenodo.24217686">doi:10.5281/zenodo.24217686</a>; this cites the catalog, not the underlying scientific papers, which you should cite from each record’s source. Figures are reported by sources and have not been independently verified, and coverage is manual and incomplete. See the <a href="methodology.html">methodology</a> for what is included.</p>
 
       <h2>Changes</h2>
-      <p>The <a href="https://github.com/marcello-pichini/ai-science-tracker/blob/main/CHANGELOG.md">changelog</a> lists data and format changes, and the <a href="feed.xml">Atom feed</a> lists the newest records.</p>
+      <p>The <a href="https://github.com/marcello-pichini/ai-science-tracker/blob/main/CHANGELOG.md">changelog</a> lists data and format changes, and the <a href="feed.xml">Atom feed</a> lists discovery additions by addition date and vulnerability cases by source-check date; it is not a complete change history.</p>
     </article>
   </div>
 </main>

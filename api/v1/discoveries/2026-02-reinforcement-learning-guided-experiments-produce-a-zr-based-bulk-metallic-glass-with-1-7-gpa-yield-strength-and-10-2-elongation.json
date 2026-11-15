@@ -1,0 +1,28 @@
+{
+  "id": "2026-02-reinforcement-learning-guided-experiments-produce-a-zr-based-bulk-metallic-glass-with-1-7-gpa-yield-strength-and-10-2-elongation",
+  "title": "Reinforcement-learning-guided experiments produce a Zr-based bulk metallic glass with 1.7 GPa yield strength and 10.2% elongation",
+  "summary": "A knowledge-augmented reinforcement-learning search over composition space, guided by learned property models and then validated by synthesis, identified a Zr-based bulk metallic glass, Zr63Cu15Al10Ni10Fe2. Single-step suction-cast specimens reached 1.7 GPa yield strength and 10.2% compressive plastic strain at room temperature. Across tested Fe-alloyed compositions, measured strength trends tracked model predictions; tungsten substitutions did not show the same ductility response.",
+  "field": "materials",
+  "ai_technology": "AIMATDESIGN knowledge-augmented reinforcement-learning framework, using machine-learning property predictors and large-language-model-assisted model refinement and domain-knowledge rewards",
+  "organization": "Nanjing University of Science and Technology; Shanghai University; University of Science and Technology of China; University of Chinese Academy of Sciences",
+  "source_url": "https://www.nature.com/articles/s41524-025-01894-x",
+  "source_type": "paper",
+  "publication_date": "2026-02-05",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41524-025-01894-x",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A knowledge-augmented reinforcement-learning search over composition space, guided by learned property models and then validated by synthesis, identified a Zr-based bulk metallic glass, Zr63Cu15Al10Ni10Fe2.",
+    "unknown": "The reported measurements are room-temperature compression tests on single-step suction-cast samples; the paper notes that plastic strain was systematically lower than predicted for most tested specimens, partly because surface defects and residual stresses were not represented in the model. The 10.2% value is for the specific Fe2 composition and test protocol, not a general alloy-family property. This is distinct from a separate study of an ML-designed bulk metallic glass optimized for hardness (DOI 10.1038/s41467-026-73008-0): the present result concerns Zr63Cu15Al10Ni10Fe2 and its strength/ductility balance.",
+    "ai_role": "An RL agent explored high-dimensional alloy compositions using ML classification/regression predictions as rewards and feasibility guidance. LLM-assisted feedback corrected unreliable model predictions and expert materials rules informed late-stage rewards. The authors used this workflow to choose Zr-based bulk-glass compositions for synthesis and mechanical testing; the experimentally tested Zr63Cu15Al10Ni10Fe2 composition achieved the reported strength and ductility result. This AI-guided composition search is the discovery contribution; the LLM was one component of a larger RL/ML workflow.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41524-025-01894-x"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2025-05-machine-learning-proteomics-identifies-a-replicated-plasma-signature-associated-with-alzheimers-disease",
+  "title": "Machine-learning proteomics identifies a replicated plasma signature associated with Alzheimer’s disease",
+  "summary": "A three-stage analysis of plasma proteomics from 1,270 people with clinical Alzheimer’s disease (AD) and 2,096 cognitively normal controls identified 416 proteins associated with clinical AD, including 294 that the paper classified as not previously associated with AD in large-scale plasma or CSF proteomic studies. A LASSO-selected seven-protein model predicted clinical AD and biomarker-defined AD status, with validation in external cohorts and orthogonal assays; the signature also stratified later progression to symptomatic AD among initially cognitively normal participants.",
+  "field": "medicine",
+  "ai_technology": "LASSO feature selection with logistic regression, using five-fold cross-validation and age/sex covariates",
+  "organization": "Washington University School of Medicine and Knight Alzheimer Disease Research Center; Stanford Alzheimer’s Disease Research Center; Rush Alzheimer’s Disease Center; Global Neurodegeneration Proteomics Consortium; collaborating Alzheimer research centers",
+  "source_url": "https://pure.amsterdamumc.nl/ws/portalfiles/portal/140778915/Large-scale-plasma-proteomic-profiling-unveils-diagnostic-biomarkers-and-pathways-for-alzheimers-disease.pdf",
+  "source_type": "paper",
+  "publication_date": "2025-05-20",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s43587-025-00872-8",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A LASSO-selected seven-protein model predicted clinical AD and biomarker-defined AD status, with validation in external cohorts and orthogonal assays; the signature also stratified later progression to symptomatic AD among initially cognitively normal participants.",
+    "unknown": "The cohort analysis is observational and does not establish that the associated proteins cause AD. The model’s clinical-status AUC was 0.72 in replication; performance was comparable to p-tau217 in the study’s comparison, but the reported AUC for frontotemporal dementia was also 0.73, limiting disease specificity. Orthogonal platform validation covered only subsets of the seven proteins (four proteins on Olink and two on Alamar), and the authors state that further work is needed before clinical use. The reported “new” designation is relative to prior large-scale plasma/CSF proteomic studies, not proof that each protein is biologically novel.",
+    "ai_role": "The team used LASSO to select a compact protein panel from the proteins associated with AD in discovery and replication analyses, then retrained logistic regression to predict clinical AD status. This model-driven panel was evaluated against amyloid and tau biomarkers, external cohorts and orthogonal protein platforms; the analysis also tested associations with progression to symptomatic AD and memory decline.",
+    "evidence_urls": [
+      "https://pure.amsterdamumc.nl/ws/portalfiles/portal/140778915/Large-scale-plasma-proteomic-profiling-unveils-diagnostic-biomarkers-and-pathways-for-alzheimers-disease.pdf"
+    ]
+  }
+}

@@ -23,7 +23,7 @@ class RedirectParser(HTMLParser):
 
 
 def is_compatibility_redirect(page, seen, root):
-    if page.parent != root / 'profiles' or not page.name.startswith('org-'):
+    if page.parent != root / 'profiles' or not page.name.startswith(('org-', 'family-')):
         return False
     parser = RedirectParser()
     parser.feed(page.read_text())
@@ -34,6 +34,8 @@ def is_compatibility_redirect(page, seen, root):
         return False
     target = (page.parent / match[1]).resolve()
     if target == page or target not in seen or root not in target.parents:
+        return False
+    if page.name.startswith('family-') and target.parent != root / 'share' and target != root / 'profiles/index.html':
         return False
     return parser.canonical[0] == 'https://marcello-pichini.github.io/ai-science-tracker/' + target.relative_to(root).as_posix()
 
@@ -71,6 +73,15 @@ class CrawlableLinkTests(unittest.TestCase):
             self.assertFalse(is_compatibility_redirect(alias, set(), root))
             alias.write_text(alias.read_text().replace('url=org-new.html', 'url=org-old.html'))
             self.assertFalse(is_compatibility_redirect(alias, {target}, root))
+            alias = root / 'profiles/family-old.html'
+            target = root / 'share/old.html'
+            target.parent.mkdir()
+            target.write_text('Archived')
+            alias.write_text('<link rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/share/old.html">'
+                             '<meta http-equiv="refresh" content="0; url=../share/old.html">'
+                             '<a href="../share/old.html">Archive</a>')
+            self.assertTrue(is_compatibility_redirect(alias, {target}, root))
+            self.assertFalse(is_compatibility_redirect(alias, set(), root))
 
     def test_data_fetches_use_the_browser_cache(self):
         for page in ROOT.glob('*.html'):

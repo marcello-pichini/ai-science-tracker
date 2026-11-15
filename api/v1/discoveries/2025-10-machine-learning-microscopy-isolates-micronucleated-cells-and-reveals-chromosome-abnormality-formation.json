@@ -1,0 +1,28 @@
+{
+  "id": "2025-10-machine-learning-microscopy-isolates-micronucleated-cells-and-reveals-chromosome-abnormality-formation",
+  "title": "Machine-learning microscopy isolates micronucleated cells and reveals chromosome-abnormality formation",
+  "summary": "The MAGIC platform used an XGBoost image classifier to identify and photolabel micronucleated cells for single-cell genome sequencing. In near-diploid human cell models, the selected cells exposed new chromosome-abnormality formation patterns, including dicentric-associated breakage-fusion-bridge events; measured baseline abnormalities approximately doubled in TP53-deficient cells, and chromosome losses outnumbered gains.",
+  "field": "biology",
+  "ai_technology": "MAGIC adaptive imaging platform with an XGBoost micronuclei classifier",
+  "organization": "European Molecular Biology Laboratory and German Cancer Research Center (DKFZ), with collaborators",
+  "source_url": "https://www.nature.com/articles/s41586-025-09632-5",
+  "source_type": "paper",
+  "publication_date": "2025-10-29",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41586-025-09632-5",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In near-diploid human cell models, the selected cells exposed new chromosome-abnormality formation patterns, including dicentric-associated breakage-fusion-bridge events; measured baseline abnormalities approximately doubled in TP53-deficient cells, and chromosome losses outnumbered gains.",
+    "unknown": "Findings come from near-diploid non-transformed cell lines and sequencing limited mainly to chromosome abnormalities larger than 200 kb in dividing cells. Micronucleated RPE-1 cells did not show significant CA enrichment, unlike MCF10A; spontaneous cell-line results do not establish cancer outcomes in patients.",
+    "ai_role": "Machine learning examined live confocal images, identified micronucleated cells and drove targeted photolabelling so selected cells could be sorted for downstream single-cell sequencing. The model enabled targeted sampling; it did not itself infer chromosome-abnormality mechanisms from sequence data.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41586-025-09632-5"
+    ]
+  }
+}

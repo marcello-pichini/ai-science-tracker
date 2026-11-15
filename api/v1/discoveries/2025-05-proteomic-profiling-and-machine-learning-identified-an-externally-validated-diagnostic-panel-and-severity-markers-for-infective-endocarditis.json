@@ -1,0 +1,28 @@
+{
+  "id": "2025-05-proteomic-profiling-and-machine-learning-identified-an-externally-validated-diagnostic-panel-and-severity-markers-for-infective-endocarditis",
+  "title": "Proteomic profiling and machine learning identified an externally validated diagnostic panel and severity markers for infective endocarditis",
+  "summary": "The study profiled plasma and excised vegetation samples from 238 infective-endocarditis patients and 100 controls, then used an ensemble machine-learning pipeline to select a 10-protein plasma diagnostic panel. The paper reports AUCs of 0.97 in the held-out discovery test set and 0.98 and 0.94 in two external plasma cohorts. Integrating proteomic and clinical features also produced a prognostic model for severe heart-failure status (abstract AUC 0.87). LRG1 and NDUFB4 were associated with infection severity in the cohort analyses.",
+  "field": "medicine",
+  "ai_technology": "Ensemble machine-learning diagnostic and prognostic models; the diagnostic workflow compared six algorithms and used recursive feature elimination with cross-validation to select a 10-protein panel",
+  "organization": "Fudan University; Guangdong Provincial People's Hospital/Southern Medical University; Fuwai Hospital/Chinese Academy of Medical Sciences; collaborating hospitals in China",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/40447567/",
+  "source_type": "paper",
+  "publication_date": "2025-05-30",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-025-60184-8",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The paper reports AUCs of 0.97 in the held-out discovery test set and 0.98 and 0.94 in two external plasma cohorts.",
+    "unknown": "The study is an observational proteomic cohort analysis; it does not demonstrate that use of the panel improves patient outcomes or can replace current diagnostic criteria. The development comparison included 238 IE patients and 100 controls, so case-control separation may not reflect performance in an unselected real-world diagnostic population. External evaluation used two additional plasma cohorts (combined n=328); the prognostic endpoint and biomarkers are associations, not causal mechanisms. The paper's proposed NET-related therapeutic implications are hypothesis-generating and are not counted as demonstrated treatment benefit.",
+    "ai_role": "Machine-learning feature-importance analysis and recursive feature elimination selected a 10-protein plasma combination for distinguishing infective endocarditis from non-endocarditis samples. The models were evaluated in a held-out discovery cohort and two external plasma cohorts. A separate model combined proteomic and clinical features to classify severe heart-failure status.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/40447567/"
+    ]
+  }
+}

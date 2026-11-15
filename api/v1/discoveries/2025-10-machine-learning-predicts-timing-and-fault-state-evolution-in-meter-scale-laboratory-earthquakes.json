@@ -1,0 +1,28 @@
+{
+  "id": "2025-10-machine-learning-predicts-timing-and-fault-state-evolution-in-meter-scale-laboratory-earthquakes",
+  "title": "Machine learning predicts timing and fault-state evolution in meter-scale laboratory earthquakes",
+  "summary": "A Random Forest using a network representation of acoustic-emission event catalogs predicted the timing of meter-scale laboratory mainshocks from tens of seconds to milliseconds ahead (test-set log R²=0.84). Feature analysis found systematic changes in event intervals and seismic moments as failure approached; comparison with dynamic simulations led the authors to infer that acoustic emissions indirectly encode stress evolution on creeping fault patches. This is a laboratory-scale result, not a validated method for forecasting natural earthquakes.",
+  "field": "physics",
+  "ai_technology": "Random Forest machine-learning model; deep-learning comparison model",
+  "organization": "Kyoto University; Disaster Prevention Research Institute, Kyoto University",
+  "source_url": "https://www.nature.com/articles/s41467-025-64542-4",
+  "source_type": "paper",
+  "publication_date": "2025-10-30",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-025-64542-4",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A Random Forest using a network representation of acoustic-emission event catalogs predicted the timing of meter-scale laboratory mainshocks from tens of seconds to milliseconds ahead (test-set log R²=0.84).",
+    "unknown": "This is one meter-scale rock-friction experiment (experiment LB12-011) and a corresponding numerical model; forecast skill varies with foreshock density and cannot be generalized to natural earthquakes. The article was corrected on 2026-02-02 to replace an uncorrected proof PDF; the correction says it did not describe a scientific-result change.",
+    "ai_role": "The Random Forest model made the time-to-failure predictions from the event catalog; the authors analyzed predictive features and compared the results to dynamic simulations to infer that catalog signals encode evolving fault state. The machine-learning analysis is the core result, not merely automated event detection.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-025-64542-4"
+    ]
+  }
+}

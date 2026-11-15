@@ -1,0 +1,28 @@
+{
+  "id": "2025-11-evo-genomic-language-model-designs-functional-toxin-antitoxin-and-anti-crispr-systems",
+  "title": "Evo genomic language model designs functional toxin-antitoxin and anti-CRISPR systems",
+  "summary": "Evo used genomic context to generate functional bacterial defence-system components. The paper reports an AI-generated toxin and low-sequence-similarity antitoxins that neutralized it in growth assays, including antitoxins that also acted against multiple natural toxins; it also reports five generated anti-CRISPR proteins that protected bacteria against Cas9 activity in cell and phage assays. Two generated anti-CRISPR proteins lacked significant sequence similarity to known proteins. These experiments demonstrate function-guided genomic design beyond simple copying of natural sequences.",
+  "field": "biology",
+  "ai_technology": "Evo 1.5, a long-context generative genomic language model trained on prokaryotic DNA sequences",
+  "organization": "Arc Institute; Stanford University",
+  "source_url": "https://www.nature.com/articles/s41586-025-09749-7.pdf",
+  "source_type": "paper",
+  "publication_date": "2025-11-19",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41586-025-09749-7",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The paper reports an AI-generated toxin and low-sequence-similarity antitoxins that neutralized it in growth assays, including antitoxins that also acted against multiple natural toxins; it also reports five generated anti-CRISPR proteins that protected bacteria against Cas9 activity in cell and phage assays.",
+    "unknown": "This is a set of functional in-vitro bacterial assays, not evidence of therapeutic use, broad host range or ecological performance. One generated toxin had 71% sequence identity to a known RelE toxin; novelty is especially supported by low-similarity antitoxins and anti-CRISPRs, two of which lacked significant sequence identity to known proteins. Earlier Evo phage-genome design and Evo 2 regulatory-sequence work are different papers and different functional results; this row is limited to the toxin-antitoxin/anti-CRISPR findings in the cited Nature article.",
+    "ai_role": "Researchers prompted Evo 1.5 with genomic contexts that associate functionally related bacterial genes and used it to generate candidate toxin-antitoxin and anti-CRISPR sequences. Candidates were filtered computationally, synthesized/expressed and tested in bacterial growth, Cas9-protection and phage assays. AI generated candidates; the biological activity was established experimentally.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41586-025-09749-7.pdf"
+    ]
+  }
+}

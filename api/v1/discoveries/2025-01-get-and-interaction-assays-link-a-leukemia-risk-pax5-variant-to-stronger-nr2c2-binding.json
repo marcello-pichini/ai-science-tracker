@@ -1,0 +1,28 @@
+{
+  "id": "2025-01-get-and-interaction-assays-link-a-leukemia-risk-pax5-variant-to-stronger-nr2c2-binding",
+  "title": "GET and interaction assays link a leukemia-risk PAX5 variant to stronger NR2C2 binding",
+  "summary": "The General Expression Transformer (GET) model inferred cell-type-specific transcription-factor motif interactions from regulatory data and nominated a lymphocyte-specific interaction between PAX5 and nuclear-receptor-family factors. AlphaFold multimer modeling and PAX5 proximity-labeling in a B-ALL cell line supported interaction with NR2C2; the leukemia-associated PAX5 G183S variant showed increased PAX5–NR2C2 proximity signal. The variant-specific expression profile was enriched for predicted NR/3 and shared PAX5/NR/3 target genes, suggesting a possible regulatory mechanism for the germline risk variant.",
+  "field": "biology",
+  "ai_technology": "GET (General Expression Transformer) foundation model for cell-type-specific regulatory grammar; AlphaFold2/AlphaFold Multimer for structural hypothesis assessment",
+  "organization": "Columbia University; Mohamed bin Zayed University of Artificial Intelligence; collaborating institutions",
+  "source_url": "https://www.nature.com/articles/s41586-024-08391-z.pdf",
+  "source_type": "paper",
+  "publication_date": "2025-01-08",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41586-024-08391-z",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The General Expression Transformer (GET) model inferred cell-type-specific transcription-factor motif interactions from regulatory data and nominated a lymphocyte-specific interaction between PAX5 and nuclear-receptor-family factors.",
+    "unknown": "This is a cell-line interaction and expression analysis, not proof that the variant causes leukemia or directly alters disease risk through NR2C2. PAX5–NR2C2 interaction itself was consistent with prior evidence for the paralogue PAX2 and mouse pre-B cells; the specific reported distinction is increased interaction signal with PAX5 G183S and associated transcriptional enrichment. The authors call the disease-driving mechanism possible and identify limitations in cell-state and variant resolution.",
+    "ai_role": "GET learned regulatory syntax across 213 cell types and used motif co-regulation to predict TF–TF interactions, which nominated PAX5/nuclear receptor family interactions in B cells. Structural modeling prioritized candidate binding interfaces. Researchers then used proximity labeling and mass spectrometry in a B-ALL cell line to compare wild-type PAX5 with the G183S leukemia-risk variant.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41586-024-08391-z.pdf"
+    ]
+  }
+}

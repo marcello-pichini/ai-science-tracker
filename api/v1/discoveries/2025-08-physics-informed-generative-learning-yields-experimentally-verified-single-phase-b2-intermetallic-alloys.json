@@ -1,0 +1,28 @@
+{
+  "id": "2025-08-physics-informed-generative-learning-yields-experimentally-verified-single-phase-b2-intermetallic-alloys",
+  "title": "Physics-informed generative learning yields experimentally verified single-phase B2 intermetallic alloys",
+  "summary": "A conditional variational autoencoder and artificial neural network, using physics-informed descriptors of B2 sublattice ordering, generated and ranked compositions in complex alloy systems. Experimental synthesis and XRD/TEM characterization verified previously unreported single-phase B2 alloys, including three Fe–Co–Ni–Ti–Zr compositions, Co19.9Ni30.5Ti38.1Zr11.5, and Cu4.7Co9.2Ni36.4Ti38.7Zr7.4Hf3.5. The study reports that random-sublattice descriptors separated B2 from multiphase alloys more effectively than conventional random-mixing descriptors in these datasets.",
+  "field": "materials",
+  "ai_technology": "Physics-informed conditional variational autoencoder (CVAE) and artificial neural network (ANN)",
+  "organization": "Central South University; City University of Hong Kong; City University of Hong Kong (Dongguan); Shanghai University",
+  "source_url": "https://www.nature.com/articles/s41524-025-01775-3",
+  "source_type": "paper",
+  "publication_date": "2025-08-27",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41524-025-01775-3",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A conditional variational autoencoder and artificial neural network, using physics-informed descriptors of B2 sublattice ordering, generated and ranked compositions in complex alloy systems.",
+    "unknown": "The result is one paper-level experimental discovery program; individual alloys are not counted separately. Experiments validated selected compositions from a small subset of the generated search space, not all model proposals. The authors report several new single-phase B2 compositions and strong structural characterization for named samples; broader property superiority and generalization to arbitrary alloy systems are not inferred here. Synthesis and characterization were performed by researchers.",
+    "ai_role": "The ANN learned B2-versus-non-B2 phase likelihoods from historical alloy-composition data using 18 physics-informed descriptors, while the conditional VAE generated candidate compositions. ANN scores filtered generated compositions for experimental validation. The paper reports successful B2 structure confirmation after synthesis, including XRD/SEM and TEM evidence for long-range B2 ordering in tested alloys.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41524-025-01775-3"
+    ]
+  }
+}

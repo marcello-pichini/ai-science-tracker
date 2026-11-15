@@ -1,0 +1,20 @@
+{
+  "id": "discourse-pr-45852",
+  "title": "Discourse topic moves can bypass destination-category visibility checks",
+  "product": "Discourse topic and message category-move authorization",
+  "ai_system": "Anthropic OSS Scanner (model not identified for this finding)",
+  "organization": "Anthropic and Discourse maintainers",
+  "summary": "The project’s security fix makes topic moves into a destination category require that the user can see that category. The change applies to moderators and members, and also to converting a message to a public topic or changing a queued topic category; existing admin and moderator exceptions for visible categories are preserved. The source does not detail a particular data exposure or attacker scenario, so impact is limited here to the authorization boundary bypass described by the maintainers.",
+  "ai_role": "The official Discourse release changelog identifies the main security change (#45852, backported as #45854) as discovered by Anthropic OSS Scanner under ANT-2026-ADPDEAPP. Anthropic’s scanner documentation says its fast-track reports are generated directly by its strongest models; the specific model/version is not identified.",
+  "disclosure_date": "2026-11-06",
+  "ai_attribution_date": "2026-11-06",
+  "classification": "disclosure",
+  "classification_note": "The project classifies the change as a security fix and explicitly credits Anthropic OSS Scanner. No CVE/GHSA is named in the reviewed primary sources; the original pull request #45852 is the public issue identifier. No exploitation claim is made.",
+  "cves": [],
+  "source_url": "https://releases.discourse.org/changelog/v2026.10.1/",
+  "ai_source_url": "https://releases.discourse.org/changelog/v2026.10.1/",
+  "remediation": "fix documented",
+  "remediation_note": "Category changes now require the user to see the destination category across direct topic moves, message-to-topic conversion, and queued-topic edits, while preserving documented admin/moderator permissions for categories they can see. The change was backported to releases 2026.10 (#45854), 2026.9 (#45855), and 2026.7 (#45856). Deployed patch status is not checked.",
+  "advisory_url": "https://releases.discourse.org/changelog/v2026.10.1/",
+  "checked_date": "2026-11-14"
+}

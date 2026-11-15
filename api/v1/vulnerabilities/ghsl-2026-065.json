@@ -1,0 +1,22 @@
+{
+  "id": "ghsl-2026-065",
+  "title": "Taskflow Agent finds unauthorized group assignment in Umbraco CMS",
+  "product": "Umbraco CMS Management API",
+  "ai_system": "GitHub Security Lab Taskflow Agent",
+  "organization": "GitHub Security Lab and Umbraco",
+  "summary": "The bulk user-group assignment endpoint checked permission to modify target users but omitted authorization for the groups being assigned, allowing an authenticated non-admin API user to add a user to the Administrators group.",
+  "ai_role": "GHSL credits its Taskflow Agent with finding the issue and says Jaroslav Lobačevski manually verified it. GHSL reports the submission collided with another reporter; this entry records AI-assisted identification and does not claim first discovery.",
+  "disclosure_date": "2026-03-10",
+  "ai_attribution_date": "2026-09-21",
+  "classification": "disclosure",
+  "classification_note": "The GHSL report and matching vendor GHSA document the issue and fix; neither source cited here claims exploitation in the wild.",
+  "cves": [
+    "CVE-2026-31834"
+  ],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2026-065_Umbraco_CMS/",
+  "ai_source_url": "https://securitylab.github.com/advisories/GHSL-2026-065_Umbraco_CMS/",
+  "remediation": "fix documented",
+  "remediation_note": "GHSL says Umbraco CMS 16.5.1 and 17.2.2 fixed the flaw on 2026-03-10. GHSL reports its submission was a collision with another reporter acknowledged 2026-02-26; attribution is to AI-assisted discovery, not priority.",
+  "advisory_url": "https://github.com/advisories/GHSA-rhcg-3h8r-v6vp",
+  "checked_date": "2026-11-14"
+}

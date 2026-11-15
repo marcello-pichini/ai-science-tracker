@@ -1,0 +1,28 @@
+{
+  "id": "2026-01-deepmet-anticipates-and-helps-identify-dozens-of-previously-unrecognized-mammalian-metabolites",
+  "title": "DeepMet anticipates and helps identify dozens of previously unrecognized mammalian metabolites",
+  "summary": "DeepMet, an LSTM chemical language model trained on known human metabolites, generated a ranked space of metabolite-like structures and was integrated with mass spectrometry data. Researchers report identifying several dozen previously unrecognized mammalian metabolites across standards, human biofluids, mouse tissues and repository data. Some standard-supported assignments still have isomer ambiguity; the study also found known metabolites missing or misannotated in HMDB.",
+  "field": "chemistry",
+  "ai_technology": "DeepMet chemical language model (three-layer LSTM over SMILES), integrated with MS/MS-spectrum prediction and meta-learning",
+  "organization": "Princeton University; University of Alberta; University of British Columbia; University of Toronto; Baylor College of Medicine; collaborating institutions",
+  "source_url": "https://www.nature.com/articles/s41586-025-09969-x.pdf",
+  "source_type": "paper",
+  "publication_date": "2026-01-14",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41586-025-09969-x",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Researchers report identifying several dozen previously unrecognized mammalian metabolites across standards, human biofluids, mouse tissues and repository data.",
+    "unknown": "A subset of assigned structures retain regioisomer/stereoisomer ambiguity; human oversight helped prioritize structures for synthesis. The model explores chemical space similar to its training set and may miss divergent biosynthetic chemistry. The paper distinguishes novel metabolites from known compounds missing in HMDB.",
+    "ai_role": "Learned metabolite-like chemical structures and prioritized structures likely to exist; combined with accurate mass/MS/MS and reference standards to support identification of previously unrecognized metabolites.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41586-025-09969-x.pdf"
+    ]
+  }
+}

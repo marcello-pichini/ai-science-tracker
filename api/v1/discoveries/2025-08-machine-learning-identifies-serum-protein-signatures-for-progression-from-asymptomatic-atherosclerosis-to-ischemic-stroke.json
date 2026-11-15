@@ -1,0 +1,28 @@
+{
+  "id": "2025-08-machine-learning-identifies-serum-protein-signatures-for-progression-from-asymptomatic-atherosclerosis-to-ischemic-stroke",
+  "title": "Machine learning identifies serum protein signatures for progression from asymptomatic atherosclerosis to ischemic stroke",
+  "summary": "In a discovery cohort of 43 patients with asymptomatic large-artery atherosclerosis and a validation cohort of 39, investigators combined serum proteomics with machine learning to distinguish acute ischemic stroke from large-artery atherosclerosis. XGBoost selected a three-protein panel (RNASE4, HBA1 and ATF6B; reported AUC 0.917, specificity 80%) and a six-protein panel distinguishing patients from healthy controls (reported AUC 0.971, specificity 86%). ELISA assays confirmed higher GUCA2A and FLNA in patient groups.",
+  "field": "medicine",
+  "ai_technology": "XGBoost machine-learning models applied to serum proteomics; DeepPRM-Stellar targeted mass spectrometry supported peptide validation and panel optimization",
+  "organization": "Huashan Hospital, Fudan University; Zhongshan Hospital, Fudan University; Xiamen University; Xiang An Biomedicine Laboratory",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/40692393/",
+  "source_type": "paper",
+  "publication_date": "2025-08-18",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1039/d5an00396b",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In a discovery cohort of 43 patients with asymptomatic large-artery atherosclerosis and a validation cohort of 39, investigators combined serum proteomics with machine learning to distinguish acute ischemic stroke from large-artery atherosclerosis.",
+    "unknown": "The abstract reports 43 discovery and 39 validation participants, but does not establish prospective prediction or external clinical deployment. The signatures are candidate biomarkers, not a validated clinical test. Reported performance comes from this study and should not be interpreted as patient benefit or causal evidence. ELISA confirmation is reported for GUCA2A and FLNA, not every protein in the ML panels.",
+    "ai_role": "The study reports that machine-learning techniques were used to identify circulating biomarkers of progression and that XGBoost selected the three- and six-protein signatures from targeted proteomic measurements. ELISA follow-up confirmed GUCA2A and FLNA group differences. The models are retrospective cohort analyses; the study did not prospectively predict future stroke events.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/40692393/"
+    ]
+  }
+}

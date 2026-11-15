@@ -1,0 +1,28 @@
+{
+  "id": "2024-10-noise-aware-active-learning-selects-a-high-latent-heat-tinihf-shape-memory-alloy",
+  "title": "Noise-aware active learning selects a high-latent-heat Ti–Ni–Hf shape-memory alloy",
+  "summary": "A noise-aware Kriging model with active-learning acquisition selected candidate compositions from a million-composition NiTi-based alloy design space. After four experiments, researchers reported Ti₀.₂₆₆Ni₀.₄₈₄Hf₀.₂₅ with a measured latent heat of −36.08 J g⁻¹, 9.2% greater in magnitude than the best value in the initial training data (−33.04 J g⁻¹). The alloy also had an austenite-finish temperature of 481.71 °C and relatively small transformation hysteresis, making it a candidate for high-temperature thermal energy storage.",
+  "field": "materials",
+  "ai_technology": "Noise-aware Kriging surrogate model with an active-learning acquisition strategy incorporating experimental-data noise",
+  "organization": "Shanghai University; Shanghai Jiao Tong University; Xi’an Jiaotong University",
+  "source_url": "https://doi.org/10.1002/advs.202406216",
+  "source_type": "paper",
+  "publication_date": "2024-10-03",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A noise-aware Kriging model with active-learning acquisition selected candidate compositions from a million-composition NiTi-based alloy design space.",
+    "unknown": "The reported latent heat retains the source’s negative sign; the 9.2% improvement is a comparison of absolute magnitudes against the initial dataset’s best value. This is one material result from an active-learning search, not exhaustive exploration of the million-composition space. The reported temperature/hysteresis properties are laboratory characterizations; the paper does not demonstrate a deployed thermal-storage module or independent reproduction.",
+    "ai_role": "The model estimated the measurement-noise level from noisy experimental data, incorporated that level into Kriging predictions, and used a noise-augmented acquisition strategy to choose the next NiTi-based compositions. Four experiments in the closed loop identified Ti0.266Ni0.484Hf0.25 as a promising high-latent-heat alloy; researchers synthesized and measured the material properties.",
+    "evidence_urls": [
+      "https://doi.org/10.1002/advs.202406216"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2026-06-observation-trained-machine-learning-halves-estimated-arctic-winter-sea-ice-surface-cooling",
+  "title": "Observation-trained machine learning halves estimated Arctic winter sea-ice surface cooling",
+  "summary": "A neural network trained on observations from five Arctic field campaigns reduced ERA5 errors in the Arctic sea-ice surface energy budget and removed ERA5’s wintertime near-surface warm bias of about 4 K. The corrected estimates imply about 50% weaker winter surface cooling and 80–120 cm seasonal thermodynamic ice growth, closer to SMOS–CryoSat thickness increases than ERA5’s 150–200 cm estimate.",
+  "field": "climate",
+  "ai_technology": "Feed-forward neural network product SEBai",
+  "organization": "Alfred Wegener Institute; Helmholtz Centre Hereon; Helmholtz AI; Deutsches Klimarechenzentrum; NOAA Physical Sciences Laboratory; University of Leeds; Norwegian Polar Institute; Karlsruhe Institute of Technology; Stockholm University; Washington State University",
+  "source_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL121289",
+  "source_type": "paper",
+  "publication_date": "2026-06-19",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1029/2025GL121289",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A neural network trained on observations from five Arctic field campaigns reduced ERA5 errors in the Arctic sea-ice surface energy budget and removed ERA5’s wintertime near-surface warm bias of about 4 K.",
+    "unknown": "Validation uses leave-one-campaign-out cross-validation and multiple field campaigns, but direct flux observations remain sparse in space and time. The climatology applies to ice-covered Arctic regions north of 70°N with sea-ice concentration above 80%; authors do not recommend extrapolation to marginal ice zones or coastal regions. The ice-growth values are thermodynamic estimates rather than direct pan-Arctic measurements.",
+    "ai_role": "The network learned the relationship between ERA5 atmospheric states and observed fluxes from MOSAiC, SHEBA, AO2018, N-ICE2015 and ARTofMELT campaigns, then bias-corrected hourly Arctic sea-ice surface fluxes for 1994–2024 to derive a revised regional climatology and ice-growth estimates.",
+    "evidence_urls": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL121289"
+    ]
+  }
+}

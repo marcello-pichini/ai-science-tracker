@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-44h9-v855-6rj3",
+  "title": "libyang LYB integer parser stack buffer overflow",
+  "product": "libyang",
+  "ai_system": "Claude Mythos Preview",
+  "organization": "Anthropic",
+  "summary": "The LYB parser copies a length-prefixed integer into a fixed-width stack value without bounding the copy to the destination size.",
+  "ai_role": "The maintainer advisory explicitly says AI was used to discover the vulnerability and credits Claude/Ada Logics; Anthropic CVD maps the same individual finding to Claude Mythos Preview.",
+  "disclosure_date": "2026-07-02",
+  "ai_attribution_date": "2026-09-28",
+  "classification": "disclosure",
+  "classification_note": "Public disclosure is documented. Sources do not establish exploitation in the wild or zero-day status. No CVE assigned in the advisory; counted once by GHSA identifier.",
+  "cves": [],
+  "source_url": "https://github.com/CESNET/libyang/security/advisories/GHSA-44h9-v855-6rj3",
+  "ai_source_url": "https://red.anthropic.com/2026/cvd/findings/ANT-2026-573F8CSS",
+  "remediation": "fix documented",
+  "remediation_note": "Fixed in libyang 6.0.1.",
+  "advisory_url": "https://github.com/CESNET/libyang/security/advisories/GHSA-44h9-v855-6rj3",
+  "checked_date": "2026-11-15"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2023-10-machine-learning-guided-screening-discovers-potent-innate-immune-signaling-modulators",
+  "title": "Machine-learning-guided screening discovers potent innate immune signaling modulators",
+  "summary": "At the University of Chicago, an active-learning pipeline iteratively selected molecules from a 139,998-compound library for in-vitro assays of NF-κB and interferon regulatory factor (IRF) signaling. After screening about 2% of the library, the study reported compounds suppressing NF-κB up to 15-fold or elevating NF-κB and IRF up to 5-fold and 6-fold, respectively. Follow-up cytokine assays found PME-4007 increased IFN-β secretion about threefold when co-delivered with the STING agonist cGAMP.",
+  "field": "biology",
+  "ai_technology": "Machine-learning active-learning pipeline with variational-autoencoder molecular representations, Gaussian-process regression and Bayesian optimization",
+  "organization": "University of Chicago Pritzker School of Molecular Engineering; University of Chicago Cellular Screening Center",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/38020385/",
+  "source_type": "paper",
+  "publication_date": "2023-10-18",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1039/d3sc03613h",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "At the University of Chicago, an active-learning pipeline iteratively selected molecules from a 139,998-compound library for in-vitro assays of NF-κB and interferon regulatory factor (IRF) signaling.",
+    "unknown": "The work reports in-vitro pathway modulation and primary-cell cytokine assays, not vaccination, immunotherapy efficacy, animal outcomes or clinical benefit. Fold changes are study-specific relative to agonist-only controls. A subset of candidates was further characterized; four tested compounds were flagged as non-viable by the cytostasis/cytotoxicity confluency mask despite strong pathway effects.",
+    "ai_role": "Models were iteratively trained on screening measurements and used Bayesian optimization to select subsequent compounds for in-vitro testing. This model-guided selection led to the reported NF-κB/IRF modulators; follow-up cytokine release assays tested a subset.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/38020385/"
+    ]
+  }
+}

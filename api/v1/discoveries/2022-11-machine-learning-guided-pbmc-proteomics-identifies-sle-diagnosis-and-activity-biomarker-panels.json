@@ -1,0 +1,28 @@
+{
+  "id": "2022-11-machine-learning-guided-pbmc-proteomics-identifies-sle-diagnosis-and-activity-biomarker-panels",
+  "title": "Machine-learning-guided PBMC proteomics identifies SLE diagnosis and activity biomarker panels",
+  "summary": "A random-forest and OPLS-DA prioritization pipeline applied to peripheral-blood mononuclear-cell proteomics identified candidate protein combinations for distinguishing systemic lupus erythematosus (SLE) from healthy and rheumatoid-arthritis controls and for separating active from inactive SLE. ELISA in a separate 80-person cohort supported a six-protein diagnosis panel (IFIT3, MX1, TOMM40, STAT1, STAT2 and OAS3; AUC 0.723 versus healthy controls and 0.815 versus rheumatoid arthritis) and a nine-protein activity panel (AUC 0.990). Single-cell RNA-sequencing analysis mapped several associated interferon-signature proteins to specific immune-cell populations.",
+  "field": "medicine",
+  "ai_technology": "POC-SLE: random-forest feature ranking with 1,000 bootstrap iterations, combined with OPLS-DA variable-importance selection",
+  "organization": "Jinan University; Shenzhen People’s Hospital; collaborating institutions",
+  "source_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2022.969509/full",
+  "source_type": "paper",
+  "publication_date": "2022-11-29",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.3389/fimmu.2022.969509",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "ELISA in a separate 80-person cohort supported a six-protein diagnosis panel (IFIT3, MX1, TOMM40, STAT1, STAT2 and OAS3; AUC 0.723 versus healthy controls and 0.815 versus rheumatoid arthritis) and a nine-protein activity panel (AUC 0.990).",
+    "unknown": "The study is cross-sectional and the ELISA validation cohort contained 80 people from the same clinical setting; it does not establish longitudinal flare prediction, treatment response, causal mechanisms or clinical utility. The six-protein panel had moderate discrimination versus healthy controls (AUC 0.723) and better but still cohort-specific discrimination versus rheumatoid arthritis (AUC 0.815). The activity-panel AUC of 0.990 was reported for active versus inactive groups in this validation cohort and needs broader independent validation. Authors note limited sample size/ethnic diversity and need for mechanistic study.",
+    "ai_role": "The random forest ranked differentially expressed proteins from discovery-cohort PBMC proteomics; its selected proteins were intersected with OPLS-DA features to construct candidate diagnosis and activity panels. Researchers evaluated those panels with ELISA in a separate cohort and used single-cell transcriptomic data to examine immune-cell sources.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2022.969509/full"
+    ]
+  }
+}

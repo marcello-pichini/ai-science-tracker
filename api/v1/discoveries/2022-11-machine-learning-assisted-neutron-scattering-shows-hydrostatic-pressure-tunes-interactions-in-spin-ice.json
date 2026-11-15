@@ -1,0 +1,28 @@
+{
+  "id": "2022-11-machine-learning-assisted-neutron-scattering-shows-hydrostatic-pressure-tunes-interactions-in-spin-ice",
+  "title": "Machine-learning-assisted neutron scattering shows hydrostatic pressure tunes interactions in spin ice",
+  "summary": "Machine-learning-assisted analysis of diffuse neutron scattering from Dy₂Ti₂O₇ at ambient pressure and about 1.3 GPa extracted pressure-dependent Hamiltonian parameters and found that hydrostatic pressure modifies further-neighbor magnetic interactions and the material’s nanoscale magnetic-glass ordering. The analysis supports using pressure to tune the spin-ice glass state. A transition at substantially higher pressure is a model-based prediction, not an observed transition in this experiment.",
+  "field": "materials",
+  "ai_technology": "Nonlinear autoencoder, radial-basis generative surrogate and hierarchical clustering for neutron-scattering analysis",
+  "organization": "Oak Ridge National Laboratory; Argonne National Laboratory; Instituto de Física de Líquidos y Sistemas Biológicos, UNLP-CONICET",
+  "source_url": "https://www.nature.com/articles/s43246-022-00306-7",
+  "source_type": "paper",
+  "publication_date": "2022-11-04",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2110.15817",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Machine-learning-assisted analysis of diffuse neutron scattering from Dy₂Ti₂O₇ at ambient pressure and about 1.3 GPa extracted pressure-dependent Hamiltonian parameters and found that hydrostatic pressure modifies further-neighbor magnetic interactions and the material’s nanoscale magnetic-glass ordering.",
+    "unknown": "The reported pressure comparison is between ambient pressure and an estimated hydrostatic pressure of about 1.3 GPa, using separate measurement setups. The change in magnetic couplings and glass morphology is inferred by fitting a spin model to scattering with ML-assisted analysis, not measured as a direct microscopic coupling. The authors predict that substantially higher pressure may induce a phase transition; no such transition was observed here. Some analysis and experimental steering remained manual.",
+    "ai_role": "The nonlinear autoencoder compressed measured and simulated diffuse neutron-scattering volumes; a trained generative surrogate enabled fast forward prediction of scattering from spin-Hamiltonian parameters, while clustering and inverse mapping constrained parameters against the experiment. Those ML components made it practical to analyze pressure-dependent measurements and infer the change in further-neighbor couplings during the neutron experiment workflow.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s43246-022-00306-7"
+    ]
+  }
+}

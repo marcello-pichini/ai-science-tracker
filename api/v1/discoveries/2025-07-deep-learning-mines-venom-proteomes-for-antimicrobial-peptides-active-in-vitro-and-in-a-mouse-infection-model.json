@@ -1,0 +1,28 @@
+{
+  "id": "2025-07-deep-learning-mines-venom-proteomes-for-antimicrobial-peptides-active-in-vitro-and-in-a-mouse-infection-model",
+  "title": "Deep learning mines venom proteomes for antimicrobial peptides active in vitro and in a mouse infection model",
+  "summary": "The APEX deep-learning model screened 16,123 venom proteins by generating and scoring 40,626,260 venom-encrypted peptides. After activity prediction and filtering for low similarity to known antimicrobial peptides, the authors selected 58 for experiments; 53 showed antimicrobial activity against at least one tested pathogen. Three selected peptides reduced bacterial counts after topical treatment in a mouse Acinetobacter baumannii skin-abscess model; the wolf-spider-derived Arachnoserver-5 peptide produced a reported three-log reduction versus untreated controls through day four, without significant body-weight change under the study conditions.",
+  "field": "medicine",
+  "ai_technology": "APEX deep-learning model for bacterial strain-specific minimum inhibitory concentration prediction",
+  "organization": "University of Pennsylvania",
+  "source_url": "https://www.nature.com/articles/s41467-025-60051-6.pdf",
+  "source_type": "paper",
+  "publication_date": "2025-07-12",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-025-60051-6",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "After activity prediction and filtering for low similarity to known antimicrobial peptides, the authors selected 58 for experiments; 53 showed antimicrobial activity against at least one tested pathogen.",
+    "unknown": "Only 58 of the 386 low-similarity candidates were experimentally tested, and activity was measured against a defined panel of 11 strains; some tested peptides were cytotoxic. The mouse study was a topical single-dose skin-abscess model with six animals per group, not systemic treatment or human efficacy. The paper notes possible ion-channel activity for many candidates and calls for follow-up safety testing. A related APEX study mined archaeal proteomes (10.1038/s41564-025-02061-0); this entry is limited to the separate venom-protein source library and its distinct peptide set and experiments.",
+    "ai_role": "APEX scored 40.6 million candidate peptide fragments generated from venom proteins for predicted antimicrobial activity. The authors filtered predicted hits for sequence dissimilarity to known antimicrobial peptides, synthesized a selected subset, and experimentally tested antimicrobial activity, cytotoxicity and selected animal-model efficacy. The AI model narrowed an otherwise very large peptide search space; assays established which selected candidates were active.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-025-60051-6.pdf"
+    ]
+  }
+}

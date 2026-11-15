@@ -1,0 +1,28 @@
+{
+  "id": "2026-03-horizyn-1-experimentally-identifies-enzymes-for-orphan-and-nonnatural-reactions",
+  "title": "Horizyn-1 experimentally identifies enzymes for orphan and nonnatural reactions",
+  "summary": "Researchers used the reaction–protein dual-encoder model Horizyn-1 to prioritize enzyme candidates, then experimentally validated activity in orphan-reaction deorphaning, enzyme-promiscuity tests and nonnatural transformations. For an uncharacterized Thermus aquaticus protein, LC–MS confirmed dCMP kinase activity; a selected transaminase produced noncanonical amino acids from lysine-derived donors, with isotope tracing supporting predominant alpha-amine transfer.",
+  "field": "biology",
+  "ai_technology": "Horizyn-1",
+  "organization": "Dayhoff Labs and collaborating researchers",
+  "source_url": "https://doi.org/10.1073/pnas.2520070123",
+  "source_type": "paper",
+  "publication_date": "2026-03-17",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Researchers used the reaction–protein dual-encoder model Horizyn-1 to prioritize enzyme candidates, then experimentally validated activity in orphan-reaction deorphaning, enzyme-promiscuity tests and nonnatural transformations.",
+    "unknown": "Evidence is from specific in-vitro assays and tested sequences/reactions; model retrieval performance and the tested enzyme activities do not establish broad generalization. The paper reports that the predicted CMP kinase activity for one protein was not confirmed, while dCMP activity was.",
+    "ai_role": "A contrastive model jointly embedded reaction fingerprints and ProtT5 protein-sequence representations, ranked candidate enzyme–reaction pairs, and informed experimental selection. The authors assayed predictions with biochemical assays, LC–MS and isotope tracing; some fine-tuning results are predictive-performance findings rather than biological discoveries.",
+    "evidence_urls": [
+      "https://doi.org/10.1073/pnas.2520070123"
+    ]
+  }
+}

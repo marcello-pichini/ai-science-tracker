@@ -1,0 +1,28 @@
+{
+  "id": "2024-09-chemical-language-models-produce-experimentally-confirmed-dual-ligands-for-three-target-pairs",
+  "title": "Chemical language models produce experimentally confirmed dual ligands for three target pairs",
+  "summary": "A generative chemical language model was fine-tuned on known ligands for paired targets. Prospective synthesis and in-vitro assays found seven of twelve tested designs modulated both intended targets, with confirmed dual activity across FXR/sEH, FXR/THRβ and PPARδ/sEH. Activities varied substantially and were often unbalanced; the strongest reported sEH inhibitor, compound 7, had IC50 17 nM with micromolar PPARδ agonism.",
+  "field": "chemistry",
+  "ai_technology": "Target-pair-fine-tuned chemical language model (four-layer LSTM recurrent neural network trained on SMILES, pretrained on 365,000 ChEMBL molecules)",
+  "organization": "Goethe University Frankfurt; Ludwig-Maximilians-Universität München; Fraunhofer Institute for Translational Medicine and Pharmacology",
+  "source_url": "https://www.nature.com/articles/s41467-024-52060-8",
+  "source_type": "paper",
+  "publication_date": "2024-09-11",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-024-52060-8",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prospective synthesis and in-vitro assays found seven of twelve tested designs modulated both intended targets, with confirmed dual activity across FXR/sEH, FXR/THRβ and PPARδ/sEH.",
+    "unknown": "This is in-vitro activity of a small set of synthesized molecules, not evidence of therapeutic efficacy or synergistic clinical benefit. Potencies were often unbalanced; several selected candidates were active on only one intended target, and the authors caution the success rate may not generalize beyond target pairs with compatible ligand chemistry. Lead optimization remains necessary.",
+    "ai_role": "The pooled fine-tuning strategy combined known ligands of each target pair to bias de-novo SMILES generation toward both ligand classes. Researchers used model sampling frequency, similarity and docking to select molecules for synthesis; assays then tested receptor agonism and soluble epoxide hydrolase inhibition. The model proposed chemical candidates, while biological activity was measured experimentally.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-024-52060-8"
+    ]
+  }
+}

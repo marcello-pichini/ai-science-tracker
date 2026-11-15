@@ -1,0 +1,28 @@
+{
+  "id": "2026-04-joint-molecular-modeling-identifies-seven-low-micromolar-kinase-hits-beyond-its-training-chemistry",
+  "title": "Joint molecular modeling identifies seven low-micromolar kinase hits beyond its training chemistry",
+  "summary": "A joint molecular model combined bioactivity prediction and molecule reconstruction to estimate how unfamiliar a candidate structure was to its training distribution. In a prospective screen of commercial compounds against PIM1 and CDK1, unfamiliarity-informed selection led to seven compounds with low-micromolar potency and limited similarity to training molecules. The authors also evaluated the metric across 33 experimentally labelled bioactivity datasets.",
+  "field": "chemistry",
+  "ai_technology": "Joint molecular model (JMM): semi-supervised molecular property-prediction and reconstruction model using a SMILES encoder; reconstruction loss defines the unfamiliarity score",
+  "organization": "Eindhoven University of Technology; Centre for Living Technologies (TU/e, WUR, UU and UMC Utrecht)",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109061/",
+  "source_type": "paper",
+  "publication_date": "2026-04-22",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s42256-026-01216-w",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The authors also evaluated the metric across 33 experimentally labelled bioactivity datasets.",
+    "unknown": "The kinase finding is a prospective in-vitro hit-identification result, not evidence of therapeutic efficacy. Seven low-micromolar hits were reported across PIM1 and CDK1; CDK1 was described as independent of the study’s earlier dataset analysis. The study screened only a small selected set per target after computational ranking. It does not establish the unfamiliarity measure as universally superior or demonstrate animal or clinical benefit.",
+    "ai_role": "The model used reconstruction-based unfamiliarity alongside predicted bioactivity and prediction uncertainty to rank molecules for a prospective virtual screen. Researchers tested selected commercial compounds against PIM1 and CDK1; seven compounds showed low-micromolar potency. AI supported prioritization and selection, while wet-lab assays established activity.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109061/"
+    ]
+  }
+}

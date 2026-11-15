@@ -1,0 +1,20 @@
+{
+  "id": "ghsl-2026-072",
+  "title": "Taskflow Agent finds an HTML encoding bypass in Orchard CMS",
+  "product": "Orchard Core CMS",
+  "ai_system": "GitHub Security Lab Taskflow Agent",
+  "organization": "GitHub Security Lab",
+  "summary": "Orchard Core StringValuesValue writes query, header and form values to Liquid output without using the encoder, enabling reflected XSS when affected templates render those values.",
+  "ai_role": "GHSL explicitly credits discovery to its Taskflow Agent and manual verification by Jaroslav Lobačevski. Reported 2026-03-31 and fixed 2026-04-01 before a published release. No CVE is listed.",
+  "disclosure_date": "2026-09-21",
+  "ai_attribution_date": "2026-09-21",
+  "classification": "disclosure",
+  "classification_note": "GHSL describes a conditional XSS risk requiring affected Liquid templates; it does not claim exploitation in the wild.",
+  "cves": [],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2026-072_Orchard_CMS/",
+  "ai_source_url": "https://securitylab.github.com/advisories/GHSL-2026-072_Orchard_CMS/",
+  "remediation": "fix documented",
+  "remediation_note": "GHSL says the vulnerability was fixed on 2026-04-01 before a published release; a fixed release number is not stated.",
+  "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-072_Orchard_CMS/",
+  "checked_date": "2026-11-14"
+}

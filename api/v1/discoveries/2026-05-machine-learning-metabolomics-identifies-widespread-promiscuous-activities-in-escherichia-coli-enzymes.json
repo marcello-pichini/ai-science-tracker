@@ -1,0 +1,28 @@
+{
+  "id": "2026-05-machine-learning-metabolomics-identifies-widespread-promiscuous-activities-in-escherichia-coli-enzymes",
+  "title": "Machine-learning metabolomics identifies widespread promiscuous activities in Escherichia coli enzymes",
+  "summary": "In vitro metabolomics of 667 purified E. coli enzymes, analyzed with a machine-learning-derived multivariate classifier, indicated previously unrecognized promiscuous activities in 11% of enzymes tested. Follow-up reconstruction assigned 22 reaction stoichiometries to 11 enzymes, with four reactions experimentally validated; examples include expanded nucleotide-substrate use by DeoA, cofactor and sugar promiscuity in NanK, and FMN dephosphorylation by CobC. Follow-up assays also found that pyrimidine-specific ribonucleoside hydrolase RihB acted on thymidine, guanosine and deoxyuridine, further extending its measured substrate range.",
+  "field": "biology",
+  "ai_technology": "Machine-learning-derived multivariate classifier applied to enzyme metabolomics ion-trace data",
+  "organization": "ETH Zurich; Weizmann Institute of Science; University Children’s Hospital Zurich and University of Zurich",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13389410/",
+  "source_type": "paper",
+  "publication_date": "2026-05-12",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s42003-026-10099-x",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In vitro metabolomics of 667 purified E. coli enzymes, analyzed with a machine-learning-derived multivariate classifier, indicated previously unrecognized promiscuous activities in 11% of enzymes tested.",
+    "unknown": "The classifier operated at a 33% false-discovery rate; the 135 ion traces were putatively annotated, and only four of 22 reconstructed reaction stoichiometries were experimentally validated. Therefore the full 11% result is a set of candidate activities, not 11% independently confirmed enzyme functions. The RihB activities were prompted by a low-confidence potassium-thymidine-adduct trace and then tested directly with purified enzyme; they should be distinguished from the classifier’s higher-confidence hit set.",
+    "ai_role": "A machine-learning-derived multivariate classifier, with a reported false-discovery rate of 33%, detected unexpected changes in metabolite ion traces in the enzyme assays and helped nominate candidate promiscuous activities. The researchers then reconstructed candidate reaction stoichiometries and experimentally validated four reactions.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13389410/"
+    ]
+  }
+}

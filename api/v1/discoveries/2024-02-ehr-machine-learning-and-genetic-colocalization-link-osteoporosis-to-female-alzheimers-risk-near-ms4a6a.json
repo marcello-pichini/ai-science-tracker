@@ -1,0 +1,28 @@
+{
+  "id": "2024-02-ehr-machine-learning-and-genetic-colocalization-link-osteoporosis-to-female-alzheimers-risk-near-ms4a6a",
+  "title": "EHR machine learning and genetic colocalization link osteoporosis to female Alzheimer’s risk near MS4A6A",
+  "summary": "Random-forest models trained on UCSF records (749 expert-diagnosed Alzheimer’s disease cases and 250,545 controls) identified clinical features predictive up to seven years before the recorded onset; the seven-year model’s AUROC was 0.72 using clinical features alone. Matched-cohort follow-up in external University of California health-system records found faster Alzheimer’s diagnosis after osteoporosis in women. Genetic colocalization analyses supported a female-specific shared signal between Alzheimer’s disease, low heel bone mineral density and MS4A6A expression near the MS4A gene cluster. The paper also reports shared APOE-locus support for hyperlipidemia and Alzheimer’s disease.",
+  "field": "medicine",
+  "ai_technology": "Random-forest models on longitudinal electronic health records, interpreted with the SPOKE biomedical knowledge network",
+  "organization": "University of California, San Francisco; Stanford University; University of California health-system collaborators; University of Oxford",
+  "source_url": "https://www.nature.com/articles/s43587-024-00573-8.pdf",
+  "source_type": "paper",
+  "publication_date": "2024-02-21",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s43587-024-00573-8",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Matched-cohort follow-up in external University of California health-system records found faster Alzheimer’s diagnosis after osteoporosis in women.",
+    "unknown": "This is hypothesis-generating observational work. EHR features may reflect healthcare access, clinician behavior, coding and biological processes; the authors explicitly state that further validation across omics data types is needed. Genetic colocalization and matched cohort associations do not establish that osteoporosis causes Alzheimer’s disease or that treating osteoporosis prevents it. The prediction model is not a prospective clinical-impact evaluation, and early risk discrimination is modest with the low-prevalence outcome.",
+    "ai_role": "Random-forest models ranked EHR-derived clinical features associated with future Alzheimer’s diagnosis. The team used matched models to prioritize hypotheses, then used SPOKE to connect clinical predictors to biological networks and independent health-system data plus GWAS/eQTL colocalization to examine the osteoporosis and hyperlipidemia associations. The model-generated prioritization led to follow-up of the female-specific osteoporosis signal near MS4A6A.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s43587-024-00573-8.pdf"
+    ]
+  }
+}

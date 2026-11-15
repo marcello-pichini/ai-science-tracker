@@ -1,0 +1,28 @@
+{
+  "id": "2025-07-ehr-deep-learning-and-sequencing-identify-two-previously-undiagnosed-noonan-syndrome-cases",
+  "title": "EHR deep learning and sequencing identify two previously undiagnosed Noonan syndrome cases",
+  "summary": "Investigators applied a deep-learning model to diagnosis text in the electronic health records of 92,428 pediatric patients. It flagged 171 patients above a prespecified Noonan syndrome risk threshold for chart review; genetic sequencing and specialist assessment identified two previously undiagnosed Noonan syndrome cases among evaluated patients, in addition to three patients diagnosed during the study period. The confirmed cases had pathogenic variants in Noonan-associated genes, including PTPN11 and LZTR1. This supplies real-world evidence that EHR-based model screening can surface rare-disease cases for clinical genetic evaluation.",
+  "field": "medicine",
+  "ai_technology": "Deep convolutional neural network trained on structured electronic-health-record diagnosis text to estimate Noonan syndrome risk",
+  "organization": "Cincinnati Children's Hospital Medical Center; University of Cincinnati College of Medicine; University of Wisconsin–Madison",
+  "source_url": "https://www.nature.com/articles/s41525-025-00512-5",
+  "source_type": "paper",
+  "publication_date": "2025-07-21",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41525-025-00512-5",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The confirmed cases had pathogenic variants in Noonan-associated genes, including PTPN11 and LZTR1.",
+    "unknown": "This was a real-world retrospective screening evaluation at one pediatric biobank, not a prospective screening trial. Sequencing identified two cases among 83 patients evaluated, and the overall precision among the 171 high-risk patients was 2.92%; the model therefore required substantial chart review and genetic confirmation. Retrospective risk trajectories suggest possible earlier recognition but do not establish earlier care or improved outcomes.",
+    "ai_role": "The previously developed deep-learning model scored 92,428 patient records and ranked 171 individuals above a prespecified risk threshold. The study team reviewed high-risk records, then used clinical genetic assessment and sequencing to evaluate patients without a prior diagnosis; these follow-up tests confirmed two previously undiagnosed cases. Model risk trajectories were also reconstructed from cumulative EHR diagnoses to assess whether the signal appeared before final diagnosis.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41525-025-00512-5"
+    ]
+  }
+}

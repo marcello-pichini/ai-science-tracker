@@ -1,0 +1,22 @@
+{
+  "id": "ghsl-2026-002",
+  "title": "GitHub Security Lab AI agent finds tool-permission bypass in Open WebUI",
+  "product": "Open WebUI",
+  "ai_system": "GitHub Security Lab AI agent",
+  "organization": "GitHub Security Lab",
+  "summary": "Open WebUI v0.6.43 chat completion accepts caller-supplied tool IDs/servers without checking the user’s permission; server-held credentials may then invoke restricted tools with server privileges.",
+  "ai_role": "GHSL credits an AI agent it developed, reviewed by Man Yue Mo and Peter Stöckli. GHSL records the report on 2026-01-05 and links the vendor advisory.",
+  "disclosure_date": "2026-05-15",
+  "ai_attribution_date": "2026-05-15",
+  "classification": "disclosure",
+  "classification_note": "The public advisory documents the vulnerability and disclosure/remediation status. It does not claim exploitation in the wild.",
+  "cves": [
+    "CVE-2026-45350"
+  ],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2026-002_Open_WebUI/",
+  "ai_source_url": "https://securitylab.github.com/advisories/GHSL-2026-002_Open_WebUI/",
+  "remediation": "fix documented",
+  "remediation_note": "The vendor advisory reports local tool access fixed in v0.7.0 and the MCP server path fixed in v0.8.6; users on v0.8.6 or later are not affected.",
+  "advisory_url": "https://github.com/open-webui/open-webui/security/advisories/GHSA-4pcg-253r-rf9w",
+  "checked_date": "2026-11-15"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2025-09-prospective-multicenter-validation-of-triverity-links-a-29-mrna-host-response-to-infection-type-and-near-term-severity",
+  "title": "Prospective multicenter validation of TriVerity links a 29-mRNA host response to infection type and near-term severity",
+  "summary": "In the prospective SEPSIS-SHIELD study, a machine-learning blood test using isothermal amplification of 29 host-response mRNAs was evaluated in adults presenting to 22 emergency departments with suspected infection or sepsis. Among 1,222 patients with valid results, its bacterial and viral scores distinguished clinically adjudicated infection status with AUROCs of 0.83 and 0.91, respectively, and the system also produced a separate score for risk of ICU-level care within seven days. The test’s high/very-high and low/very-low interpretation bands had 92–99% sensitivities and specificities for selected infection/severity endpoints.",
+  "field": "medicine",
+  "ai_technology": "TriVerity on the Myrna instrument, using logistic-regression classifiers on expression measurements for 29 host-response mRNAs",
+  "organization": "Inflammatix; Stanford University; Washington University in St. Louis; 22 emergency-department study sites",
+  "source_url": "https://www.nature.com/articles/s41591-025-03933-y",
+  "source_type": "paper",
+  "publication_date": "2025-09-30",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41591-025-03933-y",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In the prospective SEPSIS-SHIELD study, a machine-learning blood test using isothermal amplification of 29 host-response mRNAs was evaluated in adults presenting to 22 emergency departments with suspected infection or sepsis.",
+    "unknown": "This is prospective diagnostic/prognostic validation of a specific host-response test, not discovery of a causal infection mechanism and not evidence that use of the score improves patient outcomes or antibiotic decisions. Of 1,441 enrolled patients, 1,222 had valid test results; the main diagnostic analysis used 729 consensus-adjudicated patients, and 1,120 were evaluable for prognosis. Clinical adjudication is not a perfect microbiological gold standard, and the study reports lower accuracy when uncertain adjudications are included. Performance and predictive values may vary with local infection prevalence and case mix. This is distinct from the earlier VB10 10-gene signature paper (DOI 10.1016/j.ebiom.2021.103352), which used different genes, cohorts and a different diagnostic score.",
+    "ai_role": "The locked machine-learning classifiers convert the amplified host-response mRNA profile into separate likelihood scores for bacterial infection, viral infection and need for critical-care interventions within seven days. The multicenter clinical study measured how those AI-generated scores performed against blinded physician adjudication and near-term clinical endpoints.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41591-025-03933-y"
+    ]
+  }
+}

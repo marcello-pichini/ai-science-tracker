@@ -1,0 +1,20 @@
+{
+  "id": "ghsl-2026-226",
+  "title": "GHSL AI-agent index lists same-second TOCTOU in Marimo test-release workflow",
+  "product": "marimo-team/marimo GitHub Actions",
+  "ai_system": "GitHub Security Lab Taskflow Agent",
+  "organization": "GitHub Security Lab",
+  "summary": "The marimo test-release workflow compared second-precision timestamps with a strict greater-than check, allowing a same-second pull-request update after authorization to be checked out, executed and passed to privileged package-publishing jobs.",
+  "ai_role": "GHSL’s primary AI-agent index includes this advisory in its list of findings discovered with AI agents. The individual advisory credits the GHSL human reporter but does not identify the agent or its contribution; specific AI workflow is therefore not documented at item level. Reported 2026-09-04 and workflow deleted 2026-09-08.",
+  "disclosure_date": "2026-09-16",
+  "ai_attribution_date": "2026-09-16",
+  "classification": "disclosure",
+  "classification_note": "The cited sources document the finding and remediation; they do not claim exploitation in the wild.",
+  "cves": [],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2026-226_marimo-team_marimo_repository/",
+  "ai_source_url": "https://securitylab.github.com/ai-agents/",
+  "remediation": "fix documented",
+  "remediation_note": "The vulnerable workflow was deleted in PR #10765 on 2026-09-08. Exploitation requires winning a same-second race and an authorized maintainer trigger; downstream publishing exposure depends on the workflow setup.",
+  "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-226_marimo-team_marimo_repository/",
+  "checked_date": "2026-11-14"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2023-07-deep-learning-detects-elevated-tissue-derived-cfdna-across-cancer-and-cirrhosis-cohorts",
+  "title": "Deep learning detects elevated tissue-derived cfDNA across cancer and cirrhosis cohorts",
+  "summary": "A study built a fragment-level methylation atlas from 521 noncancer tissue samples spanning 29 human tissue types and used it with cfSort, a supervised deep neural network, to estimate tissue composition in plasma cell-free DNA. Applying cfSort to patient data, the investigators found higher cfDNA fractions from the affected tissue in liver, lung, colorectal and stomach cancer and cirrhosis cohorts than in healthy controls; the estimated fractions also increased with cancer stage. The tissue-origin signal was reproduced on an independent whole-genome-bisulfite-sequencing dataset for liver cancer. In serial samples from four non-small-cell lung cancer patients receiving anti-PD-1 therapy, estimated liver or kidney tissue fractions tracked measured biochemical markers of organ injury.",
+  "field": "medicine",
+  "ai_technology": "cfSort, an ensemble of two dense deep neural networks trained on simulated mixtures using a fragment-level tissue methylation atlas",
+  "organization": "University of California, Los Angeles; Stanford University; EarlyDiagnostics; University of Southern California; University of California, San Diego",
+  "source_url": "https://par.nsf.gov/servlets/purl/10428542",
+  "source_type": "paper",
+  "publication_date": "2023-07-03",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1073/pnas.2305236120",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Applying cfSort to patient data, the investigators found higher cfDNA fractions from the affected tissue in liver, lung, colorectal and stomach cancer and cirrhosis cohorts than in healthy controls; the estimated fractions also increased with cancer stage.",
+    "unknown": "The disease cohorts were retrospective and the clinical analyses demonstrate association and measurement feasibility, not prospective diagnostic benefit or improved outcomes. The clinical groups were 21 cirrhosis patients and 201 cancer patients, with 100 healthy controls; cross-platform liver-cancer validation used 24 cases and 32 controls. Anti-PD-1 injury monitoring involved only four NSCLC patients at three timepoints. The authors note that disease-specific methylation markers could improve cancer detection beyond tissue-of-origin fractions.",
+    "ai_role": "The team used the supervised cfSort model to deconvolve methylation profiles in plasma cfDNA and estimate contributions from 29 tissue types. This enabled the reported comparison of affected-tissue cfDNA fractions in cancer and cirrhosis patient cohorts versus controls and longitudinal tracking of tissue-injury signals during immunotherapy. The atlas and model were also evaluated against simulated mixtures and independent methylation data.",
+    "evidence_urls": [
+      "https://par.nsf.gov/servlets/purl/10428542"
+    ]
+  }
+}

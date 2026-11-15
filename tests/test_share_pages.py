@@ -1,6 +1,8 @@
+import csv
 import importlib.util
 import json
 import shutil
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -8,6 +10,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'scripts'))
 
 
 class SharePageTests(unittest.TestCase):
@@ -45,10 +48,59 @@ class SharePageTests(unittest.TestCase):
         root = ET.fromstring((g.ROOT / 'feed.xml').read_text())
         ns = {'a': 'http://www.w3.org/2005/Atom'}
         entries = root.findall('a:entry', ns)
+        self.assertEqual(root.find('a:title', ns).text, 'AI Science Tracker: additions and source checks')
         self.assertEqual(len(entries), 2)
         self.assertEqual(entries[0].find('a:title', ns).text, 'V & flaw')
         self.assertTrue(entries[0].find('a:updated', ns).text.startswith('2999-01-01'))
         self.assertEqual(root.find('a:updated', ns).text, '2999-01-01T00:00:00Z')
+
+    def test_exports_preserve_vulnerability_caveats_and_neutralize_formulas(self):
+        g = self.generator
+        (g.ROOT / 'data').mkdir()
+        vuln = json.loads((ROOT / 'data/vulnerabilities.json').read_text())[0]
+        vuln.update(title='=formula', classification_note='+caveat', remediation_note='@scope')
+        g.write_exports([dict(self.record, summary='\tformula')], [vuln])
+        with (g.ROOT / 'data/vulnerabilities.csv').open(newline='') as f:
+            row = next(csv.DictReader(f))
+        self.assertEqual(row['title'], "'=formula")
+        self.assertEqual(row['classification_note'], "'+caveat")
+        self.assertEqual(row['remediation_note'], "'@scope")
+        self.assertEqual(row['ai_attribution_date'], vuln['ai_attribution_date'])
+        with (g.ROOT / 'data/discoveries.csv').open(newline='') as f:
+            self.assertEqual(next(csv.DictReader(f))['summary'], "'\tformula")
+
+    def test_api_fingerprint_changes_with_edits_and_preserves_old_files_on_write_failure(self):
+        g = self.generator
+        g.write_api([self.record], [], {'models': []}, [])
+        index_path = g.ROOT / 'api/v1/index.json'
+        before = json.loads(index_path.read_text())
+        self.assertEqual(before['data_version_date'], before['latest_discovery_addition_date'])
+        g.write_api([dict(self.record, summary='corrected')], [], {'models': []}, [])
+        after = json.loads(index_path.read_text())
+        self.assertNotEqual(before['catalog_sha256'], after['catalog_sha256'])
+        self.assertEqual(before['data_version_date'], after['data_version_date'])
+        g.write_api([self.record], [], {'models': []}, [dict(self.record, id='archived')])
+        self.assertNotEqual(before['catalog_sha256'], json.loads(index_path.read_text())['catalog_sha256'])
+        old = g.ROOT / 'api/v1/discoveries/old.json'
+        old.write_text('{}')
+        with patch.object(Path, 'write_text', side_effect=OSError('disk full')):
+            with self.assertRaises(OSError):
+                g.write_api([self.record], [])
+        self.assertTrue(old.exists())
+
+    def test_card_hashes_detect_content_and_styles_changes(self):
+        g = self.generator
+        (g.ROOT / 'styles.css').write_text('style')
+        with patch.object(g, 'screenshot', side_effect=lambda page, out: out.write_bytes(b'png')) as screenshot:
+            g.render_cards([self.record], False)
+            self.assertEqual(screenshot.call_count, 2)
+            g.render_cards([self.record], False)
+            self.assertEqual(screenshot.call_count, 2)
+            g.render_cards([dict(self.record, title='Changed')], False)
+            self.assertEqual(screenshot.call_count, 3)
+            (g.ROOT / 'styles.css').write_text('changed')
+            g.render_cards([self.record], False)
+            self.assertEqual(screenshot.call_count, 5)
 
     def test_sitemap_includes_static_discoveries_and_security_without_false_dates(self):
         g = self.generator
@@ -93,6 +145,43 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('href="org-first-lab.html"', text)
         self.assertEqual(g.lead_org('First Lab AND Second Lab'), 'First Lab')
         self.assertEqual(g.lead_org('First Lab, Second Lab'), 'First Lab')
+
+    def test_archive_only_profiles_redirect_without_overwriting_active_profiles(self):
+        g = self.generator
+        active = dict(self.record, organization='Active Lab', ai_technology='Boltz', title='Active Boltz')
+        old = dict(self.record, id='old', organization='Former Lab; Partner', ai_technology='Boltz', title='Boltz old')
+        g.write_profile_pages([active], {'families': [{'id': 'boltz', 'name': 'Boltz', 'discoveries': [active['id']]}]}, [old])
+        org = (g.ROOT / 'profiles/org-former-lab.html').read_text()
+        self.assertIn('href="../share/old.html"', org)
+        self.assertIn('share/old.html', org)
+        self.assertNotIn('http-equiv="refresh"', (g.ROOT / 'profiles/family-boltz.html').read_text())
+        g.write_profile_pages([self.record], {'families': []}, [old])
+        family = (g.ROOT / 'profiles/family-boltz.html').read_text()
+        self.assertIn('href="../share/old.html"', family)
+        self.assertIn(f'rel="canonical" href="{g.BASE}share/old.html"', family)
+        other = dict(old, id='other')
+        g.write_profile_pages([self.record], {'families': []}, [old, other])
+        self.assertIn('href="index.html"', (g.ROOT / 'profiles/org-former-lab.html').read_text())
+        self.assertIn('href="index.html"', (g.ROOT / 'profiles/family-boltz.html').read_text())
+
+    def test_invalid_input_is_rejected_before_writing_outputs(self):
+        g = self.generator
+        (g.ROOT / 'data').mkdir()
+        for name, value in [('discoveries', [self.record]), ('models', {'families': [], 'models': []}),
+                            ('vulnerabilities', [{'id': 'invalid'}])]:
+            (g.ROOT / f'data/{name}.json').write_text(json.dumps(value))
+        with patch('sys.argv', ['generate_share.py', '--no-images']):
+            with self.assertRaises(KeyError):
+                g.main()
+        self.assertFalse((g.ROOT / 'share').exists())
+
+    def test_long_collaborator_list_keeps_the_canonical_profile(self):
+        g = self.generator
+        self.record['organization'] = 'First Lab; ' + 'Long partner institution ' * 20
+        pages = g.write_profile_pages([self.record], {'families': [], 'models': []})
+        self.assertIn('profiles/org-first-lab.html', pages)
+        self.assertTrue((g.ROOT / 'profiles/org-first-lab.html').exists())
+        self.assertTrue(all(len(Path(page).name.encode('utf-8')) <= 255 for page in pages))
 
     def test_archived_discovery_has_a_page_but_does_not_enter_active_outputs(self):
         g = self.generator
@@ -140,6 +229,6 @@ class SharePageTests(unittest.TestCase):
         g.write_llms_txt([self.record], {'families': []})
         text = (g.ROOT / 'llms.txt').read_text()
         self.assertTrue(text.startswith('# AI Science Tracker'))
-        self.assertIn('catalog of 1 scientific discoveries', text)
+        self.assertIn('catalog of 1 entries about scientific results', text)
         self.assertIn(g.BASE + 'data/discoveries.json', text)
 

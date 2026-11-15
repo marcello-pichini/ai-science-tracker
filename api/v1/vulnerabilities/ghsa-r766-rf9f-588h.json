@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-r766-rf9f-588h",
+  "title": "Caddy host-derived document roots can be escaped through dot segments or slashes in Host or :authority",
+  "product": "Caddy HTTP server",
+  "ai_system": "Anthropic OSS Scanner (model unspecified)",
+  "organization": "Anthropic and project maintainers",
+  "summary": "A site that builds its document root from the request host can let unauthenticated clients choose paths outside the intended tree. HTTP/1 accepts dot-only Host values; HTTP/2 and HTTP/3 accept slash or backslash characters in :authority. Caddy then cleans the expanded root, allowing file_server to expose filesystem files or PHP handlers to execute files outside the intended directory. The advisory limits exposure to catch-all or on-demand TLS sites using a host-derived root; explicitly listed host names are not affected.",
+  "ai_role": "The primary Caddy advisory directly credits Anthropic OSS Scanner as discovering the finding under ANT-2026-YKIEF8GR, and contains a proof of concept, impact, patch, and affected configuration conditions. Anthropic’s primary scanner page establishes model-based scanner provenance; the item advisory does not name a model.",
+  "disclosure_date": "2026-11-04",
+  "ai_attribution_date": "2026-11-04",
+  "classification": "disclosure",
+  "classification_note": "The primary maintainer published GHSA-r766-rf9f-588h on 2026-11-04 and directly credits Anthropic OSS Scanner (ANT-2026-YKIEF8GR). For filelock, the source records private scanner report receipt on Oct 15; the public advisory attribution date remains Oct 17.",
+  "cves": [],
+  "source_url": "https://github.com/caddyserver/caddy/security/advisories/GHSA-r766-rf9f-588h",
+  "ai_source_url": "https://github.com/caddyserver/caddy/security/advisories/GHSA-r766-rf9f-588h",
+  "remediation": "fix documented",
+  "remediation_note": "Caddy 2.11.8 validates Host and :authority consistently across protocols and rejects host values that consist only of dots.",
+  "advisory_url": "https://github.com/caddyserver/caddy/security/advisories/GHSA-r766-rf9f-588h",
+  "checked_date": "2026-11-14"
+}

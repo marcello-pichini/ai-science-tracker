@@ -1,0 +1,28 @@
+{
+  "id": "2020-12-ai-derived-symbolic-formula-improves-dark-matter-halo-overdensity-estimates-in-a-cosmological-simulation",
+  "title": "AI-derived symbolic formula improves dark-matter halo overdensity estimates in a cosmological simulation",
+  "summary": "A graph neural network trained on a detailed N-body cosmological dark-matter simulation was distilled by symbolic regression into an analytic estimator for a halo’s overdensity from its mass and the masses, positions and velocities of nearby halos. On the analyzed simulation snapshot, the new expression reduced mean absolute error to 0.0882, compared with 0.121 for the authors’ existing hand-designed estimator. The formula’s mass-weighted neighborhood term decreases with separation and includes dependence on the central halo’s mass.",
+  "field": "physics",
+  "ai_technology": "Sparse-representation Graph Neural Network followed by Eureqa genetic-programming symbolic regression",
+  "organization": "Princeton University; DeepMind; New York University; Flatiron Institute; Carnegie Mellon University",
+  "source_url": "https://proceedings.neurips.cc/paper/2020/hash/c9f2f917078bd2db12f23c3b413d9cba-Abstract.html",
+  "source_type": "paper",
+  "publication_date": "2020-12-06",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://proceedings.neurips.cc/paper_files/paper/2020/file/c9f2f917078bd2db12f23c3b413d9cba-Paper.pdf",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A graph neural network trained on a detailed N-body cosmological dark-matter simulation was distilled by symbolic regression into an analytic estimator for a halo’s overdensity from its mass and the masses, positions and velocities of nearby halos.",
+    "unknown": "The formula was derived and evaluated on a single final-time-step dataset from an N-body simulation (215,854 halos), not validated against observations or independent cosmological simulations. The authors note that some terms’ physical interpretation was unclear and reserved detailed interpretation for future astrophysics work. It is a new useful estimator for the studied simulated halo population, not a confirmed universal law of dark-matter structure.",
+    "ai_role": "The team trained a graph neural network to predict dark-matter halo overdensity using a cosmological N-body simulation. L1 regularization encouraged a compact learned message representation; Eureqa symbolic regression then fitted explicit equations to the learned graph-network components and replaced them with a closed-form model. This process yielded a previously unreported analytic halo-environment estimator and enabled comparison against the existing hand-designed formula.",
+    "evidence_urls": [
+      "https://proceedings.neurips.cc/paper/2020/hash/c9f2f917078bd2db12f23c3b413d9cba-Abstract.html"
+    ]
+  }
+}

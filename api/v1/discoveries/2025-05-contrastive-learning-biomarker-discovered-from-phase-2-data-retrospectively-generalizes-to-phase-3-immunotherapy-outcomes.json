@@ -1,0 +1,28 @@
+{
+  "id": "2025-05-contrastive-learning-biomarker-discovered-from-phase-2-data-retrospectively-generalizes-to-phase-3-immunotherapy-outcomes",
+  "title": "Contrastive-learning biomarker discovered from phase 2 data retrospectively generalizes to phase 3 immunotherapy outcomes",
+  "summary": "The Predictive Biomarker Modeling Framework (PBMF), an ensemble neural network trained with a treatment-versus-control contrastive objective, identified a composite clinicogenomic biomarker using phase 2 POPLAR data for atezolizumab versus docetaxel. When applied retrospectively to the phase 3 OAK trial, its biomarker-positive group had a treatment-versus-control overall-survival hazard ratio of 0.59 (95% CI 0.47–0.74); an interpretable distilled decision tree produced HR 0.55 (95% CI 0.43–0.70). The tree used baseline ctDNA maximum allele frequency, lesion diameter, and mutation status in KMT2D, TSC1, ATM, PDGFRA and LRP1B.",
+  "field": "medicine",
+  "ai_technology": "Predictive Biomarker Modeling Framework (PBMF), an ensemble of neural networks using a contrastive treatment/control objective; knowledge-distilled decision tree",
+  "organization": "AstraZeneca; Tempus AI",
+  "source_url": "https://ellykipkogei.io/assets/pdf/1-s2.0-S1535610825001308-main.pdf",
+  "source_type": "paper",
+  "publication_date": "2025-05-12",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.ccell.2025.03.029",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The Predictive Biomarker Modeling Framework (PBMF), an ensemble neural network trained with a treatment-versus-control contrastive objective, identified a composite clinicogenomic biomarker using phase 2 POPLAR data for atezolizumab versus docetaxel.",
+    "unknown": "Retrospective reanalysis; the biomarker has not prospectively guided patient selection or treatment. The outcome comparisons do not establish benefit from applying PBMF clinically. The authors call for prospective validation and note potential cohort comparability limitations. The identified feature set includes previously studied biomarkers; the paper’s novel result is the composite PBMF-derived predictive subgroup and retrospective generalization, not discovery of each individual feature.",
+    "ai_role": "PBMF searched clinicogenomic features for a treatment-specific predictive subgroup, using phase 2 POPLAR training data and contrasting atezolizumab against docetaxel outcomes. Researchers transferred the derived model/biomarker to phase 3 OAK data and distilled it into an interpretable tree. This was a retrospective analysis of trial data, not prospective trial stratification.",
+    "evidence_urls": [
+      "https://ellykipkogei.io/assets/pdf/1-s2.0-S1535610825001308-main.pdf"
+    ]
+  }
+}

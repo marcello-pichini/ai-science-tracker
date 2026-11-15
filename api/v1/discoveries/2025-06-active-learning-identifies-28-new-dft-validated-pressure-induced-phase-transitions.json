@@ -1,0 +1,28 @@
+{
+  "id": "2025-06-active-learning-identifies-28-new-dft-validated-pressure-induced-phase-transitions",
+  "title": "Active learning identifies 28 new DFT-validated pressure-induced phase transitions",
+  "summary": "Across 13 active-learning cycles, a graph neural network screened phase pairs for pressure-induced transitions and selected cases for density-functional-theory (DFT) calculations. DFT confirmed 28 previously unreported transformations; 14 high-pressure phases were dynamically stable at transition pressure, including 10 also predicted dynamically stable at zero pressure. The study also identifies a previously unrecorded dynamically stable monoclinic P2₁/c phase of Cr₂O₃.",
+  "field": "materials",
+  "ai_technology": "MEGNet graph neural network with five-model ensemble and iterative active learning",
+  "organization": "Purdue University",
+  "source_url": "https://www.nature.com/articles/s41524-025-01682-7",
+  "source_type": "paper",
+  "publication_date": "2025-06-20",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41524-025-01682-7",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Across 13 active-learning cycles, a graph neural network screened phase pairs for pressure-induced transitions and selected cases for density-functional-theory (DFT) calculations.",
+    "unknown": "These are computational predictions corroborated by DFT, not experimentally synthesized or observed phases. Of 28 transitions, 14 high-pressure structures were dynamically stable at transition pressure; only 10 were also predicted stable at zero pressure. Two selected phase-pair calculations remained difficult to converge. The paper's discovery count excludes 18 rediscoveries, and individual stability remains subject to DFT approximations.",
+    "ai_role": "The GNN screened 7,677 phase pairs for consensus transition-pressure predictions. Active learning selected high-confidence pairs for DFT equation-of-state calculations, and the resulting DFT outcomes were added to training data for subsequent cycles. The AI search was the discovery and prioritization mechanism; DFT calculations supplied the physical verification of the transitions.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41524-025-01682-7"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2023-10-machine-learning-models-identify-cerebrospinal-fluid-protein-signatures-for-multiple-sclerosis-activity-and-disability-progression",
+  "title": "Machine-learning models identify cerebrospinal-fluid protein signatures for multiple-sclerosis activity and disability progression",
+  "summary": "Using Olink proteomics of 1,463 proteins in CSF and plasma from two prospective Swedish cohorts, the study trained prediction models for multiple-sclerosis diagnosis, 2-year disease activity and long-term disability worsening. Lower CSF neurofilament light (NfL) predicted absence of disease activity at two years (replication AUC 0.77). A stepwise model using 11 CSF proteins (CXCL13, LTA, FCN2, ICAM3, LY9, SLAMF7, TYMP, CHI3L1, FYB1, TNFRSF1B and NfL) predicted normalized age-related MS severity; subgroup classification AUCs in the replication cohort ranged from 0.88 to 0.90.",
+  "field": "medicine",
+  "ai_technology": "Stepwise logistic regression for diagnosis and disease activity; stepwise linear regression for long-term disability severity",
+  "organization": "Linköping University; University of Skövde; Karolinska Institutet and Karolinska University Hospital; collaborating Swedish institutions",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10616092/",
+  "source_type": "paper",
+  "publication_date": "2023-10-30",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-023-42682-9",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Using Olink proteomics of 1,463 proteins in CSF and plasma from two prospective Swedish cohorts, the study trained prediction models for multiple-sclerosis diagnosis, 2-year disease activity and long-term disability worsening.",
+    "unknown": "The study included 143 people with early-stage MS and 43 healthy controls across discovery and replication cohorts; the replication MS cohort had 51 participants. The 2-year disease-activity comparison in replication was especially small (45 with activity versus 5 without). The 11-protein severity model predicted observational disability scores rather than treatment benefit. The plasma severity model had only 12 eligible replication samples and performed less convincingly. These are cohort-level results, not a clinically validated diagnostic assay or independent replication by another research group.",
+    "ai_role": "The study used statistical differential-expression testing to select disease-associated candidate proteins, then fitted logistic-regression models to predict MS diagnosis and 2-year disease activity and a linear-regression model to predict long-term normalized age-related MS severity. Stepwise feature selection produced the protein combinations; the frozen models were evaluated in a separate prospective cohort.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10616092/"
+    ]
+  }
+}

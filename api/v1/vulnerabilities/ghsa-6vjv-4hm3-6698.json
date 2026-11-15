@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-6vjv-4hm3-6698",
+  "title": "FreeRDP shadow server divides by zero after a client acknowledges a future frame ID",
+  "product": "FreeRDP freerdp-shadow-cli server",
+  "ai_system": "Claude (model/version not identified)",
+  "organization": "Anthropic and Ada Logics; FreeRDP maintainers",
+  "summary": "The shadow server stores a client-supplied frame acknowledgment without checking that it is no greater than the last frame sent. A connected viewer can acknowledge a future frame ID; unsigned subtraction wraps, and the next frame calculation divides by zero, terminating the shadow server and disconnecting viewers. The advisory states this affects availability only and, in the default setup, the attacker must already be authenticated as a desktop viewer.",
+  "ai_role": "The primary FreeRDP advisory explicitly says Anthropic found the issue using Claude and Ada Logics manually validated it. It includes a reproduction and the coordinated disclosure attribution.",
+  "disclosure_date": "2026-09-28",
+  "ai_attribution_date": "2026-09-28",
+  "classification": "disclosure",
+  "classification_note": "The advisory is GHSA-6vjv-4hm3-6698 and states no CVE is assigned. It rates the issue Moderate. The default configuration requires an already-authenticated connected desktop viewer. No exploitation claim is made.",
+  "cves": [],
+  "source_url": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-6vjv-4hm3-6698",
+  "ai_source_url": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-6vjv-4hm3-6698",
+  "remediation": "fix documented",
+  "remediation_note": "Fixed in FreeRDP 3.32.0. Upgrade to that release or later. Deployment status is not checked.",
+  "advisory_url": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-6vjv-4hm3-6698",
+  "checked_date": "2026-11-14"
+}

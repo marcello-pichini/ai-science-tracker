@@ -7,12 +7,13 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TYPES = {'object': dict, 'array': list, 'string': str, 'integer': int}
+TYPES = {'object': dict, 'array': list, 'string': str, 'integer': int, 'null': type(None)}
 
 
 def errors(value, schema, path='$'):
     t = schema.get('type')
-    if t and (not isinstance(value, TYPES[t]) or isinstance(value, bool)):
+    allowed = t if isinstance(t, list) else [t]
+    if t and (not any(isinstance(value, TYPES[k]) for k in allowed) or isinstance(value, bool)):
         return [f'{path}: expected {t}']
     out = []
     if 'enum' in schema and value not in schema['enum']:
@@ -51,6 +52,16 @@ class SchemaTests(unittest.TestCase):
 
     def test_vulnerabilities_match_schema(self):
         self.check('vulnerabilities')
+
+    def test_unknown_attribution_date_does_not_allow_other_missing_dates(self):
+        schema = json.loads((ROOT / 'schema/vulnerabilities.schema.json').read_text())
+        record = dict(json.loads((ROOT / 'data/vulnerabilities.json').read_text())[0], ai_attribution_date=None)
+        self.assertEqual(errors([record], schema), [])
+        record['disclosure_date'] = None
+        self.assertTrue(errors([record], schema))
+        record['disclosure_date'] = '2026-01-01'
+        record['ai_attribution_date'] = 'unknown'
+        self.assertTrue(errors([record], schema))
 
     def test_archived_discoveries_match_schema_and_are_not_active(self):
         schema = json.loads((ROOT / 'schema/discoveries.schema.json').read_text())

@@ -1,0 +1,28 @@
+{
+  "id": "2026-01-ai-and-developmental-profiling-reveal-conserved-rules-for-microrna-strand-selection",
+  "title": "AI and developmental profiling reveal conserved rules for microRNA strand selection",
+  "summary": "Using a high-throughput qPCR assay, Arizona State University researchers measured microRNA 5p/3p strand use across six Caenorhabditis elegans developmental stages and selected tissues. A machine-learning model trained on experimentally measured strand usage identified compositional and structural sequence features associated with strand preference; the learned relationships predicted strand usage in other vertebrates, including humans, and the authors report that the rules are conserved but context-dependent.",
+  "field": "biology",
+  "ai_technology": "Predictive machine-learning model using 77 biologically informed features, trained on high-throughput qPCR measurements from the HiTmiSS platform",
+  "organization": "Arizona State University Biodesign Institute and School of Life Sciences; Arizona State University School of Computing and Augmented Intelligence",
+  "source_url": "https://academic.oup.com/nar/article/54/2/gkaf1510/8425383",
+  "source_type": "paper",
+  "publication_date": "2026-01-14",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1093/nar/gkaf1510",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Using a high-throughput qPCR assay, Arizona State University researchers measured microRNA 5p/3p strand use across six Caenorhabditis elegans developmental stages and selected tissues.",
+    "unknown": "The dataset measured strand usage in C. elegans across six developmental stages and specific tissues; cross-species including human results are model predictions/validation against available strand-usage data, not direct tests of gene-regulatory outcomes in human cells. The result concerns strand-selection patterns and predictors, not disease causality or therapeutic efficacy.",
+    "ai_role": "The model learned strand-preference relationships from the experimental strand-usage dataset, quantified feature contributions, and predicted preference across additional nematode microRNAs and vertebrate species. Experimental qPCR measurements established the C. elegans profiles; predictions across species extend the analysis but are not themselves experimental confirmation of function in each organism.",
+    "evidence_urls": [
+      "https://academic.oup.com/nar/article/54/2/gkaf1510/8425383"
+    ]
+  }
+}

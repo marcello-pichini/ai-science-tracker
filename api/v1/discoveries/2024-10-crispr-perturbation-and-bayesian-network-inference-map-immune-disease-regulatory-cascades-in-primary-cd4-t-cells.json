@@ -1,0 +1,28 @@
+{
+  "id": "2024-10-crispr-perturbation-and-bayesian-network-inference-map-immune-disease-regulatory-cascades-in-primary-cd4-t-cells",
+  "title": "CRISPR perturbation and Bayesian network inference map immune-disease regulatory cascades in primary CD4+ T cells",
+  "summary": "The study used CRISPR knockouts of 84 genes in primary human CD4+ T cells and a new linear latent causal Bayes (LLCB) network-inference method to estimate 211 regulatory connections. Integrating the inferred network with immune GWAS analyses identified an interconnected module in which KMT2A was inferred upstream of JAK-STAT and IL-2 signaling regulators including IRF4, STAT5A/B and IL2RA, linking an epigenetic regulator to immune-disease-associated pathways.",
+  "field": "biology",
+  "ai_technology": "Linear latent causal Bayes (LLCB), a Bayesian extension of linear latent causal network inference, applied to CRISPR knockout and RNA-sequencing data",
+  "organization": "Gladstone-UCSF Institute of Genomic Immunology; University of California, San Francisco; Johns Hopkins University; Stanford University; University of California, Berkeley",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11605694/",
+  "source_type": "paper",
+  "publication_date": "2024-10-11",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.xgen.2024.100671",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The study used CRISPR knockouts of 84 genes in primary human CD4+ T cells and a new linear latent causal Bayes (LLCB) network-inference method to estimate 211 regulatory connections.",
+    "unknown": "The study perturbed 84 selected genes in primary CD4+ T cells from three donors, so this is not a complete T-cell regulatory map. LLCB “direct effects” are statistical effects adjusted for other perturbed genes and are not evidence of physical binding; effects from unperturbed genes can be attributed to modeled edges. The GWAS integration identifies pathway links, not proof that the inferred cascade causes clinical disease. A prior bioRxiv version (10.1101/2023.09.17.557749) is the same study and is not counted separately.",
+    "ai_role": "LLCB inferred direct and indirect regulatory relationships from perturbation-associated expression effects across 84 targeted genes. The model-derived network and gene-program analysis, combined with immune GWAS statistics, supported the specific KMT2A-to-JAK-STAT/IL-2 regulatory finding. CRISPR perturbation supplied the experimental perturbation data; the network algorithm converted those measurements into the reported regulatory map.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11605694/"
+    ]
+  }
+}

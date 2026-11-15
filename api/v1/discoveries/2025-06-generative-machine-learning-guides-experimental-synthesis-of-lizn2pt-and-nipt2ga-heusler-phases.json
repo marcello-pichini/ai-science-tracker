@@ -1,0 +1,28 @@
+{
+  "id": "2025-06-generative-machine-learning-guides-experimental-synthesis-of-lizn2pt-and-nipt2ga-heusler-phases",
+  "title": "Generative machine learning guides experimental synthesis of LiZn₂Pt and NiPt₂Ga Heusler phases",
+  "summary": "Researchers combined a generative probabilistic crystal-graph model (PGCGM) with an ALIGNN stability predictor to propose and screen ternary structures, then used the model outputs to guide synthesis. They experimentally synthesized phase-pure LiZn₂Pt and NiPt₂Ga; the measured NiPt₂Ga adopts a tetragonal Heusler structure rather than the model’s cubic proposal, with DFT comparisons supporting its lower energy. They also synthesized LiZn₂Pd as a human-selected follow-up that was not among PGCGM’s candidate outputs. This is one paper-level AI-enabled synthesis workflow and three related compounds, not three separate records.",
+  "field": "materials",
+  "ai_technology": "PGCGM generative Wasserstein GAN for ternary crystal structures; ALIGNN graph neural network for decomposition-enthalpy stability screening",
+  "organization": "Johns Hopkins University; Johns Hopkins University Applied Physics Laboratory; Gdansk University of Technology",
+  "source_url": "https://pubs.rsc.org/en/content/articlehtml/2025/ra/d5ra00427f",
+  "source_type": "paper",
+  "publication_date": "2025-06-05",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1039/d5ra00427f",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Researchers combined a generative probabilistic crystal-graph model (PGCGM) with an ALIGNN stability predictor to propose and screen ternary structures, then used the model outputs to guide synthesis.",
+    "unknown": "The reported synthesis outcome is experimentally characterized in the paper, but the AI was a candidate-generation and stability-screening aid rather than an autonomous discoverer: expert chemistry selected candidates and performed synthesis. LiZn₂Pt’s composition and Fm3̄m structure were already represented in Materials Project/OQMD training data, so its novelty is experimental realization rather than structure invention. The NiPt₂Ga experimental structure is tetragonal P4/mmm, differing from the cubic PGCGM proposal; the paper gives a DFT energy comparison. No superconductivity was observed, and magnetic ordering temperature for NiPt₂Ga was unresolved.",
+    "ai_role": "PGCGM generated candidate crystal structures and ALIGNN screened their predicted stability. Researchers used these model outputs to down-select and choose Heusler-family candidates for synthesis. The authors note that expert judgment remained necessary and that LiZn₂Pt’s composition/structure appeared in the model training databases; NiPt₂Ga’s experimentally realized tetragonal structure was not the exact cubic structure proposed by PGCGM.",
+    "evidence_urls": [
+      "https://pubs.rsc.org/en/content/articlehtml/2025/ra/d5ra00427f"
+    ]
+  }
+}

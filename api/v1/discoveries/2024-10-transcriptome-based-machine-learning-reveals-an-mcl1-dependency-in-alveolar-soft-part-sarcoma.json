@@ -1,0 +1,28 @@
+{
+  "id": "2024-10-transcriptome-based-machine-learning-reveals-an-mcl1-dependency-in-alveolar-soft-part-sarcoma",
+  "title": "Transcriptome-based machine learning reveals an MCL1 dependency in alveolar soft part sarcoma",
+  "summary": "A support-vector-regression model trained to infer gene dependencies from RNA-sequencing profiles predicted selective MCL1 dependence in alveolar soft part sarcoma (ASPS), distinct from TFE3-translocation renal cell carcinoma. The authors tested the prediction with CRISPR knockout and the MCL1 inhibitor murizatoclax in two ASPS cell lines; the reported viability effects were greater in ASPS than comparator tRCC lines.",
+  "field": "biology",
+  "ai_technology": "Transcriptome-based support-vector regression model (RBF kernel; 657 highly predictable gene dependencies)",
+  "organization": "Dana-Farber Cancer Institute; Broad Institute of MIT and Harvard",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11527139/",
+  "source_type": "paper",
+  "publication_date": "2024-10-25",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1101/2024.10.24.620074",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors tested the prediction with CRISPR knockout and the MCL1 inhibitor murizatoclax in two ASPS cell lines; the reported viability effects were greater in ASPS than comparator tRCC lines.",
+    "unknown": "bioRxiv preprint, not peer reviewed as stated by PMC. Validation was in two ASPS cell lines with CRISPR and inhibitor assays; it does not establish patient benefit or clinical efficacy. The model nominates dependencies and is not a functional screen itself.",
+    "ai_role": "The model predicted per-gene dependency scores from tumor/cell-line expression profiles and prioritized selective vulnerabilities. The study then tested MCL1 dependence in ASPS using three distinct sgRNAs and murizatoclax; those experiments, rather than the prediction alone, provide the reported validation.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11527139/"
+    ]
+  }
+}

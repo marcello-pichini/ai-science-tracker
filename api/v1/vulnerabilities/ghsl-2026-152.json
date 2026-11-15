@@ -1,0 +1,20 @@
+{
+  "id": "ghsl-2026-152",
+  "title": "Taskflow Agent finds authorization bypass in graphql-ruby",
+  "product": "graphql-ruby",
+  "ai_system": "GitHub Security Lab Taskflow Agent",
+  "organization": "GitHub Security Lab",
+  "summary": "In the Execution::Next runner, a resolver that raises GraphQL::UnauthorizedError from its authorization hook is treated as authorized, so the resolver still runs and can disclose data or perform side effects.",
+  "ai_role": "GHSL credits its Taskflow Agent with discovery and says GHSL team members manually verified the issue. The report identifies the Execution::Next code path and affected versions; no separate CVE is listed.",
+  "disclosure_date": "2026-07-21",
+  "ai_attribution_date": "2026-07-21",
+  "classification": "disclosure",
+  "classification_note": "The GHSL advisory documents the authorization bypass and fix; it does not claim exploitation in the wild.",
+  "cves": [],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2026-152_graphql-ruby/",
+  "ai_source_url": "https://securitylab.github.com/advisories/GHSL-2026-152_graphql-ruby/",
+  "remediation": "fix documented",
+  "remediation_note": "GHSL’s timeline says the issue was fixed 2026-07-17 and graphql-ruby v2.6.6 released 2026-07-21; patch state in dependent applications is not checked.",
+  "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-152_graphql-ruby/",
+  "checked_date": "2026-11-14"
+}

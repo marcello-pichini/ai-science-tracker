@@ -1,0 +1,28 @@
+{
+  "id": "2023-12-a-recurrent-neural-network-uncovers-a-non-canonical-human-grhl1-dna-binding-site",
+  "title": "A recurrent neural network uncovers a non-canonical human GRHL1 DNA-binding site",
+  "summary": "A convolutional recurrent neural network found 46 GRHL1 ChIP-seq sites missed by a conventional position-weight matrix, including sequences lacking the previously considered obligatory CNNG motif. Isothermal titration calorimetry confirmed GRHL1 binding to a selected non-canonical sequence lacking that core motif; nucleotide mutagenesis experiments also showed that model scores tracked measured affinity across tested variants.",
+  "field": "biology",
+  "ai_technology": "Convolutional recurrent neural network trained on GRHL1 HT-SELEX binding data",
+  "organization": "Charité – Universitätsmedizin Berlin; Max Delbrück Center for Molecular Medicine; Hannover Medical School; Institute of Bioorganic Chemistry, Polish Academy of Sciences",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10696883/",
+  "source_type": "paper",
+  "publication_date": "2023-12-04",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1186/s12864-023-09830-3",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Isothermal titration calorimetry confirmed GRHL1 binding to a selected non-canonical sequence lacking that core motif; nucleotide mutagenesis experiments also showed that model scores tracked measured affinity across tested variants.",
+    "unknown": "Only one of the 46 predicted non-canonical sites was directly validated by ITC in this study; 46 is a model-nominated set, not 46 experimentally confirmed bindings. Biochemical affinity was tested with the isolated GRHL1 DNA-binding domain and synthetic DNA, not in vivo transcriptional effects for the novel site.",
+    "ai_role": "The CNN/RNN learned GRHL1 sequence-binding patterns from HT-SELEX and scored human-cell ChIP-seq peaks. It identified 46 sites not detected by FIMO/PWM; one selected high-scoring non-canonical site was experimentally confirmed by ITC, and predicted variant affinity changes were compared with ITC results.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10696883/"
+    ]
+  }
+}

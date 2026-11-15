@@ -1,0 +1,28 @@
+{
+  "id": "2020-08-machine-learning-derives-new-idealized-ocean-eddy-momentum-and-heat-flux-closures",
+  "title": "Machine learning derives new idealized ocean-eddy momentum and heat-flux closures",
+  "summary": "Relevance-vector-machine sparse regression applied to high-resolution idealized ocean simulations produced compact momentum and temperature-flux closures for coarse grids. In the authors’ simulated setup, the inferred momentum terms include energy transfers absent from then-current closures; the parameterizations improved selected statistics when implemented in an idealized 30-km ocean model. This is a model-derived closure result, not an observation of a previously unknown ocean process.",
+  "field": "climate",
+  "ai_technology": "Relevance vector machine (RVM) sparse Bayesian regression; physically constrained convolutional neural network used as a comparison",
+  "organization": "University of Oxford; University of California, San Diego",
+  "source_url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088376",
+  "source_type": "paper",
+  "publication_date": "2020-08-06",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1029/2020GL088376",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Relevance-vector-machine sparse regression applied to high-resolution idealized ocean simulations produced compact momentum and temperature-flux closures for coarse grids.",
+    "unknown": "Derived from idealized, eddy-resolving double-gyre simulations and tested in an idealized coarse-resolution shallow-water model, not validated against observational ocean data or a global coupled climate model. The inferred tensor structure relates to earlier Reynolds-stress and deformation-based theories; the paper’s stated novelty is the additional data-derived terms/energy pathways and resulting parameterizations, not discovery of a new observed ocean phenomenon.",
+    "ai_role": "RVM selected compact closed-form terms from candidate functions of simulated velocity, vorticity and deformation fields to infer subgrid momentum and temperature forcing. The authors report the expressions captured energy pathways omitted from existing parameterizations. A physically constrained CNN was also trained and evaluated, but the interpretable closure result comes from the RVM.",
+    "evidence_urls": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2020GL088376"
+    ]
+  }
+}

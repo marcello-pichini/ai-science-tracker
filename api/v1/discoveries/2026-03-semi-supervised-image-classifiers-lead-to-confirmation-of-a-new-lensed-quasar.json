@@ -1,0 +1,28 @@
+{
+  "id": "2026-03-semi-supervised-image-classifiers-lead-to-confirmation-of-a-new-lensed-quasar",
+  "title": "Semi-supervised image classifiers lead to confirmation of a new lensed quasar",
+  "summary": "Semi-supervised image classifiers trained on Pan-STARRS and DESI imagery surfaced five quasar-lens candidates for Keck follow-up. Spectroscopy confirmed GRALJ140833.73+042229.98 as a previously undiscovered gravitationally lensed quasar: a z=2.998 quasar lensed by a z=0.542 early-type galaxy. Three other targets were quasar-plus-star or quasar-plus-galaxy interlopers, and one remained unresolved.",
+  "field": "physics",
+  "ai_technology": "Semi-supervised image-classifier pipeline using a convolutional autoencoder with a classifier, plus a convolutional network trained with virtual adversarial training",
+  "organization": "University of Sydney; University of California, Irvine; California Institute of Technology; collaborators",
+  "source_url": "https://arxiv.org/abs/2504.00054",
+  "source_type": "paper",
+  "publication_date": "2026-03-06",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1093/mnras/stag445",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Semi-supervised image classifiers trained on Pan-STARRS and DESI imagery surfaced five quasar-lens candidates for Keck follow-up.",
+    "unknown": "Only one of five observed candidates was confirmed; three were interlopers and one could not be resolved. The successful identification came from a previous model iteration during model development, so this is an AI-assisted discovery with limited follow-up yield, not a prospective performance demonstration.",
+    "ai_role": "Image-only classifiers prioritized candidate lenses; a prior iteration of the autoencoder-classifier surfaced the object, which Keck spectroscopy subsequently confirmed. The paper notes the observed candidates were selected during model development, not from a strictly prospective frozen-model test.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2504.00054"
+    ]
+  }
+}

@@ -28,6 +28,8 @@ class VulnerabilityTests(unittest.TestCase):
                 for field in ('source_url', 'ai_source_url', 'advisory_url'):
                     self.assertEqual(urlsplit(r[field]).scheme, 'https')
                 for field in ('disclosure_date', 'ai_attribution_date', 'checked_date'):
+                    if field == 'ai_attribution_date' and r[field] is None:
+                        continue
                     datetime.date.fromisoformat(r[field])
                 self.assertGreaterEqual(r['checked_date'], r['disclosure_date'])
                 for field in ('ai_role', 'classification_note', 'remediation_note'):

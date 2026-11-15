@@ -1,0 +1,28 @@
+{
+  "id": "2022-08-machine-learning-isolates-aerosol-driven-cloud-cover-increase-after-the-holuhraun-eruption",
+  "title": "Machine learning isolates aerosol-driven cloud-cover increase after the Holuhraun eruption",
+  "summary": "Using MODIS satellite observations and a random-forest counterfactual trained on meteorology and non-eruption years, researchers estimated cloud responses to the 2014 Holuhraun volcanic aerosol plume. They found cloud fraction increased by about 10% across the studied region; this change contributed more to the estimated aerosol cooling than the smaller radiative effect from brighter clouds with smaller droplets. The study supplies an observational constraint on aerosol–cloud climate forcing.",
+  "field": "climate",
+  "ai_technology": "Random-forest ML-MODIS surrogate trained on meteorological reanalysis and MODIS satellite data from 2001–2020, excluding the 2014 eruption year",
+  "organization": "University of Exeter; ETH Zurich; UK Met Office; NASA Goddard Space Flight Center; University of Cambridge; University of Leeds",
+  "source_url": "https://www.nature.com/articles/s41561-022-00991-6",
+  "source_type": "paper",
+  "publication_date": "2022-08-01",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41561-022-00991-6",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Using MODIS satellite observations and a random-forest counterfactual trained on meteorology and non-eruption years, researchers estimated cloud responses to the 2014 Holuhraun volcanic aerosol plume.",
+    "unknown": "The result concerns one volcanic natural experiment, Holuhraun in 2014, and satellite observations of a North Atlantic/Northern European region. The cloud response is estimated by comparing observations with an ML counterfactual and is not a randomized intervention; it depends on model and MODIS retrieval assumptions. The paper reports about a 10% cloud-cover increase and attributes the leading radiative contribution to cloud fraction, while the droplet-size effect is also present and the liquid-water-path contribution is weak.",
+    "ai_role": "The random forest estimated the cloud properties expected under observed meteorological conditions without volcanic aerosol, creating a counterfactual baseline. Comparing these predictions with 2014 MODIS observations let the authors isolate cloud changes associated with the Holuhraun aerosol perturbation from meteorological co-variability and estimate the relative radiative contributions of cloud-fraction, liquid-water-path, and droplet-size changes.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41561-022-00991-6"
+    ]
+  }
+}

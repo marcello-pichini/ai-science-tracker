@@ -1,0 +1,28 @@
+{
+  "id": "2024-12-deep-learning-ct-response-score-stratifies-outcomes-in-lung-cancer-immunotherapy-cohorts",
+  "title": "Deep-learning CT response score stratifies outcomes in lung-cancer immunotherapy cohorts",
+  "summary": "A deep-learning radiomic pipeline generated a pretreatment CT response score (CTRS) for advanced non-small-cell lung cancer treated with PD-(L)1 checkpoint inhibitors. In an independent real-world test cohort, high-response-score first-line ICI-monotherapy patients had longer progression-free and overall survival after adjustment for baseline covariates including PD-L1 (adjusted HR 0.46 and 0.50). In a secondary analysis of 54 participants from a prospective sasanlimab trial, the score was associated with overall survival (adjusted HR 0.33) but not progression-free survival.",
+  "field": "medicine",
+  "ai_technology": "Three-dimensional hierarchical convolutional neural network feature extractor combined with a Cox survival model (CT response score, CTRS)",
+  "organization": "Onc.AI; Pfizer; University of Pennsylvania; Moffitt Cancer Center",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11658027/",
+  "source_type": "paper",
+  "publication_date": "2024-12-13",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1200/CCI.24.00133",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In an independent real-world test cohort, high-response-score first-line ICI-monotherapy patients had longer progression-free and overall survival after adjustment for baseline covariates including PD-L1 (adjusted HR 0.46 and 0.50).",
+    "unknown": "The real-world data were retrospective. Association of the score with survival among treated patients does not establish that the score predicts differential treatment benefit versus an untreated or alternative-treatment control. Clinical-trial analysis was secondary and small (n=54): PFS association was not significant, while OS association was significant. Authors say larger prospective studies are needed; no improved-care or deployment outcome is shown.",
+    "ai_role": "The model learned image features from pretreatment CT/PET-CT scans and combined them with a Cox survival model to produce an imaging-only response score. Researchers evaluated the score in a held-out real-world cohort and in a secondary analysis of a prospective clinical-trial cohort; it stratified PFS/OS in the first and OS in the latter.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11658027/"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-rcqc-842v-m26h",
+  "title": "Skipped HEIF grid tiles can deadlock parallel decoding",
+  "product": "libheif",
+  "ai_system": "Anthropic OSS Scanner (model not specified for this finding)",
+  "organization": "Anthropic and libheif maintainers",
+  "summary": "A skipped invalid tile left an empty queue entry that was dispatched as item ID 0, potentially deadlocking parallel decoding.",
+  "ai_role": "The item-level libheif advisory explicitly attributes discovery to Anthropic's OSS Scanner as ANT-2026-OTCOV03Y. The release notes independently state that all listed security issues were found by the scanner. The Anthropic program sources establish model-based scanning, but no per-case model is identified.",
+  "disclosure_date": "2026-10-26",
+  "ai_attribution_date": "2026-10-26",
+  "classification": "disclosure",
+  "classification_note": "The primary advisory establishes a publicly disclosed security finding and direct Anthropic OSS Scanner attribution. No CVE had been assigned in the libheif release notes at the checked time; the distinct GHSA is used. No exploitation or zero-day status is asserted.",
+  "cves": [],
+  "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-rcqc-842v-m26h",
+  "ai_source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-rcqc-842v-m26h",
+  "remediation": "fix documented",
+  "remediation_note": "The queue now distinguishes empty entries from valid item ID 0 and skips empty jobs. Fixed in libheif 1.23.7. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
+  "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-rcqc-842v-m26h",
+  "checked_date": "2026-11-14"
+}

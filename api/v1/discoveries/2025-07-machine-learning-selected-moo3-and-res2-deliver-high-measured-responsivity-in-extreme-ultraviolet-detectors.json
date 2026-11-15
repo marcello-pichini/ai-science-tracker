@@ -1,0 +1,28 @@
+{
+  "id": "2025-07-machine-learning-selected-moo3-and-res2-deliver-high-measured-responsivity-in-extreme-ultraviolet-detectors",
+  "title": "Machine-learning-selected α-MoO3 and ReS2 deliver high measured responsivity in extreme-ultraviolet detectors",
+  "summary": "A cross-spectral machine-learning model trained on 1,927 visible/UV photodetector records screened materials for extreme-ultraviolet response and selected α-MoO3 and ReS2 for device validation. At the Australian Synchrotron, the α-MoO3 detector showed measured responsivity of about 50–160 A/W depending on photon energy and bias (about 60–70 A/W near 13.5 nm); ReS2 reached about 20 A/W at 91.8 eV and 1 mV, close to the model estimate. The α-MoO3 device retained repeatable current response through 100 bias cycles under high-flux exposure.",
+  "field": "materials",
+  "ai_technology": "Extremely Randomized Trees cross-spectral response prediction model",
+  "organization": "RMIT University; University of Illinois Chicago; University of Illinois Urbana-Champaign; Shahid Beheshti University; Monash University; Pakistan Institute of Engineering and Applied Sciences; Concordia University; University of Shanghai for Science and Technology; Australian Synchrotron",
+  "source_url": "https://www.nature.com/articles/s41467-025-60499-6",
+  "source_type": "paper",
+  "publication_date": "2025-07-07",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-025-60499-6",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A cross-spectral machine-learning model trained on 1,927 visible/UV photodetector records screened materials for extreme-ultraviolet response and selected α-MoO3 and ReS2 for device validation.",
+    "unknown": "The reported measurements are for the fabricated devices and stated synchrotron energies, biases and exposure conditions; they do not establish equivalent responsivity across all EUV wavelengths or device architectures. The paper reports α-MoO3 responsivity ranging about 50–160 A/W across test conditions, while near 13.5 nm it reports about 60–70 A/W; ReS2 was tested at a specified energy/bias. The authors' silicon comparison varies with the comparison conditions and metric (the abstract gives about 225-fold, while the device discussion reports up to about 800-fold); this record therefore states the direct responsivity measurements without treating either ratio as universal. The material screening result is a small experimental validation set, not an exhaustive search.",
+    "ai_role": "The model learned relations between material/device descriptors and detector response across wavelength ranges from a 1,927-record dataset of visible and ultraviolet photoresponse measurements. It screened candidate materials for EUV responsivity and selected α-MoO3 and ReS2 for fabrication and synchrotron testing. The AI contribution was transferring response patterns across spectral domains to prioritize materials; experiments then measured the EUV detector performance.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-025-60499-6"
+    ]
+  }
+}

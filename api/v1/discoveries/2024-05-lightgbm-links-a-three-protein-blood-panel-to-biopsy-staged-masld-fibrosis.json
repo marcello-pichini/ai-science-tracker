@@ -1,0 +1,28 @@
+{
+  "id": "2024-05-lightgbm-links-a-three-protein-blood-panel-to-biopsy-staged-masld-fibrosis",
+  "title": "LightGBM links a three-protein blood panel to biopsy-staged MASLD fibrosis",
+  "summary": "A translational study combined a disease-related mouse gene-expression signature, human liver-biopsy transcriptomes and serum protein measurements to select IGFBP7, SSc5D and Sema4D as a three-protein panel for metabolic dysfunction-associated steatotic liver disease (MASLD). A LightGBM model classified biopsy-staged fibrosis, with AUCs 0.82 for F0/F1, 0.89 for F2 and 0.87 for F3/F4 in the development/testing data. In an independent Danish cohort of 156 patients, AUC was 0.84 for F0/F1 and F3/F4; performance for F2 was lower (AUC 0.62).",
+  "field": "medicine",
+  "ai_technology": "LightGBM classifier (TLM3) using the three serum proteins IGFBP7, SSc5D and Sema4D",
+  "organization": "TNO, Amsterdam UMC, Leiden University Medical Center and collaborating Dutch and Danish clinical institutions",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11137090/",
+  "source_type": "paper",
+  "publication_date": "2024-05-29",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-024-48956-0",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A translational study combined a disease-related mouse gene-expression signature, human liver-biopsy transcriptomes and serum protein measurements to select IGFBP7, SSc5D and Sema4D as a three-protein panel for metabolic dysfunction-associated steatotic liver disease (MASLD).",
+    "unknown": "The model is an early translational biomarker result. Its independent cohort replicated better classification at F0/F1 and F3/F4 (AUC 0.84) but was modest for F2 (AUC 0.62). The authors say mechanistic claims could not be tested in the single-biopsy cohorts and call for prospective and intervention studies before clinical utility is established. TNO disclosed a patent application related to the biomarkers.",
+    "ai_role": "The LightGBM model combined the three protein measurements selected from a translational mouse/human fibrosis signature to classify liver-biopsy fibrosis stages. The authors compared the model with Fib-4, APRI and FibroScan in held-out and independent cohorts.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11137090/"
+    ]
+  }
+}

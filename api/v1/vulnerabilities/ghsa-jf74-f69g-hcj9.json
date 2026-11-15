@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-jf74-f69g-hcj9",
+  "title": "Caddy file_server can expose private TLS keys when its data directory falls back to the working directory",
+  "product": "Caddy HTTP file server",
+  "ai_system": "Anthropic OSS Scanner (model unspecified)",
+  "organization": "Anthropic and project maintainers",
+  "summary": "When neither HOME nor XDG_DATA_HOME is set, Caddy places certificates and local CA keys under ./caddy. If a file_server serves the working directory, anonymous clients can download those private keys and use them to impersonate the site or mint certificates trusted by clients that installed the local CA. The advisory limits exposure to deployments that lack both home-directory variables and serve the working directory.",
+  "ai_role": "The primary Caddy advisory directly credits Anthropic OSS Scanner as finding ANT-2026-JBWWW7FF and provides a reproducer and impact description. Anthropic’s primary scanner page establishes model-based scanner provenance. The advisory does not identify the model for this case.",
+  "disclosure_date": "2026-11-04",
+  "ai_attribution_date": "2026-11-04",
+  "classification": "disclosure",
+  "classification_note": "The primary maintainer published GHSA-jf74-f69g-hcj9 on 2026-11-04 and directly credits Anthropic OSS Scanner (ANT-2026-JBWWW7FF). For filelock, the source records private scanner report receipt on Oct 15; the public advisory attribution date remains Oct 17.",
+  "cves": [],
+  "source_url": "https://github.com/caddyserver/caddy/security/advisories/GHSA-jf74-f69g-hcj9",
+  "ai_source_url": "https://github.com/caddyserver/caddy/security/advisories/GHSA-jf74-f69g-hcj9",
+  "remediation": "fix documented",
+  "remediation_note": "Caddy 2.11.8 hides the absolute data-directory path when AppDataDir is relative, covering Caddyfile, JSON, and file-server command configurations.",
+  "advisory_url": "https://github.com/caddyserver/caddy/security/advisories/GHSA-jf74-f69g-hcj9",
+  "checked_date": "2026-11-14"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2024-09-machine-learning-identifies-a-high-risk-diabetic-cardiomyopathy-phenotype-linked-to-future-heart-failure",
+  "title": "Machine learning identifies a high-risk diabetic cardiomyopathy phenotype linked to future heart failure",
+  "summary": "Unsupervised clustering of 25 echocardiographic and biomarker variables in 1,199 ARIC participants with diabetes identified three phenogroups; the group with the greatest cardiac remodelling and neurohormonal-stress abnormalities had 12.1% five-year heart-failure incidence, versus 4.6% and 3.1% in the other groups. A deep-neural-network classifier trained to recognize this phenotype identified corresponding high-risk groups in the external CHS cohort (n=802) and UT Southwestern EHR cohort (n=5,071); phenotype classification was associated with incident heart failure in both.",
+  "field": "medicine",
+  "ai_technology": "Unsupervised hierarchical clustering and a deep neural network (DeepNN) classifier, with random forest variable-importance analysis",
+  "organization": "University of Texas Southwestern Medical Center; Texas Heart Institute; Houston Methodist DeBakey Heart & Vascular Center; Duke University; National Heart Centre Singapore; University of Toronto; University of Colorado; Massachusetts General Hospital",
+  "source_url": "https://onlinelibrary.wiley.com/doi/10.1002/ejhf.3443",
+  "source_type": "paper",
+  "publication_date": "2024-09-06",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1002/ejhf.3443",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Unsupervised clustering of 25 echocardiographic and biomarker variables in 1,199 ARIC participants with diabetes identified three phenogroups; the group with the greatest cardiac remodelling and neurohormonal-stress abnormalities had 12.1% five-year heart-failure incidence, versus 4.6% and 3.1% in the other groups.",
+    "unknown": "The cohorts were observational; association with future heart failure does not establish that model-guided intervention improves outcomes. The phenotype is an operational study definition, not a universally accepted diagnostic threshold. The authors describe potential preventive use, but it was not tested. The cohorts were external validations rather than prospective deployment trials.",
+    "ai_role": "The authors used unsupervised hierarchical clustering of echocardiography and cardiac biomarkers to define outcome-associated diabetic-cardiomyopathy phenogroups, then trained and externally validated a DeepNN classifier to recognize the high-risk phenotype. Random forest permutation importance prioritized NT-proBNP, left-ventricular mass, Doppler measurements, left-atrial dimension and LV end-diastolic volume.",
+    "evidence_urls": [
+      "https://onlinelibrary.wiley.com/doi/10.1002/ejhf.3443"
+    ]
+  }
+}

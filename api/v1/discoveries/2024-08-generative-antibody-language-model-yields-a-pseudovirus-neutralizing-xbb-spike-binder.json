@@ -1,0 +1,28 @@
+{
+  "id": "2024-08-generative-antibody-language-model-yields-a-pseudovirus-neutralizing-xbb-spike-binder",
+  "title": "Generative antibody language model yields a pseudovirus-neutralizing XBB spike binder",
+  "summary": "Tencent AI Lab and collaborators developed PALM-H3, a pretrained antibody language model that generates heavy-chain CDRH3 sequences, and A2binder to rank antigen-antibody binding. For SARS-CoV-2 XBB, which the paper says was not present during training, the selected generated antibody (Artificial 1) bound spike and neutralized pseudovirus in vitro, with reported KD 0.13 nM and IC50 0.00301 μg/mL. The study also assayed generated antibodies against wild-type, Alpha and Delta; performance varied by antibody and variant.",
+  "field": "biology",
+  "ai_technology": "PALM-H3 pretrained antibody generative language model and A2binder antigen-antibody affinity predictor",
+  "organization": "Tencent AI Lab; Peking University Shenzhen Graduate School; Xijing Hospital of Digestive Diseases, Fourth Military Medical University",
+  "source_url": "https://www.nature.com/articles/s41467-024-50903-y",
+  "source_type": "paper",
+  "publication_date": "2024-08-10",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-024-50903-y",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "For SARS-CoV-2 XBB, which the paper says was not present during training, the selected generated antibody (Artificial 1) bound spike and neutralized pseudovirus in vitro, with reported KD 0.13 nM and IC50 0.00301 μg/mL.",
+    "unknown": "The functional evidence is in vitro, using SARS-CoV-2 pseudovirus rather than live-virus or clinical outcomes. The study tested selected antibody candidates; several generated candidates performed substantially worse, so the reported top result is not representative of all generated sequences. The stated novelty is experimental neutralization against the XBB variant by a generated antibody, not proof of a treatment or protection in people.",
+    "ai_role": "PALM-H3 generated CDRH3 sequences conditioned on antigen specificity using a RoFormer-based antibody model; A2binder scored antibody-antigen pairs to select candidates for binding, surface-plasmon-resonance and pseudovirus neutralization tests. The paper reports it generated and selected an XBB spike-binding antibody despite XBB being absent from its training set.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-024-50903-y"
+    ]
+  }
+}

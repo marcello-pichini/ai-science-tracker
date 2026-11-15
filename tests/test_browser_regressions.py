@@ -12,12 +12,14 @@ const vm = require('node:vm');
 function page(name, hash = "", archived = []) {
   const listeners = {}, elements = new Map();
   const classes = () => ({add() {}, remove() {}, toggle() {}});
-  const node = id => ({id, classList:classes(), open:false, textContent:'', value:'',
-    setAttribute() {}, addEventListener() {}, scrollIntoView() {}, querySelector() {return null;}});
+  const node = id => ({id, classList:classes(), open:false, textContent:'', value:'', attributes:{}, handlers:{},
+    setAttribute(k, v) {this.attributes[k] = v;}, addEventListener(k, fn) {this.handlers[k] = fn;},
+    focus(options) {document.activeElement = this; this.focusOptions = options;},
+    scrollIntoView(options) {this.scrollOptions = options;}, querySelector(selector) {return selector === 'h3' ? this.heading || null : null;}});
   const list = node('lista'); list.childNodes = [];
   Object.defineProperty(list, 'innerHTML', {set(html) {
-    this.childNodes = [...html.matchAll(/<article class="voce" id="([^"]+)"/g)].map(m => {
-      const article = node(m[1]); article.details = node(); return article;
+    this.childNodes = [...html.matchAll(/<(?:article class="voce"|tr) id="([^"]+)"/g)].map(m => {
+      const article = node(m[1]); article.details = node(); if (html.includes('<article')) article.heading = node(); return article;
     });
   }});
   list.replaceChildren = (...children) => {list.childNodes = children;};
@@ -39,7 +41,8 @@ function page(name, hash = "", archived = []) {
   location.replace = url => redirects.push(url);
   const history = {replaceState(_, __, url) {location.href = new URL(url, location).href;}};
   const addEventListener = (name, fn, capture = false) => (listeners[name] ||= []).push({fn, capture});
-  const pending = {then() {return this;}, catch() {return this;}};
+  let failure;
+  const pending = {then() {return this;}, catch(fn) {failure = fn; return this;}};
   let loaded;
   const startup = {then(fn) {loaded = fn; return pending;}};
   const context = vm.createContext({document, location, history, URL, URLSearchParams, Intl,
@@ -53,7 +56,7 @@ function page(name, hash = "", archived = []) {
   vm.runInContext([...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].at(-1)[1], context);
   const run = code => vm.runInContext(code, context);
   const dispatch = type => [...(listeners[type] || [])].forEach(x => x.fn());
-  return {run, dispatch, list, location, history, redirects, requested, load:records => loaded([records, null])};
+  return {run, dispatch, list, location, history, redirects, requested, load:(records, models = null) => loaded([records, models]), fail:() => failure(new Error("Network error"))};
 }
 const records = Array.from({length:90}, (_, i) => ({id:'d'+i, title:'Discovery '+i,
  summary:'Summary', ai_technology:'AI', field:i === 89 ? 'biology' : 'medicine',
@@ -161,4 +164,69 @@ for (const [oldName, expected] of [['MIT; Imperial College London', 'MIT'], ['MI
     assert.equal(p.run('$("page-title").textContent'), 'Not found');
   }
 })().catch(error => {console.error(error); process.exitCode = 1;});
+''')
+
+    def test_malformed_fragment_does_not_abort_catalog_startup(self):
+        self.run_js(r'''
+for (const hash of ['#%', '#discovery=%E0%A4%A', '#%FF']) {
+  const p = page('index.html', hash);
+  p.run('riepilogo = spettro = grafici = featured = () => {};');
+  p.load(records);
+  assert.equal(p.list.childNodes.length, 40, 'Invalid fragments must still show the catalog');
+  assert.equal(p.run('state.field'), '');
+}
+const legacy = page('index.html', '#computer%20science');
+legacy.run('riepilogo = spettro = grafici = featured = () => {};');
+legacy.load([{...records[0], field:'computer science'}]);
+assert.equal(legacy.run('state.field'), 'computer science');
+''')
+
+    def test_discovery_chart_navigation_focuses_the_result_heading(self):
+        self.run_js(r'''
+const p = page('index.html');
+p.run('items = ' + JSON.stringify(records) + '; grafici = () => {}; lista(); vaiA("d89");');
+assert.equal(p.run('document.activeElement === document.getElementById("d89").heading'), true);
+assert.equal(p.run('document.activeElement.attributes.tabindex'), '-1');
+assert.equal(p.run('document.activeElement.focusOptions.preventScroll'), true);
+assert.equal(p.run('document.getElementById("d89").scrollOptions.block'), 'center');
+''')
+
+    def test_models_chart_and_pagination_focus_results(self):
+        self.run_js(r'''
+const models = Array.from({length:180}, (_, i) => ({name:'Model ' + i, organization:'Lab', date:'2025-01-01', domain:'Language', access:'Open', link:'', compute_flop:'', parameters:'', family:''}));
+const p = page('models.html');
+p.run('D = {models:' + JSON.stringify(models) + '}; grafici = aggiornaNuvola = () => {}; render();');
+p.run('$(' + JSON.stringify('altro') + ').handlers.click({target:{id:"piu-righe"}});');
+assert.equal(p.run('document.activeElement.id === slug(D.models[60].name)'), true, 'Pagination must focus the first newly shown model');
+p.run('vaiA(D.models[179]);');
+assert.equal(p.run('document.activeElement.id === slug(D.models[179].name)'), true, 'Scatter activation must focus the selected release');
+assert.equal(p.run('document.activeElement.attributes.tabindex'), '-1');
+''')
+
+    def test_failed_data_load_offers_public_recovery_links(self):
+        self.run_js(r'''
+for (const name of ['models.html', 'profile.html']) {
+  const p = page(name); p.fail();
+  const html = p.run(name === 'models.html' ? '$("families").innerHTML' : '$("content").innerHTML');
+  for (const link of [name, 'data/models.json', 'data/discoveries.json', 'profiles/index.html']) assert.ok(html.includes('href="' + link + '"'), name + ': missing ' + link);
+  assert.ok(!html.includes('python3'));
+}
+const profile = page('profile.html');
+profile.history.replaceState(null, '', '/profile.html?org=First%20lab&source=one');
+profile.fail();
+assert.ok(profile.run('$("content").innerHTML').includes('href="profile.html?org=First%20lab&amp;source=one"'), 'Reload must preserve the selected profile');
+''')
+
+    def test_models_snapshot_without_download_date_still_renders(self):
+        self.run_js(r'''
+for (const downloaded of [undefined, '2026-11-13']) {
+  const p = page('models.html');
+  p.run('nuvola = grafici = families = render = () => {};');
+  p.load({models:[], families:[], linked_discoveries:[], generated:'2026-11-14', source:{name:'Epoch AI', url:'https://epoch.ai/data/ai-models', license:'CC BY 4.0', license_url:'https://creativecommons.org/licenses/by/4.0/', original_records:42, csv_sha256:'a'.repeat(64), downloaded}}, []);
+  const html = p.run('$("fonte").innerHTML');
+  assert.ok(html.includes('42 records') && html.includes('href="data/models.json"'));
+  assert.equal(html.includes('Downloaded on'), Boolean(downloaded));
+  assert.equal(html.includes('13 Nov 2026'), Boolean(downloaded));
+  assert.ok(!html.includes('undefined') && !html.includes('Invalid Date'));
+}
 ''')

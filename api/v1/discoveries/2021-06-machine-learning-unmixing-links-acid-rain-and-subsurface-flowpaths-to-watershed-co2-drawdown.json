@@ -1,0 +1,28 @@
+{
+  "id": "2021-06-machine-learning-unmixing-links-acid-rain-and-subsurface-flowpaths-to-watershed-co2-drawdown",
+  "title": "Machine-learning unmixing links acid rain and subsurface flowpaths to watershed CO₂ drawdown",
+  "summary": "Non-negative matrix factorization (NMF) was applied to stream-chemistry time series from three watersheds to infer solute endmembers and their changing contributions without predefining endmember chemistry. Combined with geological interpretation and independent geochemical evidence, the model separated shallow acid-rain-affected flow from deeper pyrite-weathering contributions. The analysis found that acid rain can reduce a watershed’s long-timescale CO₂-sequestration capacity and that omitting sulfide oxidation/acid-rain reactions overestimates weathering-driven CO₂ drawdown.",
+  "field": "climate",
+  "ai_technology": "Non-negative matrix factorization (NMF) machine-learning blind-source-separation model applied to stream chemistry",
+  "organization": "Pennsylvania State University; Syracuse University",
+  "source_url": "https://hess.copernicus.org/articles/25/3397/2021/index.html",
+  "source_type": "paper",
+  "publication_date": "2021-06-17",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.5194/hess-25-3397-2021",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Non-negative matrix factorization (NMF) was applied to stream-chemistry time series from three watersheds to infer solute endmembers and their changing contributions without predefining endmember chemistry.",
+    "unknown": "This is an inference from historical stream chemistry and watershed-specific geology, not a direct measurement of global CO₂ sequestration or a causal intervention. The NMF endmembers were interpreted as subsurface flowpaths using geological knowledge and supporting geochemical evidence; the inferred acid-rain sulfate export at Shale Hills includes a 19–31-year lag estimate. The result applies to three studied watersheds and the weathering timescales considered. Endmember counts and interpretations depend on the model setup and watershed reaction-front assumptions.",
+    "ai_role": "The NMF model simultaneously inferred endmember chemical signatures and per-sample mixing proportions from solute ratios without preset endmember compositions. Researchers interpreted those patterns using watershed geology, sulfur isotopes, weathering profiles and calcite saturation, then estimated mineral-weathering rates and CO₂ sequestration. The ML decomposition enabled source separation where conventional endmember assumptions were uncertain; it did not directly measure a global carbon flux.",
+    "evidence_urls": [
+      "https://hess.copernicus.org/articles/25/3397/2021/index.html"
+    ]
+  }
+}

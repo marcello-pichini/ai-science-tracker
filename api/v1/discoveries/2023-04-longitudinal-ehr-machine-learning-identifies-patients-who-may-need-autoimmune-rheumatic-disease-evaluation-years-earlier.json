@@ -1,0 +1,28 @@
+{
+  "id": "2023-04-longitudinal-ehr-machine-learning-identifies-patients-who-may-need-autoimmune-rheumatic-disease-evaluation-years-earlier",
+  "title": "Longitudinal EHR machine learning identifies patients who may need autoimmune rheumatic-disease evaluation years earlier",
+  "summary": "A random-forest model trained on longitudinal electronic health records from 161,584 people across two institutions identified records associated with high-specificity autoantibody testing for systemic autoimmune rheumatic diseases (SARDs). The model achieved AUROC 0.93 in internal validation and 0.87 on the external All of Us cohort. In a separate BioMe cohort, model probabilities tracked SARD and other autoimmune diagnoses; records could predict later autoantibody testing and rheumatology encounters up to five years before those events. The study also found higher autoantibody yield among model-prioritized individuals than under the comparison clinical-testing rate.",
+  "field": "medicine",
+  "ai_technology": "Random-forest machine-learning model using longitudinal electronic-health-record diagnoses, medications, laboratory results and vital signs",
+  "organization": "Icahn School of Medicine at Mount Sinai; University of Maryland School of Medicine; Hospital for Special Surgery",
+  "source_url": "https://www.nature.com/articles/s41467-023-37996-7.pdf",
+  "source_type": "paper",
+  "publication_date": "2023-04-25",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-023-37996-7",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A random-forest model trained on longitudinal electronic health records from 161,584 people across two institutions identified records associated with high-specificity autoantibody testing for systemic autoimmune rheumatic diseases (SARDs).",
+    "unknown": "The model predicts clinical suspicion and need for rheumatological testing, not a SARD diagnosis. The study was retrospective and opportunistic; autoantibody testing and rheumatology encounters are imperfect proxies for clinical need, and some diseases were not included in the training target. The authors state prospective studies are needed to determine whether model-guided testing improves care or outcomes. The five-year lead is retrospective prediction of later evaluation events, not proven earlier diagnosis or patient benefit.",
+    "ai_role": "The model ranked patients by probability of receiving SARD-specific autoantibody testing, using clinical data preceding the test or rheumatology encounter. Investigators evaluated performance in internal validation, the external All of Us cohort and an independent BioMe cohort, and tested whether higher scores tracked diagnosed autoimmune disease and identified later testing or encounters earlier in retrospective records.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-023-37996-7.pdf"
+    ]
+  }
+}

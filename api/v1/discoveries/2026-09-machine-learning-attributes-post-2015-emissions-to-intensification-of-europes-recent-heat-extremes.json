@@ -1,0 +1,28 @@
+{
+  "id": "2026-09-machine-learning-attributes-post-2015-emissions-to-intensification-of-europes-recent-heat-extremes",
+  "title": "Machine learning attributes post-2015 emissions to intensification of Europe’s recent heat extremes",
+  "summary": "A diffusion model trained on ten CMIP6 climate models estimated event-specific temperature changes conditional on observed meteorology. It found >95% probability that anthropogenic emissions since the 2015 Paris Agreement intensified Europe’s summer temperature extremes in 2021–2025; for the June 2025 heatwave, regional mean temperature is estimated to have been 0.34 °C lower under 2015 cumulative emissions, with >99% probability.",
+  "field": "climate",
+  "ai_technology": "Generative diffusion model for spatially explicit temperature fields",
+  "organization": "Stanford University; Boston University; University of Auckland; Colorado State University",
+  "source_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL125079",
+  "source_type": "paper",
+  "publication_date": "2026-09-22",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1029/2026GL125079",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A diffusion model trained on ten CMIP6 climate models estimated event-specific temperature changes conditional on observed meteorology.",
+    "unknown": "This event-specific attribution is conditioned on observed large-scale meteorology and trained on ten CMIP6 models; it is not a direct experiment that removed emissions. The paper emphasizes uncertainty from internal variability/model spread and reports robust regional-mean effects, while grid-cell-level changes are more limited. The June 2025 value is a median modeled counterfactual estimate.",
+    "ai_role": "The model learned climate-model relationships between meteorological conditions, cumulative CO₂ emissions and daily temperature fields, then generated conditional counterfactual temperature distributions to attribute the incremental post-2015 emissions effect to recent European heat extremes.",
+    "evidence_urls": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL125079"
+    ]
+  }
+}

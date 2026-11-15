@@ -38,7 +38,7 @@
     <p class="lead" id="lead">Loading…</p>
     <figure class="figura" id="timeline-figure" hidden>
       <div id="timeline"></div>
-      <figcaption class="nota">Each mark is one discovery; taller means more relevant. Click a mark to jump to it.</figcaption>
+      <figcaption class="nota" id="timeline-help">Each mark is one discovery; taller means more relevant. Click or tap to open an entry or choose among nearby entries, including entries on the same date. Keyboard: focus the chart, use left and right arrows, then Enter. Escape clears the selection.</figcaption>
     </figure>
   </div>
 </section>
@@ -63,7 +63,7 @@ const fmt = new Intl.DateTimeFormat("en-GB", { day:"numeric", month:"short", yea
 const fmtDate = d => fmt.format(new Date(d + "T12:00:00"));
 const reduced = matchMedia("(prefers-reduced-motion: reduce)");
 
-// Same rules as index.html: organizations listed together count under the first one named; relevance is 0-100.
+// Same rules as index.html: organizations listed together count under the first one named; editorial relevance is 20–100.
 const leadOrg = s => s.organization.split(/[,;]| and /i)[0].trim();
 const score = s => Math.round((s.relevance.impact + s.relevance.validation + s.relevance.novelty) / 3 * 20);
 const average = a => a.length ? Math.round(a.reduce((n, s) => n + score(s), 0) / a.length) : 0;
@@ -102,31 +102,12 @@ function timeline(items) {
     g += `<line class="asse" x1="${x}" x2="${x}" y1="${P.base}" y2="${P.base + 8}"/><text class="tick" x="${x + 5}" y="${P.base + 24}">${a}</text>`; }
   const marks = items.map((s, i) => { const x = X(Date.parse(s.publication_date)), h = Math.max(4, score(s) / 100 * P.tall);
     return { s, x, tag: `<line class="tratto" data-i="${i}" x1="${x.toFixed(1)}" x2="${x.toFixed(1)}" y1="${P.base}" y2="${(P.base - h).toFixed(1)}" style="--d:${Math.round((x - P.x0) / (P.x1 - P.x0) * 900)}ms"/>` }; });
-  $("timeline").innerHTML = `<svg viewBox="0 0 ${W} 228" tabindex="0" role="group" aria-label="Timeline of ${plural(items.length, "discovery", "discoveries")}, from ${y0} to ${y1}; height represents relevance from 0 to 100. The full list appears below.">${g}<g>${marks.map(m => m.tag).join("")}</g><rect x="${P.x0 - 6}" y="0" width="${P.x1 - P.x0 + 12}" height="${P.base + 10}" fill="transparent"/></svg>`;
+  $("timeline").innerHTML = `<svg viewBox="0 0 ${W} 228" tabindex="0" role="group" aria-describedby="timeline-help" aria-label="Timeline of ${plural(items.length, "discovery", "discoveries")}, from ${y0} to ${y1}; height represents editorial relevance from 20 to 100, in 13 coarse levels. The full list appears below.">${g}<g>${marks.map(m => m.tag).join("")}</g><rect x="${P.x0 - 6}" y="0" width="${P.x1 - P.x0 + 12}" height="${P.base + 10}" fill="transparent"/></svg>`;
   const svg = $("timeline").firstElementChild;
-  const order = marks.map((_, i) => i).sort((a, b) => marks[a].x - marks[b].x);
-  let cur = -1;
-  const off = () => { svg.querySelector(".tratto.su")?.classList.remove("su"); cur = -1; hideTip(); };
-  const on = (i, x, y) => {
-    if (cur !== i) { svg.querySelector(".tratto.su")?.classList.remove("su"); svg.querySelector(`[data-i="${i}"]`).classList.add("su"); cur = i; }
-    const s = marks[i].s; showTip([s.title, `${fmtDate(s.publication_date)}, ${s.organization}`, `Relevance ${score(s)}, ${s.field}`], x, y);
-  };
-  const open = () => { const el = cur >= 0 && document.getElementById(marks[cur].s.id); if (el) el.scrollIntoView({ block:"center", behavior: reduced.matches ? "auto" : "smooth" }); };
-  svg.addEventListener("pointermove", e => {
-    const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
-    const v = p.matrixTransform(svg.getScreenCTM().inverse());
-    let best = -1, bd = Infinity; marks.forEach((m, i) => { const d = Math.abs(m.x - v.x); if (d < bd) { bd = d; best = i; } });
-    if (best >= 0 && bd < 24) on(best, e.clientX, e.clientY); else off();
-  });
-  svg.addEventListener("pointerleave", off); svg.addEventListener("blur", off); svg.addEventListener("click", open);
-  svg.addEventListener("keydown", e => {
-    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
-      e.preventDefault();
-      const pos = cur < 0 ? (e.key === "ArrowRight" ? -1 : order.length) : order.indexOf(cur);
-      const n = Math.min(order.length - 1, Math.max(0, pos + (e.key === "ArrowRight" ? 1 : -1)));
-      const r = svg.querySelector(`[data-i="${order[n]}"]`).getBoundingClientRect(); on(order[n], r.left + r.width / 2, r.top);
-    } else if (e.key === "Enter" && cur >= 0) { e.preventDefault(); open(); }
-    else if (e.key === "Escape") off();
+  CatalogUI.chartInteraction(svg, marks.map(p => ({...p, date:p.s.publication_date})), {
+    describe: p => [p.s.title, `${fmtDate(p.s.publication_date)}, ${p.s.organization}`, `Editorial relevance ${score(p.s)}, ${p.s.field}`],
+    open: p => CatalogUI.focusEntry(document.getElementById(p.s.id), {block:"center", behavior:reduced.matches ? "auto" : "smooth"}),
+    showTip, hideTip
   });
 }
 
@@ -237,7 +218,7 @@ Promise.all([
   fetch("data/discoveries.json").then(r => r.json()),
   fetch("data/models.json").then(r => r.json())
 ]).then(([discoveries, models]) => { data = { discoveries, models }; render(); })
-  .catch(() => { $("lead").textContent = "Could not load data. Open this page from a local server (python3 -m http.server)."; });
+  .catch(() => { $("lead").textContent = "The profile data could not be loaded."; $("content").innerHTML = `<section class="sez"><div class="wrap"><h2>Profile data unavailable</h2><p><a href="profile.html${esc(location.search)}">Reload this profile</a>, browse the <a href="profiles/index.html">static profiles</a>, or read the <a href="data/discoveries.json">discovery data</a> and <a href="data/models.json">model data</a>.</p></div></section>`; });
 
 let width = innerWidth, timer;
 addEventListener("resize", () => { clearTimeout(timer); timer = setTimeout(() => { if (data && innerWidth !== width) { width = innerWidth; if (!$("timeline-figure").hidden) render(); } }, 150); });

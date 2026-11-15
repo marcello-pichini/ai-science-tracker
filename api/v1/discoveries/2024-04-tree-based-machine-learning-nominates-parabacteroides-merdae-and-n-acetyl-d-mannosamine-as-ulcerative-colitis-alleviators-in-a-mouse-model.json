@@ -1,0 +1,28 @@
+{
+  "id": "2024-04-tree-based-machine-learning-nominates-parabacteroides-merdae-and-n-acetyl-d-mannosamine-as-ulcerative-colitis-alleviators-in-a-mouse-model",
+  "title": "Tree-based machine learning nominates Parabacteroides merdae and N-acetyl-D-mannosamine as ulcerative-colitis alleviators in a mouse model",
+  "summary": "The researchers combined personalized gut-microbiome community metabolic models from human iHMP data with tree-based machine-learning feature selection to identify microbial strains and metabolites associated with ulcerative-colitis samples. Parabacteroides merdae ATCC 43,184 and N-acetyl-D-mannosamine were among the most predictive features; the strain was also the main modeled microbial contributor to the metabolite. In a DSS-induced mouse colitis experiment, oral administration of the bacterium or metabolite improved reported colitis measures.",
+  "field": "biology",
+  "ai_technology": "Tree-based supervised classifiers including random forest, gradient-boosted regression trees, XGBoost, XGBoost-random forest and LightGBM, combined with individualized genome-scale microbiome community models",
+  "organization": "Jiangnan University; Wuxi Translational Medicine Research Center; Jiangsu Translational Medicine Research Institute Wuxi Branch; Wuxi People’s Hospital",
+  "source_url": "https://www.tandfonline.com/doi/full/10.1080/19490976.2024.2336877",
+  "source_type": "paper",
+  "publication_date": "2024-04-02",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1080/19490976.2024.2336877",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In a DSS-induced mouse colitis experiment, oral administration of the bacterium or metabolite improved reported colitis measures.",
+    "unknown": "The human data are observational microbiome samples, while intervention was tested in a DSS-induced mouse model, not in people. The animal groups contained eight mice each; findings do not establish treatment efficacy or safety in human ulcerative colitis. Metabolite-production associations came from community-model simulations and were not direct evidence of individual strain production in each person. The model provides candidate prioritization, not a causal human mechanism.",
+    "ai_role": "Personalized community metabolic models estimated strain-level contributions to secreted metabolites in human iHMP samples. Tree-based classifiers selected discriminative strain and metabolite features; XGBRF feature attribution ranked P. merdae ATCC 43,184 and N-acetyl-D-mannosamine highly, motivating the mouse validation. The AI analysis nominated these targets; it did not establish human therapeutic efficacy.",
+    "evidence_urls": [
+      "https://www.tandfonline.com/doi/full/10.1080/19490976.2024.2336877"
+    ]
+  }
+}

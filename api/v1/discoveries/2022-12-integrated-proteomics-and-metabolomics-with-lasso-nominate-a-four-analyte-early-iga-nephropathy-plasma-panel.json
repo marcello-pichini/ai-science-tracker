@@ -1,0 +1,28 @@
+{
+  "id": "2022-12-integrated-proteomics-and-metabolomics-with-lasso-nominate-a-four-analyte-early-iga-nephropathy-plasma-panel",
+  "title": "Integrated proteomics and metabolomics with LASSO nominate a four-analyte early IgA-nephropathy plasma panel",
+  "summary": "A study of biopsy-confirmed IgA nephropathy (IgAN) integrated plasma proteomics and untargeted metabolomics and used LASSO logistic regression to select PRKAR2A, IL6ST, SOS1 and palmitoleic acid as candidate discriminators from healthy controls. The panel had AUC 0.994 in the training set and 0.977 in the test split; ELISA assays in a separate 9-case/10-control sample set yielded an AUC of 0.91. Proteomic and metabolomic analyses also indicated complement/immune activation and altered energy and amino-acid metabolism in the studied cases.",
+  "field": "medicine",
+  "ai_technology": "LASSO logistic regression (glmnet), with tenfold cross-validation and additional random-forest/SVM model checks",
+  "organization": "Zhejiang Provincial People’s Hospital and collaborating institutions",
+  "source_url": "https://link.springer.com/article/10.1186/s12014-022-09387-5",
+  "source_type": "paper",
+  "publication_date": "2022-12-27",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1186/s12014-022-09387-5",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A study of biopsy-confirmed IgA nephropathy (IgAN) integrated plasma proteomics and untargeted metabolomics and used LASSO logistic regression to select PRKAR2A, IL6ST, SOS1 and palmitoleic acid as candidate discriminators from healthy controls.",
+    "unknown": "This is an early candidate biomarker result, not a validated clinical test or biopsy replacement. The discovery analysis included 33 biopsy-confirmed IgAN cases and 20 healthy controls; the separate ELISA group contained only 9 IgAN cases and 10 controls from the same hospital. The test split is small, and the study did not test specificity against other kidney diseases or demonstrate prospective/clinical utility. The proposed biomarker biology remains speculative.",
+    "ai_role": "LASSO feature selection on integrated proteomic and metabolomic measurements nominated the four-analyte panel; the study evaluated its classification in a held-out split and measured the selected analytes by ELISA in an independent sample batch.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1186/s12014-022-09387-5"
+    ]
+  }
+}

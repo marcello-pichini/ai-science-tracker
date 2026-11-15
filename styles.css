@@ -39,6 +39,7 @@ body { margin:0; background:var(--paper); color:var(--ink); font:400 1.0625rem/1
 a { color:var(--accent); text-underline-offset:.18em; text-decoration-thickness:1px; }
 a:hover { text-decoration-thickness:2px; }
 :focus-visible { outline:2px solid var(--accent); outline-offset:2px; border-radius:4px; }
+.header :focus-visible, .banda :focus-visible { outline-color:var(--on-prussia); }
 .wrap { max-width:var(--wrap); margin:0 auto; padding:0 var(--gut); }
 .vis-nascosto { position:absolute!important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
 
@@ -149,7 +150,7 @@ main { padding:0 0 72px; }
 .anno-tit { position:sticky; top:112px; align-self:start; margin:0; padding-top:10px; }
 .anno-tit b { display:block; font-size:2.5rem; font-weight:800; letter-spacing:-.04em; line-height:1; }
 .anno-tit span { color:var(--muted); font-size:.875rem; font-weight:500; }
-.voce { padding:18px 0 20px; border-bottom:1px solid var(--line); scroll-margin-top:120px; }
+.voce { padding:18px 0 20px; border-bottom:1px solid var(--line); scroll-margin-top:120px; overflow-wrap:anywhere; }
 .voce:last-child { border-bottom:0; }
 .voce.evid { background:var(--accent-wash); box-shadow:-14px 0 0 var(--accent-wash), 14px 0 0 var(--accent-wash), inset 3px 0 0 var(--accent); padding-left:16px; border-radius:2px; }
 .voce-meta { display:flex; flex-wrap:wrap; gap:4px 14px; font-size:.875rem; color:var(--muted); margin-bottom:4px; }
@@ -200,7 +201,7 @@ main { padding:0 0 72px; }
 
 /* long-form text (methodology) */
 .banda-bassa { padding-bottom:clamp(32px,5vw,56px); }
-.banda-bassa h1 { max-width:18ch; }
+.banda-bassa h1 { max-width:18ch; overflow-wrap:anywhere; }
 .prosa { padding-top:clamp(12px,3vw,24px); }
 .prosa { max-width:72ch; }
 .prosa h2 { font-weight:800; font-size:1.5rem; letter-spacing:-.025em; margin:44px 0 10px; }
@@ -241,6 +242,9 @@ main { padding:0 0 72px; }
   .filtri .campi { grid-template-columns:1fr; }
   .collegamenti { margin-left:0; }
   .riga { grid-template-columns:minmax(80px,42%) minmax(0,1fr) auto; gap:8px; }
+}
+@media (max-height:600px) {
+  .filtri { position:static; }
 }
 @media (prefers-reduced-motion: reduce) {
   .tratto, .punto { animation:none; }
@@ -297,13 +301,19 @@ main { padding:0 0 72px; }
 /* Source disclosures and trend controls share the catalog palette and native focus behavior. */
 .source-details { margin-top:12px; color:var(--ink-2); font-size:.875rem; }
 .source-details summary { color:var(--accent); cursor:pointer; font-weight:600; }
-.source-details p { max-width:72ch; margin:8px 0; }
+.source-details p { max-width:72ch; margin:8px 0; overflow-wrap:anywhere; }
 .trend-control { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:12px 0; font-size:.875rem; }
-.trend-control select { max-width:100%; min-width:0; font:inherit; padding:8px; border:1px solid var(--line-2); border-radius:var(--r); background:var(--sheet); color:var(--ink); }
+.trend-control select, .chart-choice select { max-width:100%; min-width:0; font:inherit; padding:8px; border:1px solid var(--line-2); border-radius:var(--r); background:var(--sheet); color:var(--ink); }
+/* Same-date chart choices use native controls and wrap within narrow screens. */
+.chart-choice:not([hidden]), .chart-choice label { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.chart-choice { margin:12px 0; font-size:.875rem; color:var(--on-prussia); }
+.chart-choice label { min-width:0; max-width:100%; }
+.chart-choice select { width:min(100%, 34ch); }
+.chart-choice button { font:inherit; padding:8px; border:1px solid var(--line-2); border-radius:var(--r); background:var(--sheet); color:var(--ink); cursor:pointer; }
 .coverage-note { max-width:78ch; color:var(--muted); font-size:.875rem; }
 @media print {
   .source-details { break-inside:avoid; }
-  .trend-control, .correction-link { display:none; }
+  .trend-control, .chart-choice, .correction-link { display:none; }
 }
 
 /* Selection export row and field-by-year grid (IMP-002, IMP-008). Cell shade is data-driven via --v; the count is always printed too. */

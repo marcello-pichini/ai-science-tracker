@@ -1,0 +1,28 @@
+{
+  "id": "2022-10-crystal-graph-learning-and-dft-identify-19-512-additional-thermodynamically-stable-materials",
+  "title": "Crystal-graph learning and DFT identify 19,512 additional thermodynamically stable materials",
+  "summary": "The authors trained crystal-graph attention networks on an expanded, composition- and symmetry-balanced dataset and used them to search 2,500 binary and ternary structure prototypes covering about one billion inorganic compounds. Density-functional-theory validation identified 19,512 additional compounds on the calculated thermodynamic convex hull and about 150,000 more within 50 meV/atom of it; the paper also analyzed predicted superconducting and superhard materials and compounds with large gap deformation potentials.",
+  "field": "materials",
+  "ai_technology": "Crystal-graph attention neural networks trained on expanded density-functional-theory materials data",
+  "organization": "Martin Luther University Halle-Wittenberg; University of Coimbra; Friedrich Schiller University Jena",
+  "source_url": "https://arxiv.org/abs/2210.00579",
+  "source_type": "paper",
+  "publication_date": "2022-10-02",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.48550/arXiv.2210.00579",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors trained crystal-graph attention networks on an expanded, composition- and symmetry-balanced dataset and used them to search 2,500 binary and ternary structure prototypes covering about one billion inorganic compounds.",
+    "unknown": "This is an arXiv preprint and the reported stable compounds are computationally predicted, with DFT convex-hull validation; the study does not report their experimental synthesis. Stability depends on the calculated structures and thermodynamic reference data. The additional ~150,000 compounds are near-hull candidates, not counted as thermodynamically stable discoveries in the title or summary.",
+    "ai_role": "The graph networks accelerated screening of roughly one billion prototype-generated candidates, after which density-functional-theory calculations validated stability for identified candidates; machine learning plus ab initio calculations also ranked materials for selected functional properties.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2210.00579"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ghsl-2026-113",
+  "title": "Taskflow Agent finds cross-thread poll-vote authorization flaw in Signal iOS",
+  "product": "Signal for iOS",
+  "ai_system": "GitHub Security Lab Taskflow Agent",
+  "organization": "GitHub Security Lab",
+  "summary": "Signal iOS poll voting resolves target messages through a thread-blind index after validating a different envelope thread, allowing a registered user to cast a vote in a group where they are not a member on the recipient’s device.",
+  "ai_role": "GHSL directly credits discovery to Taskflow Agent and verification by Jaroslav Lobačevski. Signal notified GHSL of a collision on 2026-04-15 and released the fix in 8.7.0.1523 that day; first discovery is not established. No CVE assigned.",
+  "disclosure_date": "2026-09-21",
+  "ai_attribution_date": "2026-09-21",
+  "classification": "disclosure",
+  "classification_note": "The cited sources document the finding and remediation; they do not claim exploitation in the wild.",
+  "cves": [],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2026-112_GHSL-2026-113_Signal-iOS/",
+  "ai_source_url": "https://securitylab.github.com/ai-agents/",
+  "remediation": "fix documented",
+  "remediation_note": "Fixed in Signal iOS 8.7.0.1523 on 2026-04-15. The advisory says the local vote is attributed to the attacker and requires the exact timestamp/author pair; Signal reported a collision with another report.",
+  "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-112_GHSL-2026-113_Signal-iOS/",
+  "checked_date": "2026-11-14"
+}

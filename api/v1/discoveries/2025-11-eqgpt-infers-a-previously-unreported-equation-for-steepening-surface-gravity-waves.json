@@ -1,0 +1,28 @@
+{
+  "id": "2025-11-eqgpt-infers-a-previously-unreported-equation-for-steepening-surface-gravity-waves",
+  "title": "EqGPT infers a previously unreported equation for steepening surface gravity waves",
+  "summary": "A knowledge-guided generative model trained on mathematical handbook equations generated candidate PDEs, then evaluated and optimized them against data. In a real-data case study of strongly nonlinear surface gravity waves approaching breaking, the authors report an equation not previously reported for that process.",
+  "field": "physics",
+  "ai_technology": "EqGPT, a generative transformer using equation tokenization and a generation–evaluation–optimization loop",
+  "organization": "China University of Petroleum (East China); Imperial College London; Southern University of Science and Technology; Hong Kong University of Science and Technology; University of Oxford",
+  "source_url": "https://www.nature.com/articles/s41467-025-65114-2",
+  "source_type": "paper",
+  "publication_date": "2025-11-21",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-025-65114-2",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A knowledge-guided generative model trained on mathematical handbook equations generated candidate PDEs, then evaluated and optimized them against data.",
+    "unknown": "The claimed new governing equation is an inference from a particular real-world laboratory dataset and remains a model-derived description, not a universally established law. Authors used human fluid-mechanics analysis; this was one new equation result within a methods paper that also rediscovers known PDEs.",
+    "ai_role": "The model proposed free-form PDE candidates using structures learned from 221 handbook equations; data-driven fit evaluation selected a candidate for the breaking-wave dataset, after which researchers analyzed its physical interpretation.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-025-65114-2"
+    ]
+  }
+}

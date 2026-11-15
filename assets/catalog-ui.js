@@ -16,7 +16,11 @@ globalThis.CatalogUI = {
     const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const rows = [['Publication status', e.publication_status], ['Tested', e.tested], ['Still unknown', e.unknown], ['AI role', e.ai_role]]
       .map(([label, value]) => `<li><b>${label}:</b> ${esc(value)}</li>`).join('');
-    return `<p><b>Evidence context</b> (pilot; stated by the cited sources, not an editorial judgment):</p><ul class="evidence-context">${rows}</ul>`;
+    const links = (e.evidence_urls || []).filter(url => {
+      try { return /^https?:\/\//i.test(url) && ['http:', 'https:'].includes(new URL(url).protocol); } catch { return false; }
+    }).map(url => `<a href="${esc(url)}" rel="noopener">${esc(url)}</a>`);
+    const legacy = [e.publication_status, e.tested, e.unknown, e.ai_role].includes('Not reported');
+    return `<p><b>Evidence context</b> (pilot; stated by the cited sources, not an editorial judgment):</p><ul class="evidence-context">${rows}</ul>${links.length ? `<p>Evidence sources: ${links.join(' · ')}</p>` : ''}${legacy ? '<p>The legacy label “Not reported” does not distinguish information absent from reviewed material from information not assessed. It is not a scientific finding of absence.</p>' : ''}`;
   },
   correctionUrl(record) {
     const query = new URLSearchParams({template:'correction.yml', title:`[Correction] ${record.id}`, record_id:record.id,
@@ -62,6 +66,88 @@ globalThis.CatalogUI = {
     }
     const counts = Object.values(hosts).sort((a, b) => b - a);
     return {top: Math.min(top, counts.length), entries: counts.slice(0, top).reduce((sum, n) => sum + n, 0), total: records.length, websites: counts.length};
+  },
+  focusEntry(element, scrollOptions) {
+    if (!element) return;
+    const target = element.querySelector('h3') || element;
+    target.setAttribute('tabindex', '-1');
+    target.focus({preventScroll:true});
+    element.scrollIntoView(scrollOptions);
+  },
+  // Keep keyboard focus on the equivalent control when a chart is redrawn.
+  restoreChartFocus(container, control) {
+    const match = [...container.querySelectorAll(control.tagName)].find(node =>
+      Object.keys(control.dataset).every(key => node.dataset[key] === control.dataset[key]));
+    match?.focus({preventScroll:true});
+  },
+  chartInteraction(svg, points, {describe, open, showTip, hideTip, penalty = () => 0, radius = 24}) {
+    const status = document.createElement('p');
+    status.className = 'vis-nascosto'; status.setAttribute('role', 'status'); status.setAttribute('aria-atomic', 'true');
+    const chooser = document.createElement('div'); chooser.className = 'chart-choice'; chooser.hidden = true;
+    const label = document.createElement('label'), select = document.createElement('select'), button = document.createElement('button');
+    const caption = document.createElement('span');
+    label.append(caption, select); button.type = 'button'; button.textContent = 'Open selected entry';
+    chooser.append(label, button); svg.after(status, chooser);
+    const order = points.map((_, i) => i).sort((a, b) => points[a].x - points[b].x);
+    let current = -1;
+    const clear = () => {
+      svg.querySelector('.su')?.classList.remove('su'); current = -1; hideTip(); status.textContent = '';
+    };
+    const choose = (i, x, y) => {
+      if (i < 0) return;
+      const lines = describe(points[i]);
+      if (i !== current) {
+        svg.querySelector('.su')?.classList.remove('su');
+        svg.querySelector(`[data-i="${i}"]`).classList.add('su'); current = i;
+        status.textContent = `${order.indexOf(i) + 1} of ${points.length}. ${lines.join('. ')}`;
+      }
+      if (x == null) {
+        const rect = svg.querySelector(`[data-i="${i}"]`).getBoundingClientRect(); x = rect.left + rect.width / 2; y = rect.top;
+      }
+      showTip(lines, x, y);
+    };
+    const nearest = e => {
+      const p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY;
+      const v = p.matrixTransform(svg.getScreenCTM().inverse());
+      let best = -1, distance = Infinity;
+      points.forEach((point, i) => {
+        const d = (point.y == null ? Math.abs(point.x - v.x) : Math.hypot(point.x - v.x, point.y - v.y)) + penalty(point);
+        if (d < distance) { distance = d; best = i; }
+      });
+      return distance < radius ? best : -1;
+    };
+    svg.addEventListener('pointermove', e => { const i = nearest(e); if (i >= 0) choose(i, e.clientX, e.clientY); else clear(); });
+    svg.addEventListener('pointerleave', hideTip); svg.addEventListener('blur', hideTip);
+    svg.addEventListener('click', e => {
+      const i = nearest(e); if (i < 0) return;
+      choose(i, e.clientX, e.clientY);
+      // Nearby marks share a chooser within 8 CSS pixels; dates keep their true positions.
+      const matrix = svg.getScreenCTM(), screen = points.map(point => {
+        const p = svg.createSVGPoint(); p.x = point.x; p.y = point.y ?? 0; return p.matrixTransform(matrix);
+      });
+      const group = order.filter(j => (points[i].y == null && points[i].date && points[j].date === points[i].date) ||
+        Math.hypot(screen[j].x - screen[i].x, screen[j].y - screen[i].y) <= 8);
+      if (group.length === 1) { chooser.hidden = true; open(points[i]); return; }
+      const multipleDates = new Set(group.map(j => points[j].date)).size > 1;
+      caption.textContent = multipleDates || !points[i].date ? `${group.length} nearby entries. Choose an entry ` : `${points[i].date}: ${group.length} entries. Choose an entry `;
+      select.replaceChildren(...group.map(j => {
+        const option = document.createElement('option'); option.value = j;
+        option.textContent = describe(points[j])[0] + (multipleDates && points[j].date ? ` — ${points[j].date}` : ''); return option;
+      }));
+      select.value = String(i); chooser.hidden = false; select.focus({preventScroll:true});
+    });
+    select.addEventListener('change', () => choose(+select.value));
+    button.addEventListener('click', () => open(points[+select.value]));
+    chooser.addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); chooser.hidden = true; clear(); svg.focus({preventScroll:true}); } });
+    svg.addEventListener('keydown', e => {
+      if (['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(e.key) && order.length) {
+        e.preventDefault(); chooser.hidden = true;
+        const pos = current < 0 ? (e.key === 'ArrowLeft' ? order.length : -1) : order.indexOf(current);
+        const n = e.key === 'Home' ? 0 : e.key === 'End' ? order.length - 1 : Math.max(0, Math.min(order.length - 1, pos + (e.key === 'ArrowLeft' ? -1 : 1)));
+        choose(order[n]);
+      } else if ((e.key === 'Enter' || e.key === ' ') && current >= 0) { e.preventDefault(); open(points[current]); }
+      else if (e.key === 'Escape') { chooser.hidden = true; clear(); }
+    });
   },
   annualStats(records) {
     const years = {};

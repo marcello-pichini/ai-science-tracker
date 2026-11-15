@@ -1,0 +1,28 @@
+{
+  "id": "2023-06-simmer-guided-experiments-identify-gut-bacterial-strains-that-deplete-methotrexate",
+  "title": "SIMMER-guided experiments identify gut bacterial strains that deplete methotrexate",
+  "summary": "SIMMER combines reaction-chemistry and protein-sequence similarity to predict gut microbial species and enzymes responsible for drug biotransformations. For methotrexate (MTX), the model predicted candidate strains and enzyme sequences; researchers tested 42 gut bacterial isolates by HPLC. SIMMER predicted 13 isolates as MTX-metabolizing, and 10 of those tested isolates showed MTX depletion; the association was significant in the study (Fisher exact p=0.046). Predicted MTX-hydrolysis enzyme signatures were also enriched in stool samples of MTX nonresponders in an analyzed rheumatoid-arthritis cohort.",
+  "field": "biology",
+  "ai_technology": "SIMMER, a computational reaction-similarity and protein-homology pipeline using chemical fingerprints, MetaCyc reactions and gut metagenomic sequences",
+  "organization": "Gladstone Institutes; University of California, San Francisco; Chan Zuckerberg Biohub San Francisco",
+  "source_url": "https://elifesciences.org/articles/82401",
+  "source_type": "paper",
+  "publication_date": "2023-06-12",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.7554/eLife.82401",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "For methotrexate (MTX), the model predicted candidate strains and enzyme sequences; researchers tested 42 gut bacterial isolates by HPLC.",
+    "unknown": "The study reports species-level evidence for bacterial MTX depletion, but the enzyme predictions themselves were not individually purified or functionally validated. Only 13 of 42 tested isolates were predicted positive and 10 depleted MTX; predictions may have false positives, as the authors note. The RA association is observational and does not establish that microbial metabolism caused treatment nonresponse. The underlying fact that gut bacteria can metabolize MTX was already known; this result concerns species-level prediction and validation, not discovery of MTX metabolism itself.",
+    "ai_role": "SIMMER proposed specific bacterial species and enzyme sequences for known drug transformations. The team tested its MTX predictions against an independent panel of 42 gut bacterial isolates and HPLC-measured drug depletion, and compared predicted enzyme presence with baseline stool metagenomes and later MTX response in an RA dataset.",
+    "evidence_urls": [
+      "https://elifesciences.org/articles/82401"
+    ]
+  }
+}

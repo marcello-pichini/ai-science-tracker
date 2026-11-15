@@ -1,0 +1,28 @@
+{
+  "id": "2024-12-bayesian-optimization-finds-high-performance-hole-transport-molecules-for-perovskite-solar-cells",
+  "title": "Bayesian optimization finds high-performance hole-transport molecules for perovskite solar cells",
+  "summary": "A closed-loop workflow combined high-throughput synthesis of organic semiconductors, measured photovoltaic-device performance, molecular descriptors and Bayesian optimization to search a virtual library of about one million candidate hole-transport materials. The machine-learning-guided iterations identified high-performing molecules; after device optimization, a perovskite solar cell using a selected material reached 26.23% power-conversion efficiency (25.88% certified). The work links candidate molecular structures to measured device performance in this specific cell system.",
+  "field": "materials",
+  "ai_technology": "Molecular-descriptor machine-learning models with Bayesian optimization in a high-throughput synthesis and device-testing loop",
+  "organization": "Forschungszentrum Jülich / Helmholtz Institute Erlangen-Nürnberg; Friedrich-Alexander-Universität Erlangen-Nürnberg; Karlsruhe Institute of Technology; Ulsan National Institute of Science and Technology; Xiamen University; University of Electronic Science and Technology of China; University of Groningen",
+  "source_url": "https://www.science.org/doi/10.1126/science.ads0901",
+  "source_type": "paper",
+  "publication_date": "2024-12-12",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1126/science.ads0901",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A closed-loop workflow combined high-throughput synthesis of organic semiconductors, measured photovoltaic-device performance, molecular descriptors and Bayesian optimization to search a virtual library of about one million candidate hole-transport materials.",
+    "unknown": "The 26.23% champion and certified 25.88% values followed device-specific optimization of a selected molecule; this does not establish that the molecule alone accounts for the full efficiency gain or that it is globally optimal among all possible molecules. The paper reports a materials-selection workflow for a particular p-i-n perovskite device setup, with performance also affected by other cell layers and processing. The million-member search was virtual and only a small selected subset was synthesized and measured; authors do not claim to have found the single best molecule in that space.",
+    "ai_role": "Models trained on measured data from 149 synthesized molecules linked calculated molecular descriptors to perovskite-device performance. Bayesian optimization selected new structures from a virtual library of roughly one million; high-throughput synthesis, characterization and device tests supplied feedback for two closed-loop iterations. Three promising molecules then received individual device optimization. This workflow identified hole-transport materials yielding the reported high-efficiency perovskite cells; the AI contribution was candidate selection and structure–performance modeling, with synthesis and measurements performed experimentally.",
+    "evidence_urls": [
+      "https://www.science.org/doi/10.1126/science.ads0901"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2024-10-a-gradient-boosted-model-detected-untreated-infection-before-antimicrobial-administration",
+  "title": "A gradient-boosted model detected untreated infection before antimicrobial administration",
+  "summary": "The eDENTIFI gradient-boosted model estimated the probability of untreated infection during the next six hours from demographics, vital signs and laboratory results. Trained on 3,357 adult hospitalizations at two Illinois health systems and validated in 1,632 patients at a third, it achieved validation AUC 0.80 versus 0.64 for SIRS criteria. At the reported threshold it detected infection a median two hours before antimicrobial administration (47.6% sensitivity; 93.6% negative predictive value).",
+  "field": "medicine",
+  "ai_technology": "eDENTIFI, a gradient-boosted machine model using longitudinal discrete-time predictions",
+  "organization": "University of Chicago Medical Center; Duke University; Emory University; Loyola University; Endeavor Health; University of Wisconsin-Madison",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/39392375/",
+  "source_type": "paper",
+  "publication_date": "2024-10-11",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1097/CCE.0000000000001165",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Trained on 3,357 adult hospitalizations at two Illinois health systems and validated in 1,632 patients at a third, it achieved validation AUC 0.80 versus 0.64 for SIRS criteria.",
+    "unknown": "Retrospective derivation and validation used historical hospital records from 2006–2018, and the infection reference standard was clinician chart review. The reported 10.8% absolute/46.4% relative reduction in unnecessary IV antibiotics is a counterfactual model comparison, not observed intervention evidence. The authors state prospective validation is needed; no patient benefit or implementation outcome was established.",
+    "ai_role": "The model used routinely available demographics, vital signs and laboratory results to predict clinician-chart-reviewed untreated infection over the next six hours. The study tested temporal detection performance in a separate third health system; model estimates were not prospectively used to direct care.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/39392375/"
+    ]
+  }
+}

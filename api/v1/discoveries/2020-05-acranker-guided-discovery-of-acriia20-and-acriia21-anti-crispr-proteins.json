@@ -1,0 +1,28 @@
+{
+  "id": "2020-05-acranker-guided-discovery-of-acriia20-and-acriia21-anti-crispr-proteins",
+  "title": "AcRanker-guided discovery of AcrIIA20 and AcrIIA21 anti-CRISPR proteins",
+  "summary": "AcRanker, an XGBoost ranking model using amino-acid sequence features, ranked proteins from prophage regions in self-targeting Streptococcus genomes. Experimental testing identified two previously unknown type II-A anti-CRISPRs: AcrIIA20 (ML1), which strongly inhibited Streptococcus iniae Cas9 and weakly inhibited S. pyogenes Cas9, and AcrIIA21 (ML8), which inhibited S. pyogenes, S. aureus and S. iniae Cas9 with lower potency.",
+  "field": "biology",
+  "ai_technology": "AcRanker, an XGBoost pairwise ranking model trained on amino-acid composition and grouped di- and tri-mer features",
+  "organization": "University of California, Berkeley; Monash University; University of Melbourne",
+  "source_url": "https://academic.oup.com/nar/article/48/9/4698/5819938",
+  "source_type": "paper",
+  "publication_date": "2020-05-21",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1093/nar/gkaa219",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Experimental testing identified two previously unknown type II-A anti-CRISPRs: AcrIIA20 (ML1), which strongly inhibited Streptococcus iniae Cas9 and weakly inhibited S. pyogenes Cas9, and AcrIIA21 (ML8), which inhibited S. pyogenes, S. aureus and S. iniae Cas9 with lower potency.",
+    "unknown": "The authors selected 10 candidates for follow-up, successfully purified nine and reported three validated candidates across their experiments, including ML3/AcrIIA12, which had also been identified separately as an LmoCas9 inhibitor during the study. AcrIIA20 and AcrIIA21 were roughly tenfold less potent against SpyCas9 than the established AcrIIA4 control; tested potency and host range are assay-specific. The 2025 Evo paper reports distinct generated proteins EvoAcr1–5 and separate assays; shared anti-CRISPR function does not make these identical discoveries.",
+    "ai_role": "The model ranked candidate proteins from predicted prophage regions for anti-CRISPR likelihood; the researchers selected candidates from those rankings and biochemically tested them. It directly prioritized the proteins later named AcrIIA20 and AcrIIA21, whose Cas9 inhibition was measured in vitro.",
+    "evidence_urls": [
+      "https://academic.oup.com/nar/article/48/9/4698/5819938"
+    ]
+  }
+}

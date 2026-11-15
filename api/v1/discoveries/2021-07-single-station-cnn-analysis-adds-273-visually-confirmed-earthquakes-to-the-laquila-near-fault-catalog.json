@@ -1,0 +1,28 @@
+{
+  "id": "2021-07-single-station-cnn-analysis-adds-273-visually-confirmed-earthquakes-to-the-laquila-near-fault-catalog",
+  "title": "Single-station CNN analysis adds 273 visually confirmed earthquakes to the L’Aquila near-fault catalog",
+  "summary": "A two-stage 1D CNN pipeline applied to continuous three-component seismic waveforms from one L’Aquila station identified 273 previously uncataloged local earthquake events during a one-month 2009 foreshock period. The study reports that 84% were assigned magnitude below 1 and that all 273 new detections were visually confirmed; the expanded catalog contained roughly three times as many new detections as the pre-existing catalog had events for that period.",
+  "field": "physics",
+  "ai_technology": "Two-stage one-dimensional convolutional neural network (CNN) pipeline",
+  "organization": "Université Grenoble Alpes; CNRS",
+  "source_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020JB021566",
+  "source_type": "paper",
+  "publication_date": "2021-07-02",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1029/2020JB021566",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A two-stage 1D CNN pipeline applied to continuous three-component seismic waveforms from one L’Aquila station identified 273 previously uncataloged local earthquake events during a one-month 2009 foreshock period.",
+    "unknown": "The analysis covers one month in February 2009 from one station. The authors report 273 new local detections and six nonlocal events among 369 windows classified as local; all 273 new detections were visually confirmed. The pipeline does not provide exact event locations, and transfer to other regions was not established. Magnitudes are coarse classes, not precise estimates.",
+    "ai_role": "The detector CNN scanned continuous raw three-component waveform windows for earthquake signals; a second CNN classified distance and magnitude, enabling the researchers to find and characterize uncataloged events from a single station. The CNN pipeline generated the new event detections; authors then visually checked them.",
+    "evidence_urls": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020JB021566"
+    ]
+  }
+}

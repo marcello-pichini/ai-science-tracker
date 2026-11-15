@@ -1,11 +1,11 @@
 {
- "generated": "2026-11-14",
+ "generated": "2026-11-15",
  "source": {
   "name": "Epoch AI — Data on AI models (notable models)",
   "url": "https://epoch.ai/data/ai-models",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-  "downloaded": "2026-11-12",
+  "csv_sha256": "8571f03f230fb0a53b79a8dec51edc40f280e1c3e7b033cdc95e9317dc2786b6",
   "original_records": 1092
  },
  "models": [
@@ -1962,7 +1962,7 @@
    "compute_flop": "4.7156e+22",
    "access": "Open weights (non-commercial)",
    "frontier": false,
-   "link": "arxiv.org/abs/2501.14818",
+   "link": "https://arxiv.org/abs/2501.14818",
    "family": null
   },
   {
@@ -5247,14 +5247,30 @@
     "2020-11-alphafold-casp14",
     "2020-03-alphafold-covid",
     "2025-08-bindcraft",
-    "2022-05-colabfold"
+    "2022-05-colabfold",
+    "2026-03-designed-protein-small-molecule-sensing",
+    "2025-02-fragfold-identifies-inhibitory-fragments-within-bacterial-proteins",
+    "2024-07-ai-helps-resolve-an-unknown-regulatory-mechanism-in-bacterial-acetyl-coa-synthetase",
+    "2023-06-alphafold-assisted-structural-clustering-discovers-new-deaminase-functions-and-compact-base-editing-enzymes",
+    "2024-04-structure-based-virtual-screening-identifies-mammalian-enzymes-catalyzing-the-second-step-of-carnitine-biosynthesis",
+    "2024-01-alphafold-multimer-guided-experiments-corroborate-six-novel-human-protein-interfaces",
+    "2024-07-ai-guided-huj3-mutation-improves-hiv-1-gp120-binding-and-neutralization-in-assays",
+    "2024-03-ai-ranked-sars-cov-2-protein-interactions-guide-discovery-of-an-nsp10nsp16-inhibitor",
+    "2024-06-alphafold2-guided-mining-identifies-context-independent-cytidine-deaminases-for-efficient-base-editing",
+    "2025-01-get-and-interaction-assays-link-a-leukemia-risk-pax5-variant-to-stronger-nr2c2-binding",
+    "2024-05-machine-learning-links-mycobacterial-protein-disorder-to-targeted-degradation-potential",
+    "2024-03-an-ml-generated-mine-homolog-restores-bacterial-cell-division-patterning-in-vivo",
+    "2025-04-alphafold-structure-analysis-helps-reveal-phgdh-transcriptional-activity-linked-to-alzheimers-amyloid-pathology",
+    "2024-09-deep-learning-identifies-previously-unreported-protein-interactions-in-human-bacterial-pathogens",
+    "2026-06-ai-designed-bacterial-anti-defense-proteins-enable-phage-infection-and-plasmid-retention",
+    "2024-12-picnic-machine-learning-predictions-revealed-previously-poorly-characterized-human-proteins-in-cellular-condensates"
    ],
    "models": [
     "AlphaFold-Multimer",
     "AlphaFold 2",
     "AlphaFold"
    ],
-   "discovery_count": 13,
+   "discovery_count": 29,
    "model_count": 3
   },
   {
@@ -5271,7 +5287,12 @@
     "2026-08-claude-leganti",
     "2026-03-vibe-physics",
     "2026-01-claude-biology-labs",
-    "2026-02-knuth-claude-cycles"
+    "2026-02-knuth-claude-cycles",
+    "2026-07-claude-assisted-analytic-proof-establishes-a-b-1-for-mean-field-jamming-exponents",
+    "2026-10-ai-assisted-proof-establishes-a-dimension-independent-kls-isoperimetric-bound",
+    "2026-10-claude-discovers-algorithms-that-refute-the-3sum-and-apsp-time-complexity-hypotheses",
+    "2026-03-claude-code-produces-the-first-primary-lund-jet-plane-density-measurement-in-electronpositron-collisions",
+    "2026-03-ai-assisted-work-proves-a-latin-square-imbalance-bound-with-optimal-examples-through-order-52"
    ],
    "models": [
     "Claude Sonnet 5.5",
@@ -5298,7 +5319,7 @@
     "Claude 2",
     "Claude"
    ],
-   "discovery_count": 11,
+   "discovery_count": 16,
    "model_count": 23
   },
   {
@@ -5315,7 +5336,11 @@
     "2025-12-gpt52-apprendimento",
     "2025-11-gpt5-nesterov",
     "2025-11-gpt5-esperimenti",
-    "2026-01-erdos-728"
+    "2026-01-erdos-728",
+    "2026-10-ai-assisted-proof-establishes-a-dimension-independent-kls-isoperimetric-bound",
+    "2026-09-gpt-assisted-proof-reduces-zieves-hurwitz-realizability-conjecture-to-the-three-branch-point-case",
+    "2026-09-gpt-5-6-constructs-a-counterexample-to-talagrands-operator-cotype-problem",
+    "2026-08-gpt-5-6-helps-prove-an-exact-mapping-between-frustrated-and-field-driven-spin-chains"
    ],
    "models": [
     "GPT-5.6 Cyber",
@@ -5340,8 +5365,34 @@
     "GPT-5 mini",
     "GPT-5"
    ],
-   "discovery_count": 11,
+   "discovery_count": 15,
    "model_count": 21
+  },
+  {
+   "id": "esm",
+   "name": "ESM / ESMFold",
+   "discoveries": [
+    "2024-06-esm3-esmgfp",
+    "2022-11-esm-atlas",
+    "2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine",
+    "2025-09-machine-learning-guided-mining-identifies-91-previously-unknown-pet-hydrolases-including-acid-active-enzymes",
+    "2025-08-beaut-uncovers-new-gut-microbial-bile-acid-enzymes-and-the-novel-bile-acid-3-acetodca",
+    "2024-11-chooser-uses-protein-foundation-models-to-discover-functional-cas-homologs",
+    "2025-08-esm-guided-metagenome-mining-identifies-seven-new-cas12a-subtypes-with-distinct-activities",
+    "2026-08-esm-fep-combines-protein-language-model-fitness-screening-and-free-energy-calculations-to-engineer-herbicide-detoxifying-maize-dioxygenase",
+    "2025-04-esm-ezy-mining-identifies-multicopper-oxidases-and-asparaginases-with-experimentally-improved-catalytic-properties",
+    "2025-08-pepmlm-designs-experimentally-binding-target-conditioned-peptide-ligands-including-peptides-used-for-targeted-protein-degradation",
+    "2025-02-mal-id-maps-disease-associated-immune-receptor-patterns-across-infections-and-autoimmune-conditions",
+    "2026-06-few-shot-protein-language-model-design-yields-high-output-bicyclogermacrene-synthase-variants",
+    "2026-07-enzgfm-agent-experimentally-prioritizes-activity-enhancing-secreted-alkaline-phosphatase-variants"
+   ],
+   "models": [
+    "ESM3 (98B)",
+    "ESM2-15B",
+    "ESM1b"
+   ],
+   "discovery_count": 13,
+   "model_count": 3
   },
   {
    "id": "rfdiffusion",
@@ -5355,10 +5406,12 @@
     "2025-12-rfdiffusion2-enzyme-active-sites",
     "2025-12-computational-metallohydrolases",
     "2025-12-riff-diff-enzyme-design",
-    "2026-03-designed-protein-small-molecule-sensing"
+    "2025-12-cyclerfdiffusion-designed-tp4-is-a-reproducible-cyclic-peptide-binder-to-trem2",
+    "2024-11-grace-designs-two-carbonic-anhydrase-like-enzymes-with-measured-catalytic-activity",
+    "2026-06-ai-designed-bacterial-anti-defense-proteins-enable-phage-infection-and-plasmid-retention"
    ],
    "models": [],
-   "discovery_count": 9,
+   "discovery_count": 11,
    "model_count": 0
   },
   {
@@ -5371,11 +5424,91 @@
     "2026-05-co-scientist-interruttori-molecolari",
     "2026-05-co-scientist-fegato-mash",
     "2026-05-co-scientist-invecchiamento-cellulare",
-    "2025-02-ai-co-scientist"
+    "2025-02-ai-co-scientist",
+    "2026-09-paper2agent-integrates-perturbation-datasets-to-prioritize-gpr137-at-a-psoriasis-risk-locus"
    ],
    "models": [],
-   "discovery_count": 7,
+   "discovery_count": 8,
    "model_count": 0
+  },
+  {
+   "id": "gpt6",
+   "name": "GPT-6",
+   "discoveries": [
+    "2026-10-ai-assisted-proof-establishes-a-dimension-independent-kls-isoperimetric-bound",
+    "2026-09-gpt-assisted-proof-reduces-zieves-hurwitz-realizability-conjecture-to-the-three-branch-point-case",
+    "2026-10-gpt-6-astra-proves-a-linear-coloring-bound-for-graphs-excluding-clique-minors",
+    "2026-10-gpt-6-pro-proves-an-optimal-anticoncentration-bound-for-polynomial-littlewoodofford-inequalities",
+    "2026-10-gpt-6-pro-proves-a-quadratic-size-threshold-suffices-for-random-permutations-to-contain-every-length-n-pattern",
+    "2026-10-gpt-6-astra-resolves-the-spectral-isometry-conjecture-for-arbitrary-unital-c-algebras",
+    "2026-11-gpt-6-astra-constructs-mutually-orthogonal-latin-squares-that-improve-lower-bounds-at-33-orders",
+    "2026-09-gpt-6-astra-finds-a-counting-proof-of-the-erdossos-tree-embedding-conjecture"
+   ],
+   "models": [
+    "GPT-6.1 Sol",
+    "GPT-6 Sol",
+    "GPT-6 Luna Decisions",
+    "GPT-6 Luna",
+    "GPT-6 Astra"
+   ],
+   "discovery_count": 8,
+   "model_count": 5
+  },
+  {
+   "id": "proteinmpnn",
+   "name": "ProteinMPNN",
+   "discoveries": [
+    "2023-12-leganti-peptidi",
+    "2022-09-proteinmpnn",
+    "2026-03-designed-protein-small-molecule-sensing",
+    "2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine",
+    "2025-12-cyclerfdiffusion-designed-tp4-is-a-reproducible-cyclic-peptide-binder-to-trem2",
+    "2024-11-grace-designs-two-carbonic-anhydrase-like-enzymes-with-measured-catalytic-activity",
+    "2024-06-deep-learning-design-produced-soluble-analogues-of-membrane-protein-folds-with-preserved-binding-functions",
+    "2026-06-ai-designed-bacterial-anti-defense-proteins-enable-phage-infection-and-plasmid-retention"
+   ],
+   "models": [],
+   "discovery_count": 8,
+   "model_count": 0
+  },
+  {
+   "id": "gemini",
+   "name": "Gemini",
+   "discoveries": [
+    "2026-02-deep-think-ricerca",
+    "2025-07-imo-oro",
+    "2025-05-alphaevolve",
+    "2025-02-ai-co-scientist",
+    "2026-05-google-era-empirical-research-assistance",
+    "2026-03-gemini-derives-an-exact-analytic-solution-for-the-cosmic-string-gravitational-radiation-power-integral"
+   ],
+   "models": [
+    "Gemini 4 Carbon",
+    "Gemini 4 Argon",
+    "Gemini 3.8 Flash",
+    "Gemini 3.5 Flash",
+    "Gemini Flash 3.1 TTS",
+    "Gemini 3.0 Flash-lite",
+    "Gemini 3 Pro Image (Nano Banana Pro)",
+    "Gemini 3 Pro",
+    "Gemini 3 Deep Think",
+    "Gemini Robotics-ER 1.5",
+    "Gemini 2.5 Flash Image (Nano Banana)",
+    "Gemini 2.5 Deep Think",
+    "Gemini Embedding",
+    "Gemini 2.5 Pro (Jun 2025)",
+    "Gemini 2.5 Pro (May 2025)",
+    "Gemini 2.5 Pro (Mar 2025)",
+    "Gemini 2.0 Pro",
+    "Gemini-Exp-1114",
+    "Gemini 1.5 Pro",
+    "Gemini Nano-2",
+    "Gemini Nano-1",
+    "Gemini 1.0 Ultra",
+    "Gemini 1.0 Pro"
+   ],
+   "discovery_count": 6,
+   "model_count": 23
   },
   {
    "id": "gpt4",
@@ -5406,42 +5539,18 @@
    "model_count": 12
   },
   {
-   "id": "gemini",
-   "name": "Gemini",
+   "id": "evo",
+   "name": "Evo",
    "discoveries": [
-    "2026-02-deep-think-ricerca",
-    "2025-07-imo-oro",
-    "2025-05-alphaevolve",
-    "2025-02-ai-co-scientist",
-    "2026-05-google-era-empirical-research-assistance"
+    "2026-10-evo2-in-context-enhancers",
+    "2025-09-evo-fagi",
+    "2025-02-evo2",
+    "2024-11-evo-science",
+    "2025-11-evo-genomic-language-model-designs-functional-toxin-antitoxin-and-anti-crispr-systems"
    ],
-   "models": [
-    "Gemini 4 Carbon",
-    "Gemini 4 Argon",
-    "Gemini 3.8 Flash",
-    "Gemini 3.5 Flash",
-    "Gemini Flash 3.1 TTS",
-    "Gemini 3.0 Flash-lite",
-    "Gemini 3 Pro Image (Nano Banana Pro)",
-    "Gemini 3 Pro",
-    "Gemini 3 Deep Think",
-    "Gemini Robotics-ER 1.5",
-    "Gemini 2.5 Flash Image (Nano Banana)",
-    "Gemini 2.5 Deep Think",
-    "Gemini Embedding",
-    "Gemini 2.5 Pro (Jun 2025)",
-    "Gemini 2.5 Pro (May 2025)",
-    "Gemini 2.5 Pro (Mar 2025)",
-    "Gemini 2.0 Pro",
-    "Gemini-Exp-1114",
-    "Gemini 1.5 Pro",
-    "Gemini Nano-2",
-    "Gemini Nano-1",
-    "Gemini 1.0 Ultra",
-    "Gemini 1.0 Pro"
-   ],
+   "models": [],
    "discovery_count": 5,
-   "model_count": 23
+   "model_count": 0
   },
   {
    "id": "alphaevolve",
@@ -5457,13 +5566,13 @@
    "model_count": 0
   },
   {
-   "id": "evo",
-   "name": "Evo",
+   "id": "chroma",
+   "name": "Chroma",
    "discoveries": [
-    "2026-10-evo2-in-context-enhancers",
-    "2025-09-evo-fagi",
-    "2025-02-evo2",
-    "2024-11-evo-science"
+    "2023-11-chroma",
+    "2021-04-an-integrated-arabidopsis-regulatory-network-predicts-13-previously-unlinked-reactive-oxygen-stress-regulators",
+    "2023-12-3d-hichat-predicts-embryonic-enhancer-hubs-validated-by-crispr-interference",
+    "2026-04-celloracle-guided-pancreatic-islet-differentiation-experiments-reveal-stat1-and-zeb1-lineage-roles"
    ],
    "models": [],
    "discovery_count": 4,
@@ -5484,6 +5593,60 @@
    "model_count": 1
   },
   {
+   "id": "alphagenome",
+   "name": "AlphaGenome",
+   "discoveries": [
+    "2026-09-alphagenome-atlas",
+    "2025-06-alphagenome",
+    "2026-09-paper2agent-integrates-perturbation-datasets-to-prioritize-gpr137-at-a-psoriasis-risk-locus"
+   ],
+   "models": [],
+   "discovery_count": 3,
+   "model_count": 0
+  },
+  {
+   "id": "codex",
+   "name": "Codex",
+   "discoveries": [
+    "2026-09-codex-calibrazione-qubit",
+    "2026-07-ai-guided-proof-search-solves-five-open-problems-in-banach-space-theory",
+    "2026-11-gpt-6-astra-constructs-mutually-orthogonal-latin-squares-that-improve-lower-bounds-at-33-orders"
+   ],
+   "models": [
+    "Codex"
+   ],
+   "discovery_count": 3,
+   "model_count": 1
+  },
+  {
+   "id": "progen",
+   "name": "ProGen",
+   "discoveries": [
+    "2021-07-progen-enzimi",
+    "2024-04-progeni-predicts-candidate-melanoma-and-colorectal-cancer-targets-validated-in-cell-models",
+    "2025-05-autonomous-btsbot-nearby-follow-up-captures-an-infant-supernovas-flash-spectrum-and-constrains-progenitor-mass-loss"
+   ],
+   "models": [
+    "ProGen2-xlarge"
+   ],
+   "discovery_count": 3,
+   "model_count": 1
+  },
+  {
+   "id": "rosettafold",
+   "name": "RoseTTAFold",
+   "discoveries": [
+    "2021-07-rosettafold",
+    "2022-05-colabfold",
+    "2024-09-deep-learning-identifies-previously-unreported-protein-interactions-in-human-bacterial-pathogens"
+   ],
+   "models": [
+    "RoseTTAFold All-Atom (RFAA)"
+   ],
+   "discovery_count": 3,
+   "model_count": 1
+  },
+  {
    "id": "weathernext",
    "name": "WeatherNext",
    "discoveries": [
@@ -5498,17 +5661,6 @@
    "model_count": 1
   },
   {
-   "id": "alphagenome",
-   "name": "AlphaGenome",
-   "discoveries": [
-    "2026-09-alphagenome-atlas",
-    "2025-06-alphagenome"
-   ],
-   "models": [],
-   "discovery_count": 2,
-   "model_count": 0
-  },
-  {
    "id": "alphageometry",
    "name": "AlphaGeometry",
    "discoveries": [
@@ -5520,21 +5672,6 @@
    ],
    "discovery_count": 2,
    "model_count": 1
-  },
-  {
-   "id": "esm",
-   "name": "ESM / ESMFold",
-   "discoveries": [
-    "2024-06-esm3-esmgfp",
-    "2022-11-esm-atlas"
-   ],
-   "models": [
-    "ESM3 (98B)",
-    "ESM2-15B",
-    "ESM1b"
-   ],
-   "discovery_count": 2,
-   "model_count": 3
   },
   {
    "id": "funsearch",
@@ -5587,25 +5724,32 @@
    "model_count": 1
   },
   {
-   "id": "proteinmpnn",
-   "name": "ProteinMPNN",
+   "id": "oserie",
+   "name": "o1 / o3",
    "discoveries": [
-    "2023-12-leganti-peptidi",
-    "2022-09-proteinmpnn"
-   ],
-   "models": [],
-   "discovery_count": 2,
-   "model_count": 0
-  },
-  {
-   "id": "rosettafold",
-   "name": "RoseTTAFold",
-   "discoveries": [
-    "2021-07-rosettafold",
-    "2022-05-colabfold"
+    "2026-06-o3-malattie-genetiche",
+    "2025-09-ai-assisted-transfer-matrix-analysis-yields-an-exact-solution-for-the-1d-frustrated-q-state-potts-model"
    ],
    "models": [
-    "RoseTTAFold All-Atom (RFAA)"
+    "o1-pro",
+    "o3-mini",
+    "o3",
+    "o1",
+    "o1-preview",
+    "o1-mini"
+   ],
+   "discovery_count": 2,
+   "model_count": 6
+  },
+  {
+   "id": "trrosetta",
+   "name": "trRosetta",
+   "discoveries": [
+    "2021-03-trrosetta-pfam",
+    "2026-03-designed-protein-small-molecule-sensing"
+   ],
+   "models": [
+    "trRosetta"
    ],
    "discovery_count": 2,
    "model_count": 1
@@ -5697,38 +5841,6 @@
    "model_count": 0
   },
   {
-   "id": "boltz",
-   "name": "Boltz",
-   "discoveries": [
-    "2024-12-boltz1"
-   ],
-   "models": [],
-   "discovery_count": 1,
-   "model_count": 0
-  },
-  {
-   "id": "chroma",
-   "name": "Chroma",
-   "discoveries": [
-    "2023-11-chroma"
-   ],
-   "models": [],
-   "discovery_count": 1,
-   "model_count": 0
-  },
-  {
-   "id": "codex",
-   "name": "Codex",
-   "discoveries": [
-    "2026-09-codex-calibrazione-qubit"
-   ],
-   "models": [
-    "Codex"
-   ],
-   "discovery_count": 1,
-   "model_count": 1
-  },
-  {
    "id": "corrdiff",
    "name": "CorrDiff",
    "discoveries": [
@@ -5747,6 +5859,27 @@
    "models": [],
    "discovery_count": 1,
    "model_count": 0
+  },
+  {
+   "id": "deepseekm",
+   "name": "DeepSeek",
+   "discoveries": [
+    "2026-08-physics-informed-retrieval-augmented-language-model-guides-synthesis-of-five-previously-unreported-inorganic-crystals"
+   ],
+   "models": [
+    "DeepSeek V4.1 Flash",
+    "DeepSeek-V4-Pro",
+    "DeepSeek-V4-Flash",
+    "DeepSeekMath-V2",
+    "DeepSeek-R1 (May 2025)",
+    "DeepSeek-V3 (Mar 2025)",
+    "DeepSeek-R1",
+    "DeepSeek-V3",
+    "DeepSeek-V2.5",
+    "DeepSeek-Coder-V2 236B"
+   ],
+   "discovery_count": 1,
+   "model_count": 10
   },
   {
    "id": "dolphingemma",
@@ -5899,23 +6032,6 @@
    "model_count": 0
   },
   {
-   "id": "oserie",
-   "name": "o1 / o3",
-   "discoveries": [
-    "2026-06-o3-malattie-genetiche"
-   ],
-   "models": [
-    "o1-pro",
-    "o3-mini",
-    "o3",
-    "o1",
-    "o1-preview",
-    "o1-mini"
-   ],
-   "discovery_count": 1,
-   "model_count": 6
-  },
-  {
    "id": "opencrispr",
    "name": "OpenCRISPR",
    "discoveries": [
@@ -5948,18 +6064,6 @@
    "model_count": 0
   },
   {
-   "id": "progen",
-   "name": "ProGen",
-   "discoveries": [
-    "2021-07-progen-enzimi"
-   ],
-   "models": [
-    "ProGen2-xlarge"
-   ],
-   "discovery_count": 1,
-   "model_count": 1
-  },
-  {
    "id": "retrochimera",
    "name": "RetroChimera",
    "discoveries": [
@@ -5990,18 +6094,6 @@
    "model_count": 0
   },
   {
-   "id": "trrosetta",
-   "name": "trRosetta",
-   "discoveries": [
-    "2021-03-trrosetta-pfam"
-   ],
-   "models": [
-    "trRosetta"
-   ],
-   "discovery_count": 1,
-   "model_count": 1
-  },
-  {
    "id": "alphacode",
    "name": "AlphaCode",
    "discoveries": [],
@@ -6012,25 +6104,6 @@
    "model_count": 1
   },
   {
-   "id": "deepseekm",
-   "name": "DeepSeek",
-   "discoveries": [],
-   "models": [
-    "DeepSeek V4.1 Flash",
-    "DeepSeek-V4-Pro",
-    "DeepSeek-V4-Flash",
-    "DeepSeekMath-V2",
-    "DeepSeek-R1 (May 2025)",
-    "DeepSeek-V3 (Mar 2025)",
-    "DeepSeek-R1",
-    "DeepSeek-V3",
-    "DeepSeek-V2.5",
-    "DeepSeek-Coder-V2 236B"
-   ],
-   "discovery_count": 0,
-   "model_count": 10
-  },
-  {
    "id": "genslm",
    "name": "GenSLM",
    "discoveries": [],
@@ -6039,20 +6112,6 @@
    ],
    "discovery_count": 0,
    "model_count": 1
-  },
-  {
-   "id": "gpt6",
-   "name": "GPT-6",
-   "discoveries": [],
-   "models": [
-    "GPT-6.1 Sol",
-    "GPT-6 Sol",
-    "GPT-6 Luna Decisions",
-    "GPT-6 Luna",
-    "GPT-6 Astra"
-   ],
-   "discovery_count": 0,
-   "model_count": 5
   },
   {
    "id": "medpalm",
@@ -6117,6 +6176,7 @@
   "2020-03-metnet",
   "2020-11-alphafold-casp14",
   "2021-03-trrosetta-pfam",
+  "2021-04-an-integrated-arabidopsis-regulatory-network-predicts-13-previously-unlinked-reactive-oxygen-stress-regulators",
   "2021-07-alphafold-database",
   "2021-07-progen-enzimi",
   "2021-07-rosettafold",
@@ -6133,6 +6193,7 @@
   "2023-05-lineardesign",
   "2023-05-pangenoma-umano",
   "2023-06-alphadev",
+  "2023-06-alphafold-assisted-structural-clustering-discovers-new-deaminase-functions-and-compact-base-editing-enzymes",
   "2023-07-pangu-weather",
   "2023-07-rfdiffusion",
   "2023-09-alphamissense",
@@ -6140,50 +6201,77 @@
   "2023-11-gnome",
   "2023-11-graphcast",
   "2023-11-metnet3",
+  "2023-12-3d-hichat-predicts-embryonic-enhancer-hubs-validated-by-crispr-interference",
   "2023-12-coscientist",
   "2023-12-funsearch",
   "2023-12-leganti-peptidi",
   "2023-12-mattergen-anteprima",
+  "2024-01-alphafold-multimer-guided-experiments-corroborate-six-novel-human-protein-interfaces",
   "2024-01-alphageometry",
+  "2024-03-ai-ranked-sars-cov-2-protein-interactions-guide-discovery-of-an-nsp10nsp16-inhibitor",
+  "2024-03-an-ml-generated-mine-homolog-restores-bacterial-cell-division-patterning-in-vivo",
   "2024-04-anticorpi-da-zero",
   "2024-04-opencrispr",
+  "2024-04-progeni-predicts-candidate-melanoma-and-colorectal-cancer-targets-validated-in-cell-models",
+  "2024-04-structure-based-virtual-screening-identifies-mammalian-enzymes-catalyzing-the-second-step-of-carnitine-biosynthesis",
   "2024-05-alphafold-3",
   "2024-05-chemcrow",
+  "2024-05-machine-learning-links-mycobacterial-protein-disorder-to-targeted-degradation-potential",
+  "2024-06-alphafold2-guided-mining-identifies-context-independent-cytidine-deaminases-for-efficient-base-editing",
   "2024-06-aurora",
+  "2024-06-deep-learning-design-produced-soluble-analogues-of-membrane-protein-folds-with-preserved-binding-functions",
   "2024-06-esm3-esmgfp",
+  "2024-07-ai-guided-huj3-mutation-improves-hiv-1-gp120-binding-and-neutralization-in-assays",
+  "2024-07-ai-helps-resolve-an-unknown-regulatory-mechanism-in-bacterial-acetyl-coa-synthetase",
   "2024-07-alphaproof-imo",
   "2024-07-neuralgcm",
   "2024-09-alphaproteo",
   "2024-09-debunkbot-conspiracy",
+  "2024-09-deep-learning-identifies-previously-unreported-protein-interactions-in-human-bacterial-pathogens",
   "2024-11-alphaqubit",
+  "2024-11-chooser-uses-protein-foundation-models-to-discover-functional-cas-homologs",
   "2024-11-evo-science",
+  "2024-11-grace-designs-two-carbonic-anhydrase-like-enzymes-with-measured-catalytic-activity",
   "2024-11-llm-rdf",
-  "2024-12-boltz1",
   "2024-12-gencast",
+  "2024-12-picnic-machine-learning-predictions-revealed-previously-poorly-characterized-human-proteins-in-cellular-condensates",
   "2025-01-antiveleno-proteine",
+  "2025-01-get-and-interaction-assays-link-a-leukemia-risk-pax5-variant-to-stronger-nr2c2-binding",
   "2025-01-mattergen",
   "2025-02-ai-co-scientist",
   "2025-02-corrdiff",
   "2025-02-ecmwf-aifs",
   "2025-02-evo2",
+  "2025-02-fragfold-identifies-inhibitory-fragments-within-bacterial-proteins",
+  "2025-02-mal-id-maps-disease-associated-immune-receptor-patterns-across-infections-and-autoimmune-conditions",
+  "2025-04-alphafold-structure-analysis-helps-reveal-phgdh-transcriptional-activity-linked-to-alzheimers-amyloid-pathology",
   "2025-04-dolphingemma",
+  "2025-04-esm-ezy-mining-identifies-multicopper-oxidases-and-asparaginases-with-experimentally-improved-catalytic-properties",
   "2025-04-serine-hydrolases",
   "2025-05-alphaevolve",
+  "2025-05-autonomous-btsbot-nearby-follow-up-captures-an-infant-supernovas-flash-spectrum-and-constrains-progenitor-mass-loss",
   "2025-06-alphagenome",
   "2025-06-skala",
   "2025-07-centaur-human-cognition",
   "2025-07-imo-oro",
+  "2025-08-beaut-uncovers-new-gut-microbial-bile-acid-enzymes-and-the-novel-bile-acid-3-acetodca",
   "2025-08-bindcraft",
+  "2025-08-esm-guided-metagenome-mining-identifies-seven-new-cas12a-subtypes-with-distinct-activities",
+  "2025-08-pepmlm-designs-experimentally-binding-target-conditioned-peptide-ligands-including-peptides-used-for-targeted-protein-degradation",
   "2025-08-perch-bioacustica",
+  "2025-09-ai-assisted-transfer-matrix-analysis-yields-an-exact-solution-for-the-1d-frustrated-q-state-potts-model",
   "2025-09-evo-fagi",
+  "2025-09-machine-learning-guided-mining-identifies-91-previously-unknown-pet-hydrolases-including-acid-active-enzymes",
   "2025-11-alphaevolve-tao",
   "2025-11-api-vitellogenina",
   "2025-11-apob100-colesterolo",
+  "2025-11-evo-genomic-language-model-designs-functional-toxin-antitoxin-and-anti-crispr-systems",
   "2025-11-gpt5-esperimenti",
   "2025-11-gpt5-nesterov",
   "2025-11-kosmos",
   "2025-12-colture-resistenti-calore",
   "2025-12-computational-metallohydrolases",
+  "2025-12-cyclerfdiffusion-designed-tp4-is-a-reproducible-cyclic-peptide-binder-to-trem2",
   "2025-12-gpt5-laboratorio",
   "2025-12-gpt52-apprendimento",
   "2025-12-levers-political-persuasion-ai",
@@ -6198,10 +6286,15 @@
   "2026-02-gpt5-cfps",
   "2026-02-gpt52-gluoni",
   "2026-02-knuth-claude-cycles",
+  "2026-03-ai-assisted-work-proves-a-latin-square-imbalance-bound-with-optimal-examples-through-order-52",
   "2026-03-alphaevolve-ramsey",
+  "2026-03-claude-code-produces-the-first-primary-lund-jet-plane-density-measurement-in-electronpositron-collisions",
   "2026-03-designed-protein-small-molecule-sensing",
+  "2026-03-gemini-derives-an-exact-analytic-solution-for-the-cosmic-string-gravitational-radiation-power-integral",
   "2026-03-gpt52-gravitoni",
   "2026-03-vibe-physics",
+  "2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine",
+  "2026-04-celloracle-guided-pancreatic-islet-differentiation-experiments-reveal-stat1-and-zeb1-lineage-roles",
   "2026-04-gpt55-ramsey",
   "2026-05-co-scientist-fegato-mash",
   "2026-05-co-scientist-fibrosi-epatica",
@@ -6213,23 +6306,42 @@
   "2026-05-mattersim-tap",
   "2026-05-weathernext-melissa",
   "2026-05-zarankiewicz-openevolve",
+  "2026-06-ai-designed-bacterial-anti-defense-proteins-enable-phage-infection-and-plasmid-retention",
+  "2026-06-few-shot-protein-language-model-design-yields-high-output-bicyclogermacrene-synthase-variants",
   "2026-06-gpt54-chan-lam",
   "2026-06-o3-malattie-genetiche",
+  "2026-07-ai-guided-proof-search-solves-five-open-problems-in-banach-space-theory",
+  "2026-07-claude-assisted-analytic-proof-establishes-a-b-1-for-mean-field-jamming-exponents",
+  "2026-07-enzgfm-agent-experimentally-prioritizes-activity-enhancing-secreted-alkaline-phosphatase-variants",
   "2026-07-fastnet",
   "2026-08-claude-leganti",
+  "2026-08-esm-fep-combines-protein-language-model-fitness-screening-and-free-energy-calculations-to-engineer-herbicide-detoxifying-maize-dioxygenase",
+  "2026-08-gpt-5-6-helps-prove-an-exact-mapping-between-frustrated-and-field-driven-spin-chains",
+  "2026-08-physics-informed-retrieval-augmented-language-model-guides-synthesis-of-five-previously-unreported-inorganic-crystals",
   "2026-08-weathernext-cicloni",
   "2026-09-alphagenome-atlas",
   "2026-09-claude-enzima-art",
   "2026-09-claude-ottimizza-modelli",
   "2026-09-codex-calibrazione-qubit",
   "2026-09-fermat-lean",
+  "2026-09-gpt-5-6-constructs-a-counterexample-to-talagrands-operator-cotype-problem",
+  "2026-09-gpt-6-astra-finds-a-counting-proof-of-the-erdossos-tree-embedding-conjecture",
+  "2026-09-gpt-assisted-proof-reduces-zieves-hurwitz-realizability-conjecture-to-the-three-branch-point-case",
+  "2026-09-paper2agent-integrates-perturbation-datasets-to-prioritize-gpr137-at-a-psoriasis-risk-locus",
   "2026-09-retrochimera",
   "2026-09-synthid-bio",
   "2026-09-weathernext-3",
+  "2026-10-ai-assisted-proof-establishes-a-dimension-independent-kls-isoperimetric-bound",
   "2026-10-circuiti-quantistici",
+  "2026-10-claude-discovers-algorithms-that-refute-the-3sum-and-apsp-time-complexity-hypotheses",
   "2026-10-evo2-in-context-enhancers",
+  "2026-10-gpt-6-astra-proves-a-linear-coloring-bound-for-graphs-excluding-clique-minors",
+  "2026-10-gpt-6-astra-resolves-the-spectral-isometry-conjecture-for-arbitrary-unital-c-algebras",
+  "2026-10-gpt-6-pro-proves-a-quadratic-size-threshold-suffices-for-random-permutations-to-contain-every-length-n-pattern",
+  "2026-10-gpt-6-pro-proves-an-optimal-anticoncentration-bound-for-polynomial-littlewoodofford-inequalities",
   "2026-10-leganti-scorpione",
   "2026-10-sviluppo-farmaci",
+  "2026-11-gpt-6-astra-constructs-mutually-orthogonal-latin-squares-that-improve-lower-bounds-at-33-orders",
   "2026-11-mitochondrial-interactome-alphafold",
   "2026-11-vault-claude"
  ]

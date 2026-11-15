@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-pfcm-ffqg-84hx",
+  "title": "Cyclic Exif IFD pointers can exhaust CPU in libheif helper tools",
+  "product": "libheif",
+  "ai_system": "Anthropic OSS Scanner (model not specified for this finding)",
+  "organization": "Anthropic and libheif maintainers",
+  "summary": "The heif-dec, heif-thumbnailer and heif-enc helpers followed Exif IFD pointers recursively without a bound, so cyclic pointers could make processing consume excessive CPU. The library and gdk-pixbuf loader are not affected.",
+  "ai_role": "The item-level libheif advisory explicitly attributes discovery to Anthropic's OSS Scanner as ANT-2026-TKUGU4GZ. The release notes independently state that all listed security issues were found by the scanner. The Anthropic program sources establish model-based scanning, but no per-case model is identified.",
+  "disclosure_date": "2026-10-26",
+  "ai_attribution_date": "2026-10-26",
+  "classification": "disclosure",
+  "classification_note": "The primary advisory establishes a publicly disclosed security finding and direct Anthropic OSS Scanner attribution. No CVE had been assigned in the libheif release notes at the checked time; the distinct GHSA is used. No exploitation or zero-day status is asserted.",
+  "cves": [],
+  "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-pfcm-ffqg-84hx",
+  "ai_source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-pfcm-ffqg-84hx",
+  "remediation": "fix documented",
+  "remediation_note": "The recursive traversal was replaced by a bounded iterative walk charged against Exif data size; fixed in libheif 1.23.7. Scope is the named helper tools. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
+  "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-pfcm-ffqg-84hx",
+  "checked_date": "2026-11-14"
+}

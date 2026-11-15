@@ -1,0 +1,22 @@
+{
+  "id": "ghsa-j273-m5qq-6825",
+  "title": "Junrar LocalFolderExtractor path traversal",
+  "product": "Junrar",
+  "ai_system": "Claude Mythos Preview",
+  "organization": "Anthropic",
+  "summary": "On Linux/Unix, backslash path handling in archive extraction bypasses destination path validation and can write files outside the extraction directory.",
+  "ai_role": "Item CVD ANT-2026-9VJ9JJXQ explicitly identifies Claude Mythos Preview as discoverer; the maintainer advisory documents the specific Linux/Unix path traversal. CVD’s public reveal date is 2026-05-20; it is used as the dated public AI attribution. Its timeline records a maintainer report Feb 25 and patch Feb 26, while the CVD record was later logged Mar 29.",
+  "disclosure_date": "2026-02-26",
+  "ai_attribution_date": "2026-05-20",
+  "classification": "disclosure",
+  "classification_note": "Public disclosure is documented. Sources do not establish exploitation in the wild or zero-day status.  No CVE identifier was confirmed in the read primary advisory; the case is counted by its GHSA identifier.",
+  "cves": [
+    "CVE-2026-28208"
+  ],
+  "source_url": "https://github.com/junrar/junrar/security/advisories/GHSA-j273-m5qq-6825",
+  "ai_source_url": "https://red.anthropic.com/2026/cvd/findings/ANT-2026-9VJ9JJXQ",
+  "remediation": "fix documented",
+  "remediation_note": "Affected Junrar versions below 7.5.8, fixed in 7.5.8. On Linux/Unix only, LocalFolderExtractor validates backslashes as literal characters, then converts them to path separators while reconstructing the path, allowing arbitrary file overwrite outside the extraction directory. Windows is not affected. CVD labels discovery static analysis, not dynamically reproduced; maintainer advisory includes a reproducer confirming overwrite.",
+  "advisory_url": "https://github.com/junrar/junrar/security/advisories/GHSA-j273-m5qq-6825",
+  "checked_date": "2026-11-15"
+}

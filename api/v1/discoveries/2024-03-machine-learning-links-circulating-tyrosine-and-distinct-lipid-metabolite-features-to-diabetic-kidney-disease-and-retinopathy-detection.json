@@ -1,0 +1,28 @@
+{
+  "id": "2024-03-machine-learning-links-circulating-tyrosine-and-distinct-lipid-metabolite-features-to-diabetic-kidney-disease-and-retinopathy-detection",
+  "title": "Machine learning links circulating tyrosine and distinct lipid-metabolite features to diabetic kidney disease and retinopathy detection",
+  "summary": "In 2,772 adults with diabetes from Singapore’s population-based SEED study, LASSO and gradient-boosting models screened 220 circulating metabolites and 19 clinical factors for prevalent diabetic kidney disease (DKD) and retinopathy (DR), then were externally assessed in 5,843 UK Biobank participants. Both outcomes shared diabetes duration, insulin use, age and tyrosine as important model features. DKD additionally selected cardiovascular disease history, antihypertensive use, lactate, citrate and the intermediate-density-lipoprotein cholesterol-ester/total-lipid ratio; DR additionally selected HbA1c, glucose, pulse pressure and alanine. External AUCs were 0.791 for DKD and 0.778 for DR, versus 0.691 and 0.760 for conventional adjusted logistic-regression comparators.",
+  "field": "medicine",
+  "ai_technology": "Least absolute shrinkage and selection operator logistic regression and gradient-boosting decision trees applied to metabolomics and clinical risk factors",
+  "organization": "Singapore Eye Research Institute; Singapore National Eye Centre; National University of Singapore; Duke-NUS Medical School",
+  "source_url": "https://www.jmir.org/2024/1/e41065/",
+  "source_type": "paper",
+  "publication_date": "2024-03-28",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.2196/41065",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In 2,772 adults with diabetes from Singapore’s population-based SEED study, LASSO and gradient-boosting models screened 220 circulating metabolites and 19 clinical factors for prevalent diabetic kidney disease (DKD) and retinopathy (DR), then were externally assessed in 5,843 UK Biobank participants.",
+    "unknown": "The analysis is retrospective and cross-sectional; it classifies prevalent complications and cannot establish temporal prediction or causal effects of tyrosine, lactate, citrate, alanine or lipid features. The Singapore cohort was recruited in 2004–2011 and was multiethnic Asian; about 95% had type 2 diabetes, but the study did not separate diabetes types. UK Biobank definitions and available eye-severity measures differed, and validation of moderate-or-worse DR was not feasible. Performance is modest, particularly external AUC 0.791 DKD/0.778 DR, and does not establish clinical utility.",
+    "ai_role": "ML feature selection prioritized a shared set of clinical/metabolic factors and distinct DKD- and DR-associated metabolites, then built detection models externally evaluated in UK Biobank. These models outperformed traditional adjusted logistic-regression comparators in the reported internal and external validation. The scientific result is the disease-specific feature pattern and its validated detection performance, not merely an algorithm benchmark.",
+    "evidence_urls": [
+      "https://www.jmir.org/2024/1/e41065/"
+    ]
+  }
+}

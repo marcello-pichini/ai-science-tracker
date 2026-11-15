@@ -1,0 +1,20 @@
+{
+  "id": "ghsl-2025-093",
+  "title": "Taskflow Agent and CodeQL find code injection in PraisonAI GitHub Actions",
+  "product": "PraisonAI claude-code-action workflow",
+  "ai_system": "GitHub Security Lab Taskflow Agent and CodeQL",
+  "organization": "GitHub Security Lab",
+  "summary": "The reusable issue-triage action interpolated attacker-controlled issue bodies and titles into shell assignments in a workflow with access to an Anthropic API key, creating privileged code-execution and secret-exposure risk.",
+  "ai_role": "GHSL explicitly credits both CodeQL and its Taskflow Agent with discovery; Peter Stöckli verified and reported the issue. The source does not apportion discovery between the two tools.",
+  "disclosure_date": "2025-12-16",
+  "ai_attribution_date": "2026-04-03",
+  "classification": "disclosure",
+  "classification_note": "The public GHSL report describes the code-injection flaw and remediation; it does not claim exploitation in the wild.",
+  "cves": [],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2025-093_PraisonAI/",
+  "ai_source_url": "https://securitylab.github.com/advisories/GHSL-2025-093_PraisonAI/",
+  "remediation": "fix documented",
+  "remediation_note": "GHSL says the issue was fixed in a commit on 2025-12-16; the advisory does not identify a tagged release or establish whether downstream copies were updated.",
+  "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-093_PraisonAI/",
+  "checked_date": "2026-11-14"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2024-12-omnifold-enables-an-unbinned-24-dimensional-z-jets-cross-section-measurement-by-atlas",
+  "title": "OmniFold enables an unbinned 24-dimensional Z+jets cross-section measurement by ATLAS",
+  "summary": "Using 139 fb⁻¹ of 13 TeV proton-proton data, ATLAS simultaneously unfolded 24 correlated Z+jets kinematic observables with the machine-learning method OmniFold and released the particle-level result as an unbinned event dataset. The measured total fiducial cross section is 1,808 ± 42 fb; most illustrative differential bins have 3–5% total uncertainty, rising to about 15% in tails. The measurement is more precise than the compared predictions for many distributions, especially Sherpa. The event-level release also supports derived observables, including an infrared-and-collinear-safe τ₂₁ measurement in a specified fiducial region.",
+  "field": "physics",
+  "ai_technology": "OmniFold iterative machine-learning unfolding",
+  "organization": "ATLAS Collaboration; CERN Large Hadron Collider",
+  "source_url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.261803",
+  "source_type": "paper",
+  "publication_date": "2024-12-30",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1103/PhysRevLett.133.261803",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Using 139 fb⁻¹ of 13 TeV proton-proton data, ATLAS simultaneously unfolded 24 correlated Z+jets kinematic observables with the machine-learning method OmniFold and released the particle-level result as an unbinned event dataset.",
+    "unknown": "This is a new high-dimensional precision measurement of known Z+jets production, not a new particle or beyond-Standard-Model discovery. The released measurement is unbinned in 24 measured variables; displayed plots may be binned for presentation. The authors report mostly 3–5% uncertainties in illustrative bins, up to about 15% in tails, with dominant unfolding-prior/hidden-variable uncertainties for some observables. Pseudo-data closure is generally good, with exceptions including a p-value of 0.038 for leading-jet transverse momentum; users are given phase-space and covariance-use guidance.",
+    "ai_role": "OmniFold used neural-network classifiers to iteratively reweight simulated events so the detector-level simulation matched collision data, then propagated the learned correction to particle-level events. That multivariate unfolding handled 24 correlated observables simultaneously and produced event weights with uncertainty variations, enabling a high-dimensional unbinned measurement and event-level construction of additional derived observables. The paper validates closure on pseudo-data and reports its uncertainty components.",
+    "evidence_urls": [
+      "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.261803"
+    ]
+  }
+}

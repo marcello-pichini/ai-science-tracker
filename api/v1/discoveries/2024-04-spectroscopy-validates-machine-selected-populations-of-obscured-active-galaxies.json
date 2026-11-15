@@ -1,0 +1,28 @@
+{
+  "id": "2024-04-spectroscopy-validates-machine-selected-populations-of-obscured-active-galaxies",
+  "title": "Spectroscopy validates machine-selected populations of obscured active galaxies",
+  "summary": "Using a sample selected by unsupervised machine learning on optical and mid-infrared photometry, the team obtained 178 MMT spectra and found the brighter class was 85% Type I active galactic nuclei (AGN), with <3% non-AGN contamination, while a fainter class was 65% Type II AGN with 15% contamination, mainly star-forming galaxies. The follow-up showed that the machine-selected classes recover redder and more obscured AGN populations than typical optical spectroscopic samples.",
+  "field": "physics",
+  "ai_technology": "Unsupervised UMAP and DBSCAN photometric AGN selection pipeline",
+  "organization": "University of Arizona; Princeton University; MMT Observatory",
+  "source_url": "https://iopscience.iop.org/article/10.3847/1538-3881/ad28b4",
+  "source_type": "paper",
+  "publication_date": "2024-04-01",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2402.05169",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Using a sample selected by unsupervised machine learning on optical and mid-infrared photometry, the team obtained 178 MMT spectra and found the brighter class was 85% Type I active galactic nuclei (AGN), with <3% non-AGN contamination, while a fainter class was 65% Type II AGN with 15% contamination, mainly star-forming galaxies.",
+    "unknown": "This is a follow-up validation of two machine-selected candidate classes, not a claim that every cataloged object is confirmed. Spectroscopy recovered redshifts for 139 of 178 spectra; the fainter Type II class was limited to the brightest 75% of candidates and had 15% contamination, primarily from star-forming galaxies. The unsupervised pipeline is described in related work listed as in preparation in this paper; findings here are bounded to the spectroscopically analyzed sample.",
+    "ai_role": "The selection pipeline applied UMAP dimensionality reduction and DBSCAN clustering to optical and mid-infrared colors and morphology, with matched spectroscopy and X-ray information used to identify AGN candidate classes. Those classes defined the targets for Hectospec follow-up; the paper then used optical spectra, emission-line diagnostics, and spectral stacking to test their AGN content. The AI selected the candidate populations, while spectroscopic diagnostics established the reported classifications.",
+    "evidence_urls": [
+      "https://iopscience.iop.org/article/10.3847/1538-3881/ad28b4"
+    ]
+  }
+}

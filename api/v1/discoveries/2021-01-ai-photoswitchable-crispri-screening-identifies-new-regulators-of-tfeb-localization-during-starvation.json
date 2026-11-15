@@ -1,0 +1,28 @@
+{
+  "id": "2021-01-ai-photoswitchable-crispri-screening-identifies-new-regulators-of-tfeb-localization-during-starvation",
+  "title": "AI-photoswitchable CRISPRi screening identifies new regulators of TFEB localization during starvation",
+  "summary": "An image-classification-guided pooled CRISPRi screen mapped factors that affect TFEB movement from nucleus to cytosol during prolonged starvation. The screen identified multiple candidate genes, and follow-up assays independently validated 21 of 64 neural-network-called hits; experiments on CREB5 further linked it to TFEB retention and starvation-associated autophagy/lysosomal protein expression.",
+  "field": "biology",
+  "ai_technology": "AI-photoswitchable screening (AI-PS), using SVM classifiers and a convolutional neural network",
+  "organization": "Janelia Research Campus, Howard Hughes Medical Institute; National Institute of Neurological Disorders and Stroke, NIH",
+  "source_url": "https://rupress.org/jcb/article/220/2/e202006180/211694/Image-based-pooled-whole-genome-CRISPRi-screening",
+  "source_type": "paper",
+  "publication_date": "2021-01-19",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1083/jcb.202006180",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The screen identified multiple candidate genes, and follow-up assays independently validated 21 of 64 neural-network-called hits; experiments on CREB5 further linked it to TFEB retention and starvation-associated autophagy/lysosomal protein expression.",
+    "unknown": "Only 21 of 64 neural-network-called TFEB hits were independently validated in secondary assays (about 32%); candidate effectors should not be treated as all confirmed. Results use cultured U2OS cells and prolonged starvation, and do not establish a physiological role in an organism. CREB5 received targeted follow-up but the overall screen has a modest validation rate.",
+    "ai_role": "SVM and CNN models classified single-cell images by subcellular protein localization; the system photoactivated cells with the target phenotype for FACS isolation and gRNA sequencing in pooled CRISPRi screening. AI enabled the genome-scale genotype-to-subcellular-phenotype screen.",
+    "evidence_urls": [
+      "https://rupress.org/jcb/article/220/2/e202006180/211694/Image-based-pooled-whole-genome-CRISPRi-screening"
+    ]
+  }
+}

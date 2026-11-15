@@ -1,0 +1,22 @@
+{
+  "id": "revelio-2606-22263-row-01",
+  "title": "dnsmasq: DS record log buffer overflow",
+  "product": "dnsmasq v2.93test9",
+  "ai_system": "Revelio using Claude Haiku 4.5 and Claude Sonnet 4.6",
+  "organization": "UC Berkeley Revelio research team and affected project maintainers",
+  "summary": "The Revelio paper identifies a heap-based buffer overflow in dnsmasq v2.93test9: ds record log buffer overflow. It lists the author-assessed severity as High and says the finding was manually validated with a reproducible sanitizer-backed proof of vulnerability through a reachable project test harness. This is Table V item 1 of the seven-project real-world hunt.",
+  "ai_role": "The paper describes Revelio as using Claude Haiku 4.5 for hypothesis generation and Claude Sonnet 4.6 for proof-of-vulnerability confirmation; its experimental-method section says this configuration was used for the seven-project OSS-Fuzz hunt. The authors state all 19 tabled findings were manually validated and sanitizer-confirmed. The paper does not provide a per-item model trajectory, so the exact division of Claude work within this row is not independently stated.",
+  "disclosure_date": "2026-04-21",
+  "ai_attribution_date": "2026-06-20",
+  "classification": "disclosure",
+  "classification_note": "The paper publicly identifies this distinct finding on 2026-06-20. The authors describe the hunt as searching for previously unknown flaws, but this record does not assert exploitation in the wild or operational zero-day status.",
+  "cves": [
+    "CVE-2026-12725"
+  ],
+  "source_url": "https://arxiv.org/html/2606.22263",
+  "ai_source_url": "https://arxiv.org/html/2606.22263",
+  "remediation": "fix documented",
+  "remediation_note": "Red Hat’s CVE record describes the bounded logging-path overflow and points to upstream fix commit 36d081e37477027fd721fea498f3760f529034ad; disabling query logging is a mitigation when DNSSEC remains enabled.",
+  "advisory_url": "https://access.redhat.com/security/cve/cve-2026-12725",
+  "checked_date": "2026-11-14"
+}

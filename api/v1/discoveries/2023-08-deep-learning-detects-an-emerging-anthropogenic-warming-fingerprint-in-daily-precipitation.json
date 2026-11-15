@@ -1,0 +1,28 @@
+{
+  "id": "2023-08-deep-learning-detects-an-emerging-anthropogenic-warming-fingerprint-in-daily-precipitation",
+  "title": "Deep learning detects an emerging anthropogenic warming fingerprint in daily precipitation",
+  "summary": "A convolutional neural network trained on 80 CESM2 large-ensemble members detected an emerging climate-change signal in observed daily precipitation fields. Across four satellite, merged-observation and reanalysis products, the model’s annual estimated global-mean temperature exceeded the historical internal-variability range from the mid-2010s onward. The signal was driven mainly by precipitation variability on timescales shorter than 10 days, with hotspots including the tropical eastern Pacific and mid-latitude storm tracks; rain-gauge checks over the eastern United States were consistent with the increase in high-frequency variability.",
+  "field": "climate",
+  "ai_technology": "Deep detection (DD) convolutional neural network",
+  "organization": "Chonnam National University; Pohang University of Science and Technology; University of Washington; University of Hawaiʻi at Mānoa; Institute for Basic Science; Pusan National University",
+  "source_url": "https://www.nature.com/articles/s41586-023-06474-x",
+  "source_type": "paper",
+  "publication_date": "2023-08-30",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41586-023-06474-x",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A convolutional neural network trained on 80 CESM2 large-ensemble members detected an emerging climate-change signal in observed daily precipitation fields.",
+    "unknown": "This is an observational detection and attribution result using a CNN trained on climate-model simulations; it is not a direct causal experiment or a forecast of individual storms. The long-term mean precipitation change remained indistinguishable from natural variability in the analysis. Precipitation products disagree in some estimates, especially where direct ocean measurements are sparse, and the reported hotspots depend on the selected datasets and attribution methods. The paper reports an emerging signal beginning in the mid-2010s, not a uniform increase in all regions or at every timescale.",
+    "ai_role": "The CNN was trained on paired daily precipitation anomaly maps and annual global-mean surface-air-temperature values from 80 CESM2 Large Ensemble members. Applied to observed precipitation products, it learned spatial and temporal patterns that predicted the warming metric and exposed an emergent signal that conventional linear detection did not resolve. Explainability analyses (occlusion sensitivity, with SHAP and integrated-gradients checks) localized the strongest contributions to high-frequency precipitation variability.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41586-023-06474-x"
+    ]
+  }
+}

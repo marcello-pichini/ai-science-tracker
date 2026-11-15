@@ -1,0 +1,28 @@
+{
+  "id": "2026-02-ai-derived-histology-biomarker-stratifies-first-line-chemotherapy-outcomes-in-advanced-pancreatic-cancer",
+  "title": "AI-derived histology biomarker stratifies first-line chemotherapy outcomes in advanced pancreatic cancer",
+  "summary": "The CHAI computational-histology platform generated a locked H&E-based biomarker intended to distinguish advanced pancreatic ductal adenocarcinoma patients with differential outcomes on fluoropyrimidine-based versus gemcitabine-based chemotherapy. In an independent validation cohort of 299 patients from the prospectively collected COMPASS and Know Your Tumor cohorts, the 173 patients classified F-pref had longer time to next treatment or death (8.6 vs 7.5 months, P=.035) and overall survival (14.4 vs 11.7 months, P=.003) on F- versus G-based therapy. Among 126 G-pref patients, G-based therapy was associated with longer time to next treatment or death (9.6 vs 7.2 months, P=.038), but not significantly different overall survival.",
+  "field": "medicine",
+  "ai_technology": "Computational Histology Artificial Intelligence (CHAI) platform",
+  "organization": "Cedars-Sinai Medical Center; Valar Labs; Johns Hopkins University; University of Pittsburgh Medical Center; Pancreatic Cancer Action Network; University Health Network / Princess Margaret Cancer Centre",
+  "source_url": "https://ascopubs.org/doi/pdfdirect/10.1200/JCO-25-02199",
+  "source_type": "paper",
+  "publication_date": "2026-02-11",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1200/JCO-25-02199",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In an independent validation cohort of 299 patients from the prospectively collected COMPASS and Know Your Tumor cohorts, the 173 patients classified F-pref had longer time to next treatment or death (8.6 vs 7.5 months, P=.035) and overall survival (14.4 vs 11.7 months, P=.003) on F- versus G-based therapy.",
+    "unknown": "Validation used 299 patients in two prospectively collected but nonrandomized cohorts; treatment assignment was not randomized, and the authors also used propensity weighting and target-trial emulation. The primary endpoint was time to next treatment or death, not progression-free survival. In the biomarker’s G-pref subgroup, the OS comparison was not significant. The authors call for further prospective validation before clinical adoption. An earlier CHAI study concerned adjuvant gemcitabine outcomes in resected disease; this entry is limited to the distinct locked first-line fluoropyrimidine-versus-gemcitabine biomarker and external-cohort results in advanced disease.",
+    "ai_role": "Deep-learning models segmented H&E biopsy slides and quantified more than 30,000 histomorphologic features. Using the development cohort, the investigators statistically selected and weighted features into a treatment-preference biomarker and locked its threshold before applying it to an independent validation cohort. The platform supplied the image-derived feature measurements used in the biomarker; this is a biomarker-development and validation result, not autonomous treatment assignment.",
+    "evidence_urls": [
+      "https://ascopubs.org/doi/pdfdirect/10.1200/JCO-25-02199"
+    ]
+  }
+}

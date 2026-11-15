@@ -1,0 +1,28 @@
+{
+  "id": "2026-06-routine-laboratory-lightgbm-screening-identifies-monoclonal-immunoglobulin-positivity-across-independent-hospitals",
+  "title": "Routine-laboratory LightGBM screening identifies monoclonal immunoglobulin positivity across independent hospitals",
+  "summary": "A LightGBM classifier trained on routine clinical and laboratory data distinguished serum immunofixation-positive monoclonal immunoglobulin cases from negative cases. In an independent three-hospital cohort of 2,270 patients referred for immunofixation testing, the model achieved an AUC of 0.945, with 87.0% sensitivity and 89.6% specificity. In a subset with serum protein electrophoresis results, model sensitivity was 84.6% versus 75.3% for electrophoresis; in a separate 627-patient time-extended cohort, sensitivity was 88.2%, above each of three nonspecialist clinicians in that study.",
+  "field": "medicine",
+  "ai_technology": "LightGBM classifier selected from eight machine-learning models",
+  "organization": "Xijing Hospital, Fourth Military Medical University; 3201 Hospital; Shaanxi Provincial People’s Hospital; Xi’an Medical University; Xianyang Normal University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13314525/",
+  "source_type": "paper",
+  "publication_date": "2026-06-16",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.3389/fimmu.2026.1856505",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In an independent three-hospital cohort of 2,270 patients referred for immunofixation testing, the model achieved an AUC of 0.945, with 87.0% sensitivity and 89.6% specificity.",
+    "unknown": "This is retrospective diagnostic validation, not evidence that screening with the model improves health outcomes or shortens diagnosis in practice. All participants had been referred for immunofixation testing at tertiary or regional hospitals; an unselected community or primary-care population was not studied. The 627-patient later cohort was time-extended but not strictly prospective. The model is an adjunct for flagging patients for confirmatory tests; immunofixation remained the reference standard, and the paper states broader population validation and clinical utility remain to be established.",
+    "ai_role": "Researchers used five feature-selection algorithms to identify shared predictors and trained/evaluated eight classifiers on routine clinical and laboratory measurements. The selected LightGBM model produced patient-level MIg-positive probabilities; its diagnostic performance was measured against serum immunofixation results in independent multi-center and later-collected cohorts, including direct comparisons with serum protein electrophoresis and nonspecialist clinicians.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13314525/"
+    ]
+  }
+}

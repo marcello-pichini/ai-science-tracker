@@ -1,0 +1,28 @@
+{
+  "id": "2025-07-prospective-silent-trial-validation-of-a-fine-tuned-pathology-foundation-model-for-egfr-mutation-screening-in-lung-adenocarcinoma",
+  "title": "Prospective silent-trial validation of a fine-tuned pathology foundation model for EGFR mutation screening in lung adenocarcinoma",
+  "summary": "A fine-tuned Prov-GigaPath ViT-g model, named EAGLE, predicted EGFR mutation status from routine H&E slides plus clinical features in lung adenocarcinoma. Across an international dataset of 8,461 slides it achieved mean AUC 0.847 internally and 0.870 in external cohorts. In a four-month prospective silent trial on 197 primary lung-adenocarcinoma samples, EAGLE achieved AUC 0.890. Simulated AI-assisted triage thresholds reduced rapid molecular EGFR tests by up to 43% while maintaining the study’s performance criteria.",
+  "field": "medicine",
+  "ai_technology": "EAGLE, a task-specific model fine-tuned from the Prov-GigaPath ViT-g pathology foundation model, combining H&E whole-slide image features with clinical variables for EGFR mutation prediction",
+  "organization": "Icahn School of Medicine at Mount Sinai; Memorial Sloan Kettering Cancer Center; Technical University of Munich; Sahlgrenska University Hospital and University of Gothenburg; SUNY Upstate Medical University; University of Montreal Hospital Centre",
+  "source_url": "https://www.nature.com/articles/s41591-025-03780-x",
+  "source_type": "paper",
+  "publication_date": "2025-07-09",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41591-025-03780-x",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Across an international dataset of 8,461 slides it achieved mean AUC 0.847 internally and 0.870 in external cohorts.",
+    "unknown": "The four-month prospective trial was silent: AI outputs did not guide care or replace standard testing. The 43% reduction is a simulated triage workflow at a selected score threshold, not an observed reduction in tests or evidence of improved outcomes. The cohort was 197 primary cases at one real-time deployment site, while broader retrospective/external cohorts supported generalization. EAGLE predicts presence of EGFR mutation but does not identify the mutation subtype; sequencing remains necessary before treatment. Performance was lower on metastatic samples. The paper is a distinct 2025 model iteration and validation study in the lineage of the group’s 2022 arXiv proof of concept (10.48550/arXiv.2206.10573); the prior work is cited as antecedent, not treated as a second alias or hidden as the first-ever pathology-image EGFR result.",
+    "ai_role": "The AI model predicted tumor EGFR mutation status directly from routine H&E digital slides, using sequencing results as ground truth. Fine-tuning the pathology foundation model produced cross-institution validation, and real-time inference in a prospective silent trial tested generalization on newly processed clinical slides. The model score was evaluated as a screening/triage layer alongside rapid molecular testing; it did not replace genomic sequencing.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41591-025-03780-x"
+    ]
+  }
+}

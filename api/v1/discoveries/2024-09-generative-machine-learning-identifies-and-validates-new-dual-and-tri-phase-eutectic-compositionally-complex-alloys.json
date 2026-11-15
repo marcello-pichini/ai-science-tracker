@@ -1,0 +1,28 @@
+{
+  "id": "2024-09-generative-machine-learning-identifies-and-validates-new-dual-and-tri-phase-eutectic-compositionally-complex-alloys",
+  "title": "Generative machine learning identifies and validates new dual- and tri-phase eutectic compositionally complex alloys",
+  "summary": "A conditional variational autoencoder generated candidate alloy compositions and an artificial neural network ranked eutectic-forming likelihood. The team experimentally validated previously unreported eutectic compositionally complex alloys across quaternary to senary systems. Reported examples include Al₁₆Cr₁₈Fe₂₄Ni₄₂ with a dual-phase FCC/BCC eutectic lamellar structure and Al₁₁.₃Nb₁₃.₇Co₃₆.₆Cr₈.₂Fe₇.₉Ni₂₂.₃ with a tri-phase FCC/BCC/Laves eutectic structure, supported by XRD, SEM and DSC.",
+  "field": "materials",
+  "ai_technology": "Conditional variational autoencoder (CVAE) and artificial neural network (ANN)",
+  "organization": "City University of Hong Kong; Shenzhen University",
+  "source_url": "https://www.nature.com/articles/s41524-024-01385-5",
+  "source_type": "paper",
+  "publication_date": "2024-09-03",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41524-024-01385-5",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A conditional variational autoencoder generated candidate alloy compositions and an artificial neural network ranked eutectic-forming likelihood.",
+    "unknown": "The authors report five newly identified ECCA compositions across the studied systems; this is one paper-level result, not five records. The entry names two representative experimentally examined compositions. Validation is limited to the reported arc-melted samples and XRD/SEM/DSC characterization; no long-term mechanical performance or application testing is established. The training data were sparse and imbalanced, and dataset filtering was part of the framework.",
+    "ai_role": "A CVAE generated candidate compositions conditioned on eutectic/non-eutectic microstructure labels; an ANN trained on composition and thermodynamics-derived descriptors estimated eutectic-forming likelihood and selected generated candidates for experimental validation. Dataset preprocessing with PCA and K-means addressed class imbalance. The ML pipeline directly proposed the compositions whose eutectic structures were examined experimentally.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41524-024-01385-5"
+    ]
+  }
+}

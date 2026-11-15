@@ -1,0 +1,28 @@
+{
+  "id": "2023-12-3d-hichat-predicts-embryonic-enhancer-hubs-validated-by-crispr-interference",
+  "title": "3D-HiChAT predicts embryonic enhancer hubs validated by CRISPR interference",
+  "summary": "A random-forest model integrating ATAC-seq, H3K27ac ChIP-seq and HiChIP data predicted enhancer effects across mouse trophoblast stem cells, embryonic stem cells and extraembryonic endoderm cells. CRISPRi tests supported a shared Enh14 hub regulating both Tfcp2l1 and Gli2 in embryonic stem cells, and an Enh4 hub linked to seven genes in extraembryonic endoderm; four of those seven showed expression reductions as predicted. Across 40 tested enhancer-promoter pairs, experiments yielded 12 true positives and 13 true negatives, with overall prediction accuracy 0.71.",
+  "field": "biology",
+  "ai_technology": "3D-HiChAT, an optimized Random Forest model combining chromatin accessibility, H3K27ac and 3D HiChIP connectivity features",
+  "organization": "Weill Cornell Medicine; New York Genome Center; collaborating institutions",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10897904/",
+  "source_type": "paper",
+  "publication_date": "2023-12-05",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41594-023-01130-4",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "CRISPRi tests supported a shared Enh14 hub regulating both Tfcp2l1 and Gli2 in embryonic stem cells, and an Enh4 hub linked to seven genes in extraembryonic endoderm; four of those seven showed expression reductions as predicted.",
+    "unknown": "The experiments were performed in mouse-derived cell lines, not intact embryos or human cells. Only selected predictions were tested; the 40-pair validation had 12 true positives, 13 true negatives and an overall reported accuracy of 0.71, leaving discordant/uncertain pairs. The Enh14 and Enh4 results support specific cell-type-dependent regulatory hubs but do not establish the full genome-wide predicted map as experimentally validated or prove developmental phenotypes in vivo.",
+    "ai_role": "The model used 1D and 3D chromatin features to rank genome-wide enhancer-promoter pairs by predicted expression impact after in-silico enhancer perturbation. Researchers selected predictions for CRISPRi validation and measured target-gene expression by RT-qPCR; the paper reports specific validated multi-gene enhancer hubs and positive/negative prediction rates across 40 pairs.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10897904/"
+    ]
+  }
+}

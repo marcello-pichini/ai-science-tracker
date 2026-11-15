@@ -1,0 +1,20 @@
+{
+  "id": "2026-10-eac-accessiblecalc-rce",
+  "title": "XBOW autonomously found unauthenticated RCE in the EAC Accessible Voting Machines Calculator",
+  "product": "U.S. Election Assistance Commission Accessible Voting Machines Calculator (accessiblecalc.eac.gov, /ulteac/run-simulation)",
+  "ai_system": "XBOW Public-XBOW autonomous security testing platform",
+  "organization": "XBOW; U.S. Election Assistance Commission",
+  "summary": "A crafted unauthenticated simulation request reached Python expression evaluation in the calculator backend, enabling remote code execution as root inside its backend container. XBOW reports that the EAC validated and fixed the issue before the November 3, 2026 election.",
+  "ai_role": "XBOW’s case-specific research account says its platform autonomously discovered and validated this RCE; its stated workflow has human researchers verify potential findings and reporting criteria. The account does not identify a model version or provide an exact AI run/report date. This issue affected the EAC logistics calculator, not voting machines or voter-registration systems.",
+  "disclosure_date": "2026-10-29",
+  "ai_attribution_date": "2026-10-29",
+  "classification": "disclosure",
+  "classification_note": "The public finder writeup identifies a real, individually described security flaw and reports validation and remediation by the EAC. No CVE or public vendor issue number was assigned in the sources reviewed. The writeup concerns an accessibility-resource calculator; it does not claim impact to election results or voting systems.",
+  "cves": [],
+  "source_url": "https://xbow.com/labs/research/how-xbow-found-a-critical-rce-in-an-eac-voting-resource-calculator",
+  "ai_source_url": "https://xbow.com/labs/research/how-xbow-found-a-critical-rce-in-an-eac-voting-resource-calculator",
+  "remediation": "fix documented",
+  "remediation_note": "XBOW’s October 29 writeup says the EAC validated and remediated the issue before November 3, 2026. EAC’s linked disclosure policy is general process guidance, not a case-specific confirmation or advisory; no public fix version was identified.",
+  "advisory_url": "https://www.eac.gov/vulnerability-disclosure-policy",
+  "checked_date": "2026-11-14"
+}

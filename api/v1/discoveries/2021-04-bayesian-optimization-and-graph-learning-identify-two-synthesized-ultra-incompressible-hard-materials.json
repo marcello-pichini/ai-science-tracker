@@ -1,0 +1,28 @@
+{
+  "id": "2021-04-bayesian-optimization-and-graph-learning-identify-two-synthesized-ultra-incompressible-hard-materials",
+  "title": "Bayesian optimization and graph learning identify two synthesized ultra-incompressible hard materials",
+  "summary": "A Bayesian optimization workflow using symmetry-constrained crystal relaxation and the MEGNet graph neural network screened 399,960 transition-metal boride and carbide compositions. The study identified MoWC₂ (P6₃/mmc) and ReWB (Pca2₁), then synthesized both by in-situ reactive spark-plasma sintering; the measured hardness was reported to agree with model and DFT predictions. The result is limited to these two synthesized compounds and the authors’ tested synthesis conditions.",
+  "field": "materials",
+  "ai_technology": "BOWSR (Bayesian Optimization With Symmetry Relaxation) with the MEGNet graph neural network energy model",
+  "organization": "University of California San Diego",
+  "source_url": "https://arxiv.org/abs/2104.10242",
+  "source_type": "paper",
+  "publication_date": "2021-04-20",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.mattod.2021.08.012",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A Bayesian optimization workflow using symmetry-constrained crystal relaxation and the MEGNet graph neural network screened 399,960 transition-metal boride and carbide compositions.",
+    "unknown": "The arXiv abstract states that the two materials were synthesized and describes them as ultra-incompressible hard materials; the institutional project page reports experiments on eight selected candidates and confirmation of two novel hard materials. The result is from a preprint/journal study and the provided abstract does not give numeric hardness values. Do not imply commercial performance or broader synthesis robustness.",
+    "ai_role": "MEGNet supplied graph-based formation-energy predictions; BOWSR used Bayesian optimization under crystal-symmetry constraints to relax candidate structures without DFT geometry relaxation. This enabled screening of 399,960 boride/carbide compositions, narrowing candidates for experimental synthesis.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2104.10242"
+    ]
+  }
+}

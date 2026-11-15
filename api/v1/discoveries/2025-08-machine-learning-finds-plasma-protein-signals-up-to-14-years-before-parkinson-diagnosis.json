@@ -1,0 +1,28 @@
+{
+  "id": "2025-08-machine-learning-finds-plasma-protein-signals-up-to-14-years-before-parkinson-diagnosis",
+  "title": "Machine learning finds plasma protein signals up to 14 years before Parkinson diagnosis",
+  "summary": "Using UK Biobank measurements of 2,937 plasma proteins, researchers found 446 dysregulated proteins in incident Parkinson cases and used machine learning to select a 23-protein panel for prediction. The panel achieved test AUCs of 0.78 in incident and 0.795 in prevalent cases; nine selected proteins were already dysregulated 10–14 years before diagnosis. In a separate Parkinson’s Progression Markers Initiative cohort, a 16-protein subset shared between platforms achieved validation AUC up to 0.76.",
+  "field": "medicine",
+  "ai_technology": "Support vector machine and other machine-learning models, with recursive feature elimination for panel selection",
+  "organization": "Johnson & Johnson; UK Biobank; Parkinson’s Progression Markers Initiative collaborators",
+  "source_url": "https://academic.oup.com/brain/article/149/4/1254/8234010",
+  "source_type": "paper",
+  "publication_date": "2025-08-14",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1093/brain/awaf303",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Using UK Biobank measurements of 2,937 plasma proteins, researchers found 446 dysregulated proteins in incident Parkinson cases and used machine learning to select a 23-protein panel for prediction.",
+    "unknown": "The result is a retrospective biomarker/prediction study, not a validated screening test or evidence that intervention based on the panel improves outcomes. The external PPMI analysis retrained and tested models in that cohort rather than evaluating a frozen UK Biobank model; validation AUCs varied by visit definition, and the reported maximum was 0.76. Protein associations and co-expression modules do not establish causal mechanisms. It is distinct from the earlier 2024 iRBD study in this ledger (DOI 10.1038/s41467-024-48961-3): separate cohorts and a different 23-protein/14-year result versus an eight-protein targeted panel and up-to-seven-year conversion finding; this record does not claim first discovery of presymptomatic plasma signals in Parkinson disease.",
+    "ai_role": "Machine-learning classifiers were trained on UK Biobank plasma proteomic measurements to predict incident Parkinson disease; recursive feature elimination selected a 23-protein subset. The authors then tested the shared protein subset in the separate PPMI cohort using its own train/test split.",
+    "evidence_urls": [
+      "https://academic.oup.com/brain/article/149/4/1254/8234010"
+    ]
+  }
+}

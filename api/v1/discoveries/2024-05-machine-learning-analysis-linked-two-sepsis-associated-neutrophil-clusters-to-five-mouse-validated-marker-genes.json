@@ -1,0 +1,28 @@
+{
+  "id": "2024-05-machine-learning-analysis-linked-two-sepsis-associated-neutrophil-clusters-to-five-mouse-validated-marker-genes",
+  "title": "Machine-learning analysis linked two sepsis-associated neutrophil clusters to five mouse-validated marker genes",
+  "summary": "Reanalysis of single-cell profiles from four sepsis patients and two healthy controls identified two neutrophil clusters enriched in the sepsis samples and a set of cluster-associated gene modules. LASSO and seven additional machine-learning classifiers prioritized eight hub genes, including ALPL, CD177, S100A8, S100A9 and STXBP2. Expression analyses in separate public sepsis transcriptome cohorts supported several markers, and qRT-PCR in cecal-ligation/puncture and LPS mouse models found increased neutrophil expression of those five genes. The result links sepsis-associated neutrophil states to a small marker panel, with experimental expression validation in mice.",
+  "field": "biology",
+  "ai_technology": "LASSO feature selection followed by seven machine-learning classifiers (k-nearest neighbors, linear discriminant analysis, logistic regression, naive Bayes, random forest, recursive partitioning and support-vector machine), combined with hdWGCNA and single-cell transcriptomic analysis",
+  "organization": "Department of General Surgery, General Hospital of Northern Theater Command, Shenyang, China",
+  "source_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2024.1377817/full",
+  "source_type": "paper",
+  "publication_date": "2024-05-29",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.3389/fimmu.2024.1377817",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Expression analyses in separate public sepsis transcriptome cohorts supported several markers, and qRT-PCR in cecal-ligation/puncture and LPS mouse models found increased neutrophil expression of those five genes.",
+    "unknown": "The single-cell discovery comparison was very small (four sepsis cases and two controls) and the two clusters are analysis-derived states in this dataset; the study does not establish that they are distinct universal neutrophil lineages. The public bulk cohorts validate expression/classification associations, not an independent single-cell subtype. qRT-PCR confirmed expression changes for five genes in mouse models; it did not test whether the genes cause sepsis phenotypes or are therapeutic targets. The article itself notes earlier reports of other sepsis-related neutrophil subtypes, so this record is bounded to its specific clusters/markers and assays.",
+    "ai_role": "Machine-learning feature selection prioritized eight hub genes from expression modules associated with the two sepsis-enriched neutrophil clusters. The models were assessed on separate public training and validation transcriptome cohorts; the resulting marker set guided qRT-PCR validation of five genes in two sepsis mouse models.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2024.1377817/full"
+    ]
+  }
+}

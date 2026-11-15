@@ -1,0 +1,22 @@
+{
+  "id": "ghsl-2026-151",
+  "title": "Taskflow Agent finds search-parameter XSS in mkdocs-material",
+  "product": "mkdocs-material",
+  "ai_system": "GitHub Security Lab Taskflow Agent",
+  "organization": "GitHub Security Lab",
+  "summary": "A crafted search query can reach an unescaped innerHTML write in the search-suggestion component, enabling JavaScript execution in the documentation site origin when that feature is enabled.",
+  "ai_role": "GHSL credits its Taskflow Agent with discovery and says Peter Stöckli manually verified the issue. The advisory says the flaw existed from v7.2.0 through v9.7.6.",
+  "disclosure_date": "2026-07-19",
+  "ai_attribution_date": "2026-10-22",
+  "classification": "disclosure",
+  "classification_note": "The public GHSL advisory documents the XSS and remediation; it does not claim exploitation in the wild.",
+  "cves": [
+    "CVE-2026-73295"
+  ],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2026-151_mkdocs-material/",
+  "ai_source_url": "https://securitylab.github.com/advisories/GHSL-2026-151_mkdocs-material/",
+  "remediation": "fix documented",
+  "remediation_note": "GHSL’s timeline says the fix was released with the advisory on 2026-07-19; the GHSL public write-up is dated 2026-10-22. It describes versions through 9.7.6 as affected but does not name a fixed release number.",
+  "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-151_mkdocs-material/",
+  "checked_date": "2026-11-14"
+}

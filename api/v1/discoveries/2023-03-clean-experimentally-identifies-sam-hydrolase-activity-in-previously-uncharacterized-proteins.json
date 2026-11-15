@@ -1,0 +1,28 @@
+{
+  "id": "2023-03-clean-experimentally-identifies-sam-hydrolase-activity-in-previously-uncharacterized-proteins",
+  "title": "CLEAN experimentally identifies SAM hydrolase activity in previously uncharacterized proteins",
+  "summary": "Researchers at the University of Illinois Urbana–Champaign developed CLEAN, a contrastive-learning enzyme-function predictor, and used it to identify the SAM hydrolase activity of the previously uncharacterized protein TTHA0338. In vitro HPLC–MS and enzyme-kinetic experiments also corrected the annotation of MJ1651 and confirmed the multiple activities of SsFIA.",
+  "field": "biology",
+  "ai_technology": "CLEAN (contrastive learning-based enzyme annotation model)",
+  "organization": "University of Illinois Urbana-Champaign; Cornell University; Georgia Institute of Technology",
+  "source_url": "https://doi.org/10.1126/science.adf2465",
+  "source_type": "paper",
+  "publication_date": "2023-03-31",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In vitro HPLC–MS and enzyme-kinetic experiments also corrected the annotation of MJ1651 and confirmed the multiple activities of SsFIA.",
+    "unknown": "The study validated a small, selected set of proteins, and also showed CLEAN can assign functions to non-enzymes; the demonstrated result is specific to the tested proteins. TTHA0338 is one of multiple results reported by this paper; record describes the previously unknown function rather than treating every model benchmark as a separate discovery.",
+    "ai_role": "CLEAN predicted enzyme commission functions from protein sequences; researchers then validated the predicted activity experimentally. It was the model that nominated TTHA0338 as a SAM hydrolase, not an autonomous discovery or validation system.",
+    "evidence_urls": [
+      "https://doi.org/10.1126/science.adf2465"
+    ]
+  }
+}

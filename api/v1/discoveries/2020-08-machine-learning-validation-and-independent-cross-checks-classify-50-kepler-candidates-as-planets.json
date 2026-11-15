@@ -1,0 +1,28 @@
+{
+  "id": "2020-08-machine-learning-validation-and-independent-cross-checks-classify-50-kepler-candidates-as-planets",
+  "title": "Machine-learning validation and independent cross-checks classify 50 Kepler candidates as planets",
+  "summary": "A Gaussian-process classifier, supported by random-forest, extra-trees and multilayer-perceptron models, was applied to Kepler transit candidates. From 83 candidates meeting the study’s stringent ML and data-quality criteria, the authors newly validated 50 as planets after updated vespa false-positive checks also gave each less than a 1% false-positive probability. The result is statistical validation using Kepler pipeline and stellar data, not new telescope observations of the planets.",
+  "field": "physics",
+  "ai_technology": "Gaussian process classifier, random forest, extra trees and multilayer perceptron classifiers",
+  "organization": "University of Warwick",
+  "source_url": "https://arxiv.org/abs/2008.10516",
+  "source_type": "paper",
+  "publication_date": "2020-08-24",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1093/mnras/staa2498",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A Gaussian-process classifier, supported by random-forest, extra-trees and multilayer-perceptron models, was applied to Kepler transit candidates.",
+    "unknown": "The 50 are statistically validated candidates from archival Kepler observations, not newly observed planets. The authors caution that their method is trained and demonstrated on Kepler, that atypical/outlier candidates may be unreliable, and that ML and vespa disagree for 33 other high-ML candidates; those were not counted as validated. This entry counts one paper-level validation result, not 50 separate records.",
+    "ai_role": "Four machine-learning classifiers jointly ranked candidate transit signals against planet and false-positive scenarios. The paper required all four to cross 0.99 planet probability plus positional, stellar, binary and outlier checks; an updated vespa calculation then independently cross-checked the retained candidates.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2008.10516"
+    ]
+  }
+}

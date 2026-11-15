@@ -1,0 +1,28 @@
+{
+  "id": "2023-01-random-forest-metabolite-profiling-reduces-false-positive-newborn-screens-for-four-inherited-disorders",
+  "title": "Random-forest metabolite profiling reduces false-positive newborn screens for four inherited disorders",
+  "summary": "A 121-analyte LC–MS/MS panel combined established markers, untargeted-metabolomics features and chromatographically resolved isobars with random-forest classification of California newborn-screen dried blood spots. In 883 archived infant samples, the study reports that the second-tier approach maintained 100% sensitivity while reducing false positives by 83% for glutaric acidemia type I, 84% for methylmalonic acidemia, 100% for ornithine transcarbamylase deficiency and 51% for very-long-chain acyl-CoA dehydrogenase deficiency. Several long-chain acylcarnitine and hydroxy-acylcarnitine isobar features contributed to classification, although their chemical identities were unresolved.",
+  "field": "medicine",
+  "ai_technology": "Random Forest classifier trained on targeted LC–MS/MS metabolite profiles",
+  "organization": "Stanford Health Care; Yale University; California Department of Public Health",
+  "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1002/jimd.12591",
+  "source_type": "paper",
+  "publication_date": "2023-01-21",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1002/jimd.12591",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In 883 archived infant samples, the study reports that the second-tier approach maintained 100% sensitivity while reducing false positives by 83% for glutaric acidemia type I, 84% for methylmalonic acidemia, 100% for ornithine transcarbamylase deficiency and 51% for very-long-chain acyl-CoA dehydrogenase deficiency.",
+    "unknown": "This was a proof-of-principle second-tier simulation on residual archived California newborn-screen specimens, not a prospective implementation study. The validation sample was not a fully independent external set, and archived-sample degradation and processing batch effects limited biomarker discovery; some discriminating isobar identities and biological significance remain unknown. The reported sensitivity and false-positive reductions are cohort-specific and do not establish improved health outcomes or routine clinical utility.",
+    "ai_role": "The classifier modeled multianalyte profiles from true-positive and false-positive screen-positive samples to distinguish the groups for four inherited metabolic disorders. Feature-importance analysis showed that complex profiles, including unresolved long-chain acylcarnitine/hydroxy-acylcarnitine isobars, contributed to classification; the model's second-tier performance was assessed against known case status.",
+    "evidence_urls": [
+      "https://onlinelibrary.wiley.com/doi/full/10.1002/jimd.12591"
+    ]
+  }
+}

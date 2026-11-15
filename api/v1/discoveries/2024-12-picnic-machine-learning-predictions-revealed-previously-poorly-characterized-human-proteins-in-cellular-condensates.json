@@ -1,0 +1,28 @@
+{
+  "id": "2024-12-picnic-machine-learning-predictions-revealed-previously-poorly-characterized-human-proteins-in-cellular-condensates",
+  "title": "PICNIC machine learning predictions revealed previously poorly characterized human proteins in cellular condensates",
+  "summary": "The PICNIC gradient-boosting model ranked proteins for membership in biomolecular condensates using sequence-pattern and AlphaFold2-derived structural features. To test its predictions, researchers expressed 24 poorly characterized human proteins in U2OS cells: 21 formed mesoscale fluorescent foci, and 18 met the paper’s high-confidence condensate threshold. The experiments mapped examples to cytoplasmic bodies, nuclear bodies, nucleoli or P-bodies; for example, TYW5 and RAD51AP1 showed distinct localization patterns. Across the tested set, the authors found condensate localization was not limited to highly disordered proteins.",
+  "field": "biology",
+  "ai_technology": "PICNIC, a gradient-boosting machine-learning classifier using protein sequence co-occurrence patterns, sequence complexity/disorder features and AlphaFold2-derived structural features",
+  "organization": "Max Planck Institute of Molecular Cell Biology and Genetics; Center for Systems Biology Dresden; TU Dresden Cluster of Excellence Physics of Life",
+  "source_url": "https://www.nature.com/articles/s41467-024-55089-x.pdf",
+  "source_type": "paper",
+  "publication_date": "2024-12-11",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-024-55089-x",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "To test its predictions, researchers expressed 24 poorly characterized human proteins in U2OS cells: 21 formed mesoscale fluorescent foci, and 18 met the paper’s high-confidence condensate threshold.",
+    "unknown": "The experimental test used fluorescently tagged proteins expressed in U2OS cells, so observed localization may depend on expression level, tag, cell type or condition. The study did not establish each protein’s endogenous localization or biological function; the authors explicitly state that condensate localization alone makes no functional claim. Three of 24 proteins did not form detectable mesoscale foci, and three additional results were low-confidence under the paper’s size threshold. This is targeted experimental validation of model-selected candidates, not an independently replicated atlas.",
+    "ai_role": "PICNIC scored human proteins for likely cellular-condensate membership and selected poorly characterized positive predictions for experimental testing. Its rankings directly guided the 24-protein U2OS localization validation; the model was built to predict condensate members (including clients), not only proteins that self-drive phase separation.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-024-55089-x.pdf"
+    ]
+  }
+}

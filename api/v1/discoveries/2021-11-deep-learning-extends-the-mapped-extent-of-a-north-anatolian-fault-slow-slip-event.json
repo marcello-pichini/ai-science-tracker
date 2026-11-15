@@ -1,0 +1,28 @@
+{
+  "id": "2021-11-deep-learning-extends-the-mapped-extent-of-a-north-anatolian-fault-slow-slip-event",
+  "title": "Deep learning extends the mapped extent of a North Anatolian Fault slow-slip event",
+  "summary": "A deep convolutional autoencoder trained on synthetic deformation and atmospheric-noise time series recovered millimeter-scale ground motion from real InSAR without being given the fault location. Applied to COSMO-SkyMed observations of the 2013 North Anatolian Fault slow-slip event, it detected about 2 mm of slip beyond the previously identified segment and revised the estimated along-strike event length from about 10 km to 15–20 km. The same paper used the approach to resolve transient millimeter-scale subsidence at California’s Coso geothermal field. This is one paper-level finding enabled by the model’s extraction of deformation signals from noisy satellite data.",
+  "field": "physics",
+  "ai_technology": "Deep convolutional autoencoder trained on synthetic InSAR time series",
+  "organization": "Los Alamos National Laboratory; École Normale Supérieure; University of California, Santa Cruz and collaborators",
+  "source_url": "https://arxiv.org/abs/2012.13849",
+  "source_type": "paper",
+  "publication_date": "2021-11-10",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-021-26254-3",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A deep convolutional autoencoder trained on synthetic deformation and atmospheric-noise time series recovered millimeter-scale ground motion from real InSAR without being given the fault location.",
+    "unknown": "The newly resolved extension is a reanalysis of an existing 2013 InSAR event, not a newly occurring earthquake. The paper’s reported extension is model-derived; the original expert analysis had detected the larger slow-slip segment, while the autoencoder identifies an additional lower-amplitude portion. The model assumes atmospheric noise characteristics represented by its synthetic training data and omits some noise sources, including ionospheric perturbations. Coso results are a separate application within the same paper and are not counted separately.",
+    "ai_role": "The deep autoencoder separated persistent ground deformation patterns from atmospheric noise in real InSAR data without prior fault-location information, resolving the additional 2 mm slow-slip segment; the model was trained on synthetic data and was not fine-tuned on the real case.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2012.13849"
+    ]
+  }
+}

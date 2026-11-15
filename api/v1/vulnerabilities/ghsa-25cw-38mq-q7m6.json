@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-25cw-38mq-q7m6",
+  "title": "Caddy file matcher can expose suffix-blocked files through dot-segment paths",
+  "product": "Caddy (try_files, file_server, php_fastcgi and FrankenPHP php_server configurations)",
+  "ai_system": "Anthropic OSS Scanner (model not specified for this finding)",
+  "organization": "Anthropic and Caddy maintainers",
+  "summary": "In affected configurations, try_files cleans a request such as /.env/./ into /.env while path matchers still evaluate the original /.env/ path. This can bypass suffix, exact-path, glob or anchored-regex rules before the rewrite and disclose static files such as .env files, backups or configuration. Prefix and */.* rules still block, and nothing is executed.",
+  "ai_role": "The Caddy advisory explicitly says the issue was discovered by Anthropic's OSS Scanner and supplies scanner identifier ANT-2026-VAGWNYYZ. The Anthropic program sources establish model-based scanning, but do not identify the model used for this case or the human validation steps.",
+  "disclosure_date": "2026-11-04",
+  "ai_attribution_date": "2026-11-04",
+  "classification": "disclosure",
+  "classification_note": "The primary advisory establishes a publicly disclosed vulnerability and scanner attribution; it does not establish exploitation in the wild or zero-day status. No CVE is known, so this record is identified by GHSA.",
+  "cves": [],
+  "source_url": "https://github.com/CaddyServer/caddy/security/advisories/GHSA-25cw-38mq-q7m6",
+  "ai_source_url": "https://github.com/CaddyServer/caddy/security/advisories/GHSA-25cw-38mq-q7m6",
+  "remediation": "fix documented",
+  "remediation_note": "Fixed in Caddy 2.11.8 by preserving the trailing slash on cleaned candidates so slash-terminated file paths do not match regular files. Deployed patch status is not checked.",
+  "advisory_url": "https://github.com/CaddyServer/caddy/security/advisories/GHSA-25cw-38mq-q7m6",
+  "checked_date": "2026-11-14"
+}

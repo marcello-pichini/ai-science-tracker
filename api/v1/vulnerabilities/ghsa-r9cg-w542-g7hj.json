@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-r9cg-w542-g7hj",
+  "title": "heif-dec and heif-info can release an uninitialized URI pointer",
+  "product": "libheif",
+  "ai_system": "Anthropic OSS Scanner (model not specified for this finding)",
+  "organization": "Anthropic and libheif maintainers",
+  "summary": "For a urim sample entry without a URI box, heif-dec -S and heif-info could print and release an uninitialized pointer, depending on build causing a crash or access to a URI from a previous track. The library itself is not affected; the issue is in the two helper tools.",
+  "ai_role": "The item-level libheif advisory explicitly attributes discovery to Anthropic's OSS Scanner as ANT-2026-QVQYWGC7. The release notes independently state that all listed security issues were found by the scanner. The Anthropic program sources establish model-based scanning, but no per-case model is identified.",
+  "disclosure_date": "2026-10-26",
+  "ai_attribution_date": "2026-10-26",
+  "classification": "disclosure",
+  "classification_note": "The primary advisory establishes a publicly disclosed security finding and direct Anthropic OSS Scanner attribution. No CVE had been assigned in the libheif release notes at the checked time; the distinct GHSA is used. No exploitation or zero-day status is asserted.",
+  "cves": [],
+  "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-r9cg-w542-g7hj",
+  "ai_source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-r9cg-w542-g7hj",
+  "remediation": "fix documented",
+  "remediation_note": "Both tools now use/release the URI only on successful lookup, and the API initializes its output pointer to null. Fixed in libheif 1.23.7. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
+  "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-r9cg-w542-g7hj",
+  "checked_date": "2026-11-14"
+}

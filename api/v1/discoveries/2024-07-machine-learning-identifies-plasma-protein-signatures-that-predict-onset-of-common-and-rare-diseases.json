@@ -1,0 +1,28 @@
+{
+  "id": "2024-07-machine-learning-identifies-plasma-protein-signatures-that-predict-onset-of-common-and-rare-diseases",
+  "title": "Machine learning identifies plasma protein signatures that predict onset of common and rare diseases",
+  "summary": "Researchers used regularized machine-learning models to select sparse plasma-protein signatures for 10-year incidence across 218 diseases in 41,931 UK Biobank Pharma Proteomics Project participants. Five to twenty proteins improved held-out risk prediction over basic clinical information for 67 diseases and over clinical information plus routine assays for 52. The study identified TNFRSF17 as a specific predictor for future multiple myeloma and TNFRSF13B for monoclonal gammopathy of undetermined significance. In bone-marrow single-cell data from 11 newly diagnosed myeloma patients and three controls, four of five myeloma predictor proteins were most highly expressed by plasma cells; FCRLB and QPCT elevation was attributable to malignant plasma cells. Proteomic signatures also replicated improved prediction for five of six diseases tested in EPIC-Norfolk.",
+  "field": "medicine",
+  "ai_technology": "LASSO feature selection and regularized Cox machine-learning models integrating plasma proteomics and clinical covariates",
+  "organization": "MRC Epidemiology Unit, University of Cambridge; Queen Mary University of London; University College London; GSK Research and Development; Berlin Institute of Health at Charité; EPIC-Norfolk",
+  "source_url": "https://www.nature.com/articles/s41591-024-03142-z",
+  "source_type": "paper",
+  "publication_date": "2024-07-22",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41591-024-03142-z",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Five to twenty proteins improved held-out risk prediction over basic clinical information for 67 diseases and over clinical information plus routine assays for 52.",
+    "unknown": "The disease predictions are observational risk associations, not causal mechanisms or clinical screening outcomes. Most protein signatures were not externally replicated; EPIC-Norfolk tested six diseases, with improved prediction replicated for five. The myeloma single-cell analysis involved 11 patients and three healthy controls and supports cellular expression attribution, not prospective validation of an assay. Absolute quantification with clinical-grade assays and further validation would be needed before clinical use.",
+    "ai_role": "The authors applied a three-stage machine-learning framework—feature selection, hyperparameter tuning and held-out validation—to ~2,923 proteins in UK Biobank. It selected parsimonious protein signatures for 218 future disease outcomes and identified disease-specific predictors and shared predictors. For multiple myeloma, the model-selected five-protein signature and follow-up single-cell expression analysis linked four predictors to marrow plasma cells and showed malignant-cell-associated FCRLB and QPCT expression.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41591-024-03142-z"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2021-06-explainable-neural-network-analysis-isolates-aerosol-sensitive-regional-climate-signals-in-cesm1",
+  "title": "Explainable neural-network analysis isolates aerosol-sensitive regional climate signals in CESM1",
+  "summary": "Using explainable AI on single-forcing CESM1 large ensembles, the study identified the North Atlantic, Southern Ocean and Southeast Asia as key regional temperature patterns for dating the climate simulations, particularly before the early 21st century. When applied to reanalysis observations, the neural network trained on an ensemble with industrial aerosols fixed at 1920 levels predicted the actual year more closely than networks trained on the all-forcing or greenhouse-gas-fixed ensembles. The authors interpret this as evidence that simulated regional temperature signals are sensitive to aerosol forcing.",
+  "field": "climate",
+  "ai_technology": "Artificial neural network trained on CESM1 single-forcing and all-forcing large ensembles, interpreted using layer-wise relevance propagation and an uncertainty mask",
+  "organization": "Colorado State University; National Center for Atmospheric Research; collaborators",
+  "source_url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021MS002464",
+  "source_type": "paper",
+  "publication_date": "2021-06-03",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1029/2021MS002464",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Using explainable AI on single-forcing CESM1 large ensembles, the study identified the North Atlantic, Southern Ocean and Southeast Asia as key regional temperature patterns for dating the climate simulations, particularly before the early 21st century.",
+    "unknown": "This is a model-based attribution analysis from one climate model (CESM1) and historical/RCP8.5 simulations, with reanalysis used for evaluation; it is not a direct experiment or causal attribution of every observed regional trend. The relevance maps identify patterns useful to the trained network and do not by themselves prove a physical mechanism. The authors discuss other forcings, feedbacks and internal variability, and the net influence of aerosols remains uncertain.",
+    "ai_role": "The ANN learned to predict year from global near-surface-temperature maps in simulations with different combinations of greenhouse-gas and industrial-aerosol forcing. Layer-wise relevance propagation identified regional patterns driving those predictions, and the trained networks were then tested on 20th Century Reanalysis observations. This analysis exposed the model’s aerosol-sensitive regional signal and the higher year-prediction correlation of the network trained with aerosols held at 1920 levels.",
+    "evidence_urls": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2021MS002464"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ghsl-2025-126",
+  "title": "Taskflow Agent finds missing OAuth state validation in Lobsters Mastodon linking",
+  "product": "Lobsters Mastodon OAuth integration",
+  "ai_system": "GitHub Security Lab Taskflow Agent",
+  "organization": "GitHub Security Lab",
+  "summary": "The Mastodon OAuth callback lacked state validation and session binding, allowing a cross-site request forgery that could link a victim’s Lobsters account to an attacker-controlled Mastodon account.",
+  "ai_role": "GHSL credits its Taskflow Agent and manual verification by Peter Stöckli and Man Yue Mo. Reported 2025-12-09; fixed on main branch 2025-12-22. The maintainer reported a collision with another report; priority/originality is therefore not exclusive. No CVE is listed.",
+  "disclosure_date": "2026-09-16",
+  "ai_attribution_date": "2026-09-16",
+  "classification": "disclosure",
+  "classification_note": "The advisory limits exposure to Lobsters instances with Mastodon linking enabled and notes the reported collision; no in-the-wild claim is made.",
+  "cves": [],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2025-126_GHSL-2025-127_Lobsters/",
+  "ai_source_url": "https://securitylab.github.com/advisories/GHSL-2025-126_GHSL-2025-127_Lobsters/",
+  "remediation": "fix documented",
+  "remediation_note": "GHSL reports fixes on main branch in commits 9a29bba and 41d6d02 on 2025-12-22. No tagged release or CVE is given.",
+  "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-126_GHSL-2025-127_Lobsters/",
+  "checked_date": "2026-11-14"
+}

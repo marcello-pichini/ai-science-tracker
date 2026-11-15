@@ -1,0 +1,28 @@
+{
+  "id": "2021-03-autonomous-ml-search-and-experiments-find-fecoir-pt-alloys-above-the-slaterpauling-magnetization-limit",
+  "title": "Autonomous ML search and experiments find Fe–Co–Ir/Pt alloys above the Slater–Pauling magnetization limit",
+  "summary": "A game-tree search using Gaussian-process predictions and first-principles calculations proposed dilute Ir and Pt additions as a counterintuitive way to raise Fe–Co magnetization. Combinatorial sputtering and magnetic measurements experimentally found Fe–Co–Ir and Fe–Co–Pt compositions with magnetization exceeding the conventional Fe₃Co₁ Slater–Pauling limit; the highest-moment points reported in the ternary maps were near Fe₈₁Co₁₅Ir₄ and Fe₈₅Co₁₁Pt₄. The study’s calculations attribute the effect to Ir/Pt-induced increases in local Fe and Co moments.",
+  "field": "materials",
+  "ai_technology": "Autonomous materials search using a Gaussian-process regression model with game-tree search and an upper-confidence-bound acquisition rule, coupled to KKR-CPA first-principles calculations",
+  "organization": "NEC Corporation; National Institute of Advanced Industrial Science and Technology (AIST); Tohoku University; University of Tokyo; Japan Atomic Energy Agency",
+  "source_url": "https://www.nature.com/articles/s43246-021-00135-0",
+  "source_type": "paper",
+  "publication_date": "2021-03-19",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s43246-021-00135-0",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A game-tree search using Gaussian-process predictions and first-principles calculations proposed dilute Ir and Pt additions as a counterintuitive way to raise Fe–Co magnetization.",
+    "unknown": "The highest-moment composition suggested by the autonomous search (Fe₈₂Co₁₃Ir₄Pt₁) was not itself the maximum in the measured ternary composition spreads; the Fe–Co–Ir and Fe–Co–Pt maps identified different peak compositions. The finding is based on sputtered, annealed thin-film composition spreads and room-temperature MOKE/SQUID measurements, not bulk ingots or device testing. The eight-element search space was narrowed by preliminary calculations. KKR-CPA results assume ideal disordered bulk states at 0 K, unlike the film measurements.",
+    "ai_role": "The autonomous system iteratively selected compositions in an eight-component disordered-alloy search using ab-initio magnetic-moment estimates and a game-tree Gaussian-process model balancing exploration and exploitation. After about 43 days it proposed Fe₈₂Co₁₃Ir₄Pt₁; that hypothesis directed combinatorial synthesis and testing of Fe–Co–Ir and Fe–Co–Pt spreads. The follow-up measurements found compositions surpassing the prior Fe₃Co₁ benchmark and motivated theoretical analysis of impurity-enhanced Fe/Co local moments.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s43246-021-00135-0"
+    ]
+  }
+}

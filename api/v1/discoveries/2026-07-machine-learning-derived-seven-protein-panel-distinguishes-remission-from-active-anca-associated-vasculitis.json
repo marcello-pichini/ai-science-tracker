@@ -1,0 +1,28 @@
+{
+  "id": "2026-07-machine-learning-derived-seven-protein-panel-distinguishes-remission-from-active-anca-associated-vasculitis",
+  "title": "Machine-learning-derived seven-protein panel distinguishes remission from active ANCA-associated vasculitis",
+  "summary": "Confounder-aware machine-learning feature selection on plasma proteomics identified a seven-protein signature—AHSG, CLEC3B, COMP, F9, LRG1, MCAM and MRC1—to classify remission versus active ANCA-associated vasculitis (AAV). After targeted PRM mass-spectrometry assay development, a generalized linear model was evaluated in an independent cohort of 108 AAV patients and achieved AUC 0.94 (95% CI 0.90–0.98); combined discovery and validation performance was AUC 0.97. In the study cohorts, the panel outperformed routine CRP and ANCA titer measurements.",
+  "field": "medicine",
+  "ai_technology": "MetaDeconfoundR confounder-aware feature analysis, LASSO and Boruta feature selection, and a generalized linear model applied to targeted PRM mass-spectrometry data",
+  "organization": "Max Delbrück Center for Molecular Medicine; Charité – Universitätsmedizin Berlin; Berlin Institute of Health; Charles University and General University Hospital Prague; University of Oslo",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/42481524/",
+  "source_type": "paper",
+  "publication_date": "2026-07-21",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-026-75755-6",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "After targeted PRM mass-spectrometry assay development, a generalized linear model was evaluated in an independent cohort of 108 AAV patients and achieved AUC 0.94 (95% CI 0.90–0.98); combined discovery and validation performance was AUC 0.97.",
+    "unknown": "This is cross-sectional classification of disease state in patients already diagnosed with AAV, not a prospective prediction of relapse, a validated basis for stopping immunosuppression, or evidence of improved clinical outcomes. The two cohorts together included just over 200 patients with a rare disease; the authors note uncertainty from sample size and treatment heterogeneity, and the panel remains a starting point for clinical-tool development. It is an adjunct biomarker result, not proof that the seven proteins cause remission or vasculitis activity.",
+    "ai_role": "Machine-learning methods accounted for clinical covariates including CRP, kidney function and ANCA-related measures, prioritized candidate plasma proteins, and reduced these to a seven-protein panel. Targeted PRM-MS quantified the selected proteins, and the GLM classified AAV remission versus active disease in an independent cohort. The measured validation performance and protein signature are the specific AI-enabled diagnostic finding.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/42481524/"
+    ]
+  }
+}

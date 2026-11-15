@@ -43,7 +43,7 @@ python3 scripts/generate_models.py
 python3 -m unittest discover -s tests
 ```
 
-The CSV and research working files are excluded from Git. After updating the input snapshot, update its download date in the generator. The pages let browsers cache the JSON files (GitHub Pages sends `max-age=600`), so a data update can take up to 10 minutes to show for a returning reader. Review generated family links before publishing; they are based on names, not independent attribution.
+The CSV and research working files are excluded from Git. The generated source metadata includes the SHA-256 fingerprint of the input CSV; it does not establish a download date. The pages let browsers cache the JSON files (GitHub Pages sends `max-age=600`), so a data update can take up to 10 minutes to show for a returning reader. Review generated family links before publishing; they are based on names, not independent attribution.
 
 A GitHub Actions workflow (`.github/workflows/check.yml`, read-only permissions) runs the tests on every push and pull request, then reruns `python3 scripts/generate_share.py` and fails if `share/`, `profiles/`, `sitemap.xml` or `robots.txt` differ from what is committed. After changing data or the generator, rerun the generator and commit its output.
 
@@ -51,12 +51,14 @@ A GitHub Actions workflow (`.github/workflows/check.yml`, read-only permissions)
 
 - Filters are kept in the query string: `index.html?q=&field=&org=&year=&family=&min=&sort=`. The "Copy filter link" button copies the current view; "Download selection" saves the listed entries as JSON or CSV, and each entry has "Copy link" and "Copy reference" buttons.
 - "Copy link" on a discovery copies `share/ID.html`, a generated full, self-canonical static discovery page with Open Graph tags and a 1200x630 card (`og/ID.png`); its full text is readable without JavaScript, with a link back to `index.html#discovery=ID`.
-- After changing discoveries or the design, run `python3 scripts/generate_share.py` (add `--force` to redraw every card; it needs Google Chrome, or set `CHROME=/path/to/chrome`) and commit the generated files.
+- After changing discoveries or the design, run `python3 scripts/generate_share.py` (changed cards are detected using `og/card-hashes.json`; add `--force` to redraw every card. It needs Google Chrome, or set `CHROME=/path/to/chrome`) and commit the generated files.
 - Printing or "Save as PDF" from `index.html` produces a light, control-free list with full summaries and source URLs.
 
 ## Source context, trends and contributions
 
 Entry details distinguish source checking from independent scientific confirmation and expose the three editorial subscores without hover. The annual chart switches between catalog-entry counts and mean editorial relevance; source composition and addition dates describe the collection, not worldwide scientific activity or review freshness.
+
+Methodology includes live annual tables for evidence-annotation coverage and primary source composition. Missing annotations do not mean missing scientific evidence. Counts describe catalog entries, which can bundle or overlap results; the 20–100 relevance scale is a coarse editorial aid with thirteen possible values, not a cross-field quality ranking. Timeline and model charts support keyboard selection and announce the selected record; dense date groups can be opened through an entry chooser.
 
 Corrections and missing-result suggestions open public GitHub issue forms. They require GitHub sign-in, original sources and editorial review. The forms become available when `.github/ISSUE_TEMPLATE/` is published to the default branch. They never change the catalog automatically.
 

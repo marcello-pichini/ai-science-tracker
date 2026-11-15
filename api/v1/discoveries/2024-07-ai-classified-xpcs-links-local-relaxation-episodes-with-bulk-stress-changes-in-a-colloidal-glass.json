@@ -1,0 +1,28 @@
+{
+  "id": "2024-07-ai-classified-xpcs-links-local-relaxation-episodes-with-bulk-stress-changes-in-a-colloidal-glass",
+  "title": "AI-classified XPCS links local relaxation episodes with bulk stress changes in a colloidal glass",
+  "summary": "In rheo-XPCS measurements of a sheared silica-nanoparticle glass, an unsupervised convolutional autoencoder and K-means clustering grouped two-time correlation patterns by relative relaxation rate. Changes in the frequencies of slow-dynamics classes tracked non-monotonic shear-stress relaxation, while some later local slow-dynamics episodes appeared without a corresponding change in the bulk stress signal. This is a measured microscopic-to-macroscopic relationship in the study’s model colloidal system.",
+  "field": "materials",
+  "ai_technology": "AI-NERD: convolutional autoencoder for XPCS correlation images with K-means clustering in the learned latent space",
+  "organization": "Argonne National Laboratory; University of Chicago; University of Illinois Chicago",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11251071/",
+  "source_type": "paper",
+  "publication_date": "2024-07-15",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-024-49381-z",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In rheo-XPCS measurements of a sheared silica-nanoparticle glass, an unsupervised convolutional autoencoder and K-means clustering grouped two-time correlation patterns by relative relaxation rate.",
+    "unknown": "The findings come from rheo-XPCS of a model concentrated silica-nanoparticle suspension under the reported shear/relaxation protocol. Cluster labels encode relative relaxation rates and latent-space distances are not quantitative physical measures. The authors describe the stress/dynamics relationship qualitatively and say further work is needed to extract quantitative physical information. A publisher correction dated 2024-09-09 corrected corresponding-author information; it did not report a change to the results.",
+    "ai_role": "The unsupervised neural autoencoder compressed experimental two-time X-ray photon correlation functions into a latent representation, then K-means grouped frames by dynamical similarity. Class-transition frequencies over experimental time let researchers compare local relaxation patterns with simultaneous rheometer stress measurements, revealing where local slow dynamics coincided with stress minima and where they did not.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11251071/"
+    ]
+  }
+}

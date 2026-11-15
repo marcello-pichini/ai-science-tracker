@@ -1,0 +1,28 @@
+{
+  "id": "2026-09-gpt-6-astra-finds-a-counting-proof-of-the-erdossos-tree-embedding-conjecture",
+  "title": "GPT-6 Astra finds a counting proof of the Erdős–Sós tree-embedding conjecture",
+  "summary": "A counting argument proves that every finite graph with average degree greater than t−2 contains every tree on t vertices, resolving the Erdős–Sós conjecture. The proof counts adjacency-marked vertex orderings and uses an induction on the tree to bound those not supporting a rooted copy. The exposition states the sharp classical theorem and records its proof was discovered by GPT-6 Astra; a Lean repository checks the benchmark formalization of the result. Related expository papers of the same proof are aliases, not separate discoveries.",
+  "field": "mathematics",
+  "ai_technology": "Pre-release OpenAI GPT-6 Astra in the FrontierMath Erdős benchmark",
+  "organization": "OpenAI FrontierMath Erdős project; exposition by David R. Wood (affiliation not stated in arXiv record)",
+  "source_url": "https://arxiv.org/abs/2609.17877",
+  "source_type": "paper",
+  "publication_date": "2026-09-15",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 4,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A counting argument proves that every finite graph with average degree greater than t−2 contains every tree on t vertices, resolving the Erdős–Sós conjecture.",
+    "unknown": "The arXiv paper is an exposition of the proof, not the original benchmark output. The linked Lean proof is machine-checked against the benchmark formalization; the registry notes a minor parity-case difference in that compared statement, while the paper’s counting lemma derives the sharp classical average-degree threshold. This remains a preprint and the formalization is not independently audited here.",
+    "ai_role": "GPT-6 Astra autonomously found the counting proof while solving Erdős problem 548 in the FrontierMath Erdős benchmark; the exposition author reports the discovery and lays out the proof. A Lean 4 repository states the proof was machine-checked by a Comparator against the benchmark’s formal statement.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2609.17877"
+    ]
+  }
+}

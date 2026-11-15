@@ -1,4 +1,5 @@
 import json
+import datetime
 import unittest
 from pathlib import Path
 
@@ -19,6 +20,8 @@ class DataIntegrityTests(unittest.TestCase):
 
     def test_dates_and_ids_are_coherent(self):
         for r in RECORDS:
+            self.assertGreaterEqual(r['publication_date'], '2020-01-01', r['id'])
+            self.assertLessEqual(r['publication_date'], datetime.date.today().isoformat(), r['id'])
             self.assertGreaterEqual(r['added_date'], r['publication_date'], r['id'])
             self.assertTrue(r['id'].startswith(r['publication_date'][:7]), r['id'])
 

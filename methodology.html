@@ -21,7 +21,7 @@
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker discovery catalog","description":"Scientific discoveries enabled by AI and related model families, sourced from official announcements.","url":"https://marcello-pichini.github.io/ai-science-tracker/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"distribution":{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json"},"isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","keywords":["artificial intelligence","scientific discovery","AI for science"]}
+{"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker discovery catalog","description":"Scientific discoveries enabled by AI and related model families, sourced from original papers, preprints and institutional announcements.","url":"https://marcello-pichini.github.io/ai-science-tracker/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"distribution":{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json"},"isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","keywords":["artificial intelligence","scientific discovery","AI for science"]}
 </script>
 </head>
 <body>
@@ -38,7 +38,7 @@
 <section class="banda banda-bassa" aria-labelledby="titolo-pagina">
   <div class="wrap">
     <h1 id="titolo-pagina">How we select and verify entries</h1>
-    <p class="lead">This site tracks scientific results achieved with AI since 2020, starting from official announcements by the organizations that achieved them.</p>
+    <p class="lead">This site catalogs scientific results achieved with AI since 2020, using original papers, preprints and institutional announcements.</p>
   </div>
 </section>
 
@@ -47,20 +47,27 @@
     <article class="prosa">
       <h2>What we include</h2>
   <ul>
-    <li>A concrete result in a scientific field (biology, medicine, mathematics, climate, and others), announced by the organization that achieved it.</li>
-    <li>An official page with a date and figures: lab and company blogs (DeepMind, Google Research, Microsoft Research, Meta AI, OpenAI, Anthropic, and others), or announcements from universities and institutes (such as MIT).</li>
-    <li>Tools and models only when accompanied by a verifiable result (a structure, compound, proof, or field test).</li>
+    <li>A concrete result in a scientific field (biology, medicine, mathematics, climate, and others), with a documented AI contribution.</li>
+    <li>A dated original paper or preprint, or an announcement by the lab, company, university or institute responsible for the work. The source must support the result and the figures used in the summary. A paper source is not automatically peer-reviewed; an institutional page is not independent confirmation.</li>
+    <li>Tools and models only when the reviewed source supports a qualifying scientific result: for example, a newly characterized structure or compound, a mathematical proof, or a measured scientific outcome in a field test. The summary must identify that result and explain what AI did.</li>
   </ul>
 
   <h2>What we exclude</h2>
   <ul>
-    <li>Product launches and benchmark comparisons without a scientific result. Model releases are tracked separately on the <a href="models.html">Models</a> page and do not count as discoveries.</li>
+    <li>Product launches and general method or representation benchmarks without a specific scientific result. Better accuracy, speed or benchmark rank alone does not qualify a method. A source-described study of a specific scientific, clinical or field question can qualify, including a retrospective diagnostic-validation study; this does not establish clinical benefit or new biology. Prospective testing is not a universal inclusion requirement. Model releases are tracked separately on the <a href="models.html">Models</a> page and do not count as discoveries.</li>
     <li>Awards and recognition (such as the 2024 Nobel Prize): these judge a discovery; they are not the discovery itself.</li>
     <li>Newsletters, aggregators, and third-party articles as the primary source.</li>
     <li>Announcements without results yet (funding, collaborations, interviews).</li>
   </ul>
 
   <p>Entries that do not meet the discovery criteria can be archived while their historical pages remain available. Archived entries are excluded from discovery lists, counts and statistics. The <a href="share/2024-03-uni-pathology-foundation-model.html">UNI pathology model entry</a> is retained this way because it reports retrospective method benchmarks rather than a qualifying scientific discovery.</p>
+  <p>The archived <a href="share/2024-11-naturelm-audio.html">NatureLM-audio</a> and <a href="share/2024-05-prov-gigapath-slide-model.html">Prov-GigaPath</a> entries likewise preserve method-development context outside the active counts. Each historical page explains the exclusion and links its original sources.</p>
+  <p>The <a href="share/2024-12-boltz1.html">Boltz-1 release</a> and <a href="share/2022-11-cellpose-2.html">Cellpose 2.0</a> entries are archived as method benchmarks without a separate qualifying scientific result in the reviewed material. The <a href="share/2026-09-ai-designed-physics-experiments.html">review of AI-designed physics experiments</a> is preserved as a synthesis of earlier work, rather than counted as a new discovery on the review's publication date.</p>
+  <p>By contrast, the <a href="share/2024-07-virchow-pathology-foundation-model.html">Virchow entry</a> describes a specific pan-cancer detector evaluated on held-out specimens. It is retained as a diagnostic-validation study, with no claim that the detector was deployed or improved patient outcomes. A general foundation-model benchmark suite alone does not meet this boundary.</p>
+
+  <h2>What a count represents</h2>
+  <p>The counting unit is an active catalog entry, not an independently established finding. A single paper or announcement may bundle several results in one entry. A method entry and an application entry may describe contributions to the same underlying result; for example, ColabFold and a nuclear-pore study overlap. Their presence does not establish two independent discoveries.</p>
+  <p>Use one entry for a coherent result or bundle from an announcement. Split it only when the source supports distinct scientific results that can each be summarized with their own AI contribution and limitations, and explain the relationship. Later announcements or paper versions about the same result normally update the existing entry, with version differences stated, rather than create a duplicate. Existing IDs remain stable. These rules guide review; they do not claim that every historical overlap has been resolved.</p>
 
   <h2>The models page</h2>
   <p>The <a href="models.html">Models</a> page answers a different question: which model families are linked by name to catalog discoveries. It lists releases from leading labs since 2020, plus models from any date linked to a discovery.</p>
@@ -76,21 +83,46 @@
   <p>An entry marked “needs verification” has an unresolved source check, such as an unconfirmed date or organization, an unsupported reported figure, or conflicting information. A caveat does not turn an unresolved factual claim into a checked one; claims must be supported, corrected or removed before the status becomes “Source checked.”</p>
 
   <h2>Evidence context (pilot)</h2>
-  <p>A small pilot adds an optional &ldquo;Evidence context&rdquo; to the source details of selected entries: publication status, what was tested, what the sources say is still unknown, and what the AI system did. Every statement comes from pages that were read for the annotation, which are listed in the data file; nothing is inferred from the website, keywords or the relevance score, and it does not change any score. Where a page could not be read, the field says &ldquo;Not reported&rdquo;. It is not a validation grade.</p>
+  <p>Optional annotations add &ldquo;Evidence context&rdquo; to the source details of selected entries: publication status, what was tested, what the sources say is still unknown, and what the AI system did. Every scientific statement comes from pages read for the annotation, linked in its source details and listed in the data file; nothing is inferred from the website, keywords or relevance score. These source-attributed statements are separate from editorial judgments and do not change any score. An annotation is not a validation grade.</p>
+  <p>For new or revised annotations, distinguish three cases explicitly in the text: &ldquo;Not assessed&rdquo; when relevant material was not reviewed or was inaccessible; &ldquo;Not stated in the reviewed material&rdquo; when the pages read omit the detail; and a scientific unknown only when a cited source identifies it as unresolved. State &ldquo;Not applicable&rdquo; only with an explanation. An inaccessible full paper cannot establish that it omits a detail, and an omitted detail cannot establish scientific uncertainty.</p>
+  <p>Earlier pilot fields labeled &ldquo;Not reported&rdquo; do not reliably distinguish these cases and should be treated as unspecified annotation gaps until reviewed. No annotation means not annotated in this catalog, not absent scientific evidence. Record the actual review scope (announcement, abstract or full paper) and review date when a new review is performed; do not infer them from publication or catalog addition dates or backfill unrecorded historical checks. Structured review provenance remains future work.</p>
+
+  <h2 id="evidence-coverage">Evidence and coverage</h2>
+  <p>These tables describe all active entries in the loaded catalog, grouped by their recorded publication year. Annotation coverage counts the presence of the optional evidence block, regardless of its contents. Source composition counts each entry once by its primary source type, even if it also links a paper. Neither table measures scientific quality, independent confirmation, or how much research exists outside this collection.</p>
+  <p id="coverage-status" role="status">Coverage tables require JavaScript. The raw discovery data is linked below.</p>
+  <div id="coverage-tables" hidden>
+    <div class="tabella-scorre"><table class="tab-mini">
+      <caption>Evidence annotation coverage by publication year</caption>
+      <thead><tr><th scope="col">Year</th><th scope="col">All entries</th><th scope="col">Annotated / all</th><th scope="col">Unannotated / all</th></tr></thead>
+      <tbody id="coverage-years"></tbody>
+    </table></div>
+    <div class="tabella-scorre"><table class="tab-mini">
+      <caption>Primary source types by publication year (each cell is entries / all entries that year)</caption>
+      <thead><tr><th scope="col">Year</th><th scope="col">Paper</th><th scope="col">Blog</th><th scope="col">Press release</th><th scope="col">Other</th></tr></thead>
+      <tbody id="coverage-sources"></tbody>
+    </table></div>
+  </div>
+  <p><a href="data/discoveries.json">Read the raw discovery data (JSON)</a>. Totals exclude archived entries and the separate vulnerability tracker. The current year is incomplete; missing annotations reflect catalog work, not missing scientific evidence.</p>
+  <noscript><p>JavaScript is disabled. The coverage tables require JavaScript; use the raw data link above to inspect the records.</p></noscript>
 
   <h2>Relevance score</h2>
-  <p>Each entry has a score from 0 to 100: the average of three criteria, each scored from 1 to 5, multiplied by 20. This is an editorial judgment, not an objective measure. It helps sort entries and compare categories; hover over a score to see its three criteria.</p>
+  <p>Each entry has three integer editorial subscores from 1 to 5. The displayed score is their mean multiplied by 20, rounded to an integer: a range of 20–100 with only thirteen possible values (20, 27, 33, 40, 47, 53, 60, 67, 73, 80, 87, 93, 100). This coarse scale helps browse the collection; one step in a subscore changes the displayed total by about seven points, not a precise measured difference. It is not a scientific evidence grade or a reliable ranking across fields. The source details show all three subscores.</p>
+  <p>The complete anchors below guide future scoring review. They clarify editorial interest, support and originality without turning study design or publication status into a universal evidence ladder. Existing scores are retained pending calibration and record-level review; they have not all been reassessed against these anchors.</p>
   <div class="tabella-scorre"><table>
-    <tr><th>Criterion</th><th>1</th><th>3</th><th>5</th></tr>
-    <tr><td>Impact</td><td>niche result</td><td>useful to a field or defined population</td><td>changes how an entire field works</td></tr>
-    <tr><td>Validation</td><td>computational only or announcement</td><td>confirmed in a lab, in the field, or on limited cases</td><td>independent evaluation, broad use, or external recognition</td></tr>
-    <tr><td>Novelty</td><td>incremental improvement</td><td>first result of its kind in a field</td><td>paradigm shift</td></tr>
+    <caption>Editorial scoring anchors (each criterion is assessed separately)</caption>
+    <tr><th scope="col">Level</th><th scope="col">Impact: significance of the reported result</th><th scope="col">Validation: support for the stated claim</th><th scope="col">Novelty: departure from prior work</th></tr>
+    <tr><th scope="row">1</th><td>Narrow interest in one task or setting; broader use is speculative.</td><td>A source reports the result, but the material reviewed provides little direct evaluation of the central claim.</td><td>A small extension or refinement of an established result.</td></tr>
+    <tr><th scope="row">2</th><td>A concrete benefit for a specialist task, with limited demonstrated reach.</td><td>A narrow internal test or retrospective benchmark supports part of the claim; transfer to the target setting is unresolved.</td><td>A distinct technical improvement or combination within an established approach.</td></tr>
+    <tr><th scope="row">3</th><td>A substantial result for a defined field, research problem or population.</td><td>Direct, task-appropriate testing supports the main claim in a bounded setting: for example, a lab experiment, held-out observations or a checked mathematical argument.</td><td>A substantially new capability or result for a defined problem, with its difference from prior work documented.</td></tr>
+    <tr><th scope="row">4</th><td>Demonstrated consequences across several problems or settings within a field.</td><td>Relevant additional tests address transfer or a major limitation: for example, a prospective study, a separate experimental system or independent checking of a proof. Animal testing alone does not establish human benefit.</td><td>A new approach or finding that opens several research directions beyond the initial task.</td></tr>
+    <tr><th scope="row">5</th><td>Documented broad consequences that change research or practice across a field.</td><td>Independent evaluation or sustained operational use supports the central claim across the intended settings, with limitations documented. Use by the originating organization is attributed as such.</td><td>A documented foundational change in how a class of scientific problems can be approached.</td></tr>
   </table></div>
-  <p>Validation uses the intermediate steps as follows: 4 means evidence in animals, a prospective or randomized clinical study, or experimental confirmation of a predicted structure; 5 also covers routine operational use by the organization responsible, such as a national forecasting centre or a standard software library. Operational use shows that a method is relied on, not that every claim in the announcement holds.</p>
-  <p>A category average is the mean score of its entries. With only one or two entries, the average is not very informative.</p>
+  <p>Judge validation against the claim and field: a proof, a predicted molecular structure and a clinical benefit need different checks. Peer review, prizes, publicity or deployment alone do not verify every claim. Computational work is not automatically weak evidence; experimental work is not automatically strong evidence. Keep the source-stated test context in the evidence annotation and explain the editorial rationale separately when reviewing a score.</p>
+  <p>Calibration is prospective: have two reviewers independently score a stratified sample of 20–30 entries across fields, years, source types and score levels; record rationales and disagreements; reconcile the anchors; then check whether alternative weights or omitting a criterion changes the selected top entries. Publish the review scope and decisions before any corpus rescore. This process has not yet been completed; no automatic redistribution or normalization of scores is planned.</p>
+  <p>A category average is the mean score of its selected entries. It reflects composition and editorial choices, not comparative field quality. With only one or two entries, the average is especially uninformative.</p>
 
   <h2>Reading the catalog statistics</h2>
-  <p>The annual chart offers the number of catalog entries and their mean editorial relevance. Means use the rounded 0–100 scores displayed on individual entries, then round the annual average to an integer. Annual sample sizes appear in the table; small samples and the incomplete current year require caution. These are descriptions of a selected collection, not worldwide discovery rates or measures of scientific progress.</p>
+  <p>The annual chart offers the number of catalog entries and their mean editorial relevance. Means use the rounded 20–100 scores displayed on individual entries, then round the annual average to an integer; averaging does not add precision to the rubric. Annual sample sizes appear in the table; small samples and the incomplete current year require caution. These are descriptions of a selected collection, not worldwide discovery rates or measures of scientific progress.</p>
   <p>The source composition counts each entry by its primary source type, not by evidence quality. “Most recent catalog addition” uses the addition date; it does not indicate the last scientific review or follow-up check.</p>
 
   <h2>How we choose the date</h2>
@@ -104,7 +136,7 @@
     <tr><td><code>summary</code></td><td>2–4 sentences in English, including stated limitations</td></tr>
     <tr><td><code>field</code></td><td>biology, chemistry, medicine, materials, climate, mathematics, physics, computer science, humanities, multidisciplinary, or other</td></tr>
     <tr><td><code>ai_technology</code>, <code>organization</code></td><td>technology used and announcing organization</td></tr>
-    <tr><td><code>source_url</code>, <code>source_type</code></td><td>official source link and type</td></tr>
+    <tr><td><code>source_url</code>, <code>source_type</code></td><td>original paper, preprint or institutional source link and type</td></tr>
     <tr><td><code>publication_date</code>, <code>added_date</code></td><td>announcement date and date added to the catalog</td></tr>
     <tr><td><code>verification_status</code></td><td>verified or needs verification</td></tr>
     <tr><td><code>paper_url</code></td><td>peer-reviewed paper or preprint, when available</td></tr>
@@ -118,7 +150,7 @@
   <ul>
     <li>Collection is manual and not exhaustive; selection depends on the sources reviewed so far.</li>
     <li>Companies describe their own results, so the tone may be promotional and claims are not independently assessed.</li>
-    <li>Entries come from official announcements, so most sources are the websites of the organizations that did the work. The catalog therefore reflects what organizations choose to announce; the home page states how concentrated the sources are.</li>
+    <li>Entries come from original papers, preprints and institutional announcements. The catalog reflects publication and announcement choices as well as our manual selection; the home page states how concentrated the primary-source websites are.</li>
     <li>Organizations listed together (for example, two labs) are counted under the first one named in charts.</li>
   </ul>
     </article>
@@ -127,9 +159,57 @@
 
 <footer class="footer">
   <div class="wrap">
-    <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
+    <p>Each entry links to an original source. Figures are reported by sources and have not been independently verified.</p>
     <p><a href="index.html">Back to discoveries</a></p>
   </div>
 </footer>
+<script id="coverage-metrics">
+function coverageByYear(entries) {
+  const years = new Map();
+  for (const entry of entries) {
+    const year = entry.publication_date.slice(0, 4);
+    if (!years.has(year)) years.set(year, {year, total: 0, annotated: 0, missing: 0, sources: {paper: 0, blog: 0, 'press release': 0, other: 0}});
+    const row = years.get(year);
+    row.total++;
+    if (entry.evidence) row.annotated++; else row.missing++;
+    row.sources[entry.source_type]++;
+  }
+  return [...years.values()].sort((a, b) => a.year.localeCompare(b.year));
+}
+</script>
+<script>
+async function loadCoverage() {
+  const status = document.getElementById('coverage-status');
+  status.textContent = 'Loading catalog coverage…';
+  try {
+    const response = await fetch('data/discoveries.json');
+    if (!response.ok) throw new Error('Catalog unavailable');
+    const entries = await response.json();
+    if (!Array.isArray(entries)) throw new Error('Invalid catalog');
+    const rows = coverageByYear(entries);
+    const appendRow = (id, values) => {
+      const tr = document.createElement('tr');
+      values.forEach((value, index) => {
+        const cell = document.createElement(index ? 'td' : 'th');
+        if (!index) cell.scope = 'row';
+        cell.textContent = value;
+        tr.appendChild(cell);
+      });
+      document.getElementById(id).appendChild(tr);
+    };
+    rows.forEach(row => {
+      appendRow('coverage-years', [row.year, row.total, `${row.annotated} / ${row.total}`, `${row.missing} / ${row.total}`]);
+      appendRow('coverage-sources', [row.year, ...['paper', 'blog', 'press release', 'other'].map(type => `${row.sources[type]} / ${row.total}`)]);
+    });
+    const annotated = rows.reduce((sum, row) => sum + row.annotated, 0);
+    status.textContent = `${entries.length} active catalog entries: ${annotated} / ${entries.length} annotated; ${entries.length - annotated} / ${entries.length} unannotated.`;
+    if (!entries.length) status.textContent = 'The loaded catalog contains no active entries.';
+    document.getElementById('coverage-tables').hidden = !entries.length;
+  } catch (error) {
+    status.textContent = 'Coverage could not be loaded. Use the raw discovery data link below to inspect the catalog.';
+  }
+}
+loadCoverage();
+</script>
 </body>
 </html>

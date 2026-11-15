@@ -1,0 +1,28 @@
+{
+  "id": "2026-05-ai-generates-compounds-with-experimentally-validated-pancreatic-cancer-cell-selectivity",
+  "title": "AI generates compounds with experimentally validated pancreatic cancer cell selectivity",
+  "summary": "The IRB Barcelona team trained cell-line cytotoxicity predictors on data from more than 11,000 compounds assayed across pancreatic-cancer and control cell lines, then integrated the models with a reinforcement-learning generative system to design molecules for cell-selective effects. In follow-up tests, 45 AI-designed molecules or close analogues were assayed; 20 showed the intended cell-specific cytotoxicity, and dose-response testing confirmed 18 of those 20. Across the seven selectivity exercises, at least one hit was found in five; measured IC50 values could be calculated for 12 confirmed hits and ranged from 0.97 to 16.6 μM in the targeted cell lines.",
+  "field": "chemistry",
+  "ai_technology": "Cell-line-specific cytotoxicity prediction models coupled to a reinforcement-learning molecular generator (REINVENT-based workflow)",
+  "organization": "Institute for Research in Biomedicine (IRB Barcelona), The Barcelona Institute of Science and Technology; ICREA",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/42162204/",
+  "source_type": "paper",
+  "publication_date": "2026-05-20",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s42004-026-02071-x",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The IRB Barcelona team trained cell-line cytotoxicity predictors on data from more than 11,000 compounds assayed across pancreatic-cancer and control cell lines, then integrated the models with a reinforcement-learning generative system to design molecules for cell-selective effects.",
+    "unknown": "This is a proof-of-concept hit-discovery study using in-vitro cell-line assays, not evidence of tumor selectivity in patients or an animal efficacy result. Only binary cytotoxicity labels at 10 μM informed the predictors; 45 generated structures or close analogues were tested, with 20 showing desired phenotypes and 18 confirming in dose-response assays. Exact generated structures were not always the synthesized compounds, and measured IC50 spans 0.97–16.6 μM for 12 of the confirmed hits. The paper explicitly characterizes this as an early hit-discovery stage.",
+    "ai_role": "The authors trained predictive models on phenotypic screening data from >11,000 compounds, then used their scores as rewards/objectives in a generative workflow to propose molecules intended to kill one pancreatic-cancer cell line while sparing another or control cells. Candidate molecules or close purchasable analogues were experimentally tested and dose-response validated.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/42162204/"
+    ]
+  }
+}

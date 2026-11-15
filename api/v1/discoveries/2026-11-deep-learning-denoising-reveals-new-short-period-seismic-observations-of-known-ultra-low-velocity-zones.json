@@ -1,0 +1,28 @@
+{
+  "id": "2026-11-deep-learning-denoising-reveals-new-short-period-seismic-observations-of-known-ultra-low-velocity-zones",
+  "title": "Deep-learning denoising reveals new short-period seismic observations of known ultra-low-velocity zones",
+  "summary": "A supervised deep-learning denoising autoencoder exposed previously undocumented short-period S-diffracted wave observations associated with several known ultra-low-velocity zones (ULVZs). It also revealed four Hawaiian-ULVZ S-diff post-cursor records at Japan F-net stations from East Pacific Rise earthquakes, providing ray paths with mean azimuth about 78° from earlier North American paths. These new cross-cutting observations add constraints on ULVZ geometry and frequency/azimuth-dependent waveforms, but the paper does not present a new ULVZ detection or a completed structural inversion.",
+  "field": "physics",
+  "ai_technology": "Supervised deep-learning denoising autoencoder (DeepSeisDAE)",
+  "organization": "University of Münster; James Cook University; Utrecht University; Australian National University; Geological Survey of Denmark and Greenland",
+  "source_url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JB034067",
+  "source_type": "paper",
+  "publication_date": "2026-11-05",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1029/2026JB034067",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A supervised deep-learning denoising autoencoder exposed previously undocumented short-period S-diffracted wave observations associated with several known ultra-low-velocity zones (ULVZs).",
+    "unknown": "This paper reports new seismic observations sampling known ULVZs; it does not establish a new ULVZ structure. The Japanese post-cursors are difficult to separate from the main S-diff phases and require future 3D modelling to determine their interpretation and resolve trade-offs. Denoiser amplitude fidelity is a limitation, especially under training/application mismatch; the authors advise caution for single-station denoising. These are observational constraints, not a completed inversion of shape or composition.",
+    "ai_role": "The denoiser was trained on synthetic seismic waveforms mixed with real global noise, then used to separate signal from noise in real S-diff record sections. Its output helped researchers identify short-period post-cursor observations not reported in earlier literature, including four events recorded in Japan with nearly perpendicular ray geometry to previous North American observations of the Hawaiian ULVZ.",
+    "evidence_urls": [
+      "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JB034067"
+    ]
+  }
+}

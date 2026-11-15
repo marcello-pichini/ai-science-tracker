@@ -1,0 +1,28 @@
+{
+  "id": "2022-10-machine-learning-screening-finds-previously-unreported-antibacterial-compounds-active-against-burkholderia-and-eskape-pathogens",
+  "title": "Machine-learning screening finds previously unreported antibacterial compounds active against Burkholderia and ESKAPE pathogens",
+  "summary": "A directed-message-passing neural network trained on a 29,537-compound Burkholderia cenocepacia screen prioritized compounds from a natural-product library. Laboratory testing found five previously uncharacterized compounds that inhibited B. cenocepacia; 22 of 43 tested prioritized compounds inhibited at least one of five ESKAPE pathogens.",
+  "field": "medicine",
+  "ai_technology": "Directed-message-passing neural network (D-MPNN) implemented with Chemprop",
+  "organization": "University of Manitoba",
+  "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010613",
+  "source_type": "paper",
+  "publication_date": "2022-10-13",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1371/journal.pcbi.1010613",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Laboratory testing found five previously uncharacterized compounds that inhibited B. cenocepacia; 22 of 43 tested prioritized compounds inhibited at least one of five ESKAPE pathogens.",
+    "unknown": "The compounds were active in vitro; no clinical effect, safety or therapeutic readiness is established. Several confirmed compounds were known antimicrobials, while five natural-product hits were described as previously uncharacterized. An inferred RpoB mechanism for STL558147 was suggested by CRISPRi sensitivity rather than directly demonstrated binding.",
+    "ai_role": "The D-MPNN ranked FDA-approved and natural-product library molecules for predicted antibacterial activity; researchers tested high-ranked compounds in bacterial growth assays and confirmed activity. It was a screening-prioritization tool, not evidence of clinical efficacy.",
+    "evidence_urls": [
+      "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1010613"
+    ]
+  }
+}

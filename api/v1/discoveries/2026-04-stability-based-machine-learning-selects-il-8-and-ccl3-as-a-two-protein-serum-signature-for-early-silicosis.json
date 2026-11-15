@@ -1,0 +1,28 @@
+{
+  "id": "2026-04-stability-based-machine-learning-selects-il-8-and-ccl3-as-a-two-protein-serum-signature-for-early-silicosis",
+  "title": "Stability-based machine learning selects IL-8 and CCL3 as a two-protein serum signature for early silicosis",
+  "summary": "A stability-based feature-selection workflow combining LASSO, random forest and SVM recursive feature elimination identified serum IL-8 and CCL3 as a two-protein signature distinguishing Stage I silicosis from controls. The study used a discovery cohort of 57 cases and 57 matched controls, then assessed the signature in an independent, unmatched cohort of 40 cases and 40 controls. The article reports validation AUC 0.973, specificity 95.0% and sensitivity 77.5%; both proteins were lower in silicosis cases.",
+  "field": "medicine",
+  "ai_technology": "Stability-based ensemble feature selection using LASSO, random forest and SVM recursive feature elimination, followed by logistic regression",
+  "organization": "Nanjing Medical University; Jiangsu Provincial Center for Disease Control and Prevention; Southeast University; China University of Mining and Technology",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/41937675/",
+  "source_type": "paper",
+  "publication_date": "2026-04-06",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1021/acs.jproteome.5c00987",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The study used a discovery cohort of 57 cases and 57 matched controls, then assessed the signature in an independent, unmatched cohort of 40 cases and 40 controls.",
+    "unknown": "The discovery cohort was small (57 cases/57 matched controls); the validation cohort was also small and unmatched (40/40), with 77.5% sensitivity despite high specificity. This is retrospective biomarker validation and does not establish population screening performance, clinical utility, or causal involvement of IL-8 or CCL3 in silicosis.",
+    "ai_role": "Across 100 iterations, the machine-learning feature-selection framework selected a stable two-protein signature from targeted serum proteomics. A logistic-regression classifier used those selected features and was evaluated by cross-validation and an independent validation cohort. The study reports reduced IL-8 and CCL3 as the signature components.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/41937675/"
+    ]
+  }
+}

@@ -4,7 +4,8 @@ Source: Epoch AI, Data on AI models, CC BY 4.0.
 Place the downloaded CSV at work/epoch/notable_ai_models.csv, then run from
 this repository root: python3 scripts/generate_models.py
 """
-import csv, json, re, datetime
+import csv, json, re, datetime, hashlib
+from pathlib import Path
 
 CSV = 'work/epoch/notable_ai_models.csv'
 DISCOVERIES = 'data/discoveries.json'
@@ -33,6 +34,9 @@ for r in rows:
     recent_lab = date >= '2020-01-01' and LAB.search(org)
     if not (recent_lab or fam):
         continue
+    link = (r.get('Link') or '').strip().split(' ')[0]
+    if re.match(r'^arxiv\.org/abs/[^\s]+$', link, re.I):
+        link = 'https://' + link
     models.append({
         'name': name,
         'organization': org,
@@ -42,7 +46,7 @@ for r in rows:
         'compute_flop': (r.get('Training compute (FLOP)') or '').strip(),
         'access': (r.get('Model accessibility') or '').strip(),
         'frontier': (r.get('Frontier model') or '').strip().lower() == 'true',
-        'link': (r.get('Link') or '').strip().split(' ')[0],
+        'link': link,
         'family': fam,
     })
 models.sort(key=lambda m: m['date'], reverse=True)
@@ -67,7 +71,7 @@ out = {
    'url': 'https://epoch.ai/data/ai-models',
    'license': 'CC BY 4.0',
    'license_url': 'https://creativecommons.org/licenses/by/4.0/',
-   'downloaded': '2026-11-12',
+   'csv_sha256': hashlib.sha256(Path(CSV).read_bytes()).hexdigest(),
    'original_records': len(rows),
  },
  'models': models,

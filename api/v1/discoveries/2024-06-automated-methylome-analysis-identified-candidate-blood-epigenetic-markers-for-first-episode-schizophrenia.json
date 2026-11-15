@@ -1,0 +1,28 @@
+{
+  "id": "2024-06-automated-methylome-analysis-identified-candidate-blood-epigenetic-markers-for-first-episode-schizophrenia",
+  "title": "Automated methylome analysis identified candidate blood epigenetic markers for first-episode schizophrenia",
+  "summary": "An automated machine-learning workflow screened public blood-methylation datasets and selected IGF2BP1, CENPI and PSME4 as candidate schizophrenia-associated methylation markers. The researchers then measured these genes by targeted qMSP in 30 first-episode, drug-naive schizophrenia patients and 30 controls: IGF2BP1 methylation was higher and PSME4 lower in cases, while CENPI did not differ. A five-feature model combining the three genes with age and sex classified cases versus controls with AUC 0.755 (95% CI 0.636–0.862).",
+  "field": "medicine",
+  "ai_technology": "JADBio AutoML platform, comparing classifiers including support-vector machines, random forests, ridge logistic regression and decision trees with feature selection and cross-validation",
+  "organization": "Democritus University of Thrace; Aristotle University of Thessaloniki; University of Crete; Hellenic Mediterranean University; Foundation for Research and Technology – Hellas",
+  "source_url": "https://www.nature.com/articles/s41398-024-02946-4.pdf",
+  "source_type": "paper",
+  "publication_date": "2024-06-17",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41398-024-02946-4",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The researchers then measured these genes by targeted qMSP in 30 first-episode, drug-naive schizophrenia patients and 30 controls: IGF2BP1 methylation was higher and PSME4 lower in cases, while CENPI did not differ.",
+    "unknown": "The patient validation was a small case-control pilot (30 first-episode cases and 30 healthy controls); its AUC of 0.755 is modest and has a wide confidence interval. CENPI methylation did not differ in the clinical samples, so it should not be presented as independently validated. The study does not establish diagnostic performance in clinical differential-diagnosis populations, prospective utility or causality, and the authors describe the signature as potentially useful for future diagnostics rather than clinically established.",
+    "ai_role": "AutoML selected gene-methylation features from genome-wide public schizophrenia methylome datasets and built predictive signatures. The authors then measured the selected markers using qMSP in a separate 30-case/30-control first-episode drug-naive cohort and trained a second model on methylation plus demographic variables.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41398-024-02946-4.pdf"
+    ]
+  }
+}

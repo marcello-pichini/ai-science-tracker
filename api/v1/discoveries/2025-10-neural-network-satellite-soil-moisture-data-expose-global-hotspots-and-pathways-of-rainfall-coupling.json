@@ -1,0 +1,28 @@
+{
+  "id": "2025-10-neural-network-satellite-soil-moisture-data-expose-global-hotspots-and-pathways-of-rainfall-coupling",
+  "title": "Neural-network satellite soil-moisture data expose global hotspots and pathways of rainfall coupling",
+  "summary": "An information-flow analysis of daily observations found statistically significant local surface-soil-moisture effects on precipitation over about 15.7% of global land (60°S–60°N) in the boreal warm season, with eight regional hotspots. Sensible-heat mediation dominated most hotspots, while evapotranspiration mediation dominated two African hotspots; remote moisture availability and boundary-layer-height variability helped explain regional differences. Only four of 16 assessed CMIP6 models reproduced the ERA5-derived relationship between soil-moisture variability and causal coupling.",
+  "field": "climate",
+  "ai_technology": "Neural-network-inversion satellite soil-moisture product (NNSm), analyzed with Liang–Kleeman information-flow causal inference",
+  "organization": "Tsinghua University; Chinese Academy of Sciences; National University of Singapore; University of Connecticut; Peking University",
+  "source_url": "https://www.nature.com/articles/s41467-025-63999-7",
+  "source_type": "paper",
+  "publication_date": "2025-10-08",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-025-63999-7",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "An information-flow analysis of daily observations found statistically significant local surface-soil-moisture effects on precipitation over about 15.7% of global land (60°S–60°N) in the boreal warm season, with eight regional hotspots.",
+    "unknown": "The mapped effect is local surface-soil-moisture-to-precipitation information flow, statistically significant at the authors' p<0.1 threshold over about 15.7% of land; the analysis does not imply local soil moisture causes rainfall everywhere or exclude remote/upwind effects. The AI contribution is the neural-network-derived satellite soil-moisture product; the causal analysis is not itself an AI model. The spatial pattern was broadly checked with ERA5, while pathway attribution depends on ERA5-reanalysis variables and the assumptions/limitations of information-flow causal inference. Results concern boreal warm seasons and the analyzed 2003–2020 satellite period (ERA5 cross-check spans 1979–2021).",
+    "ai_role": "The study's long-term daily satellite soil-moisture series was generated with a neural-network inversion algorithm, extending the observed record used to map global coupling. Researchers applied information-flow analysis to this AI-derived product and precipitation observations, then cross-checked the main spatial pattern using independent ERA5 reanalysis. AI provided the satellite soil-moisture input for a concrete global climate result; the causal-inference method itself is an information-theoretic statistical technique, not a learned model.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-025-63999-7"
+    ]
+  }
+}

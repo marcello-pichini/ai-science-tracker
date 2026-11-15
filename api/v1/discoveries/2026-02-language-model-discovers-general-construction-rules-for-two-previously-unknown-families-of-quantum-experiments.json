@@ -1,0 +1,28 @@
+{
+  "id": "2026-02-language-model-discovers-general-construction-rules-for-two-previously-unknown-families-of-quantum-experiments",
+  "title": "Language model discovers general construction rules for two previously unknown families of quantum experiments",
+  "summary": "A sequence-to-sequence transformer generated readable Python meta-programs that construct photonic experimental blueprints for entire families of quantum states, rather than only individual target states. In the final paper, two successful generalizations were previously unknown: a photonic construction for general spin-1/2 states with no adjacent spin-ups, and one for states of the Majumdar–Ghosh model. The generated programs matched states beyond the three examples used as input, providing computational evidence of the inferred rules.",
+  "field": "physics",
+  "ai_technology": "Transformer-based sequence-to-sequence language model trained on synthetic quantum-state and experimental-blueprint pairs",
+  "organization": "University of Tübingen; Max Planck Institute for the Science of Light; University of Toronto; University of California, Berkeley; Stanford University; xAI",
+  "source_url": "https://www.nature.com/articles/s42256-025-01153-0",
+  "source_type": "paper",
+  "publication_date": "2026-02-19",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s42256-025-01153-0",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A sequence-to-sequence transformer generated readable Python meta-programs that construct photonic experimental blueprints for entire families of quantum states, rather than only individual target states.",
+    "unknown": "This is a computational design result, not a laboratory realization of the proposed photonic experiments. Generalization was tested by checking generated states at finite larger sizes; the authors state that arbitrary code equivalence for all system sizes is not straightforward to prove. The two constructions are counted as one paper-level discovery.",
+    "ai_role": "Generated human-readable Python meta-programs from short sequences of target quantum states; the model’s programs proposed reusable experimental construction rules for whole state families, which the authors checked by simulating output states at larger system sizes.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s42256-025-01153-0"
+    ]
+  }
+}

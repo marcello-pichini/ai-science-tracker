@@ -1,0 +1,20 @@
+{
+  "id": "ghsl-2026-102",
+  "title": "GHSL Taskflow Agent finds decrypted attachment exfiltration in Signal Android",
+  "product": "Signal for Android website-distributed APK",
+  "ai_system": "GitHub Security Lab Taskflow Agent",
+  "organization": "GitHub Security Lab",
+  "summary": "An unprotected exported package-installer receiver accepts attacker-controlled intents and can launch a malicious activity with URI grants to Signal’s decrypted attachment provider, exposing attachments on affected website builds.",
+  "ai_role": "The primary advisory explicitly says the Taskflow Agent discovered the issue and a GHSL researcher verified it.",
+  "disclosure_date": "2026-04-03",
+  "ai_attribution_date": "2026-04-03",
+  "classification": "disclosure",
+  "classification_note": "The advisory describes exposure conditions and mitigations; it does not claim exploitation in the wild.",
+  "cves": [],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2026-102_Android_SignalApp/",
+  "ai_source_url": "https://securitylab.github.com/ai-agents/",
+  "remediation": "fix documented",
+  "remediation_note": "Signal updated its website APK to v8.4.2 on 2026-03-31. The issue affects the website flavor; Play Store and GitHub builds do not register the vulnerable receiver.",
+  "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-102_Android_SignalApp/",
+  "checked_date": "2026-11-14"
+}

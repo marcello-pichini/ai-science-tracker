@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-wfx7-g85r-q6vw",
+  "title": "libgit2 bundled PCRE heap buffer overflow",
+  "product": "libgit2",
+  "ai_system": "Claude Mythos Preview",
+  "organization": "Anthropic",
+  "summary": "The bundled PCRE regular-expression engine can write one byte past a heap buffer for a crafted revspec.",
+  "ai_role": "Anthropic CVD item explicitly attributes discovery to Claude Mythos Preview; the libgit2 advisory identifies the matching issue.",
+  "disclosure_date": "2026-07-18",
+  "ai_attribution_date": "2026-08-17",
+  "classification": "disclosure",
+  "classification_note": "Public disclosure is documented. Sources do not establish exploitation in the wild or zero-day status. CVD finding is static-analysis-only; no CVE confirmed.",
+  "cves": [],
+  "source_url": "https://github.com/libgit2/libgit2/security/advisories/GHSA-wfx7-g85r-q6vw",
+  "ai_source_url": "https://red.anthropic.com/2026/cvd/findings/ANT-2026-RVPC18B1",
+  "remediation": "not established",
+  "remediation_note": "The advisory lists no patched libgit2 version. It describes a structural fix in PCRE2 that was not backported to bundled PCRE 8.x.",
+  "advisory_url": "https://github.com/libgit2/libgit2/security/advisories/GHSA-wfx7-g85r-q6vw",
+  "checked_date": "2026-11-15"
+}

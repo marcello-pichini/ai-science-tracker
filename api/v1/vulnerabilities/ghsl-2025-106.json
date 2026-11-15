@@ -1,0 +1,20 @@
+{
+  "id": "ghsl-2025-106",
+  "title": "GHSL AI agent helps find privileged workflow injection in ESPHome docs",
+  "product": "ESPHome documentation GitHub Actions",
+  "ai_system": "GitHub Security Lab AI agent",
+  "organization": "GitHub Security Lab",
+  "summary": "The component-image.yml issue_comment workflow interpolated an untrusted comment body in a privileged script context, allowing code execution and cache poisoning risk.",
+  "ai_role": "GHSL explicitly credits its AI agent and CodeQL jointly; the advisory does not isolate their contributions. Reported 2025-08-08 and fixed 2025-11-10. No CVE is listed.",
+  "disclosure_date": "2025-12-11",
+  "ai_attribution_date": "2025-12-11",
+  "classification": "disclosure",
+  "classification_note": "The advisory describes potential impact and remediation; it does not claim exploitation in the wild.",
+  "cves": [],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2025-106_esphome_esphome-docs/",
+  "ai_source_url": "https://securitylab.github.com/advisories/GHSL-2025-106_esphome_esphome-docs/",
+  "remediation": "fix documented",
+  "remediation_note": "GHSL says the issue was fixed on 2025-11-10. It describes cache poisoning as a potential impact; no CVE is listed.",
+  "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-106_esphome_esphome-docs/",
+  "checked_date": "2026-11-14"
+}

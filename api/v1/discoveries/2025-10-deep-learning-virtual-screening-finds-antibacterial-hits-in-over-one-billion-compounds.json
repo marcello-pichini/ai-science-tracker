@@ -1,0 +1,28 @@
+{
+  "id": "2025-10-deep-learning-virtual-screening-finds-antibacterial-hits-in-over-one-billion-compounds",
+  "title": "Deep-learning virtual screening finds antibacterial hits in over one billion compounds",
+  "summary": "Genentech and collaborators trained the deep-learning model GNEprop on high-throughput screening data and screened more than 1.4 billion synthetically accessible molecules. In follow-up experiments, 82 selected compounds showed antibacterial activity against the sensitized E. coli ΔtolC strain; the paper reports a 90-fold higher hit rate than the training screen and describes chemically diverse hits, some with activity beyond that strain and validated biological targets.",
+  "field": "medicine",
+  "ai_technology": "GNEprop deep-learning antibacterial activity predictor",
+  "organization": "Genentech Research and Early Development; NVIDIA; Mila–Université de Montréal collaborators",
+  "source_url": "https://www.nature.com/articles/s41587-025-02814-6",
+  "source_type": "paper",
+  "publication_date": "2025-10-24",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41587-025-02814-6",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In follow-up experiments, 82 selected compounds showed antibacterial activity against the sensitized E. coli ΔtolC strain; the paper reports a 90-fold higher hit rate than the training screen and describes chemically diverse hits, some with activity beyond that strain and validated biological targets.",
+    "unknown": "The 82 confirmed hits were tested for single-dose activity against the sensitized E. coli ΔtolC screening strain; this is not evidence that all 82 work against wild-type bacteria or in infections. The 90-fold improvement refers to hit rate relative to the HTS training experiment. Some additional compounds were selected for dose-response testing; do not imply all virtual hits were validated. A publisher correction fixed a coauthor’s misspelled first name and did not change results.",
+    "ai_role": "GNEprop was trained on approximately two million small molecules screened against E. coli ΔtolC and used to rank a much larger synthetically accessible library for experimental prioritization. The follow-up assays confirmed antibacterial activity for 82 compounds; biological characterization also investigated specific targets.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41587-025-02814-6"
+    ]
+  }
+}

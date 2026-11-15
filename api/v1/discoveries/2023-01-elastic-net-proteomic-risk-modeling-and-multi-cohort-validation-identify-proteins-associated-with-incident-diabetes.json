@@ -1,0 +1,28 @@
+{
+  "id": "2023-01-elastic-net-proteomic-risk-modeling-and-multi-cohort-validation-identify-proteins-associated-with-incident-diabetes",
+  "title": "Elastic-net proteomic risk modeling and multi-cohort validation identify proteins associated with incident diabetes",
+  "summary": "An untargeted analysis of 4,955 plasma proteins in the ARIC cohort identified 140 associations with incident diabetes; 64 were significant in an internal sample and 47 (including 22 reported as novel) were associated in the external Singapore Multi-Ethnic Cohort. Elastic-net Cox modeling selected a 27-protein panel for 20-year risk prediction. In internal validation, adding those proteins to conventional risk factors including fasting glucose and HbA1c increased the C statistic from 0.720 to 0.731. Genetic-instrument analyses supported possible causal roles for SHBG, ATP1B2 and GSTA1, although ATP1B2’s genetic and observational directions differed.",
+  "field": "medicine",
+  "ai_technology": "Elastic-net Cox regression for protein feature selection and incident-diabetes risk prediction",
+  "organization": "Johns Hopkins Bloomberg School of Public Health; Atherosclerosis Risk in Communities study centers; National University of Singapore; New York University Grossman School of Medicine; collaborating institutions",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10090896/",
+  "source_type": "paper",
+  "publication_date": "2023-01-27",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.2337/dc22-1830",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "An untargeted analysis of 4,955 plasma proteins in the ARIC cohort identified 140 associations with incident diabetes; 64 were significant in an internal sample and 47 (including 22 reported as novel) were associated in the external Singapore Multi-Ethnic Cohort.",
+    "unknown": "The 47-protein associations were externally tested in Singapore MEC; the elastic-net predictive model itself was internally validated in ARIC, not independently externally validated. Its incremental C statistic over covariates including fasting glucose and HbA1c was modest (0.011; P=0.04), and the protein model overestimated observed diabetes risk across internal-validation deciles. The causal claims are genetic-instrument inferences, not experimental proof; ATP1B2 had opposite directions in genetic-instrument versus observational analyses. Cohort associations do not establish clinical utility.",
+    "ai_role": "Elastic net selected a 27-protein combination from candidate proteins to improve 20-year incident-diabetes risk prediction beyond clinical and cardiometabolic covariates. The model was trained in the ARIC discovery subset and internally evaluated in a held-out ARIC subset. Separate Cox association and genetic-instrument analyses reported the externally validated protein associations; the record does not attribute those analyses to machine learning.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10090896/"
+    ]
+  }
+}

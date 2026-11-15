@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-whxq-pxj5-qq7v",
+  "title": "PrestaShop back-office listing filter names allow SQL injection beyond employee permissions",
+  "product": "PrestaShop back-office listings",
+  "ai_system": "Claude (model/version not identified)",
+  "organization": "Anthropic and Doyensec; PrestaShop maintainers",
+  "summary": "Back-office listing filter names were insufficiently validated before being incorporated into database queries. A logged-in employee could submit a crafted filter name to read data outside their profile’s permissions, including employee password hashes and customer and order tables. The advisory states the reporter demonstrated the issue with the most restricted built-in profile.",
+  "ai_role": "The primary PrestaShop advisory explicitly says Claude (Anthropic) discovered the vulnerability as part of Anthropic’s coordinated disclosure program; Doyensec verified it and reported it to the project.",
+  "disclosure_date": "2026-08-18",
+  "ai_attribution_date": "2026-08-18",
+  "classification": "disclosure",
+  "classification_note": "The public advisory has GHSA-whxq-pxj5-qq7v but no CVE assigned. It rates the issue Moderate (CVSS 6.5); exploitation requires a logged-in employee. Older 1.7.x and earlier versions are stated to be end of life and unpatched.",
+  "cves": [],
+  "source_url": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-whxq-pxj5-qq7v",
+  "ai_source_url": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-whxq-pxj5-qq7v",
+  "remediation": "fix documented",
+  "remediation_note": "Upgrade supported installations to PrestaShop 9.1.5 or 8.2.8. No workaround is given. The same flawed legacy back-office controller is also present in 1.7.x and earlier, which the project says are end of life and will not be patched.",
+  "advisory_url": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-whxq-pxj5-qq7v",
+  "checked_date": "2026-11-14"
+}

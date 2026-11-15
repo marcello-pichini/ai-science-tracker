@@ -1,0 +1,28 @@
+{
+  "id": "2025-08-symbolic-regression-turbulence-analysis-separates-transferable-flow-physics-from-dataset-specific-closure-terms",
+  "title": "Symbolic-regression turbulence analysis separates transferable flow physics from dataset-specific closure terms",
+  "summary": "Using high-fidelity data for plane channels, zero-pressure-gradient turbulent boundary layers and adverse-pressure-gradient boundary layers, the authors used symbolic regression to decompose learned turbulence-closure corrections into inner-layer, outer-layer and pressure-gradient components. They report that retaining the generalisable inner-layer term and adding flow-specific corrections improved predictions on held-out boundary-layer and aerofoil configurations, including unseen geometries and Reynolds numbers, outperforming baseline RANS closures in a priori and a posteriori tests. The authors identify conflation of transferable and training-specific flow behavior as a source of poor model generalization in the tested setting.",
+  "field": "physics",
+  "ai_technology": "Symbolic regression applied to high-fidelity turbulence simulation data",
+  "organization": "Northwestern Polytechnical University; Pennsylvania State University",
+  "source_url": "https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/dataenabled-discovery-of-specific-and-generalisable-turbulence-closures/4077B2AAC80E5386F5A941ED13FBB451",
+  "source_type": "paper",
+  "publication_date": "2025-08-10",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1017/jfm.2025.10332",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Using high-fidelity data for plane channels, zero-pressure-gradient turbulent boundary layers and adverse-pressure-gradient boundary layers, the authors used symbolic regression to decompose learned turbulence-closure corrections into inner-layer, outer-layer and pressure-gradient components.",
+    "unknown": "The finding concerns model-derived closure components and validation on selected numerical flow configurations, not a new direct physical measurement. The claimed root cause of poor generalization is the authors' conclusion about data-driven turbulence closures in the studied context, not a universal causal theorem about all turbulence models. Out-of-sample tests and comparative RANS simulations support the stated transfer result.",
+    "ai_role": "Symbolic regression generated interpretable closure expressions from progressively expanded flow datasets. Decomposition of the learned terms let the researchers distinguish inner-layer components that transferred across flow configurations from outer-layer and pressure-gradient corrections that were specific to flow classes, enabling improved out-of-training-flow predictions.",
+    "evidence_urls": [
+      "https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/abs/dataenabled-discovery-of-specific-and-generalisable-turbulence-closures/4077B2AAC80E5386F5A941ED13FBB451"
+    ]
+  }
+}

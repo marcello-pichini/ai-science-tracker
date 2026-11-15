@@ -1,0 +1,28 @@
+{
+  "id": "2025-12-astroreg-maps-functional-enhancergene-links-in-human-astrocytes",
+  "title": "AstroREG maps functional enhancer–gene links in human astrocytes",
+  "summary": "A CRISPRi and single-cell RNA-sequencing screen tested 979 candidate enhancers in cultured human primary astrocytes and identified 158 functional enhancer–gene pairs, including enhancers regulating genes implicated in Alzheimer disease. The study trained the EGrf random-forest model on the measured screen and used it to predict additional enhancer–gene regulatory interactions genome-wide; selected model-predicted interactions were then functionally assessed by CRISPRi and qRT–PCR.",
+  "field": "biology",
+  "ai_technology": "EGrf random-forest enhancer–gene interaction model, trained on the AstroREG CRISPRi/single-cell RNA-sequencing screen",
+  "organization": "University of New South Wales; University of Western Australia; Macquarie University; Monash University; University of Michigan",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/41413662/",
+  "source_type": "paper",
+  "publication_date": "2025-12-18",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41593-025-02154-3",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A CRISPRi and single-cell RNA-sequencing screen tested 979 candidate enhancers in cultured human primary astrocytes and identified 158 functional enhancer–gene pairs, including enhancers regulating genes implicated in Alzheimer disease.",
+    "unknown": "The primary CRISPRi screen and genome-wide model outputs are distinct evidence classes. The 158 reported enhancer–gene pairs came from the screen; genome-wide EGrf predictions are computational until tested. Figure descriptions report qRT–PCR follow-up for selected model predictions with independent duplicate transductions (n=4 per enhancer). The experiments used cultured astrocytes and do not establish enhancer causality in human Alzheimer disease or clinical relevance.",
+    "ai_role": "The authors used experimentally measured enhancer–gene pairs to train EGrf, then applied the model to predict regulatory interactions genome-wide. Selected predictions were followed up by individual enhancer CRISPRi and qRT–PCR. Machine learning contributed the genome-wide extension of a functional astrocyte enhancer map; the initial 979-enhancer screen itself was experimentally measured.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/41413662/"
+    ]
+  }
+}

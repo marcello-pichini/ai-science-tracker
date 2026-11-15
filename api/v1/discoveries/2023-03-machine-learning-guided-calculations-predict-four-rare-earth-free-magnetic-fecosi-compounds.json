@@ -1,0 +1,28 @@
+{
+  "id": "2023-03-machine-learning-guided-calculations-predict-four-rare-earth-free-magnetic-fecosi-compounds",
+  "title": "Machine-learning-guided calculations predict four rare-earth-free magnetic Fe–Co–Si compounds",
+  "summary": "A crystal-graph neural network screened 357,480 hypothetical Fe–Co–Si structures; adaptive genetic search and density-functional calculations then identified four predicted ternary structures with calculated saturation polarization ≥1.0 T, easy-axis anisotropy ≥1.0 MJ/m³, and Curie temperature >840 K. Their calculated energies lie within 70 meV/atom of the ternary convex hull, supporting but not proving experimental accessibility. The paper proposes the structures for synthesis; it does not experimentally demonstrate them.",
+  "field": "materials",
+  "ai_technology": "Crystal graph convolutional neural network (CGCNN) with an adaptive genetic algorithm",
+  "organization": "University of Texas at Austin and Ames National Laboratory",
+  "source_url": "https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.7.034410",
+  "source_type": "paper",
+  "publication_date": "2023-03-29",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1103/PhysRevMaterials.7.034410",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A crystal-graph neural network screened 357,480 hypothetical Fe–Co–Si structures; adaptive genetic search and density-functional calculations then identified four predicted ternary structures with calculated saturation polarization ≥1.0 T, easy-axis anisotropy ≥1.0 MJ/m³, and Curie temperature >840 K.",
+    "unknown": "This is a theoretical, ML-guided first-principles prediction; the paper proposes the structures for synthesis and does not report experimental synthesis. The abstract describes four compounds; the results section mentions five structures meeting initial thresholds, of which four are dynamically stable. Report the four final candidates and their calculated properties only. The work establishes neither actual permanent-magnet performance nor synthesizability.",
+    "ai_role": "CGCNN models rapidly screened hypothetical structures and predicted formation energy and magnetic polarization; first-principles results were fed back to train improved models across successive generations, while an adaptive genetic algorithm searched lower-energy structures. ML materially narrowed the space for the final density-functional magnetic-property calculations.",
+    "evidence_urls": [
+      "https://journals.aps.org/prmaterials/abstract/10.1103/PhysRevMaterials.7.034410"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "ghsl-2025-127",
+  "title": "Taskflow Agent finds unauthenticated domain creation in Lobsters",
+  "product": "Lobsters domain moderation",
+  "ai_system": "GitHub Security Lab Taskflow Agent",
+  "organization": "GitHub Security Lab",
+  "summary": "The POST /domains create action lacked the moderator authentication check applied to edit and update, allowing unauthenticated users to create domain records and pollute or misrepresent moderation data.",
+  "ai_role": "GHSL credits its Taskflow Agent and manual verification by Peter Stöckli and Man Yue Mo. Reported 2025-12-09; fixed on main branch 2025-12-22. The maintainer reported a collision with another report; priority/originality is therefore not exclusive. No CVE is listed.",
+  "disclosure_date": "2026-09-16",
+  "ai_attribution_date": "2026-09-16",
+  "classification": "disclosure",
+  "classification_note": "The advisory describes data pollution and possible moderation disruption; it does not claim exploitation in the wild.",
+  "cves": [],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2025-126_GHSL-2025-127_Lobsters/",
+  "ai_source_url": "https://securitylab.github.com/advisories/GHSL-2025-126_GHSL-2025-127_Lobsters/",
+  "remediation": "fix documented",
+  "remediation_note": "GHSL reports fixes on main branch in commits 9a29bba and 41d6d02 on 2025-12-22. No tagged release or CVE is given.",
+  "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-126_GHSL-2025-127_Lobsters/",
+  "checked_date": "2026-11-14"
+}

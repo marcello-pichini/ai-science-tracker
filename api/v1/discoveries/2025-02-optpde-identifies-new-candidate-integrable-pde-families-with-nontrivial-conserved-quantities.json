@@ -1,0 +1,28 @@
+{
+  "id": "2025-02-optpde-identifies-new-candidate-integrable-pde-families-with-nontrivial-conserved-quantities",
+  "title": "OptPDE identifies new candidate integrable PDE families with nontrivial conserved quantities",
+  "summary": "Automatic differentiation optimized partial-differential-equation coefficients to increase the number of conserved quantities. The published study reports four PDE families with at least one nontrivial conserved quantity and analytically studies one new candidate, u_t = u_x^3; the work establishes candidate systems and conserved quantities, not that every generated family is fully integrable.",
+  "field": "physics",
+  "ai_technology": "OptPDE coefficient optimization with the CQFinder conserved-quantity search",
+  "organization": "Massachusetts Institute of Technology",
+  "source_url": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.111.025303",
+  "source_type": "paper",
+  "publication_date": "2025-02-10",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1103/PhysRevE.111.025303",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Automatic differentiation optimized partial-differential-equation coefficients to increase the number of conserved quantities.",
+    "unknown": "The peer-reviewed source reports four PDE families with at least one nontrivial conserved quantity and analytically examines one new candidate, u_t = u_x^3. The authors explicitly state that maximizing conserved quantities does not guarantee integrability; the result is a concrete candidate system and its studied properties, not proof that every output family is integrable.",
+    "ai_role": "The authors explicitly describe OptPDE as a machine-learning approach. CQFinder computes the conserved-quantity objective from a symbolic PDE basis; OptPDE uses a sigmoid-smoothed objective and backpropagation to optimize 34 trainable PDE coefficients. They ran 5,000 random initializations and used dimensionality reduction to group the outputs into four families. This is a learned, trainable symbolic search, not simply use of an automatic-differentiation library.",
+    "evidence_urls": [
+      "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.111.025303"
+    ]
+  }
+}

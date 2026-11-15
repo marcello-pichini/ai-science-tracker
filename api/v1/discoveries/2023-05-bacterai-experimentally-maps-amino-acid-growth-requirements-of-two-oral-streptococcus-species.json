@@ -1,0 +1,28 @@
+{
+  "id": "2023-05-bacterai-experimentally-maps-amino-acid-growth-requirements-of-two-oral-streptococcus-species",
+  "title": "BacterAI experimentally maps amino-acid growth requirements of two oral Streptococcus species",
+  "summary": "BacterAI autonomously designed and ran growth experiments with robotic liquid handling to learn amino-acid requirements for the oral commensals Streptococcus gordonii and S. sanguinis. It learned separate growth rules for each organism and showed that the closely related species have different amino-acid auxotrophies. For S. gordonii, its neural-network growth predictions exceeded 90% accuracy after nine days and 3,024 experiments; the article also reports transfer-learning tests in larger media.",
+  "field": "biology",
+  "ai_technology": "BacterAI, a reinforcement-learning agent coupled to iterative neural-network growth models and automated laboratory robots",
+  "organization": "University of Illinois Urbana-Champaign; University of Michigan",
+  "source_url": "https://www.nature.com/articles/s41564-023-01376-0",
+  "source_type": "paper",
+  "publication_date": "2023-05-04",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41564-023-01376-0",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "BacterAI autonomously designed and ran growth experiments with robotic liquid handling to learn amino-acid requirements for the oral commensals Streptococcus gordonii and S. sanguinis.",
+    "unknown": "The measured outcomes are in defined growth media under the tested laboratory conditions, not direct evidence about nutrient exchange or health effects in a human oral microbiome. The article establishes that the two species have different amino-acid requirements; transfer learning and high growth-prediction accuracy describe the method’s performance, not separate biological discoveries. Replicate growth assays showed high agreement, but inferred rules may not cover every environmental condition.",
+    "ai_role": "The agent selected successive combinations of amino acids to test based on prior growth results, executed those tests through an automated pipeline, and distilled results into interpretable growth rules. It enabled an unbiased experimental mapping of nutrient requirements from a blank slate for both species.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41564-023-01376-0"
+    ]
+  }
+}

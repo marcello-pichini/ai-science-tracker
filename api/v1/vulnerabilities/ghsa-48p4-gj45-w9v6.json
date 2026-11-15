@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-48p4-gj45-w9v6",
+  "title": "libheif can spend minutes of CPU repeatedly decoding large derived HEIF images",
+  "product": "libheif",
+  "ai_system": "Anthropic OSS Scanner (model unspecified)",
+  "organization": "Anthropic and project maintainers",
+  "summary": "A crafted HEIF image can make a single decode repeatedly construct oversized canvases while retaining only small crops, consuming tens of seconds to minutes of CPU in applications that decode untrusted images. The advisory reports measured reproduction, identifies no known memory-safety impact, and limits the affected range to libheif before 1.23.7.",
+  "ai_role": "The libheif maintainer advisory explicitly credits Anthropic OSS Scanner under ANT-2026-XHT9G07S. Anthropic’s primary OSS Scanner page says the service scans with its strongest models, and its Oct 8 launch post identifies Claude Mythos among them. The individual advisory does not identify the model used for this report.",
+  "disclosure_date": "2026-10-26",
+  "ai_attribution_date": "2026-10-26",
+  "classification": "disclosure",
+  "classification_note": "The primary maintainer published GHSA-48p4-gj45-w9v6 on 2026-10-26 and directly credits Anthropic OSS Scanner (ANT-2026-XHT9G07S); no CVE was assigned in the advisory.",
+  "cves": [],
+  "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-48p4-gj45-w9v6",
+  "ai_source_url": "https://red.anthropic.com/oss-scanner/",
+  "remediation": "fix documented",
+  "remediation_note": "A master fix adds a per-decode pixel budget and avoids decoding tiles outside the image; the advisory says release 1.23.7 is expected as the first patched release. The documented impact is CPU exhaustion when untrusted HEIF files are decoded; no memory-safety issue is known.",
+  "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-48p4-gj45-w9v6",
+  "checked_date": "2026-11-14"
+}

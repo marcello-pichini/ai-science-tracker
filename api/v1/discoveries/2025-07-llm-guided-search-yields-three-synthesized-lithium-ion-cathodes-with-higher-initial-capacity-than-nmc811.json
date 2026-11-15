@@ -1,0 +1,28 @@
+{
+  "id": "2025-07-llm-guided-search-yields-three-synthesized-lithium-ion-cathodes-with-higher-initial-capacity-than-nmc811",
+  "title": "LLM-guided search yields three synthesized lithium-ion cathodes with higher initial capacity than NMC811",
+  "summary": "An expert-guided LLM workflow proposed three NMC811-derived cathode compositions—NMC-SiMg, NMC-SiCa and NMC-MgB—that the authors report as absent from the queried materials databases. After DFT-based computational screening, the team synthesized and characterized all three. At the third cycle, measured reversible capacities were 174, 169 and 160 mAh/g, compared with 135 mAh/g for NMC811 under the reported conditions (improvements of 28.8%, 25.2% and 18.5%).",
+  "field": "materials",
+  "ai_technology": "ChatBattery expert-guided LLM agent framework (GPT-3.5 for composition generation; GPT-o4 for qualitative voltage ranking), with MACE-MP machine-learning potential for computational energy evaluation",
+  "organization": "Université de Montréal; Mila – Québec AI Institute; University of Oxford; University College London; University of Ottawa; National Research Council Canada",
+  "source_url": "https://arxiv.org/abs/2507.16110",
+  "source_type": "paper",
+  "publication_date": "2025-07-21",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.48550/arXiv.2507.16110",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "An expert-guided LLM workflow proposed three NMC811-derived cathode compositions—NMC-SiMg, NMC-SiCa and NMC-MgB—that the authors report as absent from the queried materials databases.",
+    "unknown": "This is an arXiv preprint (v1, posted 2025-07-21); no peer-reviewed journal publication was identified in the checked source. The formulas are modifications within the established layered NMC cathode family, not fundamentally new chemistry classes. The capacity comparison is reported at the third cycle; long-term cycle life and practical cell performance are not established here. The paper notes minor unidentified impurity peaks and says the LLM's qualitative voltage ranking was not exhaustive. Human experts designed the prompts and performed synthesis/characterization, so this was an expert-guided AI discovery workflow, not autonomous discovery.",
+    "ai_role": "ChatBattery generated and iteratively refined cathode hypotheses using domain-expert prompts, materials-database checks, rule-based capacity/charge screening and an LLM voltage-ranking step. The top candidates were selected for computational evaluation and wet-lab synthesis; MACE-MP screened sampled disordered supercells when direct DFT was too costly. Human experts designed prompts and conducted the experimental verification. This workflow led to the three experimentally synthesized compositions and their measured initial-cycle capacity improvements.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2507.16110"
+    ]
+  }
+}

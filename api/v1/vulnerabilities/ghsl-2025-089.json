@@ -1,0 +1,20 @@
+{
+  "id": "ghsl-2025-089",
+  "title": "GitHub Security Lab AI agent finds code injection in YDB workflow",
+  "product": "YDB",
+  "ai_system": "GitHub Security Lab AI agent and CodeQL",
+  "organization": "GitHub Security Lab",
+  "summary": "YDB’s validate-pr-description GitHub Actions workflow interpolates pull request-controlled text into a shell command in a privileged pull_request_target job, creating code injection risk.",
+  "ai_role": "The GHSL advisory credits both CodeQL and an AI agent developed by GitHub Security Lab. Reported 2025-08-04; maintainers confirmed a fix on 2025-08-17. This attribution does not establish which contribution found the flaw first.",
+  "disclosure_date": "2025-08-21",
+  "ai_attribution_date": "2025-08-21",
+  "classification": "disclosure",
+  "classification_note": "The advisory documents the finding and its disclosure/remediation state. It does not claim exploitation in the wild.",
+  "cves": [],
+  "source_url": "https://securitylab.github.com/advisories/GHSL-2025-089_ydb-platform_ydb/",
+  "ai_source_url": "https://securitylab.github.com/advisories/GHSL-2025-089_ydb-platform_ydb/",
+  "remediation": "fix documented",
+  "remediation_note": "Maintainer reported the fix in PR 22458 on 2025-08-17. No CVE was established in the advisory.",
+  "advisory_url": "https://github.com/ydb-platform/ydb/pull/22458",
+  "checked_date": "2026-11-14"
+}

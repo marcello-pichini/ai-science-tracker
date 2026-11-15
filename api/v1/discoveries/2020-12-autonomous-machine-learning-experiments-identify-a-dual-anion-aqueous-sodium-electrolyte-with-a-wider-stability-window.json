@@ -1,0 +1,28 @@
+{
+  "id": "2020-12-autonomous-machine-learning-experiments-identify-a-dual-anion-aqueous-sodium-electrolyte-with-a-wider-stability-window",
+  "title": "Autonomous machine-learning experiments identify a dual-anion aqueous sodium electrolyte with a wider stability window",
+  "summary": "A robotic electrochemistry stand coupled to Bayesian optimization tested 140 aqueous electrolyte formulas over 40 hours and selected a non-intuitive sodium mixture of NaClO4 and NaNO3. On platinum, the blend had a wider electrochemical stability window than the NaClO4 baseline despite lower total salt concentration; follow-up tests reported a 24 mV increase in the OER potential at the stated leakage-current criterion and 58% lower current density at 2 V. The result is a measured electrolyte formulation under the paper’s electrochemical protocols, not evidence of a commercial battery or field-ready cell.",
+  "field": "materials",
+  "ai_technology": "Dragonfly Bayesian optimization software coupled to the Otto robotic electrochemistry test stand",
+  "organization": "Carnegie Mellon University",
+  "source_url": "https://doi.org/10.1016/j.xcrp.2020.100264",
+  "source_type": "paper",
+  "publication_date": "2020-12-23",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A robotic electrochemistry stand coupled to Bayesian optimization tested 140 aqueous electrolyte formulas over 40 hours and selected a non-intuitive sodium mixture of NaClO4 and NaNO3.",
+    "unknown": "The study measured electrochemical behavior primarily on platinum electrodes and reports a wider stability window for the selected aqueous blend under its stated protocol. This does not establish long-term performance, commercial readiness, or general improvement across battery chemistries.",
+    "ai_role": "Dragonfly selected electrolyte formulations sequentially from real-time measurements and guided autonomous experiment requests to Otto; the paper reports the mixed-anion sodium formulation as the optimization result.",
+    "evidence_urls": [
+      "https://doi.org/10.1016/j.xcrp.2020.100264"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2024-10-ai-reconstruction-extends-the-1911-french-heatwave-signal-into-september",
+  "title": "AI reconstruction extends the 1911 French heatwave signal into September",
+  "summary": "A partial-convolution U-Net trained on CMIP6 climate simulations and transferred to European station-based extreme indices reconstructed the poorly observed 1911 heatwave. The model estimates that in parts of southern France, more than 40% of September days exceeded the 90th percentile of maximum temperature, extending the heatwave signal into fall. The reconstructed pattern is similar to 20th Century Reanalysis Version 3 and aligns spatially with higher French mortality in 1911; the HadEX3 gridded record does not show the same pronounced heat.",
+  "field": "climate",
+  "ai_technology": "Climate Reconstruction AI (CRAI), a U-Net with partial convolutions trained on CMIP6 historical simulations and transferred to the HadEX-CAM European extreme-index dataset",
+  "organization": "German Climate Computing Center (DKRZ); Met Office; University of New South Wales; Freie Universität Berlin",
+  "source_url": "https://www.nature.com/articles/s41467-024-53464-2",
+  "source_type": "paper",
+  "publication_date": "2024-10-24",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-024-53464-2",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A partial-convolution U-Net trained on CMIP6 climate simulations and transferred to European station-based extreme indices reconstructed the poorly observed 1911 heatwave.",
+    "unknown": "The September 1911 values are AI reconstructions rather than newly recovered thermometer readings; the paper states the source observations are sparse or missing. CRAI is trained on CMIP6 simulations and applied to European station-based extreme-index fields, so model-prior dependence remains. The article reports a similar spatial pattern in 20CRv3 and correlation with 1911 mortality, but these support the reconstructed pattern rather than directly validate each missing grid cell. The reported >40% refers to predicted percentage of days above the local 90th percentile for maximum temperature.",
+    "ai_role": "The deep-learning reconstruction inferred missing monthly temperature-extreme indices from spatial context and learned climate-model patterns. This enabled a detailed estimate for the poorly observed September 1911 period; the model output exposes hot extremes in southern France that are not clearly represented in the standard HadEX3 map and supports comparison with independent 20th Century Reanalysis and historical mortality patterns.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-024-53464-2"
+    ]
+  }
+}

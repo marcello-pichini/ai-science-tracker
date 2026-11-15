@@ -1,0 +1,28 @@
+{
+  "id": "2025-10-machine-learning-metabolomics-distinguishes-sars-cov-2-influenza-a-and-rsv-from-respiratory-swabs",
+  "title": "Machine-learning metabolomics distinguishes SARS-CoV-2, influenza A and RSV from respiratory swabs",
+  "summary": "Untargeted metabolomics and machine learning identified upper-respiratory-swab signatures for SARS-CoV-2 positivity, followed by targeted LC-MS/MS profiling. Across 1,226 samples (521 SARS-CoV-2-positive, 97 influenza A, 96 RSV, 211 other respiratory viruses and 301 virus-negative), the best SARS-CoV-2 LightGBM model had AUC 0.99, sensitivity 0.96 and specificity 0.95. Separate models reported AUC 0.97 for influenza A and 0.99 for RSV. The top-ranked SARS-CoV-2 features included 3-oxo-heneicosanoic acid and 2-(4-hydroxyphenyl) ethanol.",
+  "field": "medicine",
+  "ai_technology": "Light Gradient Boosting Machine and other machine-learning classifiers applied to mass-spectrometry metabolomics",
+  "organization": "British Columbia Centre for Disease Control Public Health Laboratory; University of British Columbia; Stanford University School of Medicine; Stanford Health Care; Chan Zuckerberg Biohub",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/41065362/",
+  "source_type": "paper",
+  "publication_date": "2025-10-09",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1128/jcm.02042-24",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Separate models reported AUC 0.97 for influenza A and 0.99 for RSV.",
+    "unknown": "This is an assay-validation study using stored respiratory specimens, not a prospective clinical-impact trial. Results establish classification in the studied cohorts and do not show improved patient outcomes or routine deployment. The source notes unresolved oxo-position/isomer assignment for several features. The metabolite signals are candidate host-response markers, not proof of virus-specific causal biology.",
+    "ai_role": "Machine-learning feature ranking identified metabolite signatures in untargeted profiles; the team adapted candidate signatures to targeted LC-MS/MS, and evaluated classification in respiratory-virus sample cohorts. The models supplied the sample-level classification and feature ranking, while mass spectrometry measured the metabolites.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/41065362/"
+    ]
+  }
+}

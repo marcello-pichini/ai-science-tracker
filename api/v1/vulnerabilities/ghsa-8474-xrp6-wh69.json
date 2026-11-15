@@ -1,0 +1,22 @@
+{
+  "id": "ghsa-8474-xrp6-wh69",
+  "title": "Rails safe_constantize can compile attacker-controlled regular expressions and crash the server",
+  "product": "Ruby on Rails Active Support / Action Cable",
+  "ai_system": "Anthropic OSS Scanner (model unspecified)",
+  "organization": "Anthropic and Rails maintainers",
+  "summary": "When constant lookup raises LoadError, safe_constantize compiles a regular expression from the requested constant name without escaping it. An application that passes untrusted input can allow crafted patterns to crash the server process. The advisory specifically identifies the default Action Cable channel subscription as an unauthenticated path; applications without that endpoint or with authentication checks have different exposure.",
+  "ai_role": "The Rails advisory says the issue was also found by the Anthropic OSS Scanner, identified as ANT-2026-ZUN5KU3Q. It separately credits other researchers; the advisory does not describe the scanner model or its exact validation process.",
+  "disclosure_date": "2026-11-04",
+  "ai_attribution_date": "2026-11-04",
+  "classification": "disclosure",
+  "classification_note": "The maintainer published GHSA-8474-xrp6-wh69 on 2026-11-04 and lists CVE-2026-126080. This record makes no exploitation-in-the-wild or zero-day claim.",
+  "cves": [
+    "CVE-2026-126080"
+  ],
+  "source_url": "https://github.com/rails/rails/security/advisories/GHSA-8474-xrp6-wh69",
+  "ai_source_url": "https://github.com/rails/rails/security/advisories/GHSA-8474-xrp6-wh69",
+  "remediation": "fix documented",
+  "remediation_note": "The advisory lists Active Support 8.0.5.2 and 8.1.4.1 as patched and supplies patches. It offers disabling the Action Cable mount or requiring authentication as mitigations; the latter limits but does not remove exposure if authenticated users can reach the path.",
+  "advisory_url": "https://github.com/rails/rails/security/advisories/GHSA-8474-xrp6-wh69",
+  "checked_date": "2026-11-14"
+}

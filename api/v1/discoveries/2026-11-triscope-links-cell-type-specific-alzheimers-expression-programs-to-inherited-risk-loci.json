@@ -1,0 +1,28 @@
+{
+  "id": "2026-11-triscope-links-cell-type-specific-alzheimers-expression-programs-to-inherited-risk-loci",
+  "title": "TriSCOPE links cell-type-specific Alzheimer’s expression programs to inherited risk loci",
+  "summary": "TriSCOPE combined cell-level predictive modeling, donor-aware differential expression and pseudotime analysis across six single-nucleus RNA-sequencing datasets (about 4.2 million nuclei from 627 donors). It identified cell-type-specific predictively expressed genes that were often missed by univariate differential-expression analysis; conditional GWAS–eQTL colocalization supported 27 gene–cell-type pairs at Alzheimer’s risk loci, including pairs without significant differential expression. Selected gene signals and analytical branches were compared across independent cohorts.",
+  "field": "biology",
+  "ai_technology": "TriSCOPE, using LightGBM-based multivariate predictive modeling integrated with differential expression and pseudotime analysis",
+  "organization": "Harvard Medical School; Harvard College; New York Genome Center; Rush Alzheimer’s Disease Center, Rush University",
+  "source_url": "https://www.nature.com/articles/s41467-026-77651-5.pdf",
+  "source_type": "paper",
+  "publication_date": "2026-11-09",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-026-77651-5",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Selected gene signals and analytical branches were compared across independent cohorts.",
+    "unknown": "This is a computational reanalysis of previously published, post-mortem cross-sectional datasets; it did not collect new tissue or perform perturbation experiments. The authors state the framework is for feature discovery rather than clinical prognosis, cannot establish temporal ordering, and requires functional perturbation studies to distinguish pathogenic drivers from protective or reactive signals. The reported cell-level AUCs are modest and should not be presented as patient-level diagnostic performance.",
+    "ai_role": "The supervised machine-learning branch prioritized gene-expression features that predicted clinical Alzheimer’s diagnosis within cell types, conditional on demographics and APOE genotype. The study integrated those model-ranked features with donor-aware differential expression, pseudotime and GWAS–eQTL colocalization to nominate genetically supported cell-type programs.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-026-77651-5.pdf"
+    ]
+  }
+}

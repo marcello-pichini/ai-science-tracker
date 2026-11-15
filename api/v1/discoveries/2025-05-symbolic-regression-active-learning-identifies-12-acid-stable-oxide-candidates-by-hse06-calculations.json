@@ -1,0 +1,28 @@
+{
+  "id": "2025-05-symbolic-regression-active-learning-identifies-12-acid-stable-oxide-candidates-by-hse06-calculations",
+  "title": "Symbolic-regression active learning identifies 12 acid-stable oxide candidates by HSE06 calculations",
+  "summary": "A SISSO symbolic-regression active-learning workflow identified 12 acid-stable oxide candidates from a pool of 1,470 within 30 active-learning iterations, using high-quality DFT-HSE06 Pourbaix calculations to evaluate oxygen-evolution stability. Many candidates had not been previously identified by widely used GGA calculations. The model’s property maps and uncertainty estimates helped direct calculations toward promising, underexplored regions of oxide space.",
+  "field": "materials",
+  "ai_technology": "SISSO symbolic regression with bootstrap and Monte Carlo feature-dropout ensembles in an active-learning loop",
+  "organization": "NOMAD Laboratory, Fritz Haber Institute of the Max Planck Society",
+  "source_url": "https://www.nature.com/articles/s41524-025-01596-4",
+  "source_type": "paper",
+  "publication_date": "2025-05-26",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41524-025-01596-4",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A SISSO symbolic-regression active-learning workflow identified 12 acid-stable oxide candidates from a pool of 1,470 within 30 active-learning iterations, using high-quality DFT-HSE06 Pourbaix calculations to evaluate oxygen-evolution stability.",
+    "unknown": "This is a computational materials-property result, not experimental synthesis or electrochemical validation. The oxide structures were drawn from a known candidate space; the authors explicitly define “discovery” here as evaluating a previously unevaluated property, not discovering entirely new compounds. Acid stability is labeled at ΔG_Pourbaix^OER ≤ 0.10 eV/atom, a threshold that allows small positive values on the basis of potential self-passivation. The result depends on HSE06 DFT and the selected Pourbaix phases/conditions; practical catalytic stability must be tested experimentally.",
+    "ai_role": "SISSO models learned compact descriptors of acid stability from existing calculations; model ensembles estimated prediction uncertainty, and a probability-of-feasibility acquisition strategy selected the next oxide for expensive DFT-HSE06 evaluation. The resulting feedback loop searched 1,470 candidates and identified 12 materials meeting the authors’ acid-stability criterion in 30 iterations, more efficiently than random selection.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41524-025-01596-4"
+    ]
+  }
+}

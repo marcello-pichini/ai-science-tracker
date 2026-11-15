@@ -1,0 +1,28 @@
+{
+  "id": "2024-06-phasenet-tf-expands-tonga-earthquake-catalog-and-resolves-the-intermediate-depth-double-seismic-zone",
+  "title": "PhaseNet-TF expands Tonga earthquake catalog and resolves the intermediate-depth double seismic zone",
+  "summary": "A semi-supervised PhaseNet-TF workflow detected and relocated 13,616 events from a one-year Tonga OBS and land-station record, about 11 times the manually picked reference catalog. The denser catalog delineates the intermediate-depth double seismic zone to about 300 km and indicates that its lower plane is limited to roughly 19°–21°S, rather than continuous along the studied section. The study did not recover a deeper 350–460 km double zone; sparse events and location uncertainties limit inference at those depths.",
+  "field": "physics",
+  "ai_technology": "PhaseNet-TF deep-learning phase picker with semi-supervised iterative retraining",
+  "organization": "Michigan State University; Stanford University; University of California, Berkeley",
+  "source_url": "https://academic.oup.com/gji/article/238/2/1073/7689220",
+  "source_type": "paper",
+  "publication_date": "2024-06-06",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1093/gji/ggae200",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A semi-supervised PhaseNet-TF workflow detected and relocated 13,616 events from a one-year Tonga OBS and land-station record, about 11 times the manually picked reference catalog.",
+    "unknown": "The catalog is based on one year of OBS and land data. About half of events are outside the array and have larger hypocenter uncertainty from azimuthal gaps; velocity-model choice adds absolute-location uncertainty. The authors say the absent 350–460 km double zone may reflect insufficient events, not definitive absence. Stress and hydration explanations are interpretations, and some rare events above the slab may be false.",
+    "ai_role": "The time-frequency neural picker detected P/S arrivals in noisy ocean-bottom seismometer data; iterative semi-supervised retraining expanded picks, while phase association and double-difference relocation filtered unreliable events. This expanded catalog enabled the localized double-seismic-zone inference.",
+    "evidence_urls": [
+      "https://academic.oup.com/gji/article/238/2/1073/7689220"
+    ]
+  }
+}

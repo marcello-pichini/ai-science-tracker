@@ -1,0 +1,28 @@
+{
+  "id": "2026-11-lightgbm-feature-selection-identifies-a-four-protein-panel-associated-with-incident-chronic-kidney-disease",
+  "title": "LightGBM feature selection identifies a four-protein panel associated with incident chronic kidney disease",
+  "summary": "In a prospective UK Biobank cohort of 27,429 participants without baseline chronic kidney disease, the study evaluated 2,920 plasma proteins and found 205 associated with incident CKD after protein-wide Cox regression with Bonferroni correction. LASSO reduced these to 23 candidates and LightGBM feature selection identified EDA2R, GDF15, HAVCR1 and SCARB2 as a four-protein panel. The protein panel alone had an AUC of 0.796 versus 0.805 for demographic variables; adding the proteins to the demographic model raised AUC to 0.830 in the study data.",
+  "field": "medicine",
+  "ai_technology": "Least absolute shrinkage and selection operator (LASSO) and Light Gradient Boosting Machine (LightGBM) feature selection",
+  "organization": "Nanjing Medical University, School of Public Health, Department of Epidemiology and Center for Global Health; UK Biobank",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/42968231/",
+  "source_type": "paper",
+  "publication_date": "2026-11-02",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.23876/j.krcp.26.161",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In a prospective UK Biobank cohort of 27,429 participants without baseline chronic kidney disease, the study evaluated 2,920 plasma proteins and found 205 associated with incident CKD after protein-wide Cox regression with Bonferroni correction.",
+    "unknown": "The abstract reports a prospective UK Biobank cohort and internal analyses; the four-protein model did not outperform the demographic model alone (AUC 0.796 vs 0.805, p=0.14), though combining the proteins with demographics improved AUC to 0.830. The authors state external validation is needed before clinical application. Protein associations and model selection do not establish causal roles or clinical utility.",
+    "ai_role": "After protein-wide Cox association screening, LASSO selected 23 candidate proteins and LightGBM-based feature selection identified four proteins for the incident-CKD prediction panel. The study assessed their predictive contribution with demographic covariates and sensitivity analyses; these algorithms selected risk markers rather than demonstrating causal protein effects.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/42968231/"
+    ]
+  }
+}

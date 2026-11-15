@@ -1,0 +1,28 @@
+{
+  "id": "2025-02-mal-id-maps-disease-associated-immune-receptor-patterns-across-infections-and-autoimmune-conditions",
+  "title": "Mal-ID maps disease-associated immune-receptor patterns across infections and autoimmune conditions",
+  "summary": "Mal-ID analyzed B-cell and T-cell receptor repertoires from 593 people, including patients with COVID-19, HIV, systemic lupus erythematosus and type-1 diabetes, influenza-vaccination recipients and healthy controls. Its combined models classified held-out immune states and highlighted disease-associated receptor patterns; interpretation identified distinct autoreactivity features in lupus and type-1 diabetes and antigen-associated receptor sequences in COVID-19. The authors also evaluated classification on independent COVID-19 cohorts.",
+  "field": "medicine",
+  "ai_technology": "Mal-ID (MAchine Learning for Immunological Diagnosis), an ensemble using repertoire feature models and ESM-2 protein-language-model embeddings",
+  "organization": "Stanford University, Oklahoma Medical Research Foundation, Duke University, University of Pennsylvania and collaborating institutions",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/39977494/",
+  "source_type": "paper",
+  "publication_date": "2025-02-21",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1126/science.adp2407",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The authors also evaluated classification on independent COVID-19 cohorts.",
+    "unknown": "This is a patient-sample diagnostic-validation and immune-biology study, not evidence of clinical deployment or benefit. Validation cohorts and disease-specific sample sizes are limited; external COVID-19 classification involved small cohorts and thresholds were tuned in some analyses. Additional disease-specific validation, threshold calibration, sequencing-depth assessment and interpretation alongside standard clinical assessment remain necessary. Its 2024 bioRxiv preprint is the same work, not a separate finding.",
+    "ai_role": "Three machine-learning representations of B-cell and T-cell receptor data were combined to classify immune states and prioritize disease-associated receptor sequences, gene segments and isotypes for biological interpretation.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/39977494/"
+    ]
+  }
+}

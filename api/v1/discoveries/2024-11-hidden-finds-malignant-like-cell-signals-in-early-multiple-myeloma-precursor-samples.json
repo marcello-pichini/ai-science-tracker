@@ -1,0 +1,28 @@
+{
+  "id": "2024-11-hidden-finds-malignant-like-cell-signals-in-early-multiple-myeloma-precursor-samples",
+  "title": "HiDDEN finds malignant-like cell signals in early multiple-myeloma precursor samples",
+  "summary": "HiDDEN refines sample-level case labels at single-cell resolution. In human bone-marrow single-cell RNA-seq data, its labels tracked manual neoplastic-cell annotations in mixed precursor samples and inferred malignant-like cells in three low-purity MGUS samples that the original manual analysis had labeled as containing only healthy cells. The inferred cells were enriched for previously described malignancy-associated gene signatures. In a separate mouse demyelination dataset, HiDDEN identified an early endothelial subpopulation with expression changes associated with angiogenesis, blood–brain-barrier breakdown and extracellular-matrix responses.",
+  "field": "biology",
+  "ai_technology": "HiDDEN, a machine-learning framework for refining disease/condition labels at single-cell resolution",
+  "organization": "Broad Institute of MIT and Harvard; collaborating institutions",
+  "source_url": "https://www.nature.com/articles/s41467-024-53666-8.pdf",
+  "source_type": "paper",
+  "publication_date": "2024-11-02",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-024-53666-8",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "HiDDEN refines sample-level case labels at single-cell resolution.",
+    "unknown": "The MGUS finding is a transcriptomic inference in previously collected samples, computationally supported by known gene signatures and sample-purity estimates; the paper does not report independent pathology confirmation, clinical follow-up, or validation as a diagnostic test. The endothelial subpopulation was found in a mouse lesion model; its association with blood–brain-barrier dysfunction does not establish causality.",
+    "ai_role": "The model inferred which individual cells in case samples were affected rather than assigning the sample-level case label to all cells. This enabled the paper’s reanalysis of human myeloma precursor single-cell data and mouse demyelination single-nucleus data, yielding the specified malignancy and endothelial-population findings.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-024-53666-8.pdf"
+    ]
+  }
+}

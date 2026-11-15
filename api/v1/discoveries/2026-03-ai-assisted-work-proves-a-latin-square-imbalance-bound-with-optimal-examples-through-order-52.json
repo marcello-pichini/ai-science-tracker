@@ -1,0 +1,28 @@
+{
+  "id": "2026-03-ai-assisted-work-proves-a-latin-square-imbalance-bound-with-optimal-examples-through-order-52",
+  "title": "AI-assisted work proves a Latin-square imbalance bound, with optimal examples through order 52",
+  "summary": "A collaborative LLM-plus-symbolic-computation study proved that every n×n Latin square with n ≡ 1 (mod 3) has imbalance at least 4n(n−1)/9. It introduced near-perfect permutations that attain the bound and computationally found independently verified matching examples for every such order from 4 through 52. The universal lower-bound theorem was formally checked in Lean 4.",
+  "field": "mathematics",
+  "ai_technology": "Claude Opus 4.5 LLM agent with SageMath, Rust exhaustive solver, simulated annealing and Lean 4 verification tools",
+  "organization": "Cornell University; TU Wien",
+  "source_url": "https://arxiv.org/html/2603.08322v2",
+  "source_type": "paper",
+  "publication_date": "2026-03-09",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2603.08322",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A collaborative LLM-plus-symbolic-computation study proved that every n×n Latin square with n ≡ 1 (mod 3) has imbalance at least 4n(n−1)/9.",
+    "unknown": "This is an arXiv preprint (v2 dated 2026-08-13), not yet peer-reviewed in the sources checked. The universal proven theorem is a lower bound for n ≡ 1 mod 3. Matching constructions, and hence demonstrated tightness, are computationally established only for n=4,7,…,52; the paper does not prove that the bound is attained for every larger order. Lean 4 formalizes the lower-bound inequality, not the finite construction search or universal tightness.",
+    "ai_role": "The agent identified an all-even row-distance parity pattern in numerical search data, formulated and helped prove the lower bound, and used model review to catch proof errors. SageMath and a Rust solver supported symbolic analysis and enumeration; simulated annealing found matching constructions through n=52. Human strategic direction supplied the decisive pivot to the minimum-positive-imbalance question. Lean 4 formally verifies the lower-bound theorem itself.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2603.08322v2"
+    ]
+  }
+}

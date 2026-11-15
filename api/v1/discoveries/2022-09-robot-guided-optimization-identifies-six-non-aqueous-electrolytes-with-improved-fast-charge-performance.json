@@ -1,0 +1,28 @@
+{
+  "id": "2022-09-robot-guided-optimization-identifies-six-non-aqueous-electrolytes-with-improved-fast-charge-performance",
+  "title": "Robot-guided optimization identifies six non-aqueous electrolytes with improved fast-charge performance",
+  "summary": "A closed-loop platform paired Clio, an automated electrolyte-formulation and conductivity-testing robot, with Dragonfly Bayesian optimization. In 42 experiments over two workdays, it selected six non-aqueous electrolyte formulations from a LiPF₆ and EC/EMC/DMC design space. The team tested these formulations in 220 mAh graphite‖NMC pouch cells; all showed improved fast-charging capability relative to a baseline electrolyte selected in advance from the same design space. The search reached its reported target about six times faster than random search using the same automated setup.",
+  "field": "materials",
+  "ai_technology": "Dragonfly Bayesian optimization coupled to the Clio robotic electrolyte experimentation platform",
+  "organization": "Carnegie Mellon University",
+  "source_url": "https://www.nature.com/articles/s41467-022-32938-1",
+  "source_type": "paper",
+  "publication_date": "2022-09-27",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-022-32938-1",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A closed-loop platform paired Clio, an automated electrolyte-formulation and conductivity-testing robot, with Dragonfly Bayesian optimization.",
+    "unknown": "This is a search within a defined design space of LiPF₆ in EC/EMC/DMC solvents, not a claim that the constituent chemicals or all six electrolyte recipes were wholly unprecedented. The optimization target was bulk ionic conductivity, with fast-charge cell performance as a subsequent validation. Pouch-cell tests used nominal 220 mAh graphite‖LiNi0.5Mn0.3Co0.2O2 cells and a baseline chosen from the same design space; results do not establish commercial-scale manufacturing or long-term fleet performance. The paper compares optimization time with random search in the same automated experiment.",
+    "ai_role": "Dragonfly selected electrolyte formulations for experiments and used measurement feedback from Clio to adapt subsequent selections. The closed-loop system optimized measured ionic conductivity over a non-aqueous single-salt/ternary-solvent search space; selected formulations were then assembled and evaluated by the researchers in pouch cells.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-022-32938-1"
+    ]
+  }
+}

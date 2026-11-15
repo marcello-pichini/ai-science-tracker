@@ -1,0 +1,28 @@
+{
+  "id": "2024-10-machine-learning-and-mendelian-randomization-prioritize-ca2-as-a-diabetic-nephropathy-biomarker",
+  "title": "Machine learning and Mendelian randomization prioritize CA2 as a diabetic nephropathy biomarker",
+  "summary": "Across six kidney-expression datasets, researchers identified 314 differentially expressed genes in diabetic nephropathy and used LASSO, SVM-RFE and random forest to prioritize seven candidate genes. Mendelian-randomization integration further prioritized carbonic anhydrase II (CA2); its ROC AUC exceeded 0.878 across the analyzed datasets. The authors also reported qPCR validation of CA2 in clinical patient and control samples and an association with inferred immune-cell infiltration.",
+  "field": "medicine",
+  "ai_technology": "LASSO, support-vector-machine recursive feature elimination and random-forest feature selection",
+  "organization": "Shanghai Tenth People’s Hospital, Tongji University School of Medicine; Yangpu Hospital, Tongji University School of Medicine",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/39370621/",
+  "source_type": "paper",
+  "publication_date": "2024-10-06",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1111/dom.15933",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The authors also reported qPCR validation of CA2 in clinical patient and control samples and an association with inferred immune-cell infiltration.",
+    "unknown": "This is a candidate biomarker study, not evidence of a clinically deployed test or patient benefit. Reported AUC values are retrospective dataset performance; qPCR validation supports differential expression but does not establish CA2 as causal or disease-specific. The accessible abstract does not report the clinical validation sample size, so none is inferred.",
+    "ai_role": "Three machine-learning approaches integrated candidate-gene selection from kidney-expression datasets; Mendelian randomization with expression-QTL data then prioritized CA2, which was evaluated as a diagnostic biomarker and measured by qPCR in clinical samples. The models supported gene prioritization and discrimination, while qPCR supplied the wet-lab follow-up.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/39370621/"
+    ]
+  }
+}

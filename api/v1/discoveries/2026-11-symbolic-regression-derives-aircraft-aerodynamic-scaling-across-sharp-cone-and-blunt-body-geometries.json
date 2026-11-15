@@ -1,0 +1,28 @@
+{
+  "id": "2026-11-symbolic-regression-derives-aircraft-aerodynamic-scaling-across-sharp-cone-and-blunt-body-geometries",
+  "title": "Symbolic regression derives aircraft aerodynamic scaling across sharp-cone and blunt-body geometries",
+  "summary": "A Chain of Symbolic Regression (CoSR) analysis of hypersonic simulation data derived an interpretable non-power-product scaling relation for axial-force coefficient across sharp-cone and blunt-body configurations. It combines angle of attack, Mach number and Reynolds number through a dominant term and a viscous correction; the relation has a shared functional form but geometry-specific fitted constants. The authors interpret the constants as reflecting differences in shock/base drag, friction drag and pressure drag. This is a new model-derived scaling result from simulations, not a wind-tunnel or flight measurement.",
+  "field": "physics",
+  "ai_technology": "Chain of Symbolic Regression (CoSR), a progressive symbolic-regression framework for dimensionless physical relations",
+  "organization": "Northwestern Polytechnical University; International Joint Institute of Intelligent Fluid Mechanics; National Key Laboratory of Aircraft Configuration Design",
+  "source_url": "https://journals.aps.org/prresearch/abstract/10.1103/f2kp-pp4q",
+  "source_type": "paper",
+  "publication_date": "2026-11-02",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1103/f2kp-pp4q",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A Chain of Symbolic Regression (CoSR) analysis of hypersonic simulation data derived an interpretable non-power-product scaling relation for axial-force coefficient across sharp-cone and blunt-body configurations.",
+    "unknown": "The aerodynamic relation was inferred from hypersonic simulation data for two configurations (sharp cone and blunt body), not independently measured flight or wind-tunnel data. It is a parameterized model over the analyzed configuration/data range; external validation and broader geometry coverage are not established in the source. The simpler dominant component is linked to known hypersonic invariance, while the learned viscous correction and geometry-specific scaling provide the paper’s new modeled relationship. Do not treat the authors’ drag-component interpretations as direct measurements.",
+    "ai_role": "CoSR progressively searched for interpretable dimensionless groups and combined their relationships instead of fitting one end-to-end expression. Applied to hypersonic simulation data, it identified a dominant angle-of-attack/Mach term and a Reynolds-number-dependent viscous correction, then fitted geometry-specific constants for two body shapes. Earlier canonical-law and fluid examples in the same paper are framework validations and are not counted separately here.",
+    "evidence_urls": [
+      "https://journals.aps.org/prresearch/abstract/10.1103/f2kp-pp4q"
+    ]
+  }
+}

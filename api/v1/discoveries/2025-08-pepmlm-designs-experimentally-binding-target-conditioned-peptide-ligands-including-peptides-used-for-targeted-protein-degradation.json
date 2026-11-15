@@ -1,0 +1,28 @@
+{
+  "id": "2025-08-pepmlm-designs-experimentally-binding-target-conditioned-peptide-ligands-including-peptides-used-for-targeted-protein-degradation",
+  "title": "PepMLM designs experimentally binding target-conditioned peptide ligands, including peptides used for targeted protein degradation",
+  "summary": "PepMLM fine-tunes ESM-2 using masked-language modeling conditioned on a target protein sequence to generate de novo linear peptide binders without structural input. In the reported experiments, selected peptides showed sequence-specific binding to targets including NCAM1 and AMHR2; incorporation into ubiquitin-based antibody constructs enabled targeted degradation of disease-relevant proteins, including Huntington’s disease drivers and viral phosphoproteins.",
+  "field": "biology",
+  "ai_technology": "PepMLM, ESM-2 fine-tuned with target-sequence-conditioned masked language modeling",
+  "organization": "Cornell University and collaborating institutions",
+  "source_url": "https://www.nature.com/articles/s41587-025-02761-2",
+  "source_type": "paper",
+  "publication_date": "2025-08-13",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41587-025-02761-2",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In the reported experiments, selected peptides showed sequence-specific binding to targets including NCAM1 and AMHR2; incorporation into ubiquitin-based antibody constructs enabled targeted degradation of disease-relevant proteins, including Huntington’s disease drivers and viral phosphoproteins.",
+    "unknown": "The reported evidence is preclinical binding/degradation assays, not therapeutic efficacy, pharmacokinetics or safety. The article notes that experimental optimization/stabilization of its selected peptides was not performed and further validation is needed for viral-target applications. Primary publisher full text/abstract checked; no independent replication assessed.",
+    "ai_role": "Given a target protein sequence, PepMLM generates candidate linear binder peptide sequences by reconstructing masked peptide regions. The authors tested selected designs in binding and degradation assays and reported target-specific activity in the stated systems.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41587-025-02761-2"
+    ]
+  }
+}

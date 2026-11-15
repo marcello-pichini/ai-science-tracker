@@ -1,0 +1,28 @@
+{
+  "id": "2026-01-deep-learning-histopathology-identifies-tertiary-lymphoid-structure-features-linked-to-stage-ii-colorectal-cancer-relapse",
+  "title": "Deep-learning histopathology identifies tertiary lymphoid structure features linked to stage II colorectal cancer relapse",
+  "summary": "SurvFinder analyzed 6,950 H&E slides from 1,604 stage II colorectal cancer patients across four cohorts and identified tertiary lymphoid structures (TLSs) as prognostic tissue features. Its multi-view model integrated TLS morphology and spatial location; explainable analysis highlighted TLS maturity and position near the tumor periphery as features associated with relapse-free survival and adjuvant-chemotherapy outcome patterns across the retrospective datasets.",
+  "field": "medicine",
+  "ai_technology": "SurvFinder, a multi-component deep-learning pipeline: WSINet for prognosis-associated tissue features, SegNet for TLS segmentation/subtyping, and MVNet for multi-view risk prediction",
+  "organization": "Sun Yat-sen University Cancer Center; Sun Yat-sen University; Tianjin Medical University Cancer Institute and Hospital; Johns Hopkins University; Fudan University Shanghai Cancer Center",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/41532433/",
+  "source_type": "paper",
+  "publication_date": "2026-01-13",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1371/journal.pmed.1004614",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "SurvFinder analyzed 6,950 H&E slides from 1,604 stage II colorectal cancer patients across four cohorts and identified tertiary lymphoid structures (TLSs) as prognostic tissue features.",
+    "unknown": "This was a retrospective analysis of patients enrolled in 2012–2018; results do not establish prospective clinical utility. Associations between predicted risk, TLS features and adjuvant-chemotherapy outcomes are observational and do not prove treatment benefit or that TLS features causally determine relapse. The authors identify absence of prospective validation and real-world deployment as limitations.",
+    "ai_role": "Deep learning autonomously identified prognosis-associated tissue features in whole-slide images, segmented and subtyped TLSs, and integrated morphological and spatial features for risk prediction. Explainable-AI attribution identified TLS location near the tumor margin and TLS maturity state as important prognostic features.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/41532433/"
+    ]
+  }
+}

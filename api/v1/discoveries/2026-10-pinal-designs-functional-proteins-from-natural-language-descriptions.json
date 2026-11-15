@@ -1,0 +1,28 @@
+{
+  "id": "2026-10-pinal-designs-functional-proteins-from-natural-language-descriptions",
+  "title": "Pinal designs functional proteins from natural-language descriptions",
+  "summary": "The 16-billion-parameter Pinal model generated protein candidates from plain-language function descriptions. In four reported design tasks—fluorescent protein, PET hydrolase, alcohol dehydrogenase and metabolic H-protein—the selected designs displayed the intended function in laboratory tests; the best H-protein raised product titre 1.7-fold relative to native E. coli H-protein in a reconstituted CO2-fixation pathway.",
+  "field": "biology",
+  "ai_technology": "Pinal, a 16-billion-parameter protein foundation model with text-to-structure (T2struct) and text-conditioned sequence design (SaProt-T) components",
+  "organization": "Westlake University and collaborating institutions",
+  "source_url": "https://www.nature.com/articles/s41586-026-11205-z",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41586-026-11205-z",
+  "relevance": {
+    "impact": 4,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In four reported design tasks—fluorescent protein, PET hydrolase, alcohol dehydrogenase and metabolic H-protein—the selected designs displayed the intended function in laboratory tests; the best H-protein raised product titre 1.7-fold relative to native E. coli H-protein in a reconstituted CO2-fixation pathway.",
+    "unknown": "This is a primary-paper proof of concept with selected designs, not a broad hit-rate or industrial-performance demonstration. Experimental denominators vary substantially by task; extended data reports one active PETase among 94 screened and a fluorescent design selected from 29. The H-protein titre comparison was in a reconstituted pathway, not an organism or commercial process. No independent replication or therapeutic result is claimed.",
+    "ai_role": "Pinal maps natural-language function descriptions to candidate protein structures and sequences. The team filtered and ranked model outputs, selected candidates for synthesis, and tested intended functions. The paper reports lab-observed fluorescence, PET-hydrolysis/esterase activity, alcohol-dehydrogenase catalysis and H-protein activity; the latter improved titre in a reconstituted multi-enzyme pathway.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41586-026-11205-z"
+    ]
+  }
+}

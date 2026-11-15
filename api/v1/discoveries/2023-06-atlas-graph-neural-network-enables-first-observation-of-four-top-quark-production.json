@@ -1,0 +1,28 @@
+{
+  "id": "2023-06-atlas-graph-neural-network-enables-first-observation-of-four-top-quark-production",
+  "title": "ATLAS graph neural network enables first observation of four-top-quark production",
+  "summary": "Using 140 fb⁻¹ of 13 TeV proton–proton collisions, ATLAS observed simultaneous production of four top quarks in same-sign dilepton and multilepton events, with 6.1σ observed (4.3σ expected) significance. The measured cross-section is 22.5⁺⁶·⁶₋₅·₅ fb, consistent with the Standard Model prediction within 1.8σ. A graph neural network separated the four-top signal from dominant backgrounds in the signal extraction.",
+  "field": "physics",
+  "ai_technology": "Event-level graph neural network built with graph_nets/TensorFlow",
+  "organization": "ATLAS Collaboration; CERN",
+  "source_url": "https://link.springer.com/article/10.1140/epjc/s10052-023-11573-0",
+  "source_type": "paper",
+  "publication_date": "2023-06-12",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2303.15061",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Using 140 fb⁻¹ of 13 TeV proton–proton collisions, ATLAS observed simultaneous production of four top quarks in same-sign dilepton and multilepton events, with 6.1σ observed (4.3σ expected) significance.",
+    "unknown": "This is an ATLAS observation from its own 140 fb⁻¹ analysis after earlier ATLAS/CMS evidence; it is one paper-level observation, not a separate count for CMS or later combinations. The measured cross-section uncertainty is large and its central value is 1.8σ above the SM prediction, so this is not evidence of a significant deviation from the Standard Model. Background control regions and systematic uncertainties are part of the analysis.",
+    "ai_role": "The GNN discriminant classified events using a fully connected graph of reconstructed jets, leptons and missing transverse momentum, with node, edge and global features. It separated four-top signal from background and supplied the discriminant used in the signal extraction and cross-section fit.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1140/epjc/s10052-023-11573-0"
+    ]
+  }
+}

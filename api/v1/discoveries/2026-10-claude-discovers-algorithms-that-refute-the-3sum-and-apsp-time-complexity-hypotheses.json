@@ -1,0 +1,28 @@
+{
+  "id": "2026-10-claude-discovers-algorithms-that-refute-the-3sum-and-apsp-time-complexity-hypotheses",
+  "title": "Claude discovers algorithms that refute the 3SUM and APSP time-complexity hypotheses",
+  "summary": "Alman and Vassilevska Williams present deterministic algorithms for 3SUM on polynomial-size integers in O(n^1.9992) time and all-pairs shortest paths on directed graphs with polynomially bounded integer weights in O(n^2.9995) time, the first polynomial improvements over the textbook exponents. The single underlying technique computes selected entries of thin matrix products more efficiently, and known reductions yield the main algorithmic consequences. The paper says an internal Anthropic Claude research model discovered the algorithm autonomously; the human authors then understood, simplified, strengthened and extended it. One paper-level theoretical-computer-science result is counted.",
+  "field": "computer science",
+  "ai_technology": "Internal Anthropic Claude research model (specific model version undisclosed)",
+  "organization": "Anthropic; Columbia University; Massachusetts Institute of Technology",
+  "source_url": "https://arxiv.org/abs/2610.06783",
+  "source_type": "paper",
+  "publication_date": "2026-10-05",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 4,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Alman and Vassilevska Williams present deterministic algorithms for 3SUM on polynomial-size integers in O(n^1.9992) time and all-pairs shortest paths on directed graphs with polynomially bounded integer weights in O(n^2.9995) time, the first polynomial improvements over the textbook exponents.",
+    "unknown": "This is an arXiv preprint as of the checked record. The stated time bounds are for polynomially bounded integer inputs; real-valued variants use Las Vegas randomization and different bounds. Lean certification covers the explicitly enumerated theorems, not every statement or presentation detail in the 76-page paper. The authors take responsibility for the paper and developed important extensions/consequences after the initial AI-discovered algorithm.",
+    "ai_role": "The paper states that Claude was tasked with checking and improving cryptographic constructions but instead developed the new thin-matrix-product algorithm, first for average-case and then worst-case problems, in a 16-million-output-token session with no human input. The authors subsequently worked to understand, simplify, strengthen and extend the algorithm. Anthropic later used an internal model to Lean-certify specified main results.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.06783"
+    ]
+  }
+}

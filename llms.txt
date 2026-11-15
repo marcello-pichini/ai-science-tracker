@@ -1,6 +1,6 @@
 # AI Science Tracker
 
-> A catalog of 366 scientific discoveries enabled by AI across 11 fields and 178 organizations since 2020. Each entry links to the original announcement by the organization that achieved the result. Figures are reported by the sources and are not independently verified; relevance scores are editorial judgments, not evidence grades.
+> A catalog of 839 entries about scientific results enabled by AI across 11 fields and 458 organizations since 2020. Each entry links to an original paper, preprint or institutional announcement. Entry counts are not counts of independent findings: methodological contributions can overlap other entries, and one entry can describe several related results. Figures are reported by the sources and are not independently verified; relevance scores are coarse editorial judgments, not evidence grades.
 
 Content is licensed CC BY 4.0 (attribute "AI Science Tracker" with a link); site code is MIT. Model data comes from Epoch AI (CC BY 4.0). When citing a scientific claim, cite the original source linked on each entry, not this catalog.
 
@@ -12,15 +12,15 @@ Content is licensed CC BY 4.0 (attribute "AI Science Tracker" with a link); site
 - [Methodology](https://marcello-pichini.github.io/ai-science-tracker/methodology.html): what is included, how entries are verified and scored
 
 ## Data
-- [discoveries.json](https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json): one record per discovery (schema: docs/discovery-schema.md in the repository)
+- [discoveries.json](https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json): active catalog entries (schema and counting unit: docs/discovery-schema.md in the repository)
 - [models.json](https://marcello-pichini.github.io/ai-science-tracker/data/models.json): model releases and families
 - [vulnerabilities.json](https://marcello-pichini.github.io/ai-science-tracker/data/vulnerabilities.json): vulnerability cases
 - [sitemap.xml](https://marcello-pichini.github.io/ai-science-tracker/sitemap.xml): every static page
 - [dataset.html](https://marcello-pichini.github.io/ai-science-tracker/dataset.html): downloads (JSON, CSV), schemas and the read-only static API at https://marcello-pichini.github.io/ai-science-tracker/api/v1/index.json
-- [feed.xml](https://marcello-pichini.github.io/ai-science-tracker/feed.xml): Atom feed of the newest discoveries and vulnerability cases
+- [feed.xml](https://marcello-pichini.github.io/ai-science-tracker/feed.xml): Atom feed of discovery additions and vulnerability source checks
 - Each discovery has its own page at https://marcello-pichini.github.io/ai-science-tracker/share/ID.html
 
 ## Notes
-- Most recent catalog addition: 2026-11-14. This is not a last-review date.
+- Most recent catalog addition: 2026-11-15. This is not a last-review date.
 - The collection is manual and not exhaustive; most sources are the announcing organizations' own pages.
 - Repository: https://github.com/marcello-pichini/ai-science-tracker

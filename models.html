@@ -39,6 +39,7 @@
     <figure class="figura">
       <div id="nuvola"></div>
       <figcaption class="nota" id="nota-nuvola"></figcaption>
+      <p class="nota" id="scatter-help">Hover to preview; click or tap to open a release in the list or choose among nearby releases. Keyboard: focus the chart, use left and right arrows in date order, then Enter. Escape clears the selection.</p>
     </figure>
   </div>
 </section>
@@ -48,7 +49,7 @@
   <section class="sez" aria-labelledby="t-numeri">
     <div class="wrap">
       <h2 id="t-numeri">By the numbers</h2>
-      <p class="sez-sub">Click a year or lab to filter releases; click a family to open its profile.</p>
+      <p class="sez-sub">Full-catalog aggregates remain unchanged by list filters. Click a year or lab to filter releases; click a family to open its profile.</p>
       <div class="pannelli" id="charts"></div>
     </div>
   </section>
@@ -101,6 +102,7 @@
   </div>
 </footer>
 
+<script src="assets/catalog-ui.js"></script>
 <script>
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -147,7 +149,7 @@ function mostraTip(righe, x, y) {
 const nascondiTip = () => tip.classList.remove("on");
 
 /* Scatter plot: release date versus estimated training compute on a logarithmic scale. */
-let pts = [], nuvSvg = null, cur = -1;
+let pts = [], nuvSvg = null;
 function nuvola() {
   const W = Math.max(320, Math.round($("nuvola").clientWidth || 1000)), H = W < 560 ? 300 : 360;
   const P = { x0: W < 560 ? 44 : 60, x1: W - 10, y0: 14, y1: H - 36 };
@@ -165,28 +167,21 @@ function nuvola() {
   pts = conC.filter(m => t(m) >= tMin).map(m => ({ m, x: X(t(m)), y: Y(+m.compute_flop), ev: conDiscoveries(m) }));
   const cerchi = pts.map((p, i) => ({ p, i })).sort((a, b) => a.p.ev - b.p.ev)
     .map(({ p, i }) => `<circle class="punto${p.ev ? " evid" : ""}" data-i="${i}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.ev ? 5.5 : 4.5}" style="--d:${Math.round((p.x - P.x0) / (P.x1 - P.x0) * 900)}ms"/>`).join("");
-  $("nuvola").innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="${primaVolta ? "" : "fermo"}" role="img" aria-label="Scatter plot: ${pts.length} releases with compute estimates, from 2020 to today, on a logarithmic scale from 10^17 to 10^27 FLOP. Highlighted:  ${pts.filter(p => p.ev).length} releases of families linked to discoveries. The full list appears below.">${g}<g>${cerchi}</g><rect x="${P.x0 - 8}" y="0" width="${P.x1 - P.x0 + 16}" height="${P.y1 + 10}" fill="transparent"/></svg>`;
+  $("nuvola").innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="${primaVolta ? "" : "fermo"}" tabindex="0" role="group" aria-describedby="scatter-help nota-nuvola" aria-label="Scatter plot: ${pts.length} releases with compute estimates, from 2020 to today, on a logarithmic scale from 10^17 to 10^27 FLOP. Highlighted:  ${pts.filter(p => p.ev).length} releases of families linked to discoveries. The full list appears below.">${g}<g>${cerchi}</g><rect x="${P.x0 - 8}" y="0" width="${P.x1 - P.x0 + 16}" height="${P.y1 + 10}" fill="transparent"/></svg>`;
   nuvSvg = $("nuvola").firstElementChild;
-  nuvSvg.addEventListener("pointermove", e => {
-    const q = nuvSvg.createSVGPoint(); q.x = e.clientX; q.y = e.clientY;
-    const v = q.matrixTransform(nuvSvg.getScreenCTM().inverse());
-    let best = -1, bd = Infinity;
-    pts.forEach((p, i) => { const d = Math.hypot(p.x - v.x, p.y - v.y) + (filtroAttivo() && !passa(p.m) ? 12 : 0); if (d < bd) { bd = d; best = i; } });
-    if (best >= 0 && bd < 28) evid(best, e.clientX, e.clientY); else spegni();
+  CatalogUI.chartInteraction(nuvSvg, pts.map(p => ({...p, date:p.m.date})), {
+    describe: p => {
+      const m = p.m, count = conDiscoveries(m) ? perFam[m.family].length : 0;
+      return [m.name, `${m.organization}, ${fmtDate(m.date)}`, potenzaTesto(+m.compute_flop), count ? `Family ${famNome[m.family]}: ${count} ${count === 1 ? "discovery" : "discoveries"}` : "No catalog discoveries"];
+    },
+    open: p => vaiA(p.m), showTip:mostraTip, hideTip:nascondiTip,
+    penalty: p => filtroAttivo() && !passa(p.m) ? 12 : 0, radius:28
   });
-  nuvSvg.addEventListener("pointerleave", spegni);
-  nuvSvg.addEventListener("click", () => { if (cur >= 0) vaiA(pts[cur].m); });
   const nSenza = D.models.length - conC.length, nPrima = conC.length - pts.length;
   $("nota-nuvola").innerHTML = `<span class="chiave"><i style="background:var(--sole)"></i>Family linked to catalog discoveries</span><span class="chiave"><i style="background:var(--tratto-2)"></i>Other releases</span><span>Vertical axis: estimated training compute from Epoch AI on a logarithmic scale. ${nSenza} releases without compute estimates${nPrima ? ` and ${nPrima} release${nPrima === 1 ? "" : "s"} before 2020` : ""} are omitted here but included in the list.</span>`;
   primaVolta = false;
   aggiornaNuvola();
 }
-function evid(i, x, y) {
-  if (cur !== i) { nuvSvg.querySelector(".punto.su")?.classList.remove("su"); nuvSvg.querySelector(`[data-i="${i}"]`).classList.add("su"); cur = i; }
-  const m = pts[i].m, sc = conDiscoveries(m) ? perFam[m.family].length : 0;
-  mostraTip([m.name, `${m.organization}, ${fmtDate(m.date)}`, potenzaTesto(+m.compute_flop), sc ? `Family ${famNome[m.family]}: ${sc} ${sc === 1 ? "discovery" : "discoveries"}` : "No catalog discoveries"], x, y);
-}
-function spegni() { nuvSvg?.querySelector(".punto.su")?.classList.remove("su"); cur = -1; nascondiTip(); }
 function aggiornaNuvola() { if (!nuvSvg) return; const a = filtroAttivo(); nuvSvg.querySelectorAll(".punto").forEach(c => c.classList.toggle("spento", a && !passa(pts[+c.dataset.i].m))); }
 
 function vaiA(m) {
@@ -198,7 +193,7 @@ function vaiA(m) {
   const el = document.getElementById(id); if (!el) return;
   document.querySelectorAll(".tab-rilasci tr.evid").forEach(r => r.classList.remove("evid"));
   el.classList.add("evid");
-  el.scrollIntoView({ block:"center", behavior: ridotto.matches ? "auto" : "smooth" });
+  CatalogUI.focusEntry(el, { block:"center", behavior: ridotto.matches ? "auto" : "smooth" });
 }
 
 /* Charts */
@@ -283,22 +278,22 @@ Promise.all([
   $("lab").innerHTML = `<option value="">All labs</option>` + labs.map(l => `<option>${esc(l)}</option>`).join("");
   const anni = [...new Set(d.models.map(m => m.date.slice(0, 4)))].sort().reverse();
   $("anno").innerHTML = `<option value="">All years</option>` + anni.map(a => `<option>${esc(a)}</option>`).join("");
-  $("fonte").innerHTML = `Model name, lab, date, domain, parameters, compute, and access data come from <a href="${esc(d.source.url)}" rel="noopener">${esc(d.source.name)}</a>, downloaded on ${esc(fmtDate(d.source.downloaded))} (${esc(d.source.original_records)} records in the original file) and republished under <a href="${esc(d.source.license_url)}" rel="noopener">${esc(d.source.license)}</a>. This page lists releases from leading labs since 2020, plus models from any date linked to a discovery. We link models and discoveries by comparing named technologies and discovery titles with family names. A name match does not confirm that a specific release was used in an experiment. Data last generated: ${esc(fmtDate(d.generated))}.`;
+  $("fonte").innerHTML = `Model name, lab, date, domain, parameters, compute, and access data come from <a href="${esc(d.source.url)}" rel="noopener">${esc(d.source.name)}</a> (${esc(d.source.original_records)} records in the original CSV snapshot) and are republished under <a href="${esc(d.source.license_url)}" rel="noopener">${esc(d.source.license)}</a>. ${d.source.downloaded ? `Downloaded on ${esc(fmtDate(d.source.downloaded))}. ` : ""}Snapshot provenance is included in the <a href="data/models.json">model data</a>. This page lists releases from leading labs since 2020, plus models from any date linked to a discovery. We link models and discoveries by comparing named technologies and discovery titles with family names. A name match does not confirm that a specific release was used in an experiment. Data last generated: ${esc(fmtDate(d.generated))}.`;
   nuvola(); grafici(); families(); render();
   if (location.hash.startsWith("#fam-")) document.getElementById(location.hash.slice(1))?.scrollIntoView();
-}).catch(e => { $("families").textContent = "Could not load data. Open this page from a local server (python3 -m http.server)."; $("lead").textContent = ""; });
+}).catch(() => { $("families").innerHTML = `<p class="vuoto">Could not load the model and discovery data. <a href="models.html">Reload Models</a>, read the <a href="data/models.json">model data</a> or <a href="data/discoveries.json">discovery data</a>, or browse the <a href="profiles/index.html">static profiles</a>.</p>`; $("lead").textContent = "The model and discovery data could not be loaded."; });
 
 ["q", "lab", "anno"].forEach(id => $(id).addEventListener("input", e => { state[id] = e.target.value; mostrati = 60; render(); grafici(); }));
 $("solo").addEventListener("change", e => { state.solo = e.target.checked; mostrati = 60; render(); });
 $("reset").addEventListener("click", () => { Object.assign(state, { q:"", lab:"", anno:"", solo:false }); ["q", "lab", "anno"].forEach(k => $(k).value = ""); $("solo").checked = false; mostrati = 60; render(); grafici(); });
-$("altro").addEventListener("click", e => { if (e.target.id === "piu-righe") { mostrati += 100; render(); } });
+$("altro").addEventListener("click", e => { if (e.target.id === "piu-righe") { const first = D.models.filter(passa)[mostrati]; mostrati += 100; render(); CatalogUI.focusEntry(document.getElementById(slug(first.name)), {block:"start"}); } });
 $("charts").addEventListener("click", e => {
   const a = e.target.closest("[data-anno]"), l = e.target.closest("[data-lab]"), f = e.target.closest("[data-fam]");
   if (a) { state.anno = state.anno === a.dataset.anno ? "" : a.dataset.anno; $("anno").value = state.anno; }
   else if (l) { state.lab = state.lab === l.dataset.lab ? "" : l.dataset.lab; $("lab").value = state.lab; }
-  else if (f) { const el = document.getElementById("fam-" + f.dataset.fam); history.replaceState(null, "", "#fam-" + f.dataset.fam); el?.scrollIntoView({ block:"start", behavior: ridotto.matches ? "auto" : "smooth" }); return; }
+  else if (f) { const el = document.getElementById("fam-" + f.dataset.fam); history.replaceState(null, "", "#fam-" + f.dataset.fam); CatalogUI.focusEntry(el, { block:"start", behavior: ridotto.matches ? "auto" : "smooth" }); return; }
   else return;
-  nascondiTip(); mostrati = 60; render(); grafici();
+  nascondiTip(); mostrati = 60; render(); grafici(); CatalogUI.restoreChartFocus($("charts"), a || l);
 });
 $("charts").addEventListener("keydown", e => { if ((e.key === "Enter" || e.key === " ") && e.target.matches("rect[data-anno]")) { e.preventDefault(); e.target.dispatchEvent(new MouseEvent("click", { bubbles:true })); } });
 let largh = innerWidth, tRes;

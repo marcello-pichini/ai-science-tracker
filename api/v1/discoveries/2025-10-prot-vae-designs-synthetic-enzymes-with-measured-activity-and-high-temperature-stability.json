@@ -1,0 +1,28 @@
+{
+  "id": "2025-10-prot-vae-designs-synthetic-enzymes-with-measured-activity-and-high-temperature-stability",
+  "title": "ProT-VAE designs synthetic enzymes with measured activity and high-temperature stability",
+  "summary": "The transformer–variational-autoencoder ProT-VAE generated synthetic enzyme sequences that were tested experimentally. Among 190 designed human phenylalanine-hydroxylase sequences, 69 had measurable activity and 19 exceeded wild-type activity, with the best at 2.5× wild type. A designed γ-carbonic anhydrase had a measured melting temperature of 116 °C (61 °C above the most thermostable sequence previously reported by the authors) and remained active in 23% methyl diethanolamine at pH 11.25 and 93 °C.",
+  "field": "biology",
+  "ai_technology": "Protein Transformer Variational AutoEncoder (ProT-VAE), using ProtT5nv transformer representations and a family-specific variational autoencoder",
+  "organization": "Evozyne; NVIDIA",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12541330/",
+  "source_type": "paper",
+  "publication_date": "2025-10-06",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1073/pnas.2408737122",
+  "relevance": {
+    "impact": 4,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The transformer–variational-autoencoder ProT-VAE generated synthetic enzyme sequences that were tested experimentally.",
+    "unknown": "The reported outcomes are laboratory expression/activity/stability tests on selected synthetic sequences; most generated candidates were not active or did not express. The 0.8× activity comparison is relative to bovine α-carbonic anhydrase under the stated assay, and the 61 °C comparison is against the previously reported thermostable γ-CA referenced by the authors. Industrial relevance is a proposed application, not demonstrated process performance.",
+    "ai_role": "The generative model learned protein sequence–function patterns, produced candidate enzyme sequences conditioned in a learned latent space, and guided selection for synthesis. The authors measured enzyme function and stability experimentally; AlphaFold was used only for structure predictions of selected designs.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12541330/"
+    ]
+  }
+}

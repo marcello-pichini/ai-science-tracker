@@ -1,0 +1,28 @@
+{
+  "id": "2023-12-machine-learning-discovers-d-amino-acid-mixtures-that-boost-anti-biofilm-antibiotic-cocktails",
+  "title": "Machine learning discovers D-amino-acid mixtures that boost anti-biofilm antibiotic cocktails",
+  "summary": "A machine-learning-guided high-throughput screen identified a five-component D-amino-acid mixture (“D-mix”) with about 78% anti-biofilm activity against Pseudomonas aeruginosa at 100 μM. Combining D-mix with half the lowest effective gentamicin dose retained about 91% bacterial-growth inhibition and about 93% anti-biofilm efficacy in vitro. In a small mouse lung-infection model, gentamicin/D-mix treatment reduced measured P. aeruginosa burden by about 95% in blood and 91% in lung tissue at 72 hours.",
+  "field": "medicine",
+  "ai_technology": "High-throughput screening coupled to machine-learning regression and iterative global optimization of D-amino-acid mixture ratios",
+  "organization": "University of Science and Technology Beijing Institute for Advanced Materials and Technology; National Materials Corrosion and Protection Data Center; Beijing University of Chemical Technology",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/38126652/",
+  "source_type": "paper",
+  "publication_date": "2023-12-21",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1002/advs.202307173",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In a small mouse lung-infection model, gentamicin/D-mix treatment reduced measured P. aeruginosa burden by about 95% in blood and 91% in lung tissue at 72 hours.",
+    "unknown": "The in-vivo experiment used a small mouse P. aeruginosa infection model, not human treatment; study-specific bacterial counts and efficacy are reported at 72 hours. The composition is a selected mixture of five D-amino acids, with authors noting the full synergism mechanism remains unclear. D-mix alone was not bactericidal under the reported in-vitro conditions; effects are combination- and assay-dependent.",
+    "ai_role": "Experimental measurements of mixture biofilm effects were used to train and iteratively update ML regression models, which guided mixture selection over design rounds. The selected D-mix was then evaluated with different antibiotics in vitro; the lead gentamicin/D-mix combination was tested in a P. aeruginosa lung-infection mouse model.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/38126652/"
+    ]
+  }
+}

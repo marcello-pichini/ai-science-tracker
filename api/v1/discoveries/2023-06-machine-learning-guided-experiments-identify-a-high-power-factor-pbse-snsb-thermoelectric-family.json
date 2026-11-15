@@ -1,0 +1,28 @@
+{
+  "id": "2023-06-machine-learning-guided-experiments-identify-a-high-power-factor-pbse-snsb-thermoelectric-family",
+  "title": "Machine-learning-guided experiments identify a high-power-factor PbSe:SnSb thermoelectric family",
+  "summary": "A closed-loop error-correction learning workflow guided synthesis of PbSe alloyed with SnSb and documented a previously unexplored low-temperature thermoelectric family. At 300 K, the best tested composition, 2 wt% SnSb-doped PbSe, had a measured power factor above 850 µW mK⁻² and more than twice that of PbSe. Density-functional calculations attribute the modeled transport improvement to Sn/Sb interactions that reduce hole effective mass.",
+  "field": "materials",
+  "ai_technology": "Closed-loop error-correction learning with a neural-network update to a prior materials-property model; composition representations compared included Magpie, Roost and CrabNet",
+  "organization": "University of Toronto; King Abdullah University of Science and Technology (KAUST)",
+  "source_url": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.202302575",
+  "source_type": "paper",
+  "publication_date": "2023-06-28",
+  "added_date": "2026-11-15",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1002/adma.202302575",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A closed-loop error-correction learning workflow guided synthesis of PbSe alloyed with SnSb and documented a previously unexplored low-temperature thermoelectric family.",
+    "unknown": "The result is specific to the tested powder-processing, composition and measurement protocol, including synthesis below 300 °C; it is not evidence of device-level or commercial performance. The reported mechanism for the increased power factor is supported by DFT calculations, not a direct measurement of carrier effective mass. The paper compares the 2 wt% composition with PbSe and reports more than 2× power factor at room temperature.",
+    "ai_role": "A model trained on published experimental thermoelectric data ranked candidate compositions, and a dense neural-network error-correction model incorporated local experimental comparisons to adapt predictions to the authors’ synthesis and measurement conditions. Iterative model-guided experiments selected the PbSe:SnSb family and 2 wt% SnSb-doped PbSe for characterization. AI supplied composition down-selection and adaptive experiment guidance; the authors synthesized and measured the samples.",
+    "evidence_urls": [
+      "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adma.202302575"
+    ]
+  }
+}
