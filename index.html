@@ -23,7 +23,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/atom+xml" title="AI Science Tracker: additions and source checks" href="feed.xml">
-<link rel="stylesheet" href="styles.css?v=ca7875e92bb7">
+<link rel="stylesheet" href="styles.css?v=212159537541">
 <script type="application/ld+json">
 {"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker discovery catalog","description":"Scientific discoveries enabled by AI and related model families, sourced from original papers, preprints and institutional announcements.","url":"https://marcello-pichini.github.io/ai-science-tracker/index.html","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.csv"}],"isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","keywords":["artificial intelligence","scientific discovery","AI for science"],"@id":"https://marcello-pichini.github.io/ai-science-tracker/index.html#dataset"}
 </script>
@@ -35,7 +35,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html" aria-current="page">Discoveries</a><a href="models.html">Models</a><a href="security.html">Vuln discoveries</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="index.html" aria-current="page">Discoveries</a><a href="models.html">Models</a><a href="security.html">Vuln discoveries</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a><a href="search.html">Search</a></nav>
   </div>
 </header>
 
@@ -51,6 +51,7 @@
 </section>
 
 <main>
+<section class="sez"><div class="wrap"><h2>Explore the evidence</h2><p class="sez-sub"><a href="search.html">Search across discoveries, vulnerabilities and models</a> · <a href="model-progress.html">Compare exact models and release rhythm</a> · <a href="antibiotic-dossier.html">Read the antibiotic evidence dossier</a>. Open each discovery’s result, AI contribution and limits; the list summary describes your full filtered selection.</p></div></section>
   <noscript><div class="wrap"><p class="vuoto">This catalog needs JavaScript to filter and chart entries. Without it you can still read each entry on its <a href="share/2020-02-halicin.html">static discovery page</a> (listed in the <a href="sitemap.xml">sitemap</a>), open the <a href="data/discoveries.json">raw data</a>, or read the <a href="methodology.html">methodology</a>.</p></div></noscript>
   <section class="sez" id="featured" aria-labelledby="t-featured">
     <div class="wrap">
@@ -96,6 +97,7 @@
           <select id="min" aria-label="Minimum relevance"><option value="0">Any relevance</option><option value="40">Relevance 40 or more</option><option value="60">Relevance 60 or more</option><option value="80">Relevance 80 or more</option></select>
           <button id="copy-filters" type="button">Copy filter link</button>
         </div>
+        <div class="campi"><select id="test" aria-label="Test context"></select><select id="publication" aria-label="Publication status"></select></div>
         <div class="campi campi-3">
           <button id="dl-json" type="button">Download selection (JSON)</button>
           <button id="dl-csv" type="button">Download selection (CSV)</button>
@@ -104,7 +106,7 @@
         <div class="riepilogo"><span id="conta" aria-live="polite"></span></div>
       </div>
     </div>
-    <div class="wrap"><div id="lista">Loading…</div></div>
+    <div class="wrap"><section id="selection-summary" aria-label="Your selection"></section><div id="lista">Loading…</div></div>
   </section>
   <!-- browse:start -->
   <section class="sez" aria-labelledby="t-browse"><div class="wrap prosa">
@@ -124,21 +126,22 @@
 
 <footer class="footer">
   <div class="wrap">
+    <p><a href="search.html">Search all collections</a> · <a href="model-progress.html">Model progress and release rhythm</a> · <a href="antibiotic-dossier.html">Antibiotic evidence dossier</a></p>
     <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
     <p><a href="methodology.html">How we select and verify entries</a> · <a href="profiles/index.html">All organizations and model families</a> · <a href="dataset.html">Dataset and API</a> · <a href="contributors.html">Contributors</a></p>
     <p><a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=discovery.yml">Suggest a discovery</a>. Reports are public, require GitHub sign-in, and are reviewed before catalog changes.</p>
   </div>
 </footer>
 
-<script src="assets/catalog-ui.js?v=75de9d87a94a"></script>
+<script src="assets/catalog-ui.js?v=986c23fe9ed8"></script>
 <script>
 // Object.groupBy is missing before Safari 17.4 and Chrome 117.
 Object.groupBy ??= (xs, f) => xs.reduce((o, x) => ((o[f(x)] ??= []).push(x), o), {});
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeUrl = u => /^https?:\/\//.test(u) ? u : "#";
-const state = { q:"", field:"", org:"", anno:"", ord:"desc", min:0, family:"" };
-const clearFilters = () => { Object.assign(state, { q:"", field:"", org:"", anno:"", min:0, family:"" }); $("q").value = ""; };
+const state = { q:"", field:"", org:"", anno:"", ord:"desc", min:0, family:"", test:"", publication:"" };
+const clearFilters = () => { Object.assign(state, { q:"", field:"", org:"", anno:"", min:0, family:"", test:"", publication:"" }); $("q").value = ""; };
 const ridotto = matchMedia("(prefers-reduced-motion: reduce)");
 let items = [], famDi = {}, famIds = {};
 let fragment = "";
@@ -158,10 +161,12 @@ const passa = s => {
   const q = state.q.toLowerCase();
   return (!state.field || s.field === state.field) && (!state.org || orgDi(s) === state.org) &&
     (!state.anno || s.publication_date.startsWith(state.anno)) &&
+    (!state.test || CatalogUI.evidenceValue(s, "test_type") === state.test) &&
+    (!state.publication || CatalogUI.evidenceValue(s, "publication_status") === state.publication) &&
     (!state.min || punteggio(s) >= state.min) && (!state.family || (famIds[s.id] || []).includes(state.family)) &&
     (!q || [s.title, s.summary, s.ai_technology, s.organization].join(" ").toLowerCase().includes(q));
 };
-const filtroAttivo = () => !!(state.q || state.field || state.org || state.anno || state.min || state.family);
+const filtroAttivo = () => !!(state.q || state.field || state.org || state.anno || state.min || state.family || state.test || state.publication);
 
 /* One tooltip element; insert text with textContent. */
 const tip = document.createElement("div"); tip.className = "tip"; tip.setAttribute("aria-hidden", "true"); document.body.append(tip);
@@ -336,7 +341,7 @@ const PAGE = 40;
 let limite = PAGE, chiaveLista = "", printState = null;
 function filterQuery() {
   const q = new URLSearchParams();
-  [["q", state.q], ["field", state.field], ["org", state.org], ["year", state.anno], ["family", state.family], ["min", state.min || ""], ["sort", state.ord === "desc" ? "" : state.ord]]
+  [["test", state.test], ["publication", state.publication], ["q", state.q], ["field", state.field], ["org", state.org], ["year", state.anno], ["family", state.family], ["min", state.min || ""], ["sort", state.ord === "desc" ? "" : state.ord]]
     .forEach(([k, v]) => { if (v) q.set(k, v); });
   return q.size ? "?" + q : "";
 }
@@ -349,12 +354,15 @@ function readFilters(fields, orgs, years, families) {
     if (legacy.length === 1) state.org = legacy[0];
   }
   state.family = pick("family", families); state.min = [40, 60, 80].includes(+q.get("min")) ? +q.get("min") : 0;
+  state.test = pick("test", [...new Set(items.map(s => CatalogUI.evidenceValue(s, "test_type")))]);
+  state.publication = pick("publication", [...new Set(items.map(s => CatalogUI.evidenceValue(s, "publication_status")))]);
   state.ord = SORTS.includes(q.get("sort")) ? q.get("sort") : "desc";
   $("q").value = state.q; $("ord").value = state.ord;
 }
 function lista() {
   let out = selezione();
   $("conta").textContent = `${out.length} of ${items.length} discoveries`;
+  $("selection-summary").innerHTML = `<h3>Your selection</h3><p>${out.length} catalog entries before pagination. Counts describe stored annotations, not scientific quality.</p>${out.length ? [ ["Test context", "test_type"], ["Publication status", "publication_status"] ].map(([label, key]) => `<p><b>${label}:</b> ${CatalogUI.selectionCounts(out, key).map(([value, count]) => `${count} ${esc(value)}`).join(" · ")}</p>`).join("") : "<p>No matching entries.</p>"}`;
   const chiave = JSON.stringify(state);
   if (chiave !== chiaveLista) { chiaveLista = chiave; limite = PAGE; }
   if (ancora) { const i = out.findIndex(s => s.id === ancora); if (i >= limite) limite = i + 1; }
@@ -371,6 +379,7 @@ function lista() {
   const resto = tutte.length - out.length;
   if (resto) html += `<p class="altre"><button id="altre" type="button">Show ${Math.min(PAGE, resto)} more</button> <span>${resto} not shown yet</span></p>`;
   $("lista").innerHTML = html;
+  $("test").value = state.test; $("publication").value = state.publication;
   $("org").value = state.org; $("year").value = state.anno; $("family").value = state.family; $("min").value = state.min;
   document.querySelectorAll("#cat button").forEach(b => b.setAttribute("aria-pressed", (b.dataset.v || "") === state.field));
   if (ancora) { // Preserve the anchor on the first render after opening a discovery link.
@@ -400,6 +409,8 @@ Promise.all([
   const families = modelli ? modelli.families.filter(f => f.discoveries.length).sort((a, b) => a.name.localeCompare(b.name, "en")) : [];
   $("year").innerHTML = `<option value="">All years</option>` + years.map(y => `<option>${y}</option>`).join("");
   $("family").innerHTML = `<option value="">All model families</option>` + families.map(f => `<option value="${esc(f.id)}">${esc(f.name)}</option>`).join("");
+  riempi($("test"), "All test contexts", [...new Set(items.map(s => CatalogUI.evidenceValue(s, "test_type")))].sort());
+  riempi($("publication"), "All publication states", [...new Set(items.map(s => CatalogUI.evidenceValue(s, "publication_status")))].sort());
   readFilters(perAmb.map(([v]) => v), [...new Set(items.map(orgDi))], years, families.map(f => f.id));
   const h = fragment; // legacy category links such as #biology
   if (!state.field) { if (perAmb.some(([v]) => v === h)) state.field = h; else if (legacy[h] && perAmb.some(([v]) => v === legacy[h])) state.field = legacy[h]; }
@@ -449,6 +460,7 @@ $("org").addEventListener("change", e => { state.org = e.target.value; lista(); 
 $("reset").addEventListener("click", () => { clearFilters(); lista(); grafici(); });
 $("year").addEventListener("change", e => { state.anno = e.target.value; lista(); grafici(); });
 $("family").addEventListener("change", e => { state.family = e.target.value; lista(); });
+["test", "publication"].forEach(key => $(key).addEventListener("change", e => { state[key] = e.target.value; lista(); }));
 $("min").addEventListener("change", e => { state.min = +e.target.value; lista(); });
 const scarica = (nome, tipo, testo) => {
   const a = document.createElement("a"), url = URL.createObjectURL(new Blob([testo], { type: tipo }));

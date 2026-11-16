@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=ca7875e92bb7">
+<link rel="stylesheet" href="styles.css?v=212159537541">
 <script type="application/ld+json">
 {"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker discovery catalog","description":"Scientific discoveries enabled by AI and related model families, sourced from original papers, preprints and institutional announcements.","url":"https://marcello-pichini.github.io/ai-science-tracker/index.html","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.csv"}],"isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","keywords":["artificial intelligence","scientific discovery","AI for science"],"@id":"https://marcello-pichini.github.io/ai-science-tracker/index.html#dataset"}
 </script>
@@ -34,7 +34,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="security.html">Vuln discoveries</a><a href="methodology.html" aria-current="page">Methodology</a><a href="guide.html">Guide</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="security.html">Vuln discoveries</a><a href="methodology.html" aria-current="page">Methodology</a><a href="guide.html">Guide</a><a href="search.html">Search</a></nav>
   </div>
 </header>
 
@@ -92,8 +92,11 @@
   <h2>Evidence context (pilot)</h2>
   <p>Optional annotations add &ldquo;Evidence context&rdquo; to the source details of selected entries: publication status, what was tested, what the sources say is still unknown, and what the AI system did. Every scientific statement comes from pages read for the annotation, linked in its source details and listed in the data file; nothing is inferred from the website, keywords or relevance score. Each annotation also records a test type, chosen from the tested context; it sets the validation subscore (see Relevance score). The other statements are separate from editorial judgments and do not change any score.</p>
   <p>For new or revised annotations, distinguish three cases explicitly in the text: &ldquo;Not assessed&rdquo; when relevant material was not reviewed or was inaccessible; &ldquo;Not stated in the reviewed material&rdquo; when the pages read omit the detail; and a scientific unknown only when a cited source identifies it as unresolved. State &ldquo;Not applicable&rdquo; only with an explanation. An inaccessible full paper cannot establish that it omits a detail, and an omitted detail cannot establish scientific uncertainty.</p>
-  <p>Earlier pilot fields labeled &ldquo;Not reported&rdquo; do not reliably distinguish these cases and should be treated as unspecified annotation gaps until reviewed. No annotation means not annotated in this catalog, not absent scientific evidence. Record the actual review scope (announcement, abstract or full paper) and review date when a new review is performed; do not infer them from publication or catalog addition dates or backfill unrecorded historical checks. Structured review provenance remains future work.</p>
+  <p>Earlier pilot fields labeled &ldquo;Not reported&rdquo; do not reliably distinguish these cases and should be treated as unspecified annotation gaps until reviewed. No annotation means not annotated in this catalog, not absent scientific evidence. Record the actual review scope (announcement, abstract or full paper) and review date when a new review is performed; do not infer them from publication or catalog addition dates or backfill unrecorded historical checks. Optional structured review provenance now records the actual date and bounded scope of new checks. Older entries without it retain an explicit missing-review label; dates are never inferred from publication or addition.</p>
 
+  <h2>Follow-up and scientific relationships</h2>
+  <p>Optional source-backed events distinguish publication, same-team extension, independent follow-up, documented application, contradiction, correction and retraction. Event dates retain their recorded year, month or day precision; the recording date is separate. A journal transition is not replication. Missing follow-up means none recorded here, not none exists. Review scope is displayed only where actually recorded; the catalog does not claim continuous monitoring.</p>
+  <p>Directed relationships identify the same result, an extension, independent follow-up or shared evidence, with a source and bounded reason. They preserve historical IDs and do not merge counts. The <a href="antibiotic-dossier.html">antibiotic dossier</a> illustrates a limited synthesis; <a href="model-progress.html">model progress</a> describes benchmark and release-date evidence separately from scientific outcomes.</p>
   <h2 id="evidence-coverage">Evidence and coverage</h2>
   <p>These tables describe all active entries in the loaded catalog, grouped by their recorded publication year. Annotation coverage counts the presence of the optional evidence block, regardless of its contents. Source composition counts each entry once by its primary source type, even if it also links a paper. Neither table measures scientific quality, independent confirmation, or how much research exists outside this collection.</p>
   <p id="coverage-status" role="status">Coverage tables require JavaScript. The raw discovery data is linked below.</p>
@@ -178,6 +181,7 @@
 
 <footer class="footer">
   <div class="wrap">
+    <p><a href="search.html">Search all collections</a> · <a href="model-progress.html">Model progress and release rhythm</a> · <a href="antibiotic-dossier.html">Antibiotic evidence dossier</a></p>
     <p>Each entry links to an original source. Figures are reported by sources and have not been independently verified.</p>
     <p><a href="index.html">Back to discoveries</a></p>
   </div>

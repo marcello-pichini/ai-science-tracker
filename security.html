@@ -23,7 +23,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/atom+xml" title="AI Science Tracker: additions and source checks" href="feed.xml">
-<link rel="stylesheet" href="styles.css?v=ca7875e92bb7">
+<link rel="stylesheet" href="styles.css?v=212159537541">
 </head>
 <body>
 <header class="header">
@@ -32,7 +32,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="security.html" aria-current="page">Vuln discoveries</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="security.html" aria-current="page">Vuln discoveries</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a><a href="search.html">Search</a></nav>
   </div>
 </header>
 
@@ -83,7 +83,7 @@
       </div>
       <div class="riepilogo"><span id="count" aria-live="polite"></span></div>
     </div></div>
-    <div class="wrap"><div id="cases">Loading…</div></div>
+    <div class="wrap"><div id="report-group"></div><div id="cases">Loading…</div></div>
   </section>
   <section class="sez" aria-labelledby="t-context"><div class="wrap prosa">
     <h2 id="t-context">What the labels mean</h2>
@@ -95,10 +95,11 @@
   </div></section>
 </main>
 <footer class="footer"><div class="wrap">
+    <p><a href="search.html">Search all collections</a> · <a href="model-progress.html">Model progress and release rhythm</a> · <a href="antibiotic-dossier.html">Antibiotic evidence dossier</a></p>
   <p>Original disclosures and documented remediation, with AI involvement attributed to sources.</p>
   <p><a href="index.html">Scientific discoveries</a> · <a href="guide.html">Site guide</a></p>
 </div></footer>
-<script src="assets/catalog-ui.js?v=75de9d87a94a"></script>
+<script src="assets/catalog-ui.js?v=986c23fe9ed8"></script>
 <script>
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -106,6 +107,18 @@ const safeUrl = value => /^https:\/\//.test(value) ? value : "#";
 const date = value => new Intl.DateTimeFormat("en-GB", {day:"numeric",month:"short",year:"numeric"}).format(new Date(value + "T12:00:00"));
 const labels = {undisclosed:"Undisclosed at discovery (source report)", "pre-release":"Pre-release finding", disclosure:"Vulnerability disclosure"};
 let cases = [], year = "", shown = 40;
+let report = new URLSearchParams(location.search).get('report') || '';
+const reportUrls = record => [...new Set([record.source_url, record.ai_source_url, record.advisory_url])];
+let reports = new Map();
+function reportLinks(record) {
+  return reportUrls(record).filter(url => (reports.get(url)?.length || 0) > 1).map(url => `<p><a href="?report=${encodeURIComponent(url)}#t-disclosures">Cases citing this report (${reports.get(url).length})</a> · <a href="${esc(safeUrl(url))}" rel="noopener">${esc(url)}</a></p>`).join('');
+}
+function clearReport() {
+  report = '';
+  const url = new URL(location.href);
+  url.searchParams.delete('report');
+  history.replaceState(null, '', url);
+}
 const filterIds = ["product", "context", "month", "ai_system", "remediation"];
 function rows(key, entries, max = Math.max(1, ...entries.map(entry => entry[2]))) {
   return `<div class="righe">` + entries.map(([value, label, n]) => `<button class="riga" type="button" data-k="${key}" data-v="${esc(value)}" aria-pressed="false" aria-label="${esc(label)}: ${n} ${n === 1 ? "case" : "cases"}"><span class="et" title="${esc(label)}">${esc(label)}</span><span class="bin"><span class="bar" style="width:${(n / max * 100).toFixed(1)}%;min-width:${n ? 3 : 0}px"></span></span><span class="val">${n}</span></button>`).join("") + `</div>`;
@@ -154,27 +167,31 @@ function render() {
   const openDetails = new Set([...$("cases").querySelectorAll(".source-details[open]")].map(details => details.closest("article").id));
   const query = $("q").value.trim().toLowerCase();
   document.querySelectorAll("#charts .riga").forEach(b => b.setAttribute("aria-pressed", (b.dataset.k === "year" ? year : $(b.dataset.k).value) === b.dataset.v));
-  const selected = cases.filter(record => (!year || record.disclosure_date.startsWith(year)) && (!$("product").value || record.product === $("product").value) &&
+  const group = reports.get(report);
+  $('report-group').innerHTML = group ? `<details class="source-details" open><summary>Cases citing this report · ${group.length} cases · ${new Set(group.flatMap(r => r.cves)).size} distinct CVEs</summary><p><a href="${esc(safeUrl(report))}" rel="noopener">${esc(report)}</a></p><p>Exact evidence-URL matches across disclosure, AI attribution and advisory links. Cases remain separate; sharing a report does not establish a common root cause, campaign or independent confirmation. Other filters narrow the list below.</p><ul>${group.map(r => `<li><a href="#${esc(r.id)}">${esc(r.id)} — ${esc(r.title)}</a></li>`).join('')}</ul></details>` : report ? '<p>No cases cite this exact report URL. Clear filters to browse all cases.</p>' : '';
+  const selected = cases.filter(record => (!report || reportUrls(record).includes(report)) && (!year || record.disclosure_date.startsWith(year)) && (!$("product").value || record.product === $("product").value) &&
     (!$("context").value || record.classification === $("context").value) &&
     (!$("month").value || record.disclosure_date.startsWith($("month").value)) &&
     (!$("ai_system").value || record.ai_system === $("ai_system").value) &&
     (!$("remediation").value || record.remediation === $("remediation").value) &&
-    (!query || [record.title,record.product,record.ai_system,record.organization,record.summary,...record.cves].join(" ").toLowerCase().includes(query)));
+    (!query || [record.title,record.product,record.ai_system,record.organization,record.summary,record.ai_role,...record.cves].join(" ").toLowerCase().includes(query)));
   $("count").textContent = `${selected.length} of ${cases.length} tracked cases`;
   $("cases").innerHTML = selected.slice(0, shown).map(record => `<article class="voce" id="${esc(record.id)}" tabindex="-1">
     <div class="voce-meta"><time datetime="${esc(record.disclosure_date)}">Disclosed ${esc(date(record.disclosure_date))}</time><span>${esc(record.organization)}</span></div>
     <h3><a href="#${esc(record.id)}">${esc(record.title)}</a></h3>
     <p class="sommario">${esc(record.summary)}</p>
-    <p class="tech"><span>AI system:</span> ${esc(record.ai_system)} · <span>Product:</span> ${esc(record.product)}</p>
-    <p>${record.cves.length ? record.cves.map(esc).join(", ") : "CVE: not established in this catalog"}</p>
-    <div class="voce-footer"><span class="etich">${esc(labels[record.classification])}</span><span class="etich">${esc(record.remediation)}</span>
-      <span class="collegamenti"><a href="${esc(safeUrl(record.source_url))}" rel="noopener">Original disclosure</a><a href="${esc(safeUrl(record.ai_source_url))}" rel="noopener">AI attribution</a><a href="${esc(safeUrl(record.advisory_url))}" rel="noopener">Advisory / fix evidence</a></span></div>
-    <details class="source-details"${openDetails.has(record.id) ? " open" : ""}><summary>AI contribution, context and remediation</summary>
-      <p><strong>AI contribution:</strong> ${esc(record.ai_role)}</p>
+    <details class="source-details"${openDetails.has(record.id) ? " open" : ""}><summary>Source-attributed AI, human and vendor contributions</summary>
+      <p><strong>AI and human contribution (source account):</strong> ${esc(record.ai_role)}</p>
+      <p>Human involvement is only described where the source account establishes it; unknown involvement does not mean none. Vendor confirmation of a flaw does not confirm every claim about AI contribution.</p>
+      <p><strong>Vendor / advisory and remediation scope:</strong> ${esc(record.remediation_note)}</p>
       <p><strong>Discovery context:</strong> ${esc(record.classification_note)}</p>
-      <p><strong>Remediation:</strong> ${esc(record.remediation_note)}</p>
       <p>${record.ai_attribution_date ? `AI attribution dated ${esc(date(record.ai_attribution_date))}` : 'AI attribution date not established by the source'}. Sources checked ${esc(date(record.checked_date))}; this is not a live patch-status check.</p>
     </details>
+    <p class="tech"><span>AI system:</span> ${esc(record.ai_system)} · <span>Product:</span> ${esc(record.product)}</p>
+    <p>${record.cves.length ? record.cves.map(esc).join(", ") : "CVE: not established in this catalog"}</p>
+    <div class="voce-footer"><span class="etich">${esc(labels[record.classification])}</span><span class="etich">${esc(record.remediation)}</span><span>Source-documented fix evidence does not establish installed patches or current safety.</span>
+      <span class="collegamenti"><a href="${esc(safeUrl(record.source_url))}" rel="noopener">Original disclosure</a><a href="${esc(safeUrl(record.ai_source_url))}" rel="noopener">AI attribution</a><a href="${esc(safeUrl(record.advisory_url))}" rel="noopener">Advisory / fix evidence</a></span></div>
+    ${reportLinks(record)}
   </article>`).join("") + (selected.length > shown ? `<p><button class="piu" id="more" type="button">Show 40 more of ${selected.length - shown} remaining</button></p>` : "")
     || '<p class="vuoto">No disclosures match these filters. Try clearing a filter.</p>';
   return selected;
@@ -193,7 +210,9 @@ function openHash() {
   if (i < 0) return;
   ["q",...filterIds].forEach(key => $(key).value = "");
   year = "";
-  shown = Math.max(shown, i + 1);
+  if (report && !reportUrls(cases[i]).includes(report)) clearReport();
+  const scope = report ? cases.filter(record => reportUrls(record).includes(report)) : cases;
+  shown = Math.max(shown, scope.findIndex(record => record.id === id) + 1);
   render();
   focusCase(id);
 }
@@ -221,6 +240,11 @@ fetch("data/vulnerabilities.json").then(response => {
   return response.json();
 }).then(records => {
   if (!Array.isArray(records)) throw new Error("Invalid disclosure data");
+  reports = new Map();
+  records.forEach(record => reportUrls(record).forEach(url => {
+    if (!reports.has(url)) reports.set(url, []);
+    reports.get(url).push(record);
+  }));
   cases = records.sort((a,b) => b.disclosure_date.localeCompare(a.disclosure_date));
   const products = [...new Set(cases.map(record => record.product))].sort();
   $("product").innerHTML += products.map(product => `<option>${esc(product)}</option>`).join("");
@@ -240,7 +264,7 @@ $("cases").addEventListener("click", e => {
   const selected = render();
   if (selected[firstAdded]) focusCase(selected[firstAdded].id);
 });
-$("reset").addEventListener("click",()=>{["q",...filterIds].forEach(id=>$(id).value="");year="";shown=40;render();});
+$("reset").addEventListener("click",()=>{["q",...filterIds].forEach(id=>$(id).value="");year="";clearReport();shown=40;render();});
 </script>
 </body>
 </html>

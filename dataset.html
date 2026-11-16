@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=ca7875e92bb7">
+<link rel="stylesheet" href="styles.css?v=212159537541">
 <script type="application/ld+json">
 {"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker catalog","description":"Curated records of scientific discoveries enabled by AI and of AI-assisted vulnerability findings, with original sources and dates.","url":"https://marcello-pichini.github.io/ai-science-tracker/dataset.html","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","identifier":"https://doi.org/10.5281/zenodo.24217686","keywords":["artificial intelligence","scientific discovery","AI for science"],"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.csv"},{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/vulnerabilities.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/vulnerabilities.csv"}]}
 </script>
@@ -34,7 +34,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="security.html">Vuln discoveries</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html">Models</a><a href="security.html">Vuln discoveries</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a><a href="search.html">Search</a></nav>
   </div>
 </header>
 
@@ -50,8 +50,9 @@
     <article class="prosa">
       <h2>Downloads</h2>
       <ul>
-        <li>Discoveries: <a href="data/discoveries.json">discoveries.json</a> (full records, including the optional evidence pilot) and <a href="data/discoveries.csv">discoveries.csv</a> (flat columns, no evidence fields).</li>
+        <li>Discoveries: <a href="data/discoveries.json">discoveries.json</a> (full records, including evidence, optional review scope, follow-up and relationships) and <a href="data/discoveries.csv">discoveries.csv</a> (evidence and caveat columns; structured review, follow-up and relationship fields encoded as JSON cells).</li>
         <li>AI-found vulnerabilities: <a href="data/vulnerabilities.json">vulnerabilities.json</a> and <a href="data/vulnerabilities.csv">vulnerabilities.csv</a> (CVE identifiers separated by semicolons, with classification and remediation caveats). An unknown <code>ai_attribution_date</code> is <code>null</code> in JSON and an empty cell in CSV; consumers must handle this separately from a dated account. These cases are separate from the scientific count.</li>
+        <li>Model progress: <a href="data/model-progress.json">model-progress.json</a>, the separately imported capability and benchmark snapshot from Epoch AI, CC BY 4.0. <a href="docs/model-progress.md">Import and interpretation</a>. Source entries can overlap notable releases and must not be added to that collection’s count.</li>
         <li>Models: <a href="data/models.json">models.json</a>, generated from Epoch AI data, which keeps its own CC BY 4.0 attribution.</li>
         <li>Every file is also available from the repository, whose releases are archived on Zenodo.</li>
       </ul>
@@ -91,6 +92,7 @@
 
 <footer class="footer">
   <div class="wrap">
+    <p><a href="search.html">Search all collections</a> · <a href="model-progress.html">Model progress and release rhythm</a> · <a href="antibiotic-dossier.html">Antibiotic evidence dossier</a></p>
     <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
     <p><a href="index.html">Back to discoveries</a> · <a href="profiles/index.html">All organizations and model families</a></p>
   </div>

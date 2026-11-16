@@ -55,6 +55,17 @@ class SharePageTests(unittest.TestCase):
         self.assertTrue(entries[0].find('a:updated', ns).text.startswith('2999-01-01'))
         self.assertEqual(root.find('a:updated', ns).text, '2999-01-01T00:00:00Z')
 
+    def test_skipping_image_rendering_preserves_existing_entry_previews(self):
+        g = self.generator
+        g.write_discovery_pages([self.record], {'families': []}, False)
+        page = g.ROOT / 'share/test-discovery.html'
+        self.assertIn('og/default.png', page.read_text())
+        (g.ROOT / 'og').mkdir()
+        (g.ROOT / 'og/test-discovery.png').write_bytes(b'existing image')
+        g.write_discovery_pages([self.record], {'families': []}, False)
+        self.assertIn('og/test-discovery.png', page.read_text())
+        self.assertNotIn('og/default.png', page.read_text())
+
     def test_exports_preserve_vulnerability_caveats_and_neutralize_formulas(self):
         g = self.generator
         (g.ROOT / 'data').mkdir()
@@ -102,6 +113,25 @@ class SharePageTests(unittest.TestCase):
             (g.ROOT / 'styles.css').write_text('changed')
             g.render_cards([self.record], False)
             self.assertEqual(screenshot.call_count, 5)
+
+    def test_explicit_verified_image_reuse_refreshes_hashes_without_rendering(self):
+        g = self.generator
+        with patch.object(g, 'screenshot', side_effect=lambda page, out: out.write_bytes(b'png')) as screenshot:
+            g.render_cards([self.record], False)
+            original = (g.ROOT / 'og/card-hashes.json').read_text()
+            (g.ROOT / 'styles.css').write_text('reviewed visual-equivalent CSS')
+            g.render_cards([self.record], False, reuse_images=True)
+            self.assertNotEqual(original, (g.ROOT / 'og/card-hashes.json').read_text())
+            self.assertEqual(screenshot.call_count, 2)
+            g.render_cards([self.record], False)
+            self.assertEqual(screenshot.call_count, 2)
+            with self.assertRaises(ValueError):
+                g.render_cards([self.record], True, reuse_images=True)
+            (g.ROOT / 'og/test-discovery.png').unlink()
+            before_failure = (g.ROOT / 'og/card-hashes.json').read_text()
+            with self.assertRaises(ValueError):
+                g.render_cards([self.record], False, reuse_images=True)
+            self.assertEqual(before_failure, (g.ROOT / 'og/card-hashes.json').read_text())
 
     def test_sitemap_includes_static_discoveries_and_security_without_false_dates(self):
         g = self.generator

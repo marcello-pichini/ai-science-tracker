@@ -39,7 +39,7 @@ An absent `evidence` object means unannotated in this catalog, not absent eviden
 
 For new or revised free-text fields, distinguish `Not assessed` (material not reviewed or inaccessible), `Not stated in the reviewed material` (the pages read omit the detail), and a scientific unknown explicitly attributed to a cited source. Use `Not applicable` only with an explanation. Do not infer absence from an inaccessible paper or scientific uncertainty from an omitted detail. The earlier pilot's `Not reported` values are ambiguous annotation gaps, retained until review. The publication-status enum is unchanged; if it remains `Not reported`, explain any relevant review limitation in the free text rather than inventing a publication status.
 
-When reviewing an entry, record the actual scope (announcement, abstract or full paper) and actual review date in the review record. Structured review-scope/date fields are not implemented; do not treat `publication_date` or `added_date` as review dates or invent historical checks. `verified` means source checked for the entry's stated claims, not independent scientific confirmation; a linked paper does not by itself establish that its full text was read.
+When reviewing an entry, record the actual scope (announcement, abstract or full paper) and actual review date in the review record. `source_review: {date, scope}` optionally records the actual day and bounded material reviewed; absent fields mean unknown scope/date. Do not treat `publication_date` or `added_date` as review dates or invent historical checks. `verified` means source checked for the entry's stated claims, not independent scientific confirmation; a linked paper does not by itself establish that its full text was read.
 
 ## Model data
 
@@ -50,3 +50,15 @@ When reviewing an entry, record the actual scope (announcement, abstract or full
 - Each family: `id`, `name`, `discoveries`, `models`, `discovery_count`, `model_count`.
 
 Family discovery lists contain discovery IDs, while model lists contain model names. A match identifies a family, not a specific version used in an experiment. Preserve the Epoch AI attribution and CC BY 4.0 license when reusing this data.
+
+
+## Optional source review, follow-up and relationships (IMP-005/006/010/027)
+
+These fields describe recorded evidence, never automatic score changes or new discovery counts. They are retained in JSON/API and serialized as JSON cells in CSV; evidence publication status, test type, tested result, unknowns, AI role and source URLs also have CSV columns.
+
+- `source_review`: `{date: "YYYY-MM-DD", scope: "material actually reviewed"}`. Do not backfill from addition/publication dates or equate a source check with full-text review.
+- `follow_up_review`: the same date/scope structure for a bounded follow-up search. An absent review is unknown; no events means “No follow-up recorded”, not that no follow-up exists.
+- `follow_up`: array of `{id, kind, date, date_precision, note, source_urls, recorded_date}`. IDs are stable safe slugs unique within the record. Kinds: `publication`, `same-team extension`, `independent follow-up`, `documented application`, `contradiction`, `correction`, `retraction`. `date_precision` is `year`, `month`, `day` or `unknown`, matching `YYYY`, `YYYY-MM`, `YYYY-MM-DD` or null respectively. `recorded_date` is the actual recording day. Each bounded note and event kind needs nonempty HTTPS `source_urls`. A journal version is not replication; important corrections must also update the current summary.
+- `relationships`: directed array of `{type, target_id, reason, source_urls}`. Types: `same result`, `extends`, `independent follow-up`, `shared evidence`. Read as “this entry [type] target”; `same result` and `shared evidence` assert the stated relation without merging records. Targets must be existing active or archived IDs, never self-links; duplicate type/target pairs are invalid. A bounded reason and nonempty HTTPS sources are mandatory. Links are curated, not inferred from similar names, shared organizations or fields.
+
+The generator validates these optional structures before writing outputs. Missing evidence is displayed as “Not annotated in this catalog”; legacy `not reported` test categories and `Not reported` publication categories remain distinct unspecified annotations. Neither label establishes absent scientific evidence.

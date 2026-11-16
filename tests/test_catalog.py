@@ -35,7 +35,8 @@ class CatalogTests(unittest.TestCase):
                 'verification_status', 'paper_url', 'relevance'}
         for d in discoveries:
             with self.subTest(discovery=d['id']):
-                self.assertIn(set(d), (keys, keys | {'evidence'}))
+                self.assertTrue(keys <= set(d))
+                self.assertFalse(set(d) - keys - {'evidence', 'source_review', 'follow_up', 'follow_up_review', 'relationships'})
                 if 'evidence' in d:
                     e = d['evidence']
                     self.assertEqual(set(e) - {'test_type'}, {'publication_status', 'tested', 'unknown', 'ai_role', 'evidence_urls'})

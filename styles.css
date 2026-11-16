@@ -370,3 +370,257 @@ main { padding:0 0 72px; }
 .security-options > summary:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
 #charts .riga .et { white-space:normal; overflow:visible; overflow-wrap:anywhere; }
 @media print { .security-tasks, .security-options { display:none; } }
+
+/* Cross-collection search and question-centered evidence dossier. */
+.search-controls { display:flex; gap:12px; flex-wrap:wrap; margin:12px 0; }
+.search-controls input { flex:1 1 240px; min-width:0; }
+.search-controls :is(input,button) { font:inherit; padding:10px 14px; border:1px solid var(--line-2); border-radius:var(--r); background:var(--sheet); color:var(--ink); }
+.search-controls :is(input,button):focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.search-group { border-top:1px solid var(--line); padding:24px 0; }
+.search-group li { padding:8px 0; overflow-wrap:anywhere; }
+.search-group .descr { margin:4px 0; }
+.dossier-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.dossier-grid .pannello { overflow-wrap:anywhere; }
+@media(max-width:600px) { .dossier-grid { grid-template-columns:1fr; } }
+@media print { .search-controls { display:none; } .dossier-grid { display:block; } .dossier-grid .pannello { break-inside:avoid; } }
+/* Model progress: temporal plot and selected-release comparison. */
+
+body.model-progress .progress-label { color:var(--on-prussia-2); font-size:.8125rem; margin:0 0 18px; }
+body.model-progress .banda { padding:32px 0; }
+body.model-progress .banda h1 { font-size:clamp(2.4rem,5vw,4.2rem); max-width:20ch; }
+body.model-progress .banda .lead { max-width:64ch; margin-top:18px; }
+body.model-progress .section-heading, body.model-progress .chart-heading { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+body.model-progress .section-heading h2 { margin-bottom:8px; }
+body.model-progress .progress-button, body.model-progress .lab-tabs button { border:1px solid var(--line-2); border-radius:999px; background:var(--sheet); color:var(--ink); font:600 .875rem var(--font); padding:10px 16px; cursor:pointer; }
+body.model-progress .progress-button:focus-visible, body.model-progress .lab-tabs button:focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+body.model-progress .lab-tabs { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 20px; }
+body.model-progress .lab-tabs button span { color:var(--muted); margin-left:8px; }
+body.model-progress .lab-tabs button[aria-pressed="true"] { background:var(--accent-wash); border-color:var(--accent); }
+body.model-progress .progress-layout { display:grid; grid-template-columns:minmax(0,1.7fr) minmax(0,1fr); gap:16px; }
+body.model-progress .chart-heading { margin-bottom:16px; align-items:flex-start; flex-wrap:wrap; }
+body.model-progress .chart-heading .etich { font-size:.75rem; }
+body.model-progress .chart-legend { display:flex; flex-wrap:wrap; gap:14px; font-size:.8125rem; margin:0 0 14px; }
+body.model-progress .chart-legend span::before { content:""; display:inline-block; width:16px; height:3px; margin:0 6px 3px 0; background:currentColor; }
+body.model-progress .series { color:var(--muted); opacity:.5; }
+body.model-progress .series-0, body.model-progress .legend-0 { color:var(--accent); }
+body.model-progress .series-1, body.model-progress .legend-1 { color:var(--ink-2); }
+body.model-progress .series-2, body.model-progress .legend-2 { color:var(--muted); }
+body.model-progress .series.selected { opacity:1; }
+body.model-progress .series-line { stroke:currentColor; stroke-width:2; fill:none; }
+body.model-progress .series-1 .series-line { stroke-dasharray:8 4; }
+body.model-progress .series-2 .series-line { stroke-dasharray:2 4; }
+body.model-progress .series.selected .series-line { stroke-width:3; }
+body.model-progress .mark { fill:var(--sheet); stroke:currentColor; stroke-width:2; }
+body.model-progress .selected .mark { fill:currentColor; }
+body.model-progress .hit { fill:transparent; cursor:pointer; }
+body.model-progress .series-label { fill:currentColor; font:600 13px var(--font); }
+body.model-progress .series [role="button"]:focus-visible { outline:none; }
+body.model-progress .series [role="button"]:focus-visible .mark { stroke:var(--ink); stroke-width:5; }
+body.model-progress .comparison h3 { font-size:1.35rem; line-height:1.25; overflow-wrap:anywhere; }
+body.model-progress .pair-arrow { display:block; font-weight:400; color:var(--muted); padding:8px 0; }
+body.model-progress .pair-stats { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:22px 0 18px; }
+body.model-progress .pair-stats strong { display:block; font-size:3.2rem; line-height:1; font-weight:750; letter-spacing:-.055em; color:var(--accent); }
+body.model-progress .pair-stats span { display:block; color:var(--muted); font-size:.875rem; margin-top:6px; }
+body.model-progress .eci-range, body.model-progress .pair-dates { display:flex; justify-content:space-between; gap:12px; font-size:.875rem; }
+body.model-progress .eci-range { border-top:1px solid var(--line); padding-top:12px; font-weight:700; }
+body.model-progress .pair-dates { color:var(--muted); margin:4px 0 16px; }
+body.model-progress .source-links { display:flex; flex-wrap:wrap; gap:14px; font-size:.8125rem; margin:12px 0 0; }
+body.model-progress .benchmark-panel { margin-top:16px; }
+body.model-progress .table-scroll { overflow:auto; }
+body.model-progress .benchmark-table { border-collapse:collapse; width:100%; font-size:.9375rem; font-variant-numeric:tabular-nums; }
+body.model-progress .benchmark-table th, body.model-progress .benchmark-table td { text-align:right; border-bottom:1px solid var(--line); padding:11px 12px; }
+body.model-progress .benchmark-table th:first-child { text-align:left; padding-left:0; }
+body.model-progress .benchmark-table small { display:block; color:var(--muted); font-weight:400; font-size:.75rem; }
+body.model-progress .benchmark-table td:last-child { font-weight:700; color:var(--accent); }
+body.model-progress .benchmark-table td.decline { color:var(--ink); }
+body.model-progress .benchmark-panel .nota { color:var(--muted); font-size:.8125rem; margin-bottom:0; }
+body.model-progress .release-date { display:grid; grid-template-columns:110px 1fr; gap:12px; padding:10px 0; border-bottom:1px solid var(--line); font-size:.875rem; }
+body.model-progress .release-date time { color:var(--muted); }
+body.model-progress .release-date span { overflow-wrap:anywhere; }
+@media(max-width:760px) {
+body.model-progress .progress-layout { grid-template-columns:1fr; }
+body.model-progress .section-heading { align-items:flex-start; }
+body.model-progress .progress-button { font-size:.75rem; padding:8px 12px; }
+body.model-progress .comparison h3 { font-size:1.15rem; }
+body.model-progress .pair-arrow { display:inline; padding:0 10px; }
+body.model-progress .benchmark-table { font-size:.8125rem; }
+body.model-progress .benchmark-table td, body.model-progress .benchmark-table th { padding:9px 6px; }
+body.model-progress .pannelli { grid-template-columns:1fr; }
+body.model-progress .benchmark-table th:nth-child(2), body.model-progress .benchmark-table th:nth-child(3) { min-width:76px; } }
+@media print {
+body.model-progress .lab-tabs, body.model-progress #theme { display:none; }
+body.model-progress .progress-layout { grid-template-columns:1.7fr 1fr; }
+body.model-progress .table-scroll { overflow:visible; } }
+body.model-progress .riga .et:first-letter { text-transform:none; }/* Dense comparison plots retain exact values and a shared scale. */
+
+body.model-progress .series { opacity:.78; }
+body.model-progress .series.selected { opacity:1; }
+body.model-progress .series.selected .series-line { stroke-dasharray:5 4; }
+body.model-progress .point-date { font-size:11px; }
+body.model-progress .pair-overview { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border:1px solid var(--line); border-radius:8px; margin:14px 0; overflow:hidden; }
+body.model-progress .pair-overview button { appearance:none; border:0; border-right:1px solid var(--line); padding:10px 12px; color:var(--ink); background:var(--sheet); text-align:left; font:inherit; cursor:pointer; }
+body.model-progress .pair-overview button:last-child { border-right:0; }
+body.model-progress .pair-overview button[aria-pressed="true"] { background:var(--accent-wash); }
+body.model-progress .pair-overview button:focus-visible { outline:2px solid var(--accent); outline-offset:-3px; }
+body.model-progress .pair-overview b, body.model-progress .pair-overview span, body.model-progress .pair-overview strong, body.model-progress .pair-overview small { display:block; }
+body.model-progress .pair-overview b { font-size:.8125rem; }
+body.model-progress .pair-overview span, body.model-progress .pair-overview small { font-size:.75rem; color:var(--muted); }
+body.model-progress .pair-overview strong { font-size:.9375rem; color:var(--accent); margin-top:6px; }
+body.model-progress .benchmark-row { display:grid; grid-template-columns:minmax(190px,1fr) minmax(120px,1.4fr) 95px; align-items:center; gap:16px; padding:12px 0; border-top:1px solid var(--line); font-size:.875rem; }
+body.model-progress .benchmark-row small { display:block; color:var(--muted); font-size:.75rem; margin-top:3px; }
+body.model-progress .benchmark-track { max-height:48px; }
+body.model-progress .track-base, body.model-progress .track-tick { stroke:var(--line-2); stroke-width:1; }
+body.model-progress .track-change { stroke:var(--accent); stroke-width:4; }
+body.model-progress .track-change.negative { stroke:var(--ink-2); stroke-dasharray:3 2; }
+body.model-progress .track-before { fill:var(--sheet); stroke:var(--ink-2); stroke-width:2; }
+body.model-progress .track-after { fill:var(--accent); stroke:var(--sheet); stroke-width:1.5; }
+body.model-progress .benchmark-track text { fill:var(--muted); font:500 10px var(--font); }
+body.model-progress .benchmark-delta { text-align:right; color:var(--accent); }
+body.model-progress .benchmark-delta.decline { color:var(--ink); }
+body.model-progress .cadence-layout { grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); }
+body.model-progress .cadence-axis, body.model-progress .cadence-row { display:grid; grid-template-columns:125px minmax(0,1fr) 72px; gap:10px; align-items:center; }
+body.model-progress .cadence-axis { color:var(--muted); font-size:.6875rem; margin:22px 0 6px; }
+body.model-progress .cadence-axis > div { display:flex; justify-content:space-between; }
+body.model-progress .cadence-axis > span:last-child { text-align:right; }
+body.model-progress .cadence-row { border-top:1px solid var(--line); padding:7px 0; }
+body.model-progress .cadence-row.active { background:var(--accent-wash); }
+body.model-progress .cadence-row button { background:none; color:var(--ink); border:0; text-align:left; padding:6px; font:inherit; font-size:.8125rem; cursor:pointer; }
+body.model-progress .cadence-row button small { display:block; font-size:.6875rem; color:var(--muted); margin-top:3px; }
+body.model-progress .cadence-row button:focus-visible { outline:2px solid var(--accent); }
+body.model-progress .cadence-row svg { min-width:0; overflow:visible; }
+body.model-progress .cadence-dot { fill:var(--ink-2); stroke:var(--sheet); stroke-width:1; }
+body.model-progress .active .cadence-dot { fill:var(--accent); }
+body.model-progress .cadence-row [aria-pressed="true"] .cadence-dot { fill:var(--ink); stroke-width:2; }
+body.model-progress .cadence-row [role="button"]:focus { outline:none; }
+body.model-progress .cadence-row [role="button"]:focus .cadence-dot { stroke:var(--accent); stroke-width:4; }
+body.model-progress .cadence-median { text-align:right; font-weight:700; font-size:.875rem; padding-right:6px; font-variant-numeric:tabular-nums; }
+body.model-progress .cadence-stats { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:16px 0; padding-bottom:16px; border-bottom:1px solid var(--line); }
+body.model-progress .cadence-stats dt { font-size:.75rem; color:var(--muted); }
+body.model-progress .cadence-stats dd { font-size:1.25rem; font-weight:700; margin:0; }
+@media(max-width:760px) {
+body.model-progress .cadence-layout { grid-template-columns:1fr; }
+body.model-progress .benchmark-row { grid-template-columns:minmax(0,1fr) 80px; gap:6px 12px; }
+body.model-progress .benchmark-track { grid-row:2; grid-column:1/-1; }
+body.model-progress .benchmark-delta { grid-row:1; grid-column:2; }
+body.model-progress .pair-overview button { padding:8px; }
+body.model-progress .cadence-row, body.model-progress .cadence-axis { grid-template-columns:88px minmax(0,1fr) 52px; gap:5px; }
+body.model-progress .cadence-axis > div span:nth-child(2) { display:none; }
+body.model-progress .cadence-axis { font-size:.5625rem; }
+body.model-progress .cadence-row button { font-size:.6875rem; padding:5px 2px; }
+body.model-progress .cadence-row button small { font-size:.5625rem; }
+body.model-progress .cadence-median { font-size:.75rem; }
+}
+body.model-progress .date-picker { display:grid; gap:5px; margin:14px 0; color:var(--muted); font-size:.75rem; }
+body.model-progress .date-picker select { width:100%; min-height:40px; padding:8px 12px; background:var(--sheet); border:1px solid var(--line-2); border-radius:8px; color:var(--ink); font:inherit; font-size:.875rem; }
+body.model-progress .date-picker select:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }/* Exact-version cards accompany the plotted observations. */
+
+body.model-progress .series { opacity:1; }
+body.model-progress .model-history-section { margin:24px 0; }
+body.model-progress .model-history-section h2 { font-size:1.35rem; margin-bottom:6px; }
+body.model-progress .model-history { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+body.model-progress .model-detail { border:1px solid var(--line); border-radius:var(--r); background:var(--sheet); padding:16px; min-width:0; }
+body.model-progress .model-detail.current-model { border-color:var(--accent); background:var(--accent-wash); }
+body.model-progress .model-detail h3 { font-size:1rem; margin:0 0 6px; }
+body.model-progress .model-meta { font-size:.75rem; color:var(--ink-2); margin:0; }
+body.model-progress .model-detail dl { margin:14px 0 0; display:grid; gap:10px; }
+body.model-progress .model-detail dt { font-size:.6875rem; color:var(--muted); }
+body.model-progress .model-detail dd { font-size:.8125rem; margin:2px 0 0; font-weight:600; overflow-wrap:anywhere; }
+@media(max-width:760px) {
+body.model-progress .model-history { grid-template-columns:1fr; }
+body.model-progress .model-detail dl { grid-template-columns:1fr 1fr; gap:10px 16px; }
+body.model-progress .pair-overview b { overflow-wrap:anywhere; } }/* Complete source inventory and uncertainty-aware comparisons. */
+
+body.model-progress .model-history { grid-template-columns:repeat(2,minmax(0,1fr)); }
+body.model-progress .period-label { display:flex; align-items:center; gap:8px; font-size:.75rem; color:var(--muted); }
+body.model-progress .period-label select { max-width:150px; padding:6px; border:1px solid var(--line-2); border-radius:6px; background:var(--sheet); color:var(--ink); font:inherit; }
+body.model-progress .lab-tabs button span { display:block; margin:3px 0 0; font-size:.6875rem; }
+body.model-progress .comparison-selectors label { min-width:0; }
+body.model-progress .comparison-selectors select { min-width:0; }
+body.model-progress .comparison .pair-stats strong { font-size:2.7rem; }
+body.model-progress .model-point { cursor:pointer; }
+body.model-progress .model-point .mark { fill:var(--muted); stroke:var(--sheet); stroke-width:1; }
+body.model-progress .model-point.selected-point .mark { fill:var(--accent); stroke:var(--sheet); stroke-width:2; }
+body.model-progress .model-point.baseline-point .mark { fill:var(--sheet); stroke:var(--ink); stroke-width:2; }
+body.model-progress .model-point:focus { outline:none; }
+body.model-progress .model-point:focus .mark { stroke:var(--ink); stroke-width:4; }
+body.model-progress .uncertainty { stroke:var(--line-2); stroke-width:1; }
+body.model-progress .selected-point .uncertainty, body.model-progress .baseline-point .uncertainty { stroke:var(--accent); stroke-width:2; }
+body.model-progress .comparison-connector { stroke:var(--accent); stroke-width:2; stroke-dasharray:4 4; fill:none; }
+body.model-progress .selected-model-label { fill:var(--ink); font:600 11px var(--font); paint-order:stroke; stroke:var(--sheet); stroke-width:3; stroke-linejoin:round; }
+body.model-progress #pair-overview:empty { display:none; }
+body.model-progress .model-detail li { overflow-wrap:anywhere; font-size:.75rem; }
+body.model-progress .config-details { margin-top:4px!important; font-size:.6875rem!important; }
+body.model-progress .config-details p { overflow-wrap:anywhere; }
+body.model-progress .inventory-controls { display:flex; align-items:center; flex-wrap:wrap; gap:18px; margin:20px 0; font-size:.875rem; }
+body.model-progress .inventory-controls > label:first-child { display:grid; gap:5px; flex:1; min-width:180px; }
+body.model-progress .inventory-controls input[type="search"] { min-height:40px; width:100%; background:var(--sheet); color:var(--ink); border:1px solid var(--line-2); border-radius:8px; padding:8px 12px; font:inherit; }
+body.model-progress .check-label { display:flex; align-items:center; gap:6px; }
+body.model-progress #inventory-count { color:var(--muted); font-size:.8125rem; }
+body.model-progress .inventory-table { max-height:560px; border:1px solid var(--line); border-radius:var(--r); background:var(--sheet); }
+body.model-progress .inventory-table:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+body.model-progress .inventory-table table { min-width:780px; }
+body.model-progress .inventory-table th, body.model-progress .inventory-table td { text-align:left; padding:10px!important; vertical-align:top; }
+body.model-progress .inventory-table thead { position:sticky; top:0; background:var(--sheet); z-index:1; }
+body.model-progress .inventory-table small { display:block; color:var(--muted); font-size:.6875rem; font-weight:400; }
+body.model-progress .inventory-selected { background:var(--accent-wash); }
+body.model-progress .model-link { font:inherit; color:var(--accent); background:none; border:0; padding:4px 0; text-align:left; cursor:pointer; text-decoration:underline; text-underline-offset:3px; }
+body.model-progress .model-link:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+@media(max-width:760px) {
+body.model-progress .model-history { grid-template-columns:1fr; }
+body.model-progress .period-label { flex-wrap:wrap; }
+body.model-progress .check-label { min-height:36px; } }
+@media print {
+body.model-progress .inventory-table { max-height:none; overflow:visible; }
+body.model-progress .inventory-controls, body.model-progress #plot-period { display:none; } }/* Interpretation stays next to the evidence it describes. */
+
+body.model-progress .selection-coverage { color:var(--muted); font-size:.8125rem; max-width:88ch; margin:0 0 18px; }
+body.model-progress .reading-guide { border:1px solid var(--line); border-radius:var(--r); background:var(--sheet); padding:12px 16px; margin:0 0 16px; font-size:.875rem; }
+body.model-progress .reading-guide > summary { color:var(--accent); font-weight:600; cursor:pointer; }
+body.model-progress .reading-guide > summary:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+body.model-progress .reading-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin-top:12px; }
+body.model-progress .reading-grid p { margin:0; color:var(--ink-2); font-size:.8125rem; }
+body.model-progress .reading-grid b { display:block; color:var(--ink); margin-bottom:5px; }
+body.model-progress .comparison-presets { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 18px; }
+body.model-progress .comparison-presets > span { color:var(--muted); font-size:.75rem; margin-right:6px; }
+body.model-progress .comparison-presets button { background:var(--sheet); color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:8px 12px; font:600 .75rem var(--font); text-align:left; cursor:pointer; }
+body.model-progress .comparison-presets button small { display:block; color:var(--muted); font-size:.625rem; font-weight:400; margin-top:3px; }
+body.model-progress .comparison-presets button[aria-pressed="true"] { border-color:var(--accent); background:var(--accent-wash); }
+body.model-progress .comparison-presets button:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+body.model-progress .interpretation { margin-top:16px; }
+body.model-progress .readout-headline { font-size:1rem; font-weight:600; margin:10px 0 16px; max-width:90ch; }
+body.model-progress .readout-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; font-size:.8125rem; color:var(--ink-2); }
+body.model-progress .readout-grid h4 { margin:0 0 8px; color:var(--ink); font-size:.8125rem; }
+body.model-progress .readout-grid ul { margin:0; padding-left:18px; }
+body.model-progress .readout-grid li { margin-bottom:7px; }
+body.model-progress .readout-grid p { margin:0 0 8px; }
+body.model-progress .model-detail ul { padding-left:18px; }
+@media(max-width:760px) {
+body.model-progress .reading-grid, body.model-progress .readout-grid { grid-template-columns:1fr; gap:16px; }
+body.model-progress .comparison-presets > span { width:100%; }
+body.model-progress .comparison-presets button { flex:1 1 130px; } }
+@media print {
+body.model-progress .comparison-presets { display:none; }
+body.model-progress .reading-guide, body.model-progress .interpretation { break-inside:avoid; } }/* Keep the first chart in view; the reading guide follows the comparison. */
+
+body.model-progress .banda { padding:24px 0; }
+body.model-progress .banda h1 { max-width:none; font-size:clamp(2rem,4vw,3.5rem); }
+body.model-progress .banda .lead { max-width:80ch; font-size:1.0625rem; margin-top:14px; }
+body.model-progress .progress-label { margin-bottom:14px; }
+body.model-progress .progress-section { padding-top:28px; }
+body.model-progress .progress-section .section-heading h2 { font-size:1.65rem; }
+body.model-progress .progress-section .reading-guide { margin-top:16px; }
+body.model-progress .progress-section .comparison-presets { margin-top:16px; }
+body.model-progress .mobile-lab-picker { display:none; }
+@media(max-width:760px) {
+body.model-progress .lab-tabs { display:none; }
+body.model-progress .mobile-lab-picker { display:grid; margin-bottom:18px; } }
+
+/* Family comparison uses the existing filter controls within its section. */
+.family-comparison-controls .campi { display:flex; flex-wrap:wrap; gap:8px; align-items:end; }
+.family-comparison-controls label { display:grid; gap:4px; min-width:0; max-width:100%; }
+.family-comparison-controls select { min-width:0; max-width:100%; }
+.family-comparison-controls button:focus-visible, .family-comparison-controls select:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+@media print { .family-comparison-controls { display:none; } }
+.family-comparison-controls select, .family-comparison-controls button { font:500 .9375rem var(--font); padding:9px 12px; border:1px solid var(--line-2); border-radius:10px; background:var(--sheet); color:var(--ink); }
+.family-comparison-controls button { cursor:pointer; font-weight:600; }
+.family-comparison-controls button:hover { border-color:var(--accent); }

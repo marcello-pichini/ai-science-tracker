@@ -2278,7 +2278,29 @@
         "https://www.cell.com/cell/abstract/S0092-8674(25)00855-4"
       ],
       "test_type": "direct test"
-    }
+    },
+    "source_review": {
+      "date": "2026-11-16",
+      "scope": "Original institutional announcement checked for the specific results, AI contribution and limitations cited in the antibiotic dossier or mathematical follow-up pilot. Full-paper reanalysis, external replication and an exhaustive follow-up search were not performed."
+    },
+    "relationships": [
+      {
+        "type": "extends",
+        "target_id": "2020-02-halicin",
+        "reason": "The source names this earlier screening result as program background for moving to de novo generative design. New compounds and experiments; not a clinical follow-up or replication of the earlier candidate.",
+        "source_urls": [
+          "https://news.mit.edu/2025/using-generative-ai-researchers-design-compounds-kill-drug-resistant-bacteria-0814"
+        ]
+      },
+      {
+        "type": "extends",
+        "target_id": "2023-05-abaucina",
+        "reason": "The source names this earlier screening result as program background for moving to de novo generative design. New compounds and experiments; not a clinical follow-up or replication of the earlier candidate.",
+        "source_urls": [
+          "https://news.mit.edu/2025/using-generative-ai-researchers-design-compounds-kill-drug-resistant-bacteria-0814"
+        ]
+      }
+    ]
   },
   {
     "id": "2025-08-bci-linguaggio-interiore",
@@ -3527,7 +3549,7 @@
       "novelty": 4
     },
     "evidence": {
-      "publication_status": "Announcement only",
+      "publication_status": "Peer-reviewed paper",
       "tested": "The systems solved official IMO 2024 problems, graded under IMO rules by Prof. Timothy Gowers and Dr Joseph Myers, reaching 28 of 42 points; problems were manually translated into formal language first.",
       "unknown": "Two combinatorics problems remained unsolved, translation was manual, and some solutions took up to three days.",
       "ai_role": "AlphaProof solved three problems with formal proofs, and AlphaGeometry 2 proved the geometry problem within 19 seconds of formalization.",
@@ -3535,6 +3557,37 @@
         "https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/"
       ],
       "test_type": "prospective or independent check"
+    },
+    "source_review": {
+      "date": "2026-11-16",
+      "scope": "Original institutional announcement checked for the specific results, AI contribution and limitations cited in the antibiotic dossier or mathematical follow-up pilot. Full-paper reanalysis, external replication and an exhaustive follow-up search were not performed."
+    },
+    "relationships": [
+      {
+        "type": "extends",
+        "target_id": "2024-01-alphageometry",
+        "reason": "AlphaGeometry 2 is explicitly described as an improved AlphaGeometry version; this link concerns the geometry component, not attribution of all four IMO solutions.",
+        "source_urls": [
+          "https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/"
+        ]
+      }
+    ],
+    "follow_up": [
+      {
+        "id": "alphaproof-nature-methodology",
+        "kind": "publication",
+        "date": "2025-11-12",
+        "date_precision": "day",
+        "note": "The updated original announcement dates publication of the AlphaProof methodology in Nature to 12 November 2025. This journal transition is not an independent replication and does not apply to every component of the combined system.",
+        "source_urls": [
+          "https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/"
+        ],
+        "recorded_date": "2026-11-16"
+      }
+    ],
+    "follow_up_review": {
+      "date": "2026-11-16",
+      "scope": "Bounded check of the original announcements cited by the events recorded here, including explicit links to later program work. This is not an exhaustive literature search or ongoing monitoring commitment."
     }
   },
   {
@@ -3970,6 +4023,10 @@
         "https://med.stanford.edu/news/all-news/2024/03/ai-drug-development.html"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-16",
+      "scope": "Original institutional announcement checked for the specific results, AI contribution and limitations cited in the antibiotic dossier or mathematical follow-up pilot. Full-paper reanalysis, external replication and an exhaustive follow-up search were not performed."
     }
   },
   {
@@ -4086,6 +4143,27 @@
         "https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/"
       ],
       "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-16",
+      "scope": "Original institutional announcement checked for the specific results, AI contribution and limitations cited in the antibiotic dossier or mathematical follow-up pilot. Full-paper reanalysis, external replication and an exhaustive follow-up search were not performed."
+    },
+    "follow_up": [
+      {
+        "id": "alphageometry-2-imo",
+        "kind": "same-team extension",
+        "date": "2024-07-25",
+        "date_precision": "day",
+        "note": "DeepMind describes AlphaGeometry 2 as an improved version used for the IMO 2024 geometry problem. The combined result also used AlphaProof; it does not belong to AlphaGeometry alone.",
+        "source_urls": [
+          "https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/"
+        ],
+        "recorded_date": "2026-11-16"
+      }
+    ],
+    "follow_up_review": {
+      "date": "2026-11-16",
+      "scope": "Bounded check of the original announcements cited by the events recorded here, including explicit links to later program work. This is not an exhaustive literature search or ongoing monitoring commitment."
     }
   },
   {
@@ -4886,6 +4964,37 @@
         "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1038/s41589-023-01349-8&resultType=core&format=json"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-16",
+      "scope": "Original institutional announcement checked for the specific results, AI contribution and limitations cited in the antibiotic dossier or mathematical follow-up pilot. Full-paper reanalysis, external replication and an exhaustive follow-up search were not performed."
+    },
+    "relationships": [
+      {
+        "type": "extends",
+        "target_id": "2020-02-halicin",
+        "reason": "The source explicitly traces this A. baumannii screening study to the earlier halicin program. Distinct candidate and experiment; not independent confirmation of halicin.",
+        "source_urls": [
+          "https://news.mit.edu/2023/using-ai-scientists-combat-drug-resistant-infections-0525"
+        ]
+      }
+    ],
+    "follow_up": [
+      {
+        "id": "generative-design-program-extension",
+        "kind": "same-team extension",
+        "date": "2025-08-14",
+        "date_precision": "day",
+        "note": "MIT identifies halicin and abaucin as earlier screening results motivating generative design of new NG1/DN1 candidates. The later study does not establish clinical efficacy of these earlier candidates.",
+        "source_urls": [
+          "https://news.mit.edu/2025/using-generative-ai-researchers-design-compounds-kill-drug-resistant-bacteria-0814"
+        ],
+        "recorded_date": "2026-11-16"
+      }
+    ],
+    "follow_up_review": {
+      "date": "2026-11-16",
+      "scope": "Bounded check of the original announcements cited by the events recorded here, including explicit links to later program work. This is not an exhaustive literature search or ongoing monitoring commitment."
     }
   },
   {
@@ -6899,6 +7008,38 @@
         "https://doi.org/10.1016/j.cell.2020.01.021"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-16",
+      "scope": "Original institutional announcement checked for the specific results, AI contribution and limitations cited in the antibiotic dossier or mathematical follow-up pilot. Full-paper reanalysis, external replication and an exhaustive follow-up search were not performed."
+    },
+    "follow_up": [
+      {
+        "id": "abaucin-program-extension",
+        "kind": "same-team extension",
+        "date": "2023-05-25",
+        "date_precision": "day",
+        "note": "MIT describes abaucin as a subsequent application of the antibiotic-screening program to A. baumannii. This is a different candidate and target-specific study, not replication of halicin.",
+        "source_urls": [
+          "https://news.mit.edu/2023/using-ai-scientists-combat-drug-resistant-infections-0525"
+        ],
+        "recorded_date": "2026-11-16"
+      },
+      {
+        "id": "generative-design-program-extension",
+        "kind": "same-team extension",
+        "date": "2025-08-14",
+        "date_precision": "day",
+        "note": "MIT identifies halicin and abaucin as earlier screening results motivating generative design of new NG1/DN1 candidates. The later study does not establish clinical efficacy of these earlier candidates.",
+        "source_urls": [
+          "https://news.mit.edu/2025/using-generative-ai-researchers-design-compounds-kill-drug-resistant-bacteria-0814"
+        ],
+        "recorded_date": "2026-11-16"
+      }
+    ],
+    "follow_up_review": {
+      "date": "2026-11-16",
+      "scope": "Bounded check of the original announcements cited by the events recorded here, including explicit links to later program work. This is not an exhaustive literature search or ongoing monitoring commitment."
     }
   },
   {

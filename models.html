@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=ca7875e92bb7">
+<link rel="stylesheet" href="styles.css?v=212159537541">
 </head>
 <body>
 <header class="header">
@@ -31,7 +31,7 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html" aria-current="page">Models</a><a href="security.html">Vuln discoveries</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html" aria-current="page">Models</a><a href="security.html">Vuln discoveries</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a><a href="search.html">Search</a></nav>
   </div>
 </header>
 
@@ -48,6 +48,7 @@
 </section>
 
 <main>
+<section class="sez"><div class="wrap"><h2>Two views of model development</h2><p class="sez-sub"><a href="model-progress.html">Compare capability, benchmarks and release rhythm</a> across eight labs, including exact model versions and unscored entries. This page keeps the selected notable-release catalog and its scientific family links; benchmark scores do not measure scientific outcomes.</p></div></section>
   <noscript><div class="wrap"><p class="vuoto">This page draws its tables and charts with JavaScript. Without it you can read the <a href="data/models.json">model data</a> (from <a href="https://epoch.ai/data/ai-models">Epoch AI</a>, CC BY 4.0), the <a href="profiles/index.html">static profile pages</a> or the <a href="methodology.html">methodology</a>.</p></div></noscript>
   <section class="sez" aria-labelledby="t-numeri">
     <div class="wrap">
@@ -100,12 +101,13 @@
 
 <footer class="footer">
   <div class="wrap">
+    <p><a href="search.html">Search all collections</a> · <a href="model-progress.html">Model progress and release rhythm</a> · <a href="antibiotic-dossier.html">Antibiotic evidence dossier</a></p>
     <p>Model data from Epoch AI, republished under CC BY 4.0; discovery links and selection are provided by this site.</p>
     <p><a href="methodology.html">How we select and verify entries</a> · <a href="profiles/index.html">All organizations and model families</a></p>
   </div>
 </footer>
 
-<script src="assets/catalog-ui.js?v=75de9d87a94a"></script>
+<script src="assets/catalog-ui.js?v=986c23fe9ed8"></script>
 <script>
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -296,6 +298,7 @@ Promise.all([
   const anni = [...new Set(d.models.map(m => m.date.slice(0, 4)))].sort().reverse();
   $("anno").innerHTML = `<option value="">All years</option>` + anni.map(a => `<option>${esc(a)}</option>`).join("");
   $("fonte").innerHTML = `Model name, lab, date, domain, parameters, compute, and access data come from <a href="${esc(d.source.url)}" rel="noopener">${esc(d.source.name)}</a> (${esc(d.source.original_records)} records in the original CSV snapshot) and are republished under <a href="${esc(d.source.license_url)}" rel="noopener">${esc(d.source.license)}</a>. ${d.source.downloaded ? `Downloaded on ${esc(fmtDate(d.source.downloaded))}. ` : ""}Snapshot provenance is included in the <a href="data/models.json">model data</a>. This page lists releases from leading labs since 2020, plus models from any date linked to a discovery. We link models and discoveries by comparing named technologies and discovery titles with family names. A name match does not confirm that a specific release was used in an experiment. Data last generated: ${esc(fmtDate(d.generated))}.`;
+  state.q = new URLSearchParams(location.search).get('q') || ''; $("q").value = state.q;
   nuvola(); grafici(); families(); render();
   if (location.hash.startsWith("#fam-")) document.getElementById(location.hash.slice(1))?.scrollIntoView();
 }).catch(() => { $("families").innerHTML = `<p class="vuoto">Could not load the model and discovery data. <a href="models.html">Reload Models</a>, read the <a href="data/models.json">model data</a> or <a href="data/discoveries.json">discovery data</a>, or browse the <a href="profiles/index.html">static profiles</a>.</p>`; $("lead").textContent = "The model and discovery data could not be loaded."; });

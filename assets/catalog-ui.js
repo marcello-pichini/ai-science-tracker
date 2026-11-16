@@ -25,12 +25,12 @@ globalThis.CatalogUI = {
   sourceDetails(record) {
     const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const checked = record.verification_status === 'verified';
-    return `<details class="source-details"><summary>${checked ? 'Source checked' : 'Needs source check'} · editorial details</summary>
+    return `${this.evidenceSummary(record)}${record.evidence ? `<details class="source-details"><summary>Result, AI contribution and limits</summary>${this.evidenceBlock(record)}</details>` : ''}<details class="source-details"><summary>${checked ? 'Source checked' : 'Needs source check'} · editorial details</summary>
       <p>${checked ? 'The source page was checked against this entry.' : 'The source has not been fully checked or contains conflicting information.'} Independent confirmation is not assessed by this label.</p>
       <p>Source type: ${esc(record.source_type)}. Paper: ${record.paper_url ? 'linked separately' : 'not linked in this catalog; this does not mean no paper exists'}.</p>
-      ${this.evidenceBlock(record)}
+      <p>${record.source_review ? `Review date: ${esc(this.contextDate(record.source_review.date))}. Review scope: ${esc(record.source_review.scope)}.` : 'Review scope and date are not recorded; source checked does not establish full-text review.'}</p>
       ${this.citationLine(record)}
-      <p>Editorial assessment: Impact ${esc(record.relevance.impact)}/5 · Validation ${esc(record.relevance.validation)}/5 · Novelty ${esc(record.relevance.novelty)}/5. Impact and novelty are editorial judgments; validation follows the annotated test type where one exists. Not an evidence grade. <a href="methodology.html">Scoring criteria</a>.</p></details>`;
+      <p>Editorial assessment: Impact ${esc(record.relevance.impact)}/5 · Validation ${esc(record.relevance.validation)}/5 · Novelty ${esc(record.relevance.novelty)}/5. Impact and novelty are editorial judgments; validation follows the annotated test type where one exists. Not an evidence grade. <a href="methodology.html">Scoring criteria</a>.</p></details>${this.historyBlock(record)}`;
   },
   // Source descriptions stay separate from the editorial test category that sets validation.
   evidenceBlock(record) {
@@ -45,6 +45,36 @@ globalThis.CatalogUI = {
     const legacy = [e.publication_status, e.tested, e.unknown, e.ai_role].includes('Not reported');
     return `<p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><ul class="evidence-context">${rows}</ul>${links.length ? `<p>Evidence sources: ${links.join(' · ')}</p>` : ''}${legacy ? '<p>The legacy label “Not reported” does not distinguish information absent from reviewed material from information not assessed. It is not a scientific finding of absence.</p>' : ''}`;
   },
+  evidenceValue(record, key) {
+    const value = record.evidence?.[key];
+    if (!value) return 'Not annotated in this catalog';
+    if (key === 'test_type' && value === 'not reported') return 'Test context unspecified in annotation';
+    if (key === 'publication_status' && value === 'Not reported') return 'Publication status unspecified in annotation';
+    return value;
+  },
+  evidenceSummary(record) {
+    const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    return `<p class="evidence-strip"><b>Publication:</b> ${esc(this.evidenceValue(record, 'publication_status'))} · <b>Test context:</b> ${esc(this.evidenceValue(record, 'test_type'))}. Catalog categories, not an evidence grade.</p>`;
+  },
+  selectionCounts(records, key) {
+    const counts = {};
+    records.forEach(record => { const value = this.evidenceValue(record, key); counts[value] = (counts[value] || 0) + 1; });
+    return Object.entries(counts).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  },
+  contextDate(value) {
+    if (!value) return 'Date unknown';
+    if (/^\d{4}$/.test(value)) return value;
+    const options = value.length === 7 ? {month:'short', year:'numeric'} : {day:'numeric', month:'short', year:'numeric'};
+    return new Intl.DateTimeFormat('en-GB', {...options, timeZone:'UTC'}).format(new Date(value + (value.length === 7 ? '-01' : '') + 'T12:00:00Z'));
+  },
+  historyBlock(record) {
+    const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const sources = urls => (urls || []).filter(url => { try { return /^https?:\/\//i.test(url) && ['http:', 'https:'].includes(new URL(url).protocol); } catch { return false; } }).map(url => `<a href="${esc(url)}" rel="noopener">Source</a>`).join(' · ');
+    const events = (record.follow_up || []).map(event => `<li id="event-${esc(record.id)}-${esc(event.id)}"><b>${esc(event.kind)}</b> · ${esc(this.contextDate(event.date))}: ${esc(event.note)} ${sources(event.source_urls)}. Recorded ${esc(this.contextDate(event.recorded_date))}.</li>`).join('');
+    const review = record.follow_up_review;
+    const relationships = (record.relationships || []).map(link => `<li><a href="share/${encodeURIComponent(link.target_id)}.html">${esc(link.target_id)}</a> · ${esc(link.type)}: ${esc(link.reason)} ${sources(link.source_urls)}</li>`).join('');
+    return `<details class="source-details"><summary>Follow-up and relationships</summary>${events ? `<ul>${events}</ul>` : '<p>No follow-up recorded; this is not a claim that no follow-up exists.</p>'}${review ? `<p>Follow-up checked ${esc(this.contextDate(review.date))} within scope: ${esc(review.scope)}.</p>` : '<p>Follow-up review scope and date are not recorded.</p>'}${relationships ? `<p>Directed relationships from this entry; they do not merge catalog counts.</p><ul>${relationships}</ul>` : '<p>No source-supported relationships recorded.</p>'}</details>`;
+  },
   correctionUrl(record) {
     const query = new URLSearchParams({template:'correction.yml', title:`[Correction] ${record.id}`, record_id:record.id,
       entry:'https://marcello-pichini.github.io/ai-science-tracker/index.html#discovery=' + encodeURIComponent(record.id), source:record.source_url});
@@ -58,7 +88,7 @@ globalThis.CatalogUI = {
     const date = new Date(record.publication_date + 'T12:00:00').toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'});
     return `${record.title}. ${record.organization}, announced ${date}. Source: ${record.source_url}. Catalog entry: AI Science Tracker, ${this.entryUrl(record)} (accessed ${accessed}).`;
   },
-  csvColumns: ['id', 'title', 'summary', 'field', 'ai_technology', 'organization', 'source_url', 'source_type', 'publication_date', 'added_date', 'verification_status', 'paper_url', 'impact', 'validation', 'novelty', 'catalog_entry_url'],
+  csvColumns: ['id', 'title', 'summary', 'field', 'ai_technology', 'organization', 'source_url', 'source_type', 'publication_date', 'added_date', 'verification_status', 'paper_url', 'impact', 'validation', 'novelty', 'catalog_entry_url', 'publication_status', 'test_type', 'tested', 'unknown', 'ai_role', 'evidence_urls', 'source_review', 'follow_up', 'follow_up_review', 'relationships'],
   // Cells starting with = + - @ get a leading apostrophe so spreadsheets do not run them as formulas.
   toCsv(records) {
     const cell = value => {
@@ -67,7 +97,7 @@ globalThis.CatalogUI = {
       return /[",\n\r]/.test(text) ? '"' + text.replace(/"/g, '""') + '"' : text;
     };
     const rows = records.map(r => [r.id, r.title, r.summary, r.field, r.ai_technology, r.organization, r.source_url, r.source_type,
-      r.publication_date, r.added_date, r.verification_status, r.paper_url, r.relevance.impact, r.relevance.validation, r.relevance.novelty, this.entryUrl(r)]);
+      r.publication_date, r.added_date, r.verification_status, r.paper_url, r.relevance.impact, r.relevance.validation, r.relevance.novelty, this.entryUrl(r), ...['publication_status', 'test_type', 'tested', 'unknown', 'ai_role'].map(k => r.evidence?.[k] || ''), JSON.stringify(r.evidence?.evidence_urls || []), ...['source_review', 'follow_up', 'follow_up_review', 'relationships'].map(k => JSON.stringify(r[k] ?? null))]);
     return [this.csvColumns, ...rows].map(row => row.map(cell).join(',')).join('\r\n') + '\r\n';
   },
   fieldYear(records) {

@@ -12,7 +12,8 @@ Outputs (all generated, never edit by hand; rerun this script instead):
 Usage:
   python3 scripts/generate_share.py            # pages, sitemap, robots, and changed cards
   python3 scripts/generate_share.py --force    # re-render every card
-  python3 scripts/generate_share.py --no-images  # skip Chrome (pages then point at og/default.png)
+  python3 scripts/generate_share.py --no-images  # skip Chrome, retain existing entry images
+  python3 scripts/generate_share.py --reuse-images  # refresh hashes after verifying unchanged card visuals
 
 Cards use styles.css and the self-hosted font, so they follow docs/DESIGN.md automatically.
 Discovery pages are generated, not hand-written, but still obey docs/DESIGN.md: same frame,
@@ -133,7 +134,9 @@ def screenshot(page, out):
                    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
-def render_cards(items, force):
+def render_cards(items, force, reuse_images=False):
+    if force and reuse_images:
+        raise ValueError('Forced rendering and image reuse are incompatible')
     out_dir = ROOT / 'og'
     out_dir.mkdir(exist_ok=True)
     manifest_path = out_dir / 'card-hashes.json'
@@ -155,6 +158,10 @@ def render_cards(items, force):
             digest = hashlib.sha256(content.replace(css, 'styles.css').encode() + assets).hexdigest()
             updated[name] = digest
             out = out_dir / f'{name}.png'
+            if reuse_images:
+                if not out.is_file():
+                    raise ValueError(f'Cannot reuse missing image: {name}')
+                continue
             if force or not out.exists() or hashes.get(name) != digest:
                 page.write_text(content)
                 print(f'card {name}', file=sys.stderr)
@@ -312,13 +319,14 @@ def write_discovery_pages(items, models, images, archived=False):
             fam_by_discovery.setdefault(did, f)
     ui = run_catalog_ui(items)
     for d in items:
+        has_image = images or (ROOT / 'og' / f'{d["id"]}.png').is_file()
         article = discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']], archived=archived)
         more = ('<a href="index.html">Browse the current catalog</a>.' if archived else
                 f'<a href="index.html#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.')
         lead = f'{esc(d["organization"])} &middot; {esc(nice_date(d["publication_date"]))} &middot; {esc(d["field"])}'
         page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(clip(d['summary'], 200)), base=BASE,
-                           path=f'share/{d["id"]}.html', img=d['id'] if images else 'default',
-                           imgalt=esc(f'Preview card: {d["title"]}') if images else DEFAULT_ALT, jsonld=discovery_jsonld(d),
+                           path=f'share/{d["id"]}.html', img=d['id'] if has_image else 'default',
+                           imgalt=esc(f'Preview card: {d["title"]}') if has_image else DEFAULT_ALT, jsonld=discovery_jsonld(d),
                            h2='<h2 class="vis-nascosto">Discovery</h2>', more=more, extra=related_section(d, items),
                            header=header, footer=footer, lead=lead, article=article)
         (out / f'{d["id"]}.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
@@ -334,6 +342,23 @@ def releases_table(models):
     <p class="sez-sub">Epoch AI data (CC BY 4.0), newest first. A discovery is attributed to a model family, not to a specific release.</p>
     <table class="tab-rilasci"><thead><tr><th>Date</th><th>Model</th><th>Access</th></tr></thead><tbody>{rows}</tbody></table>
   </div></section>""" if models else ''
+
+
+def family_summary(rows, name):
+    """The same stored-link scope and deterministic examples as FamilyOutcomes."""
+    def members(records):
+        return '<ul>' + ''.join(f'<li><a href="index.html#discovery={quote(d["id"])}">{esc(d["title"])}</a></li>' for d in records) + '</ul>' if records else '<p>No scientific uses are linked in this catalog.</p>'
+
+    def test_context(d):
+        value = d.get('evidence', {}).get('test_type')
+        return 'Not annotated in this catalog' if not value else 'Test context unspecified in annotation' if value == 'not reported' else value
+
+    def groups(title, key):
+        return f'<h3>{title}</h3>' + ''.join(f'<details><summary>{esc(label)} · {len(group)} linked records</summary>{members(group)}</details>' for label, group in ((label, [d for d in rows if key(d) == label]) for label in sorted({key(d) for d in rows})))
+
+    # Stable two-pass sorting keeps equal-date examples in ID order.
+    examples = sorted(sorted(rows, key=lambda d: d['id']), key=lambda d: d['publication_date'], reverse=True)[:3]
+    return f'<section aria-label="Represented scientific uses"><h2>Where {esc(name)} appears in the catalog</h2><details class="source-details"><summary>Why linked?</summary><p>These associations match family names in discovery titles and technology text. They are not verified model-version assignments or causal attribution. Missing links do not establish absence of use. A record may link to multiple families.</p></details>' + (groups('Represented fields', lambda d: d['field']) + groups('Test contexts', test_context) + groups('Annotation coverage', lambda d: 'Evidence annotation present' if d.get('evidence') else 'Not annotated in this catalog') if rows else '<p>No scientific uses are linked in this catalog.</p>') + '<h3>Examples</h3><p>Up to three linked records, newest publication date first, then stable ID. This selection is not a ranking.</p>' + members(examples) + '</section>'
 
 
 def write_profile_pages(items, models, archived=()):
@@ -370,13 +395,13 @@ def write_profile_pages(items, models, archived=()):
     def plural(n, one, many):
         return f'{n} {one if n == 1 else many}'
 
-    def emit(name, title, lead, desc, rows, path, interactive, extra='', organization=False, label='interactive profile'):
+    def emit(name, title, lead, desc, rows, path, interactive, extra='', organization=False, label='interactive profile', before=''):
         articles = ''.join(discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']], link_title=True) for d in rows)
         purpose = 'the timeline' if label == 'interactive profile' else 'charts and filters'
         more = f'<a href="{interactive}">Open the {label}</a> for {purpose}, or <a href="profiles/index.html">browse all organizations and model families</a>.'
         page = PAGE.format(title=esc(title), site=SITE, desc=esc(desc), base=BASE, path=path, img='default', imgalt=DEFAULT_ALT,
                            header=header, footer=footer, lead=lead, article=articles, more=more, extra=extra,
-                           h2='<h2 class="vis-nascosto">Discoveries</h2>', jsonld=profile_jsonld(title, desc, path, organization))
+                           h2=before + '<h2 class="vis-nascosto">Discoveries</h2>', jsonld=profile_jsonld(title, desc, path, organization))
         (ROOT / path).write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
         pages.append(path)
 
@@ -424,7 +449,7 @@ def write_profile_pages(items, models, archived=()):
         rel = [m for m in models.get('models', []) if m.get('family') == fam['id']]
         emit(fam['name'], fam['name'], f'{plural(len(rows), "discovery", "discoveries")} name this family, {years(rows)}',
              f'{plural(len(rows), "AI-enabled scientific discovery", "AI-enabled scientific discoveries")} linked to the {fam["name"]} model family.',
-             rows, f'profiles/family-{quote(fam["id"])}.html', f'profile.html?family={quote(fam["id"])}', releases_table(rel))
+             rows, f'profiles/family-{quote(fam["id"])}.html', f'profile.html?family={quote(fam["id"])}', releases_table(rel), before=family_summary(rows, fam['name']))
     for fid, ids in discovery_links(archived).items():
         if ids and fid not in active_families:
             redirect(f'family-{quote(fid)}.html', {f'../share/{quote(did)}.html' for did in ids})
@@ -474,6 +499,9 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 ## Browse
 - [Discoveries]({BASE}index.html): filters, charts and the full list
 - [Organizations and model families]({BASE}profiles/index.html): static profile pages
+- [Model progress]({BASE}model-progress.html): exact model comparison, ECI, benchmark evidence and recorded release rhythm
+- [Search all collections]({BASE}search.html): literal retrieval with separate counts and match reasons
+- [Antibiotic evidence dossier]({BASE}antibiotic-dossier.html): dated, source-bounded synthesis
 - [Models]({BASE}models.html): model releases linked to discoveries
 - [Vuln discoveries]({BASE}security.html): publicly disclosed vulnerabilities with documented AI involvement, kept separate from the scientific count
 - [Methodology]({BASE}methodology.html): what is included, how entries are verified and scored
@@ -481,6 +509,7 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 ## Data
 - [discoveries.json]({BASE}data/discoveries.json): active catalog entries (schema and counting unit: docs/discovery-schema.md in the repository)
 - [models.json]({BASE}data/models.json): model releases and families
+- [model-progress.json]({BASE}data/model-progress.json): separate Epoch capability/benchmark source entries; may overlap releases
 - [vulnerabilities.json]({BASE}data/vulnerabilities.json): vulnerability cases
 - [sitemap.xml]({BASE}sitemap.xml): every static page
 - [dataset.html]({BASE}dataset.html): downloads (JSON, CSV), schemas and the read-only static API at {BASE}api/v1/index.json
@@ -499,7 +528,7 @@ def write_sitemap(items, models, archived=()):
     orgs = sorted({lead_org(d['organization']) for d in items})
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
     # Announcement dates are not page-modification dates; omit lastmod until tracked.
-    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'profile.html', 'security.html', 'dataset.html', 'contributors.html']
+    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'profile.html', 'security.html', 'dataset.html', 'contributors.html', 'model-progress.html', 'search.html', 'antibiotic-dossier.html']
     urls += ['profiles/index.html']
     urls += [f'profiles/org-{slug(o)}.html' for o in orgs]
     urls += [f'profiles/family-{quote(f)}.html' for f in fams]
@@ -535,7 +564,7 @@ def write_feed(items, vulns, limit=40):
 
 
 CSV_DISCOVERY = ['id', 'title', 'summary', 'field', 'ai_technology', 'organization', 'source_url', 'source_type', 'publication_date',
-                 'added_date', 'verification_status', 'paper_url', 'impact', 'validation', 'novelty', 'catalog_entry_url']
+                 'added_date', 'verification_status', 'paper_url', 'impact', 'validation', 'novelty', 'catalog_entry_url', 'publication_status', 'test_type', 'tested', 'unknown', 'ai_role', 'evidence_urls', 'source_review', 'follow_up', 'follow_up_review', 'relationships']
 CSV_VULN = ['id', 'title', 'product', 'ai_system', 'organization', 'disclosure_date', 'classification', 'cves', 'source_url',
             'ai_source_url', 'advisory_url', 'remediation', 'checked_date', 'summary', 'ai_role',
             'ai_attribution_date', 'classification_note', 'remediation_note']
@@ -551,9 +580,9 @@ def write_csv(path, columns, rows):
 
 
 def write_exports(items, vulns):
-    """Flat CSV copies of the JSON data, same columns as the in-page download. Evidence pilot fields are JSON-only."""
+    """Flat CSV copies of the JSON data, same columns as the in-page download. Evidence and optional histories retain their fields; nested structures are JSON cells."""
     write_csv('data/discoveries.csv', CSV_DISCOVERY, [
-        dict(d, **d['relevance'], catalog_entry_url=f'{BASE}share/{d["id"]}.html') for d in items])
+        dict(d, **d['relevance'], **{key: d.get('evidence', {}).get(key, '') for key in ('publication_status', 'test_type', 'tested', 'unknown', 'ai_role')}, evidence_urls=json.dumps(d.get('evidence', {}).get('evidence_urls', []), ensure_ascii=False, separators=(',', ':')), **{key: json.dumps(d.get(key), ensure_ascii=False, separators=(',', ':')) for key in ('source_review', 'follow_up', 'follow_up_review', 'relationships')}, catalog_entry_url=f'{BASE}share/{d["id"]}.html') for d in items])
     write_csv('data/vulnerabilities.csv', CSV_VULN, [dict(v, cves=';'.join(v['cves'])) for v in vulns])
 
 
@@ -579,7 +608,7 @@ def write_api(items, vulns, models=None, archived=()):
         'endpoints': {
             'discoveries_list': BASE + 'data/discoveries.json', 'discovery': api + 'discoveries/{id}.json',
             'vulnerabilities_list': BASE + 'data/vulnerabilities.json', 'vulnerability': api + 'vulnerabilities/{id}.json',
-            'models_list': BASE + 'data/models.json'},
+            'models_list': BASE + 'data/models.json', 'model_progress': BASE + 'data/model-progress.json'},
         'downloads': {'discoveries_csv': BASE + 'data/discoveries.csv', 'vulnerabilities_csv': BASE + 'data/vulnerabilities.csv'},
         'schemas': {'discoveries': BASE + 'schema/discoveries.schema.json', 'vulnerabilities': BASE + 'schema/vulnerabilities.schema.json'},
         'documentation': BASE + 'dataset.html'}
@@ -587,7 +616,59 @@ def write_api(items, vulns, models=None, archived=()):
 
 
 
+def validate_discovery_context(records):
+    """Optional annotations require provenance; missing review history remains unknown."""
+    ids = {record['id'] for record in records}
+    def text(value):
+        if not isinstance(value, str) or not value.strip():
+            raise ValueError('Context text must be nonempty')
+    def date(value):
+        if not isinstance(value, str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}', value):
+            raise ValueError('Review and recording dates require day precision')
+        datetime.date.fromisoformat(value)
+    def sources(value):
+        if not isinstance(value, list) or not value or any(not isinstance(url, str) or not re.fullmatch(r'https://[^/\s?#]+(?:[/?#]\S*)?', url) for url in value):
+            raise ValueError('Context annotations need HTTPS sources')
+    for record in records:
+        for key in ('source_review', 'follow_up_review'):
+            if key in record:
+                date(record[key]['date'])
+                text(record[key]['scope'])
+        events = record.get('follow_up', [])
+        if not isinstance(events, list) or len({event['id'] for event in events}) != len(events):
+            raise ValueError('Follow-up IDs must be unique within an entry')
+        for event in events:
+            if not re.fullmatch(r'[a-z0-9][a-z0-9_-]*', event['id']):
+                raise ValueError('Follow-up IDs must be safe slugs')
+            if event['kind'] not in ('publication', 'same-team extension', 'independent follow-up', 'documented application', 'contradiction', 'correction', 'retraction'):
+                raise ValueError('Unknown follow-up kind')
+            precision, value = event['date_precision'], event['date']
+            patterns = {'year': r'\d{4}', 'month': r'\d{4}-\d{2}', 'day': r'\d{4}-\d{2}-\d{2}'}
+            if precision == 'unknown':
+                if value is not None:
+                    raise ValueError('Unknown follow-up date must be null')
+            elif precision not in patterns or not isinstance(value, str) or not re.fullmatch(patterns[precision], value):
+                raise ValueError('Follow-up date must match its precision')
+            else:
+                datetime.date.fromisoformat(value + ('-01-01' if precision == 'year' else '-01' if precision == 'month' else ''))
+            text(event['note'])
+            sources(event['source_urls'])
+            date(event['recorded_date'])
+        links = record.get('relationships', [])
+        if not isinstance(links, list):
+            raise ValueError('Relationships must be an array')
+        seen = set()
+        for link in links:
+            pair = (link['type'], link['target_id'])
+            if link['type'] not in ('same result', 'extends', 'independent follow-up', 'shared evidence') or link['target_id'] not in ids or link['target_id'] == record['id'] or pair in seen:
+                raise ValueError('Invalid or duplicate directed relationship')
+            seen.add(pair)
+            text(link['reason'])
+            sources(link['source_urls'])
+
+
 def validate_inputs(items, archived, models, vulns):
+    validate_discovery_context(items + archived)
     if not items:
         raise ValueError('At least one active discovery is required')
     for rows in (items + archived, vulns):
@@ -595,7 +676,7 @@ def validate_inputs(items, archived, models, vulns):
         if len(ids) != len(set(ids)) or any(not re.fullmatch(r'[a-z0-9][a-z0-9_-]*', value) for value in ids):
             raise ValueError('Record IDs must be unique safe slugs')
     for d in items + archived:
-        for key in CSV_DISCOVERY[:-4]:
+        for key in ('id', 'title', 'summary', 'field', 'ai_technology', 'organization', 'source_url', 'source_type', 'publication_date', 'added_date', 'verification_status', 'paper_url'):
             d[key]
         for key in ('impact', 'validation', 'novelty'):
             d['relevance'][key]
@@ -657,8 +738,11 @@ def write_home_browse(items):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--force', action='store_true')
-    ap.add_argument('--no-images', action='store_true')
+    ap.add_argument('--no-images', action='store_true', help='Skip PNG rendering; reuse existing per-entry images where present')
+    ap.add_argument('--reuse-images', action='store_true', help='Refresh image hashes without rendering only after verifying every existing card is visually unchanged')
     args = ap.parse_args()
+    if args.reuse_images and (args.force or args.no_images):
+        ap.error('--reuse-images cannot be combined with --force or --no-images')
     items = json.loads((ROOT / 'data/discoveries.json').read_text())
     archive_path = ROOT / 'data/archived-discoveries.json'
     archived = json.loads(archive_path.read_text()) if archive_path.exists() else []
@@ -668,7 +752,7 @@ def main():
     write_page_summaries(items, models)
     write_home_browse(items)
     if not args.no_images:
-        render_cards(items + archived, args.force)
+        render_cards(items + archived, args.force, args.reuse_images)
     write_discovery_pages(items, models, not args.no_images)
     write_discovery_pages(archived, models, not args.no_images, archived=True)
     write_profile_pages(items, models, archived)
