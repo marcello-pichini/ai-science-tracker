@@ -5,21 +5,45 @@
   "url": "https://epoch.ai/data/ai-models",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-  "csv_sha256": "8571f03f230fb0a53b79a8dec51edc40f280e1c3e7b033cdc95e9317dc2786b6",
-  "original_records": 1092
+  "csv_sha256": "e565740aecdd2794cd519c334c7dcf0f03a2226c7b9ed0defd9ae31362e2f21a",
+  "original_records": 1094
  },
  "models": [
   {
    "name": "Gemini 4 Carbon",
    "organization": "Google DeepMind",
-   "date": "2026-10-28",
+   "date": "2026-11-10",
    "domain": "Language,Multimodal,Vision",
    "parameters": null,
    "compute_flop": "",
-   "access": "Unreleased",
+   "access": "API access",
    "frontier": false,
    "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
    "family": "gemini"
+  },
+  {
+   "name": "Claude Mythos 5.2",
+   "organization": "Anthropic",
+   "date": "2026-11-09",
+   "domain": "Language,Multimodal,Vision",
+   "parameters": null,
+   "compute_flop": "",
+   "access": "Limited access",
+   "frontier": false,
+   "link": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+   "family": "claude"
+  },
+  {
+   "name": "Claude Fable 5.2",
+   "organization": "Anthropic",
+   "date": "2026-11-09",
+   "domain": "Language,Multimodal,Vision",
+   "parameters": null,
+   "compute_flop": "",
+   "access": "API access",
+   "frontier": false,
+   "link": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+   "family": "claude"
   },
   {
    "name": "MAI-Base-2",
@@ -44,6 +68,18 @@
    "frontier": false,
    "link": "https://x.ai/news/grok-voice-3",
    "family": "grok"
+  },
+  {
+   "name": "Gemini 4 Argon",
+   "organization": "Google DeepMind",
+   "date": "2026-10-13",
+   "domain": "Language,Multimodal,Vision",
+   "parameters": null,
+   "compute_flop": "",
+   "access": "API access",
+   "frontier": false,
+   "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+   "family": "gemini"
   },
   {
    "name": "Muse Wonder Full",
@@ -80,18 +116,6 @@
    "frontier": false,
    "link": "https://mistral.ai/news/mistral-large-4/\n\nhttps://mistral.ai/news/mistral-large-4-oss/",
    "family": null
-  },
-  {
-   "name": "Gemini 4 Argon",
-   "organization": "Google DeepMind",
-   "date": "2026-09-30",
-   "domain": "Language,Multimodal,Vision",
-   "parameters": null,
-   "compute_flop": "",
-   "access": "Limited access",
-   "frontier": false,
-   "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
-   "family": "gemini"
   },
   {
    "name": "GPT-6.1 Sol",
@@ -5297,6 +5321,8 @@
     "2026-10-agent-perrhenate-deoxydehydration-water-loss"
    ],
    "models": [
+    "Claude Mythos 5.2",
+    "Claude Fable 5.2",
     "Claude Sonnet 5.5",
     "Claude Opus 5.5",
     "Claude Fable 5.1",
@@ -5322,7 +5348,7 @@
     "Claude"
    ],
    "discovery_count": 17,
-   "model_count": 23
+   "model_count": 25
   },
   {
    "id": "gpt5",
