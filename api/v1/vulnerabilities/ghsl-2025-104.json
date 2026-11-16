@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The maintainer removed the susceptible workflow on 2025-08-11. No replacement version or CVE is specified.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-104_weaviate/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "Attacker-controlled notifier data reaches Weaviate workflow command; GHSL advisory describes command injection.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-104_weaviate/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

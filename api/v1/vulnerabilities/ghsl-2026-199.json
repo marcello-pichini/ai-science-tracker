@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The report was accepted and the workflow was deleted on 2026-08-19.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-199_DataDog_trivy_repository/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "External pull request author; workflow executes modified action in privileged context.",
+      "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-199_DataDog_trivy_repository/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

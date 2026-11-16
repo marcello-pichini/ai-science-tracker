@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in Caddy v2.11.8. The authorization bypass applies to configurations where php_fastcgi's rewrite route does not run, including the documented default when index.php is absent; the advisory describes additional configuration prerequisites for RCE escalation.",
   "advisory_url": "https://github.com/CaddyServer/caddy/security/advisories/GHSA-f278-mgc7-46j3",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution",
+        "other"
+      ],
+      "conditions": "Requires an affected php_fastcgi route configuration (for example, no index.php candidate or index disabled) and a known existing .php file. A remote unauthenticated request with cleaned-path mismatch bypasses authorization; with an attacker-controlled PHP file, the advisory demonstrated remote code execution. Sites with an index.php/front controller are masked.",
+      "exploitation": "The advisory reports a demonstrated reproduction; it does not establish exploitation in the wild.",
+      "source_url": "https://github.com/CaddyServer/caddy/security/advisories/GHSA-f278-mgc7-46j3",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

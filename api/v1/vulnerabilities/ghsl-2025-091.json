@@ -16,5 +16,19 @@
   "remediation": "fix documented",
   "remediation_note": "Maintainer fixed the issue 2025-08-05. No CVE was established in this advisory.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-091_ansys_pymapdl/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution",
+        "data disclosure",
+        "data modification"
+      ],
+      "conditions": "An issue commenter can trigger code injection in the privileged migrator workflow. The workflow has contents:write permission and uses sensitive secrets, including PYANSYS_CI_BOT_TOKEN.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-091_ansys_pymapdl/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

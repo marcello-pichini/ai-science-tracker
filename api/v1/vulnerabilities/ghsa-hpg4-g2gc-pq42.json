@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "Padding now rejects dimensions below the image or its planes and validates all planes before changes; sequence encoders reject mixed-size frames. Fixed in libheif 1.23.7. This concerns encoding workflows, not ordinary file decoding. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-hpg4-g2gc-pq42",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other",
+        "denial of service"
+      ],
+      "conditions": "A crafted mixed-size image sequence can cause a heap buffer overflow and crash when an application accepts the sequence and re-encodes it using the affected encoder. No code execution is demonstrated.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-hpg4-g2gc-pq42",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

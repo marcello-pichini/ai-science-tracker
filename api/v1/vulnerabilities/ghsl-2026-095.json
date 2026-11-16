@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in Signal iOS 8.3, released to GitHub and the App Store on 2026-03-19. Attack window depends on server-configured admin-delete age, stated as about two days by default.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-095_iOS_SignalApp/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data modification"
+      ],
+      "conditions": "Signal iOS performs the admin-delete authorization check after deletion; unauthorized message deletion is the documented effect.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-095_iOS_SignalApp/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "A fix pull request was merged 2026-09-04. The advisory notes that fork workflow approval policy may be required, but no approving review is needed in the described pull-request path.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-204_spiffe_spire_repository/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "Attacker-controlled fork artifact is extracted into a trusted-code workspace; source describes replacement of executable workflow code.",
+      "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-204_spiffe_spire_repository/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

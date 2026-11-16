@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Signal released the fix in 8.7.0.1523 on 2026-04-15. A collision with another report was recorded; no CVE is stated.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-105_Signal-iOS/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data modification"
+      ],
+      "conditions": "A removed group member can omit group context and target a prior message; cross-thread edit authorization is bypassed.",
+      "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-105_Signal-iOS/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

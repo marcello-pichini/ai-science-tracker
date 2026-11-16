@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "GHSL says the maintainer fixed the issue and released seroval 1.6.4 on 2026-08-25. The advisory timeline separately says the GHSA was published 2026-09-28; the GHSL report page is dated 2026-10-22.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-200_Seroval/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service",
+        "other"
+      ],
+      "conditions": "Untrusted HTTP JSON passed to fromJSON/fromCrossJSON can allocate hundreds of megabytes to gigabytes and consume CPU. If the application also registers functions with createReference(), the same flaw can invoke such a function during deserialization; downstream effect depends on the registered function.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-200_Seroval/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

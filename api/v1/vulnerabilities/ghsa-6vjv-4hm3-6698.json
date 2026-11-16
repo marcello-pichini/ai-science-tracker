@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in FreeRDP 3.32.0. Upgrade to that release or later. Deployment status is not checked.",
   "advisory_url": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-6vjv-4hm3-6698",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "A client already authenticated to view the shared desktop acknowledges frameId+1; SIGFPE terminates freerdp-shadow-cli and drops all concurrent viewers. Availability only; source says no out-of-bounds access.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-6vjv-4hm3-6698",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

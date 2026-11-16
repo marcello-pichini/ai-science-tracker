@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "GHSL says the vulnerability was fixed on 2026-04-01 before a published release; a fixed release number is not stated.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-072_Orchard_CMS/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "Unencoded output can permit cross-site scripting when attacker-controlled values reach the affected Orchard CMS template output.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-072_Orchard_CMS/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

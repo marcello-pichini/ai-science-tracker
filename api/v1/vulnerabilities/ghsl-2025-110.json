@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "GHSL says the issue was fixed and deployed on 2025-09-10; the advisory does not name a commit or fixed release. No CVE was established.",
   "advisory_url": "https://github.com/internetarchive/openlibrary",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution",
+        "data disclosure"
+      ],
+      "conditions": "A user must scan an ISBN in OpenLibrary’s barcode scanner while the attacker supplies a JavaScript URL in the `returnTo` query parameter. The script executes in the user’s browser; the advisory says this may lead to information disclosure or actions on the user’s behalf.",
+      "exploitation": "The advisory documents a working XSS path; it does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-110_openlibrary/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

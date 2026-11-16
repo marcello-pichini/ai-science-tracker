@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The loader checks scaling and image-creation errors, rejects output dimensions above max_image_size_pixels, and scale_image initializes its output pointer. Fixed in libheif 1.23.7. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-gff5-3vgr-p8h2",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "Application uses the libheif gdk-pixbuf loader and requests fixed width/height with aspect ratio; crafted valid input induces scaling failure.",
+      "exploitation": "The cited advisory does not state whether this issue was exploited in the wild.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-gff5-3vgr-p8h2",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

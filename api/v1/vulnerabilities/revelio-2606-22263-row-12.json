@@ -29,5 +29,20 @@
       "source_name": "GitHub_M (CNA; CVE Program record)",
       "checked_date": "2026-11-16"
     }
+  ],
+  "impacts": [
+    {
+      "cves": [
+        "CVE-2026-47254"
+      ],
+      "consequences": [
+        "denial of service",
+        "other"
+      ],
+      "conditions": "An attacker-controlled HEIC sequence with fewer stco chunks than stsz samples causes an OOB chunk-vector read that crashes the process; adjacent heap read may be possible depending on heap layout. Requires sequence iteration via heif_track_get_next_raw_sequence_sample().",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-wqjg-4x9g-6cvg",
+      "checked_date": "2026-11-16"
+    }
   ]
 }

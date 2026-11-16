@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The AV1 UVLC reader now follows the specification and rejects incomplete sequence headers; fixed in libheif 1.23.7. The confirmed affected configuration uses libaom for AV1 decoding; dav1d and FFmpeg independently enforce limits. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-fpr5-xpfr-vcq3",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "An untrusted AVIF using a long AV1 UVLC value can bypass coded-size limits and cause excessive memory allocation when libaom configuration is used.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-fpr5-xpfr-vcq3",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

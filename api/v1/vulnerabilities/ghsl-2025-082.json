@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed 2025-08-05 by requiring approval for external fork pull requests.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-082_ag-grid_ag-grid/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "Untrusted input reaches privileged ag-grid workflow; GHSL advisory describes privileged workflow code execution.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-082_ag-grid_ag-grid/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

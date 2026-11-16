@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The Revelio paper reports the issue as fixed after validation and disclosure; no public item-level vendor advisory or CVE mapping was verified.",
   "advisory_url": "https://arxiv.org/html/2606.22263",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "Paper identifies an unchecked track-array size overflow; downstream effect is not established.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://arxiv.org/html/2606.22263",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

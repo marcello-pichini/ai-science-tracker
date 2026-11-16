@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "Maintainer fixed the issue 2025-08-10. No CVE was established in this advisory.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-084_int128_datadog-actions-metrics/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution",
+        "data disclosure"
+      ],
+      "conditions": "An attacker-controlled pull request branch is checked out and its code runs in a GitHub Actions workflow; malicious package scripts can execute in that workflow and potentially leak its secrets.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-084_int128_datadog-actions-metrics/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

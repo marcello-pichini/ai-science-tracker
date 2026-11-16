@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in Signal iOS 8.7.0.1523 on 2026-04-15. The advisory says the local vote is attributed to the attacker and requires the exact timestamp/author pair; Signal reported a collision with another report.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-112_GHSL-2026-113_Signal-iOS/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data modification"
+      ],
+      "conditions": "A registered Signal user who can name the target can submit votes across group boundaries.",
+      "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-112_GHSL-2026-113_Signal-iOS/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

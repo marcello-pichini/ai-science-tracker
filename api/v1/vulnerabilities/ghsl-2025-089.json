@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Maintainer reported the fix in PR 22458 on 2025-08-17. No CVE was established in the advisory.",
   "advisory_url": "https://github.com/ydb-platform/ydb/pull/22458",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "Attacker-controlled workflow input; source labels execution in a privileged workflow context.",
+      "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-089_ydb-platform_ydb/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

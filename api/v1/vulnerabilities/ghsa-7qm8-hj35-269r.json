@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The fix rejects duplicate transformation associations and limits transformations along a decode path to 32 under default security limits; fixed in libheif 1.23.7. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-7qm8-hj35-269r",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "An application decoding an untrusted HEIF file is required; source specifies worker CPU exhaustion.",
+      "exploitation": "The cited advisory does not state whether this issue was exploited in the wild.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-7qm8-hj35-269r",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

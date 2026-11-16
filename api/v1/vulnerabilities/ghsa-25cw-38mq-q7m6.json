@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in Caddy 2.11.8 by preserving the trailing slash on cleaned candidates so slash-terminated file paths do not match regular files. Deployed patch status is not checked.",
   "advisory_url": "https://github.com/CaddyServer/caddy/security/advisories/GHSA-25cw-38mq-q7m6",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data disclosure"
+      ],
+      "conditions": "An unauthenticated client can request a dot-segment path that bypasses suffix/exact-path rules and retrieve otherwise blocked static files. The advisory explicitly says nothing is executed.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://github.com/CaddyServer/caddy/security/advisories/GHSA-25cw-38mq-q7m6",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

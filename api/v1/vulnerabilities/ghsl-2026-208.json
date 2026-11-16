@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in PR #4780 on 2026-09-30. Successful pull-request workflow execution and an available SONAR_TOKEN are prerequisites.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-208_kptdev_kpt_repository/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data disclosure",
+        "data modification"
+      ],
+      "conditions": "An external fork author can cause the privileged SonarCloud analysis workflow to send the repository SONAR_TOKEN to an attacker-selected host. The attacker can exercise that token permissions for SonarCloud permissions and manipulate authenticated analysis.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-208_kptdev_kpt_repository/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

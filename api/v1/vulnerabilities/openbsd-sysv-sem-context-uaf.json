@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "OpenBSD’s public fix commit is dated 2026-05-22, before OpenAI’s June 22 public attribution. No CVE is listed in the cited sources.",
   "advisory_url": "https://github.com/openbsd/src/commit/1957873d2063db11dab780eca75b5e629d1e838d",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "The OpenBSD commit identifies a use-after-free after tsleep during System V semaphore context-switch handling. This records the memory-safety defect only; the source does not establish a downstream consequence.",
+      "exploitation": "Exploitation in the wild is not established by the cited source.",
+      "source_url": "https://github.com/openbsd/src/commit/1957873d2063db11dab780eca75b5e629d1e838d",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

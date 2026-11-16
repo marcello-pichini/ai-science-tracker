@@ -16,5 +16,17 @@
   "remediation": "not established",
   "remediation_note": "The cited public source does not establish a fix or fixed version.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-099_cross-platform-actions_action/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "A user-controlled branch name can inject and execute arbitrary code in the release workflow context when the documented workflow trigger conditions are met.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-099_cross-platform-actions_action/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

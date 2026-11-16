@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Caddy 2.11.8 hides the absolute data-directory path when AppDataDir is relative, covering Caddyfile, JSON, and file-server command configurations.",
   "advisory_url": "https://github.com/caddyserver/caddy/security/advisories/GHSA-jf74-f69g-hcj9",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data disclosure"
+      ],
+      "conditions": "When both HOME and XDG_DATA_HOME are unset and the working directory is served, anonymous clients can download TLS private keys and local CA keys; those keys can enable site impersonation or trusted certificate minting.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://github.com/caddyserver/caddy/security/advisories/GHSA-jf74-f69g-hcj9",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The Jetty advisory lists patched releases 12.1.12, 12.0.38, 11.0.32, and 10.0.32.",
   "advisory_url": "https://github.com/jetty/jetty.project/security/advisories/GHSA-85fq-fc5f-7j7g",
-  "checked_date": "2026-11-15"
+  "checked_date": "2026-11-15",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "A WebSocket frame with a reserved opcode; auto-fragmentation is on by default, allowing allocation before opcode rejection.",
+      "exploitation": "The cited advisory does not state whether this issue was exploited in the wild.",
+      "source_url": "https://github.com/jetty/jetty.project/security/advisories/GHSA-85fq-fc5f-7j7g",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

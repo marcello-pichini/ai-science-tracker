@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "GHSL reports fixes on main branch in commits 9a29bba and 41d6d02 on 2025-12-22. No tagged release or CVE is given.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-126_GHSL-2025-127_Lobsters/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data modification",
+        "other"
+      ],
+      "conditions": "The CSRF flaw lets an attacker link a Mastodon profile to a victim’s Lobsters profile; the source says further impact is only possible if the integration expands. This is a profile-link change and an authorization-control bypass, not authentication bypass.",
+      "exploitation": "The advisory describes the vulnerability and PoC; it does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-126_GHSL-2025-127_Lobsters/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

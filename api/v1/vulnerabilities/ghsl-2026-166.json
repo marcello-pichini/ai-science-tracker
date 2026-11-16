@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in PR #5043 on 2026-09-03. The workflow must be triggered by a maintainer.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-166_MongoDB_Node_js_Driver/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution",
+        "data modification"
+      ],
+      "conditions": "An external pull request author can update the mutable head ref after maintainer authorization and cause attacker code to run in a workflow with contents:write and pull-requests:write token permissions.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-166_MongoDB_Node_js_Driver/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

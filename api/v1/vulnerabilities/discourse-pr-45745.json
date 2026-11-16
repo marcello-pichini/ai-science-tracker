@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The fix truncates normalized remote inline-onebox titles to 500 characters before caching or inserting into cooked posts. The change was backported to release 2026.9 (#45747), 2026.10 (#45749), and 2026.7 (#45748). Deployed patch status is not checked.",
   "advisory_url": "https://releases.discourse.org/changelog/v2026.9.2/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "A crafted inline-onebox title can amplify content enough to cause denial of service; advisory release notes identify content amplification DoS.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://releases.discourse.org/changelog/v2026.9.2/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Caddy 2.11.8 escapes the file-matcher remainder while preserving slashes before parsing the rewritten URI.",
   "advisory_url": "https://github.com/caddyserver/caddy/security/advisories/GHSA-69hv-5jfc-mvmv",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "Requires the Caddy rewrite/try_files configuration using the file remainder placeholder; attacker supplies crafted path info.",
+      "exploitation": "The cited advisory does not state whether this issue was exploited in the wild.",
+      "source_url": "https://github.com/caddyserver/caddy/security/advisories/GHSA-69hv-5jfc-mvmv",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

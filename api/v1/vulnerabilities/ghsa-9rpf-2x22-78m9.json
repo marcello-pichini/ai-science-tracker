@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The no-thumbnail path returns an empty image and initializes the C API handle to null; in-tree callers also initialize handles. Fixed in libheif 1.23.7. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-9rpf-2x22-78m9",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "When an application encodes a thumbnail for an image already within requested bounds, libheif returns success without assigning output handle; callers may use/release an uninitialized or stale pointer, causing UAF/double/invalid free or process crash. Code execution was not demonstrated.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-9rpf-2x22-78m9",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

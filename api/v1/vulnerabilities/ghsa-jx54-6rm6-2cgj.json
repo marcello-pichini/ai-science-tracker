@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The final OBU is now explicitly sized before scanning and decoding so libheif and libaom see the same framing; fixed in libheif 1.23.7. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-jx54-6rm6-2cgj",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "Requires decoding an untrusted AVIF with the libaom backend; no memory corruption observed.",
+      "exploitation": "The cited advisory does not state whether this issue was exploited in the wild.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-jx54-6rm6-2cgj",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

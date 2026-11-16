@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "The fix protects bit-depth queries with the coded input item mutex; fixed in libheif 1.23.7. The issue requires a crafted file and parallel decoding of shared derived inputs. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-35mc-3887-rr37",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other",
+        "denial of service"
+      ],
+      "conditions": "A crafted untrusted image processed by affected parallel decoding of derived grid tiles can cause heap use-after-free and crash release builds; code execution is not demonstrated.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-35mc-3887-rr37",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

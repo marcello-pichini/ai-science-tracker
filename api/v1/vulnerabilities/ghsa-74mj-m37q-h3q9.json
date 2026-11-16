@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The lookup is now a binary search and malformed decreasing first_chunk values are rejected; fixed in libheif 1.23.7. The advisory also discloses OpenAI Codex assistance with the human reporter’s review and drafting; Anthropic discovery attribution is separately explicit. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-74mj-m37q-h3q9",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "A crafted file can cause excessive CPU work during opening; concurrent requests can exhaust the media worker pool. Applies when untrusted inputs are processed by affected libheif usage.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-74mj-m37q-h3q9",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

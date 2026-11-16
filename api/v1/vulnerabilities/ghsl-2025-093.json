@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "GHSL says the issue was fixed in a commit on 2025-12-16; the advisory does not identify a tagged release or establish whether downstream copies were updated.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-093_PraisonAI/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "Attacker-controlled workflow input can be injected into workflow code; source reports code injection.",
+      "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-093_PraisonAI/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

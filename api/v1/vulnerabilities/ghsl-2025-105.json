@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "GHSL says the affected workflow was fixed on 2025-08-13. No released version or CVE is given.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-105_vets-api/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "A user-controlled pull request/workflow branch name is evaluated in shell commands in the affected GitHub Actions workflow, allowing code injection during those workflow runs.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-105_vets-api/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "GHSL reports fixes on main branch in commits 9a29bba and 41d6d02 on 2025-12-22. No tagged release or CVE is given.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-126_GHSL-2025-127_Lobsters/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data modification",
+        "other"
+      ],
+      "conditions": "Unauthenticated users could create Domain records through POST /domains. The advisory says this can pollute data and may disrupt moderation workflows or disguise malicious domains as trusted; no authentication-bypass label is inferred.",
+      "exploitation": "The advisory describes the vulnerability and PoC; it does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-126_GHSL-2025-127_Lobsters/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in filelock 4.2.1. The advisory recommends protecting every ancestor of the lock path from replacement by another account; a sticky shared parent can suffice if the lock tree was not planted beforehand. Deployment status is not checked.",
   "advisory_url": "https://github.com/tox-dev/filelock/security/advisories/GHSA-wfhq-q4j2-c37m",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data modification"
+      ],
+      "conditions": "The filelock advisory title states substituted lock tree can make SoftReadWriteLock write outside its intended directory; exact modified object/prerequisite needs full advisory review.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://github.com/tox-dev/filelock/security/advisories/GHSA-wfhq-q4j2-c37m",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

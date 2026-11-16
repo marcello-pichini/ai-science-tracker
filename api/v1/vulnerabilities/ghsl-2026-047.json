@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in Zammad 7.0.0; vendor advisory ZAA-2026-06 also lists 6.5.3 as fixed.",
   "advisory_url": "https://zammad.com/en/advisories/zaa-2026-06",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data disclosure"
+      ],
+      "conditions": "A low-privilege customer can extract arbitrary Zammad database data, including credentials, tickets and personal data.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-047_Zammad/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

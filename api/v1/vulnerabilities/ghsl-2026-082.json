@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Signal disabled the server-side feature flag at disclosure time; the code fix shipped in 8.3.2 and later Google Play version 8.3.4. No CVE was assigned.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-082_Android_SignalApp/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data modification"
+      ],
+      "conditions": "The documented issue permits unauthorized deletion of messages; it was fixed in Signal 8.3.4.",
+      "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-082_Android_SignalApp/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

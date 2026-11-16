@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "GHSL records that faststream fixed the issue on 2025-08-07. No CVE is listed.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-094_ag2ai_faststream/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "Untrusted checkout is executed in faststream workflow context; GHSL advisory identifies untrusted-checkout execution.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-094_ag2ai_faststream/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

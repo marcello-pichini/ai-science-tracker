@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Project Zero reports a same-day upstream correction in early October 2024, before an official release; this record does not invent a precise reporting day.",
   "advisory_url": "https://projectzero.google/2024/10/from-naptime-to-big-sleep.html",
-  "checked_date": "2026-11-13"
+  "checked_date": "2026-11-13",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "A ROWID constraint can trigger a negative-index stack write in release builds; debug assertions stop it, and exploitability is described as likely rather than demonstrated.",
+      "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+      "source_url": "https://projectzero.google/2024/10/from-naptime-to-big-sleep.html",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

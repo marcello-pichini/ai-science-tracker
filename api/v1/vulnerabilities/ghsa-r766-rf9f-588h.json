@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "Caddy 2.11.8 validates Host and :authority consistently across protocols and rejects host values that consist only of dots.",
   "advisory_url": "https://github.com/caddyserver/caddy/security/advisories/GHSA-r766-rf9f-588h",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data disclosure",
+        "code execution"
+      ],
+      "conditions": "On catch-all or on-demand TLS sites using a host-derived root, unauthenticated clients can escape the root and read files accessible to the Caddy process. With php_fastcgi or FrankenPHP configured, they can execute any PHP file on the filesystem. Sites listing their host names are not affected.",
+      "exploitation": "The advisory documents the impact but does not establish exploitation in the wild.",
+      "source_url": "https://github.com/caddyserver/caddy/security/advisories/GHSA-r766-rf9f-588h",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

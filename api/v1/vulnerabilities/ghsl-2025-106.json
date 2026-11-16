@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "GHSL says the issue was fixed on 2025-11-10. It describes cache poisoning as a potential impact; no CVE is listed.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-106_esphome_esphome-docs/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "Attacker-controlled workflow input; source says privileged-context execution.",
+      "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-106_esphome_esphome-docs/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

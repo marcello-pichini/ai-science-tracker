@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "GHSL reports a fix on 2026-09-03; see advisory for implementation details.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-190_mongodb-js_mongodb-connection-string-url_repository/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "A mutable release-workflow ref can be changed between validation and use; if job then executes fetched code, this is code execution in the workflow context.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-190_mongodb-js_mongodb-connection-string-url_repository/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

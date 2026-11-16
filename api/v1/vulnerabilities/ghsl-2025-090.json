@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Maintainer fixed the issue 2025-08-06. No CVE was established in this advisory.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-090_harvester_harvester/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "Untrusted checkout or PR input reaches privileged Harvester workflow; GHSL advisory describes workflow injection.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-090_harvester_harvester/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

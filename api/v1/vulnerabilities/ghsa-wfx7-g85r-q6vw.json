@@ -16,5 +16,17 @@
   "remediation": "not established",
   "remediation_note": "The advisory lists no patched libgit2 version. It describes a structural fix in PCRE2 that was not backported to bundled PCRE 8.x.",
   "advisory_url": "https://github.com/libgit2/libgit2/security/advisories/GHSA-wfx7-g85r-q6vw",
-  "checked_date": "2026-11-15"
+  "checked_date": "2026-11-15",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "With libgit2’s default built-in PCRE backend, a specially structured `:/pattern` revspec can cause a deterministic one-byte heap out-of-bounds write in PCRE. Any consumer passing attacker-influenced strings to revspec is exposed; no downstream consequence is established.",
+      "exploitation": "The advisory confirms a deterministic reachable trigger; it does not establish exploitation in the wild.",
+      "source_url": "https://github.com/libgit2/libgit2/security/advisories/GHSA-wfx7-g85r-q6vw",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

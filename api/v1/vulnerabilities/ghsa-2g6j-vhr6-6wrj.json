@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Decoding now refuses more than eight coded pictures per decode by default. The v1.24.x limit can be configured; zero disables it. Fixed in libheif 1.23.7. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-2g6j-vhr6-6wrj",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "A crafted HEIF item or sequence sample causes a decode call to process hundreds or thousands of coded pictures; untrusted-file decoder workers can be occupied for seconds or minutes. Source says no memory corruption or confidentiality impact is known.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-2g6j-vhr6-6wrj",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

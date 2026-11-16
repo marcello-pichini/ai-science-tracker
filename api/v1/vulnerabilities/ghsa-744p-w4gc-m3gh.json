@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Trilogy 2.13.2 rejects the unsupported legacy connection encodings and fixes escaping. Projects unable to update can enforce encodings for strings passed to escape/query, as described by the advisory.",
   "advisory_url": "https://github.com/trilogy-libraries/trilogy/security/advisories/GHSA-744p-w4gc-m3gh",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "Apps are affected when attacker-influenced strings are escaped under non-ASCII-compatible encodings or the connection uses such an encoding; the advisory documents unauthenticated SQL injection in those cases but does not specify resulting reads or writes.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://github.com/trilogy-libraries/trilogy/security/advisories/GHSA-744p-w4gc-m3gh",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

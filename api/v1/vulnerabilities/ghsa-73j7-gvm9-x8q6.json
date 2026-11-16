@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Per-codec limits now bound samples decoded without returning frames; ignore_sequence_editlist stops after original media samples. Fixed in libheif 1.23.7. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-73j7-gvm9-x8q6",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "An untrusted HEIF sequence with repeated samples that produce no output can keep one sequence-decode call busy for seconds/minutes; source observed CPU exhaustion and no memory corruption or growing memory.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-73j7-gvm9-x8q6",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

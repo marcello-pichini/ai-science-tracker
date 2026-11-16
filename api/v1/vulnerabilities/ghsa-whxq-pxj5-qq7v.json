@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Upgrade supported installations to PrestaShop 9.1.5 or 8.2.8. No workaround is given. The same flawed legacy back-office controller is also present in 1.7.x and earlier, which the project says are end of life and will not be patched.",
   "advisory_url": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-whxq-pxj5-qq7v",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data disclosure"
+      ],
+      "conditions": "A logged-in employee crafts a back-office list filter; even the most restricted built-in profile can read arbitrary shop database data, including employee hashes, customer and order tables.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-whxq-pxj5-qq7v",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

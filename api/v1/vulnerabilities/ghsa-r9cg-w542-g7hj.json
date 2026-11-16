@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "Both tools now use/release the URI only on successful lookup, and the API initializes its output pointer to null. Fixed in libheif 1.23.7. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-r9cg-w542-g7hj",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other",
+        "denial of service"
+      ],
+      "conditions": "A crafted urim track without a URI makes heif-dec -S or heif-info process an uninitialized pointer and crash before frame decoding; use-after-free/double-free details do not establish code execution.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-r9cg-w542-g7hj",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Reading and encoding now store color profiles separately so opening the file does not create new properties. Fixed in libheif 1.23.7. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-hhg3-fxg7-3gxw",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "A crafted HEIF with many color-profile associations can make libheif file-open spend seconds/minutes of CPU before image selection; source observed CPU exhaustion and no memory corruption.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-hhg3-fxg7-3gxw",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

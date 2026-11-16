@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "Patched in gh-aw v0.91.12, published October 14, 2026 and marked pre-release. The advisory recommends v0.91.12 or later; downstream deployment is not verified.",
   "advisory_url": "https://github.com/github/gh-aw/security/advisories/GHSA-f7r8-5pqp-q5p4",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data modification",
+        "other"
+      ],
+      "conditions": "A less-trusted MCP client able to reach the local server can inject argv flags that bypass intended restrictions, perform GitHub writes (push branches/open PRs), disable scanners, alter workflows/lock files, and write outside `.github/workflows`. The advisory also says a specific `mcp-inspect` argument can launch the MCP Inspector via npx; it does not establish arbitrary attacker-chosen code execution.",
+      "exploitation": "The advisory confirms the argv-parsing primitive; it does not establish exploitation in the wild.",
+      "source_url": "https://github.com/github/gh-aw/security/advisories/GHSA-f7r8-5pqp-q5p4",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

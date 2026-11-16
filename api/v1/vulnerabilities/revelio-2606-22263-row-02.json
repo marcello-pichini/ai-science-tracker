@@ -29,5 +29,19 @@
       "source_name": "GitHub_M (CNA; CVE Program record)",
       "checked_date": "2026-11-16"
     }
+  ],
+  "impacts": [
+    {
+      "cves": [
+        "CVE-2026-42217"
+      ],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "When parsing untrusted EXR input with enough variable-length-integer continuation bytes, readVariableLengthInteger() shifts a 64-bit value by 70, which the advisory identifies as undefined behavior. The recorded consequence is this arithmetic/memory-safety defect only; further downstream effects are not established.",
+      "exploitation": "Exploitation in the wild is not established by the cited advisory.",
+      "source_url": "https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-3c67-4wwp-w52m",
+      "checked_date": "2026-11-16"
+    }
   ]
 }

@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "GHSL reports the issue fixed 2025-08-15; the linked upstream advisory is GHSA-mq93-4g5w-w34h.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2025-087_PX4_PX4-Autopilot/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "A pull request controls file paths in markdown-checker output that a privileged GitHub Actions workflow interpolates into a shell command. A crafted file name may cause command execution in that CI workflow context; compromise of a published artifact is not established here.",
+      "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2025-087_PX4_PX4-Autopilot/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

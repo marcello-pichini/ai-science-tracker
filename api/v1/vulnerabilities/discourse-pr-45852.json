@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Category changes now require the user to see the destination category across direct topic moves, message-to-topic conversion, and queued-topic edits, while preserving documented admin/moderator permissions for categories they can see. The change was backported to releases 2026.10 (#45854), 2026.9 (#45855), and 2026.7 (#45856). Deployed patch status is not checked.",
   "advisory_url": "https://releases.discourse.org/changelog/v2026.10.1/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "The fix addresses a visibility authorization bypass in the affected Discourse behavior; it does not establish that protected data was actually disclosed.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://github.com/discourse/discourse/pull/45852",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

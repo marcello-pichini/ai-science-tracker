@@ -16,5 +16,18 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in 7-Zip v26.01 released 2026-04-27. GHSL identifies this as the SDK sample application rather than assigning a CVE; the release scope is described in the GHSL advisory.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-115_GHSL-2026-122_7-zip/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution",
+        "data modification"
+      ],
+      "conditions": "Attacker-controlled 7z archive extracted by the LZMA SDK sample `7zDec` in full-path mode (`x`) can write attacker-controlled files anywhere writable; remote code execution may follow if startup/configuration scripts are overwritten. The main C++ 7-Zip extractor is not affected.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-115_GHSL-2026-122_7-zip/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

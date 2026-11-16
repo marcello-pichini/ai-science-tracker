@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in PR #488 on 2026-09-14. The advisory notes current repository pull-request access is restricted to collaborators; external attack exposure depends on settings changing.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-225_actions_attest/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data modification"
+      ],
+      "conditions": "Attacker-controlled artifact metadata can select branch and content for a repository push.",
+      "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-225_actions_attest/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The recursive traversal was replaced by a bounded iterative walk charged against Exif data size; fixed in libheif 1.23.7. Scope is the named helper tools. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-pfcm-ffqg-84hx",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "Crafted Exif with cyclic IFD pointers in heifio helper tools can cause excessive CPU while searching tags; affects heif-thumbnailer/heif-dec on HEIC/AVIF and heif-enc on JPEG/PNG, not library-only applications.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-pfcm-ffqg-84hx",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

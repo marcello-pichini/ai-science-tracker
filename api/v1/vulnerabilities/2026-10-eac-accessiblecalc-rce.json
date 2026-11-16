@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "XBOW’s October 29 writeup says the EAC validated and remediated the issue before November 3, 2026. EAC’s linked disclosure policy is general process guidance, not a case-specific confirmation or advisory; no public fix version was identified.",
   "advisory_url": "https://www.eac.gov/vulnerability-disclosure-policy",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "Unauthenticated request to EAC resource-calculator application; XBOW reports EAC validation and remediation.",
+      "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+      "source_url": "https://xbow.com/labs/research/how-xbow-found-a-critical-rce-in-an-eac-voting-resource-calculator",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

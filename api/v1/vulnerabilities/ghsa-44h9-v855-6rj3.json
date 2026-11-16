@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in libyang 6.0.1.",
   "advisory_url": "https://github.com/CESNET/libyang/security/advisories/GHSA-44h9-v855-6rj3",
-  "checked_date": "2026-11-15"
+  "checked_date": "2026-11-15",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "Untrusted LYB input to an application parsing the format is required; source reports a stack out-of-bounds write and potential return-address control only on non-hardened builds.",
+      "exploitation": "The cited advisory does not state whether this issue was exploited in the wild.",
+      "source_url": "https://github.com/CESNET/libyang/security/advisories/GHSA-44h9-v855-6rj3",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

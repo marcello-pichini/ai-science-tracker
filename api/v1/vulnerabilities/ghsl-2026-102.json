@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Signal updated its website APK to v8.4.2 on 2026-03-31. The issue affects the website flavor; Play Store and GitHub builds do not register the vulnerable receiver.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-102_Android_SignalApp/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data disclosure"
+      ],
+      "conditions": "On the Signal Android website flavor, versions >=6.38.0 and <8.4.2, another installed app without permissions can exploit intent redirection to exfiltrate decrypted attachments.",
+      "exploitation": "Exploitation in the wild is not established by the cited description.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-102_Android_SignalApp/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

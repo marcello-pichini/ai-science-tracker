@@ -16,5 +16,19 @@
   "remediation": "fix documented",
   "remediation_note": "GHSL’s timeline says the issue was fixed 2026-07-17 and graphql-ruby v2.6.6 released 2026-07-21; patch state in dependent applications is not checked.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-152_graphql-ruby/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data disclosure",
+        "data modification",
+        "privilege escalation"
+      ],
+      "conditions": "Execution::Next schemas following the documented authorized? UnauthorizedError pattern; resolver runs despite authorization failure.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-152_graphql-ruby/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

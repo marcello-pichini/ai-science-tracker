@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed by rejecting unparseable SPS data in AVC/VVC size checks; included in libheif 1.23.7. The affected decoder-plugin configuration and user-controlled decode conditions are described in the advisory. The libheif v1.23.7 security release is dated 2026-10-26; deployed patch status is not checked.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-xwcv-cp39-m2w4",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data disclosure"
+      ],
+      "conditions": "Application must decode untrusted AVC-coded HEIF; disclosure depends on memory layout and a caller receiving the decoded image/thumbnail.",
+      "exploitation": "The cited advisory does not state whether this issue was exploited in the wild.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-xwcv-cp39-m2w4",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "The vulnerable workflow was deleted in PR #10765 on 2026-09-08. Exploitation requires winning a same-second race and an authorized maintainer trigger; downstream publishing exposure depends on the workflow setup.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-226_marimo-team_marimo_repository/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "A same-second update to a pull request can pass the test-release authorization check, then be checked out and executed in the privileged package-publishing workflow. The report establishes workflow code execution; do not infer a package artifact compromise unless that result is separately documented.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-226_marimo-team_marimo_repository/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

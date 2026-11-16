@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "A master fix adds a per-decode pixel budget and avoids decoding tiles outside the image; the advisory says release 1.23.7 is expected as the first patched release. The documented impact is CPU exhaustion when untrusted HEIF files are decoded; no memory-safety issue is known.",
   "advisory_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-48p4-gj45-w9v6",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "An application must decode an untrusted HEIF/derived image; source reports CPU exhaustion and successful decode of a small image.",
+      "exploitation": "The cited advisory does not state whether this issue was exploited in the wild.",
+      "source_url": "https://github.com/strukturag/libheif/security/advisories/GHSA-48p4-gj45-w9v6",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

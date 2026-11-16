@@ -16,5 +16,17 @@
   "remediation": "fix documented",
   "remediation_note": "Fixed in PR #4780 on 2026-09-30. Exploitation also requires a successful pull request workflow, expected artifacts and a configured SONAR_TOKEN.",
   "advisory_url": "https://securitylab.github.com/advisories/GHSL-2026-207_kptdev_kpt_repository/",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "code execution"
+      ],
+      "conditions": "Attacker-controlled branch name reaches SonarCloud workflow shell context; GHSL identifies branch-name injection in CI.",
+      "exploitation": "The cited source does not establish exploitation in the wild.",
+      "source_url": "https://securitylab.github.com/advisories/GHSL-2026-207_kptdev_kpt_repository/",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }
