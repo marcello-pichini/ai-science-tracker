@@ -28,7 +28,7 @@ globalThis.CatalogSearch = {
     const cases = vulnerabilities.map(r => ({id:r.id, title:r.title, href:'security.html#' + encodeURIComponent(r.id),
       fields:{Title:r.title, Identifier:[r.id,...r.cves].join(' '), Summary:r.summary, Product:r.product,
         'AI system':r.ai_system, 'AI contribution':r.ai_role, Organization:r.organization,
-        Sources:[r.source_url,r.ai_source_url,...(r.evidence_urls || [])].join(' ')}}));
+        Sources:[r.source_url,r.ai_source_url,r.advisory_url,...(r.evidence_urls || [])].join(' ')}}));
     const releases = models.models.map((r, i) => ({id:String(i), title:r.name,
       href:'models.html?q=' + encodeURIComponent(r.name), fields:{Name:r.name, Organization:r.organization, Family:r.family, Domain:r.domain, Source:r.link}}));
     const families = models.families.map(r => ({id:r.id,title:r.name,href:'profile.html?family=' + encodeURIComponent(r.id),

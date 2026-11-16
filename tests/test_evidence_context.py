@@ -40,6 +40,11 @@ const html = ui.sourceDetails(rows[0]);
 assert.ok(html.indexOf('Result, AI contribution and limits') < html.indexOf('editorial details'));
 assert.ok(html.includes('Review scope and date are not recorded'));
 assert.ok(html.includes('No follow-up recorded; this is not a claim that no follow-up exists'));
+assert.ok(ui.evidenceBlock({evidence:{unknown:'Not reported.'}}).includes('not a scientific finding of absence'), 'Punctuated legacy gaps must retain the review limitation');
+assert.ok(ui.evidenceBlock({evidence:{ai_role:'Not reported'}}).includes('not a scientific finding of absence'), 'Legacy AI-role gaps use the same warning');
+assert.ok(!ui.evidenceBlock({evidence:{unknown:'Not stated in the reviewed material'}}).includes('legacy label'), 'Explicit review gaps must keep their narrower meaning');
+assert.ok(!ui.evidenceBlock({evidence:{tested:'Measured result'}}).includes('legacy label'), 'Absent AI-role text must not invent a legacy label');
+
 const history = ui.historyBlock({id:'a', follow_up:[{id:'x',kind:'publication',date:'2025',note:'<unsafe>',recorded_date:'2026-11-16',source_urls:['javascript:bad','https://example.org']}],relationships:[{type:'extends',target_id:'b',reason:'bounded',source_urls:[]}]});
 assert.ok(history.includes('&lt;unsafe&gt;') && !history.includes('javascript:'));
 assert.ok(history.includes('share/b.html') && history.includes('do not merge catalog counts'));

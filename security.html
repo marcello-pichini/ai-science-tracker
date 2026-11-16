@@ -23,7 +23,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/atom+xml" title="AI Science Tracker: additions and source checks" href="feed.xml">
-<link rel="stylesheet" href="styles.css?v=212159537541">
+<link rel="stylesheet" href="styles.css?v=021f8ded4828">
 </head>
 <body>
 <header class="header">
@@ -48,7 +48,7 @@
   <section class="sez" aria-labelledby="t-reading"><div class="wrap prosa">
     <h2 id="t-reading">Reading the evidence</h2>
     <details class="security-options"><summary>How to read an AI vulnerability discovery</summary>
-    <p>A case connects a publicly disclosed flaw to a source describing AI involvement. Open <strong>AI contribution, context and remediation</strong> on any case to see what the system did, how researchers used its output and what the cited sources establish.</p>
+    <p>A case connects a publicly disclosed flaw to a source describing AI involvement. Open <strong>Source-attributed AI, human and vendor contributions</strong> on any case to see what the system did, how researchers used its output and what the cited sources establish.</p>
     <ul>
       <li><strong>Follow the evidence:</strong> Original disclosure describes the finding; AI attribution documents the system's role; Advisory / fix evidence supplies the remediation context. These links can point to the same report when it covers all three.</li>
       <li><strong>Read the dates separately:</strong> disclosure is the public report date, AI attribution is the dated account of AI involvement, and sources checked is this catalog's review date. None establishes when the flaw was introduced or first exploited. Unknown attribution dates remain explicit.</li>
@@ -99,7 +99,7 @@
   <p>Original disclosures and documented remediation, with AI involvement attributed to sources.</p>
   <p><a href="index.html">Scientific discoveries</a> · <a href="guide.html">Site guide</a></p>
 </div></footer>
-<script src="assets/catalog-ui.js?v=986c23fe9ed8"></script>
+<script src="assets/catalog-ui.js?v=f9dfd404ff12"></script>
 <script>
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -166,6 +166,7 @@ $("charts").addEventListener("click", e => {
 function render() {
   const openDetails = new Set([...$("cases").querySelectorAll(".source-details[open]")].map(details => details.closest("article").id));
   const query = $("q").value.trim().toLowerCase();
+  const cve = query.replace(/[–—]/g, "-"), exactCve = /^cve-\d{4}-\d{4,}$/.test(cve);
   document.querySelectorAll("#charts .riga").forEach(b => b.setAttribute("aria-pressed", (b.dataset.k === "year" ? year : $(b.dataset.k).value) === b.dataset.v));
   const group = reports.get(report);
   $('report-group').innerHTML = group ? `<details class="source-details" open><summary>Cases citing this report · ${group.length} cases · ${new Set(group.flatMap(r => r.cves)).size} distinct CVEs</summary><p><a href="${esc(safeUrl(report))}" rel="noopener">${esc(report)}</a></p><p>Exact evidence-URL matches across disclosure, AI attribution and advisory links. Cases remain separate; sharing a report does not establish a common root cause, campaign or independent confirmation. Other filters narrow the list below.</p><ul>${group.map(r => `<li><a href="#${esc(r.id)}">${esc(r.id)} — ${esc(r.title)}</a></li>`).join('')}</ul></details>` : report ? '<p>No cases cite this exact report URL. Clear filters to browse all cases.</p>' : '';
@@ -174,8 +175,8 @@ function render() {
     (!$("month").value || record.disclosure_date.startsWith($("month").value)) &&
     (!$("ai_system").value || record.ai_system === $("ai_system").value) &&
     (!$("remediation").value || record.remediation === $("remediation").value) &&
-    (!query || [record.title,record.product,record.ai_system,record.organization,record.summary,record.ai_role,...record.cves].join(" ").toLowerCase().includes(query)));
-  $("count").textContent = `${selected.length} of ${cases.length} tracked cases`;
+    (!query || (exactCve ? record.cves.some(value => value.toLowerCase() === cve) : [record.title,record.product,record.ai_system,record.organization,record.summary,record.ai_role,...record.cves].join(" ").toLowerCase().includes(query))));
+  $("count").textContent = `${selected.length} of ${cases.length} tracked cases${year ? ' · disclosure year: ' + year : ''}`;
   $("cases").innerHTML = selected.slice(0, shown).map(record => `<article class="voce" id="${esc(record.id)}" tabindex="-1">
     <div class="voce-meta"><time datetime="${esc(record.disclosure_date)}">Disclosed ${esc(date(record.disclosure_date))}</time><span>${esc(record.organization)}</span></div>
     <h3><a href="#${esc(record.id)}">${esc(record.title)}</a></h3>
@@ -189,7 +190,7 @@ function render() {
     </details>
     <p class="tech"><span>AI system:</span> ${esc(record.ai_system)} · <span>Product:</span> ${esc(record.product)}</p>
     <p>${record.cves.length ? record.cves.map(esc).join(", ") : "CVE: not established in this catalog"}</p>
-    <div class="voce-footer"><span class="etich">${esc(labels[record.classification])}</span><span class="etich">${esc(record.remediation)}</span><span>Source-documented fix evidence does not establish installed patches or current safety.</span>
+    <div class="voce-footer"><span class="etich">${esc(labels[record.classification])}</span><span class="etich">${record.remediation === "not established" ? "Fix evidence not established" : esc(record.remediation)}</span><span>Source-documented fix evidence does not establish installed patches or current safety.</span>
       <span class="collegamenti"><a href="${esc(safeUrl(record.source_url))}" rel="noopener">Original disclosure</a><a href="${esc(safeUrl(record.ai_source_url))}" rel="noopener">AI attribution</a><a href="${esc(safeUrl(record.advisory_url))}" rel="noopener">Advisory / fix evidence</a></span></div>
     ${reportLinks(record)}
   </article>`).join("") + (selected.length > shown ? `<p><button class="piu" id="more" type="button">Show 40 more of ${selected.length - shown} remaining</button></p>` : "")

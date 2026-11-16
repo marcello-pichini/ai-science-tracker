@@ -90,9 +90,9 @@ assert.equal(comparisonFacts(null,b,tasks).delta,null);
     def test_cadence_dates_and_cross_lab_selection(self):
         code = r"""
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
-const {linkedComparison}=require('./assets/model-progress-facts.js');
+const {linkedComparison,comparisonFacts}=require('./assets/model-progress-facts.js');
 const elements=new Map();
-const context=vm.createContext({linkedComparison,URLSearchParams,console,document:{activeElement:{id:''},getElementById(id){if(!elements.has(id))elements.set(id,{});return elements.get(id);}}});
+const context=vm.createContext({linkedComparison,comparisonFacts,URLSearchParams,console,document:{activeElement:{id:''},getElementById(id){if(!elements.has(id))elements.set(id,{});return elements.get(id);}}});
 const renderer=fs.readFileSync('assets/model-progress.js','utf8').split("document.addEventListener('click'")[0];
 vm.runInContext(renderer,context);
 context.snapshot=JSON.parse(fs.readFileSync('data/model-progress.json','utf8'));
@@ -104,6 +104,48 @@ assert.equal(vm.runInContext('state.lab',context),'All labs');
 assert.equal(vm.runInContext('lookup.get(state.baseline).lab',context),'OpenAI');
 assert.equal(vm.runInContext('lookup.get(state.model).lab',context),'Anthropic');
 vm.runInContext(`const shared=new URLSearchParams({model:state.model,baseline:state.baseline,lab:state.lab,period:state.period});const restored=linkedComparison(shared,models,start);if(JSON.stringify(restored)!==JSON.stringify({model:state.model,baseline:state.baseline,lab:state.lab,period:state.period}))throw Error('Shared selection changed');`,context);
+vm.runInContext(`renderInventory();`,context);
+assert.ok(elements.get('model-inventory').innerHTML.includes('Interval unavailable'));
+assert.ok(!elements.get('model-inventory').innerHTML.includes('Not available–Not available'));
+assert.equal(vm.runInContext('interval({eci_low:null,eci_high:10})',context),'Lower bound unavailable–10');
+assert.equal(vm.runInContext('interval({eci_low:0,eci_high:null})',context),'0–Upper bound unavailable');
+vm.runInContext(`state.lab='All labs';state.baseline=models.find(m=>m.lab==='Anthropic').id;chooseModel(models.findIndex(m=>m.lab==='Anthropic'&&m.id!==state.baseline));`,context);
+assert.equal(vm.runInContext('state.lab',context),'All labs');
+vm.runInContext(`const unscored=models.find(m=>m.eci==null);renderReadout(unscored,unscored);`,context);
+assert.ok(elements.get('comparison-readout').innerHTML.includes('ECI comparison is unavailable'));
+assert.ok(!elements.get('comparison-readout').innerHTML.includes('difference is zero'));
+vm.runInContext('renderReadout(undefined,models[0]);',context);
+assert.ok(elements.get('comparison-readout').innerHTML.includes('Choose a baseline and a comparison model'));
+assert.ok(!elements.get('comparison-readout').innerHTML.includes('ECI comparison is unavailable'));
+const labels=[{x:161.42,width:232.51,anchor:'end'},{x:145.31,width:218.5,anchor:'start'}].map(data=>({...data,
+  getBBox(){return {x:this.x-(this.anchor==='end'?this.width:0),width:this.width};},
+  getAttribute(){return this.x;},setAttribute(key,value){this[key]=value;}}));
+context.plotLabels=labels;
+vm.runInContext("fitPlotLabels({querySelectorAll(){return plotLabels;}},297);",context);
+assert.ok(labels.every(label=>label.getBBox().x>=4&&label.getBBox().x+label.width<=293),'Long selected model labels must remain inside the chart');
+"""
+        subprocess.run(['node', '-e', code], cwd=ROOT, check=True, capture_output=True, text=True)
+
+    def test_cadence_click_preserves_keyboard_focus(self):
+        code = r"""
+const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const elements=new Map(),handlers={},body={id:''};
+const document={activeElement:body,addEventListener(type,fn){handlers[type]=fn;},getElementById(id){
+  if(!elements.has(id))elements.set(id,{id,focus(){document.activeElement=this;}});
+  return elements.get(id);
+}};
+Object.defineProperty(document.getElementById('cadence'),'innerHTML',{set(html){this.html=html;document.activeElement=body;}});
+const context=vm.createContext({document,console});
+vm.runInContext(fs.readFileSync('assets/model-progress.js','utf8').split("document.addEventListener('keydown'")[0],context);
+context.snapshot=JSON.parse(fs.readFileSync('data/model-progress.json','utf8'));
+vm.runInContext(`D=snapshot;models=D.models;start='2025-11-16';end=D.fetched_on;computeCadence();showCadence('OpenAI');`,context);
+const firstDate=vm.runInContext(`cadenceStats.find(s=>s.lab==='Anthropic').dates[0]`,context);
+for(const [id,dataset] of [['cadence-lab-2',{cadence:'Anthropic'}],['cadence-date-2-0',{cadence:'Anthropic',date:firstDate}]]){
+  assert.ok(elements.get('cadence').html.includes('id="'+id+'"'),'Cadence controls need stable focus targets');
+  const control=document.getElementById(id);control.dataset=dataset;document.activeElement=control;
+  handlers.click({target:{closest(){return control;}}});
+  assert.equal(document.activeElement.id,id,'Activating cadence must preserve the active control');
+}
 """
         subprocess.run(['node', '-e', code], cwd=ROOT, check=True, capture_output=True, text=True)
 

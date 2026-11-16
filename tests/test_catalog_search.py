@@ -24,5 +24,7 @@ assert.deepEqual(s.match({Title:'A model'}, '---'), []);
 const groups = s.collections([],[],{models:[],families:[]},{models:[]});
 assert.equal(groups.length, 5);
 assert.ok(groups.every(g => g.records.length === 0));
+const cases = s.collections([], [{id:'case',title:'Case',cves:[],advisory_url:'https://vendor.example/unique-advisory'}], {models:[],families:[]}, {models:[]})[1];
+assert.deepEqual(s.match(cases.records[0].fields, 'unique-advisory'), ['Sources'], 'Advisory evidence is a searchable source');
 """], cwd=ROOT, text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stderr)

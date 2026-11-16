@@ -42,7 +42,7 @@ globalThis.CatalogUI = {
     const links = (e.evidence_urls || []).filter(url => {
       try { return /^https?:\/\//i.test(url) && ['http:', 'https:'].includes(new URL(url).protocol); } catch { return false; }
     }).map(url => `<a href="${esc(url)}" rel="noopener">${esc(url)}</a>`);
-    const legacy = [e.publication_status, e.tested, e.unknown, e.ai_role].includes('Not reported');
+    const legacy = [e.publication_status, e.tested, e.unknown, e.ai_role].some(value => /^Not reported\.?$/.test(value));
     return `<p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><ul class="evidence-context">${rows}</ul>${links.length ? `<p>Evidence sources: ${links.join(' · ')}</p>` : ''}${legacy ? '<p>The legacy label “Not reported” does not distinguish information absent from reviewed material from information not assessed. It is not a scientific finding of absence.</p>' : ''}`;
   },
   evidenceValue(record, key) {

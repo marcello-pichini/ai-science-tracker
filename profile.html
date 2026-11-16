@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=212159537541">
+<link rel="stylesheet" href="styles.css?v=021f8ded4828">
 </head>
 <body>
 <header class="header">
@@ -57,7 +57,7 @@
   </div>
 </footer>
 
-<script src="assets/catalog-ui.js?v=986c23fe9ed8"></script>
+<script src="assets/catalog-ui.js?v=f9dfd404ff12"></script>
 <script src="assets/family-outcomes.js?v=d4a5cba26c45"></script>
 <script>
 // Object.groupBy is missing before Safari 17.4 and Chrome 117.
@@ -157,7 +157,7 @@ function directory(discoveries, models) {
       const y = a.map(s => s.publication_date.slice(0, 4)).sort();
       return `<tr><td data-l="Organization" class="nome"><a href="profile.html?org=${encodeURIComponent(n)}">${esc(n)}</a></td><td data-l="Discoveries" class="num">${a.length}</td><td data-l="Average relevance" class="num">${average(a)}</td><td data-l="Years" class="num">${y[0] === y.at(-1) ? y[0] : y[0] + "–" + y.at(-1)}</td></tr>`; }).join("")}</tbody></table></div></section>
     <section class="sez" aria-labelledby="t-fams"><div class="wrap"><h2 id="t-fams">Model families</h2>
-    <p class="sez-sub">Families named as the technology in at least one discovery.</p>
+    <p class="sez-sub">Family names matched in discovery titles or technology text; exact versions and causal attribution are not verified.</p>
     <table class="tab-rilasci"><thead><tr><th>Family</th><th class="num">Discoveries</th><th class="num">Releases</th></tr></thead><tbody>${fams.map(f => `<tr><td data-l="Family" class="nome"><a href="profile.html?family=${encodeURIComponent(f.id)}">${esc(f.name)}</a></td><td data-l="Discoveries" class="num">${f.discovery_count}</td><td data-l="Releases" class="num">${f.model_count}</td></tr>`).join("")}</tbody></table></div></section>`;
 }
 
@@ -220,7 +220,7 @@ function memberList(items) {
 }
 function familySummary(items, name) {
   const summary = FamilyOutcomes.summary(items);
-  const groups = (heading, groups) => `<h3>${heading}</h3>${groups.map(g => `<details><summary>${esc(g.label)} · ${g.members.length} linked records</summary>${memberList(g.members)}</details>`).join("")}`;
+  const groups = (heading, groups) => `<h3>${heading}</h3>${groups.map(g => `<details class="source-details"><summary>${esc(g.label)} · ${g.members.length} linked records</summary>${memberList(g.members)}</details>`).join("")}`;
   return `<section class="sez"><div class="wrap"><h2>Where ${esc(name)} appears in the catalog</h2>
     <details class="source-details"><summary>Why linked?</summary><p>These associations match family names in discovery titles and technology text. They are not verified model-version assignments or causal attribution. Missing links do not establish absence of use. A record may link to multiple families.</p></details>
     ${items.length ? groups('Represented fields', summary.fields) + groups('Test contexts', summary.tests) + groups('Annotation coverage', summary.annotations) : '<p>No scientific uses are linked in this catalog.</p>'}
@@ -237,10 +237,12 @@ function comparisonSection(id, models) {
 function renderComparison(family, discoveries, models) {
   const q = new URLSearchParams(location.search), other = models.families.find(f => f.id === q.get('compare') && f.id !== family.id);
   if (!other) return;
-  const sets = [family, other].map(f => FamilyOutcomes.select(f, discoveries, q.get('field'), q.get('year')));
+  const field = discoveries.some(s => s.field === q.get('field')) ? q.get('field') : '';
+  const year = discoveries.some(s => s.publication_date.slice(0,4) === q.get('year')) ? q.get('year') : '';
+  const sets = [family, other].map(f => FamilyOutcomes.select(f, discoveries, field, year));
   const shared = sets[0].filter(s => sets[1].some(t => t.id === s.id));
   const union = [...new Map(sets.flat().map(s => [s.id, s])).values()];
-  $('family-comparison').innerHTML = `<h3>Filtered comparison</h3><details><summary>${union.length} distinct linked records</summary>${memberList(union)}</details><details><summary>${shared.length} shared record IDs and titles</summary>${memberList(shared)}</details>` + [family, other].map((f,i) => `<h3>${esc(f.name)} · ${sets[i].length} linked records</h3><details><summary>Open exact members</summary>${memberList(sets[i])}</details>${FamilyOutcomes.summary(sets[i]).tests.map(g => `<details><summary>${esc(g.label)} · ${g.members.length}</summary>${memberList(g.members)}</details>`).join('')}<p>Evidence excerpts: up to three newest linked records, then stable ID; up to 280 characters per stored source-attributed test description. Missing text is not evidence of absence.</p>${FamilyOutcomes.examples(sets[i]).map(s => `<blockquote><a href="index.html#discovery=${encodeURIComponent(s.id)}">${esc(s.title)}</a><p>${esc(s.evidence?.tested ? s.evidence.tested.slice(0,280) + (s.evidence.tested.length > 280 ? '…' : '') : 'Not annotated in this catalog')}</p></blockquote>`).join('') || '<p>No linked records match these filters.</p>'}`).join('');
+  $('family-comparison').innerHTML = `<h3>Filtered comparison</h3><details class="source-details"><summary>${union.length} distinct linked records</summary>${memberList(union)}</details><details class="source-details"><summary>${shared.length} shared record IDs and titles</summary>${memberList(shared)}</details>` + [family, other].map((f,i) => `<h3>${esc(f.name)} · ${sets[i].length} linked records</h3><details class="source-details"><summary>Open exact members</summary>${memberList(sets[i])}</details>${FamilyOutcomes.summary(sets[i]).tests.map(g => `<details class="source-details"><summary>${esc(g.label)} · ${g.members.length}</summary>${memberList(g.members)}</details>`).join('')}<p>Evidence excerpts: up to three newest linked records, then stable ID; up to 280 characters per stored source-attributed test description, with the full stored caveat. Missing text is not evidence of absence; legacy “Not reported” text leaves the review scope unclear. Open the entry for its AI role and original sources.</p>${FamilyOutcomes.examples(sets[i]).map(s => `<blockquote><a href="index.html#discovery=${encodeURIComponent(s.id)}">${esc(s.title)}</a><p><b>Tested:</b> ${esc(s.evidence?.tested ? s.evidence.tested.slice(0,280) + (s.evidence.tested.length > 280 ? '…' : '') : 'Not annotated in this catalog')}</p><p><b>Still unknown:</b> ${esc(CatalogUI.evidenceValue(s, 'unknown'))}</p></blockquote>`).join('') || '<p>No linked records match these filters.</p>'}`).join('');
 }
 
 function familyView(id, discoveries, models) {
