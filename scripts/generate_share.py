@@ -484,6 +484,7 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [vulnerabilities.json]({BASE}data/vulnerabilities.json): vulnerability cases
 - [sitemap.xml]({BASE}sitemap.xml): every static page
 - [dataset.html]({BASE}dataset.html): downloads (JSON, CSV), schemas and the read-only static API at {BASE}api/v1/index.json
+- [contributors.html]({BASE}contributors.html): maintainer, contributors and how to contribute
 - [feed.xml]({BASE}feed.xml): Atom feed of discovery additions and vulnerability source checks
 - Each discovery has its own page at {BASE}share/ID.html
 
@@ -498,7 +499,7 @@ def write_sitemap(items, models, archived=()):
     orgs = sorted({lead_org(d['organization']) for d in items})
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
     # Announcement dates are not page-modification dates; omit lastmod until tracked.
-    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'profile.html', 'security.html', 'dataset.html']
+    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'profile.html', 'security.html', 'dataset.html', 'contributors.html']
     urls += ['profiles/index.html']
     urls += [f'profiles/org-{slug(o)}.html' for o in orgs]
     urls += [f'profiles/family-{quote(f)}.html' for f in fams]
