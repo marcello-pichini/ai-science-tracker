@@ -1,0 +1,42 @@
+name: Weekly release
+# Publishes a dated GitHub release when data/ changed since the last tag; Zenodo archives each release.
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Mondays 06:00 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Release if data changed
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          last=$(git describe --tags --abbrev=0)
+          if git diff --quiet "$last" HEAD -- data/; then
+            echo "No data changes since $last; skipping."
+            exit 0
+          fi
+          tag="v$(date -u +%Y.%m.%d)"
+          if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
+            echo "$tag already exists; skipping."
+            exit 0
+          fi
+          gh release create "$tag" --target "$GITHUB_SHA" --title "$tag" --generate-notes --notes-start-tag "$last"
+          echo "released=true" >> "$GITHUB_OUTPUT"
+      - name: Upload to Hugging Face
+        # Needs the HF_TOKEN repository secret (write token for marcello-pichini/ai-science-tracker).
+        if: steps.release.outputs.released == 'true' || github.event_name == 'workflow_dispatch'
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [ -z "$HF_TOKEN" ]; then echo "HF_TOKEN not set; skipping."; exit 0; fi
+          pip install -q huggingface_hub
+          python3 scripts/build_hf_dataset.py hf-build
+          python3 -c "from huggingface_hub import upload_folder; upload_folder(repo_id='marcello-pichini/ai-science-tracker', repo_type='dataset', folder_path='hf-build', commit_message='Catalog snapshot $(date -u +%Y-%m-%d)')"
