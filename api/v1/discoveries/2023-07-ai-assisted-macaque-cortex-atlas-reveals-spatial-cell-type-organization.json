@@ -1,0 +1,31 @@
+{
+  "field": "biology",
+  "source_type": "paper",
+  "added_date": "2026-11-16",
+  "verification_status": "verified",
+  "id": "2023-07-ai-assisted-macaque-cortex-atlas-reveals-spatial-cell-type-organization",
+  "title": "AI-assisted macaque cortex atlas reveals regional cell-type organization",
+  "summary": "AI-assisted segmentation and Spatial-ID annotation helped map 264 transcriptome-defined cell types across the macaque cortex. Regional cell-type composition tracked cortical hierarchy, and cross-species comparisons identified primate-specific types enriched in layer 4. This is the July 12, 2023 journal version; the atlas is observational, uses male monkeys, and has limited transcript capture per spatial cell.",
+  "ai_technology": "AI-assisted cell segmentation; Spatial-ID (deep neural network and graph convolutional network)",
+  "organization": "Chinese Academy of Sciences; BGI-Research; Tencent AI Lab",
+  "source_url": "https://www.sciencedirect.com/science/article/pii/S0092867423006797",
+  "publication_date": "2023-07-12",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "New macaque tissue measurements and spatial maps were compared across sections and biological replicates; this supports a bounded anatomical result, not causal brain function.",
+    "unknown": "Not assessed: independent replication and exhaustive supplementary material. The paper identifies limited transcript sensitivity and absence of female subjects.",
+    "ai_role": "Image segmentation identifies cells; Spatial-ID trains a DNN on nucleus profiles and a GCN incorporating spatial neighborhoods to assign spatial cell labels.",
+    "evidence_urls": [
+      "https://www.sciencedirect.com/science/article/pii/S0092867423006797",
+      "https://github.com/TencentAILabHealthcare/Cell_Segmentation_Fluorescence",
+      "https://bcas.cas.cn/issue/2023_3/202311/P020231112626745733563.pdf"
+    ],
+    "test_type": "direct test"
+  }
+}

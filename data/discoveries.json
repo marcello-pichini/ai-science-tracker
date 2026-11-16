@@ -25254,5 +25254,307 @@
       ],
       "test_type": "direct test"
     }
+  },
+  {
+    "id": "2026-03-ori-engineers-active-and-thermotolerant-enzymes",
+    "title": "ORI engineers active lysozymes, heat-tolerant chitinases and dual-activity enzymes",
+    "summary": "Tencent researchers used ontology-conditioned generation and experimental feedback to engineer enzymes. In the reported assays, lysozyme TX-RL15 exceeded the earlier TX-L6 design by 66-fold and hen egg-white lysozyme by over two orders of magnitude. Chitinase TX-SC2 retained activity after incubation at 85 °C; selected proteins combined lysozyme and chitinase activity. These are bounded biochemical results. The date represents initial journal publication; the version of record followed on May 7, 2026.",
+    "field": "biology",
+    "ai_technology": "ORI; protein generation model (PGM); unified sequence model (USM)",
+    "organization": "Tencent AI for Life Sciences Lab",
+    "source_url": "https://www.nature.com/articles/s41467-026-69855-6",
+    "source_type": "paper",
+    "publication_date": "2026-03-19",
+    "added_date": "2026-11-16",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Expression, enzyme-activity and heat-treatment assays on selected generated proteins.",
+      "unknown": "Separate supplements and independent replication not assessed. Assay-specific advantages do not establish industrial or clinical outcomes.",
+      "ai_role": "Ontology-conditioned generation and reinforcement learning from experimental feedback.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-026-69855-6?error=cookies_not_supported"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-09-ertransformer-generated-tcr-candidates-activate-t-cells",
+    "title": "ERTransformer-generated TCR candidates activate T cells in defined receptor contexts",
+    "summary": "ERTransformer generated epitope-conditioned TCR β-chain CDR3 candidates. Flow-cytometry experiments found selected artificial TCRs induced activation comparable to or greater than natural controls in defined TCR/pMHC contexts. This represents the September 2026 journal report; an ERTransformer precursor was posted October 20, 2023. The earlier report does not establish that these journal wet-lab results were already public.",
+    "field": "biology",
+    "ai_technology": "ERTransformer; EpitopeBERT; ReceptorBERT",
+    "organization": "Tencent AI for Life Sciences Lab; City University of Hong Kong; The University of Hong Kong; Xijing Hospital of Digestive Diseases; Harvard Medical School, Harvard University; Monash University",
+    "source_url": "https://link.springer.com/article/10.1186/s13059-026-04266-w",
+    "source_type": "paper",
+    "publication_date": "2026-09-02",
+    "added_date": "2026-11-16",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Selected generated candidates tested for T-cell activation by flow cytometry.",
+      "unknown": "Full experimental methods and supplements not assessed: publisher rendering exposed abstract and metadata. General specificity, safety and clinical outcomes are not established by this review.",
+      "ai_role": "Generates TCR β-chain CDR3 candidates conditioned on epitopes.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1186/s13059-026-04266-w",
+        "https://www.biorxiv.org/content/10.1101/2023.10.18.562845v1"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2025-10-hudiff-humanized-antibodies-retain-binding",
+    "title": "HuDiff humanizes antibodies and nanobodies while retaining measured binding",
+    "summary": "HuDiff generated humanized variants of a murine SARS-CoV-2 RBD antibody and two alpaca nanobodies. Bio-layer interferometry measured 0.15 nM affinity for the best humanized antibody versus 0.12 nM for its parent; a humanized nanobody measured 2.52 nM versus 5.47 nM. The journal abstract also reports viral neutralization. The October 2025 journal date follows an October 25, 2024 precursor describing one antibody and one nanobody.",
+    "field": "biology",
+    "ai_technology": "HuDiff-Ab; HuDiff-Nb",
+    "organization": "School of Basic Medical Sciences, Lanzhou University; Tencent AI Lab; Fudan University; Peking University",
+    "source_url": "https://www.nature.com/articles/s42256-025-01120-9",
+    "source_type": "paper",
+    "publication_date": "2025-10-01",
+    "added_date": "2026-11-16",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Newly humanized molecules underwent binding assays; journal abstract reports neutralization.",
+      "unknown": "Main journal methods are subscription content and were not assessed. Humanness scores do not establish reduced human immunogenicity or clinical safety.",
+      "ai_role": "Adaptive autoregressive diffusion generates humanized framework sequences from CDR inputs.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s42256-025-01120-9?error=cookies_not_supported",
+        "https://www.biorxiv.org/content/10.1101/2024.10.22.619416v1"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2025-12-tfold-designs-experimentally-binding-antibodies",
+    "title": "tFold designs binding antibodies against four defined antigens",
+    "summary": "Tencent researchers generated antibodies against influenza hemagglutinin, PD-1, PD-L1 and SARS-CoV-2 RBD, followed by phage-display screening and SPR characterization. Anti-SC2RBD-H330 showed neutralization IC50 of 0.42 nM. Screening remained extensive, and some confident epitope predictions failed competition tests. The date represents initial journal publication, preceding the January 19, 2026 version of record; a tFold precursor was posted February 8, 2024.",
+    "field": "biology",
+    "ai_technology": "tFold System; tFold-Ab; tFold-Ag; AlphaFold-Multimer",
+    "organization": "Tencent AI for Life Sciences Lab",
+    "source_url": "https://www.nature.com/articles/s41467-025-67361-9",
+    "source_type": "paper",
+    "publication_date": "2025-12-10",
+    "added_date": "2026-11-16",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Binding and competition assays on generated antibodies; RBD-antibody neutralization.",
+      "unknown": "Separate supplements and independent replication not assessed. First-public dates of individual journal experiments were not established by precursor version comparison.",
+      "ai_role": "Generates CDR sequences and predicts complexes for structure-guided filtering.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-025-67361-9?error=cookies_not_supported",
+        "https://www.biorxiv.org/content/10.1101/2024.02.05.578892v1"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "field": "biology",
+    "source_type": "paper",
+    "added_date": "2026-11-16",
+    "verification_status": "verified",
+    "id": "2023-07-ai-assisted-macaque-cortex-atlas-reveals-spatial-cell-type-organization",
+    "title": "AI-assisted macaque cortex atlas reveals regional cell-type organization",
+    "summary": "AI-assisted segmentation and Spatial-ID annotation helped map 264 transcriptome-defined cell types across the macaque cortex. Regional cell-type composition tracked cortical hierarchy, and cross-species comparisons identified primate-specific types enriched in layer 4. This is the July 12, 2023 journal version; the atlas is observational, uses male monkeys, and has limited transcript capture per spatial cell.",
+    "ai_technology": "AI-assisted cell segmentation; Spatial-ID (deep neural network and graph convolutional network)",
+    "organization": "Chinese Academy of Sciences; BGI-Research; Tencent AI Lab",
+    "source_url": "https://www.sciencedirect.com/science/article/pii/S0092867423006797",
+    "publication_date": "2023-07-12",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "New macaque tissue measurements and spatial maps were compared across sections and biological replicates; this supports a bounded anatomical result, not causal brain function.",
+      "unknown": "Not assessed: independent replication and exhaustive supplementary material. The paper identifies limited transcript sensitivity and absence of female subjects.",
+      "ai_role": "Image segmentation identifies cells; Spatial-ID trains a DNN on nucleus profiles and a GCN incorporating spatial neighborhoods to assign spatial cell labels.",
+      "evidence_urls": [
+        "https://www.sciencedirect.com/science/article/pii/S0092867423006797",
+        "https://github.com/TencentAILabHealthcare/Cell_Segmentation_Fluorescence",
+        "https://bcas.cas.cn/issue/2023_3/202311/P020231112626745733563.pdf"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "field": "biology",
+    "source_type": "paper",
+    "added_date": "2026-11-16",
+    "verification_status": "verified",
+    "id": "2024-09-ai-assisted-cross-species-cerebellar-atlases-reveal-primate-specific-organization",
+    "title": "AI-assisted cerebellar atlases reveal primate-specific cellular organization",
+    "summary": "Deep-learning segmentation and spatial annotation supported cerebellar atlases of macaques, marmosets and mice, revealing primate-specific cell subtypes and regional gene-expression differences. Transcriptomic gradients corresponded with awake functional-connectivity patterns. This represents the September 27, 2024 journal version; an institutional announcement gives September 26, and the observed associations do not establish causal functions.",
+    "ai_technology": "Deep-learning cell segmentation; STAGATE; DestVI",
+    "organization": "BGI-Research; Chinese Academy of Sciences; Erasmus MC; Tencent AI Lab",
+    "source_url": "https://www.science.org/doi/10.1126/science.ado3927",
+    "publication_date": "2024-09-27",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "New spatial tissue measurements, biological replicates and comparisons with awake fMRI supported the reported anatomical associations within this study.",
+      "unknown": "Not assessed: exhaustive supplements, earlier-preprint chronology and independent confirmation. Functional mechanisms are not established by spatial correlations.",
+      "ai_role": "Deep-learning models segment cells; STAGATE clusters spatial domains and DestVI assigns cell-type probabilities.",
+      "evidence_urls": [
+        "https://pure.eur.nl/ws/files/169697439/Cross-species_single-cell_spatial_transcriptomic_atlases_of_the_cerebellar_cortex.pdf"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "field": "biology",
+    "source_type": "paper",
+    "added_date": "2026-11-16",
+    "verification_status": "verified",
+    "id": "2025-04-ai-assisted-macaque-claustrum-atlas-links-cell-types-and-projection-zones",
+    "title": "AI-assisted macaque claustrum atlas links cell types with projection zones",
+    "summary": "Learned segmentation and Spatial-ID annotation helped connect macaque claustral cell-type distributions with four projection zones identified through tracer experiments. Different glutamatergic compositions preferentially connected to different brain regions. This is the April 3, 2025 journal version, preceded by a related 2024 conference abstract; comparisons reuse published macaque-cortex data, and the findings do not establish a causal account of consciousness.",
+    "ai_technology": "Mask R-CNN; Spatial-ID; nnUNet",
+    "organization": "Chinese Academy of Sciences; Stem Cell and Brain Research Institute, Inserm; BGI-Research; Tencent AI for Life Sciences Lab",
+    "source_url": "https://www.cell.com/cell/fulltext/S0092-8674(25)00273-9",
+    "publication_date": "2025-04-03",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Spatial transcriptomics and retrograde tracing directly supported the cell-type/projection-zone relationship within the discovery study.",
+      "unknown": "Not assessed: independent replication, complete supplements and exact first posting day of the earlier conference abstract.",
+      "ai_role": "Mask R-CNN segments cells; Spatial-ID trains DNN and GCN models for spatial labels; expert-corrected nnUNet segments claustral boundaries.",
+      "evidence_urls": [
+        "https://hal.science/hal-05210393v1/file/Lei%20et%20al%202025%20Cell.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/40185102/"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-05-spatial-dc-pancreatic-cancer-cell-interactions",
+    "title": "Spatial-DC maps a candidate fibroblast–cancer signaling interaction in pancreatic tumors",
+    "summary": "Spatial-DC reconstructed cell-type-resolved spatial proteomes and suggested COL8A1–ITGA2 communication between cancer-associated fibroblasts and pancreatic cancer cells. Multiplexed immunohistochemistry supported the spatial predictions; human protein co-expression was associated with survival. The pairing was already known: the result concerns its inferred spatial deployment, not a new receptor pair or established causal mechanism. This record uses the May 27, 2026 journal version; the result already appeared in the December 20, 2024 preprint.",
+    "field": "biology",
+    "ai_technology": "Spatial-DC; graph-enhanced transfer learning",
+    "organization": "Southern University of Science and Technology; Tencent AI for Life Sciences Laboratory",
+    "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S2405471226000943",
+    "source_type": "paper",
+    "publication_date": "2026-05-27",
+    "added_date": "2026-11-16",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1016/j.cels.2026.101612",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Retrospective spatial proteomic reconstruction and human survival association. Same-study multiplexed immunohistochemistry supports spatial distributions and co-expression, not causal COL8A1–ITGA2 communication.",
+      "unknown": "No causal signaling perturbation, therapeutic benefit or independent replication is established in the reviewed material. Current review read indexed publisher introduction and NLM abstract/metadata; full journal methods were inaccessible. Earlier primary preprint XML was read in the project audit on November 16, 2026; revised journal quantitative details were not assessed.",
+      "ai_role": "Graph-enhanced transfer learning deconvolved mixed spots and reconstructed cell-type-resolved protein profiles used to infer spatial interactions.",
+      "evidence_urls": [
+        "https://www.sciencedirect.com/science/article/abs/pii/S2405471226000943",
+        "https://pubmed.ncbi.nlm.nih.gov/42202779/"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2023-12-ai-assisted-alzheimer-hippocampus-plaque-associated-cell-map",
+    "title": "AI-assisted hippocampal atlas maps Alzheimer-associated cellular changes around amyloid plaques",
+    "summary": "In a six-donor postmortem hippocampal study, neural cell segmentation and Spatial-ID annotation helped map Alzheimer-associated cell distributions and gene-expression changes. Immunofluorescence supported the inferred accumulation patterns of microglia and astrocytes around amyloid-beta plaques. These are observational associations, not causal effects or clinical benefit. This record describes the December 7, 2023 preprint; the later Neuron paper was published online March 31, 2025 with an expanded cohort, whose counts and final methods are not pooled here.",
+    "field": "biology",
+    "ai_technology": "StereoCell/ESPANet cell segmentation; Spatial-ID deep neural network and graph convolutional network",
+    "organization": "Zhejiang University; BGI Research; Tencent AI Lab; University of Chinese Academy of Sciences",
+    "source_url": "https://www.medrxiv.org/content/10.1101/2023.12.06.23299593v1",
+    "source_type": "paper",
+    "publication_date": "2023-12-07",
+    "added_date": "2026-11-16",
+    "verification_status": "verified",
+    "paper_url": "https://www.medrxiv.org/content/10.1101/2023.12.06.23299593v1.full.pdf",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Spatial transcriptomics and single-nucleus sequencing in three AD and three control donor brains; immunofluorescence checked the plaque-associated glial distribution pattern within the same study.",
+      "unknown": "Postmortem observational results do not establish disease causation. No independent replication was assessed. Preprint methods retain an unfinished training-epoch placeholder. The reviewed claims and AI architectures refer to the primary preprint, not authenticated final journal methods; candidate blood biomarkers and diagnostic efficacy are outside this record's represented claim.",
+      "ai_role": "Trained neural segmentation delineated cells; Spatial-ID used a DNN and GCN to assign spatial cell types, enabling plaque-associated cell-distribution analysis.",
+      "evidence_urls": [
+        "https://www.medrxiv.org/content/10.1101/2023.12.06.23299593v1.full.pdf",
+        "https://www.medrxiv.org/content/10.1101/2023.12.06.23299593v1.full",
+        "https://pubmed.ncbi.nlm.nih.gov/40168986/"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-10-astra-assisted-gauge-invariant-lattice-fermion-measure",
+    "title": "GPT-6 Astra assists a gauge-invariant lattice chiral-fermion measure construction",
+    "summary": "Nathaniel Craig proposes a smooth, exponentially local, gauge-invariant fermion measure on admissible four-dimensional lattices, with restrictions covering the Standard Model gauge groups. GPT-6 Astra helped develop the refinement construction and led the detailed proof. The supplementary report states that Lean kernel replay accepted the encoded measure-existence result and supporting inputs under their recorded assumptions. This is a candidate finite-lattice definition; reflection positivity, practical simulation and an interacting continuum theory remain outside the established claim. The October 6, 2026 preprint preceded the November 15 institutional announcement.",
+    "field": "physics",
+    "ai_technology": "GPT-6 Astra; Lean 4 formalization",
+    "organization": "University of California, Santa Barbara; OpenAI",
+    "source_url": "https://arxiv.org/abs/2610.09093",
+    "source_type": "paper",
+    "publication_date": "2026-10-06",
+    "added_date": "2026-11-16",
+    "verification_status": "verified",
+    "paper_url": "https://arxiv.org/html/2610.09093v1",
+    "relevance": {
+      "impact": 3,
+      "validation": 4,
+      "novelty": 4
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Source-reported Lean kernel replay checked the concrete companion measure-existence theorem, its analytic/geometric inputs and Standard Model restrictions under encoded definitions and assumptions. Same-study mathematical and two-dimensional computational checks are also reported.",
+      "unknown": "Review checked the preprint verification/conclusion sections and formal-verification supplement, not an independently executed Lean build. Formal-to-source correspondence was reviewed by AI agents. A separate frozen-reference comparator failed on generated proof names; the report distinguishes this from successful kernel replay. Kernel correctness is relative to the encoded claim and axioms; it does not establish reflection positivity, a physical continuum limit, independent scientific confirmation or practical usefulness.",
+      "ai_role": "Craig supplied the refinement strategy; Astra developed key construction steps, led proof development and carried out proposed verification work.",
+      "evidence_urls": [
+        "https://arxiv.org/html/2610.09093v1",
+        "https://arxiv.org/src/2610.09093v1/anc/lean-verification-report.pdf",
+        "https://arxiv.org/src/2610.09093v1/anc/mathematical-companion.pdf",
+        "https://openai.com/index/step-toward-defining-the-standard-model/"
+      ],
+      "test_type": "prospective or independent check"
+    }
   }
 ]

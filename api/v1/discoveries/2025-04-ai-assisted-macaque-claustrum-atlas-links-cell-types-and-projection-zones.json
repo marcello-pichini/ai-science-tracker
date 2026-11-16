@@ -1,0 +1,30 @@
+{
+  "field": "biology",
+  "source_type": "paper",
+  "added_date": "2026-11-16",
+  "verification_status": "verified",
+  "id": "2025-04-ai-assisted-macaque-claustrum-atlas-links-cell-types-and-projection-zones",
+  "title": "AI-assisted macaque claustrum atlas links cell types with projection zones",
+  "summary": "Learned segmentation and Spatial-ID annotation helped connect macaque claustral cell-type distributions with four projection zones identified through tracer experiments. Different glutamatergic compositions preferentially connected to different brain regions. This is the April 3, 2025 journal version, preceded by a related 2024 conference abstract; comparisons reuse published macaque-cortex data, and the findings do not establish a causal account of consciousness.",
+  "ai_technology": "Mask R-CNN; Spatial-ID; nnUNet",
+  "organization": "Chinese Academy of Sciences; Stem Cell and Brain Research Institute, Inserm; BGI-Research; Tencent AI for Life Sciences Lab",
+  "source_url": "https://www.cell.com/cell/fulltext/S0092-8674(25)00273-9",
+  "publication_date": "2025-04-03",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Spatial transcriptomics and retrograde tracing directly supported the cell-type/projection-zone relationship within the discovery study.",
+    "unknown": "Not assessed: independent replication, complete supplements and exact first posting day of the earlier conference abstract.",
+    "ai_role": "Mask R-CNN segments cells; Spatial-ID trains DNN and GCN models for spatial labels; expert-corrected nnUNet segments claustral boundaries.",
+    "evidence_urls": [
+      "https://hal.science/hal-05210393v1/file/Lei%20et%20al%202025%20Cell.pdf",
+      "https://pubmed.ncbi.nlm.nih.gov/40185102/"
+    ],
+    "test_type": "direct test"
+  }
+}

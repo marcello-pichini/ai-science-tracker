@@ -1,0 +1,32 @@
+{
+  "id": "2026-10-astra-assisted-gauge-invariant-lattice-fermion-measure",
+  "title": "GPT-6 Astra assists a gauge-invariant lattice chiral-fermion measure construction",
+  "summary": "Nathaniel Craig proposes a smooth, exponentially local, gauge-invariant fermion measure on admissible four-dimensional lattices, with restrictions covering the Standard Model gauge groups. GPT-6 Astra helped develop the refinement construction and led the detailed proof. The supplementary report states that Lean kernel replay accepted the encoded measure-existence result and supporting inputs under their recorded assumptions. This is a candidate finite-lattice definition; reflection positivity, practical simulation and an interacting continuum theory remain outside the established claim. The October 6, 2026 preprint preceded the November 15 institutional announcement.",
+  "field": "physics",
+  "ai_technology": "GPT-6 Astra; Lean 4 formalization",
+  "organization": "University of California, Santa Barbara; OpenAI",
+  "source_url": "https://arxiv.org/abs/2610.09093",
+  "source_type": "paper",
+  "publication_date": "2026-10-06",
+  "added_date": "2026-11-16",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/html/2610.09093v1",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Source-reported Lean kernel replay checked the concrete companion measure-existence theorem, its analytic/geometric inputs and Standard Model restrictions under encoded definitions and assumptions. Same-study mathematical and two-dimensional computational checks are also reported.",
+    "unknown": "Review checked the preprint verification/conclusion sections and formal-verification supplement, not an independently executed Lean build. Formal-to-source correspondence was reviewed by AI agents. A separate frozen-reference comparator failed on generated proof names; the report distinguishes this from successful kernel replay. Kernel correctness is relative to the encoded claim and axioms; it does not establish reflection positivity, a physical continuum limit, independent scientific confirmation or practical usefulness.",
+    "ai_role": "Craig supplied the refinement strategy; Astra developed key construction steps, led proof development and carried out proposed verification work.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.09093v1",
+      "https://arxiv.org/src/2610.09093v1/anc/lean-verification-report.pdf",
+      "https://arxiv.org/src/2610.09093v1/anc/mathematical-companion.pdf",
+      "https://openai.com/index/step-toward-defining-the-standard-model/"
+    ],
+    "test_type": "prospective or independent check"
+  }
+}

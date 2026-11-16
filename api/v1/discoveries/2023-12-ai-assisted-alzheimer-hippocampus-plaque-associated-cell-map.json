@@ -1,0 +1,31 @@
+{
+  "id": "2023-12-ai-assisted-alzheimer-hippocampus-plaque-associated-cell-map",
+  "title": "AI-assisted hippocampal atlas maps Alzheimer-associated cellular changes around amyloid plaques",
+  "summary": "In a six-donor postmortem hippocampal study, neural cell segmentation and Spatial-ID annotation helped map Alzheimer-associated cell distributions and gene-expression changes. Immunofluorescence supported the inferred accumulation patterns of microglia and astrocytes around amyloid-beta plaques. These are observational associations, not causal effects or clinical benefit. This record describes the December 7, 2023 preprint; the later Neuron paper was published online March 31, 2025 with an expanded cohort, whose counts and final methods are not pooled here.",
+  "field": "biology",
+  "ai_technology": "StereoCell/ESPANet cell segmentation; Spatial-ID deep neural network and graph convolutional network",
+  "organization": "Zhejiang University; BGI Research; Tencent AI Lab; University of Chinese Academy of Sciences",
+  "source_url": "https://www.medrxiv.org/content/10.1101/2023.12.06.23299593v1",
+  "source_type": "paper",
+  "publication_date": "2023-12-07",
+  "added_date": "2026-11-16",
+  "verification_status": "verified",
+  "paper_url": "https://www.medrxiv.org/content/10.1101/2023.12.06.23299593v1.full.pdf",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Spatial transcriptomics and single-nucleus sequencing in three AD and three control donor brains; immunofluorescence checked the plaque-associated glial distribution pattern within the same study.",
+    "unknown": "Postmortem observational results do not establish disease causation. No independent replication was assessed. Preprint methods retain an unfinished training-epoch placeholder. The reviewed claims and AI architectures refer to the primary preprint, not authenticated final journal methods; candidate blood biomarkers and diagnostic efficacy are outside this record's represented claim.",
+    "ai_role": "Trained neural segmentation delineated cells; Spatial-ID used a DNN and GCN to assign spatial cell types, enabling plaque-associated cell-distribution analysis.",
+    "evidence_urls": [
+      "https://www.medrxiv.org/content/10.1101/2023.12.06.23299593v1.full.pdf",
+      "https://www.medrxiv.org/content/10.1101/2023.12.06.23299593v1.full",
+      "https://pubmed.ncbi.nlm.nih.gov/40168986/"
+    ],
+    "test_type": "direct test"
+  }
+}
