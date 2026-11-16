@@ -1,0 +1,49 @@
+name: Daily refresh
+on:
+  schedule:
+    - cron: '30 4 * * *'  # every day 04:30 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: daily-refresh
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Refresh Epoch AI data when the export changed
+        run: |
+          mkdir -p work/epoch
+          curl -fsSL --retry 3 -o work/epoch/notable_ai_models.csv https://epoch.ai/data/notable_ai_models.csv
+          curl -fsSL --retry 3 -o work/epoch/benchmark_data.zip https://epoch.ai/data/benchmark_data.zip
+          sha() { sha256sum "$1" | cut -d' ' -f1; }
+          # Regenerate only on a new export, so unchanged days produce no commit.
+          old_csv=$(python3 -c "import json; print(json.load(open('data/models.json'))['source']['csv_sha256'])")
+          old_zip=$(python3 -c "import json; print(json.load(open('data/model-progress.json'))['zip_sha256'])")
+          if [ "$(sha work/epoch/notable_ai_models.csv)" != "$old_csv" ]; then
+            python3 scripts/generate_models.py
+          fi
+          if [ "$(sha work/epoch/benchmark_data.zip)" != "$old_zip" ]; then
+            python3 scripts/import_model_progress.py work/epoch/benchmark_data.zip --fetched-on "$(date -u +%F)"
+          fi
+      - name: Regenerate pages, API, feed and llms.txt
+        env:
+          CHROME: /usr/bin/google-chrome
+        run: python3 scripts/generate_share.py
+      - name: Tests
+        run: python3 -m unittest discover -s tests
+      - name: Commit and push if anything changed
+        run: |
+          git add -A -- . ':!work'
+          if git diff --cached --quiet; then echo "Nothing changed."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Daily refresh: Epoch AI data and generated files"
+          git push
