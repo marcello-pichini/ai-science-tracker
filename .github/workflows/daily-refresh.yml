@@ -41,7 +41,7 @@ jobs:
         run: python3 -m unittest discover -s tests
       - name: Commit and push if anything changed
         run: |
-          git add -A -- . ':!work'
+          git add -A  # work/ (raw Epoch downloads) is gitignored
           if git diff --cached --quiet; then echo "Nothing changed."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
