@@ -18,5 +18,16 @@
   "remediation": "fix documented",
   "remediation_note": "Affected Junrar versions below 7.5.8, fixed in 7.5.8. On Linux/Unix only, LocalFolderExtractor validates backslashes as literal characters, then converts them to path separators while reconstructing the path, allowing arbitrary file overwrite outside the extraction directory. Windows is not affected. CVD labels discovery static analysis, not dynamically reproduced; maintainer advisory includes a reproducer confirming overwrite.",
   "advisory_url": "https://github.com/junrar/junrar/security/advisories/GHSA-j273-m5qq-6825",
-  "checked_date": "2026-11-15"
+  "checked_date": "2026-11-15",
+  "cvss": [
+    {
+      "cve": "CVE-2026-28208",
+      "version": "3.1",
+      "score": 5.9,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "source_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/28xxx/CVE-2026-28208.json",
+      "source_name": "GitHub_M (CNA; CVE Program record)",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

@@ -637,3 +637,28 @@ body.model-progress .progress-jumps a:focus-visible { outline:2px solid var(--on
   body.model-progress .inventory-table table { min-width:0; table-layout:fixed; }
   body.model-progress .inventory-table th, body.model-progress .inventory-table td { overflow-wrap:anywhere; font-size:8pt; padding:4pt!important; }
 }
+
+/* Security evidence charts: shared theme tokens, exact labels and keyboard filters. */
+.security-legend { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+.security-mark { font:inherit; color:var(--ink); background:var(--sheet); border:1px solid var(--line-2); border-radius:4px; padding:6px 8px; cursor:pointer; overflow-wrap:anywhere; }
+.security-mark[aria-pressed="true"] { outline:2px solid var(--ink); outline-offset:2px; font-weight:700; }
+.security-mark:hover { outline:2px solid var(--accent); outline-offset:1px; }
+.security-mark:focus-visible { outline:3px solid var(--ink); outline-offset:2px; }
+.security-s0 { background:var(--paper); fill:var(--paper); stroke:var(--ink-2); }
+.security-s1 { background:var(--tratto); fill:var(--tratto); color:var(--prussia); }
+.security-s2 { background:var(--tratto-2); fill:var(--tratto-2); color:var(--prussia); }
+.security-s3 { background:var(--accent); fill:var(--accent); color:var(--sheet); }
+.security-s4 { background:var(--ink); fill:var(--ink); color:var(--sheet); }
+.security-s5 { background:var(--line-2); fill:var(--line-2); color:var(--ink); stroke:var(--muted); stroke-dasharray:3 2; }
+.security-table { max-width:100%; overflow-x:auto; }
+.security-table table { width:100%; font-size:.875rem; border-collapse:collapse; }
+.security-table th, .security-table td { padding:8px 4px; border-bottom:1px solid var(--line); text-align:left; }
+.security-table caption { text-align:left; color:var(--muted); margin:8px 0; }
+.security-ai-row { margin:16px 0; }
+.security-ai-row p { margin:0 0 6px; font-size:.875rem; overflow-wrap:anywhere; }
+.security-stack { display:flex; gap:2px; }
+.security-stack .security-mark { min-width:0; padding:6px 0; overflow:hidden; white-space:nowrap; font-size:.8125rem; }
+.security-table .security-months { min-width:680px; }
+.security-months .security-mark { stroke-width:1; }
+@media (max-width:600px) { .security-table th, .security-table td { padding:6px 2px; } .security-table .security-mark { padding:6px 3px; } }
+@media print { .security-ai-row, .security-table { break-inside:avoid; } .security-mark { border:1px solid var(--ink); } }

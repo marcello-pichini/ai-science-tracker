@@ -18,5 +18,16 @@
   "remediation": "fix documented",
   "remediation_note": "The advisory lists Active Support 8.0.5.2 and 8.1.4.1 as patched and supplies patches. It offers disabling the Action Cable mount or requiring authentication as mitigations; the latter limits but does not remove exposure if authenticated users can reach the path.",
   "advisory_url": "https://github.com/rails/rails/security/advisories/GHSA-8474-xrp6-wh69",
-  "checked_date": "2026-11-14"
+  "checked_date": "2026-11-14",
+  "cvss": [
+    {
+      "cve": "CVE-2026-126080",
+      "version": "3.1",
+      "score": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "source_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/126xxx/CVE-2026-126080.json",
+      "source_name": "GitHub_M (CNA; CVE Program record)",
+      "checked_date": "2026-11-16"
+    }
+  ]
 }

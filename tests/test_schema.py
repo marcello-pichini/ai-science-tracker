@@ -7,7 +7,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TYPES = {'object': dict, 'array': list, 'string': str, 'integer': int, 'null': type(None)}
+TYPES = {'object': dict, 'array': list, 'string': str, 'integer': int, 'number': (int, float), 'null': type(None)}
 
 
 def errors(value, schema, path='$'):
@@ -23,7 +23,7 @@ def errors(value, schema, path='$'):
             out.append(f'{path}: does not match {schema["pattern"]}')
         if len(value) < schema.get('minLength', 0):
             out.append(f'{path}: too short')
-    if isinstance(value, int) and not isinstance(value, bool):
+    if isinstance(value, (int, float)) and not isinstance(value, bool):
         if value < schema.get('minimum', value) or value > schema.get('maximum', value):
             out.append(f'{path}: out of range')
     if isinstance(value, dict):
@@ -61,6 +61,26 @@ class SchemaTests(unittest.TestCase):
         self.assertTrue(errors([record], schema))
         record['disclosure_date'] = '2026-01-01'
         record['ai_attribution_date'] = 'unknown'
+        self.assertTrue(errors([record], schema))
+
+    def test_vulnerability_evidence_accepts_zero_and_rejects_invalid_scores(self):
+        schema = json.loads((ROOT / 'schema/vulnerabilities.schema.json').read_text())
+        record = dict(json.loads((ROOT / 'data/vulnerabilities.json').read_text())[0])
+        rating = {'cve': None, 'version': '3.1', 'score': 0, 'vector': None,
+                  'source_url': 'https://example.org/advisory', 'source_name': 'Vendor', 'checked_date': '2026-01-01',
+                  'scenarios': ['Without Clientless VPN']}
+        impact = {'cves': ['CVE-2026-1234'], 'consequences': ['code execution', 'data disclosure'],
+                  'conditions': 'Requires access', 'exploitation': 'Not established',
+                  'source_url': 'https://example.org/advisory', 'checked_date': '2026-01-01'}
+        record.update(cvss=[rating, dict(rating, cve='CVE-2026-1234', score=9.8)], impacts=[impact])
+        self.assertEqual(errors([record], schema), [])
+        for field, value in [('score', -0.1), ('score', 10.1), ('version', '5.0'), ('source_url', 'http://example.org')]:
+            record['cvss'][0] = dict(rating, **{field: value})
+            self.assertTrue(errors([record], schema), (field, value))
+        record['cvss'][0] = dict(rating, scenarios=[''])
+        self.assertTrue(errors([record], schema))
+        record['cvss'][0] = rating
+        impact['consequences'] = ['invented']
         self.assertTrue(errors([record], schema))
 
     def test_archived_discoveries_match_schema_and_are_not_active(self):

@@ -61,7 +61,10 @@
         "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
       },
       "ai_attribution_date": {
-        "type": ["string", "null"],
+        "type": [
+          "string",
+          "null"
+        ],
         "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
       },
       "classification": {
@@ -109,6 +112,126 @@
       "checked_date": {
         "type": "string",
         "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+      },
+      "cvss": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "cve",
+            "version",
+            "score",
+            "vector",
+            "source_url",
+            "source_name",
+            "checked_date"
+          ],
+          "properties": {
+            "cve": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "pattern": "^CVE-\\d{4}-\\d{4,}$"
+            },
+            "version": {
+              "type": "string",
+              "enum": [
+                "2.0",
+                "3.0",
+                "3.1",
+                "4.0"
+              ]
+            },
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "vector": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 1
+            },
+            "source_url": {
+              "type": "string",
+              "pattern": "^https://\\S+$"
+            },
+            "source_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "checked_date": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "scenarios": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "impacts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "cves",
+            "consequences",
+            "conditions",
+            "exploitation",
+            "source_url",
+            "checked_date"
+          ],
+          "properties": {
+            "cves": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^CVE-\\d{4}-\\d{4,}$"
+              }
+            },
+            "consequences": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "code execution",
+                  "data disclosure",
+                  "data modification",
+                  "privilege escalation",
+                  "denial of service",
+                  "authentication bypass",
+                  "other"
+                ]
+              }
+            },
+            "conditions": {
+              "type": "string",
+              "minLength": 1
+            },
+            "exploitation": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_url": {
+              "type": "string",
+              "pattern": "^https://\\S+$"
+            },
+            "checked_date": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            }
+          }
+        }
       }
     }
   }

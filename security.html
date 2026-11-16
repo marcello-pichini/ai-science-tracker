@@ -23,7 +23,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/atom+xml" title="AI Science Tracker: additions and source checks" href="feed.xml">
-<link rel="stylesheet" href="styles.css?v=021f8ded4828">
+<link rel="stylesheet" href="styles.css?v=f7ee2e330613">
 </head>
 <body>
 <header class="header">
@@ -62,7 +62,7 @@
   <section class="sez" aria-labelledby="t-numbers"><div class="wrap">
     <h2 id="t-numbers">Catalog charts</h2>
     <details class="security-options" id="chart-options"><summary id="chart-summary">Explore six charts and filter cases</summary>
-    <p class="sez-sub">Click a row to filter the list below; click again to clear the filter. Chart counts describe the full selected catalog and stay fixed while filters narrow the list. They measure published coverage, not system effectiveness or product risk.</p>
+    <p class="sez-sub">Click a chart mark or table count to filter the list below; click again to clear that selection. Filters combine and can be shared through the page URL. Chart counts describe the full selected catalog and stay fixed while filters narrow the list. They measure published coverage, not system effectiveness or product risk.</p>
     <div class="pannelli" id="charts"></div>
     </details>
   </div></section>
@@ -79,6 +79,8 @@
         <select id="month" aria-label="Disclosure month"><option value="">All disclosure months</option></select>
         <select id="ai_system" aria-label="AI system"><option value="">All AI systems</option></select>
         <select id="remediation" aria-label="Remediation evidence"><option value="">All remediation evidence</option><option value="fix documented">Fix documented</option><option value="not established">Fix evidence not established</option></select>
+        <select id="severity" aria-label="Recorded CVSS severity"><option value="">All recorded CVSS severities</option><option>None</option><option>Low</option><option>Medium</option><option>High</option><option>Critical</option><option>Not available</option></select>
+        <select id="consequence" aria-label="Documented consequence"><option value="">All documented consequences</option><option>code execution</option><option>data disclosure</option><option>data modification</option><option>privilege escalation</option><option>denial of service</option><option>authentication bypass</option><option>other</option><option>Not available</option></select>
         <button id="reset" type="button">Clear filters</button>
       </div>
       <div class="riepilogo"><span id="count" aria-live="polite"></span></div>
@@ -110,8 +112,14 @@ let cases = [], year = "", shown = 40;
 let report = new URLSearchParams(location.search).get('report') || '';
 const reportUrls = record => [...new Set([record.source_url, record.ai_source_url, record.advisory_url])];
 let reports = new Map();
+function reportFilterUrl(reportUrl) {
+  const url = new URL(location.href);
+  url.searchParams.set("report", reportUrl);
+  url.hash = "t-disclosures";
+  return url.pathname + url.search + url.hash;
+}
 function reportLinks(record) {
-  return reportUrls(record).filter(url => (reports.get(url)?.length || 0) > 1).map(url => `<p><a href="?report=${encodeURIComponent(url)}#t-disclosures">Cases citing this report (${reports.get(url).length})</a> · <a href="${esc(safeUrl(url))}" rel="noopener">${esc(url)}</a></p>`).join('');
+  return reportUrls(record).filter(url => (reports.get(url)?.length || 0) > 1).map(url => `<p><a href="${esc(reportFilterUrl(url))}">Cases citing this report (${reports.get(url).length})</a> · <a href="${esc(safeUrl(url))}" rel="noopener">${esc(url)}</a></p>`).join('');
 }
 function clearReport() {
   report = '';
@@ -119,7 +127,47 @@ function clearReport() {
   url.searchParams.delete('report');
   history.replaceState(null, '', url);
 }
-const filterIds = ["product", "context", "month", "ai_system", "remediation"];
+const filterIds = ["product", "context", "month", "ai_system", "remediation", "severity", "consequence"];
+const severities = ["None", "Low", "Medium", "High", "Critical", "Not available"];
+const consequenceLabels = ["code execution", "data disclosure", "data modification", "privilege escalation", "denial of service", "authentication bypass", "other", "Not available"];
+function ratingSeverity(rating) {
+  if (rating.version === "2.0") return rating.score < 4 ? "Low" : rating.score < 7 ? "Medium" : "High";
+  return rating.score === 0 ? "None" : rating.score < 4 ? "Low" : rating.score < 7 ? "Medium" : rating.score < 9 ? "High" : "Critical";
+}
+function severity(record) {
+  const ratings = record.cvss || [];
+  if (!ratings.length) return "Not available";
+  const highest = Math.max(...ratings.map(rating => rating.score));
+  return severities[Math.max(...ratings.filter(rating => rating.score === highest).map(rating => severities.indexOf(ratingSeverity(rating))))];
+}
+function consequences(record) {
+  const values = [...new Set((record.impacts || []).flatMap(impact => impact.consequences))];
+  return values.length ? values : ["Not available"];
+}
+function syncUrl() {
+  const url = new URL(location.href);
+  for (const id of ["q", ...filterIds]) {
+    if ($(id).value) url.searchParams.set(id, $(id).value); else url.searchParams.delete(id);
+  }
+  if (year) url.searchParams.set("year", year); else url.searchParams.delete("year");
+  if (report) url.searchParams.set("report", report); else url.searchParams.delete("report");
+  history.replaceState(null, "", url);
+}
+function mark(key, value, label, extra = "", className = "") {
+  return `<button type="button" class="security-mark ${className}" data-k="${key}" data-v="${esc(value)}" ${extra} aria-pressed="false" title="${esc(label)}">${esc(label)}</button>`;
+}
+function severityLegend() {
+  return `<div class="security-legend">${severities.map((value, i) => mark("severity", value, value, "", "security-s" + i)).join("")}</div>`;
+}
+function evidence(record, open = false) {
+  const ratings = record.cvss || [], impacts = record.impacts || [];
+  return `<p class="tech"><strong>Recorded CVSS:</strong> ${esc(severity(record))}${ratings.length ? " · highest recorded score " + Math.max(...ratings.map(rating => rating.score)) : " · no assessment established here"}. <strong>Documented consequences:</strong> ${esc(consequences(record).join(", "))}.</p>
+    <details class="source-details" data-evidence="severity"${open ? " open" : ""}><summary>Severity, consequences and exploitation evidence</summary>
+    <p>Case grouping uses the highest recorded CVSS score, with its version-specific severity band. It is descriptive, not a combined or editorial risk index. All recorded assessments remain below; scores from different versions and sources may disagree. <a href="https://www.first.org/cvss/" rel="noopener">CVSS specifications</a> define version-specific scoring and severity bands.</p>
+    ${ratings.length ? `<ul>${ratings.map(rating => `<li><strong>${esc(rating.cve || "Case-level assessment")}</strong>: CVSS ${esc(rating.version)} · ${esc(rating.score)} (${esc(ratingSeverity(rating))})${rating.vector ? ` · <code>${esc(rating.vector)}</code>` : " · vector not available"}${rating.scenarios?.length ? ` · <strong>Assessment scenarios:</strong> ${rating.scenarios.map(esc).join("; ")}` : ""}. <a href="${esc(safeUrl(rating.source_url))}" rel="noopener">${esc(rating.source_name)}</a> · checked ${esc(date(rating.checked_date))}.</li>`).join("")}</ul>` : "<p>No source-backed CVSS assessment is established in this catalog.</p>"}
+    ${impacts.length ? impacts.map(impact => `<p><strong>${esc(impact.cves.length ? impact.cves.join(", ") : "Case-level evidence")}:</strong> ${esc(impact.consequences.length ? impact.consequences.join(", ") : "Consequences not established")}.<br><strong>Prerequisites / affected scope:</strong> ${esc(impact.conditions || "Not established by the cited evidence")}.<br><strong>Exploitation evidence:</strong> ${esc(impact.exploitation || "Not established by the cited evidence")}. <a href="${esc(safeUrl(impact.source_url))}" rel="noopener">Impact source</a> · checked ${esc(date(impact.checked_date))}.</p>`).join("") : "<p>Consequences, prerequisites and exploitation evidence are not established here. Missing evidence does not establish absence of exploitation.</p>"}
+    <p><strong>Documented fix:</strong> ${esc(record.remediation_note)}</p></details>`;
+}
 function rows(key, entries, max = Math.max(1, ...entries.map(entry => entry[2]))) {
   return `<div class="righe">` + entries.map(([value, label, n]) => `<button class="riga" type="button" data-k="${key}" data-v="${esc(value)}" aria-pressed="false" aria-label="${esc(label)}: ${n} ${n === 1 ? "case" : "cases"}"><span class="et" title="${esc(label)}">${esc(label)}</span><span class="bin"><span class="bar" style="width:${(n / max * 100).toFixed(1)}%;min-width:${n ? 3 : 0}px"></span></span><span class="val">${n}</span></button>`).join("") + `</div>`;
 }
@@ -128,10 +176,12 @@ function rankedRows(key, entries) {
   return rows(key, entries.slice(0, 10), max) + (entries.length > 10
     ? `<details><summary>Show all ${entries.length} labels</summary>${rows(key, entries.slice(10), max)}</details>` : "");
 }
+function dataTable(key, entries) {
+  return `<details><summary>View data as a table</summary><div class="security-table"><table><thead><tr><th scope="col">Label</th><th scope="col">Cases</th></tr></thead><tbody>${entries.map(([value,label,n]) => `<tr><th scope="row">${esc(label)}</th><td>${mark(key,value,n)}</td></tr>`).join("")}</tbody></table></div></details>`;
+}
 function charts() {
   const count = key => cases.reduce((m, record) => { const value = key(record); m[value] = (m[value] || 0) + 1; return m; }, Object.create(null));
   const ranked = key => Object.entries(count(record => record[key])).sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([v,n]) => [v,v,n]);
-  const years = Object.entries(count(record => record.disclosure_date.slice(0, 4))).sort().map(([y, n]) => [y, y, n]);
   const contexts = Object.entries(count(record => record.classification)).sort((a, b) => b[1] - a[1]).map(([c, n]) => [c, labels[c], n]);
   const monthly = count(record => record.disclosure_date.slice(0, 7));
   const keys = Object.keys(monthly).sort(), months = [];
@@ -147,27 +197,61 @@ function charts() {
   }
   $("month").innerHTML = '<option value="">All disclosure months</option>' + months.map(([value,label]) => `<option value="${value}">${esc(label)}</option>`).join("");
   $("ai_system").innerHTML = '<option value="">All AI systems</option>' + Object.keys(count(record => record.ai_system)).sort().map(value => `<option>${esc(value)}</option>`).join("");
-  $("charts").innerHTML = `<div class="pannello"><h3>By disclosure month</h3><p class="descr">Public disclosures, including zero-count months between the first and last reports. The current month is incomplete; reporting patterns affect the trend.</p>${rows("month", months)}</div>` +
-    `<div class="pannello"><h3>By AI system cited</h3><p class="descr">Ten most frequent source labels, with the remainder below. Exact names may describe overlapping systems or unspecified versions; counts are not a performance ranking.</p>${rankedRows("ai_system", ranked("ai_system"))}</div>` +
-    `<div class="pannello"><h3>By product</h3><p class="descr">Ten most frequent product labels, with the remainder below. Catalog coverage is not a measure of a product's security.</p>${rankedRows("product", ranked("product"))}</div>` +
-    `<div class="pannello"><h3>By remediation evidence</h3><p class="descr">Cases with a source-documented fix versus cases where fix evidence is not established here. This does not measure patch deployment or current safety.</p>${rows("remediation", ranked("remediation").map(([v,label,n]) => [v,v === "not established" ? "Fix evidence not established" : "Fix documented",n]))}</div>` +
-    `<div class="pannello"><h3>By disclosure year</h3><p class="descr">Tracked cases per year of public disclosure.</p>${rows("year", years)}</div>` +
-    `<div class="pannello"><h3>By discovery context</h3><p class="descr">Labels follow the cited sources; definitions are below.</p>${rows("context", contexts)}</div>`;
+  const maxMonth = Math.max(1, ...months.map(entry => entry[2]));
+  const monthlySvg = `<svg class="security-months" viewBox="0 0 960 300" role="group" aria-label="Monthly case counts stacked by recorded CVSS severity. Exact counts and month filters are in the table below.">${[0, maxMonth].map(n => `<text class="ax" x="0" y="${260 - n / maxMonth * 230}">${n}</text>`).join("")}${months.map(([month,label,n], index) => {
+    const width = 900 / Math.max(1, months.length), x = 45 + index * width;
+    let base = 260;
+    const bars = severities.map((value, i) => {
+      const total = cases.filter(record => record.disclosure_date.startsWith(month) && severity(record) === value).length;
+      const height = total / maxMonth * 230;
+      base -= height;
+      return total ? `<rect class="security-mark security-s${i}" x="${x}" y="${base}" width="${width * .76}" height="${height}" tabindex="0" role="button" data-k="month" data-v="${month}" data-severity="${value}" aria-pressed="false" aria-label="${esc(label)} · ${value}: ${total} cases"><title>${esc(label)} · ${value}: ${total} cases</title></rect>` : "";
+    }).join("");
+    return bars + `<text class="ax" x="${x}" y="282" transform="rotate(-35 ${x} 282)">${esc(month)}</text>`;
+  }).join("")}</svg>`;
+  const monthlyTable = `<details><summary>View monthly data and filters as a table</summary><div class="security-table"><table><caption>Monthly cases by recorded severity; counts filter month and severity together.</caption><thead><tr><th scope="col">Month</th>${severities.map(value => `<th scope="col">${value}</th>`).join("")}</tr></thead><tbody>${months.map(([month,label]) => `<tr><th scope="row">${mark("month", month, label)}</th>${severities.map(value => `<td>${mark("month", month, cases.filter(record => record.disclosure_date.startsWith(month) && severity(record) === value).length, `data-severity="${value}"`)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>${rows("month", months)}</details>`;
+  const fixes = ["fix documented", "not established"];
+  const matrix = `<div class="security-table"><table><caption>Case counts; select a cell to combine severity and remediation filters.</caption><thead><tr><th scope="col">Recorded severity</th>${fixes.map(value => `<th scope="col">${mark("remediation",value,value === "fix documented" ? "Fix documented" : "Fix evidence not established")}</th>`).join("")}</tr></thead><tbody>${severities.map(value => `<tr><th scope="row">${mark("severity", value, value)}</th>${fixes.map(fix => `<td>${mark("severity", value, cases.filter(record => severity(record) === value && record.remediation === fix).length, `data-remediation="${fix}"`)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+  const systems = Object.entries(count(record => record.ai_system)).sort((a,b) => a[0].localeCompare(b[0]));
+  const aiRows = systems.map(([system,n]) => {
+    const assessed = cases.filter(record => record.ai_system === system && severity(record) !== "Not available").length;
+    return `<div class="security-ai-row"><p>${mark("ai_system", system, system)} · n=${n} · CVSS assessed ${assessed}/${n} (${Math.round(assessed / n * 100)}%)</p><div class="security-stack">${severities.map((value,i) => {
+      const total = cases.filter(record => record.ai_system === system && severity(record) === value).length;
+      return total ? mark("ai_system", system, `${value}: ${total}`, `data-severity="${value}" style="flex:${total}"`, "security-s" + i) : "";
+    }).join("")}</div></div>`;
+  });
+  const aiTable = `<details><summary>View AI severity data as a table</summary><div class="security-table"><table><caption>Full catalog case counts; select a count to combine AI system and severity filters.</caption><thead><tr><th scope="col">AI system / sample size</th><th scope="col">CVSS assessed</th>${severities.map(value => `<th scope="col">${value}</th>`).join("")}</tr></thead><tbody>${systems.map(([system,n]) => `<tr><th scope="row">${mark("ai_system",system,system)} · n=${n}</th><td>${cases.filter(record => record.ai_system === system && severity(record) !== "Not available").length}/${n}</td>${severities.map(value => `<td>${mark("ai_system",system,cases.filter(record => record.ai_system === system && severity(record) === value).length, `data-severity="${value}"`)}</td>`).join("")}</tr>`).join("")}</tbody></table></div></details>`;
+  $("charts").innerHTML = `<div class="pannello largo"><h3>Monthly disclosures by recorded severity</h3><p class="descr">Stacked columns count cases, including calendar gaps. The current month is incomplete. Source availability and reporting patterns affect the trend. Severity uses the highest recorded CVSS score per case, not a composite index. CVSS v2 uses Low / Medium / High; v3 and v4 also distinguish None and Critical.</p>${cases.length ? "" : '<p class="vuoto">No cases are available for these charts.</p>'}${severityLegend()}<p class="descr" id="monthly-chart-scroll">Scroll the chart horizontally on narrow screens; exact values are in the table below.</p><div class="security-table" role="region" aria-label="Monthly disclosure chart" aria-describedby="monthly-chart-scroll" tabindex="0">${monthlySvg}</div>${monthlyTable}</div>` +
+    `<div class="pannello"><h3>Recorded severity × documented remediation</h3><p class="descr">A documented fix does not establish installed patches, absence of exploitation or current safety. Missing CVSS evidence is separate from None.</p>${matrix}</div>` +
+    `<div class="pannello"><h3>Documented consequences</h3><p class="descr">A case may have several consequences, so these categories overlap and their counts may exceed the case total. Not available means no consequence is established here; it does not mean no impact.</p>${rows("consequence", consequenceLabels.map(value => [value,value,cases.filter(record => consequences(record).includes(value)).length]))}<details><summary>View consequence data as a table</summary><table><thead><tr><th scope="col">Consequence</th><th scope="col">Cases</th></tr></thead><tbody>${consequenceLabels.map(value => `<tr><th scope="row">${esc(value)}</th><td>${mark("consequence",value,cases.filter(record => consequences(record).includes(value)).length)}</td></tr>`).join("")}</tbody></table></details></div>` +
+    `<div class="pannello largo"><h3>Severity distribution by cited AI system</h3><p class="descr">Alphabetical source labels, with case sample size (n) and CVSS coverage. Segment widths show shares within each system's catalog cases. Exact counts are available in the table and each segment's label; narrow segments may truncate the visible label. Different source coverage and overlapping or unspecified model versions prevent an effectiveness ranking. Select a label or severity segment to filter.</p>${severityLegend()}${aiRows.slice(0,10).join("")}${systems.length > 10 ? `<details><summary>Show all ${systems.length} source labels</summary>${aiRows.slice(10).join("")}</details>` : ""}${aiTable}</div>` +
+    `<div class="pannello"><h3>By product</h3><p class="descr">Ten most frequent product labels, with the remainder below. Catalog coverage is not a measure of a product's security. Each row gives its exact case count.</p>${rankedRows("product", ranked("product"))}${dataTable("product",ranked("product"))}</div>` +
+    `<div class="pannello"><h3>By discovery context</h3><p class="descr">Labels follow the cited sources; definitions are below. Each row gives its exact case count.</p>${rows("context", contexts)}${dataTable("context",contexts)}</div>`;
 }
-$("charts").addEventListener("click", e => {
-  const b = e.target.closest(".riga"); if (!b) return;
-  if (b.dataset.k === "year") year = year === b.dataset.v ? "" : b.dataset.v;
-  else $(b.dataset.k).value = $(b.dataset.k).value === b.dataset.v ? "" : b.dataset.v;
+function activateMark(b) {
+  const fields = [[b.dataset.k, b.dataset.v], ...["severity", "remediation"].filter(key => b.dataset[key]).map(key => [key,b.dataset[key]])];
+  const selected = fields.every(([key,value]) => (key === "year" ? year : $(key).value) === value);
+  fields.forEach(([key,value]) => { if (key === "year") year = selected ? "" : value; else $(key).value = selected ? "" : value; });
   shown = 40;
   render();
   $("t-disclosures").focus();
   $("t-disclosures").scrollIntoView({block:"start"});
+}
+$("charts").addEventListener("click", e => {
+  const b = e.target.closest("[data-k]"); if (b) activateMark(b);
 });
+$("charts").addEventListener("keydown", e => {
+  if (e.key !== "Enter" && e.key !== " ") return;
+  const b = e.target.closest("rect[data-k]"); if (!b) return;
+  e.preventDefault(); activateMark(b);
+});
+
 function render() {
-  const openDetails = new Set([...$("cases").querySelectorAll(".source-details[open]")].map(details => details.closest("article").id));
+  const openDetails = new Set([...$("cases").querySelectorAll(".source-details[open]")].map(details => details.closest("article").id + ":" + (details.dataset?.evidence || "contribution")));
   const query = $("q").value.trim().toLowerCase();
   const cve = query.replace(/[–—]/g, "-"), exactCve = /^cve-\d{4}-\d{4,}$/.test(cve);
-  document.querySelectorAll("#charts .riga").forEach(b => b.setAttribute("aria-pressed", (b.dataset.k === "year" ? year : $(b.dataset.k).value) === b.dataset.v));
+  syncUrl();
+  document.querySelectorAll("#charts [data-k]").forEach(b => b.setAttribute("aria-pressed", (b.dataset.k === "year" ? year : $(b.dataset.k).value) === b.dataset.v && (!b.dataset.severity || $("severity").value === b.dataset.severity) && (!b.dataset.remediation || $("remediation").value === b.dataset.remediation)));
   const group = reports.get(report);
   $('report-group').innerHTML = group ? `<details class="source-details" open><summary>Cases citing this report · ${group.length} cases · ${new Set(group.flatMap(r => r.cves)).size} distinct CVEs</summary><p><a href="${esc(safeUrl(report))}" rel="noopener">${esc(report)}</a></p><p>Exact evidence-URL matches across disclosure, AI attribution and advisory links. Cases remain separate; sharing a report does not establish a common root cause, campaign or independent confirmation. Other filters narrow the list below.</p><ul>${group.map(r => `<li><a href="#${esc(r.id)}">${esc(r.id)} — ${esc(r.title)}</a></li>`).join('')}</ul></details>` : report ? '<p>No cases cite this exact report URL. Clear filters to browse all cases.</p>' : '';
   const selected = cases.filter(record => (!report || reportUrls(record).includes(report)) && (!year || record.disclosure_date.startsWith(year)) && (!$("product").value || record.product === $("product").value) &&
@@ -175,13 +259,16 @@ function render() {
     (!$("month").value || record.disclosure_date.startsWith($("month").value)) &&
     (!$("ai_system").value || record.ai_system === $("ai_system").value) &&
     (!$("remediation").value || record.remediation === $("remediation").value) &&
+    (!$("severity").value || severity(record) === $("severity").value) &&
+    (!$("consequence").value || consequences(record).includes($("consequence").value)) &&
     (!query || (exactCve ? record.cves.some(value => value.toLowerCase() === cve) : [record.title,record.product,record.ai_system,record.organization,record.summary,record.ai_role,...record.cves].join(" ").toLowerCase().includes(query))));
   $("count").textContent = `${selected.length} of ${cases.length} tracked cases${year ? ' · disclosure year: ' + year : ''}`;
   $("cases").innerHTML = selected.slice(0, shown).map(record => `<article class="voce" id="${esc(record.id)}" tabindex="-1">
     <div class="voce-meta"><time datetime="${esc(record.disclosure_date)}">Disclosed ${esc(date(record.disclosure_date))}</time><span>${esc(record.organization)}</span></div>
     <h3><a href="#${esc(record.id)}">${esc(record.title)}</a></h3>
     <p class="sommario">${esc(record.summary)}</p>
-    <details class="source-details"${openDetails.has(record.id) ? " open" : ""}><summary>Source-attributed AI, human and vendor contributions</summary>
+    ${evidence(record, openDetails.has(record.id + ":severity"))}
+    <details class="source-details"${openDetails.has(record.id + ":contribution") ? " open" : ""}><summary>Source-attributed AI, human and vendor contributions</summary>
       <p><strong>AI and human contribution (source account):</strong> ${esc(record.ai_role)}</p>
       <p>Human involvement is only described where the source account establishes it; unknown involvement does not mean none. Vendor confirmation of a flaw does not confirm every claim about AI contribution.</p>
       <p><strong>Vendor / advisory and remediation scope:</strong> ${esc(record.remediation_note)}</p>
@@ -251,7 +338,12 @@ fetch("data/vulnerabilities.json").then(response => {
   $("product").innerHTML += products.map(product => `<option>${esc(product)}</option>`).join("");
   const cves = new Set(cases.flatMap(record => record.cves));
   $("coverage").textContent = `${cases.length} selected cases, ${cves.size} named CVEs, ${products.length} products. Manual and non-exhaustive; case counts are not totals of every vulnerability reported by each model.`;
-  charts(); render();
+  charts();
+  const params = new URLSearchParams(location.search);
+  ["q",...filterIds].forEach(id => { if (params.has(id)) $(id).value = params.get(id); });
+  year = /^\d{4}$/.test(params.get("year") || "") ? params.get("year") : "";
+  $("coverage").textContent += ` CVSS assessments: ${cases.filter(record => (record.cvss || []).length).length}/${cases.length} cases; documented impact evidence: ${cases.filter(record => (record.impacts || []).length).length}/${cases.length} cases. Missing coverage is explicit and is not evidence of low severity or no impact.`;
+  render();
   openHash();
 }).catch(() => {
   $("coverage").textContent = "Disclosure data could not be loaded.";

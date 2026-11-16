@@ -70,7 +70,9 @@ class SharePageTests(unittest.TestCase):
         g = self.generator
         (g.ROOT / 'data').mkdir()
         vuln = json.loads((ROOT / 'data/vulnerabilities.json').read_text())[0]
-        vuln.update(title='=formula', classification_note='+caveat', remediation_note='@scope')
+        vuln.update(title='=formula', classification_note='+caveat', remediation_note='@scope',
+                    cvss=[{'cve': None, 'score': 0, 'scenarios': ['Without Clientless VPN']}, {'cve': 'CVE-2026-1234', 'score': 9.8}],
+                    impacts=[{'consequences': ['code execution', 'data disclosure'], 'conditions': 'Access required'}])
         g.write_exports([dict(self.record, summary='\tformula')], [vuln])
         with (g.ROOT / 'data/vulnerabilities.csv').open(newline='') as f:
             row = next(csv.DictReader(f))
@@ -78,6 +80,10 @@ class SharePageTests(unittest.TestCase):
         self.assertEqual(row['classification_note'], "'+caveat")
         self.assertEqual(row['remediation_note'], "'@scope")
         self.assertEqual(row['ai_attribution_date'], vuln['ai_attribution_date'])
+        self.assertEqual(json.loads(row['cvss']), vuln['cvss'])
+        self.assertEqual(json.loads(row['impacts']), vuln['impacts'])
+        g.write_api([self.record], [vuln])
+        self.assertEqual(json.loads((g.ROOT / 'api/v1/vulnerabilities' / (vuln['id'] + '.json')).read_text()), vuln)
         with (g.ROOT / 'data/discoveries.csv').open(newline='') as f:
             self.assertEqual(next(csv.DictReader(f))['summary'], "'\tformula")
 
@@ -197,6 +203,18 @@ class SharePageTests(unittest.TestCase):
         g.write_profile_pages([self.record], {'families': []}, [old, other])
         self.assertIn('href="index.html"', (g.ROOT / 'profiles/org-former-lab.html').read_text())
         self.assertIn('href="index.html"', (g.ROOT / 'profiles/family-boltz.html').read_text())
+
+    def test_optional_vulnerability_evidence_references_case_cves(self):
+        g = self.generator
+        vuln = json.loads((ROOT / 'data/vulnerabilities.json').read_text())[0]
+        g.validate_inputs([self.record], [], {'families': [], 'models': []}, [vuln])
+        vuln.update(cves=['CVE-2026-1234'], cvss=[{'cve': None}, {'cve': 'CVE-2026-1234'}],
+                    impacts=[{'cves': ['CVE-2026-1234']}])
+        g.validate_inputs([self.record], [], {'families': [], 'models': []}, [vuln])
+        for field, invalid in [('cvss', [{'cve': 'CVE-2026-9999'}]), ('impacts', [{'cves': ['CVE-2026-9999']}])]:
+            bad = dict(vuln, **{field: invalid})
+            with self.assertRaisesRegex(ValueError, 'CVEs must belong'):
+                g.validate_inputs([self.record], [], {'families': [], 'models': []}, [bad])
 
     def test_invalid_input_is_rejected_before_writing_outputs(self):
         g = self.generator

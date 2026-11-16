@@ -567,7 +567,7 @@ CSV_DISCOVERY = ['id', 'title', 'summary', 'field', 'ai_technology', 'organizati
                  'added_date', 'verification_status', 'paper_url', 'impact', 'validation', 'novelty', 'catalog_entry_url', 'publication_status', 'test_type', 'tested', 'unknown', 'ai_role', 'evidence_urls', 'source_review', 'follow_up', 'follow_up_review', 'relationships']
 CSV_VULN = ['id', 'title', 'product', 'ai_system', 'organization', 'disclosure_date', 'classification', 'cves', 'source_url',
             'ai_source_url', 'advisory_url', 'remediation', 'checked_date', 'summary', 'ai_role',
-            'ai_attribution_date', 'classification_note', 'remediation_note']
+            'ai_attribution_date', 'classification_note', 'remediation_note', 'cvss', 'impacts']
 
 
 def write_csv(path, columns, rows):
@@ -583,7 +583,7 @@ def write_exports(items, vulns):
     """Flat CSV copies of the JSON data, same columns as the in-page download. Evidence and optional histories retain their fields; nested structures are JSON cells."""
     write_csv('data/discoveries.csv', CSV_DISCOVERY, [
         dict(d, **d['relevance'], **{key: d.get('evidence', {}).get(key, '') for key in ('publication_status', 'test_type', 'tested', 'unknown', 'ai_role')}, evidence_urls=json.dumps(d.get('evidence', {}).get('evidence_urls', []), ensure_ascii=False, separators=(',', ':')), **{key: json.dumps(d.get(key), ensure_ascii=False, separators=(',', ':')) for key in ('source_review', 'follow_up', 'follow_up_review', 'relationships')}, catalog_entry_url=f'{BASE}share/{d["id"]}.html') for d in items])
-    write_csv('data/vulnerabilities.csv', CSV_VULN, [dict(v, cves=';'.join(v['cves'])) for v in vulns])
+    write_csv('data/vulnerabilities.csv', CSV_VULN, [dict(v, cves=';'.join(v['cves']), **{key: json.dumps(v.get(key, []), ensure_ascii=False, separators=(',', ':')) for key in ('cvss', 'impacts')}) for v in vulns])
 
 
 def write_api(items, vulns, models=None, archived=()):
@@ -684,7 +684,11 @@ def validate_inputs(items, archived, models, vulns):
             datetime.date.fromisoformat(d[key])
     for v in vulns:
         for key in CSV_VULN:
-            v[key]
+            if key not in ('cvss', 'impacts'):
+                v[key]
+        cves = set(v['cves'])
+        if any(rating['cve'] is not None and rating['cve'] not in cves for rating in v.get('cvss', [])) or any(not set(impact['cves']) <= cves for impact in v.get('impacts', [])):
+            raise ValueError('Vulnerability evidence CVEs must belong to the case')
         for key in ('disclosure_date', 'ai_attribution_date', 'checked_date'):
             if key == 'ai_attribution_date' and v[key] is None:
                 continue
