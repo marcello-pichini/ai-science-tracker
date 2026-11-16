@@ -20,8 +20,9 @@ class ModelProgressTests(unittest.TestCase):
         cls.models = {r['id']: r for r in cls.data['models']}
 
     def test_source_snapshot_preserves_versions_missingness_and_configurations(self):
-        self.assertEqual(len(self.models), 569)
-        self.assertEqual(sum(r['eci'] is not None for r in self.models.values()), 207)
+        # Lower bounds, not exact counts: the daily refresh imports newer Epoch exports.
+        self.assertGreaterEqual(len(self.models), 569)
+        self.assertGreaterEqual(sum(r['eci'] is not None for r in self.models.values()), 207)
         self.assertEqual(len(self.data['labs']), 8)
         self.assertTrue({'GPT-6 Astra', 'GPT-6.1 Sol', 'GPT-6.1 Terra', 'GPT-6 Luna'} <= self.models.keys())
         self.assertEqual(self.data['unmatched_benchmark_rows'], {})
