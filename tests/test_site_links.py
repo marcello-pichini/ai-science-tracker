@@ -37,7 +37,7 @@ def is_compatibility_redirect(page, seen, root):
         return False
     if page.name.startswith('family-') and target.parent != root / 'share' and target != root / 'profiles/index.html':
         return False
-    return parser.canonical[0] == 'https://marcello-pichini.github.io/ai-science-tracker/' + target.relative_to(root).as_posix()
+    return parser.canonical[0] == 'https://aisciencetracker.org/' + target.relative_to(root).as_posix()
 
 
 class CrawlableLinkTests(unittest.TestCase):
@@ -66,7 +66,7 @@ class CrawlableLinkTests(unittest.TestCase):
             alias = root / 'profiles/org-old.html'
             target = root / 'profiles/org-new.html'
             target.write_text('Profile')
-            alias.write_text('<link rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/profiles/org-new.html">'
+            alias.write_text('<link rel="canonical" href="https://aisciencetracker.org/profiles/org-new.html">'
                              '<meta http-equiv="refresh" content="0; url=org-new.html">'
                              '<a href="org-new.html">Profile</a>')
             self.assertTrue(is_compatibility_redirect(alias, {target}, root))
@@ -77,7 +77,7 @@ class CrawlableLinkTests(unittest.TestCase):
             target = root / 'share/old.html'
             target.parent.mkdir()
             target.write_text('Archived')
-            alias.write_text('<link rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/share/old.html">'
+            alias.write_text('<link rel="canonical" href="https://aisciencetracker.org/share/old.html">'
                              '<meta http-equiv="refresh" content="0; url=../share/old.html">'
                              '<a href="../share/old.html">Archive</a>')
             self.assertTrue(is_compatibility_redirect(alias, {target}, root))
@@ -90,7 +90,7 @@ class CrawlableLinkTests(unittest.TestCase):
     def test_404_page_matches_the_site_frame_and_is_not_indexed(self):
         page = (ROOT / '404.html').read_text()
         index = (ROOT / 'index.html').read_text()
-        self.assertIn('<base href="https://marcello-pichini.github.io/ai-science-tracker/">', page)
+        self.assertIn('<base href="https://aisciencetracker.org/">', page)
         self.assertIn('name="robots" content="noindex"', page)
         self.assertRegex(page, r'href="styles.css\?v=[a-f0-9]{12}"')
         self.assertNotIn('<style', page)

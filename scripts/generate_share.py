@@ -37,7 +37,7 @@ from urllib.parse import quote
 from model_families import discovery_links
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = 'https://marcello-pichini.github.io/ai-science-tracker/'
+BASE = 'https://aisciencetracker.org/'
 CHROME = os.environ.get('CHROME', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
 SITE = 'AI Science Tracker'
 DEFAULT_ALT = 'Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.'
@@ -66,6 +66,24 @@ def nice_date(iso):
 
 def clip(text, n):
     return text if len(text) <= n else text[:n - 1].rsplit(' ', 1)[0].rstrip(',;:') + '…'
+
+
+SENTENCE_END = re.compile(r'(?<=[.!?])\s+(?=[A-Z0-9“"(])')
+
+
+def describe(text, n=200, hard=230):
+    """Meta description made of whole sentences: as many as fit in n characters, or the first
+    sentence alone when it fits in hard; only longer first sentences fall back to clip()."""
+    parts = SENTENCE_END.split(text.strip())
+    out = ''
+    for part in parts:
+        candidate = f'{out} {part}'.strip()
+        if len(candidate) > n:
+            break
+        out = candidate
+    if not out and len(parts[0]) <= hard:
+        out = parts[0]
+    return out or clip(text, n)
 
 
 def relocate(fragment):
@@ -175,7 +193,7 @@ PAGE = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
-<script type="speculationrules">{{"prerender":[{{"where":{{"and":[{{"href_matches":"/ai-science-tracker/*"}},{{"not":{{"href_matches":"/ai-science-tracker/data/*"}}}},{{"not":{{"href_matches":"/ai-science-tracker/api/*"}}}},{{"not":{{"href_matches":"/ai-science-tracker/og/*"}}}},{{"not":{{"href_matches":"/ai-science-tracker/*.xml"}}}},{{"not":{{"href_matches":"/ai-science-tracker/*.txt"}}}}]}},"eagerness":"moderate"}}]}}</script>
+<script type="speculationrules">{{"prerender":[{{"where":{{"and":[{{"href_matches":"/*"}},{{"not":{{"href_matches":"/data/*"}}}},{{"not":{{"href_matches":"/api/*"}}}},{{"not":{{"href_matches":"/og/*"}}}},{{"not":{{"href_matches":"/*.xml"}}}},{{"not":{{"href_matches":"/*.txt"}}}}]}},"eagerness":"moderate"}}]}}</script>
 <title>{title} · {site}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{base}{path}">
@@ -220,6 +238,9 @@ PAGE = """<!doctype html>
 
 
 CREATOR = {'@type': 'Person', 'name': 'Marcello Pichini', 'url': 'https://github.com/marcello-pichini'}
+PUBLISHER = {'@type': 'Organization', '@id': BASE + '#organization', 'name': SITE, 'url': BASE,
+             'sameAs': ['https://github.com/marcello-pichini/ai-science-tracker', 'https://doi.org/10.5281/zenodo.24217686',
+                        'https://huggingface.co/datasets/marcello-pichini/ai-science-tracker']}
 LICENSE_URL = 'https://creativecommons.org/licenses/by/4.0/'
 
 
@@ -238,7 +259,7 @@ def breadcrumb(name, path):
 def discovery_jsonld(d):
     # WebPage, not Article: the announcement date is not when this page was published.
     data = {'@context': 'https://schema.org/', '@type': 'WebPage', 'name': d['title'], 'description': clip(d['summary'], 300),
-            'url': f'{BASE}share/{d["id"]}.html', 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR,
+            'url': f'{BASE}share/{d["id"]}.html', 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR, 'publisher': PUBLISHER,
             'isPartOf': {'@type': 'Dataset', '@id': BASE + 'index.html#dataset', 'name': 'AI Science Tracker discovery catalog', 'url': BASE + 'index.html'},
             'breadcrumb': breadcrumb(d['title'], f'share/{d["id"]}.html'),
             'about': {'@type': 'Thing', 'name': d['title']}, 'isBasedOn': d['source_url']}
@@ -249,7 +270,7 @@ def discovery_jsonld(d):
 
 def profile_jsonld(name, desc, path, organization=False):
     data = {'@context': 'https://schema.org/', '@type': 'CollectionPage', 'name': name, 'description': desc,
-            'url': BASE + path, 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR,
+            'url': BASE + path, 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR, 'publisher': PUBLISHER,
             'isPartOf': {'@type': 'Dataset', '@id': BASE + 'index.html#dataset', 'name': 'AI Science Tracker discovery catalog', 'url': BASE + 'index.html'},
             'breadcrumb': breadcrumb(name, path)}
     if organization:
@@ -324,7 +345,7 @@ def write_discovery_pages(items, models, images, archived=False):
         more = ('<a href="index.html">Browse the current catalog</a>.' if archived else
                 f'<a href="index.html#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.')
         lead = f'{esc(d["organization"])} &middot; {esc(nice_date(d["publication_date"]))} &middot; {esc(d["field"])}'
-        page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(clip(d['summary'], 200)), base=BASE,
+        page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(describe(d['summary'])), base=BASE,
                            path=f'share/{d["id"]}.html', img=d['id'] if has_image else 'default',
                            imgalt=esc(f'Preview card: {d["title"]}') if has_image else DEFAULT_ALT, jsonld=discovery_jsonld(d),
                            h2='<h2 class="vis-nascosto">Discovery</h2>', more=more, extra=related_section(d, items),
@@ -530,7 +551,7 @@ def write_sitemap(items, models, archived=()):
     orgs = sorted({lead_org(d['organization']) for d in items})
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
     # Announcement dates are not page-modification dates; omit lastmod until tracked.
-    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'profile.html', 'security.html', 'dataset.html', 'contributors.html', 'model-progress.html', 'search.html', 'antibiotic-dossier.html']
+    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'dataset.html', 'contributors.html', 'model-progress.html', 'antibiotic-dossier.html']
     urls += ['profiles/index.html']
     urls += [f'profiles/org-{slug(o)}.html' for o in orgs]
     urls += [f'profiles/family-{quote(f)}.html' for f in fams]

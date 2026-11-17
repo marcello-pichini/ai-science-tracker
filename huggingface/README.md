@@ -29,8 +29,8 @@ configs:
 
 A sourced catalog of scientific discoveries enabled by AI since 2020, plus a separate catalog of software vulnerabilities found with AI.
 
-- **Website:** https://marcello-pichini.github.io/ai-science-tracker/
-- **Methodology:** https://marcello-pichini.github.io/ai-science-tracker/methodology.html
+- **Website:** https://aisciencetracker.org/
+- **Methodology:** https://aisciencetracker.org/methodology.html
 - **Source code and full data:** https://github.com/marcello-pichini/ai-science-tracker
 - **DOI (Zenodo, latest version):** https://doi.org/10.5281/zenodo.24217686
 
@@ -56,13 +56,13 @@ discoveries = load_dataset("marcello-pichini/ai-science-tracker", "discoveries",
 
 ## License and citation
 
-Catalog content: CC BY 4.0. Attribute as "AI Science Tracker, https://marcello-pichini.github.io/ai-science-tracker/". Linked sources keep their own terms.
+Catalog content: CC BY 4.0. Attribute as "AI Science Tracker, https://aisciencetracker.org/". Linked sources keep their own terms.
 
 ```bibtex
 @dataset{pichini_ai_science_tracker,
   author = {Pichini, Marcello},
   title  = {AI Science Tracker},
   doi    = {10.5281/zenodo.24217686},
-  url    = {https://marcello-pichini.github.io/ai-science-tracker/}
+  url    = {https://aisciencetracker.org/}
 }
 ```

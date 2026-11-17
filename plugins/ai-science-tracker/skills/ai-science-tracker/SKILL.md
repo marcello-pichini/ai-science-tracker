@@ -5,7 +5,7 @@ description: Keep the user up to date on scientific discoveries enabled by AI, A
 
 # AI Science Tracker
 
-Answer from the curated catalog at https://marcello-pichini.github.io/ai-science-tracker/ . Do not run a general web search unless the user asks to go beyond the catalog; if they do, say which results come from outside it.
+Answer from the curated catalog at https://aisciencetracker.org/ . Do not run a general web search unless the user asks to go beyond the catalog; if they do, say which results come from outside it.
 
 ## How
 
@@ -23,7 +23,7 @@ python3 scripts/tracker.py info                            # counts, data date, 
 Collections: `discoveries`, `models`, `vulnerabilities`, `all` (default). "New" means: discoveries by catalog `added_date`, vulnerabilities by `checked_date`, models by release `date`.
 
 If Python or shell is unavailable, fetch these instead (do not fetch the multi-megabyte JSON files through a summarizing fetch tool):
-- What's new: https://marcello-pichini.github.io/ai-science-tracker/feed.xml (Atom, latest discovery additions and vulnerability checks)
+- What's new: https://aisciencetracker.org/feed.xml (Atom, latest discovery additions and vulnerability checks)
 - One record: `api/v1/discoveries/{id}.json` or `api/v1/vulnerabilities/{id}.json`
 - Overview and endpoints: `api/v1/index.json`, `llms.txt`
 
