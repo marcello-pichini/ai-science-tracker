@@ -1,0 +1,35 @@
+{
+  "id": "2022-01-hydramp-antimicrobial-peptide-design",
+  "title": "HydrAMP generates antimicrobial peptide analogues validated in bacterial assays",
+  "summary": "HydrAMP, a conditional variational autoencoder with antimicrobial activity classifiers, generated peptide analogues and de novo candidates. The 2022 preprint reports wet-lab confirmation of increased activity for a generated Pexiganan-based analogue; the 2023 journal version reports testing across five bacterial strains, including nine analogues of clinical prototypes and six analogues of an inactive peptide. The tested panel was small and model/human filtered; it does not establish therapeutic efficacy.",
+  "field": "biology",
+  "ai_technology": "Conditional variational autoencoder with classifier-guided peptide generation and molecular-dynamics-based candidate preselection",
+  "organization": "University of Warsaw",
+  "source_url": "https://www.biorxiv.org/content/10.1101/2022.01.27.478054v1",
+  "source_type": "paper",
+  "publication_date": "2022-01-28",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-023-36994-z",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Generated peptide analogues were experimentally evaluated for antimicrobial activity across five bacterial strains; the journal abstract reports high activity for nine generated analogues of clinical prototypes and six analogues of an inactive peptide.",
+    "unknown": "The tested panel is selected and small; these are in-vitro assays and do not establish safety, therapeutic efficacy or clinical benefit. The 2023 correction replaced a duplicated generation-statistics figure, not the wet-lab result stated here.",
+    "ai_role": "A conditional VAE generated peptide analogues and unconstrained candidates from antimicrobial activity conditions; ranking and molecular-dynamics preselection helped choose candidates for experimental validation.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.1101/2022.01.27.478054v1",
+      "https://www.nature.com/articles/s41467-023-36994-z",
+      "https://www.nature.com/articles/s41467-023-40879-6.pdf"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary bioRxiv v1 abstract/metadata; primary Nature Communications indexed full article including methods/results; primary publisher author correction."
+  }
+}

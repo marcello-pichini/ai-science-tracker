@@ -1,0 +1,32 @@
+{
+  "id": "ant-2026-njzq4xfp",
+  "title": "HarfBuzz aliased gvar offsets can amplify avar2 subset resources",
+  "product": "HarfBuzz",
+  "ai_system": "Anthropic OSS Scanner (model not identified for this discovery)",
+  "organization": "Anthropic / HarfBuzz maintainers",
+  "summary": "Malformed overlapping gvar offsets let many glyphs refer to one block; avar2 subsetting parsed, rewrote and retained a heap copy per glyph and retried. The maintainer reports a 251 KB input reaching 1.3 GiB and 26 seconds CPU.",
+  "ai_role": "The primary maintainer commit explicitly says “Discovered by Anthropic's OSS Scanner, as vulnerability ANT-2026-NJZQ4XFP.” It separately lists Claude Opus 4.8 as a commit co-author; the source does not establish that model as the discovering system or describe its investigative steps.",
+  "disclosure_date": "2026-11-11",
+  "ai_attribution_date": "2026-11-11",
+  "classification": "disclosure",
+  "classification_note": "The maintainer source explicitly calls this a vulnerability and describes resource exhaustion from crafted font inputs in the subset path. It does not report exploitation in the wild.",
+  "cves": [],
+  "source_url": "https://github.com/harfbuzz/harfbuzz/commit/6aa278829ef3166e0b26fab3781900b30e168410",
+  "ai_source_url": "https://github.com/harfbuzz/harfbuzz/commit/6aa278829ef3166e0b26fab3781900b30e168410",
+  "advisory_url": "https://github.com/harfbuzz/harfbuzz/commit/6aa278829ef3166e0b26fab3781900b30e168410",
+  "remediation": "fix documented",
+  "remediation_note": "The maintainer commit documents a correction that bounds retained glyph/table work and rejects malformed input beyond the source-table budget. The commit does not establish an affected or fixed release boundary.",
+  "checked_date": "2026-11-17",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "A crafted font with aliased gvar offsets, processed by avar2 subsetting, can amplify memory and CPU use; maintainer reports 1.3 GiB peak memory and 26 seconds for a 251 KB input.",
+      "exploitation": "The cited maintainer source reports resource consumption from crafted test inputs; it does not report exploitation in the wild.",
+      "source_url": "https://github.com/harfbuzz/harfbuzz/commit/6aa278829ef3166e0b26fab3781900b30e168410",
+      "checked_date": "2026-11-17"
+    }
+  ]
+}

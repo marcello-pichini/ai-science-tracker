@@ -1,0 +1,34 @@
+{
+  "id": "2023-10-machine-learning-detects-terminal-singularities",
+  "title": "Machine learning exposed a structure in terminal-singularity classification",
+  "summary": "A neural-network classifier trained on eight-dimensional, Picard-rank-two toric varieties achieved 95% accuracy on a five-million-example test set and enabled rapid generation of a much larger predicted landscape of Q-Fano varieties. The authors report that the model’s classification pattern led them to formulate a new combinatorial criterion for terminal singularities, which they prove mathematically. The learned model suggested the route to the theorem; it did not supply the proof.",
+  "field": "mathematics",
+  "ai_technology": "Feed-forward neural-network classifier trained on toric-variety weight matrices",
+  "organization": "Imperial College London; University of Nottingham",
+  "source_url": "https://arxiv.org/abs/2310.20458",
+  "source_type": "paper",
+  "publication_date": "2023-10-31",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.48550/arXiv.2310.20458",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary arXiv v1 metadata and full text for posting date, author affiliations, learned-classifier results and connection to the stated mathematical criterion; linked NeurIPS proceedings identity checked."
+  },
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors report a 95% classification accuracy on a balanced test split of five million eight-dimensional toric-variety examples and use the model to explore a larger Q-Fano landscape. They formulate and prove a new combinatorial criterion for terminal singularities, motivated by the ML analysis.",
+    "unknown": "The 95% is internal held-out classification performance, not independent external validation; the authors state the neural network does not itself perform the theorem’s divisibility-based test or proof.",
+    "ai_role": "The trained neural-network classifier revealed a tractable pattern in the classification landscape and directly motivated the authors’ new combinatorial criterion; the authors separately establish its correctness by proof.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2310.20458",
+      "https://arxiv.org/html/2310.20458v1"
+    ],
+    "test_type": "direct test"
+  }
+}

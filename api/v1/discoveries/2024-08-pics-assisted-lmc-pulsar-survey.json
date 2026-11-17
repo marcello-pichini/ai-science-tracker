@@ -1,0 +1,35 @@
+{
+  "id": "2024-08-pics-assisted-lmc-pulsar-survey",
+  "title": "PICS-assisted survey reported seven new Large Magellanic Cloud pulsars",
+  "summary": "A MeerKAT survey of its first four Large Magellanic Cloud pointings reported seven new radio pulsars. The search pipeline applied the Pulsar Image-based Classification System (PICS), a deep-neural image classifier, to folded candidates and retained candidates above a PICS score threshold before human visual classification. The AI narrowed the candidate set; volunteers performed the final candidate classification and follow-up observations supplied additional checks. Six pulsars were detected again in follow-up; the incoherent-beam pulsar was not. A later paper reports 12 discoveries from additional pointings and timing follow-up of some Paper I pulsars, which are not additional discoveries in this entry.",
+  "field": "physics",
+  "ai_technology": "Pulsar Image-based Classification System (PICS), a deep-neural image classifier for folded candidate plots",
+  "organization": "University of Cape Town",
+  "source_url": "https://academic.oup.com/mnras/article/533/3/2570/7731149",
+  "source_type": "paper",
+  "publication_date": "2024-08-09",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1093/mnras/stae1917",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary OUP full-text indexed article for candidate selection workflow, score threshold, seven-pulsar result, follow-up status, publication date and first-author affiliation; primary arXiv v1 and OUP Paper II for version and overlap context."
+  },
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The survey reports seven new LMC radio pulsars. Folded candidates were screened using PICS scores and then visually classified; six of the seven were detected again in follow-up, while the incoherent-beam pulsar was not confirmed in follow-up.",
+    "unknown": "PICS filtered candidates but humans classified the candidates as new pulsars. The one incoherent-beam pulsar lacked a follow-up detection in this paper. Later timing work on Paper I objects is not a separate discovery result.",
+    "ai_role": "PICS applied a pulsar-like score to folded candidate plots and filtered the survey candidate set before human visual classification; the paper does not attribute final discovery confirmation to the model alone.",
+    "evidence_urls": [
+      "https://academic.oup.com/mnras/article/533/3/2570/7731149",
+      "https://arxiv.org/html/2405.12029v1",
+      "https://academic.oup.com/mnras/article/545/4/staf2193/8376644"
+    ],
+    "test_type": "direct test"
+  }
+}

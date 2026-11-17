@@ -1,0 +1,34 @@
+{
+  "id": "2024-08-machine-learning-screened-ulk1-inhibitors",
+  "title": "Machine-learning screening identified three compounds with measured ULK1 inhibition",
+  "summary": "A Gaussian naive-Bayes classifier using ECFP6 fingerprints ranked commercial compounds from a 13-million-compound library, followed by docking, property filtering and manual selection. Researchers purchased and assayed 25 candidates; three showed micromolar ULK1 inhibition, with reported IC50 values of 37.11 ± 4.41, 7.67 ± 2.82 and 3.15 ± 0.77 μM. The molecules were purchased rather than newly synthesized, and this entry does not claim absolute chemical novelty. The study’s comparator MRT68921 was more potent; the results do not establish cellular activity or clinical utility.",
+  "field": "medicine",
+  "ai_technology": "Gaussian naive-Bayes classifier on ECFP6 molecular fingerprints (NB-ECFP6)",
+  "organization": "The First Affiliated Hospital of Wenzhou Medical University; Oujiang Laboratory; Wenzhou Medical University; Macao Polytechnic University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11485869/",
+  "source_type": "paper",
+  "publication_date": "2024-08-15",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1080/17568919.2024.2385288",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary PMC full article and linked publisher-version PDF, including methods, kinase assay results, date and author affiliation block."
+  },
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The paper reports 25 purchased candidates tested in a biochemical ULK1 kinase assay; three had measured micromolar inhibition with IC50 values 37.11 ± 4.41, 7.67 ± 2.82 and 3.15 ± 0.77 μM.",
+    "unknown": "The candidates were purchased, not synthesized. The reported assays do not establish cell activity or clinical effect; the reference MRT68921 was more potent in the paper’s comparison. Absolute structure novelty is not claimed here.",
+    "ai_role": "The NB-ECFP6 model screened a large commercial compound set and prioritized candidates for downstream docking and biochemical testing.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11485869/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11485869/pdf/IFMC_16_2385288.pdf"
+    ],
+    "test_type": "direct test"
+  }
+}

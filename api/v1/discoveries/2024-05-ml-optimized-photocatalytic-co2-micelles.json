@@ -1,0 +1,34 @@
+{
+  "id": "2024-05-ml-optimized-photocatalytic-co2-micelles",
+  "title": "Machine learning guided multi-metric optimization of photocatalytic CO2 reduction",
+  "summary": "Bayesian optimization guided experiments on a five-component self-assembled photocatalytic micelle system for CO₂-to-CO reduction. The authors report that optimized conditions increased measured CO yield from 1.48 ± 0.24 to 5.72 ± 0.12 μmol h⁻¹, with improved turnover and quantum-yield metrics while maintaining CO selectivity. The article’s narrative fold-change (4.2×) is inconsistent with the displayed means (about 3.9×), so this record gives the means and omits the fold claim. The findings apply to the tested aqueous micelle system and conditions.",
+  "field": "chemistry",
+  "ai_technology": "Bayesian optimization for experimental selection; random-forest models and SHAP for later analysis",
+  "organization": "University of Cambridge; Politecnico di Torino; Uppsala University",
+  "source_url": "https://doi.org/10.1021/jacs.4c01305",
+  "source_type": "paper",
+  "publication_date": "2024-05-20",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary ACS publisher metadata and University of Cambridge repository copy of the article full text checked for article identity, affiliations, date, optimization method, results and source discrepancy."
+  },
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The article reports CO yield means of 5.72±0.12 and 1.48±0.24 μmol h−1 for optimized vs initial conditions, along with turnover and quantum-yield metrics and maintained selectivity. The narrative states a 4.2-fold yield improvement, inconsistent with these displayed means; the record does not repeat the fold value.",
+    "unknown": "This demonstrates a study-specific photocatalytic system optimization, not industrially scaled carbon conversion or independent replication. The source’s stated yield fold change conflicts with its displayed means.",
+    "ai_role": "Bayesian optimization guided the experimental parameter search and selected test conditions in a five-component micelle system; random-forest models and SHAP then analyzed parameter effects.",
+    "evidence_urls": [
+      "https://api.repository.cam.ac.uk/server/api/core/bitstreams/9bb1fb68-8d73-4b07-b47b-376146e130f8/content",
+      "https://pubs.acs.org/doi/pdf/10.1021/jacs.4c01305?download=true"
+    ],
+    "test_type": "direct test"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-06-family-specific-machine-learning-enzyme-function",
+  "title": "Family-specific machine learning prioritizes enzyme variants for prospective testing",
+  "summary": "Researchers screened 1,513 natural SGNH-hydrolase homologues and trained task-specific sequence CNNs on the resulting activity, thermostability, and substrate-preference data. The models helped select candidates for a prospective 230-sequence assay panel, where CNN-selected candidates were enriched for target traits relative to generalist pretrained and physics-based baselines; the panel also included other selection strategies and random controls. Assays used clarified E. coli lysates and measured relative maximum velocity, integrating expression and catalysis. The first result-bearing version was posted to bioRxiv on 2026-06-03; a Research Square version followed on 2026-06-05.",
+  "field": "biology",
+  "ai_technology": "Task-specific convolutional neural networks trained on amino-acid sequences; CNN-based HEV and UCB selection strategies",
+  "organization": "CSIRO Environment",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.06.02.729712v1.full",
+  "source_type": "paper",
+  "publication_date": "2026-06-03",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.64898/2026.06.02.729712",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A prospective panel of 230 previously untested sequences was assayed; CNN selection strategies were enriched for the predicted target traits compared with generalist pretrained and physics-based approaches. The panel pooled sequences selected by multiple strategies and included random controls.",
+    "unknown": "Clarified lysate MaxV integrates enzyme expression and catalytic activity and is not a purified-enzyme turnover measurement. The result is scoped to this enzyme family and the reported assay setup; prospective panel composition was mixed across selection strategies.",
+    "ai_role": "Supervised family-specific CNNs trained on sequence and assay data ranked untested homologues for activity, thermostability, and substrate preference, and guided candidate selection for prospective experimental testing.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.06.02.729712v1.full"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary bioRxiv v1 full text as indexed, including title, posting date, affiliations, methods, prospective assay results and limitations; primary Research Square v1 identity/date record."
+  }
+}

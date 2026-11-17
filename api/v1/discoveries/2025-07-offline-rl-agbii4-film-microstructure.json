@@ -1,0 +1,33 @@
+{
+  "id": "2025-07-offline-rl-agbii4-film-microstructure",
+  "title": "Offline reinforcement learning identifies an AgBiI4 film-processing condition",
+  "summary": "The Daisy framework combines SEM-image interpretation with offline reinforcement learning trained on historical Ag-Bi-I thin-film conditions and microstructure measurements. For AgBiI4, the planner proposed a condition outside the recorded combinations, and a newly fabricated film showed no visible pinholes and mean grain size 14.5% above the historical mean for defect-free samples. Its grain distribution was comparable to the best historical sample, so the study does not show that the new condition outperformed the previous best or improved device performance.",
+  "field": "materials",
+  "ai_technology": "Daisy image-analysis models and offline reinforcement-learning synthesis planner trained on historical microstructure data",
+  "organization": "University of Washington",
+  "source_url": "https://www.nature.com/articles/s41524-025-01701-7",
+  "source_type": "paper",
+  "publication_date": "2025-07-03",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41524-025-01701-7",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A newly fabricated AgBiI4 film under the RL-proposed processing condition showed 0% visible defect coverage and mean grain size 14.5% above the historical mean for defect-free samples; its grain distribution was comparable to the best historical sample.",
+    "unknown": "This is a thin-film morphology result; the new condition did not outperform the best historical sample and device-level optoelectronic performance was not established.",
+    "ai_role": "Daisy uses ML models to interpret SEM morphology and an offline reinforcement-learning planner trained on historical synthesis conditions to propose a processing condition that was then fabricated and measured.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41524-025-01701-7"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary publisher full text as indexed, including article date, methods, results, author contributions and affiliations."
+  }
+}

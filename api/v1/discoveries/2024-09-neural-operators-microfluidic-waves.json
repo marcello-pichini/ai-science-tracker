@@ -1,0 +1,34 @@
+{
+  "id": "2024-09-neural-operators-microfluidic-waves",
+  "title": "Neural operators reveal nonreciprocal interactions behind microfluidic nonlinear waves",
+  "summary": "Interpreting a microfluidic droplet experiment movie with a Fourier neural operator and sparse regression yielded a KdV–Burgers-type continuum model containing a dispersive term absent from the prior Burgers description. The authors’ simulations attribute the nonlinear-wave propagation and stabilization to nonreciprocal hydrodynamic interactions. The work analyzes existing experimental data and does not report a new experiment or a general proof for all nonequilibrium crystals.",
+  "field": "physics",
+  "ai_technology": "Fourier neural operator, interpretable neural-network pipeline and sparse regression",
+  "organization": "University of Chicago; Old Dominion University; Université Claude Bernard Lyon 1; ENS de Lyon; CNRS",
+  "source_url": "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.107301",
+  "source_type": "paper",
+  "publication_date": "2024-09-03",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1103/PhysRevLett.133.107301",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary APS abstract and accepted manuscript for the neural-operator and sparse-regression analysis of microfluidic wave data, affiliation block, source data and publication chronology."
+  },
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The authors trained/interpreted a neural-operator network on a microfluidic droplet experiment movie and used sparse regression to derive a KdV–Burgers-type model. The new dispersive term improved the shock-front description relative to Burgers’ equation; a microscopic model attributes nonlinear-wave stabilization/propagation to nonreciprocal hydrodynamic interactions. The source says the model was trained on an existing experimental movie.",
+    "unknown": "This is a model-derived interpretation of a specific microfluidic experiment and supporting simulations, not a new experiment or a general proof for all nonequilibrium crystals.",
+    "ai_role": "A Fourier neural operator learned latent experimental dynamics from the microfluidic movie; sparse regression extracted the governing equation, and the learned term guided the interpretation of nonreciprocal hydrodynamic interactions.",
+    "evidence_urls": [
+      "https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.107301",
+      "https://link.aps.org/accepted/10.1103/PhysRevLett.133.107301"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

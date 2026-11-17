@@ -1,0 +1,34 @@
+{
+  "id": "2026-06-ml-screen-finds-selective-membrane-active-antibacterial-hits",
+  "title": "Machine-learning screening identifies bacterial-selective membrane-active compounds",
+  "summary": "The June 2026 bioRxiv version describes an initial machine-learning-guided screen of ZINC20 compounds balancing predicted antibacterial activity, mammalian-cell toxicity, and mechanism-of-action novelty. Among 61 purchased candidates, six showed partial growth inhibition; 49 were non-toxic to HepG2 cells at 50 μM. Flow cytometry indicated membrane disruption for four of the six initial active hits and membrane depolarization for two. A September version reports additional screening and revised models; its expanded results are not attributed to the June version here. The study does not report a novel protein target or clinical antibiotic.",
+  "field": "biology",
+  "ai_technology": "Graph-convolutional neural networks for antibacterial activity/toxicity with XGBoost mechanism-of-action classification and novelty filtering",
+  "organization": "Princeton University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13278111/",
+  "source_type": "paper",
+  "publication_date": "2026-06-11",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.64898/2026.06.08.730938",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The June 2026 v1 reports that 61 purchased candidates were tested, six showed partial growth inhibition, and 49/61 were non-toxic to HepG2 cells at 50 μM. Flow cytometry indicated membrane integrity disruption for four initial active hits and membrane depolarization for two.",
+    "unknown": "The initial work does not report a novel protein target and is limited to the stated bacterial assays and HepG2 toxicity concentration. The September version adds expanded screening and revised analyses; those later results are not attributed to the June v1.",
+    "ai_role": "Learned activity and toxicity models, together with a mechanism-novelty classifier, prioritized compounds for purchase and experimental testing.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13278111/",
+      "https://pubmed.ncbi.nlm.nih.gov/42327090/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary PMC-indexed full text for the June bioRxiv v1, primary PubMed preprint abstract/metadata, and primary PMC/PubMed metadata for the later September version to distinguish version-specific results."
+  }
+}

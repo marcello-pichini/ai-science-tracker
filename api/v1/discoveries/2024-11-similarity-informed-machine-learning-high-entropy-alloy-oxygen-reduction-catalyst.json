@@ -1,0 +1,34 @@
+{
+  "id": "2024-11-similarity-informed-machine-learning-high-entropy-alloy-oxygen-reduction-catalyst",
+  "title": "Similarity-informed machine learning guides experimental high-entropy alloy catalyst discovery",
+  "summary": "A graph neural network augmented with quantum-inspired adsorption-site similarity reduced the DFT training data needed for a given prediction accuracy from 1,600 to 800 calculations. The model identified a five-metal Fe–Co–Ni–Ir–Ru high-entropy alloy candidate for oxygen reduction; the author group reports experimental validation and performance above a Pt/C comparison. The publisher abstract gives a predicted overpotential of 0.24 V, which is not presented here as the measured value. This is a laboratory catalyst result, not a fuel-cell deployment claim.",
+  "field": "materials",
+  "ai_technology": "Similarity-augmented graph neural network for adsorption-site and alloy-composition screening",
+  "organization": "Computational Laboratory for Energy and Nanoscience",
+  "source_url": "https://clean.energyscience.ca/publications/078.html",
+  "source_type": "other",
+  "publication_date": "2024-11-06",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.matt.2024.10.001",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary ScienceDirect indexed abstract and metadata; primary author-group publication page. Direct publisher full-text open was blocked, so no full Methods or complete article affiliation review is claimed."
+  },
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The author group reports experimental validation identifying a five-metal high-entropy alloy oxygen-reduction catalyst that outperformed its Pt/C comparison. The publisher describes experimental study of four additional HEAs; the 0.24 V overpotential is a model prediction, not stated here as an experimental measurement.",
+    "unknown": "The publisher full Methods and supplementary results were not reviewed in this pass. The abstract-level material does not provide the measured ORR performance values, test uncertainty, durability, or full experimental protocol. No independent replication or fuel-cell device performance is established.",
+    "ai_role": "The graph neural network incorporated quantum-inspired similarity between adsorption sites, reducing the required DFT training-set size from 1,600 to 800 while maintaining prediction accuracy. Its predictions nominated HEA compositions for experimental synthesis and ORR evaluation.",
+    "evidence_urls": [
+      "https://www.sciencedirect.com/science/article/pii/S2590238524005289",
+      "https://clean.energyscience.ca/publications/078.html"
+    ],
+    "test_type": "direct test"
+  }
+}

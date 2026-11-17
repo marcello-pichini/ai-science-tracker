@@ -431,8 +431,10 @@ def write_profile_pages(items, models, archived=()):
         target = next(iter(targets)) if len(targets) == 1 else 'index.html'
         canonical = BASE + (target[3:] if target.startswith('../') else f'profiles/{target}')
         title = 'Organization profile moved' if path.startswith('org-') else 'Model family profile moved'
+        icon = next(line for line in PAGE.splitlines() if 'rel="icon"' in line)
         (out / path).write_text(f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><title>{title}</title>
+{icon}
 <link rel="canonical" href="{canonical}"><meta http-equiv="refresh" content="0; url={target}"></head>
 <body><p>This profile has moved to <a href="{target}">the preserved page</a>.</p></body></html>
 ''')

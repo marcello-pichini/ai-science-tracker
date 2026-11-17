@@ -1,0 +1,33 @@
+{
+  "id": "2024-05-ensemble-screening-identifies-cdk8-inhibitors",
+  "title": "Ensemble machine learning identified CDK8 inhibitor hits",
+  "summary": "A six-model ensemble classified 1.6 million commercial molecules and reduced them to a 1,672-compound CDK8-focused screening library. Docking and visual inspection selected 25 candidates for enzymatic assays; six showed CDK8 inhibition. The most potent hit, T479-0984, had a reported IC50 of 99.9 nM. The paper reports low structural similarity (Tanimoto <0.300) to a comparison set of 30 diverse known CDK8 inhibitors. These are assay hits and starting points, not validated drugs or evidence of therapeutic efficacy.",
+  "field": "biology",
+  "ai_technology": "Six-model ensemble classifier (logistic regression, k-nearest neighbors, support vector classification, random forest, XGBoost and multilayer perceptron)",
+  "organization": "Taipei Medical University; The Chinese University of Hong Kong (Shenzhen); Academia Sinica; National Institutes of Health; National Taiwan University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081523/",
+  "source_type": "paper",
+  "publication_date": "2024-05-09",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1002/pro.5007",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary PMC full text, article metadata, methods/results, author affiliations and compound-level structural comparison reviewed."
+  },
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Twenty-five candidates from the focused library underwent CDK8 enzymatic testing; six showed inhibition. T479-0984 was reported with IC50 99.9 nM. The paper compared hits against 30 diverse known CDK8 inhibitors and reports Tanimoto similarity below 0.300.",
+    "unknown": "The assay establishes in-vitro enzyme inhibition only, not cellular target engagement, animal efficacy, clinical utility, or exhaustive prior patent/publication status for the compounds.",
+    "ai_role": "The six-model ensemble filtered a 1.6-million-molecule commercial library into a 1,672-molecule CDK8-focused library; docking and visual inspection selected candidates that were then tested enzymatically.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11081523/"
+    ],
+    "test_type": "direct test"
+  }
+}

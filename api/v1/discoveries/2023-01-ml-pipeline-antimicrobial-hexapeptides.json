@@ -1,0 +1,34 @@
+{
+  "id": "2023-01-ml-pipeline-antimicrobial-hexapeptides",
+  "title": "Machine-learning pipeline identifies antimicrobial hexapeptides",
+  "summary": "A sequential machine-learning pipeline screened virtual libraries of 6–9-residue peptides and identified three leading antimicrobial hexapeptides. The paper reports activity against multidrug-resistant clinical isolates and therapeutic effects in a mouse bacterial-pneumonia model. These are laboratory and animal results, not clinical efficacy.",
+  "field": "biology",
+  "ai_technology": "Sequential machine-learning pipeline for peptide selection, classification, ranking and activity regression",
+  "organization": "Zhejiang University",
+  "source_url": "https://www.nature.com/articles/s41551-022-00991-2",
+  "source_type": "paper",
+  "publication_date": "2023-01-12",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41551-022-00991-2",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary Nature indexed article text and PubMed abstract/metadata/affiliation record for the ML hexapeptide screening study, its January 2023 publication date and reported mouse pneumonia assays."
+  },
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The authors report a sequential machine-learning pipeline over virtual 6–9 amino-acid sequence space; the leading three identified hexapeptides were tested against clinical multidrug-resistant isolates and in a mouse bacterial-pneumonia model.",
+    "unknown": "The mouse model and reported comparison with penicillin do not establish human efficacy. The PubMed primary metadata gives journal online date 2023-01-12; no earlier pre-2020 version is identified in the reviewed primary material.",
+    "ai_role": "Sequential learned modules selected, classified, ranked and regressed peptide candidates from the virtual sequence library; the reported three lead hexapeptides are outputs of that workflow.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41551-022-00991-2",
+      "https://pubmed.ncbi.nlm.nih.gov/36635418/"
+    ],
+    "test_type": "direct test"
+  }
+}

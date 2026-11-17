@@ -1,0 +1,44 @@
+{
+  "id": "2024-02-slide-links-t-cell-clone-expansion-to-islet-immune-programs",
+  "title": "SLIDE links islet T-cell clone expansion to immune gene programs",
+  "summary": "SLIDE, an interpretable latent-factor interaction method, was applied to paired single-cell RNA-seq and T-cell receptor data from islet-derived CD4 T cells in NOD mice. The analysis identified latent components associated with clonal expansion and grouped inhibitory-receptor and intracellular signaling/apoptosis-related genes among the associated programs. The result is an inference from existing multiomic data, not a causal perturbation; it is a distinct T1D application in the same article as the separately catalogued systemic-sclerosis analysis.",
+  "field": "biology",
+  "ai_technology": "SLIDE interpretable latent-factor interaction discovery and exploration",
+  "organization": "University of Pittsburgh",
+  "source_url": "https://www.nature.com/articles/s41592-024-02175-z",
+  "source_type": "paper",
+  "publication_date": "2024-02-19",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41592-024-02175-z",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The method was applied to paired single-cell RNA-seq/TCR-seq from islet-derived CD4 T cells in NOD mice; the analysis reports latent components associated with clone expansion and compares the findings against an independent published dataset and alternative methods.",
+    "unknown": "The inferred gene programs are associations from existing data; the T1D analysis does not prospectively perturb the proposed pathways or establish causality.",
+    "ai_role": "SLIDE uses interpretable machine learning to identify interactions among latent factors in high-dimensional omics data and was applied to connect T-cell gene programs with clonal expansion.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41592-024-02175-z",
+      "https://pubmed.ncbi.nlm.nih.gov/38374265/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary Nature Methods indexed full article, including T1D application, Methods, results, author affiliations and publication/version dates; PubMed primary abstract and affiliation metadata."
+  },
+  "relationships": [
+    {
+      "type": "shared evidence",
+      "target_id": "2024-02-slide-uncovers-a-keratinocyte-centered-signal-in-systemic-sclerosis",
+      "reason": "Both records cite the same SLIDE article. This record describes its distinct T1D islet T-cell analysis; the linked record describes the systemic-sclerosis keratinocyte analysis. The relationship identifies a shared paper without asserting the results are identical or independent papers.",
+      "source_urls": [
+        "https://www.nature.com/articles/s41592-024-02175-z"
+      ]
+    }
+  ]
+}

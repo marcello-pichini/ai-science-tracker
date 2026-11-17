@@ -1,0 +1,34 @@
+{
+  "id": "2025-08-foundation-model-electrolyte-formulation",
+  "title": "A chemical foundation model guides high-conductivity electrolyte formulation",
+  "summary": "Researchers fine-tuned the SMI-TED chemical foundation model on 13,666 literature measurements of ionic conductivity and screened 100,000 generated electrolyte formulations. Sixteen selected formulations were measured experimentally, with seven exceeding 10 mS/cm. A model-generated LiFSI formulation measured 19.14 mS/cm at room temperature, 82% above the best literature value in the paper’s comparison; the model had predicted 10.52 mS/cm. Conductivity is only one electrolyte property and does not establish electrochemical stability, safety or battery performance. The article was published 2025-08-30; a later correction changed an author name only.",
+  "field": "materials",
+  "ai_technology": "SMI-TED chemical foundation model fine-tuned for electrolyte mixture ionic-conductivity prediction and generative screening",
+  "organization": "IBM Research",
+  "source_url": "https://www.nature.com/articles/s41524-025-01774-4",
+  "source_type": "paper",
+  "publication_date": "2025-08-30",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41524-025-01774-4",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Sixteen selected formulations were measured by triplicate EIS at 20 °C; seven exceeded 10 mS/cm. A generated LiFSI electrolyte measured 19.14 mS/cm, compared with a model prediction of 10.52 mS/cm and 82% higher conductivity than the best literature value used in the paper comparison.",
+    "unknown": "High ionic conductivity alone does not establish electrochemical stability, compatibility with particular electrodes, safety, cycle life or commercial battery performance.",
+    "ai_role": "SMI-TED was fine-tuned on literature ionic-conductivity data and screened 100,000 generated formulations; selected candidates were prepared and measured experimentally.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41524-025-01774-4",
+      "https://www.nature.com/articles/s41524-025-01804-1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary publisher full text including methods, measured outcomes, affiliations and publication date; primary publisher correction."
+  }
+}

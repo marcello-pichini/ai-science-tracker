@@ -1,0 +1,34 @@
+{
+  "id": "2026-08-evolvepro-guided-hpabc-l-dopa",
+  "title": "Machine learning and directed evolution improved an L-Dopa-producing monooxygenase",
+  "summary": "Zero-shot protein models prioritized HpaBC substitutions, which were experimentally assayed with a L-Dopa-responsive GFP biosensor. EVOLVEpro then combined experimentally validated substitutions, including directed-evolution-derived variants, and selected higher-order designs. The best reported combined variants produced up to 57–58 times the wild-type fluorescence signal under the stated assay conditions. This is a biosensor proxy for L-Dopa production, not a purified-enzyme kinetic measurement; the work also builds on prior directed-evolution mutations and does not establish clinical benefit.",
+  "field": "biology",
+  "ai_technology": "MutCompute, ProteinMPNN, ESM protein language models and EVOLVEpro combinatorial design",
+  "organization": "The University of Texas at Austin",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.07.31.742090v1",
+  "source_type": "paper",
+  "publication_date": "2026-08-03",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.64898/2026.07.31.742090",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary bioRxiv v1 API metadata and Crossref posted-date metadata checked; primary v1 full-text indexed extract reviewed for methods, biosensor-normalized outcomes, model role and affiliation. Direct full-text page open was blocked."
+  },
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "329 model-predicted variants were assayed; 19 showed at least 1.25-fold biosensor signal. EVOLVEpro-selected combined variants yielded up to 57–58-fold normalized fluorescence relative to wild type under the reported assay conditions.",
+    "unknown": "Fluorescence from a DopA/GFP biosensor is an indirect L-Dopa-production proxy, not a purified-enzyme catalytic constant. The work includes directed-evolution-derived mutations; G295T had prior directed-evolution support. No human therapeutic efficacy is established.",
+    "ai_role": "MutCompute, ProteinMPNN and ESM prioritized single substitutions for experimental testing; EVOLVEpro combined tested mutations and iteratively selected higher-order variants, including designs incorporating directed-evolution results.",
+    "evidence_urls": [
+      "https://api.biorxiv.org/details/biorxiv/10.64898/2026.07.31.742090",
+      "https://www.biorxiv.org/content/10.64898/2026.07.31.742090v1.full"
+    ],
+    "test_type": "direct test"
+  }
+}

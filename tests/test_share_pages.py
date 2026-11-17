@@ -183,6 +183,7 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('org-first-lab.html', text)
         self.assertIn(f'rel="canonical" href="{g.BASE}profiles/org-first-lab.html"', text)
         self.assertIn('href="org-first-lab.html"', text)
+        self.assertIn('rel="icon" href="data:image/svg+xml,', text)
         self.assertEqual(g.lead_org('First Lab AND Second Lab'), 'First Lab AND Second Lab')
         self.assertEqual(g.lead_org('First Lab, Second Lab'), 'First Lab, Second Lab')
 

@@ -1,0 +1,47 @@
+{
+  "id": "ant-2026-7302",
+  "title": "SGLang upload filename path traversal permits arbitrary file writes",
+  "product": "SGLang",
+  "ai_system": "Antiproof AI-powered vulnerability discovery system (specific model not identified)",
+  "organization": "Antiproof / SGLang maintainers (no vendor response recorded by CERT/CC)",
+  "summary": "The multimodal generation runtime upload handlers incorporate client-supplied filenames into filesystem paths without sanitization. Antiproof reports traversal via ../ on /v1/images/edits and /v1/videos.",
+  "ai_role": "The Antiproof article identifies this CVE among three findings it disclosed on 2026-03-10. Antiproof’s AI-system page explicitly includes CVE-2026-7302 among the system’s autonomously discovered and validated cases. The sources do not identify a specific model or separately describe model steps for this issue. CERT/CC independently records the filename traversal and arbitrary-write effect.",
+  "disclosure_date": "2026-05-18",
+  "ai_attribution_date": "2026-05-15",
+  "classification": "disclosure",
+  "classification_note": "Public disclosure is documented by the Antiproof report and CERT/CC note. The checked sources do not establish exploitation in the wild; disclosure status does not imply it was or was not a zero-day.",
+  "cves": [
+    "CVE-2026-7302"
+  ],
+  "source_url": "https://antiproof.ai/blog/three-rces-in-sglang/",
+  "ai_source_url": "https://antiproof.ai/",
+  "advisory_url": "https://kb.cert.org/vuls/id/777338",
+  "remediation": "not established",
+  "remediation_note": "Antiproof and CERT/CC report no official patch as of 2026-05-15 and 2026-05-18 respectively. Current remediation or fixed release boundary was not established by these checks.",
+  "checked_date": "2026-11-17",
+  "cvss": [
+    {
+      "cve": "CVE-2026-7302",
+      "version": "3.1",
+      "score": 9.1,
+      "vector": null,
+      "source_url": "https://antiproof.ai/blog/three-rces-in-sglang/",
+      "source_name": "Antiproof",
+      "checked_date": "2026-11-17"
+    }
+  ],
+  "impacts": [
+    {
+      "cves": [
+        "CVE-2026-7302"
+      ],
+      "consequences": [
+        "data modification"
+      ],
+      "conditions": "Unauthenticated arbitrary file write, limited to locations the SGLang server process can write, when multimodal generation is enabled and an affected upload endpoint is reachable. Do not infer code execution from file-write capability.",
+      "exploitation": "The cited sources describe vulnerability capability and conditions; they do not report observed exploitation in the wild.",
+      "source_url": "https://kb.cert.org/vuls/id/777338",
+      "checked_date": "2026-11-17"
+    }
+  ]
+}

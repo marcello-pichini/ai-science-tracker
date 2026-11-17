@@ -1,0 +1,34 @@
+{
+  "id": "2023-09-photocat-guides-photocatalytic-reaction-discovery",
+  "title": "PhotoCat guides experimental discovery of photocatalytic reactions",
+  "summary": "The PhotoCat Transformer was pretrained on general reaction data and fine-tuned on the authors’ photocatalysis database to predict products and reaction conditions. In the 2023 ChemRxiv version, the authors report using it to guide experimental validation of previously unreported photocatalytic reactions. The later 2026 journal version describes four novel validated reactions, whereas the preprint reports five; this entry makes no exact-count claim and treats the journal article as a revised version of the same study.",
+  "field": "chemistry",
+  "ai_technology": "Transformer-based deep-learning reaction predictor pretrained on USPTO and fine-tuned on PhotoCatDB, with reaction-condition inputs",
+  "organization": "Zhejiang University of Technology",
+  "source_url": "https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/65004fd999918fe537d200ab/original/photo-cat-an-artificial-intelligence-driven-synthesis-planning-platform-for-photocatalysis.pdf",
+  "source_type": "paper",
+  "publication_date": "2023-09-12",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s42004-026-01894-y",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The PhotoCat Transformer was pretrained on general reaction data and fine-tuned on a photocatalysis database to predict products and conditions. The 2023 ChemRxiv version reports wet-lab validation of five predicted reactions; the 2026 journal abstract reports four novel validated reactions.",
+    "unknown": "The preprint and journal version differ in their reported count of validated novel reactions. This record states the shared model-guided experimental discovery claim and makes no exact-count claim.",
+    "ai_role": "A Transformer reaction predictor was pretrained on USPTO and fine-tuned on PhotoCatDB to rank photocatalytic reaction outcomes and conditions, guiding experimental validation.",
+    "evidence_urls": [
+      "https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/65004fd999918fe537d200ab/original/photo-cat-an-artificial-intelligence-driven-synthesis-planning-platform-for-photocatalysis.pdf",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12913628/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary ChemRxiv v2 full-text PDF and version-history metadata; primary PMC full-text journal version and publication metadata. The preprint and journal versions report different counts (five versus four); the summary preserves this discrepancy."
+  }
+}

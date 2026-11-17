@@ -1,0 +1,34 @@
+{
+  "id": "2024-03-metl-gfp-protein-engineering",
+  "title": "A biophysics-informed protein language model designs functional GFP variants",
+  "summary": "Mutational Effect Transfer Learning (METL) combines transformer pretraining on simulated protein biophysics with fine-tuning on experimental sequence–function data. Using only 64 experimental GFP examples, the authors designed 20 previously untested variants and measured their fluorescence; 16 showed measurable fluorescence, although none was brighter than wild-type GFP. The result demonstrates functional design under a small-data setup, not improved brightness over wild type. The result was present in the bioRxiv version posted 2024-03-17; the GEM@ICLR 2024 workshop paper provides the detailed 20-variant assay report, and the later journal version is the same study.",
+  "field": "biology",
+  "ai_technology": "Mutational Effect Transfer Learning (METL), a transformer protein language model pretrained on simulated biophysical features and fine-tuned on experimental data",
+  "organization": "University of Wisconsin-Madison",
+  "source_url": "https://www.biorxiv.org/content/10.1101/2024.03.15.585128v1",
+  "source_type": "paper",
+  "publication_date": "2024-03-17",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41592-025-02776-2",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Twenty METL-designed GFP variants were synthesized and experimentally measured; 16 showed measurable fluorescence, but none exceeded wild-type brightness.",
+    "unknown": "The panel contains 20 designed variants in a specific GFP task; the result does not show improvement over wild-type brightness or establish general performance across protein families.",
+    "ai_role": "METL-Local was pretrained on simulated GFP sequence/biophysical data, fine-tuned using 64 experimental examples, and used with sequence optimization to select variants for wet-lab testing.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.1101/2024.03.15.585128v1",
+      "https://openreview.net/pdf?id=hWISqnHBr7"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary bioRxiv v1 indexed abstract, posting date and affiliation metadata; primary GEM@ICLR workshop paper full text with methods and experimental outcomes."
+  }
+}

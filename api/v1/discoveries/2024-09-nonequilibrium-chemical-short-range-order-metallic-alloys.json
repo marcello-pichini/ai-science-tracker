@@ -1,0 +1,36 @@
+{
+  "id": "2024-09-nonequilibrium-chemical-short-range-order-metallic-alloys",
+  "title": "Machine learning simulations reveal nonequilibrium short-range order in metallic alloys",
+  "summary": "A moment-tensor machine-learning interatomic potential enabled large-scale simulations of CrCoNi processing. The authors report that thermomechanical deformation and solidification can generate steady-state chemical short-range order outside the equilibrium-annealing spectrum, and propose an ordering-bias mechanism. This is a simulation-based computational finding, not direct experimental validation of the predicted states in manufactured alloys. The result and AI role were already present in arXiv v1; journal publication followed in 2025.",
+  "field": "materials",
+  "ai_technology": "Moment-tensor machine-learning interatomic potential; E(3)-equivariant graph neural network for local chemical-motif identification",
+  "organization": "Massachusetts Institute of Technology",
+  "source_url": "https://arxiv.org/pdf/2409.15474v1",
+  "source_type": "paper",
+  "publication_date": "2024-09-23",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-025-64733-z",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The primary v1 reports molecular-dynamics and nonequilibrium Monte Carlo simulations of CrCoNi thermomechanical deformation and solidification; these simulations yield steady-state SRO states outside the equilibrium-annealing spectrum.",
+    "unknown": "This is a simulation-based result, not direct experimental confirmation of every predicted state or industrial deployment. Broad prior-art screening is bounded; independent reproduction is not established.",
+    "ai_role": "A moment-tensor machine-learning interatomic potential (TS-f) supplies energies and forces for simulations; an E(3)-equivariant graph neural network separately identifies local motifs and supports SRO quantification.",
+    "evidence_urls": [
+      "https://arxiv.org/pdf/2409.15474v1",
+      "https://arxiv.org/abs/2409.15474",
+      "https://www.nature.com/articles/s41467-025-64733-z",
+      "https://pubmed.ncbi.nlm.nih.gov/41062492/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary arXiv v1 full text and submission history; indexed Nature Communications full text including Methods/contributions and affiliation block; PubMed metadata/abstract."
+  }
+}

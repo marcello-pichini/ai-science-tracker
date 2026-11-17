@@ -1,0 +1,35 @@
+{
+  "id": "2025-08-hydramp-tryptophan-rich-antimicrobial-peptides",
+  "title": "HydrAMP-guided design of short tryptophan-rich antimicrobial peptides",
+  "summary": "HydrAMP generated analogues from a short Arg/Trp prototype, with AMPlify scoring and empirical filters used to select candidates. The authors synthesized three peptides and measured antimicrobial activity across bacterial strains; AMP3 showed the broadest activity among those tested, including MIC50 values of 15 μM against E. coli and 125 μM against P. aeruginosa. This is a small, model-assisted peptide panel built on a known sequence motif, not evidence of therapeutic efficacy.",
+  "field": "biology",
+  "ai_technology": "HydrAMP deep-learning peptide sequence generator and AMPlify deep-learning antimicrobial-activity scorer",
+  "organization": "University of Napoli Federico II",
+  "source_url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/pdfdirect/10.1002/chem.202501918",
+  "source_type": "paper",
+  "publication_date": "2025-08-13",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1002/chem.202501918",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Three peptides were synthesized and tested in vitro. The lead AMP3 had reported MIC50 values of 15 μM against E. coli and 125 μM against P. aeruginosa, with broader spectrum than AMP1/AMP2 in the tested panel.",
+    "unknown": "The design starts from a known short Arg/Trp peptide motif and tests a very small selected set; clinical efficacy, safety, and broad-spectrum performance beyond the strains tested are unknown. The accessible source comparison establishes it is not the Pexiganan/Temporin-A wet-lab result reported in the earlier HydrAMP paper, but does not assert exhaustive sequence-prior-art completeness.",
+    "ai_role": "HydrAMP generated candidate analogues from the AMP1 prototype; the AMPlify learned model scored antimicrobial propensity, followed by empirical candidate filtering and wet-lab testing.",
+    "evidence_urls": [
+      "https://chemistry-europe.onlinelibrary.wiley.com/doi/pdfdirect/10.1002/chem.202501918",
+      "https://pubmed.ncbi.nlm.nih.gov/40801152/",
+      "https://www.nature.com/articles/s41467-023-36994-z"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary Wiley publisher full-text indexed article including sequences, Methods, MIC results and publication date; PubMed metadata/abstract/affiliation; separate primary Nature Communications article reviewed to compare the prior HydrAMP wet-lab prototypes and results."
+  }
+}

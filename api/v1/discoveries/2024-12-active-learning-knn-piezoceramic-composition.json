@@ -1,0 +1,34 @@
+{
+  "id": "2024-12-active-learning-knn-piezoceramic-composition",
+  "title": "Active learning identified a KNN ceramic composition with high piezoelectric response",
+  "summary": "An active-learning loop combined machine-learning prediction, surrogate optimization and experimental testing to explore lead-free potassium-sodium niobate (KNN) ceramics. After three experiment and optimization iterations, the authors report identifying a composition with a measured piezoelectric coefficient d33 of approximately 353 pC/N from thousands of possible compositions. This is a laboratory material-property measurement, not validation of a finished sensor or device.",
+  "field": "materials",
+  "ai_technology": "Support vector regression with a radial basis function kernel in an active-learning experimental-design loop",
+  "organization": "Nanjing University of Aeronautics and Astronautics",
+  "source_url": "https://www.sciencedirect.com/science/article/pii/S0272884224048338",
+  "source_type": "paper",
+  "publication_date": "2024-12-15",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.ceramint.2024.10.312",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary publisher indexed full text/abstract and primary institutional repository metadata/abstract for article date, author affiliation, model workflow and experimental result."
+  },
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "After three active-learning-guided experiment iterations, the authors report a synthesized KNN composition with measured d33 of approximately 353 pC/N.",
+    "unknown": "The reported coefficient is a laboratory material-property measurement, not device-level qualification or commercial performance.",
+    "ai_role": "An SVR model predicted KNN piezoelectric response and guided composition selection across three experiment-optimization iterations.",
+    "evidence_urls": [
+      "https://www.sciencedirect.com/science/article/pii/S0272884224048338",
+      "https://research.mpu.edu.mo/en/publications/multi-iteration-active-learning-for-the-composition-design-of-pot/"
+    ],
+    "test_type": "direct test"
+  }
+}

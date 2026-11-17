@@ -1,0 +1,43 @@
+{
+  "id": "ghsa-j5pq-cm28-qm6v",
+  "title": "FreeRDP shadow server accepts unauthenticated Fast-Path input before session activation",
+  "product": "FreeRDP shadow server",
+  "ai_system": "Claude (model/version not identified)",
+  "organization": "FreeRDP maintainers / reporter",
+  "summary": "Before a shadow server reaches the authenticated active-session state, its Fast-Path input handlers forward mouse, keyboard and synchronization events to the X11 backend without the state guard used by the slow-path handlers. A network client can negotiate TLS-only RDP and send Fast-Path input before Confirm Active or valid credentials, injecting synthetic input into the host user’s X11 session. The advisory reports no screen/content disclosure or denial of service.",
+  "ai_role": "The primary FreeRDP advisory states that Claude was used to analyze source code, build the reproduction harness and draft the report. The reporter says the protocol-level reproduction was executed against an unmodified FreeRDP shadow server and independently verified. The exact Claude model/version is not identified.",
+  "disclosure_date": "2026-11-09",
+  "ai_attribution_date": "2026-11-09",
+  "classification": "disclosure",
+  "classification_note": "The FreeRDP advisory was published on 2026-11-09. No cited source reports exploitation in the wild or establishes zero-day status.",
+  "cves": [],
+  "source_url": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-j5pq-cm28-qm6v",
+  "ai_source_url": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-j5pq-cm28-qm6v",
+  "advisory_url": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-j5pq-cm28-qm6v",
+  "remediation": "fix documented",
+  "remediation_note": "The advisory identifies FreeRDP 3.33.0 as patched. It also explains that the earlier 3.32.0 change fixed slow-path handlers only and left the Fast-Path handlers unguarded; exact merged remediation commit is not linked in the advisory. This does not establish patch deployment.",
+  "checked_date": "2026-11-17",
+  "cvss": [
+    {
+      "cve": null,
+      "version": "3.1",
+      "score": 7.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
+      "source_url": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-j5pq-cm28-qm6v",
+      "source_name": "FreeRDP GitHub Security Advisory GHSA-j5pq-cm28-qm6v",
+      "checked_date": "2026-11-17"
+    }
+  ],
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "A network client can reach a FreeRDP shadow server and send Fast-Path input before completing Confirm Active or providing credentials. The demonstrated target is the host user’s X11 session; the advisory does not demonstrate disclosure of screen contents or a crash/denial of service.",
+      "exploitation": "The advisory describes a reproducible controlled test against an unmodified build; it does not report exploitation in the wild.",
+      "source_url": "https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-j5pq-cm28-qm6v",
+      "checked_date": "2026-11-17"
+    }
+  ]
+}

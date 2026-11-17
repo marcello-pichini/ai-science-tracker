@@ -1,0 +1,32 @@
+{
+  "id": "ant-2026-3ho8jddv",
+  "title": "HarfBuzz avar2 zero-width variation rows can amplify subset memory",
+  "product": "HarfBuzz",
+  "ai_system": "Anthropic OSS Scanner (model not identified for this discovery)",
+  "organization": "Anthropic / HarfBuzz maintainers",
+  "summary": "A small font with many avar breakpoints and a 65,535-row region-less VarData caused dense tuple allocation; the maintainer reports a 20 KB input reaching 2.8 GB peak memory.",
+  "ai_role": "The primary maintainer commit explicitly says “Discovered by Anthropic's OSS Scanner, as vulnerability ANT-2026-3HO8JDDV.” It separately lists Claude Opus 4.8 as a commit co-author; the source does not establish that model as the discovering system or describe its investigative steps.",
+  "disclosure_date": "2026-11-12",
+  "ai_attribution_date": "2026-11-12",
+  "classification": "disclosure",
+  "classification_note": "The maintainer source explicitly calls this a vulnerability and describes resource exhaustion from crafted font inputs in the subset path. It does not report exploitation in the wild.",
+  "cves": [],
+  "source_url": "https://github.com/harfbuzz/harfbuzz/commit/5ee557a991502a82211f9e54f343323f935ef2dc",
+  "ai_source_url": "https://github.com/harfbuzz/harfbuzz/commit/5ee557a991502a82211f9e54f343323f935ef2dc",
+  "advisory_url": "https://github.com/harfbuzz/harfbuzz/commit/5ee557a991502a82211f9e54f343323f935ef2dc",
+  "remediation": "fix documented",
+  "remediation_note": "The maintainer commit documents a separate budget for avar2 tuple-memory deltas, rejecting the subset cleanly on exhaustion; it also reports the attack reproducer reduced from 2.8 GB to 21 MB. The commit does not establish an affected or fixed release boundary.",
+  "checked_date": "2026-11-17",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "A crafted font supplied to avar2 subsetting can drive excessive memory allocation; maintainer reports 2.8 GB peak memory from a 20 KB input.",
+      "exploitation": "The cited maintainer source reports resource consumption from crafted test inputs; it does not report exploitation in the wild.",
+      "source_url": "https://github.com/harfbuzz/harfbuzz/commit/5ee557a991502a82211f9e54f343323f935ef2dc",
+      "checked_date": "2026-11-17"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "2022-11-ml-screened-ionic-liquids-enable-ipe-membranes",
+  "title": "Machine-learning screening guides ionic-liquid polymer electrolytes for lithium-metal batteries",
+  "summary": "A machine-learning and quantum-chemistry workflow screened ionic liquids for conductivity and electrochemical-window properties, then guided selection for rigid-rod polyelectrolyte membranes. The 2022 preprint reports ~50 μm membranes and lithium-cell testing, including symmetric-cell cycling up to 800 hours at room temperature and reversible operation at 6 mA cm−2 at 80°C. Its preprint abstract reports 146 mAh g−1 at 5C/80°C; the later 2023 journal abstract lists 3C, so those version-specific figures are not conflated.",
+  "field": "materials",
+  "ai_technology": "Graph-convolutional neural network and ensemble SVM/random-forest/XGBoost screening with Psi4 quantum-chemistry descriptors",
+  "organization": "Fudan University",
+  "source_url": "https://assets-eu.researchsquare.com/files/rs-2220925/v1/0341f570-c3ce-430f-8b00-a72d3fa48184.pdf?c=1684221171",
+  "source_type": "paper",
+  "publication_date": "2022-11-09",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-023-38493-7",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The 2022 preprint reports a machine-learning/quantum-chemistry workflow that screened 2,356 ion pairs and recommended 40 for testing in rigid-rod polyelectrolyte membranes. It reports symmetric-cell cycling up to 800 hours at room temperature and reversible operation at 6 mA cm−2 at 80°C; its abstract reports 146 mAh g−1 at 5C/80°C.",
+    "unknown": "The 2023 journal abstract reports the same study but gives 146 mAh g−1 at 3C rather than 5C. The record keeps the version-specific preprint metric separate and does not transfer it to the journal version. A publisher correction changes plot labels, not the core study claim.",
+    "ai_role": "Machine-learning models and quantum-chemistry calculations screened ionic-liquid properties and guided selection for experimental polymer-electrolyte membranes and cell testing.",
+    "evidence_urls": [
+      "https://assets-eu.researchsquare.com/files/rs-2220925/v1/0341f570-c3ce-430f-8b00-a72d3fa48184.pdf?c=1684221171",
+      "https://www.nature.com/articles/s41467-023-38493-7",
+      "https://www.nature.com/articles/s41467-023-39621-z"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary Research Square v1 full-text PDF, including version date, affiliations, Methods and Results; primary Nature Communications journal article indexed text and metadata; primary publisher correction notice."
+  }
+}

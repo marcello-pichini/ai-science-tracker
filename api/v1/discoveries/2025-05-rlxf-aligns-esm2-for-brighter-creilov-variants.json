@@ -1,0 +1,35 @@
+{
+  "id": "2025-05-rlxf-aligns-esm2-for-brighter-creilov-variants",
+  "title": "Experimental feedback guides ESM-2 to brighter CreiLOV variants",
+  "summary": "Reinforcement Learning from eXperimental Feedback (RLXF) used a learned fluorescence reward model to align ESM-2 with measured CreiLOV sequence-function data. In the peer-reviewed study, the authors expressed 60 generated variants in E. coli and measured cellular fluorescence; six of ten aligned ESM-2 five-mutant designs exceeded CreiLOV fluorescence, and three aligned designs exceeded CreiLOV-T7S. The first bioRxiv version (posted 2025-05-08) already described experimentally enhanced fluorescence from RLXF-aligned designs; detailed measurements here are from the 2026 journal version. The earlier ICLR workshop comparison was computational and did not report new wet-lab fluorescence assays.",
+  "field": "biology",
+  "ai_technology": "650-million-parameter ESM-2 protein language model aligned by reinforcement learning from experimental feedback using a learned sequence-fluorescence reward model",
+  "organization": "University of Wisconsin-Madison",
+  "source_url": "https://www.biorxiv.org/content/10.1101/2025.05.02.651993v1",
+  "source_type": "paper",
+  "publication_date": "2025-05-08",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-026-77557-2",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The journal article reports 60 CreiLOV designs expressed in E. coli BL21(DE3) and measured for total cellular fluorescence. Six of ten aligned ESM-2 five-mutant designs exceeded CreiLOV fluorescence, and three aligned designs exceeded the prior CreiLOV-T7S control; the brightest reported design was 1.2-fold above T7S.",
+    "unknown": "The measurements use total cellular fluorescence and are specific to tested designs/conditions; broader cellular contexts, protein function beyond fluorescence, and independent reproduction are not established. The qualitative enhanced-fluorescence result is present in the 2025 preprint abstract; detailed design-set metrics are verified from the later journal version.",
+    "ai_role": "A learned sequence-fluorescence reward model trained on measured CreiLOV variant data guides supervised fine-tuning and PPO alignment of ESM-2. The aligned model generates the candidate sequences that were expressed and assayed.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.1101/2025.05.02.651993v1",
+      "https://www.nature.com/articles/s41467-026-77557-2",
+      "https://openreview.net/pdf?id=yuiQMh52Bm"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary bioRxiv v1 abstract, posting-date and affiliation metadata; primary GEM@ICLR workshop paper full text for methods and experimental outcomes; primary Nature Communications indexed text for later journal-version comparison."
+  }
+}

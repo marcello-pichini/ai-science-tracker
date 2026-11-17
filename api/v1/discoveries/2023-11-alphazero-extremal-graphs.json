@@ -1,0 +1,35 @@
+{
+  "id": "2023-11-alphazero-extremal-graphs",
+  "title": "AlphaZero finds improved finite extremal-graph bounds",
+  "summary": "A neural network-guided AlphaZero search with a curriculum generated triangle- and 4-cycle-free graphs that improve known lower bounds for the extremal function ex(n,{C3,C4}) over finite sizes; the proceedings report AlphaZero improvements for n=64–136 and release the graph constructions. The paper also finds improvements using a separate tabu-search method, which often matches or outperforms AlphaZero. This does not solve the asymptotic Erdős conjecture. The result was present in the arXiv v1 posted 2023-11-06; the 2024 IJCAI proceedings paper is a later version.",
+  "field": "mathematics",
+  "ai_technology": "AlphaZero reinforcement learning with neural Pairformer representation and curriculum",
+  "organization": "Google DeepMind; Imperial College London; Yonsei University; University of Bonn; Worcester Polytechnic Institute",
+  "source_url": "https://arxiv.org/html/2311.03583v1",
+  "source_type": "paper",
+  "publication_date": "2023-11-06",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://ijcai.org/proceedings/2024/0772",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary arXiv v1 full text and metadata plus IJCAI 2024 proceedings page/PDF for AlphaZero versus tabu-search graph construction results, theorem limits and author affiliations."
+  },
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The paper reports released graphs with improved lower bounds for ex(n,{C3,C4}) for node counts 64–134. Incremental AlphaZero (neural network-guided Monte Carlo tree search) is explicitly reported to improve bounds for sizes 64–136 in the proceedings version; incremental tabu search also improves bounds and the authors report it can match or exceed AlphaZero. This is a finite-graph construction result, not a proof of the asymptotic Erdős conjecture.",
+    "unknown": "The result consists of explicit finite constructions/lower bounds; the asymptotic conjecture remains open. The work does not establish that learned search outperforms strong local search.",
+    "ai_role": "AlphaZero with a neural Pairformer representation and a curriculum generated extremal graphs improving the established lower bounds for n=64–136; tabu search is a separate, non-neural method and its results are not attributed to AI.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2311.03583v1",
+      "https://ijcai.org/proceedings/2024/0772",
+      "https://ijcai.org/proceedings/2024/0772.pdf"
+    ],
+    "test_type": "direct test"
+  }
+}

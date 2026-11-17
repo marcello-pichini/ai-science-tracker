@@ -1,0 +1,33 @@
+{
+  "id": "2024-03-cosann-induced-fit-glucokinase-design",
+  "title": "CoSaNN designs and tests an induced-fit carbohydrate kinase",
+  "summary": "CoSaNN combined neural structure prediction, learned sequence optimization and solubility ranking to design variants of an induced-fit ROK carbohydrate kinase. The authors measured expression, thermal stability and activity in vitro. The paper reports measurable expression for 189 of 348 designs in one table, while the strategy-level counts do not sum to that total; no success-rate claim is made here.",
+  "field": "biology",
+  "ai_technology": "CoSaNN: AlphaFold2-based conformation modeling, ProteinMPNN sequence design and SolvIT graph neural network ranking",
+  "organization": "Enzymit Ltd.",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10945820/",
+  "source_type": "paper",
+  "publication_date": "2024-03-04",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1073/pnas.2313809121",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary PMC full text and PNAS DOI record for CoSaNN-guided glucokinase design, Enzymit affiliations, experimental activity results and the discrepancy in reported design totals."
+  },
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The authors applied CoSaNN to redesign the Arthrobacter polyphosphate glucokinase ROK kinase and performed expression, thermal-stability and enzyme-activity assays on designed variants. The primary Results table reports 189 designs with detectable soluble expression among 348 listed designs; its strategy counts (119+95+94 plus 40 in another strategy; rows in the prose/table are internally inconsistent) do not reconcile cleanly, so the record does not use a single total as a success-rate denominator.",
+    "unknown": "The study tests a company-designed enzyme set in vitro; it does not establish industrial deployment. The primary paper’s count inconsistency remains explicitly disclosed.",
+    "ai_role": "CoSaNN uses deep-learning structure prediction (AlphaFold2), sequence optimization with ProteinMPNN and a learned solubility classifier (SolvIT) to rank enzyme designs for experimental characterization.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10945820/"
+    ],
+    "test_type": "direct test"
+  }
+}

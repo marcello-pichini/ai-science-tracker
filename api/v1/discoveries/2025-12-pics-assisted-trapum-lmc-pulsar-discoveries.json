@@ -1,0 +1,36 @@
+{
+  "id": "2025-12-pics-assisted-trapum-lmc-pulsar-discoveries",
+  "title": "PICS-assisted survey reported 12 new Large Magellanic Cloud pulsars",
+  "summary": "A MeerKAT search of 18 additional Large Magellanic Cloud pointings reported 12 new radio pulsars. Folded candidates were classified using PICS, a deep-learning image classifier; high-ranking candidates were inspected, and the reported pulsar discoveries were identified from that candidate set. The entry represents the 12 new search detections, not the separate timing solutions for seven pulsars reported in the same paper, which include earlier Paper I discoveries. A journal correction changed the reported folded signal-to-noise for PSR J0537−6957 from 26.1 to 21.7; the publisher states the conclusions were unaffected.",
+  "field": "physics",
+  "ai_technology": "Pulsar Image-based Classification System (PICS), a deep-learning model for image-based candidate classification",
+  "organization": "University of Cape Town",
+  "source_url": "https://academic.oup.com/mnras/article/545/4/staf2193/8376644",
+  "source_type": "paper",
+  "publication_date": "2025-12-10",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1093/mnras/staf2193",
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary arXiv v1 full text for candidate ranking and 12 discoveries; primary journal author-deposited version for publication date; primary OUP correction and Paper I full text for correction and cohort overlap."
+  },
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The paper reports 12 new LMC radio pulsars in 18 additional pointings. Its pipeline used PICS to classify folded candidates, then inspected high-ranking candidates and identified new pulsars from them.",
+    "unknown": "The model ranks candidate plots; researchers perform follow-up and final identification. Seven timing solutions in this paper include earlier Paper I discoveries and are not independent new pulsar discoveries. The publisher correction lowers PSR J0537−6957 folded S/N from 26.1 to 21.7 without changing conclusions.",
+    "ai_role": "PICS deep-learning classification was used to rank folded candidates; high-ranking candidates were manually inspected, from which the 12 new pulsars were identified.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2512.12765v1",
+      "https://pure.mpg.de/rest/items/item_3687092_6/component/file_3687093/staf2193.pdf",
+      "https://academic.oup.com/mnras/article/547/4/stag518/8540231",
+      "https://academic.oup.com/mnras/article/533/3/2570/7731149"
+    ],
+    "test_type": "direct test"
+  }
+}

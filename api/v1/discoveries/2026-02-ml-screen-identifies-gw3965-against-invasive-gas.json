@@ -1,0 +1,33 @@
+{
+  "id": "2026-02-ml-screen-identifies-gw3965-against-invasive-gas",
+  "title": "Machine learning screening identifies GW3965 activity against invasive group A Streptococcus",
+  "summary": "A neural network trained on measured growth responses from 2,560 compounds screened 6,111 FDA-evaluated compounds for activity against multidrug-resistant emm92 group A Streptococcus. Of nine selected compounds tested, GW3965 reduced bacterial survival by 99% at an MIC of 6.25 μM. The authors also report improved wound closure in an infected human skin-equivalent model and reduced lesion area and bacterial burden in mice. This is preclinical evidence and does not establish efficacy or safety in people. The peer-reviewed journal article followed on 2026-05-30 and reports the same core GW3965 result.",
+  "field": "biology",
+  "ai_technology": "Deep neural network trained on compound SMILES and measured bacterial growth responses; model screened an FDA-evaluated compound library",
+  "organization": "West Virginia University",
+  "source_url": "https://assets-eu.researchsquare.com/files/rs-8779898/v1/a183f808-a19a-41be-8b56-ad4009293888.pdf",
+  "source_type": "paper",
+  "publication_date": "2026-02-18",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s44259-026-00225-4",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The model was trained on 2,560 compounds and screened 6,111. Nine selected compounds were validated; GW3965 had MIC 6.25 μM and reduced viable emm92 iGAS by 99%. In a human skin-equivalent model infected tissues treated with GW3965 showed wound closure; in a mouse SSTI model 30 mg/kg reduced lesion size and day-6 wound bacterial burden by about 2 logs on average.",
+    "unknown": "Results come from in-vitro assays and animal/tissue models; the preprint reports no synergy with ampicillin. Human clinical efficacy, dosing, safety and mechanism against GAS remain unestablished.",
+    "ai_role": "A neural network learned structure–growth-inhibition patterns from measured compound screening data, prioritized GW3965 for follow-up, and the selected candidate was experimentally tested in bacterial, human skin-equivalent, and mouse infection models.",
+    "evidence_urls": [
+      "https://assets-eu.researchsquare.com/files/rs-8779898/v1/a183f808-a19a-41be-8b56-ad4009293888.pdf"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary Research Square v1 full-text PDF, including posted date, affiliations, Methods and experimental outcomes; primary Nature publisher indexed article text and journal-version abstract/results."
+  }
+}

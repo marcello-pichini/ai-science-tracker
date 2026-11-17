@@ -1,0 +1,34 @@
+{
+  "id": "2024-09-deepbiosphere-maps-plant-distributions-and-fire-change",
+  "title": "Deep learning maps fine-scale plant distributions and fire-associated change",
+  "summary": "DeepBiosphere combines a residual CNN trained on citizen-science observations with aerial imagery to map California distributions for 2,221 plant species. The authors report median AUC 0.95 versus 0.88 for climate-only models and use repeat imagery to map plant-community change associated with the 2013 Rim Fire. These are California-specific ecological maps and observational associations; the study does not establish causal effects of fire or a new species discovery.",
+  "field": "biology",
+  "ai_technology": "DeepBiosphere residual convolutional neural network for species-distribution mapping",
+  "organization": "Carnegie Science",
+  "source_url": "https://www.pnas.org/doi/10.1073/pnas.2318296121",
+  "source_type": "paper",
+  "publication_date": "2024-09-05",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1073/pnas.2318296121",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The primary article reports held-out mapping median AUC 0.95 versus 0.88 for climate-only models and uses repeat imagery to map community change following the 2013 Rim Fire.",
+    "unknown": "The fire-severity relationship is observational and does not establish causation. Mapping performance is California-specific and weaker for rare species.",
+    "ai_role": "A residual CNN trained with citizen-science observations and aerial imagery produced fine-scale species-distribution maps that were then used to estimate rapid plant-community change.",
+    "evidence_urls": [
+      "https://www.pnas.org/doi/10.1073/pnas.2318296121",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11406280/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "Primary PNAS indexed article and PMC full-text indexed content, including abstract, Methods, results and plant/fire case studies; PubMed primary metadata/affiliations and first-online date."
+  }
+}
