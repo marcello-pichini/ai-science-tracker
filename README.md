@@ -74,7 +74,7 @@ GitHub Pages serves this repository's `main` branch from the root. There is no b
 
 ## Use it from an AI assistant
 
-The repository ships a skill that answers "what's new in AI science?" from the catalog instead of a general web search.
+The repository ships a skill that answers "what's new in AI science?" from the catalog instead of a general web search. It is fast and cheap in tokens: the catalog data is about 5.9 MB, but the skill filters it locally and returns a typical answer of 1-12 KB (roughly 300-3,000 tokens), so research that would need many searches and page reads becomes one short call.
 
 - **Claude Code:** `/plugin marketplace add marcello-pichini/ai-science-tracker`, then `/plugin install ai-science-tracker@ai-science-tracker`. A second plugin, `ai-vulnerability-tracker`, covers only AI-attributed vulnerabilities (`plugins/ai-vulnerability-tracker/`).
 - **Other agents that read `SKILL.md` skills (for example Codex):** copy `plugins/ai-science-tracker/skills/ai-science-tracker/` into the agent's skills folder. It needs Python 3 and no packages.

@@ -53,8 +53,12 @@ def line(name, r):
         return f"[model] {r.get('date', '?')} {r['name']} ({r.get('organization', '?')}) {link(name, r)}"
     when = r.get(DATE_FIELD[name]) or "?"
     org = r.get("organization") or "?"
-    tag = "discovery" if name == "discoveries" else "vulnerability"
-    return f"[{tag}] {when} {r['title']} ({org}) {link(name, r)}"
+    if name == "vulnerabilities":
+        cves = ",".join(r.get("cves") or []) or "no CVE"
+        return (f"[vulnerability] checked {when}, disclosed {r.get('disclosure_date') or '?'}: {r['title']} "
+                f"({org}; {r.get('product') or '?'}; AI: {r.get('ai_system') or '?'}; {cves}; "
+                f"fix: {r.get('remediation') or '?'}) {link(name, r)}")
+    return f"[discovery] {when} {r['title']} ({org}) {link(name, r)}"
 
 
 def text(r, fields):
@@ -79,6 +83,15 @@ def main(argv=None):
     sub.add_parser("get").add_argument("id")
     sub.add_parser("info")
     a = p.parse_args(argv)
+    if a.cmd in ("new", "search") and a.limit < 1:
+        p.error("--limit must be at least 1")
+    if a.cmd == "search" and not a.text.strip():
+        p.error("search text must not be empty")
+    if a.cmd == "new" and a.since:
+        try:
+            dt.date.fromisoformat(a.since)
+        except ValueError:
+            p.error("--since must be YYYY-MM-DD")
 
     if a.cmd == "info":
         print(json.dumps(fetch("api/v1/index.json"), indent=1))
@@ -95,7 +108,7 @@ def main(argv=None):
         return 1
 
     needle = a.text.lower() if a.cmd == "search" else None
-    since = None if needle else a.since or (dt.date.today() - dt.timedelta(days=a.days)).isoformat()
+    since = None if needle is not None else a.since or (dt.date.today() - dt.timedelta(days=a.days)).isoformat()
     for name in selected(a.collection):
         rows = records(name)
         if needle is None:
@@ -111,4 +124,8 @@ def main(argv=None):
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except (urllib.error.URLError, TimeoutError, ValueError) as e:
+        print(f"tracker.py: could not read {BASE}: {e}", file=sys.stderr)
+        sys.exit(2)
