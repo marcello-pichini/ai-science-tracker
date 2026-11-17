@@ -12,6 +12,12 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = ROOT / "plugins/ai-science-tracker/skills/ai-science-tracker/scripts/tracker.py"
 
 
+class TrackerSkillCopyTest(unittest.TestCase):
+    def test_vulnerability_skill_script_is_identical(self):
+        other = ROOT / "plugins/ai-vulnerability-tracker/skills/ai-vulnerability-tracker/scripts/tracker.py"
+        self.assertEqual(SCRIPT.read_bytes(), other.read_bytes())
+
+
 class TrackerSkillTest(unittest.TestCase):
     """Runs the plugin's query script against the local data files."""
 

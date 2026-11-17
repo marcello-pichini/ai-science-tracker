@@ -76,7 +76,7 @@ GitHub Pages serves this repository's `main` branch from the root. There is no b
 
 The repository ships a skill that answers "what's new in AI science?" from the catalog instead of a general web search.
 
-- **Claude Code:** `/plugin marketplace add marcello-pichini/ai-science-tracker`, then `/plugin install ai-science-tracker@ai-science-tracker`.
+- **Claude Code:** `/plugin marketplace add marcello-pichini/ai-science-tracker`, then `/plugin install ai-science-tracker@ai-science-tracker`. A second plugin, `ai-vulnerability-tracker`, covers only AI-attributed vulnerabilities (`plugins/ai-vulnerability-tracker/`).
 - **Other agents that read `SKILL.md` skills (for example Codex):** copy `plugins/ai-science-tracker/skills/ai-science-tracker/` into the agent's skills folder. It needs Python 3 and no packages.
 - **ChatGPT, Gemini and other assistants without skills:** point them at https://aisciencetracker.org/llms.txt, the Atom feed `feed.xml` or the JSON API under `api/v1/`.
 
