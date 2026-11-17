@@ -1,0 +1,32 @@
+{
+  "id": "ant-2026-88ewbs43",
+  "title": "Sunlight certificate-transparency deduplication cache collision",
+  "product": "Sunlight",
+  "ai_system": "Claude",
+  "organization": "Anthropic",
+  "summary": "A 128-bit deduplication-cache collision could yield an SCT for a certificate omitted from the log, with approximately 2^64 work according to the maintainer. In WebPKI the described route also requires a colluding, compromised or otherwise vulnerable CA because certificate serial entropy constrains offline collision preparation.",
+  "ai_role": "The Sunlight release says these vulnerabilities were discovered by Claude and triaged by Anthropic’s security team in collaboration with Anthropic Research.",
+  "disclosure_date": "2026-06-30",
+  "ai_attribution_date": "2026-06-30",
+  "classification": "disclosure",
+  "classification_note": "The cited source documents public disclosure; it does not establish whether the issue was previously known to defenders or exploited before disclosure.",
+  "cves": [],
+  "source_url": "https://github.com/FiloSottile/sunlight/releases/tag/v0.8.1",
+  "ai_source_url": "https://github.com/FiloSottile/sunlight/releases/tag/v0.8.1",
+  "advisory_url": "https://github.com/FiloSottile/sunlight/releases/tag/v0.8.1",
+  "remediation": "fix documented",
+  "remediation_note": "Sunlight v0.8.1 changes new cache keys to 256 bits. The release also retains legacy-key queries and describes optional cache recomputation; upgrading alone does not eliminate every legacy-key consideration.",
+  "checked_date": "2026-11-16",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "The maintainer describes a theoretical route to an SCT for a certificate omitted from the log; approximately 2^64 work and the stated WebPKI CA prerequisite apply.",
+      "exploitation": "The cited primary source does not report observed exploitation.",
+      "source_url": "https://github.com/FiloSottile/sunlight/releases/tag/v0.8.1",
+      "checked_date": "2026-11-16"
+    }
+  ]
+}

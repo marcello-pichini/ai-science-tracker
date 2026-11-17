@@ -1,0 +1,33 @@
+{
+  "id": "2025-07-random-forest-candida-screening",
+  "title": "Machine-learning screening selects compounds active against Candida",
+  "summary": "Random-forest prediction and chemical filters helped narrow commercial compounds for experimental testing. Of 17 selected compounds, the paper reports 11 with inhibitory activity against Candida albicans at tested concentrations. Compound 17 had an IC50 of 0.071 μM and MIC of 4.5 μM, compared with fluconazole values of 0.39 μM and 0.78 μM, respectively; its lower IC50 but higher MIC does not establish superiority. The reported selectivity-index definition appears inconsistent with tabulated values, so this draft omits that index. Cell assays do not establish clinical efficacy or safety.",
+  "field": "biology",
+  "ai_technology": "Random-forest classifiers and regressors; chemical similarity filtering",
+  "organization": "Federal University of Goiás",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12320878/",
+  "source_type": "paper",
+  "publication_date": "2025-07-02",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1080/17460913.2025.2525717",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Primary full text reports 17 experimentally tested compounds and 11 active; compound-specific IC50/MIC values are stated with different fluconazole comparators.",
+    "unknown": "Molecule-level previous activity, exact compound identities and independent replication remain to review.",
+    "ai_role": "Random-forest models predict activity and toxicity to prioritize commercially available compounds; selected compounds are experimentally tested.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12320878/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-16",
+    "scope": "Primary full-text article on PMC indexed text and methods/results read; online date, title and DOI verified."
+  }
+}

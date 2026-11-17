@@ -1,0 +1,33 @@
+{
+  "id": "2021-08-ml-moth-receptor-larval-attractants",
+  "title": "Machine learning identifies moth-receptor agonists that attract larvae",
+  "summary": "Random-forest and k-nearest-neighbors QSAR models trained on known odorant responses prioritized natural-product candidates for two Spodoptera littoralis odorant receptors. The paper reports receptor responses for selected compounds and Y-maze preference for seven strong agonists; all seven were preferred at 10⁻² dilution, while three retained preference at 10⁻³. The percentages of receptor-active candidates apply to selected test sets and are not field trap accuracy. The fly-neuron assay is heterologous, and larval choice is laboratory evidence, not crop-protection efficacy or ecological safety. This extends the same group’s 2020 receptor-ligand study; count the 2021 behavior result as one study, not each molecule or a separate model discovery.",
+  "field": "biology",
+  "ai_technology": "Random-forest QSAR and k-nearest-neighbors classifier",
+  "organization": "INRAE; Sorbonne Université; CNRS; IRD; Université de Paris; Université Côte d’Azur; Daegu Gyeongbuk Institute of Science and Technology",
+  "source_url": "https://link.springer.com/article/10.1007/s00018-021-03919-2",
+  "source_type": "paper",
+  "publication_date": "2021-08-27",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "source_review": {
+    "date": "2026-11-16",
+    "scope": "Primary publisher article, article metadata and author-affiliation block reviewed; summary is limited to reported assay results."
+  },
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Selected ML-prioritized receptor ligands were tested electrophysiologically and in larval Y-maze assays; the paper reports the stated dose-dependent preference outcomes.",
+    "unknown": "No field efficacy, human health benefit, broad ecological selectivity or global priority is established. The study extends earlier same-group work; its compounds and behavior result are bounded to the reported assays.",
+    "ai_role": "The models ranked candidate natural-product ligands for SlitOR24/SlitOR25; researchers selected the targets and candidates and performed the receptor and larval behavioral experiments.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s00018-021-03919-2"
+    ],
+    "test_type": "direct test"
+  }
+}

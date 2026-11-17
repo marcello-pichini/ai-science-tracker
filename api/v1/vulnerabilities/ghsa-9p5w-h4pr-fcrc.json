@@ -1,0 +1,42 @@
+{
+  "id": "ghsa-9p5w-h4pr-fcrc",
+  "title": "better-auth/electron sign-in response exposes server secrets and can bypass two-factor",
+  "product": "@better-auth/electron",
+  "ai_system": "Anthropic OSS Scanner",
+  "organization": "Anthropic",
+  "summary": "A normal desktop sign-in can return the server auth context rather than the normal response, disclosing the auth secret and configured social-provider client secrets to a user who can sign in. With the auth secret, the user can create trusted signed values and obtain another known-email user’s session. Separately, when the Electron plugin precedes twoFactor(), password sign-in is enabled, and the account has two-factor enabled, a desktop sign-in code can be exchanged for a full session before second-factor completion. The advisory documents these separate paths under one GHSA; no CVE is assigned.",
+  "ai_role": "Discovered by Anthropic’s OSS Scanner, ANT-2026-R8Z0P3MG. The advisory also lists ANT-2026-DDHILQ2X as a related anonymous-sign-in path, but does not establish it as an independent vulnerability.",
+  "disclosure_date": "2026-11-03",
+  "ai_attribution_date": "2026-11-03",
+  "classification": "disclosure",
+  "classification_note": "The vulnerability is documented as a public disclosure; the source does not establish prior defender knowledge or exploitation.",
+  "cves": [],
+  "source_url": "https://github.com/better-auth/better-auth/security/advisories/GHSA-9p5w-h4pr-fcrc",
+  "ai_source_url": "https://github.com/better-auth/better-auth/security/advisories/GHSA-9p5w-h4pr-fcrc",
+  "advisory_url": "https://github.com/better-auth/better-auth/security/advisories/GHSA-9p5w-h4pr-fcrc",
+  "remediation": "fix documented",
+  "remediation_note": "Upgrade @better-auth/electron and better-auth to 1.7.16 or 1.8.0-beta.5. If previously deployed, rotate auth and social-provider secrets.",
+  "checked_date": "2026-11-16",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "data disclosure"
+      ],
+      "conditions": "Affected Electron plugin; a user who can sign in can cause the wrong endpoint context to be returned.",
+      "exploitation": "No observed exploitation is reported.",
+      "source_url": "https://github.com/better-auth/better-auth/security/advisories/GHSA-9p5w-h4pr-fcrc",
+      "checked_date": "2026-11-16"
+    },
+    {
+      "cves": [],
+      "consequences": [
+        "authentication bypass"
+      ],
+      "conditions": "Password sign-in enabled; user has two-factor; electron() is registered before twoFactor(); attacker knows the user password.",
+      "exploitation": "No observed exploitation is reported.",
+      "source_url": "https://github.com/better-auth/better-auth/security/advisories/GHSA-9p5w-h4pr-fcrc",
+      "checked_date": "2026-11-16"
+    }
+  ]
+}

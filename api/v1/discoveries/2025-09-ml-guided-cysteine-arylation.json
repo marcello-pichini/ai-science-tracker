@@ -1,0 +1,33 @@
+{
+  "id": "2025-09-ml-guided-cysteine-arylation",
+  "title": "ML-guided optimization improves photochemical cysteine arylation",
+  "summary": "The ChemRxiv v1 reports a two-stage optimization for nickel-catalyzed photochemical cysteine arylation: an embedding-based ranker screens categorical reagent choices, followed by Bayesian optimization of continuous conditions. The journal version reports 88% yield for both optimized conditions; the preprint reports 89% for the shorter second condition. The ranker was initially a weak yield predictor, with better separation after experimental iteration. The study expands a reaction class with earlier precedents; it does not establish invention of cysteine arylation or clinical use.",
+  "field": "chemistry",
+  "ai_technology": "Embedding-based neural ranking; Gaussian-process Bayesian optimization",
+  "organization": "University of Amsterdam",
+  "source_url": "https://www.cambridge.org/engage/chemrxiv/article-details/68cc1a7323be8e43d6f4b2fb",
+  "source_type": "paper",
+  "publication_date": "2025-09-23",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1021/acscatal.6c06459",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The two-stage workflow iteratively tests candidates and optimizes conditions; journal reports 88% yields for both conditions, while v1 reports 89% for the shorter condition.",
+    "unknown": "Exact prior conditions and independent replication remain unreviewed; preprint and journal yield discrepancy retained.",
+    "ai_role": "Learned embeddings rank categorical reagent conditions; later Bayesian optimization selects continuous conditions using feedback from laboratory experiments.",
+    "evidence_urls": [
+      "https://www.cambridge.org/engage/chemrxiv/article-details/68cc1a7323be8e43d6f4b2fb"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-16",
+    "scope": "Primary ChemRxiv v1 record/date and version content verified in continuation audit; publisher indexed article Methods/Results freshly checked; ACS direct fetch returned 403. Journal exact online-first day remains unverified."
+  }
+}

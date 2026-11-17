@@ -1,0 +1,32 @@
+{
+  "id": "ant-2026-sapgr4d6",
+  "title": "Sunlight witness checkpoint signature storage denial of service",
+  "product": "Sunlight witness",
+  "ai_system": "Claude",
+  "organization": "Anthropic",
+  "summary": "A forged witness signature could be stored and later fail verification when the witness reopens it with its own verifier, wedging that witness for the log. The maintainer describes an availability issue in witness mode, not certificate forging.",
+  "ai_role": "The Sunlight release says the vulnerabilities were discovered by Claude and triaged by Anthropic’s security team in collaboration with Anthropic Research.",
+  "disclosure_date": "2026-07-28",
+  "ai_attribution_date": "2026-07-28",
+  "classification": "disclosure",
+  "classification_note": "The cited source documents public disclosure; it does not establish whether the issue was previously known to defenders or exploited before disclosure.",
+  "cves": [],
+  "source_url": "https://github.com/FiloSottile/sunlight/releases/tag/v0.9.0",
+  "ai_source_url": "https://github.com/FiloSottile/sunlight/releases/tag/v0.9.0",
+  "advisory_url": "https://github.com/FiloSottile/sunlight/releases/tag/v0.9.0",
+  "remediation": "fix documented",
+  "remediation_note": "Sunlight v0.9.0 stops storing unverified checkpoint signatures. The release also changes witness configuration; deployment-specific instructions apply.",
+  "checked_date": "2026-11-16",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "Applies to witness mode when a forged checkpoint signature is stored and later reopened for verification.",
+      "exploitation": "The cited primary source does not report observed exploitation.",
+      "source_url": "https://github.com/FiloSottile/sunlight/releases/tag/v0.9.0",
+      "checked_date": "2026-11-16"
+    }
+  ]
+}

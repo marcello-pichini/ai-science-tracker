@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-16",
+ "generated": "2026-11-17",
  "source": {
   "name": "Epoch AI — Data on AI models (notable models)",
   "url": "https://epoch.ai/data/ai-models",
@@ -5352,6 +5352,35 @@
    "model_count": 25
   },
   {
+   "id": "esm",
+   "name": "ESM / ESMFold",
+   "discoveries": [
+    "2024-06-esm3-esmgfp",
+    "2022-11-esm-atlas",
+    "2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine",
+    "2025-09-machine-learning-guided-mining-identifies-91-previously-unknown-pet-hydrolases-including-acid-active-enzymes",
+    "2025-08-beaut-uncovers-new-gut-microbial-bile-acid-enzymes-and-the-novel-bile-acid-3-acetodca",
+    "2024-11-chooser-uses-protein-foundation-models-to-discover-functional-cas-homologs",
+    "2025-08-esm-guided-metagenome-mining-identifies-seven-new-cas12a-subtypes-with-distinct-activities",
+    "2026-08-esm-fep-combines-protein-language-model-fitness-screening-and-free-energy-calculations-to-engineer-herbicide-detoxifying-maize-dioxygenase",
+    "2025-04-esm-ezy-mining-identifies-multicopper-oxidases-and-asparaginases-with-experimentally-improved-catalytic-properties",
+    "2025-08-pepmlm-designs-experimentally-binding-target-conditioned-peptide-ligands-including-peptides-used-for-targeted-protein-degradation",
+    "2025-02-mal-id-maps-disease-associated-immune-receptor-patterns-across-infections-and-autoimmune-conditions",
+    "2026-06-few-shot-protein-language-model-design-yields-high-output-bicyclogermacrene-synthase-variants",
+    "2026-07-enzgfm-agent-experimentally-prioritizes-activity-enhancing-secreted-alkaline-phosphatase-variants",
+    "2025-07-venusmine-kbpetase",
+    "2024-07-esmif1-antibody-variant-selection",
+    "2026-07-arcadiamp-arcinin"
+   ],
+   "models": [
+    "ESM3 (98B)",
+    "ESM2-15B",
+    "ESM1b"
+   ],
+   "discovery_count": 16,
+   "model_count": 3
+  },
+  {
    "id": "gpt5",
    "name": "GPT-5",
    "discoveries": [
@@ -5398,32 +5427,6 @@
    "model_count": 21
   },
   {
-   "id": "esm",
-   "name": "ESM / ESMFold",
-   "discoveries": [
-    "2024-06-esm3-esmgfp",
-    "2022-11-esm-atlas",
-    "2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine",
-    "2025-09-machine-learning-guided-mining-identifies-91-previously-unknown-pet-hydrolases-including-acid-active-enzymes",
-    "2025-08-beaut-uncovers-new-gut-microbial-bile-acid-enzymes-and-the-novel-bile-acid-3-acetodca",
-    "2024-11-chooser-uses-protein-foundation-models-to-discover-functional-cas-homologs",
-    "2025-08-esm-guided-metagenome-mining-identifies-seven-new-cas12a-subtypes-with-distinct-activities",
-    "2026-08-esm-fep-combines-protein-language-model-fitness-screening-and-free-energy-calculations-to-engineer-herbicide-detoxifying-maize-dioxygenase",
-    "2025-04-esm-ezy-mining-identifies-multicopper-oxidases-and-asparaginases-with-experimentally-improved-catalytic-properties",
-    "2025-08-pepmlm-designs-experimentally-binding-target-conditioned-peptide-ligands-including-peptides-used-for-targeted-protein-degradation",
-    "2025-02-mal-id-maps-disease-associated-immune-receptor-patterns-across-infections-and-autoimmune-conditions",
-    "2026-06-few-shot-protein-language-model-design-yields-high-output-bicyclogermacrene-synthase-variants",
-    "2026-07-enzgfm-agent-experimentally-prioritizes-activity-enhancing-secreted-alkaline-phosphatase-variants"
-   ],
-   "models": [
-    "ESM3 (98B)",
-    "ESM2-15B",
-    "ESM1b"
-   ],
-   "discovery_count": 13,
-   "model_count": 3
-  },
-  {
    "id": "rfdiffusion",
    "name": "RFdiffusion",
    "discoveries": [
@@ -5437,10 +5440,11 @@
     "2025-12-riff-diff-enzyme-design",
     "2025-12-cyclerfdiffusion-designed-tp4-is-a-reproducible-cyclic-peptide-binder-to-trem2",
     "2024-11-grace-designs-two-carbonic-anhydrase-like-enzymes-with-measured-catalytic-activity",
-    "2026-06-ai-designed-bacterial-anti-defense-proteins-enable-phage-infection-and-plasmid-retention"
+    "2026-06-ai-designed-bacterial-anti-defense-proteins-enable-phage-infection-and-plasmid-retention",
+    "2026-10-designed-metalloproteases"
    ],
    "models": [],
-   "discovery_count": 11,
+   "discovery_count": 12,
    "model_count": 0
   },
   {
@@ -5478,10 +5482,11 @@
     "2025-12-cyclerfdiffusion-designed-tp4-is-a-reproducible-cyclic-peptide-binder-to-trem2",
     "2024-11-grace-designs-two-carbonic-anhydrase-like-enzymes-with-measured-catalytic-activity",
     "2024-06-deep-learning-design-produced-soluble-analogues-of-membrane-protein-folds-with-preserved-binding-functions",
-    "2026-06-ai-designed-bacterial-anti-defense-proteins-enable-phage-infection-and-plasmid-retention"
+    "2026-06-ai-designed-bacterial-anti-defense-proteins-enable-phage-infection-and-plasmid-retention",
+    "2025-11-rfd2-mi-cysteine-proteases"
    ],
    "models": [],
-   "discovery_count": 8,
+   "discovery_count": 9,
    "model_count": 0
   },
   {
@@ -5498,6 +5503,23 @@
    "models": [],
    "discovery_count": 6,
    "model_count": 0
+  },
+  {
+   "id": "alphafold3",
+   "name": "AlphaFold 3",
+   "discoveries": [
+    "2026-09-synthid-bio",
+    "2025-11-api-vitellogenina",
+    "2024-05-alphafold-3",
+    "2026-05-designed-generalist-binder-catalysis",
+    "2025-11-rfd2-mi-cysteine-proteases",
+    "2026-10-designed-metalloproteases"
+   ],
+   "models": [
+    "AlphaFold 3"
+   ],
+   "discovery_count": 6,
+   "model_count": 1
   },
   {
    "id": "gemini",
@@ -5592,21 +5614,6 @@
    "models": [],
    "discovery_count": 4,
    "model_count": 0
-  },
-  {
-   "id": "alphafold3",
-   "name": "AlphaFold 3",
-   "discoveries": [
-    "2026-09-synthid-bio",
-    "2025-11-api-vitellogenina",
-    "2024-05-alphafold-3",
-    "2026-05-designed-generalist-binder-catalysis"
-   ],
-   "models": [
-    "AlphaFold 3"
-   ],
-   "discovery_count": 4,
-   "model_count": 1
   },
   {
    "id": "alphagenome",
@@ -6226,6 +6233,7 @@
   "2024-07-ai-guided-huj3-mutation-improves-hiv-1-gp120-binding-and-neutralization-in-assays",
   "2024-07-ai-helps-resolve-an-unknown-regulatory-mechanism-in-bacterial-acetyl-coa-synthetase",
   "2024-07-alphaproof-imo",
+  "2024-07-esmif1-antibody-variant-selection",
   "2024-07-neuralgcm",
   "2024-09-alphaproteo",
   "2024-09-debunkbot-conspiracy",
@@ -6254,6 +6262,7 @@
   "2025-06-skala",
   "2025-07-centaur-human-cognition",
   "2025-07-imo-oro",
+  "2025-07-venusmine-kbpetase",
   "2025-08-beaut-uncovers-new-gut-microbial-bile-acid-enzymes-and-the-novel-bile-acid-3-acetodca",
   "2025-08-bindcraft",
   "2025-08-esm-guided-metagenome-mining-identifies-seven-new-cas12a-subtypes-with-distinct-activities",
@@ -6268,6 +6277,7 @@
   "2025-11-gpt5-esperimenti",
   "2025-11-gpt5-nesterov",
   "2025-11-kosmos",
+  "2025-11-rfd2-mi-cysteine-proteases",
   "2025-12-colture-resistenti-calore",
   "2025-12-computational-metallohydrolases",
   "2025-12-cyclerfdiffusion-designed-tp4-is-a-reproducible-cyclic-peptide-binder-to-trem2",
@@ -6309,6 +6319,7 @@
   "2026-06-gpt54-chan-lam",
   "2026-06-o3-malattie-genetiche",
   "2026-07-ai-guided-proof-search-solves-five-open-problems-in-banach-space-theory",
+  "2026-07-arcadiamp-arcinin",
   "2026-07-claude-assisted-analytic-proof-establishes-a-b-1-for-mean-field-jamming-exponents",
   "2026-07-enzgfm-agent-experimentally-prioritizes-activity-enhancing-secreted-alkaline-phosphatase-variants",
   "2026-07-fastnet",
@@ -6334,6 +6345,7 @@
   "2026-10-astra-assisted-gauge-invariant-lattice-fermion-measure",
   "2026-10-circuiti-quantistici",
   "2026-10-claude-discovers-algorithms-that-refute-the-3sum-and-apsp-time-complexity-hypotheses",
+  "2026-10-designed-metalloproteases",
   "2026-10-evo2-in-context-enhancers",
   "2026-10-gpt-6-astra-proves-a-linear-coloring-bound-for-graphs-excluding-clique-minors",
   "2026-10-gpt-6-astra-resolves-the-spectral-isometry-conjecture-for-arbitrary-unital-c-algebras",

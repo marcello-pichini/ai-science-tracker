@@ -1,0 +1,32 @@
+{
+  "id": "ghsa-c37p-4qqg-3p76",
+  "title": "Twilio webhook signature bypass with ngrok loopback compatibility enabled",
+  "product": "OpenClaw",
+  "ai_system": "Endor Labs AI SAST engine",
+  "organization": "Endor Labs",
+  "summary": "A configuration-specific bypass allows forged requests to a Twilio voice-call webhook to be accepted without a valid X-Twilio-Signature. The issue is not enabled by default.",
+  "ai_role": "Endor Labs’ case-specific report describes its AI SAST engine’s trace for this finding and the researcher’s subsequent validation with a proof of concept. This supports AI-assisted discovery with human validation; the specific model is not named. The six-case article was updated after initial publication, so the exact first public date of its current attribution text is not established.",
+  "disclosure_date": "2026-02-15",
+  "ai_attribution_date": null,
+  "classification": "disclosure",
+  "classification_note": "The upstream security advisory documents the public disclosure and fix. The sources do not establish whether defenders knew of the issue or whether it was exploited before disclosure.",
+  "cves": [],
+  "source_url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-c37p-4qqg-3p76",
+  "ai_source_url": "https://www.endorlabs.com/learn/how-ai-sast-traced-data-flows-to-uncover-six-openclaw-vulnerabilities",
+  "advisory_url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-c37p-4qqg-3p76",
+  "remediation": "fix documented",
+  "remediation_note": "OpenClaw 2026.2.14 and later are listed as patched; the ngrok compatibility option no longer bypasses signature verification.",
+  "checked_date": "2026-11-16",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "authentication bypass"
+      ],
+      "conditions": "Only the described optional voice-call/ngrok configuration with public or otherwise reachable webhook exposure.",
+      "exploitation": "The sources report validation or describe attack conditions but do not report observed exploitation.",
+      "source_url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-c37p-4qqg-3p76",
+      "checked_date": "2026-11-16"
+    }
+  ]
+}

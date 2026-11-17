@@ -1,0 +1,58 @@
+{
+  "id": "ghsa-rh6f-3x46-j33q",
+  "title": "vLLM shared cache keys allow cross-request state aliasing",
+  "product": "vLLM",
+  "ai_system": "GPT-5.5-Cyber",
+  "organization": "Patch the Planet (OpenAI and Trail of Bits)",
+  "summary": "Caller-controlled EXIF image identifiers and untyped prefix-cache extra keys can produce collisions between requests. The project advisory groups these two cache-identity sites together; the reported result is cross-request cached-state confusion, not demonstrated code execution.",
+  "ai_role": "The vLLM project advisory attributes the discovery to GPT-5.5-Cyber through Patch the Planet. The advisory identifies the reporting collaboration; it does not establish exclusive autonomy or an exact private discovery date.",
+  "disclosure_date": "2026-10-06",
+  "ai_attribution_date": "2026-10-06",
+  "classification": "disclosure",
+  "classification_note": "The public advisory describes the finding; no prior exploitation or previously unknown status is established.",
+  "cves": [],
+  "source_url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-rh6f-3x46-j33q",
+  "ai_source_url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-rh6f-3x46-j33q",
+  "advisory_url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-rh6f-3x46-j33q",
+  "remediation": "not established",
+  "remediation_note": "The advisory lists versions below 0.31.0 as affected and 0.31.0 as patched. The linked PR #51899 tags prefix-cache domains but states that the attempted EXIF hasher change was dropped; complete remediation of both sites is not established by that patch alone.",
+  "checked_date": "2026-11-17",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "A caller controls an image EXIF identifier or, for the prefix-cache case, an enabled cache salt and a known static LoRA name. The advisory describes cache state confusion and substitution, with site-specific preconditions.",
+      "exploitation": "The cited advisory does not report observed exploitation.",
+      "source_url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-rh6f-3x46-j33q",
+      "checked_date": "2026-11-17"
+    }
+  ],
+  "cvss": [
+    {
+      "cve": null,
+      "version": "3.1",
+      "score": 6.5,
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+      "scenarios": [
+        "EXIF ImageID multimodal cache alias"
+      ],
+      "source_url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-rh6f-3x46-j33q",
+      "source_name": "vLLM project advisory",
+      "checked_date": "2026-11-17"
+    },
+    {
+      "cve": null,
+      "version": "3.1",
+      "score": 3.1,
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N",
+      "scenarios": [
+        "Untyped prefix-cache extra keys"
+      ],
+      "source_url": "https://github.com/vllm-project/vllm/security/advisories/GHSA-rh6f-3x46-j33q",
+      "source_name": "vLLM project advisory",
+      "checked_date": "2026-11-17"
+    }
+  ]
+}

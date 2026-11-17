@@ -1,0 +1,33 @@
+{
+  "id": "2022-04-knowledge-graph-antibiotic-resistance",
+  "title": "Knowledge-graph-guided discovery of antibiotic-resistance associations",
+  "summary": "KIDS combined an expert-curated knowledge graph with learned link-prediction models to rank gene–antibiotic resistance hypotheses for experiments. The authors report 93 validated associations involving 83 E. coli genes and 15 antibiotics, including six genes they describe as previously unknown resistance genes; five tested Salmonella homologs also showed resistance. These are laboratory gene–drug associations, not clinical validation. The article’s second-round percentage conflicts with its counts (29/90 is 32.2%, although the text states 28.8%). Count one study.",
+  "field": "biology",
+  "ai_technology": "Knowledge graph with PRA, multilayer perceptron, AdaBoost-stacked model, TransE and TransD",
+  "organization": "University of California, Davis",
+  "source_url": "https://www.nature.com/articles/s41467-022-29993-z",
+  "source_type": "paper",
+  "publication_date": "2022-04-29",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "source_review": {
+    "date": "2026-11-16",
+    "scope": "Primary Nature indexed full text, article dates, affiliations, methods/results, contributions and stated counting discrepancy."
+  },
+  "paper_url": "https://doi.org/10.1038/s41467-022-29993-z",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The authors report wet-lab validation of 93 gene–antibiotic associations, including five tested Salmonella homologs.",
+    "unknown": "Reported percentages are internally inconsistent for 29 of 90 second-round tests; these assays do not establish clinical relevance or treatment outcomes.",
+    "ai_role": "KIDS ranked gene–antibiotic links from an expert-curated graph with learned link-prediction models, directing experiments to candidate resistance associations.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-022-29993-z"
+    ],
+    "test_type": "direct test"
+  }
+}

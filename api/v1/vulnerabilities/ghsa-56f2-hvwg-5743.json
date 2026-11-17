@@ -1,0 +1,32 @@
+{
+  "id": "ghsa-56f2-hvwg-5743",
+  "title": "SSRF in OpenClaw Image tool remote fetch",
+  "product": "OpenClaw",
+  "ai_system": "Endor Labs AI SAST engine",
+  "organization": "Endor Labs",
+  "summary": "The Image tool fetched attacker-supplied HTTP(S) URLs without SSRF protection, enabling requests to localhost, private, link-local and cloud-metadata targets. The upstream advisory notes GET-only behavior, media-type validation and metadata-service header requirements, which limit some direct confidentiality scenarios.",
+  "ai_role": "Endor Labs’ case-specific report describes its AI SAST engine’s trace for this finding and the researcher’s subsequent validation with a proof of concept. This supports AI-assisted discovery with human validation; the specific model is not named. The six-case article was updated after initial publication, so the exact first public date of its current attribution text is not established.",
+  "disclosure_date": "2026-02-14",
+  "ai_attribution_date": null,
+  "classification": "disclosure",
+  "classification_note": "The upstream security advisory documents the public disclosure and fix. The sources do not establish whether defenders knew of the issue or whether it was exploited before disclosure.",
+  "cves": [],
+  "source_url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-56f2-hvwg-5743",
+  "ai_source_url": "https://www.endorlabs.com/learn/how-ai-sast-traced-data-flows-to-uncover-six-openclaw-vulnerabilities",
+  "advisory_url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-56f2-hvwg-5743",
+  "remediation": "fix documented",
+  "remediation_note": "OpenClaw 2026.2.2 and later are listed as patched; remote media fetching now uses the SSRF guard with internal/private host checks, redirect hardening and DNS pinning.",
+  "checked_date": "2026-11-16",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "The Image tool must fetch an attacker-controlled URL; requests are GET-only and fetched content must pass image/media validation. Metadata services requiring special headers/tokens may not be reachable for direct credential theft.",
+      "exploitation": "The sources report validation or describe attack conditions but do not report observed exploitation.",
+      "source_url": "https://github.com/openclaw/openclaw/security/advisories/GHSA-56f2-hvwg-5743",
+      "checked_date": "2026-11-16"
+    }
+  ]
+}

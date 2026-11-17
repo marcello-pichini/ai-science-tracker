@@ -1,0 +1,34 @@
+{
+  "id": "2020-09-active-deep-learning-lamost-emission-objects",
+  "title": "Active deep learning identifies emission-line object candidates in LAMOST spectra",
+  "summary": "An active-learning workflow with a 12-layer convolutional network analyzed about 4.1 million LAMOST DR2 spectra and used human labeling of uncertain cases. After visual inspection and rejection of 58 poor spectra, the paper reports 4,321 spectra from about 3,788 objects, including 1,013 spectra of 948 objects not matched to SIMBAD or the specified Hou et al. 2016 catalog. Visual inspection supported emission signatures, but catalog non-match does not prove universal prior absence and proposed subtypes remain hypotheses. Count the catalog study once.",
+  "field": "physics",
+  "ai_technology": "12-layer one-dimensional convolutional neural network with uncertainty-sampling active learning",
+  "organization": "Astronomical Institute of the Czech Academy of Sciences; Faculty of Information Technology, Czech Technical University in Prague",
+  "source_url": "https://arxiv.org/abs/2009.03219",
+  "source_type": "paper",
+  "publication_date": "2020-09-07",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "source_review": {
+    "date": "2026-11-16",
+    "scope": "Primary arXiv metadata/abstract and journal full indexed results, publication dates, affiliations, and stated catalog limits."
+  },
+  "paper_url": "https://doi.org/10.1051/0004-6361/201936090",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The paper reports human-oracle labeling and visual inspection of candidates, confirming emission signatures in retained spectra.",
+    "unknown": "“New” means not matched to the named SIMBAD/Hou catalogs at the study date; proposed object classes require further classification.",
+    "ai_role": "An active-learning CNN prioritized emission-line spectra in a large archive and asked human annotators to label uncertain examples.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2009.03219",
+      "https://doi.org/10.1051/0004-6361/201936090"
+    ],
+    "test_type": "direct test"
+  }
+}

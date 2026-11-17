@@ -1,0 +1,68 @@
+{
+  "id": "ghsa-9683-2chf-hfw9",
+  "title": "BlueZ LE Audio BASE parser stack buffer overflow",
+  "product": "BlueZ",
+  "ai_system": "Claude",
+  "organization": "Anthropic",
+  "summary": "In the LE Audio BASE parser, an attacker-controlled Audio_Channel_Allocation LTV length is passed to memcpy into a four-byte stack local in bap_sink_match_allocation(); a second copy exists in bap_sink_get_allocation(). The advisory describes an over-the-air periodic advertisement path within BLE range, without pairing, connection, or user interaction, when the BAP sink and experimental kernel ISO socket path are enabled. With _FORTIFY_SOURCE >= 2 the daemon aborts; with _FORTIFY_SOURCE=0 the source describes a 195-byte-or-greater attacker-controlled write into root-running bluetoothd. The advisory lists no patched release and only proposes checking that the LTV length equals sizeof(uint32_t). Its affected scope is tied to a 2026-04-14 historical master snapshot, not a current exact boundary.",
+  "ai_role": "The BlueZ advisory says this vulnerability was discovered by AI and verified by humans. It credits two named Calif.io researchers working in collaboration with Claude and Anthropic Research. It does not specify the model version or internal discovery date.",
+  "disclosure_date": "2026-08-27",
+  "ai_attribution_date": "2026-08-27",
+  "classification": "disclosure",
+  "classification_note": "The advisory is a public report; it does not establish whether defenders knew of the issue or whether it was exploited before disclosure.",
+  "cves": [],
+  "source_url": "https://github.com/bluez/bluez/security/advisories/GHSA-9683-2chf-hfw9",
+  "ai_source_url": "https://github.com/bluez/bluez/security/advisories/GHSA-9683-2chf-hfw9",
+  "advisory_url": "https://github.com/bluez/bluez/security/advisories/GHSA-9683-2chf-hfw9",
+  "remediation": "not established",
+  "remediation_note": "No patched version is listed. The advisory provides a suggested exact-length check for both copies, but does not document a merged patch or released fix. Affected source scope is stated as git master commit 510623fb53b53dce5a297c4a7878cad7546c2e47 from 2026-04-14 and earlier versions containing BAP broadcast-sink code; an exact release boundary is not established.",
+  "checked_date": "2026-11-16",
+  "cvss": [
+    {
+      "cve": null,
+      "version": "3.1",
+      "score": 7.5,
+      "vector": "CVSS:3.1/AV:A/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "scenarios": [
+        "Narrative CVSS 3.1 line in the advisory; differs from the formal rendered advisory rating."
+      ],
+      "source_url": "https://github.com/bluez/bluez/security/advisories/GHSA-9683-2chf-hfw9",
+      "source_name": "BlueZ advisory narrative rating",
+      "checked_date": "2026-11-16"
+    },
+    {
+      "cve": null,
+      "version": "3.1",
+      "score": 3.9,
+      "vector": "CVSS:3.1/AV:A/AC:H/PR:H/UI:N/S:U/C:L/I:L/A:L",
+      "scenarios": [
+        "Formal rendered CVSS 3.1 metrics section in the same advisory; differs from the narrative 7.5 rating."
+      ],
+      "source_url": "https://github.com/bluez/bluez/security/advisories/GHSA-9683-2chf-hfw9",
+      "source_name": "BlueZ GitHub Advisory rendered rating",
+      "checked_date": "2026-11-16"
+    }
+  ],
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "For builds with _FORTIFY_SOURCE >= 2, the advisory says malformed periodic advertisement data can abort root-running bluetoothd; systemd auto-restart permits repeated crashes. The BAP sink and experimental ISO path must be enabled; attacker must be within BLE range.",
+      "exploitation": "The advisory includes a proof-of-concept artifact and attack-path description but does not report exploitation in the wild.",
+      "source_url": "https://github.com/bluez/bluez/security/advisories/GHSA-9683-2chf-hfw9",
+      "checked_date": "2026-11-16"
+    },
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "For builds with _FORTIFY_SOURCE=0, the advisory describes a 195-byte-or-greater attacker-controlled stack write beyond a four-byte local in root-running bluetoothd; source does not establish code execution. The BAP sink and experimental ISO path must be enabled; attacker must be within BLE range.",
+      "exploitation": "The advisory includes a proof-of-concept artifact and attack-path description but does not report exploitation in the wild.",
+      "source_url": "https://github.com/bluez/bluez/security/advisories/GHSA-9683-2chf-hfw9",
+      "checked_date": "2026-11-16"
+    }
+  ]
+}

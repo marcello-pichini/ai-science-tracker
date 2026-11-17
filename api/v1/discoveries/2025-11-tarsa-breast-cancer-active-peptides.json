@@ -1,0 +1,33 @@
+{
+  "id": "2025-11-tarsa-breast-cancer-active-peptides",
+  "title": "TARSA prioritizes peptides active against breast cancer cells",
+  "summary": "TARSA combines reinforcement learning and posterior sampling to search a 36-million-sequence library of experimentally resolved helical peptides. The study reports that 15 of 105 selected candidates showed cytotoxic activity against triple-negative breast cancer cells in vitro; the three leads were further tested against other breast cancer subtypes and peripheral blood cells. The source also reports toxicity against normal breast cells, so these findings do not establish therapeutic safety or clinical efficacy.",
+  "field": "medicine",
+  "ai_technology": "TARSA reinforcement learning; MCMC posterior sampling; learned cytotoxicity models",
+  "organization": "University of British Columbia; University of Ottawa; Mila, Université de Montréal; Simon Fraser University",
+  "source_url": "https://www.nature.com/articles/s41467-025-66748-y",
+  "source_type": "paper",
+  "publication_date": "2025-11-27",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-025-66748-y",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "105 selected peptides were experimentally evaluated; 15 showed activity in the reported breast-cancer-cell assays.",
+    "unknown": "Cell-culture results do not establish therapeutic efficacy; the source reports normal-breast-cell toxicity, and independent replication remains unknown.",
+    "ai_role": "TARSA reinforcement learning and posterior sampling guide exploration of a very large peptide library, with learned potency/toxicity models used to select candidates for assays.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-025-66748-y"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-16",
+    "scope": "Publisher full article including publication date, model description, methods and experimental results."
+  }
+}

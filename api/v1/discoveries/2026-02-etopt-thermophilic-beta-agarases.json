@@ -1,0 +1,34 @@
+{
+  "id": "2026-02-etopt-thermophilic-beta-agarases",
+  "title": "ETopt-guided screening identifies thermophilic beta-agarases",
+  "summary": "ETopt combines sequence, structural and protein-language-model features in an ensemble XGBoost model to predict enzyme optimum temperatures. The authors report wet-lab screening that identified two novel thermophilic beta-agarases. The draft is limited to those source-identified enzyme findings; model benchmarks and other screened enzyme classes are not counted as separate discoveries. Industrial process performance and independent replication are not established.",
+  "field": "biology",
+  "ai_technology": "ETopt multimodal model; ensemble XGBoost; ProtBERT and Prime embeddings",
+  "organization": "Ocean University of China",
+  "source_url": "https://www.sciencedirect.com/science/article/pii/S0141813026009943",
+  "source_type": "paper",
+  "publication_date": "2026-02-24",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.ijbiomac.2026.151068",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source highlights experimental identification of two novel thermophilic beta-agarases; detailed enzyme activity and comparator data were not available in the reviewed abstract.",
+    "unknown": "Full article, exact assay results, sequences, prior enzyme overlap and independent replication were not reviewed.",
+    "ai_role": "ETopt integrates learned sequence and structural representations with selected features to predict optimum temperature and prioritize candidate enzymes for wet-lab validation.",
+    "evidence_urls": [
+      "https://www.sciencedirect.com/science/article/pii/S0141813026009943",
+      "https://pubmed.ncbi.nlm.nih.gov/41747980/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-16",
+    "scope": "Publisher highlights and abstract; PubMed primary metadata and abstract."
+  }
+}

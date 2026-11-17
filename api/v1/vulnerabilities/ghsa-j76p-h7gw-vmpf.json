@@ -1,0 +1,32 @@
+{
+  "id": "ghsa-j76p-h7gw-vmpf",
+  "title": "OpenEXR Python RGB channel coalescing heap buffer overflow",
+  "product": "OpenEXR",
+  "ai_system": "Claude",
+  "organization": "Anthropic",
+  "summary": "With default separate_channels=false, distinct RGB channel groups can coalesce to one Python binding key but have different component counts. The array is allocated for three components and a later four-component frame-buffer slice writes approximately 33% past the end when processing an untrusted OpenEXR file.",
+  "ai_role": "The OpenEXR maintainer advisory states that Anthropic found this issue using Claude and that Ada Logics validated it. This supports case-specific AI-assisted discovery with independent human validation; the source does not specify Claude’s individual investigative steps or model version.",
+  "disclosure_date": "2026-10-31",
+  "ai_attribution_date": "2026-10-31",
+  "classification": "disclosure",
+  "classification_note": "The advisory documents the public disclosure and fix but does not establish whether defenders knew of the issue or whether it was exploited before disclosure.",
+  "cves": [],
+  "source_url": "https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-j76p-h7gw-vmpf",
+  "ai_source_url": "https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-j76p-h7gw-vmpf",
+  "advisory_url": "https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-j76p-h7gw-vmpf",
+  "remediation": "fix documented",
+  "remediation_note": "The OpenEXR GHSA lists fixed release versions 3.3.15, 3.4.17, and 3.5.3. This records the upstream fix only; downstream packaging/deployment is not inferred.",
+  "checked_date": "2026-11-16",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "A Python program must call OpenEXR.File with default arguments on an untrusted file. The advisory does not establish controlled code execution.",
+      "exploitation": "The advisory describes a file-crafted reproducer/attack condition; it does not report observed exploitation.",
+      "source_url": "https://github.com/AcademySoftwareFoundation/openexr/security/advisories/GHSA-j76p-h7gw-vmpf",
+      "checked_date": "2026-11-16"
+    }
+  ]
+}

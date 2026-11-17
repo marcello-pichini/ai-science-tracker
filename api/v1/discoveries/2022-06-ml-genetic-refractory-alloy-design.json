@@ -1,0 +1,33 @@
+{
+  "id": "2022-06-ml-genetic-refractory-alloy-design",
+  "title": "Machine learning and genetic search predict stronger refractory alloys",
+  "summary": "A random-forest model trained on published refractory high-entropy-alloy data was coupled to a stochastic genetic algorithm to optimize alloy compositions for yield strength at selected temperatures. For an AlMo0.5NbTa0.5TiZr base composition, the authors report modeled gains of 90 MPa at 25 °C and 13% at 1,000 °C for optimized compositions. Other base-alloy optimizations are also reported. The proposed alloys were not experimentally fabricated or mechanically measured in this study; these are computational design predictions.",
+  "field": "materials",
+  "ai_technology": "Random-forest regression; stochastic genetic algorithm",
+  "organization": "CFD Research Corporation; University at Buffalo",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-1666028/v1",
+  "source_type": "paper",
+  "publication_date": "2022-06-13",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41524-022-00926-0",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The model was validated against published experimental yield-strength data, including previously unseen datasets; the proposed optimized compositions and their target-temperature improvements were computational predictions.",
+    "unknown": "The proposed optimized alloys were not experimentally fabricated or measured in this study; predicted yield strength depends on the source dataset and model assumptions.",
+    "ai_role": "A random-forest model predicted yield strength and a stochastic genetic algorithm searched compositions to maximize strength at specified temperatures.",
+    "evidence_urls": [
+      "https://assets-eu.researchsquare.com/files/rs-1666028/v1_covered.pdf"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-16",
+    "scope": "Research Square primary v1 full text and posted-date metadata"
+  }
+}

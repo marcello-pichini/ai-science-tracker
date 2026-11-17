@@ -1,0 +1,33 @@
+{
+  "id": "2022-08-deep-learning-ribozyme-neutral-network",
+  "title": "Deep learning helps experimentally map a ribozyme neutral network",
+  "summary": "After earlier experimental evolutionary rounds, the authors trained a deep classifier to guide the final in-silico generation and experimentally tested candidates. They measured all 2^16 intermediates between two active RNA ligase ribozymes separated by 16 mutations and report an extensive network of neutral paths. The result applies to this ribozyme and assay, not all RNA evolution. The paper also notes possible model overfitting and the restricted classifier’s accuracy.",
+  "field": "biology",
+  "ai_technology": "Deep-learning classifier; evolutionary algorithm",
+  "organization": "Okinawa Institute of Science and Technology Graduate University",
+  "source_url": "https://www.nature.com/articles/s41467-022-32538-z",
+  "source_type": "paper",
+  "publication_date": "2022-08-17",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "source_review": {
+    "date": "2026-11-16",
+    "scope": "Primary Nature Communications indexed full text, abstract, main text, publication metadata and author affiliation."
+  },
+  "paper_url": "https://doi.org/10.1038/s41467-022-32538-z",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The study reports experimental activity measurements for all 2^16 connecting sequence variants and a screen of more than 120,000 ribozyme sequences.",
+    "unknown": "The neutral network is bounded to one RNA ligase ribozyme and assay; generality across other landscapes is not established, and the paper notes potential classifier overfitting.",
+    "ai_role": "A deep-learning classifier trained on prior experimental generations guided in-silico selection, mutation and recombination in the final generation.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-022-32538-z"
+    ],
+    "test_type": "direct test"
+  }
+}

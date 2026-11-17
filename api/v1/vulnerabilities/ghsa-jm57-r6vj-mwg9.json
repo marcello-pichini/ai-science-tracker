@@ -1,0 +1,32 @@
+{
+  "id": "ghsa-jm57-r6vj-mwg9",
+  "title": "Unbounded handshake cache allows remote memory exhaustion",
+  "product": "Pion DTLS",
+  "ai_system": "Anthropic's OSS Scanner",
+  "organization": "Anthropic",
+  "summary": "The append-only handshake cache had no entry or aggregate-memory limit, retained duplicate incoming and outgoing retransmission messages for the connection lifetime, and continued accepting entries after handshake completion. Suitable traffic can exhaust application memory and cause denial of service; the separate fragment-reassembly limit did not bound this cache.",
+  "ai_role": "The Pion maintainer's case-specific advisory credits Anthropic's OSS Scanner as discoverer (tracking identifier AMMUN4CQ). It does not identify model versions or internal discovery dates.",
+  "disclosure_date": "2026-10-16",
+  "ai_attribution_date": "2026-10-16",
+  "classification": "disclosure",
+  "classification_note": "The cited advisory documents public disclosure; it does not establish whether defenders knew of the issue or whether it was exploited before disclosure.",
+  "cves": [],
+  "source_url": "https://github.com/pion/dtls/security/advisories/GHSA-jm57-r6vj-mwg9",
+  "ai_source_url": "https://github.com/pion/dtls/security/advisories/GHSA-jm57-r6vj-mwg9",
+  "advisory_url": "https://github.com/pion/dtls/security/advisories/GHSA-jm57-r6vj-mwg9",
+  "remediation": "fix documented",
+  "remediation_note": "The advisory identifies fix commit f444d08 and the following package-version scope: v2 2.1.4–2.2.12 (no patched v2 version listed); v3 3.0.0 through before 3.1.13, fixed 3.1.13. This source does not establish downstream deployment.",
+  "checked_date": "2026-11-16",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "remote denial of service by application-memory exhaustion via suitable DTLS traffic.",
+      "exploitation": "The advisory describes a possible attack path but does not report observed exploitation.",
+      "source_url": "https://github.com/pion/dtls/security/advisories/GHSA-jm57-r6vj-mwg9",
+      "checked_date": "2026-11-16"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ghsa-jp25-wc3w-p9xp",
+  "title": "Oversized peer RSA keys allow excessive CPU consumption during DTLS handshakes",
+  "product": "Pion DTLS",
+  "ai_system": "Anthropic's OSS Scanner",
+  "organization": "Anthropic",
+  "summary": "Peer RSA public keys were not size-limited before signature verification. A remote peer can supply a certificate with an attacker-chosen oversized modulus and invalid signature; expensive verification occurs before rejection. Repeated or concurrent handshakes can consume CPU and delay legitimate connections. The fix rejects RSA keys above 8,192 bits.",
+  "ai_role": "The Pion maintainer's case-specific advisory credits Anthropic's OSS Scanner as discoverer (tracking identifier 3X1BUF5Y). It does not identify model versions or internal discovery dates.",
+  "disclosure_date": "2026-10-16",
+  "ai_attribution_date": "2026-10-16",
+  "classification": "disclosure",
+  "classification_note": "The cited advisory documents public disclosure; it does not establish whether defenders knew of the issue or whether it was exploited before disclosure.",
+  "cves": [],
+  "source_url": "https://github.com/pion/dtls/security/advisories/GHSA-jp25-wc3w-p9xp",
+  "ai_source_url": "https://github.com/pion/dtls/security/advisories/GHSA-jp25-wc3w-p9xp",
+  "advisory_url": "https://github.com/pion/dtls/security/advisories/GHSA-jp25-wc3w-p9xp",
+  "remediation": "fix documented",
+  "remediation_note": "The advisory identifies fix commit fa6e8d3 and the following package-version scope: v2 2.0.0–2.2.12 (no patched v2 version listed); v3 3.0.0 through before 3.1.13, fixed 3.1.13. This source does not establish downstream deployment.",
+  "checked_date": "2026-11-16",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "CPU consumption and reduced availability under repeated or concurrent malicious handshakes; affected WebRTC applications only when the attacker reaches an RSA verification path.",
+      "exploitation": "The advisory describes a possible attack path but does not report observed exploitation.",
+      "source_url": "https://github.com/pion/dtls/security/advisories/GHSA-jp25-wc3w-p9xp",
+      "checked_date": "2026-11-16"
+    }
+  ]
+}

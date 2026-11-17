@@ -1,0 +1,33 @@
+{
+  "id": "2026-06-fungai-antifungal-peptides",
+  "title": "Fung-AI prioritizes peptides with measured antifungal activity",
+  "summary": "Fung-AI combines a generative adversarial network with learned antifungal and hemolysis classifiers to select peptides for testing. The study first tested five peptides from separate clusters; activity of peptide 40 prompted testing of eight more members from cluster 17. Five of the nine tested cluster-17 peptides inhibited Fusarium graminearum, a post-selection cluster-specific outcome—not a general 5/13 model hit rate. Four peptides showed activity against Candida albicans, while none inhibited C. auris up to 500 μg/mL. The paper’s HepG2 cytotoxicity statements are internally inconsistent for peptide 48 and peptide 65, and peptide 12 and 40 have reported cytotoxicity; these assays establish neither human safety nor clinical efficacy.",
+  "field": "biology",
+  "ai_technology": "Fung-AI GAN; learned antifungal and hemolysis classifiers",
+  "organization": "Johns Hopkins University Applied Physics Laboratory; Johns Hopkins University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13289945/",
+  "source_type": "paper",
+  "publication_date": "2026-06-15",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1371/journal.pcbi.1014105",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Primary article reports staged testing, fungal MICs and cell-line cytotoxicity; adaptive denominator and conflicting LC50 statements were reconciled in the continuation audit.",
+    "unknown": "Sequence-level prior art and independent replication not assessed; HepG2 assays do not establish human safety.",
+    "ai_role": "GAN generates candidates; antifungal and hemolysis classifiers narrow the candidate set before synthesis and fungal assays.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13289945/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-16",
+    "scope": "Primary PLOS article and indexed PMC full text checked; follow-up audit read full article and resolves staged denominator and LC50 inconsistency, not by remeasurement."
+  }
+}

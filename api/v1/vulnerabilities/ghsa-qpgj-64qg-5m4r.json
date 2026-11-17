@@ -1,0 +1,32 @@
+{
+  "id": "ghsa-qpgj-64qg-5m4r",
+  "title": "Repeated client certificate verification allows excessive CPU consumption during DTLS handshakes",
+  "product": "Pion DTLS",
+  "ai_system": "Anthropic's OSS Scanner",
+  "organization": "Anthropic",
+  "summary": "While waiting for Finished, additional handshake traffic could make the server revisit cached Certificate, ClientKeyExchange, and CertificateVerify messages. This repeats parsing and cryptographic/certificate-chain verification depending on policy; a malicious client can withhold Finished and send more traffic to consume CPU. Pion WebRTC is affected when operating as DTLS server.",
+  "ai_role": "The Pion maintainer's case-specific advisory credits Anthropic's OSS Scanner as discoverer (tracking identifier E9EALMAT). It does not identify model versions or internal discovery dates.",
+  "disclosure_date": "2026-10-16",
+  "ai_attribution_date": "2026-10-16",
+  "classification": "disclosure",
+  "classification_note": "The cited advisory documents public disclosure; it does not establish whether defenders knew of the issue or whether it was exploited before disclosure.",
+  "cves": [],
+  "source_url": "https://github.com/pion/dtls/security/advisories/GHSA-qpgj-64qg-5m4r",
+  "ai_source_url": "https://github.com/pion/dtls/security/advisories/GHSA-qpgj-64qg-5m4r",
+  "advisory_url": "https://github.com/pion/dtls/security/advisories/GHSA-qpgj-64qg-5m4r",
+  "remediation": "fix documented",
+  "remediation_note": "The advisory identifies fix commit 979ad79d and the following package-version scope: v1 1.2.2–1.5.4 and v2 2.0.0–2.2.12 (no patched versions listed); v3 before 3.1.13, fixed 3.1.13. This source does not establish downstream deployment.",
+  "checked_date": "2026-11-16",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "denial of service"
+      ],
+      "conditions": "repeated or concurrent handshakes can consume CPU and delay legitimate connections under the stated server role.",
+      "exploitation": "The advisory describes a possible attack path but does not report observed exploitation.",
+      "source_url": "https://github.com/pion/dtls/security/advisories/GHSA-qpgj-64qg-5m4r",
+      "checked_date": "2026-11-16"
+    }
+  ]
+}

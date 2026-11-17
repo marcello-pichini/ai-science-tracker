@@ -1,0 +1,33 @@
+{
+  "id": "2021-04-ml-guided-ngal-dna-aptamer",
+  "title": "Machine learning guides refinement of DNA aptamers binding NGAL",
+  "summary": "Neural models trained on particle-display affinity-screening data guided sequence mutation and candidate nomination, followed by synthesis and experimental affinity testing. The authors report a 23-nucleotide truncation of candidate G13 with measured dissociation constant 1.5 nM, compared with about 8 nM for the full-length parent under their assay. This is a binding result, not demonstrated diagnostic or therapeutic efficacy. The screening set is not 187,499 independently validated agents; sequence-level prior art remains open.",
+  "field": "biology",
+  "ai_technology": "Neural-network models trained on particle-display affinity data",
+  "organization": "Google Research; Aptitude Medical Systems",
+  "source_url": "https://www.nature.com/articles/s41467-021-22555-9",
+  "source_type": "paper",
+  "publication_date": "2021-04-22",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "source_review": {
+    "date": "2026-11-16",
+    "scope": "Primary publisher indexed full text, article dates, methods/results, affiliations and disclosed limitations."
+  },
+  "paper_url": "https://doi.org/10.1038/s41467-021-22555-9",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The study reports particle-display screening and measured NGAL binding, including full Kd for truncated and parent G13.",
+    "unknown": "Binding assay only; no diagnostic/therapeutic outcome; one holdout set used for tuning and sequence novelty requires further review.",
+    "ai_role": "Trained neural models extrapolated from experimentally measured sequences to nominate and iteratively refine higher-affinity DNA aptamers and truncations.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-021-22555-9"
+    ],
+    "test_type": "direct test"
+  }
+}

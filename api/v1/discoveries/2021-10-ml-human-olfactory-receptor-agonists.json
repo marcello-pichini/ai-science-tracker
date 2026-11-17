@@ -1,0 +1,33 @@
+{
+  "id": "2021-10-ml-human-olfactory-receptor-agonists",
+  "title": "Machine learning prioritizes agonists for two human olfactory receptors",
+  "summary": "A random-forest classifier trained from molecular descriptors screened five databases containing about 23 million compounds for agonists of human olfactory receptors OR1A1 and OR2W1. Following docking and researcher selection, the paper reports in-vitro activation by ethyl 2-(3-bromophenyl)acetate and methyl 2-(2-methylphenyl)acetate at OR1A1 and 2-ethoxynaphthalene at OR2W1. These are cell-assay results; they do not establish human perception, tissue safety or clinical benefit. The compounds were selected after multiple filters, so the results are not a database-wide hit rate. Prior ML work on related receptors exists; this record is limited to the reported candidates and assays.",
+  "field": "biology",
+  "ai_technology": "Random-forest classifier; molecular descriptors; homology-model docking",
+  "organization": "Macquarie University; Duke University",
+  "source_url": "https://www.mdpi.com/1422-0067/22/21/11546",
+  "source_type": "paper",
+  "publication_date": "2021-10-26",
+  "added_date": "2026-11-17",
+  "verification_status": "verified",
+  "source_review": {
+    "date": "2026-11-16",
+    "scope": "Primary publisher article, article metadata and author-affiliation block reviewed; summary is limited to reported assay results."
+  },
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Selected candidates were tested in vitro; the paper reports two active OR1A1 ligands and one active OR2W1 ligand.",
+    "unknown": "No in-vivo human olfaction or clinical effect is established. A 2018 study used ML for related human receptors; candidate-level overlap and priority remain bounded follow-up.",
+    "ai_role": "The random-forest classifier screened chemical databases to rank candidates; docking and researcher selection further narrowed compounds for in-vitro validation.",
+    "evidence_urls": [
+      "https://www.mdpi.com/1422-0067/22/21/11546"
+    ],
+    "test_type": "direct test"
+  }
+}
