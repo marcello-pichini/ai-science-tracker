@@ -77,11 +77,11 @@ globalThis.CatalogUI = {
   },
   correctionUrl(record) {
     const query = new URLSearchParams({template:'correction.yml', title:`[Correction] ${record.id}`, record_id:record.id,
-      entry:'https://marcello-pichini.github.io/ai-science-tracker/index.html#discovery=' + encodeURIComponent(record.id), source:record.source_url});
+      entry:'https://aisciencetracker.org/index.html#discovery=' + encodeURIComponent(record.id), source:record.source_url});
     return 'https://github.com/marcello-pichini/ai-science-tracker/issues/new?' + query;
   },
   entryUrl(record) {
-    return 'https://marcello-pichini.github.io/ai-science-tracker/index.html#discovery=' + encodeURIComponent(record.id);
+    return 'https://aisciencetracker.org/index.html#discovery=' + encodeURIComponent(record.id);
   },
   // Plain catalog reference; deliberately carries no authors, DOI or publisher, which the catalog does not hold.
   reference(record, accessed) {

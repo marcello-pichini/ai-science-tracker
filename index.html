@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
-<script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/ai-science-tracker/*"},{"not":{"href_matches":"/ai-science-tracker/data/*"}},{"not":{"href_matches":"/ai-science-tracker/api/*"}},{"not":{"href_matches":"/ai-science-tracker/og/*"}},{"not":{"href_matches":"/ai-science-tracker/*.xml"}},{"not":{"href_matches":"/ai-science-tracker/*.txt"}}]},"eagerness":"moderate"}]}</script>
+<script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/data/*"}},{"not":{"href_matches":"/api/*"}},{"not":{"href_matches":"/og/*"}},{"not":{"href_matches":"/*.xml"}},{"not":{"href_matches":"/*.txt"}}]},"eagerness":"moderate"}]}</script>
 <title>Scientific discoveries made with AI · AI Science Tracker</title>
 <meta name="description" content="A sourced catalog of scientific discoveries made with AI since 2020: biology, medicine, materials, climate, physics and mathematics, each linked to its original announcement or paper.">
 <meta property="og:title" content="Scientific discoveries made with AI · AI Science Tracker">
 <meta property="og:description" content="Scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://marcello-pichini.github.io/ai-science-tracker/og/default.png">
+<meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://marcello-pichini.github.io/ai-science-tracker/index.html">
-<meta property="og:url" content="https://marcello-pichini.github.io/ai-science-tracker/index.html">
+<link rel="canonical" href="https://aisciencetracker.org/index.html">
+<meta property="og:url" content="https://aisciencetracker.org/index.html">
 <meta property="og:site_name" content="AI Science Tracker">
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -25,7 +25,10 @@
 <link rel="alternate" type="application/atom+xml" title="AI Science Tracker: additions and source checks" href="feed.xml">
 <link rel="stylesheet" href="styles.css?v=f7ee2e330613">
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker discovery catalog","description":"Scientific discoveries enabled by AI and related model families, sourced from original papers, preprints and institutional announcements.","url":"https://marcello-pichini.github.io/ai-science-tracker/index.html","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://marcello-pichini.github.io/ai-science-tracker/data/discoveries.csv"}],"isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","keywords":["artificial intelligence","scientific discovery","AI for science"],"@id":"https://marcello-pichini.github.io/ai-science-tracker/index.html#dataset"}
+{"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker discovery catalog","description":"Scientific discoveries enabled by AI and related model families, sourced from original papers, preprints and institutional announcements.","url":"https://aisciencetracker.org/index.html","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://aisciencetracker.org/data/discoveries.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://aisciencetracker.org/data/discoveries.csv"}],"isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","keywords":["artificial intelligence","scientific discovery","AI for science"],"@id":"https://aisciencetracker.org/index.html#dataset"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org/","@graph":[{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},{"@type":"WebSite","@id":"https://aisciencetracker.org/#website","name":"AI Science Tracker","url":"https://aisciencetracker.org/","inLanguage":"en","publisher":{"@id":"https://aisciencetracker.org/#organization"}}]}
 </script>
 </head>
 <body>
@@ -133,7 +136,7 @@
   </div>
 </footer>
 
-<script src="assets/catalog-ui.js?v=f9dfd404ff12"></script>
+<script src="assets/catalog-ui.js?v=6c310621c0ce"></script>
 <script>
 // Object.groupBy is missing before Safari 17.4 and Chrome 117.
 Object.groupBy ??= (xs, f) => xs.reduce((o, x) => ((o[f(x)] ??= []).push(x), o), {});

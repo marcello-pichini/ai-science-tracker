@@ -18,7 +18,7 @@ An entry describes one concrete scientific result in which an AI system played a
 3. **What was shown and how it was tested**, as stated by the source, including its limits.
 4. **The AI contribution**, as stated by the source.
 
-Product launches, benchmarks on their own, funding news and general claims about a model's ability are not included. The [methodology](https://marcello-pichini.github.io/ai-science-tracker/methodology.html) explains the selection rules, the test types and the relevance score.
+Product launches, benchmarks on their own, funding news and general claims about a model's ability are not included. The [methodology](https://aisciencetracker.org/methodology.html) explains the selection rules, the test types and the relevance score.
 
 ## How suggestions are handled
 

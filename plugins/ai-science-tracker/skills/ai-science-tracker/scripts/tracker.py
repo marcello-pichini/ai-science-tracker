@@ -18,7 +18,7 @@ import urllib.parse
 import urllib.request
 
 BASE = os.environ.get("AI_SCIENCE_TRACKER_BASE",
-                      "https://marcello-pichini.github.io/ai-science-tracker").rstrip("/")
+                      "https://aisciencetracker.org").rstrip("/")
 COLLECTIONS = ("discoveries", "models", "vulnerabilities")
 # Date that means "new to the reader" per collection, and the fields searched.
 DATE_FIELD = {"discoveries": "added_date", "models": "date", "vulnerabilities": "checked_date"}
