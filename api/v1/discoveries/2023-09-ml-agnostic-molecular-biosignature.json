@@ -1,0 +1,33 @@
+{
+  "id": "2023-09-ml-agnostic-molecular-biosignature",
+  "title": "Machine learning on pyrolysis GC-MS data separates biotic from abiotic samples with about 90 percent accuracy",
+  "summary": "Cleaves et al. trained machine-learning models on pyrolysis-GC-MS data from living cells, fossil organic material, carbon-rich meteorites and synthetic organics (134 samples per secondary sources) to classify biogenicity of contemporary and ancient samples at about 90 percent accuracy without identifying individual compounds. Accuracy comes from held-out data within the same sample set; no blind or flight validation and no detection of extraterrestrial life is reported. Abstract-level review.",
+  "field": "multidisciplinary",
+  "ai_technology": "Supervised machine-learning classifiers on chromatographic and mass-spectral peak patterns",
+  "organization": "Carnegie Institution for Science",
+  "source_url": "https://doi.org/10.1073/pnas.2307149120",
+  "source_type": "paper",
+  "publication_date": "2023-09-25",
+  "added_date": "2026-11-17",
+  "verification_status": "needs verification",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Train and test subsets of the sample set gave about 90 percent accuracy (per abstract).",
+    "unknown": "Independent samples, model identity and sample count were not verified from the paper itself; generalisation to alien biochemistry is a stated aim, not a demonstrated result.",
+    "ai_role": "Models learn relational patterns in peak data to classify biogenicity.",
+    "evidence_urls": [
+      "https://europepmc.org/article/MED/37748080"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-17",
+    "scope": "abstract and bibliographic metadata (Europe PMC) only; Methods and full text not assessed"
+  }
+}
