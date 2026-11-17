@@ -10,13 +10,13 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
 function page(name, hash = "", archived = [], staticPages = []) {
-  const listeners = {}, elements = new Map();
+  const listeners = {}, elements = new Map(), timers = [];
   const classes = () => ({add() {}, remove() {}, toggle() {}});
   const node = id => ({id, classList:classes(), open:false, textContent:'', value:'', attributes:{}, handlers:{}, childNodes:[],
     append() {}, click() {}, remove() {}, replaceChildren(...children) {this.childNodes = children;},
     setAttribute(k, v) {this.attributes[k] = v;}, addEventListener(k, fn) {this.handlers[k] = fn;},
     focus(options) {document.activeElement = this; this.focusOptions = options;},
-    scrollIntoView(options) {this.scrollOptions = options;}, querySelector(selector) {return selector === 'h3' ? this.heading || null : null;}});
+    scrollIntoView(options) {this.scrollOptions = options;}, contains(child) {return child === this || child === this.heading;}, querySelector(selector) {return selector === 'h3' ? this.heading || null : null;}});
   const list = node('lista'); list.childNodes = [];
   Object.defineProperty(list, 'innerHTML', {set(html) {
     this.childNodes = [...html.matchAll(/<(?:article class="voce"|tr) id="([^"]+)"/g)].map(m => {
@@ -47,7 +47,7 @@ function page(name, hash = "", archived = [], staticPages = []) {
   let loaded;
   const startup = {then(fn) {loaded = fn; return pending;}};
   const context = vm.createContext({document, location, history, URL, URLSearchParams, Intl,
-    matchMedia:() => ({matches:true}), innerWidth:1280, addEventListener,
+    matchMedia:() => ({matches:true}), innerWidth:1280, addEventListener, setTimeout:fn => timers.push(fn),
     window:{addEventListener}, Promise:{all:() => startup}, fetch:url => {
       requested.push(url);
       if (url.startsWith('profiles/family-') || url.startsWith('profiles/org-')) return Promise.resolve({ok:staticPages.includes(url)});
@@ -58,7 +58,7 @@ function page(name, hash = "", archived = [], staticPages = []) {
   vm.runInContext([...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].at(-1)[1], context);
   const run = code => vm.runInContext(code, context);
   const dispatch = type => [...(listeners[type] || [])].forEach(x => x.fn());
-  return {run, dispatch, list, location, history, redirects, requested, load:(records, models = null, citations = null) => loaded([records, models, citations]), fail:() => failure(new Error("Network error"))};
+  return {run, dispatch, list, location, history, redirects, requested, flushTimers:() => timers.splice(0).forEach(fn => fn()), load:(records, models = null, citations = null) => loaded([records, models, citations]), fail:() => failure(new Error("Network error"))};
 }
 const records = Array.from({length:90}, (_, i) => ({id:'d'+i, title:'Discovery '+i,
  summary:'Summary', ai_technology:'AI', field:i === 89 ? 'biology' : 'medicine',
@@ -72,6 +72,16 @@ class BrowserRegressionTests(unittest.TestCase):
     def run_js(self, code):
         result = subprocess.run(['node', '-e', HARNESS + code], cwd=ROOT, text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_discovery_navigation_repositions_the_focused_heading(self):
+        self.run_js(r'''
+const p = page('index.html');
+p.run('items = ' + JSON.stringify(records) + '; grafici = () => {}; lista(); vaiA("d89");');
+const entry = p.list.childNodes.find(n => n.id === 'd89');
+p.flushTimers();
+assert.equal(entry.heading.scrollOptions.block, 'center');
+assert.equal(entry.heading.scrollOptions.behavior, 'instant');
+''')
 
     def test_discovery_navigation_does_not_animate_over_deferred_records(self):
         self.run_js(r'''
