@@ -33,6 +33,11 @@ jobs:
           if [ "$(sha work/epoch/benchmark_data.zip)" != "$old_zip" ]; then
             python3 scripts/import_model_progress.py work/epoch/benchmark_data.zip --fetched-on "$(date -u +%F)"
           fi
+      - name: Refresh separate noncommercial SWE-bench selection
+        run: |
+          mkdir -p work/swe-bench
+          curl -fsSL --retry 3 -o work/swe-bench/leaderboards.json https://raw.githubusercontent.com/SWE-bench/swe-bench.github.io/master/data/leaderboards.json
+          python3 scripts/import_swe_bench.py work/swe-bench/leaderboards.json --fetched-on "$(date -u +%F)"
       - name: Regenerate pages, API, feed and llms.txt
         env:
           CHROME: /usr/bin/google-chrome

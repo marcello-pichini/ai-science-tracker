@@ -517,7 +517,7 @@ def write_llms_txt(items, models):
 
 > A catalog of {len(items)} entries about scientific results enabled by AI across {fields} fields and {orgs} organizations since 2020. Each entry links to an original paper, preprint or institutional announcement. Entry counts are not counts of independent findings: methodological contributions can overlap other entries, and one entry can describe several related results. Figures are reported by the sources and are not independently verified; relevance scores are coarse editorial judgments, not evidence grades.
 
-Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT. Model data comes from Epoch AI (CC BY 4.0). When citing a scientific claim, cite the original source linked on each entry, not this catalog.
+Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT. Epoch AI model data is CC BY 4.0. The separate SWE-bench selection (data/swe-bench.json) is CC BY-NC 4.0, for noncommercial reuse only; it is not covered by the catalog CC BY 4.0 grant. When citing a scientific claim, cite the original source linked on each entry, not this catalog.
 
 ## Browse
 - [Discoveries]({BASE}index.html): filters, charts and the full list
