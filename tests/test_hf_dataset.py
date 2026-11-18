@@ -20,6 +20,24 @@ class HfDatasetTest(unittest.TestCase):
             self.assertNotIn(key, card)
         self.assertIn(f"| {counts['discoveries']} |", card)
 
+    def test_snapshot_date_is_stable_and_data_are_copied_exactly(self):
+        with tempfile.TemporaryDirectory() as d:
+            output = Path(d)
+            hf.build(output, '2026-11-17')
+            first = {p.name: p.read_bytes() for p in output.iterdir()}
+            hf.build(output, '2026-11-17')
+            self.assertEqual(first, {p.name: p.read_bytes() for p in output.iterdir()})
+            self.assertIn('on 2026-11-17.', first['README.md'].decode())
+            for name in hf.FILES:
+                self.assertEqual(first[name], (hf.ROOT / 'data' / name).read_bytes())
+
+    def test_invalid_snapshot_date_does_not_write_output(self):
+        with tempfile.TemporaryDirectory() as d:
+            output = Path(d) / 'dataset'
+            with self.assertRaises(ValueError):
+                hf.build(output, '2026-02-30')
+            self.assertFalse(output.exists())
+
 
 if __name__ == "__main__":
     unittest.main()

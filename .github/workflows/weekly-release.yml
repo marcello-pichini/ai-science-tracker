@@ -1,42 +1,76 @@
-name: Weekly release
-# Publishes a dated GitHub release when data/ changed since the last tag; Zenodo archives each release.
+name: Publish datasets
+# Keep this workflow path stable; publication now follows successful site deployments.
 on:
-  schedule:
-    - cron: '0 6 * * 1'  # Mondays 06:00 UTC
+  workflow_run:
+    workflows: [pages build and deployment]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: write
+  actions: read
+concurrency:
+  group: dataset-publication
+  cancel-in-progress: false
 jobs:
   release:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
+      - name: Select the latest successfully deployed snapshot
+        id: snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEPLOYED_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          latest=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?branch=main&status=success&per_page=100" \
+            --jq '[.workflow_runs[] | select(.name == "pages build and deployment")][0].head_sha')
+          if [[ ! "$latest" =~ ^[0-9a-f]{40}$ ]]; then
+            echo "::error::No successful main site deployment was found."
+            exit 1
+          fi
+          if [ -n "$DEPLOYED_SHA" ] && [ "$DEPLOYED_SHA" != "$latest" ]; then
+            echo "A newer site snapshot has already deployed; skipping this older run."
+            exit 0
+          fi
+          echo "sha=$latest" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
+        id: checkout
+        if: steps.snapshot.outputs.sha != ''
         with:
           fetch-depth: 0
+          ref: ${{ steps.snapshot.outputs.sha }}
+      - uses: actions/setup-python@v5
+        if: steps.snapshot.outputs.sha != ''
+        with:
+          python-version: '3.12'
       - name: Release if data changed
-        id: release
+        if: steps.snapshot.outputs.sha != ''
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          last=$(git describe --tags --abbrev=0)
-          if git diff --quiet "$last" HEAD -- data/; then
+          last=$(git describe --tags --abbrev=0 2>/dev/null || true)
+          if [ -n "$last" ] && git diff --quiet "$last" HEAD -- data/; then
             echo "No data changes since $last; skipping."
             exit 0
           fi
           tag="v$(date -u +%Y.%m.%d)"
-          if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
+          if gh release view "$tag" >/dev/null 2>&1; then
             echo "$tag already exists; skipping."
             exit 0
           fi
-          gh release create "$tag" --target "$GITHUB_SHA" --title "$tag" --generate-notes --notes-start-tag "$last"
-          echo "released=true" >> "$GITHUB_OUTPUT"
+          notes=()
+          if [ -n "$last" ]; then notes+=(--notes-start-tag "$last"); fi
+          gh release create "$tag" --target "$(git rev-parse HEAD)" --title "$tag" --generate-notes "${notes[@]}"
       - name: Upload to Hugging Face
         # Needs the HF_TOKEN repository secret (write token for marcello-pichini/ai-science-tracker).
-        if: steps.release.outputs.released == 'true' || github.event_name == 'workflow_dispatch'
+        # Retry independently even if today's release already exists.
+        if: ${{ !cancelled() && steps.checkout.outcome == 'success' }}
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          if [ -z "$HF_TOKEN" ]; then echo "HF_TOKEN not set; skipping."; exit 0; fi
+          if [ -z "$HF_TOKEN" ]; then echo "::error::HF_TOKEN is not configured."; exit 1; fi
           pip install -q huggingface_hub
-          python3 scripts/build_hf_dataset.py hf-build
+          snapshot_date=$(git log -1 --format=%cs -- data/discoveries.csv data/discoveries.json data/vulnerabilities.csv data/vulnerabilities.json huggingface/README.md)
+          python3 scripts/build_hf_dataset.py hf-build --snapshot-date "$snapshot_date"
           python3 -c "from huggingface_hub import upload_folder; upload_folder(repo_id='marcello-pichini/ai-science-tracker', repo_type='dataset', folder_path='hf-build', commit_message='Catalog snapshot $(date -u +%Y-%m-%d)')"
