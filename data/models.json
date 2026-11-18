@@ -1,12 +1,12 @@
 {
- "generated": "2026-11-17",
+ "generated": "2026-11-18",
  "source": {
   "name": "Epoch AI — Data on AI models (notable models)",
   "url": "https://epoch.ai/data/ai-models",
   "license": "CC BY 4.0",
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
-  "csv_sha256": "1999c2fffc6b2b28b59a036d3dda966f599d7933f739f7c2ae6c9f056f7b437e",
-  "original_records": 1095
+  "csv_sha256": "0c411dbaafd96eb1166545cfe13f760131e4860f18a1d41d222ba77697341107",
+  "original_records": 1102
  },
  "models": [
   {
@@ -586,6 +586,18 @@
    "family": "gpt5"
   },
   {
+   "name": "Mistral Medium 3.5",
+   "organization": "Mistral AI",
+   "date": "2026-04-29",
+   "domain": "Language,Multimodal",
+   "parameters": 128000000000.0,
+   "compute_flop": "",
+   "access": "Open weights (restricted use)",
+   "frontier": false,
+   "link": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B",
+   "family": null
+  },
+  {
    "name": "DeepSeek-V4-Pro",
    "organization": "DeepSeek",
    "date": "2026-04-24",
@@ -835,6 +847,18 @@
    "access": "Open weights (restricted use)",
    "frontier": false,
    "link": "https://github.com/QwenLM/Qwen3.5?tab=readme-ov-file",
+   "family": "qwen"
+  },
+  {
+   "name": "Qwen3.5-35B-A3B",
+   "organization": "Alibaba",
+   "date": "2026-02-24",
+   "domain": "Language",
+   "parameters": 35000000000.0,
+   "compute_flop": "",
+   "access": "Open weights (unrestricted)",
+   "frontier": false,
+   "link": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B",
    "family": "qwen"
   },
   {
@@ -1843,6 +1867,18 @@
    "access": "Open weights (unrestricted)",
    "frontier": false,
    "link": "https://www.datacamp.com/blog/ernie-4-5-x1\n\nhttps://yiyan.baidu.com/blog/publication/ERNIE_Technical_Report.pdf",
+   "family": null
+  },
+  {
+   "name": "Cohere Command A",
+   "organization": "Cohere",
+   "date": "2025-03-13",
+   "domain": "Language",
+   "parameters": 111000000000.0,
+   "compute_flop": "",
+   "access": "Open weights (non-commercial)",
+   "frontier": false,
+   "link": "https://cohere.com/blog/command-a\nhttps://huggingface.co/CohereForAI/c4ai-command-a-03-2025?ref=cohere-ai.ghost.io",
    "family": null
   },
   {
@@ -3218,7 +3254,7 @@
    "organization": "OpenAI",
    "date": "2023-09-28",
    "domain": "Language",
-   "parameters": 20000000000.0,
+   "parameters": null,
    "compute_flop": "",
    "access": "API access",
    "frontier": false,
@@ -3374,7 +3410,7 @@
    "organization": "OpenAI",
    "date": "2023-06-13",
    "domain": "Language",
-   "parameters": 20000000000.0,
+   "parameters": null,
    "compute_flop": "",
    "access": "API access",
    "frontier": false,
@@ -6170,6 +6206,7 @@
     "Qwen3.5-Omni-Plus",
     "Qwen3.5-Omni-Flash",
     "Qwen3.5-122B-A10B",
+    "Qwen3.5-35B-A3B",
     "Qwen3.5 397B-A17B",
     "Qwen3-Coder-Next",
     "Qwen3-Max-Thinking",
@@ -6193,7 +6230,7 @@
     "Qwen-VL"
    ],
    "discovery_count": 0,
-   "model_count": 28
+   "model_count": 29
   }
  ],
  "linked_discoveries": [
