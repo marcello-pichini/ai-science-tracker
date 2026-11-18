@@ -545,9 +545,13 @@ def write_profile_pages(items, models, archived=()):
             continue
         active_families.add(fam['id'])
         rel = [m for m in models.get('models', []) if m.get('family') == fam['id']]
+        dossier = ''
+        if fam['id'] == 'alphafold':
+            dossier = ('<p id="alphafold-evidence"><a href="alphafold-dossier.html">'
+                       'Read the AlphaFold evidence dossier</a>.</p>')
         emit(fam['name'], fam['name'], f'{plural(len(rows), "discovery", "discoveries")} name this family, {years(rows)}, across {len({d["field"] for d in rows})} scientific fields. Links are name-based family associations; exact versions and causal attribution are not verified.',
              f'{plural(len(rows), "AI-enabled scientific discovery", "AI-enabled scientific discoveries")} linked to the {fam["name"]} model family.',
-             rows, f'profiles/family-{quote(fam["id"])}.html', f'profile.html?family={quote(fam["id"])}', releases_table(rel), before=family_affiliations(rows) + family_summary(rows, fam['name']))
+             rows, f'profiles/family-{quote(fam["id"])}.html', f'profile.html?family={quote(fam["id"])}', releases_table(rel), before=dossier + family_affiliations(rows) + family_summary(rows, fam['name']))
     for fid, ids in discovery_links(archived).items():
         if ids and fid not in active_families:
             redirect(f'family-{quote(fid)}.html', {f'../share/{quote(did)}.html' for did in ids})
@@ -802,7 +806,7 @@ def write_sitemap(items, models, archived=(), vulns=()):
     orgs = sorted({lead_org(d['organization']) for d in items})
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
     # Announcement dates are not page-modification dates; omit lastmod until tracked.
-    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'dataset.html', 'contributors.html', 'model-progress.html', 'antibiotic-dossier.html']
+    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'dataset.html', 'contributors.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
     urls += ['profiles/index.html']
     urls += ['profiles/catalog-evidence.html', 'profiles/security-index.html']
     urls += [f'profiles/security-{quote(v["id"])}.html' for v in vulns]
