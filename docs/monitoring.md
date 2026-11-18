@@ -5,7 +5,8 @@ and daily at 07:15 UTC. It is independent of the maintainer's computer and needs
 no AI API or new secret. A manual run can also request the full external-link scan.
 
 The workflow selects the latest successful main-site deployment and checks against
-that exact Git commit, rather than unpublished changes on main or a local checkout.
+that exact Git commit. Separately, freshness compares the expected main update SHA
+with the deployed SHA, so selecting an older successful deployment cannot hide lag.
 Monitoring tools run from main; the expected published snapshot is checked out
 separately. The checks are read-only and never modify catalog records or retry a
 publication automatically.
@@ -17,6 +18,11 @@ publication automatically.
 - Referenced same-origin scripts and styles must match the deployed source bytes.
 - Live scientific, vulnerability and model JSON plus the API index must match the
   deployed source contents. Optional benchmark collections are checked when present.
+- `data/benchmarks/index.json` is required and compared with the deployed snapshot.
+  Every numerical component listed there is checked against its exact SHA-256, even
+  when the catalog component manifest is absent. Unsafe paths, invalid registries,
+  missing files and invalid hashes fail the check. Historical snapshots
+  predating the registry require explicit `--allow-legacy-benchmarks` opt-in.
 - Hugging Face's four scientific/vulnerability JSON and CSV files must match that
   same snapshot, comparing actual contents rather than just record counts.
 - The Zenodo concept DOI must resolve to the latest GitHub release version. A new
@@ -27,6 +33,20 @@ publication automatically.
 These are HTTP, HTML and content checks, not a browser rendering, accessibility or
 scientific-evidence audit. An unchanged Epoch export is not considered stale merely
 because its retrieval date is old.
+
+## Deployment freshness metadata
+
+Pass `--deployment-metadata deployment.json` alongside the expected deployed tree.
+The JSON object contains `expected_sha` (current expected main commit),
+`deployed_sha` (latest successful Pages commit), and `expected_updated_at` (the
+expected commit's ISO 8601 timestamp with timezone). Both SHAs must be full lowercase
+40-character values. Optional `grace_seconds` defaults to 7200. Different SHAs are
+`pending` inside the grace period and `fail` at or beyond its boundary; equal SHAs
+pass. Missing/invalid timestamps or identities fail rather than implying freshness.
+The report preserves the supplied metadata and a separate `deployment/freshness`
+result. Omitting the option performs content parity only and establishes no
+freshness claim. Grace covers deployment propagation, not an old benchmark retrieval
+date or upstream source availability.
 
 ## External source links
 

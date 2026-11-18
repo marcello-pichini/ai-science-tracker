@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: daily-refresh
 jobs:
@@ -18,38 +19,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Refresh Epoch AI data when the export changed
-        run: |
-          mkdir -p work/epoch
-          curl -fsSL --retry 3 -o work/epoch/notable_ai_models.csv https://epoch.ai/data/notable_ai_models.csv
-          curl -fsSL --retry 3 -o work/epoch/benchmark_data.zip https://epoch.ai/data/benchmark_data.zip
-          sha() { sha256sum "$1" | cut -d' ' -f1; }
-          # Regenerate only on a new export, so unchanged days produce no commit.
-          old_csv=$(python3 -c "import json; print(json.load(open('data/models.json'))['source']['csv_sha256'])")
-          old_zip=$(python3 -c "import json; print(json.load(open('data/model-progress.json'))['zip_sha256'])")
-          if [ "$(sha work/epoch/notable_ai_models.csv)" != "$old_csv" ]; then
-            python3 scripts/generate_models.py
-          fi
-          if [ "$(sha work/epoch/benchmark_data.zip)" != "$old_zip" ]; then
-            python3 scripts/import_model_progress.py work/epoch/benchmark_data.zip --fetched-on "$(date -u +%F)"
-          fi
-      - name: Refresh separate noncommercial SWE-bench selection
-        run: |
-          mkdir -p work/swe-bench
-          curl -fsSL --retry 3 -o work/swe-bench/leaderboards.json https://raw.githubusercontent.com/SWE-bench/swe-bench.github.io/master/data/leaderboards.json
-          python3 scripts/import_swe_bench.py work/swe-bench/leaderboards.json --fetched-on "$(date -u +%F)"
-      - name: Refresh independently licensed benchmark selections
+      - name: Refresh independent sources and retain failed snapshots
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          python3 -m pip install -r scripts/requirements-benchmarks.txt
-          python3 scripts/refresh_public_benchmarks.py --epoch-zip work/epoch/benchmark_data.zip
+          python3 scripts/deployment_state.py refresh
       - name: Retain per-source benchmark refresh report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-refresh-report
-          path: work/benchmark-refresh-report.json
+          path: work/*refresh-report.json
           retention-days: 30
       - name: Regenerate pages, API, feed and llms.txt
         env:
@@ -58,10 +38,14 @@ jobs:
       - name: Tests
         run: python3 -m unittest discover -s tests
       - name: Commit and push if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          git add -A  # work/ (raw Epoch downloads) is gitignored
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$GITHUB_SHA"
+          git add -- data/ scripts/public-benchmark-inputs.json share/ profiles/ og/ api/ feed.xml llms.txt sitemap.xml robots.txt
           if git diff --cached --quiet; then echo "Nothing changed."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Daily refresh: model data, licensed benchmarks and generated files"
-          git push
+          git push origin HEAD:main
+          gh workflow run check.yml --ref main -f expected_sha="$(git rev-parse HEAD)"

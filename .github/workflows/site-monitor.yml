@@ -15,6 +15,7 @@ on:
 permissions:
   contents: read
   actions: read
+  deployments: read
 concurrency:
   group: site-monitor
   cancel-in-progress: false
@@ -37,11 +38,10 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           RUN_LINKS: ${{ inputs.external_links }}
         run: |
-          sha=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?branch=main&status=success&per_page=100" \
-            --jq '[.workflow_runs[] | select(.name == "pages build and deployment")][0].head_sha')
-          [[ "$sha" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::No deployed snapshot found"; exit 1; }
-          echo "sha=$sha" >> "$GITHUB_OUTPUT"
           mkdir -p monitoring-reports
+          python3 scripts/deployment_state.py select --output monitoring-reports/deployment.json
+          sha=$(python3 -c 'import json; print(json.load(open("monitoring-reports/deployment.json"))["deployed_sha"])')
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
           gh release view --json tagName,publishedAt,url,targetCommitish > monitoring-reports/release.json
           if [ "$RUN_LINKS" = true ] || { [ "$EVENT_NAME" = schedule ] && [ "$(date -u +%u)" = 1 ]; }; then
             echo "links=true" >> "$GITHUB_OUTPUT"
@@ -51,7 +51,7 @@ jobs:
           ref: ${{ steps.snapshot.outputs.sha }}
           path: published
       - name: Check live pages, assets and dataset parity
-        run: python3 scripts/check_publication.py --root published --release-metadata monitoring-reports/release.json --report monitoring-reports/publication.json
+        run: python3 scripts/check_publication.py --root published --deployment-metadata monitoring-reports/deployment.json --release-metadata monitoring-reports/release.json --report monitoring-reports/publication.json
       - name: Check external sources weekly or on request
         if: ${{ !cancelled() && steps.snapshot.outputs.links == 'true' }}
         run: python3 scripts/check_links.py --root published --report monitoring-reports/links.json

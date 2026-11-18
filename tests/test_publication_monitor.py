@@ -1,11 +1,12 @@
 """Monitoring catches content drift even when counts and HTTP status look healthy."""
 import datetime as dt
+import hashlib
 import importlib.util
 import json
 from pathlib import Path
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,6 +31,24 @@ def write_sample_pages(root):
 
 
 class PublicationMonitorTest(unittest.TestCase):
+    def test_default_fetch_returns_body_and_inspection_metadata(self):
+        response = MagicMock()
+        response.read.return_value = b'catalog'
+        response.status = 200
+        response.geturl.return_value = 'https://site.test/final'
+        response.headers.get_all.return_value = ['index, follow']
+        context = MagicMock()
+        context.__enter__.return_value = response
+        with patch.object(monitor, 'urlopen', return_value=context):
+            self.assertEqual(monitor.fetch('https://site.test/', attempts=1), b'catalog')
+            self.assertEqual(monitor.fetch('https://site.test/', attempts=1, inspect=True),
+                             (b'catalog', 200, 'https://site.test/final', ['index, follow']))
+            response.read.assert_called_with(monitor.MAX_BYTES + 1)
+            with patch.object(monitor, 'MAX_BYTES', 3):
+                for inspect in (False, True):
+                    with self.subTest(inspect=inspect), self.assertRaisesRegex(ValueError, 'size limit'):
+                        monitor.fetch('https://site.test/', attempts=1, inspect=inspect)
+
     def test_page_identity_rejects_soft_404_and_robots_conflicts(self):
         url = 'https://site.test/dataset.html'
         expected, error = monitor.Page(), monitor.Page()
@@ -57,6 +76,13 @@ class PublicationMonitorTest(unittest.TestCase):
                     (root / 'data' / name).write_text('id\nsample\n')
             (root / 'api/v1/index.json').write_text('{}')
             (root / 'assets/app.js').write_text('current-version')
+            (root / 'data/benchmarks').mkdir()
+            benchmark = root / 'data/benchmarks/sample.json'
+            benchmark.write_text('{"score": 1}')
+            registry = {'schema_version': 1, 'sources': [{'path': 'data/benchmarks/sample.json',
+                        'sha256': hashlib.sha256(benchmark.read_bytes()).hexdigest()}]}
+            registry_path = root / 'data/benchmarks/index.json'
+            registry_path.write_text(json.dumps(registry))
 
             write_sample_pages(root)
 
@@ -77,6 +103,8 @@ class PublicationMonitorTest(unittest.TestCase):
             self.assertTrue(all(r['status'] == 'pass' for r in good))
 
             def stale_fetch(url):
+                if '/data/benchmarks/sample.json' in url:
+                    return b'{"score": 2}'
                 if '/assets/app.js' in url:
                     return b'old-version'
                 if urlsplit(url).netloc == 'hf.test' and 'discoveries.json' in url:
@@ -84,7 +112,31 @@ class PublicationMonitorTest(unittest.TestCase):
                 return complete_fetch(url)
             bad = monitor.check(root, 'https://site.test/', 'https://hf.test/', release, stale_fetch)
             failed = {r['check'] for r in bad if r['status'] == 'fail'}
-            self.assertEqual(failed, {'asset/assets/app.js', 'hugging-face/discoveries.json'})
+            self.assertEqual(failed, {'asset/assets/app.js', 'hugging-face/discoveries.json', 'site/data/benchmarks/sample.json'})
+            registry['sources'][0]['path'] = '../private.json'
+            registry_path.write_text(json.dumps(registry))
+            with self.assertRaisesRegex(ValueError, 'Unsafe component path'):
+                monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=complete_fetch)
+            registry_path.write_text('{invalid')
+            with self.assertRaises(ValueError):
+                monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=complete_fetch)
+            registry_path.unlink()
+            with self.assertRaisesRegex(ValueError, 'Benchmark registry missing'):
+                monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=complete_fetch)
+
+    def test_deployment_freshness_current_pending_then_stale(self):
+        metadata = {'expected_sha': 'a' * 40, 'deployed_sha': 'b' * 40,
+                    'expected_updated_at': '2026-11-18T10:00:00Z'}
+        for hour, expected in ((11, 'pending'), (12, 'fail'), (13, 'fail')):
+            with self.subTest(hour=hour):
+                self.assertEqual(monitor.check_freshness(metadata, dt.datetime(2026, 11, 18, hour,
+                                 tzinfo=dt.timezone.utc))[0], expected)
+        metadata['deployed_sha'] = metadata['expected_sha']
+        self.assertEqual(monitor.check_freshness(metadata, dt.datetime(2026, 11, 18, 13,
+                         tzinfo=dt.timezone.utc))[0], 'pass')
+        metadata['expected_updated_at'] = '2026-11-18T10:00:00'
+        with self.assertRaisesRegex(ValueError, 'timezone'):
+            monitor.check_freshness(metadata)
 
     def test_zenodo_grace_period_and_missing_archive(self):
         release = {'tagName': 'v2026.11.18', 'publishedAt': '2026-11-18T10:00:00Z'}
@@ -115,3 +167,4 @@ class LinkMonitorTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
