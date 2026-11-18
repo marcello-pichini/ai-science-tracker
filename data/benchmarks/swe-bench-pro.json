@@ -1,0 +1,159 @@
+{
+  "id": "swe-bench-pro",
+  "name": "SWE-bench Pro · initial repository runs",
+  "attribution": "Scale AI, SWE-bench Pro authors",
+  "license": "MIT",
+  "license_url": "https://github.com/scaleapi/SWE-bench_Pro-os/blob/66f92766bba642462d4bbe5479e83f91f9211862/LICENSE",
+  "license_notice": "docs/benchmark-licenses/SWE-bench_Pro-os-license.txt",
+  "scope": "Initial SWE-Agent runs on 730 problems with uncapped cost and a 250-turn limit. Source explicitly says results are preliminary and may change. Distinct from SWE-bench Verified and from separate Scale commercial/private leaderboard data.",
+  "selection": "Only seven source-committed HTML numerical scores; no client-computed confidence intervals, tasks or private results.",
+  "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+  "upstream_revision": "66f92766bba642462d4bbe5479e83f91f9211862",
+  "inputs": [
+    "swe-bench-pro",
+    "SWE-bench_Pro-os-license"
+  ],
+  "source_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html",
+  "retrieved_on": "2026-11-18",
+  "schema_version": 1,
+  "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+  "records": [
+    {
+      "id": "46e4c3ba263124e6c287",
+      "model": "🥇 SWE-Agent + claude-4-5-Sonnet",
+      "metric": "Resolved · initial 730-problem runs",
+      "value": 43.72,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Resolved · initial 730-problem runs",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html",
+      "details": {
+        "agent": "SWE-Agent",
+        "problems": 730,
+        "turn_limit": 250,
+        "cost_cap": "Uncapped",
+        "status": "Initial runs; source warns results may change. Not SWE-bench Verified."
+      }
+    },
+    {
+      "id": "9bbf369acf7a399b509b",
+      "model": "🥈 SWE-Agent + claude-4-Sonnet",
+      "metric": "Resolved · initial 730-problem runs",
+      "value": 42.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Resolved · initial 730-problem runs",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html",
+      "details": {
+        "agent": "SWE-Agent",
+        "problems": 730,
+        "turn_limit": 250,
+        "cost_cap": "Uncapped",
+        "status": "Initial runs; source warns results may change. Not SWE-bench Verified."
+      }
+    },
+    {
+      "id": "9a2dd077bfd6f1d6b4e9",
+      "model": "🥉 SWE-Agent + claude-4-5-haiku",
+      "metric": "Resolved · initial 730-problem runs",
+      "value": 39.45,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Resolved · initial 730-problem runs",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html",
+      "details": {
+        "agent": "SWE-Agent",
+        "problems": 730,
+        "turn_limit": 250,
+        "cost_cap": "Uncapped",
+        "status": "Initial runs; source warns results may change. Not SWE-bench Verified."
+      }
+    },
+    {
+      "id": "dff0208b8ad8b5eeada5",
+      "model": "SWE-Agent + gpt-5-2025-08-07 (High)",
+      "metric": "Resolved · initial 730-problem runs",
+      "value": 36.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Resolved · initial 730-problem runs",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html",
+      "details": {
+        "agent": "SWE-Agent",
+        "problems": 730,
+        "turn_limit": 250,
+        "cost_cap": "Uncapped",
+        "status": "Initial runs; source warns results may change. Not SWE-bench Verified."
+      }
+    },
+    {
+      "id": "58f0fb092fa959e50baf",
+      "model": "SWE-Agent + glm-4.5",
+      "metric": "Resolved · initial 730-problem runs",
+      "value": 35.52,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Resolved · initial 730-problem runs",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html",
+      "details": {
+        "agent": "SWE-Agent",
+        "problems": 730,
+        "turn_limit": 250,
+        "cost_cap": "Uncapped",
+        "status": "Initial runs; source warns results may change. Not SWE-bench Verified."
+      }
+    },
+    {
+      "id": "e3a291b9d80558fac465",
+      "model": "SWE-Agent + kimi-k2-instruct",
+      "metric": "Resolved · initial 730-problem runs",
+      "value": 27.67,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Resolved · initial 730-problem runs",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html",
+      "details": {
+        "agent": "SWE-Agent",
+        "problems": 730,
+        "turn_limit": 250,
+        "cost_cap": "Uncapped",
+        "status": "Initial runs; source warns results may change. Not SWE-bench Verified."
+      }
+    },
+    {
+      "id": "421ae6e31fc817a80250",
+      "model": "SWE-Agent + gpt-oss-120b",
+      "metric": "Resolved · initial 730-problem runs",
+      "value": 16.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Resolved · initial 730-problem runs",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html",
+      "details": {
+        "agent": "SWE-Agent",
+        "problems": 730,
+        "turn_limit": 250,
+        "cost_cap": "Uncapped",
+        "status": "Initial runs; source warns results may change. Not SWE-bench Verified."
+      }
+    }
+  ],
+  "input_sha256": {
+    "swe-bench-pro": "4d60641d707aa3574db8722616f459e80a595a4c275c5686e6195523a17459e9",
+    "SWE-bench_Pro-os-license": "03a44b2f703779d3f34c18e056da5b893537ca61588e6b15b615a4a612e77fb9"
+  }
+}

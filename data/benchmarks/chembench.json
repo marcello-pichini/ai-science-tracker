@@ -1,0 +1,60 @@
+{
+  "id": "chembench",
+  "name": "ChemBench · legacy reports",
+  "attribution": "LAMA Lab / ChemBench authors",
+  "license": "MIT",
+  "license_url": "https://github.com/lamalab-org/chembench/blob/45f8bad062fe552810c52be3a328d5da8597ed30/LICENSE",
+  "license_notice": "docs/benchmark-licenses/chembench-license.txt",
+  "scope": "Chemical question performance in two historical repository reports. Source folder names are retained; exact model release and evaluation dates are not stated. This is not the current ChemBench-Results leaderboard.",
+  "selection": "Only gpt-4o and claude3.5 aggregate fraction_correct; question-level outputs and tasks excluded.",
+  "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+  "upstream_revision": "45f8bad062fe552810c52be3a328d5da8597ed30",
+  "inputs": [
+    "chembench-gpt4o",
+    "chembench-claude35",
+    "chembench-license"
+  ],
+  "source_url": "https://raw.githubusercontent.com/lamalab-org/chembench/45f8bad062fe552810c52be3a328d5da8597ed30/reports/gpt-4o/gpt-4o.json",
+  "retrieved_on": "2026-11-18",
+  "schema_version": 1,
+  "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+  "records": [
+    {
+      "id": "e346dda8359be6a62732",
+      "model": "gpt-4o",
+      "metric": "Fraction correct · legacy report",
+      "value": 0.610832137733142,
+      "unit": "fraction",
+      "direction": "Higher is better",
+      "comparison_group": "Fraction correct · legacy report",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/lamalab-org/chembench/45f8bad062fe552810c52be3a328d5da8597ed30/reports/gpt-4o/gpt-4o.json",
+      "details": {
+        "source_label": "gpt-4o",
+        "scope": "Legacy repository report; exact release date not stated. Question-level outputs omitted."
+      }
+    },
+    {
+      "id": "8cab2b7112a3ea790454",
+      "model": "claude3.5",
+      "metric": "Fraction correct · legacy report",
+      "value": 0.6255380200860832,
+      "unit": "fraction",
+      "direction": "Higher is better",
+      "comparison_group": "Fraction correct · legacy report",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/lamalab-org/chembench/45f8bad062fe552810c52be3a328d5da8597ed30/reports/claude3.5/claude3.5.json",
+      "details": {
+        "source_label": "claude3.5",
+        "scope": "Legacy repository report; exact release date not stated. Question-level outputs omitted."
+      }
+    }
+  ],
+  "input_sha256": {
+    "chembench-gpt4o": "160d72208d1551b919060cb385b9d285348eaf11770f364891c6d15a33108084",
+    "chembench-claude35": "72f9512d70fa74ad064f0981f79a0e957e10f8f7c091abdf0b268ad04a0c8fe5",
+    "chembench-license": "027ff98bb0102effddd422dcb975cad00a0c6d60c976080683a6a9ded57bafca"
+  }
+}

@@ -1,0 +1,1210 @@
+{
+  "schema_version": 1,
+  "retrieved_on": "2026-11-18",
+  "reuse": "Component licenses only. This manifest is original source metadata; it does not relicense the numerical outputs.",
+  "sources": [
+    {
+      "id": "gpqa",
+      "name": "GPQA Diamond · Epoch own runs",
+      "attribution": "Epoch AI, Capabilities & benchmarking",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_notice": "docs/benchmark-licenses/cc-by-4.0.txt",
+      "scope": "Graduate-level biology, chemistry and physics. Mean accuracy is a fraction, not ECI. Inference settings and budgets differ; stderr is source-reported, not a confidence interval.",
+      "selection": "All scored own-run gpqa_diamond.csv rows; no external imported scores.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "upstream_revision": "Export SHA-256 retained in input hashes",
+      "inputs": [
+        "epoch-zip",
+        "cc-by-4.0"
+      ],
+      "source_url": "https://epoch.ai/benchmarks/use-this-data",
+      "retrieved_on": "2026-11-18"
+    },
+    {
+      "id": "arena",
+      "name": "Arena · text preferences",
+      "attribution": "Arena / LMArena, leaderboard-dataset",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_notice": "docs/benchmark-licenses/cc-by-4.0.txt",
+      "scope": "Pairwise human preferences, not factual accuracy. Rating points are not percentages or directly comparable across categories or dates. Confidence bounds and vote counts retained. The source model license field describes the model, not this numerical dataset.",
+      "selection": "Complete frozen text/latest Parquet, overall category only; category scores are not mixed.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "upstream_revision": "b17ca88fd34809e9161df1ef89fd444acaf598e4",
+      "inputs": [
+        "arena-parquet",
+        "arena-card",
+        "cc-by-4.0"
+      ],
+      "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/b17ca88fd34809e9161df1ef89fd444acaf598e4/text/latest-00000-of-00001.parquet",
+      "retrieved_on": "2026-11-18"
+    },
+    {
+      "id": "tau",
+      "name": "τ²-bench · text agent tasks",
+      "attribution": "Sierra Research and τ-bench result submitters",
+      "license": "MIT",
+      "license_url": "https://github.com/sierra-research/tau2-bench/blob/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/LICENSE",
+      "license_notice": "docs/benchmark-licenses/tau2-bench-license.txt",
+      "scope": "Agent task success. Pass^1 is shown; other pass^k values and methodology remain in details. Versions, simulators, domains, retrieval, reasoning and agent setups can differ. Source-reported results, not independent reproductions.",
+      "selection": "All active text submission.json records in the pinned manifest; voice, legacy and S3 trajectories excluded.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "upstream_revision": "c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4",
+      "inputs": [
+        "tau-manifest",
+        "tau-claude-opus-4-5_sierra_2026-02-26",
+        "tau-claude-sonnet-4-5_sierra_2026-02-26",
+        "tau-cortex-0-1_principledmachines_2026-10-20",
+        "tau-gpt-5-5_sierra_2026-05-05",
+        "tau-gemini-3-flash_sierra_2026-03-02",
+        "tau-glm-5-think_sierra_2026-03-02",
+        "tau-distyl-buttonagent_distyl_2026-03-25",
+        "tau-gpt-5-4_sierra_2026-03-25",
+        "tau-claude-opus-4-6_sierra_2026-05-05",
+        "tau-claude-opus-4-7_sierra_2026-05-05",
+        "tau-gpt-5-2_sierra_2026-02-26",
+        "tau-qwen3.5-397b-a17b-think_sierra_2026-03-02",
+        "tau-grok-4-fast_sierra_2026-05-05",
+        "tau-gemini-2-5-pro_sierra_2026-05-05",
+        "tau-gemini-3-1-pro-preview_sierra_2026-05-05",
+        "tau-gpt-5-2-none_sierra_2026-02-26",
+        "tau-raft-30b-a3b_neu_2026-04-29",
+        "tau-gemini-3-pro_sierra_2026-03-02",
+        "tau-grok-4-1-fast_sierra_2026-05-05",
+        "tau-grok-4-2_sierra_2026-05-05",
+        "tau-gpt-5-6-sol_sierra_2026-08-04",
+        "tau-claude-fable-5_sierra_2026-08-04",
+        "tau-claude-opus-5_sierra_2026-08-04",
+        "tau-muse-spark-1-1_sierra_2026-08-04",
+        "tau-claude-opus-4-8_sierra_2026-08-04",
+        "tau-kimi-k3_sierra_2026-08-04",
+        "tau-grok-4-5_sierra_2026-08-04",
+        "tau-inkling_sierra_2026-08-04",
+        "tau-glm-5-2_sierra_2026-08-04",
+        "tau-qwen3-8-max_sierra_2026-08-04",
+        "tau2-bench-license"
+      ],
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/manifest.json",
+      "retrieved_on": "2026-11-18"
+    },
+    {
+      "id": "chembench",
+      "name": "ChemBench · legacy reports",
+      "attribution": "LAMA Lab / ChemBench authors",
+      "license": "MIT",
+      "license_url": "https://github.com/lamalab-org/chembench/blob/45f8bad062fe552810c52be3a328d5da8597ed30/LICENSE",
+      "license_notice": "docs/benchmark-licenses/chembench-license.txt",
+      "scope": "Chemical question performance in two historical repository reports. Source folder names are retained; exact model release and evaluation dates are not stated. This is not the current ChemBench-Results leaderboard.",
+      "selection": "Only gpt-4o and claude3.5 aggregate fraction_correct; question-level outputs and tasks excluded.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "upstream_revision": "45f8bad062fe552810c52be3a328d5da8597ed30",
+      "inputs": [
+        "chembench-gpt4o",
+        "chembench-claude35",
+        "chembench-license"
+      ],
+      "source_url": "https://raw.githubusercontent.com/lamalab-org/chembench/45f8bad062fe552810c52be3a328d5da8597ed30/reports/gpt-4o/gpt-4o.json",
+      "retrieved_on": "2026-11-18"
+    },
+    {
+      "id": "bixbench",
+      "name": "BixBench v1.5 · zero-shot baselines",
+      "attribution": "FutureHouse / BixBench authors",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/Future-House/BixBench/blob/49311180bdacb324c596f2e07596c126f2004008/LICENSE",
+      "license_notice": "docs/benchmark-licenses/BixBench-license.txt",
+      "scope": "Bioinformatics zero-shot baseline accuracy on 205 questions. MCQ, refusal-enabled and open-ended settings differ; these are not the paper agent runs. Precision and coverage retained.",
+      "selection": "All six configurations in zero_shot_baselines.json.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "upstream_revision": "49311180bdacb324c596f2e07596c126f2004008",
+      "inputs": [
+        "bixbench",
+        "BixBench-license"
+      ],
+      "source_url": "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/bixbench-v1.5_results/zero_shot_baselines.json",
+      "retrieved_on": "2026-11-18"
+    },
+    {
+      "id": "mmlu-pro",
+      "name": "MMLU-Pro · historical README results",
+      "attribution": "TIGER-AI-Lab; Yubo Wang and MMLU-Pro coauthors",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/TIGER-AI-Lab/MMLU-Pro/blob/f418b116db00b065c2aea046518d8fcf74d39872/LICENSE",
+      "license_notice": "docs/benchmark-licenses/MMLU-Pro-license.txt",
+      "scope": "Multitask knowledge/reasoning accuracy. Historical mini-leaderboard; dates and full inference configurations are not reported in the selected table. It does not represent the current external leaderboard.",
+      "selection": "All numerical rows in the licensed README mini-leaderboard.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "upstream_revision": "f418b116db00b065c2aea046518d8fcf74d39872",
+      "inputs": [
+        "mmlu-pro",
+        "MMLU-Pro-license"
+      ],
+      "source_url": "https://raw.githubusercontent.com/TIGER-AI-Lab/MMLU-Pro/f418b116db00b065c2aea046518d8fcf74d39872/README.md",
+      "retrieved_on": "2026-11-18"
+    },
+    {
+      "id": "charxiv",
+      "name": "CharXiv · chart understanding",
+      "attribution": "Princeton NLP / CharXiv authors",
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_notice": "docs/benchmark-licenses/charxiv-data-license.txt",
+      "scope": "Scientific chart question performance. Descriptive and reasoning validation scores are separate; human/random references are labeled as in source. Released evaluations are historical (2024); current website scores are not imported. No paper chart images or question text included.",
+      "selection": "All released stats-*.json aggregate evaluations; source numbers unchanged. This adapted numerical component is shared under CC BY-SA 4.0. Attribution, license and change notices must travel with adaptations.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "upstream_revision": "f441eb632fc62f6f777830a0f47619e6e86459b0",
+      "inputs": [
+        "charxiv-card",
+        "charxiv-data-license",
+        "cc-by-sa-4.0",
+        "charxiv-stats-Cambrian-34B-descriptive_val",
+        "charxiv-stats-Cambrian-34B-reasoning_val",
+        "charxiv-stats-ChartGemma-descriptive_val",
+        "charxiv-stats-ChartGemma-reasoning_val",
+        "charxiv-stats-Claude-3-5-Sonnet-descriptive_val",
+        "charxiv-stats-Claude-3-5-Sonnet-reasoning_val",
+        "charxiv-stats-Claude-3-Haiku-descriptive_val",
+        "charxiv-stats-Claude-3-Haiku-reasoning_val",
+        "charxiv-stats-Claude-3-Opus-descriptive_val",
+        "charxiv-stats-Claude-3-Opus-reasoning_val",
+        "charxiv-stats-Claude-3-Sonnet-descriptive_val",
+        "charxiv-stats-Claude-3-Sonnet-reasoning_val",
+        "charxiv-stats-DeepSeek-VL-descriptive_val",
+        "charxiv-stats-DeepSeek-VL-reasoning_val",
+        "charxiv-stats-GPT-4V-Turbo-descriptive_val",
+        "charxiv-stats-GPT-4V-Turbo-reasoning_val",
+        "charxiv-stats-GPT-4o-Random-descriptive_val",
+        "charxiv-stats-GPT-4o-Random-reasoning_val",
+        "charxiv-stats-GPT-4o-descriptive_val",
+        "charxiv-stats-GPT-4o-mini-descriptive_val",
+        "charxiv-stats-GPT-4o-mini-reasoning_val",
+        "charxiv-stats-GPT-4o-reasoning_val",
+        "charxiv-stats-Gemini-1-5-Pro-descriptive_val",
+        "charxiv-stats-Gemini-1-5-Pro-reasoning_val",
+        "charxiv-stats-Gemini-1.0-Pro-Vision-descriptive_val",
+        "charxiv-stats-Gemini-1.0-Pro-Vision-reasoning_val",
+        "charxiv-stats-Human-descriptive_val",
+        "charxiv-stats-Human-reasoning_val",
+        "charxiv-stats-IDEFICS-2-Chatty-descriptive_val",
+        "charxiv-stats-IDEFICS-2-Chatty-reasoning_val",
+        "charxiv-stats-IDEFICS-2-descriptive_val",
+        "charxiv-stats-IDEFICS-2-reasoning_val",
+        "charxiv-stats-InternLM-XComposer2-4KHD-descriptive_val",
+        "charxiv-stats-InternLM-XComposer2-4KHD-reasoning_val",
+        "charxiv-stats-InternLM-XComposer2-descriptive_val",
+        "charxiv-stats-InternLM-XComposer2-reasoning_val",
+        "charxiv-stats-InternVL-Chat-V1-5-descriptive_val",
+        "charxiv-stats-InternVL-Chat-V1-5-reasoning_val",
+        "charxiv-stats-InternVL2-26B-descriptive_val",
+        "charxiv-stats-InternVL2-26B-reasoning_val",
+        "charxiv-stats-InternVL2-76B-descriptive_val",
+        "charxiv-stats-InternVL2-76B-reasoning_val",
+        "charxiv-stats-InternVL2-Pro-descriptive_val",
+        "charxiv-stats-InternVL2-Pro-reasoning_val",
+        "charxiv-stats-LLaVA-1-6-Mistral-7B-descriptive_val",
+        "charxiv-stats-LLaVA-1-6-Mistral-7B-reasoning_val",
+        "charxiv-stats-LLaVA-1-6-Yi-34B-descriptive_val",
+        "charxiv-stats-LLaVA-1-6-Yi-34B-reasoning_val",
+        "charxiv-stats-Mini-Gemini-HD-LLaMA3-8B-descriptive_val",
+        "charxiv-stats-Mini-Gemini-HD-LLaMA3-8B-reasoning_val",
+        "charxiv-stats-Mini-Gemini-HD-Yi-34B-descriptive_val",
+        "charxiv-stats-Mini-Gemini-HD-Yi-34B-reasoning_val",
+        "charxiv-stats-MiniCPM-V2-5-descriptive_val",
+        "charxiv-stats-MiniCPM-V2-5-reasoning_val",
+        "charxiv-stats-MiniCPM-V2-descriptive_val",
+        "charxiv-stats-MiniCPM-V2-reasoning_val",
+        "charxiv-stats-MoAI-descriptive_val",
+        "charxiv-stats-MoAI-reasoning_val",
+        "charxiv-stats-Ovis1.5-Gemma2-9B-descriptive_val",
+        "charxiv-stats-Ovis1.5-Gemma2-9B-reasoning_val",
+        "charxiv-stats-Ovis1.5-Llama3-8B-descriptive_val",
+        "charxiv-stats-Ovis1.5-Llama3-8B-reasoning_val",
+        "charxiv-stats-Phi-3-Vision-descriptive_val",
+        "charxiv-stats-Phi-3-Vision-reasoning_val",
+        "charxiv-stats-Qwen-VL-Max-descriptive_val",
+        "charxiv-stats-Qwen-VL-Max-reasoning_val",
+        "charxiv-stats-Qwen-VL-Plus-descriptive_val",
+        "charxiv-stats-Qwen-VL-Plus-reasoning_val",
+        "charxiv-stats-Reka-Core-descriptive_val",
+        "charxiv-stats-Reka-Core-reasoning_val",
+        "charxiv-stats-Reka-Edge-descriptive_val",
+        "charxiv-stats-Reka-Edge-reasoning_val",
+        "charxiv-stats-Reka-Flash-descriptive_val",
+        "charxiv-stats-Reka-Flash-reasoning_val",
+        "charxiv-stats-SPHINX-V2-13B-descriptive_val",
+        "charxiv-stats-SPHINX-V2-13B-reasoning_val",
+        "charxiv-stats-VILA-1-5-40B-descriptive_val",
+        "charxiv-stats-VILA-1-5-40B-reasoning_val"
+      ],
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/README.md",
+      "retrieved_on": "2026-11-18"
+    },
+    {
+      "id": "ruler",
+      "name": "RULER · long-context accuracy",
+      "attribution": "NVIDIA / RULER authors; contributing model authors identified in the source notes",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/NVIDIA/RULER/blob/db43f92ff634bbce1c33d1fb15858aec4bba509a/LICENSE",
+      "license_notice": "docs/benchmark-licenses/RULER-license.txt",
+      "scope": "Source README accuracy at six measured context lengths. Claimed and effective length differ. Includes contributing-author reports; see original notes for FILM, Qwen, Jamba and EXAONE protocol exceptions. Missing lengths are absent, never zero. No third-party task corpora redistributed.",
+      "selection": "All available numeric 4K–128K context columns for model rows; aggregate weighted rankings not imported.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "upstream_revision": "db43f92ff634bbce1c33d1fb15858aec4bba509a",
+      "inputs": [
+        "ruler",
+        "RULER-license"
+      ],
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "retrieved_on": "2026-11-18"
+    },
+    {
+      "id": "agentdojo",
+      "name": "AgentDojo · prompt injection robustness",
+      "attribution": "ETH Zurich SPY Lab / AgentDojo authors",
+      "license": "MIT",
+      "license_url": "https://github.com/ethz-spylab/agentdojo/blob/089ed468cf3ed0322acc66b0211f26d9d90dbf60/LICENSE",
+      "license_notice": "docs/benchmark-licenses/agentdojo-license.txt",
+      "scope": "Agent utility and targeted attack success are separate outcomes. Lower attack success is better. Defenses and attacks differ; dates are source table dates. No attack content, traces or conversations redistributed.",
+      "selection": "All numeric utility, utility-under-attack and targeted-ASR cells in the repository results table.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "upstream_revision": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+      "inputs": [
+        "agentdojo",
+        "agentdojo-license"
+      ],
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "retrieved_on": "2026-11-18"
+    },
+    {
+      "id": "swe-bench-pro",
+      "name": "SWE-bench Pro · initial repository runs",
+      "attribution": "Scale AI, SWE-bench Pro authors",
+      "license": "MIT",
+      "license_url": "https://github.com/scaleapi/SWE-bench_Pro-os/blob/66f92766bba642462d4bbe5479e83f91f9211862/LICENSE",
+      "license_notice": "docs/benchmark-licenses/SWE-bench_Pro-os-license.txt",
+      "scope": "Initial SWE-Agent runs on 730 problems with uncapped cost and a 250-turn limit. Source explicitly says results are preliminary and may change. Distinct from SWE-bench Verified and from separate Scale commercial/private leaderboard data.",
+      "selection": "Only seven source-committed HTML numerical scores; no client-computed confidence intervals, tasks or private results.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "upstream_revision": "66f92766bba642462d4bbe5479e83f91f9211862",
+      "inputs": [
+        "swe-bench-pro",
+        "SWE-bench_Pro-os-license"
+      ],
+      "source_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html",
+      "retrieved_on": "2026-11-18"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "mmlu-pro",
+      "file": "mmlu-pro.raw",
+      "download_url": "https://raw.githubusercontent.com/TIGER-AI-Lab/MMLU-Pro/f418b116db00b065c2aea046518d8fcf74d39872/README.md",
+      "source_url": "https://raw.githubusercontent.com/TIGER-AI-Lab/MMLU-Pro/f418b116db00b065c2aea046518d8fcf74d39872/README.md",
+      "sha256": "dfbab62320e644f3682d4697e206160bbb59baafa324c59a17e4424328e3e5a5"
+    },
+    {
+      "id": "swe-bench-pro",
+      "file": "swe-bench-pro.raw",
+      "download_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html",
+      "source_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html",
+      "sha256": "4d60641d707aa3574db8722616f459e80a595a4c275c5686e6195523a17459e9"
+    },
+    {
+      "id": "bixbench",
+      "file": "bixbench.raw",
+      "download_url": "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/bixbench-v1.5_results/zero_shot_baselines.json",
+      "source_url": "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/bixbench-v1.5_results/zero_shot_baselines.json",
+      "sha256": "01c5a57ce1dde2d4f0dfaaf123f932791d3ae556df22d89ba4579d6f699d36a8"
+    },
+    {
+      "id": "agentdojo",
+      "file": "agentdojo.raw",
+      "download_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "sha256": "bdd665fd32069666d3d89e2f54a9b6c12a38798f0e3824b5fe5b6488021d0925"
+    },
+    {
+      "id": "ruler",
+      "file": "ruler.raw",
+      "download_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "sha256": "f3aae5bbd58fcd7de32aab099c455dd2bbc1da23a2efee9db3071eb9fbf894a3"
+    },
+    {
+      "id": "chembench-claude35",
+      "file": "chembench-claude35.raw",
+      "download_url": "https://raw.githubusercontent.com/lamalab-org/chembench/45f8bad062fe552810c52be3a328d5da8597ed30/reports/claude3.5/claude3.5.json",
+      "source_url": "https://raw.githubusercontent.com/lamalab-org/chembench/45f8bad062fe552810c52be3a328d5da8597ed30/reports/claude3.5/claude3.5.json",
+      "sha256": "72f9512d70fa74ad064f0981f79a0e957e10f8f7c091abdf0b268ad04a0c8fe5"
+    },
+    {
+      "id": "chembench-gpt4o",
+      "file": "chembench-gpt4o.raw",
+      "download_url": "https://raw.githubusercontent.com/lamalab-org/chembench/45f8bad062fe552810c52be3a328d5da8597ed30/reports/gpt-4o/gpt-4o.json",
+      "source_url": "https://raw.githubusercontent.com/lamalab-org/chembench/45f8bad062fe552810c52be3a328d5da8597ed30/reports/gpt-4o/gpt-4o.json",
+      "sha256": "160d72208d1551b919060cb385b9d285348eaf11770f364891c6d15a33108084"
+    },
+    {
+      "id": "tau-manifest",
+      "file": "tau-manifest.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/manifest.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/manifest.json",
+      "sha256": "b313029ea07c987cc913ce0bd20f2fdc389c2da44b9b9b09ed231fa6c1c15f0a"
+    },
+    {
+      "id": "cc-by-4.0",
+      "file": "cc-by-4.0.raw",
+      "download_url": "https://creativecommons.org/licenses/by/4.0/legalcode.txt",
+      "source_url": "https://creativecommons.org/licenses/by/4.0/legalcode.txt",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "id": "cc-by-sa-4.0",
+      "file": "cc-by-sa-4.0.raw",
+      "download_url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
+      "source_url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.txt",
+      "sha256": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5"
+    },
+    {
+      "id": "arena-card",
+      "file": "arena-card.raw",
+      "download_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/b17ca88fd34809e9161df1ef89fd444acaf598e4/README.md",
+      "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/b17ca88fd34809e9161df1ef89fd444acaf598e4/README.md",
+      "sha256": "b18c0997a38fbdb747ca03beee6d765c7dcd206330a89bf2f0f2398aa9b6ce9c"
+    },
+    {
+      "id": "SWE-bench_Pro-os-license",
+      "file": "SWE-bench_Pro-os-license.raw",
+      "download_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/LICENSE",
+      "sha256": "03a44b2f703779d3f34c18e056da5b893537ca61588e6b15b615a4a612e77fb9"
+    },
+    {
+      "id": "chembench-license",
+      "file": "chembench-license.raw",
+      "download_url": "https://raw.githubusercontent.com/lamalab-org/chembench/45f8bad062fe552810c52be3a328d5da8597ed30/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/lamalab-org/chembench/45f8bad062fe552810c52be3a328d5da8597ed30/LICENSE",
+      "sha256": "027ff98bb0102effddd422dcb975cad00a0c6d60c976080683a6a9ded57bafca"
+    },
+    {
+      "id": "BixBench-license",
+      "file": "BixBench-license.raw",
+      "download_url": "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/LICENSE",
+      "sha256": "9630430e02c6a317ed7ebb49a35059472decb389e874c6db3d084190ad10f6f8"
+    },
+    {
+      "id": "MMLU-Pro-license",
+      "file": "MMLU-Pro-license.raw",
+      "download_url": "https://raw.githubusercontent.com/TIGER-AI-Lab/MMLU-Pro/f418b116db00b065c2aea046518d8fcf74d39872/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/TIGER-AI-Lab/MMLU-Pro/f418b116db00b065c2aea046518d8fcf74d39872/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "id": "tau2-bench-license",
+      "file": "tau2-bench-license.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/LICENSE",
+      "sha256": "e67c5aa0074dfcaefd3c3a1aedb94cb539234aecd15d5a972574e3200e6252fe"
+    },
+    {
+      "id": "agentdojo-license",
+      "file": "agentdojo-license.raw",
+      "download_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/LICENSE",
+      "sha256": "4285a071f2d382338e52b4fb0a186d952984a34d43a33d8872e1a1d8cb43401e"
+    },
+    {
+      "id": "charxiv-data-license",
+      "file": "charxiv-data-license.raw",
+      "download_url": "https://raw.githubusercontent.com/princeton-nlp/CharXiv/7ebe88f78dee387691551f071abcb2b9e1a8025b/data/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/princeton-nlp/CharXiv/7ebe88f78dee387691551f071abcb2b9e1a8025b/data/LICENSE",
+      "sha256": "925e1b06fa82e379bad225eb67723f7f296266d61b9fe6ac83445cc9778b8e2c"
+    },
+    {
+      "id": "tau-claude-opus-4-5_sierra_2026-02-26",
+      "file": "tau-claude-opus-4-5_sierra_2026-02-26.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-opus-4-5_sierra_2026-02-26/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-opus-4-5_sierra_2026-02-26/submission.json",
+      "sha256": "9c3b8b400e21d370cea27caec3643bfe6fd8385be9ed5135b585d0b976b6e34f"
+    },
+    {
+      "id": "tau-claude-sonnet-4-5_sierra_2026-02-26",
+      "file": "tau-claude-sonnet-4-5_sierra_2026-02-26.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-sonnet-4-5_sierra_2026-02-26/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-sonnet-4-5_sierra_2026-02-26/submission.json",
+      "sha256": "e5ce9f12ab9e616db52e973e90b48144b7bafd29e35c4fd6c3e7fde573a9b8d8"
+    },
+    {
+      "id": "charxiv-card",
+      "file": "charxiv-card.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/README.md",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/README.md",
+      "sha256": "1874b3229ec3fa78abd5aa8ef51548b673ad44cefacd79cf632ebd3e299b1f51"
+    },
+    {
+      "id": "RULER-license",
+      "file": "RULER-license.raw",
+      "download_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/LICENSE",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/LICENSE",
+      "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1"
+    },
+    {
+      "id": "tau-cortex-0-1_principledmachines_2026-10-20",
+      "file": "tau-cortex-0-1_principledmachines_2026-10-20.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/cortex-0-1_principledmachines_2026-10-20/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/cortex-0-1_principledmachines_2026-10-20/submission.json",
+      "sha256": "8da2f652410da89bd242b462771d560fe70b531653b550b882c0a436cd8befa5"
+    },
+    {
+      "id": "tau-gpt-5-5_sierra_2026-05-05",
+      "file": "tau-gpt-5-5_sierra_2026-05-05.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gpt-5-5_sierra_2026-05-05/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gpt-5-5_sierra_2026-05-05/submission.json",
+      "sha256": "24247d74b2a942da4c8f85503d0f8b95ba6e2d5df7158c2adf15049056d8b7f4"
+    },
+    {
+      "id": "tau-gemini-3-flash_sierra_2026-03-02",
+      "file": "tau-gemini-3-flash_sierra_2026-03-02.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gemini-3-flash_sierra_2026-03-02/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gemini-3-flash_sierra_2026-03-02/submission.json",
+      "sha256": "d1b7d1fc5d789662fb6eeb4a5ec01948295db397d2313df42c43c7fd8caf3637"
+    },
+    {
+      "id": "tau-glm-5-think_sierra_2026-03-02",
+      "file": "tau-glm-5-think_sierra_2026-03-02.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/glm-5-think_sierra_2026-03-02/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/glm-5-think_sierra_2026-03-02/submission.json",
+      "sha256": "fa27b9a1a7a4c8b15517ec1329ef21fcc700be2ca12f21659b60aeda99c7de8f"
+    },
+    {
+      "id": "tau-distyl-buttonagent_distyl_2026-03-25",
+      "file": "tau-distyl-buttonagent_distyl_2026-03-25.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/distyl-buttonagent_distyl_2026-03-25/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/distyl-buttonagent_distyl_2026-03-25/submission.json",
+      "sha256": "bb1984dd43557ac3e526f64eeaea0fd4467d924c69d38655d64dde0a45a2c522"
+    },
+    {
+      "id": "tau-gpt-5-4_sierra_2026-03-25",
+      "file": "tau-gpt-5-4_sierra_2026-03-25.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gpt-5-4_sierra_2026-03-25/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gpt-5-4_sierra_2026-03-25/submission.json",
+      "sha256": "47fa11691a745682b86ffc91e1a57aef6d6d7cebe60df66820ebb310b518b0ab"
+    },
+    {
+      "id": "tau-claude-opus-4-6_sierra_2026-05-05",
+      "file": "tau-claude-opus-4-6_sierra_2026-05-05.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-opus-4-6_sierra_2026-05-05/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-opus-4-6_sierra_2026-05-05/submission.json",
+      "sha256": "880ea58f76664a0f0e06c3117c6a8b75c4007149d06cc3de04f852f62487f3f3"
+    },
+    {
+      "id": "tau-claude-opus-4-7_sierra_2026-05-05",
+      "file": "tau-claude-opus-4-7_sierra_2026-05-05.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-opus-4-7_sierra_2026-05-05/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-opus-4-7_sierra_2026-05-05/submission.json",
+      "sha256": "7ec10475f58a7d24c55548df9b8a04b6e6105dc25a6927f618c487185f28eca9"
+    },
+    {
+      "id": "tau-gpt-5-2_sierra_2026-02-26",
+      "file": "tau-gpt-5-2_sierra_2026-02-26.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gpt-5-2_sierra_2026-02-26/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gpt-5-2_sierra_2026-02-26/submission.json",
+      "sha256": "343687b822edbcbff42a4d4632ecc6288a58d9817a7a02c8533081c5709c0ac6"
+    },
+    {
+      "id": "tau-qwen3.5-397b-a17b-think_sierra_2026-03-02",
+      "file": "tau-qwen3.5-397b-a17b-think_sierra_2026-03-02.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/qwen3.5-397b-a17b-think_sierra_2026-03-02/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/qwen3.5-397b-a17b-think_sierra_2026-03-02/submission.json",
+      "sha256": "2cfb2c7d2a46e9f22154fa153dcdf155d50dbd5bf86233ecf564eccca1e5913e"
+    },
+    {
+      "id": "tau-grok-4-fast_sierra_2026-05-05",
+      "file": "tau-grok-4-fast_sierra_2026-05-05.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/grok-4-fast_sierra_2026-05-05/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/grok-4-fast_sierra_2026-05-05/submission.json",
+      "sha256": "e310d5fa844297cbb9b3ff0755f9784ddeae8daf99624f1003a8d0bdd973c237"
+    },
+    {
+      "id": "tau-gemini-2-5-pro_sierra_2026-05-05",
+      "file": "tau-gemini-2-5-pro_sierra_2026-05-05.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gemini-2-5-pro_sierra_2026-05-05/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gemini-2-5-pro_sierra_2026-05-05/submission.json",
+      "sha256": "b14f65b54ac7b733550cb1e04b986d17b7ff877de6ff79e94e8e98998035de6f"
+    },
+    {
+      "id": "tau-gemini-3-1-pro-preview_sierra_2026-05-05",
+      "file": "tau-gemini-3-1-pro-preview_sierra_2026-05-05.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gemini-3-1-pro-preview_sierra_2026-05-05/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gemini-3-1-pro-preview_sierra_2026-05-05/submission.json",
+      "sha256": "16ada360be015c129cc704ab283535144305df1b1cb911750bb2ec6a2fde53ac"
+    },
+    {
+      "id": "tau-gpt-5-2-none_sierra_2026-02-26",
+      "file": "tau-gpt-5-2-none_sierra_2026-02-26.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gpt-5-2-none_sierra_2026-02-26/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gpt-5-2-none_sierra_2026-02-26/submission.json",
+      "sha256": "e1be4bac436e8115f9253697d68b71867f17cfcb2bef5dfa6a756c0a89a70dab"
+    },
+    {
+      "id": "tau-raft-30b-a3b_neu_2026-04-29",
+      "file": "tau-raft-30b-a3b_neu_2026-04-29.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/raft-30b-a3b_neu_2026-04-29/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/raft-30b-a3b_neu_2026-04-29/submission.json",
+      "sha256": "ea8fff2d8386ff90b9f63aefda32a3f1afe5d01b087fdea9bf178919edc44fe6"
+    },
+    {
+      "id": "tau-gemini-3-pro_sierra_2026-03-02",
+      "file": "tau-gemini-3-pro_sierra_2026-03-02.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gemini-3-pro_sierra_2026-03-02/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gemini-3-pro_sierra_2026-03-02/submission.json",
+      "sha256": "f5c7b2d432d4efc6d6c1533f87e61ae1673336579df9f5f5cf986c277f0afd18"
+    },
+    {
+      "id": "tau-grok-4-1-fast_sierra_2026-05-05",
+      "file": "tau-grok-4-1-fast_sierra_2026-05-05.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/grok-4-1-fast_sierra_2026-05-05/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/grok-4-1-fast_sierra_2026-05-05/submission.json",
+      "sha256": "24efda601208398e37890ee127e37190b2080dc8eb34aa52fac0ee7f32ae1e08"
+    },
+    {
+      "id": "tau-grok-4-2_sierra_2026-05-05",
+      "file": "tau-grok-4-2_sierra_2026-05-05.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/grok-4-2_sierra_2026-05-05/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/grok-4-2_sierra_2026-05-05/submission.json",
+      "sha256": "6187e4b645a9de92f40ba0d6b800c13200ef39c5bc95062d5ae8122251459fc6"
+    },
+    {
+      "id": "tau-gpt-5-6-sol_sierra_2026-08-04",
+      "file": "tau-gpt-5-6-sol_sierra_2026-08-04.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gpt-5-6-sol_sierra_2026-08-04/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/gpt-5-6-sol_sierra_2026-08-04/submission.json",
+      "sha256": "0394128dc04d58ff77846e404ce588d786988a5c2ffcb69a8af09f19c46c97a4"
+    },
+    {
+      "id": "tau-claude-fable-5_sierra_2026-08-04",
+      "file": "tau-claude-fable-5_sierra_2026-08-04.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-fable-5_sierra_2026-08-04/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-fable-5_sierra_2026-08-04/submission.json",
+      "sha256": "f5cb61669a7f9665a006031ae1779b59230dcb4527cf763cfc3d2c771878166b"
+    },
+    {
+      "id": "tau-claude-opus-5_sierra_2026-08-04",
+      "file": "tau-claude-opus-5_sierra_2026-08-04.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-opus-5_sierra_2026-08-04/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-opus-5_sierra_2026-08-04/submission.json",
+      "sha256": "4ab17f3f2e77cae8b2b4e4ba13413f7e2168104a772f25afe9d071950ed24ba2"
+    },
+    {
+      "id": "tau-muse-spark-1-1_sierra_2026-08-04",
+      "file": "tau-muse-spark-1-1_sierra_2026-08-04.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/muse-spark-1-1_sierra_2026-08-04/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/muse-spark-1-1_sierra_2026-08-04/submission.json",
+      "sha256": "5ec4d2b119542bb40358374e3408515dccf5f0b3dace60de7936a20cb9bf13da"
+    },
+    {
+      "id": "tau-claude-opus-4-8_sierra_2026-08-04",
+      "file": "tau-claude-opus-4-8_sierra_2026-08-04.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-opus-4-8_sierra_2026-08-04/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/claude-opus-4-8_sierra_2026-08-04/submission.json",
+      "sha256": "13052291f58a74e601c4e577bce110a7fad93a126edaa87fb483e49df0823054"
+    },
+    {
+      "id": "tau-kimi-k3_sierra_2026-08-04",
+      "file": "tau-kimi-k3_sierra_2026-08-04.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/kimi-k3_sierra_2026-08-04/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/kimi-k3_sierra_2026-08-04/submission.json",
+      "sha256": "71e1ac4413f59ceac04851843319f73b485280a756f3b69fb5f47836d65a52b6"
+    },
+    {
+      "id": "tau-grok-4-5_sierra_2026-08-04",
+      "file": "tau-grok-4-5_sierra_2026-08-04.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/grok-4-5_sierra_2026-08-04/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/grok-4-5_sierra_2026-08-04/submission.json",
+      "sha256": "fb6414a4c05756d2ea00289684680f22fe3111a1ed69cf8d77c1071b1075bcb1"
+    },
+    {
+      "id": "tau-inkling_sierra_2026-08-04",
+      "file": "tau-inkling_sierra_2026-08-04.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/inkling_sierra_2026-08-04/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/inkling_sierra_2026-08-04/submission.json",
+      "sha256": "f5d7b5fae9986619bc3258d1be25b3577f46d4e61a1b6c8853933710eb3169b9"
+    },
+    {
+      "id": "charxiv-stats-Cambrian-34B-reasoning_val",
+      "file": "charxiv-stats-Cambrian-34B-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Cambrian-34B-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Cambrian-34B-reasoning_val.json",
+      "sha256": "133d6a0e3c7c9f508fb69c69aa94133fa6d5498b215f4193071465fe6eaf5fcc"
+    },
+    {
+      "id": "charxiv-stats-Cambrian-34B-descriptive_val",
+      "file": "charxiv-stats-Cambrian-34B-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Cambrian-34B-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Cambrian-34B-descriptive_val.json",
+      "sha256": "09266fce92a423c8353537913a4224f6a61fce2ccffdaa9cafb3fdbdfc20a3d7"
+    },
+    {
+      "id": "tau-glm-5-2_sierra_2026-08-04",
+      "file": "tau-glm-5-2_sierra_2026-08-04.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/glm-5-2_sierra_2026-08-04/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/glm-5-2_sierra_2026-08-04/submission.json",
+      "sha256": "58b36fd68b92eac5c9e72efce3952aa4004db2b7f6f520c2bcf2908c4845e801"
+    },
+    {
+      "id": "tau-qwen3-8-max_sierra_2026-08-04",
+      "file": "tau-qwen3-8-max_sierra_2026-08-04.raw",
+      "download_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/qwen3-8-max_sierra_2026-08-04/submission.json",
+      "source_url": "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/qwen3-8-max_sierra_2026-08-04/submission.json",
+      "sha256": "afd5525e447a221f6997b6af8a6a72536acda81b0e7775fd7124836a13a9ad76"
+    },
+    {
+      "id": "charxiv-stats-Claude-3-5-Sonnet-descriptive_val",
+      "file": "charxiv-stats-Claude-3-5-Sonnet-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-5-Sonnet-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-5-Sonnet-descriptive_val.json",
+      "sha256": "4d03fc0012e09e809ccf093f3b48bf5111c769d3b85f597836c444ff9b4bc32b"
+    },
+    {
+      "id": "charxiv-stats-ChartGemma-reasoning_val",
+      "file": "charxiv-stats-ChartGemma-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-ChartGemma-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-ChartGemma-reasoning_val.json",
+      "sha256": "bcd85ad48f0b431c6c9b9261a3d2989c114c0d27f53964cb56ea8ce7c79c9e75"
+    },
+    {
+      "id": "charxiv-stats-ChartGemma-descriptive_val",
+      "file": "charxiv-stats-ChartGemma-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-ChartGemma-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-ChartGemma-descriptive_val.json",
+      "sha256": "96eeb92b6f14949c993d2f786dce9794c920288220a75ef81ee904776505d2c3"
+    },
+    {
+      "id": "charxiv-stats-Claude-3-Opus-descriptive_val",
+      "file": "charxiv-stats-Claude-3-Opus-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Opus-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Opus-descriptive_val.json",
+      "sha256": "86ca0b0bea757fd48ef953e292fb7fdb6221d94b89633d16794a8bb937217e6d"
+    },
+    {
+      "id": "charxiv-stats-Claude-3-5-Sonnet-reasoning_val",
+      "file": "charxiv-stats-Claude-3-5-Sonnet-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-5-Sonnet-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-5-Sonnet-reasoning_val.json",
+      "sha256": "eb4407fbe67e3a6d896ae2dc973d7e676dbe760bc08e15f4229931f7487262e5"
+    },
+    {
+      "id": "charxiv-stats-DeepSeek-VL-reasoning_val",
+      "file": "charxiv-stats-DeepSeek-VL-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-DeepSeek-VL-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-DeepSeek-VL-reasoning_val.json",
+      "sha256": "81baf1ddd03f21ccfe001ab2cc0bb8f5292672531b3f006d03487da5118404ab"
+    },
+    {
+      "id": "charxiv-stats-Claude-3-Opus-reasoning_val",
+      "file": "charxiv-stats-Claude-3-Opus-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Opus-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Opus-reasoning_val.json",
+      "sha256": "c32efb963218c38fd16576b8ea2355cd6253f6049a51b9aeeb6b27a64348a8a1"
+    },
+    {
+      "id": "charxiv-stats-Claude-3-Haiku-reasoning_val",
+      "file": "charxiv-stats-Claude-3-Haiku-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Haiku-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Haiku-reasoning_val.json",
+      "sha256": "2d98efbf51e10765c723c31e639ca53008afe78c1d7c651600df90db9c7eb4d1"
+    },
+    {
+      "id": "charxiv-stats-GPT-4o-Random-reasoning_val",
+      "file": "charxiv-stats-GPT-4o-Random-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-Random-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-Random-reasoning_val.json",
+      "sha256": "1ef1003817964c2662811d7fd8adf607f84d0d9a57b77b5293e5e1e0b0c25b5b"
+    },
+    {
+      "id": "charxiv-stats-GPT-4V-Turbo-reasoning_val",
+      "file": "charxiv-stats-GPT-4V-Turbo-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4V-Turbo-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4V-Turbo-reasoning_val.json",
+      "sha256": "b74374cad257b2a8e48b70090a80e6f3cb9b0878e1816ec5f4847a45fe3ccd1c"
+    },
+    {
+      "id": "charxiv-stats-Claude-3-Sonnet-reasoning_val",
+      "file": "charxiv-stats-Claude-3-Sonnet-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Sonnet-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Sonnet-reasoning_val.json",
+      "sha256": "372da3ad8ee5b1b9dc91a291f897d0f8e90aa8a56e340bd8a0eb8dfc4c021c78"
+    },
+    {
+      "id": "charxiv-stats-GPT-4o-mini-reasoning_val",
+      "file": "charxiv-stats-GPT-4o-mini-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-mini-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-mini-reasoning_val.json",
+      "sha256": "1f3b6fecc150e088bc1cb4d49c0b5fc79117e4a29f0f6aae6cee8e3d705e0979"
+    },
+    {
+      "id": "charxiv-stats-Claude-3-Haiku-descriptive_val",
+      "file": "charxiv-stats-Claude-3-Haiku-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Haiku-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Haiku-descriptive_val.json",
+      "sha256": "28555ed17fe07a69705a2c5a3f4c3c9c65941f8e3ce60ca47e6e852c2a228fdb"
+    },
+    {
+      "id": "charxiv-stats-Claude-3-Sonnet-descriptive_val",
+      "file": "charxiv-stats-Claude-3-Sonnet-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Sonnet-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Sonnet-descriptive_val.json",
+      "sha256": "74701019a02a01884ba9b506e772400782ab281aa892e7776c6db9fabf474ff1"
+    },
+    {
+      "id": "charxiv-stats-DeepSeek-VL-descriptive_val",
+      "file": "charxiv-stats-DeepSeek-VL-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-DeepSeek-VL-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-DeepSeek-VL-descriptive_val.json",
+      "sha256": "05807b15eb9dc147e5b3fcb660759459bb59f830ac21245c5c59cdaafc2560c9"
+    },
+    {
+      "id": "charxiv-stats-GPT-4V-Turbo-descriptive_val",
+      "file": "charxiv-stats-GPT-4V-Turbo-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4V-Turbo-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4V-Turbo-descriptive_val.json",
+      "sha256": "2e565b835a5fca59832d451b6b1450ae7c3389719fb8211dfa07498d855a3f0b"
+    },
+    {
+      "id": "charxiv-stats-GPT-4o-descriptive_val",
+      "file": "charxiv-stats-GPT-4o-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-descriptive_val.json",
+      "sha256": "1a3d4a1eff5d57a4491d59211fb78dd9fda99159f1ce3a926e493db42de99228"
+    },
+    {
+      "id": "charxiv-stats-GPT-4o-mini-descriptive_val",
+      "file": "charxiv-stats-GPT-4o-mini-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-mini-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-mini-descriptive_val.json",
+      "sha256": "d7480635a1ea12de54ed5e773959ebfd05afe32933ee2a8d6433092be618653e"
+    },
+    {
+      "id": "charxiv-stats-GPT-4o-Random-descriptive_val",
+      "file": "charxiv-stats-GPT-4o-Random-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-Random-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-Random-descriptive_val.json",
+      "sha256": "7c3d99e1a71023ab5d86ca6b7f16b78135c1f64bfa6cc0c7d7cd4ae826f685d6"
+    },
+    {
+      "id": "charxiv-stats-GPT-4o-reasoning_val",
+      "file": "charxiv-stats-GPT-4o-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-reasoning_val.json",
+      "sha256": "2a4385cf4346629b8b8f35a647035e54b3b5c38a70be5ce16e61aa7cd5e96325"
+    },
+    {
+      "id": "charxiv-stats-Gemini-1-5-Pro-reasoning_val",
+      "file": "charxiv-stats-Gemini-1-5-Pro-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Gemini-1-5-Pro-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Gemini-1-5-Pro-reasoning_val.json",
+      "sha256": "296861a2107a9f5c9946e7a8816a743bcea00b2470a55f7a19dbb6895d2b5883"
+    },
+    {
+      "id": "charxiv-stats-Gemini-1.0-Pro-Vision-reasoning_val",
+      "file": "charxiv-stats-Gemini-1.0-Pro-Vision-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Gemini-1.0-Pro-Vision-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Gemini-1.0-Pro-Vision-reasoning_val.json",
+      "sha256": "3c099a9735c6df21b6c598f9b17d3a9186406ad54abd9dade1ba898568e45cd8"
+    },
+    {
+      "id": "charxiv-stats-IDEFICS-2-Chatty-descriptive_val",
+      "file": "charxiv-stats-IDEFICS-2-Chatty-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-IDEFICS-2-Chatty-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-IDEFICS-2-Chatty-descriptive_val.json",
+      "sha256": "2ad77e076b7eed045d66d877a9aa245a4ea13763c525442d837d81a41e1e8c52"
+    },
+    {
+      "id": "charxiv-stats-IDEFICS-2-reasoning_val",
+      "file": "charxiv-stats-IDEFICS-2-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-IDEFICS-2-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-IDEFICS-2-reasoning_val.json",
+      "sha256": "b5e5877fda8d4ce4cf113998b87935bece284679f874d25d1932b6b53190c292"
+    },
+    {
+      "id": "charxiv-stats-InternLM-XComposer2-4KHD-descriptive_val",
+      "file": "charxiv-stats-InternLM-XComposer2-4KHD-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternLM-XComposer2-4KHD-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternLM-XComposer2-4KHD-descriptive_val.json",
+      "sha256": "78bf76c246301cb059ff6eeeef675f78021d3f74757469c5c6e33d09be7beb23"
+    },
+    {
+      "id": "charxiv-stats-Human-reasoning_val",
+      "file": "charxiv-stats-Human-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Human-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Human-reasoning_val.json",
+      "sha256": "9d54d5c2e004deb74fa381e8a7593b226c0af7aaf9dbf655c5a79392a9c7ca7e"
+    },
+    {
+      "id": "charxiv-stats-Human-descriptive_val",
+      "file": "charxiv-stats-Human-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Human-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Human-descriptive_val.json",
+      "sha256": "f5bc5e7b83e4e408dc391fc467e1576204a9dbba5f7b175271cc0e799dcbada3"
+    },
+    {
+      "id": "charxiv-stats-IDEFICS-2-Chatty-reasoning_val",
+      "file": "charxiv-stats-IDEFICS-2-Chatty-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-IDEFICS-2-Chatty-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-IDEFICS-2-Chatty-reasoning_val.json",
+      "sha256": "fb3ef6687eb071d927555e43fa0ead6c8362d21dc425fa115915d01b2fdcbd24"
+    },
+    {
+      "id": "charxiv-stats-Gemini-1-5-Pro-descriptive_val",
+      "file": "charxiv-stats-Gemini-1-5-Pro-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Gemini-1-5-Pro-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Gemini-1-5-Pro-descriptive_val.json",
+      "sha256": "79d23771b287b00256bf124a2c55210e18d55d717434df016864fe3a2ac8f447"
+    },
+    {
+      "id": "charxiv-stats-Gemini-1.0-Pro-Vision-descriptive_val",
+      "file": "charxiv-stats-Gemini-1.0-Pro-Vision-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Gemini-1.0-Pro-Vision-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Gemini-1.0-Pro-Vision-descriptive_val.json",
+      "sha256": "62c36956022e1ff9c0c774f898e1941cf0303a07da4c4486f4b8722bb6a3f8e6"
+    },
+    {
+      "id": "charxiv-stats-IDEFICS-2-descriptive_val",
+      "file": "charxiv-stats-IDEFICS-2-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-IDEFICS-2-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-IDEFICS-2-descriptive_val.json",
+      "sha256": "c2fde76a30dd401f708cc370d78ada94ea788adf064de2f3213883d103e00e44"
+    },
+    {
+      "id": "charxiv-stats-InternLM-XComposer2-descriptive_val",
+      "file": "charxiv-stats-InternLM-XComposer2-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternLM-XComposer2-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternLM-XComposer2-descriptive_val.json",
+      "sha256": "9294c3a5fe082b2aa71cbdb28460fab1e8117960a3786e9f2d1354b80387dbcf"
+    },
+    {
+      "id": "charxiv-stats-InternLM-XComposer2-4KHD-reasoning_val",
+      "file": "charxiv-stats-InternLM-XComposer2-4KHD-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternLM-XComposer2-4KHD-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternLM-XComposer2-4KHD-reasoning_val.json",
+      "sha256": "513c9fd23f768286d3ef56534d7cdfc8024d66b6bbfc3203a952a2a53d7ed531"
+    },
+    {
+      "id": "charxiv-stats-InternVL-Chat-V1-5-descriptive_val",
+      "file": "charxiv-stats-InternVL-Chat-V1-5-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL-Chat-V1-5-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL-Chat-V1-5-descriptive_val.json",
+      "sha256": "1f94f528186e013b5ad4eb1b7dca3c2bedd232f3a1c8ddbdb96a6c2607211e67"
+    },
+    {
+      "id": "charxiv-stats-InternLM-XComposer2-reasoning_val",
+      "file": "charxiv-stats-InternLM-XComposer2-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternLM-XComposer2-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternLM-XComposer2-reasoning_val.json",
+      "sha256": "858614a3e4b4dafb88301cda4541f4864df93175c967898b8be67b9dfd2c1ed5"
+    },
+    {
+      "id": "charxiv-stats-InternVL2-76B-reasoning_val",
+      "file": "charxiv-stats-InternVL2-76B-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-76B-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-76B-reasoning_val.json",
+      "sha256": "a721faac8b46ca7a0e0428080164d2c2d0e55846b96f5ab18b7e2b59f73f6c98"
+    },
+    {
+      "id": "charxiv-stats-Mini-Gemini-HD-Yi-34B-descriptive_val",
+      "file": "charxiv-stats-Mini-Gemini-HD-Yi-34B-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Mini-Gemini-HD-Yi-34B-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Mini-Gemini-HD-Yi-34B-descriptive_val.json",
+      "sha256": "a49eb1d6d138877d2f3917fec1acd6e3ed184c209d111e4cec137006452064dc"
+    },
+    {
+      "id": "charxiv-stats-LLaVA-1-6-Yi-34B-reasoning_val",
+      "file": "charxiv-stats-LLaVA-1-6-Yi-34B-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-LLaVA-1-6-Yi-34B-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-LLaVA-1-6-Yi-34B-reasoning_val.json",
+      "sha256": "32e363c83e96c420e94ddbecd0c06fe05a4042babaee88c4ee7f9ccb02648636"
+    },
+    {
+      "id": "charxiv-stats-InternVL-Chat-V1-5-reasoning_val",
+      "file": "charxiv-stats-InternVL-Chat-V1-5-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL-Chat-V1-5-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL-Chat-V1-5-reasoning_val.json",
+      "sha256": "4cc1638ae25c417d1070339c52ed55d2b6a3edc9f1e83ac13bd87b9dc50448c0"
+    },
+    {
+      "id": "charxiv-stats-InternVL2-26B-reasoning_val",
+      "file": "charxiv-stats-InternVL2-26B-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-26B-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-26B-reasoning_val.json",
+      "sha256": "ad13a0bcb45c3047047f92a0b459b438d7164c8b5802eadffd2e70ff43942619"
+    },
+    {
+      "id": "charxiv-stats-Mini-Gemini-HD-Yi-34B-reasoning_val",
+      "file": "charxiv-stats-Mini-Gemini-HD-Yi-34B-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Mini-Gemini-HD-Yi-34B-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Mini-Gemini-HD-Yi-34B-reasoning_val.json",
+      "sha256": "7aad9aecd80a5f9f0cede1a6151c3efef4dd1b5d0ae3cfa0ff6cdfcb24da19fd"
+    },
+    {
+      "id": "charxiv-stats-InternVL2-76B-descriptive_val",
+      "file": "charxiv-stats-InternVL2-76B-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-76B-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-76B-descriptive_val.json",
+      "sha256": "5b11616559e068d3c59357c72d0456212a69febbb7f25b500eeda8d65078d9dc"
+    },
+    {
+      "id": "charxiv-stats-MiniCPM-V2-5-descriptive_val",
+      "file": "charxiv-stats-MiniCPM-V2-5-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MiniCPM-V2-5-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MiniCPM-V2-5-descriptive_val.json",
+      "sha256": "f6befa8950bc1c93664d0a4f39c4ebf4c4f5ffdad42e8668119689423c4e2735"
+    },
+    {
+      "id": "charxiv-stats-InternVL2-Pro-descriptive_val",
+      "file": "charxiv-stats-InternVL2-Pro-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-Pro-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-Pro-descriptive_val.json",
+      "sha256": "4a04e6fe663395877e08085841dda08a5f277919bd4ac8959ec1c58c284b9a44"
+    },
+    {
+      "id": "charxiv-stats-LLaVA-1-6-Mistral-7B-reasoning_val",
+      "file": "charxiv-stats-LLaVA-1-6-Mistral-7B-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-LLaVA-1-6-Mistral-7B-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-LLaVA-1-6-Mistral-7B-reasoning_val.json",
+      "sha256": "c1da252efdc7b54cbe635aa77b647898365084633cb91ef54ffaec8bb451bd1d"
+    },
+    {
+      "id": "charxiv-stats-LLaVA-1-6-Mistral-7B-descriptive_val",
+      "file": "charxiv-stats-LLaVA-1-6-Mistral-7B-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-LLaVA-1-6-Mistral-7B-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-LLaVA-1-6-Mistral-7B-descriptive_val.json",
+      "sha256": "79ff8a027cd60a39856c0e8dbb0cd561ad054aeea5c1f9e2f5a082ed2f6fb52a"
+    },
+    {
+      "id": "charxiv-stats-Mini-Gemini-HD-LLaMA3-8B-descriptive_val",
+      "file": "charxiv-stats-Mini-Gemini-HD-LLaMA3-8B-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Mini-Gemini-HD-LLaMA3-8B-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Mini-Gemini-HD-LLaMA3-8B-descriptive_val.json",
+      "sha256": "aa51a6dbe7ab9f3e17409064ed38fbf733cba7843e7394f039490d65bffffbcc"
+    },
+    {
+      "id": "charxiv-stats-Mini-Gemini-HD-LLaMA3-8B-reasoning_val",
+      "file": "charxiv-stats-Mini-Gemini-HD-LLaMA3-8B-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Mini-Gemini-HD-LLaMA3-8B-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Mini-Gemini-HD-LLaMA3-8B-reasoning_val.json",
+      "sha256": "ffb52763d1e0c129085a8517d8e827ea67c5d1cd65e1d7c703a352fe8519799b"
+    },
+    {
+      "id": "charxiv-stats-InternVL2-Pro-reasoning_val",
+      "file": "charxiv-stats-InternVL2-Pro-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-Pro-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-Pro-reasoning_val.json",
+      "sha256": "7da613461a6ff1dd990a23f336b89916252838430b0994a233ce1c87f066afb8"
+    },
+    {
+      "id": "charxiv-stats-LLaVA-1-6-Yi-34B-descriptive_val",
+      "file": "charxiv-stats-LLaVA-1-6-Yi-34B-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-LLaVA-1-6-Yi-34B-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-LLaVA-1-6-Yi-34B-descriptive_val.json",
+      "sha256": "d4934eb41e9ecc1caf1ca798f6e2ce7d4e0210a96acb7c9d6daed609406035f9"
+    },
+    {
+      "id": "charxiv-stats-InternVL2-26B-descriptive_val",
+      "file": "charxiv-stats-InternVL2-26B-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-26B-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-26B-descriptive_val.json",
+      "sha256": "fc4a3117df336c8e8952567db58cc2717f56cfd65ceec5fe1bf0fa62b46a4f2a"
+    },
+    {
+      "id": "charxiv-stats-MiniCPM-V2-reasoning_val",
+      "file": "charxiv-stats-MiniCPM-V2-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MiniCPM-V2-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MiniCPM-V2-reasoning_val.json",
+      "sha256": "e43ec03909e49989dc8bc584bcc85fdc362c6ceebde3d9006ba7634e8cd12149"
+    },
+    {
+      "id": "charxiv-stats-Ovis1.5-Llama3-8B-reasoning_val",
+      "file": "charxiv-stats-Ovis1.5-Llama3-8B-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Ovis1.5-Llama3-8B-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Ovis1.5-Llama3-8B-reasoning_val.json",
+      "sha256": "e64ed801815fb7bc5b44233a4c717dc00b90f2b7d97fcb58ecfb744237e6f38a"
+    },
+    {
+      "id": "charxiv-stats-Phi-3-Vision-reasoning_val",
+      "file": "charxiv-stats-Phi-3-Vision-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Phi-3-Vision-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Phi-3-Vision-reasoning_val.json",
+      "sha256": "98b4ebe6f6ed8def51f3dc16289ba6bac8cd70b1d5025489e13329e2b7e2f991"
+    },
+    {
+      "id": "charxiv-stats-MiniCPM-V2-5-reasoning_val",
+      "file": "charxiv-stats-MiniCPM-V2-5-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MiniCPM-V2-5-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MiniCPM-V2-5-reasoning_val.json",
+      "sha256": "0562e819de5bfe1ab2a82afafa73fd12a9ac9bf4a642a113e8dbaad13e054451"
+    },
+    {
+      "id": "charxiv-stats-Qwen-VL-Plus-reasoning_val",
+      "file": "charxiv-stats-Qwen-VL-Plus-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Qwen-VL-Plus-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Qwen-VL-Plus-reasoning_val.json",
+      "sha256": "8a5f5ff1d9ce68f305edd107143e798f810b85881ad8cb07b9bc1582931b1682"
+    },
+    {
+      "id": "charxiv-stats-Ovis1.5-Gemma2-9B-reasoning_val",
+      "file": "charxiv-stats-Ovis1.5-Gemma2-9B-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Ovis1.5-Gemma2-9B-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Ovis1.5-Gemma2-9B-reasoning_val.json",
+      "sha256": "6667f16af2f28987adb388a69290d8480e75648803bad099f679ad29000f10cf"
+    },
+    {
+      "id": "charxiv-stats-Qwen-VL-Max-reasoning_val",
+      "file": "charxiv-stats-Qwen-VL-Max-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Qwen-VL-Max-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Qwen-VL-Max-reasoning_val.json",
+      "sha256": "add42fe789c1cc762246b2ebd20e716fb985d142ea648b8f91042868f2851f16"
+    },
+    {
+      "id": "charxiv-stats-MoAI-reasoning_val",
+      "file": "charxiv-stats-MoAI-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MoAI-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MoAI-reasoning_val.json",
+      "sha256": "30640a8e1b0c58ea3261319fbe61074f54891c71535711516adbcebecc4a8834"
+    },
+    {
+      "id": "charxiv-stats-Qwen-VL-Max-descriptive_val",
+      "file": "charxiv-stats-Qwen-VL-Max-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Qwen-VL-Max-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Qwen-VL-Max-descriptive_val.json",
+      "sha256": "cb79c7cd6ea9ac54185319f453f901fa2ccaf8081ae2b8a479c9815e2ce0048a"
+    },
+    {
+      "id": "charxiv-stats-Reka-Core-descriptive_val",
+      "file": "charxiv-stats-Reka-Core-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Core-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Core-descriptive_val.json",
+      "sha256": "8f6794485061488bc943ed99ba9e42a3515172a00fffca7000704842e3c876dd"
+    },
+    {
+      "id": "charxiv-stats-Ovis1.5-Gemma2-9B-descriptive_val",
+      "file": "charxiv-stats-Ovis1.5-Gemma2-9B-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Ovis1.5-Gemma2-9B-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Ovis1.5-Gemma2-9B-descriptive_val.json",
+      "sha256": "22e4ea36a26677303ad63312788e2c80fe0c0b90daeda1ae6e3e297ac07f8461"
+    },
+    {
+      "id": "charxiv-stats-MoAI-descriptive_val",
+      "file": "charxiv-stats-MoAI-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MoAI-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MoAI-descriptive_val.json",
+      "sha256": "3836046441d73c7ff43a08e926317a3b125ae6b7a99611683f62273f471e04e9"
+    },
+    {
+      "id": "charxiv-stats-Phi-3-Vision-descriptive_val",
+      "file": "charxiv-stats-Phi-3-Vision-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Phi-3-Vision-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Phi-3-Vision-descriptive_val.json",
+      "sha256": "914c935065087b5e74892d57e6a14d9cc10dff28e7756865e7a40e6baeead67e"
+    },
+    {
+      "id": "charxiv-stats-MiniCPM-V2-descriptive_val",
+      "file": "charxiv-stats-MiniCPM-V2-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MiniCPM-V2-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MiniCPM-V2-descriptive_val.json",
+      "sha256": "fb292501ae7b3b4fe0f9e67ab9145ea31b215e613e17ea9002ee11d27934ccf5"
+    },
+    {
+      "id": "charxiv-stats-Qwen-VL-Plus-descriptive_val",
+      "file": "charxiv-stats-Qwen-VL-Plus-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Qwen-VL-Plus-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Qwen-VL-Plus-descriptive_val.json",
+      "sha256": "2b6a28069dd7761b83214d446003147eaf0d213b060e2205a1e88682dff42d20"
+    },
+    {
+      "id": "charxiv-stats-Ovis1.5-Llama3-8B-descriptive_val",
+      "file": "charxiv-stats-Ovis1.5-Llama3-8B-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Ovis1.5-Llama3-8B-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Ovis1.5-Llama3-8B-descriptive_val.json",
+      "sha256": "934d343f019606bdeac4d5395d9ab1ca54f03f35ed1cd324bde578b352b7d7c5"
+    },
+    {
+      "id": "charxiv-stats-Reka-Edge-reasoning_val",
+      "file": "charxiv-stats-Reka-Edge-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Edge-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Edge-reasoning_val.json",
+      "sha256": "343e61cfc0b19b1f04efbe89eaab3f316cfdcf10573a546b8877e4976ed363d8"
+    },
+    {
+      "id": "charxiv-stats-Reka-Core-reasoning_val",
+      "file": "charxiv-stats-Reka-Core-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Core-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Core-reasoning_val.json",
+      "sha256": "ea1e121a01d9958fc1d2c24d954ab40d2f2d81ab9d0634088d962ebab9359512"
+    },
+    {
+      "id": "charxiv-stats-SPHINX-V2-13B-reasoning_val",
+      "file": "charxiv-stats-SPHINX-V2-13B-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-SPHINX-V2-13B-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-SPHINX-V2-13B-reasoning_val.json",
+      "sha256": "6c57e38af5abb7f90b0e0159b7b0cda3a4fd9f6e77d7aee9dcb3279bd633a75f"
+    },
+    {
+      "id": "charxiv-stats-SPHINX-V2-13B-descriptive_val",
+      "file": "charxiv-stats-SPHINX-V2-13B-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-SPHINX-V2-13B-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-SPHINX-V2-13B-descriptive_val.json",
+      "sha256": "729ed7d0ca28f1f4f54cac856234dd5a1e5e954089ba1e571b38f0c0ca10ac40"
+    },
+    {
+      "id": "charxiv-stats-VILA-1-5-40B-reasoning_val",
+      "file": "charxiv-stats-VILA-1-5-40B-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-VILA-1-5-40B-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-VILA-1-5-40B-reasoning_val.json",
+      "sha256": "4f88520516f479204691a07831ffb4115ce2adcf9367cc32a934cd3a1043fa5b"
+    },
+    {
+      "id": "charxiv-stats-Reka-Flash-descriptive_val",
+      "file": "charxiv-stats-Reka-Flash-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Flash-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Flash-descriptive_val.json",
+      "sha256": "4c79f9d828352a681a67e82950c9a98c066166a2aaa83ee58d96688befee71d1"
+    },
+    {
+      "id": "charxiv-stats-VILA-1-5-40B-descriptive_val",
+      "file": "charxiv-stats-VILA-1-5-40B-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-VILA-1-5-40B-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-VILA-1-5-40B-descriptive_val.json",
+      "sha256": "a0c53104f33e34da9ba599e6afd13d725b4eac9f16f924f5b5276fe8dee706b4"
+    },
+    {
+      "id": "charxiv-stats-Reka-Edge-descriptive_val",
+      "file": "charxiv-stats-Reka-Edge-descriptive_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Edge-descriptive_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Edge-descriptive_val.json",
+      "sha256": "f3b58e72fa6025ff7f2383301511d3b2bd0469116b8adda31006fe4173c95516"
+    },
+    {
+      "id": "charxiv-stats-Reka-Flash-reasoning_val",
+      "file": "charxiv-stats-Reka-Flash-reasoning_val.raw",
+      "download_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Flash-reasoning_val.json",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Flash-reasoning_val.json",
+      "sha256": "8eb580766b0aeddb51103ae787432851af272e4af085ac91dac4c1262aec682e"
+    },
+    {
+      "id": "epoch-zip",
+      "file": "epoch.zip",
+      "download_url": "https://epoch.ai/data/benchmark_data.zip",
+      "source_url": "https://epoch.ai/benchmarks/use-this-data",
+      "sha256": "4e3e52330e276cc63f4b304dc05f6575ede8da8e5e468c74e544eaaf0b71f379"
+    },
+    {
+      "id": "arena-parquet",
+      "file": "arena-text-latest.parquet",
+      "download_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/b17ca88fd34809e9161df1ef89fd444acaf598e4/text/latest-00000-of-00001.parquet",
+      "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/b17ca88fd34809e9161df1ef89fd444acaf598e4/text/latest-00000-of-00001.parquet",
+      "sha256": "928462c23d9e51ea1581e3e6063f5e280834782a0cb943f6922bf3322f06ea16"
+    }
+  ]
+}

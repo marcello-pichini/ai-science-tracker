@@ -1,0 +1,4778 @@
+{
+  "id": "ruler",
+  "name": "RULER · long-context accuracy",
+  "attribution": "NVIDIA / RULER authors; contributing model authors identified in the source notes",
+  "license": "Apache-2.0",
+  "license_url": "https://github.com/NVIDIA/RULER/blob/db43f92ff634bbce1c33d1fb15858aec4bba509a/LICENSE",
+  "license_notice": "docs/benchmark-licenses/RULER-license.txt",
+  "scope": "Source README accuracy at six measured context lengths. Claimed and effective length differ. Includes contributing-author reports; see original notes for FILM, Qwen, Jamba and EXAONE protocol exceptions. Missing lengths are absent, never zero. No third-party task corpora redistributed.",
+  "selection": "All available numeric 4K–128K context columns for model rows; aggregate weighted rankings not imported.",
+  "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+  "upstream_revision": "db43f92ff634bbce1c33d1fb15858aec4bba509a",
+  "inputs": [
+    "ruler",
+    "RULER-license"
+  ],
+  "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+  "retrieved_on": "2026-11-18",
+  "schema_version": 1,
+  "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+  "records": [
+    {
+      "id": "f8d2465e0226975511f1",
+      "model": "Llama2 (7B)",
+      "metric": "Accuracy · 4K context",
+      "value": 85.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "4K",
+        "effective_length": "",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6c23855cc27d25ab58f9",
+      "model": "Jamba-1.5-large* (94B/398B)",
+      "metric": "Accuracy · 4K context",
+      "value": 96.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "256k",
+        "effective_length": ">128k",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "1f14577a85c2f153e0ec",
+      "model": "Jamba-1.5-large* (94B/398B)",
+      "metric": "Accuracy · 8K context",
+      "value": 96.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "256k",
+        "effective_length": ">128k",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "de7508b69c4e4c9f88e2",
+      "model": "Jamba-1.5-large* (94B/398B)",
+      "metric": "Accuracy · 16K context",
+      "value": 96.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "256k",
+        "effective_length": ">128k",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "16fd66e67c9afd23a351",
+      "model": "Jamba-1.5-large* (94B/398B)",
+      "metric": "Accuracy · 32K context",
+      "value": 96.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "256k",
+        "effective_length": ">128k",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5079e4663a60e63391f2",
+      "model": "Jamba-1.5-large* (94B/398B)",
+      "metric": "Accuracy · 64K context",
+      "value": 95.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "256k",
+        "effective_length": ">128k",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "f1b24f015a8c001fd609",
+      "model": "Jamba-1.5-large* (94B/398B)",
+      "metric": "Accuracy · 128K context",
+      "value": 95.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "256k",
+        "effective_length": ">128k",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "4d2722ad91a18ffc4417",
+      "model": "Gemini-1.5-pro,-Text%20and%20images)",
+      "metric": "Accuracy · 4K context",
+      "value": 96.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "f4f8b1790e4c64bf13e6",
+      "model": "Gemini-1.5-pro,-Text%20and%20images)",
+      "metric": "Accuracy · 8K context",
+      "value": 95.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "1c6193dae6e3f0716d10",
+      "model": "Gemini-1.5-pro,-Text%20and%20images)",
+      "metric": "Accuracy · 16K context",
+      "value": 96.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "65eaad5f679bf73e13a0",
+      "model": "Gemini-1.5-pro,-Text%20and%20images)",
+      "metric": "Accuracy · 32K context",
+      "value": 95.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "3a11aaf78e63822c02bc",
+      "model": "Gemini-1.5-pro,-Text%20and%20images)",
+      "metric": "Accuracy · 64K context",
+      "value": 95.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "3bfdc11486211e36bfa0",
+      "model": "Gemini-1.5-pro,-Text%20and%20images)",
+      "metric": "Accuracy · 128K context",
+      "value": 94.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e9b518e612072cc50510",
+      "model": "Qwen2.5-14B-Instruct-1M* (14B)",
+      "metric": "Accuracy · 4K context",
+      "value": 97.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6f612793268507abfe4d",
+      "model": "Qwen2.5-14B-Instruct-1M* (14B)",
+      "metric": "Accuracy · 8K context",
+      "value": 97.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "2ea3f7ba98249ac61618",
+      "model": "Qwen2.5-14B-Instruct-1M* (14B)",
+      "metric": "Accuracy · 16K context",
+      "value": 94.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6fc1be3ac85c761b27a2",
+      "model": "Qwen2.5-14B-Instruct-1M* (14B)",
+      "metric": "Accuracy · 32K context",
+      "value": 94.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5d11e74e2d2ea796d4cf",
+      "model": "Qwen2.5-14B-Instruct-1M* (14B)",
+      "metric": "Accuracy · 64K context",
+      "value": 94.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "67b8809bfa612399bf6b",
+      "model": "Qwen2.5-14B-Instruct-1M* (14B)",
+      "metric": "Accuracy · 128K context",
+      "value": 92.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "8a572e8353a2d4bb9e7e",
+      "model": "Qwen3-235B-A22B* (235B)",
+      "metric": "Accuracy · 4K context",
+      "value": 97.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "a2439c6e1f757b8139ea",
+      "model": "Qwen3-235B-A22B* (235B)",
+      "metric": "Accuracy · 8K context",
+      "value": 97.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "c3c3b1355d76adf5976a",
+      "model": "Qwen3-235B-A22B* (235B)",
+      "metric": "Accuracy · 16K context",
+      "value": 96.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "53ed490f8895656f7ece",
+      "model": "Qwen3-235B-A22B* (235B)",
+      "metric": "Accuracy · 32K context",
+      "value": 95.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5f4fba63a74d95a65630",
+      "model": "Qwen3-235B-A22B* (235B)",
+      "metric": "Accuracy · 64K context",
+      "value": 93.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "98ef2656162470342920",
+      "model": "Qwen3-235B-A22B* (235B)",
+      "metric": "Accuracy · 128K context",
+      "value": 90.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "08bf029c4f9b32deb5f3",
+      "model": "Qwen3-14B* (14B)",
+      "metric": "Accuracy · 4K context",
+      "value": 98.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "84030b92d08a7f59a2ba",
+      "model": "Qwen3-14B* (14B)",
+      "metric": "Accuracy · 8K context",
+      "value": 97.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6815e97089c69b939bfc",
+      "model": "Qwen3-14B* (14B)",
+      "metric": "Accuracy · 16K context",
+      "value": 96.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "bb9c1008fe87a387321c",
+      "model": "Qwen3-14B* (14B)",
+      "metric": "Accuracy · 32K context",
+      "value": 96.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "be9429f3967dff027252",
+      "model": "Qwen3-14B* (14B)",
+      "metric": "Accuracy · 64K context",
+      "value": 94.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "103687b511ce613f3d86",
+      "model": "Qwen3-14B* (14B)",
+      "metric": "Accuracy · 128K context",
+      "value": 85.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "9a64f05dcedacb6ce782",
+      "model": "Jamba-1.5-mini (12B/52B)",
+      "metric": "Accuracy · 4K context",
+      "value": 95.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "256K",
+        "effective_length": ">128K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e984ad358e5db44ce1ef",
+      "model": "Jamba-1.5-mini (12B/52B)",
+      "metric": "Accuracy · 8K context",
+      "value": 95.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "256K",
+        "effective_length": ">128K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "07b9b4e254a5d808f201",
+      "model": "Jamba-1.5-mini (12B/52B)",
+      "metric": "Accuracy · 16K context",
+      "value": 94.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "256K",
+        "effective_length": ">128K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "ac6d866eed8bbeecb1f6",
+      "model": "Jamba-1.5-mini (12B/52B)",
+      "metric": "Accuracy · 32K context",
+      "value": 94.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "256K",
+        "effective_length": ">128K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "c6293a8dde4b275326e6",
+      "model": "Jamba-1.5-mini (12B/52B)",
+      "metric": "Accuracy · 64K context",
+      "value": 92.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "256K",
+        "effective_length": ">128K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "30a88d88a7412d47d874",
+      "model": "Jamba-1.5-mini (12B/52B)",
+      "metric": "Accuracy · 128K context",
+      "value": 90.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "256K",
+        "effective_length": ">128K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "36e31888455949642c5c",
+      "model": "Qwen3-32B* (32B)",
+      "metric": "Accuracy · 4K context",
+      "value": 98.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "9d979754a5ee89fef719",
+      "model": "Qwen3-32B* (32B)",
+      "metric": "Accuracy · 8K context",
+      "value": 96.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "b5204dcc35e2efeea541",
+      "model": "Qwen3-32B* (32B)",
+      "metric": "Accuracy · 16K context",
+      "value": 96.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "2a97a414d59ad0ca3cf0",
+      "model": "Qwen3-32B* (32B)",
+      "metric": "Accuracy · 32K context",
+      "value": 94.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "52d0e09ae6fde6b06565",
+      "model": "Qwen3-32B* (32B)",
+      "metric": "Accuracy · 64K context",
+      "value": 91.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5fc0a4c130bebe222abf",
+      "model": "Qwen3-32B* (32B)",
+      "metric": "Accuracy · 128K context",
+      "value": 85.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6f5b65082fe29586011e",
+      "model": "EXAONE-4.0-32B* (32B)",
+      "metric": "Accuracy · 4K context",
+      "value": 96.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "bc9b6ac77cdf52a05b14",
+      "model": "EXAONE-4.0-32B* (32B)",
+      "metric": "Accuracy · 8K context",
+      "value": 94.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "7ee067cab61a9e8c754a",
+      "model": "EXAONE-4.0-32B* (32B)",
+      "metric": "Accuracy · 16K context",
+      "value": 93.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "56ddfc159a2327df5a8b",
+      "model": "EXAONE-4.0-32B* (32B)",
+      "metric": "Accuracy · 32K context",
+      "value": 93.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "d74647344dff9656e6f1",
+      "model": "EXAONE-4.0-32B* (32B)",
+      "metric": "Accuracy · 64K context",
+      "value": 91.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e05931961f9b69c937d5",
+      "model": "EXAONE-4.0-32B* (32B)",
+      "metric": "Accuracy · 128K context",
+      "value": 88.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": ">128K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e551478c865c68e92d70",
+      "model": "Qwen2.5-7B-Instruct-1M* (7B)",
+      "metric": "Accuracy · 4K context",
+      "value": 96.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "690725ee845cc80d0b23",
+      "model": "Qwen2.5-7B-Instruct-1M* (7B)",
+      "metric": "Accuracy · 8K context",
+      "value": 95.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "87d90e02b1895fb74162",
+      "model": "Qwen2.5-7B-Instruct-1M* (7B)",
+      "metric": "Accuracy · 16K context",
+      "value": 93.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "f3e56422d086711b4c6d",
+      "model": "Qwen2.5-7B-Instruct-1M* (7B)",
+      "metric": "Accuracy · 32K context",
+      "value": 91.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "1ab927fdd170f7ea500a",
+      "model": "Qwen2.5-7B-Instruct-1M* (7B)",
+      "metric": "Accuracy · 64K context",
+      "value": 90.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "66426e9ae6365b9961aa",
+      "model": "Qwen2.5-7B-Instruct-1M* (7B)",
+      "metric": "Accuracy · 128K context",
+      "value": 84.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": ">128K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5e5b2679ad301022d794",
+      "model": "Qwen3-30B-A3B* (30B)",
+      "metric": "Accuracy · 4K context",
+      "value": 96.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "21e784d4605e5fe43f85",
+      "model": "Qwen3-30B-A3B* (30B)",
+      "metric": "Accuracy · 8K context",
+      "value": 97.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "19b11a0a577dd6575376",
+      "model": "Qwen3-30B-A3B* (30B)",
+      "metric": "Accuracy · 16K context",
+      "value": 95.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "ad8fe8eb6d23eb3d6ff1",
+      "model": "Qwen3-30B-A3B* (30B)",
+      "metric": "Accuracy · 32K context",
+      "value": 92.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "c0dc8fedec66fa0a3462",
+      "model": "Qwen3-30B-A3B* (30B)",
+      "metric": "Accuracy · 64K context",
+      "value": 89.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6127237a9e2742a2e62e",
+      "model": "Qwen3-30B-A3B* (30B)",
+      "metric": "Accuracy · 128K context",
+      "value": 79.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "beb911a26b0b66421e4f",
+      "model": "GPT-4-1106-preview",
+      "metric": "Accuracy · 4K context",
+      "value": 96.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "20cce70ecd174a3fa332",
+      "model": "GPT-4-1106-preview",
+      "metric": "Accuracy · 8K context",
+      "value": 96.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "813802faa414b1e0a496",
+      "model": "GPT-4-1106-preview",
+      "metric": "Accuracy · 16K context",
+      "value": 95.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "1c019e034da1be9ad451",
+      "model": "GPT-4-1106-preview",
+      "metric": "Accuracy · 32K context",
+      "value": 93.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "568b109fcd541f173725",
+      "model": "GPT-4-1106-preview",
+      "metric": "Accuracy · 64K context",
+      "value": 87.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "639e4d9d61da4037b896",
+      "model": "GPT-4-1106-preview",
+      "metric": "Accuracy · 128K context",
+      "value": 81.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "af84b49ed22b07d24e57",
+      "model": "Llama3.1 (70B)",
+      "metric": "Accuracy · 4K context",
+      "value": 96.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "cf071916b3ca94ca6880",
+      "model": "Llama3.1 (70B)",
+      "metric": "Accuracy · 8K context",
+      "value": 95.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "070559c1e417b3abaadd",
+      "model": "Llama3.1 (70B)",
+      "metric": "Accuracy · 16K context",
+      "value": 95.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "92906a3c5041640e3a78",
+      "model": "Llama3.1 (70B)",
+      "metric": "Accuracy · 32K context",
+      "value": 94.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "9686dfe6206af00d31d7",
+      "model": "Llama3.1 (70B)",
+      "metric": "Accuracy · 64K context",
+      "value": 88.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "f099a9210ac117bb440f",
+      "model": "Llama3.1 (70B)",
+      "metric": "Accuracy · 128K context",
+      "value": 66.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "10ecad2bee54f68df61d",
+      "model": "Qwen3-8B* (8B)",
+      "metric": "Accuracy · 4K context",
+      "value": 96.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6dd0d8aeb032a991712d",
+      "model": "Qwen3-8B* (8B)",
+      "metric": "Accuracy · 8K context",
+      "value": 96.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "8a5f7fc0edb03e8d696a",
+      "model": "Qwen3-8B* (8B)",
+      "metric": "Accuracy · 16K context",
+      "value": 91.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "dd5bcfe3a1bf3cfb99a0",
+      "model": "Qwen3-8B* (8B)",
+      "metric": "Accuracy · 32K context",
+      "value": 91.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "36ba5ce94c970e753ec3",
+      "model": "Qwen3-8B* (8B)",
+      "metric": "Accuracy · 64K context",
+      "value": 82.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6551c4d7d2116b980916",
+      "model": "Qwen3-8B* (8B)",
+      "metric": "Accuracy · 128K context",
+      "value": 77.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "082e05c2398e43ab82bc",
+      "model": "Mistral-Large-2411 (123B)",
+      "metric": "Accuracy · 4K context",
+      "value": 96.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "c644e97d12d8629e8388",
+      "model": "Mistral-Large-2411 (123B)",
+      "metric": "Accuracy · 8K context",
+      "value": 96.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "4ce38bfb30441e255019",
+      "model": "Mistral-Large-2411 (123B)",
+      "metric": "Accuracy · 16K context",
+      "value": 95.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "df4b1ca84bf9f02bdcb9",
+      "model": "Mistral-Large-2411 (123B)",
+      "metric": "Accuracy · 32K context",
+      "value": 94.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e4df52e882955b44f151",
+      "model": "Mistral-Large-2411 (123B)",
+      "metric": "Accuracy · 64K context",
+      "value": 85.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "14c734cd9af8bfa996b8",
+      "model": "Mistral-Large-2411 (123B)",
+      "metric": "Accuracy · 128K context",
+      "value": 48.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "35f84fe2e0167e465af8",
+      "model": "Command-R-plus-0824 (104B)",
+      "metric": "Accuracy · 4K context",
+      "value": 96.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "8c55f1e0645143e4639d",
+      "model": "Command-R-plus-0824 (104B)",
+      "metric": "Accuracy · 8K context",
+      "value": 95.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "b62e9dab277a9f63947a",
+      "model": "Command-R-plus-0824 (104B)",
+      "metric": "Accuracy · 16K context",
+      "value": 94.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "9975fc36f98a3fe9f5c3",
+      "model": "Command-R-plus-0824 (104B)",
+      "metric": "Accuracy · 32K context",
+      "value": 92.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "730420f301e96b7d0e0a",
+      "model": "Command-R-plus-0824 (104B)",
+      "metric": "Accuracy · 64K context",
+      "value": 85.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "f36828d7d05b46cfc19c",
+      "model": "Command-R-plus-0824 (104B)",
+      "metric": "Accuracy · 128K context",
+      "value": 64.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "079a4c8b9b48fbd50015",
+      "model": "Qwen2 (72B)",
+      "metric": "Accuracy · 4K context",
+      "value": 96.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "03ac02d5b1c6ff91b475",
+      "model": "Qwen2 (72B)",
+      "metric": "Accuracy · 8K context",
+      "value": 96.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "436085b332f516d8092d",
+      "model": "Qwen2 (72B)",
+      "metric": "Accuracy · 16K context",
+      "value": 94.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "89c923d83595dd790a94",
+      "model": "Qwen2 (72B)",
+      "metric": "Accuracy · 32K context",
+      "value": 94.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "33da2e2564de82715908",
+      "model": "Qwen2 (72B)",
+      "metric": "Accuracy · 64K context",
+      "value": 79.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6745dc204aecc1a7b30d",
+      "model": "Qwen2 (72B)",
+      "metric": "Accuracy · 128K context",
+      "value": 53.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "b137e94b150b30406d70",
+      "model": "Command-R-plus (104B)",
+      "metric": "Accuracy · 4K context",
+      "value": 95.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6ae1b9cac774788e9fe2",
+      "model": "Command-R-plus (104B)",
+      "metric": "Accuracy · 8K context",
+      "value": 95.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e92498d2dfce0e662347",
+      "model": "Command-R-plus (104B)",
+      "metric": "Accuracy · 16K context",
+      "value": 94.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5881fcb3279144085bb2",
+      "model": "Command-R-plus (104B)",
+      "metric": "Accuracy · 32K context",
+      "value": 92.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "458c5d8c6417ea307ce6",
+      "model": "Command-R-plus (104B)",
+      "metric": "Accuracy · 64K context",
+      "value": 84.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "58c749aac753395e1854",
+      "model": "Command-R-plus (104B)",
+      "metric": "Accuracy · 128K context",
+      "value": 63.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e27bad7cd0ba7c62f8d8",
+      "model": "Command-R-0824 (32B)",
+      "metric": "Accuracy · 4K context",
+      "value": 94.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "a5115e113d76d9fcfd1d",
+      "model": "Command-R-0824 (32B)",
+      "metric": "Accuracy · 8K context",
+      "value": 93.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "b0421b64ccd89ec32283",
+      "model": "Command-R-0824 (32B)",
+      "metric": "Accuracy · 16K context",
+      "value": 93.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "346a017738d79d892d39",
+      "model": "Command-R-0824 (32B)",
+      "metric": "Accuracy · 32K context",
+      "value": 90.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "9e6125f3a841ef921b76",
+      "model": "Command-R-0824 (32B)",
+      "metric": "Accuracy · 64K context",
+      "value": 86.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "8ebe5def2053f3c667fa",
+      "model": "Command-R-0824 (32B)",
+      "metric": "Accuracy · 128K context",
+      "value": 74.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "04f3246c59e90dee84a2",
+      "model": "GLM4 (9B)",
+      "metric": "Accuracy · 4K context",
+      "value": 94.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "64K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "75ed294ae993244ee54a",
+      "model": "GLM4 (9B)",
+      "metric": "Accuracy · 8K context",
+      "value": 92.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "64K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "f9b7fda0811e3c9ab393",
+      "model": "GLM4 (9B)",
+      "metric": "Accuracy · 16K context",
+      "value": 92.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "64K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "cf22a2c9727ed5954fc5",
+      "model": "GLM4 (9B)",
+      "metric": "Accuracy · 32K context",
+      "value": 89.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "64K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "fb07f7be22c26014c25a",
+      "model": "GLM4 (9B)",
+      "metric": "Accuracy · 64K context",
+      "value": 86.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "64K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "34d1aae54c815ae3a09a",
+      "model": "GLM4 (9B)",
+      "metric": "Accuracy · 128K context",
+      "value": 83.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "64K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "4ba8b98d9749b0ddf049",
+      "model": "Llama3.1 (8B)",
+      "metric": "Accuracy · 4K context",
+      "value": 95.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "8732fc030da00160410f",
+      "model": "Llama3.1 (8B)",
+      "metric": "Accuracy · 8K context",
+      "value": 93.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "72299c607d641d3d1fac",
+      "model": "Llama3.1 (8B)",
+      "metric": "Accuracy · 16K context",
+      "value": 91.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "708164a868ca45a4029c",
+      "model": "Llama3.1 (8B)",
+      "metric": "Accuracy · 32K context",
+      "value": 87.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "33eabde216d826651ceb",
+      "model": "Llama3.1 (8B)",
+      "metric": "Accuracy · 64K context",
+      "value": 84.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "da7bfeb22bce1919248c",
+      "model": "Llama3.1 (8B)",
+      "metric": "Accuracy · 128K context",
+      "value": 77.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "76f862d742b42f41ca7d",
+      "model": "ProLong (8B)",
+      "metric": "Accuracy · 4K context",
+      "value": 94.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "512K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "92a17a67876471a8c56b",
+      "model": "ProLong (8B)",
+      "metric": "Accuracy · 8K context",
+      "value": 92.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "512K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "cb697626eddd10cbe58e",
+      "model": "ProLong (8B)",
+      "metric": "Accuracy · 16K context",
+      "value": 92.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "512K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "2d1e56e3269a04c72cde",
+      "model": "ProLong (8B)",
+      "metric": "Accuracy · 32K context",
+      "value": 89.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "512K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "f63a10bc0e25f06577a3",
+      "model": "ProLong (8B)",
+      "metric": "Accuracy · 64K context",
+      "value": 83.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "512K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "9dc7ff3d7386ef3eee44",
+      "model": "ProLong (8B)",
+      "metric": "Accuracy · 128K context",
+      "value": 81.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "512K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "c57a3b682e9138f3d3b2",
+      "model": "Command-R (35B)",
+      "metric": "Accuracy · 4K context",
+      "value": 93.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "7415f5139fc5eef94ea8",
+      "model": "Command-R (35B)",
+      "metric": "Accuracy · 8K context",
+      "value": 93.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "20c9a8bc3de4c2ab0244",
+      "model": "Command-R (35B)",
+      "metric": "Accuracy · 16K context",
+      "value": 92.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "b47925a98b6aa1b7e459",
+      "model": "Command-R (35B)",
+      "metric": "Accuracy · 32K context",
+      "value": 89.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "dfe91d038b5d9c35e337",
+      "model": "Command-R (35B)",
+      "metric": "Accuracy · 64K context",
+      "value": 84.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "c6bd442b712239568ea8",
+      "model": "Command-R (35B)",
+      "metric": "Accuracy · 128K context",
+      "value": 76.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6971ee3a2cf594a95443",
+      "model": "MegaBeam-Mistral (7B)",
+      "metric": "Accuracy · 4K context",
+      "value": 93.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "512K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6ebef833619c94bf9c43",
+      "model": "MegaBeam-Mistral (7B)",
+      "metric": "Accuracy · 8K context",
+      "value": 92.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "512K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e7f7a7b410850ed1c215",
+      "model": "MegaBeam-Mistral (7B)",
+      "metric": "Accuracy · 16K context",
+      "value": 92.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "512K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e88c900fc2ae87a3d2bb",
+      "model": "MegaBeam-Mistral (7B)",
+      "metric": "Accuracy · 32K context",
+      "value": 89.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "512K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "a3791cb6797d9f07ac98",
+      "model": "MegaBeam-Mistral (7B)",
+      "metric": "Accuracy · 64K context",
+      "value": 83.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "512K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "f71a5572135fe00b9099",
+      "model": "MegaBeam-Mistral (7B)",
+      "metric": "Accuracy · 128K context",
+      "value": 83.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "512K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "a49f0546ac3f12fb3842",
+      "model": "Mistral-Large-2407 (123B)",
+      "metric": "Accuracy · 4K context",
+      "value": 96.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "aa4408aa93533a3ffcd1",
+      "model": "Mistral-Large-2407 (123B)",
+      "metric": "Accuracy · 8K context",
+      "value": 96.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "915fb4ddf15391606fe4",
+      "model": "Mistral-Large-2407 (123B)",
+      "metric": "Accuracy · 16K context",
+      "value": 95.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "51a78252d3e842620a3c",
+      "model": "Mistral-Large-2407 (123B)",
+      "metric": "Accuracy · 32K context",
+      "value": 93.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "2a07034febc30be60b2a",
+      "model": "Mistral-Large-2407 (123B)",
+      "metric": "Accuracy · 64K context",
+      "value": 78.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "03755f88256681a969ed",
+      "model": "Mistral-Large-2407 (123B)",
+      "metric": "Accuracy · 128K context",
+      "value": 23.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "948de59a4f3258dc3041",
+      "model": "GradientAI/Llama3 (70B)",
+      "metric": "Accuracy · 4K context",
+      "value": 95.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "16K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "7643063ef6a4ef0cf553",
+      "model": "GradientAI/Llama3 (70B)",
+      "metric": "Accuracy · 8K context",
+      "value": 94.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "16K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "d02ac5c0e90762230818",
+      "model": "GradientAI/Llama3 (70B)",
+      "metric": "Accuracy · 16K context",
+      "value": 90.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "16K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "4ad1e1ce3e6334da5adc",
+      "model": "GradientAI/Llama3 (70B)",
+      "metric": "Accuracy · 32K context",
+      "value": 85.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "16K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "af95870766df22f6e470",
+      "model": "GradientAI/Llama3 (70B)",
+      "metric": "Accuracy · 64K context",
+      "value": 80.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "16K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "a1c554e7b1db28c5a658",
+      "model": "GradientAI/Llama3 (70B)",
+      "metric": "Accuracy · 128K context",
+      "value": 72.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "16K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "81cce07637c72fb48a49",
+      "model": "Mixtral-8x22B (39B/141B)",
+      "metric": "Accuracy · 4K context",
+      "value": 95.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "64K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "27220a902ebe38645481",
+      "model": "Mixtral-8x22B (39B/141B)",
+      "metric": "Accuracy · 8K context",
+      "value": 94.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "64K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5d5b4383318e60c4b493",
+      "model": "Mixtral-8x22B (39B/141B)",
+      "metric": "Accuracy · 16K context",
+      "value": 93.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "64K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "af19e447cda3603e6db5",
+      "model": "Mixtral-8x22B (39B/141B)",
+      "metric": "Accuracy · 32K context",
+      "value": 90.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "64K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "8056d9dc3cdbfa95f503",
+      "model": "Mixtral-8x22B (39B/141B)",
+      "metric": "Accuracy · 64K context",
+      "value": 84.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "64K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "c0bc3f432ef8c0656693",
+      "model": "Mixtral-8x22B (39B/141B)",
+      "metric": "Accuracy · 128K context",
+      "value": 31.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "64K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "ac4d255a5739ba698717",
+      "model": "Yi (34B)",
+      "metric": "Accuracy · 4K context",
+      "value": 93.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "200K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "f8a46e42fa38fff7f648",
+      "model": "Yi (34B)",
+      "metric": "Accuracy · 8K context",
+      "value": 92.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "200K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "21b42410fb6da20da661",
+      "model": "Yi (34B)",
+      "metric": "Accuracy · 16K context",
+      "value": 91.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "200K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "59f8d63a856863a134c3",
+      "model": "Yi (34B)",
+      "metric": "Accuracy · 32K context",
+      "value": 87.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "200K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "804cb6f2ed089143a279",
+      "model": "Yi (34B)",
+      "metric": "Accuracy · 64K context",
+      "value": 83.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "200K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "619820a6afc76c14761a",
+      "model": "Yi (34B)",
+      "metric": "Accuracy · 128K context",
+      "value": 77.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "200K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "70916fa58f00b1787f64",
+      "model": "Qwen3-4B* (4B)",
+      "metric": "Accuracy · 4K context",
+      "value": 95.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5a4adabf1c422fedac92",
+      "model": "Qwen3-4B* (4B)",
+      "metric": "Accuracy · 8K context",
+      "value": 93.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "919d3e93b479633e72f6",
+      "model": "Qwen3-4B* (4B)",
+      "metric": "Accuracy · 16K context",
+      "value": 91.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "bd502bcb53cb3e90cf5a",
+      "model": "Qwen3-4B* (4B)",
+      "metric": "Accuracy · 32K context",
+      "value": 87.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "4e3ccaf91e1a777500e2",
+      "model": "Qwen3-4B* (4B)",
+      "metric": "Accuracy · 64K context",
+      "value": 77.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "a84f742ae4fb1648ce66",
+      "model": "Qwen3-4B* (4B)",
+      "metric": "Accuracy · 128K context",
+      "value": 66.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "64K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "7c9277f6504832b808ad",
+      "model": "EXAONE-4.0-1.2B* (1.2B)",
+      "metric": "Accuracy · 4K context",
+      "value": 87.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "64K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "86b6c5bc3f6f9516b5e4",
+      "model": "EXAONE-4.0-1.2B* (1.2B)",
+      "metric": "Accuracy · 8K context",
+      "value": 86.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "64K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "cc315a94c86861c7f8ad",
+      "model": "EXAONE-4.0-1.2B* (1.2B)",
+      "metric": "Accuracy · 16K context",
+      "value": 88.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "64K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "200b7a4a9be356d79fff",
+      "model": "EXAONE-4.0-1.2B* (1.2B)",
+      "metric": "Accuracy · 32K context",
+      "value": 81.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "64K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5dee869ee2d543dd4bd2",
+      "model": "EXAONE-4.0-1.2B* (1.2B)",
+      "metric": "Accuracy · 64K context",
+      "value": 77.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "64K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "959973fde692cba49f0b",
+      "model": "Phi3-mini (3.8B)",
+      "metric": "Accuracy · 4K context",
+      "value": 92.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "47432f8016072784a968",
+      "model": "Phi3-mini (3.8B)",
+      "metric": "Accuracy · 8K context",
+      "value": 91.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "99bab20e443e2d1d6ac5",
+      "model": "Phi3-mini (3.8B)",
+      "metric": "Accuracy · 16K context",
+      "value": 90.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5bff83b6424e0bacbad0",
+      "model": "Phi3-mini (3.8B)",
+      "metric": "Accuracy · 32K context",
+      "value": 87.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "219e7d7d704d8f8362c8",
+      "model": "Phi3-mini (3.8B)",
+      "metric": "Accuracy · 64K context",
+      "value": 80.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6039a01eba59011b6b04",
+      "model": "Phi3-mini (3.8B)",
+      "metric": "Accuracy · 128K context",
+      "value": 66.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "097aa3886869f5fddc75",
+      "model": "Phi3-medium (14B)",
+      "metric": "Accuracy · 4K context",
+      "value": 93.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "4c2459d33d26ebed03d6",
+      "model": "Phi3-medium (14B)",
+      "metric": "Accuracy · 8K context",
+      "value": 93.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "a2ad57dacaf978afa068",
+      "model": "Phi3-medium (14B)",
+      "metric": "Accuracy · 16K context",
+      "value": 91.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "2d87a08a3ecb5ce9e8f2",
+      "model": "Phi3-medium (14B)",
+      "metric": "Accuracy · 32K context",
+      "value": 86.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "65eee5ef93c7e087c8f0",
+      "model": "Phi3-medium (14B)",
+      "metric": "Accuracy · 64K context",
+      "value": 78.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "1e85b9dcc2c291b5f256",
+      "model": "Phi3-medium (14B)",
+      "metric": "Accuracy · 128K context",
+      "value": 46.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "887233e146046c1efd41",
+      "model": "Mixtral-8x7B (12.9B/46.7B)",
+      "metric": "Accuracy · 4K context",
+      "value": 94.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "46a2cd7e66eb3b76a2f5",
+      "model": "Mixtral-8x7B (12.9B/46.7B)",
+      "metric": "Accuracy · 8K context",
+      "value": 92.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "63dae480615bf9b28a99",
+      "model": "Mixtral-8x7B (12.9B/46.7B)",
+      "metric": "Accuracy · 16K context",
+      "value": 92.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "7fc1c76e3be19e7ccb93",
+      "model": "Mixtral-8x7B (12.9B/46.7B)",
+      "metric": "Accuracy · 32K context",
+      "value": 85.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "b1dee2fd3fee8ab39ca8",
+      "model": "Mixtral-8x7B (12.9B/46.7B)",
+      "metric": "Accuracy · 64K context",
+      "value": 72.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "667c9b3297ab3c6caf50",
+      "model": "Mixtral-8x7B (12.9B/46.7B)",
+      "metric": "Accuracy · 128K context",
+      "value": 44.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "16304207d575464c9a16",
+      "model": "GradientAI/Llama3 (8B)",
+      "metric": "Accuracy · 4K context",
+      "value": 92.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "16K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "505ec29fea74d76ea2fc",
+      "model": "GradientAI/Llama3 (8B)",
+      "metric": "Accuracy · 8K context",
+      "value": 90.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "16K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "a250ea8c67e3f7c26616",
+      "model": "GradientAI/Llama3 (8B)",
+      "metric": "Accuracy · 16K context",
+      "value": 85.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "16K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "4aed8176ae795be0c9db",
+      "model": "GradientAI/Llama3 (8B)",
+      "metric": "Accuracy · 32K context",
+      "value": 79.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "16K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "9757b93cb7d4b10882de",
+      "model": "GradientAI/Llama3 (8B)",
+      "metric": "Accuracy · 64K context",
+      "value": 76.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "16K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "0533e1fc2fd38d0b9c9c",
+      "model": "GradientAI/Llama3 (8B)",
+      "metric": "Accuracy · 128K context",
+      "value": 69.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "16K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e9894280bb825c086a2f",
+      "model": "FILM-7B* (7B)",
+      "metric": "Accuracy · 4K context",
+      "value": 92.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "32K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "43d2e79a46b25a39467b",
+      "model": "FILM-7B* (7B)",
+      "metric": "Accuracy · 8K context",
+      "value": 88.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "32K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "bee8ec90f8b1ef62522d",
+      "model": "FILM-7B* (7B)",
+      "metric": "Accuracy · 16K context",
+      "value": 88.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "32K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "cd505531fce3c3ee9774",
+      "model": "FILM-7B* (7B)",
+      "metric": "Accuracy · 32K context",
+      "value": 86.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "32K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "0191fb4e4b1d30e18c7f",
+      "model": "FILM-7B* (7B)",
+      "metric": "Accuracy · 64K context",
+      "value": 70.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "32K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "1fec9a331f83dfbc31b0",
+      "model": "FILM-7B* (7B)",
+      "metric": "Accuracy · 128K context",
+      "value": 27.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "32K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "3a354c90ebd0aadd3751",
+      "model": "InternLM2.5 (7B)",
+      "metric": "Accuracy · 4K context",
+      "value": 88.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "4K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "ba97da1bd68d399bd197",
+      "model": "InternLM2.5 (7B)",
+      "metric": "Accuracy · 8K context",
+      "value": 85.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "4K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "d9aff5a8a152923837d6",
+      "model": "InternLM2.5 (7B)",
+      "metric": "Accuracy · 16K context",
+      "value": 84.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "4K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e629974809aea395e0f1",
+      "model": "InternLM2.5 (7B)",
+      "metric": "Accuracy · 32K context",
+      "value": 82.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "4K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "a19b38c92cbc66809731",
+      "model": "InternLM2.5 (7B)",
+      "metric": "Accuracy · 64K context",
+      "value": 75.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "4K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e432bc4ba3f51a7a82b7",
+      "model": "InternLM2.5 (7B)",
+      "metric": "Accuracy · 128K context",
+      "value": 68.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "4K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "0e001fc74205e127a403",
+      "model": "Mistral (7B)",
+      "metric": "Accuracy · 4K context",
+      "value": 93.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "16K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "823ed16e10f8b3ea6e0a",
+      "model": "Mistral (7B)",
+      "metric": "Accuracy · 8K context",
+      "value": 91.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "16K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "d78506eba5a9d7d5015b",
+      "model": "Mistral (7B)",
+      "metric": "Accuracy · 16K context",
+      "value": 87.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "16K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "930a5e3a29f8cc98e235",
+      "model": "Mistral (7B)",
+      "metric": "Accuracy · 32K context",
+      "value": 75.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "16K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "4649d44a7e0143a87915",
+      "model": "Mistral (7B)",
+      "metric": "Accuracy · 64K context",
+      "value": 49.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "16K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "2108bcde0530f15c4348",
+      "model": "Mistral (7B)",
+      "metric": "Accuracy · 128K context",
+      "value": 13.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "16K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "cb3e186ae393fe47591f",
+      "model": "Mistral-Nemo",
+      "metric": "Accuracy · 4K context",
+      "value": 87.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "16K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "7debff2299047c15f592",
+      "model": "Mistral-Nemo",
+      "metric": "Accuracy · 8K context",
+      "value": 87.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "16K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "783c912552cf65ff93ab",
+      "model": "Mistral-Nemo",
+      "metric": "Accuracy · 16K context",
+      "value": 87.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "16K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "f2cd84244931b9ec6e70",
+      "model": "Mistral-Nemo",
+      "metric": "Accuracy · 32K context",
+      "value": 69.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "16K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "1335028c6177b84458c2",
+      "model": "Mistral-Nemo",
+      "metric": "Accuracy · 64K context",
+      "value": 46.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "16K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "af3d9f48c891d6d4f112",
+      "model": "Mistral-Nemo",
+      "metric": "Accuracy · 128K context",
+      "value": 19.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "16K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "3a63bd59a2b614cd971d",
+      "model": "GLM3 (6B)",
+      "metric": "Accuracy · 4K context",
+      "value": 87.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "4K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "20157f71ec355f5947c3",
+      "model": "GLM3 (6B)",
+      "metric": "Accuracy · 8K context",
+      "value": 83.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "4K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "914c447bff6484c2bfdc",
+      "model": "GLM3 (6B)",
+      "metric": "Accuracy · 16K context",
+      "value": 78.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "4K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "f4ef6b6b2746bdc2a406",
+      "model": "GLM3 (6B)",
+      "metric": "Accuracy · 32K context",
+      "value": 69.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "4K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5957375527f73b26c675",
+      "model": "GLM3 (6B)",
+      "metric": "Accuracy · 64K context",
+      "value": 56.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "4K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "510d8f9c668471addbcd",
+      "model": "GLM3 (6B)",
+      "metric": "Accuracy · 128K context",
+      "value": 42.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "128K",
+        "effective_length": "4K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "da31edfa8c0d8dce98aa",
+      "model": "LWM (7B)",
+      "metric": "Accuracy · 4K context",
+      "value": 82.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "<4K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "b82998cb3d2affea3b0e",
+      "model": "LWM (7B)",
+      "metric": "Accuracy · 8K context",
+      "value": 78.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "<4K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "13373185537e6230527e",
+      "model": "LWM (7B)",
+      "metric": "Accuracy · 16K context",
+      "value": 73.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "<4K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e57196159cca7ef1d7a5",
+      "model": "LWM (7B)",
+      "metric": "Accuracy · 32K context",
+      "value": 69.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "<4K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "33e4729f8185b7f370c3",
+      "model": "LWM (7B)",
+      "metric": "Accuracy · 64K context",
+      "value": 68.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "<4K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "8bc1020a86bb006c94b5",
+      "model": "LWM (7B)",
+      "metric": "Accuracy · 128K context",
+      "value": 65.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "1M",
+        "effective_length": "<4K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "49649368e87aa2ca830e",
+      "model": "DBRX (36B/132B)",
+      "metric": "Accuracy · 4K context",
+      "value": 95.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "8K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "8a37d790c11bb13ee8b3",
+      "model": "DBRX (36B/132B)",
+      "metric": "Accuracy · 8K context",
+      "value": 93.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "8K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "118886bda2dc942b6e2c",
+      "model": "DBRX (36B/132B)",
+      "metric": "Accuracy · 16K context",
+      "value": 83.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "8K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "00b74a084a8d2c883a51",
+      "model": "DBRX (36B/132B)",
+      "metric": "Accuracy · 32K context",
+      "value": 63.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "8K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5cad26f384b2d7eefd3d",
+      "model": "DBRX (36B/132B)",
+      "metric": "Accuracy · 64K context",
+      "value": 2.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "8K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "06a52cd8bfec5da63a88",
+      "model": "DBRX (36B/132B)",
+      "metric": "Accuracy · 128K context",
+      "value": 0.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "8K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "a0a4090a3096dbc403ce",
+      "model": "Qwen1.5 (72B)",
+      "metric": "Accuracy · 4K context",
+      "value": 94.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "8K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "1da55a69777cbdddeec7",
+      "model": "Qwen1.5 (72B)",
+      "metric": "Accuracy · 8K context",
+      "value": 93.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "8K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "c61815e4aab6607a5f3e",
+      "model": "Qwen1.5 (72B)",
+      "metric": "Accuracy · 16K context",
+      "value": 78.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "8K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5a05c8dd4caea7dfa73a",
+      "model": "Qwen1.5 (72B)",
+      "metric": "Accuracy · 32K context",
+      "value": 67.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "8K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "d1b530949b039d146915",
+      "model": "Qwen1.5 (72B)",
+      "metric": "Accuracy · 64K context",
+      "value": 0.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "8K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6f35db52985404c6757d",
+      "model": "Qwen1.5 (72B)",
+      "metric": "Accuracy · 128K context",
+      "value": 0.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "8K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "85b318db4902180917df",
+      "model": "Together (7B)",
+      "metric": "Accuracy · 4K context",
+      "value": 88.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "4K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "4e57745c85c585bfb567",
+      "model": "Together (7B)",
+      "metric": "Accuracy · 8K context",
+      "value": 81.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "4K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "e3eb7d29ee1b32ecd5e6",
+      "model": "Together (7B)",
+      "metric": "Accuracy · 16K context",
+      "value": 69.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "4K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "7cea3a8b8fb7bb6b3f61",
+      "model": "Together (7B)",
+      "metric": "Accuracy · 32K context",
+      "value": 63.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "4K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "453f052ec3f586221e9b",
+      "model": "Together (7B)",
+      "metric": "Accuracy · 64K context",
+      "value": 0.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "4K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "b926a578176de71b10fd",
+      "model": "Together (7B)",
+      "metric": "Accuracy · 128K context",
+      "value": 0.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "4K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "997fec0f2afd4523ecd3",
+      "model": "LongChat (7B)",
+      "metric": "Accuracy · 4K context",
+      "value": 84.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "<4K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "914984da6ffbf9176ddc",
+      "model": "LongChat (7B)",
+      "metric": "Accuracy · 8K context",
+      "value": 79.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "<4K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "59993bc91092f2bec884",
+      "model": "LongChat (7B)",
+      "metric": "Accuracy · 16K context",
+      "value": 70.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "<4K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "b57b115cc57a70bd462c",
+      "model": "LongChat (7B)",
+      "metric": "Accuracy · 32K context",
+      "value": 59.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "<4K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "b4465be593eaf7246767",
+      "model": "LongChat (7B)",
+      "metric": "Accuracy · 64K context",
+      "value": 0.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "<4K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "6d4b6f3707c6fe1839d0",
+      "model": "LongChat (7B)",
+      "metric": "Accuracy · 128K context",
+      "value": 0.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "<4K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "234e1c4646a7c7952a6f",
+      "model": "LongAlpaca (13B)",
+      "metric": "Accuracy · 4K context",
+      "value": 60.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 4K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "<4K",
+        "context_length": "4K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "5b5161e76d87a7543eb2",
+      "model": "LongAlpaca (13B)",
+      "metric": "Accuracy · 8K context",
+      "value": 57.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 8K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "<4K",
+        "context_length": "8K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "600807d1f76cc4018499",
+      "model": "LongAlpaca (13B)",
+      "metric": "Accuracy · 16K context",
+      "value": 56.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 16K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "<4K",
+        "context_length": "16K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "73668f4f0fb12a7e0fed",
+      "model": "LongAlpaca (13B)",
+      "metric": "Accuracy · 32K context",
+      "value": 43.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 32K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "<4K",
+        "context_length": "32K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "127b477a1dd41ba0d5d0",
+      "model": "LongAlpaca (13B)",
+      "metric": "Accuracy · 64K context",
+      "value": 0.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 64K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "<4K",
+        "context_length": "64K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    },
+    {
+      "id": "b716a13e1fea5cc248d7",
+      "model": "LongAlpaca (13B)",
+      "metric": "Accuracy · 128K context",
+      "value": 0.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Accuracy · 128K context",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md",
+      "details": {
+        "claimed_length": "32K",
+        "effective_length": "<4K",
+        "context_length": "128K",
+        "scope": "README snapshot includes source-reported author results; asterisk and model size retained in label. See source notes for protocol exceptions."
+      }
+    }
+  ],
+  "input_sha256": {
+    "ruler": "f3aae5bbd58fcd7de32aab099c455dd2bbc1da23a2efee9db3071eb9fbf894a3",
+    "RULER-license": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1"
+  }
+}

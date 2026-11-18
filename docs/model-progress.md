@@ -1,5 +1,7 @@
 # Model progress
 
+The page also exposes [ten independent numerical benchmark components](public-benchmarks.md), each with its own attribution, license, source revision, selection and interpretation limits. They are separate from the ECI pair chart and are not joined to Epoch model labels. Several are historical snapshots. The daily workflow now checks all ten exact selections, validates source rights and supported formats, and retains each previous snapshot with a visible warning if its source is blocked. The existing SWE-bench Verified component retains its separate CC BY-NC 4.0 terms.
+
 `model-progress.html` compares exact source model entries across OpenAI, Google DeepMind, Anthropic, Meta, Alibaba, DeepSeek, xAI and Mistral. It complements `models.html`; it does not change discovery counts, family attribution or the original model catalog.
 
 ## Reproduce the data

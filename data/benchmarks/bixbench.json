@@ -1,0 +1,146 @@
+{
+  "id": "bixbench",
+  "name": "BixBench v1.5 · zero-shot baselines",
+  "attribution": "FutureHouse / BixBench authors",
+  "license": "Apache-2.0",
+  "license_url": "https://github.com/Future-House/BixBench/blob/49311180bdacb324c596f2e07596c126f2004008/LICENSE",
+  "license_notice": "docs/benchmark-licenses/BixBench-license.txt",
+  "scope": "Bioinformatics zero-shot baseline accuracy on 205 questions. MCQ, refusal-enabled and open-ended settings differ; these are not the paper agent runs. Precision and coverage retained.",
+  "selection": "All six configurations in zero_shot_baselines.json.",
+  "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+  "upstream_revision": "49311180bdacb324c596f2e07596c126f2004008",
+  "inputs": [
+    "bixbench",
+    "BixBench-license"
+  ],
+  "source_url": "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/bixbench-v1.5_results/zero_shot_baselines.json",
+  "retrieved_on": "2026-11-18",
+  "schema_version": 1,
+  "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+  "records": [
+    {
+      "id": "591590cd0f9fa8d918bc",
+      "model": "gpt-4o-grader-mcq-refusal-False",
+      "metric": "Zero-shot accuracy · v1.5",
+      "value": 0.36097560975609755,
+      "unit": "fraction",
+      "direction": "Higher is better",
+      "comparison_group": "v1.5 · zero-shot · mcq-refusal-False",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/bixbench-v1.5_results/zero_shot_baselines.json",
+      "details": {
+        "accuracy": 0.36097560975609755,
+        "precision": 0.36097560975609755,
+        "coverage": 1.0,
+        "n_total": 205,
+        "n_correct": 74,
+        "n_sure": 205
+      }
+    },
+    {
+      "id": "013b524b83cc25f30590",
+      "model": "gpt-4o-grader-mcq-refusal-True",
+      "metric": "Zero-shot accuracy · v1.5",
+      "value": 0.03902439024390244,
+      "unit": "fraction",
+      "direction": "Higher is better",
+      "comparison_group": "v1.5 · zero-shot · mcq-refusal-True",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/bixbench-v1.5_results/zero_shot_baselines.json",
+      "details": {
+        "accuracy": 0.03902439024390244,
+        "precision": 0.4,
+        "coverage": 0.0975609756097561,
+        "n_total": 205,
+        "n_correct": 8,
+        "n_sure": 20
+      }
+    },
+    {
+      "id": "2c1503a1177bcb038f94",
+      "model": "claude-3-5-sonnet-latest-grader-mcq-refusal-True",
+      "metric": "Zero-shot accuracy · v1.5",
+      "value": 0.08292682926829269,
+      "unit": "fraction",
+      "direction": "Higher is better",
+      "comparison_group": "v1.5 · zero-shot · mcq-refusal-True",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/bixbench-v1.5_results/zero_shot_baselines.json",
+      "details": {
+        "accuracy": 0.08292682926829269,
+        "precision": 0.38636363636363635,
+        "coverage": 0.2146341463414634,
+        "n_total": 205,
+        "n_correct": 17,
+        "n_sure": 44
+      }
+    },
+    {
+      "id": "a7371680141147d83503",
+      "model": "claude-3-5-sonnet-latest-grader-mcq-refusal-False",
+      "metric": "Zero-shot accuracy · v1.5",
+      "value": 0.34146341463414637,
+      "unit": "fraction",
+      "direction": "Higher is better",
+      "comparison_group": "v1.5 · zero-shot · mcq-refusal-False",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/bixbench-v1.5_results/zero_shot_baselines.json",
+      "details": {
+        "accuracy": 0.34146341463414637,
+        "precision": 0.34146341463414637,
+        "coverage": 1.0,
+        "n_total": 205,
+        "n_correct": 70,
+        "n_sure": 205
+      }
+    },
+    {
+      "id": "cc177529e73dcec6c543",
+      "model": "gpt-4o-grader-openended",
+      "metric": "Zero-shot accuracy · v1.5",
+      "value": 0.02926829268292683,
+      "unit": "fraction",
+      "direction": "Higher is better",
+      "comparison_group": "v1.5 · zero-shot · openended",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/bixbench-v1.5_results/zero_shot_baselines.json",
+      "details": {
+        "accuracy": 0.02926829268292683,
+        "precision": 0.02926829268292683,
+        "coverage": 1.0,
+        "n_total": 205,
+        "n_correct": 6,
+        "n_sure": 205
+      }
+    },
+    {
+      "id": "7d6f92d1e712469bdb85",
+      "model": "claude-3-5-sonnet-latest-grader-openended",
+      "metric": "Zero-shot accuracy · v1.5",
+      "value": 0.02926829268292683,
+      "unit": "fraction",
+      "direction": "Higher is better",
+      "comparison_group": "v1.5 · zero-shot · openended",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/bixbench-v1.5_results/zero_shot_baselines.json",
+      "details": {
+        "accuracy": 0.02926829268292683,
+        "precision": 0.02926829268292683,
+        "coverage": 1.0,
+        "n_total": 205,
+        "n_correct": 6,
+        "n_sure": 205
+      }
+    }
+  ],
+  "input_sha256": {
+    "bixbench": "01c5a57ce1dde2d4f0dfaaf123f932791d3ae556df22d89ba4579d6f699d36a8",
+    "BixBench-license": "9630430e02c6a317ed7ebb49a35059472decb389e874c6db3d084190ad10f6f8"
+  }
+}

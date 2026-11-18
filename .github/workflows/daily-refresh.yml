@@ -38,6 +38,19 @@ jobs:
           mkdir -p work/swe-bench
           curl -fsSL --retry 3 -o work/swe-bench/leaderboards.json https://raw.githubusercontent.com/SWE-bench/swe-bench.github.io/master/data/leaderboards.json
           python3 scripts/import_swe_bench.py work/swe-bench/leaderboards.json --fetched-on "$(date -u +%F)"
+      - name: Refresh independently licensed benchmark selections
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 -m pip install -r scripts/requirements-benchmarks.txt
+          python3 scripts/refresh_public_benchmarks.py --epoch-zip work/epoch/benchmark_data.zip
+      - name: Retain per-source benchmark refresh report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-refresh-report
+          path: work/benchmark-refresh-report.json
+          retention-days: 30
       - name: Regenerate pages, API, feed and llms.txt
         env:
           CHROME: /usr/bin/google-chrome
@@ -50,5 +63,5 @@ jobs:
           if git diff --cached --quiet; then echo "Nothing changed."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Daily refresh: Epoch AI data and generated files"
+          git commit -m "Daily refresh: model data, licensed benchmarks and generated files"
           git push

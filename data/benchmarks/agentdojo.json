@@ -1,0 +1,1454 @@
+{
+  "id": "agentdojo",
+  "name": "AgentDojo · prompt injection robustness",
+  "attribution": "ETH Zurich SPY Lab / AgentDojo authors",
+  "license": "MIT",
+  "license_url": "https://github.com/ethz-spylab/agentdojo/blob/089ed468cf3ed0322acc66b0211f26d9d90dbf60/LICENSE",
+  "license_notice": "docs/benchmark-licenses/agentdojo-license.txt",
+  "scope": "Agent utility and targeted attack success are separate outcomes. Lower attack success is better. Defenses and attacks differ; dates are source table dates. No attack content, traces or conversations redistributed.",
+  "selection": "All numeric utility, utility-under-attack and targeted-ASR cells in the repository results table.",
+  "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+  "upstream_revision": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+  "inputs": [
+    "agentdojo",
+    "agentdojo-license"
+  ],
+  "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+  "retrieved_on": "2026-11-18",
+  "schema_version": 1,
+  "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+  "records": [
+    {
+      "id": "62eca033df9d7a2978b4",
+      "model": "claude-3-7-sonnet-20250219",
+      "metric": "Utility",
+      "value": 88.66,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2025-02-24",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "a41020cd0ee3b641d3c4",
+      "model": "claude-3-7-sonnet-20250219",
+      "metric": "Utility under attack",
+      "value": 77.27,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2025-02-24",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "0150e962649698c2cc1a",
+      "model": "claude-3-7-sonnet-20250219",
+      "metric": "Targeted attack success",
+      "value": 7.31,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2025-02-24",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "495e1ea0370a1ed1728f",
+      "model": "gemini-2.0-flash-001",
+      "metric": "Utility",
+      "value": 43.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2025-01-30",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "9e7ec34c1fe0a032589b",
+      "model": "gemini-2.0-flash-001",
+      "metric": "Utility under attack",
+      "value": 39.75,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2025-01-30",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "2c865b2e9a33700ee6e7",
+      "model": "gemini-2.0-flash-001",
+      "metric": "Targeted attack success",
+      "value": 20.83,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2025-01-30",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "ed6514aba68cb96fb370",
+      "model": "gemini-2.0-flash-exp",
+      "metric": "Utility",
+      "value": 46.39,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-12-11",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "60b5fa8594f5bac82b64",
+      "model": "gemini-2.0-flash-exp",
+      "metric": "Utility under attack",
+      "value": 39.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-12-11",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "18dd7065ff660178d17d",
+      "model": "gemini-2.0-flash-exp",
+      "metric": "Targeted attack success",
+      "value": 17.01,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-12-11",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "8ed9c041d78ddac32378",
+      "model": "claude-3-5-sonnet-20241022",
+      "metric": "Utility",
+      "value": 79.38,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-11-15",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "58d3f181e25925e914ac",
+      "model": "claude-3-5-sonnet-20241022",
+      "metric": "Utility under attack",
+      "value": 72.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-11-15",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "21f2eb11e742de85b768",
+      "model": "claude-3-5-sonnet-20241022",
+      "metric": "Targeted attack success",
+      "value": 1.11,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-11-15",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "dfb28f4dd1148ad1de13",
+      "model": "gemini-1.5-flash-002",
+      "metric": "Utility",
+      "value": 38.14,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-11-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "d3d7597b68dedc64cec2",
+      "model": "gemini-1.5-flash-002",
+      "metric": "Utility under attack",
+      "value": 32.43,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-11-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "1282028a748829afb05d",
+      "model": "gemini-1.5-flash-002",
+      "metric": "Targeted attack success",
+      "value": 3.5,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-11-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "8de9857139653bfd5fb3",
+      "model": "gemini-1.5-pro-002",
+      "metric": "Utility",
+      "value": 61.86,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-11-04",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "09792a2256e70662e108",
+      "model": "gemini-1.5-pro-002",
+      "metric": "Utility under attack",
+      "value": 47.06,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-11-04",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "9ea626375af13007185a",
+      "model": "gemini-1.5-pro-002",
+      "metric": "Targeted attack success",
+      "value": 17.01,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-11-04",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "b5460ffb9d332833c566",
+      "model": "gpt-4o-mini-2024-07-18",
+      "metric": "Utility",
+      "value": 68.04,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-07-19",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "bb3bb136ef6eece75bcb",
+      "model": "gpt-4o-mini-2024-07-18",
+      "metric": "Utility under attack",
+      "value": 49.92,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-07-19",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "a4fe7925fad74463e57f",
+      "model": "gpt-4o-mini-2024-07-18",
+      "metric": "Targeted attack success",
+      "value": 27.19,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-07-19",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "86d74e751e9d057872a0",
+      "model": "claude-3-5-sonnet-20240620",
+      "metric": "Utility",
+      "value": 79.38,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-06-20",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "2a18ec4c78ebf9d3ee44",
+      "model": "claude-3-5-sonnet-20240620",
+      "metric": "Utility under attack",
+      "value": 51.19,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-06-20",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "06daf39c7eac9279d5d3",
+      "model": "claude-3-5-sonnet-20240620",
+      "metric": "Targeted attack success",
+      "value": 33.86,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-06-20",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "e7f7e1304ca06b18f53d",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility",
+      "value": 69.07,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack tool_knowledge",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "tool_knowledge"
+      }
+    },
+    {
+      "id": "df5576f8e02a64ae9274",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility under attack",
+      "value": 57.71,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack tool_knowledge",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "tool_knowledge"
+      }
+    },
+    {
+      "id": "a88b3d20e77c0955afd6",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Targeted attack success",
+      "value": 34.5,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack tool_knowledge",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "tool_knowledge"
+      }
+    },
+    {
+      "id": "d390f93cca1daf9d6584",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility",
+      "value": 69.07,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack injecagent",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "injecagent"
+      }
+    },
+    {
+      "id": "6f91f521fbe294c4a54b",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility under attack",
+      "value": 68.52,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack injecagent",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "injecagent"
+      }
+    },
+    {
+      "id": "73b177b22d389f5cbd75",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Targeted attack success",
+      "value": 5.72,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack injecagent",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "injecagent"
+      }
+    },
+    {
+      "id": "24388370dcc32565aaea",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility",
+      "value": 41.24,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense transformers_pi_detector · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "transformers_pi_detector",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "47fae52c29732c90591a",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility under attack",
+      "value": 21.14,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense transformers_pi_detector · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "transformers_pi_detector",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "b00b85e115d0e2601d15",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Targeted attack success",
+      "value": 7.95,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense transformers_pi_detector · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "transformers_pi_detector",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "bf106aeb22b784aa3285",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility",
+      "value": 72.16,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense tool_filter · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "tool_filter",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "324dcd9c3d785795bd2f",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility under attack",
+      "value": 56.28,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense tool_filter · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "tool_filter",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "7c7856300f1be96c0926",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Targeted attack success",
+      "value": 6.84,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense tool_filter · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "tool_filter",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "acc14642315e6cbbd167",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility",
+      "value": 72.16,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense spotlighting_with_delimiting · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "spotlighting_with_delimiting",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "60ffe410dda4aca6ed5c",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility under attack",
+      "value": 55.64,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense spotlighting_with_delimiting · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "spotlighting_with_delimiting",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "84b256e2c51a104ae1cc",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Targeted attack success",
+      "value": 41.65,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense spotlighting_with_delimiting · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "spotlighting_with_delimiting",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "e236e3cc216c97906184",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility",
+      "value": 84.54,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense repeat_user_prompt · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "repeat_user_prompt",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "f1c023e6968c1bd7a6a5",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility under attack",
+      "value": 67.25,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense repeat_user_prompt · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "repeat_user_prompt",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "97ec0b695b179f90b37e",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Targeted attack success",
+      "value": 27.82,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense repeat_user_prompt · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "repeat_user_prompt",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "562945bd599a43bb80f4",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility",
+      "value": 69.07,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "9492890e9517feecd2fd",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility under attack",
+      "value": 50.08,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "06e59a2b8f8deb357189",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Targeted attack success",
+      "value": 47.69,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "1a7b42408765654c24b6",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility",
+      "value": 69.07,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack ignore_previous",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "ignore_previous"
+      }
+    },
+    {
+      "id": "e08c95e357203fdff91b",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility under attack",
+      "value": 66.77,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack ignore_previous",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "ignore_previous"
+      }
+    },
+    {
+      "id": "0deb058ad80ca0763a85",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Targeted attack success",
+      "value": 5.41,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack ignore_previous",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "ignore_previous"
+      }
+    },
+    {
+      "id": "91f019b3bab693ada54a",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility",
+      "value": 69.07,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack direct",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "direct"
+      }
+    },
+    {
+      "id": "b173bb3f731f19d9b4c8",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Utility under attack",
+      "value": 67.25,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack direct",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "direct"
+      }
+    },
+    {
+      "id": "2a9427237807f36aa841",
+      "model": "gpt-4o-2024-05-13",
+      "metric": "Targeted attack success",
+      "value": 3.66,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack direct",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "direct"
+      }
+    },
+    {
+      "id": "6b0071743ab2aeb0828c",
+      "model": "gpt-4-turbo-2024-04-09",
+      "metric": "Utility",
+      "value": 64.95,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "9c0b9855120b253337f3",
+      "model": "gpt-4-turbo-2024-04-09",
+      "metric": "Utility under attack",
+      "value": 54.05,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "bbc63c3cecbb99d64772",
+      "model": "gpt-4-turbo-2024-04-09",
+      "metric": "Targeted attack success",
+      "value": 28.62,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "c614aa7c19f2b066b6d0",
+      "model": "gpt-4-0125-preview",
+      "metric": "Utility",
+      "value": 65.98,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "5a4ceeef3117eab1a8f7",
+      "model": "gpt-4-0125-preview",
+      "metric": "Utility under attack",
+      "value": 40.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "1290c4f93e47b00d8361",
+      "model": "gpt-4-0125-preview",
+      "metric": "Targeted attack success",
+      "value": 56.28,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "4c65c8925415964ba7db",
+      "model": "gpt-3.5-turbo-0125",
+      "metric": "Utility",
+      "value": 35.05,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "6bc1393cbf8f8483c83e",
+      "model": "gpt-3.5-turbo-0125",
+      "metric": "Utility under attack",
+      "value": 34.66,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "633e5c91210ac3f5f58a",
+      "model": "gpt-3.5-turbo-0125",
+      "metric": "Targeted attack success",
+      "value": 10.33,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "openai",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "96626b2142ffb6d7825a",
+      "model": "gemini-1.5-pro-001",
+      "metric": "Utility",
+      "value": 46.39,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "6b9aa643ab72535e01ca",
+      "model": "gemini-1.5-pro-001",
+      "metric": "Utility under attack",
+      "value": 28.93,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "c4a8595283651733c450",
+      "model": "gemini-1.5-pro-001",
+      "metric": "Targeted attack success",
+      "value": 28.62,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "99a35c2d1d9559b26ba1",
+      "model": "gemini-1.5-flash-001",
+      "metric": "Utility",
+      "value": 38.14,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "8dfcc13d0f1c3d19056f",
+      "model": "gemini-1.5-flash-001",
+      "metric": "Utility under attack",
+      "value": 34.18,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "275a626669ec455bcf52",
+      "model": "gemini-1.5-flash-001",
+      "metric": "Targeted attack success",
+      "value": 12.24,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "google",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "4624d0a03bd921d8e238",
+      "model": "command-r-plus",
+      "metric": "Utility",
+      "value": 24.74,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "cohere",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "0a6460c72aba8b4da55f",
+      "model": "command-r-plus",
+      "metric": "Utility under attack",
+      "value": 25.12,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "cohere",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "442865e4eeca7f0100d7",
+      "model": "command-r-plus",
+      "metric": "Targeted attack success",
+      "value": 4.45,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "cohere",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "baa345b56300e6afff46",
+      "model": "command-r",
+      "metric": "Utility",
+      "value": 26.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "cohere",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "f95bb192fb65b87266c8",
+      "model": "command-r",
+      "metric": "Utility under attack",
+      "value": 30.84,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "cohere",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "6d52b0db7eaa75d8688f",
+      "model": "command-r",
+      "metric": "Targeted attack success",
+      "value": 3.34,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "cohere",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "3a964a0e0179b914c98f",
+      "model": "claude-3-sonnet-20240229",
+      "metric": "Utility",
+      "value": 53.61,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "9cd9edec49a8d94af553",
+      "model": "claude-3-sonnet-20240229",
+      "metric": "Utility under attack",
+      "value": 33.23,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "ef75d925608f6a4a2d75",
+      "model": "claude-3-sonnet-20240229",
+      "metric": "Targeted attack success",
+      "value": 26.71,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "c26b55824fd8bdd8fc7b",
+      "model": "claude-3-opus-20240229",
+      "metric": "Utility",
+      "value": 68.04,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "2424ab5096061329465d",
+      "model": "claude-3-opus-20240229",
+      "metric": "Utility under attack",
+      "value": 52.46,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "e10708f291cab071952f",
+      "model": "claude-3-opus-20240229",
+      "metric": "Targeted attack success",
+      "value": 11.29,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "9afbff653500b03c0d7e",
+      "model": "claude-3-haiku-20240307",
+      "metric": "Utility",
+      "value": 39.18,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "881557721d1ae71ca08e",
+      "model": "claude-3-haiku-20240307",
+      "metric": "Utility under attack",
+      "value": 33.39,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "a265794fb9e17dd4c591",
+      "model": "claude-3-haiku-20240307",
+      "metric": "Targeted attack success",
+      "value": 9.06,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2024-06-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "anthropic",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "bfc75fc24e3ff1c214e3",
+      "model": "meta-llama/Llama-3-70b-chat-hf",
+      "metric": "Utility",
+      "value": 34.02,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility · defense None · attack important_instructions",
+      "date": "2021-09-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "together-prompting",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "6f1236dc889233a6fb00",
+      "model": "meta-llama/Llama-3-70b-chat-hf",
+      "metric": "Utility under attack",
+      "value": 18.28,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Utility under attack · defense None · attack important_instructions",
+      "date": "2021-09-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "together-prompting",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    },
+    {
+      "id": "50a995eca0468a6b5557",
+      "model": "meta-llama/Llama-3-70b-chat-hf",
+      "metric": "Targeted attack success",
+      "value": 25.6,
+      "unit": "%",
+      "direction": "Lower is better",
+      "comparison_group": "Targeted attack success · defense None · attack important_instructions",
+      "date": "2021-09-05",
+      "date_basis": "Source table date",
+      "source_url": "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html",
+      "details": {
+        "provider": "together-prompting",
+        "defense": "None",
+        "attack": "important_instructions"
+      }
+    }
+  ],
+  "input_sha256": {
+    "agentdojo": "bdd665fd32069666d3d89e2f54a9b6c12a38798f0e3824b5fe5b6488021d0925",
+    "agentdojo-license": "4285a071f2d382338e52b4fb0a186d952984a34d43a33d8872e1a1d8cb43401e"
+  }
+}

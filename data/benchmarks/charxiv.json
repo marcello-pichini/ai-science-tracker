@@ -1,0 +1,4747 @@
+{
+  "id": "charxiv",
+  "name": "CharXiv · chart understanding",
+  "attribution": "Princeton NLP / CharXiv authors",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "license_notice": "docs/benchmark-licenses/charxiv-data-license.txt",
+  "scope": "Scientific chart question performance. Descriptive and reasoning validation scores are separate; human/random references are labeled as in source. Released evaluations are historical (2024); current website scores are not imported. No paper chart images or question text included.",
+  "selection": "All released stats-*.json aggregate evaluations; source numbers unchanged. This adapted numerical component is shared under CC BY-SA 4.0. Attribution, license and change notices must travel with adaptations.",
+  "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+  "upstream_revision": "f441eb632fc62f6f777830a0f47619e6e86459b0",
+  "inputs": [
+    "charxiv-card",
+    "charxiv-data-license",
+    "cc-by-sa-4.0",
+    "charxiv-stats-Cambrian-34B-descriptive_val",
+    "charxiv-stats-Cambrian-34B-reasoning_val",
+    "charxiv-stats-ChartGemma-descriptive_val",
+    "charxiv-stats-ChartGemma-reasoning_val",
+    "charxiv-stats-Claude-3-5-Sonnet-descriptive_val",
+    "charxiv-stats-Claude-3-5-Sonnet-reasoning_val",
+    "charxiv-stats-Claude-3-Haiku-descriptive_val",
+    "charxiv-stats-Claude-3-Haiku-reasoning_val",
+    "charxiv-stats-Claude-3-Opus-descriptive_val",
+    "charxiv-stats-Claude-3-Opus-reasoning_val",
+    "charxiv-stats-Claude-3-Sonnet-descriptive_val",
+    "charxiv-stats-Claude-3-Sonnet-reasoning_val",
+    "charxiv-stats-DeepSeek-VL-descriptive_val",
+    "charxiv-stats-DeepSeek-VL-reasoning_val",
+    "charxiv-stats-GPT-4V-Turbo-descriptive_val",
+    "charxiv-stats-GPT-4V-Turbo-reasoning_val",
+    "charxiv-stats-GPT-4o-Random-descriptive_val",
+    "charxiv-stats-GPT-4o-Random-reasoning_val",
+    "charxiv-stats-GPT-4o-descriptive_val",
+    "charxiv-stats-GPT-4o-mini-descriptive_val",
+    "charxiv-stats-GPT-4o-mini-reasoning_val",
+    "charxiv-stats-GPT-4o-reasoning_val",
+    "charxiv-stats-Gemini-1-5-Pro-descriptive_val",
+    "charxiv-stats-Gemini-1-5-Pro-reasoning_val",
+    "charxiv-stats-Gemini-1.0-Pro-Vision-descriptive_val",
+    "charxiv-stats-Gemini-1.0-Pro-Vision-reasoning_val",
+    "charxiv-stats-Human-descriptive_val",
+    "charxiv-stats-Human-reasoning_val",
+    "charxiv-stats-IDEFICS-2-Chatty-descriptive_val",
+    "charxiv-stats-IDEFICS-2-Chatty-reasoning_val",
+    "charxiv-stats-IDEFICS-2-descriptive_val",
+    "charxiv-stats-IDEFICS-2-reasoning_val",
+    "charxiv-stats-InternLM-XComposer2-4KHD-descriptive_val",
+    "charxiv-stats-InternLM-XComposer2-4KHD-reasoning_val",
+    "charxiv-stats-InternLM-XComposer2-descriptive_val",
+    "charxiv-stats-InternLM-XComposer2-reasoning_val",
+    "charxiv-stats-InternVL-Chat-V1-5-descriptive_val",
+    "charxiv-stats-InternVL-Chat-V1-5-reasoning_val",
+    "charxiv-stats-InternVL2-26B-descriptive_val",
+    "charxiv-stats-InternVL2-26B-reasoning_val",
+    "charxiv-stats-InternVL2-76B-descriptive_val",
+    "charxiv-stats-InternVL2-76B-reasoning_val",
+    "charxiv-stats-InternVL2-Pro-descriptive_val",
+    "charxiv-stats-InternVL2-Pro-reasoning_val",
+    "charxiv-stats-LLaVA-1-6-Mistral-7B-descriptive_val",
+    "charxiv-stats-LLaVA-1-6-Mistral-7B-reasoning_val",
+    "charxiv-stats-LLaVA-1-6-Yi-34B-descriptive_val",
+    "charxiv-stats-LLaVA-1-6-Yi-34B-reasoning_val",
+    "charxiv-stats-Mini-Gemini-HD-LLaMA3-8B-descriptive_val",
+    "charxiv-stats-Mini-Gemini-HD-LLaMA3-8B-reasoning_val",
+    "charxiv-stats-Mini-Gemini-HD-Yi-34B-descriptive_val",
+    "charxiv-stats-Mini-Gemini-HD-Yi-34B-reasoning_val",
+    "charxiv-stats-MiniCPM-V2-5-descriptive_val",
+    "charxiv-stats-MiniCPM-V2-5-reasoning_val",
+    "charxiv-stats-MiniCPM-V2-descriptive_val",
+    "charxiv-stats-MiniCPM-V2-reasoning_val",
+    "charxiv-stats-MoAI-descriptive_val",
+    "charxiv-stats-MoAI-reasoning_val",
+    "charxiv-stats-Ovis1.5-Gemma2-9B-descriptive_val",
+    "charxiv-stats-Ovis1.5-Gemma2-9B-reasoning_val",
+    "charxiv-stats-Ovis1.5-Llama3-8B-descriptive_val",
+    "charxiv-stats-Ovis1.5-Llama3-8B-reasoning_val",
+    "charxiv-stats-Phi-3-Vision-descriptive_val",
+    "charxiv-stats-Phi-3-Vision-reasoning_val",
+    "charxiv-stats-Qwen-VL-Max-descriptive_val",
+    "charxiv-stats-Qwen-VL-Max-reasoning_val",
+    "charxiv-stats-Qwen-VL-Plus-descriptive_val",
+    "charxiv-stats-Qwen-VL-Plus-reasoning_val",
+    "charxiv-stats-Reka-Core-descriptive_val",
+    "charxiv-stats-Reka-Core-reasoning_val",
+    "charxiv-stats-Reka-Edge-descriptive_val",
+    "charxiv-stats-Reka-Edge-reasoning_val",
+    "charxiv-stats-Reka-Flash-descriptive_val",
+    "charxiv-stats-Reka-Flash-reasoning_val",
+    "charxiv-stats-SPHINX-V2-13B-descriptive_val",
+    "charxiv-stats-SPHINX-V2-13B-reasoning_val",
+    "charxiv-stats-VILA-1-5-40B-descriptive_val",
+    "charxiv-stats-VILA-1-5-40B-reasoning_val"
+  ],
+  "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/README.md",
+  "retrieved_on": "2026-11-18",
+  "schema_version": 1,
+  "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+  "records": [
+    {
+      "id": "23d89ed2246c3c14791c",
+      "model": "Cambrian-34B",
+      "metric": "Descriptive · validation overall",
+      "value": 59.73,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Cambrian-34B-descriptive_val.json",
+      "details": {
+        "Overall Score": 59.73,
+        "By Question": {
+          "Q1": 61.07,
+          "Q2": 64.35,
+          "Q3": 46.78,
+          "Q4": 71.21,
+          "Q5": 70.71,
+          "Q6": 48.59,
+          "Q7": 51.71,
+          "Q8": 69.2,
+          "Q9": 51.24,
+          "Q10": 67.81,
+          "Q11": 46.86,
+          "Q12": 60.44,
+          "Q13": 49.32,
+          "Q14": 85.82,
+          "Q15": 86.58,
+          "Q16": 55.56,
+          "Q17": 5.36,
+          "Q18": 57.49,
+          "Q19": 69.23
+        },
+        "By Category": {
+          "Information Extraction": 59.31,
+          "Enumeration": 70.94,
+          "Pattern Recognition": 53.28,
+          "Counting": 64.63,
+          "Compositionality": 5.36
+        },
+        "By Subplot": {
+          "1 Subplot": 68.46,
+          "2-4 Subplots": 57.94,
+          "5+ Subplots": 48.31
+        },
+        "By Subject": {
+          "Computer Science": 55.56,
+          "Economics": 63.04,
+          "Electrical Engineering and Systems Science": 66.39,
+          "Mathematics": 62.22,
+          "Physics": 55.71,
+          "Quantitative Biology": 56.55,
+          "Quantitative Finance": 57.11,
+          "Statistics": 61.06
+        },
+        "By Year": {
+          "2020": 60.32,
+          "2021": 56.7,
+          "2022": 60.25,
+          "2023": 61.79
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "64c7edd0ded01227f313",
+      "model": "Cambrian-34B",
+      "metric": "Reasoning · validation overall",
+      "value": 27.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Cambrian-34B-reasoning_val.json",
+      "details": {
+        "Overall Score": 27.3,
+        "By Answer Type": {
+          "Text-in-Chart": 24.55,
+          "Text-in-General": 44.44,
+          "Number-in-Chart": 27.59,
+          "Number-in-General": 24.89
+        },
+        "By Source": {
+          "GPT-Sourced": 28.8,
+          "GPT-Inspired": 27.78,
+          "Completely Human": 26.67
+        },
+        "By Subject": {
+          "Computer Science": 25.4,
+          "Economics": 28.26,
+          "Electrical Engineering and Systems Science": 27.73,
+          "Mathematics": 31.11,
+          "Physics": 29.92,
+          "Quantitative Biology": 27.78,
+          "Quantitative Finance": 23.28,
+          "Statistics": 23.89
+        },
+        "By Year": {
+          "2020": 23.89,
+          "2021": 31.42,
+          "2022": 25.82,
+          "2023": 27.82
+        },
+        "By Subplot": {
+          "1 Subplot": 28.24,
+          "2-4 Subplots": 30.69,
+          "5+ Subplots": 20.34
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "4693c6fcb9dbdf937500",
+      "model": "ChartGemma",
+      "metric": "Descriptive · validation overall",
+      "value": 21.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-ChartGemma-descriptive_val.json",
+      "details": {
+        "Overall Score": 21.3,
+        "By Question": {
+          "Q1": 28.28,
+          "Q2": 42.17,
+          "Q3": 13.73,
+          "Q4": 34.24,
+          "Q5": 44.77,
+          "Q6": 11.65,
+          "Q7": 18.38,
+          "Q8": 23.66,
+          "Q9": 25.37,
+          "Q10": 7.53,
+          "Q11": 34.86,
+          "Q12": 36.26,
+          "Q13": 25.57,
+          "Q14": 19.5,
+          "Q15": 6.39,
+          "Q16": 0.0,
+          "Q17": 4.46,
+          "Q18": 1.62,
+          "Q19": 0.0
+        },
+        "By Category": {
+          "Information Extraction": 27.58,
+          "Enumeration": 18.97,
+          "Pattern Recognition": 14.19,
+          "Counting": 19.59,
+          "Compositionality": 4.46
+        },
+        "By Subplot": {
+          "1 Subplot": 25.26,
+          "2-4 Subplots": 19.97,
+          "5+ Subplots": 16.95
+        },
+        "By Subject": {
+          "Computer Science": 21.43,
+          "Economics": 20.83,
+          "Electrical Engineering and Systems Science": 24.37,
+          "Mathematics": 17.96,
+          "Physics": 19.09,
+          "Quantitative Biology": 19.44,
+          "Quantitative Finance": 23.71,
+          "Statistics": 24.56
+        },
+        "By Year": {
+          "2020": 20.95,
+          "2021": 19.35,
+          "2022": 22.34,
+          "2023": 22.68
+        },
+        "N_valid": 4000,
+        "N_invalid": 60,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "a5361fa4571f0c201f2f",
+      "model": "ChartGemma",
+      "metric": "Reasoning · validation overall",
+      "value": 12.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-ChartGemma-reasoning_val.json",
+      "details": {
+        "Overall Score": 12.5,
+        "By Answer Type": {
+          "Text-in-Chart": 11.59,
+          "Text-in-General": 24.24,
+          "Number-in-Chart": 16.81,
+          "Number-in-General": 4.8
+        },
+        "By Source": {
+          "GPT-Sourced": 16.3,
+          "GPT-Inspired": 13.43,
+          "Completely Human": 11.0
+        },
+        "By Subject": {
+          "Computer Science": 10.32,
+          "Economics": 12.32,
+          "Electrical Engineering and Systems Science": 15.97,
+          "Mathematics": 15.56,
+          "Physics": 12.6,
+          "Quantitative Biology": 10.32,
+          "Quantitative Finance": 6.9,
+          "Statistics": 15.93
+        },
+        "By Year": {
+          "2020": 8.1,
+          "2021": 15.33,
+          "2022": 14.34,
+          "2023": 12.1
+        },
+        "By Subplot": {
+          "1 Subplot": 13.73,
+          "2-4 Subplots": 12.7,
+          "5+ Subplots": 10.17
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "a0b0bc6c033047bb2a0b",
+      "model": "Claude-3-5-Sonnet",
+      "metric": "Descriptive · validation overall",
+      "value": 84.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-5-Sonnet-descriptive_val.json",
+      "details": {
+        "Overall Score": 84.3,
+        "By Question": {
+          "Q1": 83.2,
+          "Q2": 81.74,
+          "Q3": 69.53,
+          "Q4": 90.66,
+          "Q5": 86.61,
+          "Q6": 79.92,
+          "Q7": 85.9,
+          "Q8": 88.39,
+          "Q9": 84.58,
+          "Q10": 90.41,
+          "Q11": 80.0,
+          "Q12": 87.91,
+          "Q13": 72.6,
+          "Q14": 95.39,
+          "Q15": 97.44,
+          "Q16": 86.11,
+          "Q17": 48.66,
+          "Q18": 98.79,
+          "Q19": 95.38
+        },
+        "By Category": {
+          "Information Extraction": 82.62,
+          "Enumeration": 88.86,
+          "Pattern Recognition": 90.61,
+          "Counting": 90.08,
+          "Compositionality": 48.66
+        },
+        "By Subplot": {
+          "1 Subplot": 88.21,
+          "2-4 Subplots": 85.25,
+          "5+ Subplots": 76.38
+        },
+        "By Subject": {
+          "Computer Science": 84.52,
+          "Economics": 85.87,
+          "Electrical Engineering and Systems Science": 88.03,
+          "Mathematics": 83.15,
+          "Physics": 80.51,
+          "Quantitative Biology": 81.55,
+          "Quantitative Finance": 84.91,
+          "Statistics": 86.28
+        },
+        "By Year": {
+          "2020": 83.5,
+          "2021": 83.91,
+          "2022": 84.84,
+          "2023": 84.98
+        },
+        "N_valid": 4000,
+        "N_invalid": 10,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "e92db089d5abab86140f",
+      "model": "Claude-3-5-Sonnet",
+      "metric": "Reasoning · validation overall",
+      "value": 60.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-5-Sonnet-reasoning_val.json",
+      "details": {
+        "Overall Score": 60.2,
+        "By Answer Type": {
+          "Text-in-Chart": 61.14,
+          "Text-in-General": 78.79,
+          "Number-in-Chart": 63.79,
+          "Number-in-General": 46.72
+        },
+        "By Source": {
+          "GPT-Sourced": 67.39,
+          "GPT-Inspired": 56.48,
+          "Completely Human": 59.33
+        },
+        "By Subject": {
+          "Computer Science": 57.94,
+          "Economics": 59.42,
+          "Electrical Engineering and Systems Science": 58.82,
+          "Mathematics": 59.26,
+          "Physics": 70.08,
+          "Quantitative Biology": 57.94,
+          "Quantitative Finance": 58.62,
+          "Statistics": 59.29
+        },
+        "By Year": {
+          "2020": 57.49,
+          "2021": 63.6,
+          "2022": 57.79,
+          "2023": 61.69
+        },
+        "By Subplot": {
+          "1 Subplot": 62.18,
+          "2-4 Subplots": 57.41,
+          "5+ Subplots": 61.44
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "cae6d7905e2e5f1955df",
+      "model": "Claude-3-Haiku",
+      "metric": "Descriptive · validation overall",
+      "value": 65.08,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Haiku-descriptive_val.json",
+      "details": {
+        "Overall Score": 65.08,
+        "By Question": {
+          "Q1": 59.84,
+          "Q2": 75.65,
+          "Q3": 51.07,
+          "Q4": 85.6,
+          "Q5": 76.15,
+          "Q6": 68.27,
+          "Q7": 71.37,
+          "Q8": 76.79,
+          "Q9": 60.2,
+          "Q10": 58.22,
+          "Q11": 54.29,
+          "Q12": 66.48,
+          "Q13": 65.3,
+          "Q14": 60.99,
+          "Q15": 82.75,
+          "Q16": 58.33,
+          "Q17": 8.04,
+          "Q18": 73.28,
+          "Q19": 56.92
+        },
+        "By Category": {
+          "Information Extraction": 69.87,
+          "Enumeration": 69.98,
+          "Pattern Recognition": 64.85,
+          "Counting": 61.83,
+          "Compositionality": 8.04
+        },
+        "By Subplot": {
+          "1 Subplot": 70.34,
+          "2-4 Subplots": 65.34,
+          "5+ Subplots": 56.04
+        },
+        "By Subject": {
+          "Computer Science": 62.3,
+          "Economics": 66.49,
+          "Electrical Engineering and Systems Science": 71.64,
+          "Mathematics": 68.33,
+          "Physics": 61.81,
+          "Quantitative Biology": 58.93,
+          "Quantitative Finance": 67.89,
+          "Statistics": 63.27
+        },
+        "By Year": {
+          "2020": 65.38,
+          "2021": 63.31,
+          "2022": 64.86,
+          "2023": 66.83
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "d8cf32651afff90f8b69",
+      "model": "Claude-3-Haiku",
+      "metric": "Reasoning · validation overall",
+      "value": 31.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Haiku-reasoning_val.json",
+      "details": {
+        "Overall Score": 31.8,
+        "By Answer Type": {
+          "Text-in-Chart": 29.77,
+          "Text-in-General": 45.45,
+          "Number-in-Chart": 34.48,
+          "Number-in-General": 27.07
+        },
+        "By Source": {
+          "GPT-Sourced": 35.87,
+          "GPT-Inspired": 27.78,
+          "Completely Human": 32.0
+        },
+        "By Subject": {
+          "Computer Science": 26.19,
+          "Economics": 30.43,
+          "Electrical Engineering and Systems Science": 37.82,
+          "Mathematics": 34.07,
+          "Physics": 37.01,
+          "Quantitative Biology": 29.37,
+          "Quantitative Finance": 28.45,
+          "Statistics": 30.97
+        },
+        "By Year": {
+          "2020": 31.58,
+          "2021": 34.1,
+          "2022": 30.33,
+          "2023": 31.05
+        },
+        "By Subplot": {
+          "1 Subplot": 31.61,
+          "2-4 Subplots": 35.19,
+          "5+ Subplots": 26.69
+        },
+        "N_valid": 1000,
+        "N_invalid": 3,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "35f6ee4f6f9a5e6b75bc",
+      "model": "Claude-3-Opus",
+      "metric": "Descriptive · validation overall",
+      "value": 71.55,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Opus-descriptive_val.json",
+      "details": {
+        "Overall Score": 71.55,
+        "By Question": {
+          "Q1": 68.03,
+          "Q2": 75.22,
+          "Q3": 60.09,
+          "Q4": 87.94,
+          "Q5": 84.52,
+          "Q6": 78.31,
+          "Q7": 73.93,
+          "Q8": 85.27,
+          "Q9": 74.13,
+          "Q10": 62.33,
+          "Q11": 54.86,
+          "Q12": 71.98,
+          "Q13": 62.56,
+          "Q14": 77.66,
+          "Q15": 69.33,
+          "Q16": 41.67,
+          "Q17": 26.79,
+          "Q18": 91.5,
+          "Q19": 84.62
+        },
+        "By Category": {
+          "Information Extraction": 75.62,
+          "Enumeration": 73.69,
+          "Pattern Recognition": 73.58,
+          "Counting": 70.48,
+          "Compositionality": 26.79
+        },
+        "By Subplot": {
+          "1 Subplot": 77.78,
+          "2-4 Subplots": 70.77,
+          "5+ Subplots": 62.61
+        },
+        "By Subject": {
+          "Computer Science": 69.25,
+          "Economics": 71.92,
+          "Electrical Engineering and Systems Science": 81.09,
+          "Mathematics": 75.0,
+          "Physics": 65.35,
+          "Quantitative Biology": 65.48,
+          "Quantitative Finance": 73.71,
+          "Statistics": 71.02
+        },
+        "By Year": {
+          "2020": 71.76,
+          "2021": 69.35,
+          "2022": 73.98,
+          "2023": 71.27
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "c86f74428871e35ba64c",
+      "model": "Claude-3-Opus",
+      "metric": "Reasoning · validation overall",
+      "value": 30.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Opus-reasoning_val.json",
+      "details": {
+        "Overall Score": 30.2,
+        "By Answer Type": {
+          "Text-in-Chart": 26.36,
+          "Text-in-General": 50.51,
+          "Number-in-Chart": 33.62,
+          "Number-in-General": 25.33
+        },
+        "By Source": {
+          "GPT-Sourced": 33.7,
+          "GPT-Inspired": 27.31,
+          "Completely Human": 30.17
+        },
+        "By Subject": {
+          "Computer Science": 25.4,
+          "Economics": 31.16,
+          "Electrical Engineering and Systems Science": 31.09,
+          "Mathematics": 36.3,
+          "Physics": 33.07,
+          "Quantitative Biology": 29.37,
+          "Quantitative Finance": 25.86,
+          "Statistics": 28.32
+        },
+        "By Year": {
+          "2020": 29.15,
+          "2021": 31.42,
+          "2022": 30.74,
+          "2023": 29.44
+        },
+        "By Subplot": {
+          "1 Subplot": 29.27,
+          "2-4 Subplots": 33.6,
+          "5+ Subplots": 26.27
+        },
+        "N_valid": 1000,
+        "N_invalid": 1,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "7d5ffcd2a1ecb5719f0f",
+      "model": "Claude-3-Sonnet",
+      "metric": "Descriptive · validation overall",
+      "value": 73.65,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Sonnet-descriptive_val.json",
+      "details": {
+        "Overall Score": 73.65,
+        "By Question": {
+          "Q1": 74.18,
+          "Q2": 76.09,
+          "Q3": 53.22,
+          "Q4": 88.33,
+          "Q5": 84.94,
+          "Q6": 76.71,
+          "Q7": 75.21,
+          "Q8": 87.05,
+          "Q9": 77.11,
+          "Q10": 65.07,
+          "Q11": 66.86,
+          "Q12": 75.82,
+          "Q13": 69.41,
+          "Q14": 84.4,
+          "Q15": 87.86,
+          "Q16": 55.56,
+          "Q17": 8.48,
+          "Q18": 86.64,
+          "Q19": 78.46
+        },
+        "By Category": {
+          "Information Extraction": 75.74,
+          "Enumeration": 81.92,
+          "Pattern Recognition": 76.64,
+          "Counting": 72.26,
+          "Compositionality": 8.48
+        },
+        "By Subplot": {
+          "1 Subplot": 78.69,
+          "2-4 Subplots": 73.94,
+          "5+ Subplots": 64.94
+        },
+        "By Subject": {
+          "Computer Science": 75.79,
+          "Economics": 75.72,
+          "Electrical Engineering and Systems Science": 81.72,
+          "Mathematics": 73.15,
+          "Physics": 67.72,
+          "Quantitative Biology": 68.45,
+          "Quantitative Finance": 73.92,
+          "Statistics": 73.01
+        },
+        "By Year": {
+          "2020": 71.36,
+          "2021": 73.18,
+          "2022": 74.9,
+          "2023": 75.2
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "fdceebd3942765d9dc9f",
+      "model": "Claude-3-Sonnet",
+      "metric": "Reasoning · validation overall",
+      "value": 32.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Claude-3-Sonnet-reasoning_val.json",
+      "details": {
+        "Overall Score": 32.2,
+        "By Answer Type": {
+          "Text-in-Chart": 31.59,
+          "Text-in-General": 50.51,
+          "Number-in-Chart": 31.47,
+          "Number-in-General": 26.2
+        },
+        "By Source": {
+          "GPT-Sourced": 35.87,
+          "GPT-Inspired": 27.78,
+          "Completely Human": 32.67
+        },
+        "By Subject": {
+          "Computer Science": 26.19,
+          "Economics": 31.16,
+          "Electrical Engineering and Systems Science": 32.77,
+          "Mathematics": 33.33,
+          "Physics": 37.8,
+          "Quantitative Biology": 30.16,
+          "Quantitative Finance": 29.31,
+          "Statistics": 37.17
+        },
+        "By Year": {
+          "2020": 31.98,
+          "2021": 33.33,
+          "2022": 27.46,
+          "2023": 35.89
+        },
+        "By Subplot": {
+          "1 Subplot": 32.38,
+          "2-4 Subplots": 32.01,
+          "5+ Subplots": 32.2
+        },
+        "N_valid": 1000,
+        "N_invalid": 3,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "55d21456f6b43168b9a9",
+      "model": "DeepSeek-VL",
+      "metric": "Descriptive · validation overall",
+      "value": 45.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-DeepSeek-VL-descriptive_val.json",
+      "details": {
+        "Overall Score": 45.8,
+        "By Question": {
+          "Q1": 61.89,
+          "Q2": 54.35,
+          "Q3": 33.48,
+          "Q4": 59.14,
+          "Q5": 51.05,
+          "Q6": 38.96,
+          "Q7": 44.02,
+          "Q8": 55.36,
+          "Q9": 47.76,
+          "Q10": 53.42,
+          "Q11": 41.14,
+          "Q12": 57.14,
+          "Q13": 42.47,
+          "Q14": 60.28,
+          "Q15": 24.6,
+          "Q16": 47.22,
+          "Q17": 4.91,
+          "Q18": 43.32,
+          "Q19": 84.62
+        },
+        "By Category": {
+          "Information Extraction": 49.11,
+          "Enumeration": 45.2,
+          "Pattern Recognition": 42.79,
+          "Counting": 60.31,
+          "Compositionality": 4.91
+        },
+        "By Subplot": {
+          "1 Subplot": 55.31,
+          "2-4 Subplots": 43.06,
+          "5+ Subplots": 34.64
+        },
+        "By Subject": {
+          "Computer Science": 43.25,
+          "Economics": 46.2,
+          "Electrical Engineering and Systems Science": 53.15,
+          "Mathematics": 45.74,
+          "Physics": 42.72,
+          "Quantitative Biology": 42.06,
+          "Quantitative Finance": 47.2,
+          "Statistics": 46.68
+        },
+        "By Year": {
+          "2020": 47.77,
+          "2021": 43.01,
+          "2022": 47.54,
+          "2023": 45.06
+        },
+        "N_valid": 4000,
+        "N_invalid": 1,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "b25ca13197448edcc8af",
+      "model": "DeepSeek-VL",
+      "metric": "Reasoning · validation overall",
+      "value": 17.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-DeepSeek-VL-reasoning_val.json",
+      "details": {
+        "Overall Score": 17.1,
+        "By Answer Type": {
+          "Text-in-Chart": 16.36,
+          "Text-in-General": 32.32,
+          "Number-in-Chart": 19.83,
+          "Number-in-General": 9.17
+        },
+        "By Source": {
+          "GPT-Sourced": 18.48,
+          "GPT-Inspired": 12.5,
+          "Completely Human": 18.33
+        },
+        "By Subject": {
+          "Computer Science": 8.73,
+          "Economics": 18.12,
+          "Electrical Engineering and Systems Science": 15.13,
+          "Mathematics": 15.56,
+          "Physics": 21.26,
+          "Quantitative Biology": 20.63,
+          "Quantitative Finance": 11.21,
+          "Statistics": 26.55
+        },
+        "By Year": {
+          "2020": 18.62,
+          "2021": 17.62,
+          "2022": 16.8,
+          "2023": 15.32
+        },
+        "By Subplot": {
+          "1 Subplot": 17.88,
+          "2-4 Subplots": 18.78,
+          "5+ Subplots": 13.14
+        },
+        "N_valid": 1000,
+        "N_invalid": 2,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "03d4fd5fd2379eb0de5a",
+      "model": "GPT-4V-Turbo",
+      "metric": "Descriptive · validation overall",
+      "value": 79.92,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4V-Turbo-descriptive_val.json",
+      "details": {
+        "Overall Score": 79.92,
+        "By Question": {
+          "Q1": 81.56,
+          "Q2": 82.17,
+          "Q3": 70.82,
+          "Q4": 82.1,
+          "Q5": 83.26,
+          "Q6": 73.09,
+          "Q7": 74.79,
+          "Q8": 87.5,
+          "Q9": 72.64,
+          "Q10": 79.45,
+          "Q11": 84.0,
+          "Q12": 79.67,
+          "Q13": 79.91,
+          "Q14": 90.07,
+          "Q15": 93.29,
+          "Q16": 72.22,
+          "Q17": 41.07,
+          "Q18": 93.52,
+          "Q19": 87.69
+        },
+        "By Category": {
+          "Information Extraction": 78.29,
+          "Enumeration": 85.79,
+          "Pattern Recognition": 88.21,
+          "Counting": 80.92,
+          "Compositionality": 41.07
+        },
+        "By Subplot": {
+          "1 Subplot": 85.43,
+          "2-4 Subplots": 80.36,
+          "5+ Subplots": 70.23
+        },
+        "By Subject": {
+          "Computer Science": 77.78,
+          "Economics": 80.07,
+          "Electrical Engineering and Systems Science": 84.66,
+          "Mathematics": 79.63,
+          "Physics": 78.15,
+          "Quantitative Biology": 76.19,
+          "Quantitative Finance": 82.33,
+          "Statistics": 81.19
+        },
+        "By Year": {
+          "2020": 79.35,
+          "2021": 78.54,
+          "2022": 81.25,
+          "2023": 80.65
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "bebda5b5b81a19796e2d",
+      "model": "GPT-4V-Turbo",
+      "metric": "Reasoning · validation overall",
+      "value": 37.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4V-Turbo-reasoning_val.json",
+      "details": {
+        "Overall Score": 37.1,
+        "By Answer Type": {
+          "Text-in-Chart": 38.18,
+          "Text-in-General": 57.58,
+          "Number-in-Chart": 37.93,
+          "Number-in-General": 25.33
+        },
+        "By Source": {
+          "GPT-Sourced": 42.93,
+          "GPT-Inspired": 33.8,
+          "Completely Human": 36.5
+        },
+        "By Subject": {
+          "Computer Science": 34.92,
+          "Economics": 39.13,
+          "Electrical Engineering and Systems Science": 42.02,
+          "Mathematics": 39.26,
+          "Physics": 51.97,
+          "Quantitative Biology": 30.16,
+          "Quantitative Finance": 27.59,
+          "Statistics": 30.09
+        },
+        "By Year": {
+          "2020": 33.6,
+          "2021": 39.46,
+          "2022": 37.3,
+          "2023": 37.9
+        },
+        "By Subplot": {
+          "1 Subplot": 35.49,
+          "2-4 Subplots": 39.15,
+          "5+ Subplots": 36.44
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "aa195df3b3bfd147e1cf",
+      "model": "GPT-4o-Random",
+      "metric": "Descriptive · validation overall",
+      "value": 19.85,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-Random-descriptive_val.json",
+      "details": {
+        "Overall Score": 19.85,
+        "By Question": {
+          "Q1": 59.02,
+          "Q2": 11.74,
+          "Q3": 12.02,
+          "Q4": 33.46,
+          "Q5": 3.77,
+          "Q6": 26.91,
+          "Q7": 1.71,
+          "Q8": 15.18,
+          "Q9": 11.94,
+          "Q10": 23.29,
+          "Q11": 41.71,
+          "Q12": 26.37,
+          "Q13": 26.48,
+          "Q14": 21.99,
+          "Q15": 9.27,
+          "Q16": 19.44,
+          "Q17": 5.36,
+          "Q18": 11.74,
+          "Q19": 29.23
+        },
+        "By Category": {
+          "Information Extraction": 21.65,
+          "Enumeration": 16.71,
+          "Pattern Recognition": 23.8,
+          "Counting": 25.7,
+          "Compositionality": 5.36
+        },
+        "By Subplot": {
+          "1 Subplot": 22.22,
+          "2-4 Subplots": 19.64,
+          "5+ Subplots": 16.31
+        },
+        "By Subject": {
+          "Computer Science": 17.46,
+          "Economics": 20.47,
+          "Electrical Engineering and Systems Science": 22.9,
+          "Mathematics": 22.96,
+          "Physics": 20.87,
+          "Quantitative Biology": 19.44,
+          "Quantitative Finance": 17.46,
+          "Statistics": 16.59
+        },
+        "By Year": {
+          "2020": 19.64,
+          "2021": 19.16,
+          "2022": 18.95,
+          "2023": 21.67
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "11ce5a5e62aef17b9ac7",
+      "model": "GPT-4o-Random",
+      "metric": "Reasoning · validation overall",
+      "value": 10.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-Random-reasoning_val.json",
+      "details": {
+        "Overall Score": 10.8,
+        "By Answer Type": {
+          "Text-in-Chart": 4.32,
+          "Text-in-General": 39.39,
+          "Number-in-Chart": 5.6,
+          "Number-in-General": 16.16
+        },
+        "By Source": {
+          "GPT-Sourced": 11.96,
+          "GPT-Inspired": 8.8,
+          "Completely Human": 11.17
+        },
+        "By Subject": {
+          "Computer Science": 10.32,
+          "Economics": 12.32,
+          "Electrical Engineering and Systems Science": 6.72,
+          "Mathematics": 11.85,
+          "Physics": 12.6,
+          "Quantitative Biology": 11.11,
+          "Quantitative Finance": 11.21,
+          "Statistics": 9.73
+        },
+        "By Year": {
+          "2020": 10.12,
+          "2021": 11.88,
+          "2022": 10.25,
+          "2023": 10.89
+        },
+        "By Subplot": {
+          "1 Subplot": 9.84,
+          "2-4 Subplots": 12.17,
+          "5+ Subplots": 10.17
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "1261042045a2e6d9421b",
+      "model": "GPT-4o",
+      "metric": "Descriptive · validation overall",
+      "value": 84.45,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-descriptive_val.json",
+      "details": {
+        "Overall Score": 84.45,
+        "By Question": {
+          "Q1": 76.23,
+          "Q2": 84.78,
+          "Q3": 73.82,
+          "Q4": 87.94,
+          "Q5": 86.61,
+          "Q6": 84.34,
+          "Q7": 82.91,
+          "Q8": 89.29,
+          "Q9": 77.11,
+          "Q10": 84.25,
+          "Q11": 83.43,
+          "Q12": 83.52,
+          "Q13": 85.39,
+          "Q14": 93.26,
+          "Q15": 95.85,
+          "Q16": 86.11,
+          "Q17": 59.82,
+          "Q18": 95.55,
+          "Q19": 93.85
+        },
+        "By Category": {
+          "Information Extraction": 82.44,
+          "Enumeration": 89.18,
+          "Pattern Recognition": 90.17,
+          "Counting": 85.5,
+          "Compositionality": 59.82
+        },
+        "By Subplot": {
+          "1 Subplot": 90.16,
+          "2-4 Subplots": 83.73,
+          "5+ Subplots": 76.27
+        },
+        "By Subject": {
+          "Computer Science": 86.71,
+          "Economics": 86.23,
+          "Electrical Engineering and Systems Science": 87.18,
+          "Mathematics": 84.63,
+          "Physics": 79.92,
+          "Quantitative Biology": 80.56,
+          "Quantitative Finance": 85.13,
+          "Statistics": 85.4
+        },
+        "By Year": {
+          "2020": 85.53,
+          "2021": 82.57,
+          "2022": 85.04,
+          "2023": 84.78
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "034092b206aad09d0a34",
+      "model": "GPT-4o-mini",
+      "metric": "Descriptive · validation overall",
+      "value": 74.92,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-mini-descriptive_val.json",
+      "details": {
+        "Overall Score": 74.92,
+        "By Question": {
+          "Q1": 75.0,
+          "Q2": 80.43,
+          "Q3": 69.1,
+          "Q4": 85.21,
+          "Q5": 77.41,
+          "Q6": 65.46,
+          "Q7": 71.37,
+          "Q8": 77.23,
+          "Q9": 67.66,
+          "Q10": 82.88,
+          "Q11": 70.29,
+          "Q12": 74.73,
+          "Q13": 79.0,
+          "Q14": 90.07,
+          "Q15": 92.65,
+          "Q16": 61.11,
+          "Q17": 35.71,
+          "Q18": 69.64,
+          "Q19": 83.08
+        },
+        "By Category": {
+          "Information Extraction": 74.91,
+          "Enumeration": 82.81,
+          "Pattern Recognition": 69.21,
+          "Counting": 79.13,
+          "Compositionality": 35.71
+        },
+        "By Subplot": {
+          "1 Subplot": 81.93,
+          "2-4 Subplots": 74.01,
+          "5+ Subplots": 64.94
+        },
+        "By Subject": {
+          "Computer Science": 73.41,
+          "Economics": 75.0,
+          "Electrical Engineering and Systems Science": 79.83,
+          "Mathematics": 78.15,
+          "Physics": 72.83,
+          "Quantitative Biology": 69.84,
+          "Quantitative Finance": 74.57,
+          "Statistics": 75.88
+        },
+        "By Year": {
+          "2020": 75.81,
+          "2021": 74.81,
+          "2022": 74.39,
+          "2023": 74.7
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "8c48d676d32bdfcb90c9",
+      "model": "GPT-4o-mini",
+      "metric": "Reasoning · validation overall",
+      "value": 34.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-mini-reasoning_val.json",
+      "details": {
+        "Overall Score": 34.1,
+        "By Answer Type": {
+          "Text-in-Chart": 35.23,
+          "Text-in-General": 47.47,
+          "Number-in-Chart": 32.33,
+          "Number-in-General": 27.95
+        },
+        "By Source": {
+          "GPT-Sourced": 40.22,
+          "GPT-Inspired": 27.78,
+          "Completely Human": 34.5
+        },
+        "By Subject": {
+          "Computer Science": 34.92,
+          "Economics": 31.88,
+          "Electrical Engineering and Systems Science": 42.02,
+          "Mathematics": 34.81,
+          "Physics": 39.37,
+          "Quantitative Biology": 29.37,
+          "Quantitative Finance": 29.31,
+          "Statistics": 30.97
+        },
+        "By Year": {
+          "2020": 34.41,
+          "2021": 32.18,
+          "2022": 33.2,
+          "2023": 36.69
+        },
+        "By Subplot": {
+          "1 Subplot": 35.75,
+          "2-4 Subplots": 35.19,
+          "5+ Subplots": 29.66
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "e19b75d3aed6ac50e5fc",
+      "model": "GPT-4o",
+      "metric": "Reasoning · validation overall",
+      "value": 47.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-GPT-4o-reasoning_val.json",
+      "details": {
+        "Overall Score": 47.1,
+        "By Answer Type": {
+          "Text-in-Chart": 50.0,
+          "Text-in-General": 61.62,
+          "Number-in-Chart": 47.84,
+          "Number-in-General": 34.5
+        },
+        "By Source": {
+          "GPT-Sourced": 52.17,
+          "GPT-Inspired": 43.52,
+          "Completely Human": 46.83
+        },
+        "By Subject": {
+          "Computer Science": 53.97,
+          "Economics": 43.48,
+          "Electrical Engineering and Systems Science": 47.06,
+          "Mathematics": 42.96,
+          "Physics": 53.54,
+          "Quantitative Biology": 46.83,
+          "Quantitative Finance": 43.97,
+          "Statistics": 45.13
+        },
+        "By Year": {
+          "2020": 43.32,
+          "2021": 49.04,
+          "2022": 45.49,
+          "2023": 50.4
+        },
+        "By Subplot": {
+          "1 Subplot": 46.37,
+          "2-4 Subplots": 49.47,
+          "5+ Subplots": 44.49
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "f046d25fd06604e2d666",
+      "model": "Gemini-1-5-Pro",
+      "metric": "Descriptive · validation overall",
+      "value": 71.97,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Gemini-1-5-Pro-descriptive_val.json",
+      "details": {
+        "Overall Score": 71.97,
+        "By Question": {
+          "Q1": 79.1,
+          "Q2": 82.61,
+          "Q3": 69.1,
+          "Q4": 87.55,
+          "Q5": 89.12,
+          "Q6": 82.33,
+          "Q7": 82.05,
+          "Q8": 88.39,
+          "Q9": 81.59,
+          "Q10": 77.4,
+          "Q11": 65.71,
+          "Q12": 70.33,
+          "Q13": 82.65,
+          "Q14": 45.39,
+          "Q15": 41.85,
+          "Q16": 75.0,
+          "Q17": 15.18,
+          "Q18": 89.88,
+          "Q19": 90.77
+        },
+        "By Category": {
+          "Information Extraction": 81.79,
+          "Enumeration": 64.73,
+          "Pattern Recognition": 79.48,
+          "Counting": 76.34,
+          "Compositionality": 15.18
+        },
+        "By Subplot": {
+          "1 Subplot": 78.89,
+          "2-4 Subplots": 70.11,
+          "5+ Subplots": 63.67
+        },
+        "By Subject": {
+          "Computer Science": 71.83,
+          "Economics": 75.54,
+          "Electrical Engineering and Systems Science": 75.0,
+          "Mathematics": 72.96,
+          "Physics": 65.75,
+          "Quantitative Biology": 66.47,
+          "Quantitative Finance": 72.84,
+          "Statistics": 75.66
+        },
+        "By Year": {
+          "2020": 72.67,
+          "2021": 70.5,
+          "2022": 71.82,
+          "2023": 72.98
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "b9d6a86e53f2598fb4a6",
+      "model": "Gemini-1-5-Pro",
+      "metric": "Reasoning · validation overall",
+      "value": 43.3,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Gemini-1-5-Pro-reasoning_val.json",
+      "details": {
+        "Overall Score": 43.3,
+        "By Answer Type": {
+          "Text-in-Chart": 45.68,
+          "Text-in-General": 56.57,
+          "Number-in-Chart": 45.69,
+          "Number-in-General": 30.57
+        },
+        "By Source": {
+          "GPT-Sourced": 51.09,
+          "GPT-Inspired": 40.28,
+          "Completely Human": 42.0
+        },
+        "By Subject": {
+          "Computer Science": 38.1,
+          "Economics": 45.65,
+          "Electrical Engineering and Systems Science": 42.02,
+          "Mathematics": 45.19,
+          "Physics": 45.67,
+          "Quantitative Biology": 42.86,
+          "Quantitative Finance": 50.0,
+          "Statistics": 36.28
+        },
+        "By Year": {
+          "2020": 38.87,
+          "2021": 47.89,
+          "2022": 41.39,
+          "2023": 44.76
+        },
+        "By Subplot": {
+          "1 Subplot": 42.75,
+          "2-4 Subplots": 44.18,
+          "5+ Subplots": 42.8
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "69192f23c9db777ba0a1",
+      "model": "Gemini-1.0-Pro-Vision",
+      "metric": "Descriptive · validation overall",
+      "value": 54.38,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Gemini-1.0-Pro-Vision-descriptive_val.json",
+      "details": {
+        "Overall Score": 54.38,
+        "By Question": {
+          "Q1": 64.34,
+          "Q2": 76.09,
+          "Q3": 63.95,
+          "Q4": 75.49,
+          "Q5": 79.5,
+          "Q6": 55.82,
+          "Q7": 60.68,
+          "Q8": 56.25,
+          "Q9": 60.7,
+          "Q10": 64.38,
+          "Q11": 44.0,
+          "Q12": 53.3,
+          "Q13": 57.99,
+          "Q14": 9.57,
+          "Q15": 26.84,
+          "Q16": 41.67,
+          "Q17": 8.93,
+          "Q18": 74.9,
+          "Q19": 84.62
+        },
+        "By Category": {
+          "Information Extraction": 67.97,
+          "Enumeration": 39.23,
+          "Pattern Recognition": 60.48,
+          "Counting": 62.6,
+          "Compositionality": 8.93
+        },
+        "By Subplot": {
+          "1 Subplot": 61.98,
+          "2-4 Subplots": 53.24,
+          "5+ Subplots": 43.75
+        },
+        "By Subject": {
+          "Computer Science": 53.37,
+          "Economics": 55.98,
+          "Electrical Engineering and Systems Science": 61.34,
+          "Mathematics": 57.04,
+          "Physics": 50.98,
+          "Quantitative Biology": 48.02,
+          "Quantitative Finance": 55.82,
+          "Statistics": 52.43
+        },
+        "By Year": {
+          "2020": 57.39,
+          "2021": 53.45,
+          "2022": 51.64,
+          "2023": 55.04
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "32d5c3504081259de25d",
+      "model": "Gemini-1.0-Pro-Vision",
+      "metric": "Reasoning · validation overall",
+      "value": 22.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Gemini-1.0-Pro-Vision-reasoning_val.json",
+      "details": {
+        "Overall Score": 22.8,
+        "By Answer Type": {
+          "Text-in-Chart": 20.91,
+          "Text-in-General": 48.48,
+          "Number-in-Chart": 18.1,
+          "Number-in-General": 20.09
+        },
+        "By Source": {
+          "GPT-Sourced": 22.83,
+          "GPT-Inspired": 18.06,
+          "Completely Human": 24.5
+        },
+        "By Subject": {
+          "Computer Science": 22.22,
+          "Economics": 30.43,
+          "Electrical Engineering and Systems Science": 17.65,
+          "Mathematics": 23.7,
+          "Physics": 25.2,
+          "Quantitative Biology": 24.6,
+          "Quantitative Finance": 13.79,
+          "Statistics": 23.01
+        },
+        "By Year": {
+          "2020": 21.86,
+          "2021": 22.99,
+          "2022": 24.59,
+          "2023": 21.77
+        },
+        "By Subplot": {
+          "1 Subplot": 22.02,
+          "2-4 Subplots": 24.34,
+          "5+ Subplots": 21.61
+        },
+        "N_valid": 1000,
+        "N_invalid": 1,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "abe5e163adab60e6f568",
+      "model": "Human",
+      "metric": "Descriptive · validation overall",
+      "value": 92.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Human-descriptive_val.json",
+      "details": {
+        "Overall Score": 92.1,
+        "By Question": {
+          "Q1": 90.98,
+          "Q2": 86.96,
+          "Q3": 81.12,
+          "Q4": 94.16,
+          "Q5": 92.47,
+          "Q6": 97.19,
+          "Q7": 96.15,
+          "Q8": 95.98,
+          "Q9": 93.03,
+          "Q10": 95.89,
+          "Q11": 94.86,
+          "Q12": 91.76,
+          "Q13": 80.82,
+          "Q14": 92.55,
+          "Q15": 92.65,
+          "Q16": 80.56,
+          "Q17": 92.86,
+          "Q18": 98.38,
+          "Q19": 92.31
+        },
+        "By Category": {
+          "Information Extraction": 91.4,
+          "Enumeration": 91.2,
+          "Pattern Recognition": 95.63,
+          "Counting": 93.38,
+          "Compositionality": 92.86
+        },
+        "By Subplot": {
+          "1 Subplot": 93.2,
+          "2-4 Subplots": 91.34,
+          "5+ Subplots": 91.53
+        },
+        "By Subject": {
+          "Computer Science": 88.29,
+          "Economics": 89.13,
+          "Electrical Engineering and Systems Science": 92.86,
+          "Mathematics": 92.41,
+          "Physics": 92.91,
+          "Quantitative Biology": 93.06,
+          "Quantitative Finance": 95.04,
+          "Statistics": 93.81
+        },
+        "By Year": {
+          "2020": 92.0,
+          "2021": 92.82,
+          "2022": 92.21,
+          "2023": 91.33
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "d2972e68bf5eda0d76dc",
+      "model": "Human",
+      "metric": "Reasoning · validation overall",
+      "value": 80.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Human-reasoning_val.json",
+      "details": {
+        "Overall Score": 80.5,
+        "By Answer Type": {
+          "Text-in-Chart": 77.27,
+          "Text-in-General": 77.78,
+          "Number-in-Chart": 84.91,
+          "Number-in-General": 83.41
+        },
+        "By Source": {
+          "GPT-Sourced": 83.7,
+          "GPT-Inspired": 78.24,
+          "Completely Human": 80.33
+        },
+        "By Subject": {
+          "Computer Science": 73.02,
+          "Economics": 77.54,
+          "Electrical Engineering and Systems Science": 80.67,
+          "Mathematics": 85.93,
+          "Physics": 87.4,
+          "Quantitative Biology": 79.37,
+          "Quantitative Finance": 82.76,
+          "Statistics": 76.99
+        },
+        "By Year": {
+          "2020": 79.35,
+          "2021": 82.76,
+          "2022": 82.79,
+          "2023": 77.02
+        },
+        "By Subplot": {
+          "1 Subplot": 82.12,
+          "2-4 Subplots": 80.95,
+          "5+ Subplots": 77.12
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "525af80a2002b329849c",
+      "model": "IDEFICS-2-Chatty",
+      "metric": "Descriptive · validation overall",
+      "value": 41.55,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-IDEFICS-2-Chatty-descriptive_val.json",
+      "details": {
+        "Overall Score": 41.55,
+        "By Question": {
+          "Q1": 20.49,
+          "Q2": 52.61,
+          "Q3": 33.91,
+          "Q4": 37.35,
+          "Q5": 41.42,
+          "Q6": 30.12,
+          "Q7": 29.06,
+          "Q8": 26.34,
+          "Q9": 24.38,
+          "Q10": 39.73,
+          "Q11": 46.29,
+          "Q12": 39.56,
+          "Q13": 30.59,
+          "Q14": 82.62,
+          "Q15": 85.62,
+          "Q16": 22.22,
+          "Q17": 6.7,
+          "Q18": 48.58,
+          "Q19": 67.69
+        },
+        "By Category": {
+          "Information Extraction": 34.88,
+          "Enumeration": 54.56,
+          "Pattern Recognition": 45.63,
+          "Counting": 44.27,
+          "Compositionality": 6.7
+        },
+        "By Subplot": {
+          "1 Subplot": 45.27,
+          "2-4 Subplots": 42.13,
+          "5+ Subplots": 34.53
+        },
+        "By Subject": {
+          "Computer Science": 39.68,
+          "Economics": 41.3,
+          "Electrical Engineering and Systems Science": 44.96,
+          "Mathematics": 45.0,
+          "Physics": 36.42,
+          "Quantitative Biology": 41.67,
+          "Quantitative Finance": 41.81,
+          "Statistics": 41.59
+        },
+        "By Year": {
+          "2020": 43.52,
+          "2021": 40.04,
+          "2022": 39.14,
+          "2023": 43.55
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "47a1e7b68b15e1e7b526",
+      "model": "IDEFICS-2-Chatty",
+      "metric": "Reasoning · validation overall",
+      "value": 17.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-IDEFICS-2-Chatty-reasoning_val.json",
+      "details": {
+        "Overall Score": 17.8,
+        "By Answer Type": {
+          "Text-in-Chart": 15.45,
+          "Text-in-General": 34.34,
+          "Number-in-Chart": 19.83,
+          "Number-in-General": 13.1
+        },
+        "By Source": {
+          "GPT-Sourced": 21.2,
+          "GPT-Inspired": 13.43,
+          "Completely Human": 18.33
+        },
+        "By Subject": {
+          "Computer Science": 19.84,
+          "Economics": 15.22,
+          "Electrical Engineering and Systems Science": 13.45,
+          "Mathematics": 26.67,
+          "Physics": 17.32,
+          "Quantitative Biology": 14.29,
+          "Quantitative Finance": 14.66,
+          "Statistics": 20.35
+        },
+        "By Year": {
+          "2020": 19.84,
+          "2021": 16.86,
+          "2022": 16.8,
+          "2023": 17.74
+        },
+        "By Subplot": {
+          "1 Subplot": 18.39,
+          "2-4 Subplots": 18.25,
+          "5+ Subplots": 16.1
+        },
+        "N_valid": 1000,
+        "N_invalid": 3,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "f73fd06f6f2bf4ee447d",
+      "model": "IDEFICS-2",
+      "metric": "Descriptive · validation overall",
+      "value": 32.77,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-IDEFICS-2-descriptive_val.json",
+      "details": {
+        "Overall Score": 32.77,
+        "By Question": {
+          "Q1": 36.48,
+          "Q2": 48.26,
+          "Q3": 40.77,
+          "Q4": 33.46,
+          "Q5": 40.17,
+          "Q6": 29.72,
+          "Q7": 24.79,
+          "Q8": 33.93,
+          "Q9": 30.85,
+          "Q10": 37.67,
+          "Q11": 22.86,
+          "Q12": 41.76,
+          "Q13": 33.33,
+          "Q14": 28.01,
+          "Q15": 15.34,
+          "Q16": 30.56,
+          "Q17": 3.12,
+          "Q18": 55.06,
+          "Q19": 60.0
+        },
+        "By Category": {
+          "Information Extraction": 36.12,
+          "Enumeration": 27.28,
+          "Pattern Recognition": 40.83,
+          "Counting": 43.26,
+          "Compositionality": 3.12
+        },
+        "By Subplot": {
+          "1 Subplot": 39.38,
+          "2-4 Subplots": 31.22,
+          "5+ Subplots": 24.47
+        },
+        "By Subject": {
+          "Computer Science": 33.53,
+          "Economics": 28.99,
+          "Electrical Engineering and Systems Science": 37.61,
+          "Mathematics": 37.04,
+          "Physics": 30.91,
+          "Quantitative Biology": 28.57,
+          "Quantitative Finance": 32.33,
+          "Statistics": 33.63
+        },
+        "By Year": {
+          "2020": 35.32,
+          "2021": 31.23,
+          "2022": 30.02,
+          "2023": 34.58
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "c2350496b20cababbf0a",
+      "model": "IDEFICS-2",
+      "metric": "Reasoning · validation overall",
+      "value": 18.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-IDEFICS-2-reasoning_val.json",
+      "details": {
+        "Overall Score": 18.2,
+        "By Answer Type": {
+          "Text-in-Chart": 15.45,
+          "Text-in-General": 35.35,
+          "Number-in-Chart": 17.24,
+          "Number-in-General": 17.03
+        },
+        "By Source": {
+          "GPT-Sourced": 21.74,
+          "GPT-Inspired": 14.35,
+          "Completely Human": 18.5
+        },
+        "By Subject": {
+          "Computer Science": 18.25,
+          "Economics": 15.94,
+          "Electrical Engineering and Systems Science": 18.49,
+          "Mathematics": 20.74,
+          "Physics": 19.69,
+          "Quantitative Biology": 16.67,
+          "Quantitative Finance": 17.24,
+          "Statistics": 18.58
+        },
+        "By Year": {
+          "2020": 21.46,
+          "2021": 15.71,
+          "2022": 16.8,
+          "2023": 18.95
+        },
+        "By Subplot": {
+          "1 Subplot": 18.65,
+          "2-4 Subplots": 19.58,
+          "5+ Subplots": 15.25
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "e3b0d8e8840dd1b30de7",
+      "model": "InternLM-XComposer2-4KHD",
+      "metric": "Descriptive · validation overall",
+      "value": 54.65,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternLM-XComposer2-4KHD-descriptive_val.json",
+      "details": {
+        "Overall Score": 54.65,
+        "By Question": {
+          "Q1": 68.03,
+          "Q2": 70.87,
+          "Q3": 43.35,
+          "Q4": 73.15,
+          "Q5": 70.29,
+          "Q6": 44.58,
+          "Q7": 56.84,
+          "Q8": 55.8,
+          "Q9": 49.25,
+          "Q10": 52.05,
+          "Q11": 44.0,
+          "Q12": 62.09,
+          "Q13": 51.14,
+          "Q14": 71.28,
+          "Q15": 42.49,
+          "Q16": 66.67,
+          "Q17": 6.7,
+          "Q18": 54.66,
+          "Q19": 70.77
+        },
+        "By Category": {
+          "Information Extraction": 61.09,
+          "Enumeration": 54.08,
+          "Pattern Recognition": 51.53,
+          "Counting": 59.8,
+          "Compositionality": 6.7
+        },
+        "By Subplot": {
+          "1 Subplot": 58.61,
+          "2-4 Subplots": 55.62,
+          "5+ Subplots": 46.61
+        },
+        "By Subject": {
+          "Computer Science": 51.59,
+          "Economics": 56.52,
+          "Electrical Engineering and Systems Science": 62.18,
+          "Mathematics": 57.22,
+          "Physics": 52.17,
+          "Quantitative Biology": 45.83,
+          "Quantitative Finance": 56.03,
+          "Statistics": 55.97
+        },
+        "By Year": {
+          "2020": 57.89,
+          "2021": 52.68,
+          "2022": 53.89,
+          "2023": 54.23
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "6ecbd8fb8bca93228330",
+      "model": "InternLM-XComposer2-4KHD",
+      "metric": "Reasoning · validation overall",
+      "value": 25.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternLM-XComposer2-4KHD-reasoning_val.json",
+      "details": {
+        "Overall Score": 25.0,
+        "By Answer Type": {
+          "Text-in-Chart": 23.86,
+          "Text-in-General": 43.43,
+          "Number-in-Chart": 29.31,
+          "Number-in-General": 14.85
+        },
+        "By Source": {
+          "GPT-Sourced": 33.7,
+          "GPT-Inspired": 19.44,
+          "Completely Human": 24.33
+        },
+        "By Subject": {
+          "Computer Science": 26.98,
+          "Economics": 29.71,
+          "Electrical Engineering and Systems Science": 21.85,
+          "Mathematics": 27.41,
+          "Physics": 28.35,
+          "Quantitative Biology": 23.02,
+          "Quantitative Finance": 18.97,
+          "Statistics": 22.12
+        },
+        "By Year": {
+          "2020": 23.08,
+          "2021": 28.35,
+          "2022": 23.77,
+          "2023": 24.6
+        },
+        "By Subplot": {
+          "1 Subplot": 27.72,
+          "2-4 Subplots": 24.6,
+          "5+ Subplots": 21.19
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "a1e7bd4e59c9076f6b1f",
+      "model": "InternLM-XComposer2",
+      "metric": "Descriptive · validation overall",
+      "value": 38.75,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternLM-XComposer2-descriptive_val.json",
+      "details": {
+        "Overall Score": 38.75,
+        "By Question": {
+          "Q1": 60.66,
+          "Q2": 35.65,
+          "Q3": 16.31,
+          "Q4": 33.46,
+          "Q5": 46.86,
+          "Q6": 22.09,
+          "Q7": 23.08,
+          "Q8": 31.7,
+          "Q9": 27.86,
+          "Q10": 48.63,
+          "Q11": 52.57,
+          "Q12": 52.2,
+          "Q13": 37.44,
+          "Q14": 51.42,
+          "Q15": 59.42,
+          "Q16": 33.33,
+          "Q17": 5.8,
+          "Q18": 44.53,
+          "Q19": 64.62
+        },
+        "By Category": {
+          "Information Extraction": 34.1,
+          "Enumeration": 43.58,
+          "Pattern Recognition": 46.72,
+          "Counting": 52.93,
+          "Compositionality": 5.8
+        },
+        "By Subplot": {
+          "1 Subplot": 42.36,
+          "2-4 Subplots": 38.36,
+          "5+ Subplots": 33.47
+        },
+        "By Subject": {
+          "Computer Science": 35.52,
+          "Economics": 44.57,
+          "Electrical Engineering and Systems Science": 43.28,
+          "Mathematics": 38.89,
+          "Physics": 36.02,
+          "Quantitative Biology": 36.31,
+          "Quantitative Finance": 38.15,
+          "Statistics": 36.73
+        },
+        "By Year": {
+          "2020": 39.68,
+          "2021": 36.4,
+          "2022": 38.63,
+          "2023": 40.42
+        },
+        "N_valid": 4000,
+        "N_invalid": 2,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "5317d532b16a6d60ca54",
+      "model": "InternLM-XComposer2",
+      "metric": "Reasoning · validation overall",
+      "value": 18.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternLM-XComposer2-reasoning_val.json",
+      "details": {
+        "Overall Score": 18.7,
+        "By Answer Type": {
+          "Text-in-Chart": 16.14,
+          "Text-in-General": 38.38,
+          "Number-in-Chart": 21.98,
+          "Number-in-General": 11.79
+        },
+        "By Source": {
+          "GPT-Sourced": 21.2,
+          "GPT-Inspired": 17.59,
+          "Completely Human": 18.33
+        },
+        "By Subject": {
+          "Computer Science": 19.05,
+          "Economics": 21.74,
+          "Electrical Engineering and Systems Science": 14.29,
+          "Mathematics": 20.0,
+          "Physics": 18.9,
+          "Quantitative Biology": 17.46,
+          "Quantitative Finance": 19.83,
+          "Statistics": 17.7
+        },
+        "By Year": {
+          "2020": 18.22,
+          "2021": 17.62,
+          "2022": 15.57,
+          "2023": 23.39
+        },
+        "By Subplot": {
+          "1 Subplot": 21.76,
+          "2-4 Subplots": 19.58,
+          "5+ Subplots": 12.29
+        },
+        "N_valid": 1000,
+        "N_invalid": 1,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "ccc43cdcbb7a6391f896",
+      "model": "InternVL-Chat-V1-5",
+      "metric": "Descriptive · validation overall",
+      "value": 58.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL-Chat-V1-5-descriptive_val.json",
+      "details": {
+        "Overall Score": 58.5,
+        "By Question": {
+          "Q1": 73.36,
+          "Q2": 73.91,
+          "Q3": 59.66,
+          "Q4": 77.43,
+          "Q5": 77.82,
+          "Q6": 60.24,
+          "Q7": 64.53,
+          "Q8": 73.66,
+          "Q9": 63.18,
+          "Q10": 54.79,
+          "Q11": 34.29,
+          "Q12": 69.23,
+          "Q13": 67.58,
+          "Q14": 27.3,
+          "Q15": 44.41,
+          "Q16": 58.33,
+          "Q17": 5.8,
+          "Q18": 65.59,
+          "Q19": 73.85
+        },
+        "By Category": {
+          "Information Extraction": 69.63,
+          "Enumeration": 52.95,
+          "Pattern Recognition": 53.06,
+          "Counting": 64.63,
+          "Compositionality": 5.8
+        },
+        "By Subplot": {
+          "1 Subplot": 67.49,
+          "2-4 Subplots": 57.28,
+          "5+ Subplots": 45.76
+        },
+        "By Subject": {
+          "Computer Science": 58.13,
+          "Economics": 59.42,
+          "Electrical Engineering and Systems Science": 65.13,
+          "Mathematics": 60.56,
+          "Physics": 53.15,
+          "Quantitative Biology": 54.37,
+          "Quantitative Finance": 59.48,
+          "Statistics": 57.96
+        },
+        "By Year": {
+          "2020": 59.21,
+          "2021": 57.47,
+          "2022": 58.4,
+          "2023": 58.97
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "9043e97d3422c59ed553",
+      "model": "InternVL-Chat-V1-5",
+      "metric": "Reasoning · validation overall",
+      "value": 29.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL-Chat-V1-5-reasoning_val.json",
+      "details": {
+        "Overall Score": 29.2,
+        "By Answer Type": {
+          "Text-in-Chart": 30.0,
+          "Text-in-General": 45.45,
+          "Number-in-Chart": 32.33,
+          "Number-in-General": 17.47
+        },
+        "By Source": {
+          "GPT-Sourced": 30.43,
+          "GPT-Inspired": 25.46,
+          "Completely Human": 30.17
+        },
+        "By Subject": {
+          "Computer Science": 30.95,
+          "Economics": 29.71,
+          "Electrical Engineering and Systems Science": 21.85,
+          "Mathematics": 39.26,
+          "Physics": 29.92,
+          "Quantitative Biology": 26.98,
+          "Quantitative Finance": 22.41,
+          "Statistics": 30.97
+        },
+        "By Year": {
+          "2020": 31.17,
+          "2021": 31.42,
+          "2022": 27.05,
+          "2023": 27.02
+        },
+        "By Subplot": {
+          "1 Subplot": 31.61,
+          "2-4 Subplots": 28.84,
+          "5+ Subplots": 25.85
+        },
+        "N_valid": 1000,
+        "N_invalid": 1,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "33d0d922ba7b01a0c654",
+      "model": "InternVL2-26B",
+      "metric": "Descriptive · validation overall",
+      "value": 62.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-26B-descriptive_val.json",
+      "details": {
+        "Overall Score": 62.4,
+        "By Question": {
+          "Q1": 70.49,
+          "Q2": 73.48,
+          "Q3": 61.37,
+          "Q4": 80.93,
+          "Q5": 74.06,
+          "Q6": 68.27,
+          "Q7": 70.09,
+          "Q8": 75.0,
+          "Q9": 66.17,
+          "Q10": 65.07,
+          "Q11": 37.71,
+          "Q12": 67.58,
+          "Q13": 62.56,
+          "Q14": 45.04,
+          "Q15": 61.02,
+          "Q16": 47.22,
+          "Q17": 6.25,
+          "Q18": 70.04,
+          "Q19": 75.38
+        },
+        "By Category": {
+          "Information Extraction": 71.35,
+          "Enumeration": 61.02,
+          "Pattern Recognition": 55.9,
+          "Counting": 67.94,
+          "Compositionality": 6.25
+        },
+        "By Subplot": {
+          "1 Subplot": 72.22,
+          "2-4 Subplots": 59.99,
+          "5+ Subplots": 50.21
+        },
+        "By Subject": {
+          "Computer Science": 59.52,
+          "Economics": 65.58,
+          "Electrical Engineering and Systems Science": 65.97,
+          "Mathematics": 64.63,
+          "Physics": 56.3,
+          "Quantitative Biology": 58.53,
+          "Quantitative Finance": 61.42,
+          "Statistics": 67.48
+        },
+        "By Year": {
+          "2020": 62.15,
+          "2021": 59.67,
+          "2022": 62.4,
+          "2023": 65.52
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "874b0f870bd3ad09c411",
+      "model": "InternVL2-26B",
+      "metric": "Reasoning · validation overall",
+      "value": 33.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-26B-reasoning_val.json",
+      "details": {
+        "Overall Score": 33.4,
+        "By Answer Type": {
+          "Text-in-Chart": 33.18,
+          "Text-in-General": 51.52,
+          "Number-in-Chart": 41.81,
+          "Number-in-General": 17.47
+        },
+        "By Source": {
+          "GPT-Sourced": 40.76,
+          "GPT-Inspired": 30.56,
+          "Completely Human": 32.17
+        },
+        "By Subject": {
+          "Computer Science": 36.51,
+          "Economics": 28.26,
+          "Electrical Engineering and Systems Science": 36.97,
+          "Mathematics": 38.52,
+          "Physics": 34.65,
+          "Quantitative Biology": 30.16,
+          "Quantitative Finance": 31.03,
+          "Statistics": 30.97
+        },
+        "By Year": {
+          "2020": 31.98,
+          "2021": 36.4,
+          "2022": 31.56,
+          "2023": 33.47
+        },
+        "By Subplot": {
+          "1 Subplot": 39.9,
+          "2-4 Subplots": 33.33,
+          "5+ Subplots": 22.88
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "5d095e7aeecfa88a1080",
+      "model": "InternVL2-76B",
+      "metric": "Descriptive · validation overall",
+      "value": 75.17,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-76B-descriptive_val.json",
+      "details": {
+        "Overall Score": 75.17,
+        "By Question": {
+          "Q1": 71.72,
+          "Q2": 79.13,
+          "Q3": 65.24,
+          "Q4": 85.6,
+          "Q5": 87.03,
+          "Q6": 74.7,
+          "Q7": 75.64,
+          "Q8": 85.71,
+          "Q9": 75.62,
+          "Q10": 82.19,
+          "Q11": 71.43,
+          "Q12": 74.18,
+          "Q13": 65.75,
+          "Q14": 89.36,
+          "Q15": 75.08,
+          "Q16": 61.11,
+          "Q17": 32.14,
+          "Q18": 81.78,
+          "Q19": 86.15
+        },
+        "By Category": {
+          "Information Extraction": 77.11,
+          "Enumeration": 78.69,
+          "Pattern Recognition": 76.2,
+          "Counting": 79.13,
+          "Compositionality": 32.14
+        },
+        "By Subplot": {
+          "1 Subplot": 83.23,
+          "2-4 Subplots": 75.0,
+          "5+ Subplots": 62.29
+        },
+        "By Subject": {
+          "Computer Science": 74.4,
+          "Economics": 74.64,
+          "Electrical Engineering and Systems Science": 80.46,
+          "Mathematics": 78.15,
+          "Physics": 68.7,
+          "Quantitative Biology": 71.63,
+          "Quantitative Finance": 76.94,
+          "Statistics": 76.99
+        },
+        "By Year": {
+          "2020": 76.32,
+          "2021": 74.04,
+          "2022": 75.61,
+          "2023": 74.8
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "b19e553def7b9f6e6d1d",
+      "model": "InternVL2-76B",
+      "metric": "Reasoning · validation overall",
+      "value": 38.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-76B-reasoning_val.json",
+      "details": {
+        "Overall Score": 38.9,
+        "By Answer Type": {
+          "Text-in-Chart": 40.0,
+          "Text-in-General": 59.6,
+          "Number-in-Chart": 42.67,
+          "Number-in-General": 24.02
+        },
+        "By Source": {
+          "GPT-Sourced": 47.28,
+          "GPT-Inspired": 32.41,
+          "Completely Human": 38.67
+        },
+        "By Subject": {
+          "Computer Science": 38.1,
+          "Economics": 40.58,
+          "Electrical Engineering and Systems Science": 38.66,
+          "Mathematics": 43.7,
+          "Physics": 45.67,
+          "Quantitative Biology": 34.92,
+          "Quantitative Finance": 32.76,
+          "Statistics": 35.4
+        },
+        "By Year": {
+          "2020": 35.63,
+          "2021": 44.44,
+          "2022": 35.25,
+          "2023": 39.92
+        },
+        "By Subplot": {
+          "1 Subplot": 43.78,
+          "2-4 Subplots": 39.15,
+          "5+ Subplots": 30.51
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "56d0f5f5cca1a994ee0f",
+      "model": "InternVL2-Pro",
+      "metric": "Descriptive · validation overall",
+      "value": 76.83,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-Pro-descriptive_val.json",
+      "details": {
+        "Overall Score": 76.83,
+        "By Question": {
+          "Q1": 84.02,
+          "Q2": 78.7,
+          "Q3": 63.52,
+          "Q4": 85.21,
+          "Q5": 78.66,
+          "Q6": 73.09,
+          "Q7": 75.64,
+          "Q8": 82.14,
+          "Q9": 79.1,
+          "Q10": 84.25,
+          "Q11": 75.43,
+          "Q12": 71.98,
+          "Q13": 72.15,
+          "Q14": 90.07,
+          "Q15": 93.93,
+          "Q16": 50.0,
+          "Q17": 27.23,
+          "Q18": 82.19,
+          "Q19": 86.15
+        },
+        "By Category": {
+          "Information Extraction": 77.11,
+          "Enumeration": 84.67,
+          "Pattern Recognition": 77.07,
+          "Counting": 78.88,
+          "Compositionality": 27.23
+        },
+        "By Subplot": {
+          "1 Subplot": 82.58,
+          "2-4 Subplots": 76.19,
+          "5+ Subplots": 68.43
+        },
+        "By Subject": {
+          "Computer Science": 76.59,
+          "Economics": 75.91,
+          "Electrical Engineering and Systems Science": 82.56,
+          "Mathematics": 80.37,
+          "Physics": 71.46,
+          "Quantitative Biology": 73.81,
+          "Quantitative Finance": 75.22,
+          "Statistics": 78.98
+        },
+        "By Year": {
+          "2020": 76.82,
+          "2021": 75.77,
+          "2022": 76.95,
+          "2023": 77.82
+        },
+        "N_valid": 4000,
+        "N_invalid": 5,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "92b649156997206b12a3",
+      "model": "InternVL2-Pro",
+      "metric": "Reasoning · validation overall",
+      "value": 39.8,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-InternVL2-Pro-reasoning_val.json",
+      "details": {
+        "Overall Score": 39.8,
+        "By Answer Type": {
+          "Text-in-Chart": 40.0,
+          "Text-in-General": 60.61,
+          "Number-in-Chart": 44.4,
+          "Number-in-General": 25.76
+        },
+        "By Source": {
+          "GPT-Sourced": 47.28,
+          "GPT-Inspired": 40.74,
+          "Completely Human": 37.17
+        },
+        "By Subject": {
+          "Computer Science": 38.1,
+          "Economics": 41.3,
+          "Electrical Engineering and Systems Science": 38.66,
+          "Mathematics": 48.15,
+          "Physics": 44.88,
+          "Quantitative Biology": 36.51,
+          "Quantitative Finance": 36.21,
+          "Statistics": 32.74
+        },
+        "By Year": {
+          "2020": 36.84,
+          "2021": 40.61,
+          "2022": 39.34,
+          "2023": 42.34
+        },
+        "By Subplot": {
+          "1 Subplot": 44.04,
+          "2-4 Subplots": 39.42,
+          "5+ Subplots": 33.47
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "feec4193cfa1a432c935",
+      "model": "LLaVA-1-6-Mistral-7B",
+      "metric": "Descriptive · validation overall",
+      "value": 35.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-LLaVA-1-6-Mistral-7B-descriptive_val.json",
+      "details": {
+        "Overall Score": 35.4,
+        "By Question": {
+          "Q1": 56.56,
+          "Q2": 46.52,
+          "Q3": 16.74,
+          "Q4": 38.52,
+          "Q5": 37.24,
+          "Q6": 22.09,
+          "Q7": 24.79,
+          "Q8": 42.41,
+          "Q9": 35.82,
+          "Q10": 42.47,
+          "Q11": 49.71,
+          "Q12": 43.41,
+          "Q13": 32.42,
+          "Q14": 42.91,
+          "Q15": 19.81,
+          "Q16": 50.0,
+          "Q17": 8.48,
+          "Q18": 48.18,
+          "Q19": 40.0
+        },
+        "By Category": {
+          "Information Extraction": 34.7,
+          "Enumeration": 33.98,
+          "Pattern Recognition": 48.91,
+          "Counting": 42.49,
+          "Compositionality": 8.48
+        },
+        "By Subplot": {
+          "1 Subplot": 44.3,
+          "2-4 Subplots": 33.13,
+          "5+ Subplots": 24.47
+        },
+        "By Subject": {
+          "Computer Science": 33.13,
+          "Economics": 37.68,
+          "Electrical Engineering and Systems Science": 37.18,
+          "Mathematics": 38.33,
+          "Physics": 33.86,
+          "Quantitative Biology": 31.55,
+          "Quantitative Finance": 37.28,
+          "Statistics": 33.85
+        },
+        "By Year": {
+          "2020": 36.94,
+          "2021": 34.48,
+          "2022": 37.09,
+          "2023": 33.17
+        },
+        "N_valid": 4000,
+        "N_invalid": 7,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "144c981d3195f19af447",
+      "model": "LLaVA-1-6-Mistral-7B",
+      "metric": "Reasoning · validation overall",
+      "value": 13.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-LLaVA-1-6-Mistral-7B-reasoning_val.json",
+      "details": {
+        "Overall Score": 13.9,
+        "By Answer Type": {
+          "Text-in-Chart": 11.36,
+          "Text-in-General": 32.32,
+          "Number-in-Chart": 16.81,
+          "Number-in-General": 7.86
+        },
+        "By Source": {
+          "GPT-Sourced": 11.96,
+          "GPT-Inspired": 11.57,
+          "Completely Human": 15.33
+        },
+        "By Subject": {
+          "Computer Science": 11.11,
+          "Economics": 14.49,
+          "Electrical Engineering and Systems Science": 15.13,
+          "Mathematics": 16.3,
+          "Physics": 17.32,
+          "Quantitative Biology": 12.7,
+          "Quantitative Finance": 10.34,
+          "Statistics": 13.27
+        },
+        "By Year": {
+          "2020": 11.34,
+          "2021": 12.26,
+          "2022": 19.26,
+          "2023": 12.9
+        },
+        "By Subplot": {
+          "1 Subplot": 14.25,
+          "2-4 Subplots": 14.55,
+          "5+ Subplots": 12.29
+        },
+        "N_valid": 1000,
+        "N_invalid": 2,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "a1582fb0a8e92309c1c2",
+      "model": "LLaVA-1-6-Yi-34B",
+      "metric": "Descriptive · validation overall",
+      "value": 51.05,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-LLaVA-1-6-Yi-34B-descriptive_val.json",
+      "details": {
+        "Overall Score": 51.05,
+        "By Question": {
+          "Q1": 66.39,
+          "Q2": 46.52,
+          "Q3": 26.18,
+          "Q4": 54.86,
+          "Q5": 58.58,
+          "Q6": 34.54,
+          "Q7": 36.32,
+          "Q8": 60.27,
+          "Q9": 38.81,
+          "Q10": 58.9,
+          "Q11": 54.86,
+          "Q12": 36.81,
+          "Q13": 36.99,
+          "Q14": 80.85,
+          "Q15": 84.35,
+          "Q16": 50.0,
+          "Q17": 5.8,
+          "Q18": 57.89,
+          "Q19": 78.46
+        },
+        "By Category": {
+          "Information Extraction": 46.38,
+          "Enumeration": 63.44,
+          "Pattern Recognition": 56.11,
+          "Counting": 51.91,
+          "Compositionality": 5.8
+        },
+        "By Subplot": {
+          "1 Subplot": 59.46,
+          "2-4 Subplots": 49.21,
+          "5+ Subplots": 40.25
+        },
+        "By Subject": {
+          "Computer Science": 49.01,
+          "Economics": 55.07,
+          "Electrical Engineering and Systems Science": 58.19,
+          "Mathematics": 52.22,
+          "Physics": 48.62,
+          "Quantitative Biology": 44.64,
+          "Quantitative Finance": 51.94,
+          "Statistics": 48.45
+        },
+        "By Year": {
+          "2020": 50.91,
+          "2021": 50.77,
+          "2022": 51.64,
+          "2023": 50.91
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "76893ebccd85fe7198cf",
+      "model": "LLaVA-1-6-Yi-34B",
+      "metric": "Reasoning · validation overall",
+      "value": 22.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-LLaVA-1-6-Yi-34B-reasoning_val.json",
+      "details": {
+        "Overall Score": 22.5,
+        "By Answer Type": {
+          "Text-in-Chart": 20.45,
+          "Text-in-General": 37.37,
+          "Number-in-Chart": 23.71,
+          "Number-in-General": 18.78
+        },
+        "By Source": {
+          "GPT-Sourced": 22.28,
+          "GPT-Inspired": 18.98,
+          "Completely Human": 23.83
+        },
+        "By Subject": {
+          "Computer Science": 21.43,
+          "Economics": 19.57,
+          "Electrical Engineering and Systems Science": 21.85,
+          "Mathematics": 31.11,
+          "Physics": 19.69,
+          "Quantitative Biology": 23.81,
+          "Quantitative Finance": 18.97,
+          "Statistics": 23.01
+        },
+        "By Year": {
+          "2020": 20.65,
+          "2021": 26.05,
+          "2022": 21.31,
+          "2023": 21.77
+        },
+        "By Subplot": {
+          "1 Subplot": 25.13,
+          "2-4 Subplots": 23.28,
+          "5+ Subplots": 16.95
+        },
+        "N_valid": 1000,
+        "N_invalid": 2,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "b69a84c9435f5e4a4f74",
+      "model": "Mini-Gemini-HD-LLaMA3-8B",
+      "metric": "Descriptive · validation overall",
+      "value": 44.42,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Mini-Gemini-HD-LLaMA3-8B-descriptive_val.json",
+      "details": {
+        "Overall Score": 44.42,
+        "By Question": {
+          "Q1": 41.39,
+          "Q2": 56.96,
+          "Q3": 35.62,
+          "Q4": 63.42,
+          "Q5": 61.09,
+          "Q6": 40.16,
+          "Q7": 46.58,
+          "Q8": 48.21,
+          "Q9": 31.34,
+          "Q10": 58.9,
+          "Q11": 53.71,
+          "Q12": 50.0,
+          "Q13": 49.32,
+          "Q14": 39.01,
+          "Q15": 30.99,
+          "Q16": 47.22,
+          "Q17": 1.79,
+          "Q18": 49.8,
+          "Q19": 66.15
+        },
+        "By Category": {
+          "Information Extraction": 49.41,
+          "Enumeration": 39.23,
+          "Pattern Recognition": 51.09,
+          "Counting": 55.98,
+          "Compositionality": 1.79
+        },
+        "By Subplot": {
+          "1 Subplot": 52.91,
+          "2-4 Subplots": 41.47,
+          "5+ Subplots": 35.28
+        },
+        "By Subject": {
+          "Computer Science": 43.45,
+          "Economics": 44.02,
+          "Electrical Engineering and Systems Science": 50.0,
+          "Mathematics": 43.89,
+          "Physics": 40.75,
+          "Quantitative Biology": 43.45,
+          "Quantitative Finance": 45.26,
+          "Statistics": 45.13
+        },
+        "By Year": {
+          "2020": 45.75,
+          "2021": 43.97,
+          "2022": 44.06,
+          "2023": 43.95
+        },
+        "N_valid": 4000,
+        "N_invalid": 4,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "0ff09e1fa42c3e98403a",
+      "model": "Mini-Gemini-HD-LLaMA3-8B",
+      "metric": "Reasoning · validation overall",
+      "value": 19.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Mini-Gemini-HD-LLaMA3-8B-reasoning_val.json",
+      "details": {
+        "Overall Score": 19.0,
+        "By Answer Type": {
+          "Text-in-Chart": 19.77,
+          "Text-in-General": 36.36,
+          "Number-in-Chart": 21.12,
+          "Number-in-General": 7.86
+        },
+        "By Source": {
+          "GPT-Sourced": 21.2,
+          "GPT-Inspired": 18.52,
+          "Completely Human": 18.5
+        },
+        "By Subject": {
+          "Computer Science": 19.84,
+          "Economics": 16.67,
+          "Electrical Engineering and Systems Science": 17.65,
+          "Mathematics": 20.0,
+          "Physics": 20.47,
+          "Quantitative Biology": 18.25,
+          "Quantitative Finance": 21.55,
+          "Statistics": 17.7
+        },
+        "By Year": {
+          "2020": 17.81,
+          "2021": 17.62,
+          "2022": 20.49,
+          "2023": 20.16
+        },
+        "By Subplot": {
+          "1 Subplot": 19.43,
+          "2-4 Subplots": 20.9,
+          "5+ Subplots": 15.25
+        },
+        "N_valid": 1000,
+        "N_invalid": 1,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "3d1ac7f50a7cb6806abe",
+      "model": "Mini-Gemini-HD-Yi-34B",
+      "metric": "Descriptive · validation overall",
+      "value": 52.67,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Mini-Gemini-HD-Yi-34B-descriptive_val.json",
+      "details": {
+        "Overall Score": 52.67,
+        "By Question": {
+          "Q1": 61.07,
+          "Q2": 61.74,
+          "Q3": 33.48,
+          "Q4": 64.59,
+          "Q5": 64.44,
+          "Q6": 41.77,
+          "Q7": 49.15,
+          "Q8": 68.3,
+          "Q9": 54.73,
+          "Q10": 56.85,
+          "Q11": 78.29,
+          "Q12": 46.15,
+          "Q13": 51.14,
+          "Q14": 64.18,
+          "Q15": 40.26,
+          "Q16": 50.0,
+          "Q17": 2.23,
+          "Q18": 58.7,
+          "Q19": 69.23
+        },
+        "By Category": {
+          "Information Extraction": 53.86,
+          "Enumeration": 55.04,
+          "Pattern Recognition": 65.5,
+          "Counting": 53.94,
+          "Compositionality": 2.23
+        },
+        "By Subplot": {
+          "1 Subplot": 58.48,
+          "2-4 Subplots": 53.11,
+          "5+ Subplots": 42.48
+        },
+        "By Subject": {
+          "Computer Science": 50.2,
+          "Economics": 55.07,
+          "Electrical Engineering and Systems Science": 56.93,
+          "Mathematics": 51.85,
+          "Physics": 46.46,
+          "Quantitative Biology": 51.19,
+          "Quantitative Finance": 55.39,
+          "Statistics": 54.87
+        },
+        "By Year": {
+          "2020": 54.15,
+          "2021": 49.33,
+          "2022": 53.18,
+          "2023": 54.23
+        },
+        "N_valid": 4000,
+        "N_invalid": 1,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "4c932969f67231546173",
+      "model": "Mini-Gemini-HD-Yi-34B",
+      "metric": "Reasoning · validation overall",
+      "value": 25.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Mini-Gemini-HD-Yi-34B-reasoning_val.json",
+      "details": {
+        "Overall Score": 25.0,
+        "By Answer Type": {
+          "Text-in-Chart": 26.59,
+          "Text-in-General": 43.43,
+          "Number-in-Chart": 27.16,
+          "Number-in-General": 11.79
+        },
+        "By Source": {
+          "GPT-Sourced": 30.43,
+          "GPT-Inspired": 20.83,
+          "Completely Human": 24.83
+        },
+        "By Subject": {
+          "Computer Science": 26.19,
+          "Economics": 23.19,
+          "Electrical Engineering and Systems Science": 24.37,
+          "Mathematics": 29.63,
+          "Physics": 22.83,
+          "Quantitative Biology": 22.22,
+          "Quantitative Finance": 23.28,
+          "Statistics": 28.32
+        },
+        "By Year": {
+          "2020": 25.51,
+          "2021": 24.9,
+          "2022": 24.18,
+          "2023": 25.4
+        },
+        "By Subplot": {
+          "1 Subplot": 26.42,
+          "2-4 Subplots": 24.87,
+          "5+ Subplots": 22.88
+        },
+        "N_valid": 1000,
+        "N_invalid": 1,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "913b3aa4e95db1b2bf62",
+      "model": "MiniCPM-V2-5",
+      "metric": "Descriptive · validation overall",
+      "value": 59.27,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MiniCPM-V2-5-descriptive_val.json",
+      "details": {
+        "Overall Score": 59.27,
+        "By Question": {
+          "Q1": 69.67,
+          "Q2": 76.52,
+          "Q3": 63.09,
+          "Q4": 66.15,
+          "Q5": 62.34,
+          "Q6": 51.81,
+          "Q7": 46.58,
+          "Q8": 65.62,
+          "Q9": 48.26,
+          "Q10": 73.97,
+          "Q11": 56.57,
+          "Q12": 60.44,
+          "Q13": 62.1,
+          "Q14": 64.89,
+          "Q15": 65.18,
+          "Q16": 41.67,
+          "Q17": 10.27,
+          "Q18": 59.11,
+          "Q19": 81.54
+        },
+        "By Category": {
+          "Information Extraction": 62.28,
+          "Enumeration": 61.9,
+          "Pattern Recognition": 56.77,
+          "Counting": 68.96,
+          "Compositionality": 10.27
+        },
+        "By Subplot": {
+          "1 Subplot": 71.83,
+          "2-4 Subplots": 56.22,
+          "5+ Subplots": 43.64
+        },
+        "By Subject": {
+          "Computer Science": 56.75,
+          "Economics": 61.96,
+          "Electrical Engineering and Systems Science": 65.97,
+          "Mathematics": 60.19,
+          "Physics": 54.92,
+          "Quantitative Biology": 56.55,
+          "Quantitative Finance": 58.19,
+          "Statistics": 59.73
+        },
+        "By Year": {
+          "2020": 59.82,
+          "2021": 56.9,
+          "2022": 60.86,
+          "2023": 59.68
+        },
+        "N_valid": 4000,
+        "N_invalid": 5,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "150eb998b3dfc50d3819",
+      "model": "MiniCPM-V2-5",
+      "metric": "Reasoning · validation overall",
+      "value": 24.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MiniCPM-V2-5-reasoning_val.json",
+      "details": {
+        "Overall Score": 24.9,
+        "By Answer Type": {
+          "Text-in-Chart": 25.23,
+          "Text-in-General": 43.43,
+          "Number-in-Chart": 25.43,
+          "Number-in-General": 15.72
+        },
+        "By Source": {
+          "GPT-Sourced": 23.91,
+          "GPT-Inspired": 24.54,
+          "Completely Human": 25.33
+        },
+        "By Subject": {
+          "Computer Science": 24.6,
+          "Economics": 25.36,
+          "Electrical Engineering and Systems Science": 21.01,
+          "Mathematics": 25.19,
+          "Physics": 25.98,
+          "Quantitative Biology": 24.6,
+          "Quantitative Finance": 25.0,
+          "Statistics": 27.43
+        },
+        "By Year": {
+          "2020": 21.05,
+          "2021": 24.14,
+          "2022": 28.69,
+          "2023": 25.81
+        },
+        "By Subplot": {
+          "1 Subplot": 27.72,
+          "2-4 Subplots": 27.25,
+          "5+ Subplots": 16.53
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "458e9da3e1dae7f40f6e",
+      "model": "MiniCPM-V2",
+      "metric": "Descriptive · validation overall",
+      "value": 35.77,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MiniCPM-V2-descriptive_val.json",
+      "details": {
+        "Overall Score": 35.77,
+        "By Question": {
+          "Q1": 47.95,
+          "Q2": 41.74,
+          "Q3": 39.06,
+          "Q4": 44.36,
+          "Q5": 45.61,
+          "Q6": 30.12,
+          "Q7": 29.06,
+          "Q8": 18.3,
+          "Q9": 26.37,
+          "Q10": 42.47,
+          "Q11": 25.14,
+          "Q12": 42.31,
+          "Q13": 43.38,
+          "Q14": 47.16,
+          "Q15": 41.85,
+          "Q16": 36.11,
+          "Q17": 5.36,
+          "Q18": 25.91,
+          "Q19": 55.38
+        },
+        "By Category": {
+          "Information Extraction": 39.74,
+          "Enumeration": 36.56,
+          "Pattern Recognition": 26.42,
+          "Counting": 44.53,
+          "Compositionality": 5.36
+        },
+        "By Subplot": {
+          "1 Subplot": 42.88,
+          "2-4 Subplots": 33.6,
+          "5+ Subplots": 27.65
+        },
+        "By Subject": {
+          "Computer Science": 33.93,
+          "Economics": 35.87,
+          "Electrical Engineering and Systems Science": 38.03,
+          "Mathematics": 42.59,
+          "Physics": 32.87,
+          "Quantitative Biology": 33.13,
+          "Quantitative Finance": 35.13,
+          "Statistics": 34.07
+        },
+        "By Year": {
+          "2020": 37.96,
+          "2021": 34.58,
+          "2022": 35.04,
+          "2023": 35.58
+        },
+        "N_valid": 4000,
+        "N_invalid": 12,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "c979bd5fcda144b987d4",
+      "model": "MiniCPM-V2",
+      "metric": "Reasoning · validation overall",
+      "value": 18.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MiniCPM-V2-reasoning_val.json",
+      "details": {
+        "Overall Score": 18.5,
+        "By Answer Type": {
+          "Text-in-Chart": 17.95,
+          "Text-in-General": 33.33,
+          "Number-in-Chart": 19.4,
+          "Number-in-General": 12.23
+        },
+        "By Source": {
+          "GPT-Sourced": 17.93,
+          "GPT-Inspired": 18.52,
+          "Completely Human": 18.67
+        },
+        "By Subject": {
+          "Computer Science": 15.08,
+          "Economics": 14.49,
+          "Electrical Engineering and Systems Science": 22.69,
+          "Mathematics": 21.48,
+          "Physics": 14.96,
+          "Quantitative Biology": 21.43,
+          "Quantitative Finance": 20.69,
+          "Statistics": 17.7
+        },
+        "By Year": {
+          "2020": 15.79,
+          "2021": 19.54,
+          "2022": 23.77,
+          "2023": 14.92
+        },
+        "By Subplot": {
+          "1 Subplot": 19.43,
+          "2-4 Subplots": 18.78,
+          "5+ Subplots": 16.53
+        },
+        "N_valid": 1000,
+        "N_invalid": 1,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "6391cfd2ba15edead7db",
+      "model": "MoAI",
+      "metric": "Descriptive · validation overall",
+      "value": 28.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MoAI-descriptive_val.json",
+      "details": {
+        "Overall Score": 28.7,
+        "By Question": {
+          "Q1": 52.05,
+          "Q2": 32.61,
+          "Q3": 11.59,
+          "Q4": 31.91,
+          "Q5": 47.7,
+          "Q6": 20.88,
+          "Q7": 20.94,
+          "Q8": 24.55,
+          "Q9": 22.39,
+          "Q10": 34.25,
+          "Q11": 38.29,
+          "Q12": 34.62,
+          "Q13": 30.59,
+          "Q14": 22.7,
+          "Q15": 10.22,
+          "Q16": 30.56,
+          "Q17": 7.59,
+          "Q18": 42.51,
+          "Q19": 70.77
+        },
+        "By Category": {
+          "Information Extraction": 31.2,
+          "Enumeration": 21.23,
+          "Pattern Recognition": 39.96,
+          "Counting": 40.46,
+          "Compositionality": 7.59
+        },
+        "By Subplot": {
+          "1 Subplot": 34.97,
+          "2-4 Subplots": 26.79,
+          "5+ Subplots": 21.5
+        },
+        "By Subject": {
+          "Computer Science": 27.18,
+          "Economics": 30.62,
+          "Electrical Engineering and Systems Science": 32.77,
+          "Mathematics": 31.67,
+          "Physics": 25.98,
+          "Quantitative Biology": 25.6,
+          "Quantitative Finance": 28.45,
+          "Statistics": 26.99
+        },
+        "By Year": {
+          "2020": 31.88,
+          "2021": 25.29,
+          "2022": 27.36,
+          "2023": 30.44
+        },
+        "N_valid": 4000,
+        "N_invalid": 1,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "4587440e1898195cb7e8",
+      "model": "MoAI",
+      "metric": "Reasoning · validation overall",
+      "value": 17.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-MoAI-reasoning_val.json",
+      "details": {
+        "Overall Score": 17.5,
+        "By Answer Type": {
+          "Text-in-Chart": 9.32,
+          "Text-in-General": 36.36,
+          "Number-in-Chart": 21.12,
+          "Number-in-General": 21.4
+        },
+        "By Source": {
+          "GPT-Sourced": 19.57,
+          "GPT-Inspired": 13.43,
+          "Completely Human": 18.33
+        },
+        "By Subject": {
+          "Computer Science": 18.25,
+          "Economics": 17.39,
+          "Electrical Engineering and Systems Science": 12.61,
+          "Mathematics": 20.0,
+          "Physics": 21.26,
+          "Quantitative Biology": 19.05,
+          "Quantitative Finance": 16.38,
+          "Statistics": 14.16
+        },
+        "By Year": {
+          "2020": 16.6,
+          "2021": 16.86,
+          "2022": 15.16,
+          "2023": 21.37
+        },
+        "By Subplot": {
+          "1 Subplot": 20.47,
+          "2-4 Subplots": 19.05,
+          "5+ Subplots": 10.17
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "900337756eb5410a72f3",
+      "model": "Ovis1.5-Gemma2-9B",
+      "metric": "Descriptive · validation overall",
+      "value": 62.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Ovis1.5-Gemma2-9B-descriptive_val.json",
+      "details": {
+        "Overall Score": 62.6,
+        "By Question": {
+          "Q1": 69.26,
+          "Q2": 63.91,
+          "Q3": 52.79,
+          "Q4": 71.98,
+          "Q5": 73.64,
+          "Q6": 55.42,
+          "Q7": 62.39,
+          "Q8": 71.88,
+          "Q9": 64.18,
+          "Q10": 73.97,
+          "Q11": 40.57,
+          "Q12": 54.4,
+          "Q13": 55.25,
+          "Q14": 85.46,
+          "Q15": 75.72,
+          "Q16": 44.44,
+          "Q17": 5.8,
+          "Q18": 69.23,
+          "Q19": 81.54
+        },
+        "By Category": {
+          "Information Extraction": 64.29,
+          "Enumeration": 71.75,
+          "Pattern Recognition": 56.33,
+          "Counting": 66.16,
+          "Compositionality": 5.8
+        },
+        "By Subplot": {
+          "1 Subplot": 72.99,
+          "2-4 Subplots": 59.85,
+          "5+ Subplots": 50.0
+        },
+        "By Subject": {
+          "Computer Science": 57.74,
+          "Economics": 64.67,
+          "Electrical Engineering and Systems Science": 67.44,
+          "Mathematics": 66.48,
+          "Physics": 58.07,
+          "Quantitative Biology": 58.13,
+          "Quantitative Finance": 63.79,
+          "Statistics": 64.6
+        },
+        "By Year": {
+          "2020": 63.26,
+          "2021": 60.92,
+          "2022": 61.78,
+          "2023": 64.52
+        },
+        "N_valid": 4000,
+        "N_invalid": 5,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "58245badd57457dee78b",
+      "model": "Ovis1.5-Gemma2-9B",
+      "metric": "Reasoning · validation overall",
+      "value": 28.4,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Ovis1.5-Gemma2-9B-reasoning_val.json",
+      "details": {
+        "Overall Score": 28.4,
+        "By Answer Type": {
+          "Text-in-Chart": 26.14,
+          "Text-in-General": 44.44,
+          "Number-in-Chart": 33.19,
+          "Number-in-General": 20.96
+        },
+        "By Source": {
+          "GPT-Sourced": 31.52,
+          "GPT-Inspired": 27.31,
+          "Completely Human": 27.83
+        },
+        "By Subject": {
+          "Computer Science": 25.4,
+          "Economics": 29.71,
+          "Electrical Engineering and Systems Science": 25.21,
+          "Mathematics": 34.81,
+          "Physics": 33.07,
+          "Quantitative Biology": 28.57,
+          "Quantitative Finance": 23.28,
+          "Statistics": 25.66
+        },
+        "By Year": {
+          "2020": 27.94,
+          "2021": 32.57,
+          "2022": 27.46,
+          "2023": 25.4
+        },
+        "By Subplot": {
+          "1 Subplot": 27.46,
+          "2-4 Subplots": 30.69,
+          "5+ Subplots": 26.27
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "d023febbef2ec8e8193b",
+      "model": "Ovis1.5-Llama3-8B",
+      "metric": "Descriptive · validation overall",
+      "value": 60.15,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Ovis1.5-Llama3-8B-descriptive_val.json",
+      "details": {
+        "Overall Score": 60.15,
+        "By Question": {
+          "Q1": 70.08,
+          "Q2": 64.78,
+          "Q3": 51.5,
+          "Q4": 67.7,
+          "Q5": 66.53,
+          "Q6": 51.81,
+          "Q7": 56.84,
+          "Q8": 55.8,
+          "Q9": 57.71,
+          "Q10": 57.53,
+          "Q11": 38.86,
+          "Q12": 58.79,
+          "Q13": 51.14,
+          "Q14": 80.85,
+          "Q15": 87.22,
+          "Q16": 61.11,
+          "Q17": 7.14,
+          "Q18": 68.02,
+          "Q19": 80.0
+        },
+        "By Category": {
+          "Information Extraction": 61.39,
+          "Enumeration": 68.93,
+          "Pattern Recognition": 56.33,
+          "Counting": 61.83,
+          "Compositionality": 7.14
+        },
+        "By Subplot": {
+          "1 Subplot": 71.11,
+          "2-4 Subplots": 56.81,
+          "5+ Subplots": 47.56
+        },
+        "By Subject": {
+          "Computer Science": 56.75,
+          "Economics": 62.68,
+          "Electrical Engineering and Systems Science": 65.76,
+          "Mathematics": 61.85,
+          "Physics": 54.92,
+          "Quantitative Biology": 57.14,
+          "Quantitative Finance": 60.34,
+          "Statistics": 61.95
+        },
+        "By Year": {
+          "2020": 61.13,
+          "2021": 57.76,
+          "2022": 61.37,
+          "2023": 60.48
+        },
+        "N_valid": 4000,
+        "N_invalid": 15,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "8ea5fb5f936e42279a7a",
+      "model": "Ovis1.5-Llama3-8B",
+      "metric": "Reasoning · validation overall",
+      "value": 28.2,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Ovis1.5-Llama3-8B-reasoning_val.json",
+      "details": {
+        "Overall Score": 28.2,
+        "By Answer Type": {
+          "Text-in-Chart": 27.27,
+          "Text-in-General": 49.49,
+          "Number-in-Chart": 31.03,
+          "Number-in-General": 17.9
+        },
+        "By Source": {
+          "GPT-Sourced": 25.0,
+          "GPT-Inspired": 31.02,
+          "Completely Human": 28.17
+        },
+        "By Subject": {
+          "Computer Science": 28.57,
+          "Economics": 34.78,
+          "Electrical Engineering and Systems Science": 26.89,
+          "Mathematics": 25.19,
+          "Physics": 30.71,
+          "Quantitative Biology": 27.78,
+          "Quantitative Finance": 25.86,
+          "Statistics": 24.78
+        },
+        "By Year": {
+          "2020": 26.32,
+          "2021": 31.8,
+          "2022": 26.23,
+          "2023": 28.23
+        },
+        "By Subplot": {
+          "1 Subplot": 33.42,
+          "2-4 Subplots": 28.31,
+          "5+ Subplots": 19.49
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "d271d97b29d8413a1746",
+      "model": "Phi-3-Vision",
+      "metric": "Descriptive · validation overall",
+      "value": 60.48,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Phi-3-Vision-descriptive_val.json",
+      "details": {
+        "Overall Score": 60.48,
+        "By Question": {
+          "Q1": 59.43,
+          "Q2": 70.87,
+          "Q3": 60.94,
+          "Q4": 84.05,
+          "Q5": 73.64,
+          "Q6": 61.85,
+          "Q7": 61.54,
+          "Q8": 45.09,
+          "Q9": 40.3,
+          "Q10": 69.18,
+          "Q11": 46.29,
+          "Q12": 59.89,
+          "Q13": 62.1,
+          "Q14": 82.27,
+          "Q15": 66.45,
+          "Q16": 58.33,
+          "Q17": 6.25,
+          "Q18": 59.92,
+          "Q19": 72.31
+        },
+        "By Category": {
+          "Information Extraction": 67.62,
+          "Enumeration": 61.18,
+          "Pattern Recognition": 54.59,
+          "Counting": 65.39,
+          "Compositionality": 6.25
+        },
+        "By Subplot": {
+          "1 Subplot": 68.33,
+          "2-4 Subplots": 59.52,
+          "5+ Subplots": 49.15
+        },
+        "By Subject": {
+          "Computer Science": 59.33,
+          "Economics": 62.5,
+          "Electrical Engineering and Systems Science": 64.5,
+          "Mathematics": 62.04,
+          "Physics": 58.27,
+          "Quantitative Biology": 56.75,
+          "Quantitative Finance": 59.48,
+          "Statistics": 60.84
+        },
+        "By Year": {
+          "2020": 61.23,
+          "2021": 59.48,
+          "2022": 61.17,
+          "2023": 60.08
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "0264dd5295504f70d165",
+      "model": "Phi-3-Vision",
+      "metric": "Reasoning · validation overall",
+      "value": 31.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Phi-3-Vision-reasoning_val.json",
+      "details": {
+        "Overall Score": 31.6,
+        "By Answer Type": {
+          "Text-in-Chart": 31.36,
+          "Text-in-General": 46.46,
+          "Number-in-Chart": 35.78,
+          "Number-in-General": 21.4
+        },
+        "By Source": {
+          "GPT-Sourced": 35.33,
+          "GPT-Inspired": 23.15,
+          "Completely Human": 33.5
+        },
+        "By Subject": {
+          "Computer Science": 31.75,
+          "Economics": 31.16,
+          "Electrical Engineering and Systems Science": 30.25,
+          "Mathematics": 37.04,
+          "Physics": 29.92,
+          "Quantitative Biology": 26.98,
+          "Quantitative Finance": 29.31,
+          "Statistics": 36.28
+        },
+        "By Year": {
+          "2020": 29.96,
+          "2021": 31.03,
+          "2022": 29.92,
+          "2023": 35.48
+        },
+        "By Subplot": {
+          "1 Subplot": 32.12,
+          "2-4 Subplots": 34.13,
+          "5+ Subplots": 26.69
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "afd40c29c30327b7151d",
+      "model": "Qwen-VL-Max",
+      "metric": "Descriptive · validation overall",
+      "value": 41.48,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Qwen-VL-Max-descriptive_val.json",
+      "details": {
+        "Overall Score": 41.48,
+        "By Question": {
+          "Q1": 39.75,
+          "Q2": 67.83,
+          "Q3": 59.23,
+          "Q4": 63.81,
+          "Q5": 58.58,
+          "Q6": 25.7,
+          "Q7": 38.89,
+          "Q8": 43.3,
+          "Q9": 33.33,
+          "Q10": 39.04,
+          "Q11": 46.29,
+          "Q12": 50.55,
+          "Q13": 49.77,
+          "Q14": 10.28,
+          "Q15": 15.97,
+          "Q16": 50.0,
+          "Q17": 4.46,
+          "Q18": 59.51,
+          "Q19": 80.0
+        },
+        "By Category": {
+          "Information Extraction": 50.42,
+          "Enumeration": 28.41,
+          "Pattern Recognition": 53.71,
+          "Counting": 51.15,
+          "Compositionality": 4.46
+        },
+        "By Subplot": {
+          "1 Subplot": 52.07,
+          "2-4 Subplots": 38.89,
+          "5+ Subplots": 28.28
+        },
+        "By Subject": {
+          "Computer Science": 41.47,
+          "Economics": 42.39,
+          "Electrical Engineering and Systems Science": 45.59,
+          "Mathematics": 44.07,
+          "Physics": 36.81,
+          "Quantitative Biology": 35.32,
+          "Quantitative Finance": 42.67,
+          "Statistics": 43.81
+        },
+        "By Year": {
+          "2020": 44.74,
+          "2021": 40.8,
+          "2022": 40.78,
+          "2023": 39.62
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "1b5a8c6e3e12f3a656b5",
+      "model": "Qwen-VL-Max",
+      "metric": "Reasoning · validation overall",
+      "value": 24.7,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Qwen-VL-Max-reasoning_val.json",
+      "details": {
+        "Overall Score": 24.7,
+        "By Answer Type": {
+          "Text-in-Chart": 26.14,
+          "Text-in-General": 41.41,
+          "Number-in-Chart": 24.57,
+          "Number-in-General": 14.85
+        },
+        "By Source": {
+          "GPT-Sourced": 24.46,
+          "GPT-Inspired": 24.54,
+          "Completely Human": 24.83
+        },
+        "By Subject": {
+          "Computer Science": 27.78,
+          "Economics": 21.74,
+          "Electrical Engineering and Systems Science": 23.53,
+          "Mathematics": 23.7,
+          "Physics": 25.98,
+          "Quantitative Biology": 26.98,
+          "Quantitative Finance": 24.14,
+          "Statistics": 23.89
+        },
+        "By Year": {
+          "2020": 27.94,
+          "2021": 24.9,
+          "2022": 23.36,
+          "2023": 22.58
+        },
+        "By Subplot": {
+          "1 Subplot": 25.13,
+          "2-4 Subplots": 26.19,
+          "5+ Subplots": 21.61
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "271e6deb399142b75c70",
+      "model": "Qwen-VL-Plus",
+      "metric": "Descriptive · validation overall",
+      "value": 28.93,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Qwen-VL-Plus-descriptive_val.json",
+      "details": {
+        "Overall Score": 28.93,
+        "By Question": {
+          "Q1": 25.0,
+          "Q2": 59.13,
+          "Q3": 44.64,
+          "Q4": 39.3,
+          "Q5": 27.62,
+          "Q6": 19.28,
+          "Q7": 19.66,
+          "Q8": 24.55,
+          "Q9": 16.92,
+          "Q10": 52.74,
+          "Q11": 36.0,
+          "Q12": 58.79,
+          "Q13": 41.55,
+          "Q14": 7.8,
+          "Q15": 6.39,
+          "Q16": 33.33,
+          "Q17": 2.23,
+          "Q18": 29.15,
+          "Q19": 56.92
+        },
+        "By Category": {
+          "Information Extraction": 33.33,
+          "Enumeration": 17.92,
+          "Pattern Recognition": 32.1,
+          "Counting": 56.23,
+          "Compositionality": 2.23
+        },
+        "By Subplot": {
+          "1 Subplot": 35.56,
+          "2-4 Subplots": 27.12,
+          "5+ Subplots": 20.97
+        },
+        "By Subject": {
+          "Computer Science": 32.54,
+          "Economics": 27.54,
+          "Electrical Engineering and Systems Science": 31.09,
+          "Mathematics": 32.41,
+          "Physics": 23.03,
+          "Quantitative Biology": 25.2,
+          "Quantitative Finance": 31.47,
+          "Statistics": 28.32
+        },
+        "By Year": {
+          "2020": 29.45,
+          "2021": 28.45,
+          "2022": 27.46,
+          "2023": 30.34
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "04ded7638f5d958be26a",
+      "model": "Qwen-VL-Plus",
+      "metric": "Reasoning · validation overall",
+      "value": 16.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Qwen-VL-Plus-reasoning_val.json",
+      "details": {
+        "Overall Score": 16.0,
+        "By Answer Type": {
+          "Text-in-Chart": 15.45,
+          "Text-in-General": 45.45,
+          "Number-in-Chart": 12.07,
+          "Number-in-General": 8.3
+        },
+        "By Source": {
+          "GPT-Sourced": 14.67,
+          "GPT-Inspired": 15.74,
+          "Completely Human": 16.5
+        },
+        "By Subject": {
+          "Computer Science": 15.08,
+          "Economics": 13.77,
+          "Electrical Engineering and Systems Science": 13.45,
+          "Mathematics": 19.26,
+          "Physics": 22.83,
+          "Quantitative Biology": 10.32,
+          "Quantitative Finance": 12.07,
+          "Statistics": 21.24
+        },
+        "By Year": {
+          "2020": 15.38,
+          "2021": 14.94,
+          "2022": 16.8,
+          "2023": 16.94
+        },
+        "By Subplot": {
+          "1 Subplot": 13.21,
+          "2-4 Subplots": 19.05,
+          "5+ Subplots": 15.68
+        },
+        "N_valid": 1000,
+        "N_invalid": 1,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "2b414433202f37343e66",
+      "model": "Reka-Core",
+      "metric": "Descriptive · validation overall",
+      "value": 55.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Core-descriptive_val.json",
+      "details": {
+        "Overall Score": 55.6,
+        "By Question": {
+          "Q1": 50.41,
+          "Q2": 66.52,
+          "Q3": 57.51,
+          "Q4": 62.65,
+          "Q5": 66.53,
+          "Q6": 50.2,
+          "Q7": 58.97,
+          "Q8": 68.75,
+          "Q9": 63.68,
+          "Q10": 66.44,
+          "Q11": 58.29,
+          "Q12": 69.23,
+          "Q13": 57.99,
+          "Q14": 36.52,
+          "Q15": 36.42,
+          "Q16": 66.67,
+          "Q17": 10.71,
+          "Q18": 70.85,
+          "Q19": 87.69
+        },
+        "By Category": {
+          "Information Extraction": 58.9,
+          "Enumeration": 50.52,
+          "Pattern Recognition": 65.72,
+          "Counting": 71.25,
+          "Compositionality": 10.71
+        },
+        "By Subplot": {
+          "1 Subplot": 66.19,
+          "2-4 Subplots": 53.57,
+          "5+ Subplots": 41.53
+        },
+        "By Subject": {
+          "Computer Science": 58.93,
+          "Economics": 55.98,
+          "Electrical Engineering and Systems Science": 61.13,
+          "Mathematics": 57.96,
+          "Physics": 50.2,
+          "Quantitative Biology": 51.19,
+          "Quantitative Finance": 54.74,
+          "Statistics": 54.65
+        },
+        "By Year": {
+          "2020": 57.19,
+          "2021": 52.68,
+          "2022": 56.66,
+          "2023": 56.05
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "2ed49e950f5c7da7d705",
+      "model": "Reka-Core",
+      "metric": "Reasoning · validation overall",
+      "value": 28.9,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Core-reasoning_val.json",
+      "details": {
+        "Overall Score": 28.9,
+        "By Answer Type": {
+          "Text-in-Chart": 27.5,
+          "Text-in-General": 41.41,
+          "Number-in-Chart": 28.45,
+          "Number-in-General": 26.64
+        },
+        "By Source": {
+          "GPT-Sourced": 32.61,
+          "GPT-Inspired": 24.07,
+          "Completely Human": 29.5
+        },
+        "By Subject": {
+          "Computer Science": 23.81,
+          "Economics": 34.06,
+          "Electrical Engineering and Systems Science": 35.29,
+          "Mathematics": 31.11,
+          "Physics": 28.35,
+          "Quantitative Biology": 28.57,
+          "Quantitative Finance": 23.28,
+          "Statistics": 25.66
+        },
+        "By Year": {
+          "2020": 27.94,
+          "2021": 31.8,
+          "2022": 29.51,
+          "2023": 26.21
+        },
+        "By Subplot": {
+          "1 Subplot": 31.87,
+          "2-4 Subplots": 28.84,
+          "5+ Subplots": 24.15
+        },
+        "N_valid": 1000,
+        "N_invalid": 2,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "dfeb7ede9a27ecefd1a0",
+      "model": "Reka-Edge",
+      "metric": "Descriptive · validation overall",
+      "value": 33.65,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Edge-descriptive_val.json",
+      "details": {
+        "Overall Score": 33.65,
+        "By Question": {
+          "Q1": 19.26,
+          "Q2": 53.91,
+          "Q3": 37.34,
+          "Q4": 49.03,
+          "Q5": 43.1,
+          "Q6": 26.1,
+          "Q7": 28.21,
+          "Q8": 45.98,
+          "Q9": 30.85,
+          "Q10": 52.05,
+          "Q11": 39.43,
+          "Q12": 49.45,
+          "Q13": 42.47,
+          "Q14": 24.82,
+          "Q15": 7.99,
+          "Q16": 36.11,
+          "Q17": 4.91,
+          "Q18": 31.17,
+          "Q19": 60.0
+        },
+        "By Category": {
+          "Information Extraction": 36.65,
+          "Enumeration": 28.49,
+          "Pattern Recognition": 34.72,
+          "Counting": 52.16,
+          "Compositionality": 4.91
+        },
+        "By Subplot": {
+          "1 Subplot": 39.9,
+          "2-4 Subplots": 32.14,
+          "5+ Subplots": 25.85
+        },
+        "By Subject": {
+          "Computer Science": 32.54,
+          "Economics": 33.15,
+          "Electrical Engineering and Systems Science": 36.55,
+          "Mathematics": 38.15,
+          "Physics": 32.09,
+          "Quantitative Biology": 30.16,
+          "Quantitative Finance": 31.03,
+          "Statistics": 35.4
+        },
+        "By Year": {
+          "2020": 37.75,
+          "2021": 30.27,
+          "2022": 32.27,
+          "2023": 34.48
+        },
+        "N_valid": 4000,
+        "N_invalid": 2,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "88812f3ed3a5bee424ea",
+      "model": "Reka-Edge",
+      "metric": "Reasoning · validation overall",
+      "value": 23.5,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Edge-reasoning_val.json",
+      "details": {
+        "Overall Score": 23.5,
+        "By Answer Type": {
+          "Text-in-Chart": 20.23,
+          "Text-in-General": 32.32,
+          "Number-in-Chart": 30.6,
+          "Number-in-General": 18.78
+        },
+        "By Source": {
+          "GPT-Sourced": 24.46,
+          "GPT-Inspired": 20.37,
+          "Completely Human": 24.33
+        },
+        "By Subject": {
+          "Computer Science": 19.05,
+          "Economics": 20.29,
+          "Electrical Engineering and Systems Science": 27.73,
+          "Mathematics": 27.41,
+          "Physics": 25.98,
+          "Quantitative Biology": 23.81,
+          "Quantitative Finance": 13.79,
+          "Statistics": 30.09
+        },
+        "By Year": {
+          "2020": 23.08,
+          "2021": 26.44,
+          "2022": 22.13,
+          "2023": 22.18
+        },
+        "By Subplot": {
+          "1 Subplot": 25.91,
+          "2-4 Subplots": 23.28,
+          "5+ Subplots": 19.92
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "750722bc905dd7ef43d2",
+      "model": "Reka-Flash",
+      "metric": "Descriptive · validation overall",
+      "value": 56.45,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Flash-descriptive_val.json",
+      "details": {
+        "Overall Score": 56.45,
+        "By Question": {
+          "Q1": 67.62,
+          "Q2": 67.83,
+          "Q3": 63.95,
+          "Q4": 62.26,
+          "Q5": 63.6,
+          "Q6": 45.78,
+          "Q7": 59.4,
+          "Q8": 64.29,
+          "Q9": 60.2,
+          "Q10": 76.03,
+          "Q11": 67.43,
+          "Q12": 67.03,
+          "Q13": 68.04,
+          "Q14": 40.43,
+          "Q15": 23.64,
+          "Q16": 75.0,
+          "Q17": 7.14,
+          "Q18": 70.85,
+          "Q19": 80.0
+        },
+        "By Category": {
+          "Information Extraction": 61.39,
+          "Enumeration": 48.59,
+          "Pattern Recognition": 69.87,
+          "Counting": 72.52,
+          "Compositionality": 7.14
+        },
+        "By Subplot": {
+          "1 Subplot": 65.16,
+          "2-4 Subplots": 56.22,
+          "5+ Subplots": 42.58
+        },
+        "By Subject": {
+          "Computer Science": 54.56,
+          "Economics": 57.97,
+          "Electrical Engineering and Systems Science": 61.13,
+          "Mathematics": 60.37,
+          "Physics": 51.57,
+          "Quantitative Biology": 52.78,
+          "Quantitative Finance": 57.54,
+          "Statistics": 55.53
+        },
+        "By Year": {
+          "2020": 58.1,
+          "2021": 53.35,
+          "2022": 57.89,
+          "2023": 56.65
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "343a1d42d56f7c9a44b8",
+      "model": "Reka-Flash",
+      "metric": "Reasoning · validation overall",
+      "value": 26.6,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-Reka-Flash-reasoning_val.json",
+      "details": {
+        "Overall Score": 26.6,
+        "By Answer Type": {
+          "Text-in-Chart": 26.59,
+          "Text-in-General": 39.39,
+          "Number-in-Chart": 30.6,
+          "Number-in-General": 17.03
+        },
+        "By Source": {
+          "GPT-Sourced": 26.09,
+          "GPT-Inspired": 23.15,
+          "Completely Human": 28.0
+        },
+        "By Subject": {
+          "Computer Science": 20.63,
+          "Economics": 25.36,
+          "Electrical Engineering and Systems Science": 36.97,
+          "Mathematics": 27.41,
+          "Physics": 30.71,
+          "Quantitative Biology": 23.81,
+          "Quantitative Finance": 25.0,
+          "Statistics": 23.01
+        },
+        "By Year": {
+          "2020": 26.32,
+          "2021": 27.59,
+          "2022": 25.82,
+          "2023": 26.61
+        },
+        "By Subplot": {
+          "1 Subplot": 30.83,
+          "2-4 Subplots": 26.98,
+          "5+ Subplots": 19.07
+        },
+        "N_valid": 1000,
+        "N_invalid": 3,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "f23ad8b00705f4524e65",
+      "model": "SPHINX-V2-13B",
+      "metric": "Descriptive · validation overall",
+      "value": 30.25,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-SPHINX-V2-13B-descriptive_val.json",
+      "details": {
+        "Overall Score": 30.25,
+        "By Question": {
+          "Q1": 53.69,
+          "Q2": 36.96,
+          "Q3": 16.31,
+          "Q4": 43.19,
+          "Q5": 35.98,
+          "Q6": 36.14,
+          "Q7": 25.21,
+          "Q8": 12.5,
+          "Q9": 13.93,
+          "Q10": 22.6,
+          "Q11": 46.86,
+          "Q12": 24.73,
+          "Q13": 36.07,
+          "Q14": 21.28,
+          "Q15": 34.19,
+          "Q16": 30.56,
+          "Q17": 1.79,
+          "Q18": 38.46,
+          "Q19": 58.46
+        },
+        "By Category": {
+          "Information Extraction": 35.59,
+          "Enumeration": 24.37,
+          "Pattern Recognition": 41.05,
+          "Counting": 29.52,
+          "Compositionality": 1.79
+        },
+        "By Subplot": {
+          "1 Subplot": 41.0,
+          "2-4 Subplots": 23.61,
+          "5+ Subplots": 23.31
+        },
+        "By Subject": {
+          "Computer Science": 28.37,
+          "Economics": 29.71,
+          "Electrical Engineering and Systems Science": 36.97,
+          "Mathematics": 34.07,
+          "Physics": 28.54,
+          "Quantitative Biology": 27.38,
+          "Quantitative Finance": 31.68,
+          "Statistics": 25.0
+        },
+        "By Year": {
+          "2020": 32.19,
+          "2021": 30.75,
+          "2022": 27.25,
+          "2023": 30.75
+        },
+        "N_valid": 4000,
+        "N_invalid": 3,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "568b441a8a2d3837a10a",
+      "model": "SPHINX-V2-13B",
+      "metric": "Reasoning · validation overall",
+      "value": 16.1,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-SPHINX-V2-13B-reasoning_val.json",
+      "details": {
+        "Overall Score": 16.1,
+        "By Answer Type": {
+          "Text-in-Chart": 13.86,
+          "Text-in-General": 28.28,
+          "Number-in-Chart": 17.67,
+          "Number-in-General": 13.54
+        },
+        "By Source": {
+          "GPT-Sourced": 19.02,
+          "GPT-Inspired": 14.81,
+          "Completely Human": 15.67
+        },
+        "By Subject": {
+          "Computer Science": 13.49,
+          "Economics": 13.77,
+          "Electrical Engineering and Systems Science": 16.81,
+          "Mathematics": 21.48,
+          "Physics": 17.32,
+          "Quantitative Biology": 15.08,
+          "Quantitative Finance": 14.66,
+          "Statistics": 15.93
+        },
+        "By Year": {
+          "2020": 17.0,
+          "2021": 18.39,
+          "2022": 12.7,
+          "2023": 16.13
+        },
+        "By Subplot": {
+          "1 Subplot": 20.21,
+          "2-4 Subplots": 12.43,
+          "5+ Subplots": 15.25
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    },
+    {
+      "id": "20e069d6a72066b1c783",
+      "model": "VILA-1-5-40B",
+      "metric": "Descriptive · validation overall",
+      "value": 38.67,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Descriptive · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-VILA-1-5-40B-descriptive_val.json",
+      "details": {
+        "Overall Score": 38.67,
+        "By Question": {
+          "Q1": 65.16,
+          "Q2": 45.65,
+          "Q3": 31.33,
+          "Q4": 45.53,
+          "Q5": 46.86,
+          "Q6": 36.55,
+          "Q7": 28.63,
+          "Q8": 37.05,
+          "Q9": 34.33,
+          "Q10": 45.21,
+          "Q11": 41.14,
+          "Q12": 42.86,
+          "Q13": 38.36,
+          "Q14": 20.92,
+          "Q15": 23.0,
+          "Q16": 30.56,
+          "Q17": 9.82,
+          "Q18": 61.54,
+          "Q19": 84.62
+        },
+        "By Category": {
+          "Information Extraction": 42.94,
+          "Enumeration": 29.62,
+          "Pattern Recognition": 51.31,
+          "Counting": 50.64,
+          "Compositionality": 9.82
+        },
+        "By Subplot": {
+          "1 Subplot": 51.62,
+          "2-4 Subplots": 33.93,
+          "5+ Subplots": 25.11
+        },
+        "By Subject": {
+          "Computer Science": 38.69,
+          "Economics": 38.77,
+          "Electrical Engineering and Systems Science": 48.11,
+          "Mathematics": 42.96,
+          "Physics": 34.45,
+          "Quantitative Biology": 32.74,
+          "Quantitative Finance": 40.95,
+          "Statistics": 32.52
+        },
+        "By Year": {
+          "2020": 40.79,
+          "2021": 37.36,
+          "2022": 37.91,
+          "2023": 38.71
+        },
+        "N_valid": 4000,
+        "N_invalid": 0,
+        "Question Type": "Descriptive"
+      }
+    },
+    {
+      "id": "7322925c3d3828569e92",
+      "model": "VILA-1-5-40B",
+      "metric": "Reasoning · validation overall",
+      "value": 24.0,
+      "unit": "%",
+      "direction": "Higher is better",
+      "comparison_group": "Reasoning · validation overall",
+      "date": null,
+      "date_basis": "Not reported",
+      "source_url": "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/existing_evaluations/stats-VILA-1-5-40B-reasoning_val.json",
+      "details": {
+        "Overall Score": 24.0,
+        "By Answer Type": {
+          "Text-in-Chart": 21.59,
+          "Text-in-General": 41.41,
+          "Number-in-Chart": 25.0,
+          "Number-in-General": 20.09
+        },
+        "By Source": {
+          "GPT-Sourced": 26.63,
+          "GPT-Inspired": 19.91,
+          "Completely Human": 24.67
+        },
+        "By Subject": {
+          "Computer Science": 28.57,
+          "Economics": 23.91,
+          "Electrical Engineering and Systems Science": 24.37,
+          "Mathematics": 28.15,
+          "Physics": 17.32,
+          "Quantitative Biology": 22.22,
+          "Quantitative Finance": 18.1,
+          "Statistics": 29.2
+        },
+        "By Year": {
+          "2020": 23.48,
+          "2021": 24.14,
+          "2022": 22.54,
+          "2023": 25.81
+        },
+        "By Subplot": {
+          "1 Subplot": 27.72,
+          "2-4 Subplots": 23.02,
+          "5+ Subplots": 19.49
+        },
+        "N_valid": 1000,
+        "N_invalid": 0,
+        "Question Type": "Reasoning"
+      }
+    }
+  ],
+  "input_sha256": {
+    "charxiv-card": "1874b3229ec3fa78abd5aa8ef51548b673ad44cefacd79cf632ebd3e299b1f51",
+    "charxiv-data-license": "925e1b06fa82e379bad225eb67723f7f296266d61b9fe6ac83445cc9778b8e2c",
+    "cc-by-sa-4.0": "28a9529c7d0bb4dc51f4bf5c116a3d16ef247a052f7591466768ddf563fd1cf5",
+    "charxiv-stats-Cambrian-34B-descriptive_val": "09266fce92a423c8353537913a4224f6a61fce2ccffdaa9cafb3fdbdfc20a3d7",
+    "charxiv-stats-Cambrian-34B-reasoning_val": "133d6a0e3c7c9f508fb69c69aa94133fa6d5498b215f4193071465fe6eaf5fcc",
+    "charxiv-stats-ChartGemma-descriptive_val": "96eeb92b6f14949c993d2f786dce9794c920288220a75ef81ee904776505d2c3",
+    "charxiv-stats-ChartGemma-reasoning_val": "bcd85ad48f0b431c6c9b9261a3d2989c114c0d27f53964cb56ea8ce7c79c9e75",
+    "charxiv-stats-Claude-3-5-Sonnet-descriptive_val": "4d03fc0012e09e809ccf093f3b48bf5111c769d3b85f597836c444ff9b4bc32b",
+    "charxiv-stats-Claude-3-5-Sonnet-reasoning_val": "eb4407fbe67e3a6d896ae2dc973d7e676dbe760bc08e15f4229931f7487262e5",
+    "charxiv-stats-Claude-3-Haiku-descriptive_val": "28555ed17fe07a69705a2c5a3f4c3c9c65941f8e3ce60ca47e6e852c2a228fdb",
+    "charxiv-stats-Claude-3-Haiku-reasoning_val": "2d98efbf51e10765c723c31e639ca53008afe78c1d7c651600df90db9c7eb4d1",
+    "charxiv-stats-Claude-3-Opus-descriptive_val": "86ca0b0bea757fd48ef953e292fb7fdb6221d94b89633d16794a8bb937217e6d",
+    "charxiv-stats-Claude-3-Opus-reasoning_val": "c32efb963218c38fd16576b8ea2355cd6253f6049a51b9aeeb6b27a64348a8a1",
+    "charxiv-stats-Claude-3-Sonnet-descriptive_val": "74701019a02a01884ba9b506e772400782ab281aa892e7776c6db9fabf474ff1",
+    "charxiv-stats-Claude-3-Sonnet-reasoning_val": "372da3ad8ee5b1b9dc91a291f897d0f8e90aa8a56e340bd8a0eb8dfc4c021c78",
+    "charxiv-stats-DeepSeek-VL-descriptive_val": "05807b15eb9dc147e5b3fcb660759459bb59f830ac21245c5c59cdaafc2560c9",
+    "charxiv-stats-DeepSeek-VL-reasoning_val": "81baf1ddd03f21ccfe001ab2cc0bb8f5292672531b3f006d03487da5118404ab",
+    "charxiv-stats-GPT-4V-Turbo-descriptive_val": "2e565b835a5fca59832d451b6b1450ae7c3389719fb8211dfa07498d855a3f0b",
+    "charxiv-stats-GPT-4V-Turbo-reasoning_val": "b74374cad257b2a8e48b70090a80e6f3cb9b0878e1816ec5f4847a45fe3ccd1c",
+    "charxiv-stats-GPT-4o-Random-descriptive_val": "7c3d99e1a71023ab5d86ca6b7f16b78135c1f64bfa6cc0c7d7cd4ae826f685d6",
+    "charxiv-stats-GPT-4o-Random-reasoning_val": "1ef1003817964c2662811d7fd8adf607f84d0d9a57b77b5293e5e1e0b0c25b5b",
+    "charxiv-stats-GPT-4o-descriptive_val": "1a3d4a1eff5d57a4491d59211fb78dd9fda99159f1ce3a926e493db42de99228",
+    "charxiv-stats-GPT-4o-mini-descriptive_val": "d7480635a1ea12de54ed5e773959ebfd05afe32933ee2a8d6433092be618653e",
+    "charxiv-stats-GPT-4o-mini-reasoning_val": "1f3b6fecc150e088bc1cb4d49c0b5fc79117e4a29f0f6aae6cee8e3d705e0979",
+    "charxiv-stats-GPT-4o-reasoning_val": "2a4385cf4346629b8b8f35a647035e54b3b5c38a70be5ce16e61aa7cd5e96325",
+    "charxiv-stats-Gemini-1-5-Pro-descriptive_val": "79d23771b287b00256bf124a2c55210e18d55d717434df016864fe3a2ac8f447",
+    "charxiv-stats-Gemini-1-5-Pro-reasoning_val": "296861a2107a9f5c9946e7a8816a743bcea00b2470a55f7a19dbb6895d2b5883",
+    "charxiv-stats-Gemini-1.0-Pro-Vision-descriptive_val": "62c36956022e1ff9c0c774f898e1941cf0303a07da4c4486f4b8722bb6a3f8e6",
+    "charxiv-stats-Gemini-1.0-Pro-Vision-reasoning_val": "3c099a9735c6df21b6c598f9b17d3a9186406ad54abd9dade1ba898568e45cd8",
+    "charxiv-stats-Human-descriptive_val": "f5bc5e7b83e4e408dc391fc467e1576204a9dbba5f7b175271cc0e799dcbada3",
+    "charxiv-stats-Human-reasoning_val": "9d54d5c2e004deb74fa381e8a7593b226c0af7aaf9dbf655c5a79392a9c7ca7e",
+    "charxiv-stats-IDEFICS-2-Chatty-descriptive_val": "2ad77e076b7eed045d66d877a9aa245a4ea13763c525442d837d81a41e1e8c52",
+    "charxiv-stats-IDEFICS-2-Chatty-reasoning_val": "fb3ef6687eb071d927555e43fa0ead6c8362d21dc425fa115915d01b2fdcbd24",
+    "charxiv-stats-IDEFICS-2-descriptive_val": "c2fde76a30dd401f708cc370d78ada94ea788adf064de2f3213883d103e00e44",
+    "charxiv-stats-IDEFICS-2-reasoning_val": "b5e5877fda8d4ce4cf113998b87935bece284679f874d25d1932b6b53190c292",
+    "charxiv-stats-InternLM-XComposer2-4KHD-descriptive_val": "78bf76c246301cb059ff6eeeef675f78021d3f74757469c5c6e33d09be7beb23",
+    "charxiv-stats-InternLM-XComposer2-4KHD-reasoning_val": "513c9fd23f768286d3ef56534d7cdfc8024d66b6bbfc3203a952a2a53d7ed531",
+    "charxiv-stats-InternLM-XComposer2-descriptive_val": "9294c3a5fe082b2aa71cbdb28460fab1e8117960a3786e9f2d1354b80387dbcf",
+    "charxiv-stats-InternLM-XComposer2-reasoning_val": "858614a3e4b4dafb88301cda4541f4864df93175c967898b8be67b9dfd2c1ed5",
+    "charxiv-stats-InternVL-Chat-V1-5-descriptive_val": "1f94f528186e013b5ad4eb1b7dca3c2bedd232f3a1c8ddbdb96a6c2607211e67",
+    "charxiv-stats-InternVL-Chat-V1-5-reasoning_val": "4cc1638ae25c417d1070339c52ed55d2b6a3edc9f1e83ac13bd87b9dc50448c0",
+    "charxiv-stats-InternVL2-26B-descriptive_val": "fc4a3117df336c8e8952567db58cc2717f56cfd65ceec5fe1bf0fa62b46a4f2a",
+    "charxiv-stats-InternVL2-26B-reasoning_val": "ad13a0bcb45c3047047f92a0b459b438d7164c8b5802eadffd2e70ff43942619",
+    "charxiv-stats-InternVL2-76B-descriptive_val": "5b11616559e068d3c59357c72d0456212a69febbb7f25b500eeda8d65078d9dc",
+    "charxiv-stats-InternVL2-76B-reasoning_val": "a721faac8b46ca7a0e0428080164d2c2d0e55846b96f5ab18b7e2b59f73f6c98",
+    "charxiv-stats-InternVL2-Pro-descriptive_val": "4a04e6fe663395877e08085841dda08a5f277919bd4ac8959ec1c58c284b9a44",
+    "charxiv-stats-InternVL2-Pro-reasoning_val": "7da613461a6ff1dd990a23f336b89916252838430b0994a233ce1c87f066afb8",
+    "charxiv-stats-LLaVA-1-6-Mistral-7B-descriptive_val": "79ff8a027cd60a39856c0e8dbb0cd561ad054aeea5c1f9e2f5a082ed2f6fb52a",
+    "charxiv-stats-LLaVA-1-6-Mistral-7B-reasoning_val": "c1da252efdc7b54cbe635aa77b647898365084633cb91ef54ffaec8bb451bd1d",
+    "charxiv-stats-LLaVA-1-6-Yi-34B-descriptive_val": "d4934eb41e9ecc1caf1ca798f6e2ce7d4e0210a96acb7c9d6daed609406035f9",
+    "charxiv-stats-LLaVA-1-6-Yi-34B-reasoning_val": "32e363c83e96c420e94ddbecd0c06fe05a4042babaee88c4ee7f9ccb02648636",
+    "charxiv-stats-Mini-Gemini-HD-LLaMA3-8B-descriptive_val": "aa51a6dbe7ab9f3e17409064ed38fbf733cba7843e7394f039490d65bffffbcc",
+    "charxiv-stats-Mini-Gemini-HD-LLaMA3-8B-reasoning_val": "ffb52763d1e0c129085a8517d8e827ea67c5d1cd65e1d7c703a352fe8519799b",
+    "charxiv-stats-Mini-Gemini-HD-Yi-34B-descriptive_val": "a49eb1d6d138877d2f3917fec1acd6e3ed184c209d111e4cec137006452064dc",
+    "charxiv-stats-Mini-Gemini-HD-Yi-34B-reasoning_val": "7aad9aecd80a5f9f0cede1a6151c3efef4dd1b5d0ae3cfa0ff6cdfcb24da19fd",
+    "charxiv-stats-MiniCPM-V2-5-descriptive_val": "f6befa8950bc1c93664d0a4f39c4ebf4c4f5ffdad42e8668119689423c4e2735",
+    "charxiv-stats-MiniCPM-V2-5-reasoning_val": "0562e819de5bfe1ab2a82afafa73fd12a9ac9bf4a642a113e8dbaad13e054451",
+    "charxiv-stats-MiniCPM-V2-descriptive_val": "fb292501ae7b3b4fe0f9e67ab9145ea31b215e613e17ea9002ee11d27934ccf5",
+    "charxiv-stats-MiniCPM-V2-reasoning_val": "e43ec03909e49989dc8bc584bcc85fdc362c6ceebde3d9006ba7634e8cd12149",
+    "charxiv-stats-MoAI-descriptive_val": "3836046441d73c7ff43a08e926317a3b125ae6b7a99611683f62273f471e04e9",
+    "charxiv-stats-MoAI-reasoning_val": "30640a8e1b0c58ea3261319fbe61074f54891c71535711516adbcebecc4a8834",
+    "charxiv-stats-Ovis1.5-Gemma2-9B-descriptive_val": "22e4ea36a26677303ad63312788e2c80fe0c0b90daeda1ae6e3e297ac07f8461",
+    "charxiv-stats-Ovis1.5-Gemma2-9B-reasoning_val": "6667f16af2f28987adb388a69290d8480e75648803bad099f679ad29000f10cf",
+    "charxiv-stats-Ovis1.5-Llama3-8B-descriptive_val": "934d343f019606bdeac4d5395d9ab1ca54f03f35ed1cd324bde578b352b7d7c5",
+    "charxiv-stats-Ovis1.5-Llama3-8B-reasoning_val": "e64ed801815fb7bc5b44233a4c717dc00b90f2b7d97fcb58ecfb744237e6f38a",
+    "charxiv-stats-Phi-3-Vision-descriptive_val": "914c935065087b5e74892d57e6a14d9cc10dff28e7756865e7a40e6baeead67e",
+    "charxiv-stats-Phi-3-Vision-reasoning_val": "98b4ebe6f6ed8def51f3dc16289ba6bac8cd70b1d5025489e13329e2b7e2f991",
+    "charxiv-stats-Qwen-VL-Max-descriptive_val": "cb79c7cd6ea9ac54185319f453f901fa2ccaf8081ae2b8a479c9815e2ce0048a",
+    "charxiv-stats-Qwen-VL-Max-reasoning_val": "add42fe789c1cc762246b2ebd20e716fb985d142ea648b8f91042868f2851f16",
+    "charxiv-stats-Qwen-VL-Plus-descriptive_val": "2b6a28069dd7761b83214d446003147eaf0d213b060e2205a1e88682dff42d20",
+    "charxiv-stats-Qwen-VL-Plus-reasoning_val": "8a5f5ff1d9ce68f305edd107143e798f810b85881ad8cb07b9bc1582931b1682",
+    "charxiv-stats-Reka-Core-descriptive_val": "8f6794485061488bc943ed99ba9e42a3515172a00fffca7000704842e3c876dd",
+    "charxiv-stats-Reka-Core-reasoning_val": "ea1e121a01d9958fc1d2c24d954ab40d2f2d81ab9d0634088d962ebab9359512",
+    "charxiv-stats-Reka-Edge-descriptive_val": "f3b58e72fa6025ff7f2383301511d3b2bd0469116b8adda31006fe4173c95516",
+    "charxiv-stats-Reka-Edge-reasoning_val": "343e61cfc0b19b1f04efbe89eaab3f316cfdcf10573a546b8877e4976ed363d8",
+    "charxiv-stats-Reka-Flash-descriptive_val": "4c79f9d828352a681a67e82950c9a98c066166a2aaa83ee58d96688befee71d1",
+    "charxiv-stats-Reka-Flash-reasoning_val": "8eb580766b0aeddb51103ae787432851af272e4af085ac91dac4c1262aec682e",
+    "charxiv-stats-SPHINX-V2-13B-descriptive_val": "729ed7d0ca28f1f4f54cac856234dd5a1e5e954089ba1e571b38f0c0ca10ac40",
+    "charxiv-stats-SPHINX-V2-13B-reasoning_val": "6c57e38af5abb7f90b0e0159b7b0cda3a4fd9f6e77d7aee9dcb3279bd633a75f",
+    "charxiv-stats-VILA-1-5-40B-descriptive_val": "a0c53104f33e34da9ba599e6afd13d725b4eac9f16f924f5b5276fe8dee706b4",
+    "charxiv-stats-VILA-1-5-40B-reasoning_val": "4f88520516f479204691a07831ffb4115ce2adcf9367cc32a934cd3a1043fa5b"
+  }
+}

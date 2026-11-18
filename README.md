@@ -68,6 +68,8 @@ The shared UI helper is `assets/catalog-ui.js`. The test command also exercises 
 
 Model data: [Epoch AI, Data on AI models](https://epoch.ai/data/ai-models), used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The exported subset, field names and family associations are adapted for this catalog. Original model metrics and names are preserved.
 
+Additional numerical benchmark evidence: [10 separately licensed source snapshots](docs/public-benchmarks.md), explored on the [model-progress page](https://aisciencetracker.org/model-progress.html#metrics-heading). Component downloads retain their own licenses, attribution, source revisions and change notices. CharXiv adapted numerical data is CC BY-SA 4.0; these benchmark files are excluded from the blanket catalog CC BY 4.0 grant and from the catalog Hugging Face export. The existing SWE-bench Verified selection remains CC BY-NC 4.0.
+
 Font: Schibsted Grotesk, distributed under the SIL Open Font License in `assets/fonts/OFL.txt`.
 
 GitHub Pages serves this repository's `main` branch from the root. There is no build step or external JavaScript dependency. Published claims and editorial scores have the limitations described on the methodology page; coverage is manual and incomplete.
