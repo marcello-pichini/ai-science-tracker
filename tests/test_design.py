@@ -76,7 +76,8 @@ class DesignTests(unittest.TestCase):
                 self.assertIn('rel="canonical"', text)
                 self.assertRegex(text, r'<title>[^<]*AI Science Tracker</title>')
                 menu = re.search(r'<nav class="menu".*?</nav>', text, re.S).group()
-                self.assertLess(menu.index('href="security.html"'), menu.index('href="methodology.html"'))
+                self.assertLess(menu.index('href="security.html"'), menu.index('href="dossiers.html"'))
+                self.assertLess(menu.index('href="dossiers.html"'), menu.index('href="methodology.html"'))
                 for nav in ('index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html'):
                     self.assertIn(f'href="{nav}"', text)
 

@@ -18,7 +18,7 @@ Every page, script and generated asset must look and behave like one product. Th
 
 ## Page skeleton
 
-Every page has the same frame, in this order: shared `<head>` (charset, viewport, title `Page · AI Science Tracker`, description, Open Graph, canonical, theme color, icon, font preload, `styles.css` with its content-hash query), the header with the six-item menu (Discoveries, Models, Vuln discoveries, Methodology, Guide, Search) plus the page's own `aria-current="page"`, a blue banner with one `<h1>`, `<main>` with sections that each have an `<h2>`, and the footer. Copy the frame from an existing page; do not retype it. `404.html` is the one exception to the shared `<head>` (no canonical or Open Graph, `noindex`, and a `<base href>` so it works from any URL depth); `tests/test_site_links.py` checks it instead of `PAGES`.
+Every page has the same frame, in this order: shared `<head>` (charset, viewport, title `Page · AI Science Tracker`, description, Open Graph, canonical, theme color, icon, font preload, `styles.css` with its content-hash query), the header with the seven-item menu (Discoveries, Models, Vuln discoveries, Dossiers, Methodology, Guide, Search) plus the page's own `aria-current="page"`, a blue banner with one `<h1>`, `<main>` with sections that each have an `<h2>`, and the footer. Copy the frame from an existing page; do not retype it. `404.html` is the one exception to the shared `<head>` (no canonical or Open Graph, `noindex`, and a `<base href>` so it works from any URL depth); `tests/test_site_links.py` checks it instead of `PAGES`.
 
 ## Charts and interaction
 
