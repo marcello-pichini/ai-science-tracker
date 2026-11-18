@@ -17,7 +17,30 @@ links = importlib.util.module_from_spec(LINK_SPEC)
 LINK_SPEC.loader.exec_module(links)
 
 
+def sample_page(path):
+    return (f'<link rel="canonical" href="https://site.test/{path}">'
+            '<title>Catalog</title><h1>Catalog</h1><script src="/assets/app.js"></script>').encode()
+
+
+def write_sample_pages(root):
+    for path in (*monitor.PAGES, 'share/sample.html'):
+        page = root / path
+        page.parent.mkdir(parents=True, exist_ok=True)
+        page.write_bytes(sample_page(path))
+
+
 class PublicationMonitorTest(unittest.TestCase):
+    def test_page_identity_rejects_soft_404_and_robots_conflicts(self):
+        url = 'https://site.test/dataset.html'
+        expected, error = monitor.Page(), monitor.Page()
+        expected.feed(sample_page('dataset.html').decode())
+        error.feed('<title>Page not found</title><h1>Page not found</h1>')
+        self.assertEqual(monitor.check_page(expected, error, url, url, 200, [])[0], 'fail')
+        self.assertEqual(monitor.check_page(expected, expected, url, url, 200, ['noindex'])[0], 'fail')
+        self.assertEqual(monitor.check_page(expected, expected, url, url + '?other=1', 200, [])[0], 'fail')
+        self.assertEqual(monitor.check_page(expected, expected, url, url, 200, [])[0], 'pass')
+
+
     def test_same_count_different_record_is_a_failure(self):
         self.assertFalse(monitor.same_data(b'[{"id":"a"}]', b'[{"id":"b"}]', 'records.json'))
         self.assertTrue(monitor.same_data(b'{"a":1,"b":2}', b'{"b":2,"a":1}', 'records.json'))
@@ -35,10 +58,12 @@ class PublicationMonitorTest(unittest.TestCase):
             (root / 'api/v1/index.json').write_text('{}')
             (root / 'assets/app.js').write_text('current-version')
 
+            write_sample_pages(root)
+
             def fetch(url):
                 path = urlsplit(url).path.lstrip('/')
                 if path.endswith('.html'):
-                    return b'<title>Catalog</title><h1>Catalog</h1><script src="/assets/app.js"></script>'
+                    return sample_page(path)
                 if urlsplit(url).netloc == 'hf.test':
                     return (root / 'data' / Path(path).name).read_bytes()
                 return (root / path).read_bytes()
