@@ -1,4 +1,4 @@
-"""Refresh the ten licensed numerical selections, retaining blocked components.
+"""Refresh the licensed numerical selections, retaining blocked components.
 
 Only reviewed repositories, file selections and licenses are eligible. An
 upstream license/NOTICE change, unsupported protocol or malformed score holds
@@ -51,7 +51,8 @@ def semantic(result):
     # A new unrelated repository commit is not a new numerical snapshot.
     records = [{k: v for k, v in r.items() if k != 'source_url'} for r in result['records']]
     return {'records': records, 'license': result['license'], 'attribution': result['attribution'],
-            'scope': result['scope'], 'selection': result['selection'], 'maintenance': result['maintenance']}
+            'scope': result['scope'], 'selection': result['selection'], 'maintenance': result['maintenance'],
+            'source_status': result.get('source_status')}
 
 
 def prepare(source, manifest, directory, epoch_zip=None):
@@ -103,7 +104,30 @@ def prepare(source, manifest, directory, epoch_zip=None):
             raise ValueError('License text changed; explicit source review required')
         content[key] = body
 
-    if source_id == 'gpqa':
+    if source_id == 'metr':
+        if source.get('permission_confirmed_on') != '2026-11-18' or source['license'] != 'CC BY 4.0':
+            raise ValueError('METR public-data permission requires review')
+        expected = {
+            'metr-th-1-1': 'https://metr.org/assets/benchmark_results_1_1.yaml',
+            'metr-th-1-0': 'https://metr.org/assets/benchmark_results_1_0.yaml',
+            'metr-source-page': 'https://metr.org/time-horizons/',
+        }
+        if any(selected[k]['download_url'] != url for k, url in expected.items()):
+            raise ValueError('METR endpoint expansion requires review')
+        content['metr-source-page'] = fetch(expected['metr-source-page'])
+        page = content['metr-source-page'].decode()
+        if 'time horizon' not in page.lower() or '16 hrs' not in page or '95% CI' not in page:
+            raise ValueError('METR units, interval or saturation policy needs review')
+        if re.search(r'CC\s*BY[- ]NC|CC\s*BY[- ]ND|not permitted to (?:reuse|redistribute)', page, re.I):
+            raise ValueError('METR public-page reuse terms need review')
+        update = re.search(r'class="post-date"[^>]*>([^<]+)</', page)
+        source['source_status'] = {
+            'actively_updated': 'no longer actively updated' not in page,
+            'page_last_updated': datetime.datetime.strptime(update[1].strip(), '%B %d, %Y').date().isoformat() if update else None,
+        }
+        state = 'METR states the source page is no longer actively updated.' if not source['source_status']['actively_updated'] else 'Source maintenance notice checked.'
+        source['maintenance'] = 'Checked daily for changes to these public exports; blocked sources retain the last accepted snapshot. ' + state
+    elif source_id == 'gpqa':
         # The own-run license is scoped by Epoch's reuse page, not the ZIP alone.
         policy = fetch('https://epoch.ai/benchmarks/use-this-data').decode()
         if 'creativecommons.org/licenses/by/' not in policy or 'retains its original licensing' not in policy:

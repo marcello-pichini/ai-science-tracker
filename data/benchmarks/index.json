@@ -173,6 +173,30 @@
       "path": "data/benchmarks/swe-bench-pro.json",
       "record_count": 7,
       "sha256": "439d6467f11f4532168e95010fc69acf3d72dc279ef912913db37595aaca4db9"
+    },
+    {
+      "id": "metr",
+      "name": "METR · task-completion time horizons",
+      "attribution": "METR, Measuring AI Ability to Complete Long Tasks (2025), arXiv:2503.14499",
+      "citation_url": "https://arxiv.org/abs/2503.14499",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_notice": "docs/benchmark-licenses/cc-by-4.0.txt",
+      "permission_confirmed_on": "2026-11-18",
+      "permission_scope": "METR confirmed CC BY 4.0 reuse of public METR data directly. This does not publish the correspondence or license third-party/private tasks.",
+      "scope": "Human-expert task duration at 50% or 80% predicted agent success, measured in minutes. This is task difficulty, not AI runtime, uninterrupted autonomy or job-automation coverage. Versions 1.1 and 1.0 use different suites; scaffolds differ. Estimates above 16 hours are unreliable with this task suite. Source-reported 95% bootstrapped intervals are retained.",
+      "selection": "All scored 50% and 80% horizons in the official public METR-Horizon-v1.1 and v1.0 exports. Version 1.1 is shown first; versions and success thresholds remain separate. Exact source aliases, scaffolds, dataset versions and model-release dates retained. No inferred Epoch joins, trend fits or private task data. Three identical v1.0 baselines stitched into the v1.1 export are retained once under v1.0, not counted as v1.1 reruns.",
+      "maintenance": "Checked daily for changes to these public exports; blocked sources retain the last accepted snapshot. METR states the source page is no longer actively updated.",
+      "source_status": {
+        "actively_updated": false,
+        "page_last_updated": "2026-09-08"
+      },
+      "upstream_revision": "Official versioned METR YAML exports; exact source-byte hashes retained per input.",
+      "retrieved_on": "2026-11-18",
+      "source_url": "https://metr.org/time-horizons/",
+      "path": "data/benchmarks/metr.json",
+      "record_count": 112,
+      "sha256": "9b929e4234b1ef2fed08a0109c215500001e77038aa302efc4c64123d1fa395e"
     }
   ]
 }

@@ -783,7 +783,7 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [discoveries.json]({BASE}data/discoveries.json): active catalog entries (schema and counting unit: docs/discovery-schema.md in the repository)
 - [models.json]({BASE}data/models.json): model releases and families
 - [model-progress.json]({BASE}data/model-progress.json): separate Epoch capability/benchmark source entries; may overlap releases
-- [Independent benchmark directory]({BASE}data/benchmarks/index.json): 10 separately licensed numerical snapshots; source-specific selections and limits
+- [Independent benchmark directory]({BASE}data/benchmarks/index.json): 11 separately licensed numerical snapshots; source-specific selections and limits
 - [vulnerabilities.json]({BASE}data/vulnerabilities.json): vulnerability cases
 - [sitemap.xml]({BASE}sitemap.xml): every static page
 - [dataset.html]({BASE}dataset.html): downloads (JSON, CSV), schemas and the read-only static API at {BASE}api/v1/index.json

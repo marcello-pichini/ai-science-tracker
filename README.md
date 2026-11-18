@@ -68,7 +68,7 @@ The shared UI helper is `assets/catalog-ui.js`. The test command also exercises 
 
 Model data: [Epoch AI, Data on AI models](https://epoch.ai/data/ai-models), used under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The exported subset, field names and family associations are adapted for this catalog. Original model metrics and names are preserved.
 
-Additional numerical benchmark evidence: [10 separately licensed source snapshots](docs/public-benchmarks.md), explored on the [model-progress page](https://aisciencetracker.org/model-progress.html#metrics-heading). Component downloads retain their own licenses, attribution, source revisions and change notices. CharXiv adapted numerical data is CC BY-SA 4.0; these benchmark files are excluded from the blanket catalog CC BY 4.0 grant and from the catalog Hugging Face export. The existing SWE-bench Verified selection remains CC BY-NC 4.0.
+Additional numerical benchmark evidence: [11 separately licensed source snapshots](docs/public-benchmarks.md), explored on the [model-progress page](https://aisciencetracker.org/model-progress.html#metrics-heading). Component downloads retain their own licenses, attribution, source revisions and change notices. CharXiv adapted numerical data is CC BY-SA 4.0; these benchmark files are excluded from the blanket catalog CC BY 4.0 grant and from the catalog Hugging Face export. The existing SWE-bench Verified selection remains CC BY-NC 4.0. METR public 50%/80% time horizons retain CC BY 4.0, versioned suites and 95% intervals; the daily check does not imply active upstream maintenance.
 
 Font: Schibsted Grotesk, distributed under the SIL Open Font License in `assets/fonts/OFL.txt`.
 

@@ -38,6 +38,25 @@ def clean(value):
     return html.unescape(re.sub('<[^>]*>', '', value)).strip()
 
 
+def metr_yaml(content):
+    """Read public METR numerical YAML, rejecting duplicate identities/fields."""
+    import yaml
+    if len(content) > 2000000:
+        raise ValueError('Unexpected METR export size')
+    class UniqueLoader(yaml.SafeLoader):
+        pass
+    def mapping(loader, node, deep=False):
+        result = {}
+        for key_node, value_node in node.value:
+            key = loader.construct_object(key_node, deep=deep)
+            if key in result:
+                raise ValueError('Duplicate METR field or evaluation identity')
+            result[key] = loader.construct_object(value_node, deep=deep)
+        return result
+    UniqueLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, mapping)
+    return yaml.load(content, Loader=UniqueLoader)
+
+
 class Tables(HTMLParser):
     """Read table cell text only; never execute downloaded source markup."""
     def __init__(self):
@@ -84,7 +103,48 @@ def parse_records(source_id, inputs, directory):
         return inputs[key]['source_url']
 
     records = []
-    if source_id == 'gpqa':
+    if source_id == 'metr':
+        for key, version in [('metr-th-1-1', 'METR-Horizon-v1.1'), ('metr-th-1-0', 'METR-Horizon-v1.0')]:
+            data = metr_yaml(text(key))
+            for field in ('license', 'license_url', 'licence'):
+                if field in data and data[field] not in ('CC BY 4.0', 'cc-by-4.0', 'https://creativecommons.org/licenses/by/4.0/'):
+                    raise ValueError('METR numerical export license requires review')
+            if data.get('benchmark_name') != version or not 0 < len(data['results']) <= 2000:
+                raise ValueError('METR evaluation version/schema changed')
+            for alias, item in data['results'].items():
+                if version == 'METR-Horizon-v1.1' and item.get('benchmark_name') == 'METR-Horizon-v1.0':
+                    baseline = metr_yaml(text('metr-th-1-0'))['results'].get(alias)
+                    if baseline != item:
+                        raise ValueError('Conflicting inherited METR v1.0 baseline')
+                    # The v1.1 export stitches in identical old baselines. Keep
+                    # them once under their actual v1.0 suite, never as reruns.
+                    continue
+                if item.get('benchmark_name') != version or not isinstance(alias, str):
+                    raise ValueError('METR row version or identity mismatch')
+                date = item.get('release_date')
+                date = date.isoformat() if isinstance(date, datetime.date) else date
+                for probability, field in [(50, 'p50_horizon_length'), (80, 'p80_horizon_length')]:
+                    estimate = item['metrics'][field]
+                    value = number(estimate.get('estimate'))
+                    if value is None:
+                        continue
+                    low, high = number(estimate.get('ci_low')), number(estimate.get('ci_high'))
+                    if value < 0 or any(v is not None and v < 0 for v in (low, high)) or low is not None and high is not None and low > high:
+                        raise ValueError('Invalid METR horizon or interval')
+                    metric = version + ' · ' + str(probability) + '% success horizon'
+                    result = row(alias, metric, value, 'human-baseline minutes', url(key),
+                        version + ':' + alias + ':' + str(probability), date=date,
+                        date_basis='Source model release date; evaluation date not reported',
+                        direction='Longer task duration at this success threshold',
+                        details={'evaluation_version': version, 'success_threshold_percent': probability,
+                            'source_alias': alias, 'scaffolds': item.get('scaffolds'),
+                            'long_tasks_version': data.get('long_tasks_version'),
+                            'swaa_version': data.get('swaa_version')})
+                    result['interval'] = {'low': low, 'high': high, 'level_percent': 95,
+                        'method': 'METR-reported bootstrapped confidence interval', 'unit': 'human-baseline minutes'}
+                    result['caution'] = 'Above 16 hours: METR says measurements are unreliable with this task suite.' if value > 960 else None
+                    records.append(result)
+    elif source_id == 'gpqa':
         with zipfile.ZipFile(directory / inputs['epoch-zip']['file']) as archive:
             names = [n for n in archive.namelist() if n.split('/')[-1] == 'gpqa_diamond.csv']
             if len(names) != 1:

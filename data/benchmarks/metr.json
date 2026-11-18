@@ -1,0 +1,3633 @@
+{
+  "id": "metr",
+  "name": "METR · task-completion time horizons",
+  "attribution": "METR, Measuring AI Ability to Complete Long Tasks (2025), arXiv:2503.14499",
+  "citation_url": "https://arxiv.org/abs/2503.14499",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "license_notice": "docs/benchmark-licenses/cc-by-4.0.txt",
+  "permission_confirmed_on": "2026-11-18",
+  "permission_scope": "METR confirmed CC BY 4.0 reuse of public METR data directly. This does not publish the correspondence or license third-party/private tasks.",
+  "scope": "Human-expert task duration at 50% or 80% predicted agent success, measured in minutes. This is task difficulty, not AI runtime, uninterrupted autonomy or job-automation coverage. Versions 1.1 and 1.0 use different suites; scaffolds differ. Estimates above 16 hours are unreliable with this task suite. Source-reported 95% bootstrapped intervals are retained.",
+  "selection": "All scored 50% and 80% horizons in the official public METR-Horizon-v1.1 and v1.0 exports. Version 1.1 is shown first; versions and success thresholds remain separate. Exact source aliases, scaffolds, dataset versions and model-release dates retained. No inferred Epoch joins, trend fits or private task data. Three identical v1.0 baselines stitched into the v1.1 export are retained once under v1.0, not counted as v1.1 reruns.",
+  "maintenance": "Checked daily for changes to these public exports; blocked sources retain the last accepted snapshot. METR states the source page is no longer actively updated.",
+  "source_status": {
+    "actively_updated": false,
+    "page_last_updated": "2026-09-08"
+  },
+  "upstream_revision": "Official versioned METR YAML exports; exact source-byte hashes retained per input.",
+  "retrieved_on": "2026-11-18",
+  "inputs": [
+    "metr-th-1-1",
+    "metr-th-1-0",
+    "metr-source-page",
+    "cc-by-4.0"
+  ],
+  "source_url": "https://metr.org/time-horizons/",
+  "schema_version": 1,
+  "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+  "records": [
+    {
+      "id": "dc57bc150afa9730aa2f",
+      "model": "claude_3_5_sonnet_20240620_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 11.395377,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2024-06-20",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_3_5_sonnet_20240620_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 5.489734,
+        "high": 22.384214,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "100f52c96af5b84c140e",
+      "model": "claude_3_5_sonnet_20240620_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 1.671757,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2024-06-20",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_3_5_sonnet_20240620_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 0.57927,
+        "high": 4.573519,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "a8b67e1d49bf6821a648",
+      "model": "claude_3_5_sonnet_20241022_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 20.522872,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2024-10-22",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_3_5_sonnet_20241022_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 10.144026,
+        "high": 40.82028,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "3769aa835bf8de45cae2",
+      "model": "claude_3_5_sonnet_20241022_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 2.595677,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2024-10-22",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_3_5_sonnet_20241022_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 0.89379,
+        "high": 7.363864,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "68fd52dc58418f94eab8",
+      "model": "claude_3_7_sonnet_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 60.388937,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2025-02-24",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_3_7_sonnet_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 33.006168,
+        "high": 104.226017,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "dd88fbc75b36abe912f1",
+      "model": "claude_3_7_sonnet_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 12.09179,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2025-02-24",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_3_7_sonnet_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 4.575608,
+        "high": 28.889879,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "2429b2a5aba0e1bda2ac",
+      "model": "claude_3_opus_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 3.952262,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2024-03-04",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_3_opus_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 1.706313,
+        "high": 8.76484,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "68310e99ffda1e9db77b",
+      "model": "claude_3_opus_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 0.638973,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2024-03-04",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_3_opus_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 0.190491,
+        "high": 2.118276,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "1e9da5d37b3427526880",
+      "model": "claude_4_1_opus_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 100.472004,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2025-08-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_4_1_opus_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 59.272391,
+        "high": 159.451918,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "01a54cf4694d28dbb7fd",
+      "model": "claude_4_1_opus_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 23.455761,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2025-08-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_4_1_opus_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 10.538456,
+        "high": 47.785951,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "e8601617b606228dc277",
+      "model": "claude_4_opus_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 100.366123,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2025-05-22",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_4_opus_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 59.994073,
+        "high": 163.454074,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "e1f5fe3996c2ebb50f72",
+      "model": "claude_4_opus_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 20.429752,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2025-05-22",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_4_opus_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 8.483125,
+        "high": 41.937268,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "8e8a593bc14b810f72a2",
+      "model": "claude_opus_4_5_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 292.994594,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2025-11-24",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_opus_4_5_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 161.717714,
+        "high": 623.704698,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "dd40b2510b839a96b82a",
+      "model": "claude_opus_4_5_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 49.430584,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2025-11-24",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_opus_4_5_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 20.660485,
+        "high": 104.641318,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "8c87317bb9086990f0e2",
+      "model": "claude_opus_4_6_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 718.80683,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2026-02-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_opus_4_6_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 316.685725,
+        "high": 3633.786163,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "06e3c04d0cdc8bc5846e",
+      "model": "claude_opus_4_6_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 69.874587,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2026-02-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_opus_4_6_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 27.026521,
+        "high": 170.437873,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "55397efeeb11751dbe83",
+      "model": "gpt_5_3_codex",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 349.530732,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2026-02-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_5_3_codex",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 194.913134,
+        "high": 816.351994,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "9087adfcbeb25f4793a3",
+      "model": "gpt_5_3_codex",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 54.739407,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2026-02-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_5_3_codex",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 22.361504,
+        "high": 122.058963,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "afa02c1ebb5ad7a21fde",
+      "model": "gemini_3_pro",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 224.325884,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2025-11-18",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "gemini_3_pro",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 139.565157,
+        "high": 379.235434,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "c6a918efd0f5a98fb193",
+      "model": "gemini_3_pro",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 54.142849,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2025-11-18",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "gemini_3_pro",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 25.650451,
+        "high": 103.295501,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "f0df81d3b28ec7b257f2",
+      "model": "gemini_3_1_pro",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 384.147435,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2026-02-19",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "gemini_3_1_pro",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 233.50073,
+        "high": 694.750898,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "fdbe49c80ae5df327bb7",
+      "model": "gemini_3_1_pro",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 89.801503,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2026-02-19",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "gemini_3_1_pro",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 52.025934,
+        "high": 158.618017,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "55f0ff909df610bd14fe",
+      "model": "gpt_4",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 3.987428,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2023-03-14",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_4",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 1.93292,
+        "high": 7.995283,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "1deb4dd1bf246ac7c619",
+      "model": "gpt_4",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 0.889561,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2023-03-14",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_4",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 0.342984,
+        "high": 2.523746,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "cda8e5b5cdc1ad9e6349",
+      "model": "gpt_4_1106_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 4.044959,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2023-11-06",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_4_1106_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 1.866859,
+        "high": 8.443226,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "9e19bce24a90d0ecffd6",
+      "model": "gpt_4_1106_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 0.783032,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2023-11-06",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_4_1106_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 0.276599,
+        "high": 2.358414,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "b50c141302efd86d989d",
+      "model": "gpt_4_turbo_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 3.732787,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2024-04-09",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_4_turbo_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 1.980046,
+        "high": 6.736613,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "4bf1581173db2d9e6695",
+      "model": "gpt_4_turbo_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 0.927933,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2024-04-09",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_4_turbo_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 0.428277,
+        "high": 2.196806,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "a78d08c3a744372fbcd4",
+      "model": "gpt_4o_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 6.991195,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2024-05-13",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_4o_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 4.001482,
+        "high": 12.905741,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "89fe68a79e5ee0b61684",
+      "model": "gpt_4o_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 1.267009,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2024-05-13",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_4o_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 0.562997,
+        "high": 3.01517,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "f1fb6d81c0b27d448814",
+      "model": "gpt_5_1_codex_max_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 223.714694,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2025-11-19",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_5_1_codex_max_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 134.31077,
+        "high": 396.206723,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "b5e3e196ffead3daba74",
+      "model": "gpt_5_1_codex_max_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 50.632499,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2025-11-19",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_5_1_codex_max_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 27.30204,
+        "high": 88.365435,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "ccfb455c920ae98dd286",
+      "model": "gpt_5_2",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 352.249302,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2025-12-11",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_5_2",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 198.067494,
+        "high": 815.177445,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "7b106872a6250866f0d5",
+      "model": "gpt_5_2",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 66.002649,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2025-12-11",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_5_2",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 31.665111,
+        "high": 131.730719,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "9160c405c5886a2559f9",
+      "model": "gpt_5_2025_08_07_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 203.012577,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2025-08-07",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_5_2025_08_07_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 112.641357,
+        "high": 405.551565,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "1541c1b348846ae015e5",
+      "model": "gpt_5_2025_08_07_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 38.312431,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2025-08-07",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_5_2025_08_07_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 19.184874,
+        "high": 70.093125,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "a343085a58b8f756a82e",
+      "model": "gpt_5_4",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 341.735276,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2026-03-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_5_4",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 186.581591,
+        "high": 768.779526,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "dd259955d2365220ef3c",
+      "model": "gpt_5_4",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 53.877851,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2026-03-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_5_4",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 23.957027,
+        "high": 108.679232,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "ef2293880076114ae43a",
+      "model": "o1_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 38.831588,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2024-12-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "o1_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 21.164512,
+        "high": 64.95249,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "7f275d0313c0a1834284",
+      "model": "o1_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 7.090121,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2024-12-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "o1_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 3.036033,
+        "high": 16.640636,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "9f7c74a2ffd46205f105",
+      "model": "o1_preview",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 20.326586,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2024-09-12",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "o1_preview",
+        "scaffolds": [
+          "duet",
+          null
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 11.716193,
+        "high": 33.379877,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "56592af267d380291317",
+      "model": "o1_preview",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 4.420545,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2024-09-12",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "o1_preview",
+        "scaffolds": [
+          "duet",
+          null
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 2.012646,
+        "high": 8.912444,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "974bdb94cc16635810a6",
+      "model": "o3_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 119.732634,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2025-04-16",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "o3_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 74.615398,
+        "high": 190.943818,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "fd864cd98ce24d788d3f",
+      "model": "o3_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 29.981603,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2025-04-16",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "o3_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,triframe_inspect/triframe_agent",
+          "ai_rd_fix_embedding/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "re_bench_common/init_solver,use_tools,triframe_inspect/triframe_agent",
+          "metr_tasks_swaa/init_solver,generate",
+          "triframe_inspect/triframe_agent"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 15.127348,
+        "high": 57.823511,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "c31fe983494c44052876",
+      "model": "claude_mythos_preview_early_inspect",
+      "metric": "METR-Horizon-v1.1 · 50% success horizon",
+      "value": 1044.780145,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 50% success horizon",
+      "date": "2026-04-07",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_mythos_preview_early_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 508.876789,
+        "high": 3304.261235,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": "Above 16 hours: METR says measurements are unreliable with this task suite."
+    },
+    {
+      "id": "06a6088d83cd5548af64",
+      "model": "claude_mythos_preview_early_inspect",
+      "metric": "METR-Horizon-v1.1 · 80% success horizon",
+      "value": 185.911829,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.1 · 80% success horizon",
+      "date": "2026-04-07",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.1",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_mythos_preview_early_inspect",
+        "scaffolds": [
+          "mtb/start_metr_task,metr_agents/react",
+          "ai_rd_fix_embedding/init_solver,use_tools,metr_agents/react",
+          "re_bench_common/init_solver,use_tools,metr_agents/react",
+          "metr_tasks_swaa/init_solver,generate",
+          "metr_agents/react"
+        ],
+        "long_tasks_version": "799cc9c4b4483a93fc3445623a49ea1bd74fdeb2",
+        "swaa_version": "f6cc84052e2a79dd540766c8a1b15ff399696371"
+      },
+      "interval": {
+        "low": 97.30292,
+        "high": 398.514614,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "1278dc15e9ceef6db4a8",
+      "model": "claude_3_5_sonnet",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 19.764601,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2024-06-20",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_3_5_sonnet",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 10.531997,
+        "high": 35.808873,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "274e8b01ed800046b6a6",
+      "model": "claude_3_5_sonnet",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 4.192071,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2024-06-20",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_3_5_sonnet",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 1.818235,
+        "high": 10.000262,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "1c12efcd73de92b9f5c9",
+      "model": "claude_3_5_sonnet_20241022",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 30.454555,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2024-10-22",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_3_5_sonnet_20241022",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 14.72191,
+        "high": 60.891717,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "642cbede5f0935aa30f6",
+      "model": "claude_3_5_sonnet_20241022",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 5.907631,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2024-10-22",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_3_5_sonnet_20241022",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 2.249329,
+        "high": 15.195336,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "98d8d1814bab2341f94f",
+      "model": "claude_3_7_sonnet",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 55.258445,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-02-24",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_3_7_sonnet",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 28.87097,
+        "high": 89.187313,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "fdc5a7f197646ca9d31e",
+      "model": "claude_3_7_sonnet",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 20.378794,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-02-24",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_3_7_sonnet",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 7.749991,
+        "high": 43.669897,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "a1140dcdf7b738f409d8",
+      "model": "claude_3_opus",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 7.148402,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2024-03-04",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_3_opus",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 3.217769,
+        "high": 14.764711,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "6835f1660945bb735c67",
+      "model": "claude_3_opus",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 1.578216,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2024-03-04",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_3_opus",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.585264,
+        "high": 4.612595,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "a364c966a1df775b0e40",
+      "model": "claude_4_1_opus",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 109.263038,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-08-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_4_1_opus",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 55.954932,
+        "high": 200.80836,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "c1ab234c48e595541361",
+      "model": "claude_4_1_opus",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 27.289864,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-08-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_4_1_opus",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 8.357108,
+        "high": 66.554968,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "087774967e937d07601e",
+      "model": "claude_4_opus",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 83.567793,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-05-22",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_4_opus",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 44.934856,
+        "high": 140.617499,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "14f1237f5db0d15b91e7",
+      "model": "claude_4_opus",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 26.88671,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-05-22",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_4_opus",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 9.151599,
+        "high": 61.850971,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "715fe4d3521b10080f3c",
+      "model": "claude_4_sonnet",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 73.660733,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-05-22",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_4_sonnet",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 38.322944,
+        "high": 127.091712,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "490f1f9296e17842a56b",
+      "model": "claude_4_sonnet",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 21.948674,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-05-22",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_4_sonnet",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 7.941505,
+        "high": 49.861238,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "d27b7f936ba33d03144b",
+      "model": "claude_opus_4_5",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 246.781803,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-11-24",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_opus_4_5",
+        "scaffolds": [
+          "flock-public",
+          "metr_tasks_swaa/init_solver,generate"
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 104.265659,
+        "high": 821.560215,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "139ac438d41ae84c99f5",
+      "model": "claude_opus_4_5",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 36.039286,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-11-24",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_opus_4_5",
+        "scaffolds": [
+          "flock-public",
+          "metr_tasks_swaa/init_solver,generate"
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 9.313074,
+        "high": 114.200812,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "65d9d9ee11aeabcea729",
+      "model": "claude_sonnet_4_5",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 116.528413,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-09-29",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "claude_sonnet_4_5",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 58.936193,
+        "high": 225.752849,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "510c79863830a352ad63",
+      "model": "claude_sonnet_4_5",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 26.095319,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-09-29",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "claude_sonnet_4_5",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 7.513898,
+        "high": 73.824859,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "b5d0b4cffee8def5e711",
+      "model": "davinci_002",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 0.144057,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2020-05-28",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "davinci_002",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.093319,
+        "high": 0.221209,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "770bec7c92f3e707387a",
+      "model": "davinci_002",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 0.056238,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2020-05-28",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "davinci_002",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.034813,
+        "high": 0.105813,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "ee301982580b60852432",
+      "model": "deepseek_r1",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 27.887616,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-01-20",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "deepseek_r1",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 14.422102,
+        "high": 52.750504,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "e65a81be57368eb5945c",
+      "model": "deepseek_r1",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 5.629461,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-01-20",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "deepseek_r1",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 2.344816,
+        "high": 13.373897,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "0fb66eb713c3d763b959",
+      "model": "deepseek_r1_0528",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 32.764282,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-05-28",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "deepseek_r1_0528",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 13.756178,
+        "high": 64.081849,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "636fa042200693f3c802",
+      "model": "deepseek_r1_0528",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 4.671541,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-05-28",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "deepseek_r1_0528",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 1.353217,
+        "high": 15.485703,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "07404d2f6787a104668e",
+      "model": "deepseek_v3",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 19.822812,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2024-12-26",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "deepseek_v3",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 10.37305,
+        "high": 35.001162,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "103435b58d86f115f7ba",
+      "model": "deepseek_v3",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 5.424593,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2024-12-26",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "deepseek_v3",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 2.208963,
+        "high": 13.145861,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "dff8bd083ba7a657d84f",
+      "model": "deepseek_v3_0324",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 24.594348,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-03-24",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "deepseek_v3_0324",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 12.569662,
+        "high": 43.32637,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "a43d787c898ff7fcc858",
+      "model": "deepseek_v3_0324",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 7.452729,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-03-24",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "deepseek_v3_0324",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 3.283517,
+        "high": 15.876695,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "dba178886908c5e75008",
+      "model": "gemini_2_5_pro_preview",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 40.182282,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-06-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "gemini_2_5_pro_preview",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 20.357511,
+        "high": 69.856777,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "835352b8d291b7cbdff7",
+      "model": "gemini_2_5_pro_preview",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 12.565677,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-06-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "gemini_2_5_pro_preview",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 4.659581,
+        "high": 27.288387,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "08356261f4cfcc6d2f6b",
+      "model": "gpt-oss-120b",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 45.110184,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-08-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt-oss-120b",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 19.901035,
+        "high": 85.537034,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "596a51712901b77d31bf",
+      "model": "gpt-oss-120b",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 8.35222,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-08-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt-oss-120b",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 2.416079,
+        "high": 21.625724,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "8d1354a7c92605afa20e",
+      "model": "gpt2",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 0.053778,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2019-02-14",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt2",
+        "scaffolds": [
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.009994,
+        "high": 0.141825,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "3aa7ff37e031081bbc81",
+      "model": "gpt2",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 0.0128,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2019-02-14",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt2",
+        "scaffolds": [
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.001589,
+        "high": 0.068612,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "f347201f7c0cf7ee230c",
+      "model": "gpt_3_5_turbo_instruct",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 0.599247,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2022-03-15",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_3_5_turbo_instruct",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.255148,
+        "high": 1.115905,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "15813e388d57d0a721da",
+      "model": "gpt_3_5_turbo_instruct",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 0.25538,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2022-03-15",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_3_5_turbo_instruct",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.141649,
+        "high": 0.492933,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "2016b58ed37f9c7bd7ba",
+      "model": "gpt_4",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 6.024114,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2023-03-14",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_4",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 2.768122,
+        "high": 11.721889,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "86eb51c6625bf489d4b0",
+      "model": "gpt_4",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 1.367526,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2023-03-14",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_4",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.495441,
+        "high": 3.856515,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "dd3216f3de86b6faa6a2",
+      "model": "gpt_4_0125",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 6.346859,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2024-01-25",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_4_0125",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 3.267886,
+        "high": 11.553041,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "a2033621e31f737bf730",
+      "model": "gpt_4_0125",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 1.913986,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2024-01-25",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_4_0125",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.854185,
+        "high": 4.699039,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "0e5374459ed8fdc20687",
+      "model": "gpt_4_1106",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 9.394536,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2023-11-06",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_4_1106",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 4.468489,
+        "high": 18.162454,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "50ecde2b1072f7aed836",
+      "model": "gpt_4_1106",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 2.01019,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2023-11-06",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_4_1106",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.73874,
+        "high": 5.666518,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "51ce2ca2712c08d2b862",
+      "model": "gpt_4_turbo",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 7.777455,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2024-04-09",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_4_turbo",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 4.050277,
+        "high": 14.21142,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "a55ba9611c9e35a9997f",
+      "model": "gpt_4_turbo",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 2.492662,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2024-04-09",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_4_turbo",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 1.084966,
+        "high": 6.034151,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "52b3daa66b34f15f197e",
+      "model": "gpt_4o",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 10.174857,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2024-05-13",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_4o",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 5.000948,
+        "high": 19.508766,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "77e3d48127799a34c2f9",
+      "model": "gpt_4o",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 2.374364,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2024-05-13",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_4o",
+        "scaffolds": [
+          "modular-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.947346,
+        "high": 5.947962,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "2b4ddbc3898c2ce94685",
+      "model": "gpt_5",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 130.816528,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-08-07",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_5",
+        "scaffolds": [
+          "flock-secret",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 67.703931,
+        "high": 247.820152,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "67a72421202e10af5e43",
+      "model": "gpt_5",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 32.984347,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-08-07",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_5",
+        "scaffolds": [
+          "flock-secret",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 9.79551,
+        "high": 92.692214,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "599e12388b36ae4502e4",
+      "model": "gpt_5_1_codex_max",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 162.253699,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-11-19",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "gpt_5_1_codex_max",
+        "scaffolds": [
+          "flock-camel",
+          "metr_tasks_swaa/init_solver,generate"
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 80.193214,
+        "high": 336.504695,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "e20f4ad246eb1c9d3c3a",
+      "model": "gpt_5_1_codex_max",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 40.039035,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-11-19",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "gpt_5_1_codex_max",
+        "scaffolds": [
+          "flock-camel",
+          "metr_tasks_swaa/init_solver,generate"
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 10.315095,
+        "high": 129.233087,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "7540521c59d705461560",
+      "model": "grok_4",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 104.84751,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-07-09",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "grok_4",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 47.555449,
+        "high": 208.297605,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "5ca1afd2c742582a79c5",
+      "model": "grok_4",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 18.59131,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-07-09",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "grok_4",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 4.757614,
+        "high": 55.346662,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "3184191fe295a525a640",
+      "model": "kimi_k2_thinking",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 57.621724,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-11-06",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "kimi_k2_thinking",
+        "scaffolds": [
+          "flock-public",
+          "metr_tasks_swaa/init_solver,generate"
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 27.423314,
+        "high": 100.591631,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "52577ac0fc29ebb22d8c",
+      "model": "kimi_k2_thinking",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 15.004943,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-11-06",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "kimi_k2_thinking",
+        "scaffolds": [
+          "flock-public",
+          "metr_tasks_swaa/init_solver,generate"
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 4.37601,
+        "high": 38.984235,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "9414f122294e5299eca9",
+      "model": "o1_elicited",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 41.551706,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2024-12-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "o1_elicited",
+        "scaffolds": [
+          "flock",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 19.822684,
+        "high": 85.806317,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "47fff09c5e53f33abac8",
+      "model": "o1_elicited",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 7.645697,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2024-12-05",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "o1_elicited",
+        "scaffolds": [
+          "flock",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 2.557853,
+        "high": 21.983284,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "e3aa67d67845e7814c5b",
+      "model": "o1_preview",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 23.254728,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2024-09-12",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "o1_preview",
+        "scaffolds": [
+          "duet",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 12.640748,
+        "high": 39.370195,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "3be4b6679f4315146c30",
+      "model": "o1_preview",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 6.418505,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2024-09-12",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "o1_preview",
+        "scaffolds": [
+          "duet",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 2.800499,
+        "high": 13.27718,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "4034dbc3456cfa4c47d6",
+      "model": "o3",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 91.443799,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-04-16",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "o3",
+        "scaffolds": [
+          "flock-secret",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 46.571206,
+        "high": 158.036682,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "047afccd4732877ed8ac",
+      "model": "o3",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 27.30067,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-04-16",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "o3",
+        "scaffolds": [
+          "flock-secret",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 9.243647,
+        "high": 67.256198,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "b1cd78a526afa082d91e",
+      "model": "o4-mini",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 76.748308,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2025-04-16",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "o4-mini",
+        "scaffolds": [
+          "flock-secret",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 37.053517,
+        "high": 142.123876,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "1049ba66466004c6035b",
+      "model": "o4-mini",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 20.147776,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2025-04-16",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "o4-mini",
+        "scaffolds": [
+          "flock-secret",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 6.654501,
+        "high": 52.779547,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "02ae0b38e564fc6b04bb",
+      "model": "qwen_2_5_72b",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 5.813798,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2024-09-19",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "qwen_2_5_72b",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 2.563669,
+        "high": 12.146289,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "3ac2967e1f60a7297bbf",
+      "model": "qwen_2_5_72b",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 1.325385,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2024-09-19",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "qwen_2_5_72b",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.46914,
+        "high": 3.916909,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "c2c7150f0bdebf5e5d1d",
+      "model": "qwen_2_72b",
+      "metric": "METR-Horizon-v1.0 · 50% success horizon",
+      "value": 2.536634,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 50% success horizon",
+      "date": "2024-06-07",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 50,
+        "source_alias": "qwen_2_72b",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.945777,
+        "high": 5.937061,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    },
+    {
+      "id": "f52e514506a9ceb1b8a0",
+      "model": "qwen_2_72b",
+      "metric": "METR-Horizon-v1.0 · 80% success horizon",
+      "value": 0.595157,
+      "unit": "human-baseline minutes",
+      "direction": "Longer task duration at this success threshold",
+      "comparison_group": "METR-Horizon-v1.0 · 80% success horizon",
+      "date": "2024-06-07",
+      "date_basis": "Source model release date; evaluation date not reported",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "details": {
+        "evaluation_version": "METR-Horizon-v1.0",
+        "success_threshold_percent": 80,
+        "source_alias": "qwen_2_72b",
+        "scaffolds": [
+          "flock-public",
+          null
+        ],
+        "long_tasks_version": "2ce7f1e0c4f8b7f2653e7014941a1a9f3ca908e2",
+        "swaa_version": "3d2ab4f0662a752409858a73e006af35e3fb7d64"
+      },
+      "interval": {
+        "low": 0.185057,
+        "high": 1.983832,
+        "level_percent": 95,
+        "method": "METR-reported bootstrapped confidence interval",
+        "unit": "human-baseline minutes"
+      },
+      "caution": null
+    }
+  ],
+  "input_sha256": {
+    "metr-th-1-1": "aae31902b0519a4da73e16643915e5e8aca13cd3315c3aac893ce3d6dfe92ad9",
+    "metr-th-1-0": "f15fd2f13cd8d28f06f5430fabf21dcd1284193ec152bdedc34e11dcc525df66",
+    "metr-source-page": "b04b0262225d5d7dd1620cba01b1ef08db16ed2f3ee89331601b032065d76801",
+    "cc-by-4.0": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+  }
+}

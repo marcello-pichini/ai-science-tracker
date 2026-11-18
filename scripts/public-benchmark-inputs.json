@@ -293,6 +293,33 @@
       ],
       "source_url": "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html",
       "retrieved_on": "2026-11-18"
+    },
+    {
+      "id": "metr",
+      "name": "METR · task-completion time horizons",
+      "attribution": "METR, Measuring AI Ability to Complete Long Tasks (2025), arXiv:2503.14499",
+      "citation_url": "https://arxiv.org/abs/2503.14499",
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_notice": "docs/benchmark-licenses/cc-by-4.0.txt",
+      "permission_confirmed_on": "2026-11-18",
+      "permission_scope": "METR confirmed CC BY 4.0 reuse of public METR data directly. This does not publish the correspondence or license third-party/private tasks.",
+      "scope": "Human-expert task duration at 50% or 80% predicted agent success, measured in minutes. This is task difficulty, not AI runtime, uninterrupted autonomy or job-automation coverage. Versions 1.1 and 1.0 use different suites; scaffolds differ. Estimates above 16 hours are unreliable with this task suite. Source-reported 95% bootstrapped intervals are retained.",
+      "selection": "All scored 50% and 80% horizons in the official public METR-Horizon-v1.1 and v1.0 exports. Version 1.1 is shown first; versions and success thresholds remain separate. Exact source aliases, scaffolds, dataset versions and model-release dates retained. No inferred Epoch joins, trend fits or private task data. Three identical v1.0 baselines stitched into the v1.1 export are retained once under v1.0, not counted as v1.1 reruns.",
+      "maintenance": "Checked daily for changes to these public exports; blocked sources retain the last accepted snapshot. METR states the source page is no longer actively updated.",
+      "source_status": {
+        "actively_updated": false,
+        "page_last_updated": "2026-09-08"
+      },
+      "upstream_revision": "Official versioned METR YAML exports; exact source-byte hashes retained per input.",
+      "retrieved_on": "2026-11-18",
+      "inputs": [
+        "metr-th-1-1",
+        "metr-th-1-0",
+        "metr-source-page",
+        "cc-by-4.0"
+      ],
+      "source_url": "https://metr.org/time-horizons/"
     }
   ],
   "inputs": [
@@ -1205,6 +1232,27 @@
       "download_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/b17ca88fd34809e9161df1ef89fd444acaf598e4/text/latest-00000-of-00001.parquet",
       "source_url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/b17ca88fd34809e9161df1ef89fd444acaf598e4/text/latest-00000-of-00001.parquet",
       "sha256": "928462c23d9e51ea1581e3e6063f5e280834782a0cb943f6922bf3322f06ea16"
+    },
+    {
+      "id": "metr-th-1-1",
+      "file": "metr-th-1-1.yaml",
+      "download_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "source_url": "https://metr.org/assets/benchmark_results_1_1.yaml",
+      "sha256": "aae31902b0519a4da73e16643915e5e8aca13cd3315c3aac893ce3d6dfe92ad9"
+    },
+    {
+      "id": "metr-th-1-0",
+      "file": "metr-th-1-0.yaml",
+      "download_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "source_url": "https://metr.org/assets/benchmark_results_1_0.yaml",
+      "sha256": "f15fd2f13cd8d28f06f5430fabf21dcd1284193ec152bdedc34e11dcc525df66"
+    },
+    {
+      "id": "metr-source-page",
+      "file": "metr-source-page.html",
+      "download_url": "https://metr.org/time-horizons/",
+      "source_url": "https://metr.org/time-horizons/",
+      "sha256": "b04b0262225d5d7dd1620cba01b1ef08db16ed2f3ee89331601b032065d76801"
     }
   ]
 }

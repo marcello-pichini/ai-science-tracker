@@ -16,6 +16,11 @@
   function details(record) {
     return `<details class="source-details"><summary>Configuration and source values</summary>${Object.entries(record.details).map(([key,value]) => `<p><b>${escape(key)}:</b> ${escape(typeof value === 'object' && value !== null ? JSON.stringify(value) : value ?? 'Not reported')}</p>`).join('')}<p>Record: ${escape(record.id)}. ${link(record.source_url, 'Original numerical source')}.</p></details>`;
   }
+  function interval(record) {
+    if (!record.interval) return '';
+    const range = record.interval;
+    return `<small>${escape(range.level_percent)}% CI: ${number(range.low)}–${number(range.high)} ${escape(range.unit)}</small>${record.caution ? `<small>${escape(record.caution)}</small>` : ''}`;
+  }
   function render() {
     if (!current) return;
     const group = el('metric-slice').value, query = el('metric-search').value.trim().toLowerCase();
@@ -24,13 +29,13 @@
     const units = [...new Set(rows.map(r => r.unit))].join(', ');
     el('metric-count').textContent = `${rows.length} of ${current.records.length} source observations shown · ${units || 'no matching observations'} · retrieved ${date(current.retrieved_on)}. Source order retained; counts are not unique models.`;
     el('metric-count-summary').textContent = `${rows.length} source observations shown`;
-    el('metric-results').innerHTML = `<caption>${escape(current.name)} — ${escape(group)}</caption><thead><tr><th scope="col">Exact source label and configuration</th><th scope="col">Source score</th><th scope="col">Source date</th></tr></thead><tbody>${rows.map(r => `<tr><th scope="row">${escape(r.model)}${details(r)}</th><td>${number(r.value)} ${escape(r.unit)}<small>${escape(r.direction)}</small></td><td>${date(r.date)}<small>${escape(r.date_basis)}</small></td></tr>`).join('') || '<tr><td colspan="3">No source observations match this search.</td></tr>'}</tbody>`;
+    el('metric-results').innerHTML = `<caption>${escape(current.name)} — ${escape(group)}</caption><thead><tr><th scope="col">Exact source label and configuration</th><th scope="col">Source score</th><th scope="col">Source date</th></tr></thead><tbody>${rows.map(r => `<tr><th scope="row">${escape(r.model)}${details(r)}</th><td>${number(r.value)} ${escape(r.unit)}${interval(r)}<small>${escape(r.direction)}</small></td><td>${date(r.date)}<small>${escape(r.date_basis)}</small></td></tr>`).join('') || '<tr><td colspan="3">No source observations match this search.</td></tr>'}</tbody>`;
   }
   function selectSource(preferredSlice, clearQuery = true) {
     if (!registry) return;
     const source = registry.sources.find(s => s.id === el('metric-source').value);
     current = snapshots.get(source.id);
-    el('metric-context').innerHTML = `<h3>${escape(source.name)}</h3><p>${escape(source.scope)}</p><p>${escape(source.selection)}</p><p><b>Maintenance:</b> ${escape(source.maintenance)}</p><p><b>Attribution:</b> ${escape(source.attribution)}. ${link(source.license_url, source.license)} · ${link(source.license_notice, 'Full license notice')} · ${link(source.path + '?v=' + source.sha256, 'Download this attributed JSON')} · ${link(source.source_url, 'Original source')}.</p>`;
+    el('metric-context').innerHTML = `<h3>${escape(source.name)}</h3><p>${escape(source.scope)}</p><p>${escape(source.selection)}</p><p><b>Maintenance:</b> ${escape(source.maintenance)}</p>${source.source_status?.page_last_updated ? `<p><b>Source page notice:</b> ${date(source.source_status.page_last_updated)}. ${source.citation_url ? link(source.citation_url, "Research paper") : ""}</p>` : ""}<p><b>Attribution:</b> ${escape(source.attribution)}. ${link(source.license_url, source.license)} · ${link(source.license_notice, 'Full license notice')} · ${link(source.path + '?v=' + source.sha256, 'Download this attributed JSON')} · ${link(source.source_url, 'Original source')}.</p>`;
     const groups = [...new Set(current.records.map(r => r.comparison_group))];
     el('metric-slice').innerHTML = groups.map(group => `<option value="${escape(group)}">${escape(group)}</option>`).join('');
     el('metric-slice').value = groups.includes(preferredSlice) ? preferredSlice : groups[0];

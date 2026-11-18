@@ -29,7 +29,7 @@ class PublicBenchmarkTests(unittest.TestCase):
         registry = json.loads((ROOT / 'data/benchmarks/index.json').read_text())
         manifest = json.loads((ROOT / 'scripts/public-benchmark-inputs.json').read_text())
         inputs = {i['id']: i for i in manifest['inputs']}
-        self.assertEqual(len(registry['sources']), 10)
+        self.assertEqual(len(registry['sources']), 11)
         total = 0
         for source in registry['sources']:
             content = (ROOT / source['path']).read_bytes()

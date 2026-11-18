@@ -26,6 +26,8 @@ jobs:
         env:
           EXPECTED_SHA: ${{ inputs.expected_sha }}
         run: test -z "$EXPECTED_SHA" || test "$EXPECTED_SHA" = "$GITHUB_SHA"
+      - name: Install benchmark YAML reader
+        run: python3 -m pip install PyYAML==6.0.3
       - name: Tests
         run: python3 -m unittest discover -s tests
       - name: Generated files are up to date
