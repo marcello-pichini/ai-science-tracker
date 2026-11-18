@@ -1,7 +1,7 @@
 {
   "id": "2021-05-study-10-1007-s00204-021-03058-4",
   "title": "Selection of safe artemisinin derivatives using a machine learning-based cardiotoxicity platform and in vitro and in vivo validation.",
-  "summary": "Cell assays support reduced toxicity for selected derivatives; no clinical safety claim.",
+  "summary": "A random-forest cardiotoxicity model and additional toxicity filters reduced a 374-derivative library to seven candidates. Artemisinin B was then examined in AC16 cells and zebrafish larvae; these preclinical assays do not establish human safety.",
   "field": "medicine",
   "ai_technology": "Random-forest cardiotoxicity models",
   "organization": "Johannes Gutenberg University Mainz; German Cancer Research Center; National Center for Tumor Diseases",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2021-05-22",
   "added_date": "2026-11-18",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 2,
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Cell assays support reduced toxicity for selected derivatives; no clinical safety claim.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "Random-forest cardiotoxicity models is the AI method documented in the editorial source review.",
+    "tested": "The screen retained 197/374 derivatives, then 17, then seven. Five were available for AC16 viability assays (three independent experiments, six parallel measurements each); one showed moderate cytotoxicity at high concentration. Artemisinin B was tested in 210 zebrafish larvae across seven groups of 30; one death at 0.5 pg/mL and pericardial edema at 1 pg/mL were reported.",
+    "unknown": "The seven-candidate list is a computational screening outcome. The reported cell and zebrafish assays do not establish human safety or clinical cardioprotection; transcriptomic markers are indirect endpoints.",
+    "ai_role": "A leave-one-out random-forest model predicted arrhythmia, cardiac failure, heart block, hypertension and myocardial infarction; DataWarrior and Pro-Tox-II added other toxicity filters.",
     "evidence_urls": [
       "https://doi.org/10.1007/s00204-021-03058-4"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "PMC screening funnel, AC16 viability Methods/Results and Figure 3 caption, zebrafish Methods/Results, and publication metadata."
   }
 }

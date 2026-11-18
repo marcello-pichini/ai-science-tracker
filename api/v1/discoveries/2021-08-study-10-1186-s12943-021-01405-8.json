@@ -1,7 +1,7 @@
 {
   "id": "2021-08-study-10-1186-s12943-021-01405-8",
   "title": "Uncovering cancer vulnerabilities by machine learning prediction of synthetic lethality.",
-  "summary": "The structured primary abstract reports experimental validation of a predicted synthetic-lethal interaction. This supports cancer-cell biology, not demonstrated patient stratification or treatment benefit.",
+  "summary": "PARIS inferred synthetic-lethal interactions from DepMap CRISPR and multi-omic data. Follow-up CRISPR assays supported an ALDH2-BRIP1 dependency in low-ALDH2 cancer-cell models; this is preclinical cell evidence, not patient stratification or treatment benefit.",
   "field": "medicine",
   "ai_technology": "PARIS learned synthetic-lethality predictor",
   "organization": "BioMed X; University Hospital Heidelberg; National Center for Tumor Diseases",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2021-08-28",
   "added_date": "2026-11-18",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 2,
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "The structured primary abstract reports experimental validation of a predicted synthetic-lethal interaction. This supports cancer-cell biology, not demonstrated patient stratification or treatment benefit.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "PARIS learned synthetic-lethality predictor is the AI method documented in the editorial source review.",
+    "tested": "PARIS predicted 15 high-confidence interactions across 549 DNA-damage-repair genes. Experimental follow-up tested ALDH2-BRIP1 in breast cancer cell lines and engineered RPE-1 cells using CRISPR knockouts, colony formation and DNA-damage readouts. The paper separately reports experimental validation of CDKN2A-TYMP-TYMS.",
+    "unknown": "Validation was in cell models and does not establish patient stratification or treatment benefit. The authors note heterozygous Fanconi-anemia-pathway mutations in several cancer lines as a possible background confounder.",
+    "ai_role": "PARIS uses random-forest importance scores and Boruta feature selection to explain CRISPR dependency scores from mutation and expression features across DepMap cell lines, then ranks candidate synthetic-lethal interactions.",
     "evidence_urls": [
       "https://doi.org/10.1186/s12943-021-01405-8"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Full PMC paper, including model description, experimental methods, results and discussion."
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "2021-12-study-10-1016-j-bbrc-2021-12-061",
   "title": "Artificial intelligence-based identification of octenidine as a Bcl-xL inhibitor.",
-  "summary": "The abstract links learned screening to newly reported Bcl-xL binding; NMR and intracellular interaction assays support that result. Cancer-cell inhibition is preclinical evidence only.",
+  "summary": "Deep-learning and docking screening nominated octenidine as a Bcl-xL binder. The abstract reports NMR binding, reduced intracellular Bcl-xL/Bak interaction and cancer-cell effects; full-text methods and quantitative assay details were not assessed.",
   "field": "medicine",
   "ai_technology": "Structural-feature-based deep learning plus molecular docking",
   "organization": "Korea Research Institute of Bioscience and Biotechnology; Korea Advanced Institute of Science and Technology; Korea University of Science and Technology",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2021-12-20",
   "added_date": "2026-11-18",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 2,
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "The abstract links learned screening to newly reported Bcl-xL binding; NMR and intracellular interaction assays support that result. Cancer-cell inhibition is preclinical evidence only.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "Structural-feature-based deep learning plus molecular docking is the AI method documented in the editorial source review.",
+    "tested": "The primary abstract reports NMR binding to the Bcl-xL BH3-binding region, NanoBiT inhibition of Bcl-xL/Bak-BH3 interaction in cells, and apoptosis-associated proliferation inhibition in MCF-7 and H1299 cells. Denominators and quantitative potency were not stated in the reviewed abstract.",
+    "unknown": "Only the PubMed abstract and metadata were reviewed. Full-text methods, concentrations, denominators, quantitative binding data and detailed controls were not assessed; cell results do not establish treatment efficacy.",
+    "ai_role": "The primary abstract reports structural-feature-based deep learning and molecular docking to screen an approved-drug library; architecture, training data and candidate denominator were not assessable from the abstract.",
     "evidence_urls": [
       "https://doi.org/10.1016/j.bbrc.2021.12.061"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Primary PubMed abstract and bibliographic metadata only; full text not reviewed."
   }
 }

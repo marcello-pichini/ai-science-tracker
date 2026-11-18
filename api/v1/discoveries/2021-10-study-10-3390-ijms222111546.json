@@ -1,7 +1,7 @@
 {
   "id": "2021-10-study-10-3390-ijms222111546",
   "title": "Machine Learning Assisted Approach for Finding Novel High Activity Agonists of Human Ectopic Olfactory Receptors.",
-  "summary": "Database screening and receptor assays yielded three high-activity agonists; receptor activation does not demonstrate a therapy.",
+  "summary": "Random-forest screening and docking prioritized candidates from five databases; luciferase assays identified two OR1A1 agonists and one OR2W1 agonist. These receptor-activation assays do not establish a therapeutic effect.",
   "field": "medicine",
   "ai_technology": "Random forest classifier",
   "organization": "Macquarie University; Duke University; Duke Medical Center",
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Database screening and receptor assays yielded three high-activity agonists; receptor activation does not demonstrate a therapy.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "Random forest classifier is the AI method documented in the editorial source review.",
+    "tested": "Luciferase dose-response assays identified two OR1A1 agonists with EC50 95% confidence intervals of 11.5–24.4 and 12.2–25.0 μM, and 2-ethoxynaphthalene as an OR2W1 agonist with interval 3.05–6.59 μM. Benzophenone was the positive activation control. Other selected compounds were inactive or weak activators.",
+    "unknown": "Only selected candidates were experimentally tested; classifier sensitivity and F1 scores were below 0.80. Receptor activation in this assay does not establish physiological or therapeutic effects.",
+    "ai_role": "Random-forest classifiers trained on molecular descriptors ranked database compounds within training-like chemical space; docking helped select candidates for receptor luciferase assays.",
     "evidence_urls": [
       "https://doi.org/10.3390/ijms222111546"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "PMC primary abstract and indexed primary screening/luciferase Results including control and 95% EC50 confidence intervals; complete Methods not independently reviewed."
   }
 }

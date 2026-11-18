@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-page-snapshot="dbb99d4fab32144ee19e898786bc247792549ff2af538cb03e507382e75a7952">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,9 +22,9 @@
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=f7ee2e330613">
+<link rel="stylesheet" href="styles.css?v=23f6b9beaa5b">
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker discovery catalog","description":"Scientific discoveries enabled by AI and related model families, sourced from original papers, preprints and institutional announcements.","url":"https://aisciencetracker.org/index.html","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://aisciencetracker.org/data/discoveries.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://aisciencetracker.org/data/discoveries.csv"}],"isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","keywords":["artificial intelligence","scientific discovery","AI for science"],"@id":"https://aisciencetracker.org/index.html#dataset"}
+{"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker discovery catalog","description":"Scientific discoveries enabled by AI and related model families, sourced from original papers, preprints and institutional announcements.","url":"https://aisciencetracker.org/dataset.html#scientific-dataset","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://aisciencetracker.org/data/discoveries.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://aisciencetracker.org/data/discoveries.csv"}],"isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","keywords":["artificial intelligence","scientific discovery","AI for science"],"@id":"https://aisciencetracker.org/index.html#dataset"}
 </script>
 </head>
 <body>
@@ -94,13 +94,17 @@
   <p>For new or revised annotations, distinguish three cases explicitly in the text: &ldquo;Not assessed&rdquo; when relevant material was not reviewed or was inaccessible; &ldquo;Not stated in the reviewed material&rdquo; when the pages read omit the detail; and a scientific unknown only when a cited source identifies it as unresolved. State &ldquo;Not applicable&rdquo; only with an explanation. An inaccessible full paper cannot establish that it omits a detail, and an omitted detail cannot establish scientific uncertainty.</p>
   <p>Earlier pilot fields labeled &ldquo;Not reported&rdquo; do not reliably distinguish these cases and should be treated as unspecified annotation gaps until reviewed. No annotation means not annotated in this catalog, not absent scientific evidence. Record the actual review scope (announcement, abstract or full paper) and review date when a new review is performed; do not infer them from publication or catalog addition dates or backfill unrecorded historical checks. Optional structured review provenance now records the actual date and bounded scope of new checks. Older entries without it retain an explicit missing-review label; dates are never inferred from publication or addition.</p>
 
+  <p>New source reviews and transitions from pending to source-checked require the actual review day and bounded material read. A provenance preflight checks changed review/status fields; untouched historical unknown metadata remains valid. This check does not authenticate scientific reading. The <a href="docs/datasets.md">dataset documentation</a> describes the review workflow.</p>
   <h2>Follow-up and scientific relationships</h2>
   <p>Optional source-backed events distinguish publication, same-team extension, independent follow-up, documented application, contradiction, correction and retraction. Event dates retain their recorded year, month or day precision; the recording date is separate. A journal transition is not replication. Missing follow-up means none recorded here, not none exists. Review scope is displayed only where actually recorded; the catalog does not claim continuous monitoring.</p>
   <p>Directed relationships identify the same result, an extension, independent follow-up or shared evidence, with a source and bounded reason. They preserve historical IDs and do not merge counts. The <a href="antibiotic-dossier.html">antibiotic dossier</a> illustrates a limited synthesis; <a href="model-progress.html">model progress</a> describes benchmark and release-date evidence separately from scientific outcomes.</p>
   <h2 id="evidence-coverage">Evidence and coverage</h2>
   <p>These tables describe all active entries in the loaded catalog, grouped by their recorded publication year. Annotation coverage counts the presence of the optional evidence block, regardless of its contents. Source composition counts each entry once by its primary source type, even if it also links a paper. Neither table measures scientific quality, independent confirmation, or how much research exists outside this collection.</p>
+  <p>These are collection-coverage and acquisition gaps, not missing research. Years use the publication/announcement policy below, not acquisition year; <code>added_date</code> separately records catalog acquisition. Structured review means a recorded review day and bounded scope, not necessarily full-text access. Missing review metadata does not prove a source was never checked.</p>
   <p id="coverage-status" role="status">Coverage tables require JavaScript. The raw discovery data is linked below.</p>
   <div id="coverage-tables" hidden>
+    <div class="tabella-scorre" tabindex="0" role="region" aria-label="Acquisition coverage by field and publication year"><table class="tab-mini"><caption>Collection acquisition and review gaps by field / publication year; each fraction uses that row's total</caption><thead><tr><th scope="col">Field / year</th><th scope="col">All entries</th><th scope="col">Paper / all</th><th scope="col">Blog / all</th><th scope="col">Press release / all</th><th scope="col">Other / all</th><th scope="col">Source check pending / all</th><th scope="col">Review day + scope / all</th><th scope="col">Review metadata missing / all</th></tr></thead><tbody id="coverage-field-years"></tbody></table></div>
+    <p>No row means no active entry in this catalog cell; it does not establish that a field or year has no AI-enabled research. Source composition uses the stored primary source type once per entry. Sparse cells and source-check/review gaps guide future acquisition and source reading.</p>
     <div class="tabella-scorre"><table class="tab-mini">
       <caption>Evidence annotation coverage by publication year</caption>
       <thead><tr><th scope="col">Year</th><th scope="col">All entries</th><th scope="col">Annotated / all</th><th scope="col">Unannotated / all</th></tr></thead>
@@ -173,7 +177,7 @@
     <li>Collection is manual and not exhaustive; selection depends on the sources reviewed so far.</li>
     <li>Companies describe their own results, so the tone may be promotional and claims are not independently assessed.</li>
     <li>Entries come from original papers, preprints and institutional announcements. The catalog reflects publication and announcement choices as well as our manual selection; the home page states how concentrated the primary-source websites are.</li>
-    <li>Organizations are separated with semicolons and counted under the first complete institution name in charts. Commas and conjunctions inside an institution name are preserved; historical ambiguous profiles link to the organization directory.</li>
+    <li>Organizations are separated with semicolons and counted under the first complete institution name in charts. Reviewed exact aliases group MIT with Massachusetts Institute of Technology; original source labels remain unchanged. Unknown affiliation is separate from institutions. Commas and conjunctions inside an institution name are preserved; historical ambiguous profiles link to the organization directory.</li>
   </ul>
     </article>
   </div>
@@ -187,6 +191,7 @@
     <p>Privacy: this site sets no cookies and uses Cloudflare Web Analytics for aggregate visit statistics (page, referrer, browser, IP address) under legitimate interest (GDPR Art. 6(1)(f)). Cloudflare acts as our processor and may process data in the United States under the EU-US Data Privacy Framework. To object or exercise your rights, <a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new">open an issue</a>.</p>
   </div>
 </footer>
+<script src="assets/catalog-data.js?v=100014eb08f1"></script>
 <script id="coverage-metrics">
 function coverageByYear(entries) {
   const years = new Map();
@@ -200,15 +205,23 @@ function coverageByYear(entries) {
   }
   return [...years.values()].sort((a, b) => a.year.localeCompare(b.year));
 }
+function coverageByFieldYear(entries) {
+  const cells = new Map();
+  for (const entry of entries) {
+    const field = entry.field, year = entry.publication_date.slice(0, 4), key = field + '/' + year;
+    if (!cells.has(key)) cells.set(key, {field, year, total:0, pending:0, reviewed:0, sources:{paper:0, blog:0, 'press release':0, other:0}});
+    const row = cells.get(key); row.total++; row.sources[entry.source_type]++;
+    if (entry.verification_status !== 'verified') row.pending++;
+    if (entry.source_review?.date && entry.source_review?.scope) row.reviewed++;
+  }
+  return [...cells.values()].sort((a,b) => a.field.localeCompare(b.field, 'en') || a.year.localeCompare(b.year));
+}
 </script>
 <script>
-async function loadCoverage() {
+CatalogData.run(['discoveries'], loaded => {
   const status = document.getElementById('coverage-status');
   status.textContent = 'Loading catalog coverage…';
-  try {
-    const response = await fetch('data/discoveries.json');
-    if (!response.ok) throw new Error('Catalog unavailable');
-    const entries = await response.json();
+    const entries = loaded.data.discoveries;
     if (!Array.isArray(entries)) throw new Error('Invalid catalog');
     const rows = coverageByYear(entries);
     const appendRow = (id, values) => {
@@ -221,6 +234,8 @@ async function loadCoverage() {
       });
       document.getElementById(id).appendChild(tr);
     };
+    ['coverage-years','coverage-sources','coverage-field-years'].forEach(id => document.getElementById(id).replaceChildren());
+    coverageByFieldYear(entries).forEach(row => appendRow('coverage-field-years', [row.field + ' / ' + row.year, row.total, ...['paper','blog','press release','other'].map(type => `${row.sources[type]} / ${row.total}`), `${row.pending} / ${row.total}`, `${row.reviewed} / ${row.total}`, `${row.total - row.reviewed} / ${row.total}`]));
     rows.forEach(row => {
       appendRow('coverage-years', [row.year, row.total, `${row.annotated} / ${row.total}`, `${row.missing} / ${row.total}`]);
       appendRow('coverage-sources', [row.year, ...['paper', 'blog', 'press release', 'other'].map(type => `${row.sources[type]} / ${row.total}`)]);
@@ -229,11 +244,7 @@ async function loadCoverage() {
     status.textContent = `${entries.length} active catalog entries: ${annotated} / ${entries.length} annotated; ${entries.length - annotated} / ${entries.length} unannotated.`;
     if (!entries.length) status.textContent = 'The loaded catalog contains no active entries.';
     document.getElementById('coverage-tables').hidden = !entries.length;
-  } catch (error) {
-    status.textContent = 'Coverage could not be loaded. Use the raw discovery data link below to inspect the catalog.';
-  }
-}
-loadCoverage();
+}, {clear:() => {document.getElementById('coverage-tables').hidden = true; ['coverage-years','coverage-sources','coverage-field-years'].forEach(id => document.getElementById(id).replaceChildren());}});
 </script>
 </body>
 </html>

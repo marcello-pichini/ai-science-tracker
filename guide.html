@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=f7ee2e330613">
+<link rel="stylesheet" href="styles.css?v=23f6b9beaa5b">
 </head>
 <body>
 <header class="header">
@@ -63,6 +63,8 @@
       <ul>
         <li><strong>Fields:</strong> the buttons under “Explore by field” filter by science field; the number is the discovery count.</li>
         <li><strong>Charts:</strong> click a row (field or organization) or a year in “By the numbers” to filter the list; click it again to clear. Aggregate charts describe the full catalog, even when the list is filtered.</li>
+        <li><strong>Data snapshot:</strong> collection views validate the actual loaded file bytes against one component manifest. If files differ during deployment, loading retries once; a persistent mismatch shows Retry and downloads instead of stale search results. The visible snapshot and component hashes describe the data used by the view.</li>
+        <li><strong>Entity names:</strong> reviewed exact aliases group MIT/Massachusetts Institute of Technology and source-attributed AISLE labels. Complete original labels remain on records; an AISLE vendor group does not identify a specific model, version or autonomous role. Unknown affiliations are separate from institutions.</li>
         <li><strong>Filter bar:</strong> search text, organization, year, model family, minimum relevance and sort order. “Clear filters” resets everything.</li>
         <li><strong>Copy filter link:</strong> every filter is stored in the address, so you can share or bookmark the exact view.</li>
       </ul>

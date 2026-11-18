@@ -19,12 +19,16 @@
   "evidence": {
     "publication_status": "Peer-reviewed paper",
     "tested": "Manual-analysis and prior-segmentation comparisons; applications to neuron types, gene-therapy products, gerbil cochleae and lower-resolution mouse and marmoset imaging. The abstract does not state the specific biological outcomes.",
-    "unknown": "The journal body was not accessible through the publisher (HTTP 403), and the linked preprint full-text API returned HTTP 500. Original preprint abstract adds no specific gene-therapy result. Eligibility remains unresolved until the actual application finding is read.",
+    "unknown": "The journal abstract reports neuron-type analyses and gene-therapy-product validation without stating their specific biological or product-comparison outcomes. Complete Methods and Results, sample sizes and the distinction between tool validation and biological or therapeutic validation were not assessed. This omission does not establish that the paper contains no qualifying finding.",
     "ai_role": "Deep learning framework that reconstructs the cochlea and segments hair cells, neurons and synapses, and quantifies tonotopy and gene expression.",
     "evidence_urls": [
       "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1016%2Fj.ymthe.2026.10.025%22&resultType=core&format=json",
       "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3APPR1120449&resultType=core&format=json"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Indexed primary Molecular Therapy journal abstract and metadata, and the author-institution page reproducing the 2025 preprint abstract. Complete primary Methods and Results were not accessed; journal and preprint evidence were kept version-specific."
   }
 }

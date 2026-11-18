@@ -1,7 +1,7 @@
 {
   "id": "2026-11-human-in-loop-ai-copilot-structural-design",
   "title": "Human-in-the-loop AI copilot improves topology-optimized structure design",
-  "summary": "MIT’s November 13, 2026 announcement describes a machine-learning copilot that flags regions for human edits during topology optimization. It reports improved manufacturability and buckling-load performance, but the reviewed announcement identifies no separate structural discovery or experimentally demonstrated new structure beyond testing the design workflow. Synthetic feedback training and limited thickening/thinning edits are acknowledged. The full journal paper was not assessed. The publisher abstract specifies improved manufacturability or a 39% linear-buckling-load improvement; it does not assign 39% to both metrics. The paper was published November 10; this entry represents the November 13 announcement.",
+  "summary": "A U-Net trained on synthetic preference labels recommended regions for human edits in topology-optimization demonstrations. An L-bracket example had about 39% higher simulated linear buckling load. This validates a design workflow; physical fabrication or load testing was not established by the reviewed material.",
   "field": "other",
   "ai_technology": "Human-in-the-loop AI copilot with topology optimization (machine-learning region-flagging model)",
   "organization": "MIT; Georgia Institute of Technology",
@@ -19,12 +19,16 @@
   "evidence": {
     "publication_status": "Peer-reviewed paper",
     "tested": "Computational topology-optimization workflow demonstrations; no separate structural finding established in reviewed scope.",
-    "unknown": "Admission review pending: primary full results needed to distinguish a specific scientific/application result from general method validation. Existing supported claims may be retained with bounded scope, but do not mark source checked until admission is resolved.",
+    "unknown": "The reviewed demonstrations are computational; they do not establish physical load-test performance or in-service structural outcomes. Compliance and timing comparisons differ between the article text, table and abstract and were not reconciled in this review. The training preferences were synthetic, and users modified the recommended regions.",
     "ai_role": "A machine-learning model quickly identifies design regions a human would likely want to change, within a topology optimization workflow.",
     "evidence_urls": [
       "https://news.mit.edu/2026/new-ai-copilot-helps-engineers-design-better-structures-1113",
       "https://www.nature.com/articles/s44172-026-00818-x"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Primary journal PDF Results, Methods, Table 1 and Discussion; indexed publisher publication metadata. Reviewed results concern computational topology-optimization demonstrations and simulated linear buckling."
   }
 }

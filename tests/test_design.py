@@ -2,11 +2,30 @@
 import re
 import hashlib
 import unittest
+from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = [ROOT / n for n in ('index.html', 'models.html', 'methodology.html', 'profile.html', 'guide.html', 'security.html', 'dataset.html', 'contributors.html', 'model-progress.html', 'search.html', 'antibiotic-dossier.html')]
 COLOR = re.compile(r'#[0-9a-fA-F]{3,8}\b|rgba?\(')
+
+
+class RootLanguageParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.root_seen = False
+        self.language = None
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'html' and not self.root_seen:
+            self.root_seen = True
+            self.language = dict(attrs).get('lang')
+
+
+def document_language(text):
+    parser = RootLanguageParser()
+    parser.feed(text)
+    return parser.language
 
 
 def css_outside_root(css):
@@ -15,6 +34,18 @@ def css_outside_root(css):
 
 
 class DesignTests(unittest.TestCase):
+    def test_root_language_allows_snapshot_attributes_and_rejects_missing_or_other_languages(self):
+        for text, expected in (
+            ('<html lang="en">', 'en'),
+            ('<html lang="en" data-page-snapshot="abc">', 'en'),
+            ("<HTML data-page-snapshot='abc' LANG='en'>", 'en'),
+            ('<html lang="it" data-page-snapshot="abc">', 'it'),
+            ('<html data-lang="en">', None),
+            ('<!-- <html lang="en"> --><html>', None),
+        ):
+            with self.subTest(text=text):
+                self.assertEqual(document_language(text), expected)
+
     def test_shared_script_urls_identify_the_current_content(self):
         digest = hashlib.sha256((ROOT / 'assets/catalog-ui.js').read_bytes()).hexdigest()[:12]
         for page in PAGES:
@@ -35,7 +66,7 @@ class DesignTests(unittest.TestCase):
         for page in PAGES:
             text = page.read_text()
             with self.subTest(page=page.name):
-                self.assertIn('<html lang="en">', text)
+                self.assertEqual(document_language(text), 'en')
                 self.assertRegex(text, r'href="styles.css\?v=[a-f0-9]{12}"')
                 self.assertIn('assets/fonts/schibsted-grotesk-latin.woff2', text)
                 self.assertNotIn('<style', text)

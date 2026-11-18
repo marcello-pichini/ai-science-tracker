@@ -1,7 +1,7 @@
 {
   "id": "2021-03-study-10-1038-s41565-021-00870-y",
   "title": "Computationally guided high-throughput design of self-assembling drug nanoparticles.",
-  "summary": "A trained random forest nominated six new drug/excipient pairs; light scattering and microscopy confirmed nanoparticles. Preclinical formulation evidence, not patient efficacy.",
+  "summary": "Machine learning integrated with high-throughput experiments identified 100 self-assembling drug nanoparticles from 2.1 million drug/excipient pairings. Two formulations were further characterized ex vivo and in vivo; the reviewed abstract does not establish clinical benefit.",
   "field": "medicine",
   "ai_technology": "Random-forest co-aggregation classifier",
   "organization": "Brigham and Women's Hospital; Harvard University; Duke University",
@@ -18,13 +18,17 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "A trained random forest nominated six new drug/excipient pairs; light scattering and microscopy confirmed nanoparticles. Preclinical formulation evidence, not patient efficacy.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "Random-forest co-aggregation classifier is the AI method documented in the editorial source review.",
+    "tested": "The primary abstract reports 100 self-assembling formulations identified from a search space of 2.1 million drug/excipient pairings (788 drugs, 2,686 excipients). Sorafenib–glycyrrhizin and terbinafine–taurocholic acid received further ex-vivo/in-vivo characterization. Actual physical-screen denominator, sample sizes and controls were not assessed.",
+    "unknown": "Only publisher abstract and metadata were reviewed; article Methods and supplement were inaccessible through PMC due CAPTCHA. Model architecture, screen controls, sample sizes and detailed ex-vivo/in-vivo outcomes were not assessed.",
+    "ai_role": "The abstract confirms machine learning integrated with high-throughput experimentation; model architecture and precise selection operation were not assessable from the reviewed material.",
     "evidence_urls": [
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC8197729/",
       "https://doi.org/10.1038/s41565-021-00870-y"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Indexed primary PubMed metadata and author-institution abstract; complete Nature/PMC Methods and supplement not accessible."
   }
 }

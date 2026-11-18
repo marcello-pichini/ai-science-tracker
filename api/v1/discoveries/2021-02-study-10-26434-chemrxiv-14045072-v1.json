@@ -1,7 +1,7 @@
 {
   "id": "2021-02-study-10-26434-chemrxiv-14045072-v1",
   "title": "A Bag of Tricks for Automated De Novo Design of Molecules with the Desired Properties: Application to EGFR Inhibitor Discovery",
-  "summary": "A learned generator produced EGFR candidates reported as experimentally potent. Assay details are absent from the abstract; decision applies to the cited v1 result, not an assumed later version.",
+  "summary": "A deep recurrent generator with reinforcement learning nominated EGFR compounds; enzyme assays confirmed 4 of 15 predicted actives, including two with nanomolar potency. Five predicted-inactive controls were inactive. This is a small preclinical proof of concept.",
   "field": "medicine",
   "ai_technology": "Generative recurrent neural network with reinforcement learning",
   "organization": "Carnegie Mellon University; University of Oxford; University of North Carolina at Chapel Hill",
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Preprint",
-    "tested": "A learned generator produced EGFR candidates reported as experimentally potent. Assay details are absent from the abstract; decision applies to the cited v1 result, not an assumed later version.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "Generative recurrent neural network with reinforcement learning is the AI method documented in the editorial source review.",
+    "tested": "The v1 preprint reports four confirmed inhibitors among 15 assayed predicted actives and five inactive predicted-inactive controls. Two predicted-active compounds were insoluble and not assayed. Two hits had nanomolar inhibition comparable to staurosporine; the selected-batch hit fraction does not establish a general success rate.",
+    "unknown": "The result is a proof-of-concept assay on 15 predicted actives and five predicted-inactive controls. The preprint does not establish therapeutic efficacy or generalize its hit rate beyond this target and protocol.",
+    "ai_role": "A deep recurrent neural network generated SMILES molecules; reinforcement learning used an EGFR random-forest activity predictor with transfer learning, experience replay and reward shaping to guide generation and selection.",
     "evidence_urls": [
       "https://doi.org/10.26434/chemrxiv.14045072.v1"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Original ChemRxiv v1 PDF initial sections plus indexed primary assay/summary passages and official version metadata; complete PDF not independently re-read."
   }
 }

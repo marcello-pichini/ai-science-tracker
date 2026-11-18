@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "scope": "Reviewed exact alias grouping; original organization and AI-system labels are retained in source records. Vendor grouping is not an exact model identity or independent verification.",
+  "organizations": [
+    {
+      "id": "org-mit",
+      "label": "Massachusetts Institute of Technology",
+      "kind": "institution",
+      "aliases": [
+        "MIT",
+        "Massachusetts Institute of Technology"
+      ],
+      "basis": "Official MIT about page explicitly names MIT and Massachusetts Institute of Technology. Alias identity only; no corpus revalidation.",
+      "source_urls": [
+        "https://www.mit.edu/about/"
+      ],
+      "reviewed_on": "2026-11-18"
+    },
+    {
+      "id": "unknown-affiliation",
+      "label": "Affiliation not reported",
+      "kind": "unknown affiliation",
+      "aliases": [
+        "Not stated in the abstract reviewed",
+        "Alexandr Grebennikov (affiliation not stated in arXiv record)",
+        "Xinglong Wu (author affiliation not stated in the arXiv record)"
+      ],
+      "basis": "These exact catalog labels explicitly state that affiliation was not established; named authors remain in original record labels.",
+      "source_urls": []
+    }
+  ],
+  "systems": [
+    {
+      "id": "vendor-aisle",
+      "label": "AISLE (source-attributed vendor group)",
+      "kind": "source-attributed vendor",
+      "aliases": [
+        "AISLE AI analyzer (specific model/version not disclosed)",
+        "AISLE AI system",
+        "AISLE AI system (model not named)",
+        "AISLE AI system (specific model not identified)",
+        "AISLE AI-native analyzer (specific model/version not disclosed)",
+        "AISLE AI-native discovery engine (model/version not disclosed)",
+        "AISLE AI-native discovery engine (specific model not identified)",
+        "AISLE AI-native engine (specific model not identified)",
+        "AISLE AI-native engine (specific model/version not disclosed)",
+        "AISLE AI-native vulnerability discovery engine (model/version not disclosed)",
+        "AISLE AI-native vulnerability discovery engine (specific model not disclosed)",
+        "AISLE analyzer (specific model not identified)",
+        "AISLE analyzer (specific model/version not disclosed)",
+        "AISLE analyzer agents (specific model/version not disclosed)",
+        "AISLE autonomous AI vulnerability detection system (model versions not disclosed)",
+        "AISLE autonomous AI vulnerability discovery system (model versions not disclosed)",
+        "AISLE autonomous analyzer (specific model/version not disclosed)",
+        "AISLE autonomous security analyzer (model not named)",
+        "AISLE autonomous system (specific model/version not disclosed)",
+        "AISLE multi-model AI vulnerability discovery engine (model versions not disclosed)",
+        "AISLE multi-model AI vulnerability discovery system (model versions not disclosed)"
+      ],
+      "basis": "The cited disclosure attributes the AISLE platform. Grouping exact source-attributed AISLE labels does not identify a specific model/version or validate autonomy, independence or comparative effectiveness.",
+      "source_urls": [
+        "https://aisle.com/cve-discoveries/cve-2026-125201"
+      ],
+      "reviewed_on": "2026-11-18"
+    }
+  ]
+}

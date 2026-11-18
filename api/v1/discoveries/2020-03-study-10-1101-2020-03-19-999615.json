@@ -1,7 +1,7 @@
 {
   "id": "2020-03-study-10-1101-2020-03-19-999615",
   "title": "Automated design and optimization of multitarget schizophrenia drug candidates by deep learning",
-  "summary": "The preprint reports synthesis and receptor testing of generated candidates, followed by animal-model activity. Evidence is preclinical and preprint-specific, not clinical efficacy.",
+  "summary": "The later journal abstract reports a deep recurrent generator and multitask activity network, receptor testing of compound 3 and six analogs, and animal-model antipsychotic effects for compound 8 with low reported sedation/catalepsy potential. These are preclinical results. Journal online publication was 2020-07-12; the original preprint’s posting date and version-specific results remain unchecked.",
   "field": "medicine",
   "ai_technology": "Deep recurrent generator and multitask deep neural network",
   "organization": "Shanghai Institute of Materia Medica, Chinese Academy of Sciences",
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Preprint",
-    "tested": "The preprint reports synthesis and receptor testing of generated candidates, followed by animal-model activity. Evidence is preclinical and preprint-specific, not clinical efficacy.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "Deep recurrent generator and multitask deep neural network is the AI method documented in the editorial source review.",
+    "tested": "The journal abstract reports synthesis and receptor testing of compound 3, experimental evaluation of six analogs, and animal-model testing of compound 8. The accessible abstract does not provide animal species, sample sizes, dose, comparator, or behavioral endpoint details.",
+    "unknown": "Animal model, group sizes, dose, comparator, and behavioral endpoints were not available in the reviewed abstract. No human safety or efficacy was established. The record's date refers to the preprint, while the journal version was online 2020-07-12 and assigned to the 2020-10-15 issue.",
+    "ai_role": "A deep recurrent neural network generated and iteratively refined candidate molecules; a multitask deep neural network predicted D2, 5-HT1A, and 5-HT2A activity to rank candidates and guide hit expansion.",
     "evidence_urls": [
       "https://doi.org/10.1101/2020.03.19.999615"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Indexed primary PubMed journal abstract and online/issue dates; official bioRxiv v1 and full journal Methods not accessed."
   }
 }

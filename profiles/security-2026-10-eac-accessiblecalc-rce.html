@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+<script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/data/*"}},{"not":{"href_matches":"/api/*"}},{"not":{"href_matches":"/og/*"}},{"not":{"href_matches":"/*.xml"}},{"not":{"href_matches":"/*.txt"}}]},"eagerness":"moderate"}]}</script><!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "04bfc0ca5b5e4460b4c8ee6bb5055925"}'></script><!-- End Cloudflare Web Analytics -->
+<title>XBOW autonomously found unauthenticated RCE in the EAC Accessible Voting Machines Calculator · AI Science Tracker</title>
+<meta name="description" content="A crafted unauthenticated simulation request reached Python expression evaluation in the calculator backend, enabling remote code execution as root inside its backend container.">
+<link rel="canonical" href="https://aisciencetracker.org/profiles/security-2026-10-eac-accessiblecalc-rce.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Science Tracker">
+<meta property="og:title" content="XBOW autonomously found unauthenticated RCE in the EAC Accessible Voting Machines Calculator">
+<meta property="og:description" content="A crafted unauthenticated simulation request reached Python expression evaluation in the calculator backend, enabling remote code execution as root inside its backend container.">
+<meta property="og:url" content="https://aisciencetracker.org/profiles/security-2026-10-eac-accessiblecalc-rce.html">
+<meta property="og:image" content="https://aisciencetracker.org/og/default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#12367e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" href="../assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../styles.css?v=23f6b9beaa5b">
+<script type="application/ld+json">
+{"@context":"https://schema.org/","@type":"WebPage","name":"XBOW autonomously found unauthenticated RCE in the EAC Accessible Voting Machines Calculator","description":"A crafted unauthenticated simulation request reached Python expression evaluation in the calculator backend, enabling remote code execution as root inside its backend container.","url":"https://aisciencetracker.org/profiles/security-2026-10-eac-accessiblecalc-rce.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},"isPartOf":{"@type":"Dataset","@id":"https://aisciencetracker.org/dataset.html#security-dataset","name":"AI Science Tracker AI-found vulnerability catalog","url":"https://aisciencetracker.org/dataset.html#security-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/index.html"},{"@type":"ListItem","position":2,"name":"XBOW autonomously found unauthenticated RCE in the EAC Accessible Voting Machines Calculator","item":"https://aisciencetracker.org/profiles/security-2026-10-eac-accessiblecalc-rce.html"}]}}
+</script>
+</head>
+<body class="static-page">
+<header class="header">
+  <div class="wrap">
+    <a class="marchio" href="../index.html" aria-label="AI Science Tracker, home page">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <span>AI Science Tracker</span>
+    </a>
+    <nav class="menu" aria-label="Site sections"><a href="../index.html">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav>
+  </div>
+</header>
+
+<section class="banda banda-bassa" aria-labelledby="titolo-pagina">
+  <div class="wrap">
+    <h1 id="titolo-pagina">XBOW autonomously found unauthenticated RCE in the EAC Accessible Voting Machines Calculator</h1>
+    <p class="lead">U.S. Election Assistance Commission Accessible Voting Machines Calculator (accessiblecalc.eac.gov, /ulteac/run-simulation) · AI involvement attributed to XBOW Public-XBOW autonomous security testing platform</p>
+  </div>
+</section>
+
+<main>
+  <section class="sez"><div class="wrap">
+    <div class="piatto"><article class="voce" id="2026-10-eac-accessiblecalc-rce"><h2>Finding and attribution</h2><p class="sommario">A crafted unauthenticated simulation request reached Python expression evaluation in the calculator backend, enabling remote code execution as root inside its backend container. XBOW reports that the EAC validated and fixed the issue before the November 3, 2026 election.</p><p><strong>Product:</strong> U.S. Election Assistance Commission Accessible Voting Machines Calculator (accessiblecalc.eac.gov, /ulteac/run-simulation). <strong>AI system:</strong> XBOW Public-XBOW autonomous security testing platform. <strong>Team / organization:</strong> XBOW; U.S. Election Assistance Commission.</p><p><strong>CVE identifiers:</strong> Not established in the cited evidence.</p><p><strong>AI and human contribution (source account):</strong> XBOW’s case-specific research account says its platform autonomously discovered and validated this RCE; its stated workflow has human researchers verify potential findings and reporting criteria. The account does not identify a model version or provide an exact AI run/report date. This issue affected the EAC logistics calculator, not voting machines or voter-registration systems.</p><p>Human involvement is only described where the source account establishes it; unknown involvement does not mean none. Vendor confirmation of a flaw does not confirm every claim about AI contribution.</p><p><strong>Discovery context:</strong> The public finder writeup identifies a real, individually described security flaw and reports validation and remediation by the EAC. No CVE or public vendor issue number was assigned in the sources reviewed. The writeup concerns an accessibility-resource calculator; it does not claim impact to election results or voting systems.</p><p><strong>Remediation status:</strong> fix documented. XBOW’s October 29 writeup says the EAC validated and remediated the issue before November 3, 2026. EAC’s linked disclosure policy is general process guidance, not a case-specific confirmation or advisory; no public fix version was identified.</p><p>A source-documented fix does not establish installed patches or current safety. Source checking does not independently reproduce the finding or establish observed exploitation.</p><p>Disclosed 29 Oct 2026. AI attribution dated 29 Oct 2026. Sources checked 14 Nov 2026; these are separate dates, not a live installation check.</p><p class="tech"><strong>Recorded CVSS:</strong> Not available · no assessment established here. <strong>Documented technical effects:</strong> code execution.</p>
+    <details class="source-details" data-evidence="severity" open><summary>Severity, consequences and exploitation evidence</summary>
+    <p>Case grouping uses the highest recorded CVSS score, with its version-specific severity band. It is descriptive, not a combined or editorial risk index. All recorded assessments remain below; scores from different versions and sources may disagree. <a href="https://www.first.org/cvss/" rel="noopener">CVSS specifications</a> define version-specific scoring and severity bands.</p>
+    <p>No source-backed CVSS assessment is established in this catalog.</p>
+    <p><strong>Case-level evidence:</strong> code execution.<br><strong>Prerequisites / affected scope:</strong> Unauthenticated request to EAC resource-calculator application; XBOW reports EAC validation and remediation..<br><strong>Exploitation evidence:</strong> The cited source does not state whether this issue was exploited in the wild.. <a href="https://xbow.com/labs/research/how-xbow-found-a-critical-rce-in-an-eac-voting-resource-calculator" rel="noopener">Impact source</a> · checked 16 Nov 2026.</p>
+    <p><strong>Documented fix:</strong> XBOW’s October 29 writeup says the EAC validated and remediated the issue before November 3, 2026. EAC’s linked disclosure policy is general process guidance, not a case-specific confirmation or advisory; no public fix version was identified.</p></details><h2>Original evidence</h2><ul><li><a href="https://xbow.com/labs/research/how-xbow-found-a-critical-rce-in-an-eac-voting-resource-calculator" rel="noopener">Original disclosure</a></li><li><a href="https://xbow.com/labs/research/how-xbow-found-a-critical-rce-in-an-eac-voting-resource-calculator" rel="noopener">AI attribution</a></li><li><a href="https://www.eac.gov/vulnerability-disclosure-policy" rel="noopener">Advisory / fix evidence</a></li></ul><p><a href="../api/v1/vulnerabilities/2026-10-eac-accessiblecalc-rce.json">Download this source record (JSON)</a></p></article></div>
+    <p class="sez-sub"><a href="../security.html#2026-10-eac-accessiblecalc-rce">Open this case in the interactive tracker</a> · <a href="../profiles/security-index.html">Browse all static security cases</a></p>
+  </div></section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p><a href="../search.html">Search all collections</a> · <a href="../model-progress.html">Model progress and release rhythm</a> · <a href="../antibiotic-dossier.html">Antibiotic evidence dossier</a></p>
+    <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
+    <p><a href="../methodology.html">How we select and verify entries</a> · <a href="../profiles/index.html">All organizations and model families</a> · <a href="../dataset.html">Dataset and API</a> · <a href="../contributors.html">Contributors</a></p>
+    <p><a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=discovery.yml">Suggest a discovery</a>. Reports are public, require GitHub sign-in, and are reviewed before catalog changes.</p>
+    <p>Privacy: this site sets no cookies and uses Cloudflare Web Analytics for aggregate visit statistics (page, referrer, browser, IP address) under legitimate interest (GDPR Art. 6(1)(f)). Cloudflare acts as our processor and may process data in the United States under the EU-US Data Privacy Framework. To object or exercise your rights, <a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new">open an issue</a>.</p>
+  </div>
+</footer>
+</body>
+</html>

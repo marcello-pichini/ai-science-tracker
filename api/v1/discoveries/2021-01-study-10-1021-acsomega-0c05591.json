@@ -1,7 +1,7 @@
 {
   "id": "2021-01-study-10-1021-acsomega-0c05591",
   "title": "Using Bibliometric Analysis and Machine Learning to Identify Compounds Binding to Sialidase-1.",
-  "summary": "Model-ranked compounds yielded two experimentally measured human sialidase-1 binders.",
+  "summary": "A Bayesian model ranked three candidates for testing; microscale thermophoresis found sialidase-1 binding for sulfameter (Kd 2.15 ± 1.02 μM) and mexenone (8.88 ± 4.02 μM). Enzyme activity and chaperone function were not tested.",
   "field": "medicine",
   "ai_technology": "Bayesian classifier",
   "organization": "Collaborations Pharmaceuticals (United States)",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2021-01-20",
   "added_date": "2026-11-18",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 2,
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Model-ranked compounds yielded two experimentally measured human sialidase-1 binders.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "Bayesian classifier is the AI method documented in the editorial source review.",
+    "tested": "Three selected compounds were tested by microscale thermophoresis in triplicate against 5 nM recombinant human sialidase-1; two bound, with reported Kd values of 2.15 ± 1.02 μM (sulfameter) and 8.88 ± 4.02 μM (mexenone).",
+    "unknown": "The paper states that the target model used a small training set and limited chemical space. The study measured binding, not sialidase activity, cellular chaperoning, or disease benefit.",
+    "ai_role": "Assay Central used ECFP6 descriptors and a Bayesian model trained on curated ChEMBL and BindingDB IC50 data to rank compounds; toxicity and CNS filters also informed candidate selection.",
     "evidence_urls": [
       "https://doi.org/10.1021/acsomega.0c05591"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Full PMC paper, including Methods, results and limitations."
   }
 }

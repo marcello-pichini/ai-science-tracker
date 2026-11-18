@@ -1,7 +1,7 @@
 {
   "id": "2020-09-study-10-1021-acs-jcim-0c00652",
   "title": "Discovery of Dual FGFR4 and EGFR Inhibitors by Machine Learning and Biological Evaluation.",
-  "summary": "SVM predictions nominated an in-house compound with measured inhibition of both kinases. Docking and dynamics are supporting analyses, not evidence of clinical efficacy.",
+  "summary": "Four machine-learning methods were compared; the selected SVM models screened in-house compounds for dual FGFR4/EGFR inhibition. The primary abstract reports compound 1 kinase IC50 values of 86.2 and 83.9 nM, respectively. This assay result does not establish clinical efficacy.",
   "field": "medicine",
   "ai_technology": "Support-vector-machine activity models",
   "organization": "China Pharmaceutical University; State Key Laboratory of Natural Medicine",
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "SVM predictions nominated an in-house compound with measured inhibition of both kinases. Docking and dynamics are supporting analyses, not evidence of clinical efficacy.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "Support-vector-machine activity models is the AI method documented in the editorial source review.",
+    "tested": "The primary abstract reports four QSAR methods and a selected dual inhibitor with IC50 86.2 nM for FGFR4 and 83.9 nM for EGFR. Assay denominator, comparator, and cell-level validation details were not present in the reviewed abstract; full ACS text was inaccessible.",
+    "unknown": "Full Methods and biological-evaluation details were not reviewed. The date is unresolved: ACS header September 14 versus publication-history September 24 and PubMed Epub September 23, 2020.",
+    "ai_role": "SVM, random forest, gradient-boost regression tree and XGBoost models were compared after mutual-information feature selection; the best-performing SVM models predicted activity of in-house compounds.",
     "evidence_urls": [
       "https://doi.org/10.1021/acs.jcim.0c00652"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Indexed primary ACS/PubMed abstract and conflicting publication metadata; complete Methods/Results not reviewed."
   }
 }

@@ -24,6 +24,7 @@ class SharePageTests(unittest.TestCase):
         (self.generator.ROOT / 'assets').mkdir()
         shutil.copyfile(ROOT / 'styles.css', self.generator.ROOT / 'styles.css')
         shutil.copyfile(ROOT / 'assets/catalog-ui.js', self.generator.ROOT / 'assets/catalog-ui.js')
+        shutil.copyfile(ROOT / 'security.html', self.generator.ROOT / 'security.html')
         (self.generator.ROOT / 'index.html').write_text('<header class="header"><nav><a href="security.html" aria-current="page">Security</a></nav></header><footer class="footer"><a href="guide.html">Guide</a></footer>')
         self.record = dict(json.loads((ROOT / 'data/discoveries.json').read_text())[0], id='test-discovery', title='A <test> & result', summary='A complete summary with <markup> escaped.')
 
@@ -42,6 +43,64 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('Source checked', text)
         self.assertFalse(any(line.rstrip() != line for line in text.splitlines()))
 
+    def test_collection_overview_uses_selected_counts_and_full_collection_links(self):
+        g = self.generator
+        rows = [dict(self.record, publication_date='2024-01-02', field='biology', evidence={}),
+                dict(self.record, id='second', publication_date='2025-02-03', field='biology', evidence={'tested': 'assay'})]
+        text = g.collection_summary(rows, 'AI discoveries in biology')
+        self.assertIn('1 include structured evidence annotations', text)
+        self.assertIn('profiles/year-2024.html', text)
+        self.assertIn('profiles/year-2025.html', text)
+        self.assertIn('each link opens the full year collection', text)
+        self.assertIn('Counts do not measure independent discoveries', text)
+        self.assertIn('profiles/field-biology.html', g.collection_summary(rows, '2025', by_year=True))
+
+    def test_catalog_comparison_counts_annotations_and_checks_separately(self):
+        import csv
+        g = self.generator
+        rows = [dict(self.record, publication_date='2024-01-02', field='biology', evidence={}, verification_status='verified'),
+                dict(self.record, id='second', publication_date='2025-02-03', field='biology', evidence={'tested': 'assay'}, verification_status='needs verification')]
+        g.write_catalog_evidence(rows)
+        with (g.ROOT / 'data/catalog-summary.csv').open(newline='') as stream:
+            summary = list(csv.DictReader(stream))
+        for dimension in ('year', 'field'):
+            selected = [r for r in summary if r['grouping'] == dimension]
+            self.assertEqual(sum(int(r['catalog_entries']) for r in selected), 2)
+            self.assertEqual(sum(int(r['evidence_annotated']) for r in selected), 1)
+            self.assertEqual(sum(int(r['source_checked']) for r in selected), 1)
+        page = (g.ROOT / 'profiles/catalog-evidence.html').read_text()
+        self.assertIn('rather than the rate of scientific progress', page)
+        self.assertIn('methodology.html#evidence-coverage', page)
+        self.assertIn('Archived discoveries, model releases and security cases are excluded', page)
+        self.assertIn('href="../data/catalog-summary.csv"', page)
+
+    def test_security_static_pages_preserve_evidence_and_separate_dataset_identity(self):
+        g = self.generator
+        record = dict(json.loads((ROOT / 'data/vulnerabilities.json').read_text())[0], id='test-case',
+                      title='A <test> case', ai_attribution_date=None,
+                      cvss=[{'cve': None, 'version': '3.1', 'score': 0, 'vector': None,
+                             'scenarios': ['Only with <condition>'], 'source_url': 'https://example.org/score',
+                             'source_name': 'Assessor', 'checked_date': '2026-11-18'}],
+                      impacts=[{'cves': [], 'consequences': [], 'conditions': 'Technical effect unresolved',
+                                'exploitation': 'Not established', 'source_url': 'https://example.org/impact',
+                                'checked_date': '2026-11-18'}])
+        g.write_security_pages([record])
+        page = (g.ROOT / 'profiles/security-test-case.html').read_text()
+        for text in ('A &lt;test&gt; case', 'AI attribution date not established by the source',
+                     'Only with &lt;condition&gt;', 'Technical effect not established',
+                     'CVSS 3.1 · 0', 'installed patches or current safety', 'Human involvement is only described'):
+            self.assertIn(text, page)
+        self.assertIn('href="../security.html#test-case"', page)
+        self.assertIn('href="../api/v1/vulnerabilities/test-case.json"', page)
+        metadata = json.loads(__import__('re').search(r'<script type="application/ld\+json">(.*?)</script>', page, __import__('re').S)[1])
+        self.assertEqual(metadata['@type'], 'WebPage')
+        self.assertEqual(metadata['isPartOf']['@id'], g.BASE + 'dataset.html#security-dataset')
+        self.assertNotIn('dateModified', metadata)
+        directory = (g.ROOT / 'profiles/security-index.html').read_text()
+        self.assertIn('href="../profiles/security-test-case.html"', directory)
+        g.write_sitemap([self.record], {'families': []}, vulns=[record])
+        self.assertIn(g.BASE + 'profiles/security-test-case.html', (g.ROOT / 'sitemap.xml').read_text())
+
     def test_feed_lists_newest_records_with_catalog_dates(self):
         g = self.generator
         vuln = {'id': 'v1', 'title': 'V & flaw', 'summary': 's', 'organization': 'Org', 'checked_date': '2999-01-01', 'disclosure_date': '2998-01-01'}
@@ -52,8 +111,24 @@ class SharePageTests(unittest.TestCase):
         self.assertEqual(root.find('a:title', ns).text, 'AI Science Tracker: additions and source checks')
         self.assertEqual(len(entries), 2)
         self.assertEqual(entries[0].find('a:title', ns).text, 'V & flaw')
+        self.assertEqual(entries[0].find('a:id', ns).text, g.BASE + 'security.html#v1')
+        self.assertEqual(entries[0].find('a:link', ns).get('href'), g.BASE + 'profiles/security-v1.html')
         self.assertTrue(entries[0].find('a:updated', ns).text.startswith('2999-01-01'))
         self.assertEqual(root.find('a:updated', ns).text, '2999-01-01T00:00:00Z')
+
+    def test_related_records_prioritize_documented_relationships_and_keep_archive_visible(self):
+        g = self.generator
+        archive = dict(self.record, id='archived', field='biology', publication_date='2026-01-01')
+        nearby = dict(self.record, id='nearby', field='biology', publication_date='2026-01-02')
+        documented = dict(self.record, id='documented', field='physics', publication_date='2020-01-01',
+                          relationships=[{'target_id': 'archived'}])
+        g.write_discovery_pages([archive], {'families': []}, False, archived=True, related_items=[nearby, documented])
+        page = (g.ROOT / 'share/archived.html').read_text()
+        self.assertIn('<title>Archived: ', page)
+        self.assertIn('Archived catalog entry', page)
+        related = page.split('<h2>Related catalog entries</h2>', 1)[1]
+        self.assertLess(related.index('share/documented.html'), related.index('share/nearby.html'))
+        self.assertNotIn('href="../share/archived.html"', related)
 
     def test_skipping_image_rendering_preserves_existing_entry_previews(self):
         g = self.generator
@@ -243,6 +318,9 @@ class SharePageTests(unittest.TestCase):
         for name, value in [('discoveries', [self.record]), ('archived-discoveries', [archived]),
                             ('models', {'families': [], 'models': []}), ('vulnerabilities', [])]:
             (g.ROOT / f'data/{name}.json').write_text(json.dumps(value))
+        shutil.copytree(ROOT / 'data/benchmarks', g.ROOT / 'data/benchmarks')
+        for component in ('model-progress', 'swe-bench', 'citations', 'entity-aliases'):
+            shutil.copyfile(ROOT / f'data/{component}.json', g.ROOT / f'data/{component}.json')
         with patch('sys.argv', ['generate_share.py', '--no-images']):
             g.main()
         page = (g.ROOT / 'share/archived.html').read_text()

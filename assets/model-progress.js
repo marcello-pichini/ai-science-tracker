@@ -26,11 +26,12 @@ function selectLab(lab){
   preserveFocus(render);if(lab!=='All labs')showCadence(lab);
 }
 function render(){
+  if(!D)return;
   $('lab-tabs').innerHTML=['All labs',...D.labs].map((lab,i)=>{const rows=models.filter(m=>lab==='All labs'||m.lab===lab);return `<button type="button" id="lab-${i}" data-lab="${lab}" aria-pressed="${state.lab===lab}">${lab}<span>${rows.length} entries / ${rows.filter(m=>m.eci!=null).length} ECI</span></button>`;}).join('');
   $('lab-select').innerHTML=['All labs',...D.labs].map(lab=>{const n=models.filter(m=>lab==='All labs'||m.lab===lab).length;return `<option value="${lab}"${state.lab===lab?' selected':''}>${lab} · ${n} entries</option>`;}).join('');
   $('comparison-presets').innerHTML='<span>Try a comparison</span>'+presets.map((p,i)=>lookup.has(p[1])&&lookup.has(p[2])?`<button id="preset-${i}" type="button" data-preset="${i}" aria-pressed="${state.baseline===p[1]&&state.model===p[2]}">${p[0]}<small>${p[3]}</small></button>`:'').join('');
   const rows=scoped(),scored=rows.filter(m=>m.eci!=null),dates=rows.map(m=>m.date).filter(Boolean).sort();
-  $('selection-coverage').textContent=`${state.lab}: ${rows.length} imported entries; ${scored.length} with ECI (${num(scored.length/Math.max(1,rows.length)*100)}% coverage). Recorded years: ${dates[0]?.slice(0,4)||'unknown'}–${dates.at(-1)?.slice(0,4)||'unknown'}.`;
+  $('selection-coverage').textContent=`${state.lab}: ${rows.length} imported entries; ${scored.length} with ECI (${num(scored.length/Math.max(1,rows.length)*100)}% coverage). Displayed benchmark availability: ${rows.filter(m=>D.benchmarks.some(k=>m.benchmarks[k.id]?.score!=null)).length}/${rows.length} entries with any task. Recorded years: ${dates[0]?.slice(0,4)||'unknown'}–${dates.at(-1)?.slice(0,4)||'unknown'}.`;
   renderComparison();draw();renderInventory();shareSelection();
 }
 function shareSelection(){
@@ -59,7 +60,8 @@ function renderReadout(a,b){
   if(f.signedDays!=null)lines.push(f.signedDays===0?'Both models share a recorded date; this is not a measured generational interval.':`The comparison model’s recorded date is ${Math.abs(f.signedDays)} days ${f.signedDays>0?'later':'earlier'} than the baseline’s date.`);
   if(f.differentDateBases)lines.push('The two dates use different definitions (benchmark release versus catalog publication); their spacing is not a verified launch interval.');
   if(f.differentLabs)lines.push('This is a cross-lab comparison, not a documented generational lineage.');
-  const summary=f.common?`${f.common} of ${f.total} displayed benchmarks have scores for both models: ${f.higher} higher, ${f.lower} lower and ${f.unchanged} unchanged for the comparison model.`:'None of the four displayed benchmarks has scores for both models.';
+  const availability=`Baseline: ${f.availableA}/${f.total} displayed tasks; comparison: ${f.availableB}/${f.total}; common: ${f.common}/${f.total}. Missing scores are not zero. `;
+  const summary=availability + (f.common?`${f.common} of ${f.total} displayed benchmarks have scores for both models: ${f.higher} higher, ${f.lower} lower and ${f.unchanged} unchanged for the comparison model.`:'No common displayed task has scores for both models; task-level performance cannot be compared.');
   $('comparison-readout').innerHTML=`<h3>What this comparison tells you</h3><p class="readout-headline">${esc(headline)}</p><div class="readout-grid"><div><h4>Capability estimate and dates</h4><ul>${lines.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div><div><h4>Task-level evidence</h4><p>${esc(summary)}</p><p>These counts cover only the displayed tasks. Scores use each model’s best observed configuration; they do not establish superiority under the same inference budget.</p><p><a href="#benchmark-heading">Inspect the benchmark changes</a> · <a href="#inventory-heading">Find another model</a></p></div></div>`;
 }
 function renderComparison(){
@@ -124,28 +126,39 @@ function chooseModel(index){
   Object.assign(state,linkedComparison(params,models,start));$('plot-period').value=state.period;
   preserveFocus(render);
 }
-document.addEventListener('click',e=>{const b=e.target.closest('[data-preset],[data-lab],[data-model],[data-cadence]');if(!b)return;if(b.dataset.preset!==undefined)applyPreset(Number(b.dataset.preset));else if(b.dataset.lab)selectLab(b.dataset.lab);else if(b.dataset.model!==undefined)chooseModel(Number(b.dataset.model));else preserveFocus(()=>showCadence(b.dataset.cadence,b.dataset.cadence===selectedCadence&&b.dataset.date===selectedDay?null:b.dataset.date));});
+document.addEventListener('click',e=>{if(!D)return;const b=e.target.closest('[data-preset],[data-lab],[data-model],[data-cadence]');if(!b)return;if(b.dataset.preset!==undefined)applyPreset(Number(b.dataset.preset));else if(b.dataset.lab)selectLab(b.dataset.lab);else if(b.dataset.model!==undefined)chooseModel(Number(b.dataset.model));else preserveFocus(()=>showCadence(b.dataset.cadence,b.dataset.cadence===selectedCadence&&b.dataset.date===selectedDay?null:b.dataset.date));});
 document.addEventListener('keydown',e=>{
+  if(!D)return;
   const b=e.target.closest('svg [data-model],svg [data-date]');if(!b)return;
   if(['ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();const nodes=[...b.parentNode.querySelectorAll('[data-model],[data-date]')],n=nodes[Math.max(0,Math.min(nodes.length-1,nodes.indexOf(b)+(e.key==='ArrowRight'?1:-1)))];b.tabIndex=-1;n.tabIndex=0;n.focus();}
   else if(['Enter',' '].includes(e.key)){e.preventDefault();if(b.dataset.model!==undefined)chooseModel(Number(b.dataset.model));else{showCadence(b.dataset.cadence,b.dataset.date);$('release-title').focus();}}
 });
 document.addEventListener('change',e=>{
+  if(!D)return;
   if(e.target.id==='lab-select'){selectLab(e.target.value);}
   else if(e.target.id==='baseline-model'||e.target.id==='comparison-model'){state[e.target.id==='baseline-model'?'baseline':'model']=e.target.value;const m=lookup.get(e.target.value);if(m?.date&&m.date<start){state.period='all';$('plot-period').value='all';}preserveFocus(render);}
   else if(e.target.id==='plot-period'){state.period=e.target.value;draw();shareSelection();}
   else if(e.target.id==='only-eci'){state.onlyECI=e.target.checked;renderInventory();}
   else if(e.target.id==='date-picker'){const day=e.target.value;preserveFocus(()=>showCadence(selectedCadence,day||null));}
 });
-$('model-search').addEventListener('input',e=>{state.query=e.target.value;renderInventory();});
+$('model-search').addEventListener('input',e=>{if(!D)return;state.query=e.target.value;renderInventory();});
 $('theme').onclick=()=>{const dark=document.documentElement.dataset.theme==='dark'||(!document.documentElement.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.dataset.theme=dark?'light':'dark';};
 window.addEventListener('resize',draw);
-fetch('data/model-progress.json').then(r=>{if(!r.ok)throw Error('Model export unavailable');return r.json();}).then(data=>{
+CatalogData.run(['model-progress','swe-bench'], loaded => {
+  const data = loaded.data['model-progress'];
+  SWEBench.init(loaded.data['swe-bench']);
+  PublicBenchmarks.init(loaded);
   D=data;end=D.fetched_on;const windowStart=date(end);windowStart.setUTCFullYear(windowStart.getUTCFullYear()-1);start=windowStart.toISOString().slice(0,10);$('import-date').textContent=format(end);$('cadence-period').textContent=format(end);models=D.models;lookup=new Map(models.map(m=>[m.id,m]));
-  $('coverage').textContent=`${models.length} source entries · ${models.filter(m=>m.eci!=null).length} with ECI · ${D.labs.length} labs · ${D.fetched_on}`;
+  $('coverage').textContent=`${models.length} source entries · ${models.filter(m=>m.eci!=null).length} with ECI · ${D.labs.length} labs · snapshot retrieved ${format(D.fetched_on)}`;
   $('source-coverage').textContent=`${models.filter(m=>m.lab_inferred).length} lab assignments rely on family names because source organizations are empty; they are marked in the inventory.`;
   Object.assign(state,linkedComparison(new URLSearchParams(location.search),models,start)||{});$('plot-period').value=state.period;
   render();computeCadence();showCadence(state.lab==='All labs'?(lookup.get(state.model)?.lab||'OpenAI'):state.lab);
-}).catch(error=>{$('coverage').textContent='Model data could not load.';$('comparison').innerHTML='<p>Reload the page to retry. Source import or rendering failed.</p>';console.error(error);});
+}, {groups:['public-benchmarks'], clear:() => {
+  D = null; models = []; lookup = new Map(); cadenceStats = []; start = undefined; end = undefined; selectedCadence = null; selectedDay = null;
+  SWEBench.reset(); PublicBenchmarks.reset();
+  ['model-history','benchmark-chart','benchmarks','model-inventory','progress-chart','comparison','comparison-presets','comparison-readout','lab-tabs','lab-select','plot-data','pair-overview','selection-coverage','plot-caption','pair-lab','inventory-count','source-coverage','cadence','cadence-summary','release-list','import-date','cadence-period'].forEach(id => $(id).replaceChildren());
+  $('release-title').textContent = 'Publication dates';
+  $('coverage').textContent = 'No validated snapshot loaded.';
+}});
 
-$('clear-model-search').onclick=()=>{state.query='';state.onlyECI=false;$('model-search').value='';$('only-eci').checked=false;renderInventory();};
+$('clear-model-search').onclick=()=>{if(!D)return;state.query='';state.onlyECI=false;$('model-search').value='';$('only-eci').checked=false;renderInventory();};

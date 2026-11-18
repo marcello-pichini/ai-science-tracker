@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-page-snapshot="dbb99d4fab32144ee19e898786bc247792549ff2af538cb03e507382e75a7952">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,12 +17,13 @@
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://aisciencetracker.org/profile.html">
+<meta name="robots" content="noindex, follow">
 <meta property="og:url" content="https://aisciencetracker.org/profile.html">
 <meta property="og:site_name" content="AI Science Tracker">
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=f7ee2e330613">
+<link rel="stylesheet" href="styles.css?v=23f6b9beaa5b">
 </head>
 <body>
 <header class="header">
@@ -41,7 +42,7 @@
     <p class="lead" id="lead">Loading…</p>
     <figure class="figura" id="timeline-figure" hidden>
       <div id="timeline"></div>
-      <figcaption class="nota" id="timeline-help">Each mark is one discovery; taller means more relevant. Click or tap to open an entry or choose among nearby entries, including entries on the same date. Keyboard: focus the chart, use left and right arrows, then Enter. Escape clears the selection.</figcaption>
+      <figcaption class="nota" id="timeline-help">Each mark is one discovery; height shows coarse editorial relevance, not scientific quality. Click or tap to open an entry or choose among nearby entries, including entries on the same date. Keyboard: focus the chart, use left and right arrows, then Enter. Escape clears the selection.</figcaption>
     </figure>
   </div>
 </section>
@@ -58,7 +59,9 @@
   </div>
 </footer>
 
-<script src="assets/catalog-ui.js?v=6c310621c0ce"></script>
+<script src="assets/catalog-data.js?v=100014eb08f1"></script>
+<script src="assets/catalog-entities.js?v=0c51c8fa4441"></script>
+<script src="assets/catalog-ui.js?v=3a48ac18fb9e"></script>
 <script src="assets/family-outcomes.js?v=d4a5cba26c45"></script>
 <script>
 // Object.groupBy is missing before Safari 17.4 and Chrome 117.
@@ -72,13 +75,18 @@ const fmtDate = d => fmt.format(new Date(d + "T12:00:00"));
 const reduced = matchMedia("(prefers-reduced-motion: reduce)");
 
 // Same rules as index.html: organizations listed together count under the first one named; editorial relevance is 20–100.
-const leadOrg = s => CatalogUI.leadOrganization(s.organization);
+const leadOrg = s => CatalogEntities.organization(s.organization).label;
+let archiveData = [];
 const score = s => CatalogUI.score(s);
 const average = a => a.length ? Math.round(a.reduce((n, s) => n + score(s), 0) / a.length) : 0;
 const newestFirst = (a, b) => b.publication_date.localeCompare(a.publication_date);
 // shortcut: a lab matches model-release organizations by this alias list; add a line when a lab's models are missing.
 const MODEL_ORG_ALIASES = { "google deepmind":["google deepmind","deepmind"], "google research":["google"], "microsoft research":["microsoft"], "meta ai":["meta ai"] };
-const modelOrgs = lab => MODEL_ORG_ALIASES[lab.toLowerCase()] || [lab.toLowerCase()];
+const modelOrgs = lab => {
+  const entity = CatalogEntities.organization(lab);
+  const aliases = CatalogEntities.map.organizations.find(row => row.id === entity.id)?.aliases || [lab];
+  return MODEL_ORG_ALIASES[lab.toLowerCase()] || aliases.map(label => label.toLowerCase());
+};
 
 /* One tooltip element; text is inserted with textContent. */
 const tip = document.createElement("div"); tip.className = "tip"; tip.setAttribute("aria-hidden", "true"); document.body.append(tip);
@@ -125,10 +133,11 @@ function entry(s) {
   return `<article class="voce" id="${esc(s.id)}">
     <div class="voce-meta"><time datetime="${esc(s.publication_date)}">${esc(fmtDate(s.publication_date))}</time><span>${esc(s.organization)}</span></div>
     <h3><a href="index.html#discovery=${encodeURIComponent(s.id)}">${esc(s.title)}</a></h3>
-    <p class="sommario">${esc(s.summary)}</p>
+    ${CatalogUI.sourceBadge(s)}
+    <p class="sommario"><b>${s.evidence?.tested === s.summary ? "Finding / tested result" : "Finding"}:</b> ${esc(s.summary)}</p>
     ${s.ai_technology ? `<p class="tech"><span>Technology:</span> ${esc(s.ai_technology)}</p>` : ""}
     <div class="voce-footer">
-      <span class="punteggio" title="Impact ${s.relevance.impact}/5, validation ${s.relevance.validation}/5, novelty ${s.relevance.novelty}/5">Relevance ${p}<span class="metro" aria-hidden="true"><i style="width:${p}%"></i></span></span>
+      <span class="punteggio" title="Impact ${s.relevance.impact}/5, validation ${s.relevance.validation}/5, novelty ${s.relevance.novelty}/5">Editorial relevance ${p}<span class="metro" aria-hidden="true"><i style="width:${p}%"></i></span></span>
       <span class="etich">${esc(s.field)}</span>
       <span class="collegamenti"><a href="${esc(safeUrl(s.source_url))}" rel="noopener">Original source</a>${s.paper_url ? `<a href="${esc(safeUrl(s.paper_url))}" rel="noopener">Paper</a>` : ""} <a class="correction-link" href="${esc(CatalogUI.correctionUrl(s))}" rel="noopener">Suggest a correction</a></span>
     </div>${CatalogUI.sourceDetails(s)}</article>`;
@@ -148,15 +157,16 @@ const releasesSection = (models, famName) => !models.length ? "" : `<section cla
 
 /* Views */
 function directory(discoveries, models) {
-  const byLab = Object.groupBy(discoveries, leadOrg);
+  const unknown = discoveries.filter(s => CatalogEntities.organization(s.organization).kind === "unknown affiliation");
+  const byLab = Object.groupBy(discoveries.filter(s => CatalogEntities.organization(s.organization).kind !== "unknown affiliation"), leadOrg);
   const labs = Object.entries(byLab).sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], "en"));
   const fams = models.families.filter(f => f.discoveries.length).sort((a, b) => b.discovery_count - a.discovery_count || a.name.localeCompare(b.name, "en"));
   $("lead").innerHTML = `<b>${labs.length} organizations</b> and <b>${fams.length} model families</b> with at least one tracked discovery. Pick one to see its timeline.`;
   $("content").innerHTML = `<section class="sez" aria-labelledby="t-labs"><div class="wrap"><h2 id="t-labs">Organizations</h2>
-    <p class="sez-sub">Organizations listed together on a discovery are counted under the first one named.</p>
-    <table class="tab-rilasci"><thead><tr><th>Organization</th><th class="num">Discoveries</th><th class="num">Average relevance</th><th class="num">Years</th></tr></thead><tbody>${labs.map(([n, a]) => {
+    <p class="sez-sub">Organizations listed together count under the first affiliation, using reviewed exact aliases. Original labels remain on records. ${unknown.length} entries have <a href="profile.html?org=Affiliation%20not%20reported">affiliation not reported</a>, separate from institutions.</p>
+    <table class="tab-rilasci"><thead><tr><th>Organization</th><th class="num">Discoveries</th><th class="num">Average editorial relevance</th><th class="num">Years</th></tr></thead><tbody>${labs.map(([n, a]) => {
       const y = a.map(s => s.publication_date.slice(0, 4)).sort();
-      return `<tr><td data-l="Organization" class="nome"><a href="profile.html?org=${encodeURIComponent(n)}">${esc(n)}</a></td><td data-l="Discoveries" class="num">${a.length}</td><td data-l="Average relevance" class="num">${average(a)}</td><td data-l="Years" class="num">${y[0] === y.at(-1) ? y[0] : y[0] + "–" + y.at(-1)}</td></tr>`; }).join("")}</tbody></table></div></section>
+      return `<tr><td data-l="Organization" class="nome"><a href="profile.html?org=${encodeURIComponent(n)}">${esc(n)}</a></td><td data-l="Discoveries" class="num">${a.length}</td><td data-l="Average editorial relevance" class="num">${average(a)}</td><td data-l="Years" class="num">${y[0] === y.at(-1) ? y[0] : y[0] + "–" + y.at(-1)}</td></tr>`; }).join("")}</tbody></table></div></section>
     <section class="sez" aria-labelledby="t-fams"><div class="wrap"><h2 id="t-fams">Model families</h2>
     <p class="sez-sub">Family names matched in discovery titles or technology text; exact versions and causal attribution are not verified.</p>
     <table class="tab-rilasci"><thead><tr><th>Family</th><th class="num">Discoveries</th><th class="num">Releases</th></tr></thead><tbody>${fams.map(f => `<tr><td data-l="Family" class="nome"><a href="profile.html?family=${encodeURIComponent(f.id)}">${esc(f.name)}</a></td><td data-l="Discoveries" class="num">${f.discovery_count}</td><td data-l="Releases" class="num">${f.model_count}</td></tr>`).join("")}</tbody></table></div></section>`;
@@ -173,10 +183,10 @@ function setMeta(title, description) {
   document.querySelector('meta[name="description"]').content = description;
   document.querySelector('meta[property="og:title"]').content = document.title;
   document.querySelector('meta[property="og:description"]').content = description;
-  document.querySelector('link[rel="canonical"]').href = location.origin + location.pathname + location.search;
 }
 
 function labView(name, discoveries, models) {
+  name = CatalogEntities.resolve(name, "organizations").label;
   const matchesLegacy = s => s.organization === name || s.organization.split(/[,;]| and /i)[0].trim() === name;
   if (!discoveries.some(s => leadOrg(s) === name)) {
     const names = [...new Set(discoveries.filter(matchesLegacy).map(leadOrg))];
@@ -192,7 +202,7 @@ function labView(name, discoveries, models) {
   const items = discoveries.filter(s => leadOrg(s) === name).sort(newestFirst);
   if (!items.length) {
     const query = location.search;
-    fetch("data/archived-discoveries.json").then(r => r.ok ? r.json() : []).then(archived => {
+    Promise.resolve(archiveData).then(archived => {
       if (location.search !== query) return;
       const matches = archived.filter(s => leadOrg(s) === name || matchesLegacy(s));
       if (matches.length === 1) location.replace("share/" + encodeURIComponent(matches[0].id) + ".html");
@@ -210,7 +220,7 @@ function labView(name, discoveries, models) {
   const releases = models.models.filter(m => aliases.includes((m.organization || "").toLowerCase())).sort((a, b) => b.date.localeCompare(a.date));
   const years = items.map(s => s.publication_date.slice(0, 4)).sort();
   $("page-title").textContent = name;
-  $("lead").innerHTML = `<b>${plural(items.length, "discovery", "discoveries")}</b> from ${years[0] === years.at(-1) ? years[0] : years[0] + " to " + years.at(-1)}, average relevance <b>${average(items)}</b>. <a href="profile.html">All labs and model families</a>`;
+  $("lead").innerHTML = `<b>${plural(items.length, "discovery", "discoveries")}</b> from ${years[0] === years.at(-1) ? years[0] : years[0] + " to " + years.at(-1)}, average editorial relevance <b>${average(items)}</b>. <a href="profile.html">All labs and model families</a>`;
   setMeta(name, `${plural(items.length, "AI-enabled scientific discovery", "AI-enabled scientific discoveries")} tracked from ${name}, with timeline, sources and model releases.`);
   $("content").innerHTML = discoveriesSection(items) + releasesSection(releases, famName);
   timeline(items);
@@ -220,9 +230,9 @@ function memberList(items) {
   return items.length ? `<ul>${items.map(s => `<li><a href="index.html#discovery=${encodeURIComponent(s.id)}">${esc(s.title)}</a></li>`).join("")}</ul>` : '<p class="vuoto">No linked records match these filters. Change the field or year to explore other catalog coverage.</p>';
 }
 function familySummary(items, name) {
-  const summary = FamilyOutcomes.summary(items);
+  const summary = FamilyOutcomes.summary(items), coverage = CatalogUI.reviewCoverage(items);
   const groups = (heading, groups) => `<h3>${heading}</h3>${groups.map(g => `<details class="source-details"><summary>${esc(g.label)} · ${g.members.length} linked records</summary>${memberList(g.members)}</details>`).join("")}`;
-  return `<section class="sez"><div class="wrap"><h2>Where ${esc(name)} appears in the catalog</h2>
+  return `<section class="sez"><div class="wrap"><h2>Where ${esc(name)} appears in the catalog</h2><p><b>Evidence annotations:</b> ${coverage.annotated}/${coverage.total} linked records. <b>Structured review date and scope:</b> ${coverage.reviewed}/${coverage.total}. Missing review metadata does not prove a source was never checked.</p>
     <details class="source-details"><summary>Why linked?</summary><p>These associations match family names in discovery titles and technology text. They are not verified model-version assignments or causal attribution. Missing links do not establish absence of use. A record may link to multiple families.</p></details>
     ${items.length ? groups('Represented fields', summary.fields) + groups('Test contexts', summary.tests) + groups('Annotation coverage', summary.annotations) : '<p>No scientific uses are linked in this catalog.</p>'}
     <h3>Examples</h3><p>Up to three linked records, newest publication date first, then stable ID. This selection is not a ranking.</p>${memberList(FamilyOutcomes.examples(items))}</div></section>`;
@@ -261,9 +271,9 @@ function familyView(id, discoveries, models) {
   const releases = models.models.filter(m => m.family === id).sort((a, b) => b.date.localeCompare(a.date));
   const labs = [...new Set(items.map(leadOrg))];
   $("page-title").textContent = fam.name;
-  $("lead").innerHTML = `<b>${plural(items.length, "discovery", "discoveries")}</b> name this family${items.length ? `, average relevance <b>${average(items)}</b>` : ""}. ${labs.length ? "Announced by " + labs.map(l => `<a href="profile.html?org=${encodeURIComponent(l)}">${esc(l)}</a>`).join(", ") + ". " : ""}Links are name-based family associations; exact versions and causal attribution are not verified. <a href="profile.html">All labs and model families</a>`;
+  $("lead").innerHTML = `<b>${plural(items.length, "discovery", "discoveries")}</b> name this family${items.length ? `, average editorial relevance <b>${average(items)}</b>` : ""}. ${items.length ? `Across ${new Set(items.map(s => s.field)).size} scientific fields. ` : ""}Links are name-based family associations; exact versions and causal attribution are not verified. <a href="profile.html">All labs and model families</a>`;
   setMeta(fam.name, `${plural(items.length, "AI-enabled scientific discovery", "AI-enabled scientific discoveries")} linked to the ${fam.name} model family, with its model releases.`);
-  $("content").innerHTML = familySummary(items, fam.name) + comparisonSection(id, models) + discoveriesSection(items) + releasesSection(releases, famName);
+  $("content").innerHTML = (labs.length ? `<section class="sez"><div class="wrap"><h2>First-listed affiliations</h2><details class="source-details"><summary>${labs.length} first-affiliation groups in linked records</summary><p>Grouping uses the first listed affiliation; complete source labels remain on each entry.</p><ul class="elenco-profili">${labs.map(l => `<li><a href="profile.html?org=${encodeURIComponent(l)}">${esc(l)}</a></li>`).join("")}</ul></details></div></section>` : "") + familySummary(items, fam.name) + comparisonSection(id, models) + discoveriesSection(items) + releasesSection(releases, famName);
   renderComparison(fam, discoveries, models);
   if (items.length) timeline(items);
 }
@@ -276,14 +286,13 @@ function render() {
   else directory(data.discoveries, data.models);
 }
 
-Promise.all([
-  fetch("data/discoveries.json").then(r => r.json()),
-  fetch("data/models.json").then(r => r.json()),
-  fetch("data/citations.json").then(r => r.ok ? r.json() : null).catch(() => null)
-]).then(([discoveries, models, citations]) => {
+CatalogData.run(['discoveries', 'models', 'citations', 'archived-discoveries', 'entity-aliases'], loaded => {
+  CatalogEntities.configure(loaded.data['entity-aliases']);
+  const discoveries = loaded.data.discoveries, models = loaded.data.models, citations = loaded.data.citations;
+  archiveData = loaded.data['archived-discoveries'];
   discoveries.forEach(s => { const cited = citations?.records?.[s.id]; s.citation = cited ? {...cited, checked:citations.checked} : undefined; });
-  data = { discoveries, models }; render(); })
-  .catch(() => { $("lead").textContent = "The profile data could not be loaded."; $("content").innerHTML = `<section class="sez"><div class="wrap"><h2>Profile data unavailable</h2><p><a href="profile.html${esc(location.search)}">Reload this profile</a>, browse the <a href="profiles/index.html">static profiles</a>, or read the <a href="data/discoveries.json">discovery data</a> and <a href="data/models.json">model data</a>.</p></div></section>`; });
+  data = { discoveries, models }; render();
+}, {clear:() => { data = null; $('content').replaceChildren(); }});
 
 let width = innerWidth, timer;
 addEventListener("resize", () => { clearTimeout(timer); timer = setTimeout(() => { if (data && innerWidth !== width) { width = innerWidth; if (!$("timeline-figure").hidden) render(); } }, 150); });

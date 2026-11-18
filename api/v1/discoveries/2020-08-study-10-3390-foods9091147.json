@@ -1,7 +1,7 @@
 {
   "id": "2020-08-study-10-3390-foods9091147",
   "title": "An Artificial Intelligence Characterised Functional Ingredient, Derived from Rice, Inhibits TNF-α and Significantly Improves Physical Strength in an Inflammaging Population.",
-  "summary": "Saved Methods link predictions to food-derived peptide selection and in-vitro confirmation. The ingredient trial missed its primary subjective endpoint; secondary benefits do not prove peptide-specific clinical efficacy.",
+  "summary": "An ensemble of ten neural networks predicted anti-inflammatory rice peptides, which were identified in a rice peptide hydrolysate and tested in vitro. A 12-week pilot randomized 40 older adults (30 rice NPN, 10 placebo); its primary digestive-discomfort endpoint was not met, while secondary physical-performance and biomarker outcomes favored treatment. Small sample, compliance/timing confounding, and the ingredient-versus-isolated-peptide distinction limit inference.",
   "field": "medicine",
   "ai_technology": "Trained neural-network ensemble for peptide bioactivity prediction",
   "organization": "Nuritas (Ireland)",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2020-08-20",
   "added_date": "2026-11-18",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 2,
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Saved Methods link predictions to food-derived peptide selection and in-vitro confirmation. The ingredient trial missed its primary subjective endpoint; secondary benefits do not prove peptide-specific clinical efficacy.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "Trained neural-network ensemble for peptide bioactivity prediction is the AI method documented in the editorial source review.",
+    "tested": "Eight predicted peptides were synthesized; seven reduced TNF-α secretion in stimulated THP-1 assays. A 12-week pilot randomized 40 older adults (rice NPN 30, placebo 10). The digestive-discomfort primary endpoint was not met; secondary chair-stand/SPPB results favored treatment. Figure captions report at least 27/10 and 28/10 analyzed for those outcomes, respectively.",
+    "unknown": "The pilot was small and randomized 30:10; the primary subjective endpoint was not met, and authors noted compliance and Christmas-period measurement as confounders. The clinical intervention was a rice peptide hydrolysate, so effects cannot be assigned to individual AI-predicted peptides. Clinical efficacy and generalizability need confirmation.",
+    "ai_role": "A ten-model neural-network ensemble predicted anti-inflammatory peptides from food proteomes and helped characterize peptides detected in rice NPN; peptide and ingredient effects were then tested by mass spectrometry, cell assays, and a human pilot. The AI prediction itself did not establish clinical effect.",
     "evidence_urls": [
       "https://doi.org/10.3390/foods9091147"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Publisher Methods on peptide prediction and pilot design; peptide Results, human Results and outcome-specific figure-caption denominators."
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "2020-07-study-10-1021-acs-jmedchem-0c00473",
   "title": "Discovery of Novel Inhibitors of a Critical Brain Enzyme Using a Homology Model and a Deep Convolutional Neural Network.",
-  "summary": "The primary abstract identifies AtomNet and reports five low-micromolar inhibitors of a rare-disease enzyme. This supports hit discovery, not treatment efficacy.",
+  "summary": "AtomNet, a deep convolutional network, helped identify five low-micromolar ANAT enzyme inhibitors using a homology model despite the lack of a native structure or high-identity template. This is biochemical hit identification for a Canavan-disease target, not evidence of treatment efficacy.",
   "field": "medicine",
   "ai_technology": "AtomNet deep convolutional neural network",
   "organization": "Numerion Labs (United States); University of Toledo",
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "The primary abstract identifies AtomNet and reports five low-micromolar inhibitors of a rare-disease enzyme. This supports hit discovery, not treatment efficacy.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "AtomNet deep convolutional neural network is the AI method documented in the editorial source review.",
+    "tested": "The primary abstract reports five low-micromolar ANAT inhibitors. Indexed ACS text describes dose-response validation and comparison of AtomNet and smina rankings over a 7.2-million-compound library; full assay denominator and comparator details were not directly reviewed.",
+    "unknown": "Full ACS Methods and supporting information were not reviewed. Exact assay denominator, comparator details, cellular target engagement, in-vivo efficacy and therapeutic safety were not assessed; biochemical inhibition does not establish treatment efficacy.",
+    "ai_role": "AtomNet, a deep convolutional neural network, ranked candidate ligands for ANAT using a homology model and informed biochemical hit selection.",
     "evidence_urls": [
       "https://doi.org/10.1021/acs.jmedchem.0c00473"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Indexed primary PubMed abstract and publication metadata; full ACS Methods/supporting information not reviewed."
   }
 }

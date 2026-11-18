@@ -1,7 +1,7 @@
 {
   "id": "2020-03-study-10-1021-acsmedchemlett-9b00612",
   "title": "Accelerated Discovery of Novel Ponatinib Analogs with Improved Properties for the Treatment of Parkinson's Disease.",
-  "summary": "Naïve Bayes networks jointly prioritized c-Abl potency and reduced hERG liability; synthesized compounds were assayed. Improved assay profiles do not establish cardiac safety or Parkinson disease efficacy.",
+  "summary": "Paired Naive Bayes models prospectively prioritized ponatinib analogs for c-Abl potency and reduced hERG liability. Of six new compounds tested, two combined sub-10 nM c-Abl activity with improved hERG assay profiles; this is biochemical optimization, not evidence of Parkinson’s efficacy or cardiac safety.",
   "field": "medicine",
   "ai_technology": "Paired Naïve Bayes networks",
   "organization": "University of Oxford; Emory University",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2020-03-12",
   "added_date": "2026-11-18",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "https://doi.org/10.1021/acsmedchemlett.9b00612",
   "relevance": {
     "impact": 2,
@@ -18,13 +18,17 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Naïve Bayes networks jointly prioritized c-Abl potency and reduced hERG liability; synthesized compounds were assayed. Improved assay profiles do not establish cardiac safety or Parkinson disease efficacy.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "Paired Naïve Bayes networks is the AI method documented in the editorial source review.",
+    "tested": "Six novel compounds were tested. Table 1 reports compounds 4 and 5 with c-Abl IC50 below 10 nM and hERG IC50 5.02 and 12.1 μM; nilotinib/ponatinib hERG values are 0.45/0.77 μM. The correction swaps compounds 4/5 in the separate kinase-panel Table 2, not these Table 1 values.",
+    "unknown": "The enzyme/channel and cell-toxicity assays do not establish Parkinson’s efficacy, in-vivo exposure, or clinical cardiac safety. The June 24 correction swaps compounds 4 and 5 in kinase-panel Table 2.",
+    "ai_role": "A single Naive Bayes network predicted c-Abl potency; two networks in concert prioritized c-Abl potency and predicted hERG IC50 greater than 1 μM, and the workflows were prospectively tested.",
     "evidence_urls": [
       "https://pmc.ncbi.nlm.nih.gov/articles/PMC7153011/",
       "https://doi.org/10.1021/acsmedchemlett.9b00612"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "PMC Results and Table 1; indexed primary correction Table 2; ACS online/issue publication metadata."
   }
 }

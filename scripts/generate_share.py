@@ -31,10 +31,13 @@ import csv
 import subprocess
 import sys
 import tempfile
+from collections import Counter
 from pathlib import Path
 from urllib.parse import quote
 
 from model_families import discovery_links
+from entities import organization as canonical_organization
+from dataset_manifest import write_manifest, stamp_pages, write_component_jsonld
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://aisciencetracker.org/'
@@ -50,7 +53,7 @@ def esc(s):
 
 def lead_org(name):
     """Same rule as index.html: organizations listed together count under the first one named."""
-    return name.split(';')[0].strip()
+    return canonical_organization(name)['label']
 
 
 def score(d):
@@ -123,7 +126,7 @@ def run_catalog_ui(items):
     script = ("require(process.argv[1]);"
               "const items = JSON.parse(require('fs').readFileSync(0, 'utf8'));"
               "const out = {};"
-              "for (const r of items) out[r.id] = {details: CatalogUI.sourceDetails(r), correction: CatalogUI.correctionUrl(r)};"
+              "for (const r of items) out[r.id] = {details: CatalogUI.sourceDetails(r), status: CatalogUI.sourceBadge(r), correction: CatalogUI.correctionUrl(r)};"
               "process.stdout.write(JSON.stringify(out));")
     result = subprocess.run(['node', '-e', script, str(ROOT / 'assets/catalog-ui.js')],
                             input=json.dumps(items), capture_output=True, text=True, check=True)
@@ -260,7 +263,8 @@ def discovery_jsonld(d):
     # WebPage, not Article: the announcement date is not when this page was published.
     data = {'@context': 'https://schema.org/', '@type': 'WebPage', 'name': d['title'], 'description': clip(d['summary'], 300),
             'url': f'{BASE}share/{d["id"]}.html', 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR, 'publisher': PUBLISHER,
-            'isPartOf': {'@type': 'Dataset', '@id': BASE + 'index.html#dataset', 'name': 'AI Science Tracker discovery catalog', 'url': BASE + 'index.html'},
+            'isPartOf': {'@type': 'Dataset', '@id': BASE + 'index.html#dataset', 'name': 'AI Science Tracker discovery catalog',
+                         'url': BASE + 'dataset.html#scientific-dataset'},
             'breadcrumb': breadcrumb(d['title'], f'share/{d["id"]}.html'),
             'about': {'@type': 'Thing', 'name': d['title']}, 'isBasedOn': d['source_url']}
     if d['paper_url']:
@@ -268,11 +272,15 @@ def discovery_jsonld(d):
     return jsonld(data)
 
 
-def profile_jsonld(name, desc, path, organization=False):
-    data = {'@context': 'https://schema.org/', '@type': 'CollectionPage', 'name': name, 'description': desc,
+def profile_jsonld(name, desc, path, organization=False, security=False, page_type='CollectionPage'):
+    data = {'@context': 'https://schema.org/', '@type': page_type, 'name': name, 'description': desc,
             'url': BASE + path, 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR, 'publisher': PUBLISHER,
-            'isPartOf': {'@type': 'Dataset', '@id': BASE + 'index.html#dataset', 'name': 'AI Science Tracker discovery catalog', 'url': BASE + 'index.html'},
+            'isPartOf': {'@type': 'Dataset', '@id': BASE + 'index.html#dataset', 'name': 'AI Science Tracker discovery catalog',
+                         'url': BASE + 'dataset.html#scientific-dataset'},
             'breadcrumb': breadcrumb(name, path)}
+    if security:
+        data['isPartOf'] = {'@type': 'Dataset', '@id': BASE + 'dataset.html#security-dataset',
+                            'name': 'AI Science Tracker AI-found vulnerability catalog', 'url': BASE + 'dataset.html#security-dataset'}
     if organization:
         data['about'] = {'@type': 'Organization', 'name': name}
     return jsonld(data)
@@ -287,8 +295,7 @@ def safe_url(u):
 
 
 def discovery_article(d, fam, ui, link_title=False, archived=False):
-    """Same fields and markup as index.html's voce(), minus JS-only controls (the "Read
-    more" truncation toggle and the "Copy link" button) that cannot work without script."""
+    """Same fields and markup as index.html's voce(), minus JS-only copy controls."""
     p = score(d)
     family = (f'<p class="modello">Family {esc(fam["name"])}: <a href="profiles/family-{quote(fam["id"])}.html">profile</a> '
               f'&middot; <a href="models.html#fam-{esc(fam["id"])}">models page</a></p>') if fam else ''
@@ -299,11 +306,12 @@ def discovery_article(d, fam, ui, link_title=False, archived=False):
     return f"""<article class="voce" id="{esc(d['id'])}">
     <div class="voce-meta"><time datetime="{esc(d['publication_date'])}">{esc(nice_date(d['publication_date']))}</time>{organization}</div>
     <h3>{title_html}</h3>
-    <p class="sommario">{esc(d['summary'])}</p>
+    {ui['status']}
+    <p class="sommario"><b>{"Finding / tested result" if d.get("evidence", {}).get("tested") == d["summary"] else "Finding"}:</b> {esc(d['summary'])}</p>
     {tech}
     {family}
     <div class="voce-footer">
-      <span class="punteggio" title="Impact {d['relevance']['impact']}/5, validation {d['relevance']['validation']}/5, novelty {d['relevance']['novelty']}/5">Relevance {p}<span class="metro" aria-hidden="true"><i style="width:{p}%"></i></span></span>
+      <span class="punteggio" title="Impact {d['relevance']['impact']}/5, validation {d['relevance']['validation']}/5, novelty {d['relevance']['novelty']}/5">Editorial relevance {p}<span class="metro" aria-hidden="true"><i style="width:{p}%"></i></span></span>
       <span class="etich">{esc(d['field'])}</span>
       <span class="collegamenti"><a href="{esc(safe_url(d['source_url']))}" rel="noopener">Original source</a>{paper} <a class="correction-link" href="{esc(ui['correction'])}" rel="noopener">Suggest a correction</a></span>
     </div>
@@ -311,33 +319,59 @@ def discovery_article(d, fam, ui, link_title=False, archived=False):
   </article>"""
 
 
-def related_section(d, items):
-    """Plain anchors to a few newer-first siblings, so every discovery page has inbound links
-    from other pages (not only the sitemap). Capped at 3 per list to avoid near-duplicate blocks."""
-    def block(title, rows):
-        rows = rows[:3]
-        if not rows:
-            return ''
-        lis = ''.join(f'<li><a href="share/{esc(r["id"])}.html">{esc(r["title"])}</a> &middot; {esc(nice_date(r["publication_date"]))}</li>' for r in rows)
-        return f'<h2>{title}</h2><ul>{lis}</ul>'
-    newest = sorted((r for r in items if r['id'] != d['id']), key=lambda r: r['publication_date'], reverse=True)
-    org = lead_org(d['organization'])
-    same_org = [r for r in newest if lead_org(r['organization']) == org]
-    same_field = [r for r in newest if r['field'] == d['field'] and r not in same_org[:3]]
-    body = block(f'More from {esc(org)}', same_org) + block(f'More in {esc(d["field"])}', same_field)
-    return f'\n  <section class="sez"><div class="wrap"><div class="prosa">{body}</div></div></section>' if body else ''
+def related_section(d, candidates, families):
+    """Prefer recorded links, then exact catalog context and closeness in date."""
+    current_id = d['id']
+    outgoing = {link['target_id'] for link in d.get('relationships', [])}
+    affiliation = canonical_organization(d['organization'])
+    current_org = affiliation['label'] if affiliation['kind'] != 'unknown affiliation' else None
+    current_date = datetime.date.fromisoformat(d['publication_date'])
+    technology = d['ai_technology'].strip().casefold()
+    ranked = []
+    for row, org, day, incoming, tech in candidates:
+        other_id = row['id']
+        if other_id == current_id:
+            continue
+        documented = other_id in outgoing or current_id in incoming
+        shared_family = bool(families.get(current_id, set()) & families.get(other_id, set()))
+        same_field = d['field'] == row['field']
+        same_technology = bool(technology and technology == tech)
+        same_org = current_org == org
+        if not any((documented, shared_family, same_technology, same_field and same_org)):
+            continue
+        reason = ('Documented relationship' if documented else 'Shared model family' if shared_family
+                  else 'Same recorded technology' if same_technology else 'Same field and first-listed affiliation')
+        key = (not documented, not (same_field and (shared_family or same_technology)),
+               not shared_family, not same_technology, not (same_field and same_org),
+               not same_field, abs((current_date - day).days), other_id)
+        ranked.append((key, row, reason))
+    if not ranked:
+        return ''
+    links = ''.join(f'<li><a href="share/{quote(row["id"])}.html">{esc(row["title"])}</a>'
+                    f' &middot; {esc(nice_date(row["publication_date"]))} · {reason}</li>'
+                    for _, row, reason in sorted(ranked)[:4])
+    return ('\n  <section class="sez"><div class="wrap prosa"><h2>Related catalog entries</h2>'
+            '<p>Links use documented relationships where available, plus shared catalog context. '
+            'A shared topic or model family does not establish a scientific dependency.</p>'
+            f'<ul>{links}</ul></div></section>')
 
 
-def write_discovery_pages(items, models, images, archived=False):
+def write_discovery_pages(items, models, images, archived=False, related_items=None):
     """Each page is a full, self-canonical page in the shared frame, indexable without
     JavaScript (IMP-011) — replacing the earlier noindex/meta-refresh stub."""
     out = ROOT / 'share'
     out.mkdir(exist_ok=True)
     header, footer = site_frame()
     fam_by_discovery = {}
+    families_by_discovery = {}
     for f in models['families']:
         for did in f['discoveries']:
             fam_by_discovery.setdefault(did, f)
+            families_by_discovery.setdefault(did, set()).add(f['id'])
+    candidates = [(row, lead_org(row['organization']), datetime.date.fromisoformat(row['publication_date']),
+                   {link['target_id'] for link in row.get('relationships', [])}, row['ai_technology'].strip().casefold())
+                  for row in (items if related_items is None else related_items)]
+    fields = {row['field'] for row, *_ in candidates}
     ui = run_catalog_ui(items)
     for d in items:
         has_image = images or (ROOT / 'og' / f'{d["id"]}.png').is_file()
@@ -345,11 +379,18 @@ def write_discovery_pages(items, models, images, archived=False):
         more = ('<a href="index.html">Browse the current catalog</a>.' if archived else
                 f'<a href="index.html#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.')
         lead = f'{esc(d["organization"])} &middot; {esc(nice_date(d["publication_date"]))} &middot; {esc(d["field"])}'
+        if d['field'] in fields:
+            more += f' <a href="profiles/field-{slug(d["field"])}.html">Browse {esc(d["field"])} discoveries</a>.'
+        if archived:
+            lead = f'Archived catalog entry &middot; {lead}'
         page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(describe(d['summary'])), base=BASE,
                            path=f'share/{d["id"]}.html', img=d['id'] if has_image else 'default',
                            imgalt=esc(f'Preview card: {d["title"]}') if has_image else DEFAULT_ALT, jsonld=discovery_jsonld(d),
-                           h2='<h2 class="vis-nascosto">Discovery</h2>', more=more, extra=related_section(d, items),
+                           h2='<h2 class="vis-nascosto">Discovery</h2>', more=more, extra=related_section(d, candidates, families_by_discovery),
                            header=header, footer=footer, lead=lead, article=article)
+        if archived:
+            page = page.replace(f'<title>{esc(d["title"])} · {SITE}</title>',
+                                f'<title>Archived: {esc(d["title"])} · {SITE}</title>', 1)
         (out / f'{d["id"]}.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
 
 
@@ -377,9 +418,43 @@ def family_summary(rows, name):
     def groups(title, key):
         return f'<h3>{title}</h3>' + ''.join(f'<details><summary>{esc(label)} · {len(group)} linked records</summary>{members(group)}</details>' for label, group in ((label, [d for d in rows if key(d) == label]) for label in sorted({key(d) for d in rows})))
 
+    annotated = sum(bool(d.get('evidence')) for d in rows)
+    reviewed = sum(bool(d.get('source_review', {}).get('date') and d.get('source_review', {}).get('scope')) for d in rows)
     # Stable two-pass sorting keeps equal-date examples in ID order.
     examples = sorted(sorted(rows, key=lambda d: d['id']), key=lambda d: d['publication_date'], reverse=True)[:3]
-    return f'<section aria-label="Represented scientific uses"><h2>Where {esc(name)} appears in the catalog</h2><details class="source-details"><summary>Why linked?</summary><p>These associations match family names in discovery titles and technology text. They are not verified model-version assignments or causal attribution. Missing links do not establish absence of use. A record may link to multiple families.</p></details>' + (groups('Represented fields', lambda d: d['field']) + groups('Test contexts', test_context) + groups('Annotation coverage', lambda d: 'Evidence annotation present' if d.get('evidence') else 'Not annotated in this catalog') if rows else '<p>No scientific uses are linked in this catalog.</p>') + '<h3>Examples</h3><p>Up to three linked records, newest publication date first, then stable ID. This selection is not a ranking.</p>' + members(examples) + '</section>'
+    return f'<section aria-label="Represented scientific uses"><h2>Where {esc(name)} appears in the catalog</h2><p><b>Evidence annotations:</b> {annotated}/{len(rows)} linked records. <b>Structured review date and scope:</b> {reviewed}/{len(rows)}. Missing review metadata does not prove a source was never checked.</p><details class="source-details"><summary>Why linked?</summary><p>These associations match family names in discovery titles and technology text. They are not verified model-version assignments or causal attribution. Missing links do not establish absence of use. A record may link to multiple families.</p></details>' + (groups('Represented fields', lambda d: d['field']) + groups('Test contexts', test_context) + groups('Annotation coverage', lambda d: 'Evidence annotation present' if d.get('evidence') else 'Not annotated in this catalog') if rows else '<p>No scientific uses are linked in this catalog.</p>') + '<h3>Examples</h3><p>Up to three linked records, newest publication date first, then stable ID. This selection is not a ranking.</p>' + members(examples) + '</section>'
+
+
+def family_affiliations(rows):
+    """Preserve first-affiliation profile links outside the concise family lead."""
+    names = sorted({lead_org(d['organization']) for d in rows})
+    links = ''.join(f'<li><a href="profiles/org-{slug(name)}.html">{esc(name)}</a></li>' for name in names)
+    return (f'<h2>First-listed affiliations</h2><details class="source-details">'
+            f'<summary>{len(names)} first-affiliation groups in linked records</summary>'
+            '<p>Grouping uses the first listed affiliation; complete source labels remain on each entry.</p>'
+            f'<ul class="elenco-profili">{links}</ul></details>') if names else ''
+
+
+def collection_summary(rows, title, by_year=False):
+    """Source-derived orientation and cross-links, without completeness or trend claims."""
+    counts = Counter(d['field'] if by_year else d['publication_date'][:4] for d in rows)
+    links = []
+    for key, count in sorted(counts.items(), reverse=not by_year):
+        path = f'profiles/field-{slug(key)}.html' if by_year else f'profiles/year-{key}.html'
+        links.append(f'<li><a href="{path}">{esc(key)}</a> · {count} entries in this selection</li>')
+    annotated = sum(bool(d.get('evidence')) for d in rows)
+    dates = sorted(d['publication_date'] for d in rows)
+    dimension = 'field' if by_year else 'year'
+    return (f'<section class="prosa" aria-label="Collection overview"><h2>About {esc(title)}</h2>'
+            f'<p>This selection contains {len(rows)} catalog entries dated {nice_date(dates[0])} to {nice_date(dates[-1])}. '
+            f'{annotated} include structured evidence annotations describing reported tests, the AI contribution and remaining limits. '
+            'Missing annotations mean those details have not been structured here, not that a study lacks evidence.</p>'
+            '<p>Dates follow the catalog publication policy. Coverage is selected and incomplete; entries can overlap or describe several results. '
+            'Counts do not measure independent discoveries, clinical benefit or worldwide research output. '
+            '<a href="methodology.html">Read the selection and evidence policy</a> or '
+            '<a href="profiles/catalog-evidence.html">compare catalog coverage by year and field</a>.</p>'
+            f'<details><summary>Explore this selection by {dimension}</summary><p>Counts refer to this selection; '
+            f'each link opens the full {dimension} collection.</p><ul>{"".join(links)}</ul></details></section>')
 
 
 def write_profile_pages(items, models, archived=()):
@@ -401,7 +476,7 @@ def write_profile_pages(items, models, archived=()):
     pages = []
     aliases = {}
     for d in items:
-        legacy_names = {d['organization'].replace(' and ', ',').split(',')[0].strip(),
+        legacy_names = {d['organization'].split(';')[0].strip(), d['organization'].replace(' and ', ',').split(',')[0].strip(),
                         re.split(r'[,;]| and ', d['organization'], flags=re.I)[0].strip()}
         new = slug(lead_org(d['organization']))
         for legacy in legacy_names:
@@ -431,7 +506,7 @@ def write_profile_pages(items, models, archived=()):
         assert slugs.setdefault(slug(name), name) == name, f'organization slug collision: {name}'
         emit(name, name, f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
              f'{plural(len(rows), "AI-enabled scientific discovery", "AI-enabled scientific discoveries")} tracked from {name}, with sources.',
-             rows, f'profiles/org-{slug(name)}.html', f'profile.html?org={quote(name)}', organization=True)
+             rows, f'profiles/org-{slug(name)}.html', f'profile.html?org={quote(name)}', organization=canonical_organization(rows[0]['organization'])['kind'] != 'unknown affiliation')
     archived_orgs = {}
     for d in archived:
         legacy = slug(d['organization'].replace(' and ', ',').split(',')[0].strip())
@@ -470,9 +545,9 @@ def write_profile_pages(items, models, archived=()):
             continue
         active_families.add(fam['id'])
         rel = [m for m in models.get('models', []) if m.get('family') == fam['id']]
-        emit(fam['name'], fam['name'], f'{plural(len(rows), "discovery", "discoveries")} name this family, {years(rows)}',
+        emit(fam['name'], fam['name'], f'{plural(len(rows), "discovery", "discoveries")} name this family, {years(rows)}, across {len({d["field"] for d in rows})} scientific fields. Links are name-based family associations; exact versions and causal attribution are not verified.',
              f'{plural(len(rows), "AI-enabled scientific discovery", "AI-enabled scientific discoveries")} linked to the {fam["name"]} model family.',
-             rows, f'profiles/family-{quote(fam["id"])}.html', f'profile.html?family={quote(fam["id"])}', releases_table(rel), before=family_summary(rows, fam['name']))
+             rows, f'profiles/family-{quote(fam["id"])}.html', f'profile.html?family={quote(fam["id"])}', releases_table(rel), before=family_affiliations(rows) + family_summary(rows, fam['name']))
     for fid, ids in discovery_links(archived).items():
         if ids and fid not in active_families:
             redirect(f'family-{quote(fid)}.html', {f'../share/{quote(did)}.html' for did in ids})
@@ -482,22 +557,56 @@ def write_profile_pages(items, models, archived=()):
         by_field.setdefault(d['field'], []).append(d)
         by_year.setdefault(d['publication_date'][:4], []).append(d)
     for field, rows in sorted(by_field.items()):
-        emit(field, f'AI discoveries in {field}', f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
+        title = f'AI discoveries in {field}'
+        overview = collection_summary(rows, title)
+        if field == 'materials' and {'2023-11-gnome', '2023-11-a-lab', '2020-05-hob2-magnetocaloric-effect'} <= {d['id'] for d in rows}:
+            title = 'AI materials discoveries: predictions and experiments'
+            overview = ('<section class="prosa"><h2>From prediction to physical evidence</h2>'
+                        '<ul><li><a href="share/2023-11-gnome.html">GNoME</a> used a graph neural network to predict crystal structures '
+                        'and estimate stability. The project reports that other laboratories synthesized some of the predicted structures.</li>'
+                        '<li><a href="share/2023-11-a-lab.html">A-Lab</a> used an automated laboratory to make compounds from computed targets. '
+                        'The catalog record links the correction and explains where the diffraction evidence remained inconclusive.</li>'
+                        '<li><a href="share/2020-05-hob2-magnetocaloric-effect.html">The HoB₂ magnetocaloric study</a> used machine learning '
+                        'to select a known compound. The study reports measurements of its magnetic entropy change under an applied field.</li></ul>'
+                        '<p>These studies illustrate distinct steps. A calculation estimates stability, synthesis produces a sample, '
+                        'and a property measurement tests a defined characteristic under stated conditions. '
+                        'For claims about performance, check which property was measured and what it was compared with.</p></section>') + overview
+        math_examples = {'2024-07-alphaproof-imo', '2026-02-congettura-fel', '2026-03-alphaevolve-ramsey'}
+        if field == 'mathematics' and math_examples <= {d['id'] for d in rows}:
+            overview = (
+                '<section class="prosa"><h2>What has AI helped discover in mathematics?</h2>'
+                '<p>AI systems can solve competition problems, help formalize proofs and search for constructions that improve mathematical bounds. '
+                'Each task has a different way to check the result.</p><dl>'
+                '<dt><a href="share/2024-07-alphaproof-imo.html">Competition benchmark: AlphaProof and AlphaGeometry 2</a></dt>'
+                '<dd>Two mathematicians graded the solutions against International Mathematical Olympiad criteria. '
+                'The team translated problems into formal language manually, and some solutions took up to three days.</dd>'
+                '<dt><a href="share/2026-02-congettura-fel.html">Formal proof: the Fel conjecture</a></dt>'
+                '<dd>AxiomMath reports a proof checked in Lean. The report describes one case and identifies dependence on the available Mathlib library.</dd>'
+                '<dt><a href="share/2026-03-alphaevolve-ramsey.html">Improved bounds: AlphaEvolve and Ramsey numbers</a></dt>'
+                '<dd>The authors report computational constructions that improve lower bounds for Ramsey numbers. '
+                'A lower bound constrains the possible value. The exact number remains a separate question.</dd>'
+                '</dl><p>Follow the linked records for sources and the limits of each check.</p></section>'
+            ) + overview
+        emit(field, title, f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
              f'{plural(len(rows), "scientific discovery", "scientific discoveries")} in {field} made with AI, {years(rows)}, each linked to its original source.',
-             rows, f'profiles/field-{slug(field)}.html', f'index.html?field={quote(field)}', label='filtered catalog')
+             rows, f'profiles/field-{slug(field)}.html', f'index.html?field={quote(field)}', label='filtered catalog',
+             before=overview)
     for year, rows in sorted(by_year.items(), reverse=True):
         emit(year, f'AI discoveries in {year}', f'{plural(len(rows), "discovery", "discoveries")} announced in {year}',
              f'{plural(len(rows), "scientific discovery", "scientific discoveries")} made with AI and announced in {year}, each linked to its original source.',
-             rows, f'profiles/year-{year}.html', f'index.html?year={year}', label='filtered catalog')
+             rows, f'profiles/year-{year}.html', f'index.html?year={year}', label='filtered catalog',
+             before=collection_summary(rows, f'AI discoveries in {year}', by_year=True))
     topics = ''.join(f'<li><a href="profiles/field-{slug(f)}.html">{esc(f)}</a> ({len(r)})</li>' for f, r in sorted(by_field.items(), key=lambda kv: (-len(kv[1]), kv[0])))
     yearly = ''.join(f'<li><a href="profiles/year-{y}.html">{y}</a> ({len(r)})</li>' for y, r in sorted(by_year.items(), reverse=True))
-    labs = ''.join(f'<li><a href="profiles/org-{slug(n)}.html">{esc(n)}</a> ({len(r)})</li>' for n, r in sorted(by_org.items(), key=lambda kv: (-len(kv[1]), kv[0])))
+    unknown_groups = {n: rows for n, rows in by_org.items() if canonical_organization(rows[0]['organization'])['kind'] == 'unknown affiliation'}
+    labs = ''.join(f'<li><a href="profiles/org-{slug(n)}.html">{esc(n)}</a> ({len(r)})</li>' for n, r in sorted(by_org.items(), key=lambda kv: (-len(kv[1]), kv[0])) if n not in unknown_groups)
     fams = ''.join(f'<li><a href="profiles/family-{quote(f["id"])}.html">{esc(f["name"])}</a> ({len(f["discoveries"])})</li>' for f in sorted(models['families'], key=lambda f: (-len(f['discoveries']), f['name'])) if f['discoveries'])
-    directory = f'<h2>Fields</h2><ul class="elenco-profili">{topics}</ul><h2>Years</h2><ul class="elenco-profili">{yearly}</ul><h2>Organizations</h2><ul class="elenco-profili">{labs}</ul><h2>Model families</h2><ul class="elenco-profili">{fams}</ul>'
-    page = PAGE.format(title='Labs and model families', site=SITE, desc='Organizations and model families with at least one tracked AI-enabled discovery.', base=BASE,
+    unknown_links = ''.join(f'<li><a href="profiles/org-{slug(n)}.html">{esc(n)}</a> ({len(rows)})</li>' for n, rows in unknown_groups.items())
+    directory = f'<h2>Fields</h2><ul class="elenco-profili">{topics}</ul><h2>Years</h2><ul class="elenco-profili">{yearly}</ul><h2>Organizations</h2><ul class="elenco-profili">{labs}</ul><h2>Unknown affiliation</h2><p>These entries do not establish an institution; original author and source labels are preserved.</p><ul class="elenco-profili">{unknown_links}</ul><h2>Model families</h2><ul class="elenco-profili">{fams}</ul>'
+    page = PAGE.format(title='AI discoveries by field, year, lab and model family', site=SITE, desc='Browse source-linked AI scientific discoveries by discipline, publication year, organization and model family.', base=BASE,
                        path='profiles/index.html', img='default', imgalt=DEFAULT_ALT, header=header, footer=footer,
-                       jsonld=profile_jsonld('Labs and model families', 'Organizations and model families with at least one tracked AI-enabled discovery.', 'profiles/index.html'),
-                       lead=f'{len(by_org)} organizations and {len([f for f in models["families"] if f["discoveries"]])} model families', article=directory,
+                       jsonld=profile_jsonld('AI discoveries by field, year, lab and model family', 'Browse source-linked AI scientific discoveries by discipline, publication year, organization and model family.', 'profiles/index.html'),
+                       lead=f'{len(by_org) - len(unknown_groups)} organizations and {len([f for f in models["families"] if f["discoveries"]])} model families', article=directory,
                        more='<a href="profile.html">Open the interactive directory</a>.', extra='', h2='')
     (ROOT / 'profiles/index.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
     pages.append('profiles/index.html')
@@ -508,10 +617,149 @@ def write_profile_pages(items, models, archived=()):
     return pages
 
 
+def write_collection_page(title, description, path, article, lead, more, security=False, page_type='CollectionPage', search_title=None):
+    """Use the existing static frame for generated evidence and security collections."""
+    header, footer = site_frame()
+    page = PAGE.format(title=esc(title), site=SITE, desc=esc(description), base=BASE, path=path,
+                       img='default', imgalt=DEFAULT_ALT, header=header, footer=footer,
+                       lead=lead, article=article, more=more, extra='', h2='',
+                       jsonld=profile_jsonld(title, description, path, security=security, page_type=page_type))
+    if search_title:
+        page = page.replace(f'<title>{esc(title)} · {SITE}</title>',
+                            f'<title>{esc(search_title)} · {SITE}</title>', 1)
+    (ROOT / path).parent.mkdir(exist_ok=True)
+    (ROOT / path).write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
+
+
+def write_catalog_evidence(items):
+    """Reproducible composition analysis; annotations are not inferred evidence grades."""
+    groups = []
+    sections = []
+    for dimension in ('year', 'field'):
+        keys = sorted({d['publication_date'][:4] if dimension == 'year' else d['field'] for d in items},
+                      reverse=dimension == 'year')
+        table = []
+        for key in keys:
+            rows = [d for d in items if (d['publication_date'][:4] if dimension == 'year' else d['field']) == key]
+            annotated = sum(bool(d.get('evidence')) for d in rows)
+            checked = sum(d['verification_status'] == 'verified' for d in rows)
+            groups.append({'grouping': dimension, 'group': key, 'catalog_entries': len(rows),
+                           'evidence_annotated': annotated, 'source_checked': checked})
+            path = f'profiles/year-{key}.html' if dimension == 'year' else f'profiles/field-{slug(key)}.html'
+            table.append(f'<tr><th scope="row"><a href="{path}">{esc(key)}</a></th>'
+                         f'<td>{len(rows)}</td><td>{annotated}</td><td>{checked}</td></tr>')
+        sections.append(f'<h2>Catalog coverage by {dimension}</h2><div class="security-table"><table>'
+                        f'<caption>Active catalog entries grouped by {dimension}; annotation and source-check counts are separate, overlapping attributes.</caption>'
+                        f'<thead><tr><th scope="col">{dimension.title()}</th><th scope="col">Entries</th>'
+                        '<th scope="col">Evidence annotated</th><th scope="col">Source checked</th></tr></thead>'
+                        f'<tbody>{"".join(table)}</tbody></table></div>')
+    annotated = sum(bool(d.get('evidence')) for d in items)
+    article = ('<div class="prosa"><h2>What does this catalog cover?</h2>'
+               f'<p>Of {len(items)} active entries, {annotated} contain a structured evidence annotation '
+               f'and {len(items) - annotated} do not. The tables compare the composition of the current catalog, '
+               'rather than the rate of scientific progress.</p>'
+               '<p><strong>Counting unit:</strong> one active discovery record. Records can overlap and one record can describe several results. '
+               'Archived discoveries, model releases and security cases are excluded. Year means the stored publication year, not the year the entry was added.</p>'
+               '<p><strong>Evidence annotated</strong> means a nonempty structured evidence object is present. It does not establish that every annotation field '
+               'is populated, peer review, independent replication or clinical benefit. <strong>Source checked</strong> means the catalog stores '
+               'a completed source check; it is not independent reproduction. These attributes overlap and must not be added together.</p>'
+               '<p><strong>Interpretation:</strong> coverage and annotation effort differ by field and year. Import batches can change historical totals. '
+               '<a href="methodology.html#evidence-coverage">Inspect field/year acquisition and source-review gaps</a> for finer collection coverage. '
+               'A larger count does not prove a more productive field, faster AI progress, or better scientific evidence. '
+               'The latest year may be incomplete.</p></div>' + ''.join(sections) +
+               '<div class="prosa"><h2>Reproduce and cite this comparison</h2>'
+               '<p><a href="data/catalog-summary.csv">Download these exact table rows as CSV</a>. '
+               'Group the <a href="data/discoveries.json">active discovery JSON</a> by publication-date year or field, '
+               'count records, count nonempty evidence objects and count verification_status values equal to verified. '
+               'Each grouping sums to the active catalog size; do not sum the year and field tables together.</p>'
+               '<p>For a stable citation, select a matching archived release from '
+               '<a href="https://doi.org/10.5281/zenodo.24217686">Zenodo</a> and record its version. '
+               'The current page and downloads change with the catalog. '
+               '<a href="antibiotic-dossier.html">Compare four antibiotic studies and their experiments</a> for a source-bounded scientific synthesis.</p></div>')
+    (ROOT / 'data').mkdir(exist_ok=True)
+    write_csv(ROOT / 'data/catalog-summary.csv', ['grouping', 'group', 'catalog_entries', 'evidence_annotated', 'source_checked'], groups)
+    write_collection_page('AI discoveries: catalog coverage and evidence',
+                          'Compare AI Science Tracker entries by year and scientific field, with evidence annotation coverage, source-check counts and reproducible CSV data.',
+                          'profiles/catalog-evidence.html', article,
+                          f'{len(items)} active catalog entries · descriptive coverage, not a census of science',
+                          '<a href="dataset.html">Dataset, licenses and citation</a> · <a href="methodology.html">Methodology</a>')
+
+
+def run_security_evidence(items):
+    """Reuse the interactive severity renderer, including all source/scenario caveats."""
+    source = (ROOT / 'security.html').read_text()
+    names = ('esc', 'safeUrl', 'date', 'severities')
+    declarations = []
+    for name in names:
+        match = re.search(r'^const ' + name + r' = .*?;$', source, re.M)
+        if not match:
+            raise ValueError(f'Missing shared security declaration: {name}')
+        declarations.append(match[0])
+    for name in ('ratingSeverity', 'severity', 'consequences', 'evidence'):
+        match = re.search(r'^function ' + name + r'\(.*?^}', source, re.M | re.S)
+        if not match:
+            raise ValueError(f'Missing shared security renderer: {name}')
+        declarations.append(match[0])
+    script = '\n'.join(declarations) + ("\nconst records=JSON.parse(require('fs').readFileSync(0,'utf8'));"
+             "process.stdout.write(JSON.stringify(Object.fromEntries(records.map(r=>[r.id,evidence(r,true)]))));")
+    result = subprocess.run(['node', '-e', script], input=json.dumps(items), capture_output=True, text=True, check=True)
+    return json.loads(result.stdout)
+
+
+def write_security_pages(items):
+    """Full source-attributed case pages; security counts remain separate from science."""
+    rendered = run_security_evidence(items)
+    groups = {}
+    for record in sorted(items, key=lambda r: (r['disclosure_date'], r['id']), reverse=True):
+        path = f'profiles/security-{quote(record["id"])}.html'
+        cves = record['cves']
+        search_title = f'{cves[0]} · {record["product"]} · AI attribution' if cves else None
+        summary = record['summary']
+        if cves:
+            summary = f'{cves[0]} in {record["product"]} — {summary}'
+        description = describe(summary)
+        attribution = (f'AI attribution dated {nice_date(record["ai_attribution_date"])}'
+                       if record['ai_attribution_date'] else 'AI attribution date not established by the source')
+        sources = ''.join(f'<li><a href="{esc(safe_url(record[key]))}" rel="noopener">{label}</a></li>' for key, label in
+                          [('source_url', 'Original disclosure'), ('ai_source_url', 'AI attribution'), ('advisory_url', 'Advisory / fix evidence')])
+        article = (f'<article class="voce" id="{esc(record["id"])}"><h2>Finding and attribution</h2>'
+                   f'<p class="sommario">{esc(record["summary"])}</p>'
+                   f'<p><strong>Product:</strong> {esc(record["product"])}. <strong>AI system:</strong> {esc(record["ai_system"])}. '
+                   f'<strong>Team / organization:</strong> {esc(record["organization"])}.</p>'
+                   f'<p><strong>CVE identifiers:</strong> {esc(", ".join(record["cves"]) or "Not established in the cited evidence")}.</p>'
+                   f'<p><strong>AI and human contribution (source account):</strong> {esc(record["ai_role"])}</p>'
+                   '<p>Human involvement is only described where the source account establishes it; unknown involvement does not mean none. '
+                   'Vendor confirmation of a flaw does not confirm every claim about AI contribution.</p>'
+                   f'<p><strong>Discovery context:</strong> {esc(record["classification_note"])}</p>'
+                   f'<p><strong>Remediation status:</strong> {esc(record["remediation"])}. {esc(record["remediation_note"])}</p>'
+                   '<p>A source-documented fix does not establish installed patches or current safety. '
+                   'Source checking does not independently reproduce the finding or establish observed exploitation.</p>'
+                   f'<p>Disclosed {nice_date(record["disclosure_date"])}. {attribution}. '
+                   f'Sources checked {nice_date(record["checked_date"])}; these are separate dates, not a live installation check.</p>'
+                   f'{rendered[record["id"]]}<h2>Original evidence</h2><ul>{sources}</ul>'
+                   f'<p><a href="api/v1/vulnerabilities/{quote(record["id"])}.json">Download this source record (JSON)</a></p></article>')
+        write_collection_page(record['title'], description, path, article,
+                              f'{esc(record["product"])} · AI involvement attributed to {esc(record["ai_system"])}',
+                              f'<a href="security.html#{quote(record["id"])}">Open this case in the interactive tracker</a> · '
+                              '<a href="profiles/security-index.html">Browse all static security cases</a>',
+                              security=True, page_type='WebPage', search_title=search_title)
+        groups.setdefault(record['disclosure_date'][:4], []).append(record)
+    listings = ''.join(f'<h2>Disclosures in {year}</h2><ul class="elenco-profili">' + ''.join(
+        f'<li><a href="profiles/security-{quote(r["id"])}.html">{esc(r["title"])}</a> · '
+        f'{esc(", ".join(r["cves"]) or r["product"])}</li>' for r in rows) + '</ul>' for year, rows in groups.items())
+    article = ('<div class="prosa"><h2>Read the source-attributed evidence</h2><p>Each case preserves the original finding, '
+               'AI and human contribution, separate disclosure and attribution dates, reported severity assessments and remediation limits. '
+               'These cases are separate from scientific-discovery counts. Missing evidence does not establish absence of exploitation.</p></div>' + listings)
+    write_collection_page('Vulnerabilities found by AI: source-linked cases',
+                          'Browse publicly disclosed AI-found vulnerability cases, CVEs, original disclosures, AI attribution and documented remediation caveats without JavaScript.',
+                          'profiles/security-index.html', article, f'{len(items)} cases · selected public evidence, not a complete vulnerability inventory',
+                          '<a href="security.html">Interactive filters and charts</a> · <a href="dataset.html">Download security data</a>', security=True)
+
+
 def write_llms_txt(items, models):
     """llms.txt: a plain summary for language-model crawlers. Counts come from the data so it never goes stale."""
     fields = len({d['field'] for d in items})
-    orgs = len({lead_org(d['organization']) for d in items})
+    orgs = len({lead_org(d['organization']) for d in items if canonical_organization(d['organization'])['kind'] != 'unknown affiliation'})
     newest = max(d['added_date'] for d in items)
     (ROOT / 'llms.txt').write_text(f'''# {SITE}
 
@@ -525,6 +773,8 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [Model progress]({BASE}model-progress.html): exact model comparison, ECI, benchmark evidence and recorded release rhythm
 - [Search all collections]({BASE}search.html): literal retrieval with separate counts and match reasons
 - [Antibiotic evidence dossier]({BASE}antibiotic-dossier.html): dated, source-bounded synthesis
+- [Catalog coverage and evidence]({BASE}profiles/catalog-evidence.html): reproducible composition tables, counting limits and CSV
+- [Static AI-found security cases]({BASE}profiles/security-index.html): source-attributed case pages readable without JavaScript
 - [Models]({BASE}models.html): model releases linked to discoveries
 - [Vuln discoveries]({BASE}security.html): publicly disclosed vulnerabilities with documented AI involvement, kept separate from the scientific count
 - [Methodology]({BASE}methodology.html): what is included, how entries are verified and scored
@@ -548,12 +798,14 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 ''')
 
 
-def write_sitemap(items, models, archived=()):
+def write_sitemap(items, models, archived=(), vulns=()):
     orgs = sorted({lead_org(d['organization']) for d in items})
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
     # Announcement dates are not page-modification dates; omit lastmod until tracked.
     urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'dataset.html', 'contributors.html', 'model-progress.html', 'antibiotic-dossier.html']
     urls += ['profiles/index.html']
+    urls += ['profiles/catalog-evidence.html', 'profiles/security-index.html']
+    urls += [f'profiles/security-{quote(v["id"])}.html' for v in vulns]
     urls += [f'profiles/org-{slug(o)}.html' for o in orgs]
     urls += [f'profiles/family-{quote(f)}.html' for f in fams]
     urls += [f'profiles/field-{slug(f)}.html' for f in sorted({d['field'] for d in items})]
@@ -569,17 +821,19 @@ def write_feed(items, vulns, limit=40):
     """Order discoveries by addition date and vulnerabilities by source-check date."""
     rows = []
     for d in items:
-        rows.append((d['added_date'], d['publication_date'], f'share/{quote(d["id"])}.html', d['title'], d['summary'],
+        path = f'share/{quote(d["id"])}.html'
+        rows.append((d['added_date'], d['publication_date'], path, path, d['title'], d['summary'],
                      f'Discovery - {d["organization"]}'))
     for v in vulns:
-        rows.append((v['checked_date'], v['disclosure_date'], f'security.html#{quote(v["id"])}', v['title'], v['summary'],
+        path = f'profiles/security-{quote(v["id"])}.html'
+        rows.append((v['checked_date'], v['disclosure_date'], f'security.html#{quote(v["id"])}', path, v['title'], v['summary'],
                      f'Vulnerability - {v["organization"]}'))
     rows = sorted(rows, reverse=True)[:limit]
     entries = ''.join(
-        f'<entry><id>{esc(BASE + path)}</id><title>{esc(title)}</title><link href="{esc(BASE + path)}"/>'
+        f'<entry><id>{esc(BASE + entry_id)}</id><title>{esc(title)}</title><link href="{esc(BASE + path)}"/>'
         f'<updated>{added}T00:00:00Z</updated><category term="{esc(cat.split(" - ")[0].lower())}"/>'
         f'<summary>{esc(clip(summary, 300))} ({esc(cat)}; announced {announced})</summary></entry>\n'
-        for added, announced, path, title, summary, cat in rows)
+        for added, announced, entry_id, path, title, summary, cat in rows)
     (ROOT / 'feed.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n'
         f'<id>{BASE}feed.xml</id><title>{SITE}: additions and source checks</title>'
@@ -610,7 +864,7 @@ def write_exports(items, vulns):
     write_csv('data/vulnerabilities.csv', CSV_VULN, [dict(v, cves=';'.join(v['cves']), **{key: json.dumps(v.get(key, []), ensure_ascii=False, separators=(',', ':')) for key in ('cvss', 'impacts')}) for v in vulns])
 
 
-def write_api(items, vulns, models=None, archived=()):
+def write_api(items, vulns, models=None, archived=(), manifest=None):
     """Read-only static API: api/v1/index.json plus one JSON file per record. The full lists stay in data/*.json."""
     for kind, rows in (('discoveries', items), ('vulnerabilities', vulns)):
         out = ROOT / 'api/v1' / kind
@@ -636,6 +890,9 @@ def write_api(items, vulns, models=None, archived=()):
         'downloads': {'discoveries_csv': BASE + 'data/discoveries.csv', 'vulnerabilities_csv': BASE + 'data/vulnerabilities.csv'},
         'schemas': {'discoveries': BASE + 'schema/discoveries.schema.json', 'vulnerabilities': BASE + 'schema/vulnerabilities.schema.json'},
         'documentation': BASE + 'dataset.html'}
+    if manifest is not None:
+        index['component_manifest'] = BASE + 'api/v1/manifest.json'
+        index['snapshot_sha256'] = manifest['snapshot_sha256']
     (ROOT / 'api/v1/index.json').write_text(json.dumps(index, indent=2) + '\n')
 
 
@@ -727,8 +984,8 @@ BROWSE_START, BROWSE_END = '<!-- browse:start -->', '<!-- browse:end -->'
 def write_page_summaries(items, models):
     summaries = {
         'index.html': (f'<b>{len(items)} discoveries</b> in {len({d["field"] for d in items})} fields and '
-                       f'{len({lead_org(d["organization"]) for d in items})} organizations since 2020. '
-                       'Each mark below represents one discovery; taller means more relevant.'),
+                       f'{len({lead_org(d["organization"]) for d in items if canonical_organization(d["organization"])["kind"] != "unknown affiliation"})} organizations since 2020. '
+                       'Browse source-linked findings below. Chart heights show coarse editorial relevance, not scientific quality.'),
         'models.html': (f'<b>{len(models["models"])} releases</b> from leading labs since 2020, using Epoch AI data. '
                         f'<b>{sum(f.get("discovery_count", 0) > 0 for f in models["families"])} families</b> of models are matched by name '
                         f'to at least one of {len(items)} catalog discoveries, covering {len(models.get("linked_discoveries", []))} discoveries in total.')}
@@ -758,6 +1015,8 @@ def write_home_browse(items):
                f'    <h2 id="t-browse">All entries by year</h2>\n'
                f'    <p>Plain links to the page of each of the {len(items)} entries, newest first.</p>\n'
                f'    <p>By field: {fields}.</p>\n'
+               '    <p><a href="profiles/catalog-evidence.html">Compare catalog coverage and evidence by year and field</a> · '
+               '<a href="profiles/security-index.html">Browse source-linked AI-found vulnerability cases</a>.</p>\n'
                f'{blocks}  </div></section>\n  {BROWSE_END}')
     start, end = page.index(BROWSE_START), page.index(BROWSE_END) + len(BROWSE_END)
     path.write_text(page[:start] + section + page[end:])
@@ -782,13 +1041,18 @@ def main():
     if not args.no_images:
         render_cards(items + archived, args.force, args.reuse_images)
     write_discovery_pages(items, models, not args.no_images)
-    write_discovery_pages(archived, models, not args.no_images, archived=True)
+    write_discovery_pages(archived, models, not args.no_images, archived=True, related_items=items)
     write_profile_pages(items, models, archived)
+    write_catalog_evidence(items)
+    write_security_pages(vulns)
     write_llms_txt(items, models)
-    write_sitemap(items, models, archived)
+    write_sitemap(items, models, archived, vulns)
     write_feed(items, vulns)
     write_exports(items, vulns)
-    write_api(items, vulns, models, archived)
+    manifest = write_manifest(ROOT)
+    write_component_jsonld(ROOT, manifest)
+    write_api(items, vulns, models, archived, manifest=manifest)
+    stamp_pages(ROOT, manifest['snapshot_sha256'])
     print(f'{len(items)} share pages, profile pages, sitemap.xml, feed.xml and robots.txt written')
 
 

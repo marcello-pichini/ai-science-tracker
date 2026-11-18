@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'self'">
 <script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/data/*"}},{"not":{"href_matches":"/api/*"}},{"not":{"href_matches":"/og/*"}},{"not":{"href_matches":"/*.xml"}},{"not":{"href_matches":"/*.txt"}}]},"eagerness":"moderate"}]}</script><!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "04bfc0ca5b5e4460b4c8ee6bb5055925"}'></script><!-- End Cloudflare Web Analytics -->
-<title>AI antibiotics: evidence dossier · AI Science Tracker</title>
+<title>AI-discovered antibiotics: experiments and evidence limits · AI Science Tracker</title>
 <meta name="description" content="A source-bounded dossier on AI-discovered antibiotics: screening, generative design, laboratory assays, mouse models and remaining clinical evidence gaps.">
 <link rel="canonical" href="https://aisciencetracker.org/antibiotic-dossier.html">
-<meta property="og:title" content="AI antibiotics: evidence dossier · AI Science Tracker">
+<meta property="og:title" content="AI-discovered antibiotics: experiments and evidence limits · AI Science Tracker">
 <meta property="og:description" content="Four source-bounded studies compare AI screening and design, mouse infection experiments, toxicity tests and clinical evidence limits.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#12367e">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=f7ee2e330613">
+<link rel="stylesheet" href="styles.css?v=23f6b9beaa5b">
 </head>
 <body>
 <header class="header">
@@ -35,7 +35,7 @@
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><p class="nota">Evidence dossier · Editorial review 16 Nov 2026</p><h1 id="page-title">Beyond the petri dish?</h1><p class="lead">How far have AI-discovered antibiotics progressed beyond laboratory assays?</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><p class="nota">Evidence dossier · Editorial review 16 Nov 2026</p><h1 id="page-title">AI-discovered antibiotics: what has been tested?</h1><p class="lead">How far have AI-discovered antibiotics progressed beyond laboratory assays?</p></div></section>
 <main>
 <section class="sez"><div class="wrap prosa"><h2>What these four studies establish</h2>
 <p>Several candidates reached mouse infection experiments; that is a step beyond a laboratory growth assay. The selected source reports do not establish efficacy in patients. They describe different compounds, organisms and experiments, so they cannot be treated as successive clinical stages of one drug.</p>
@@ -43,6 +43,15 @@
 <p class="nota"><b>Scope:</b> four catalog studies, 2020–2025, selected to contrast screening, generative design, infection experiments and toxicity-only animal testing. This is an illustrative synthesis, not an exhaustive or systematic review. The original institutional reports linked below were checked on 16 Nov 2026; full papers, trial registries and all later literature were not re-reviewed. Absence from this dossier is not absence from the research literature.</p>
 </div></section>
 <section class="sez"><div class="wrap"><h2>Compare the actual experiments</h2><p class="sez-sub">Counting unit: one existing catalog study per card. The candidates and conditions differ; no pooled success rate is calculated.</p>
+<div class="tabella-scorre" tabindex="0" role="region" aria-label="Antibiotic evidence comparison">
+<table><caption>Experimental evidence reported in the four selected studies</caption>
+<thead><tr><th scope="col">Study</th><th scope="col">AI contribution</th><th scope="col">Animal evidence in the cited report</th></tr></thead>
+<tbody>
+<tr><th scope="row">Halicin</th><td>Screened existing compounds</td><td>Efficacy tested in mouse infection models</td></tr>
+<tr><th scope="row">Abaucin</th><td>Ranked candidates for testing</td><td>Efficacy tested in a mouse wound infection model</td></tr>
+<tr><th scope="row">SyntheMol</th><td>Generated molecules with synthesis recipes</td><td>Mouse toxicity tests. Infection efficacy was listed as future work.</td></tr>
+<tr><th scope="row">NG1 / DN1</th><td>Generated molecules with two design approaches</td><td>Efficacy tested in separate mouse infection models</td></tr>
+</tbody></table></div>
 <div class="dossier-grid">
 <article class="pannello"><h3><a href="share/2020-02-halicin.html">Halicin · 2020</a></h3><p><b>Result:</b> antibacterial activity and clearance in reported mouse infection experiments.</p><p><b>AI contribution:</b> learned structure–activity screening selected an existing compound.</p><p><b>Test and comparison:</b> bacterial assays, mouse infection models, and a laboratory resistance comparison with ciprofloxacin.</p><p><b>Limit:</b> the source planned further development for humans; mouse efficacy does not establish patient benefit.</p><p><a href="https://news.mit.edu/2020/artificial-intelligence-identifies-new-antibiotic-0220" rel="noopener">Original MIT report · 20 Feb 2020</a></p></article>
 <article class="pannello"><h3><a href="share/2023-05-abaucina.html">Abaucin · 2023</a></h3><p><b>Result:</b> targeted activity against A. baumannii and treatment of mouse wound infections.</p><p><b>AI contribution:</b> ranked compounds for experimental selection.</p><p><b>Test and comparison:</b> activity against resistant isolates; little activity against other bacterial species in the reported assays.</p><p><b>Limit:</b> narrow-spectrum activity is a property in these experiments, not demonstrated clinical safety or efficacy.</p><p><a href="https://news.mit.edu/2023/using-ai-scientists-combat-drug-resistant-infections-0525" rel="noopener">Original MIT report · 25 May 2023</a></p></article>

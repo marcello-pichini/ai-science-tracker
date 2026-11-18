@@ -22,18 +22,38 @@ globalThis.CatalogUI = {
       ? `<a href="${esc('https://api.openalex.org/works/https://doi.org/' + encodeURI(c.doi))}" rel="noopener">OpenAlex work metrics</a>` : 'OpenAlex';
     return `<p>Citations: ${band} of works of the same type, year and subfield (${source}, ${esc(c.cited_by)} citations; ${asOf}). Attention, not a measure of correctness; not part of the score.</p>`;
   },
+  sourceStatus(record) {
+    return record.verification_status === 'verified' ? 'Source checked' : 'Needs source check';
+  },
+  sourceBadge(record) {
+    return `<p class="source-status"><b>Source check:</b> ${this.sourceStatus(record)}. <span>Not independent scientific confirmation.</span></p>`;
+  },
+  reviewCoverage(records) {
+    return {total:records.length, annotated:records.filter(r => r.evidence).length,
+      reviewed:records.filter(r => r.source_review?.date && r.source_review?.scope).length,
+      checked:records.filter(r => r.verification_status === 'verified').length};
+  },
+  readingContext(record) {
+    const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const e = record.evidence;
+    if (!e) return '<p class="evidence-strip">AI contribution, test and limitation are not annotated in this catalog; this does not establish their absence from the source.</p>';
+    const rows = [['AI contribution', this.evidenceValue(record, 'ai_role')],
+      ...(e.tested && e.tested === record.summary ? [] : [['Test and result', this.evidenceValue(record, 'tested')]]),
+      ['Limitation / still unknown', this.evidenceValue(record, 'unknown')]];
+    return `<dl class="reading-context">${rows.map(([label,value]) => `<div><dt>${label}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>`;
+  },
   sourceDetails(record) {
     const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const checked = record.verification_status === 'verified';
-    return `${this.evidenceSummary(record)}${record.evidence ? `<details class="source-details"><summary>Result, AI contribution and limits</summary>${this.evidenceBlock(record)}</details>` : ''}<details class="source-details"><summary>${checked ? 'Source checked' : 'Needs source check'} · editorial details</summary>
+    return `${this.evidenceSummary(record)}${this.readingContext(record)}${record.evidence ? `<details class="source-details"><summary>Evidence sources and annotation context</summary>${this.evidenceBlock(record, false)}</details>` : ''}<details class="source-details"><summary>${checked ? 'Source checked' : 'Needs source check'} · editorial details</summary>
       <p>${checked ? 'The source page was checked against this entry.' : 'The source has not been fully checked or contains conflicting information.'} Independent confirmation is not assessed by this label.</p>
       <p>Source type: ${esc(record.source_type)}. Paper: ${record.paper_url ? 'linked separately' : 'not linked in this catalog; this does not mean no paper exists'}.</p>
       <p>${record.source_review ? `Review date: ${esc(this.contextDate(record.source_review.date))}. Review scope: ${esc(record.source_review.scope)}.` : 'Review scope and date are not recorded; source checked does not establish full-text review.'}</p>
-      ${this.citationLine(record)}
+      ${this.citationLine(record)}${!record.follow_up?.length && !record.relationships?.length && !record.follow_up_review ? this.historyAbsence() : ''}
       <p>Editorial assessment: Impact ${esc(record.relevance.impact)}/5 · Validation ${esc(record.relevance.validation)}/5 · Novelty ${esc(record.relevance.novelty)}/5. Impact and novelty are editorial judgments; validation follows the annotated test type where one exists. Not an evidence grade. <a href="methodology.html">Scoring criteria</a>.</p></details>${this.historyBlock(record)}`;
   },
   // Source descriptions stay separate from the editorial test category that sets validation.
-  evidenceBlock(record) {
+  evidenceBlock(record, includeRows = true) {
     const e = record.evidence;
     if (!e) return '';
     const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -43,7 +63,7 @@ globalThis.CatalogUI = {
       try { return /^https?:\/\//i.test(url) && ['http:', 'https:'].includes(new URL(url).protocol); } catch { return false; }
     }).map(url => `<a href="${esc(url)}" rel="noopener">${esc(url)}</a>`);
     const legacy = [e.publication_status, e.tested, e.unknown, e.ai_role].some(value => /^Not reported\.?$/.test(value));
-    return `<p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><ul class="evidence-context">${rows}</ul>${links.length ? `<p>Evidence sources: ${links.join(' · ')}</p>` : ''}${legacy ? '<p>The legacy label “Not reported” does not distinguish information absent from reviewed material from information not assessed. It is not a scientific finding of absence.</p>' : ''}`;
+    return `<p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p>${includeRows ? `<ul class="evidence-context">${rows}</ul>` : ''}${links.length ? `<p>Evidence sources: ${links.join(' · ')}</p>` : ''}${legacy ? '<p>The legacy label “Not reported” does not distinguish information absent from reviewed material from information not assessed. It is not a scientific finding of absence.</p>' : ''}`;
   },
   evidenceValue(record, key) {
     const value = record.evidence?.[key];
@@ -67,7 +87,11 @@ globalThis.CatalogUI = {
     const options = value.length === 7 ? {month:'short', year:'numeric'} : {day:'numeric', month:'short', year:'numeric'};
     return new Intl.DateTimeFormat('en-GB', {...options, timeZone:'UTC'}).format(new Date(value + (value.length === 7 ? '-01' : '') + 'T12:00:00Z'));
   },
+  historyAbsence() {
+    return '<p>No follow-up recorded; this is not a claim that no follow-up exists. Follow-up review scope and date are not recorded. No source-supported relationships recorded.</p>';
+  },
   historyBlock(record) {
+    if (!record.follow_up?.length && !record.relationships?.length && !record.follow_up_review) return '';
     const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const sources = urls => (urls || []).filter(url => { try { return /^https?:\/\//i.test(url) && ['http:', 'https:'].includes(new URL(url).protocol); } catch { return false; } }).map(url => `<a href="${esc(url)}" rel="noopener">Source</a>`).join(' · ');
     const events = (record.follow_up || []).map(event => `<li id="event-${esc(record.id)}-${esc(event.id)}"><b>${esc(event.kind)}</b> · ${esc(this.contextDate(event.date))}: ${esc(event.note)} ${sources(event.source_urls)}. Recorded ${esc(this.contextDate(event.recorded_date))}.</li>`).join('');

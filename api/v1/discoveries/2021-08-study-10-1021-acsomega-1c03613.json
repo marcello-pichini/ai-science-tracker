@@ -1,7 +1,7 @@
 {
   "id": "2021-08-study-10-1021-acsomega-1c03613",
   "title": "A Novel Scalarized Scaffold Hopping Algorithm with Graph-Based Variational Autoencoder for Discovery of JAK1 Inhibitors.",
-  "summary": "Generated scaffold-hopped compounds were synthesized; seven were biochemically active, including a nanomolar JAK1 inhibitor. No therapeutic efficacy established.",
+  "summary": "GraphGMVAE scaffold hopping from upadacitinib yielded seven synthesized JAK1 inhibitors from 25 prioritized candidates. In biochemical assays, separated Ten01/Ten02 had IC50 values of 5.0/16.8 nM; activity does not establish therapeutic efficacy.",
   "field": "medicine",
   "ai_technology": "GraphGMVAE graph variational autoencoder with message-passing encoders",
   "organization": "Tencent (China)",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2021-08-24",
   "added_date": "2026-11-18",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 2,
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Generated scaffold-hopped compounds were synthesized; seven were biochemically active, including a nanomolar JAK1 inhibitor. No therapeutic efficacy established.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "GraphGMVAE graph variational autoencoder with message-passing encoders is the AI method documented in the editorial source review.",
+    "tested": "Seven synthesized compounds were tested in an ADP-Glo JAK1 kinase assay. Ten01 and Ten02 had IC50 values of 5.0 and 16.8 nM after chiral separation; the other isomeric mixtures ranged from 0.50 to 9.6 μM. The Ten01/Ten02 mixture had IC50 64 nM.",
+    "unknown": "The assays establish biochemical JAK1 inhibition only. The campaign synthesized seven compounds from 25 prioritized molecules; some potency values followed chiral separation and other compounds were tested as isomeric mixtures.",
+    "ai_role": "GraphGMVAE, a graph variational autoencoder with Gaussian-mixture latent space, generated scaffold-hopped molecules from upadacitinib; docking and CNN affinity scoring helped prioritize compounds for synthesis.",
     "evidence_urls": [
       "https://doi.org/10.1021/acsomega.1c03613"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Full PMC paper, including synthesis/assay methods, results and discussion."
   }
 }

@@ -1,7 +1,7 @@
 {
   "id": "2020-10-study-10-1016-j-ejmech-2020-112982",
   "title": "Deep learning enables discovery of highly potent anti-osteoporosis natural products.",
-  "summary": "Prospective natural-product screening yielded five active hits among ten tested, including new-scaffold osteoclastogenesis inhibitors with follow-up expression assays. No clinical efficacy established.",
+  "summary": "A pretrained self-attentive message-passing network prioritized natural products for anti-osteoclastogenesis screening. Five of ten selected virtual hits were confirmed; two were nanomolar inhibitors with new scaffolds and follow-up changes in osteoclast-related gene expression. These are in-vitro findings, not osteoporosis treatment evidence.",
   "field": "medicine",
   "ai_technology": "Pretrained self-attentive message-passing neural network (P-SAMPNN)",
   "organization": "Guangdong Academy of Sciences; Sun Yat-sen University; Guangdong Provincial Hospital of Chinese Medicine",
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Prospective natural-product screening yielded five active hits among ten tested, including new-scaffold osteoclastogenesis inhibitors with follow-up expression assays. No clinical efficacy established.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "Pretrained self-attentive message-passing neural network (P-SAMPNN) is the AI method documented in the editorial source review.",
+    "tested": "The primary abstract reports five confirmed hits among ten selected virtual hits from a natural-product library. Two were nanomolar anti-osteoclastogenesis inhibitors with changes in RANK, Ctsk, Nfatc1 and Tracp expression. Biological-replicate counts, protocols and baseline-model metrics were not assessed from the abstract.",
+    "unknown": "Full assay protocols, comparator compounds, replicate counts and model-comparison metrics were not reviewed. In-vitro osteoclastogenesis/expression endpoints do not establish clinical osteoporosis benefit; animal-level results were not assessed.",
+    "ai_role": "A pretrained self-attentive message-passing neural network, developed on anti-osteoclastogenesis data, ranked natural products for phenotype-based experimental screening.",
     "evidence_urls": [
       "https://doi.org/10.1016/j.ejmech.2020.112982"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Full PubMed primary abstract and metadata; ScienceDirect publisher article identified, but full-text retrieval was blocked and Methods were not reviewed."
   }
 }

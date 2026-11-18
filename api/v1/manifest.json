@@ -1,0 +1,667 @@
+{
+  "schema_version": 1,
+  "scope": "Current public collection files; snapshot identity is not a review or publication timestamp.",
+  "snapshot_sha256": "dbb99d4fab32144ee19e898786bc247792549ff2af538cb03e507382e75a7952",
+  "components": {
+    "discoveries": {
+      "path": "data/discoveries.json",
+      "label": "Scientific discoveries",
+      "sha256": "725e7bdb36979507d2b9b40640017716eb272b9fdddeefa4c1515972e751b20b",
+      "bytes": 2921687,
+      "count": 1343,
+      "unit": "active scientific catalog entries",
+      "dates": {
+        "publication_dates": {
+          "first": "2020-01-01",
+          "last": "2026-11-13"
+        },
+        "addition_dates": {
+          "first": "2026-11-11",
+          "last": "2026-11-18"
+        }
+      },
+      "source_urls": [
+        "https://aisciencetracker.org/methodology.html"
+      ],
+      "license": "CC BY 4.0",
+      "coverage": "Manual and incomplete; entries can overlap or bundle findings.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
+      "catalog_doi": "https://doi.org/10.5281/zenodo.24217686",
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license."
+    },
+    "archived-discoveries": {
+      "path": "data/archived-discoveries.json",
+      "label": "Archived discoveries",
+      "sha256": "617668cffd1086ef0df5b957f456bce59326c907e92faac71b5219b58b7d1d10",
+      "bytes": 29071,
+      "count": 17,
+      "unit": "historical catalog entries",
+      "dates": {
+        "publication_dates": {
+          "first": "2022-11-07",
+          "last": "2026-11-09"
+        },
+        "addition_dates": {
+          "first": "2026-11-11",
+          "last": "2026-11-15"
+        }
+      },
+      "source_urls": [
+        "https://aisciencetracker.org/methodology.html"
+      ],
+      "license": "CC BY 4.0",
+      "coverage": "Retained historical records; excluded from active science totals.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
+      "catalog_doi": "https://doi.org/10.5281/zenodo.24217686",
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license."
+    },
+    "vulnerabilities": {
+      "path": "data/vulnerabilities.json",
+      "label": "AI-found vulnerabilities",
+      "sha256": "bdf2283d43c9eb9066e2ff1ea27f3f0dd982e1c96f87d7602e7691c6124491dc",
+      "bytes": 4284009,
+      "count": 1647,
+      "unit": "source-attributed cases",
+      "dates": {
+        "disclosure_date": {
+          "first": "2024-10-16",
+          "last": "2026-11-16"
+        },
+        "ai_attribution_date": {
+          "first": "2024-11-01",
+          "last": "2026-11-16"
+        },
+        "checked_date": {
+          "first": "2026-11-13",
+          "last": "2026-11-18"
+        }
+      },
+      "source_urls": [
+        "https://aisciencetracker.org/security.html#t-context"
+      ],
+      "license": "CC BY 4.0",
+      "coverage": "Manual and incomplete; cases and distinct CVEs are different units.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
+      "catalog_doi": "https://doi.org/10.5281/zenodo.24217686",
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license.",
+      "distinct_cves": 1536
+    },
+    "models": {
+      "path": "data/models.json",
+      "label": "Notable model releases",
+      "sha256": "6fec0f09dcc86c346c8b6a766699a73decc193e1cfa116faaef886c40071cafb",
+      "bytes": 180359,
+      "count": 440,
+      "unit": "selected Epoch model releases",
+      "dates": {
+        "generated_on": "2026-11-18",
+        "source_downloaded_on": null,
+        "release_dates": {
+          "first": "2019-08-22",
+          "last": "2026-11-10"
+        }
+      },
+      "source_urls": [
+        "https://epoch.ai/data/ai-models"
+      ],
+      "license": "CC BY 4.0; attribute Epoch AI",
+      "coverage": "Selected notable releases; overlaps model-progress inventory.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
+      "catalog_doi": null,
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license."
+    },
+    "model-progress": {
+      "path": "data/model-progress.json",
+      "label": "Model progress",
+      "sha256": "23c0185543ba940712aaba21688f738438ac9cd5bdf60f1931bf43c0cd983a33",
+      "bytes": 538428,
+      "count": 572,
+      "unit": "Epoch source entries",
+      "dates": {
+        "snapshot_retrieved_on": "2026-11-18",
+        "recorded_dates": {
+          "first": "2019-10-23",
+          "last": "2026-11-17"
+        }
+      },
+      "source_urls": [
+        "https://epoch.ai/data/benchmark_data.zip"
+      ],
+      "license": "CC BY 4.0; attribute Epoch AI",
+      "coverage": "Selected source entries; missing ECI and benchmark values are not zero.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
+      "catalog_doi": null,
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license.",
+      "coverage_counts": {
+        "eci": 208,
+        "any_displayed_benchmark": 97,
+        "total": 572
+      }
+    },
+    "swe-bench": {
+      "path": "data/swe-bench.json",
+      "label": "SWE-bench Verified",
+      "sha256": "9511d100759c9d62ddb574631ae119e33a7cc8c8fdf1469b2b3909f128404aad",
+      "bytes": 29091,
+      "count": 47,
+      "unit": "mini-SWE-agent evaluation runs",
+      "dates": {
+        "snapshot_retrieved_on": "2026-11-18",
+        "evaluation_dates": {
+          "first": "2025-07-20",
+          "last": "2026-02-26"
+        }
+      },
+      "source_urls": [
+        "https://github.com/SWE-bench/swe-bench.github.io/blob/master/data/leaderboards.json"
+      ],
+      "license": "CC BY-NC 4.0",
+      "coverage": "Separate configurations, not unique models; excluded from current Hugging Face catalog export. Noncommercial reuse only.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
+      "catalog_doi": null,
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license.",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "license_notice": "docs/swe-bench-license.txt",
+      "attribution": "SWE-bench Team, SWE-bench website leaderboard",
+      "changes": "Selected Verified mini-SWE-agent runs; omitted warning-marked and unscored runs; renamed fields and sorted records. No scores recalculated.",
+      "hugging_face_export": false
+    },
+    "citations": {
+      "path": "data/citations.json",
+      "label": "Citation metadata",
+      "sha256": "099158c61ebca6f755bbf3a3eff154e94f912becd8dba36cf50ab36139ed6ab9",
+      "bytes": 104396,
+      "count": 505,
+      "unit": "OpenAlex records matched to catalog IDs",
+      "dates": {
+        "metadata_checked_on": "2026-11-15"
+      },
+      "source_urls": [
+        "https://openalex.org"
+      ],
+      "license": "CC0; OpenAlex metadata",
+      "coverage": "Selective matching; citation counts do not measure scientific evidence strength.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
+      "catalog_doi": null,
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license."
+    },
+    "entity-aliases": {
+      "path": "data/entity-aliases.json",
+      "label": "Reviewed entity aliases",
+      "sha256": "5af444822a8c4502f3c2cc6eaddd920afdbf286f180bed645198be172893d497",
+      "bytes": 3294,
+      "count": 3,
+      "unit": "reviewed entity groups",
+      "dates": {
+        "alias_review_dates": {
+          "first": "2026-11-18",
+          "last": "2026-11-18"
+        }
+      },
+      "source_urls": [
+        "https://aisle.com/cve-discoveries/cve-2026-125201",
+        "https://www.mit.edu/about/"
+      ],
+      "license": "CC BY 4.0",
+      "coverage": "Exact aliases only; original labels and model-version uncertainty remain in records.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
+      "catalog_doi": null,
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license."
+    },
+    "discoveries-csv": {
+      "path": "data/discoveries.csv",
+      "label": "Scientific discoveries",
+      "sha256": "41234670253135b4f4c875f4f1abfe18cf996d3d29893084640c23bd18ffdb4b",
+      "bytes": 2393144,
+      "count": 1343,
+      "unit": "active scientific catalog entries",
+      "dates": {
+        "publication_dates": {
+          "first": "2020-01-01",
+          "last": "2026-11-13"
+        },
+        "addition_dates": {
+          "first": "2026-11-11",
+          "last": "2026-11-18"
+        }
+      },
+      "source_urls": [
+        "https://aisciencetracker.org/methodology.html"
+      ],
+      "license": "CC BY 4.0",
+      "coverage": "Manual and incomplete; entries can overlap or bundle findings.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
+      "catalog_doi": "https://doi.org/10.5281/zenodo.24217686",
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license."
+    },
+    "vulnerabilities-csv": {
+      "path": "data/vulnerabilities.csv",
+      "label": "AI-found vulnerabilities",
+      "sha256": "a9ada12dc91e9749aeaa8fa75e46242b35a2983dc90482a542fb3803297d08e8",
+      "bytes": 3382166,
+      "count": 1647,
+      "unit": "source-attributed cases",
+      "dates": {
+        "disclosure_date": {
+          "first": "2024-10-16",
+          "last": "2026-11-16"
+        },
+        "ai_attribution_date": {
+          "first": "2024-11-01",
+          "last": "2026-11-16"
+        },
+        "checked_date": {
+          "first": "2026-11-13",
+          "last": "2026-11-18"
+        }
+      },
+      "source_urls": [
+        "https://aisciencetracker.org/security.html#t-context"
+      ],
+      "license": "CC BY 4.0",
+      "coverage": "Manual and incomplete; cases and distinct CVEs are different units.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
+      "catalog_doi": "https://doi.org/10.5281/zenodo.24217686",
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license.",
+      "distinct_cves": 1536
+    },
+    "catalog-summary": {
+      "path": "data/catalog-summary.csv",
+      "label": "Catalog coverage summary",
+      "sha256": "c4ad211f64124b5286df69c020bf3f0b41ab6af702713f2a6d6e40705d2e7611",
+      "bytes": 521,
+      "count": 18,
+      "unit": "overlapping year/field aggregate rows",
+      "dates": {
+        "publication_dates": {
+          "first": "2020-01-01",
+          "last": "2026-11-13"
+        },
+        "addition_dates": {
+          "first": "2026-11-11",
+          "last": "2026-11-18"
+        }
+      },
+      "source_urls": [
+        "https://aisciencetracker.org/profiles/catalog-evidence.html"
+      ],
+      "license": "CC BY 4.0",
+      "coverage": "Each grouping separately sums to active catalog entries; never add the year and field groupings together. Counts describe collection coverage, not independent findings.",
+      "catalog_doi": "https://doi.org/10.5281/zenodo.24217686",
+      "doi_note": "Catalog archive DOI; choose a matching release for stable citation.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases"
+    },
+    "benchmark-registry": {
+      "path": "data/benchmarks/index.json",
+      "label": "Independent benchmark directory",
+      "sha256": "fb0f162508094e4e290c495a2105098fcb3b0c83e305d6a34b09dd7c3978ea7f",
+      "bytes": 14003,
+      "count": 10,
+      "unit": "separately licensed source components",
+      "dates": {
+        "directory_retrieved_on": "2026-11-18"
+      },
+      "source_urls": [
+        "https://aisciencetracker.org/docs/public-benchmarks.md"
+      ],
+      "license": "Per-component terms; no blanket catalog license",
+      "coverage": "Separate numerical source snapshots. No composite ranking or inferred model joins.",
+      "group": "public-benchmarks",
+      "catalog_doi": null,
+      "doi_note": "Source components retain their own identity and license.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases"
+    },
+    "benchmark-gpqa": {
+      "path": "data/benchmarks/gpqa.json",
+      "label": "GPQA Diamond · Epoch own runs",
+      "sha256": "82cef472d9f314a2583f47449035301741e13ce239ce6850cc4c84096fe8f8fa",
+      "bytes": 352282,
+      "count": 340,
+      "unit": "source numerical observations",
+      "record_units": [
+        "fraction"
+      ],
+      "dates": {
+        "snapshot_retrieved_on": "2026-11-18",
+        "source_observation_dates": {
+          "first": "2025-01-27",
+          "last": "2026-11-06"
+        }
+      },
+      "source_date_basis": [
+        "Evaluation start"
+      ],
+      "source_urls": [
+        "https://epoch.ai/benchmarks/use-this-data"
+      ],
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_notice": "docs/benchmark-licenses/cc-by-4.0.txt",
+      "attribution": "Epoch AI, Capabilities & benchmarking",
+      "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+      "coverage": "Graduate-level biology, chemistry and physics. Mean accuracy is a fraction, not ECI. Inference settings and budgets differ; stderr is source-reported, not a confidence interval.",
+      "selection": "All scored own-run gpqa_diamond.csv rows; no external imported scores.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "group": "public-benchmarks",
+      "hugging_face_export": false,
+      "catalog_doi": null,
+      "doi_note": "No component DOI assigned here; the catalog archive does not replace source citation.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases"
+    },
+    "benchmark-arena": {
+      "path": "data/benchmarks/arena.json",
+      "label": "Arena · text preferences",
+      "sha256": "f9fa231fcf4f60dfbae28cd281caa7c137374488760498de18152a08715e869e",
+      "bytes": 358497,
+      "count": 421,
+      "unit": "source numerical observations",
+      "record_units": [
+        "rating points"
+      ],
+      "dates": {
+        "snapshot_retrieved_on": "2026-11-18",
+        "source_observation_dates": {
+          "first": "2026-11-11",
+          "last": "2026-11-11"
+        }
+      },
+      "source_date_basis": [
+        "Leaderboard publication"
+      ],
+      "source_urls": [
+        "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/b17ca88fd34809e9161df1ef89fd444acaf598e4/text/latest-00000-of-00001.parquet"
+      ],
+      "license": "CC BY 4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "license_notice": "docs/benchmark-licenses/cc-by-4.0.txt",
+      "attribution": "Arena / LMArena, leaderboard-dataset",
+      "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+      "coverage": "Pairwise human preferences, not factual accuracy. Rating points are not percentages or directly comparable across categories or dates. Confidence bounds and vote counts retained. The source model license field describes the model, not this numerical dataset.",
+      "selection": "Complete frozen text/latest Parquet, overall category only; category scores are not mixed.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "group": "public-benchmarks",
+      "hugging_face_export": false,
+      "catalog_doi": null,
+      "doi_note": "No component DOI assigned here; the catalog archive does not replace source citation.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases"
+    },
+    "benchmark-tau": {
+      "path": "data/benchmarks/tau.json",
+      "label": "τ²-bench · text agent tasks",
+      "sha256": "203f217be4db00e8f3ca4ce46de406bae7af3434cc34b26f1c7d16b5cbbd9d0c",
+      "bytes": 111976,
+      "count": 54,
+      "unit": "source numerical observations",
+      "record_units": [
+        "%"
+      ],
+      "dates": {
+        "snapshot_retrieved_on": "2026-11-18",
+        "source_observation_dates": {
+          "first": "2026-02-24",
+          "last": "2026-11-03"
+        }
+      },
+      "source_date_basis": [
+        "Evaluation date, or submission date if absent"
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/sierra-research/tau2-bench/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/web/leaderboard/public/submissions/manifest.json"
+      ],
+      "license": "MIT",
+      "license_url": "https://github.com/sierra-research/tau2-bench/blob/c06b07dd7c4d4ec61ba6ff9bcdf0b15dd7ef36d4/LICENSE",
+      "license_notice": "docs/benchmark-licenses/tau2-bench-license.txt",
+      "attribution": "Sierra Research and τ-bench result submitters",
+      "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+      "coverage": "Agent task success. Pass^1 is shown; other pass^k values and methodology remain in details. Versions, simulators, domains, retrieval, reasoning and agent setups can differ. Source-reported results, not independent reproductions.",
+      "selection": "All active text submission.json records in the pinned manifest; voice, legacy and S3 trajectories excluded.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "group": "public-benchmarks",
+      "hugging_face_export": false,
+      "catalog_doi": null,
+      "doi_note": "No component DOI assigned here; the catalog archive does not replace source citation.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases"
+    },
+    "benchmark-chembench": {
+      "path": "data/benchmarks/chembench.json",
+      "label": "ChemBench · legacy reports",
+      "sha256": "0247b5561d6cc4d25329b6f657e7329a29a7955aea7aca83c25fb4c1a8008bb4",
+      "bytes": 3117,
+      "count": 2,
+      "unit": "source numerical observations",
+      "record_units": [
+        "fraction"
+      ],
+      "dates": {
+        "snapshot_retrieved_on": "2026-11-18",
+        "source_observation_dates": null
+      },
+      "source_date_basis": [
+        "Not reported"
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/lamalab-org/chembench/45f8bad062fe552810c52be3a328d5da8597ed30/reports/gpt-4o/gpt-4o.json"
+      ],
+      "license": "MIT",
+      "license_url": "https://github.com/lamalab-org/chembench/blob/45f8bad062fe552810c52be3a328d5da8597ed30/LICENSE",
+      "license_notice": "docs/benchmark-licenses/chembench-license.txt",
+      "attribution": "LAMA Lab / ChemBench authors",
+      "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+      "coverage": "Chemical question performance in two historical repository reports. Source folder names are retained; exact model release and evaluation dates are not stated. This is not the current ChemBench-Results leaderboard.",
+      "selection": "Only gpt-4o and claude3.5 aggregate fraction_correct; question-level outputs and tasks excluded.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "group": "public-benchmarks",
+      "hugging_face_export": false,
+      "catalog_doi": null,
+      "doi_note": "No component DOI assigned here; the catalog archive does not replace source citation.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases"
+    },
+    "benchmark-bixbench": {
+      "path": "data/benchmarks/bixbench.json",
+      "label": "BixBench v1.5 · zero-shot baselines",
+      "sha256": "4f5cac1da0ec773cdf4dd1e9d0513b412e2156a0776e4bcdb3745da3740129a1",
+      "bytes": 6091,
+      "count": 6,
+      "unit": "source numerical observations",
+      "record_units": [
+        "fraction"
+      ],
+      "dates": {
+        "snapshot_retrieved_on": "2026-11-18",
+        "source_observation_dates": null
+      },
+      "source_date_basis": [
+        "Not reported"
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/Future-House/BixBench/49311180bdacb324c596f2e07596c126f2004008/bixbench-v1.5_results/zero_shot_baselines.json"
+      ],
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/Future-House/BixBench/blob/49311180bdacb324c596f2e07596c126f2004008/LICENSE",
+      "license_notice": "docs/benchmark-licenses/BixBench-license.txt",
+      "attribution": "FutureHouse / BixBench authors",
+      "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+      "coverage": "Bioinformatics zero-shot baseline accuracy on 205 questions. MCQ, refusal-enabled and open-ended settings differ; these are not the paper agent runs. Precision and coverage retained.",
+      "selection": "All six configurations in zero_shot_baselines.json.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "group": "public-benchmarks",
+      "hugging_face_export": false,
+      "catalog_doi": null,
+      "doi_note": "No component DOI assigned here; the catalog archive does not replace source citation.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases"
+    },
+    "benchmark-mmlu-pro": {
+      "path": "data/benchmarks/mmlu-pro.json",
+      "label": "MMLU-Pro · historical README results",
+      "sha256": "33908e39453141b5d163199869446fb6b844542117d6e9b23a5a583098ff81ce",
+      "bytes": 11484,
+      "count": 17,
+      "unit": "source numerical observations",
+      "record_units": [
+        "%"
+      ],
+      "dates": {
+        "snapshot_retrieved_on": "2026-11-18",
+        "source_observation_dates": null
+      },
+      "source_date_basis": [
+        "Not reported"
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/TIGER-AI-Lab/MMLU-Pro/f418b116db00b065c2aea046518d8fcf74d39872/README.md"
+      ],
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/TIGER-AI-Lab/MMLU-Pro/blob/f418b116db00b065c2aea046518d8fcf74d39872/LICENSE",
+      "license_notice": "docs/benchmark-licenses/MMLU-Pro-license.txt",
+      "attribution": "TIGER-AI-Lab; Yubo Wang and MMLU-Pro coauthors",
+      "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+      "coverage": "Multitask knowledge/reasoning accuracy. Historical mini-leaderboard; dates and full inference configurations are not reported in the selected table. It does not represent the current external leaderboard.",
+      "selection": "All numerical rows in the licensed README mini-leaderboard.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "group": "public-benchmarks",
+      "hugging_face_export": false,
+      "catalog_doi": null,
+      "doi_note": "No component DOI assigned here; the catalog archive does not replace source citation.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases"
+    },
+    "benchmark-charxiv": {
+      "path": "data/benchmarks/charxiv.json",
+      "label": "CharXiv · chart understanding",
+      "sha256": "2b2abecbecdcf6d2a86dd73da96177df358387428bab27b0a92e487d03e6d2fe",
+      "bytes": 152675,
+      "count": 78,
+      "unit": "source numerical observations",
+      "record_units": [
+        "%"
+      ],
+      "dates": {
+        "snapshot_retrieved_on": "2026-11-18",
+        "source_observation_dates": null
+      },
+      "source_date_basis": [
+        "Not reported"
+      ],
+      "source_urls": [
+        "https://huggingface.co/datasets/princeton-nlp/CharXiv/resolve/f441eb632fc62f6f777830a0f47619e6e86459b0/README.md"
+      ],
+      "license": "CC BY-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "license_notice": "docs/benchmark-licenses/charxiv-data-license.txt",
+      "attribution": "Princeton NLP / CharXiv authors",
+      "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+      "coverage": "Scientific chart question performance. Descriptive and reasoning validation scores are separate; human/random references are labeled as in source. Released evaluations are historical (2024); current website scores are not imported. No paper chart images or question text included.",
+      "selection": "All released stats-*.json aggregate evaluations; source numbers unchanged. This adapted numerical component is shared under CC BY-SA 4.0. Attribution, license and change notices must travel with adaptations.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "group": "public-benchmarks",
+      "hugging_face_export": false,
+      "catalog_doi": null,
+      "doi_note": "No component DOI assigned here; the catalog archive does not replace source citation.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases"
+    },
+    "benchmark-ruler": {
+      "path": "data/benchmarks/ruler.json",
+      "label": "RULER · long-context accuracy",
+      "sha256": "a763ff8c8cc44b9489ece703d252728f5e2c552d07369c35b47291b25bbbe93b",
+      "bytes": 193722,
+      "count": 264,
+      "unit": "source numerical observations",
+      "record_units": [
+        "%"
+      ],
+      "dates": {
+        "snapshot_retrieved_on": "2026-11-18",
+        "source_observation_dates": null
+      },
+      "source_date_basis": [
+        "Not reported"
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/NVIDIA/RULER/db43f92ff634bbce1c33d1fb15858aec4bba509a/README.md"
+      ],
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/NVIDIA/RULER/blob/db43f92ff634bbce1c33d1fb15858aec4bba509a/LICENSE",
+      "license_notice": "docs/benchmark-licenses/RULER-license.txt",
+      "attribution": "NVIDIA / RULER authors; contributing model authors identified in the source notes",
+      "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+      "coverage": "Source README accuracy at six measured context lengths. Claimed and effective length differ. Includes contributing-author reports; see original notes for FILM, Qwen, Jamba and EXAONE protocol exceptions. Missing lengths are absent, never zero. No third-party task corpora redistributed.",
+      "selection": "All available numeric 4K–128K context columns for model rows; aggregate weighted rankings not imported.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "group": "public-benchmarks",
+      "hugging_face_export": false,
+      "catalog_doi": null,
+      "doi_note": "No component DOI assigned here; the catalog archive does not replace source citation.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases"
+    },
+    "benchmark-agentdojo": {
+      "path": "data/benchmarks/agentdojo.json",
+      "label": "AgentDojo · prompt injection robustness",
+      "sha256": "89ddc08c6479b65d367dce348e48be33df4d27aa7f6f3af06180b03d5b2de110",
+      "bytes": 55601,
+      "count": 84,
+      "unit": "source numerical observations",
+      "record_units": [
+        "%"
+      ],
+      "dates": {
+        "snapshot_retrieved_on": "2026-11-18",
+        "source_observation_dates": {
+          "first": "2021-09-05",
+          "last": "2025-02-24"
+        }
+      },
+      "source_date_basis": [
+        "Source table date"
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/ethz-spylab/agentdojo/089ed468cf3ed0322acc66b0211f26d9d90dbf60/docs/results-table.html"
+      ],
+      "license": "MIT",
+      "license_url": "https://github.com/ethz-spylab/agentdojo/blob/089ed468cf3ed0322acc66b0211f26d9d90dbf60/LICENSE",
+      "license_notice": "docs/benchmark-licenses/agentdojo-license.txt",
+      "attribution": "ETH Zurich SPY Lab / AgentDojo authors",
+      "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+      "coverage": "Agent utility and targeted attack success are separate outcomes. Lower attack success is better. Defenses and attacks differ; dates are source table dates. No attack content, traces or conversations redistributed.",
+      "selection": "All numeric utility, utility-under-attack and targeted-ASR cells in the repository results table.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "group": "public-benchmarks",
+      "hugging_face_export": false,
+      "catalog_doi": null,
+      "doi_note": "No component DOI assigned here; the catalog archive does not replace source citation.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases"
+    },
+    "benchmark-swe-bench-pro": {
+      "path": "data/benchmarks/swe-bench-pro.json",
+      "label": "SWE-bench Pro · initial repository runs",
+      "sha256": "439d6467f11f4532168e95010fc69acf3d72dc279ef912913db37595aaca4db9",
+      "bytes": 6788,
+      "count": 7,
+      "unit": "source numerical observations",
+      "record_units": [
+        "%"
+      ],
+      "dates": {
+        "snapshot_retrieved_on": "2026-11-18",
+        "source_observation_dates": null
+      },
+      "source_date_basis": [
+        "Not reported"
+      ],
+      "source_urls": [
+        "https://raw.githubusercontent.com/scaleapi/SWE-bench_Pro-os/66f92766bba642462d4bbe5479e83f91f9211862/index.html"
+      ],
+      "license": "MIT",
+      "license_url": "https://github.com/scaleapi/SWE-bench_Pro-os/blob/66f92766bba642462d4bbe5479e83f91f9211862/LICENSE",
+      "license_notice": "docs/benchmark-licenses/SWE-bench_Pro-os-license.txt",
+      "attribution": "Scale AI, SWE-bench Pro authors",
+      "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
+      "coverage": "Initial SWE-Agent runs on 730 problems with uncapped cost and a 250-turn limit. Source explicitly says results are preliminary and may change. Distinct from SWE-bench Verified and from separate Scale commercial/private leaderboard data.",
+      "selection": "Only seven source-committed HTML numerical scores; no client-computed confidence intervals, tasks or private results.",
+      "maintenance": "Checked daily for updates within this exact selection. Source licenses and supported formats are checked before acceptance; blocked sources retain the last accepted snapshot. Historical and preliminary scope still applies.",
+      "group": "public-benchmarks",
+      "hugging_face_export": false,
+      "catalog_doi": null,
+      "doi_note": "No component DOI assigned here; the catalog archive does not replace source citation.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases"
+    }
+  }
+}

@@ -9,6 +9,8 @@ function comparisonFacts(a,b,benchmarks) {
     delta:a?.eci==null||b?.eci==null?null:b.eci-a.eci,
     signedDays:a?.date&&b?.date?Math.round((Date.parse(b.date+'T00:00:00Z')-Date.parse(a.date+'T00:00:00Z'))/864e5):null,
     common:common.length,total:benchmarks.length,
+    availableA:benchmarks.filter(k=>a?.benchmarks[k.id]?.score!=null).length,
+    availableB:benchmarks.filter(k=>b?.benchmarks[k.id]?.score!=null).length,
     higher:common.filter(k=>k.delta>1e-9).length,
     lower:common.filter(k=>k.delta< -1e-9).length,
     unchanged:common.filter(k=>Math.abs(k.delta)<=1e-9).length,

@@ -1,7 +1,7 @@
 {
   "id": "2021-11-study-10-1021-acs-jmedchem-1c01205",
   "title": "Discovery of Pyrazolo[3,4-d]pyridazinone Derivatives as Selective DDR1 Inhibitors via Deep Learning Based Design, Synthesis, and Biological Evaluation.",
-  "summary": "Model-based scaffold design yielded a new selective DDR1 inhibitor tested biochemically, in cells and in a mouse colitis model.",
+  "summary": "A scaffold-design workflow incorporating a deep generative model, kinase screening and docking produced compound 2, with DDR1 IC50 10.6 ± 1.9 nM and selectivity tested against 430 kinases. Cell and mouse-colitis results are preclinical; sample sizes and comparators were not assessed from the abstract.",
   "field": "medicine",
   "ai_technology": "Deep generative molecular model",
   "organization": "Chinese Academy of Sciences; Shanghai Institute of Materia Medica; State Key Laboratory of Drug Research",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2021-11-25",
   "added_date": "2026-11-18",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 2,
@@ -17,13 +17,17 @@
     "novelty": 2
   },
   "evidence": {
-    "publication_status": "Not reported",
-    "tested": "Model-based scaffold design yielded a new selective DDR1 inhibitor tested biochemically, in cells and in a mouse colitis model.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "Deep generative molecular model is the AI method documented in the editorial source review.",
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The publisher abstract reports DDR1 IC50 10.6 ± 1.9 nM, selectivity testing against 430 kinases, cell cytokine/autophosphorylation assays and a DSS-induced mouse colitis model. Sample sizes and comparator details were not available in the reviewed abstract.",
+    "unknown": "Only the publisher abstract and metadata were reviewed. Animal sample size, comparator regimen, detailed assay design and the generator's specific operation were not assessed; mouse results do not establish clinical efficacy.",
+    "ai_role": "The publisher abstract identifies a deep generative model within a scaffold-design workflow with kinase selectivity screening and docking; its specific operation was not assessable from the abstract.",
     "evidence_urls": [
       "https://doi.org/10.1021/acs.jmedchem.1c01205"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Indexed primary ACS abstract, supporting-information inventory and online/issue metadata; complete article body not reviewed."
   }
 }

@@ -24768,12 +24768,16 @@
     "evidence": {
       "publication_status": "Peer-reviewed paper",
       "tested": "Forecast accuracy against a numerical ocean forecasting system, without a separate discovery in the reviewed abstract.",
-      "unknown": "Admission review pending: primary full results needed to distinguish a specific scientific/application result from general method validation. Existing supported claims may be retained with bounded scope, but do not mark source checked until admission is resolved.",
+      "unknown": "Complete Methods and Results were not reviewed. Observation periods, evaluation timing, forecast comparisons, eddy-event interpretation and stated limitations were not assessed beyond the abstract. The reviewed material does not resolve whether the event example establishes a scientific result beyond forecast-performance validation; no absence of such a result is inferred.",
       "ai_role": "Machine learning model produces the full eddy-resolving global ocean forecast from observations, replacing numerical initial conditions.",
       "evidence_urls": [
         "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1126%2Fsciadv.aeh9058%22&resultType=core&format=json"
       ],
       "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Indexed primary PubMed abstract and bibliographic metadata; the PMC full-text route served browser verification. Complete primary Methods, Results and supplement were not reviewed."
     }
   },
   {
@@ -24925,7 +24929,7 @@
   {
     "id": "2026-11-human-in-loop-ai-copilot-structural-design",
     "title": "Human-in-the-loop AI copilot improves topology-optimized structure design",
-    "summary": "MIT’s November 13, 2026 announcement describes a machine-learning copilot that flags regions for human edits during topology optimization. It reports improved manufacturability and buckling-load performance, but the reviewed announcement identifies no separate structural discovery or experimentally demonstrated new structure beyond testing the design workflow. Synthetic feedback training and limited thickening/thinning edits are acknowledged. The full journal paper was not assessed. The publisher abstract specifies improved manufacturability or a 39% linear-buckling-load improvement; it does not assign 39% to both metrics. The paper was published November 10; this entry represents the November 13 announcement.",
+    "summary": "A U-Net trained on synthetic preference labels recommended regions for human edits in topology-optimization demonstrations. An L-bracket example had about 39% higher simulated linear buckling load. This validates a design workflow; physical fabrication or load testing was not established by the reviewed material.",
     "field": "other",
     "ai_technology": "Human-in-the-loop AI copilot with topology optimization (machine-learning region-flagging model)",
     "organization": "MIT; Georgia Institute of Technology",
@@ -24943,13 +24947,17 @@
     "evidence": {
       "publication_status": "Peer-reviewed paper",
       "tested": "Computational topology-optimization workflow demonstrations; no separate structural finding established in reviewed scope.",
-      "unknown": "Admission review pending: primary full results needed to distinguish a specific scientific/application result from general method validation. Existing supported claims may be retained with bounded scope, but do not mark source checked until admission is resolved.",
+      "unknown": "The reviewed demonstrations are computational; they do not establish physical load-test performance or in-service structural outcomes. Compliance and timing comparisons differ between the article text, table and abstract and were not reconciled in this review. The training preferences were synthetic, and users modified the recommended regions.",
       "ai_role": "A machine-learning model quickly identifies design regions a human would likely want to change, within a topology optimization workflow.",
       "evidence_urls": [
         "https://news.mit.edu/2026/new-ai-copilot-helps-engineers-design-better-structures-1113",
         "https://www.nature.com/articles/s44172-026-00818-x"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Primary journal PDF Results, Methods, Table 1 and Discussion; indexed publisher publication metadata. Reviewed results concern computational topology-optimization demonstrations and simulated linear buckling."
     }
   },
   {
@@ -24973,12 +24981,16 @@
     "evidence": {
       "publication_status": "Peer-reviewed paper",
       "tested": "Reconstruction agreement with porometry, pycnometry and X-ray tomography for one fiber-mat material system.",
-      "unknown": "Admission review pending: primary full results needed to distinguish a specific scientific/application result from general method validation. Existing supported claims may be retained with bounded scope, but do not mark source checked until admission is resolved.",
+      "unknown": "The complete Results and supplement were not reviewed. Exact reconstruction metrics, volume/sample details and full validation caveats were not assessed. The reviewed passages describe reconstruction agreement for Cu-coated PVDF-HFP fiber mats; any material-specific finding beyond method validation and any electrochemical-performance outcome remain unassessed.",
       "ai_role": "Monocular depth estimation model, trained on macroscale images, plus unsupervised clustering to separate in-plane from subsurface material in FIB-SEM slices.",
       "evidence_urls": [
         "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A42928641&resultType=core&format=json"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Indexed primary Wiley abstract, Introduction and pycnometry Methods passage, plus indexed primary PubMed abstract and publication metadata. Complete article Results and supporting information were not reviewed."
     }
   },
   {
@@ -25031,13 +25043,17 @@
     "evidence": {
       "publication_status": "Peer-reviewed paper",
       "tested": "Manual-analysis and prior-segmentation comparisons; applications to neuron types, gene-therapy products, gerbil cochleae and lower-resolution mouse and marmoset imaging. The abstract does not state the specific biological outcomes.",
-      "unknown": "The journal body was not accessible through the publisher (HTTP 403), and the linked preprint full-text API returned HTTP 500. Original preprint abstract adds no specific gene-therapy result. Eligibility remains unresolved until the actual application finding is read.",
+      "unknown": "The journal abstract reports neuron-type analyses and gene-therapy-product validation without stating their specific biological or product-comparison outcomes. Complete Methods and Results, sample sizes and the distinction between tool validation and biological or therapeutic validation were not assessed. This omission does not establish that the paper contains no qualifying finding.",
       "ai_role": "Deep learning framework that reconstructs the cochlea and segments hair cells, neurons and synapses, and quantifies tonotopy and gene expression.",
       "evidence_urls": [
         "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1016%2Fj.ymthe.2026.10.025%22&resultType=core&format=json",
         "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3APPR1120449&resultType=core&format=json"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Indexed primary Molecular Therapy journal abstract and metadata, and the author-institution page reproducing the 2025 preprint abstract. Complete primary Methods and Results were not accessed; journal and preprint evidence were kept version-specific."
     }
   },
   {
@@ -36529,7 +36545,7 @@
   {
     "id": "2021-05-study-10-1007-s00204-021-03058-4",
     "title": "Selection of safe artemisinin derivatives using a machine learning-based cardiotoxicity platform and in vitro and in vivo validation.",
-    "summary": "Cell assays support reduced toxicity for selected derivatives; no clinical safety claim.",
+    "summary": "A random-forest cardiotoxicity model and additional toxicity filters reduced a 374-derivative library to seven candidates. Artemisinin B was then examined in AC16 cells and zebrafish larvae; these preclinical assays do not establish human safety.",
     "field": "medicine",
     "ai_technology": "Random-forest cardiotoxicity models",
     "organization": "Johannes Gutenberg University Mainz; German Cancer Research Center; National Center for Tumor Diseases",
@@ -36537,7 +36553,7 @@
     "source_type": "paper",
     "publication_date": "2021-05-22",
     "added_date": "2026-11-18",
-    "verification_status": "needs verification",
+    "verification_status": "verified",
     "paper_url": "",
     "relevance": {
       "impact": 2,
@@ -36546,13 +36562,17 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "Cell assays support reduced toxicity for selected derivatives; no clinical safety claim.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Random-forest cardiotoxicity models is the AI method documented in the editorial source review.",
+      "tested": "The screen retained 197/374 derivatives, then 17, then seven. Five were available for AC16 viability assays (three independent experiments, six parallel measurements each); one showed moderate cytotoxicity at high concentration. Artemisinin B was tested in 210 zebrafish larvae across seven groups of 30; one death at 0.5 pg/mL and pericardial edema at 1 pg/mL were reported.",
+      "unknown": "The seven-candidate list is a computational screening outcome. The reported cell and zebrafish assays do not establish human safety or clinical cardioprotection; transcriptomic markers are indirect endpoints.",
+      "ai_role": "A leave-one-out random-forest model predicted arrhythmia, cardiac failure, heart block, hypertension and myocardial infarction; DataWarrior and Pro-Tox-II added other toxicity filters.",
       "evidence_urls": [
         "https://doi.org/10.1007/s00204-021-03058-4"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "PMC screening funnel, AC16 viability Methods/Results and Figure 3 caption, zebrafish Methods/Results, and publication metadata."
     }
   },
   {
@@ -36587,7 +36607,7 @@
   {
     "id": "2021-12-study-10-1016-j-bbrc-2021-12-061",
     "title": "Artificial intelligence-based identification of octenidine as a Bcl-xL inhibitor.",
-    "summary": "The abstract links learned screening to newly reported Bcl-xL binding; NMR and intracellular interaction assays support that result. Cancer-cell inhibition is preclinical evidence only.",
+    "summary": "Deep-learning and docking screening nominated octenidine as a Bcl-xL binder. The abstract reports NMR binding, reduced intracellular Bcl-xL/Bak interaction and cancer-cell effects; full-text methods and quantitative assay details were not assessed.",
     "field": "medicine",
     "ai_technology": "Structural-feature-based deep learning plus molecular docking",
     "organization": "Korea Research Institute of Bioscience and Biotechnology; Korea Advanced Institute of Science and Technology; Korea University of Science and Technology",
@@ -36595,7 +36615,7 @@
     "source_type": "paper",
     "publication_date": "2021-12-20",
     "added_date": "2026-11-18",
-    "verification_status": "needs verification",
+    "verification_status": "verified",
     "paper_url": "",
     "relevance": {
       "impact": 2,
@@ -36604,13 +36624,17 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "The abstract links learned screening to newly reported Bcl-xL binding; NMR and intracellular interaction assays support that result. Cancer-cell inhibition is preclinical evidence only.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Structural-feature-based deep learning plus molecular docking is the AI method documented in the editorial source review.",
+      "tested": "The primary abstract reports NMR binding to the Bcl-xL BH3-binding region, NanoBiT inhibition of Bcl-xL/Bak-BH3 interaction in cells, and apoptosis-associated proliferation inhibition in MCF-7 and H1299 cells. Denominators and quantitative potency were not stated in the reviewed abstract.",
+      "unknown": "Only the PubMed abstract and metadata were reviewed. Full-text methods, concentrations, denominators, quantitative binding data and detailed controls were not assessed; cell results do not establish treatment efficacy.",
+      "ai_role": "The primary abstract reports structural-feature-based deep learning and molecular docking to screen an approved-drug library; architecture, training data and candidate denominator were not assessable from the abstract.",
       "evidence_urls": [
         "https://doi.org/10.1016/j.bbrc.2021.12.061"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Primary PubMed abstract and bibliographic metadata only; full text not reviewed."
     }
   },
   {
@@ -36819,7 +36843,7 @@
   {
     "id": "2020-10-study-10-1016-j-ejmech-2020-112982",
     "title": "Deep learning enables discovery of highly potent anti-osteoporosis natural products.",
-    "summary": "Prospective natural-product screening yielded five active hits among ten tested, including new-scaffold osteoclastogenesis inhibitors with follow-up expression assays. No clinical efficacy established.",
+    "summary": "A pretrained self-attentive message-passing network prioritized natural products for anti-osteoclastogenesis screening. Five of ten selected virtual hits were confirmed; two were nanomolar inhibitors with new scaffolds and follow-up changes in osteoclast-related gene expression. These are in-vitro findings, not osteoporosis treatment evidence.",
     "field": "medicine",
     "ai_technology": "Pretrained self-attentive message-passing neural network (P-SAMPNN)",
     "organization": "Guangdong Academy of Sciences; Sun Yat-sen University; Guangdong Provincial Hospital of Chinese Medicine",
@@ -36836,13 +36860,17 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "Prospective natural-product screening yielded five active hits among ten tested, including new-scaffold osteoclastogenesis inhibitors with follow-up expression assays. No clinical efficacy established.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Pretrained self-attentive message-passing neural network (P-SAMPNN) is the AI method documented in the editorial source review.",
+      "tested": "The primary abstract reports five confirmed hits among ten selected virtual hits from a natural-product library. Two were nanomolar anti-osteoclastogenesis inhibitors with changes in RANK, Ctsk, Nfatc1 and Tracp expression. Biological-replicate counts, protocols and baseline-model metrics were not assessed from the abstract.",
+      "unknown": "Full assay protocols, comparator compounds, replicate counts and model-comparison metrics were not reviewed. In-vitro osteoclastogenesis/expression endpoints do not establish clinical osteoporosis benefit; animal-level results were not assessed.",
+      "ai_role": "A pretrained self-attentive message-passing neural network, developed on anti-osteoclastogenesis data, ranked natural products for phenotype-based experimental screening.",
       "evidence_urls": [
         "https://doi.org/10.1016/j.ejmech.2020.112982"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Full PubMed primary abstract and metadata; ScienceDirect publisher article identified, but full-text retrieval was blocked and Methods were not reviewed."
     }
   },
   {
@@ -37110,7 +37138,7 @@
   {
     "id": "2020-09-study-10-1021-acs-jcim-0c00652",
     "title": "Discovery of Dual FGFR4 and EGFR Inhibitors by Machine Learning and Biological Evaluation.",
-    "summary": "SVM predictions nominated an in-house compound with measured inhibition of both kinases. Docking and dynamics are supporting analyses, not evidence of clinical efficacy.",
+    "summary": "Four machine-learning methods were compared; the selected SVM models screened in-house compounds for dual FGFR4/EGFR inhibition. The primary abstract reports compound 1 kinase IC50 values of 86.2 and 83.9 nM, respectively. This assay result does not establish clinical efficacy.",
     "field": "medicine",
     "ai_technology": "Support-vector-machine activity models",
     "organization": "China Pharmaceutical University; State Key Laboratory of Natural Medicine",
@@ -37127,13 +37155,17 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "SVM predictions nominated an in-house compound with measured inhibition of both kinases. Docking and dynamics are supporting analyses, not evidence of clinical efficacy.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Support-vector-machine activity models is the AI method documented in the editorial source review.",
+      "tested": "The primary abstract reports four QSAR methods and a selected dual inhibitor with IC50 86.2 nM for FGFR4 and 83.9 nM for EGFR. Assay denominator, comparator, and cell-level validation details were not present in the reviewed abstract; full ACS text was inaccessible.",
+      "unknown": "Full Methods and biological-evaluation details were not reviewed. The date is unresolved: ACS header September 14 versus publication-history September 24 and PubMed Epub September 23, 2020.",
+      "ai_role": "SVM, random forest, gradient-boost regression tree and XGBoost models were compared after mutual-information feature selection; the best-performing SVM models predicted activity of in-house compounds.",
       "evidence_urls": [
         "https://doi.org/10.1021/acs.jcim.0c00652"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Indexed primary ACS/PubMed abstract and conflicting publication metadata; complete Methods/Results not reviewed."
     }
   },
   {
@@ -37255,7 +37287,7 @@
   {
     "id": "2020-07-study-10-1021-acs-jmedchem-0c00473",
     "title": "Discovery of Novel Inhibitors of a Critical Brain Enzyme Using a Homology Model and a Deep Convolutional Neural Network.",
-    "summary": "The primary abstract identifies AtomNet and reports five low-micromolar inhibitors of a rare-disease enzyme. This supports hit discovery, not treatment efficacy.",
+    "summary": "AtomNet, a deep convolutional network, helped identify five low-micromolar ANAT enzyme inhibitors using a homology model despite the lack of a native structure or high-identity template. This is biochemical hit identification for a Canavan-disease target, not evidence of treatment efficacy.",
     "field": "medicine",
     "ai_technology": "AtomNet deep convolutional neural network",
     "organization": "Numerion Labs (United States); University of Toledo",
@@ -37272,19 +37304,23 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "The primary abstract identifies AtomNet and reports five low-micromolar inhibitors of a rare-disease enzyme. This supports hit discovery, not treatment efficacy.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "AtomNet deep convolutional neural network is the AI method documented in the editorial source review.",
+      "tested": "The primary abstract reports five low-micromolar ANAT inhibitors. Indexed ACS text describes dose-response validation and comparison of AtomNet and smina rankings over a 7.2-million-compound library; full assay denominator and comparator details were not directly reviewed.",
+      "unknown": "Full ACS Methods and supporting information were not reviewed. Exact assay denominator, comparator details, cellular target engagement, in-vivo efficacy and therapeutic safety were not assessed; biochemical inhibition does not establish treatment efficacy.",
+      "ai_role": "AtomNet, a deep convolutional neural network, ranked candidate ligands for ANAT using a homology model and informed biochemical hit selection.",
       "evidence_urls": [
         "https://doi.org/10.1021/acs.jmedchem.0c00473"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Indexed primary PubMed abstract and publication metadata; full ACS Methods/supporting information not reviewed."
     }
   },
   {
     "id": "2021-11-study-10-1021-acs-jmedchem-1c01205",
     "title": "Discovery of Pyrazolo[3,4-d]pyridazinone Derivatives as Selective DDR1 Inhibitors via Deep Learning Based Design, Synthesis, and Biological Evaluation.",
-    "summary": "Model-based scaffold design yielded a new selective DDR1 inhibitor tested biochemically, in cells and in a mouse colitis model.",
+    "summary": "A scaffold-design workflow incorporating a deep generative model, kinase screening and docking produced compound 2, with DDR1 IC50 10.6 ± 1.9 nM and selectivity tested against 430 kinases. Cell and mouse-colitis results are preclinical; sample sizes and comparators were not assessed from the abstract.",
     "field": "medicine",
     "ai_technology": "Deep generative molecular model",
     "organization": "Chinese Academy of Sciences; Shanghai Institute of Materia Medica; State Key Laboratory of Drug Research",
@@ -37292,7 +37328,7 @@
     "source_type": "paper",
     "publication_date": "2021-11-25",
     "added_date": "2026-11-18",
-    "verification_status": "needs verification",
+    "verification_status": "verified",
     "paper_url": "",
     "relevance": {
       "impact": 2,
@@ -37300,14 +37336,18 @@
       "novelty": 2
     },
     "evidence": {
-      "publication_status": "Not reported",
-      "tested": "Model-based scaffold design yielded a new selective DDR1 inhibitor tested biochemically, in cells and in a mouse colitis model.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Deep generative molecular model is the AI method documented in the editorial source review.",
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The publisher abstract reports DDR1 IC50 10.6 ± 1.9 nM, selectivity testing against 430 kinases, cell cytokine/autophosphorylation assays and a DSS-induced mouse colitis model. Sample sizes and comparator details were not available in the reviewed abstract.",
+      "unknown": "Only the publisher abstract and metadata were reviewed. Animal sample size, comparator regimen, detailed assay design and the generator's specific operation were not assessed; mouse results do not establish clinical efficacy.",
+      "ai_role": "The publisher abstract identifies a deep generative model within a scaffold-design workflow with kinase selectivity screening and docking; its specific operation was not assessable from the abstract.",
       "evidence_urls": [
         "https://doi.org/10.1021/acs.jmedchem.1c01205"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Indexed primary ACS abstract, supporting-information inventory and online/issue metadata; complete article body not reviewed."
     }
   },
   {
@@ -37807,7 +37847,7 @@
   {
     "id": "2020-03-study-10-1021-acsmedchemlett-9b00612",
     "title": "Accelerated Discovery of Novel Ponatinib Analogs with Improved Properties for the Treatment of Parkinson's Disease.",
-    "summary": "Naïve Bayes networks jointly prioritized c-Abl potency and reduced hERG liability; synthesized compounds were assayed. Improved assay profiles do not establish cardiac safety or Parkinson disease efficacy.",
+    "summary": "Paired Naive Bayes models prospectively prioritized ponatinib analogs for c-Abl potency and reduced hERG liability. Of six new compounds tested, two combined sub-10 nM c-Abl activity with improved hERG assay profiles; this is biochemical optimization, not evidence of Parkinson’s efficacy or cardiac safety.",
     "field": "medicine",
     "ai_technology": "Paired Naïve Bayes networks",
     "organization": "University of Oxford; Emory University",
@@ -37815,7 +37855,7 @@
     "source_type": "paper",
     "publication_date": "2020-03-12",
     "added_date": "2026-11-18",
-    "verification_status": "needs verification",
+    "verification_status": "verified",
     "paper_url": "https://doi.org/10.1021/acsmedchemlett.9b00612",
     "relevance": {
       "impact": 2,
@@ -37824,14 +37864,18 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "Naïve Bayes networks jointly prioritized c-Abl potency and reduced hERG liability; synthesized compounds were assayed. Improved assay profiles do not establish cardiac safety or Parkinson disease efficacy.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Paired Naïve Bayes networks is the AI method documented in the editorial source review.",
+      "tested": "Six novel compounds were tested. Table 1 reports compounds 4 and 5 with c-Abl IC50 below 10 nM and hERG IC50 5.02 and 12.1 μM; nilotinib/ponatinib hERG values are 0.45/0.77 μM. The correction swaps compounds 4/5 in the separate kinase-panel Table 2, not these Table 1 values.",
+      "unknown": "The enzyme/channel and cell-toxicity assays do not establish Parkinson’s efficacy, in-vivo exposure, or clinical cardiac safety. The June 24 correction swaps compounds 4 and 5 in kinase-panel Table 2.",
+      "ai_role": "A single Naive Bayes network predicted c-Abl potency; two networks in concert prioritized c-Abl potency and predicted hERG IC50 greater than 1 μM, and the workflows were prospectively tested.",
       "evidence_urls": [
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC7153011/",
         "https://doi.org/10.1021/acsmedchemlett.9b00612"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "PMC Results and Table 1; indexed primary correction Table 2; ACS online/issue publication metadata."
     }
   },
   {
@@ -37924,7 +37968,7 @@
   {
     "id": "2021-01-study-10-1021-acsomega-0c05591",
     "title": "Using Bibliometric Analysis and Machine Learning to Identify Compounds Binding to Sialidase-1.",
-    "summary": "Model-ranked compounds yielded two experimentally measured human sialidase-1 binders.",
+    "summary": "A Bayesian model ranked three candidates for testing; microscale thermophoresis found sialidase-1 binding for sulfameter (Kd 2.15 ± 1.02 μM) and mexenone (8.88 ± 4.02 μM). Enzyme activity and chaperone function were not tested.",
     "field": "medicine",
     "ai_technology": "Bayesian classifier",
     "organization": "Collaborations Pharmaceuticals (United States)",
@@ -37932,7 +37976,7 @@
     "source_type": "paper",
     "publication_date": "2021-01-20",
     "added_date": "2026-11-18",
-    "verification_status": "needs verification",
+    "verification_status": "verified",
     "paper_url": "",
     "relevance": {
       "impact": 2,
@@ -37941,19 +37985,23 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "Model-ranked compounds yielded two experimentally measured human sialidase-1 binders.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Bayesian classifier is the AI method documented in the editorial source review.",
+      "tested": "Three selected compounds were tested by microscale thermophoresis in triplicate against 5 nM recombinant human sialidase-1; two bound, with reported Kd values of 2.15 ± 1.02 μM (sulfameter) and 8.88 ± 4.02 μM (mexenone).",
+      "unknown": "The paper states that the target model used a small training set and limited chemical space. The study measured binding, not sialidase activity, cellular chaperoning, or disease benefit.",
+      "ai_role": "Assay Central used ECFP6 descriptors and a Bayesian model trained on curated ChEMBL and BindingDB IC50 data to rank compounds; toxicity and CNS filters also informed candidate selection.",
       "evidence_urls": [
         "https://doi.org/10.1021/acsomega.0c05591"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Full PMC paper, including Methods, results and limitations."
     }
   },
   {
     "id": "2021-08-study-10-1021-acsomega-1c03613",
     "title": "A Novel Scalarized Scaffold Hopping Algorithm with Graph-Based Variational Autoencoder for Discovery of JAK1 Inhibitors.",
-    "summary": "Generated scaffold-hopped compounds were synthesized; seven were biochemically active, including a nanomolar JAK1 inhibitor. No therapeutic efficacy established.",
+    "summary": "GraphGMVAE scaffold hopping from upadacitinib yielded seven synthesized JAK1 inhibitors from 25 prioritized candidates. In biochemical assays, separated Ten01/Ten02 had IC50 values of 5.0/16.8 nM; activity does not establish therapeutic efficacy.",
     "field": "medicine",
     "ai_technology": "GraphGMVAE graph variational autoencoder with message-passing encoders",
     "organization": "Tencent (China)",
@@ -37961,7 +38009,7 @@
     "source_type": "paper",
     "publication_date": "2021-08-24",
     "added_date": "2026-11-18",
-    "verification_status": "needs verification",
+    "verification_status": "verified",
     "paper_url": "",
     "relevance": {
       "impact": 2,
@@ -37970,13 +38018,17 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "Generated scaffold-hopped compounds were synthesized; seven were biochemically active, including a nanomolar JAK1 inhibitor. No therapeutic efficacy established.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "GraphGMVAE graph variational autoencoder with message-passing encoders is the AI method documented in the editorial source review.",
+      "tested": "Seven synthesized compounds were tested in an ADP-Glo JAK1 kinase assay. Ten01 and Ten02 had IC50 values of 5.0 and 16.8 nM after chiral separation; the other isomeric mixtures ranged from 0.50 to 9.6 μM. The Ten01/Ten02 mixture had IC50 64 nM.",
+      "unknown": "The assays establish biochemical JAK1 inhibition only. The campaign synthesized seven compounds from 25 prioritized molecules; some potency values followed chiral separation and other compounds were tested as isomeric mixtures.",
+      "ai_role": "GraphGMVAE, a graph variational autoencoder with Gaussian-mixture latent space, generated scaffold-hopped molecules from upadacitinib; docking and CNN affinity scoring helped prioritize compounds for synthesis.",
       "evidence_urls": [
         "https://doi.org/10.1021/acsomega.1c03613"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Full PMC paper, including synthesis/assay methods, results and discussion."
     }
   },
   {
@@ -38478,7 +38530,7 @@
   {
     "id": "2021-03-study-10-1038-s41565-021-00870-y",
     "title": "Computationally guided high-throughput design of self-assembling drug nanoparticles.",
-    "summary": "A trained random forest nominated six new drug/excipient pairs; light scattering and microscopy confirmed nanoparticles. Preclinical formulation evidence, not patient efficacy.",
+    "summary": "Machine learning integrated with high-throughput experiments identified 100 self-assembling drug nanoparticles from 2.1 million drug/excipient pairings. Two formulations were further characterized ex vivo and in vivo; the reviewed abstract does not establish clinical benefit.",
     "field": "medicine",
     "ai_technology": "Random-forest co-aggregation classifier",
     "organization": "Brigham and Women's Hospital; Harvard University; Duke University",
@@ -38495,20 +38547,24 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "A trained random forest nominated six new drug/excipient pairs; light scattering and microscopy confirmed nanoparticles. Preclinical formulation evidence, not patient efficacy.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Random-forest co-aggregation classifier is the AI method documented in the editorial source review.",
+      "tested": "The primary abstract reports 100 self-assembling formulations identified from a search space of 2.1 million drug/excipient pairings (788 drugs, 2,686 excipients). Sorafenib–glycyrrhizin and terbinafine–taurocholic acid received further ex-vivo/in-vivo characterization. Actual physical-screen denominator, sample sizes and controls were not assessed.",
+      "unknown": "Only publisher abstract and metadata were reviewed; article Methods and supplement were inaccessible through PMC due CAPTCHA. Model architecture, screen controls, sample sizes and detailed ex-vivo/in-vivo outcomes were not assessed.",
+      "ai_role": "The abstract confirms machine learning integrated with high-throughput experimentation; model architecture and precise selection operation were not assessable from the reviewed material.",
       "evidence_urls": [
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC8197729/",
         "https://doi.org/10.1038/s41565-021-00870-y"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Indexed primary PubMed metadata and author-institution abstract; complete Nature/PMC Methods and supplement not accessible."
     }
   },
   {
     "id": "2020-07-study-10-1038-s41598-020-70026-w",
     "title": "Synergistic drug combinations and machine learning for drug repurposing in chordoma.",
-    "summary": "Models ranked repurposing assets; AZD2014 inhibited chordoma cells. Separate drug-combination synergy is not automatically attributable to AI; no clinical efficacy is shown.",
+    "summary": "Bayesian models trained on prior chordoma-cell screening data ranked compounds for in-vitro testing; AZD2014 inhibited U-CH1 and U-CH2 cells (IC50 0.35 and 0.61 μM), though maximal U-CH2 inhibition was limited. Separately tested drug-pair synergy is not attributed to AI. No animal or clinical efficacy is shown.",
     "field": "medicine",
     "ai_technology": "Bayesian machine-learning inhibition models",
     "organization": "University of North Carolina at Chapel Hill; Collaborations Pharmaceuticals (United States); RTI International",
@@ -38525,13 +38581,17 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "Models ranked repurposing assets; AZD2014 inhibited chordoma cells. Separate drug-combination synergy is not automatically attributable to AI; no clinical efficacy is shown.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Bayesian machine-learning inhibition models is the AI method documented in the editorial source review.",
+      "tested": "Indexed primary Results report AZD2014 IC50 of 0.35 μM in U-CH1 and 0.61 μM in U-CH2, with limited maximal U-CH2 inhibition. Afatinib/palbociclib were known-inhibitor comparators; drug combinations were a separate study strategy. Replicate details were not independently assessed.",
+      "unknown": "Cell-line activity does not establish animal or clinical efficacy. Complete model-validation and replicate methods were not independently reviewed.",
+      "ai_role": "Bayesian machine-learning inhibition models trained on prior chordoma-cell screening data ranked compounds from an NIH NCATS asset set for in-vitro testing; the drug-combination experiments were a separate study strategy.",
       "evidence_urls": [
         "https://doi.org/10.1038/s41598-020-70026-w"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Indexed Nature primary abstract and Results passages on Bayesian selection, single-agent activity, and separately tested combinations; complete Methods not independently reviewed."
     }
   },
   {
@@ -38904,12 +38964,16 @@
     "evidence": {
       "publication_status": "Peer-reviewed paper",
       "tested": "Regression-derived formulations produced high-fidelity printed structures with viable proliferating cells. This is a materials/printing result, not demonstrated tissue therapy.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
+      "unknown": "Full primary Methods/Results were not reviewed; formulation/cell replicate counts, learned-model validation and assay details were not assessed. Version-date conflict remains: catalog May 13, reproduced publisher preview May 27, PubMed electronic date May 28, 2020.",
       "ai_role": "Fitted multiple-regression formulation model is the AI method documented in the editorial source review.",
       "evidence_urls": [
         "https://doi.org/10.1088/1758-5090/ab8707"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Primary PubMed metadata and publisher preview reproduced by ResearchGate; complete primary Methods/Results not authenticated."
     }
   },
   {
@@ -38991,18 +39055,22 @@
     "evidence": {
       "publication_status": "Preprint",
       "tested": "Two new CDK9 inhibitors were reported, including one structurally distinct hit. Prior research hold is the same case, not an additional discovery; date refers to the supplied preprint.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
+      "unknown": "The official bioRxiv manuscript was inaccessible in this review. Methods, selected-compound denominator, exact posting date and version-specific results were not authenticated against the original; an author-uploaded reproduction does not resolve those source checks. These access limits do not establish that any scientific finding is absent.",
       "ai_role": "Generative and predictive learned molecular models is the AI method documented in the editorial source review.",
       "evidence_urls": [
         "https://doi.org/10.1101/2020.03.18.996538"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Official bioRxiv QR/DOI identity metadata identifying v1; an author-uploaded ResearchGate reproduction was consulted but not authenticated against the hosted original. Primary manuscript/API routes were inaccessible; primary Methods and Results were not verified."
     }
   },
   {
     "id": "2020-03-study-10-1101-2020-03-19-999615",
     "title": "Automated design and optimization of multitarget schizophrenia drug candidates by deep learning",
-    "summary": "The preprint reports synthesis and receptor testing of generated candidates, followed by animal-model activity. Evidence is preclinical and preprint-specific, not clinical efficacy.",
+    "summary": "The later journal abstract reports a deep recurrent generator and multitask activity network, receptor testing of compound 3 and six analogs, and animal-model antipsychotic effects for compound 8 with low reported sedation/catalepsy potential. These are preclinical results. Journal online publication was 2020-07-12; the original preprint’s posting date and version-specific results remain unchecked.",
     "field": "medicine",
     "ai_technology": "Deep recurrent generator and multitask deep neural network",
     "organization": "Shanghai Institute of Materia Medica, Chinese Academy of Sciences",
@@ -39019,13 +39087,17 @@
     },
     "evidence": {
       "publication_status": "Preprint",
-      "tested": "The preprint reports synthesis and receptor testing of generated candidates, followed by animal-model activity. Evidence is preclinical and preprint-specific, not clinical efficacy.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Deep recurrent generator and multitask deep neural network is the AI method documented in the editorial source review.",
+      "tested": "The journal abstract reports synthesis and receptor testing of compound 3, experimental evaluation of six analogs, and animal-model testing of compound 8. The accessible abstract does not provide animal species, sample sizes, dose, comparator, or behavioral endpoint details.",
+      "unknown": "Animal model, group sizes, dose, comparator, and behavioral endpoints were not available in the reviewed abstract. No human safety or efficacy was established. The record's date refers to the preprint, while the journal version was online 2020-07-12 and assigned to the 2020-10-15 issue.",
+      "ai_role": "A deep recurrent neural network generated and iteratively refined candidate molecules; a multitask deep neural network predicted D2, 5-HT1A, and 5-HT2A activity to rank candidates and guide hit expansion.",
       "evidence_urls": [
         "https://doi.org/10.1101/2020.03.19.999615"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Indexed primary PubMed journal abstract and online/issue dates; official bioRxiv v1 and full journal Methods not accessed."
     }
   },
   {
@@ -39380,7 +39452,7 @@
   {
     "id": "2021-08-study-10-1186-s12943-021-01405-8",
     "title": "Uncovering cancer vulnerabilities by machine learning prediction of synthetic lethality.",
-    "summary": "The structured primary abstract reports experimental validation of a predicted synthetic-lethal interaction. This supports cancer-cell biology, not demonstrated patient stratification or treatment benefit.",
+    "summary": "PARIS inferred synthetic-lethal interactions from DepMap CRISPR and multi-omic data. Follow-up CRISPR assays supported an ALDH2-BRIP1 dependency in low-ALDH2 cancer-cell models; this is preclinical cell evidence, not patient stratification or treatment benefit.",
     "field": "medicine",
     "ai_technology": "PARIS learned synthetic-lethality predictor",
     "organization": "BioMed X; University Hospital Heidelberg; National Center for Tumor Diseases",
@@ -39388,7 +39460,7 @@
     "source_type": "paper",
     "publication_date": "2021-08-28",
     "added_date": "2026-11-18",
-    "verification_status": "needs verification",
+    "verification_status": "verified",
     "paper_url": "",
     "relevance": {
       "impact": 2,
@@ -39397,13 +39469,17 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "The structured primary abstract reports experimental validation of a predicted synthetic-lethal interaction. This supports cancer-cell biology, not demonstrated patient stratification or treatment benefit.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "PARIS learned synthetic-lethality predictor is the AI method documented in the editorial source review.",
+      "tested": "PARIS predicted 15 high-confidence interactions across 549 DNA-damage-repair genes. Experimental follow-up tested ALDH2-BRIP1 in breast cancer cell lines and engineered RPE-1 cells using CRISPR knockouts, colony formation and DNA-damage readouts. The paper separately reports experimental validation of CDKN2A-TYMP-TYMS.",
+      "unknown": "Validation was in cell models and does not establish patient stratification or treatment benefit. The authors note heterozygous Fanconi-anemia-pathway mutations in several cancer lines as a possible background confounder.",
+      "ai_role": "PARIS uses random-forest importance scores and Boruta feature selection to explain CRISPR dependency scores from mutation and expression features across DepMap cell lines, then ranks candidate synthetic-lethal interactions.",
       "evidence_urls": [
         "https://doi.org/10.1186/s12943-021-01405-8"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Full PMC paper, including model description, experimental methods, results and discussion."
     }
   },
   {
@@ -39760,7 +39836,7 @@
   {
     "id": "2021-02-study-10-26434-chemrxiv-14045072-v1",
     "title": "A Bag of Tricks for Automated De Novo Design of Molecules with the Desired Properties: Application to EGFR Inhibitor Discovery",
-    "summary": "A learned generator produced EGFR candidates reported as experimentally potent. Assay details are absent from the abstract; decision applies to the cited v1 result, not an assumed later version.",
+    "summary": "A deep recurrent generator with reinforcement learning nominated EGFR compounds; enzyme assays confirmed 4 of 15 predicted actives, including two with nanomolar potency. Five predicted-inactive controls were inactive. This is a small preclinical proof of concept.",
     "field": "medicine",
     "ai_technology": "Generative recurrent neural network with reinforcement learning",
     "organization": "Carnegie Mellon University; University of Oxford; University of North Carolina at Chapel Hill",
@@ -39777,13 +39853,17 @@
     },
     "evidence": {
       "publication_status": "Preprint",
-      "tested": "A learned generator produced EGFR candidates reported as experimentally potent. Assay details are absent from the abstract; decision applies to the cited v1 result, not an assumed later version.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Generative recurrent neural network with reinforcement learning is the AI method documented in the editorial source review.",
+      "tested": "The v1 preprint reports four confirmed inhibitors among 15 assayed predicted actives and five inactive predicted-inactive controls. Two predicted-active compounds were insoluble and not assayed. Two hits had nanomolar inhibition comparable to staurosporine; the selected-batch hit fraction does not establish a general success rate.",
+      "unknown": "The result is a proof-of-concept assay on 15 predicted actives and five predicted-inactive controls. The preprint does not establish therapeutic efficacy or generalize its hit rate beyond this target and protocol.",
+      "ai_role": "A deep recurrent neural network generated SMILES molecules; reinforcement learning used an EGFR random-forest activity predictor with transfer learning, experience replay and reward shaping to guide generation and selection.",
       "evidence_urls": [
         "https://doi.org/10.26434/chemrxiv.14045072.v1"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Original ChemRxiv v1 PDF initial sections plus indexed primary assay/summary passages and official version metadata; complete PDF not independently re-read."
     }
   },
   {
@@ -39847,7 +39927,7 @@
   {
     "id": "2021-11-study-10-3389-fphar-2021-772296",
     "title": "An Integrated Deep Learning and Molecular Dynamics Simulation-Based Screening Pipeline Identifies Inhibitors of a New Cancer Drug Target TIPE2.",
-    "summary": "Model-led screening followed by simulations yielded three experimentally confirmed TIPE2 binders among four tested compounds.",
+    "summary": "A hybrid deep-learning, docking and molecular-dynamics screen nominated TIPE2 ligands. Biolayer interferometry tested four: UM-164 bound at Kd 4.97 μM, while three alternatives showed much weaker reported binding. A PIP2 competition assay does not establish cancer-treatment efficacy.",
     "field": "medicine",
     "ai_technology": "DFCNN dense fully connected neural network",
     "organization": "Chinese Academy of Sciences; Shenzhen Institutes of Advanced Technology",
@@ -39855,7 +39935,7 @@
     "source_type": "paper",
     "publication_date": "2021-11-23",
     "added_date": "2026-11-18",
-    "verification_status": "needs verification",
+    "verification_status": "verified",
     "paper_url": "",
     "relevance": {
       "impact": 2,
@@ -39864,13 +39944,17 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "Model-led screening followed by simulations yielded three experimentally confirmed TIPE2 binders among four tested compounds.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "DFCNN dense fully connected neural network is the AI method documented in the editorial source review.",
+      "tested": "BLI tested four selected compounds: UM-164 Kd 4.97 μM, golvatinib about 189 μM and fedratinib about 298 μM. FIIN-3 was described as lacking reactivity; the discussion’s approximately 0.858 M fit is not evidence of appreciable binding. A separate UM-164 competition assay reduced TIPE2–PIP2 binding.",
+      "unknown": "The assays establish biochemical binding and in-vitro competition only, not cellular target engagement or treatment efficacy. The paper's conclusion calls UM-164 low-nanomolar, but the reported BLI Kd is 4.97 μM.",
+      "ai_role": "DFCNN and DeepBindBC binding predictors, docking and molecular-dynamics simulations prioritized compounds for experimental TIPE2 binding and PIP2-competition assays.",
       "evidence_urls": [
         "https://doi.org/10.3389/fphar.2021.772296"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Frontiers primary Methods on DFCNN/DeepBindBC and Results/Discussion on BLI binding, competition, and internal affinity inconsistencies."
     }
   },
   {
@@ -40021,7 +40105,7 @@
   {
     "id": "2020-08-study-10-3390-foods9091147",
     "title": "An Artificial Intelligence Characterised Functional Ingredient, Derived from Rice, Inhibits TNF-α and Significantly Improves Physical Strength in an Inflammaging Population.",
-    "summary": "Saved Methods link predictions to food-derived peptide selection and in-vitro confirmation. The ingredient trial missed its primary subjective endpoint; secondary benefits do not prove peptide-specific clinical efficacy.",
+    "summary": "An ensemble of ten neural networks predicted anti-inflammatory rice peptides, which were identified in a rice peptide hydrolysate and tested in vitro. A 12-week pilot randomized 40 older adults (30 rice NPN, 10 placebo); its primary digestive-discomfort endpoint was not met, while secondary physical-performance and biomarker outcomes favored treatment. Small sample, compliance/timing confounding, and the ingredient-versus-isolated-peptide distinction limit inference.",
     "field": "medicine",
     "ai_technology": "Trained neural-network ensemble for peptide bioactivity prediction",
     "organization": "Nuritas (Ireland)",
@@ -40029,7 +40113,7 @@
     "source_type": "paper",
     "publication_date": "2020-08-20",
     "added_date": "2026-11-18",
-    "verification_status": "needs verification",
+    "verification_status": "verified",
     "paper_url": "",
     "relevance": {
       "impact": 2,
@@ -40038,19 +40122,23 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "Saved Methods link predictions to food-derived peptide selection and in-vitro confirmation. The ingredient trial missed its primary subjective endpoint; secondary benefits do not prove peptide-specific clinical efficacy.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Trained neural-network ensemble for peptide bioactivity prediction is the AI method documented in the editorial source review.",
+      "tested": "Eight predicted peptides were synthesized; seven reduced TNF-α secretion in stimulated THP-1 assays. A 12-week pilot randomized 40 older adults (rice NPN 30, placebo 10). The digestive-discomfort primary endpoint was not met; secondary chair-stand/SPPB results favored treatment. Figure captions report at least 27/10 and 28/10 analyzed for those outcomes, respectively.",
+      "unknown": "The pilot was small and randomized 30:10; the primary subjective endpoint was not met, and authors noted compliance and Christmas-period measurement as confounders. The clinical intervention was a rice peptide hydrolysate, so effects cannot be assigned to individual AI-predicted peptides. Clinical efficacy and generalizability need confirmation.",
+      "ai_role": "A ten-model neural-network ensemble predicted anti-inflammatory peptides from food proteomes and helped characterize peptides detected in rice NPN; peptide and ingredient effects were then tested by mass spectrometry, cell assays, and a human pilot. The AI prediction itself did not establish clinical effect.",
       "evidence_urls": [
         "https://doi.org/10.3390/foods9091147"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Publisher Methods on peptide prediction and pilot design; peptide Results, human Results and outcome-specific figure-caption denominators."
     }
   },
   {
     "id": "2021-10-study-10-3390-ijms222111546",
     "title": "Machine Learning Assisted Approach for Finding Novel High Activity Agonists of Human Ectopic Olfactory Receptors.",
-    "summary": "Database screening and receptor assays yielded three high-activity agonists; receptor activation does not demonstrate a therapy.",
+    "summary": "Random-forest screening and docking prioritized candidates from five databases; luciferase assays identified two OR1A1 agonists and one OR2W1 agonist. These receptor-activation assays do not establish a therapeutic effect.",
     "field": "medicine",
     "ai_technology": "Random forest classifier",
     "organization": "Macquarie University; Duke University; Duke Medical Center",
@@ -40067,13 +40155,17 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "Database screening and receptor assays yielded three high-activity agonists; receptor activation does not demonstrate a therapy.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Random forest classifier is the AI method documented in the editorial source review.",
+      "tested": "Luciferase dose-response assays identified two OR1A1 agonists with EC50 95% confidence intervals of 11.5–24.4 and 12.2–25.0 μM, and 2-ethoxynaphthalene as an OR2W1 agonist with interval 3.05–6.59 μM. Benzophenone was the positive activation control. Other selected compounds were inactive or weak activators.",
+      "unknown": "Only selected candidates were experimentally tested; classifier sensitivity and F1 scores were below 0.80. Receptor activation in this assay does not establish physiological or therapeutic effects.",
+      "ai_role": "Random-forest classifiers trained on molecular descriptors ranked database compounds within training-like chemical space; docking helped select candidates for receptor luciferase assays.",
       "evidence_urls": [
         "https://doi.org/10.3390/ijms222111546"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "PMC primary abstract and indexed primary screening/luciferase Results including control and 95% EC50 confidence intervals; complete Methods not independently reviewed."
     }
   },
   {
@@ -40342,7 +40434,7 @@
   {
     "id": "2020-02-study-10-3390-pharmaceutics12020166",
     "title": "A 3D Bioprinted Pseudo-Bone Drug Delivery Scaffold for Bone Tissue Engineering.",
-    "summary": "The optimized scaffold underwent mechanical characterization and in-vitro drug-release testing. Bone-like matrix performance does not establish fracture healing or patient benefit.",
+    "summary": "ANN-supported optimization selected a 3D-printed simvastatin scaffold with 20-day in-vitro release. The primary abstract reports hardness and resilience near healthy bone in a mechanically fractured human clavicle model. These release and ex-vivo mechanical endpoints do not establish living-organism healing or clinical benefit.",
     "field": "medicine",
     "ai_technology": "Artificial neural network for scaffold optimization",
     "organization": "University of the Witwatersrand",
@@ -40359,13 +40451,17 @@
     },
     "evidence": {
       "publication_status": "Peer-reviewed paper",
-      "tested": "The optimized scaffold underwent mechanical characterization and in-vitro drug-release testing. Bone-like matrix performance does not establish fracture healing or patient benefit.",
-      "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-      "ai_role": "Artificial neural network for scaffold optimization is the AI method documented in the editorial source review.",
+      "tested": "Thirty-nine scaffold formulations were evaluated with ANN-supported optimization. The selected 14% PPF/16% PF127 formulation released simvastatin in vitro for 20 days. The abstract reports hardness and resilience near healthy bone in a mechanically fractured human clavicle model; specimen and replicate counts were not assessed in this review.",
+      "unknown": "Living-organism bone healing and patient benefit are not established by the reported in-vitro release and ex-vivo mechanical model. Specimen and replicate counts were not assessed.",
+      "ai_role": "A multilayer feed-forward/back-propagation artificial neural network optimized scaffold formulation using thermogelation and drug-release responses; it did not test biological healing.",
       "evidence_urls": [
         "https://doi.org/10.3390/pharmaceutics12020166"
       ],
       "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-18",
+      "scope": "Publisher abstract and indexed publisher Methods/Results passages on ANN/formulations and drug release; complete article and mechanical-model methods not independently reviewed."
     }
   },
   {

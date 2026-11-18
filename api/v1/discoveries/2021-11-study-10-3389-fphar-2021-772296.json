@@ -1,7 +1,7 @@
 {
   "id": "2021-11-study-10-3389-fphar-2021-772296",
   "title": "An Integrated Deep Learning and Molecular Dynamics Simulation-Based Screening Pipeline Identifies Inhibitors of a New Cancer Drug Target TIPE2.",
-  "summary": "Model-led screening followed by simulations yielded three experimentally confirmed TIPE2 binders among four tested compounds.",
+  "summary": "A hybrid deep-learning, docking and molecular-dynamics screen nominated TIPE2 ligands. Biolayer interferometry tested four: UM-164 bound at Kd 4.97 μM, while three alternatives showed much weaker reported binding. A PIP2 competition assay does not establish cancer-treatment efficacy.",
   "field": "medicine",
   "ai_technology": "DFCNN dense fully connected neural network",
   "organization": "Chinese Academy of Sciences; Shenzhen Institutes of Advanced Technology",
@@ -9,7 +9,7 @@
   "source_type": "paper",
   "publication_date": "2021-11-23",
   "added_date": "2026-11-18",
-  "verification_status": "needs verification",
+  "verification_status": "verified",
   "paper_url": "",
   "relevance": {
     "impact": 2,
@@ -18,12 +18,16 @@
   },
   "evidence": {
     "publication_status": "Peer-reviewed paper",
-    "tested": "Model-led screening followed by simulations yielded three experimentally confirmed TIPE2 binders among four tested compounds.",
-    "unknown": "The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.",
-    "ai_role": "DFCNN dense fully connected neural network is the AI method documented in the editorial source review.",
+    "tested": "BLI tested four selected compounds: UM-164 Kd 4.97 μM, golvatinib about 189 μM and fedratinib about 298 μM. FIIN-3 was described as lacking reactivity; the discussion’s approximately 0.858 M fit is not evidence of appreciable binding. A separate UM-164 competition assay reduced TIPE2–PIP2 binding.",
+    "unknown": "The assays establish biochemical binding and in-vitro competition only, not cellular target engagement or treatment efficacy. The paper's conclusion calls UM-164 low-nanomolar, but the reported BLI Kd is 4.97 μM.",
+    "ai_role": "DFCNN and DeepBindBC binding predictors, docking and molecular-dynamics simulations prioritized compounds for experimental TIPE2 binding and PIP2-competition assays.",
     "evidence_urls": [
       "https://doi.org/10.3389/fphar.2021.772296"
     ],
     "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-18",
+    "scope": "Frontiers primary Methods on DFCNN/DeepBindBC and Results/Discussion on BLI binding, competition, and internal affinity inconsistencies."
   }
 }

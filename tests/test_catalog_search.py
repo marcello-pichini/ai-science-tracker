@@ -26,5 +26,21 @@ assert.equal(groups.length, 5);
 assert.ok(groups.every(g => g.records.length === 0));
 const cases = s.collections([], [{id:'case',title:'Case',cves:[],advisory_url:'https://vendor.example/unique-advisory'}], {models:[],families:[]}, {models:[]})[1];
 assert.deepEqual(s.match(cases.records[0].fields, 'unique-advisory'), ['Sources'], 'Advisory evidence is a searchable source');
+assert.equal(cases.records[0].href, 'profiles/security-case.html');
+assert.equal(cases.records[0].explorer, 'security.html#case');
+const linked = s.collections([{id:'discovery'}], [], {models:[], families:[
+  {id:'active', discoveries:['discovery']}, {id:'archive-only', discoveries:['archived']}
+]});
+assert.equal(linked[0].records[0].href, 'share/discovery.html');
+assert.equal(linked[0].records[0].explorer, 'index.html#discovery=discovery');
+assert.equal(linked[4].records[0].href, 'profiles/family-active.html');
+assert.equal(linked[4].records[1].href, 'profile.html?family=archive-only');
+const science = s.collections([
+  {id:'other',title:'Other study',summary:'Used AlphaFold 3'},
+  {id:'exact',title:'AlphaFold 3: molecular complexes',source_url:'https://publisher.example/article'}
+],[],{models:[],families:[]},null,{records:{exact:{doi:'10.1234/full-id'},other:{doi:'10.1234/other'}}})[0].records;
+assert.equal(s.results(science, 'AlphaFold 3')[0].id, 'exact');
+assert.deepEqual(s.results(science, 'https://doi.org/10.1234/full-id').map(r => r.id), ['exact']);
+assert.equal(s.results(science, '10.1234/full').length, 0);
 """], cwd=ROOT, text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stderr)

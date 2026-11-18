@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-page-snapshot="dbb99d4fab32144ee19e898786bc247792549ff2af538cb03e507382e75a7952">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'self'">
 <script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/data/*"}},{"not":{"href_matches":"/api/*"}},{"not":{"href_matches":"/og/*"}},{"not":{"href_matches":"/*.xml"}},{"not":{"href_matches":"/*.txt"}}]},"eagerness":"moderate"}]}</script><!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "04bfc0ca5b5e4460b4c8ee6bb5055925"}'></script><!-- End Cloudflare Web Analytics -->
-<title>AI-discovered vulnerabilities and disclosure tracker · AI Science Tracker</title>
+<title>Vulnerabilities Found by AI: Disclosure Tracker · AI Science Tracker</title>
 <meta name="description" content="Explore publicly disclosed AI-discovered vulnerabilities by project, finder, severity and disclosure date, with original sources, AI attribution and remediation caveats.">
 <link rel="canonical" href="https://aisciencetracker.org/security.html">
-<meta property="og:title" content="AI-discovered vulnerabilities and disclosure tracker · AI Science Tracker">
+<meta property="og:title" content="Vulnerabilities Found by AI: Disclosure Tracker · AI Science Tracker">
 <meta property="og:description" content="Explore publicly disclosed AI-discovered vulnerabilities by project, finder, severity and disclosure date, with original sources, AI attribution and remediation caveats.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
@@ -23,7 +23,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/atom+xml" title="AI Science Tracker: additions and source checks" href="feed.xml">
-<link rel="stylesheet" href="styles.css?v=f7ee2e330613">
+<link rel="stylesheet" href="styles.css?v=23f6b9beaa5b">
 </head>
 <body>
 <header class="header">
@@ -38,13 +38,14 @@
 
 <section class="banda banda-bassa" aria-labelledby="page-title">
   <div class="wrap">
-    <h1 id="page-title">AI-discovered vulnerabilities</h1>
+    <h1 id="page-title">Vulnerabilities found by AI</h1>
     <p class="lead">Public disclosures, zero-day context and documented fixes. Only findings with an original source establishing AI involvement are included.</p>
     <p class="security-tasks"><a href="#t-disclosures">Browse cases</a> · <a href="#chart-options" id="explore-charts">Explore charts</a></p>
   </div>
 </section>
 <main>
-  <noscript><div class="wrap"><p class="vuoto">This page draws its cases with JavaScript. Without it you can read the <a href="data/vulnerabilities.json">raw case data</a> with its source links, or the <a href="methodology.html">methodology</a> for what is included.</p></div></noscript>
+  <div class="wrap"><p class="sez-sub"><a href="profiles/security-index.html">Browse all source-linked case pages</a> · <a href="dataset.html#security-dataset">Download and cite the security dataset</a>. Case pages preserve AI attribution, reported severity and remediation caveats.</p></div>
+  <noscript><div class="wrap"><p class="vuoto">Charts and filters need JavaScript. You can still <a href="profiles/security-index.html">read every case on its static page</a>, open the <a href="data/vulnerabilities.json">raw case data</a>, or read the <a href="methodology.html">methodology</a>.</p></div></noscript>
   <section class="sez" aria-labelledby="t-reading"><div class="wrap prosa">
     <h2 id="t-reading">Reading the evidence</h2>
     <details class="security-options"><summary>How to read an AI vulnerability discovery</summary>
@@ -69,6 +70,8 @@
   <section class="sez" aria-labelledby="t-disclosures">
     <div class="wrap">
       <h2 id="t-disclosures" tabindex="-1">Tracked disclosures</h2>
+      <dl id="security-facts" class="collection-facts" aria-label="Security collection coverage"></dl>
+      <p class="descr">Cases and distinct CVEs are separate counting units. Coverage denominators count cases; missing assessments do not mean low severity, no effect or an installed fix. Vendor groups preserve exact AI-system labels and do not establish specific models, autonomy or independence.</p>
       <p id="coverage" class="coverage-note" aria-live="polite">Loading disclosures…</p>
     </div>
     <div class="filtri"><div class="wrap">
@@ -77,6 +80,7 @@
         <select id="product" aria-label="Product"><option value="">All products</option></select>
         <select id="context" aria-label="Discovery context"><option value="">All discovery contexts</option><option value="undisclosed">Undisclosed at discovery (source report)</option><option value="pre-release">Pre-release findings</option><option value="disclosure">Other vulnerability disclosures</option></select>
         <select id="month" aria-label="Disclosure month"><option value="">All disclosure months</option></select>
+        <select id="ai_group" aria-label="Source-attributed system group"><option value="">All source-attributed groups</option></select>
         <select id="ai_system" aria-label="AI system"><option value="">All AI systems</option></select>
         <select id="remediation" aria-label="Remediation evidence"><option value="">All remediation evidence</option><option value="fix documented">Fix documented</option><option value="not established">Fix evidence not established</option></select>
         <select id="severity" aria-label="Recorded CVSS severity"><option value="">All recorded CVSS severities</option><option>None</option><option>Low</option><option>Medium</option><option>High</option><option>Critical</option><option>Not available</option></select>
@@ -102,7 +106,9 @@
   <p><a href="index.html">Scientific discoveries</a> · <a href="guide.html">Site guide</a></p>
   <p>Privacy: this site sets no cookies and uses Cloudflare Web Analytics for aggregate visit statistics (page, referrer, browser, IP address) under legitimate interest (GDPR Art. 6(1)(f)). Cloudflare acts as our processor and may process data in the United States under the EU-US Data Privacy Framework. To object or exercise your rights, <a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new">open an issue</a>.</p>
 </div></footer>
-<script src="assets/catalog-ui.js?v=6c310621c0ce"></script>
+<script src="assets/catalog-data.js?v=100014eb08f1"></script>
+<script src="assets/catalog-entities.js?v=0c51c8fa4441"></script>
+<script src="assets/catalog-ui.js?v=3a48ac18fb9e"></script>
 <script>
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -128,7 +134,7 @@ function clearReport() {
   url.searchParams.delete('report');
   history.replaceState(null, '', url);
 }
-const filterIds = ["product", "context", "month", "ai_system", "remediation", "severity", "consequence"];
+const filterIds = ["product", "context", "month", "ai_system","ai_group", "remediation", "severity", "consequence"];
 const severities = ["None", "Low", "Medium", "High", "Critical", "Not available"];
 const consequenceLabels = ["code execution", "data disclosure", "data modification", "privilege escalation", "denial of service", "authentication bypass", "other", "Not available"];
 function ratingSeverity(rating) {
@@ -262,6 +268,7 @@ function render() {
     (!$("remediation").value || record.remediation === $("remediation").value) &&
     (!$("severity").value || severity(record) === $("severity").value) &&
     (!$("consequence").value || consequences(record).includes($("consequence").value)) &&
+    (!$("ai_group").value || CatalogEntities.system(record.ai_system).label === $("ai_group").value) &&
     (!query || (exactCve ? record.cves.some(value => value.toLowerCase() === cve) : [record.title,record.product,record.ai_system,record.organization,record.summary,record.ai_role,...record.cves].join(" ").toLowerCase().includes(query))));
   $("count").textContent = `${selected.length} of ${cases.length} tracked cases${year ? ' · disclosure year: ' + year : ''}`;
   $("cases").innerHTML = selected.slice(0, shown).map(record => `<article class="voce" id="${esc(record.id)}" tabindex="-1">
@@ -279,7 +286,7 @@ function render() {
     <p class="tech"><span>AI system:</span> ${esc(record.ai_system)} · <span>Product:</span> ${esc(record.product)}</p>
     <p>${record.cves.length ? record.cves.map(esc).join(", ") : "CVE: not established in this catalog"}</p>
     <div class="voce-footer"><span class="etich">${esc(labels[record.classification])}</span><span class="etich">${record.remediation === "not established" ? "Fix evidence not established" : esc(record.remediation)}</span><span>Source-documented fix evidence does not establish installed patches or current safety.</span>
-      <span class="collegamenti"><a href="${esc(safeUrl(record.source_url))}" rel="noopener">Original disclosure</a><a href="${esc(safeUrl(record.ai_source_url))}" rel="noopener">AI attribution</a><a href="${esc(safeUrl(record.advisory_url))}" rel="noopener">Advisory / fix evidence</a></span></div>
+      <span class="collegamenti"><a href="profiles/security-${encodeURIComponent(record.id)}.html">Source-linked case page</a><a href="${esc(safeUrl(record.source_url))}" rel="noopener">Original disclosure</a><a href="${esc(safeUrl(record.ai_source_url))}" rel="noopener">AI attribution</a><a href="${esc(safeUrl(record.advisory_url))}" rel="noopener">Advisory / fix evidence</a></span></div>
     ${reportLinks(record)}
   </article>`).join("") + (selected.length > shown ? `<p><button class="piu" id="more" type="button">Show 40 more of ${selected.length - shown} remaining</button></p>` : "")
     || '<p class="vuoto">No disclosures match these filters. Try clearing a filter.</p>';
@@ -324,10 +331,9 @@ CatalogUI.afterPrint = () => {
   printState = null;
 };
 addEventListener("hashchange", openHash);
-fetch("data/vulnerabilities.json").then(response => {
-  if (!response.ok) throw new Error("Disclosure data unavailable");
-  return response.json();
-}).then(records => {
+CatalogData.run(['vulnerabilities', 'entity-aliases'], loaded => {
+  CatalogEntities.configure(loaded.data['entity-aliases']);
+  const records = loaded.data.vulnerabilities;
   if (!Array.isArray(records)) throw new Error("Invalid disclosure data");
   reports = new Map();
   records.forEach(record => reportUrls(record).forEach(url => {
@@ -336,8 +342,13 @@ fetch("data/vulnerabilities.json").then(response => {
   }));
   cases = records.sort((a,b) => b.disclosure_date.localeCompare(a.disclosure_date));
   const products = [...new Set(cases.map(record => record.product))].sort();
-  $("product").innerHTML += products.map(product => `<option>${esc(product)}</option>`).join("");
+  $("product").innerHTML = '<option value="">All products</option>' + products.map(product => `<option>${esc(product)}</option>`).join("");
+  const groups = [...new Set(cases.map(record => CatalogEntities.system(record.ai_system).label))].sort();
+  $('ai_group').innerHTML = '<option value="">All source-attributed groups</option>' + groups.map(group => `<option value="${esc(group)}">${esc(group)} · ${cases.filter(record => CatalogEntities.system(record.ai_system).label === group).length} cases</option>`).join('');
   const cves = new Set(cases.flatMap(record => record.cves));
+  const scoreCount = cases.filter(record => (record.cvss || []).length).length;
+  const effectCount = cases.filter(record => (record.impacts || []).some(impact => impact.consequences.length)).length;
+  $('security-facts').innerHTML = [['Cases', cases.length], ['Named CVEs', cves.size], ['Cases with CVSS', `${scoreCount} / ${cases.length}`], ['Cases with documented effects', `${effectCount} / ${cases.length}`]].map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('');
   $("coverage").textContent = `${cases.length} selected cases, ${cves.size} named CVEs, ${products.length} products. Manual and non-exhaustive; case counts are not totals of every vulnerability reported by each model.`;
   charts();
   const params = new URLSearchParams(location.search);
@@ -346,10 +357,7 @@ fetch("data/vulnerabilities.json").then(response => {
   $("coverage").textContent += ` CVSS assessments: ${cases.filter(record => (record.cvss || []).length).length}/${cases.length} cases; documented technical effects: ${cases.filter(record => (record.impacts || []).some(impact => impact.consequences.length)).length}/${cases.length} cases (${cases.filter(record => consequences(record).length === 1 && consequences(record)[0] === "other").length} with only other documented effects). Impact-source review recorded: ${cases.filter(record => (record.impacts || []).length).length}/${cases.length} cases. Missing coverage is explicit and is not evidence of low severity or no impact.`;
   render();
   openHash();
-}).catch(() => {
-  $("coverage").textContent = "Disclosure data could not be loaded.";
-  $("cases").innerHTML = '<p><a href="data/vulnerabilities.json">Open the disclosure dataset</a> or reload the page.</p>';
-});
+}, {clear:() => { cases = []; reports = new Map(); printState = null; shown = 40; ['product','month','ai_system','ai_group'].forEach(id => $(id).replaceChildren()); $('cases').replaceChildren(); $('charts').replaceChildren(); $('security-facts').replaceChildren(); $('report-group').replaceChildren(); $('count').textContent = ''; $('coverage').textContent = 'No validated snapshot loaded.'; }});
 ["q",...filterIds].forEach(id => $(id).addEventListener("input",()=>{shown=40;render();}));
 $("cases").addEventListener("click", e => {
   if (e.target.id !== "more") return;
