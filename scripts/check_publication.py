@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 import re
 import time
-from urllib.parse import urljoin, urlsplit
+from urllib.parse import unquote, urljoin, urlsplit
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,11 +26,11 @@ def fetch(url, attempts=3, inspect=False):
                                             'Cache-Control': 'no-cache'})
             with urlopen(request, timeout=20) as response:
                 body = response.read(MAX_BYTES + 1)
-            if len(body) > MAX_BYTES:
-                raise ValueError('Response exceeds the monitor size limit')
+                if len(body) > MAX_BYTES:
+                    raise ValueError('Response exceeds the monitor size limit')
                 if inspect:
-                    return body, response.status, response.geturl(), response.headers.get_all('X-Robots-Tag', [])
-                return body
+                    metadata = (response.status, response.geturl(), response.headers.get_all('X-Robots-Tag', []))
+            return (body, *metadata) if inspect else body
         except (OSError, ValueError):
             if attempt == attempts - 1:
                 raise
@@ -119,8 +119,61 @@ def check_zenodo(body, release, now=None):
     return status, f"Expected {release['tagName']}; Zenodo currently reports {actual or 'no version'}"
 
 
-def check(root, site, hf, release=None, fetcher=fetch):
+def component_entries(root, rows, prefix=None):
+    """Validate paths before any read or request; reject ambiguous snapshot entries."""
+    result = {}
+    for row in rows:
+        path, digest = row['path'], row['sha256']
+        if (not isinstance(path, str) or unquote(path) != path or
+                not re.fullmatch(r'[A-Za-z0-9_./-]+', path) or
+                path.startswith('/') or any(part in ('', '.', '..') for part in path.split('/')) or
+                (prefix and not path.startswith(prefix)) or
+                not (root / path).resolve().is_relative_to(root.resolve())):
+            raise ValueError(f'Unsafe component path: {path!r}')
+        if not isinstance(digest, str) or not re.fullmatch(r'[0-9a-f]{64}', digest):
+            raise ValueError(f'Invalid SHA-256 for {path}')
+        if path in result:
+            raise ValueError(f'Duplicate component path: {path}')
+        result[path] = digest
+    if not result:
+        raise ValueError('Component manifest must not be empty')
+    return result
+
+
+def check_freshness(metadata, now=None):
+    expected, deployed = metadata['expected_sha'], metadata['deployed_sha']
+    if any(not isinstance(value, str) or not re.fullmatch(r'[0-9a-f]{40}', value)
+           for value in (expected, deployed)):
+        raise ValueError('Deployment SHAs must be full lowercase Git SHAs')
+    updated = dt.datetime.fromisoformat(metadata['expected_updated_at'].replace('Z', '+00:00'))
+    if updated.tzinfo is None:
+        raise ValueError('expected_updated_at must include a timezone')
+    grace = metadata.get('grace_seconds', 7200)
+    if isinstance(grace, bool) or not isinstance(grace, (int, float)) or grace < 0:
+        raise ValueError('grace_seconds must be a nonnegative number')
+    age = ((now or dt.datetime.now(dt.timezone.utc)) - updated).total_seconds()
+    if age < 0:
+        raise ValueError('Expected update timestamp is in the future')
+    if expected == deployed:
+        return 'pass', f'Expected update {expected} is deployed'
+    status = 'pending' if age < grace else 'fail'
+    return status, f'Expected {expected}; deployed {deployed}; update age {int(age)} seconds (grace {grace})'
+
+
+def check(root, site, hf, release=None, fetcher=fetch, deployment=None, now=None,
+          allow_legacy_benchmarks=False):
     results, assets = [], set()
+    component_hashes = {}
+    registry_path = root / 'data/benchmarks/index.json'
+    if registry_path.exists():
+        registry = json.loads(registry_path.read_text())
+        if registry['schema_version'] != 1 or not isinstance(registry['sources'], list):
+            raise ValueError('Invalid benchmark registry')
+        benchmarks = component_entries(root, registry['sources'], 'data/benchmarks/')
+        for path, digest in benchmarks.items():
+            component_hashes[path] = digest
+    elif not allow_legacy_benchmarks:
+        raise ValueError('Benchmark registry missing; legacy snapshots require explicit opt-in')
 
     def record(name, action):
         try:
@@ -133,9 +186,17 @@ def check(root, site, hf, release=None, fetcher=fetch):
         expected = path.read_bytes()
         separator = '&' if '?' in url else '?'
         url += separator + 'monitor=' + hashlib.sha256(expected).hexdigest()[:16]
-        if not same_data(expected, fetcher(url), path.name):
+        actual = fetcher(url)
+        relative = str(path.relative_to(root))
+        digest = component_hashes.get(relative) if urlsplit(url).netloc == urlsplit(site).netloc else None
+        if digest is not None and (hashlib.sha256(expected).hexdigest() != digest or hashlib.sha256(actual).hexdigest() != digest):
+            return 'fail', 'Published component bytes do not match the snapshot manifest SHA-256'
+        if not same_data(expected, actual, path.name):
             return 'fail', 'Published contents differ from the deployed Git snapshot'
         return 'pass', 'Published contents match the deployed Git snapshot'
+
+    if deployment is not None:
+        record('deployment/freshness', lambda: check_freshness(deployment, now))
 
     paths = list(PAGES)
     discoveries = json.loads((root / 'data/discoveries.json').read_text())
@@ -184,6 +245,11 @@ def check(root, site, hf, release=None, fetcher=fetch):
                    compare(local, urljoin(site, 'data/' + name)))
     record('site/api/v1/index.json', lambda:
            compare(root / 'api/v1/index.json', urljoin(site, 'api/v1/index.json')))
+    if registry_path.exists():
+        record('site/data/benchmarks/index.json', lambda: compare(registry_path, urljoin(site, 'data/benchmarks/index.json')))
+    for relative in component_hashes:
+        if relative not in {'data/' + name for name in DATA}:
+            record('site/' + relative, lambda relative=relative: compare(root / relative, urljoin(site, relative)))
     for name in HF_FILES:
         record('hugging-face/' + name, lambda name=name:
                compare(root / 'data' / name, hf.rstrip('/') + '/' + name))
@@ -208,14 +274,19 @@ def main():
     parser.add_argument('--site', default='https://aisciencetracker.org/')
     parser.add_argument('--hf', default='https://huggingface.co/datasets/marcello-pichini/ai-science-tracker/resolve/main')
     parser.add_argument('--release-metadata', type=Path)
+    parser.add_argument('--deployment-metadata', type=Path)
+    parser.add_argument('--allow-legacy-benchmarks', action='store_true')
     parser.add_argument('--report', type=Path, required=True)
     args = parser.parse_args()
+    deployment = None
     try:
         release = json.loads(args.release_metadata.read_text()) if args.release_metadata else None
-        results = check(args.root, args.site.rstrip('/') + '/', args.hf, release)
+        deployment = json.loads(args.deployment_metadata.read_text()) if args.deployment_metadata else None
+        results = check(args.root, args.site.rstrip('/') + '/', args.hf, release,
+                        deployment=deployment, allow_legacy_benchmarks=args.allow_legacy_benchmarks)
     except Exception as exc:
         results = [{'check': 'setup', 'status': 'fail', 'detail': f'{type(exc).__name__}: {exc}'}]
-    report = {'checked_at': dt.datetime.now(dt.timezone.utc).isoformat(), 'results': results}
+    report = {'checked_at': dt.datetime.now(dt.timezone.utc).isoformat(), 'results': results, 'deployment': deployment}
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, indent=2) + '\n')
     for result in results:
@@ -225,3 +296,4 @@ def main():
 
 if __name__ == '__main__':
     raise SystemExit(main())
+

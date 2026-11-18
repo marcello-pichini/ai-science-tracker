@@ -2,38 +2,35 @@ name: Publish datasets
 # Keep this workflow path stable; publication now follows successful site deployments.
 on:
   workflow_run:
-    workflows: [pages-build-deployment, pages build and deployment]
+    workflows: [Check, pages-build-deployment, pages build and deployment]
     types: [completed]
     branches: [main]
   workflow_dispatch:
 permissions:
   contents: write
   actions: read
+  deployments: read
 concurrency:
   group: dataset-publication
   cancel-in-progress: false
 jobs:
   release:
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_repository.full_name == github.repository && github.event.workflow_run.event != 'pull_request'))
     runs-on: ubuntu-latest
     steps:
-      - name: Select the latest successfully deployed snapshot
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Select verified successful Pages deployment
         id: snapshot
         env:
           GH_TOKEN: ${{ github.token }}
-          DEPLOYED_SHA: ${{ github.event.workflow_run.head_sha }}
+          EVENT_SHA: ${{ github.event.workflow_run.head_sha }}
         run: |
-          latest=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?branch=main&status=success&per_page=100" \
-            --jq '[.workflow_runs[] | select(.name == "pages build and deployment")][0].head_sha')
-          if [[ ! "$latest" =~ ^[0-9a-f]{40}$ ]]; then
-            echo "::error::No successful main site deployment was found."
-            exit 1
-          fi
-          if [ -n "$DEPLOYED_SHA" ] && [ "$DEPLOYED_SHA" != "$latest" ]; then
-            echo "A newer site snapshot has already deployed; skipping this older run."
-            exit 0
-          fi
-          echo "sha=$latest" >> "$GITHUB_OUTPUT"
+          python3 scripts/deployment_state.py select --require-check --require-current --output "$RUNNER_TEMP/deployment.json"
+          sha=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["deployed_sha"])' "$RUNNER_TEMP/deployment.json")
+          if [ -n "$EVENT_SHA" ] && [ "$EVENT_SHA" != "$sha" ]; then echo "Superseded event; skipping."; exit 0; fi
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         id: checkout
         if: steps.snapshot.outputs.sha != ''
@@ -49,6 +46,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$(git rev-parse HEAD)"
           last=$(git describe --tags --abbrev=0 2>/dev/null || true)
           if [ -n "$last" ] && git diff --quiet "$last" HEAD -- data/; then
             echo "No data changes since $last; skipping."
@@ -69,6 +67,7 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$(git rev-parse HEAD)"
           if [ -z "$HF_TOKEN" ]; then echo "::error::HF_TOKEN is not configured."; exit 1; fi
           pip install -q huggingface_hub
           snapshot_date=$(git log -1 --format=%cs -- data/discoveries.csv data/discoveries.json data/vulnerabilities.csv data/vulnerabilities.json huggingface/README.md)
