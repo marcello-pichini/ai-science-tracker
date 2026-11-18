@@ -99,8 +99,16 @@ vm.runInContext(renderer,context);
 context.snapshot=JSON.parse(fs.readFileSync('data/model-progress.json','utf8'));
 vm.runInContext(`D=snapshot;models=D.models;lookup=new Map(models.map(m=>[m.id,m]));start='2025-11-16';end=D.fetched_on;computeCadence();showCadence('Anthropic');render=()=>{};chooseModel(models.findIndex(m=>m.lab==='Anthropic'));`,context);
 const html=elements.get('cadence').innerHTML;
-assert.ok(html.includes('16 Nov 2025')&&html.includes('16 Nov 2026'));
+const displayDate=value=>new Intl.DateTimeFormat('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(value+'T00:00:00Z'));
+assert.ok(html.includes('16 Nov 2025')&&html.includes(displayDate(context.snapshot.fetched_on)));
 assert.ok(!html.includes('${'));
+// A daily import changes the axis end date, including across calendar years.
+for(const fetchedOn of ['2026-11-18','2027-01-02']){
+  context.fetchedOn=fetchedOn;
+  vm.runInContext("end=fetchedOn;computeCadence();showCadence('Anthropic');",context);
+  assert.ok(elements.get('cadence').innerHTML.includes(displayDate(fetchedOn)));
+}
+vm.runInContext("end=D.fetched_on;computeCadence();showCadence('Anthropic');",context);
 assert.equal(vm.runInContext('state.lab',context),'All labs');
 assert.equal(vm.runInContext('lookup.get(state.baseline).lab',context),'OpenAI');
 assert.equal(vm.runInContext('lookup.get(state.model).lab',context),'Anthropic');
