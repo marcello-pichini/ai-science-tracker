@@ -1,0 +1,79 @@
+name: Site and dataset checks
+on:
+  workflow_run:
+    workflows: [Publish datasets]
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: '15 7 * * *'
+  workflow_dispatch:
+    inputs:
+      external_links:
+        description: Also check all external source links
+        type: boolean
+        default: false
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: site-monitor
+  cancel-in-progress: false
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Select the deployed snapshot and latest archive release
+        id: snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          EVENT_NAME: ${{ github.event_name }}
+          RUN_LINKS: ${{ inputs.external_links }}
+        run: |
+          sha=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?branch=main&status=success&per_page=100" \
+            --jq '[.workflow_runs[] | select(.name == "pages build and deployment")][0].head_sha')
+          [[ "$sha" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::No deployed snapshot found"; exit 1; }
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          mkdir -p monitoring-reports
+          gh release view --json tagName,publishedAt,url,targetCommitish > monitoring-reports/release.json
+          if [ "$RUN_LINKS" = true ] || { [ "$EVENT_NAME" = schedule ] && [ "$(date -u +%u)" = 1 ]; }; then
+            echo "links=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.snapshot.outputs.sha }}
+          path: published
+      - name: Check live pages, assets and dataset parity
+        run: python3 scripts/check_publication.py --root published --release-metadata monitoring-reports/release.json --report monitoring-reports/publication.json
+      - name: Check external sources weekly or on request
+        if: ${{ !cancelled() && steps.snapshot.outputs.links == 'true' }}
+        run: python3 scripts/check_links.py --root published --report monitoring-reports/links.json
+      - name: Summarize checks
+        if: always()
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          from pathlib import Path
+          print('## Site and dataset monitoring\n')
+          for path in sorted(Path('monitoring-reports').glob('*.json')):
+              data = json.loads(path.read_text())
+              if 'results' in data:
+                  for row in data['results']:
+                      print(f"- **{row['status']}** `{row['check']}`: {row['detail']}")
+              if 'links' in data:
+                  print(f"\nExternal sources: {data['total']} checked, {data['gone']} confirmed missing, {data['uncertain']} inconclusive.")
+          print('\nFull details are available in the monitoring-reports artifact.')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: monitoring-reports
+          path: monitoring-reports/
+          retention-days: 30
