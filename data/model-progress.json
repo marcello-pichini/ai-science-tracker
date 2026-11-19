@@ -1,7 +1,7 @@
 {
-  "fetched_on": "2026-11-18",
+  "fetched_on": "2026-11-19",
   "source_url": "https://epoch.ai/data/benchmark_data.zip",
-  "zip_sha256": "3e653304ac90e76f1085ef50ba72e97057f98fff61209c983c44a024d765f6f6",
+  "zip_sha256": "312905d9b0b7550e5bb99616209d4ec908f4dde98607096ae020b77363df578c",
   "catalog_snapshot": "0c411dbaafd96eb1166545cfe13f760131e4860f18a1d41d222ba77697341107",
   "license": "CC BY 4.0; attribute Epoch AI",
   "labs": [
@@ -156,7 +156,38 @@
         "gemini-4-hydrogen_unknown",
         "gemini-4-hydrogen_xhigh"
       ],
-      "benchmarks": {},
+      "benchmarks": {
+        "frontiermath_tier_4_v2.csv": {
+          "score": 87.8048780487805,
+          "variant": "gemini-4-hydrogen_xhigh",
+          "configurations": [
+            {
+              "variant": "gemini-4-hydrogen_xhigh",
+              "score": 87.8048780487805
+            }
+          ]
+        },
+        "simpleqa_verified.csv": {
+          "score": 70.89999999999999,
+          "variant": "gemini-4-hydrogen_xhigh",
+          "configurations": [
+            {
+              "variant": "gemini-4-hydrogen_xhigh",
+              "score": 70.89999999999999
+            }
+          ]
+        },
+        "mystery_game_puzzles.csv": {
+          "score": 65.0,
+          "variant": "gemini-4-hydrogen_xhigh",
+          "configurations": [
+            {
+              "variant": "gemini-4-hydrogen_xhigh",
+              "score": 65.0
+            }
+          ]
+        }
+      },
       "catalog_link": null,
       "source": "https://epoch.ai/benchmarks"
     },

@@ -14,10 +14,33 @@
     "cc-by-4.0"
   ],
   "source_url": "https://epoch.ai/benchmarks/use-this-data",
-  "retrieved_on": "2026-11-18",
+  "retrieved_on": "2026-11-19",
   "schema_version": 1,
   "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
   "records": [
+    {
+      "id": "c7caeda5e07b7e33844a",
+      "model": "gemini-4-hydrogen_xhigh",
+      "metric": "Mean accuracy",
+      "value": 0.9678030303030303,
+      "unit": "fraction",
+      "direction": "Higher is better",
+      "comparison_group": "Mean accuracy",
+      "date": "2026-11-13",
+      "date_basis": "Evaluation start",
+      "source_url": "https://epoch.ai/benchmarks/gpqa-diamond",
+      "details": {
+        "Model version": "gemini-4-hydrogen_xhigh",
+        "Organization": "Google DeepMind",
+        "stderr": "0.011702287369004602",
+        "Release date": "2026-11-12",
+        "Started at": "2026-11-13T22:31:13.000Z",
+        "Best score (across scorers)": "0.9678030303030303",
+        "id": "XRQWGQeJDNvVcvSYCn247P",
+        "Log viewer": "https://logs.epoch.ai/inspect-viewer/36231d6d/viewer.html?log_file=https%3A%2F%2Flogs.epoch.ai%2Finspect_ai_logs%2FXRQWGQeJDNvVcvSYCn247P.eval",
+        "Logs": "https://epoch-benchmarks-production-public.s3.us-east-2.amazonaws.com/inspect_ai_logs/XRQWGQeJDNvVcvSYCn247P.eval"
+      }
+    },
     {
       "id": "856f100adc3b79329e55",
       "model": "claude-fable-5-2_max",
@@ -7840,7 +7863,7 @@
     }
   ],
   "input_sha256": {
-    "epoch-zip": "4e3e52330e276cc63f4b304dc05f6575ede8da8e5e468c74e544eaaf0b71f379",
+    "epoch-zip": "312905d9b0b7550e5bb99616209d4ec908f4dde98607096ae020b77363df578c",
     "cc-by-4.0": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
   }
 }

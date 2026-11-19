@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Current public collection files; snapshot identity is not a review or publication timestamp.",
-  "snapshot_sha256": "5371c2e57eb727b181fcb834253718cb6db46a724cecf3f60b7d69cc59a153f1",
+  "snapshot_sha256": "c104629c8db32fc7ba7e9b46219add8a19248090e61e846ef208f288876b289b",
   "components": {
     "discoveries": {
       "path": "data/discoveries.json",
@@ -113,12 +113,12 @@
     "model-progress": {
       "path": "data/model-progress.json",
       "label": "Model progress",
-      "sha256": "aa191cb95b13742db46c11b2932abddee31fe3593af2dd2b29b706b2626b1788",
-      "bytes": 538428,
+      "sha256": "8bb5cbd8936db0046dd8da8590d2e54b7df54c49aaac7f11661e3d31d28cd975",
+      "bytes": 539299,
       "count": 572,
       "unit": "Epoch source entries",
       "dates": {
-        "snapshot_retrieved_on": "2026-11-18",
+        "snapshot_retrieved_on": "2026-11-19",
         "recorded_dates": {
           "first": "2019-10-23",
           "last": "2026-11-17"
@@ -134,7 +134,7 @@
       "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license.",
       "coverage_counts": {
         "eci": 208,
-        "any_displayed_benchmark": 97,
+        "any_displayed_benchmark": 98,
         "total": 572
       }
     },
@@ -294,12 +294,12 @@
     "benchmark-registry": {
       "path": "data/benchmarks/index.json",
       "label": "Independent benchmark directory",
-      "sha256": "54b34e6f3646243895323c62d1d86bb5f424ae06f8f0024296ca42b7f1ab18b2",
-      "bytes": 16109,
+      "sha256": "a22073fa0f0ae3ec45cd2c30ab33867bb86d5d6a8c1212d276f306b689a246fe",
+      "bytes": 16084,
       "count": 11,
       "unit": "separately licensed source components",
       "dates": {
-        "directory_retrieved_on": "2026-11-18"
+        "directory_retrieved_on": "2026-11-19"
       },
       "source_urls": [
         "https://aisciencetracker.org/docs/public-benchmarks.md"
@@ -314,18 +314,18 @@
     "benchmark-gpqa": {
       "path": "data/benchmarks/gpqa.json",
       "label": "GPQA Diamond · Epoch own runs",
-      "sha256": "82cef472d9f314a2583f47449035301741e13ce239ce6850cc4c84096fe8f8fa",
-      "bytes": 352282,
-      "count": 340,
+      "sha256": "8462ce70f7aecd353f454f342a7a8dc657b33c3f20a98e4569a6209d2f88ae7d",
+      "bytes": 353334,
+      "count": 341,
       "unit": "source numerical observations",
       "record_units": [
         "fraction"
       ],
       "dates": {
-        "snapshot_retrieved_on": "2026-11-18",
+        "snapshot_retrieved_on": "2026-11-19",
         "source_observation_dates": {
           "first": "2025-01-27",
-          "last": "2026-11-06"
+          "last": "2026-11-13"
         }
       },
       "source_date_basis": [
@@ -351,25 +351,25 @@
     "benchmark-arena": {
       "path": "data/benchmarks/arena.json",
       "label": "Arena · text preferences",
-      "sha256": "f9fa231fcf4f60dfbae28cd281caa7c137374488760498de18152a08715e869e",
-      "bytes": 358497,
-      "count": 421,
+      "sha256": "e9ac05d6a9bb335c9cc19a1917ff470c4236a17711fc2e2ea2614b7cb866c98b",
+      "bytes": 359348,
+      "count": 422,
       "unit": "source numerical observations",
       "record_units": [
         "rating points"
       ],
       "dates": {
-        "snapshot_retrieved_on": "2026-11-18",
+        "snapshot_retrieved_on": "2026-11-19",
         "source_observation_dates": {
-          "first": "2026-11-11",
-          "last": "2026-11-11"
+          "first": "2026-11-18",
+          "last": "2026-11-18"
         }
       },
       "source_date_basis": [
         "Leaderboard publication"
       ],
       "source_urls": [
-        "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/b17ca88fd34809e9161df1ef89fd444acaf598e4/text/latest-00000-of-00001.parquet"
+        "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset/resolve/b9863c64b88ca180037b5c2dcd65742b7ea8cf70/README.md"
       ],
       "license": "CC BY 4.0",
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
