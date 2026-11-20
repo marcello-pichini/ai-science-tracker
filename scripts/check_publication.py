@@ -163,7 +163,9 @@ def check_freshness(metadata, now=None):
 def check(root, site, hf, release=None, fetcher=fetch, deployment=None, now=None,
           allow_legacy_benchmarks=False):
     results, assets = [], set()
-    component_hashes = {}
+    manifest_path = root / 'api/v1/manifest.json'
+    manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else None
+    component_hashes = component_entries(root, manifest['components'].values()) if manifest is not None else {}
     registry_path = root / 'data/benchmarks/index.json'
     if registry_path.exists():
         registry = json.loads(registry_path.read_text())
@@ -171,6 +173,8 @@ def check(root, site, hf, release=None, fetcher=fetch, deployment=None, now=None
             raise ValueError('Invalid benchmark registry')
         benchmarks = component_entries(root, registry['sources'], 'data/benchmarks/')
         for path, digest in benchmarks.items():
+            if path in component_hashes and component_hashes[path] != digest:
+                raise ValueError(f'Conflicting snapshot hashes for {path}')
             component_hashes[path] = digest
     elif not allow_legacy_benchmarks:
         raise ValueError('Benchmark registry missing; legacy snapshots require explicit opt-in')
@@ -182,7 +186,7 @@ def check(root, site, hf, release=None, fetcher=fetch, deployment=None, now=None
             status, detail = 'fail', f'{type(exc).__name__}: {exc}'
         results.append({'check': name, 'status': status, 'detail': detail})
 
-    def compare(path, url):
+    def compare(path, url, *, exact=False):
         expected = path.read_bytes()
         separator = '&' if '?' in url else '?'
         url += separator + 'monitor=' + hashlib.sha256(expected).hexdigest()[:16]
@@ -191,7 +195,8 @@ def check(root, site, hf, release=None, fetcher=fetch, deployment=None, now=None
         digest = component_hashes.get(relative) if urlsplit(url).netloc == urlsplit(site).netloc else None
         if digest is not None and (hashlib.sha256(expected).hexdigest() != digest or hashlib.sha256(actual).hexdigest() != digest):
             return 'fail', 'Published component bytes do not match the snapshot manifest SHA-256'
-        if not same_data(expected, actual, path.name):
+        matches = expected == actual if exact else same_data(expected, actual, path.name)
+        if not matches:
             return 'fail', 'Published contents differ from the deployed Git snapshot'
         return 'pass', 'Published contents match the deployed Git snapshot'
 
@@ -245,10 +250,13 @@ def check(root, site, hf, release=None, fetcher=fetch, deployment=None, now=None
                    compare(local, urljoin(site, 'data/' + name)))
     record('site/api/v1/index.json', lambda:
            compare(root / 'api/v1/index.json', urljoin(site, 'api/v1/index.json')))
+    if manifest is not None:
+        record('site/api/v1/manifest.json', lambda:
+               compare(manifest_path, urljoin(site, 'api/v1/manifest.json'), exact=True))
     if registry_path.exists():
         record('site/data/benchmarks/index.json', lambda: compare(registry_path, urljoin(site, 'data/benchmarks/index.json')))
     for relative in component_hashes:
-        if relative not in {'data/' + name for name in DATA}:
+        if relative != 'data/benchmarks/index.json' and relative not in {'data/' + name for name in DATA}:
             record('site/' + relative, lambda relative=relative: compare(root / relative, urljoin(site, relative)))
     for name in HF_FILES:
         record('hugging-face/' + name, lambda name=name:

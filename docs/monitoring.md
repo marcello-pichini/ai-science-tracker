@@ -18,6 +18,9 @@ publication automatically.
 - Referenced same-origin scripts and styles must match the deployed source bytes.
 - Live scientific, vulnerability and model JSON plus the API index must match the
   deployed source contents. Optional benchmark collections are checked when present.
+- When present, `api/v1/manifest.json` and every component it lists must match
+  the deployed snapshot byte for byte. Conflicting hashes in the catalog manifest
+  and benchmark registry fail the check.
 - `data/benchmarks/index.json` is required and compared with the deployed snapshot.
   Every numerical component listed there is checked against its exact SHA-256, even
   when the catalog component manifest is absent. Unsafe paths, invalid registries,

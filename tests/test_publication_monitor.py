@@ -124,6 +124,36 @@ class PublicationMonitorTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Benchmark registry missing'):
                 monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=complete_fetch)
 
+    def test_component_manifest_detects_exact_byte_drift_and_new_components(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            for directory in ('data', 'api/v1'):
+                (root / directory).mkdir(parents=True)
+            for name in set(monitor.DATA + monitor.HF_FILES + ('citations.json',)):
+                (root / 'data' / name).write_text('[{"id":"sample"}]' if name.endswith('.json') else 'id\nsample\n')
+            (root / 'api/v1/index.json').write_text('{}')
+            raw = (root / 'data/citations.json').read_bytes()
+            (root / 'api/v1/manifest.json').write_text(json.dumps({'components': {'citations': {'path': 'data/citations.json', 'sha256': hashlib.sha256(raw).hexdigest()}}}))
+            (root / 'assets').mkdir()
+            (root / 'assets/app.js').write_text('current-version')
+            write_sample_pages(root)
+            def fetch(url):
+                if 'doi.org' in url:
+                    return b'<p>Version v2026.11.18</p>'
+                path = urlsplit(url).path.lstrip('/')
+                if path.endswith('.html'):
+                    return sample_page(path)
+                if urlsplit(url).netloc == 'hf.test':
+                    return (root / 'data' / Path(path).name).read_bytes()
+                if path in ('data/citations.json', 'api/v1/manifest.json'):
+                    return (root / path).read_bytes() + b'\n'
+                return (root / path).read_bytes()
+            results = monitor.check(root, 'https://site.test/', 'https://hf.test/', {'tagName':'v2026.11.18', 'publishedAt':'2026-11-18T00:00:00Z'}, fetcher=fetch, allow_legacy_benchmarks=True)
+            failed = {r['check']: r['detail'] for r in results if r['status'] == 'fail'}
+            self.assertEqual(set(failed), {'site/data/citations.json', 'site/api/v1/manifest.json'})
+            self.assertIn('SHA-256', failed['site/data/citations.json'])
+
     def test_deployment_freshness_current_pending_then_stale(self):
         metadata = {'expected_sha': 'a' * 40, 'deployed_sha': 'b' * 40,
                     'expected_updated_at': '2026-11-18T10:00:00Z'}
