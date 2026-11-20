@@ -31,7 +31,9 @@ Pull requests are welcome. Before opening one:
 - Read [docs/discovery-schema.md](docs/discovery-schema.md) for the data format and [docs/DESIGN.md](docs/DESIGN.md) for the design rules.
 - Edit `data/discoveries.json` or the page sources only. Files in `share/`, `profiles/`, `og/`, `api/` and the exports are generated: run `python3 scripts/generate_share.py` instead of editing them.
 - Run `python3 -m unittest discover -s tests`. All tests must pass.
-- Write in English and keep source caveats.
+- Write catalog data and code in English and keep source caveats.
+- To change interface or editorial wording, edit the English page and add the new string to `i18n/messages/en.json`, then translate it in `it.json`, `de.json`, `fr.json` and `es.json`. Keep `{n}` and `⟦…⟧` placeholders in the same order. Run `python3 scripts/i18n_site.py --check`.
+- Discovery summaries may be translated in `i18n/discoveries/<lang>.json` under the entry id (`{"summary": "…"}`). Leave the title, quotes and source links in the original language. A missing summary stays in English.
 
 ## Licenses
 

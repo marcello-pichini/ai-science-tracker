@@ -4,7 +4,63 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'self'">
-<script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/data/*"}},{"not":{"href_matches":"/api/*"}},{"not":{"href_matches":"/og/*"}},{"not":{"href_matches":"/*.xml"}},{"not":{"href_matches":"/*.txt"}}]},"eagerness":"moderate"}]}</script><!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "04bfc0ca5b5e4460b4c8ee6bb5055925"}'></script><!-- End Cloudflare Web Analytics -->
+<script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/data/*"}},{"not":{"href_matches":"/api/*"}},{"not":{"href_matches":"/og/*"}},{"not":{"href_matches":"/*.xml"}},{"not":{"href_matches":"/*.txt"}}]},"eagerness":"moderate"}]}</script><!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "04bfc0ca5b5e4460b4c8ee6bb5055925"}'></script><!-- End Cloudflare Web Analytics --><script>
+globalThis.astResolveLanguage = function (input) {
+  var SUPPORTED = {it:1, de:1, fr:1, es:1};
+  var ua = input.ua || '';
+  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
+  var path = input.path || '/';
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
+  var pages = input.pages || [];
+  var saved = input.saved || '';
+  var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
+  if (!target) {
+    var list = input.languages || [];
+    for (var i = 0; i < list.length; i++) {
+      var code = String(list[i] || '').toLowerCase().split('-')[0];
+      if (code === 'en' || SUPPORTED[code]) { target = code; break; }
+    }
+  }
+  if (!target) {
+    var hint = {
+      'Europe/Rome':'it','Europe/Vatican':'it','Europe/San_Marino':'it',
+      'Europe/Berlin':'de','Europe/Busingen':'de','Europe/Vienna':'de',
+      'Europe/Paris':'fr','Europe/Monaco':'fr',
+      'Europe/Madrid':'es','Atlantic/Canary':'es','Africa/Ceuta':'es','Europe/Andorra':'es',
+      'America/Mexico_City':'es','America/Argentina/Buenos_Aires':'es','America/Bogota':'es',
+      'America/Lima':'es','America/Santiago':'es','America/Montevideo':'es','America/Asuncion':'es',
+      'America/La_Paz':'es','America/Caracas':'es','America/Guayaquil':'es'
+    };
+    if (hint[input.timezone || '']) target = hint[input.timezone];
+  }
+  if (!target || target === 'en' || !SUPPORTED[target]) return null;
+  var search = input.search || '';
+  var hash = input.hash || '';
+  if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+  var file = path.split('/').pop();
+  var dir = path.slice(0, path.length - file.length);
+  if (dir !== '/') return null;
+  if (!file) file = 'index.html';
+  if (pages.indexOf(file) < 0) return null;
+  return '/' + target + '/' + file + search + hash;
+};
+globalThis.astEquivalent = function (lang, path, search, hash, pages) {
+  search = search || '';
+  hash = hash || '';
+  pages = pages || [];
+  var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
+  var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
+  if (rest === '' || rest === '/') rest = '/index.html';
+  var prefix = lang === 'en' ? '' : '/' + lang;
+  var file = rest.split('/').pop();
+  var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
+  var share = rest.match(/^\/share\/([^/]+)\.html$/);
+  if (share) return prefix + '/index.html#discovery=' + share[1];
+  if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
+  return prefix + '/index.html' + search;
+};
+try{var saved=null;try{saved=localStorage.getItem("ast-lang");}catch(e){}var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}catch(e){}</script>
 <title>AI Scientific Discoveries: Examples and Database · AI Science Tracker</title>
 <meta name="description" content="Explore AI-enabled scientific discoveries by field, with original sources and a clear account of what the AI did and what researchers tested.">
 <meta property="og:title" content="AI Scientific Discoveries: Examples and Database · AI Science Tracker">
@@ -23,13 +79,25 @@
 <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="alternate" type="application/atom+xml" title="AI Science Tracker: additions and source checks" href="feed.xml">
-<link rel="stylesheet" href="styles.css?v=23f6b9beaa5b">
+<link rel="stylesheet" href="styles.css?v=23f6b9beaa5b"><link rel="stylesheet" href="assets/i18n.css?v=bc803f599a72">
 <script type="application/ld+json">
 {"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker discovery catalog","description":"Scientific discoveries enabled by AI and related model families, sourced from original papers, preprints and institutional announcements.","url":"https://aisciencetracker.org/dataset.html#scientific-dataset","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://aisciencetracker.org/data/discoveries.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://aisciencetracker.org/data/discoveries.csv"}],"isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","keywords":["artificial intelligence","scientific discovery","AI for science"],"@id":"https://aisciencetracker.org/index.html#dataset"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org/","@graph":[{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},{"@type":"WebSite","@id":"https://aisciencetracker.org/#website","name":"AI Science Tracker","url":"https://aisciencetracker.org/","inLanguage":"en","publisher":{"@id":"https://aisciencetracker.org/#organization"}}]}
 </script>
+<link rel="alternate" hreflang="en" href="https://aisciencetracker.org/index.html">
+<link rel="alternate" hreflang="it" href="https://aisciencetracker.org/it/index.html">
+<link rel="alternate" hreflang="de" href="https://aisciencetracker.org/de/index.html">
+<link rel="alternate" hreflang="fr" href="https://aisciencetracker.org/fr/index.html">
+<link rel="alternate" hreflang="es" href="https://aisciencetracker.org/es/index.html">
+<link rel="alternate" hreflang="x-default" href="https://aisciencetracker.org/index.html">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale" content="en_GB">
 </head>
 <body>
 <header class="header">
@@ -38,7 +106,63 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html" aria-current="page">Discoveries</a><a href="models.html">Models</a><a href="security.html">Vuln discoveries</a><a href="dossiers.html">Dossiers</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a><a href="search.html">Search</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="index.html" aria-current="page">Discoveries</a><a href="models.html">Models</a><a href="security.html">Vuln discoveries</a><a href="dossiers.html">Dossiers</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a><a href="search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="index.html" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="it/index.html" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="de/index.html" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="fr/index.html" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="es/index.html" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+globalThis.astResolveLanguage = function (input) {
+  var SUPPORTED = {it:1, de:1, fr:1, es:1};
+  var ua = input.ua || '';
+  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
+  var path = input.path || '/';
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
+  var pages = input.pages || [];
+  var saved = input.saved || '';
+  var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
+  if (!target) {
+    var list = input.languages || [];
+    for (var i = 0; i < list.length; i++) {
+      var code = String(list[i] || '').toLowerCase().split('-')[0];
+      if (code === 'en' || SUPPORTED[code]) { target = code; break; }
+    }
+  }
+  if (!target) {
+    var hint = {
+      'Europe/Rome':'it','Europe/Vatican':'it','Europe/San_Marino':'it',
+      'Europe/Berlin':'de','Europe/Busingen':'de','Europe/Vienna':'de',
+      'Europe/Paris':'fr','Europe/Monaco':'fr',
+      'Europe/Madrid':'es','Atlantic/Canary':'es','Africa/Ceuta':'es','Europe/Andorra':'es',
+      'America/Mexico_City':'es','America/Argentina/Buenos_Aires':'es','America/Bogota':'es',
+      'America/Lima':'es','America/Santiago':'es','America/Montevideo':'es','America/Asuncion':'es',
+      'America/La_Paz':'es','America/Caracas':'es','America/Guayaquil':'es'
+    };
+    if (hint[input.timezone || '']) target = hint[input.timezone];
+  }
+  if (!target || target === 'en' || !SUPPORTED[target]) return null;
+  var search = input.search || '';
+  var hash = input.hash || '';
+  if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+  var file = path.split('/').pop();
+  var dir = path.slice(0, path.length - file.length);
+  if (dir !== '/') return null;
+  if (!file) file = 'index.html';
+  if (pages.indexOf(file) < 0) return null;
+  return '/' + target + '/' + file + search + hash;
+};
+globalThis.astEquivalent = function (lang, path, search, hash, pages) {
+  search = search || '';
+  hash = hash || '';
+  pages = pages || [];
+  var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
+  var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
+  if (rest === '' || rest === '/') rest = '/index.html';
+  var prefix = lang === 'en' ? '' : '/' + lang;
+  var file = rest.split('/').pop();
+  var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
+  var share = rest.match(/^\/share\/([^/]+)\.html$/);
+  if (share) return prefix + '/index.html#discovery=' + share[1];
+  if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
+  return prefix + '/index.html' + search;
+};
+try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"];var current=document.documentElement.lang||"en";nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});}}catch(e){}</script>
   </div>
 </header>
 
@@ -156,13 +280,13 @@
     <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
     <p><a href="methodology.html">How we select and verify entries</a> · <a href="profiles/index.html">All organizations and model families</a> · <a href="dataset.html">Dataset and API</a> · <a href="contributors.html">Contributors</a></p>
     <p><a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=discovery.yml">Suggest a discovery</a>. Reports are public, require GitHub sign-in, and are reviewed before catalog changes.</p>
-    <p>Privacy: this site sets no cookies and uses Cloudflare Web Analytics for aggregate visit statistics (page, referrer, browser, IP address) under legitimate interest (GDPR Art. 6(1)(f)). Cloudflare acts as our processor and may process data in the United States under the EU-US Data Privacy Framework. To object or exercise your rights, <a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new">open an issue</a>.</p>
+    <p>Privacy: this site sets no cookies. A language choice is stored only in this browser and is not sent to a server. The site uses Cloudflare Web Analytics for aggregate visit statistics (page, referrer, browser, IP address) under legitimate interest (GDPR Art. 6(1)(f)). Cloudflare acts as our processor and may process data in the United States under the EU-US Data Privacy Framework. To object or exercise your rights, <a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new">open an issue</a>.</p>
   </div>
 </footer>
 
-<script src="assets/catalog-data.js?v=100014eb08f1"></script>
+<script src="assets/catalog-data.js?v=7bf369c369e2"></script>
 <script src="assets/catalog-entities.js?v=0c51c8fa4441"></script>
-<script src="assets/catalog-ui.js?v=3a48ac18fb9e"></script>
+<script src="assets/catalog-ui.js?v=ccdd7cbfaa68"></script>
 <script>
 // Object.groupBy is missing before Safari 17.4 and Chrome 117.
 Object.groupBy ??= (xs, f) => xs.reduce((o, x) => ((o[f(x)] ??= []).push(x), o), {});
@@ -186,7 +310,14 @@ const punteggio = s => CatalogUI.score(s);
 const media = arr => Math.round(arr.reduce((a, s) => a + punteggio(s), 0) / arr.length);
 const conta = (arr, f) => { const m = {}; arr.forEach(x => { const k = f(x); m[k] = (m[k] || 0) + 1; }); return m; };
 const ordina = m => Object.entries(m).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
-const fmtD = new Intl.DateTimeFormat("en-GB", { day:"numeric", month:"short", year:"numeric" });
+const uiLang = (document.documentElement && document.documentElement.lang) || "en";
+const dateLocale = uiLang === "en" ? "en-GB" : uiLang;
+const sortLocale = uiLang === "en" ? "en" : dateLocale;
+const fmtN = n => uiLang === "en" ? String(n) : new Intl.NumberFormat(dateLocale).format(n);
+const tr = (en, vars) => globalThis.CatalogUI ? CatalogUI.t(en, vars) : en;
+const oneMany = (n, one, many) => tr(Number(n) === 1 ? one : many, {n: fmtN(n)});
+const localizedSummary = s => { const row = globalThis.AST_DISCOVERIES && AST_DISCOVERIES[s.id]; return (row && row.summary) || s.summary; };
+const fmtD = new Intl.DateTimeFormat(dateLocale, { day:"numeric", month:"short", year:"numeric" });
 const fmtData = d => fmtD.format(new Date(d + "T12:00:00"));
 const passa = s => {
   const q = state.q.toLowerCase();
@@ -196,7 +327,7 @@ const passa = s => {
     (!state.test || CatalogUI.evidenceValue(s, "test_type") === state.test) &&
     (!state.publication || CatalogUI.evidenceValue(s, "publication_status") === state.publication) &&
     (!state.min || punteggio(s) >= state.min) && (!state.family || (famIds[s.id] || []).includes(state.family)) &&
-    (!q || [s.title, s.summary, s.ai_technology, s.organization].join(" ").toLowerCase().includes(q));
+    (!q || [s.title, localizedSummary(s), s.summary, s.ai_technology, s.organization].join(" ").toLowerCase().includes(q));
 };
 const filtroAttivo = () => !!(state.q || state.field || state.org || state.anno || state.min || state.family || state.test || state.publication || state.status);
 
@@ -231,10 +362,10 @@ function spettro() {
     g += `<line class="asse" x1="${x}" x2="${x}" y1="${SP.base}" y2="${SP.base + 8}"/><text class="tick" x="${x + 5}" y="${SP.base + 24}">${a}</text>`; }
   sp = items.map(s => ({ s, x: X(Date.parse(s.publication_date)), h: Math.max(4, punteggio(s) / 100 * SP.alto) }));
   const tratti = sp.map((p, i) => `<line class="tratto" data-i="${i}" x1="${p.x.toFixed(1)}" x2="${p.x.toFixed(1)}" y1="${SP.base}" y2="${(SP.base - p.h).toFixed(1)}" style="--d:${Math.round((p.x - SP.x0) / (SP.x1 - SP.x0) * 1100)}ms"/>`).join("");
-  $("spettro").innerHTML = `<svg viewBox="0 0 ${SP.W} 228" class="${primaVolta ? "" : "fermo"}" tabindex="0" role="group" aria-describedby="spectrum-help" aria-label="Discovery timeline: ${items.length} marks, one per discovery, from 2020 to today; height represents editorial relevance from 20 to 100, in 13 coarse levels. The full list appears below.">${g}<g>${tratti}</g><rect x="${SP.x0 - 6}" y="0" width="${SP.x1 - SP.x0 + 12}" height="${SP.base + 10}" fill="transparent"/></svg>`;
+  $("spettro").innerHTML = `<svg viewBox="0 0 ${SP.W} 228" class="${primaVolta ? "" : "fermo"}" tabindex="0" role="group" aria-describedby="spectrum-help" aria-label="${tr("Discovery timeline: {n} marks, one per discovery, from 2020 to today; height represents editorial relevance from 20 to 100, in 13 coarse levels. The full list appears below.", {n: fmtN(items.length)})}">${g}<g>${tratti}</g><rect x="${SP.x0 - 6}" y="0" width="${SP.x1 - SP.x0 + 12}" height="${SP.base + 10}" fill="transparent"/></svg>`;
   spSvg = $("spettro").firstElementChild;
   CatalogUI.chartInteraction(spSvg, sp.map(p => ({...p, date:p.s.publication_date})), {
-    describe: p => [p.s.title, `${fmtData(p.s.publication_date)}, ${p.s.organization}`, `Editorial relevance ${punteggio(p.s)}, ${p.s.field}`],
+    describe: p => [p.s.title, `${fmtData(p.s.publication_date)}, ${p.s.organization}`, tr("Editorial relevance {n}, {field}", {n: punteggio(p.s), field: tr(p.s.field)})],
     open: p => vaiA(p.s.id), showTip:mostraTip, hideTip:nascondiTip,
     penalty: p => filtroAttivo() && !passa(p.s) ? 14 : 0
   });
@@ -283,8 +414,8 @@ addEventListener("hashchange", () => { if (items.length) openFragment(); });
 function righe(key, voci, max, extra) {
   return `<div class="righe">` + voci.map(([v, n]) => {
     const m = extra ? extra[v] : null;
-    return `<button class="riga" type="button" data-k="${key}" data-v="${esc(v)}" aria-pressed="${state[key] === v}" aria-label="${esc(v)}: ${n} ${n === 1 ? "discovery" : "discoveries"}${m != null ? ", average relevance " + m : ""}">
-      <span class="et" title="${esc(v)}">${esc(v)}</span>
+    return `<button class="riga" type="button" data-k="${key}" data-v="${esc(v)}" aria-pressed="${state[key] === v}" aria-label="${esc(tr(v))}: ${oneMany(n, "{n} discovery", "{n} discoveries")}${m != null ? tr(", average relevance {n}", {n: m}) : ""}">
+      <span class="et" title="${esc(tr(v))}">${esc(tr(v))}</span>
       <span class="bin"><span class="bar" style="width:${(n / max * 100).toFixed(1)}%"></span></span>
       <span class="val">${n}${m != null ? `<small>average ${m}</small>` : ""}</span></button>`; }).join("") + `</div>`;
 }
@@ -306,23 +437,23 @@ function grafici() {
   const pts = anni.map((a, i) => [X(i), Y(yearValue(a))]);
   const iMax = anni.reduce((b, a, i) => yearValue(a) > yearValue(anni[b]) ? i : b, 0), iUlt = anni.length - 1;
   const passo = (L.x1 - L.x0) / Math.max(1, anni.length - 1);
-  let svg = [0, top / 2, top].map(v => `<line class="${v ? "griglia" : "base"}" x1="${L.x0}" x2="${L.x1}" y1="${Y(v)}" y2="${Y(v)}"/><text class="ax" x="${L.x0 - 10}" y="${Y(v) + 4}" text-anchor="end">${v.toLocaleString("en-GB")}</text>`).join("");
+  let svg = [0, top / 2, top].map(v => `<line class="${v ? "griglia" : "base"}" x1="${L.x0}" x2="${L.x1}" y1="${Y(v)}" y2="${Y(v)}"/><text class="ax" x="${L.x0 - 10}" y="${Y(v) + 4}" text-anchor="end">${v.toLocaleString(dateLocale)}</text>`).join("");
   svg += `<path class="area" d="M${pts[0][0]},${L.base} ${pts.map(p => "L" + p.join(",")).join(" ")} L${pts[iUlt][0]},${L.base} Z"/>`;
   svg += `<polyline class="linea" points="${pts.map(p => p.join(",")).join(" ")}"/>`;
   svg += anni.map((a, i) => `<rect data-k="anno" data-v="${a}" data-anno="${a}" x="${Math.max(L.x0 - 20, X(i) - passo / 2)}" y="0" width="${passo}" height="${L.base + 30}" fill="transparent" style="cursor:pointer"/>`).join("");
-  svg += anni.map((a, i) => `<circle class="pt" cx="${pts[i][0]}" cy="${pts[i][1]}" r="5.5" tabindex="0" role="button" data-k="anno" data-v="${a}" aria-pressed="${state.anno === a}" aria-label="${a}: ${annual[a].count} catalog entries, mean editorial relevance ${annual[a].mean}"/><text class="ax" x="${X(i)}" y="${L.base + 22}" text-anchor="middle">${a}</text>`).join("");
-  [iMax, iUlt].filter((v, j, arr) => arr.indexOf(v) === j).forEach(i => { svg += `<text class="lab" x="${pts[i][0]}" y="${pts[i][1] - 14}" text-anchor="middle">${yearValue(anni[i]).toLocaleString("en-GB")}</text>`; });
-  const tabella = `<details><summary>View data as a table</summary><table class="tab-mini"><tr><th>Year</th><th>Catalog entries</th><th>Mean editorial relevance</th></tr>${anni.map(a => `<tr><td>${a}</td><td>${annual[a].count}</td><td>${annual[a].mean}</td></tr>`).join("")}</table></details>`;
+  svg += anni.map((a, i) => `<circle class="pt" cx="${pts[i][0]}" cy="${pts[i][1]}" r="5.5" tabindex="0" role="button" data-k="anno" data-v="${a}" aria-pressed="${state.anno === a}" aria-label="${tr("{year}: {n} catalog entries, mean editorial relevance {mean}", {year: a, n: fmtN(annual[a].count), mean: annual[a].mean})}"/><text class="ax" x="${X(i)}" y="${L.base + 22}" text-anchor="middle">${a}</text>`).join("");
+  [iMax, iUlt].filter((v, j, arr) => arr.indexOf(v) === j).forEach(i => { svg += `<text class="lab" x="${pts[i][0]}" y="${pts[i][1] - 14}" text-anchor="middle">${yearValue(anni[i]).toLocaleString(dateLocale)}</text>`; });
+  const tabella = `<details><summary>${tr("View data as a table")}</summary><table class="tab-mini"><tr><th>${tr("Year")}</th><th>${tr("Catalog entries")}</th><th>${tr("Mean editorial relevance")}</th></tr>${anni.map(a => `<tr><td>${a}</td><td>${annual[a].count}</td><td>${annual[a].mean}</td></tr>`).join("")}</table></details>`;
   $("charts").innerHTML =
-    `<div class="pannello"><h3>By field</h3><p class="descr">Number of catalog entries and mean editorial relevance. Individual scores range from 20 to 100 in 13 coarse levels.</p>${righe("field", fields, fields[0][1], medie)}</div>` +
-    `<div class="pannello"><h3>By organization</h3><p class="descr">${org.length > 8 ? `Top 8 of ${org.length}; organizations listed together are counted under the first one named.` : "Organizations listed together are counted under the first one named."}</p>${righe("org", org.slice(0, 8), org[0][1])}</div>` +
-    `<div class="pannello largo"><h3>Catalog entries and editorial relevance by year</h3><label class="trend-control">Show <select id="trend-metric"><option value="count"${trendMetric === "count" ? " selected" : ""}>Catalog entries</option><option value="mean"${trendMetric === "mean" ? " selected" : ""}>Mean editorial relevance (out of 100)</option></select></label><p class="descr">This selected collection is incomplete; counts do not measure worldwide discovery rates. Each mean is based on the annual number of entries shown in the table, and small samples can be misleading.${anni[iUlt] == new Date().getFullYear() ? ` ${anni[iUlt]} is still in progress.` : ""}</p><svg viewBox="0 0 ${W} 244" id="linea-anni" role="group" aria-label="${trendMetric === "count" ? "Catalog entries" : "Mean editorial relevance"} by year, from ${anni[0]} to ${anni[iUlt]}">${svg}</svg>${tabella}</div>`;
+    `<div class="pannello"><h3>${tr("By field")}</h3><p class="descr">${tr("Number of catalog entries and mean editorial relevance. Individual scores range from 20 to 100 in 13 coarse levels.")}</p>${righe("field", fields, fields[0][1], medie)}</div>` +
+    `<div class="pannello"><h3>${tr("By organization")}</h3><p class="descr">${org.length > 8 ? tr("Top 8 of {n}; organizations listed together are counted under the first one named.", {n: fmtN(org.length)}) : tr("Organizations listed together are counted under the first one named.")}</p>${righe("org", org.slice(0, 8), org[0][1])}</div>` +
+    `<div class="pannello largo"><h3>${tr("Catalog entries and editorial relevance by year")}</h3><label class="trend-control">${tr("Show")} <select id="trend-metric"><option value="count"${trendMetric === "count" ? " selected" : ""}>${tr("Catalog entries")}</option><option value="mean"${trendMetric === "mean" ? " selected" : ""}>${tr("Mean editorial relevance (out of 100)")}</option></select></label><p class="descr">${tr("This selected collection is incomplete; counts do not measure worldwide discovery rates. Each mean is based on the annual number of entries shown in the table, and small samples can be misleading.")}${anni[iUlt] == new Date().getFullYear() ? " " + tr("{year} is still in progress.", {year: anni[iUlt]}) : ""}</p><svg viewBox="0 0 ${W} 244" id="linea-anni" role="group" aria-label="${tr("{metric} by year, from {start} to {end}", {metric: trendMetric === "count" ? tr("Catalog entries") : tr("Mean editorial relevance"), start: anni[0], end: anni[iUlt]})}">${svg}</svg>${tabella}</div>`;
   const fy = CatalogUI.fieldYear(items), fyMax = Math.max(...Object.values(fy.cells));
-  const heat = `<div class="heat-wrap"><table class="heat"><caption class="vis-nascosto">Discoveries per field and year; select a cell to filter the list.</caption><thead><tr><th scope="col">Field</th>${fy.years.map(y => `<th scope="col">${y}</th>`).join("")}</tr></thead><tbody>${fy.fields.map(f => `<tr><th scope="row">${esc(f)}</th>${fy.years.map(y => { const n = fy.cells[f + "|" + y] || 0; return n ? `<td><button type="button" class="heat-cell" data-field="${esc(f)}" data-year="${y}" style="--v:${(n / fyMax).toFixed(2)}" aria-pressed="${state.field === f && state.anno === y}" aria-label="${esc(f)}, ${y}: ${n} ${n === 1 ? "discovery" : "discoveries"}">${n}</button></td>` : `<td><span class="heat-zero" aria-label="${esc(f)}, ${y}: none">0</span></td>`; }).join("")}</tr>`).join("")}</tbody></table></div>`;
-  $("charts").insertAdjacentHTML("beforeend", `<div class="pannello largo"><h3>Fields by year</h3><p class="descr">Number of catalog entries per field and year; stronger color intensity indicates more entries, with exact counts in every cell. The collection is selected, not exhaustive, so empty cells do not mean no AI-enabled work existed.</p>${heat}</div>`);
+  const heat = `<div class="heat-wrap"><table class="heat"><caption class="vis-nascosto">${tr("Discoveries per field and year; select a cell to filter the list.")}</caption><thead><tr><th scope="col">${tr("Field")}</th>${fy.years.map(y => `<th scope="col">${y}</th>`).join("")}</tr></thead><tbody>${fy.fields.map(f => `<tr><th scope="row">${esc(tr(f))}</th>${fy.years.map(y => { const n = fy.cells[f + "|" + y] || 0; return n ? `<td><button type="button" class="heat-cell" data-field="${esc(f)}" data-year="${y}" style="--v:${(n / fyMax).toFixed(2)}" aria-pressed="${state.field === f && state.anno === y}" aria-label="${esc(tr(f))}, ${y}: ${oneMany(n, "{n} discovery", "{n} discoveries")}">${n}</button></td>` : `<td><span class="heat-zero" aria-label="${tr("{field}, {year}: none", {field: esc(tr(f)), year: y})}">0</span></td>`; }).join("")}</tr>`).join("")}</tbody></table></div>`;
+  $("charts").insertAdjacentHTML("beforeend", `<div class="pannello largo"><h3>${tr("Fields by year")}</h3><p class="descr">${tr("Number of catalog entries per field and year; stronger color intensity indicates more entries, with exact counts in every cell. The collection is selected, not exhaustive, so empty cells do not mean no AI-enabled work existed.")}</p>${heat}</div>`);
   const sourceCounts = ordina(conta(items, record => record.source_type));
   const sc = CatalogUI.sourceConcentration(items);
-  $("coverage").textContent = `Full catalog: ${items.length} entries; primary sources: ${sourceCounts.map(([type, n]) => `${type}: ${n}`).join(", ")}. Most recent catalog addition: ${fmtData(items.map(record => record.added_date).sort().at(-1))}. This is not a last-review date. Source concentration: the ${sc.top} most frequent source websites account for ${sc.entries} of ${sc.total} entries, out of ${sc.websites} websites in total.`;
+  $("coverage").textContent = tr("Full catalog: {n} entries; primary sources: {sources}. Most recent catalog addition: {date}. This is not a last-review date. Source concentration: the {top} most frequent source websites account for {entries} of {total} entries, out of {websites} websites in total.", {n: fmtN(items.length), sources: sourceCounts.map(([type, n]) => `${tr(type)}: ${fmtN(n)}`).join(", "), date: fmtData(items.map(record => record.added_date).sort().at(-1)), top: sc.top, entries: fmtN(sc.entries), total: fmtN(sc.total), websites: fmtN(sc.websites)});
   const ls = $("linea-anni");
   ls.querySelectorAll("rect[data-anno]").forEach(r => {
     r.addEventListener("pointerenter", e => { const a = r.dataset.anno; ls.querySelector(`circle[data-v="${a}"]`).classList.add("su"); mostraTip([`${a}`, `${annual[a].count} catalog entries`, `Mean editorial relevance ${annual[a].mean}/100`], e.clientX, e.clientY); });
@@ -333,7 +464,7 @@ function grafici() {
 
 function riepilogo() {
   const nAmb = new Set(items.map(s => s.field)).size, nOrg = new Set(items.filter(s => CatalogEntities.organization(s.organization).kind !== "unknown affiliation").map(orgDi)).size;
-  $("lead").innerHTML = `<b>${items.length} discoveries</b> in ${nAmb} fields and ${nOrg} organizations since 2020. Browse source-linked findings below. Chart heights show coarse editorial relevance, not scientific quality.`;
+  $("lead").innerHTML = `<b>${tr("{n} discoveries", {n: fmtN(items.length)})}</b> ${tr("in {fields} fields and {orgs} organizations since 2020. Browse source-linked findings below. Chart heights show coarse editorial relevance, not scientific quality.", {fields: fmtN(nAmb), orgs: fmtN(nOrg)})}`;
 }
 
 /* Featured: three newest entries and the three highest scores of the twelve months before the newest one. */
@@ -341,30 +472,30 @@ function featured() {
   const from = new Date(Date.parse(items[0].publication_date) - 365 * 864e5).toISOString().slice(0, 10);
   const newest = items.slice(0, 3);
   const best = items.filter(s => s.publication_date >= from && !newest.includes(s)).sort((a, b) => punteggio(b) - punteggio(a)).slice(0, 3);
-  const link = s => `<a class="inev" href="#discovery=${encodeURIComponent(s.id)}" data-id="${esc(s.id)}"><b>${esc(s.title)}</b><span>${esc(fmtData(s.publication_date))} · ${esc(orgDi(s))} · ${esc(s.field)} · editorial relevance ${punteggio(s)}</span><span>${esc(CatalogUI.sourceStatus(s))} · Publication: ${esc(CatalogUI.evidenceValue(s, "publication_status"))} · Test: ${esc(CatalogUI.evidenceValue(s, "test_type"))}</span></a>`;
+  const link = s => `<a class="inev" href="#discovery=${encodeURIComponent(s.id)}" data-id="${esc(s.id)}"><b>${esc(s.title)}</b><span>${esc(fmtData(s.publication_date))} · ${esc(orgDi(s))} · ${esc(tr(s.field))} · ${tr("editorial relevance {n}", {n: punteggio(s)})}</span><span>${esc(CatalogUI.sourceStatus(s))} · ${tr("Publication:")} ${esc(CatalogUI.evidenceValue(s, "publication_status"))} · ${tr("Test:")} ${esc(CatalogUI.evidenceValue(s, "test_type"))}</span></a>`;
   $("featured-list").innerHTML =
-    `<div class="pannello"><h3>Newest</h3><p class="descr">By date of the original announcement.</p>${newest.map(link).join("")}</div>` +
-    `<div class="pannello"><h3>Highest editorial relevance, past twelve months</h3><p class="descr">Editorial score from 20 to 100 in 13 coarse levels; see the methodology.</p>${best.map(link).join("")}</div>`;
+    `<div class="pannello"><h3>${tr("Newest")}</h3><p class="descr">${tr("By date of the original announcement.")}</p>${newest.map(link).join("")}</div>` +
+    `<div class="pannello"><h3>${tr("Highest editorial relevance, past twelve months")}</h3><p class="descr">${tr("Editorial score from 20 to 100 in 13 coarse levels; see the methodology.")}</p>${best.map(link).join("")}</div>`;
 }
 $("featured-list").addEventListener("click", e => { const a = e.target.closest("a[data-id]"); if (a) { e.preventDefault(); vaiA(a.dataset.id); } });
 
 function riempi(sel, etichetta, valori) {
-  sel.innerHTML = `<option value="">${etichetta}</option>` + valori.map(v => `<option>${esc(v)}</option>`).join("");
+  sel.innerHTML = `<option value="">${esc(tr(etichetta))}</option>` + valori.map(v => `<option value="${esc(v)}">${esc(tr(v))}</option>`).join("");
 }
 
 function voce(s) {
   const p = punteggio(s), f = famDi[s.id];
   return `<article class="voce" id="${esc(s.id)}">
-    <div class="voce-meta"><time datetime="${esc(s.publication_date)}">${esc(fmtData(s.publication_date))}</time><a href="profile.html?org=${encodeURIComponent(orgDi(s))}">${esc(s.organization)}</a><span>Added ${esc(fmtData(s.added_date))}</span></div>
+    <div class="voce-meta"><time datetime="${esc(s.publication_date)}">${esc(fmtData(s.publication_date))}</time><a href="profile.html?org=${encodeURIComponent(orgDi(s))}">${esc(s.organization)}</a><span>${tr("Added {date}", {date: esc(fmtData(s.added_date))})}</span></div>
     <h3>${esc(s.title)}</h3>
     ${CatalogUI.sourceBadge(s)}
-    <p class="sommario"><b>${s.evidence?.tested === s.summary ? "Finding / tested result" : "Finding"}:</b> ${esc(s.summary)}</p>
-    ${s.ai_technology ? `<p class="tech"><span>Technology:</span> ${esc(s.ai_technology)}</p>` : ""}
-    ${f ? `<p class="modello">Family ${esc(f.name)}: <a href="profile.html?family=${encodeURIComponent(f.id)}">profile</a> · <a href="models.html#fam-${esc(f.id)}">models page</a></p>` : ""}
+    <p class="sommario"><b>${s.evidence?.tested === s.summary ? tr("Finding / tested result") : tr("Finding")}:</b> ${esc(localizedSummary(s))}</p>
+    ${s.ai_technology ? `<p class="tech"><span>${tr("Technology:")}</span> ${esc(s.ai_technology)}</p>` : ""}
+    ${f ? `<p class="modello">${tr("Family {name}:", {name: esc(f.name)})} <a href="profile.html?family=${encodeURIComponent(f.id)}">${tr("profile")}</a> · <a href="models.html#fam-${esc(f.id)}">${tr("models page")}</a></p>` : ""}
     <div class="voce-footer">
-      <span class="punteggio" title="Impact ${s.relevance.impact}/5, validation ${s.relevance.validation}/5, novelty ${s.relevance.novelty}/5">Editorial relevance ${p}<span class="metro" aria-hidden="true"><i style="width:${p}%"></i></span></span>
-      <span class="etich">${esc(s.field)}</span>
-      <span class="collegamenti"><a href="${esc(safeUrl(s.source_url))}" rel="noopener">Original source</a>${s.paper_url ? `<a href="${esc(safeUrl(s.paper_url))}" rel="noopener">Paper</a>` : ""}<button class="copia" type="button" data-id="${esc(s.id)}">Copy link</button> <button class="copia riferimento" type="button" data-id="${esc(s.id)}">Copy reference</button> <a class="correction-link" href="${esc(CatalogUI.correctionUrl(s))}" rel="noopener">Suggest a correction</a></span>
+      <span class="punteggio" title="${tr("Impact {i}/5, validation {v}/5, novelty {n}/5", {i: s.relevance.impact, v: s.relevance.validation, n: s.relevance.novelty})}">${tr("Editorial relevance {n}", {n: p})}<span class="metro" aria-hidden="true"><i style="width:${p}%"></i></span></span>
+      <span class="etich">${esc(tr(s.field))}</span>
+      <span class="collegamenti"><a href="${esc(safeUrl(s.source_url))}" rel="noopener">${tr("Original source")}</a>${s.paper_url ? `<a href="${esc(safeUrl(s.paper_url))}" rel="noopener">${tr("Paper")}</a>` : ""}<button class="copia" type="button" data-id="${esc(s.id)}">${tr("Copy link")}</button> <button class="copia riferimento" type="button" data-id="${esc(s.id)}">${tr("Copy reference")}</button> <a class="correction-link" href="${esc(CatalogUI.correctionUrl(s))}" rel="noopener">${tr("Suggest a correction")}</a></span>
     </div>
     ${CatalogUI.sourceDetails(s)}
   </article>`;
@@ -399,24 +530,24 @@ function readFilters(fields, orgs, years, families) {
 }
 function lista() {
   let out = selezione();
-  $("conta").textContent = `${out.length} of ${items.length} discoveries`;
+  $("conta").textContent = tr("{n} of {total} discoveries", {n: fmtN(out.length), total: fmtN(items.length)});
   const coverage = CatalogUI.reviewCoverage(out);
-  $("selection-summary").innerHTML = `<h3>Your selection</h3><p>${out.length} catalog entries before pagination. Counts describe stored annotations, not scientific quality.</p><p><b>Source checks:</b> ${coverage.checked} checked · ${coverage.total - coverage.checked} need a source check. <b>Evidence annotations:</b> ${coverage.annotated}/${coverage.total}. <b>Structured review date and scope:</b> ${coverage.reviewed}/${coverage.total}. Missing review metadata does not prove a source was never checked.</p>${out.length ? [ ["Test context", "test_type"], ["Publication status", "publication_status"] ].map(([label, key]) => `<p><b>${label}:</b> ${CatalogUI.selectionCounts(out, key).map(([value, count]) => `${count} ${esc(value)}`).join(" · ")}</p>`).join("") : "<p>No matching entries.</p>"}`;
+  $("selection-summary").innerHTML = `<h3>${tr("Your selection")}</h3><p>${tr("{n} catalog entries before pagination. Counts describe stored annotations, not scientific quality.", {n: fmtN(out.length)})}</p><p><b>${tr("Source checks:")}</b> ${tr("{n} checked · {m} need a source check", {n: coverage.checked, m: coverage.total - coverage.checked})}. <b>${tr("Evidence annotations:")}</b> ${coverage.annotated}/${coverage.total}. <b>${tr("Structured review date and scope:")}</b> ${coverage.reviewed}/${coverage.total}. ${tr("Missing review metadata does not prove a source was never checked.")}</p>${out.length ? [ ["Test context", "test_type"], ["Publication status", "publication_status"] ].map(([label, key]) => `<p><b>${tr(label)}:</b> ${CatalogUI.selectionCounts(out, key).map(([value, count]) => `${fmtN(count)} ${esc(tr(value))}`).join(" · ")}</p>`).join("") : `<p>${tr("No matching entries.")}</p>`}`;
   const chiave = JSON.stringify(state);
   if (chiave !== chiaveLista) { chiaveLista = chiave; limite = PAGE; }
   if (ancora) { const i = out.findIndex(s => s.id === ancora); if (i >= limite) limite = i + 1; }
   const tutte = out; out = out.slice(0, limite);
-  if (tutte.length > out.length) $("conta").textContent += `, ${out.length} shown`;
+  if (tutte.length > out.length) $("conta").textContent += tr(", {n} shown", {n: fmtN(out.length)});
   let html = "";
-  if (!out.length) html = `<p class="vuoto">No discoveries match these filters. Try removing a filter or click “Clear filters”.</p>`;
+  if (!out.length) html = `<p class="vuoto">${tr("No discoveries match these filters. Try removing a filter or click “Clear filters”.")}</p>`;
   else if (state.ord === "relevance" || state.ord === "added") html = `<div class="piatto">${out.map(voce).join("")}</div>`;
   else {
     const gruppi = [];
     out.forEach(s => { const a = s.publication_date.slice(0, 4); if (!gruppi.length || gruppi.at(-1)[0] !== a) gruppi.push([a, []]); gruppi.at(-1)[1].push(s); });
-    html = gruppi.map(([a, v]) => `<section class="annata" aria-label="${a}"><h3 class="anno-tit"><b>${a}</b><span>${v.length} ${v.length === 1 ? "discovery" : "discoveries"}</span></h3><div>${v.map(voce).join("")}</div></section>`).join("");
+    html = gruppi.map(([a, v]) => `<section class="annata" aria-label="${a}"><h3 class="anno-tit"><b>${a}</b><span>${oneMany(v.length, "{n} discovery", "{n} discoveries")}</span></h3><div>${v.map(voce).join("")}</div></section>`).join("");
   }
   const resto = tutte.length - out.length;
-  if (resto) html += `<p class="altre"><button id="altre" type="button">Show ${Math.min(PAGE, resto)} more</button> <span>${resto} not shown yet</span></p>`;
+  if (resto) html += `<p class="altre"><button id="altre" type="button">${tr("Show {n} more", {n: fmtN(Math.min(PAGE, resto))})}</button> <span>${tr("{n} not shown yet", {n: fmtN(resto)})}</span></p>`;
   $("lista").innerHTML = html;
   $("status").value = state.status; $("test").value = state.test; $("publication").value = state.publication;
   $("org").value = state.org; $("year").value = state.anno; $("family").value = state.family; $("min").value = state.min;
@@ -439,14 +570,14 @@ CatalogData.run(['discoveries', 'models', 'citations', 'archived-discoveries', '
   if (modelli) modelli.families.forEach(f => f.discoveries.forEach(id => { if (!famDi[id]) famDi[id] = f; (famIds[id] ||= []).push(f.id); }));
   riepilogo(); if ($("timeline-overview").open) spettro(); if ($("overview").open) grafici();
   const perAmb = ordina(conta(items, s => s.field));
-  $("cat").innerHTML = [["", "All", items.length], ...perAmb.map(([v, n]) => [v, v, n])]
-    .map(([v, l, n]) => `<button type="button" data-v="${esc(v)}" aria-pressed="false" aria-label="${esc(l)}: ${n} ${n === 1 ? "discovery" : "discoveries"}"><em>${esc(l)}</em> <span>${n}</span></button>`).join("");
-  riempi($("org"), "All organizations", [...new Set(items.map(orgDi))].sort((a, b) => a.localeCompare(b, "en")));
+  $("cat").innerHTML = [["", tr("All"), items.length], ...perAmb.map(([v, n]) => [v, tr(v), n])]
+    .map(([v, l, n]) => `<button type="button" data-v="${esc(v)}" aria-pressed="false" aria-label="${esc(l)}: ${oneMany(n, "{n} discovery", "{n} discoveries")}"><em>${esc(l)}</em> <span>${fmtN(n)}</span></button>`).join("");
+  riempi($("org"), "All organizations", [...new Set(items.map(orgDi))].sort((a, b) => a.localeCompare(b, sortLocale)));
   const legacy = { biologia:"biology", chimica:"chemistry", medicina:"medicine", materiali:"materials", clima:"climate", matematica:"mathematics", fisica:"physics", informatica:"computer science", "scienze umane":"humanities", multidisciplinare:"multidisciplinary", altro:"other" };
   const years = [...new Set(items.map(s => s.publication_date.slice(0, 4)))].sort().reverse();
-  const families = modelli ? modelli.families.filter(f => f.discoveries.length).sort((a, b) => a.name.localeCompare(b.name, "en")) : [];
-  $("year").innerHTML = `<option value="">All years</option>` + years.map(y => `<option>${y}</option>`).join("");
-  $("family").innerHTML = `<option value="">All model families</option>` + families.map(f => `<option value="${esc(f.id)}">${esc(f.name)}</option>`).join("");
+  const families = modelli ? modelli.families.filter(f => f.discoveries.length).sort((a, b) => a.name.localeCompare(b.name, sortLocale)) : [];
+  $("year").innerHTML = `<option value="">${tr("All years")}</option>` + years.map(y => `<option>${y}</option>`).join("");
+  $("family").innerHTML = `<option value="">${tr("All model families")}</option>` + families.map(f => `<option value="${esc(f.id)}">${esc(f.name)}</option>`).join("");
   riempi($("test"), "All test contexts", [...new Set(items.map(s => CatalogUI.evidenceValue(s, "test_type")))].sort());
   riempi($("publication"), "All publication states", [...new Set(items.map(s => CatalogUI.evidenceValue(s, "publication_status")))].sort());
   readFilters(perAmb.map(([v]) => v), [...new Set(items.map(orgDi))], years, families.map(f => f.id));
@@ -459,7 +590,7 @@ CatalogData.run(['discoveries', 'models', 'citations', 'archived-discoveries', '
   CatalogEntities.configure({organizations:[], systems:[]});
   nascondiTip(); tip.replaceChildren();
   ['lista','spettro','charts','featured-list','cat','selection-summary','coverage','conta','org','year','family','test','publication'].forEach(id => $(id).replaceChildren());
-  $('lead').textContent = 'No validated catalog snapshot loaded.';
+  $('lead').textContent = tr('No validated catalog snapshot loaded.');
 }});
 
 let largh = innerWidth, tRes;
@@ -496,15 +627,15 @@ $("lista").addEventListener("click", e => {
   const r = e.target.closest(".riferimento");
   if (r) {
     const text = CatalogUI.reference(items.find(x => x.id === r.dataset.id), fmtData(new Date().toISOString().slice(0, 10)));
-    const fatto = () => { r.textContent = "Reference copied"; setTimeout(() => { r.textContent = "Copy reference"; }, 1500); };
-    (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(fatto, () => prompt("Copy this reference:", text));
+    const fatto = () => { r.textContent = tr("Reference copied"); setTimeout(() => { r.textContent = tr("Copy reference"); }, 1500); };
+    (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(fatto, () => prompt(tr("Copy this reference:"), text));
     return;
   }
   const c = e.target.closest(".copia:not(.riferimento)");
   if (c) {
     const url = new URL("share/" + encodeURIComponent(c.dataset.id) + ".html", location.href).href; // generated stub with Open Graph image, redirects here
-    const fatto = () => { c.textContent = "Link copied"; setTimeout(() => { c.textContent = "Copy link"; }, 1500); };
-    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(fatto, () => prompt("Copy this link:", url));
+    const fatto = () => { c.textContent = tr("Link copied"); setTimeout(() => { c.textContent = tr("Copy link"); }, 1500); };
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(fatto, () => prompt(tr("Copy this link:"), url));
     return;
   }
 });
@@ -532,8 +663,8 @@ function selezione() {
 $("dl-json").addEventListener("click", () => scarica("ai-science-tracker-selection.json", "application/json", JSON.stringify(selezione().map(({citation, ...record}) => record), null, 2) + "\n"));
 $("dl-csv").addEventListener("click", () => scarica("ai-science-tracker-selection.csv", "text/csv;charset=utf-8", CatalogUI.toCsv(selezione())));
 $("copy-filters").addEventListener("click", e => {
-  const b = e.currentTarget, done = () => { b.textContent = "Link copied"; setTimeout(() => { b.textContent = "Copy filter link"; }, 1500); };
-  (navigator.clipboard ? navigator.clipboard.writeText(location.href) : Promise.reject()).then(done, () => prompt("Copy this link:", location.href));
+  const b = e.currentTarget, done = () => { b.textContent = tr("Link copied"); setTimeout(() => { b.textContent = tr("Copy filter link"); }, 1500); };
+  (navigator.clipboard ? navigator.clipboard.writeText(location.href) : Promise.reject()).then(done, () => prompt(tr("Copy this link:"), location.href));
 });
 $("charts").addEventListener("change", e => {
   if (e.target.id !== "trend-metric") return;

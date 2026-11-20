@@ -23,6 +23,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="../assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../styles.css?v=23f6b9beaa5b">
+<link rel="stylesheet" href="../assets/i18n.css?v=bc803f599a72">
 <script type="application/ld+json">
 {"@context":"https://schema.org/","@type":"WebPage","name":"Minerva identifies nickel-catalyzed Suzuki reaction conditions","description":"Minerva combines Gaussian-process optimization with automated high-throughput experiments to search reaction conditions. In the nickel-catalyzed Suzuki campaign, the preprint reports a condition with 76 area-percent yield and 92% selectivity, while two chemist-designed screening plates did not…","url":"https://aisciencetracker.org/share/2024-10-minerva-nickel-suzuki-optimization.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},"isPartOf":{"@type":"Dataset","@id":"https://aisciencetracker.org/index.html#dataset","name":"AI Science Tracker discovery catalog","url":"https://aisciencetracker.org/dataset.html#scientific-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/index.html"},{"@type":"ListItem","position":2,"name":"Minerva identifies nickel-catalyzed Suzuki reaction conditions","item":"https://aisciencetracker.org/share/2024-10-minerva-nickel-suzuki-optimization.html"}]},"about":{"@type":"Thing","name":"Minerva identifies nickel-catalyzed Suzuki reaction conditions"},"isBasedOn":"https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/66f976b5cec5d6c142981e4e/original/highly-parallel-optimisation-of-nickel-catalysed-suzuki-reactions-through-automation-and-machine-intelligence.pdf","citation":"https://doi.org/10.1038/s41467-025-61803-0"}
 </script>
@@ -34,7 +35,63 @@
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="../index.html">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../dossiers.html">Dossiers</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav>
+    <nav class="menu" aria-label="Site sections"><a href="../index.html">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../dossiers.html">Dossiers</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="../index.html" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="../it/index.html" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="../de/index.html" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="../fr/index.html" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="../es/index.html" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+globalThis.astResolveLanguage = function (input) {
+  var SUPPORTED = {it:1, de:1, fr:1, es:1};
+  var ua = input.ua || '';
+  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
+  var path = input.path || '/';
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
+  var pages = input.pages || [];
+  var saved = input.saved || '';
+  var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
+  if (!target) {
+    var list = input.languages || [];
+    for (var i = 0; i < list.length; i++) {
+      var code = String(list[i] || '').toLowerCase().split('-')[0];
+      if (code === 'en' || SUPPORTED[code]) { target = code; break; }
+    }
+  }
+  if (!target) {
+    var hint = {
+      'Europe/Rome':'it','Europe/Vatican':'it','Europe/San_Marino':'it',
+      'Europe/Berlin':'de','Europe/Busingen':'de','Europe/Vienna':'de',
+      'Europe/Paris':'fr','Europe/Monaco':'fr',
+      'Europe/Madrid':'es','Atlantic/Canary':'es','Africa/Ceuta':'es','Europe/Andorra':'es',
+      'America/Mexico_City':'es','America/Argentina/Buenos_Aires':'es','America/Bogota':'es',
+      'America/Lima':'es','America/Santiago':'es','America/Montevideo':'es','America/Asuncion':'es',
+      'America/La_Paz':'es','America/Caracas':'es','America/Guayaquil':'es'
+    };
+    if (hint[input.timezone || '']) target = hint[input.timezone];
+  }
+  if (!target || target === 'en' || !SUPPORTED[target]) return null;
+  var search = input.search || '';
+  var hash = input.hash || '';
+  if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+  var file = path.split('/').pop();
+  var dir = path.slice(0, path.length - file.length);
+  if (dir !== '/') return null;
+  if (!file) file = 'index.html';
+  if (pages.indexOf(file) < 0) return null;
+  return '/' + target + '/' + file + search + hash;
+};
+globalThis.astEquivalent = function (lang, path, search, hash, pages) {
+  search = search || '';
+  hash = hash || '';
+  pages = pages || [];
+  var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
+  var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
+  if (rest === '' || rest === '/') rest = '/index.html';
+  var prefix = lang === 'en' ? '' : '/' + lang;
+  var file = rest.split('/').pop();
+  var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
+  var share = rest.match(/^\/share\/([^/]+)\.html$/);
+  if (share) return prefix + '/index.html#discovery=' + share[1];
+  if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
+  return prefix + '/index.html' + search;
+};
+try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"];var current=document.documentElement.lang||"en";nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});}}catch(e){}</script>
   </div>
 </header>
 
@@ -77,7 +134,7 @@
     <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
     <p><a href="../methodology.html">How we select and verify entries</a> · <a href="../profiles/index.html">All organizations and model families</a> · <a href="../dataset.html">Dataset and API</a> · <a href="../contributors.html">Contributors</a></p>
     <p><a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=discovery.yml">Suggest a discovery</a>. Reports are public, require GitHub sign-in, and are reviewed before catalog changes.</p>
-    <p>Privacy: this site sets no cookies and uses Cloudflare Web Analytics for aggregate visit statistics (page, referrer, browser, IP address) under legitimate interest (GDPR Art. 6(1)(f)). Cloudflare acts as our processor and may process data in the United States under the EU-US Data Privacy Framework. To object or exercise your rights, <a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new">open an issue</a>.</p>
+    <p>Privacy: this site sets no cookies. A language choice is stored only in this browser and is not sent to a server. The site uses Cloudflare Web Analytics for aggregate visit statistics (page, referrer, browser, IP address) under legitimate interest (GDPR Art. 6(1)(f)). Cloudflare acts as our processor and may process data in the United States under the EU-US Data Privacy Framework. To object or exercise your rights, <a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new">open an issue</a>.</p>
   </div>
 </footer>
 </body>

@@ -28,7 +28,8 @@ Every page has the same frame, in this order: shared `<head>` (charset, viewport
 
 ## Language and tone
 
-- All visible text, code identifiers, comments, filenames and documentation are in English. Dates render as `4 Nov 2026` (`en-GB`).
+- The canonical pages at the site root, the code, comments, filenames and documentation are in English. Dates on those pages render as `4 Nov 2026` (`en-GB`).
+- Italian, German, French and Spanish editions are generated under `/it/`, `/de/`, `/fr/` and `/es/` from `i18n/messages/`. They translate the interface and editorial pages. Discovery titles, organization names, paper titles and source links stay in the original language; a missing summary translation falls back to English. See the README for how to add a language.
 - Plain, neutral wording. Say what a source reports; never claim independent verification. Keep evidence caveats.
 
 ## Accessibility and performance

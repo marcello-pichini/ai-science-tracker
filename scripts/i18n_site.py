@@ -1,0 +1,609 @@
+#!/usr/bin/env python3
+"""Static language editions for the editorial pages.
+
+English files at the site root stay canonical. This module writes /it/, /de/,
+/fr/ and /es/ from those files and from i18n/messages/<lang>.json. Discovery
+summaries are an optional overlay in i18n/discoveries/<lang>.json; a missing
+summary stays in English. Titles, paper names and source links are never
+translated.
+
+    python3 scripts/i18n_site.py            # refresh locale pages
+    python3 scripts/i18n_site.py --check    # fail if a catalog key is missing
+    python3 scripts/i18n_site.py --sync-en  # add newly found English keys
+"""
+
+from __future__ import annotations
+
+import hashlib
+import html
+import json
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+BASE = 'https://aisciencetracker.org/'
+MESSAGES = ROOT / 'i18n' / 'messages'
+DISCOVERIES = ROOT / 'i18n' / 'discoveries'
+KEEP_PATH = ROOT / 'i18n' / 'keep-english.txt'
+
+LOCALES = ('it', 'de', 'fr', 'es')
+LOCALE_META = {
+    'en': {'html': 'en', 'og': 'en_GB', 'intl': 'en-GB', 'label': 'EN', 'name': 'English'},
+    'it': {'html': 'it', 'og': 'it_IT', 'intl': 'it-IT', 'label': 'IT', 'name': 'Italiano'},
+    'de': {'html': 'de', 'og': 'de_DE', 'intl': 'de-DE', 'label': 'DE', 'name': 'Deutsch'},
+    'fr': {'html': 'fr', 'og': 'fr_FR', 'intl': 'fr-FR', 'label': 'FR', 'name': 'Français'},
+    'es': {'html': 'es', 'og': 'es_ES', 'intl': 'es-ES', 'label': 'ES', 'name': 'Español'},
+}
+
+# Pages that receive a full translated copy. Order is the sitemap order.
+PAGES = (
+    'index.html', 'models.html', 'security.html', 'dossiers.html', 'methodology.html',
+    'guide.html', 'search.html', 'dataset.html', 'contributors.html', 'contact.html',
+    'model-progress.html', 'profile.html', 'alphafold-dossier.html', 'antibiotic-dossier.html',
+    '404.html',
+)
+SITEMAP_PAGES = tuple(page for page in PAGES if page != '404.html')
+
+ASSET_PREFIXES = ('assets/', 'data/', 'share/', 'profiles/', 'api/', 'og/')
+ASSET_FILES = {'styles.css', 'feed.xml', 'sitemap.xml', 'llms.txt', 'robots.txt'}
+SKIP_TAGS = {'script', 'style'}
+NUMBER = re.compile(r'\d+(?:\.\d+)?')
+KEEP_LINE = re.compile(
+    r'^(?:AI Science Tracker|CC BY(?:[-\w.]*)?(?: \d+(?:\.\d+)?)?|https?://\S+|10\.\d{4,9}/\S+)$'
+)
+TR_CALL = re.compile(r'''(?:\btr|\bthis\.t|\bAST_t)\(\s*(['"])(.*?)\1''', re.S)
+
+DETECT_FN = r'''
+globalThis.astResolveLanguage = function (input) {
+  var SUPPORTED = {it:1, de:1, fr:1, es:1};
+  var ua = input.ua || '';
+  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
+  var path = input.path || '/';
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
+  var pages = input.pages || [];
+  var saved = input.saved || '';
+  var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
+  if (!target) {
+    var list = input.languages || [];
+    for (var i = 0; i < list.length; i++) {
+      var code = String(list[i] || '').toLowerCase().split('-')[0];
+      if (code === 'en' || SUPPORTED[code]) { target = code; break; }
+    }
+  }
+  if (!target) {
+    var hint = {
+      'Europe/Rome':'it','Europe/Vatican':'it','Europe/San_Marino':'it',
+      'Europe/Berlin':'de','Europe/Busingen':'de','Europe/Vienna':'de',
+      'Europe/Paris':'fr','Europe/Monaco':'fr',
+      'Europe/Madrid':'es','Atlantic/Canary':'es','Africa/Ceuta':'es','Europe/Andorra':'es',
+      'America/Mexico_City':'es','America/Argentina/Buenos_Aires':'es','America/Bogota':'es',
+      'America/Lima':'es','America/Santiago':'es','America/Montevideo':'es','America/Asuncion':'es',
+      'America/La_Paz':'es','America/Caracas':'es','America/Guayaquil':'es'
+    };
+    if (hint[input.timezone || '']) target = hint[input.timezone];
+  }
+  if (!target || target === 'en' || !SUPPORTED[target]) return null;
+  var search = input.search || '';
+  var hash = input.hash || '';
+  if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+  var file = path.split('/').pop();
+  var dir = path.slice(0, path.length - file.length);
+  if (dir !== '/') return null;
+  if (!file) file = 'index.html';
+  if (pages.indexOf(file) < 0) return null;
+  return '/' + target + '/' + file + search + hash;
+};
+globalThis.astEquivalent = function (lang, path, search, hash, pages) {
+  search = search || '';
+  hash = hash || '';
+  pages = pages || [];
+  var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
+  var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
+  if (rest === '' || rest === '/') rest = '/index.html';
+  var prefix = lang === 'en' ? '' : '/' + lang;
+  var file = rest.split('/').pop();
+  var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
+  var share = rest.match(/^\/share\/([^/]+)\.html$/);
+  if (share) return prefix + '/index.html#discovery=' + share[1];
+  if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
+  return prefix + '/index.html' + search;
+};
+'''
+
+
+def switcher_html() -> str:
+    links = []
+    for code in ('en',) + LOCALES:
+        meta = LOCALE_META[code]
+        current = ' aria-current="true"' if code == 'en' else ''
+        href = 'index.html' if code == 'en' else f'{code}/index.html'
+        links.append(
+            f'<a href="{href}" hreflang="{meta["html"]}" lang="{meta["html"]}" data-lang="{code}" '
+            f'aria-label="{meta["name"]}"{current}>{meta["label"]}</a>'
+        )
+    return (
+        '<nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language">'
+        + ''.join(links) + '</nav><script>' + DETECT_FN +
+        'try{var nav=document.getElementById("lang-switch");if(nav){var pages='
+        + json.dumps(list(PAGES)) +
+        ';var current=document.documentElement.lang||"en";nav.querySelectorAll("[data-lang]").forEach(function(a){'
+        'var lang=a.getAttribute("data-lang");a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);'
+        'if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");'
+        'a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});}}catch(e){}'
+        '</script>'
+    )
+
+
+def detect_html() -> str:
+    return (
+        '<script>' + DETECT_FN +
+        'try{var saved=null;try{saved=localStorage.getItem("ast-lang");}catch(e){}'
+        'var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}'
+        'var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:'
+        + json.dumps(list(PAGES)) + '});if(dest)location.replace(dest);}catch(e){}</script>'
+    )
+
+
+def hreflang_html(page: str) -> str:
+    lines = []
+    for code in ('en',) + LOCALES:
+        href = BASE + page if code == 'en' else f'{BASE}{code}/{page}'
+        lines.append(f'<link rel="alternate" hreflang="{LOCALE_META[code]["html"]}" href="{href}">')
+    lines.append(f'<link rel="alternate" hreflang="x-default" href="{BASE}{page}">')
+    for code in ('en',) + LOCALES:
+        lines.append(f'<meta property="og:locale:alternate" content="{LOCALE_META[code]["og"]}">')
+    # The primary og:locale is separate so a locale page can replace just that value.
+    lines.append(f'<meta property="og:locale" content="{LOCALE_META["en"]["og"]}">')
+    return '\n'.join(lines)
+
+
+def install_english_chrome(root: Path | None = None) -> None:
+    """Add the switcher, first-visit redirect and hreflang links to English pages."""
+    root = root or ROOT
+    switcher = switcher_html()
+    detect = detect_html()
+    for page in PAGES:
+        path = root / page
+        if not path.exists():
+            continue
+        text = path.read_text(encoding='utf-8')
+        if 'id="lang-switch"' not in text:
+            if '<nav class="menu" aria-label="Site sections">' not in text:
+                continue
+            text, n = re.subn(
+                r'(<nav class="menu" aria-label="Site sections">.*?</nav>)',
+                lambda m: m.group(1) + switcher, text, count=1, flags=re.S)
+            if n != 1:
+                raise RuntimeError(f'{page}: could not insert the language switcher')
+        text = text.replace('href="/index.html"', 'href="index.html"')
+        for code in LOCALES:
+            text = text.replace(f'href="/{code}/index.html"', f'href="{code}/index.html"')
+        if 'astResolveLanguage' not in text.split('id="lang-switch"', 1)[0]:
+            # Detection lives in <head>, before the switcher copy inside the header.
+            marker = '<!-- End Cloudflare Web Analytics -->'
+            if marker not in text:
+                raise RuntimeError(f'{page}: missing analytics marker for the language script')
+            text = text.replace(marker, marker + detect, 1)
+        if 'assets/i18n.css' not in text and '<link rel="stylesheet" href="styles.css' in text:
+            digest = hashlib.sha256((ROOT / 'assets' / 'i18n.css').read_bytes()).hexdigest()[:12]
+            link = f'<link rel="stylesheet" href="assets/i18n.css?v={digest}">'
+            text = re.sub(
+                r'(<link rel="stylesheet" href="styles\.css\?v=[a-f0-9]+">)',
+                lambda m: m.group(1) + link, text, count=1)
+        if 'hreflang="x-default"' not in text:
+            block = hreflang_html(page)
+            if '</head>' not in text:
+                raise RuntimeError(f'{page}: missing </head>')
+            text = text.replace('</head>', block + '\n</head>', 1)
+        path.write_text(text, encoding='utf-8')
+
+
+def load_json(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding='utf-8'))
+    if not isinstance(data, dict):
+        raise ValueError(f'{path} must be a JSON object')
+    return data
+
+
+def keep_english() -> set[str]:
+    if not KEEP_PATH.exists():
+        return set()
+    return {line.strip() for line in KEEP_PATH.read_text(encoding='utf-8').splitlines() if line.strip() and not line.startswith('#')}
+
+
+def should_translate(text: str, kept: set[str]) -> bool:
+    if text in kept or KEEP_LINE.match(text):
+        return False
+    if re.fullmatch(r'[a-z]{2}_[A-Z]{2}', text):
+        return False
+    if re.fullmatch(r'[\w./-]+\.(?:json|csv|md|html|txt|py|yml)', text):
+        return False
+    if re.fullmatch(r'[a-z][a-z0-9_]*', text) and '_' in text:
+        return False
+    letters = sum(ch.isalpha() for ch in text)
+    if letters < 2 or len(text) <= 2:
+        return False
+    return True
+
+
+def templatize(text: str) -> tuple[str, list[str]]:
+    nums = NUMBER.findall(text)
+    if not nums:
+        return text, []
+    return NUMBER.sub('{n}', text), nums
+
+
+def lookup(text: str, table: dict) -> tuple[str, bool]:
+    if text in table and isinstance(table[text], str):
+        return table[text], True
+    template, nums = templatize(text)
+    if nums and template in table and isinstance(table[template], str):
+        out = table[template]
+        for num in nums:
+            if '{n}' not in out:
+                return text, False
+            out = out.replace('{n}', num, 1)
+        return out, True
+    return text, False
+
+
+def protect(pattern: str, text: str, vault: list[str]) -> str:
+    def stash(match: re.Match) -> str:
+        vault.append(match.group(0))
+        return f'\x00{len(vault) - 1}\x00'
+    return re.sub(pattern, stash, text, flags=re.S)
+
+
+def restore(text: str, vault: list[str]) -> str:
+    return re.sub(r'\x00(\d+)\x00', lambda m: vault[int(m.group(1))], text)
+
+
+# A leaf is a phrase or sentence whose only nested tags are inline. Link text stays
+# inside ⟦ ⟧ so a translation can move it. Locked titles (share pages, organization
+# names) use ⟦*⟧ and keep their original element.
+_STRUCT = r'p|li|h[1-4]|div|ul|ol|section|table|thead|tbody|tr|details|nav|form|figure|header|footer|main|article|script|style|blockquote|dl'
+_LEAF = re.compile(
+    rf'<(p|li|h[1-4]|figcaption|summary|button|label|dt|dd|caption|option|th|td|a|title)\b([^>]*)>'
+    rf'((?:[^<]|<(?!/?(?:{_STRUCT})\b))*?)</\1>',
+    re.S)
+_INLINE = re.compile(r'<((?:a|b|strong|em|i|span|code|time|small|abbr))\b([^>]*)>(.*?)</\1>', re.S)
+_ATTR = re.compile(r'(\s)(placeholder|aria-label|title|alt|content)(=)(["\'])(.*?)\4', re.S)
+
+
+def _marker_key(inner: str):
+    slots = []
+
+    def repl(match: re.Match) -> str:
+        tag, attrs, body = match.group(1), match.group(2), match.group(3)
+        href = re.search(r'\bhref="([^"]*)"', attrs)
+        target = href.group(1) if href else ''
+        locked = tag == 'a' and (target.startswith(('share/', '../share/', 'profile.html?org=')))
+        if locked:
+            slots.append(match.group(0))
+            return '⟦*⟧'
+        text = re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', '', body))).strip()
+        slots.append((tag, attrs, text))
+        return f'⟦{text}⟧'
+
+    masked = _INLINE.sub(repl, inner)
+    if re.search(r'<[a-zA-Z!/]', masked):
+        return None, None
+    return re.sub(r'\s+', ' ', html.unescape(masked)).strip(), slots
+
+
+def _rebuild(translated: str, slots: list) -> str | None:
+    parts = re.split(r'⟦(.*?)⟧', translated)
+    if len(parts) != len(slots) * 2 + 1:
+        return None
+    out = []
+    for index, slot in enumerate(slots):
+        out.append(html.escape(parts[index * 2], quote=False))
+        if isinstance(slot, str):
+            out.append(slot)
+        else:
+            tag, attrs, _old = slot
+            out.append(f'<{tag}{attrs}>{html.escape(parts[index * 2 + 1], quote=False)}</{tag}>')
+    out.append(html.escape(parts[-1], quote=False))
+    return ''.join(out)
+
+
+def translate_leaves(text: str, table: dict, kept: set[str], missing: list[str]) -> str:
+    def repl(match: re.Match) -> str:
+        tag, attrs, inner = match.group(1), match.group(2), match.group(3)
+        key, slots = _marker_key(inner)
+        if not key:
+            return match.group(0)
+        translated, found = lookup(key, table)
+        if not found:
+            if should_translate(key, kept):
+                missing.append(key)
+            return match.group(0)
+        if not slots:
+            return f'<{tag}{attrs}>{html.escape(translated, quote=False)}</{tag}>'
+        rebuilt = _rebuild(translated, slots)
+        if rebuilt is None:
+            missing.append(key)
+            return match.group(0)
+        return f'<{tag}{attrs}>{rebuilt}</{tag}>'
+
+    return _LEAF.sub(repl, text)
+
+
+def translate_attributes(text: str, table: dict, kept: set[str], missing: list[str]) -> str:
+    def repl(match: re.Match) -> str:
+        space, name, eq, quote, raw = match.group(1), match.group(2), match.group(3), match.group(4), match.group(5)
+        decoded = html.unescape(raw).strip()
+        if name == 'content' and (
+            'self' in decoded or decoded.startswith(('#', 'default-src')) or 'noindex' in decoded
+            or 'device-width' in decoded or re.fullmatch(r'[a-z]{2}_[A-Z]{2}', decoded)
+            or decoded in {'website', 'summary_large_image', 'article'}
+        ):
+            return match.group(0)
+        translated, found = lookup(decoded, table)
+        if not found:
+            if should_translate(decoded, kept):
+                missing.append(decoded)
+            return match.group(0)
+        return f'{space}{name}{eq}{quote}{html.escape(translated, quote=True)}{quote}'
+
+    return _ATTR.sub(repl, text)
+
+
+def translate_document(page_html: str, table: dict, kept: set[str]) -> tuple[str, list[str]]:
+    vault: list[str] = []
+    missing: list[str] = []
+    protected = protect(r'<script\b[^>]*>.*?</script>', page_html, vault)
+    protected = protect(r'<style\b[^>]*>.*?</style>', protected, vault)
+    protected = protect(r'<nav\b[^>]*\bdata-i18n-skip\b[^>]*>.*?</nav>', protected, vault)
+    protected = translate_leaves(protected, table, kept, missing)
+    protected = translate_attributes(protected, table, kept, missing)
+    return restore(protected, vault), missing
+
+
+def split_url(value: str) -> tuple[str, str]:
+    for mark in ('#', '?'):
+        if mark in value:
+            path, rest = value.split(mark, 1)
+            return path, mark + rest
+    return value, ''
+
+
+def rewrite_url(value: str, lang: str, page: str) -> str:
+    if re.match(r'^(?:https?:|data:|mailto:|#|/)', value):
+        return value
+    path, suffix = split_url(value)
+    if page == '404.html':
+        # 404.html uses a site-root <base>, so assets stay relative and translated pages gain a prefix.
+        if path in PAGES:
+            return f'{lang}/{path}{suffix}'
+        return value
+    if path in PAGES:
+        return value
+    if path in ASSET_FILES or any(path.startswith(prefix) for prefix in ASSET_PREFIXES):
+        return f'../{path}{suffix}'
+    return value
+
+
+def rewrite_attrs(page_html: str, lang: str, page: str) -> str:
+    def repl(match: re.Match) -> str:
+        return f'{match.group(1)}={match.group(2)}{rewrite_url(match.group(3), lang, page)}{match.group(2)}'
+    return re.sub(r'(href|src)=(["\'])([^"\']+)\2', repl, page_html)
+
+
+def rewrite_script_paths(page_html: str) -> str:
+    def repl_script(match: re.Match) -> str:
+        body = match.group(2)
+        for folder in ('share/', 'profiles/', 'data/', 'api/', 'og/'):
+            body = body.replace(f'"{folder}', f'"../{folder}')
+            body = body.replace(f"'{folder}", f"'../{folder}")
+            body = body.replace(f'`{folder}', f'`../{folder}')
+        return match.group(1) + body + '</script>'
+    return re.sub(r'(<script\b(?![^>]*\bsrc=)[^>]*>)(.*?)(</script>)', lambda m: repl_script(m), page_html, flags=re.S)
+
+
+def retarget_switcher(page_html: str, lang: str) -> str:
+    """Point the language links out of a /<lang>/ page without root-absolute URLs."""
+    def repl(match: re.Match) -> str:
+        block = match.group(0)
+        for code in ('en',) + LOCALES:
+            if code == lang:
+                href = 'index.html'
+            elif code == 'en':
+                href = '../index.html'
+            else:
+                href = f'../{code}/index.html'
+            block = re.sub(rf'href="[^"]*"(\s[^>]*\bdata-lang="{code}")', f'href="{href}"\\1', block, count=1)
+        return block
+
+    return re.sub(r'<nav class="menu" id="lang-switch".*?</nav>', repl, page_html, count=1, flags=re.S)
+
+
+def mark_switcher(page_html: str, lang: str) -> str:
+    def repl(match: re.Match) -> str:
+        block = match.group(0).replace(' aria-current="true"', '')
+        return block.replace(f'data-lang="{lang}"', f'data-lang="{lang}" aria-current="true"', 1)
+    return re.sub(r'<nav class="menu" id="lang-switch".*?</nav>', repl, page_html, count=1, flags=re.S)
+
+
+def runtime_script(lang: str, messages: dict, discoveries: dict) -> str:
+    root = '' if lang == 'en' else '../'
+    payload = {
+        'AST_MESSAGES': messages,
+        'AST_DISCOVERIES': discoveries,
+    }
+    raw = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+    intl = LOCALE_META[lang]['intl']
+    return (
+        '<script>Object.assign(globalThis,' + raw + ');'
+        f'globalThis.AST_SITE_ROOT={json.dumps(root)};'
+        'if(globalThis.CatalogUI){CatalogUI.messages=AST_MESSAGES;CatalogUI.dateLocale='
+        + json.dumps(intl) + ';}</script>'
+    )
+
+
+def retarget_head(page_html: str, page: str, lang: str) -> str:
+    meta = LOCALE_META[lang]
+    page_html = re.sub(r'<html lang="en"', f'<html lang="{meta["html"]}"', page_html, count=1)
+    if page != '404.html':
+        english = BASE + page
+        local = f'{BASE}{lang}/{page}'
+        page_html = page_html.replace(f'<link rel="canonical" href="{english}">', f'<link rel="canonical" href="{local}">')
+        page_html = page_html.replace(f'<meta property="og:url" content="{english}">', f'<meta property="og:url" content="{local}">')
+        page_html = page_html.replace('"inLanguage":"en"', f'"inLanguage":"{meta["html"]}"')
+        page_html = page_html.replace(
+            f'<meta property="og:locale" content="{LOCALE_META["en"]["og"]}">',
+            f'<meta property="og:locale" content="{meta["og"]}">')
+    return page_html
+
+
+def js_message_keys(root: Path | None = None) -> set[str]:
+    root = root or ROOT
+    keys = set()
+    files = list((root / 'assets').glob('*.js')) + [root / name for name in PAGES if (root / name).exists()]
+    files.append(root / 'scripts' / 'i18n_site.py')
+    for path in files:
+        if not path.exists():
+            continue
+        for match in TR_CALL.finditer(path.read_text(encoding='utf-8', errors='ignore')):
+            keys.add(match.group(2).encode('utf-8').decode('unicode_escape') if '\\' in match.group(2) else match.group(2))
+    return keys
+
+
+def required_keys(root: Path | None = None) -> tuple[set[str], list[str]]:
+    """English strings the catalogs must cover, plus prose that is still untranslated."""
+    root = root or ROOT
+    kept = keep_english()
+    needed = set(js_message_keys(root))
+    missing_preview = []
+    empty = {}
+    for page in PAGES:
+        path = root / page
+        if not path.exists():
+            continue
+        _translated, missing = translate_document(path.read_text(encoding='utf-8'), empty, kept)
+        for item in missing:
+            template, nums = templatize(item)
+            key = template if nums else item
+            needed.add(key)
+            missing_preview.append(f'{page}: {key}')
+    return needed, missing_preview
+
+
+def sync_english_catalog(root: Path | None = None) -> int:
+    root = root or ROOT
+    needed, _ = required_keys(root)
+    path = MESSAGES / 'en.json'
+    current = load_json(path)
+    for key in sorted(needed):
+        current.setdefault(key, key)
+    # Drop keys that the pages no longer use, so a stale translation cannot hide a gap.
+    current = {key: current[key] for key in sorted(needed)}
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(current, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    return len(current)
+
+
+def catalog_errors(root: Path | None = None) -> list[str]:
+    root = root or ROOT
+    english = load_json(MESSAGES / 'en.json')
+    errors = []
+    needed, _ = required_keys(root)
+    for key in sorted(needed - set(english)):
+        errors.append(f'en.json is missing {key!r}')
+    for lang in LOCALES:
+        table = load_json(MESSAGES / f'{lang}.json')
+        for key in sorted(set(english) - set(table)):
+            errors.append(f'{lang}.json is missing {key!r}')
+        for key, value in table.items():
+            if not isinstance(value, str) or not value.strip():
+                errors.append(f'{lang}.json has an empty value for {key!r}')
+        discoveries = load_json(DISCOVERIES / f'{lang}.json')
+        for entry_id, row in discoveries.items():
+            if not isinstance(row, dict) or not isinstance(row.get('summary', ''), str):
+                errors.append(f'{lang} discovery {entry_id} needs a summary string')
+    return errors
+
+
+def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
+    root = root or ROOT
+    kept = keep_english()
+    english = load_json(MESSAGES / 'en.json')
+    problems = []
+    for lang in LOCALES:
+        table = load_json(MESSAGES / f'{lang}.json')
+        discoveries = load_json(DISCOVERIES / f'{lang}.json')
+        # English catalog values are the source strings; a locale file may omit nothing checked above.
+        merged = dict(table)
+        out_dir = root / lang
+        out_dir.mkdir(parents=True, exist_ok=True)
+        for page in PAGES:
+            source = root / page
+            if not source.exists():
+                continue
+            text = source.read_text(encoding='utf-8')
+            if 'id="lang-switch"' not in text:
+                continue
+            text, missing = translate_document(text, merged, kept)
+            if missing:
+                problems.extend(f'{lang}/{page}: {item}' for item in missing[:8])
+                if len(missing) > 8:
+                    problems.append(f'{lang}/{page}: {len(missing) - 8} more untranslated strings')
+            text = retarget_head(text, page, lang)
+            text = mark_switcher(text, lang)
+            if page != '404.html':
+                text = retarget_switcher(text, lang)
+            if page != '404.html':
+                text = rewrite_script_paths(text)
+            text = rewrite_attrs(text, lang, page)
+            injection = runtime_script(lang, merged, discoveries)
+            text = text.replace('</head>', injection + '\n</head>', 1)
+            (out_dir / page).write_text(text, encoding='utf-8')
+    if problems and strict:
+        preview = '\n'.join(problems[:40])
+        raise SystemExit(f'Untranslated prose ({len(problems)}):\n{preview}')
+    # Silence unused in case a locale inherits English explicitly.
+    del english
+
+
+def sitemap_entries() -> str:
+    """Extra <url> rows for language editions, with hreflang alternates on every static page."""
+    rows = []
+    for page in SITEMAP_PAGES:
+        alternates = [('en', BASE + page), ('x-default', BASE + page)]
+        alternates[1:1] = [(code, f'{BASE}{code}/{page}') for code in LOCALES]
+        # Insert language codes before x-default: rebuild cleanly.
+        links = [f'<xhtml:link rel="alternate" hreflang="en" href="{html.escape(BASE + page, quote=True)}"/>']
+        for code in LOCALES:
+            links.append(f'<xhtml:link rel="alternate" hreflang="{code}" href="{html.escape(f"{BASE}{code}/{page}", quote=True)}"/>')
+        links.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{html.escape(BASE + page, quote=True)}"/>')
+        block = ''.join(links)
+        rows.append(f'<url><loc>{html.escape(BASE + page, quote=True)}</loc>{block}</url>\n')
+        for code in LOCALES:
+            rows.append(f'<url><loc>{html.escape(f"{BASE}{code}/{page}", quote=True)}</loc>{block}</url>\n')
+    return ''.join(rows)
+
+
+def main() -> None:
+    if '--sync-en' in sys.argv:
+        count = sync_english_catalog()
+        print(f'{count} English message keys')
+        return
+    errors = catalog_errors() if '--check' in sys.argv or '--sync-en' not in sys.argv else []
+    if '--check' in sys.argv:
+        if errors:
+            raise SystemExit('\n'.join(errors[:50]))
+        print('language catalogs cover every English key')
+        return
+    if errors and '--sync-en' not in sys.argv:
+        raise SystemExit('\n'.join(errors[:50]))
+    install_english_chrome()
+    write_locale_pages()
+    print(f'wrote {", ".join(LOCALES)} editions of {len(PAGES)} pages')
+
+
+if __name__ == '__main__':
+    main()

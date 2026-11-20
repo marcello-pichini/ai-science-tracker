@@ -1,0 +1,10 @@
+/* Language switcher layout. Separate from styles.css so discovery-card hashes stay stable. */
+#lang-switch { flex: 0 0 auto; }
+@media (min-width: 861px) {
+  #lang-switch { flex-wrap: nowrap; }
+  #lang-switch a { padding-left: 8px; padding-right: 8px; }
+}
+@media (max-width: 860px) {
+  .header .wrap { flex-wrap: wrap; row-gap: 4px; }
+  #lang-switch { flex: 1 1 100%; justify-content: flex-end; flex-wrap: nowrap; }
+}

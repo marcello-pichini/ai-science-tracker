@@ -44,7 +44,7 @@ BASE = 'https://aisciencetracker.org/'
 CHROME = os.environ.get('CHROME', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome')
 SITE = 'AI Science Tracker'
 DEFAULT_ALT = 'Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.'
-NOT_ROOT_RELATIVE = re.compile(r'^(https?:|data:|mailto:|#|\.\./)')
+NOT_ROOT_RELATIVE = re.compile(r'^(https?:|data:|mailto:|#|\.\./|/)')
 
 
 def esc(s):
@@ -93,6 +93,10 @@ def relocate(fragment):
     """Rewrite href/src values for a page one directory below the site root (share/id.html),
     so root-relative links copied verbatim out of a top-level page (index.html, "styles.css", ...)
     still resolve. Absolute, data:, mailto:, anchor and already-relocated links are left alone."""
+    i18n_css = Path(__file__).resolve().parents[1] / 'assets' / 'i18n.css'
+    if i18n_css.is_file():
+        digest = hashlib.sha256(i18n_css.read_bytes()).hexdigest()[:12]
+        fragment = fragment.replace('__I18N_CSS__', f'assets/i18n.css?v={digest}')
     def fix(m):
         attr, quote_char, value = m.group(1), m.group(2), m.group(3)
         if value == 'styles.css':
@@ -215,6 +219,7 @@ PAGE = """<!doctype html>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="__I18N_CSS__">
 {jsonld}
 </head>
 <body class="static-page">
@@ -818,9 +823,25 @@ def write_sitemap(items, models, archived=(), vulns=()):
     urls += [f'profiles/field-{slug(f)}.html' for f in sorted({d['field'] for d in items})]
     urls += [f'profiles/year-{y}.html' for y in sorted({d['publication_date'][:4] for d in items}, reverse=True)]
     urls += [f'share/{quote(d["id"])}.html' for d in [*items, *archived]]
-    rows = ''.join(f'<url><loc>{esc(BASE + url)}</loc></url>\n' for url in urls)
-    (ROOT / 'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n'
-                                      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + rows + '</urlset>\n')
+    from i18n_site import LOCALES, SITEMAP_PAGES
+
+    def alternates(page):
+        links = [f'<xhtml:link rel="alternate" hreflang="en" href="{esc(BASE + page)}"/>']
+        links += [f'<xhtml:link rel="alternate" hreflang="{code}" href="{esc(BASE + code + "/" + page)}"/>' for code in LOCALES]
+        links.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{esc(BASE + page)}"/>')
+        return ''.join(links)
+
+    rows = []
+    for url in urls:
+        block = alternates(url) if url in SITEMAP_PAGES else ''
+        rows.append(f'<url><loc>{esc(BASE + url)}</loc>{block}</url>\n')
+        if url in SITEMAP_PAGES:
+            for code in LOCALES:
+                rows.append(f'<url><loc>{esc(BASE + code + "/" + url)}</loc>{block}</url>\n')
+    (ROOT / 'sitemap.xml').write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+        + ''.join(rows) + '</urlset>\n')
     (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n')
 
 
@@ -1042,6 +1063,8 @@ def write_home_browse(items):
 
 
 def main():
+    from i18n_site import install_english_chrome, write_locale_pages
+    install_english_chrome(ROOT)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--force', action='store_true')
     ap.add_argument('--no-images', action='store_true', help='Skip PNG rendering; reuse existing per-entry images where present')
@@ -1072,6 +1095,7 @@ def main():
     write_component_jsonld(ROOT, manifest)
     write_api(items, vulns, models, archived, manifest=manifest)
     stamp_pages(ROOT, manifest['snapshot_sha256'])
+    write_locale_pages(ROOT)
     print(f'{len(items)} share pages, profile pages, sitemap.xml, feed.xml and robots.txt written')
 
 

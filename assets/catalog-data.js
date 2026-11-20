@@ -1,4 +1,11 @@
 /* Validate the exact bytes used by every view against one public component manifest. */
+globalThis.AST_t ||= (en, vars) => {
+  const table = globalThis.AST_MESSAGES;
+  let s = table && Object.prototype.hasOwnProperty.call(table, en) && typeof table[en] === 'string' ? table[en] : en;
+  if (vars) for (const key of Object.keys(vars)) s = s.split('{' + key + '}').join(String(vars[key]));
+  return s;
+};
+const tr = globalThis.AST_t;
 (() => {
   const script = typeof document === 'undefined' ? null : document.currentScript;
   const defaultRoot = script ? new URL('../', script.src).href : 'https://aisciencetracker.org/';
@@ -106,7 +113,7 @@
       target.dataset.loadState = 'loading'; delete target.dataset.snapshotSha256; delete target.dataset.componentSha256;
       disableControls();
       options.clear?.();
-      status.textContent = 'Loading a consistent data snapshot…';
+      status.textContent = tr('Loading a consistent data snapshot…');
       let loaded;
       try {
         loaded = await load(ids, {groups:options.groups});
@@ -116,8 +123,8 @@
         const oldPage = target.dataset.pageSnapshot && target.dataset.pageSnapshot !== loaded.snapshot;
         status.replaceChildren();
         const text = document.createElement('span');
-        text.textContent = `Data snapshot ${loaded.snapshot.slice(0, 12)}. ${oldPage ? 'The validated data snapshot differs from this page’s generated snapshot. ' : loaded.recovered ? 'A consistent snapshot loaded after retry. ' : ''}`;
-        const link = document.createElement('a'); link.href = new URL('api/v1/manifest.json', defaultRoot).href; link.textContent = 'Component dates and hashes';
+        text.textContent = tr('Data snapshot {id}. ', {id: loaded.snapshot.slice(0, 12)}) + (oldPage ? tr('The validated data snapshot differs from this page’s generated snapshot. ') : loaded.recovered ? tr('A consistent snapshot loaded after retry. ') : '');
+        const link = document.createElement('a'); link.href = new URL('api/v1/manifest.json', defaultRoot).href; link.textContent = tr('Component dates and hashes');
         status.append(text, link);
       } catch (error) {
         disableControls();
@@ -125,11 +132,11 @@
         delete target.dataset.snapshotSha256; delete target.dataset.componentSha256;
         options.clear?.(); status.replaceChildren();
         const message = document.createElement('p');
-        message.textContent = 'A consistent data snapshot could not be loaded. ' + (error.message?.startsWith('Secure SHA-256') ? error.message + ' ' : '') + 'Your query is preserved; retry or use the static pages and downloads.';
-        const retry = document.createElement('button'); retry.type = 'button'; retry.textContent = 'Retry';
+        message.textContent = tr('A consistent data snapshot could not be loaded. ') + (error.message?.startsWith('Secure SHA-256') ? error.message + ' ' : '') + tr('Your query is preserved; retry or use the static pages and downloads.');
+        const retry = document.createElement('button'); retry.type = 'button'; retry.textContent = tr('Retry');
         retry.addEventListener('click', start);
         const links = document.createElement('p');
-        for (const [label, path] of [['Static discovery pages', 'profiles/index.html'], ['Dataset downloads', 'dataset.html'], ['Scientific JSON', 'data/discoveries.json'], ['Security JSON', 'data/vulnerabilities.json']]) {
+        for (const [label, path] of [[tr('Static discovery pages'), 'profiles/index.html'], [tr('Dataset downloads'), 'dataset.html'], [tr('Scientific JSON'), 'data/discoveries.json'], [tr('Security JSON'), 'data/vulnerabilities.json']]) {
           const a = document.createElement('a'); a.href = new URL(path, defaultRoot).href; a.textContent = label; links.append(a, document.createTextNode(' · '));
         }
         status.append(message, retry, links);
