@@ -82,8 +82,7 @@ global.fetch=async url=>new URL(url).pathname.endsWith('manifest.json')?{ok:true
  await loader.run(['discoveries'],()=>{rendered++;oldResults=['current'];},{clear:()=>{oldResults=[];}});
  assert.equal(rendered,0);assert.deepEqual(oldResults,[]);assert.equal(root.dataset.loadState,'failed');assert.equal(control.disabled,true);assert.equal(root.dataset.snapshotSha256,undefined);
  const status=nodes.get('data-snapshot-status');assert.ok(status.children[0].textContent.includes('consistent data snapshot could not be loaded'));
- const retry=status.children.find(n=>n.textContent==='Retry');assert.ok(retry.handlers.click);broken=false;retry.handlers.click();
- for(let i=0;i<15&&root.dataset.loadState!=='ready';i++)await new Promise(setImmediate);
+ const retry=status.children.find(n=>n.textContent==='Retry');assert.ok(retry.handlers.click);broken=false;await retry.handlers.click();
  assert.equal(root.dataset.loadState,'ready');assert.equal(control.disabled,false);assert.deepEqual(oldResults,['current']);assert.equal(rendered,1);
 })().catch(e=>{console.error(e);process.exitCode=1;});
 ''')

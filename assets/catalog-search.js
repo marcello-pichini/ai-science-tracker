@@ -44,6 +44,11 @@ globalThis.CatalogSearch = {
       return {...record, reasons, rank};
     }).filter(record => record.reasons.length).sort((a, b) => a.rank - b.rank);
   },
+  home() {
+    let lang = 'en';
+    try { lang = String(document.documentElement.lang || 'en').toLowerCase(); } catch (e) {}
+    return ['it', 'de', 'fr', 'es'].includes(lang) ? '/' + lang + '/' : '/';
+  },
   collections(discoveries, vulnerabilities, models, progress, citations = {}) {
     const root = globalThis.AST_SITE_ROOT || '';
     const site = path => /^(share|profiles|data|api|og)\//.test(path) ? root + path : path;
@@ -55,7 +60,7 @@ globalThis.CatalogSearch = {
       }
     }
     const scientific = discoveries.map(r => ({id:r.id, title:r.title, href:site('share/' + encodeURIComponent(r.id) + '.html'),
-      explorer:'index.html#discovery=' + encodeURIComponent(r.id),
+      explorer:this.home() + '#discovery=' + encodeURIComponent(r.id),
       fields:{'Organization aliases':globalThis.CatalogEntities?.organization(r.organization).label, Title:r.title, Identifier:r.id, Summary:r.summary, Field:r.field, Organization:r.organization, Technology:r.ai_technology,
         DOI:citations.records?.[r.id]?.doi, 'Model family':(familyNames.get(r.id) || []).join(' · '),
         Sources:[r.source_url, r.paper_url, ...(r.evidence?.evidence_urls || [])].join(' '),

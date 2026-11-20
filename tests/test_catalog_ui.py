@@ -33,7 +33,7 @@ assert.equal(u.pathname, '/marcello-pichini/ai-science-tracker/issues/new');
 assert.equal(u.searchParams.get('template'), 'correction.yml');
 assert.equal(u.searchParams.get('record_id'), d.id);
 assert.equal(u.searchParams.get('source'), d.source_url);
-assert.equal(u.searchParams.get('entry'), 'https://aisciencetracker.org/index.html#discovery=test%20%26%20%CE%B1%3F');
+assert.equal(u.searchParams.get('entry'), 'https://aisciencetracker.org/share/test%20%26%20%CE%B1%3F.html');
 ''')
 
     def test_correction_prefills_target_required_form_fields(self):
@@ -67,14 +67,14 @@ const lines = ui.toCsv([r]);
 assert.ok(lines.startsWith(ui.csvColumns.join(',') + '\\r\\n'));
 assert.ok(lines.includes("'=HYPERLINK(\\"\\"x\\"\\")"));
 assert.ok(lines.includes('"one, ""two""\\nthree"'));
-assert.ok(lines.includes('#discovery=a'));
+assert.ok(lines.includes('https://aisciencetracker.org/share/a.html'));
 ''')
 
     def test_reference_has_no_invented_metadata_and_field_year_counts(self):
         self.run_js('''
 const r = {id:'x y', title:'T', organization:'O', publication_date:'2025-02-03', source_url:'https://e.org/s'};
 const text = ui.reference(r, '13 Nov 2026');
-assert.equal(text, 'T. O, announced 3 Feb 2025. Source: https://e.org/s. Catalog entry: AI Science Tracker, https://aisciencetracker.org/index.html#discovery=x%20y (accessed 13 Nov 2026).');
+assert.equal(text, 'T. O, announced 3 Feb 2025. Source: https://e.org/s. Catalog entry: AI Science Tracker, https://aisciencetracker.org/share/x%20y.html (accessed 13 Nov 2026).');
 const m = ui.fieldYear([{field:'b', publication_date:'2021-01-01'}, {field:'b', publication_date:'2021-05-01'}, {field:'c', publication_date:'2020-01-01'}]);
 assert.equal(m.cells['b|2021'], 2); assert.deepEqual(m.fields, ['b','c']); assert.deepEqual(m.years, ['2020','2021']);
 ''')

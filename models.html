@@ -5,12 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action 'self'">
 <script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/data/*"}},{"not":{"href_matches":"/api/*"}},{"not":{"href_matches":"/og/*"}},{"not":{"href_matches":"/*.xml"}},{"not":{"href_matches":"/*.txt"}}]},"eagerness":"moderate"}]}</script><!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "04bfc0ca5b5e4460b4c8ee6bb5055925"}'></script><!-- End Cloudflare Web Analytics --><script>
+globalThis.astCleanPath = function (path) {
+  path = path || '/';
+  if (path === '/index.html') return '/';
+  var home = path.match(/^\/(it|de|fr|es)\/index\.html$/);
+  if (home) return '/' + home[1] + '/';
+  return path;
+};
 globalThis.astResolveLanguage = function (input) {
   var SUPPORTED = {it:1, de:1, fr:1, es:1};
   var ua = input.ua || '';
-  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|googleother|google-extended|google-inspectiontool|google-read-aloud|duplexweb|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
-  var path = input.path || '/';
-  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
+  var bot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua);
+  var raw = input.path || '/';
+  var path = astCleanPath(raw);
+  var search = input.search || '';
+  var hash = input.hash || '';
+  var cleaned = path + search + hash;
+  if (bot) return path === raw ? null : cleaned;
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return path === raw ? null : cleaned;
   var pages = input.pages || [];
   var saved = input.saved || '';
   var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
@@ -33,18 +45,16 @@ globalThis.astResolveLanguage = function (input) {
     };
     if (hint[input.timezone || '']) target = hint[input.timezone];
   }
-  if (!target || target === 'en' || !SUPPORTED[target]) return null;
-  var search = input.search || '';
-  var hash = input.hash || '';
-  if (path === '/' || path === '') return '/' + target + '/' + search + hash;
-  var file = path.split('/').pop();
-  var dir = path.slice(0, path.length - file.length);
-  if (dir !== '/') return null;
-  if (!file) file = 'index.html';
-  if (pages.indexOf(file) < 0) return null;
-  // /index.html is the same document as /. Send people to the directory URL.
-  if (file === 'index.html') return '/' + target + '/' + search + hash;
-  return '/' + target + '/' + file + search + hash;
+  if (target && target !== 'en' && SUPPORTED[target]) {
+    if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+    var file = path.split('/').pop();
+    var dir = path.slice(0, path.length - file.length);
+    if (dir !== '/') return path === raw ? null : cleaned;
+    if (!file || file === 'index.html') return '/' + target + '/' + search + hash;
+    if (pages.indexOf(file) < 0) return path === raw ? null : cleaned;
+    return '/' + target + '/' + file + search + hash;
+  }
+  return path === raw ? null : cleaned;
 };
 globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   search = search || '';
@@ -52,30 +62,31 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   pages = pages || [];
   var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
   var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
-  if (rest === '' || rest === '/') rest = '/index.html';
+  if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
   var prefix = lang === 'en' ? '' : '/' + lang;
+  if (rest === '/') return prefix + '/' + search + hash;
   var file = rest.split('/').pop();
   var dir = rest.slice(0, rest.length - file.length);
-  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) {
-    if (file === 'index.html') return (prefix || '') + '/' + search + hash;
-    return prefix + '/' + file + search + hash;
-  }
+  if ((dir === '/' || dir === '') && file === 'index.html') return prefix + '/' + search + hash;
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
   var share = rest.match(/^\/share\/([^/]+)\.html$/);
-  if (share) return (prefix || '') + '/#discovery=' + share[1];
+  if (share) return prefix + '/#discovery=' + share[1];
   if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
-  return prefix + '/index.html' + search;
+  return prefix + '/' + search;
 };
-try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>AI Model Release Timeline and Scientific Discoveries · AI Science Tracker</title>
-<meta name="description" content="Explore AI model releases from Epoch AI and the model families linked to scientific discoveries, with release dates, organizations and original sources.">
-<meta property="og:title" content="AI Model Release Timeline and Scientific Discoveries · AI Science Tracker">
-<meta property="og:description" content="Explore AI model releases from Epoch AI and the model families linked to scientific discoveries, with release dates, organizations and original sources.">
+try{var saved=null;try{saved=localStorage.getItem("ast-lang");}catch(e){}var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}catch(e){}</script>
+<title>AI Models for Science: Release Timeline · AI Science Tracker</title>
+<meta name="description" content="Timeline of AI models used in scientific discoveries, with Epoch AI release dates, labs and the model families linked to papers in the catalog.">
+<meta property="og:title" content="AI Models for Science: Release Timeline · AI Science Tracker">
+<meta property="og:description" content="Timeline of AI models used in scientific discoveries, with Epoch AI release dates, labs and the model families linked to papers in the catalog.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:title" content="AI Models for Science: Release Timeline · AI Science Tracker">
+<meta name="twitter:description" content="Timeline of AI models used in scientific discoveries, with Epoch AI release dates, labs and the model families linked to papers in the catalog.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://aisciencetracker.org/models.html">
 <meta property="og:url" content="https://aisciencetracker.org/models.html">
@@ -84,6 +95,9 @@ try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang")
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css?v=23f6b9beaa5b"><link rel="stylesheet" href="assets/i18n.css?v=bc803f599a72">
+<script type="application/ld+json">
+{"@context":"https://schema.org/","@type":"CollectionPage","name":"AI models for science","description":"Timeline of AI models used in scientific discoveries, with Epoch AI release dates, labs and the model families linked to papers in the catalog.","url":"https://aisciencetracker.org/models.html","inLanguage":"en","isPartOf":{"@id":"https://aisciencetracker.org/#website"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/"},{"@type":"ListItem","position":2,"name":"AI models for science","item":"https://aisciencetracker.org/models.html"}]}}
+</script>
 <link rel="alternate" hreflang="en" href="https://aisciencetracker.org/models.html">
 <link rel="alternate" hreflang="it" href="https://aisciencetracker.org/it/models.html">
 <link rel="alternate" hreflang="de" href="https://aisciencetracker.org/de/models.html">
@@ -100,17 +114,29 @@ try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang")
 <body>
 <header class="header">
   <div class="wrap">
-    <a class="marchio" href="index.html" aria-label="AI Science Tracker, home page">
+    <a class="marchio" href="/" aria-label="AI Science Tracker, home page">
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="index.html">Discoveries</a><a href="models.html" aria-current="page">Models</a><a href="security.html">Vuln discoveries</a><a href="dossiers.html">Dossiers</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a><a href="search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="index.html" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="it/index.html" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="de/index.html" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="fr/index.html" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="es/index.html" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+    <nav class="menu" aria-label="Site sections"><a href="/">Discoveries</a><a href="models.html" aria-current="page">Models</a><a href="security.html">Vuln discoveries</a><a href="dossiers.html">Dossiers</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a><a href="search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="/it/" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="/de/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="/fr/" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="/es/" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+globalThis.astCleanPath = function (path) {
+  path = path || '/';
+  if (path === '/index.html') return '/';
+  var home = path.match(/^\/(it|de|fr|es)\/index\.html$/);
+  if (home) return '/' + home[1] + '/';
+  return path;
+};
 globalThis.astResolveLanguage = function (input) {
   var SUPPORTED = {it:1, de:1, fr:1, es:1};
   var ua = input.ua || '';
-  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|googleother|google-extended|google-inspectiontool|google-read-aloud|duplexweb|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
-  var path = input.path || '/';
-  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
+  var bot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua);
+  var raw = input.path || '/';
+  var path = astCleanPath(raw);
+  var search = input.search || '';
+  var hash = input.hash || '';
+  var cleaned = path + search + hash;
+  if (bot) return path === raw ? null : cleaned;
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return path === raw ? null : cleaned;
   var pages = input.pages || [];
   var saved = input.saved || '';
   var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
@@ -133,18 +159,16 @@ globalThis.astResolveLanguage = function (input) {
     };
     if (hint[input.timezone || '']) target = hint[input.timezone];
   }
-  if (!target || target === 'en' || !SUPPORTED[target]) return null;
-  var search = input.search || '';
-  var hash = input.hash || '';
-  if (path === '/' || path === '') return '/' + target + '/' + search + hash;
-  var file = path.split('/').pop();
-  var dir = path.slice(0, path.length - file.length);
-  if (dir !== '/') return null;
-  if (!file) file = 'index.html';
-  if (pages.indexOf(file) < 0) return null;
-  // /index.html is the same document as /. Send people to the directory URL.
-  if (file === 'index.html') return '/' + target + '/' + search + hash;
-  return '/' + target + '/' + file + search + hash;
+  if (target && target !== 'en' && SUPPORTED[target]) {
+    if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+    var file = path.split('/').pop();
+    var dir = path.slice(0, path.length - file.length);
+    if (dir !== '/') return path === raw ? null : cleaned;
+    if (!file || file === 'index.html') return '/' + target + '/' + search + hash;
+    if (pages.indexOf(file) < 0) return path === raw ? null : cleaned;
+    return '/' + target + '/' + file + search + hash;
+  }
+  return path === raw ? null : cleaned;
 };
 globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   search = search || '';
@@ -152,18 +176,17 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   pages = pages || [];
   var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
   var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
-  if (rest === '' || rest === '/') rest = '/index.html';
+  if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
   var prefix = lang === 'en' ? '' : '/' + lang;
+  if (rest === '/') return prefix + '/' + search + hash;
   var file = rest.split('/').pop();
   var dir = rest.slice(0, rest.length - file.length);
-  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) {
-    if (file === 'index.html') return (prefix || '') + '/' + search + hash;
-    return prefix + '/' + file + search + hash;
-  }
+  if ((dir === '/' || dir === '') && file === 'index.html') return prefix + '/' + search + hash;
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
   var share = rest.match(/^\/share\/([^/]+)\.html$/);
-  if (share) return (prefix || '') + '/#discovery=' + share[1];
+  if (share) return prefix + '/#discovery=' + share[1];
   if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
-  return prefix + '/index.html' + search;
+  return prefix + '/' + search;
 };
 try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"];var current=document.documentElement.lang||"en";nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});}}catch(e){}</script>
   </div>
@@ -171,8 +194,9 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
 
 <section class="banda" aria-labelledby="titolo-pagina">
   <div class="wrap">
-    <h1 id="titolo-pagina">AI model releases and scientific discoveries</h1>
+    <h1 id="titolo-pagina">AI models for science</h1>
     <p class="lead" id="lead"><b>440 releases</b> from leading labs since 2020, using Epoch AI data. <b>53 families</b> of models are matched by name to at least one of 1362 catalog discoveries, covering 197 discoveries in total.</p>
+    <p class="sez-sub">A timeline of AI models for science: which releases exist, which families are tied to catalog discoveries, and where to read the original papers.</p>
     <figure class="figura">
       <div id="nuvola"></div>
       <figcaption class="nota" id="nota-nuvola"></figcaption>
@@ -239,13 +263,14 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <p><a href="search.html">Search all collections</a> · <a href="model-progress.html">Model progress and release rhythm</a> · <a href="antibiotic-dossier.html">Antibiotic evidence dossier</a></p>
     <p>Model data from Epoch AI, republished under CC BY 4.0; discovery links and selection are provided by this site.</p>
     <p><a href="methodology.html">How we select and verify entries</a> · <a href="profiles/index.html">All organizations and model families</a></p>
+    <p>See also: <a href="https://iamops.dev/">iamops.dev: IAM, AI agents and DevOps notes</a></p>
     <p>Privacy: this site sets no cookies. A language choice is stored only in this browser and is not sent to a server. The site uses Cloudflare Web Analytics for aggregate visit statistics (page, referrer, browser, IP address) under legitimate interest (GDPR Art. 6(1)(f)). Cloudflare acts as our processor and may process data in the United States under the EU-US Data Privacy Framework. To object or exercise your rights, <a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new">open an issue</a>.</p>
   </div>
 </footer>
 
 <script src="assets/catalog-data.js?v=7bf369c369e2"></script>
 <script src="assets/catalog-entities.js?v=0c51c8fa4441"></script>
-<script src="assets/catalog-ui.js?v=ef739eb7159e"></script>
+<script src="assets/catalog-ui.js?v=2b590d9d26f0"></script>
 <script>
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -382,7 +407,7 @@ function families() {
   const con = D.families.filter(f => f.discovery_count > 0);
   $("families").innerHTML = con.map(f => {
     const lista = f.discoveries.map(id => discoveries[id]).filter(Boolean).sort((a, b) => b.publication_date.localeCompare(a.publication_date));
-    const li = s => `<li><time datetime="${esc(s.publication_date)}">${esc(fmtDate(s.publication_date))}</time><a href="index.html#discovery=${encodeURIComponent(s.id)}">${esc(s.title)}</a></li>`;
+    const li = s => `<li><time datetime="${esc(s.publication_date)}">${esc(fmtDate(s.publication_date))}</time><a href="/#discovery=${encodeURIComponent(s.id)}">${esc(s.title)}</a></li>`;
     return `<article class="famiglia" id="fam-${esc(f.id)}"><h3>${esc(f.name)}<span>${f.discovery_count} ${f.discovery_count === 1 ? "discovery" : "discoveries"}</span></h3>
       <ul>${lista.slice(0, 4).map(li).join("")}</ul>
       ${lista.length > 4 ? `<button class="piu altre" type="button" data-f="${esc(f.id)}" aria-expanded="false">Show all ${lista.length}</button>` : ""}
@@ -395,7 +420,7 @@ $("families").addEventListener("click", e => {
     const f = D.families.find(x => x.id === b.dataset.f), ul = b.previousElementSibling, aperto = b.getAttribute("aria-expanded") === "true";
     if (!f) return;
     const lista = f.discoveries.map(id => discoveries[id]).filter(Boolean).sort((a, c) => c.publication_date.localeCompare(a.publication_date));
-    const li = s => `<li><time datetime="${esc(s.publication_date)}">${esc(fmtDate(s.publication_date))}</time><a href="index.html#discovery=${encodeURIComponent(s.id)}">${esc(s.title)}</a></li>`;
+    const li = s => `<li><time datetime="${esc(s.publication_date)}">${esc(fmtDate(s.publication_date))}</time><a href="/#discovery=${encodeURIComponent(s.id)}">${esc(s.title)}</a></li>`;
     ul.innerHTML = (aperto ? lista.slice(0, 4) : lista).map(li).join("");
     b.setAttribute("aria-expanded", !aperto); b.textContent = aperto ? `Show all ${lista.length}` : "Show less";
   });

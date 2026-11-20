@@ -27,19 +27,23 @@ class LanguageCatalogTests(unittest.TestCase):
         script = DETECT_FN + """
 const pages = """ + json.dumps(list(PAGES)) + """;
 const go = (extra) => astResolveLanguage(Object.assign({pages, path:'/index.html', search:'', hash:'', saved:'', languages:['en'], timezone:'', ua:'Mozilla/5.0'}, extra));
-if (go({ua:'Mozilla/5.0 (compatible; Googlebot/2.1)', languages:['it-IT','it']}) !== null) throw new Error('bot');
+if (go({ua:'Mozilla/5.0 (compatible; Googlebot/2.1)', languages:['it-IT','it']}) !== '/') throw new Error('bot cleans home');
+if (go({ua:'Mozilla/5.0 (compatible; GoogleOther)', languages:['it-IT']}) !== '/') throw new Error('googleother cleans home');
+if (go({ua:'Mozilla/5.0 (compatible; Googlebot/2.1)', path:'/methodology.html', languages:['it']}) !== null) throw new Error('bot stays');
 if (go({languages:['it-IT','it','en']}) !== '/it/') throw new Error('italian');
 if (go({path:'/', languages:['de-CH','fr']}) !== '/de/') throw new Error('de-CH');
 if (go({path:'/index.html', search:'?q=1', hash:'#elenco', languages:['fr-CH']}) !== '/fr/?q=1#elenco') throw new Error('home query');
 if (go({path:'/models.html', languages:['es']}) !== '/es/models.html') throw new Error('models');
-if (go({ua:'Mozilla/5.0 (compatible; GoogleOther)', languages:['it-IT']}) !== null) throw new Error('googleother');
-if (go({saved:'en', languages:['it-IT']}) !== null) throw new Error('saved english');
+if (go({saved:'en', languages:['it-IT']}) !== '/') throw new Error('saved english cleans index');
+if (go({saved:'en', path:'/', languages:['it-IT']}) !== null) throw new Error('clean english stays');
 if (go({saved:'de', languages:['en']}) !== '/de/') throw new Error('saved german');
 if (go({path:'/share/halicin.html', languages:['it']}) !== null) throw new Error('share');
 if (go({path:'/it/methodology.html', languages:['de']}) !== null) throw new Error('already local');
+if (go({path:'/it/index.html', languages:['de']}) !== '/it/') throw new Error('locale home cleaned');
 if (go({languages:['zh-CN'], timezone:'Europe/Rome'}) !== '/it/') throw new Error('timezone');
-if (go({languages:['en-CH'], timezone:'Europe/Zurich'}) !== null) throw new Error('en-CH');
-if (go({languages:['en-GB'], timezone:'Europe/Rome'}) !== null) throw new Error('english wins');
+if (go({languages:['en-CH'], timezone:'Europe/Zurich'}) !== '/') throw new Error('en-CH cleans dirty home');
+if (go({languages:['en-GB'], timezone:'Europe/Rome'}) !== '/') throw new Error('english cleans dirty home');
+if (go({path:'/', languages:['en-GB'], timezone:'Europe/Rome'}) !== null) throw new Error('english wins');
 const home = astEquivalent('fr', '/methodology.html', '?q=1', '#elenco', pages);
 if (home !== '/fr/methodology.html?q=1#elenco') throw new Error('switch '+home);
 const back = astEquivalent('en', '/de/security.html', '', '', pages);
@@ -48,6 +52,8 @@ const share = astEquivalent('it', '/share/2020-02-halicin.html', '', '', pages);
 if (share !== '/it/#discovery=2020-02-halicin') throw new Error('entry '+share);
 const root = astEquivalent('es', '/index.html', '', '#discovery=x', pages);
 if (root !== '/es/#discovery=x') throw new Error('root '+root);
+const englishHome = astEquivalent('en', '/index.html', '', '#elenco', pages);
+if (englishHome !== '/#elenco') throw new Error('english home '+englishHome);
 """
         result = subprocess.run(['node', '-e', script], text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -87,17 +93,18 @@ if (root !== '/es/#discovery=x') throw new Error('root '+root);
         self.assertIn('ast-lang', page)
         self.assertIn('https://static.cloudflareinsights.com/beacon.min.js', page)
         self.assertIn('storageOk', page)
-        self.assertIn('<link rel="canonical" href="https://aisciencetracker.org/">', page)
+        self.assertIn('rel="canonical" href="https://aisciencetracker.org/"', page)
         self.assertIn('<meta property="og:url" content="https://aisciencetracker.org/">', page)
         self.assertIn('<link rel="alternate" hreflang="it" href="https://aisciencetracker.org/it/">', page)
         self.assertIn('<link rel="alternate" hreflang="x-default" href="https://aisciencetracker.org/">', page)
-        self.assertNotIn('https://aisciencetracker.org/index.html"', page)
+        self.assertNotIn('https://aisciencetracker.org/index.html', page)
+        self.assertIn('https://iamops.dev/', page)
+        self.assertNotIn('"@type":"Dataset"', page)
+        self.assertNotIn('"@type":"Dataset"', (ROOT / 'methodology.html').read_text())
+        self.assertIn('dataset.html#scientific-dataset', (ROOT / 'dataset.html').read_text())
         italian = (ROOT / 'it' / 'index.html').read_text()
         self.assertIn('<link rel="canonical" href="https://aisciencetracker.org/it/">', italian)
-        self.assertIn('<meta property="og:url" content="https://aisciencetracker.org/it/">', italian)
-        self.assertIn('hreflang="de" href="https://aisciencetracker.org/de/"', italian)
-        self.assertNotIn('"@type":"Dataset"', (ROOT / 'methodology.html').read_text())
-        self.assertIn('"@type":"Dataset"', page)
+        self.assertIn('https://iamops.dev/it/', italian)
         english = json.loads((MESSAGES / 'en.json').read_text())
         self.assertIn('{n} of {total} discoveries', english)
 

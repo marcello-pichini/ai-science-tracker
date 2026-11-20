@@ -55,12 +55,25 @@ KEEP_LINE = re.compile(
 TR_CALL = re.compile(r'''(?:\btr|\bthis\.t|\bAST_t)\(\s*(['"])(.*?)\1''', re.S)
 
 DETECT_FN = r'''
+globalThis.astCleanPath = function (path) {
+  path = path || '/';
+  if (path === '/index.html') return '/';
+  var home = path.match(/^\/(it|de|fr|es)\/index\.html$/);
+  if (home) return '/' + home[1] + '/';
+  return path;
+};
 globalThis.astResolveLanguage = function (input) {
   var SUPPORTED = {it:1, de:1, fr:1, es:1};
   var ua = input.ua || '';
-  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|googleother|google-extended|google-inspectiontool|google-read-aloud|duplexweb|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
-  var path = input.path || '/';
-  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
+  var bot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|googleother|google-extended|google-inspectiontool|google-read-aloud|duplexweb|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua);
+  var raw = input.path || '/';
+  var path = astCleanPath(raw);
+  var search = input.search || '';
+  var hash = input.hash || '';
+  var cleaned = path + search + hash;
+  // Crawlers are not sent to another language. They are sent from /index.html to /.
+  if (bot) return path === raw ? null : cleaned;
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return path === raw ? null : cleaned;
   var pages = input.pages || [];
   var saved = input.saved || '';
   var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
@@ -83,18 +96,16 @@ globalThis.astResolveLanguage = function (input) {
     };
     if (hint[input.timezone || '']) target = hint[input.timezone];
   }
-  if (!target || target === 'en' || !SUPPORTED[target]) return null;
-  var search = input.search || '';
-  var hash = input.hash || '';
-  if (path === '/' || path === '') return '/' + target + '/' + search + hash;
-  var file = path.split('/').pop();
-  var dir = path.slice(0, path.length - file.length);
-  if (dir !== '/') return null;
-  if (!file) file = 'index.html';
-  if (pages.indexOf(file) < 0) return null;
-  // /index.html is the same document as /. Send people to the directory URL.
-  if (file === 'index.html') return '/' + target + '/' + search + hash;
-  return '/' + target + '/' + file + search + hash;
+  if (target && target !== 'en' && SUPPORTED[target]) {
+    if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+    var file = path.split('/').pop();
+    var dir = path.slice(0, path.length - file.length);
+    if (dir !== '/') return path === raw ? null : cleaned;
+    if (!file || file === 'index.html') return '/' + target + '/' + search + hash;
+    if (pages.indexOf(file) < 0) return path === raw ? null : cleaned;
+    return '/' + target + '/' + file + search + hash;
+  }
+  return path === raw ? null : cleaned;
 };
 globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   search = search || '';
@@ -102,20 +113,111 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   pages = pages || [];
   var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
   var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
-  if (rest === '' || rest === '/') rest = '/index.html';
+  if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
   var prefix = lang === 'en' ? '' : '/' + lang;
+  if (rest === '/') return prefix + '/' + search + hash;
   var file = rest.split('/').pop();
   var dir = rest.slice(0, rest.length - file.length);
-  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) {
-    if (file === 'index.html') return (prefix || '') + '/' + search + hash;
-    return prefix + '/' + file + search + hash;
-  }
+  if ((dir === '/' || dir === '') && file === 'index.html') return prefix + '/' + search + hash;
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
   var share = rest.match(/^\/share\/([^/]+)\.html$/);
-  if (share) return (prefix || '') + '/#discovery=' + share[1];
+  if (share) return prefix + '/#discovery=' + share[1];
   if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
-  return prefix + '/index.html' + search;
+  return prefix + '/' + search;
 };
 '''
+
+DETECT_BLOCK = re.compile(
+    r'(?:globalThis\.astCleanPath = function \(path\) \{\n.*?\n\};\n)?'
+    r'globalThis\.astResolveLanguage = function \(input\) \{\n.*?\n\};\n'
+    r'globalThis\.astEquivalent = function \(lang, path, search, hash, pages\) \{\n.*?\n\};\n',
+    re.S)
+
+
+def public_url(page: str, lang: str = 'en') -> str:
+    """Absolute URL. The homepage is / and /it/, never /index.html."""
+    if page == 'index.html':
+        return BASE if lang == 'en' else f'{BASE}{lang}/'
+    if lang == 'en':
+        return BASE + page
+    return f'{BASE}{lang}/{page}'
+
+
+def home_href(lang: str) -> str:
+    return '/' if lang == 'en' else f'/{lang}/'
+
+
+# iamops.dev publishes the same five languages. Each edition links to its match.
+IAMOPS_URL = {
+    'en': 'https://iamops.dev/',
+    'it': 'https://iamops.dev/it/',
+    'de': 'https://iamops.dev/de/',
+    'fr': 'https://iamops.dev/fr/',
+    'es': 'https://iamops.dev/es/',
+}
+SEE_ALSO = '<p>See also: <a href="https://iamops.dev/">iamops.dev: IAM, AI agents and DevOps notes</a></p>'
+
+
+def retarget_iamops(text: str, lang: str) -> str:
+    """Point the footer link at the iamops.dev edition for this language."""
+    return text.replace('href="https://iamops.dev/"', f'href="{IAMOPS_URL[lang]}"', 1)
+
+
+def rewrite_dirty_homes(text: str) -> str:
+    """Replace declared /index.html URLs with the directory URL GitHub Pages already serves."""
+    for code in LOCALES:
+        text = text.replace(f'{BASE}{code}/index.html', f'{BASE}{code}/')
+    text = text.replace(BASE + 'index.html', BASE)
+    return text
+
+
+def clean_home_links(text: str, home: str) -> str:
+    """Point in-page home links at / or /it/. The language switcher keeps its own targets."""
+    def rewrite(chunk: str) -> str:
+        chunk = re.sub(
+            r'(href|action)="index\.html(#[^"]*)?"',
+            lambda match: f'{match.group(1)}="{home}{match.group(2) or ""}"',
+            chunk)
+        # Root-absolute home links (/ and /#hash) follow the page language.
+        # /models.html and https:// URLs do not match.
+        return re.sub(
+            r'(href|action)="/(#[^"]*)?"',
+            lambda match: f'{match.group(1)}="{home}{match.group(2) or ""}"',
+            chunk)
+
+    parts = re.split(r'(<nav class="menu" id="lang-switch".*?</nav>)', text, flags=re.S)
+    return ''.join(part if part.startswith('<nav class="menu" id="lang-switch"') else rewrite(part) for part in parts)
+
+
+def set_switcher_hrefs(text: str) -> str:
+    def repl(match: re.Match) -> str:
+        block = match.group(0)
+        for code in ('en',) + LOCALES:
+            block = re.sub(
+                rf'href="[^"]*"(\s[^>]*\bdata-lang="{code}")',
+                f'href="{home_href(code)}"\\1', block, count=1)
+        return block
+    return re.sub(r'<nav class="menu" id="lang-switch".*?</nav>', repl, text, count=1, flags=re.S)
+
+
+def ensure_twitter(text: str) -> str:
+    if 'name="twitter:title"' in text:
+        return text
+    title = re.search(r'<meta property="og:title" content="([^"]*)"', text)
+    if not title:
+        return text
+    tags = f'<meta name="twitter:title" content="{title.group(1)}">\n'
+    desc = re.search(r'<meta property="og:description" content="([^"]*)"', text)
+    if desc:
+        tags += f'<meta name="twitter:description" content="{desc.group(1)}">\n'
+    return text.replace('<meta name="twitter:card"', tags + '<meta name="twitter:card"', 1)
+
+
+def refresh_detection(text: str) -> str:
+    updated, count = DETECT_BLOCK.subn(DETECT_FN.strip() + '\n', text)
+    if count == 0 and 'function astCleanPath' not in text and 'astResolveLanguage' in text:
+        raise RuntimeError('language detection script could not be refreshed')
+    return updated
 
 
 def switcher_html() -> str:
@@ -123,7 +225,7 @@ def switcher_html() -> str:
     for code in ('en',) + LOCALES:
         meta = LOCALE_META[code]
         current = ' aria-current="true"' if code == 'en' else ''
-        href = 'index.html' if code == 'en' else f'{code}/index.html'
+        href = home_href(code)
         links.append(
             f'<a href="{href}" hreflang="{meta["html"]}" lang="{meta["html"]}" data-lang="{code}" '
             f'aria-label="{meta["name"]}"{current}>{meta["label"]}</a>'
@@ -153,18 +255,11 @@ def detect_html() -> str:
     )
 
 
-def public_page_url(page: str, lang: str = 'en') -> str:
-    """URL search engines should use. Homepages are the directory, not index.html."""
-    if page == 'index.html':
-        return BASE if lang == 'en' else f'{BASE}{lang}/'
-    return BASE + page if lang == 'en' else f'{BASE}{lang}/{page}'
-
-
 def hreflang_html(page: str) -> str:
     lines = []
     for code in ('en',) + LOCALES:
-        lines.append(f'<link rel="alternate" hreflang="{LOCALE_META[code]["html"]}" href="{public_page_url(page, code)}">')
-    lines.append(f'<link rel="alternate" hreflang="x-default" href="{public_page_url(page, "en")}">')
+        lines.append(f'<link rel="alternate" hreflang="{LOCALE_META[code]["html"]}" href="{public_url(page, code)}">')
+    lines.append(f'<link rel="alternate" hreflang="x-default" href="{public_url(page, "en")}">')
     for code in ('en',) + LOCALES:
         lines.append(f'<meta property="og:locale:alternate" content="{LOCALE_META[code]["og"]}">')
     # The primary og:locale is separate so a locale page can replace just that value.
@@ -190,9 +285,11 @@ def install_english_chrome(root: Path | None = None) -> None:
                 lambda m: m.group(1) + switcher, text, count=1, flags=re.S)
             if n != 1:
                 raise RuntimeError(f'{page}: could not insert the language switcher')
-        text = text.replace('href="/index.html"', 'href="index.html"')
-        for code in LOCALES:
-            text = text.replace(f'href="/{code}/index.html"', f'href="{code}/index.html"')
+        text = refresh_detection(text)
+        text = rewrite_dirty_homes(text)
+        text = clean_home_links(text, '/')
+        text = set_switcher_hrefs(text)
+        text = ensure_twitter(text)
         if 'astResolveLanguage' not in text.split('id="lang-switch"', 1)[0]:
             # Detection lives in <head>, before the switcher copy inside the header.
             marker = '<!-- End Cloudflare Web Analytics -->'
@@ -434,20 +531,9 @@ def rewrite_script_paths(page_html: str) -> str:
 
 
 def retarget_switcher(page_html: str, lang: str) -> str:
-    """Point the language links out of a /<lang>/ page without root-absolute URLs."""
-    def repl(match: re.Match) -> str:
-        block = match.group(0)
-        for code in ('en',) + LOCALES:
-            if code == lang:
-                href = 'index.html'
-            elif code == 'en':
-                href = '../index.html'
-            else:
-                href = f'../{code}/index.html'
-            block = re.sub(rf'href="[^"]*"(\s[^>]*\bdata-lang="{code}")', f'href="{href}"\\1', block, count=1)
-        return block
-
-    return re.sub(r'<nav class="menu" id="lang-switch".*?</nav>', repl, page_html, count=1, flags=re.S)
+    """Language links are root URLs (/ and /it/), so they do not become /index.html."""
+    del lang
+    return set_switcher_hrefs(page_html)
 
 
 def mark_switcher(page_html: str, lang: str) -> str:
@@ -479,6 +565,7 @@ def refresh_embedded_detection(text: str) -> str:
         return text
     fresh = DETECT_FN.strip()
     text, n = re.subn(
+        r'(?:globalThis\.astCleanPath = function \(path\) \{.*?\n\};\n)?'
         r'globalThis\.astResolveLanguage = function \(input\) \{.*?globalThis\.astEquivalent = function \(lang, path, search, hash, pages\) \{.*?\n\};',
         fresh, text, flags=re.S)
     if n < 1:
@@ -501,8 +588,8 @@ def retarget_head(page_html: str, page: str, lang: str) -> str:
     meta = LOCALE_META[lang]
     page_html = re.sub(r'<html lang="en"', f'<html lang="{meta["html"]}"', page_html, count=1)
     if page != '404.html':
-        english = public_page_url(page, 'en')
-        local = public_page_url(page, lang)
+        english = public_url(page, 'en')
+        local = public_url(page, lang)
         page_html = page_html.replace(f'<link rel="canonical" href="{english}">', f'<link rel="canonical" href="{local}">')
         page_html = page_html.replace(f'<meta property="og:url" content="{english}">', f'<meta property="og:url" content="{local}">')
         page_html = page_html.replace('"inLanguage":"en"', f'"inLanguage":"{meta["html"]}"')
@@ -611,6 +698,8 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
             if page != '404.html':
                 text = rewrite_script_paths(text)
             text = rewrite_attrs(text, lang, page)
+            text = clean_home_links(text, home_href(lang))
+            text = retarget_iamops(text, lang)
             injection = runtime_script(lang, merged, discoveries)
             text = text.replace('</head>', injection + '\n</head>', 1)
             (out_dir / page).write_text(text, encoding='utf-8')
@@ -625,14 +714,14 @@ def sitemap_entries() -> str:
     """Extra <url> rows for language editions, with hreflang alternates on every static page."""
     rows = []
     for page in SITEMAP_PAGES:
-        links = [f'<xhtml:link rel="alternate" hreflang="en" href="{html.escape(public_page_url(page, "en"), quote=True)}"/>']
+        links = [f'<xhtml:link rel="alternate" hreflang="en" href="{html.escape(public_url(page, "en"), quote=True)}"/>']
         for code in LOCALES:
-            links.append(f'<xhtml:link rel="alternate" hreflang="{code}" href="{html.escape(public_page_url(page, code), quote=True)}"/>')
-        links.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{html.escape(public_page_url(page, "en"), quote=True)}"/>')
+            links.append(f'<xhtml:link rel="alternate" hreflang="{code}" href="{html.escape(public_url(page, code), quote=True)}"/>')
+        links.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{html.escape(public_url(page, "en"), quote=True)}"/>')
         block = ''.join(links)
-        rows.append(f'<url><loc>{html.escape(public_page_url(page, "en"), quote=True)}</loc>{block}</url>\n')
+        rows.append(f'<url><loc>{html.escape(public_url(page, "en"), quote=True)}</loc>{block}</url>\n')
         for code in LOCALES:
-            rows.append(f'<url><loc>{html.escape(public_page_url(page, code), quote=True)}</loc>{block}</url>\n')
+            rows.append(f'<url><loc>{html.escape(public_url(page, code), quote=True)}</loc>{block}</url>\n')
     return ''.join(rows)
 
 
