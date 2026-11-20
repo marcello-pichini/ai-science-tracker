@@ -153,7 +153,7 @@ const p = page('index.html');
 p.run('globalThis.draws = []; riepilogo = featured = () => {}; spettro = () => draws.push("spectrum"); grafici = () => draws.push("overview");');
 p.load(records);
 assert.equal(p.run('draws.length'), 0, 'Closed charts must not measure hidden widths at startup');
-p.run('state.status = "verified"; $("explore-overview").handlers.click(); $("overview").handlers.toggle();');
+p.run('state.status = "verified"; $("overview").open = true; $("overview").handlers.toggle();');
 assert.equal(p.run('$("overview").open'), true);
 assert.equal(p.run('draws.join(",")'), 'overview');
 p.run('$("timeline-overview").open = true; $("timeline-overview").handlers.toggle();');

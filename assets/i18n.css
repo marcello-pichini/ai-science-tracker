@@ -1,0 +1,118 @@
+/* Header and homepage chrome.
+   Kept out of styles.css so a layout change does not invalidate every discovery-card hash.
+   Colors are the shared custom properties; light and dark both come from :root. */
+
+.header { position:relative; z-index:40; }
+.nav-toggle, .lang-toggle {
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  color:var(--on-prussia); background:transparent; border:1px solid var(--prussia-line);
+  border-radius:999px; font:600 .875rem var(--font); cursor:pointer;
+}
+.nav-toggle { display:none; width:40px; height:40px; padding:0; }
+.nav-toggle .nav-icon { width:20px; height:20px; }
+.lang { position:relative; flex:0 0 auto; }
+.lang-toggle { list-style:none; height:40px; padding:0 12px 0 10px; }
+.lang-toggle::-webkit-details-marker { display:none; }
+.lang-toggle .globe { width:18px; height:18px; flex:none; }
+.lang-code { letter-spacing:.04em; }
+#lang-switch.menu {
+  position:absolute; top:calc(100% + 6px); right:0; z-index:50;
+  flex-direction:column; flex-wrap:nowrap; align-items:stretch;
+  min-width:11.5rem; margin:0; padding:6px;
+  background:var(--prussia); border:1px solid var(--prussia-line); border-radius:12px;
+}
+.lang[open] #lang-switch.menu { display:flex; }
+#lang-switch.menu a { border-radius:8px; }
+#lang-switch.menu a[aria-current="true"] { color:var(--prussia); background:var(--on-prussia); }
+.nav-toggle:focus-visible, .lang-toggle:focus-visible, #lang-switch a:focus-visible {
+  outline:2px solid var(--on-prussia); outline-offset:2px;
+}
+
+/* Narrow screens: one header row, wordmark kept, sections behind a button. */
+@media (max-width:980px) {
+  .header .wrap { flex-wrap:wrap; }
+  .js .header .wrap { flex-wrap:nowrap; }
+  .js .nav-toggle { display:inline-flex; }
+  .js #site-nav { display:none; }
+  .js #site-nav.is-open {
+    display:flex; flex-direction:column; align-items:stretch;
+    position:absolute; top:100%; left:0; right:0; z-index:45;
+    padding:8px var(--gut) 14px; background:var(--prussia);
+    border-top:1px solid var(--prussia-line);
+  }
+  .js #site-nav.is-open a { border-radius:10px; }
+}
+@media (max-width:520px) {
+  .marchio span { display:inline; }
+  .marchio { font-size:.95rem; min-width:0; }
+  .header .wrap { gap:8px; }
+}
+@media (max-width:380px) {
+  .marchio { font-size:.8125rem; gap:6px; }
+  .lang-toggle { padding-inline:8px; }
+}
+
+/* Homepage: copy on the left, a living-catalog card in the space beside it. */
+.hero {
+  display:grid; grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);
+  gap:clamp(20px,3vw,40px); align-items:start;
+}
+.hero-copy { min-width:0; }
+.hero-copy .catalog-search, .hero-copy .catalog-jumps { max-width:none; }
+.catalog-jumps a.hero-action {
+  display:inline-flex; align-items:center; color:var(--prussia); background:var(--on-prussia);
+  text-decoration:none; font-weight:700; padding:10px 16px; border-radius:999px;
+}
+.catalog-jumps a.hero-action:hover { text-decoration:underline; }
+.catalog-jumps a.hero-action:focus-visible { outline:2px solid var(--on-prussia); outline-offset:3px; }
+.banner-details { grid-column:1 / -1; }
+.hero-live {
+  background:var(--sheet); color:var(--ink); border-radius:var(--r);
+  padding:16px 16px 12px; min-width:0;
+}
+.hero-live h2 {
+  margin:0; color:var(--ink); font-size:1.125rem; font-weight:800;
+  letter-spacing:-.02em; line-height:1.2;
+}
+.hero-kicker { margin:6px 0 12px; color:var(--ink-2); font-size:.875rem; }
+.hero-latest { list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+.hero-latest li { min-width:0; }
+.hero-latest a {
+  color:var(--accent); font-weight:700; text-decoration:none;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.hero-latest a:hover { text-decoration:underline; }
+.hero-latest a:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+.hero-meta {
+  display:flex; flex-wrap:wrap; gap:4px 10px; margin:2px 0 0;
+  color:var(--muted); font-size:.8125rem;
+}
+.hero-field:first-letter { text-transform:uppercase; }
+.hero-chart { margin:14px 0 0; }
+.hero-chart svg { display:block; width:100%; height:auto; overflow:visible; }
+.hero-chart a { outline:none; }
+.hero-chart a:focus-visible .hero-bar { stroke:var(--ink); stroke-width:2; }
+.hero-chart a:hover .hero-bar { stroke:var(--ink); stroke-width:1.5; }
+.hero-bar { fill:var(--accent); transform-box:fill-box; transform-origin:center bottom;
+  animation:hero-rise .7s cubic-bezier(.2,.7,.15,1) both; animation-delay:var(--d,0ms); }
+.hero-bar-now { fill:var(--sole); }
+.hero-count { fill:var(--ink); font:600 11px var(--font); }
+.hero-year { fill:var(--ink-2); font:600 12px var(--font); }
+.hero-chart figcaption, .hero-live summary { color:var(--ink-2); font-size:.8125rem; margin-top:8px; }
+.hero-live summary { color:var(--accent); cursor:pointer; }
+.hero-live .tab-mini { color:var(--ink); }
+@keyframes hero-rise { from { transform:scaleY(.08); } to { transform:none; } }
+@media (max-width:860px) {
+  .hero { grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .hero-bar { animation:none; }
+}
+@media print {
+  .nav-toggle, .lang, #nav-label-close { display:none !important; }
+  .hero { display:block; }
+  .hero-live { border:1px solid var(--ink); break-inside:avoid; }
+  .hero-bar { animation:none; fill:var(--ink); }
+  .hero-bar-now { fill:var(--ink-2); }
+  .catalog-jumps a.hero-action { color:var(--ink); background:none; border:1px solid var(--ink); }
+}

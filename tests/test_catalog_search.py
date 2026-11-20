@@ -32,7 +32,7 @@ const linked = s.collections([{id:'discovery'}], [], {models:[], families:[
   {id:'active', discoveries:['discovery']}, {id:'archive-only', discoveries:['archived']}
 ]});
 assert.equal(linked[0].records[0].href, 'share/discovery.html');
-assert.equal(linked[0].records[0].explorer, 'index.html#discovery=discovery');
+assert.equal(linked[0].records[0].explorer, '/#discovery=discovery');
 assert.equal(linked[4].records[0].href, 'profiles/family-active.html');
 assert.equal(linked[4].records[1].href, 'profile.html?family=archive-only');
 const science = s.collections([

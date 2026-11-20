@@ -10,15 +10,15 @@ Every page, script and generated asset must look and behave like one product. Th
 
 ## Single stylesheet
 
-- All styling lives in `styles.css`. Pages have no `<style>` blocks and no `style=""` attributes, except for data-driven values (a bar width, an animation delay, a CSS variable).
+- All styling lives in `styles.css`, except header and homepage-hero chrome in `assets/i18n.css`. That file stays separate so a navigation or hero change does not invalidate the discovery-card hashes, which include every byte of `styles.css`. Pages have no `<style>` blocks and no `style=""` attributes, except for data-driven values (a bar width, an animation delay, a CSS variable).
 - All colors come from the custom properties in `:root` (`--prussia`, `--paper`, `--sheet`, `--ink`, `--ink-2`, `--muted`, `--line`, `--line-2`, `--accent`, `--accent-wash`, `--sole`, ...). Never write a hex color, `rgb()` or named color outside `:root` and its two dark-mode blocks. If a new color is truly needed, add a variable with a light and a dark value.
 - Spacing, radii, type scale and widths reuse existing values (`--wrap`, `--gut`, `--r`, the `clamp()` sizes already in use). Do not invent near-duplicates.
 - Reuse existing component classes before adding any: header and menu, banner (`.banda`), section (`.sez`), chart panels, filter bar, discovery entry (`.voce`), tag (`.etich`), badge, family card, release table, long-form text (`.prosa`), footer. A new page is assembled from these.
-- A new component needs: a short comment in `styles.css`, light and dark appearance, a keyboard focus state, a layout at 320 px, and a print appearance.
+- A new component needs: a short comment in `styles.css` (or in `assets/i18n.css` when it is header or homepage-hero chrome), light and dark appearance, a keyboard focus state, a layout at 320 px, and a print appearance.
 
 ## Page skeleton
 
-Every page has the same frame, in this order: shared `<head>` (charset, viewport, title `Page · AI Science Tracker`, description, Open Graph, canonical, theme color, icon, font preload, `styles.css` with its content-hash query), the header with the seven-item menu (Discoveries, Models, Vuln discoveries, Dossiers, Methodology, Guide, Search) plus the page's own `aria-current="page"`, a blue banner with one `<h1>`, `<main>` with sections that each have an `<h2>`, and the footer. Copy the frame from an existing page; do not retype it. `404.html` is the one exception to the shared `<head>` (no canonical or Open Graph, `noindex`, and a `<base href>` so it works from any URL depth); `tests/test_site_links.py` checks it instead of `PAGES`.
+Every page has the same frame, in this order: shared `<head>` (charset, viewport, title `Page · AI Science Tracker`, description, Open Graph, canonical, theme color, icon, font preload, `styles.css` with its content-hash query), the header with the seven-item menu (Discoveries, Models, Vulnerabilities, Dossiers, Methodology, Guide, Search) plus the page's own `aria-current="page"`, a compact language menu (globe and the current code), a blue banner with one `<h1>`, `<main>` with sections that each have an `<h2>`, and the footer. Below 980px the section menu collapses behind a button when JavaScript is available; without it the links stay visible. The vulnerabilities label points at `security.html`. Copy the frame from an existing page; do not retype it. `404.html` is the one exception to the shared `<head>` (no canonical or Open Graph, `noindex`, and a `<base href>` so it works from any URL depth); `tests/test_site_links.py` checks it instead of `PAGES`.
 
 ## Charts and interaction
 
@@ -28,7 +28,8 @@ Every page has the same frame, in this order: shared `<head>` (charset, viewport
 
 ## Language and tone
 
-- All visible text, code identifiers, comments, filenames and documentation are in English. Dates render as `4 Nov 2026` (`en-GB`).
+- The canonical pages at the site root, the code, comments, filenames and documentation are in English. Dates on those pages render as `4 Nov 2026` (`en-GB`).
+- Italian, German, French and Spanish editions are generated under `/it/`, `/de/`, `/fr/` and `/es/` from `i18n/messages/`. They translate the interface and editorial pages. Discovery titles, organization names, paper titles and source links stay in the original language; a missing summary translation falls back to English. See the README for how to add a language.
 - Plain, neutral wording. Say what a source reports; never claim independent verification. Keep evidence caveats.
 
 ## Accessibility and performance

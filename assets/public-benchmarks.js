@@ -1,9 +1,18 @@
 /* Independently licensed evidence: no cross-benchmark ranking or model-name joins. */
+globalThis.AST_t ||= (en, vars) => {
+  const table = globalThis.AST_MESSAGES;
+  let s = table && Object.prototype.hasOwnProperty.call(table, en) && typeof table[en] === 'string' ? table[en] : en;
+  if (vars) for (const key of Object.keys(vars)) s = s.split('{' + key + '}').join(String(vars[key]));
+  return s;
+};
 (() => {
+  const tr = globalThis.AST_t;
   const el = id => document.getElementById(id);
+  const uiLang = (document.documentElement && document.documentElement.lang) || 'en';
+  const dateLocale = uiLang === 'en' ? 'en-GB' : uiLang;
   const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const number = value => value == null ? 'Not reported' : Number(value).toLocaleString('en-GB', {maximumFractionDigits: 4});
-  const date = value => value ? new Date(value.slice(0, 10) + 'T00:00:00Z').toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}) : 'Not reported';
+  const date = value => value ? new Date(value.slice(0, 10) + 'T00:00:00Z').toLocaleDateString(dateLocale, {day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}) : tr('Not reported');
   const link = (url, label) => `<a href="${escape(url)}">${escape(label)}</a>`;
   let registry = null, current = null;
   const snapshots = new Map();
@@ -27,8 +36,8 @@
     const rows = current.records.filter(r => r.comparison_group === group &&
       `${r.model} ${JSON.stringify(r.details)}`.toLowerCase().includes(query));
     const units = [...new Set(rows.map(r => r.unit))].join(', ');
-    el('metric-count').textContent = `${rows.length} of ${current.records.length} source observations shown · ${units || 'no matching observations'} · retrieved ${date(current.retrieved_on)}. Source order retained; counts are not unique models.`;
-    el('metric-count-summary').textContent = `${rows.length} source observations shown`;
+    el('metric-count').textContent = tr('{n} of {total} source observations shown · {units} · retrieved {date}. Source order retained; counts are not unique models.', {n: rows.length, total: current.records.length, units: units || tr('no matching observations'), date: date(current.retrieved_on)});
+    el('metric-count-summary').textContent = tr('{n} source observations shown', {n: rows.length});
     el('metric-results').innerHTML = `<caption>${escape(current.name)} — ${escape(group)}</caption><thead><tr><th scope="col">Exact source label and configuration</th><th scope="col">Source score</th><th scope="col">Source date</th></tr></thead><tbody>${rows.map(r => `<tr><th scope="row">${escape(r.model)}${details(r)}</th><td>${number(r.value)} ${escape(r.unit)}${interval(r)}<small>${escape(r.direction)}</small></td><td>${date(r.date)}<small>${escape(r.date_basis)}</small></td></tr>`).join('') || '<tr><td colspan="3">No source observations match this search.</td></tr>'}</tbody>`;
   }
   function selectSource(preferredSlice, clearQuery = true) {
