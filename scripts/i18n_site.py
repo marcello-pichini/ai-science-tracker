@@ -146,6 +146,22 @@ def home_href(lang: str) -> str:
     return '/' if lang == 'en' else f'/{lang}/'
 
 
+# iamops.dev publishes the same five languages. Each edition links to its match.
+IAMOPS_URL = {
+    'en': 'https://iamops.dev/',
+    'it': 'https://iamops.dev/it/',
+    'de': 'https://iamops.dev/de/',
+    'fr': 'https://iamops.dev/fr/',
+    'es': 'https://iamops.dev/es/',
+}
+SEE_ALSO = '<p>See also: <a href="https://iamops.dev/">iamops.dev: IAM, AI agents and DevOps notes</a></p>'
+
+
+def retarget_iamops(text: str, lang: str) -> str:
+    """Point the footer link at the iamops.dev edition for this language."""
+    return text.replace('href="https://iamops.dev/"', f'href="{IAMOPS_URL[lang]}"', 1)
+
+
 def rewrite_dirty_homes(text: str) -> str:
     """Replace declared /index.html URLs with the directory URL GitHub Pages already serves."""
     for code in LOCALES:
@@ -640,6 +656,7 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
                 text = rewrite_script_paths(text)
             text = rewrite_attrs(text, lang, page)
             text = clean_home_links(text, home_href(lang))
+            text = retarget_iamops(text, lang)
             injection = runtime_script(lang, merged, discoveries)
             text = text.replace('</head>', injection + '\n</head>', 1)
             (out_dir / page).write_text(text, encoding='utf-8')
