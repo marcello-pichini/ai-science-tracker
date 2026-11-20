@@ -40637,5 +40637,507 @@
       ],
       "test_type": "direct test"
     }
+  },
+  {
+    "id": "2026-11-openai-jalapeno-circuit-area-optimization",
+    "title": "OpenAI models help reduce circuit area in the Jalapeño inference chip",
+    "summary": "OpenAI estimates that AI-proposed changes cut standard-cell area by about 13% in the vector unit and 10% in the matrix unit. OpenAI reports that the optimizations were verified during silicon bring-up. The August announcement reported chip-level performance, while this November account provides the unit-level area estimates.",
+    "field": "computer science",
+    "ai_technology": "OpenAI reasoning models",
+    "organization": "OpenAI",
+    "source_url": "https://openai.com/index/advancing-chip-design-with-our-models/",
+    "source_type": "blog",
+    "publication_date": "2026-11-18",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "OpenAI reports engineering verification and silicon bring-up.",
+      "unknown": "The aggregate area savings are company estimates. Independent replication and model-by-model contributions were not reported.",
+      "ai_role": "OpenAI engineers used models to propose arithmetic, circuit and pipeline changes. The account identifies o3-mini in early work and does not assign the full savings to one model.",
+      "evidence_urls": [
+        "https://openai.com/index/advancing-chip-design-with-our-models/",
+        "https://openai.com/index/jalapeno-first-results/"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-reinhardt-conjecture-computer-assisted-proof",
+    "title": "AI assists a computer-aided proof of the Reinhardt conjecture",
+    "summary": "Fei Xue reports that the smoothed regular octagon minimizes optimal lattice-packing density among centrally symmetric convex disks in the plane.",
+    "field": "mathematics",
+    "ai_technology": "ChatGPT; GPT-6.1 Sol",
+    "organization": "Fei Xue",
+    "source_url": "https://arxiv.org/abs/2611.21470v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-16",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "https://arxiv.org/html/2611.21470v1",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The preprint presents a finite reduction and computer-assisted checks.",
+      "unknown": "Independent validation and an independently replayed certificate were not established in this review.",
+      "ai_role": "ChatGPT explored local-cost lower bounds. The author credits GPT-6.1 Sol with the proofs for six remaining types.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.21470v1",
+        "https://arxiv.org/html/2611.21470v1"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-three-dimensional-passive-quantum-memory-stability",
+    "title": "Gemini assists a proof of stability for three-dimensional passive quantum memory",
+    "summary": "Patrick Hayden reports a three-dimensional welded-code construction and stability results in separate thermal and zero-temperature perturbative regimes.",
+    "field": "physics",
+    "ai_technology": "Gemini 4 Argon; Lean 4",
+    "organization": "Google DeepMind",
+    "source_url": "https://arxiv.org/abs/2611.21749v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-16",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "https://arxiv.org/html/2611.21749v1",
+    "relevance": {
+      "impact": 3,
+      "validation": 4,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The source reports Lean 4 checks of standalone formulations of core claims, including the main zero-temperature result and a positive-temperature result in the companion paper.",
+      "unknown": "The Lean development covers selected formulations in specified regimes. It does not check every manuscript statement or demonstrate a physical device.",
+      "ai_role": "The author specified the problem and proof strategy and credits Gemini 4 Argon with most detailed reasoning and proof construction.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.21749v1",
+        "https://arxiv.org/html/2611.21749v1"
+      ],
+      "test_type": "prospective or independent check"
+    }
+  },
+  {
+    "id": "2026-11-chabauty-kim-dimension-inequality",
+    "title": "GPT-6 Astra assists work on the Chabauty–Kim dimension inequality",
+    "summary": "Sa’ar Zehavi reports a proof of Kim’s conjectural dimension inequality for a specified class of curves, using noncommutative Iwasawa theory.",
+    "field": "mathematics",
+    "ai_technology": "GPT-6 Astra",
+    "organization": "Max Planck Institute for Mathematics",
+    "source_url": "https://arxiv.org/abs/2611.18218v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-13",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "https://arxiv.org/html/2611.18218v1",
+    "relevance": {
+      "impact": 3,
+      "validation": 1,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The preprint gives a proof with explicit hypotheses.",
+      "unknown": "Independent checking or proof-kernel verification was not established.",
+      "ai_role": "Ideas for a key cohomology bound emerged during discussions with GPT-6 Astra within the author’s proof strategy.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.18218v1",
+        "https://arxiv.org/html/2611.18218v1"
+      ],
+      "test_type": "not reported"
+    }
+  },
+  {
+    "id": "2026-11-aklt-square-lattice-uniform-spectral-gap",
+    "title": "AI assists a proof of a uniform gap for the square-lattice AKLT model",
+    "summary": "The preprint reports a uniform lower bound for the spectral gap on sufficiently large square-lattice tori and uniqueness results for the ground state.",
+    "field": "physics",
+    "ai_technology": "Claude Opus 5.5; Fable 5.2; Luna 6; GPT-6.1 Sol; GPT-6 Astra",
+    "organization": "P. M. Aronow; Patrick Lopatto",
+    "source_url": "https://hexagonmath.org/2611.00580v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-18",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The authors report computer-assisted verification and Lean work.",
+      "unknown": "The exact correspondence and coverage of a kernel-checked theorem and independent confirmation were not established in this review.",
+      "ai_role": "The authors attribute proof discovery and verification work to a combination of language models.",
+      "evidence_urls": [
+        "https://hexagonmath.org/2611.00580v1"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-axiom-cfsg-automorphism-group-correction",
+    "title": "Axiom Prover formalization identifies a missing case in a published group classification",
+    "summary": "Axiom reports that formalizing a 2019 theorem about automorphism groups of curves exposed an omission in its printed list. The group SL(2,3) occurs for a specific curve and was already present in the original authors’ computation.",
+    "field": "mathematics",
+    "ai_technology": "Axiom Prover; Lean",
+    "organization": "Axiom",
+    "source_url": "https://axiommath.ai/research/beyond-the-classification-what-the-cfsg-corpus-unlocks/",
+    "source_type": "blog",
+    "publication_date": "2026-11-16",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "Axiom reports the correction and gives an explicit example.",
+      "unknown": "The result is a correction to the published statement. The original computation already included the group.",
+      "ai_role": "Axiom Prover was used to formalize results against the Lean finite simple group classification corpus and identify the discrepancy.",
+      "evidence_urls": [
+        "https://axiommath.ai/research/beyond-the-classification-what-the-cfsg-corpus-unlocks/"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-ml-bipolar-anomalous-nernst-effect",
+    "title": "Machine-learning screening guides a measured reversal of the anomalous Nernst signal",
+    "summary": "A materials-screening study led the authors to test Co₂TiGe single crystals. The preprint reports a reversal of the anomalous Nernst signal near 225 K.",
+    "field": "materials",
+    "ai_technology": "Machine-learning materials screening",
+    "organization": "Haofu Wen and coauthors",
+    "source_url": "https://arxiv.org/abs/2611.19039v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-14",
+    "added_date": "2026-11-20",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The authors measured Nernst behavior in single crystals.",
+      "unknown": "The abstract establishes the reported selection and measurement. Screening methods and independent replication remain to be checked.",
+      "ai_role": "The authors report using learned screening for multiple target properties to select a material for measurement.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.19039v1"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-ml-nickel-cobalt-lithium-oxygen-catalyst",
+    "title": "Machine learning guides a nickel–cobalt catalyst for lithium–oxygen batteries",
+    "summary": "The authors selected a nickel–cobalt dual-atom catalyst and report 2,075 cycles in a laboratory lithium–oxygen battery operating along a four-electron lithium hydroxide pathway.",
+    "field": "materials",
+    "ai_technology": "Interpretable machine learning; density functional theory",
+    "organization": "Harbin Institute of Technology (Shenzhen); City University of Hong Kong; Shenzhen University",
+    "source_url": "https://www.nature.com/articles/s41467-026-79335-6",
+    "source_type": "paper",
+    "publication_date": "2026-11-18",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The paper reports experimental electrochemistry and cycling tests under its laboratory protocol.",
+      "unknown": "The reported cycle life is protocol-specific. Independent replication and commercial-cell performance are not established.",
+      "ai_role": "Machine learning and density functional theory screened candidate active sites and guided the choice of dual-atom catalyst.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-026-79335-6"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-machine-learning-parkinsons-plasma-protein-panel",
+    "title": "Machine learning selects a plasma protein panel evaluated for Parkinson’s disease",
+    "summary": "A two-stage study of 391 participants identified a five-protein plasma panel. The authors tested selected proteins in a separate cohort that included Parkinson’s disease, multiple system atrophy and healthy controls.",
+    "field": "medicine",
+    "ai_technology": "Machine-learning feature selection",
+    "organization": "First Affiliated Hospital of Zhengzhou University; Peking University First Hospital",
+    "source_url": "https://www.nature.com/articles/s41531-026-01606-2",
+    "source_type": "paper",
+    "publication_date": "2026-11-17",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The study reports cohort-based discrimination and follow-up protein measurements using immunoassays.",
+      "unknown": "The results do not establish prospective screening benefit or causal involvement of the proteins.",
+      "ai_role": "Machine-learning feature selection derived candidate panels from the measured proteomics data.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41531-026-01606-2"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2026-11-optimal-one-bit-graph-fingerprints",
+    "title": "AI assists a minimax result for one-bit graph fingerprints",
+    "summary": "The preprint reports an optimal worst-case distinguishing probability of 8/27 for a specified family of randomized graph fingerprints with three vertex roles and symmetric Boolean tables. It also classifies optimal tables.",
+    "field": "mathematics",
+    "ai_technology": "GPT-6.2 Astra Max; GPT-6 (Mira)",
+    "organization": "Viktor Diakin",
+    "source_url": "https://hexagonmath.org/2611.00604v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-19",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The manuscript reports computational checks alongside the mathematical argument.",
+      "unknown": "Independent confirmation and the priority of overlapping results were not established.",
+      "ai_role": "The provenance statement credits Astra Max with the initial construction and minimax theorem and GPT-6 with parts of the classification.",
+      "evidence_urls": [
+        "https://hexagonmath.org/2611.00604v1"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-ehrhart-positivity-polypositroids",
+    "title": "AI assists a proof of Ehrhart positivity for integral polypositroids",
+    "summary": "Luis Ferroni reports a proof that every coefficient of the Ehrhart polynomial of an integral polypositroid is positive.",
+    "field": "mathematics",
+    "ai_technology": "GPT-6 Astra; GPT-6.2 Astra; Claude Opus 5.5",
+    "organization": "Luis Ferroni",
+    "source_url": "https://hexagonmath.org/2611.00653v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-19",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 1,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The preprint states a proof and documents cross-model review.",
+      "unknown": "Cross-model review is not proof-kernel verification or independent expert confirmation.",
+      "ai_role": "The author describes model-generated proof development and refinement, followed by additional checks and author review.",
+      "evidence_urls": [
+        "https://hexagonmath.org/2611.00653v1"
+      ],
+      "test_type": "not reported"
+    }
+  },
+  {
+    "id": "2026-11-weighted-lucas-reciprocal-sum-field-exclusion",
+    "title": "GPT-6.2 Astra assists a field-exclusion proof for a weighted Lucas sum",
+    "summary": "The preprint reports that a weighted reciprocal sum of even-indexed Lucas numbers lies outside the quadratic field generated by the square root of five. It extends the irrationality claim across positive integer strides.",
+    "field": "mathematics",
+    "ai_technology": "OpenAI Codex with GPT-6.2 Astra Max",
+    "organization": "twinheterodox",
+    "source_url": "https://hexagonmath.org/2611.00639v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-19",
+    "added_date": "2026-11-20",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Source-reported exact certificates and computational replays support parts of the proof.",
+      "unknown": "The submitting author reports understanding only parts of the proof. Independent review and priority were not established.",
+      "ai_role": "The submitting author credits Codex with developing the mathematical argument and describes directing the inquiry.",
+      "evidence_urls": [
+        "https://hexagonmath.org/2611.00639v1"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-sol-assisted-non-kahler-ricci-soliton",
+    "title": "GPT-6.1 Sol helps construct a compact non-Kähler Ricci soliton",
+    "summary": "The authors construct a gradient shrinking Ricci soliton on a simply connected eight-dimensional flag manifold and show that its metric is nowhere locally Kähler.",
+    "field": "mathematics",
+    "ai_technology": "GPT-6.1 Sol",
+    "organization": "Timothy Buttsworth; Henry Wood",
+    "source_url": "https://arxiv.org/abs/2611.20552v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-16",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "https://arxiv.org/html/2611.20552v1",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The authors report checking the proof and replaying the supplied computational verification successfully.",
+      "unknown": "The computational replay is from the study team. Independent reproduction was not established.",
+      "ai_role": "The authors say GPT-6.1 Sol initially generated the construction, proof arguments and verification code in response to their prompt.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.20552v1",
+        "https://arxiv.org/html/2611.20552v1"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-xgboost-spinel-polysulfide-catalysts",
+    "title": "XGBoost guides the selection of two experimentally tested spinel catalysts",
+    "summary": "The authors report that two structural descriptors jointly predict polysulfide conversion and that they experimentally tested two model-nominated spinel oxide catalysts. The compositions differ from the catalyst highlighted in their earlier single-descriptor work.",
+    "field": "materials",
+    "ai_technology": "XGBoost",
+    "organization": "Nanyang Technological University",
+    "source_url": "https://doi.org/10.1126/sciadv.aef1994",
+    "source_type": "paper",
+    "publication_date": "2026-11-18",
+    "added_date": "2026-11-20",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The authors report experimental validation of Fe₂CoO₄ and Fe₂NiO₄.",
+      "unknown": "The comparison used the indexed abstract and earlier publisher text. Full performance baselines and experimental protocols remain to be checked.",
+      "ai_role": "XGBoost was used to predict the descriptors across spinel oxides and nominate candidates for experiments.",
+      "evidence_urls": [
+        "https://doi.org/10.1126/sciadv.aef1994",
+        "https://pubmed.ncbi.nlm.nih.gov/43050539/",
+        "https://www.nature.com/articles/s41467-025-63903-3"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-physics-informed-titanium-halide-electrolyte",
+    "title": "Physics-informed deep learning guides a synthesized titanium halide electrolyte",
+    "summary": "The authors synthesize Li₄TiBr₄Cl₄ and report room-temperature ionic conductivity of 1.14 mS/cm. A laboratory cell retained 90.6% capacity after 200 cycles at 0.5 C.",
+    "field": "materials",
+    "ai_technology": "Physics-informed neural network; dual-source graph neural network",
+    "organization": "Central South University",
+    "source_url": "https://doi.org/10.1002/smll.76722",
+    "source_type": "paper",
+    "publication_date": "2026-11-18",
+    "added_date": "2026-11-20",
+    "verification_status": "needs verification",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The abstract reports synthesis, structural characterization, conductivity and cell cycling.",
+      "unknown": "The comparison used indexed abstract evidence. Baselines, detailed protocol and independent replication remain to be checked.",
+      "ai_role": "Two neural networks helped screen inorganic crystals and identify titanium halides for synthesis.",
+      "evidence_urls": [
+        "https://doi.org/10.1002/smll.76722",
+        "https://pubmed.ncbi.nlm.nih.gov/43049221/"
+      ],
+      "test_type": "direct test"
+    }
+  },
+  {
+    "id": "2026-11-boruta-proteomics-myocardial-infarction-risk",
+    "title": "Machine learning selects a protein panel that improves myocardial infarction risk prediction",
+    "summary": "A 23-protein panel raised the C-statistic from 0.710 to 0.733 when added to conventional risk factors in 37,187 UK Biobank participants, including 630 myocardial infarction cases.",
+    "field": "medicine",
+    "ai_technology": "Boruta feature selection",
+    "organization": "China Kadoorie Biobank; University of Oxford; UK Biobank",
+    "source_url": "https://doi.org/10.1093/gigascience/giag102",
+    "source_type": "paper",
+    "publication_date": "2026-11-17",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The authors report evaluation in Chinese source data and an external UK Biobank cohort.",
+      "unknown": "The observational evaluation does not establish causal effects, prospective clinical benefit or readiness for routine testing.",
+      "ai_role": "Boruta selected proteins from two proteomics platforms for the prediction panel.",
+      "evidence_urls": [
+        "https://doi.org/10.1093/gigascience/giag102"
+      ],
+      "test_type": "retrospective or benchmark"
+    }
+  },
+  {
+    "id": "2026-11-ai-assisted-gradient-rank-metric-measure-spaces",
+    "title": "GPT-6.1 Astra assists a gradient rank theorem for metric measure spaces",
+    "summary": "Fabrice Baudoin develops a finite-rank gradient framework and proves that the pointwise gradient rank is strictly below p almost everywhere under the hypotheses of his rank theorem. The result assumes a small-scale doubling measure, a Poincaré inequality and cutoffs with a matching energy scale above the exponent p.",
+    "field": "mathematics",
+    "ai_technology": "GPT-6.1 Astra; GPT-6.1 Sol",
+    "organization": "Fabrice Baudoin",
+    "source_url": "https://hexagonmath.org/2611.00669v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-19",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "https://hexagonmath.org/pdf/2611.00669v1",
+    "relevance": {
+      "impact": 3,
+      "validation": 1,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The preprint states and proves the rank bound in Theorem 5.2 and discusses examples.",
+      "unknown": "Independent review and proof-kernel verification were not established.",
+      "ai_role": "The author says he devised the theory and manuscript structure, Astra 6.1 produced the proofs, and Sol 6.1 helped review and polish them.",
+      "evidence_urls": [
+        "https://hexagonmath.org/2611.00669v1",
+        "https://hexagonmath.org/pdf/2611.00669v1"
+      ],
+      "test_type": "not reported"
+    }
   }
 ]

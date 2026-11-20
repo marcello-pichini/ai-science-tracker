@@ -67921,5 +67921,159 @@
     "remediation_note": "Remediation was not independently checked for this catalog entry. Consult the linked public CVE record and maintainer guidance.",
     "advisory_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/9xxx/CVE-2026-9811.json",
     "checked_date": "2026-11-18"
+  },
+  {
+    "id": "cve-2026-114938",
+    "title": "Oracle discloses a Java vulnerability reported by Calif researchers",
+    "product": "Oracle Java SE and GraalVM",
+    "ai_system": "AI system unspecified",
+    "organization": "Calif; Oracle",
+    "summary": "Oracle published an advisory for a vulnerability affecting specified Java SE and GraalVM versions.",
+    "ai_role": "Calif reports that its researchers used AI to find the issue. Oracle’s attribution credits the researchers. The model and degree of automation are unspecified.",
+    "disclosure_date": "2026-11-17",
+    "ai_attribution_date": null,
+    "classification": "disclosure",
+    "classification_note": "Public coordinated or vendor disclosure. The cited sources establish the reported finding and attribution.",
+    "cves": [
+      "CVE-2026-114938"
+    ],
+    "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-114938",
+    "ai_source_url": "https://calif.io/java4shell",
+    "advisory_url": "https://www.oracle.com/security-alerts/cspunov2026.html",
+    "remediation": "fix documented",
+    "remediation_note": "Apply the Oracle security update appropriate to the affected product and release line.",
+    "checked_date": "2026-11-20"
+  },
+  {
+    "id": "cve-2026-127039",
+    "title": "GnuTLS fixes a denial-of-service issue in certificate handling",
+    "product": "GnuTLS",
+    "ai_system": "AISLE",
+    "organization": "AISLE Research Team; GnuTLS Project",
+    "summary": "GnuTLS documented a denial-of-service risk under memory pressure in the affected versions.",
+    "ai_role": "AISLE attributes discovery to its system. The CNA names AISLE researcher Joshua Rogers as finder. The model and individual division of work are unspecified.",
+    "disclosure_date": "2026-11-18",
+    "ai_attribution_date": "2026-11-18",
+    "classification": "disclosure",
+    "classification_note": "Public coordinated or vendor disclosure. The cited sources establish the reported finding and attribution.",
+    "cves": [
+      "CVE-2026-127039"
+    ],
+    "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-127039",
+    "ai_source_url": "https://aisle.com/cve-discoveries/cve-2026-127039",
+    "advisory_url": "https://gnutls.org/security-new.html",
+    "remediation": "fix documented",
+    "remediation_note": "Upgrade to GnuTLS 3.8.14 or later.",
+    "checked_date": "2026-11-20"
+  },
+  {
+    "id": "cve-2026-127040",
+    "title": "GnuTLS fixes a denial-of-service issue in RSA-PSK authentication",
+    "product": "GnuTLS",
+    "ai_system": "AISLE",
+    "organization": "AISLE Research Team; GnuTLS Project",
+    "summary": "GnuTLS documented a denial-of-service risk under memory pressure in the affected versions.",
+    "ai_role": "AISLE attributes discovery to its system. The CNA names AISLE researcher Joshua Rogers as finder. The model and individual division of work are unspecified.",
+    "disclosure_date": "2026-11-18",
+    "ai_attribution_date": "2026-11-18",
+    "classification": "disclosure",
+    "classification_note": "Public coordinated or vendor disclosure. The cited sources establish the reported finding and attribution.",
+    "cves": [
+      "CVE-2026-127040"
+    ],
+    "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-127040",
+    "ai_source_url": "https://aisle.com/cve-discoveries/cve-2026-127040",
+    "advisory_url": "https://gnutls.org/security-new.html",
+    "remediation": "fix documented",
+    "remediation_note": "Upgrade to GnuTLS 3.8.14 or later.",
+    "checked_date": "2026-11-20"
+  },
+  {
+    "id": "cve-2026-129510",
+    "title": "Apache log4net fixes an issue that could hide log events",
+    "product": "Apache log4net",
+    "ai_system": "Anthropic OSS Scanner",
+    "organization": "Apache Software Foundation",
+    "summary": "The Apache advisory describes a case where later log events can be hidden in XML output.",
+    "ai_role": "Apache states that its team found the issue using Anthropic OSS Scanner. The underlying model version is unspecified.",
+    "disclosure_date": "2026-11-17",
+    "ai_attribution_date": "2026-11-17",
+    "classification": "disclosure",
+    "classification_note": "Public coordinated or vendor disclosure. The cited sources establish the reported finding and attribution.",
+    "cves": [
+      "CVE-2026-129510"
+    ],
+    "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-129510",
+    "ai_source_url": "https://logging.apache.org/security.html#CVE-2026-129510",
+    "advisory_url": "https://logging.apache.org/security.html#CVE-2026-129510",
+    "remediation": "fix documented",
+    "remediation_note": "Upgrade to Apache log4net 3.6.0 or later.",
+    "checked_date": "2026-11-20"
+  },
+  {
+    "id": "cve-2026-129511",
+    "title": "Apache log4net fixes an integrity issue affecting XML log events",
+    "product": "Apache log4net",
+    "ai_system": "Anthropic OSS Scanner",
+    "organization": "Apache Software Foundation",
+    "summary": "The Apache advisory describes an encoding-related risk to the integrity of XML log output.",
+    "ai_role": "Apache states that its team found the issue using Anthropic OSS Scanner. The underlying model version is unspecified.",
+    "disclosure_date": "2026-11-17",
+    "ai_attribution_date": "2026-11-17",
+    "classification": "disclosure",
+    "classification_note": "Public coordinated or vendor disclosure. The cited sources establish the reported finding and attribution.",
+    "cves": [
+      "CVE-2026-129511"
+    ],
+    "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-129511",
+    "ai_source_url": "https://logging.apache.org/security.html#CVE-2026-129511",
+    "advisory_url": "https://logging.apache.org/security.html#CVE-2026-129511",
+    "remediation": "fix documented",
+    "remediation_note": "Upgrade to Apache log4net 3.6.0 or later.",
+    "checked_date": "2026-11-20"
+  },
+  {
+    "id": "cve-2026-129512",
+    "title": "Apache log4net fixes an issue that could lose a database log event",
+    "product": "Apache log4net",
+    "ai_system": "Anthropic OSS Scanner",
+    "organization": "Apache Software Foundation",
+    "summary": "The Apache advisory describes loss of a log event when the database cannot store its text.",
+    "ai_role": "Apache states that its team found the issue using Anthropic OSS Scanner. The underlying model version is unspecified.",
+    "disclosure_date": "2026-11-17",
+    "ai_attribution_date": "2026-11-17",
+    "classification": "disclosure",
+    "classification_note": "Public coordinated or vendor disclosure. The cited sources establish the reported finding and attribution.",
+    "cves": [
+      "CVE-2026-129512"
+    ],
+    "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-129512",
+    "ai_source_url": "https://logging.apache.org/security.html#CVE-2026-129512",
+    "advisory_url": "https://logging.apache.org/security.html#CVE-2026-129512",
+    "remediation": "fix documented",
+    "remediation_note": "Upgrade to Apache log4net 3.6.0 or later.",
+    "checked_date": "2026-11-20"
+  },
+  {
+    "id": "cve-2026-132129",
+    "title": "Apache Kudu fixes an out-of-bounds read in deprecated range predicates",
+    "product": "Apache Kudu",
+    "ai_system": "Mythos security scan",
+    "organization": "Apache Software Foundation",
+    "summary": "The CNA documented an out-of-bounds read affecting deprecated range predicates.",
+    "ai_role": "The CNA identifies a Mythos security scan as finder. The exact model version and human verification workflow are unspecified.",
+    "disclosure_date": "2026-11-19",
+    "ai_attribution_date": "2026-11-19",
+    "classification": "disclosure",
+    "classification_note": "Public coordinated or vendor disclosure. The cited sources establish the reported finding and attribution.",
+    "cves": [
+      "CVE-2026-132129"
+    ],
+    "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-132129",
+    "ai_source_url": "https://www.cve.org/CVERecord?id=CVE-2026-132129",
+    "advisory_url": "https://lists.apache.org/thread/lnj6xlwvwno6zrqxocsyszsfdxd76fm2",
+    "remediation": "fix documented",
+    "remediation_note": "Upgrade to an applicable fixed Apache Kudu release, 1.17.2 or 1.18.2, or later on the relevant release line.",
+    "checked_date": "2026-11-20"
   }
 ]
