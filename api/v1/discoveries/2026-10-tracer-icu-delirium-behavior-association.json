@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-tracer-icu-delirium-behavior-association",
+  "title": "AI video analysis links lower purposeful activity with documented ICU delirium",
+  "summary": "In a single-center retrospective study of 280 ICU patients, TRACER used Gemini 3.1 Flash Lite to detect actions across about 60,000 camera-hours. Patients with any positive delirium assessment during their stay (53 patients versus 227 without) showed less purposeful activity. Behavior was pooled across whole stays, rather than aligned to delirious periods. Detection errors, intermittent assessments, sedation and length-of-stay differences limit interpretation. This preprint reports a cohort association, without establishing early prediction, causality or clinical benefit. The result was present in the October 15 preprint before the November announcement.",
+  "field": "medicine",
+  "ai_technology": "TRACER; Gemini 3.1 Flash Lite",
+  "organization": "Stanford University",
+  "source_url": "https://arxiv.org/abs/2610.21266v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-15",
+  "added_date": "2026-11-20",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Existing ICU recordings; action annotations and patient-level association/sensitivity analysis.",
+    "unknown": "Transfer, prospective prediction and patient benefit are not established.",
+    "ai_role": "Pretrained vision-language model detects actions for cohort comparison.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.21266",
+      "https://arxiv.org/html/2610.21266v1"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-20",
+    "scope": "Primary v1 abstract/history; bounded full-text model operation, cohort analysis, Appendix A.14 and limitations. No independent reproduction."
+  }
+}

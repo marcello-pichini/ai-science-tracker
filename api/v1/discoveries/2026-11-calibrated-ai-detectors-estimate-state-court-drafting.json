@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-calibrated-ai-detectors-estimate-state-court-drafting",
+  "title": "Calibrated AI detectors estimate rising AI-assisted drafting in four state courts",
+  "summary": "Stanford researchers applied the learned EditLens detector with ScoreMix calibration to 127,518 complaints from four U.S. county court systems. Their selected settings estimated rising AI-like drafting, reaching about 38% in Santa Clara and 36% in San Francisco in 2026 for non-debt-collection complaints. Calibration used documented hallucination filings and assumed their detector-score distribution represented other AI-assisted writing. Detector settings, imperfect controls, case mix and selection of conspicuous AI mistakes limit the estimates. These are population estimates, not proof that any particular filing used AI, fabricated citations or affected a judicial outcome. November 19 is the institutional announcement date; the working paper posting day is unestablished.",
+  "field": "humanities",
+  "ai_technology": "EditLens (Llama-3.2-3B); ScoreMix calibration",
+  "organization": "Stanford University",
+  "source_url": "https://hai.stanford.edu/news/ai-might-be-flooding-state-court-houses-but-proving-it-is-another-matter",
+  "source_type": "press release",
+  "publication_date": "2026-11-19",
+  "added_date": "2026-11-20",
+  "verification_status": "verified",
+  "paper_url": "https://dho.stanford.edu/wp-content/uploads/GenAI_Courts.pdf",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Retrospective court complaints and detector calibration/validation.",
+    "unknown": "Exact prevalence depends on detector specifications and reference distributions.",
+    "ai_role": "Learned text classifier supplies scores for calibrated population estimates.",
+    "evidence_urls": [
+      "https://hai.stanford.edu/news/ai-might-be-flooding-state-court-houses-but-proving-it-is-another-matter",
+      "https://dho.stanford.edu/wp-content/uploads/GenAI_Courts.pdf"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-20",
+    "scope": "Dated first-party announcement and bounded primary working-paper Methods Sections 2–5 and discussion. Separate appendix not reviewed; no individual-file attribution or independent replication."
+  }
+}
