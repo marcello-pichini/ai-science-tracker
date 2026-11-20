@@ -42,6 +42,9 @@ def lab_for(organization):
 
 
 def family_lab(name):
+    # LMMs-Lab released this checkpoint using Meta's Llama as a base model.
+    if name.casefold() == 'llama3-llava-next-8b':
+        return None
     # Name-based attribution is retained explicitly when source ownership is empty.
     for pattern, lab in [
         (r'^(GPT|ChatGPT|o[134](?:-|\b)|Codex|DALL)', 'OpenAI'),
@@ -172,8 +175,19 @@ def main():
     parser.add_argument('--catalog', type=Path, default=ROOT / 'data/models.json')
     parser.add_argument('--fetched-on', required=True, help='Export retrieval date (YYYY-MM-DD)')
     parser.add_argument('--output', type=Path, default=ROOT / 'data/model-progress.json')
+    parser.add_argument('--refresh-if-changed', action='store_true',
+                        help='Rebuild when the benchmark ZIP or notable-model input changed')
     args = parser.parse_args()
-    result = build(args.archive, args.catalog, args.fetched_on)
+    fetched_on = args.fetched_on
+    if args.refresh_if_changed and args.output.is_file():
+        previous = json.loads(args.output.read_text())
+        zip_sha = hashlib.sha256(args.archive.read_bytes()).hexdigest()
+        catalog_sha = json.loads(args.catalog.read_text())['source']['csv_sha256']
+        if zip_sha == previous['zip_sha256']:
+            if catalog_sha == previous['catalog_snapshot']:
+                return
+            fetched_on = previous['fetched_on']
+    result = build(args.archive, args.catalog, fetched_on)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False) + '\n')
     records = {row['id']: row for row in result['models']}
     unmatched = result['unmatched_benchmark_rows']

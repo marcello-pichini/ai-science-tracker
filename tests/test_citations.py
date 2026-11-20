@@ -44,6 +44,17 @@ class CitationImportTests(unittest.TestCase):
             'doi': '10.1234/published', 'percentile': 95.0, 'top_1': False,
             'top_10': True, 'cited_by': 12})
 
+    def test_flood_hub_predecessor_metrics_belong_only_to_march(self):
+        discoveries = json.loads((ROOT / 'data/discoveries.json').read_text())
+        by_id = {record['id']: record for record in discoveries}
+        rows = json.loads((ROOT / 'data/citations.json').read_text())['records']
+        newer = '2024-11-flood-hub-globale'
+        earlier = '2024-03-previsione-alluvioni'
+        self.assertEqual(citations.doi_of(by_id[earlier]), '10.1038/s41586-024-07145-1')
+        self.assertIsNone(citations.doi_of(by_id[newer]))
+        self.assertIn(earlier, rows)
+        self.assertNotIn(newer, rows)
+
     def test_singleton_match_preserves_identity_when_location_alias_is_not_returned(self):
         error, output = self.run_import(self.work(), doi='10.1234/preprint')
         self.assertIsNone(error)

@@ -5,7 +5,9 @@ import json
 from pathlib import Path
 import shutil
 import subprocess
+import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location('model_progress_import', ROOT / 'scripts/import_model_progress.py')
@@ -39,10 +41,31 @@ class ModelProgressTests(unittest.TestCase):
         self.assertTrue(any(r['eci'] is None for r in self.models.values()))
 
     def test_existing_requested_lab_catalog_releases_are_retained(self):
-        original = json.loads((ROOT / 'data/models.json').read_text())['models']
-        expected = {r['name'] for r in original if IMPORT.lab_for(r['organization'])}
-        retained = {r['name'] for m in self.models.values() for r in m['catalog_releases']}
+        original = json.loads((ROOT / 'data/models.json').read_text())
+        self.assertEqual(self.data['catalog_snapshot'], original['source']['csv_sha256'])
+        expected = {(r['name'], r['date'], r['link']) for r in original['models'] if IMPORT.lab_for(r['organization'])}
+        retained = {(r['name'], r['date'], r['link']) for m in self.models.values() for r in m['catalog_releases']}
         self.assertLessEqual(expected, retained)
+
+    def test_llava_project_does_not_count_as_meta_just_because_it_uses_llama(self):
+        self.assertIsNone(IMPORT.family_lab('llama3-llava-next-8b'))
+        self.assertEqual(IMPORT.family_lab('Llama 3 8B'), 'Meta')
+        self.assertNotIn('llama3-llava-next-8b', self.models)
+
+    def test_csv_only_refresh_retains_benchmark_retrieval_date(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            archive, catalog, output = [Path(tmp) / name for name in ('epoch.zip', 'catalog.json', 'progress.json')]
+            archive.write_bytes(b'benchmark export')
+            output.write_text(json.dumps({'fetched_on': '2026-11-18',
+                'zip_sha256': hashlib.sha256(archive.read_bytes()).hexdigest(), 'catalog_snapshot': 'old'}))
+            catalog.write_text(json.dumps({'source': {'csv_sha256': 'new'}}))
+            with patch.object(IMPORT, 'build') as build:
+                build.return_value = {'models': [], 'unmatched_benchmark_rows': {}}
+                args = ['import_model_progress.py', str(archive), '--catalog', str(catalog), '--output', str(output),
+                        '--fetched-on', '2026-11-20', '--refresh-if-changed']
+                with patch('sys.argv', args):
+                    IMPORT.main()
+                build.assert_called_once_with(archive, catalog, '2026-11-18')
 
     def test_source_numbers_reject_nonfinite_and_keep_zero(self):
         self.assertIsNone(IMPORT.number(''))

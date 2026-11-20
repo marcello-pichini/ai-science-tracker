@@ -26,6 +26,17 @@ class Links(HTMLParser):
 
 
 class CatalogTests(unittest.TestCase):
+    def test_family_links_distinguish_models_from_analogies_and_harnesses(self):
+        links = discovery_links([
+            {'id': 'analogy', 'ai_technology': 'OpenEvolve (AlphaEvolve-style search)'},
+            {'id': 'harness', 'ai_technology': 'GPT-6 Astra, used through the Codex harness'},
+            {'id': 'alpha', 'ai_technology': 'AlphaEvolve'},
+            {'id': 'codex', 'ai_technology': 'OpenAI Codex'},
+        ])
+        self.assertEqual(links['alphaevolve'], ['alpha'])
+        self.assertEqual(links['codex'], ['codex'])
+        self.assertEqual(links['gpt6'], ['harness'])
+
     def test_discovery_schema(self):
         discoveries = json.loads((ROOT / 'data/discoveries.json').read_text())
         self.assertTrue(discoveries)

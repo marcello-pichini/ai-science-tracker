@@ -60,9 +60,11 @@ def refresh(root):
     rows = []
     sources = [
         ('epoch-models', ['data/models.json'], 'https://epoch.ai/data/notable_ai_models.csv', 'work/epoch/notable_ai_models.csv', ['python3', 'scripts/generate_models.py']),
-        ('epoch-progress', ['data/model-progress.json'], 'https://epoch.ai/data/benchmark_data.zip', 'work/epoch/benchmark_data.zip', ['python3', 'scripts/import_model_progress.py', 'work/epoch/benchmark_data.zip', '--fetched-on', date]),
+        ('epoch-progress', ['data/model-progress.json'], 'https://epoch.ai/data/benchmark_data.zip', 'work/epoch/benchmark_data.zip', ['python3', 'scripts/import_model_progress.py', 'work/epoch/benchmark_data.zip', '--fetched-on', date, '--refresh-if-changed']),
         ('swe-bench', ['data/swe-bench.json'], 'https://raw.githubusercontent.com/SWE-bench/swe-bench.github.io/master/data/leaderboards.json', 'work/swe-bench/leaderboards.json', ['python3', 'scripts/import_swe_bench.py', 'work/swe-bench/leaderboards.json', '--fetched-on', date]),
     ]
+    models_path = root / 'data/models.json'
+    previous_models = models_path.read_bytes()
     for name, paths, url, destination, generator in sources:
         target = root / destination
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -72,13 +74,17 @@ def refresh(root):
             target.unlink(missing_ok=True)
             rows.append({'id': name, 'status': 'held', 'reason': 'download failed'})
             continue
-        previous = json.loads((root / paths[0]).read_text())
-        old_hash = (previous.get('source', {}).get('csv_sha256') if name == 'epoch-models'
-                    else previous.get('zip_sha256') if name == 'epoch-progress' else None)
-        if old_hash and hashlib.sha256(target.read_bytes()).hexdigest() == old_hash:
-            rows.append({'id': name, 'status': 'unchanged'})
-            continue
+        if name == 'epoch-models':
+            previous = json.loads(previous_models)
+            old_hash = previous.get('source', {}).get('csv_sha256')
+            if old_hash and hashlib.sha256(target.read_bytes()).hexdigest() == old_hash:
+                rows.append({'id': name, 'status': 'unchanged'})
+                continue
         rows.append(source_transaction(root, name, paths, generator))
+    models_result, progress_result = rows[:2]
+    if models_result['status'] == 'updated' and progress_result['status'] == 'held':
+        models_path.write_bytes(previous_models)
+        models_result.update(status='held', reason='Matching Epoch progress refresh failed')
     command = ['bash', '-c', 'python3 -m pip install -r scripts/requirements-benchmarks.txt && python3 scripts/refresh_public_benchmarks.py "$@"', 'benchmark-refresh']
     epoch_zip = root / 'work/epoch/benchmark_data.zip'
     if epoch_zip.exists():

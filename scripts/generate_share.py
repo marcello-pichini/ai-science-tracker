@@ -1119,7 +1119,7 @@ def write_page_summaries(items, models):
         'index.html': (f'<b>{len(items)} discoveries</b> in {len({d["field"] for d in items})} fields and '
                        f'{len({lead_org(d["organization"]) for d in items if canonical_organization(d["organization"])["kind"] != "unknown affiliation"})} organizations since 2020. '
                        'Browse source-linked findings below.'),
-        'models.html': (f'<b>{len(models["models"])} releases</b> from leading labs since 2020, using Epoch AI data. '
+        'models.html': (f'<b>{len(models["models"])} selected releases</b> from Epoch AI, including leading labs since 2020 and tracked families from any date. '
                         f'<b>{sum(f.get("discovery_count", 0) > 0 for f in models["families"])} families</b> of models are matched by name '
                         f'to at least one of {len(items)} catalog discoveries, covering {len(models.get("linked_discoveries", []))} discoveries in total.')}
     for name, summary in summaries.items():
@@ -1128,6 +1128,12 @@ def write_page_summaries(items, models):
             path.write_text(re.sub(r'(<p class="lead" id="lead">).*?(</p>)',
                                    lambda m: m[1] + summary + m[2], path.read_text(), flags=re.S))
 
+    progress_page = ROOT / 'model-progress.html'
+    if progress_page.exists():
+        progress = json.loads((ROOT / 'data/model-progress.json').read_text())
+        retrieved = nice_date(progress['fetched_on'])
+        progress_page.write_text(re.sub(r'(<span id="(?:import-date|cadence-period)">)[^<]*(</span>)',
+                                        lambda m: m[1] + retrieved + m[2], progress_page.read_text()))
 
 def write_home_browse(items):
     """Write plain links to every entry page into index.html, grouped by year, so search

@@ -1,14 +1,16 @@
-"""Read-only checks of the deployed site, Hugging Face files and Zenodo version."""
+"""Read-only checks of the deployed site, Hugging Face files and Zenodo archive."""
 import argparse
 import datetime as dt
 import hashlib
 from html.parser import HTMLParser
+from io import BytesIO
 import json
 from pathlib import Path
 import re
 import time
 from urllib.parse import unquote, urljoin, urlsplit
 from urllib.request import Request, urlopen
+from zipfile import BadZipFile, ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ('index.html', 'models.html', 'model-progress.html', 'security.html',
@@ -17,16 +19,19 @@ DATA = ('discoveries.json', 'vulnerabilities.json', 'models.json',
         'model-progress.json', 'swe-bench.json')
 HF_FILES = ('discoveries.json', 'discoveries.csv', 'vulnerabilities.json', 'vulnerabilities.csv')
 MAX_BYTES = 64 * 1024 * 1024
+MAX_ARCHIVE_BYTES = 256 * 1024 * 1024
+ZENODO_CONCEPT = '10.5281/zenodo.24217686'
+ZENODO_LATEST = 'https://zenodo.org/api/records/24217686/versions/latest'
 
 
-def fetch(url, attempts=3, inspect=False):
+def fetch(url, attempts=3, inspect=False, max_bytes=MAX_BYTES):
     for attempt in range(attempts):
         try:
             request = Request(url, headers={'User-Agent': 'AI-Science-Tracker-Monitor/1.0',
                                             'Cache-Control': 'no-cache'})
             with urlopen(request, timeout=20) as response:
-                body = response.read(MAX_BYTES + 1)
-                if len(body) > MAX_BYTES:
+                body = response.read(max_bytes + 1)
+                if len(body) > max_bytes:
                     raise ValueError('Response exceeds the monitor size limit')
                 if inspect:
                     metadata = (response.status, response.geturl(), response.headers.get_all('X-Robots-Tag', []))
@@ -42,8 +47,6 @@ class Page(HTMLParser):
         super().__init__()
         self.title = self.heading = False
         self.assets = set()
-        self.text = []
-        self.hidden = 0
         self.canonical = []
         self.robots = []
         self.identity = {'title': [], 'h1': []}
@@ -62,8 +65,6 @@ class Page(HTMLParser):
             self.canonical.append(attrs.get('href'))
         if tag == 'meta' and attrs.get('name', '').casefold() in ('robots', 'googlebot'):
             self.robots.append(attrs.get('content', ''))
-        if tag in ('script', 'style'):
-            self.hidden += 1
         if tag == 'script' and attrs.get('src'):
             self.assets.add(attrs['src'])
         if tag == 'link' and 'stylesheet' in attrs.get('rel', '').split() and attrs.get('href'):
@@ -72,14 +73,10 @@ class Page(HTMLParser):
     def handle_endtag(self, tag):
         if tag == self.identity_tag:
             self.identity_tag = None
-        if tag in ('script', 'style'):
-            self.hidden = max(0, self.hidden - 1)
 
     def handle_data(self, data):
         if self.identity_tag:
             self.identity[self.identity_tag].append(data)
-        if not self.hidden:
-            self.text.append(data)
 
     def signature(self):
         return tuple(' '.join(''.join(self.identity[tag]).split()) for tag in ('title', 'h1'))
@@ -106,19 +103,6 @@ def same_data(expected, actual, filename):
     return expected == actual
 
 
-def check_zenodo(body, release, now=None):
-    page = Page()
-    page.feed(body.decode('utf-8'))
-    match = re.search(r'\bVersion\s+(v[\w.\-]+)', ' '.join(page.text))
-    actual = match.group(1) if match else None
-    if actual == release['tagName']:
-        return 'pass', f"Latest archived version is {actual}"
-    published = dt.datetime.fromisoformat(release['publishedAt'].replace('Z', '+00:00'))
-    age = (now or dt.datetime.now(dt.timezone.utc)) - published
-    status = 'pending' if age < dt.timedelta(hours=2) else 'fail'
-    return status, f"Expected {release['tagName']}; Zenodo currently reports {actual or 'no version'}"
-
-
 def component_entries(root, rows, prefix=None):
     """Validate paths before any read or request; reject ambiguous snapshot entries."""
     result = {}
@@ -138,6 +122,87 @@ def component_entries(root, rows, prefix=None):
     if not result:
         raise ValueError('Component manifest must not be empty')
     return result
+
+
+def verify_archive(zipped, file, expected_manifest, target_sha):
+    if len(zipped) != file['size'] or file['checksum'] != 'md5:' + hashlib.md5(zipped, usedforsecurity=False).hexdigest():
+        raise ValueError('ZIP length or checksum differs from the Zenodo record')
+    manifest = json.loads(expected_manifest)
+    components = manifest['components']
+    snapshot = hashlib.sha256(json.dumps(
+        components, sort_keys=True, ensure_ascii=False, separators=(',', ':')
+    ).encode()).hexdigest()
+    if snapshot != manifest['snapshot_sha256']:
+        raise ValueError('Tagged release manifest has an invalid snapshot digest')
+    component_entries(ROOT, components.values(), 'data/')
+    with ZipFile(BytesIO(zipped)) as archive:
+        names = archive.namelist()
+        if len(names) != len(set(names)):
+            raise ValueError('ZIP contains duplicate member names')
+        manifest_name, = [name for name in names if name.split('/', 1)[-1] == 'api/v1/manifest.json']
+        prefix = manifest_name.split('/', 1)[0]
+        suffix = prefix.rsplit('-', 1)[-1]
+        if not re.fullmatch(r'[0-9a-f]{7,40}', suffix) or not target_sha.startswith(suffix):
+            raise ValueError('ZIP source directory does not match the tagged Git commit')
+        if (archive.getinfo(manifest_name).file_size != len(expected_manifest)
+                or archive.read(manifest_name) != expected_manifest):
+            raise ValueError('ZIP manifest differs from the tagged Git snapshot')
+        for descriptor in components.values():
+            member = archive.getinfo(prefix + '/' + descriptor['path'])
+            if member.file_size != descriptor['bytes'] or member.file_size > MAX_BYTES:
+                raise ValueError(f"ZIP component length mismatch or size limit exceeded: {descriptor['path']}")
+            if hashlib.sha256(archive.read(member)).hexdigest() != descriptor['sha256']:
+                raise ValueError(f"ZIP component SHA-256 mismatch: {descriptor['path']}")
+    return snapshot, components
+
+
+def check_zenodo(release, expected_manifest, deployed_snapshot, fetcher, now=None):
+    results = []
+    tag = release['tagName']
+    published = dt.datetime.fromisoformat(release['publishedAt'].replace('Z', '+00:00'))
+    within_grace = (now or dt.datetime.now(dt.timezone.utc)) - published < dt.timedelta(hours=2)
+
+    def record(name, status, detail):
+        results.append({'check': 'zenodo/' + name, 'status': status, 'detail': detail})
+
+    try:
+        report = json.loads(fetcher(ZENODO_LATEST))
+        actual = report['metadata'].get('version')
+        if actual != tag:
+            record('archive-integrity', 'pending' if within_grace else 'fail',
+                   f"Expected {tag}; Zenodo currently reports {actual or 'no version'}")
+            return results
+        doi, target_sha = report['doi'], release['targetSha']
+        if (report['conceptdoi'] != ZENODO_CONCEPT or doi != f"10.5281/zenodo.{report['id']}"
+                or not re.fullmatch(r'[0-9a-f]{40}', target_sha)):
+            raise ValueError('Invalid Zenodo version DOI, concept DOI or tagged Git commit')
+        file, = [file for file in report['files'] if file['key'].endswith('.zip')]
+        url = file['links']['self']
+        parsed = urlsplit(url)
+        if (parsed.scheme != 'https' or parsed.netloc != 'zenodo.org' or parsed.query or parsed.fragment
+                or not parsed.path.startswith(f"/api/records/{report['id']}/files/")
+                or not parsed.path.endswith('.zip/content')
+                or not 0 < file['size'] <= MAX_ARCHIVE_BYTES):
+            raise ValueError('Invalid Zenodo ZIP address or size')
+        zipped = fetcher(url, max_bytes=file['size']) if fetcher is fetch else fetcher(url)
+        archived_snapshot, components = verify_archive(zipped, file, expected_manifest, target_sha)
+    except OSError as exc:
+        record('archive-integrity', 'pending' if within_grace else 'fail', f'Zenodo archive unavailable: {exc}')
+        return results
+    except (BadZipFile, KeyError, TypeError, ValueError) as exc:
+        record('archive-integrity', 'fail', f'{type(exc).__name__}: {exc}')
+        return results
+
+    record('archive-integrity', 'pass',
+           f'{tag}, DOI {doi}, commit {target_sha}, snapshot {archived_snapshot}. Verified {len(components)} component files.')
+    parity = 'unknown' if deployed_snapshot is None else 'pass' if archived_snapshot == deployed_snapshot else 'different'
+    record('deployed-parity', parity,
+           f"Archive snapshot {archived_snapshot}. Deployed snapshot {deployed_snapshot or 'unavailable'}.")
+    license_id = (report['metadata'].get('license') or {}).get('id', '')
+    if license_id.lower() == 'cc-by-4.0' and any('CC BY-NC' in row.get('license', '') or 'CC BY-SA' in row.get('license', '')
+                                               for row in components.values()):
+        record('license-metadata', 'warning', f'DOI {doi} has a record-level CC BY 4.0 label and differently licensed components.')
+    return results
 
 
 def check_freshness(metadata, now=None):
@@ -161,7 +226,7 @@ def check_freshness(metadata, now=None):
 
 
 def check(root, site, hf, release=None, fetcher=fetch, deployment=None, now=None,
-          allow_legacy_benchmarks=False):
+          allow_legacy_benchmarks=False, release_manifest=None):
     results, assets = [], set()
     manifest_path = root / 'api/v1/manifest.json'
     manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else None
@@ -258,18 +323,10 @@ def check(root, site, hf, release=None, fetcher=fetch, deployment=None, now=None
     for name in HF_FILES:
         record('hugging-face/' + name, lambda name=name:
                compare(root / 'data' / name, hf.rstrip('/') + '/' + name))
-    if release:
-        def zenodo_check():
-            try:
-                return check_zenodo(fetcher('https://doi.org/10.5281/zenodo.24217686'), release)
-            except Exception:
-                published = dt.datetime.fromisoformat(release['publishedAt'].replace('Z', '+00:00'))
-                if dt.datetime.now(dt.timezone.utc) - published < dt.timedelta(hours=2):
-                    return 'pending', 'Zenodo has not become reachable within the archive grace period'
-                raise
-        record('zenodo/latest-version', zenodo_check)
+    if release and release_manifest:
+        results.extend(check_zenodo(release, release_manifest, (manifest or {}).get('snapshot_sha256'), fetcher, now))
     else:
-        record('zenodo/latest-version', lambda: ('fail', 'Latest GitHub release metadata is missing'))
+        record('zenodo/archive-integrity', lambda: ('fail', 'Latest GitHub release metadata or tagged component manifest is missing'))
     return results
 
 
@@ -279,6 +336,7 @@ def main():
     parser.add_argument('--site', default='https://aisciencetracker.org/')
     parser.add_argument('--hf', default='https://huggingface.co/datasets/marcello-pichini/ai-science-tracker/resolve/main')
     parser.add_argument('--release-metadata', type=Path)
+    parser.add_argument('--release-manifest', type=Path, help='Component manifest from the exact tagged release')
     parser.add_argument('--deployment-metadata', type=Path)
     parser.add_argument('--allow-legacy-benchmarks', action='store_true')
     parser.add_argument('--report', type=Path, required=True)
@@ -286,9 +344,11 @@ def main():
     deployment = None
     try:
         release = json.loads(args.release_metadata.read_text()) if args.release_metadata else None
+        release_manifest = args.release_manifest.read_bytes() if args.release_manifest else None
         deployment = json.loads(args.deployment_metadata.read_text()) if args.deployment_metadata else None
         results = check(args.root, args.site.rstrip('/') + '/', args.hf, release,
-                        deployment=deployment, allow_legacy_benchmarks=args.allow_legacy_benchmarks)
+                        deployment=deployment, allow_legacy_benchmarks=args.allow_legacy_benchmarks,
+                        release_manifest=release_manifest)
     except Exception as exc:
         results = [{'check': 'setup', 'status': 'fail', 'detail': f'{type(exc).__name__}: {exc}'}]
     report = {'checked_at': dt.datetime.now(dt.timezone.utc).isoformat(), 'results': results, 'deployment': deployment}

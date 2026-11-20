@@ -3,11 +3,13 @@ import datetime as dt
 import hashlib
 import importlib.util
 import json
+from io import BytesIO
 from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import MagicMock, patch
 from urllib.parse import urlsplit
+from zipfile import ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location('publication_monitor', ROOT / 'scripts/check_publication.py')
@@ -44,10 +46,9 @@ class PublicationMonitorTest(unittest.TestCase):
             self.assertEqual(monitor.fetch('https://site.test/', attempts=1, inspect=True),
                              (b'catalog', 200, 'https://site.test/final', ['index, follow']))
             response.read.assert_called_with(monitor.MAX_BYTES + 1)
-            with patch.object(monitor, 'MAX_BYTES', 3):
-                for inspect in (False, True):
-                    with self.subTest(inspect=inspect), self.assertRaisesRegex(ValueError, 'size limit'):
-                        monitor.fetch('https://site.test/', attempts=1, inspect=inspect)
+            for inspect in (False, True):
+                with self.subTest(inspect=inspect), self.assertRaisesRegex(ValueError, 'size limit'):
+                    monitor.fetch('https://site.test/', attempts=1, inspect=inspect, max_bytes=3)
 
     def test_page_identity_rejects_soft_404_and_robots_conflicts(self):
         url = 'https://site.test/dataset.html'
@@ -94,13 +95,8 @@ class PublicationMonitorTest(unittest.TestCase):
                     return (root / 'data' / Path(path).name).read_bytes()
                 return (root / path).read_bytes()
 
-            release = {'tagName': 'v2026.11.18', 'publishedAt': '2026-11-18T00:00:00Z'}
-            def complete_fetch(url):
-                if 'doi.org' in url:
-                    return b'<p>Version v2026.11.18</p>'
-                return fetch(url)
-            good = monitor.check(root, 'https://site.test/', 'https://hf.test/', release, complete_fetch)
-            self.assertTrue(all(r['status'] == 'pass' for r in good))
+            good = monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=fetch)
+            self.assertEqual([r['check'] for r in good if r['status'] != 'pass'], ['zenodo/archive-integrity'])
 
             def stale_fetch(url):
                 if '/data/benchmarks/sample.json' in url:
@@ -109,20 +105,20 @@ class PublicationMonitorTest(unittest.TestCase):
                     return b'old-version'
                 if urlsplit(url).netloc == 'hf.test' and 'discoveries.json' in url:
                     return b'[{"id":"different"}]'
-                return complete_fetch(url)
-            bad = monitor.check(root, 'https://site.test/', 'https://hf.test/', release, stale_fetch)
+                return fetch(url)
+            bad = monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=stale_fetch)
             failed = {r['check'] for r in bad if r['status'] == 'fail'}
-            self.assertEqual(failed, {'asset/assets/app.js', 'hugging-face/discoveries.json', 'site/data/benchmarks/sample.json'})
+            self.assertEqual(failed, {'asset/assets/app.js', 'hugging-face/discoveries.json', 'site/data/benchmarks/sample.json', 'zenodo/archive-integrity'})
             registry['sources'][0]['path'] = '../private.json'
             registry_path.write_text(json.dumps(registry))
             with self.assertRaisesRegex(ValueError, 'Unsafe component path'):
-                monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=complete_fetch)
+                monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=fetch)
             registry_path.write_text('{invalid')
             with self.assertRaises(ValueError):
-                monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=complete_fetch)
+                monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=fetch)
             registry_path.unlink()
             with self.assertRaisesRegex(ValueError, 'Benchmark registry missing'):
-                monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=complete_fetch)
+                monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=fetch)
 
     def test_component_manifest_detects_exact_byte_drift_and_new_components(self):
         import hashlib
@@ -143,8 +139,6 @@ class PublicationMonitorTest(unittest.TestCase):
             (root / 'assets/app.js').write_text('current-version')
             write_sample_pages(root)
             def fetch(url):
-                if 'doi.org' in url:
-                    return b'<p>Version v2026.11.18</p>'
                 path = urlsplit(url).path.lstrip('/')
                 if path.endswith('.html'):
                     return sample_page(path)
@@ -153,9 +147,9 @@ class PublicationMonitorTest(unittest.TestCase):
                 if path in ('data/citations.json', 'api/v1/manifest.json'):
                     return (root / path).read_bytes() + b'\n'
                 return (root / path).read_bytes()
-            results = monitor.check(root, 'https://site.test/', 'https://hf.test/', {'tagName':'v2026.11.18', 'publishedAt':'2026-11-18T00:00:00Z'}, fetcher=fetch, allow_legacy_benchmarks=True)
+            results = monitor.check(root, 'https://site.test/', 'https://hf.test/', fetcher=fetch, allow_legacy_benchmarks=True)
             failed = {r['check']: r['detail'] for r in results if r['status'] == 'fail'}
-            self.assertEqual(set(failed), {'site/data/citations.json', 'site/data/models.json', 'site/api/v1/manifest.json'})
+            self.assertEqual(set(failed), {'site/data/citations.json', 'site/data/models.json', 'site/api/v1/manifest.json', 'zenodo/archive-integrity'})
             self.assertIn('SHA-256', failed['site/data/citations.json'])
 
     def test_deployment_freshness_current_pending_then_stale(self):
@@ -174,10 +168,54 @@ class PublicationMonitorTest(unittest.TestCase):
 
     def test_zenodo_grace_period_and_missing_archive(self):
         release = {'tagName': 'v2026.11.18', 'publishedAt': '2026-11-18T10:00:00Z'}
-        old = b'<script>Version v2026.11.18</script><p>Version v2026.11.17</p>'
-        self.assertEqual(monitor.check_zenodo(old, release, dt.datetime(2026, 11, 18, 11, tzinfo=dt.timezone.utc))[0], 'pending')
-        self.assertEqual(monitor.check_zenodo(old, release, dt.datetime(2026, 11, 18, 13, tzinfo=dt.timezone.utc))[0], 'fail')
-        self.assertEqual(monitor.check_zenodo(b'<p>Version v2026.11.18</p>', release)[0], 'pass')
+        old = b'{"metadata":{"version":"v2026.11.17"}}'
+        for hour, status in ((11, 'pending'), (13, 'fail')):
+            now = dt.datetime(2026, 11, 18, hour, tzinfo=dt.timezone.utc)
+            result, = monitor.check_zenodo(release, b'', None, lambda _: old, now)
+            self.assertEqual(result['status'], status)
+
+    def test_zenodo_checks_release_bytes_separately_from_deployed_parity(self):
+        component = b'archived data'
+        components = {'sample': {'path': 'data/sample.json',
+                                 'sha256': hashlib.sha256(component).hexdigest(),
+                                 'bytes': len(component), 'license': 'CC BY-NC 4.0'}}
+        snapshot = hashlib.sha256(json.dumps(
+            components, ensure_ascii=False, sort_keys=True, separators=(',', ':')
+        ).encode()).hexdigest()
+        manifest = json.dumps({'snapshot_sha256': snapshot, 'components': components}).encode()
+        release = {'tagName': 'v2026.11.18', 'publishedAt': '2026-11-18T10:00:00Z',
+                   'targetSha': 'a' * 40}
+        zip_url = 'https://zenodo.org/api/records/42/files/archive.zip/content'
+
+        def run_case(payload, deployed, checksum=None):
+            stream = BytesIO()
+            with ZipFile(stream, 'w') as archive:
+                prefix = 'owner-repo-aaaaaaa/'
+                archive.writestr(prefix + 'api/v1/manifest.json', manifest)
+                archive.writestr(prefix + 'data/sample.json', payload)
+            zipped = stream.getvalue()
+            metadata = {'doi': '10.5281/zenodo.42', 'id': 42,
+                        'conceptdoi': '10.5281/zenodo.24217686',
+                        'metadata': {'version': release['tagName'], 'license': {'id': 'cc-by-4.0'}},
+                        'files': [{'key': 'archive.zip', 'size': len(zipped),
+                                   'checksum': checksum or 'md5:' + hashlib.md5(zipped).hexdigest(),
+                                   'links': {'self': zip_url}}]}
+            def fetch(url):
+                return zipped if url == zip_url else json.dumps(metadata).encode()
+            return {r['check']: r for r in monitor.check_zenodo(release, manifest, deployed, fetch)}
+
+        earlier = run_case(component, 'b' * 64)
+        integrity = earlier['zenodo/archive-integrity']
+        self.assertEqual(integrity['status'], 'pass')
+        self.assertIn(release['targetSha'], integrity['detail'])
+        self.assertIn('10.5281/zenodo.42', integrity['detail'])
+        self.assertIn(snapshot, integrity['detail'])
+        self.assertEqual(earlier['zenodo/deployed-parity']['status'], 'different')
+        self.assertEqual(earlier['zenodo/license-metadata']['status'], 'warning')
+        self.assertEqual(run_case(component, snapshot)['zenodo/deployed-parity']['status'], 'pass')
+        self.assertEqual(run_case(b'altered data!', snapshot)['zenodo/archive-integrity']['status'], 'fail')
+        self.assertEqual(run_case(component, snapshot, 'md5:' + '0' * 32)['zenodo/archive-integrity']['status'], 'fail')
+
 
 
 class LinkMonitorTest(unittest.TestCase):

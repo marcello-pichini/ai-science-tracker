@@ -1,4 +1,6 @@
 import importlib.util
+import hashlib
+import json
 from pathlib import Path
 import subprocess
 import sys
@@ -67,6 +69,46 @@ class PipelineTests(unittest.TestCase):
             self.assertFalse(report['complete'])
             self.assertEqual([r['status'] for r in report['sources']], ['held', 'unchanged', 'unchanged', 'unchanged'])
             self.assertEqual((root / 'data/models.json').read_text(), '{}')
+
+    def test_refresh_passes_unchanged_epoch_zip_to_progress_when_catalog_changes(self):
+        for failure in (None, 'download', 'import'):
+            with self.subTest(failure=failure):
+                with tempfile.TemporaryDirectory() as directory:
+                    root = Path(directory)
+                    (root / 'data/benchmarks').mkdir(parents=True)
+                    (root / 'scripts').mkdir()
+                    (root / 'scripts/public-benchmark-inputs.json').write_text('{}')
+                    models_path = root / 'data/models.json'
+                    models_path.write_text(json.dumps({'source': {'csv_sha256': 'old'}}))
+                    progress_path = root / 'data/model-progress.json'
+                    progress = {'zip_sha256': hashlib.sha256(b'download').hexdigest(), 'catalog_snapshot': 'old'}
+                    progress_path.write_text(json.dumps(progress))
+                    (root / 'data/swe-bench.json').write_text('{}')
+
+                    def run(command, **kwargs):
+                        if command[0] == 'curl':
+                            if failure == 'download' and command[-1].endswith('/benchmark_data.zip'):
+                                return subprocess.CompletedProcess(command, 22)
+                            Path(command[command.index('-o') + 1]).write_bytes(b'download')
+                        elif command[1] == 'scripts/generate_models.py':
+                            models_path.write_text(json.dumps({'source': {'csv_sha256': 'new'}}))
+                        elif command[1] == 'scripts/import_model_progress.py':
+                            self.assertIn('--refresh-if-changed', command)
+                            progress['catalog_snapshot'] = json.loads(models_path.read_text())['source']['csv_sha256']
+                            progress_path.write_text(json.dumps(progress))
+                            if failure == 'import':
+                                raise subprocess.CalledProcessError(1, command)
+                        return subprocess.CompletedProcess(command, 0)
+
+                    with patch.object(state.subprocess, 'run', side_effect=run):
+                        state.refresh(root)
+                    report = json.loads((root / 'work/source-refresh-report.json').read_text())
+                    statuses = [r['status'] for r in report['sources']]
+                    expected = 'old' if failure else 'new'
+                    self.assertEqual(statuses, ['held', 'held', 'unchanged', 'unchanged'] if failure
+                                     else ['updated', 'updated', 'unchanged', 'unchanged'])
+                    self.assertEqual(json.loads(models_path.read_text())['source']['csv_sha256'], expected)
+                    self.assertEqual(json.loads(progress_path.read_text())['catalog_snapshot'], expected)
 
     def test_public_artifact_retains_license_documents(self):
         workflow = (ROOT / '.github/workflows/check.yml').read_text()

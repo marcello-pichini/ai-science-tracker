@@ -391,12 +391,17 @@ class SharePageTests(unittest.TestCase):
         g = self.generator
         for name in ('index.html', 'models.html'):
             (g.ROOT / name).write_text('<p class="lead" id="lead">Loading…</p>')
+        (g.ROOT / 'data').mkdir()
+        (g.ROOT / 'data/model-progress.json').write_text('{"fetched_on":"2026-11-20"}')
+        (g.ROOT / 'model-progress.html').write_text('<span id="import-date">Old</span><span id="cadence-period">Old</span>')
         models = {'models': [{}, {}], 'families': [{'discovery_count': 1}, {'discovery_count': 0}], 'linked_discoveries': ['test-discovery']}
         g.write_page_summaries([self.record], models)
         self.assertIn('<b>1 discoveries</b> in 1 fields and 1 organizations', (g.ROOT / 'index.html').read_text())
-        self.assertIn('<b>2 releases</b>', (g.ROOT / 'models.html').read_text())
+        self.assertIn('<b>2 selected releases</b>', (g.ROOT / 'models.html').read_text())
         self.assertIn('<b>1 families</b>', (g.ROOT / 'models.html').read_text())
         self.assertIn('covering 1 discoveries in total.', (g.ROOT / 'models.html').read_text())
+        self.assertEqual((g.ROOT / 'model-progress.html').read_text(),
+                         '<span id="import-date">20 Nov 2026</span><span id="cadence-period">20 Nov 2026</span>')
 
     def test_corrected_organization_keeps_old_profile_without_stale_records(self):
         g = self.generator

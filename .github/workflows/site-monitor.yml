@@ -42,7 +42,13 @@ jobs:
           python3 scripts/deployment_state.py select --output monitoring-reports/deployment.json
           sha=$(python3 -c 'import json; print(json.load(open("monitoring-reports/deployment.json"))["deployed_sha"])')
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
-          gh release view --json tagName,publishedAt,url,targetCommitish > monitoring-reports/release.json
+          release=$(gh release view --json tagName,publishedAt,url,targetCommitish)
+          tag=$(jq -r '.tagName' <<< "$release")
+          [[ "$tag" =~ ^v[0-9][0-9A-Za-z._-]*$ ]] || { echo "::error::Invalid archive release tag"; exit 1; }
+          release_sha=$(gh api "repos/$GITHUB_REPOSITORY/commits/$tag" --jq .sha)
+          [[ "$release_sha" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::Invalid archive release commit"; exit 1; }
+          jq --arg sha "$release_sha" '. + {targetSha: $sha}' <<< "$release" > monitoring-reports/release.json
+          echo "release_sha=$release_sha" >> "$GITHUB_OUTPUT"
           if [ "$RUN_LINKS" = true ] || { [ "$EVENT_NAME" = schedule ] && [ "$(date -u +%u)" = 1 ]; }; then
             echo "links=true" >> "$GITHUB_OUTPUT"
           fi
@@ -50,8 +56,19 @@ jobs:
         with:
           ref: ${{ steps.snapshot.outputs.sha }}
           path: published
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.snapshot.outputs.release_sha }}
+          path: archived
+          sparse-checkout: api/v1/manifest.json
+          sparse-checkout-cone-mode: false
       - name: Check live pages, assets and dataset parity
-        run: python3 scripts/check_publication.py --root published --deployment-metadata monitoring-reports/deployment.json --release-metadata monitoring-reports/release.json --report monitoring-reports/publication.json
+        run: >-
+          python3 scripts/check_publication.py --root published
+          --deployment-metadata monitoring-reports/deployment.json
+          --release-metadata monitoring-reports/release.json
+          --release-manifest archived/api/v1/manifest.json
+          --report monitoring-reports/publication.json
       - name: Check external sources weekly or on request
         if: ${{ !cancelled() && steps.snapshot.outputs.links == 'true' }}
         run: python3 scripts/check_links.py --root published --report monitoring-reports/links.json

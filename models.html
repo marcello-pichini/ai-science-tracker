@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-page-snapshot="6a38c0562226a2f8a494d927d0bb31c51120c92baba6adfd91b65127dadb731f">
+<html lang="en" data-page-snapshot="6936721d5d9e7e342e2de9df935ac6bc487400f757ee53a4b5fc03d0e89a4136">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -197,7 +197,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
 <section class="banda" aria-labelledby="titolo-pagina">
   <div class="wrap">
     <h1 id="titolo-pagina">AI models for science</h1>
-    <p class="lead" id="lead"><b>440 releases</b> from leading labs since 2020, using Epoch AI data. <b>53 families</b> of models are matched by name to at least one of 1362 catalog discoveries, covering 197 discoveries in total.</p>
+    <p class="lead" id="lead"><b>440 selected releases</b> from Epoch AI, including leading labs since 2020 and tracked families from any date. <b>53 families</b> of models are matched by name to at least one of 1359 catalog discoveries, covering 196 discoveries in total.</p>
     <p class="sez-sub">A timeline of AI models for science: which releases exist, which families are tied to catalog discoveries, and where to read the original papers.</p>
     <figure class="figura">
       <div id="nuvola"></div>
@@ -468,12 +468,14 @@ CatalogData.run(['models', 'discoveries', 'entity-aliases'], loaded => {
   sc.forEach(s => discoveries[s.id] = s);
   d.families.forEach(f => { perFam[f.id] = f.discoveries; famNome[f.id] = f.name; });
   const nFam = d.families.filter(f => f.discovery_count > 0).length;
-  $("lead").innerHTML = `<b>${d.models.length} releases</b> from leading labs since 2020, using Epoch AI data. <b>${nFam} families</b> of models are matched by name to at least one of ${sc.length} catalog discoveries, covering ${d.linked_discoveries.length} discoveries in total.`;
+  const leadCounts = [d.models.length, 2020, nFam, sc.length, d.linked_discoveries.length];
+  const lead = globalThis.AST_t("⟦{n} selected releases⟧ from Epoch AI, including leading labs since {n} and tracked families from any date. ⟦{n} families⟧ of models are matched by name to at least one of {n} catalog discoveries, covering {n} discoveries in total.").replace(/\{n\}/g, () => leadCounts.shift());
+  $("lead").innerHTML = esc(lead).replaceAll('⟦', '<b>').replaceAll('⟧', '</b>');
   const labs = [...new Set(d.models.map(modelOrganization))].sort((a, b) => a.localeCompare(b, "en"));
   $("lab").innerHTML = `<option value="">All labs</option>` + labs.map(l => `<option>${esc(l)}</option>`).join("");
   const anni = [...new Set(d.models.map(m => m.date.slice(0, 4)))].sort().reverse();
   $("anno").innerHTML = `<option value="">All years</option>` + anni.map(a => `<option>${esc(a)}</option>`).join("");
-  $("fonte").innerHTML = `Model name, lab, date, domain, parameters, compute, and access data come from <a href="${esc(d.source.url)}" rel="noopener">${esc(d.source.name)}</a> (${esc(d.source.original_records)} records in the original CSV snapshot) and are republished under <a href="${esc(d.source.license_url)}" rel="noopener">${esc(d.source.license)}</a>. ${d.source.downloaded ? `Downloaded on ${esc(fmtDate(d.source.downloaded))}. ` : ""}Snapshot provenance is included in the <a href="data/models.json">model data</a>. This page lists releases from leading labs since 2020, plus models from any date linked to a discovery. We link models and discoveries by comparing named technologies and discovery titles with family names. A name match does not confirm that a specific release was used in an experiment. Data last generated: ${esc(fmtDate(d.generated))}.`;
+  $("fonte").innerHTML = `Model name, lab, date, domain, parameters, compute, and access data come from <a href="${esc(d.source.url)}" rel="noopener">${esc(d.source.name)}</a> (${esc(d.source.original_records)} records in the original CSV snapshot) and are republished under <a href="${esc(d.source.license_url)}" rel="noopener">${esc(d.source.license)}</a>. ${d.source.downloaded ? `Downloaded on ${esc(fmtDate(d.source.downloaded))}. ` : ""}Snapshot provenance is included in the <a href="data/models.json">model data</a>. We link models and discoveries by comparing named technologies and discovery titles with family names. A name match does not confirm that a specific release was used in an experiment. Data last generated: ${esc(fmtDate(d.generated))}.`;
   ["q", "lab", "anno"].forEach(id => $(id).value = state[id]); $("solo").checked = state.solo;
   nuvola(); grafici(); families(); render();
   if (location.hash.startsWith("#fam-")) document.getElementById(location.hash.slice(1))?.scrollIntoView();

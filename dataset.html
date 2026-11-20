@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-page-snapshot="6a38c0562226a2f8a494d927d0bb31c51120c92baba6adfd91b65127dadb731f">
+<html lang="en" data-page-snapshot="6936721d5d9e7e342e2de9df935ac6bc487400f757ee53a4b5fc03d0e89a4136">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -215,7 +215,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
       <h2 id="collection-matrix">Compare the collections</h2>
       <p>Units and dates differ across components. A content snapshot identifies the files, not a common acquisition day or a scientific review. Source dates below keep their original meaning. Current counts require the component manifest; the downloads remain available without JavaScript.</p>
       <div class="tabella-scorre dataset-matrix" tabindex="0" role="region" aria-label="Dataset component comparison"><table><caption>Current collection files, coverage and reuse terms</caption><thead><tr><th scope="col">Collection</th><th scope="col">Count and unit</th><th scope="col">Dates and source</th><th scope="col">Formats and exact-byte hash</th><th scope="col">License</th><th scope="col">Coverage</th><th scope="col">DOI / release</th></tr></thead><tbody id="dataset-components"></tbody></table></div>
-      <p><a href="api/v1/manifest.json">Complete machine-readable component manifest</a> includes exact SHA-256 and byte lengths for every current collection JSON and CSV, including model progress, SWE-bench, citations, reviewed aliases, the separate 10-source benchmark directory/components and non-additive catalog-summary CSV. Repository archives retain component-specific licenses; the archive is not uniformly CC BY 4.0.</p>
+      <p>The <a href="api/v1/manifest.json">component manifest</a> gives the SHA-256 and byte length of every current collection JSON and CSV. Each archived component keeps the reuse terms listed in its release’s manifest.</p>
       <h2>Downloads</h2>
       <p>Explore the <a href="profiles/catalog-evidence.html">catalog coverage and evidence comparison</a>, or <a href="data/catalog-summary.csv">download its year and field counts as CSV</a>. The comparison explains annotation gaps and counting limits before you reuse the records.</p>
       <ul>
@@ -223,17 +223,17 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
         <li>AI-found vulnerabilities: <a href="data/vulnerabilities.json">vulnerabilities.json</a> and <a href="data/vulnerabilities.csv">vulnerabilities.csv</a> (CVE identifiers separated by semicolons, with classification and remediation caveats). An unknown <code>ai_attribution_date</code> is <code>null</code> in JSON and an empty cell in CSV; consumers must handle this separately from a dated account. These cases are separate from the scientific count.</li>
         <li>Model progress: <a href="data/model-progress.json">model-progress.json</a>, the separately imported capability and benchmark snapshot from Epoch AI, CC BY 4.0. <a href="docs/model-progress.md">Import and interpretation</a>. Source entries can overlap notable releases and must not be added to that collection’s count.</li>
         <li>SWE-bench Verified: <a href="data/swe-bench.json">swe-bench.json</a>, a separate selection of official mini-SWE-agent evaluation runs, under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> (noncommercial reuse only). This component is excluded from the catalog’s CC BY 4.0 grant and current Hugging Face catalog exports. <a href="docs/swe-bench.md">Scope and attribution</a>.</li>
-        <li>Additional benchmark evidence: <a href="data/benchmarks/index.json">11-component directory</a>, with per-source attributed JSON downloads and distinct CC BY 4.0, CC BY-SA 4.0, MIT or Apache-2.0 terms. These snapshots are excluded from the blanket catalog license and its Hugging Face export. <a href="docs/public-benchmarks.md">Selections, attribution and reuse rules</a>.</li>
+        <li>Additional benchmark evidence: <a href="data/benchmarks/index.json">benchmark directory</a>, with per-source attributed JSON downloads under CC BY 4.0, CC BY-SA 4.0, MIT or Apache-2.0 terms. These snapshots use their source licenses and are outside the Hugging Face catalog export. <a href="docs/public-benchmarks.md">Selections, attribution and reuse rules</a>.</li>
         <li>Models: <a href="data/models.json">models.json</a>, generated from Epoch AI data, which keeps its own CC BY 4.0 attribution.</li>
         <li>Citation metadata: <a href="data/citations.json">citations.json</a>, OpenAlex CC0 metadata; matching is selective. <a href="data/archived-discoveries.json">Archived discoveries</a> preserve historical records outside active counts. <a href="data/entity-aliases.json">Reviewed entity aliases</a> preserve source labels while grouping exact aliases.</li>
         <li>Every file is also available from the repository, whose releases are archived on Zenodo.</li>
       </ul>
 
-      <p>CSV cells beginning with a spreadsheet formula character are prefixed with an apostrophe; JSON retains the original values.</p>
+      <p>The bulk discovery CSV and the filtered CSV both link to the canonical share page for each record. CSV cells beginning with a spreadsheet formula character are prefixed with an apostrophe. JSON retains the original values.</p>
 
       <h2 id="security-dataset">AI-found vulnerability dataset</h2>
       <p>The security collection records publicly disclosed findings with source-attributed AI involvement. <a href="profiles/security-index.html">Read individual cases and their original evidence without JavaScript</a>, or use the JSON and CSV downloads above. It tracks vulnerabilities found with AI, rather than a census of vulnerabilities in AI software. Cases, CVEs and source reports have different counting units; documented fixes do not establish installed patches or current product safety.</p>
-      <p>For research reuse, the <a href="https://huggingface.co/datasets/marcello-pichini/ai-science-tracker">Hugging Face dataset</a> provides a separate distribution, and <a href="https://doi.org/10.5281/zenodo.24217686">Zenodo archived releases</a> provide versioned citations. Check the selected version and component licenses; the current website may contain later records.</p>
+      <p>The <a href="https://huggingface.co/datasets/marcello-pichini/ai-science-tracker">Hugging Face dataset</a> mirrors the deployed science and security JSON and CSV. <a href="https://doi.org/10.5281/zenodo.24217686">Zenodo</a> archives at most one GitHub release per UTC day, so its files can lag the site and mirror. Cite the version DOI of the ZIP you used and record its <code>snapshot_sha256</code> from <code>api/v1/manifest.json</code>. Consult that ZIP’s component licenses before reuse, including the separate SWE-bench Verified and CharXiv terms.</p>
 
       <h2>Static API</h2>
       <p>There is no server: the API is a set of static JSON files, regenerated with the site, so responses are cached by GitHub Pages for about ten minutes and allow cross-origin reads. Filtering is done by the client.</p>
