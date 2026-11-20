@@ -1019,13 +1019,91 @@ def validate_inputs(items, archived, models, vulns):
 
 
 BROWSE_START, BROWSE_END = '<!-- browse:start -->', '<!-- browse:end -->'
+PULSE_START, PULSE_END = '<!-- pulse:start -->', '<!-- pulse:end -->'
+
+
+def hero_pulse_html(items):
+    """Static homepage panel: publication-year counts and the latest catalog additions.
+
+    Built from the discovery records at generation time. No client request and no library.
+    Titles stay inside data-i18n-skip so a new entry does not create a translation key;
+    the page script localizes the date and the field name when messages are available.
+    """
+    counts = Counter(d['publication_date'][:4] for d in items)
+    years = sorted(counts)
+    if not years:
+        return f'{PULSE_START}\n{PULSE_END}'
+    latest = sorted(items, key=lambda d: (d.get('added_date') or d['publication_date'], d['publication_date'], d['id']), reverse=True)[:4]
+    width, height, gap = 320, 156, 8
+    top, bottom = 22, 22
+    plot = height - top - bottom
+    bar_w = (width - gap * (len(years) - 1)) / len(years)
+    peak = max(counts.values())
+    current = str(datetime.date.today().year)
+    parts = []
+    for i, year in enumerate(years):
+        count = counts[year]
+        bar_h = max(3, round(count / peak * plot, 2))
+        x = round(i * (bar_w + gap), 2)
+        y = round(top + plot - bar_h, 2)
+        bw = round(bar_w, 2)
+        klass = 'hero-bar hero-bar-now' if year == current else 'hero-bar'
+        delay = i * 40
+        parts.append(
+            f'<a href="index.html?year={year}#elenco" aria-label="{esc(f"{year}: {count} catalog entries")}">'
+            f'<rect class="{klass}" style="--d:{delay}ms" x="{x}" y="{y}" width="{bw}" height="{bar_h}" rx="3"/>'
+            f'<text class="hero-count" x="{round(x + bw / 2, 2)}" y="{max(11, round(y - 4, 2))}" text-anchor="middle">{count}</text>'
+            f'<text class="hero-year" x="{round(x + bw / 2, 2)}" y="{height - 4}" text-anchor="middle">{year}</text></a>'
+        )
+    rows = ''.join(
+        f'<tr><td>{esc(year)}</td><td>{counts[year]}</td></tr>' for year in years)
+    entries = ''.join(
+        '<li><a href="share/{id}.html">{title}</a>'
+        '<p class="hero-meta"><time datetime="{added}">{shown}</time>'
+        '<span class="hero-field">{field}</span></p></li>'.format(
+            id=esc(d['id']), title=esc(d['title']),
+            added=esc(d.get('added_date') or d['publication_date']),
+            shown=esc(nice_date(d.get('added_date') or d['publication_date'])),
+            field=esc(d['field']))
+        for d in latest)
+    caption = ('Catalog entries by publication year. Bar height is the number of entries in this collection, '
+               'not a measure of scientific quality.')
+    if years[-1] == current:
+        caption += ' The latest year is still in progress.'
+    figure = (
+        '<figure class="hero-chart">'
+        f'<svg viewBox="0 0 {width} {height}" role="group" aria-labelledby="hero-chart-cap">{"".join(parts)}</svg>'
+        f'<figcaption id="hero-chart-cap">{caption}</figcaption>'
+        '<details><summary>View data as a table</summary>'
+        '<table class="tab-mini"><caption class="vis-nascosto">Catalog entries by publication year</caption>'
+        '<thead><tr><th>Year</th><th>Catalog entries</th></tr></thead>'
+        f'<tbody>{rows}</tbody></table></details></figure>'
+    )
+    return (
+        f'{PULSE_START}\n'
+        '<aside class="hero-live" aria-labelledby="hero-live-title">'
+        '<h2 id="hero-live-title">Recently added</h2>'
+        '<p class="hero-kicker">Four entries most recently added to this catalog, and how many entries each publication year holds.</p>'
+        f'<ol class="hero-latest" data-i18n-skip>{entries}</ol>'
+        f'{figure}</aside>\n'
+        f'{PULSE_END}'
+    )
+
+
+def write_hero_pulse(items):
+    path = ROOT / 'index.html'
+    page = path.read_text()
+    if PULSE_START not in page or PULSE_END not in page:
+        return
+    start, end = page.index(PULSE_START), page.index(PULSE_END) + len(PULSE_END)
+    path.write_text(page[:start] + hero_pulse_html(items) + page[end:])
 
 
 def write_page_summaries(items, models):
     summaries = {
         'index.html': (f'<b>{len(items)} discoveries</b> in {len({d["field"] for d in items})} fields and '
                        f'{len({lead_org(d["organization"]) for d in items if canonical_organization(d["organization"])["kind"] != "unknown affiliation"})} organizations since 2020. '
-                       'Browse source-linked findings below. Chart heights show coarse editorial relevance, not scientific quality.'),
+                       'Browse source-linked findings below.'),
         'models.html': (f'<b>{len(models["models"])} releases</b> from leading labs since 2020, using Epoch AI data. '
                         f'<b>{sum(f.get("discovery_count", 0) > 0 for f in models["families"])} families</b> of models are matched by name '
                         f'to at least one of {len(items)} catalog discoveries, covering {len(models.get("linked_discoveries", []))} discoveries in total.')}
@@ -1079,6 +1157,7 @@ def main():
     vulns = json.loads((ROOT / 'data/vulnerabilities.json').read_text())
     validate_inputs(items, archived, models, vulns)
     write_page_summaries(items, models)
+    write_hero_pulse(items)
     write_home_browse(items)
     if not args.no_images:
         render_cards(items + archived, args.force, args.reuse_images)

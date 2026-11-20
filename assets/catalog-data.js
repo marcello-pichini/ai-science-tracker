@@ -5,8 +5,10 @@ globalThis.AST_t ||= (en, vars) => {
   if (vars) for (const key of Object.keys(vars)) s = s.split('{' + key + '}').join(String(vars[key]));
   return s;
 };
-const tr = globalThis.AST_t;
 (() => {
+  // Keep this binding inside the module. A top-level const would clash with the
+  // homepage script, which also declares tr, and that script would not run.
+  const tr = globalThis.AST_t;
   const script = typeof document === 'undefined' ? null : document.currentScript;
   const defaultRoot = script ? new URL('../', script.src).href : 'https://aisciencetracker.org/';
   let sequence = 0;
