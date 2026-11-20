@@ -68290,5 +68290,36 @@
         "checked_date": "2026-11-20"
       }
     ]
+  },
+  {
+    "id": "cve-2026-129509",
+    "title": "Apache Airflow Azure provider could disable S3 certificate verification (CVE-2026-129509)",
+    "product": "Apache Airflow Microsoft Azure provider",
+    "ai_system": "Claude Security Scans (model not disclosed)",
+    "organization": "Apache Software Foundation",
+    "disclosure_date": "2026-11-17",
+    "classification": "disclosure",
+    "cves": [
+      "CVE-2026-129509"
+    ],
+    "source_url": "https://www.openwall.com/lists/oss-security/2026/11/17/30",
+    "ai_source_url": "https://www.openwall.com/lists/oss-security/2026/11/17/30",
+    "advisory_url": "https://www.openwall.com/lists/oss-security/2026/11/17/30",
+    "remediation": "fix documented",
+    "checked_date": "2026-11-20",
+    "summary": "Apache disclosed a TLS certificate verification issue in the Microsoft Azure provider for Airflow. The vendor advisory is dated November 17, 2026, and the public CVE record is dated November 18.",
+    "ai_role": "The Apache advisory credits Claude Security Scans as a tool for the case and names a separate remediation developer. It does not disclose the underlying model or describe the division of discovery work.",
+    "ai_attribution_date": "2026-11-17",
+    "classification_note": "Public Apache security advisory. The reviewed sources do not establish zero-day status.",
+    "remediation_note": "The Apache advisory lists provider versions 10.2.0 through 15.3.0 as affected and recommends upgrading to provider 15.3.1 or later.",
+    "remediation_details": {
+      "scope": "Microsoft Azure provider package",
+      "fixed_in": [
+        "15.3.1"
+      ],
+      "action": "Upgrade apache-airflow-providers-microsoft-azure to 15.3.1 or later.",
+      "source_url": "https://www.openwall.com/lists/oss-security/2026/11/17/30",
+      "checked_date": "2026-11-20"
+    }
   }
 ]
