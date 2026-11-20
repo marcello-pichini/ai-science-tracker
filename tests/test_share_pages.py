@@ -223,9 +223,14 @@ class SharePageTests(unittest.TestCase):
         ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
         urls = [node.text for node in root.findall('s:url/s:loc', ns)]
         self.assertIn(g.BASE + 'security.html', urls)
-        self.assertNotIn(g.BASE, urls)
-        self.assertIn(g.BASE + 'index.html', urls)
+        self.assertIn(g.BASE + 'search.html', urls)
+        self.assertIn(g.BASE, urls)
+        self.assertNotIn(g.BASE + 'index.html', urls)
+        self.assertNotIn(g.BASE + 'it/index.html', urls)
+        self.assertNotIn(g.BASE + 'profile.html', urls)
+        self.assertNotIn(g.BASE + 'it/share/test-discovery.html', urls)
         self.assertIn(g.BASE + 'share/test-discovery.html', urls)
+        self.assertEqual(len(urls), len(set(urls)))
         self.assertEqual(len(root.findall('s:url/s:lastmod', ns)), 0)
 
     def test_static_profiles_are_indexable_and_sitemap_uses_them(self):
@@ -368,10 +373,14 @@ class SharePageTests(unittest.TestCase):
     def test_generated_metadata_uses_canonical_dataset_and_breadcrumb_urls(self):
         g = self.generator
         data = json.loads(g.discovery_jsonld(self.record).split('\n')[1])
-        self.assertEqual(data['isPartOf']['@id'], g.BASE + 'index.html#dataset')
+        self.assertEqual(data['@type'], 'WebPage')
+        self.assertEqual(data['mainEntity']['@type'], 'CreativeWork')
+        self.assertEqual(data['mainEntity']['headline'], self.record['title'])
+        self.assertNotIn('name', data['isPartOf'])
+        self.assertEqual(data['isPartOf']['@id'], g.BASE + 'dataset.html#scientific-dataset')
         crumbs = data['breadcrumb']['itemListElement']
         self.assertEqual([c['position'] for c in crumbs], [1, 2])
-        self.assertEqual(crumbs[0]['item'], g.BASE + 'index.html')
+        self.assertEqual(crumbs[0]['item'], g.BASE)
         self.assertEqual(crumbs[-1]['item'], data['url'])
         profile = json.loads(g.profile_jsonld('Example Lab', 'Discoveries', 'profiles/org-example.html', True).split('\n')[1])
         self.assertEqual(profile['breadcrumb']['itemListElement'][-1]['item'], profile['url'])

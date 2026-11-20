@@ -17,6 +17,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:title" content="University of Chicago">
+<meta name="twitter:description" content="5 AI-enabled scientific discoveries tracked from University of Chicago, with sources.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#12367e">
@@ -25,23 +27,35 @@
 <link rel="stylesheet" href="../styles.css?v=23f6b9beaa5b">
 <link rel="stylesheet" href="../assets/i18n.css?v=bc803f599a72">
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"CollectionPage","name":"University of Chicago","description":"5 AI-enabled scientific discoveries tracked from University of Chicago, with sources.","url":"https://aisciencetracker.org/profiles/org-university-of-chicago.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},"isPartOf":{"@type":"Dataset","@id":"https://aisciencetracker.org/index.html#dataset","name":"AI Science Tracker discovery catalog","url":"https://aisciencetracker.org/dataset.html#scientific-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/index.html"},{"@type":"ListItem","position":2,"name":"University of Chicago","item":"https://aisciencetracker.org/profiles/org-university-of-chicago.html"}]},"about":{"@type":"Organization","name":"University of Chicago"}}
+{"@context":"https://schema.org/","@type":"CollectionPage","name":"University of Chicago","description":"5 AI-enabled scientific discoveries tracked from University of Chicago, with sources.","url":"https://aisciencetracker.org/profiles/org-university-of-chicago.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},"isPartOf":{"@id":"https://aisciencetracker.org/dataset.html#scientific-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/"},{"@type":"ListItem","position":2,"name":"University of Chicago","item":"https://aisciencetracker.org/profiles/org-university-of-chicago.html"}]},"about":{"@type":"Organization","name":"University of Chicago"}}
 </script>
 </head>
 <body class="static-page">
 <header class="header">
   <div class="wrap">
-    <a class="marchio" href="../index.html" aria-label="AI Science Tracker, home page">
+    <a class="marchio" href="/" aria-label="AI Science Tracker, home page">
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="../index.html">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../dossiers.html">Dossiers</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="../index.html" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="../it/index.html" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="../de/index.html" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="../fr/index.html" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="../es/index.html" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+    <nav class="menu" aria-label="Site sections"><a href="/">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../dossiers.html">Dossiers</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="/it/" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="/de/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="/fr/" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="/es/" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+globalThis.astCleanPath = function (path) {
+  path = path || '/';
+  if (path === '/index.html') return '/';
+  var home = path.match(/^\/(it|de|fr|es)\/index\.html$/);
+  if (home) return '/' + home[1] + '/';
+  return path;
+};
 globalThis.astResolveLanguage = function (input) {
   var SUPPORTED = {it:1, de:1, fr:1, es:1};
   var ua = input.ua || '';
-  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
-  var path = input.path || '/';
-  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
+  var bot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua);
+  var raw = input.path || '/';
+  var path = astCleanPath(raw);
+  var search = input.search || '';
+  var hash = input.hash || '';
+  var cleaned = path + search + hash;
+  if (bot) return path === raw ? null : cleaned;
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return path === raw ? null : cleaned;
   var pages = input.pages || [];
   var saved = input.saved || '';
   var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
@@ -64,16 +78,16 @@ globalThis.astResolveLanguage = function (input) {
     };
     if (hint[input.timezone || '']) target = hint[input.timezone];
   }
-  if (!target || target === 'en' || !SUPPORTED[target]) return null;
-  var search = input.search || '';
-  var hash = input.hash || '';
-  if (path === '/' || path === '') return '/' + target + '/' + search + hash;
-  var file = path.split('/').pop();
-  var dir = path.slice(0, path.length - file.length);
-  if (dir !== '/') return null;
-  if (!file) file = 'index.html';
-  if (pages.indexOf(file) < 0) return null;
-  return '/' + target + '/' + file + search + hash;
+  if (target && target !== 'en' && SUPPORTED[target]) {
+    if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+    var file = path.split('/').pop();
+    var dir = path.slice(0, path.length - file.length);
+    if (dir !== '/') return path === raw ? null : cleaned;
+    if (!file || file === 'index.html') return '/' + target + '/' + search + hash;
+    if (pages.indexOf(file) < 0) return path === raw ? null : cleaned;
+    return '/' + target + '/' + file + search + hash;
+  }
+  return path === raw ? null : cleaned;
 };
 globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   search = search || '';
@@ -81,15 +95,17 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   pages = pages || [];
   var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
   var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
-  if (rest === '' || rest === '/') rest = '/index.html';
+  if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
   var prefix = lang === 'en' ? '' : '/' + lang;
+  if (rest === '/') return prefix + '/' + search + hash;
   var file = rest.split('/').pop();
   var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && file === 'index.html') return prefix + '/' + search + hash;
   if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
   var share = rest.match(/^\/share\/([^/]+)\.html$/);
-  if (share) return prefix + '/index.html#discovery=' + share[1];
+  if (share) return prefix + '/#discovery=' + share[1];
   if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
-  return prefix + '/index.html' + search;
+  return prefix + '/' + search;
 };
 try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"];var current=document.documentElement.lang||"en";nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});}}catch(e){}</script>
   </div>
@@ -114,7 +130,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 3/5, validation 3/5, novelty 3/5">Editorial relevance 60<span class="metro" aria-hidden="true"><i style="width:60%"></i></span></span>
       <span class="etich">biology</span>
-      <span class="collegamenti"><a href="https://academic.oup.com/nar/article/54/14/gkag756/8753004" rel="noopener">Original source</a><a href="https://doi.org/10.1093/nar/gkag756" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2026-08-machine-learning-guided-csra-homolog-screens-reveal-divergent-bacterial-regulatory-activities&amp;record_id=2026-08-machine-learning-guided-csra-homolog-screens-reveal-divergent-bacterial-regulatory-activities&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2026-08-machine-learning-guided-csra-homolog-screens-reveal-divergent-bacterial-regulatory-activities&amp;source=https%3A%2F%2Facademic.oup.com%2Fnar%2Farticle%2F54%2F14%2Fgkag756%2F8753004" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://academic.oup.com/nar/article/54/14/gkag756/8753004" rel="noopener">Original source</a><a href="https://doi.org/10.1093/nar/gkag756" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2026-08-machine-learning-guided-csra-homolog-screens-reveal-divergent-bacterial-regulatory-activities&amp;record_id=2026-08-machine-learning-guided-csra-homolog-screens-reveal-divergent-bacterial-regulatory-activities&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2026-08-machine-learning-guided-csra-homolog-screens-reveal-divergent-bacterial-regulatory-activities.html&amp;source=https%3A%2F%2Facademic.oup.com%2Fnar%2Farticle%2F54%2F14%2Fgkag756%2F8753004" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>High-throughput swarming assays generated a functional dataset; machine learning was then trained to classify homolog functional activity across the bacterial domain and nominate homologs for validation. Selected CsrABb and RsmAPp predictions were experimentally validated.</dd></div><div><dt>Test and result</dt><dd>A Swarm-seq assay tested more than 500 bacterial CsrA homologs for regulation of Bacillus subtilis swarming and found two functional classes: several homologs strongly inhibited swarming while others failed despite conserved sequence and canonical GGA motifs in the hag transcript.</dd></div><div><dt>Limitation / still unknown</dt><dd>Activity classifications are based on the reported B. subtilis swarming assay and tested proteins; they do not establish all native targets or regulatory functions in each source organism. The predicted function landscape across thousands of homologs is not experimentally validated wholesale. Primary publisher abstract checked; no independent replication assessed.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://academic.oup.com/nar/article/54/14/gkag756/8753004" rel="noopener">https://academic.oup.com/nar/article/54/14/gkag756/8753004</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
@@ -132,7 +148,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 3/5, validation 3/5, novelty 3/5">Editorial relevance 60<span class="metro" aria-hidden="true"><i style="width:60%"></i></span></span>
       <span class="etich">materials</span>
-      <span class="collegamenti"><a href="https://www.nature.com/articles/s41467-025-63303-7" rel="noopener">Original source</a><a href="https://doi.org/10.1038/s41467-025-63303-7" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-09-active-learning-anode-free-electrolytes&amp;record_id=2025-09-active-learning-anode-free-electrolytes&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2025-09-active-learning-anode-free-electrolytes&amp;source=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41467-025-63303-7" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://www.nature.com/articles/s41467-025-63303-7" rel="noopener">Original source</a><a href="https://doi.org/10.1038/s41467-025-63303-7" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-09-active-learning-anode-free-electrolytes&amp;record_id=2025-09-active-learning-anode-free-electrolytes&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2025-09-active-learning-anode-free-electrolytes.html&amp;source=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41467-025-63303-7" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>A sequential active-learning framework selected each batch of candidate solvents using Bayesian experimental design and Bayesian model averaging, then incorporated measured electrochemical outcomes to update its next selections.</dd></div><div><dt>Test and result</dt><dd>Electrolytes were tested iteratively in Cu||LiFePO4 cells. The study reports seven top-performing solvents; three had not previously been reported as anode-free battery electrolytes, and four distinct solvents rivaled state-of-the-art performance. Five of nine batch-7 electrolytes exceeded 100 mAh/g discharge capacity at cycle 20.</dd></div><div><dt>Limitation / still unknown</dt><dd>Performance is limited to the reported cell chemistry, 1 M LiFSA configuration and cycling protocol; it does not establish full-cell energy density, lifetime in commercial formats or manufacturing readiness.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://www.nature.com/articles/s41467-025-63303-7" rel="noopener">https://www.nature.com/articles/s41467-025-63303-7</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12462480/" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC12462480/</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
@@ -150,7 +166,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 3/5, validation 3/5, novelty 3/5">Editorial relevance 60<span class="metro" aria-hidden="true"><i style="width:60%"></i></span></span>
       <span class="etich">physics</span>
-      <span class="collegamenti"><a href="https://knowledge.uchicago.edu/records/424pk-bp381" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-04-active-learning-oxygen-evolution-catalysts&amp;record_id=2025-04-active-learning-oxygen-evolution-catalysts&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2025-04-active-learning-oxygen-evolution-catalysts&amp;source=https%3A%2F%2Fknowledge.uchicago.edu%2Frecords%2F424pk-bp381" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://knowledge.uchicago.edu/records/424pk-bp381" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-04-active-learning-oxygen-evolution-catalysts&amp;record_id=2025-04-active-learning-oxygen-evolution-catalysts&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2025-04-active-learning-oxygen-evolution-catalysts.html&amp;source=https%3A%2F%2Fknowledge.uchicago.edu%2Frecords%2F424pk-bp381" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>Supervised/unsupervised materials models, active learning and domain adaptation</dd></div><div><dt>Test and result</dt><dd>Primary journal record and full-text link identify the reported campaign and experimental catalyst result; arXiv v1 submitted 2024-07-05 already names the Ru–Mn–Ca–Pr catalyst, so journal date is not first disclosure.</dd></div><div><dt>Limitation / still unknown</dt><dd>Independent replication and exhaustive prior-art review are not established.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://pubmed.ncbi.nlm.nih.gov/40184453/" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/40184453/</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
@@ -168,7 +184,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 2/5, validation 2/5, novelty 3/5">Editorial relevance 47<span class="metro" aria-hidden="true"><i style="width:47%"></i></span></span>
       <span class="etich">physics</span>
-      <span class="collegamenti"><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.107301" rel="noopener">Original source</a><a href="https://doi.org/10.1103/PhysRevLett.133.107301" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2024-09-neural-operators-microfluidic-waves&amp;record_id=2024-09-neural-operators-microfluidic-waves&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2024-09-neural-operators-microfluidic-waves&amp;source=https%3A%2F%2Fjournals.aps.org%2Fprl%2Fabstract%2F10.1103%2FPhysRevLett.133.107301" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.107301" rel="noopener">Original source</a><a href="https://doi.org/10.1103/PhysRevLett.133.107301" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2024-09-neural-operators-microfluidic-waves&amp;record_id=2024-09-neural-operators-microfluidic-waves&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2024-09-neural-operators-microfluidic-waves.html&amp;source=https%3A%2F%2Fjournals.aps.org%2Fprl%2Fabstract%2F10.1103%2FPhysRevLett.133.107301" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> retrospective or benchmark. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>A Fourier neural operator learned latent experimental dynamics from the microfluidic movie; sparse regression extracted the governing equation, and the learned term guided the interpretation of nonreciprocal hydrodynamic interactions.</dd></div><div><dt>Test and result</dt><dd>The authors trained/interpreted a neural-operator network on a microfluidic droplet experiment movie and used sparse regression to derive a KdV–Burgers-type model. The new dispersive term improved the shock-front description relative to Burgers’ equation; a microscopic model attributes nonlinear-wave stabilization/propagation to nonreciprocal hydrodynamic interactions. The source says the model was trained on an existing experimental movie.</dd></div><div><dt>Limitation / still unknown</dt><dd>This is a model-derived interpretation of a specific microfluidic experiment and supporting simulations, not a new experiment or a general proof for all nonequilibrium crystals.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.107301" rel="noopener">https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.133.107301</a> · <a href="https://link.aps.org/accepted/10.1103/PhysRevLett.133.107301" rel="noopener">https://link.aps.org/accepted/10.1103/PhysRevLett.133.107301</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
@@ -186,7 +202,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 3/5, validation 2/5, novelty 3/5">Editorial relevance 53<span class="metro" aria-hidden="true"><i style="width:53%"></i></span></span>
       <span class="etich">humanities</span>
-      <span class="collegamenti"><a href="https://news.uchicago.edu/story/how-ai-could-help-translate-written-language-ancient-civilizations" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2020-03-deepscribe&amp;record_id=2020-03-deepscribe&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2020-03-deepscribe&amp;source=https%3A%2F%2Fnews.uchicago.edu%2Fstory%2Fhow-ai-could-help-translate-written-language-ancient-civilizations" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://news.uchicago.edu/story/how-ai-could-help-translate-written-language-ancient-civilizations" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2020-03-deepscribe&amp;record_id=2020-03-deepscribe&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2020-03-deepscribe.html&amp;source=https%3A%2F%2Fnews.uchicago.edu%2Fstory%2Fhow-ai-could-help-translate-written-language-ancient-civilizations" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Announcement only · <b>Test context:</b> retrospective or benchmark. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>Machine-learning model trained on over 100,000 annotated signs from Persepolis Fortification Archive tablet images to recognize cuneiform signs.</dd></div><div><dt>Test and result</dt><dd>Recognition of signs on tablets excluded from training reached about 80% accuracy; the source describes the testing as internal only.</dd></div><div><dt>Limitation / still unknown</dt><dd>About 20% of signs are still wrong; the size of the held-out set and an error breakdown are not given; other uses are described as aspirations.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://news.uchicago.edu/story/how-ai-could-help-translate-written-language-ancient-civilizations" rel="noopener">https://news.uchicago.edu/story/how-ai-could-help-translate-written-language-ancient-civilizations</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>

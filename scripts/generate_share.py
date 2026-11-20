@@ -213,6 +213,8 @@ PAGE = """<!doctype html>
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="{imgalt}">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
 <meta name="twitter:image:alt" content="{imgalt}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#12367e">
@@ -250,6 +252,8 @@ PUBLISHER = {'@type': 'Organization', '@id': BASE + '#organization', 'name': SIT
              'sameAs': ['https://github.com/marcello-pichini/ai-science-tracker', 'https://doi.org/10.5281/zenodo.24217686',
                         'https://huggingface.co/datasets/marcello-pichini/ai-science-tracker']}
 LICENSE_URL = 'https://creativecommons.org/licenses/by/4.0/'
+DATASET_ID = BASE + 'dataset.html#scientific-dataset'
+SECURITY_DATASET_ID = BASE + 'dataset.html#security-dataset'
 
 
 def jsonld(data):
@@ -260,32 +264,35 @@ def jsonld(data):
 
 def breadcrumb(name, path):
     return {'@type': 'BreadcrumbList', 'itemListElement': [
-        {'@type': 'ListItem', 'position': 1, 'name': 'AI Science Tracker', 'item': BASE + 'index.html'},
+        {'@type': 'ListItem', 'position': 1, 'name': 'AI Science Tracker', 'item': BASE},
         {'@type': 'ListItem', 'position': 2, 'name': name, 'item': BASE + path}]}
 
 
 def discovery_jsonld(d):
-    # WebPage, not Article: the announcement date is not when this page was published.
+    # WebPage plus a CreativeWork for the catalog record. This is not the paper itself,
+    # so it is not a ScholarlyArticle. datePublished is the source announcement date.
+    url = f'{BASE}share/{d["id"]}.html'
+    work = {'@type': 'CreativeWork', 'name': d['title'], 'headline': d['title'], 'abstract': clip(d['summary'], 300),
+            'datePublished': d['publication_date'], 'inLanguage': 'en', 'url': url, 'keywords': d['field'],
+            'isBasedOn': d['source_url']}
     data = {'@context': 'https://schema.org/', '@type': 'WebPage', 'name': d['title'], 'description': clip(d['summary'], 300),
-            'url': f'{BASE}share/{d["id"]}.html', 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR, 'publisher': PUBLISHER,
-            'isPartOf': {'@type': 'Dataset', '@id': BASE + 'index.html#dataset', 'name': 'AI Science Tracker discovery catalog',
-                         'url': BASE + 'dataset.html#scientific-dataset'},
+            'url': url, 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR, 'publisher': PUBLISHER,
+            'mainEntity': work, 'isPartOf': {'@id': DATASET_ID},
             'breadcrumb': breadcrumb(d['title'], f'share/{d["id"]}.html'),
             'about': {'@type': 'Thing', 'name': d['title']}, 'isBasedOn': d['source_url']}
     if d['paper_url']:
         data['citation'] = d['paper_url']
+        work['sameAs'] = d['paper_url']
     return jsonld(data)
 
 
 def profile_jsonld(name, desc, path, organization=False, security=False, page_type='CollectionPage'):
     data = {'@context': 'https://schema.org/', '@type': page_type, 'name': name, 'description': desc,
             'url': BASE + path, 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR, 'publisher': PUBLISHER,
-            'isPartOf': {'@type': 'Dataset', '@id': BASE + 'index.html#dataset', 'name': 'AI Science Tracker discovery catalog',
-                         'url': BASE + 'dataset.html#scientific-dataset'},
+            'isPartOf': {'@id': DATASET_ID},
             'breadcrumb': breadcrumb(name, path)}
     if security:
-        data['isPartOf'] = {'@type': 'Dataset', '@id': BASE + 'dataset.html#security-dataset',
-                            'name': 'AI Science Tracker AI-found vulnerability catalog', 'url': BASE + 'dataset.html#security-dataset'}
+        data['isPartOf'] = {'@id': SECURITY_DATASET_ID}
     if organization:
         data['about'] = {'@type': 'Organization', 'name': name}
     return jsonld(data)
@@ -381,8 +388,8 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
     for d in items:
         has_image = images or (ROOT / 'og' / f'{d["id"]}.png').is_file()
         article = discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']], archived=archived)
-        more = ('<a href="index.html">Browse the current catalog</a>.' if archived else
-                f'<a href="index.html#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.')
+        more = ('<a href="/">Browse the current catalog</a>.' if archived else
+                f'<a href="/#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.')
         lead = f'{esc(d["organization"])} &middot; {esc(nice_date(d["publication_date"]))} &middot; {esc(d["field"])}'
         if d['field'] in fields:
             more += f' <a href="profiles/field-{slug(d["field"])}.html">Browse {esc(d["field"])} discoveries</a>.'
@@ -414,7 +421,7 @@ def releases_table(models):
 def family_summary(rows, name):
     """The same stored-link scope and deterministic examples as FamilyOutcomes."""
     def members(records):
-        return '<ul>' + ''.join(f'<li><a href="index.html#discovery={quote(d["id"])}">{esc(d["title"])}</a></li>' for d in records) + '</ul>' if records else '<p>No scientific uses are linked in this catalog.</p>'
+        return '<ul>' + ''.join(f'<li><a href="/#discovery={quote(d["id"])}">{esc(d["title"])}</a></li>' for d in records) + '</ul>' if records else '<p>No scientific uses are linked in this catalog.</p>'
 
     def test_context(d):
         value = d.get('evidence', {}).get('test_type')
@@ -600,12 +607,12 @@ def write_profile_pages(items, models, archived=()):
             ) + overview
         emit(field, title, f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
              f'{plural(len(rows), "scientific discovery", "scientific discoveries")} in {field} made with AI, {years(rows)}, each linked to its original source.',
-             rows, f'profiles/field-{slug(field)}.html', f'index.html?field={quote(field)}', label='filtered catalog',
+             rows, f'profiles/field-{slug(field)}.html', f'/?field={quote(field)}', label='filtered catalog',
              before=overview)
     for year, rows in sorted(by_year.items(), reverse=True):
         emit(year, f'AI discoveries in {year}', f'{plural(len(rows), "discovery", "discoveries")} announced in {year}',
              f'{plural(len(rows), "scientific discovery", "scientific discoveries")} made with AI and announced in {year}, each linked to its original source.',
-             rows, f'profiles/year-{year}.html', f'index.html?year={year}', label='filtered catalog',
+             rows, f'profiles/year-{year}.html', f'/?year={year}', label='filtered catalog',
              before=collection_summary(rows, f'AI discoveries in {year}', by_year=True))
     topics = ''.join(f'<li><a href="profiles/field-{slug(f)}.html">{esc(f)}</a> ({len(r)})</li>' for f, r in sorted(by_field.items(), key=lambda kv: (-len(kv[1]), kv[0])))
     yearly = ''.join(f'<li><a href="profiles/year-{y}.html">{y}</a> ({len(r)})</li>' for y, r in sorted(by_year.items(), reverse=True))
@@ -780,7 +787,7 @@ def write_llms_txt(items, models):
 Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT. Epoch AI model data is CC BY 4.0. The separate SWE-bench selection (data/swe-bench.json) is CC BY-NC 4.0, for noncommercial reuse only; it is not covered by the catalog CC BY 4.0 grant. Additional numerical benchmarks (data/benchmarks/) retain per-component CC BY 4.0, CC BY-SA 4.0, MIT or Apache-2.0 terms; see docs/public-benchmarks.md. CharXiv adapted data is CC BY-SA 4.0. These components are excluded from the blanket catalog license and catalog Hugging Face export. When citing a scientific claim, cite the original source linked on each entry, not this catalog.
 
 ## Browse
-- [Discoveries]({BASE}index.html): filters, charts and the full list
+- [Discoveries]({BASE}): filters, charts and the full list
 - [Organizations and model families]({BASE}profiles/index.html): static profile pages
 - [Model progress]({BASE}model-progress.html): exact model comparison, ECI, benchmark evidence and recorded release rhythm
 - [Search all collections]({BASE}search.html): literal retrieval with separate counts and match reasons
@@ -813,8 +820,11 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 def write_sitemap(items, models, archived=(), vulns=()):
     orgs = sorted({lead_org(d['organization']) for d in items})
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
-    # Announcement dates are not page-modification dates; omit lastmod until tracked.
-    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'dataset.html', 'contributors.html', 'contact.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
+    # Announcement and catalog-addition dates are not page-modification dates.
+    # Omit lastmod until a real page-change date is tracked; a guessed date would be wrong.
+    # search.html is a translated editorial page. profile.html and 404.html are noindex.
+    # Localized copies exist only for translated editorial pages, not for share/ or profiles/.
+    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'search.html', 'dataset.html', 'contributors.html', 'contact.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
     urls += ['profiles/index.html']
     urls += ['profiles/catalog-evidence.html', 'profiles/security-index.html']
     urls += [f'profiles/security-{quote(v["id"])}.html' for v in vulns]
@@ -823,21 +833,26 @@ def write_sitemap(items, models, archived=(), vulns=()):
     urls += [f'profiles/field-{slug(f)}.html' for f in sorted({d['field'] for d in items})]
     urls += [f'profiles/year-{y}.html' for y in sorted({d['publication_date'][:4] for d in items}, reverse=True)]
     urls += [f'share/{quote(d["id"])}.html' for d in [*items, *archived]]
-    from i18n_site import LOCALES, SITEMAP_PAGES
+    from i18n_site import LOCALES, SITEMAP_PAGES, public_url
 
     def alternates(page):
-        links = [f'<xhtml:link rel="alternate" hreflang="en" href="{esc(BASE + page)}"/>']
-        links += [f'<xhtml:link rel="alternate" hreflang="{code}" href="{esc(BASE + code + "/" + page)}"/>' for code in LOCALES]
-        links.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{esc(BASE + page)}"/>')
+        links = [f'<xhtml:link rel="alternate" hreflang="en" href="{esc(public_url(page, "en"))}"/>']
+        links += [f'<xhtml:link rel="alternate" hreflang="{code}" href="{esc(public_url(page, code))}"/>' for code in LOCALES]
+        links.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{esc(public_url(page, "en"))}"/>')
         return ''.join(links)
 
     rows = []
+    seen = set()
     for url in urls:
         block = alternates(url) if url in SITEMAP_PAGES else ''
-        rows.append(f'<url><loc>{esc(BASE + url)}</loc>{block}</url>\n')
+        targets = [public_url(url, 'en')]
         if url in SITEMAP_PAGES:
-            for code in LOCALES:
-                rows.append(f'<url><loc>{esc(BASE + code + "/" + url)}</loc>{block}</url>\n')
+            targets += [public_url(url, code) for code in LOCALES]
+        for loc in targets:
+            if loc in seen or loc.endswith('/index.html'):
+                continue
+            seen.add(loc)
+            rows.append(f'<url><loc>{esc(loc)}</loc>{block}</url>\n')
     (ROOT / 'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'

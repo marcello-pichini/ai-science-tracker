@@ -17,6 +17,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:title" content="Central South University">
+<meta name="twitter:description" content="6 AI-enabled scientific discoveries tracked from Central South University, with sources.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#12367e">
@@ -25,23 +27,35 @@
 <link rel="stylesheet" href="../styles.css?v=23f6b9beaa5b">
 <link rel="stylesheet" href="../assets/i18n.css?v=bc803f599a72">
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"CollectionPage","name":"Central South University","description":"6 AI-enabled scientific discoveries tracked from Central South University, with sources.","url":"https://aisciencetracker.org/profiles/org-central-south-university.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},"isPartOf":{"@type":"Dataset","@id":"https://aisciencetracker.org/index.html#dataset","name":"AI Science Tracker discovery catalog","url":"https://aisciencetracker.org/dataset.html#scientific-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/index.html"},{"@type":"ListItem","position":2,"name":"Central South University","item":"https://aisciencetracker.org/profiles/org-central-south-university.html"}]},"about":{"@type":"Organization","name":"Central South University"}}
+{"@context":"https://schema.org/","@type":"CollectionPage","name":"Central South University","description":"6 AI-enabled scientific discoveries tracked from Central South University, with sources.","url":"https://aisciencetracker.org/profiles/org-central-south-university.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},"isPartOf":{"@id":"https://aisciencetracker.org/dataset.html#scientific-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/"},{"@type":"ListItem","position":2,"name":"Central South University","item":"https://aisciencetracker.org/profiles/org-central-south-university.html"}]},"about":{"@type":"Organization","name":"Central South University"}}
 </script>
 </head>
 <body class="static-page">
 <header class="header">
   <div class="wrap">
-    <a class="marchio" href="../index.html" aria-label="AI Science Tracker, home page">
+    <a class="marchio" href="/" aria-label="AI Science Tracker, home page">
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="../index.html">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../dossiers.html">Dossiers</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="../index.html" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="../it/index.html" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="../de/index.html" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="../fr/index.html" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="../es/index.html" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+    <nav class="menu" aria-label="Site sections"><a href="/">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../dossiers.html">Dossiers</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="/it/" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="/de/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="/fr/" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="/es/" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+globalThis.astCleanPath = function (path) {
+  path = path || '/';
+  if (path === '/index.html') return '/';
+  var home = path.match(/^\/(it|de|fr|es)\/index\.html$/);
+  if (home) return '/' + home[1] + '/';
+  return path;
+};
 globalThis.astResolveLanguage = function (input) {
   var SUPPORTED = {it:1, de:1, fr:1, es:1};
   var ua = input.ua || '';
-  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
-  var path = input.path || '/';
-  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
+  var bot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua);
+  var raw = input.path || '/';
+  var path = astCleanPath(raw);
+  var search = input.search || '';
+  var hash = input.hash || '';
+  var cleaned = path + search + hash;
+  if (bot) return path === raw ? null : cleaned;
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return path === raw ? null : cleaned;
   var pages = input.pages || [];
   var saved = input.saved || '';
   var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
@@ -64,16 +78,16 @@ globalThis.astResolveLanguage = function (input) {
     };
     if (hint[input.timezone || '']) target = hint[input.timezone];
   }
-  if (!target || target === 'en' || !SUPPORTED[target]) return null;
-  var search = input.search || '';
-  var hash = input.hash || '';
-  if (path === '/' || path === '') return '/' + target + '/' + search + hash;
-  var file = path.split('/').pop();
-  var dir = path.slice(0, path.length - file.length);
-  if (dir !== '/') return null;
-  if (!file) file = 'index.html';
-  if (pages.indexOf(file) < 0) return null;
-  return '/' + target + '/' + file + search + hash;
+  if (target && target !== 'en' && SUPPORTED[target]) {
+    if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+    var file = path.split('/').pop();
+    var dir = path.slice(0, path.length - file.length);
+    if (dir !== '/') return path === raw ? null : cleaned;
+    if (!file || file === 'index.html') return '/' + target + '/' + search + hash;
+    if (pages.indexOf(file) < 0) return path === raw ? null : cleaned;
+    return '/' + target + '/' + file + search + hash;
+  }
+  return path === raw ? null : cleaned;
 };
 globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   search = search || '';
@@ -81,15 +95,17 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   pages = pages || [];
   var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
   var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
-  if (rest === '' || rest === '/') rest = '/index.html';
+  if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
   var prefix = lang === 'en' ? '' : '/' + lang;
+  if (rest === '/') return prefix + '/' + search + hash;
   var file = rest.split('/').pop();
   var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && file === 'index.html') return prefix + '/' + search + hash;
   if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
   var share = rest.match(/^\/share\/([^/]+)\.html$/);
-  if (share) return prefix + '/index.html#discovery=' + share[1];
+  if (share) return prefix + '/#discovery=' + share[1];
   if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
-  return prefix + '/index.html' + search;
+  return prefix + '/' + search;
 };
 try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"];var current=document.documentElement.lang||"en";nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});}}catch(e){}</script>
   </div>
@@ -114,7 +130,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 3/5, validation 3/5, novelty 3/5">Editorial relevance 60<span class="metro" aria-hidden="true"><i style="width:60%"></i></span></span>
       <span class="etich">materials</span>
-      <span class="collegamenti"><a href="https://doi.org/10.1002/smll.76722" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2026-11-physics-informed-titanium-halide-electrolyte&amp;record_id=2026-11-physics-informed-titanium-halide-electrolyte&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2026-11-physics-informed-titanium-halide-electrolyte&amp;source=https%3A%2F%2Fdoi.org%2F10.1002%2Fsmll.76722" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://doi.org/10.1002/smll.76722" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2026-11-physics-informed-titanium-halide-electrolyte&amp;record_id=2026-11-physics-informed-titanium-halide-electrolyte&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2026-11-physics-informed-titanium-halide-electrolyte.html&amp;source=https%3A%2F%2Fdoi.org%2F10.1002%2Fsmll.76722" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>Two neural networks helped screen inorganic crystals and identify titanium halides for synthesis.</dd></div><div><dt>Test and result</dt><dd>The abstract reports synthesis, structural characterization, conductivity and cell cycling.</dd></div><div><dt>Limitation / still unknown</dt><dd>The comparison used indexed abstract evidence. Baselines, detailed protocol and independent replication remain to be checked.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://doi.org/10.1002/smll.76722" rel="noopener">https://doi.org/10.1002/smll.76722</a> · <a href="https://pubmed.ncbi.nlm.nih.gov/43049221/" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/43049221/</a></p></details><details class="source-details"><summary>Needs source check · editorial details</summary>
       <p>The source has not been fully checked or contains conflicting information. Independent confirmation is not assessed by this label.</p>
@@ -132,7 +148,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 4/5, validation 3/5, novelty 3/5">Editorial relevance 67<span class="metro" aria-hidden="true"><i style="width:67%"></i></span></span>
       <span class="etich">materials</span>
-      <span class="collegamenti"><a href="https://www.nature.com/articles/s41524-026-02073-2" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2026-04-al-mg-zn-transfer-learning-alloys&amp;record_id=2026-04-al-mg-zn-transfer-learning-alloys&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2026-04-al-mg-zn-transfer-learning-alloys&amp;source=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41524-026-02073-2" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://www.nature.com/articles/s41524-026-02073-2" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2026-04-al-mg-zn-transfer-learning-alloys&amp;record_id=2026-04-al-mg-zn-transfer-learning-alloys&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2026-04-al-mg-zn-transfer-learning-alloys.html&amp;source=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41524-026-02073-2" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>A thermodynamics-informed representation transfers knowledge from established alloy systems; ML predictions and NSGA-II guide experiments, and selected alloys are synthesized and tested.</dd></div><div><dt>Test and result</dt><dd>The primary source reports the study-specific result summarized here.</dd></div><div><dt>Limitation / still unknown</dt><dd>Independent replication and broad deployment are not established by this review.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://doi.org/10.1038/s41524-026-02073-2" rel="noopener">https://doi.org/10.1038/s41524-026-02073-2</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
@@ -150,7 +166,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 2/5, validation 3/5, novelty 2/5">Editorial relevance 47<span class="metro" aria-hidden="true"><i style="width:47%"></i></span></span>
       <span class="etich">materials</span>
-      <span class="collegamenti"><a href="https://doi.org/10.1002/adma.202511814" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-08-study-10-1002-adma-202511814&amp;record_id=2025-08-study-10-1002-adma-202511814&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2025-08-study-10-1002-adma-202511814&amp;source=https%3A%2F%2Fdoi.org%2F10.1002%2Fadma.202511814" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://doi.org/10.1002/adma.202511814" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-08-study-10-1002-adma-202511814&amp;record_id=2025-08-study-10-1002-adma-202511814&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2025-08-study-10-1002-adma-202511814.html&amp;source=https%3A%2F%2Fdoi.org%2F10.1002%2Fadma.202511814" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Publication status unspecified in annotation · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>AdaBoost HOMO predictor is the AI method documented in the editorial source review.</dd></div><div><dt>Limitation / still unknown</dt><dd>The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://doi.org/10.1002/adma.202511814" rel="noopener">https://doi.org/10.1002/adma.202511814</a></p><p>The legacy label “Not reported” does not distinguish information absent from reviewed material from information not assessed. It is not a scientific finding of absence.</p></details><details class="source-details"><summary>Needs source check · editorial details</summary>
       <p>The source has not been fully checked or contains conflicting information. Independent confirmation is not assessed by this label.</p>
@@ -168,7 +184,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 3/5, validation 3/5, novelty 3/5">Editorial relevance 60<span class="metro" aria-hidden="true"><i style="width:60%"></i></span></span>
       <span class="etich">materials</span>
-      <span class="collegamenti"><a href="https://www.nature.com/articles/s41524-025-01775-3" rel="noopener">Original source</a><a href="https://doi.org/10.1038/s41524-025-01775-3" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-08-physics-informed-generative-learning-yields-experimentally-verified-single-phase-b2-intermetallic-alloys&amp;record_id=2025-08-physics-informed-generative-learning-yields-experimentally-verified-single-phase-b2-intermetallic-alloys&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2025-08-physics-informed-generative-learning-yields-experimentally-verified-single-phase-b2-intermetallic-alloys&amp;source=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41524-025-01775-3" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://www.nature.com/articles/s41524-025-01775-3" rel="noopener">Original source</a><a href="https://doi.org/10.1038/s41524-025-01775-3" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-08-physics-informed-generative-learning-yields-experimentally-verified-single-phase-b2-intermetallic-alloys&amp;record_id=2025-08-physics-informed-generative-learning-yields-experimentally-verified-single-phase-b2-intermetallic-alloys&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2025-08-physics-informed-generative-learning-yields-experimentally-verified-single-phase-b2-intermetallic-alloys.html&amp;source=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41524-025-01775-3" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>The ANN learned B2-versus-non-B2 phase likelihoods from historical alloy-composition data using 18 physics-informed descriptors, while the conditional VAE generated candidate compositions. ANN scores filtered generated compositions for experimental validation. The paper reports successful B2 structure confirmation after synthesis, including XRD/SEM and TEM evidence for long-range B2 ordering in tested alloys.</dd></div><div><dt>Test and result</dt><dd>A conditional variational autoencoder and artificial neural network, using physics-informed descriptors of B2 sublattice ordering, generated and ranked compositions in complex alloy systems.</dd></div><div><dt>Limitation / still unknown</dt><dd>The result is one paper-level experimental discovery program; individual alloys are not counted separately. Experiments validated selected compositions from a small subset of the generated search space, not all model proposals. The authors report several new single-phase B2 compositions and strong structural characterization for named samples; broader property superiority and generalization to arbitrary alloy systems are not inferred here. Synthesis and characterization were performed by researchers.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://www.nature.com/articles/s41524-025-01775-3" rel="noopener">https://www.nature.com/articles/s41524-025-01775-3</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
@@ -186,7 +202,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 2/5, validation 3/5, novelty 2/5">Editorial relevance 47<span class="metro" aria-hidden="true"><i style="width:47%"></i></span></span>
       <span class="etich">materials</span>
-      <span class="collegamenti"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9822033/" rel="noopener">Original source</a><a href="https://doi.org/10.3390/ma16010306" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2022-12-study-10-3390-ma16010306&amp;record_id=2022-12-study-10-3390-ma16010306&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2022-12-study-10-3390-ma16010306&amp;source=https%3A%2F%2Fpmc.ncbi.nlm.nih.gov%2Farticles%2FPMC9822033%2F" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9822033/" rel="noopener">Original source</a><a href="https://doi.org/10.3390/ma16010306" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2022-12-study-10-3390-ma16010306&amp;record_id=2022-12-study-10-3390-ma16010306&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2022-12-study-10-3390-ma16010306.html&amp;source=https%3A%2F%2Fpmc.ncbi.nlm.nih.gov%2Farticles%2FPMC9822033%2F" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>Learned property predictors and Bayesian optimization is the AI method documented in the editorial source review.</dd></div><div><dt>Limitation / still unknown</dt><dd>The date refers to the cited version. Earlier public versions and independent replication were not systematically verified.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9822033/" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC9822033/</a> · <a href="https://doi.org/10.3390/ma16010306" rel="noopener">https://doi.org/10.3390/ma16010306</a></p></details><details class="source-details"><summary>Needs source check · editorial details</summary>
       <p>The source has not been fully checked or contains conflicting information. Independent confirmation is not assessed by this label.</p>
@@ -204,7 +220,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 3/5, validation 3/5, novelty 3/5">Editorial relevance 60<span class="metro" aria-hidden="true"><i style="width:60%"></i></span></span>
       <span class="etich">biology</span>
-      <span class="collegamenti"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9621234/" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2022-10-ligand-based-discovery-of-coronavir&amp;record_id=2022-10-ligand-based-discovery-of-coronavir&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2022-10-ligand-based-discovery-of-coronavir&amp;source=https%3A%2F%2Fpmc.ncbi.nlm.nih.gov%2Farticles%2FPMC9621234%2F" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9621234/" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2022-10-ligand-based-discovery-of-coronavir&amp;record_id=2022-10-ligand-based-discovery-of-coronavir&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2022-10-ligand-based-discovery-of-coronavir.html&amp;source=https%3A%2F%2Fpmc.ncbi.nlm.nih.gov%2Farticles%2FPMC9621234%2F" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>MACAW molecular embeddings used in ligand-based machine learning virtual screening</dd></div><div><dt>Test and result</dt><dd>Primary article reports 8/10 selected compounds inhibiting recombinant Mpro and follow-up cellular testing of compound 7 against HCoV-229E.</dd></div><div><dt>Limitation / still unknown</dt><dd>Independent replication and exhaustive prior-art review are not established.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9621234/" rel="noopener">https://pmc.ncbi.nlm.nih.gov/articles/PMC9621234/</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>

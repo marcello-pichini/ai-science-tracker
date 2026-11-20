@@ -78,7 +78,8 @@ class DesignTests(unittest.TestCase):
                 menu = re.search(r'<nav class="menu".*?</nav>', text, re.S).group()
                 self.assertLess(menu.index('href="security.html"'), menu.index('href="dossiers.html"'))
                 self.assertLess(menu.index('href="dossiers.html"'), menu.index('href="methodology.html"'))
-                for nav in ('index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html'):
+                self.assertIn('href="/"', menu)
+                for nav in ('models.html', 'methodology.html', 'guide.html', 'security.html'):
                     self.assertIn(f'href="{nav}"', text)
 
     def test_no_hard_coded_colors_in_stylesheet(self):

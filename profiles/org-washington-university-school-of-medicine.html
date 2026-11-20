@@ -17,6 +17,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:title" content="Washington University School of Medicine">
+<meta name="twitter:description" content="2 AI-enabled scientific discoveries tracked from Washington University School of Medicine, with sources.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#12367e">
@@ -25,23 +27,35 @@
 <link rel="stylesheet" href="../styles.css?v=23f6b9beaa5b">
 <link rel="stylesheet" href="../assets/i18n.css?v=bc803f599a72">
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"CollectionPage","name":"Washington University School of Medicine","description":"2 AI-enabled scientific discoveries tracked from Washington University School of Medicine, with sources.","url":"https://aisciencetracker.org/profiles/org-washington-university-school-of-medicine.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},"isPartOf":{"@type":"Dataset","@id":"https://aisciencetracker.org/index.html#dataset","name":"AI Science Tracker discovery catalog","url":"https://aisciencetracker.org/dataset.html#scientific-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/index.html"},{"@type":"ListItem","position":2,"name":"Washington University School of Medicine","item":"https://aisciencetracker.org/profiles/org-washington-university-school-of-medicine.html"}]},"about":{"@type":"Organization","name":"Washington University School of Medicine"}}
+{"@context":"https://schema.org/","@type":"CollectionPage","name":"Washington University School of Medicine","description":"2 AI-enabled scientific discoveries tracked from Washington University School of Medicine, with sources.","url":"https://aisciencetracker.org/profiles/org-washington-university-school-of-medicine.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},"isPartOf":{"@id":"https://aisciencetracker.org/dataset.html#scientific-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/"},{"@type":"ListItem","position":2,"name":"Washington University School of Medicine","item":"https://aisciencetracker.org/profiles/org-washington-university-school-of-medicine.html"}]},"about":{"@type":"Organization","name":"Washington University School of Medicine"}}
 </script>
 </head>
 <body class="static-page">
 <header class="header">
   <div class="wrap">
-    <a class="marchio" href="../index.html" aria-label="AI Science Tracker, home page">
+    <a class="marchio" href="/" aria-label="AI Science Tracker, home page">
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="../index.html">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../dossiers.html">Dossiers</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="../index.html" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="../it/index.html" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="../de/index.html" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="../fr/index.html" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="../es/index.html" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+    <nav class="menu" aria-label="Site sections"><a href="/">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../dossiers.html">Dossiers</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="/it/" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="/de/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="/fr/" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="/es/" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+globalThis.astCleanPath = function (path) {
+  path = path || '/';
+  if (path === '/index.html') return '/';
+  var home = path.match(/^\/(it|de|fr|es)\/index\.html$/);
+  if (home) return '/' + home[1] + '/';
+  return path;
+};
 globalThis.astResolveLanguage = function (input) {
   var SUPPORTED = {it:1, de:1, fr:1, es:1};
   var ua = input.ua || '';
-  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
-  var path = input.path || '/';
-  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
+  var bot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua);
+  var raw = input.path || '/';
+  var path = astCleanPath(raw);
+  var search = input.search || '';
+  var hash = input.hash || '';
+  var cleaned = path + search + hash;
+  if (bot) return path === raw ? null : cleaned;
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return path === raw ? null : cleaned;
   var pages = input.pages || [];
   var saved = input.saved || '';
   var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
@@ -64,16 +78,16 @@ globalThis.astResolveLanguage = function (input) {
     };
     if (hint[input.timezone || '']) target = hint[input.timezone];
   }
-  if (!target || target === 'en' || !SUPPORTED[target]) return null;
-  var search = input.search || '';
-  var hash = input.hash || '';
-  if (path === '/' || path === '') return '/' + target + '/' + search + hash;
-  var file = path.split('/').pop();
-  var dir = path.slice(0, path.length - file.length);
-  if (dir !== '/') return null;
-  if (!file) file = 'index.html';
-  if (pages.indexOf(file) < 0) return null;
-  return '/' + target + '/' + file + search + hash;
+  if (target && target !== 'en' && SUPPORTED[target]) {
+    if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+    var file = path.split('/').pop();
+    var dir = path.slice(0, path.length - file.length);
+    if (dir !== '/') return path === raw ? null : cleaned;
+    if (!file || file === 'index.html') return '/' + target + '/' + search + hash;
+    if (pages.indexOf(file) < 0) return path === raw ? null : cleaned;
+    return '/' + target + '/' + file + search + hash;
+  }
+  return path === raw ? null : cleaned;
 };
 globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   search = search || '';
@@ -81,15 +95,17 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   pages = pages || [];
   var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
   var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
-  if (rest === '' || rest === '/') rest = '/index.html';
+  if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
   var prefix = lang === 'en' ? '' : '/' + lang;
+  if (rest === '/') return prefix + '/' + search + hash;
   var file = rest.split('/').pop();
   var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && file === 'index.html') return prefix + '/' + search + hash;
   if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
   var share = rest.match(/^\/share\/([^/]+)\.html$/);
-  if (share) return prefix + '/index.html#discovery=' + share[1];
+  if (share) return prefix + '/#discovery=' + share[1];
   if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
-  return prefix + '/index.html' + search;
+  return prefix + '/' + search;
 };
 try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"];var current=document.documentElement.lang||"en";nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});}}catch(e){}</script>
   </div>
@@ -114,7 +130,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 3/5, validation 3/5, novelty 3/5">Editorial relevance 60<span class="metro" aria-hidden="true"><i style="width:60%"></i></span></span>
       <span class="etich">biology</span>
-      <span class="collegamenti"><a href="https://www.biorxiv.org/content/10.64898/2026.04.27.721124v2.full" rel="noopener">Original source</a><a href="https://doi.org/10.64898/2026.04.27.721124" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2026-04-celloracle-guided-pancreatic-islet-differentiation-experiments-reveal-stat1-and-zeb1-lineage-roles&amp;record_id=2026-04-celloracle-guided-pancreatic-islet-differentiation-experiments-reveal-stat1-and-zeb1-lineage-roles&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2026-04-celloracle-guided-pancreatic-islet-differentiation-experiments-reveal-stat1-and-zeb1-lineage-roles&amp;source=https%3A%2F%2Fwww.biorxiv.org%2Fcontent%2F10.64898%2F2026.04.27.721124v2.full" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://www.biorxiv.org/content/10.64898/2026.04.27.721124v2.full" rel="noopener">Original source</a><a href="https://doi.org/10.64898/2026.04.27.721124" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2026-04-celloracle-guided-pancreatic-islet-differentiation-experiments-reveal-stat1-and-zeb1-lineage-roles&amp;record_id=2026-04-celloracle-guided-pancreatic-islet-differentiation-experiments-reveal-stat1-and-zeb1-lineage-roles&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2026-04-celloracle-guided-pancreatic-islet-differentiation-experiments-reveal-stat1-and-zeb1-lineage-roles.html&amp;source=https%3A%2F%2Fwww.biorxiv.org%2Fcontent%2F10.64898%2F2026.04.27.721124v2.full" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Preprint · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>The integrated cell-state model inferred regulatory networks and performed in-silico transcription-factor knockout simulations to identify candidate lineage regulators and intervention windows. These model predictions guided subsequent CRISPRi and pharmacologic perturbations in stem-cell-derived islet differentiation cultures.</dd></div><div><dt>Test and result</dt><dd>CRISPRi experiments supported a previously unreported role for STAT1 in exocrine specification: transient STAT1 knockdown reduced exocrine markers, and JAK–STAT inhibition preserved beta-cell markers and improved glucose-stimulated insulin secretion.</dd></div><div><dt>Limitation / still unknown</dt><dd>This is a bioRxiv preprint (first posted 30 April 2026; the source lists a later version on 17 September 2026), not peer-reviewed at this source date. It integrates existing datasets and reports laboratory validation in stem-cell-derived islet cultures; it does not establish human therapeutic benefit or mature clinical transplantation outcomes. Regulatory-model predictions remain context- and stage-dependent.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://www.biorxiv.org/content/10.64898/2026.04.27.721124v2.full" rel="noopener">https://www.biorxiv.org/content/10.64898/2026.04.27.721124v2.full</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
@@ -132,7 +148,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 3/5, validation 2/5, novelty 3/5">Editorial relevance 53<span class="metro" aria-hidden="true"><i style="width:53%"></i></span></span>
       <span class="etich">medicine</span>
-      <span class="collegamenti"><a href="https://pure.amsterdamumc.nl/ws/portalfiles/portal/140778915/Large-scale-plasma-proteomic-profiling-unveils-diagnostic-biomarkers-and-pathways-for-alzheimers-disease.pdf" rel="noopener">Original source</a><a href="https://doi.org/10.1038/s43587-025-00872-8" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-05-machine-learning-proteomics-identifies-a-replicated-plasma-signature-associated-with-alzheimers-disease&amp;record_id=2025-05-machine-learning-proteomics-identifies-a-replicated-plasma-signature-associated-with-alzheimers-disease&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2025-05-machine-learning-proteomics-identifies-a-replicated-plasma-signature-associated-with-alzheimers-disease&amp;source=https%3A%2F%2Fpure.amsterdamumc.nl%2Fws%2Fportalfiles%2Fportal%2F140778915%2FLarge-scale-plasma-proteomic-profiling-unveils-diagnostic-biomarkers-and-pathways-for-alzheimers-disease.pdf" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://pure.amsterdamumc.nl/ws/portalfiles/portal/140778915/Large-scale-plasma-proteomic-profiling-unveils-diagnostic-biomarkers-and-pathways-for-alzheimers-disease.pdf" rel="noopener">Original source</a><a href="https://doi.org/10.1038/s43587-025-00872-8" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-05-machine-learning-proteomics-identifies-a-replicated-plasma-signature-associated-with-alzheimers-disease&amp;record_id=2025-05-machine-learning-proteomics-identifies-a-replicated-plasma-signature-associated-with-alzheimers-disease&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2025-05-machine-learning-proteomics-identifies-a-replicated-plasma-signature-associated-with-alzheimers-disease.html&amp;source=https%3A%2F%2Fpure.amsterdamumc.nl%2Fws%2Fportalfiles%2Fportal%2F140778915%2FLarge-scale-plasma-proteomic-profiling-unveils-diagnostic-biomarkers-and-pathways-for-alzheimers-disease.pdf" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> retrospective or benchmark. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>The team used LASSO to select a compact protein panel from the proteins associated with AD in discovery and replication analyses, then retrained logistic regression to predict clinical AD status. This model-driven panel was evaluated against amyloid and tau biomarkers, external cohorts and orthogonal protein platforms; the analysis also tested associations with progression to symptomatic AD and memory decline.</dd></div><div><dt>Test and result</dt><dd>A LASSO-selected seven-protein model predicted clinical AD and biomarker-defined AD status, with validation in external cohorts and orthogonal assays; the signature also stratified later progression to symptomatic AD among initially cognitively normal participants.</dd></div><div><dt>Limitation / still unknown</dt><dd>The cohort analysis is observational and does not establish that the associated proteins cause AD. The model’s clinical-status AUC was 0.72 in replication; performance was comparable to p-tau217 in the study’s comparison, but the reported AUC for frontotemporal dementia was also 0.73, limiting disease specificity. Orthogonal platform validation covered only subsets of the seven proteins (four proteins on Olink and two on Alamar), and the authors state that further work is needed before clinical use. The reported “new” designation is relative to prior large-scale plasma/CSF proteomic studies, not proof that each protein is biologically novel.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://pure.amsterdamumc.nl/ws/portalfiles/portal/140778915/Large-scale-plasma-proteomic-profiling-unveils-diagnostic-biomarkers-and-pathways-for-alzheimers-disease.pdf" rel="noopener">https://pure.amsterdamumc.nl/ws/portalfiles/portal/140778915/Large-scale-plasma-proteomic-profiling-unveils-diagnostic-biomarkers-and-pathways-for-alzheimers-disease.pdf</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>

@@ -17,6 +17,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:title" content="GraphCast">
+<meta name="twitter:description" content="2 AI-enabled scientific discoveries linked to the GraphCast model family.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#12367e">
@@ -25,23 +27,35 @@
 <link rel="stylesheet" href="../styles.css?v=23f6b9beaa5b">
 <link rel="stylesheet" href="../assets/i18n.css?v=bc803f599a72">
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"CollectionPage","name":"GraphCast","description":"2 AI-enabled scientific discoveries linked to the GraphCast model family.","url":"https://aisciencetracker.org/profiles/family-graphcast.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},"isPartOf":{"@type":"Dataset","@id":"https://aisciencetracker.org/index.html#dataset","name":"AI Science Tracker discovery catalog","url":"https://aisciencetracker.org/dataset.html#scientific-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/index.html"},{"@type":"ListItem","position":2,"name":"GraphCast","item":"https://aisciencetracker.org/profiles/family-graphcast.html"}]}}
+{"@context":"https://schema.org/","@type":"CollectionPage","name":"GraphCast","description":"2 AI-enabled scientific discoveries linked to the GraphCast model family.","url":"https://aisciencetracker.org/profiles/family-graphcast.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},"isPartOf":{"@id":"https://aisciencetracker.org/dataset.html#scientific-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/"},{"@type":"ListItem","position":2,"name":"GraphCast","item":"https://aisciencetracker.org/profiles/family-graphcast.html"}]}}
 </script>
 </head>
 <body class="static-page">
 <header class="header">
   <div class="wrap">
-    <a class="marchio" href="../index.html" aria-label="AI Science Tracker, home page">
+    <a class="marchio" href="/" aria-label="AI Science Tracker, home page">
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="../index.html">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../dossiers.html">Dossiers</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="../index.html" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="../it/index.html" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="../de/index.html" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="../fr/index.html" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="../es/index.html" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+    <nav class="menu" aria-label="Site sections"><a href="/">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../dossiers.html">Dossiers</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="/it/" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="/de/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="/fr/" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="/es/" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+globalThis.astCleanPath = function (path) {
+  path = path || '/';
+  if (path === '/index.html') return '/';
+  var home = path.match(/^\/(it|de|fr|es)\/index\.html$/);
+  if (home) return '/' + home[1] + '/';
+  return path;
+};
 globalThis.astResolveLanguage = function (input) {
   var SUPPORTED = {it:1, de:1, fr:1, es:1};
   var ua = input.ua || '';
-  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
-  var path = input.path || '/';
-  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
+  var bot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua);
+  var raw = input.path || '/';
+  var path = astCleanPath(raw);
+  var search = input.search || '';
+  var hash = input.hash || '';
+  var cleaned = path + search + hash;
+  if (bot) return path === raw ? null : cleaned;
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return path === raw ? null : cleaned;
   var pages = input.pages || [];
   var saved = input.saved || '';
   var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
@@ -64,16 +78,16 @@ globalThis.astResolveLanguage = function (input) {
     };
     if (hint[input.timezone || '']) target = hint[input.timezone];
   }
-  if (!target || target === 'en' || !SUPPORTED[target]) return null;
-  var search = input.search || '';
-  var hash = input.hash || '';
-  if (path === '/' || path === '') return '/' + target + '/' + search + hash;
-  var file = path.split('/').pop();
-  var dir = path.slice(0, path.length - file.length);
-  if (dir !== '/') return null;
-  if (!file) file = 'index.html';
-  if (pages.indexOf(file) < 0) return null;
-  return '/' + target + '/' + file + search + hash;
+  if (target && target !== 'en' && SUPPORTED[target]) {
+    if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+    var file = path.split('/').pop();
+    var dir = path.slice(0, path.length - file.length);
+    if (dir !== '/') return path === raw ? null : cleaned;
+    if (!file || file === 'index.html') return '/' + target + '/' + search + hash;
+    if (pages.indexOf(file) < 0) return path === raw ? null : cleaned;
+    return '/' + target + '/' + file + search + hash;
+  }
+  return path === raw ? null : cleaned;
 };
 globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   search = search || '';
@@ -81,15 +95,17 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   pages = pages || [];
   var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
   var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
-  if (rest === '' || rest === '/') rest = '/index.html';
+  if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
   var prefix = lang === 'en' ? '' : '/' + lang;
+  if (rest === '/') return prefix + '/' + search + hash;
   var file = rest.split('/').pop();
   var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && file === 'index.html') return prefix + '/' + search + hash;
   if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
   var share = rest.match(/^\/share\/([^/]+)\.html$/);
-  if (share) return prefix + '/index.html#discovery=' + share[1];
+  if (share) return prefix + '/#discovery=' + share[1];
   if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
-  return prefix + '/index.html' + search;
+  return prefix + '/' + search;
 };
 try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"];var current=document.documentElement.lang||"en";nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});}}catch(e){}</script>
   </div>
@@ -104,7 +120,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
 
 <main>
   <section class="sez"><div class="wrap">
-    <h2>First-listed affiliations</h2><details class="source-details"><summary>2 first-affiliation groups in linked records</summary><p>Grouping uses the first listed affiliation; complete source labels remain on each entry.</p><ul class="elenco-profili"><li><a href="../profiles/org-google-deepmind.html">Google DeepMind</a></li><li><a href="../profiles/org-noaa.html">NOAA</a></li></ul></details><section aria-label="Represented scientific uses"><h2>Where GraphCast appears in the catalog</h2><p><b>Evidence annotations:</b> 2/2 linked records. <b>Structured review date and scope:</b> 0/2. Missing review metadata does not prove a source was never checked.</p><details class="source-details"><summary>Why linked?</summary><p>These associations match family names in discovery titles and technology text. They are not verified model-version assignments or causal attribution. Missing links do not establish absence of use. A record may link to multiple families.</p></details><h3>Represented fields</h3><details><summary>climate · 2 linked records</summary><ul><li><a href="../index.html#discovery=2025-12-noaa-modelli-ai">NOAA puts three AI-based global models into operation</a></li><li><a href="../index.html#discovery=2023-11-graphcast">GraphCast: global 10-day weather forecasts</a></li></ul></details><h3>Test contexts</h3><details><summary>Test context unspecified in annotation · 1 linked records</summary><ul><li><a href="../index.html#discovery=2025-12-noaa-modelli-ai">NOAA puts three AI-based global models into operation</a></li></ul></details><details><summary>retrospective or benchmark · 1 linked records</summary><ul><li><a href="../index.html#discovery=2023-11-graphcast">GraphCast: global 10-day weather forecasts</a></li></ul></details><h3>Annotation coverage</h3><details><summary>Evidence annotation present · 2 linked records</summary><ul><li><a href="../index.html#discovery=2025-12-noaa-modelli-ai">NOAA puts three AI-based global models into operation</a></li><li><a href="../index.html#discovery=2023-11-graphcast">GraphCast: global 10-day weather forecasts</a></li></ul></details><h3>Examples</h3><p>Up to three linked records, newest publication date first, then stable ID. This selection is not a ranking.</p><ul><li><a href="../index.html#discovery=2025-12-noaa-modelli-ai">NOAA puts three AI-based global models into operation</a></li><li><a href="../index.html#discovery=2023-11-graphcast">GraphCast: global 10-day weather forecasts</a></li></ul></section><h2 class="vis-nascosto">Discoveries</h2><div class="piatto"><article class="voce" id="2025-12-noaa-modelli-ai">
+    <h2>First-listed affiliations</h2><details class="source-details"><summary>2 first-affiliation groups in linked records</summary><p>Grouping uses the first listed affiliation; complete source labels remain on each entry.</p><ul class="elenco-profili"><li><a href="../profiles/org-google-deepmind.html">Google DeepMind</a></li><li><a href="../profiles/org-noaa.html">NOAA</a></li></ul></details><section aria-label="Represented scientific uses"><h2>Where GraphCast appears in the catalog</h2><p><b>Evidence annotations:</b> 2/2 linked records. <b>Structured review date and scope:</b> 0/2. Missing review metadata does not prove a source was never checked.</p><details class="source-details"><summary>Why linked?</summary><p>These associations match family names in discovery titles and technology text. They are not verified model-version assignments or causal attribution. Missing links do not establish absence of use. A record may link to multiple families.</p></details><h3>Represented fields</h3><details><summary>climate · 2 linked records</summary><ul><li><a href="/#discovery=2025-12-noaa-modelli-ai">NOAA puts three AI-based global models into operation</a></li><li><a href="/#discovery=2023-11-graphcast">GraphCast: global 10-day weather forecasts</a></li></ul></details><h3>Test contexts</h3><details><summary>Test context unspecified in annotation · 1 linked records</summary><ul><li><a href="/#discovery=2025-12-noaa-modelli-ai">NOAA puts three AI-based global models into operation</a></li></ul></details><details><summary>retrospective or benchmark · 1 linked records</summary><ul><li><a href="/#discovery=2023-11-graphcast">GraphCast: global 10-day weather forecasts</a></li></ul></details><h3>Annotation coverage</h3><details><summary>Evidence annotation present · 2 linked records</summary><ul><li><a href="/#discovery=2025-12-noaa-modelli-ai">NOAA puts three AI-based global models into operation</a></li><li><a href="/#discovery=2023-11-graphcast">GraphCast: global 10-day weather forecasts</a></li></ul></details><h3>Examples</h3><p>Up to three linked records, newest publication date first, then stable ID. This selection is not a ranking.</p><ul><li><a href="/#discovery=2025-12-noaa-modelli-ai">NOAA puts three AI-based global models into operation</a></li><li><a href="/#discovery=2023-11-graphcast">GraphCast: global 10-day weather forecasts</a></li></ul></section><h2 class="vis-nascosto">Discoveries</h2><div class="piatto"><article class="voce" id="2025-12-noaa-modelli-ai">
     <div class="voce-meta"><time datetime="2025-12-17">17 Dec 2025</time><a href="../profiles/org-noaa.html">NOAA</a></div>
     <h3><a href="../share/2025-12-noaa-modelli-ai.html">NOAA puts three AI-based global models into operation</a></h3>
     <p class="source-status"><b>Source check:</b> Source checked. <span>Not independent scientific confirmation.</span></p>
@@ -114,7 +130,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 5/5, validation 1/5, novelty 4/5">Editorial relevance 40<span class="metro" aria-hidden="true"><i style="width:40%"></i></span></span>
       <span class="etich">climate</span>
-      <span class="collegamenti"><a href="https://www.noaa.gov/news-release/noaa-deploys-new-generation-of-ai-driven-global-weather-models" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-12-noaa-modelli-ai&amp;record_id=2025-12-noaa-modelli-ai&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2025-12-noaa-modelli-ai&amp;source=https%3A%2F%2Fwww.noaa.gov%2Fnews-release%2Fnoaa-deploys-new-generation-of-ai-driven-global-weather-models" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://www.noaa.gov/news-release/noaa-deploys-new-generation-of-ai-driven-global-weather-models" rel="noopener">Original source</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-12-noaa-modelli-ai&amp;record_id=2025-12-noaa-modelli-ai&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2025-12-noaa-modelli-ai.html&amp;source=https%3A%2F%2Fwww.noaa.gov%2Fnews-release%2Fnoaa-deploys-new-generation-of-ai-driven-global-weather-models" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Announcement only · <b>Test context:</b> Test context unspecified in annotation. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>AI global models: AIGFS forecasts with up to 99.7% less compute; AIGEFS is a 31-member AI ensemble with 9% of the GEFS computing; HGEFS combines 31 GEFS and 31 AIGEFS members.</dd></div><div><dt>Test and result</dt><dd>The release describes initial or early testing and claims skill comparable to GEFS and better ensemble performance, but gives no metrics, verification datasets or time periods.</dd></div><div><dt>Limitation / still unknown</dt><dd>The release states that AIGFS v1.0 degraded tropical cyclone intensity forecasts, that AIGEFS ensemble spread is still being improved, and that HGEFS hurricane intensity is being improved.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://www.noaa.gov/news-release/noaa-deploys-new-generation-of-ai-driven-global-weather-models" rel="noopener">https://www.noaa.gov/news-release/noaa-deploys-new-generation-of-ai-driven-global-weather-models</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
@@ -132,7 +148,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 5/5, validation 2/5, novelty 4/5">Editorial relevance 60<span class="metro" aria-hidden="true"><i style="width:60%"></i></span></span>
       <span class="etich">climate</span>
-      <span class="collegamenti"><a href="https://deepmind.google/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/" rel="noopener">Original source</a><a href="https://doi.org/10.1126/science.adi2336" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2023-11-graphcast&amp;record_id=2023-11-graphcast&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2023-11-graphcast&amp;source=https%3A%2F%2Fdeepmind.google%2Fblog%2Fgraphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting%2F" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://deepmind.google/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/" rel="noopener">Original source</a><a href="https://doi.org/10.1126/science.adi2336" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2023-11-graphcast&amp;record_id=2023-11-graphcast&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2023-11-graphcast.html&amp;source=https%3A%2F%2Fdeepmind.google%2Fblog%2Fgraphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting%2F" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> retrospective or benchmark. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>A machine-learning model trained directly on reanalysis data.</dd></div><div><dt>Test and result</dt><dd>10-day forecasts of hundreds of variables at 0.25° in under a minute; outperforms the most accurate operational deterministic systems on 90% of 1,380 verification targets; supports better tropical-cyclone, atmospheric-river and extreme-temperature prediction.</dd></div><div><dt>Limitation / still unknown</dt><dd>Comparison with ensemble systems is not described in the abstract.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://doi.org/10.1126/science.adi2336" rel="noopener">https://doi.org/10.1126/science.adi2336</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>

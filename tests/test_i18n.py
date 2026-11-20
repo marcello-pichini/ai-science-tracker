@@ -27,20 +27,26 @@ class LanguageCatalogTests(unittest.TestCase):
         script = DETECT_FN + """
 const pages = """ + json.dumps(list(PAGES)) + """;
 const go = (extra) => astResolveLanguage(Object.assign({pages, path:'/index.html', search:'', hash:'', saved:'', languages:['en'], timezone:'', ua:'Mozilla/5.0'}, extra));
-if (go({ua:'Mozilla/5.0 (compatible; Googlebot/2.1)', languages:['it-IT','it']}) !== null) throw new Error('bot');
-if (go({languages:['it-IT','it','en']}) !== '/it/index.html') throw new Error('italian');
-if (go({saved:'en', languages:['it-IT']}) !== null) throw new Error('saved english');
-if (go({saved:'de', languages:['en']}) !== '/de/index.html') throw new Error('saved german');
+if (go({ua:'Mozilla/5.0 (compatible; Googlebot/2.1)', languages:['it-IT','it']}) !== '/') throw new Error('bot cleans home');
+if (go({ua:'Mozilla/5.0 (compatible; Googlebot/2.1)', path:'/methodology.html', languages:['it']}) !== null) throw new Error('bot stays');
+if (go({languages:['it-IT','it','en']}) !== '/it/') throw new Error('italian');
+if (go({saved:'en', languages:['it-IT']}) !== '/') throw new Error('saved english cleans index');
+if (go({saved:'en', path:'/', languages:['it-IT']}) !== null) throw new Error('clean english stays');
+if (go({saved:'de', languages:['en']}) !== '/de/') throw new Error('saved german');
 if (go({path:'/share/halicin.html', languages:['it']}) !== null) throw new Error('share');
 if (go({path:'/it/methodology.html', languages:['de']}) !== null) throw new Error('already local');
-if (go({languages:['zh-CN'], timezone:'Europe/Rome'}) !== '/it/index.html') throw new Error('timezone');
-if (go({languages:['en-GB'], timezone:'Europe/Rome'}) !== null) throw new Error('english wins');
+if (go({path:'/it/index.html', languages:['de']}) !== '/it/') throw new Error('locale home cleaned');
+if (go({languages:['zh-CN'], timezone:'Europe/Rome'}) !== '/it/') throw new Error('timezone');
+if (go({languages:['en-GB'], timezone:'Europe/Rome'}) !== '/') throw new Error('english cleans dirty home');
+if (go({path:'/', languages:['en-GB'], timezone:'Europe/Rome'}) !== null) throw new Error('english wins');
 const home = astEquivalent('fr', '/methodology.html', '?q=1', '#elenco', pages);
 if (home !== '/fr/methodology.html?q=1#elenco') throw new Error('switch '+home);
 const back = astEquivalent('en', '/de/security.html', '', '', pages);
 if (back !== '/security.html') throw new Error('back '+back);
 const share = astEquivalent('it', '/share/2020-02-halicin.html', '', '', pages);
-if (share !== '/it/index.html#discovery=2020-02-halicin') throw new Error('entry '+share);
+if (share !== '/it/#discovery=2020-02-halicin') throw new Error('entry '+share);
+const root = astEquivalent('en', '/index.html', '', '#elenco', pages);
+if (root !== '/#elenco') throw new Error('root '+root);
 """
         result = subprocess.run(['node', '-e', script], text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -79,6 +85,10 @@ if (share !== '/it/index.html#discovery=2020-02-halicin') throw new Error('entry
         self.assertIn("default-src 'self'", page)
         self.assertIn('ast-lang', page)
         self.assertIn('https://static.cloudflareinsights.com/beacon.min.js', page)
+        self.assertIn('rel="canonical" href="https://aisciencetracker.org/"', page)
+        self.assertNotIn('https://aisciencetracker.org/index.html', page)
+        self.assertIn('href="/it/"', page)
+        self.assertNotIn('"@type":"Dataset"', page)
         english = json.loads((MESSAGES / 'en.json').read_text())
         self.assertIn('{n} of {total} discoveries', english)
 

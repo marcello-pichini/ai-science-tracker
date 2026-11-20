@@ -17,6 +17,8 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:title" content="Columbia University">
+<meta name="twitter:description" content="5 AI-enabled scientific discoveries tracked from Columbia University, with sources.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#12367e">
@@ -25,23 +27,35 @@
 <link rel="stylesheet" href="../styles.css?v=23f6b9beaa5b">
 <link rel="stylesheet" href="../assets/i18n.css?v=bc803f599a72">
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"CollectionPage","name":"Columbia University","description":"5 AI-enabled scientific discoveries tracked from Columbia University, with sources.","url":"https://aisciencetracker.org/profiles/org-columbia-university.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},"isPartOf":{"@type":"Dataset","@id":"https://aisciencetracker.org/index.html#dataset","name":"AI Science Tracker discovery catalog","url":"https://aisciencetracker.org/dataset.html#scientific-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/index.html"},{"@type":"ListItem","position":2,"name":"Columbia University","item":"https://aisciencetracker.org/profiles/org-columbia-university.html"}]},"about":{"@type":"Organization","name":"Columbia University"}}
+{"@context":"https://schema.org/","@type":"CollectionPage","name":"Columbia University","description":"5 AI-enabled scientific discoveries tracked from Columbia University, with sources.","url":"https://aisciencetracker.org/profiles/org-columbia-university.html","inLanguage":"en","license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini"},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"]},"isPartOf":{"@id":"https://aisciencetracker.org/dataset.html#scientific-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/"},{"@type":"ListItem","position":2,"name":"Columbia University","item":"https://aisciencetracker.org/profiles/org-columbia-university.html"}]},"about":{"@type":"Organization","name":"Columbia University"}}
 </script>
 </head>
 <body class="static-page">
 <header class="header">
   <div class="wrap">
-    <a class="marchio" href="../index.html" aria-label="AI Science Tracker, home page">
+    <a class="marchio" href="/" aria-label="AI Science Tracker, home page">
       <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
       <span>AI Science Tracker</span>
     </a>
-    <nav class="menu" aria-label="Site sections"><a href="../index.html">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../dossiers.html">Dossiers</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="../index.html" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="../it/index.html" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="../de/index.html" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="../fr/index.html" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="../es/index.html" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+    <nav class="menu" aria-label="Site sections"><a href="/">Discoveries</a><a href="../models.html">Models</a><a href="../security.html">Vuln discoveries</a><a href="../dossiers.html">Dossiers</a><a href="../methodology.html">Methodology</a><a href="../guide.html">Guide</a><a href="../search.html">Search</a></nav><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">EN</a><a href="/it/" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">IT</a><a href="/de/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">DE</a><a href="/fr/" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">FR</a><a href="/es/" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a></nav><script>
+globalThis.astCleanPath = function (path) {
+  path = path || '/';
+  if (path === '/index.html') return '/';
+  var home = path.match(/^\/(it|de|fr|es)\/index\.html$/);
+  if (home) return '/' + home[1] + '/';
+  return path;
+};
 globalThis.astResolveLanguage = function (input) {
   var SUPPORTED = {it:1, de:1, fr:1, es:1};
   var ua = input.ua || '';
-  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
-  var path = input.path || '/';
-  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
+  var bot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua);
+  var raw = input.path || '/';
+  var path = astCleanPath(raw);
+  var search = input.search || '';
+  var hash = input.hash || '';
+  var cleaned = path + search + hash;
+  if (bot) return path === raw ? null : cleaned;
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return path === raw ? null : cleaned;
   var pages = input.pages || [];
   var saved = input.saved || '';
   var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
@@ -64,16 +78,16 @@ globalThis.astResolveLanguage = function (input) {
     };
     if (hint[input.timezone || '']) target = hint[input.timezone];
   }
-  if (!target || target === 'en' || !SUPPORTED[target]) return null;
-  var search = input.search || '';
-  var hash = input.hash || '';
-  if (path === '/' || path === '') return '/' + target + '/' + search + hash;
-  var file = path.split('/').pop();
-  var dir = path.slice(0, path.length - file.length);
-  if (dir !== '/') return null;
-  if (!file) file = 'index.html';
-  if (pages.indexOf(file) < 0) return null;
-  return '/' + target + '/' + file + search + hash;
+  if (target && target !== 'en' && SUPPORTED[target]) {
+    if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+    var file = path.split('/').pop();
+    var dir = path.slice(0, path.length - file.length);
+    if (dir !== '/') return path === raw ? null : cleaned;
+    if (!file || file === 'index.html') return '/' + target + '/' + search + hash;
+    if (pages.indexOf(file) < 0) return path === raw ? null : cleaned;
+    return '/' + target + '/' + file + search + hash;
+  }
+  return path === raw ? null : cleaned;
 };
 globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   search = search || '';
@@ -81,15 +95,17 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   pages = pages || [];
   var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
   var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
-  if (rest === '' || rest === '/') rest = '/index.html';
+  if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
   var prefix = lang === 'en' ? '' : '/' + lang;
+  if (rest === '/') return prefix + '/' + search + hash;
   var file = rest.split('/').pop();
   var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && file === 'index.html') return prefix + '/' + search + hash;
   if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
   var share = rest.match(/^\/share\/([^/]+)\.html$/);
-  if (share) return prefix + '/index.html#discovery=' + share[1];
+  if (share) return prefix + '/#discovery=' + share[1];
   if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
-  return prefix + '/index.html' + search;
+  return prefix + '/' + search;
 };
 try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"];var current=document.documentElement.lang||"en";nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});}}catch(e){}</script>
   </div>
@@ -114,7 +130,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 3/5, validation 3/5, novelty 4/5">Editorial relevance 67<span class="metro" aria-hidden="true"><i style="width:67%"></i></span></span>
       <span class="etich">biology</span>
-      <span class="collegamenti"><a href="https://magazine.columbia.edu/article/could-life-be-made-simpler" rel="noopener">Original source</a><a href="https://doi.org/10.1126/science.aeb5171" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine&amp;record_id=2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine&amp;source=https%3A%2F%2Fmagazine.columbia.edu%2Farticle%2Fcould-life-be-made-simpler" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://magazine.columbia.edu/article/could-life-be-made-simpler" rel="noopener">Original source</a><a href="https://doi.org/10.1126/science.aeb5171" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine&amp;record_id=2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine.html&amp;source=https%3A%2F%2Fmagazine.columbia.edu%2Farticle%2Fcould-life-be-made-simpler" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>The researchers used AI-guided computational design to propose amino-acid substitutions that allowed selected ribosomal proteins to function after removing isoleucine; the strain was assembled and experimentally tested by the team.</dd></div><div><dt>Test and result</dt><dd>Researchers used computational protein design and generative AI to recode ribosomal proteins in E. coli so they function without isoleucine, then assembled an engineered strain that remained viable and genomically stable over more than 450 laboratory generations.</dd></div><div><dt>Limitation / still unknown</dt><dd>This is not a whole 19-amino-acid organism: isoleucine was eliminated from the engineered ribosomal proteins, while the rest of the cell still uses it. Growth was slower than wild type according to the paper.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://magazine.columbia.edu/article/could-life-be-made-simpler" rel="noopener">https://magazine.columbia.edu/article/could-life-be-made-simpler</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
@@ -132,7 +148,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 5/5, validation 4/5, novelty 4/5">Editorial relevance 87<span class="metro" aria-hidden="true"><i style="width:87%"></i></span></span>
       <span class="etich">medicine</span>
-      <span class="collegamenti"><a href="https://www.nature.com/articles/s41586-025-09227-0" rel="noopener">Original source</a><a href="https://doi.org/10.1038/s41586-025-09227-0" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-07-echonext-structural-heart-disease&amp;record_id=2025-07-echonext-structural-heart-disease&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2025-07-echonext-structural-heart-disease&amp;source=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41586-025-09227-0" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://www.nature.com/articles/s41586-025-09227-0" rel="noopener">Original source</a><a href="https://doi.org/10.1038/s41586-025-09227-0" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-07-echonext-structural-heart-disease&amp;record_id=2025-07-echonext-structural-heart-disease&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2025-07-echonext-structural-heart-disease.html&amp;source=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41586-025-09227-0" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> prospective or independent check. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>A deep-learning model estimated structural-heart-disease risk from electrocardiograms to guide imaging-based screening.</dd></div><div><dt>Test and result</dt><dd>Internal/external diagnostic validation, a controlled cardiologist comparison and prospective clinical-trial screening of patients without previous cardiac imaging.</dd></div><div><dt>Limitation / still unknown</dt><dd>Abstract and publication metadata reviewed. No claim of mortality reduction, universal clinical generalization or independent replication is made.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1038%2Fs41586-025-09227-0%22&amp;resultType=core&amp;format=json" rel="noopener">https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI%3A%2210.1038%2Fs41586-025-09227-0%22&amp;resultType=core&amp;format=json</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
@@ -150,7 +166,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 3/5, validation 3/5, novelty 3/5">Editorial relevance 60<span class="metro" aria-hidden="true"><i style="width:60%"></i></span></span>
       <span class="etich">biology</span>
-      <span class="collegamenti"><a href="https://www.nature.com/articles/s41586-024-08391-z.pdf" rel="noopener">Original source</a><a href="https://doi.org/10.1038/s41586-024-08391-z" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-01-get-and-interaction-assays-link-a-leukemia-risk-pax5-variant-to-stronger-nr2c2-binding&amp;record_id=2025-01-get-and-interaction-assays-link-a-leukemia-risk-pax5-variant-to-stronger-nr2c2-binding&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2025-01-get-and-interaction-assays-link-a-leukemia-risk-pax5-variant-to-stronger-nr2c2-binding&amp;source=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41586-024-08391-z.pdf" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://www.nature.com/articles/s41586-024-08391-z.pdf" rel="noopener">Original source</a><a href="https://doi.org/10.1038/s41586-024-08391-z" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2025-01-get-and-interaction-assays-link-a-leukemia-risk-pax5-variant-to-stronger-nr2c2-binding&amp;record_id=2025-01-get-and-interaction-assays-link-a-leukemia-risk-pax5-variant-to-stronger-nr2c2-binding&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2025-01-get-and-interaction-assays-link-a-leukemia-risk-pax5-variant-to-stronger-nr2c2-binding.html&amp;source=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41586-024-08391-z.pdf" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>GET learned regulatory syntax across 213 cell types and used motif co-regulation to predict TF–TF interactions, which nominated PAX5/nuclear receptor family interactions in B cells. Structural modeling prioritized candidate binding interfaces. Researchers then used proximity labeling and mass spectrometry in a B-ALL cell line to compare wild-type PAX5 with the G183S leukemia-risk variant.</dd></div><div><dt>Test and result</dt><dd>The General Expression Transformer (GET) model inferred cell-type-specific transcription-factor motif interactions from regulatory data and nominated a lymphocyte-specific interaction between PAX5 and nuclear-receptor-family factors.</dd></div><div><dt>Limitation / still unknown</dt><dd>This is a cell-line interaction and expression analysis, not proof that the variant causes leukemia or directly alters disease risk through NR2C2. PAX5–NR2C2 interaction itself was consistent with prior evidence for the paralogue PAX2 and mouse pre-B cells; the specific reported distinction is increased interaction signal with PAX5 G183S and associated transcriptional enrichment. The authors call the disease-driving mechanism possible and identify limitations in cell-state and variant resolution.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://www.nature.com/articles/s41586-024-08391-z.pdf" rel="noopener">https://www.nature.com/articles/s41586-024-08391-z.pdf</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
@@ -168,7 +184,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 3/5, validation 3/5, novelty 3/5">Editorial relevance 60<span class="metro" aria-hidden="true"><i style="width:60%"></i></span></span>
       <span class="etich">biology</span>
-      <span class="collegamenti"><a href="https://www.nature.com/articles/s41587-023-01674-2" rel="noopener">Original source</a><a href="https://doi.org/10.1038/s41587-023-01674-2" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2023-02-learned-morphology-guides-targeted-isolation-of-gut-bacteria&amp;record_id=2023-02-learned-morphology-guides-targeted-isolation-of-gut-bacteria&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2023-02-learned-morphology-guides-targeted-isolation-of-gut-bacteria&amp;source=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41587-023-01674-2" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://www.nature.com/articles/s41587-023-01674-2" rel="noopener">Original source</a><a href="https://doi.org/10.1038/s41587-023-01674-2" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2023-02-learned-morphology-guides-targeted-isolation-of-gut-bacteria&amp;record_id=2023-02-learned-morphology-guides-targeted-isolation-of-gut-bacteria&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2023-02-learned-morphology-guides-targeted-isolation-of-gut-bacteria.html&amp;source=https%3A%2F%2Fwww.nature.com%2Farticles%2Fs41587-023-01674-2" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> direct test. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>CAMII random-forest colony taxonomy prediction supported the stated study; experimental and interpretive work remained with researchers.</dd></div><div><dt>Test and result</dt><dd>New colonies selected by the taxonomy model were isolated and sequenced.</dd></div><div><dt>Limitation / still unknown</dt><dd>Generality beyond the studied samples and culture conditions remains unestablished.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://www.nature.com/articles/s41587-023-01674-2" rel="noopener">https://www.nature.com/articles/s41587-023-01674-2</a> · <a href="https://www.nature.com/articles/s41587-023-01674-2.pdf" rel="noopener">https://www.nature.com/articles/s41587-023-01674-2.pdf</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
@@ -186,7 +202,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="voce-footer">
       <span class="punteggio" title="Impact 2/5, validation 2/5, novelty 3/5">Editorial relevance 47<span class="metro" aria-hidden="true"><i style="width:47%"></i></span></span>
       <span class="etich">physics</span>
-      <span class="collegamenti"><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022JF006909" rel="noopener">Original source</a><a href="https://doi.org/10.1029/2022JF006909" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2022-12-unsupervised-seismic-clustering-reveals-distinct-drainage-signals-at-gornergletscher&amp;record_id=2022-12-unsupervised-seismic-clustering-reveals-distinct-drainage-signals-at-gornergletscher&amp;entry=https%3A%2F%2Faisciencetracker.org%2Findex.html%23discovery%3D2022-12-unsupervised-seismic-clustering-reveals-distinct-drainage-signals-at-gornergletscher&amp;source=https%3A%2F%2Fagupubs.onlinelibrary.wiley.com%2Fdoi%2F10.1029%2F2022JF006909" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti"><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022JF006909" rel="noopener">Original source</a><a href="https://doi.org/10.1029/2022JF006909" rel="noopener">Paper</a> <a class="correction-link" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=correction.yml&amp;title=%5BCorrection%5D+2022-12-unsupervised-seismic-clustering-reveals-distinct-drainage-signals-at-gornergletscher&amp;record_id=2022-12-unsupervised-seismic-clustering-reveals-distinct-drainage-signals-at-gornergletscher&amp;entry=https%3A%2F%2Faisciencetracker.org%2Fshare%2F2022-12-unsupervised-seismic-clustering-reveals-distinct-drainage-signals-at-gornergletscher.html&amp;source=https%3A%2F%2Fagupubs.onlinelibrary.wiley.com%2Fdoi%2F10.1029%2F2022JF006909" rel="noopener">Suggest a correction</a></span>
     </div>
     <p class="evidence-strip"><b>Publication:</b> Peer-reviewed paper · <b>Test context:</b> retrospective or benchmark. Catalog categories, not an evidence grade.</p><dl class="reading-context"><div><dt>AI contribution</dt><dd>The unsupervised learning pipeline reduced seismic spectrograms to fingerprints and grouped similar continuous-noise and icequake signals without labels. Comparing the learned clusters with lake level, GPS, temperature, and event timing exposed distinct clusters associated with lake-flood drainage and daily meltwater flow, which supported the revised drainage chronology.</dd></div><div><dt>Test and result</dt><dd>An unsupervised analysis of five weeks of seismic records from Gornergletscher, Switzerland, separated cryoseismic signals into clusters associated with the 2007 Gornersee lake flood and with afternoon/evening meltwater flow.</dd></div><div><dt>Limitation / still unknown</dt><dd>The analysis covers five weeks at one glacier using the 2007 flood record. The inferred drainage start precedes lake-level evidence by about two days, but the source cannot definitively exclude ice-bed slip, till deformation, or small fractures as explanations for some spectral features. The study interprets cluster timing and spectra as hydrologic signals; it does not directly image subglacial drainage pathways.</dd></div></dl><details class="source-details"><summary>Evidence sources and annotation context</summary><p><b>Evidence context</b> (descriptions follow the cited sources; test type is a catalog classification):</p><p>Evidence sources: <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022JF006909" rel="noopener">https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022JF006909</a></p></details><details class="source-details"><summary>Source checked · editorial details</summary>
       <p>The source page was checked against this entry. Independent confirmation is not assessed by this label.</p>
