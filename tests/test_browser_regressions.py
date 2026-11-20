@@ -9,7 +9,7 @@ HARNESS = r'''
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
-function page(name, hash = "", archived = [], staticPages = []) {
+function page(name, hash = "", archived = [], staticPages = [], storage = new Map()) {
   const listeners = {}, elements = new Map(), timers = [];
   const classes = () => ({add() {}, remove() {}, toggle() {}});
   const node = id => ({id, classList:classes(), open:false, textContent:'', value:'', attributes:{}, handlers:{}, listenerCounts:{}, childNodes:[],
@@ -48,6 +48,7 @@ function page(name, hash = "", archived = [], staticPages = []) {
   let loaded;
   const startup = {then(fn) {loaded = fn; return pending;}};
   const context = vm.createContext({document, location, history, URL, URLSearchParams, Intl,
+    localStorage:{getItem:key=>storage.get(key), setItem:(key,value)=>storage.set(key,value)},
     matchMedia:() => ({matches:true}), innerWidth:1280, addEventListener, setTimeout:fn => timers.push(fn),
     window:{addEventListener}, Promise, CatalogData:{run(ids, render, options) {requestedComponents = ids; loaded = render; failure = () => options.clear?.(); return pending;}}, fetch:url => {
       requested.push(url);
@@ -519,6 +520,45 @@ assert.equal((options.match(/<option>Retained/g) || []).length, 1);
 assert.ok(!options.includes('Removed'));
 assert.equal(p.run('$("product").value'), 'Retained');
 assert.equal(p.run('$("q").value'), 'needle');
+''')
+
+    def test_security_remediation_shows_verified_ranges_and_preserves_unknowns(self):
+        self.run_js(r'''
+const storage = new Map();
+const p = page('security.html', '', [], [], storage);
+const vulnerabilities = JSON.parse(fs.readFileSync('data/vulnerabilities.json','utf8'));
+const openWebUI = vulnerabilities.find(record => record.id === 'ghsl-2026-002');
+const firefox = vulnerabilities.find(record => record.id === 'cve-2026-2796');
+const mozillaFirefox = vulnerabilities.find(record => record.id === 'cve-2026-2797');
+const sqlite = vulnerabilities.find(record => record.id === 'cve-2025-6965');
+p.run('charts = () => {};');
+p.load([openWebUI, firefox, mozillaFirefox, sqlite]);
+p.run('$("my-product").value = "Open WebUI"; $("my-version").value = "v0.8.5"; $("my-product-form").handlers.submit({preventDefault(){}});');
+assert.deepEqual(JSON.parse(storage.get('ast-security-my-products')), [['Open WebUI', 'v0.8.5']]);
+const reopened = page('security.html', '', [], [], storage);
+assert.equal(reopened.run('myProducts.get("Open WebUI")'), 'v0.8.5');
+let html = p.run('$("cases").innerHTML');
+assert.match(html, /What to update.*Open WebUI/);
+assert.match(html, /Matches the advisory’s affected version range/);
+assert.doesNotMatch(html, /Firefox/);
+p.run('myProducts.set("Open WebUI", "0.8.10"); render();');
+assert.match(p.run('$("cases").innerHTML'), /Outside the advisory’s listed affected range/);
+p.run('myProducts.set("Open WebUI", "0.8.6-rc1"); render();');
+assert.match(p.run('$("cases").innerHTML'), /Comparison unavailable/);
+p.run('myProducts.set("Firefox", "147.0.0"); render();');
+html = p.run('$("cases").innerHTML');
+assert.match(html, /Affected versions not confirmed in this summary/);
+assert.match(html, /Fixed in:<\/strong> Firefox 148/);
+assert.match(html, /Saved version 147\.0\.0:<\/strong> Comparison unavailable/);
+assert.match(html, /id="cve-2026-2797"/, 'Firefox watchlist includes a Mozilla Firefox product label');
+assert.doesNotMatch(html, /id="cve-2025-6965"/);
+assert.match(p.run('versionMatch("3.50.1", {upper_bound:"3.50.2", inclusive:false})'), /^Matches/);
+assert.match(p.run('versionMatch("3.50.2", {upper_bound:"3.50.2", inclusive:false})'), /^Outside/);
+p.run('$("reset").handlers.click();');
+assert.equal(p.run('$("only-my-products").checked'), false);
+assert.equal(p.run('myProducts.has("Open WebUI")'), true);
+p.run('$("my-product-list").handlers.click({target:{closest:()=>({dataset:{removeProduct:"Open WebUI"}})}});');
+assert.deepEqual(JSON.parse(storage.get('ast-security-my-products')), [['Firefox', '147.0.0']]);
 ''')
 
     def test_models_snapshot_without_download_date_still_renders(self):

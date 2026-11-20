@@ -692,7 +692,7 @@ def write_catalog_evidence(items):
 
 
 def run_security_evidence(items):
-    """Reuse the interactive severity renderer, including all source/scenario caveats."""
+    """Reuse the interactive remediation and severity renderers with their source caveats."""
     source = (ROOT / 'security.html').read_text()
     names = ('esc', 'safeUrl', 'date', 'severities')
     declarations = []
@@ -701,13 +701,13 @@ def run_security_evidence(items):
         if not match:
             raise ValueError(f'Missing shared security declaration: {name}')
         declarations.append(match[0])
-    for name in ('ratingSeverity', 'severity', 'consequences', 'evidence'):
+    for name in ('ratingSeverity', 'severity', 'consequences', 'versionParts', 'versionMatch', 'remediationPanel', 'evidence'):
         match = re.search(r'^function ' + name + r'\(.*?^}', source, re.M | re.S)
         if not match:
             raise ValueError(f'Missing shared security renderer: {name}')
         declarations.append(match[0])
     script = '\n'.join(declarations) + ("\nconst records=JSON.parse(require('fs').readFileSync(0,'utf8'));"
-             "process.stdout.write(JSON.stringify(Object.fromEntries(records.map(r=>[r.id,evidence(r,true)]))));")
+             "process.stdout.write(JSON.stringify(Object.fromEntries(records.map(r=>[r.id,{remediation:remediationPanel(r),severity:evidence(r,true)}]))));")
     result = subprocess.run(['node', '-e', script], input=json.dumps(items), capture_output=True, text=True, check=True)
     return json.loads(result.stdout)
 
@@ -730,6 +730,7 @@ def write_security_pages(items):
                           [('source_url', 'Original disclosure'), ('ai_source_url', 'AI attribution'), ('advisory_url', 'Advisory / fix evidence')])
         article = (f'<article class="voce" id="{esc(record["id"])}"><h2>Finding and attribution</h2>'
                    f'<p class="sommario">{esc(record["summary"])}</p>'
+                   f'{rendered[record["id"]]["remediation"]}'
                    f'<p><strong>Product:</strong> {esc(record["product"])}. <strong>AI system:</strong> {esc(record["ai_system"])}. '
                    f'<strong>Team / organization:</strong> {esc(record["organization"])}.</p>'
                    f'<p><strong>CVE identifiers:</strong> {esc(", ".join(record["cves"]) or "Not established in the cited evidence")}.</p>'
@@ -737,12 +738,12 @@ def write_security_pages(items):
                    '<p>Human involvement is only described where the source account establishes it; unknown involvement does not mean none. '
                    'Vendor confirmation of a flaw does not confirm every claim about AI contribution.</p>'
                    f'<p><strong>Discovery context:</strong> {esc(record["classification_note"])}</p>'
-                   f'<p><strong>Remediation status:</strong> {esc(record["remediation"])}. {esc(record["remediation_note"])}</p>'
+                   f'<p><strong>Remediation status:</strong> {esc(record["remediation"])}.</p>'
                    '<p>A source-documented fix does not establish installed patches or current safety. '
                    'Source checking does not independently reproduce the finding or establish observed exploitation.</p>'
                    f'<p>Disclosed {nice_date(record["disclosure_date"])}. {attribution}. '
                    f'Sources checked {nice_date(record["checked_date"])}; these are separate dates, not a live installation check.</p>'
-                   f'{rendered[record["id"]]}<h2>Original evidence</h2><ul>{sources}</ul>'
+                   f'{rendered[record["id"]]["severity"]}<h2>Original evidence</h2><ul>{sources}</ul>'
                    f'<p><a href="api/v1/vulnerabilities/{quote(record["id"])}.json">Download this source record (JSON)</a></p></article>')
         write_collection_page(record['title'], description, path, article,
                               f'{esc(record["product"])} · AI involvement attributed to {esc(record["ai_system"])}',
@@ -851,7 +852,7 @@ CSV_DISCOVERY = ['id', 'title', 'summary', 'field', 'ai_technology', 'organizati
                  'added_date', 'verification_status', 'paper_url', 'impact', 'validation', 'novelty', 'catalog_entry_url', 'publication_status', 'test_type', 'tested', 'unknown', 'ai_role', 'evidence_urls', 'source_review', 'follow_up', 'follow_up_review', 'relationships']
 CSV_VULN = ['id', 'title', 'product', 'ai_system', 'organization', 'disclosure_date', 'classification', 'cves', 'source_url',
             'ai_source_url', 'advisory_url', 'remediation', 'checked_date', 'summary', 'ai_role',
-            'ai_attribution_date', 'classification_note', 'remediation_note', 'cvss', 'impacts']
+            'ai_attribution_date', 'classification_note', 'remediation_note', 'cvss', 'impacts', 'remediation_details']
 
 
 def write_csv(path, columns, rows):
@@ -867,7 +868,10 @@ def write_exports(items, vulns):
     """Flat CSV copies of the JSON data, same columns as the in-page download. Evidence and optional histories retain their fields; nested structures are JSON cells."""
     write_csv('data/discoveries.csv', CSV_DISCOVERY, [
         dict(d, **d['relevance'], **{key: d.get('evidence', {}).get(key, '') for key in ('publication_status', 'test_type', 'tested', 'unknown', 'ai_role')}, evidence_urls=json.dumps(d.get('evidence', {}).get('evidence_urls', []), ensure_ascii=False, separators=(',', ':')), **{key: json.dumps(d.get(key), ensure_ascii=False, separators=(',', ':')) for key in ('source_review', 'follow_up', 'follow_up_review', 'relationships')}, catalog_entry_url=f'{BASE}share/{d["id"]}.html') for d in items])
-    write_csv('data/vulnerabilities.csv', CSV_VULN, [dict(v, cves=';'.join(v['cves']), **{key: json.dumps(v.get(key, []), ensure_ascii=False, separators=(',', ':')) for key in ('cvss', 'impacts')}) for v in vulns])
+    write_csv('data/vulnerabilities.csv', CSV_VULN, [
+        dict(v, cves=';'.join(v['cves']), remediation_details=json.dumps(v['remediation_details'], ensure_ascii=False, separators=(',', ':')) if 'remediation_details' in v else '',
+             **{key: json.dumps(v.get(key, []), ensure_ascii=False, separators=(',', ':')) for key in ('cvss', 'impacts')})
+        for v in vulns])
 
 
 def write_api(items, vulns, models=None, archived=(), manifest=None):
@@ -971,7 +975,7 @@ def validate_inputs(items, archived, models, vulns):
             datetime.date.fromisoformat(d[key])
     for v in vulns:
         for key in CSV_VULN:
-            if key not in ('cvss', 'impacts'):
+            if key not in ('cvss', 'impacts', 'remediation_details'):
                 v[key]
         cves = set(v['cves'])
         if any(rating['cve'] is not None and rating['cve'] not in cves for rating in v.get('cvss', [])) or any(not set(impact['cves']) <= cves for impact in v.get('impacts', [])):
@@ -980,6 +984,15 @@ def validate_inputs(items, archived, models, vulns):
             if key == 'ai_attribution_date' and v[key] is None:
                 continue
             datetime.date.fromisoformat(v[key])
+        if 'remediation_details' in v:
+            detail = v['remediation_details']
+            if not str(detail['source_url']).startswith('https://'):
+                raise ValueError('Remediation details require an HTTPS source')
+            datetime.date.fromisoformat(detail['checked_date'])
+            if 'comparison' in detail:
+                comparison = detail['comparison']
+                if not re.fullmatch(r'\d{1,8}\.\d{1,8}\.\d{1,8}', comparison['upper_bound']) or not isinstance(comparison['inclusive'], bool):
+                    raise ValueError('Remediation comparison requires an explicit three-part upper bound and inclusivity')
     models['families']
     models['models']
 

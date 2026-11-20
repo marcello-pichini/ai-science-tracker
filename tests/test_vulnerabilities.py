@@ -22,7 +22,7 @@ class VulnerabilityTests(unittest.TestCase):
                 'advisory_url', 'checked_date'}
         for r in records:
             with self.subTest(case=r['id']):
-                self.assertEqual(set(r) - {'cvss', 'impacts'}, keys)
+                self.assertEqual(set(r) - {'cvss', 'impacts', 'remediation_details'}, keys)
                 self.assertIn(r['classification'], {'undisclosed', 'pre-release', 'disclosure'})
                 self.assertIn(r['remediation'], {'fix documented', 'not established'})
                 for field in ('source_url', 'ai_source_url', 'advisory_url'):

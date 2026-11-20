@@ -7,13 +7,14 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TYPES = {'object': dict, 'array': list, 'string': str, 'integer': int, 'number': (int, float), 'null': type(None)}
+TYPES = {'object': (dict,), 'array': (list,), 'string': (str,), 'integer': (int,),
+         'number': (int, float), 'null': (type(None),), 'boolean': (bool,)}
 
 
 def errors(value, schema, path='$'):
     t = schema.get('type')
     allowed = t if isinstance(t, list) else [t]
-    if t and (not any(isinstance(value, TYPES[k]) for k in allowed) or isinstance(value, bool)):
+    if t and not any(type(value) in TYPES[k] for k in allowed):
         return [f'{path}: expected {t}']
     out = []
     if 'enum' in schema and value not in schema['enum']:

@@ -147,7 +147,8 @@ class SharePageTests(unittest.TestCase):
         vuln = json.loads((ROOT / 'data/vulnerabilities.json').read_text())[0]
         vuln.update(title='=formula', classification_note='+caveat', remediation_note='@scope',
                     cvss=[{'cve': None, 'score': 0, 'scenarios': ['Without Clientless VPN']}, {'cve': 'CVE-2026-1234', 'score': 9.8}],
-                    impacts=[{'consequences': ['code execution', 'data disclosure'], 'conditions': 'Access required'}])
+                    impacts=[{'consequences': ['code execution', 'data disclosure'], 'conditions': 'Access required'}],
+                    remediation_details={'source_url': vuln['advisory_url'], 'checked_date': vuln['checked_date'], 'fixed_in': ['1.2.3']})
         g.write_exports([dict(self.record, summary='\tformula')], [vuln])
         with (g.ROOT / 'data/vulnerabilities.csv').open(newline='') as f:
             row = next(csv.DictReader(f))
@@ -157,6 +158,7 @@ class SharePageTests(unittest.TestCase):
         self.assertEqual(row['ai_attribution_date'], vuln['ai_attribution_date'])
         self.assertEqual(json.loads(row['cvss']), vuln['cvss'])
         self.assertEqual(json.loads(row['impacts']), vuln['impacts'])
+        self.assertEqual(json.loads(row['remediation_details']), vuln['remediation_details'])
         g.write_api([self.record], [vuln])
         self.assertEqual(json.loads((g.ROOT / 'api/v1/vulnerabilities' / (vuln['id'] + '.json')).read_text()), vuln)
         with (g.ROOT / 'data/discoveries.csv').open(newline='') as f:
