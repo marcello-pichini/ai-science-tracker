@@ -1,0 +1,34 @@
+{
+  "id": "2024-03-autonomous-electrochemistry-mechanistic-outlier",
+  "title": "Deep-learning-guided electrochemistry identifies a mechanistic outlier in cobalt–organohalide reactions",
+  "summary": "A UCLA-led team combined a ResNet voltammogram classifier with Bayesian experiment selection to investigate cobalt tetraphenylporphyrin reactions. The workflow flagged 4-chlorobutyronitrile as departing from the expected electron-transfer–chemical-reaction mechanism; additional manual measurements confirmed the anomaly. An alternative radical pathway remains a hypothesis. This is a laboratory proof of concept, not a general-purpose mechanistic oracle. The date records the journal version.",
+  "field": "chemistry",
+  "ai_technology": "ResNet cyclic-voltammetry classifier; Bayesian optimization; Gaussian-process response modeling",
+  "organization": "University of California, Los Angeles; University of Illinois Urbana–Champaign; University of Utah; Université Grenoble Alpes",
+  "source_url": "https://www.nature.com/articles/s41467-024-47210-x",
+  "source_type": "paper",
+  "publication_date": "2024-03-30",
+  "added_date": "2026-11-20",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-024-47210-x",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Automated cyclic voltammetry followed by manual confirmation of the unexpected substrate behavior.",
+    "unknown": "The proposed alternative pathway is not established. Supplementary material was not assessed.",
+    "ai_role": "Learned mechanism probabilities guided experiments and flagged the outlier; people performed the confirming measurements and interpretation.",
+    "evidence_urls": [
+      "https://escholarship.org/content/qt9m07h2rt/qt9m07h2rt_noSplash_59bac7dca75de9fb362a05a56f917e16.pdf",
+      "https://pubmed.ncbi.nlm.nih.gov/38555303/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-20",
+    "scope": "Final-paper full text, including Results, Discussion and main Methods, via author institutional PDF; PubMed bibliographic record. Supplement and raw data not reviewed."
+  }
+}

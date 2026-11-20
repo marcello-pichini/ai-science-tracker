@@ -41232,5 +41232,72 @@
       "date": "2026-11-20",
       "scope": "Dated first-party announcement and bounded primary working-paper Methods Sections 2–5 and discussion. Separate appendix not reviewed; no individual-file attribution or independent replication."
     }
+  },
+  {
+    "id": "2024-03-autonomous-electrochemistry-mechanistic-outlier",
+    "title": "Deep-learning-guided electrochemistry identifies a mechanistic outlier in cobalt–organohalide reactions",
+    "summary": "A UCLA-led team combined a ResNet voltammogram classifier with Bayesian experiment selection to investigate cobalt tetraphenylporphyrin reactions. The workflow flagged 4-chlorobutyronitrile as departing from the expected electron-transfer–chemical-reaction mechanism; additional manual measurements confirmed the anomaly. An alternative radical pathway remains a hypothesis. This is a laboratory proof of concept, not a general-purpose mechanistic oracle. The date records the journal version.",
+    "field": "chemistry",
+    "ai_technology": "ResNet cyclic-voltammetry classifier; Bayesian optimization; Gaussian-process response modeling",
+    "organization": "University of California, Los Angeles; University of Illinois Urbana–Champaign; University of Utah; Université Grenoble Alpes",
+    "source_url": "https://www.nature.com/articles/s41467-024-47210-x",
+    "source_type": "paper",
+    "publication_date": "2024-03-30",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41467-024-47210-x",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Automated cyclic voltammetry followed by manual confirmation of the unexpected substrate behavior.",
+      "unknown": "The proposed alternative pathway is not established. Supplementary material was not assessed.",
+      "ai_role": "Learned mechanism probabilities guided experiments and flagged the outlier; people performed the confirming measurements and interpretation.",
+      "evidence_urls": [
+        "https://escholarship.org/content/qt9m07h2rt/qt9m07h2rt_noSplash_59bac7dca75de9fb362a05a56f917e16.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/38555303/"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-20",
+      "scope": "Final-paper full text, including Results, Discussion and main Methods, via author institutional PDF; PubMed bibliographic record. Supplement and raw data not reviewed."
+    }
+  },
+  {
+    "id": "2026-10-surface-active-learning-nicofe-oxygen-evolution",
+    "title": "Surface-informed active learning selects a tested Ni55Co10Fe35 oxygen-evolution catalyst",
+    "summary": "Researchers used Gaussian-process active learning with DFT adsorption energies to select a nickel–cobalt–iron alloy precursor. Synthesized Ni55Co10Fe35 required 327 mV overpotential at 10 mA/cm² in alkaline laboratory tests, versus 380 mV for NiFe and 404 mV for CoFe controls. Its Tafel slope was 43.07 mV/decade. Prediction and experimental activity maps did not fully agree; this supports compositional narrowing, not quantitative performance prediction. The working surface reconstructs into oxyhydroxides, which the alloy-surface model does not represent.",
+    "field": "materials",
+    "ai_technology": "Gaussian-process regression; surface-informed active learning",
+    "organization": "Kyonggi University; Seoul National University; Dongguk University; Korea University",
+    "source_url": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.78281",
+    "source_type": "paper",
+    "publication_date": "2026-10-22",
+    "added_date": "2026-11-20",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1002/advs.78281",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Synthesized alloy tested by rotating-disk electrochemistry in 1 M KOH; approximately 24-hour stability test.",
+      "unknown": "Broader material-system generalization remains prospective. Supplement and raw data not assessed.",
+      "ai_role": "GPR learned adsorption-energy relationships and selected further DFT configurations, narrowing the alloy composition for experimental testing.",
+      "evidence_urls": [
+        "https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.78281"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-20",
+      "scope": "Publisher full text, including Results and Discussion and main Methods; supporting information and raw datasets not reviewed."
+    }
   }
 ]

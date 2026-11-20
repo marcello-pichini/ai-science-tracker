@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-surface-active-learning-nicofe-oxygen-evolution",
+  "title": "Surface-informed active learning selects a tested Ni55Co10Fe35 oxygen-evolution catalyst",
+  "summary": "Researchers used Gaussian-process active learning with DFT adsorption energies to select a nickel–cobalt–iron alloy precursor. Synthesized Ni55Co10Fe35 required 327 mV overpotential at 10 mA/cm² in alkaline laboratory tests, versus 380 mV for NiFe and 404 mV for CoFe controls. Its Tafel slope was 43.07 mV/decade. Prediction and experimental activity maps did not fully agree; this supports compositional narrowing, not quantitative performance prediction. The working surface reconstructs into oxyhydroxides, which the alloy-surface model does not represent.",
+  "field": "materials",
+  "ai_technology": "Gaussian-process regression; surface-informed active learning",
+  "organization": "Kyonggi University; Seoul National University; Dongguk University; Korea University",
+  "source_url": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.78281",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "added_date": "2026-11-20",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1002/advs.78281",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Synthesized alloy tested by rotating-disk electrochemistry in 1 M KOH; approximately 24-hour stability test.",
+    "unknown": "Broader material-system generalization remains prospective. Supplement and raw data not assessed.",
+    "ai_role": "GPR learned adsorption-energy relationships and selected further DFT configurations, narrowing the alloy composition for experimental testing.",
+    "evidence_urls": [
+      "https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.78281"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-20",
+    "scope": "Publisher full text, including Results and Discussion and main Methods; supporting information and raw datasets not reviewed."
+  }
+}
