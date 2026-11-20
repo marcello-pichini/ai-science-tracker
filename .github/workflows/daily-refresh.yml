@@ -55,7 +55,7 @@ jobs:
           sha=$(git rev-parse HEAD)
           # A bot dispatch does not carry the usual workflow_run chain through publication.
           dispatch_and_wait() {
-            local workflow="$1" run_id run run_sha status conclusion
+            local workflow="$1" run_id run run_sha status conclusion unavailable=0
             shift
             if [ "$(git ls-remote origin refs/heads/main | cut -f1)" != "$sha" ]; then
               echo "Main advanced; leaving publication to the newer commit."
@@ -67,8 +67,17 @@ jobs:
             [[ "$run_id" =~ ^[0-9]+$ ]]
             echo "Waiting for $workflow: https://github.com/$GITHUB_REPOSITORY/actions/runs/$run_id"
             for attempt in {1..120}; do
-              run=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id" \
-                --jq '[.head_sha, .status, .conclusion] | @tsv')
+              if ! run=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id" \
+                --jq '[.head_sha, .status, .conclusion] | @tsv'); then
+                unavailable=$((unavailable + 1))
+                if [ "$unavailable" -ge 6 ]; then
+                  echo "::error::Could not read status for $workflow run $run_id."
+                  return 1
+                fi
+                sleep 10
+                continue
+              fi
+              unavailable=0
               IFS=$'\t' read -r run_sha status conclusion <<< "$run"
               test "$run_sha" = "$sha"
               if [ "$status" = completed ]; then

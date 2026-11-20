@@ -185,6 +185,10 @@ gh() {
       */actions/runs/[123])
         id=${arg##*/}
         echo "status:$id" >&2
+        if [ "$id" = "$DELAYED_RUN" ] && [ ! -e "$DELAY_MARKER" ]; then
+          touch "$DELAY_MARKER"
+          return 1
+        fi
         result=success
         sha=$GITHUB_SHA
         if [ "$id" = "$FAILED_RUN" ]; then result=failure; fi
@@ -195,16 +199,20 @@ gh() {
   done
   return 1
 }
+sleep() { :; }
 '''
-        for event, failed, wrong, expected in (
-            ('workflow_dispatch', '', '', ['dispatch:check', 'status:1', 'dispatch:publish', 'status:2', 'dispatch:monitor', 'status:3']),
-            ('workflow_dispatch', '2', '', ['dispatch:check', 'status:1', 'dispatch:publish', 'status:2']),
-            ('workflow_dispatch', '', '1', ['dispatch:check', 'status:1']),
-            ('schedule', '', '', []),
+        complete = ['dispatch:check', 'status:1', 'dispatch:publish', 'status:2', 'dispatch:monitor', 'status:3']
+        for event, failed, wrong, delayed, expected in (
+            ('workflow_dispatch', '', '', '', complete),
+            ('workflow_dispatch', '', '', '1', complete[:2] + ['status:1'] + complete[2:]),
+            ('workflow_dispatch', '2', '', '', complete[:4]),
+            ('workflow_dispatch', '', '1', '', complete[:2]),
+            ('schedule', '', '', '', []),
         ):
-            with self.subTest(event=event, failed=failed, wrong=wrong):
+            with self.subTest(event=event, failed=failed, wrong=wrong, delayed=delayed), tempfile.TemporaryDirectory() as temp:
                 env = dict(os.environ, GITHUB_EVENT_NAME=event, GITHUB_SHA='a' * 40,
-                           GITHUB_REPOSITORY='owner/repo', FAILED_RUN=failed, WRONG_HEAD=wrong)
+                           GITHUB_REPOSITORY='owner/repo', FAILED_RUN=failed, WRONG_HEAD=wrong,
+                           DELAYED_RUN=delayed, DELAY_MARKER=str(Path(temp) / 'first-read'))
                 result = subprocess.run(['bash', '-e', '-c', fake + block], env=env, capture_output=True, text=True)
                 self.assertEqual(result.returncode == 0, not (failed or wrong), result.stderr)
                 self.assertEqual(result.stderr.splitlines(), expected)
