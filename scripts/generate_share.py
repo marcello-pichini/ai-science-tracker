@@ -808,7 +808,7 @@ def write_sitemap(items, models, archived=(), vulns=()):
     orgs = sorted({lead_org(d['organization']) for d in items})
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
     # Announcement dates are not page-modification dates; omit lastmod until tracked.
-    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'dataset.html', 'contributors.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
+    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'dataset.html', 'contributors.html', 'contact.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
     urls += ['profiles/index.html']
     urls += ['profiles/catalog-evidence.html', 'profiles/security-index.html']
     urls += [f'profiles/security-{quote(v["id"])}.html' for v in vulns]

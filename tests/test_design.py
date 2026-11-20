@@ -6,7 +6,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = [ROOT / n for n in ('index.html', 'models.html', 'methodology.html', 'profile.html', 'guide.html', 'security.html', 'dataset.html', 'contributors.html', 'model-progress.html', 'search.html', 'antibiotic-dossier.html', 'dossiers.html', 'alphafold-dossier.html')]
+PAGES = [ROOT / n for n in ('index.html', 'models.html', 'methodology.html', 'profile.html', 'guide.html', 'security.html', 'dataset.html', 'contributors.html', 'model-progress.html', 'search.html', 'antibiotic-dossier.html', 'dossiers.html', 'alphafold-dossier.html', 'contact.html')]
 COLOR = re.compile(r'#[0-9a-fA-F]{3,8}\b|rgba?\(')
 
 
