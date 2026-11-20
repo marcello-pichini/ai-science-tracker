@@ -108,6 +108,18 @@ if (englishHome !== '/#elenco') throw new Error('english home '+englishHome);
         english = json.loads((MESSAGES / 'en.json').read_text())
         self.assertIn('{n} of {total} discoveries', english)
 
+    def test_home_uses_the_compact_header_and_generated_pulse(self):
+        page = (ROOT / 'index.html').read_text()
+        self.assertIn('id="lang-details"', page)
+        self.assertIn('class="nav-toggle"', page)
+        self.assertIn('>Vulnerabilities</a>', page)
+        self.assertIn('class="hero-live"', page)
+        self.assertIn('data-i18n-skip', page)
+        self.assertNotIn('id="explore-overview"', page)
+        self.assertIn('Chart heights show coarse editorial relevance, not scientific quality.', page)
+        lead = page.split('id="lead">', 1)[1].split('</p>', 1)[0]
+        self.assertNotIn('Chart heights', lead)
+
 
 if __name__ == '__main__':
     unittest.main()

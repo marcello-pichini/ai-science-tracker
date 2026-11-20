@@ -220,7 +220,26 @@ def refresh_detection(text: str) -> str:
     return updated
 
 
+GLOBE_SVG = (
+    '<svg class="globe" viewBox="0 0 24 24" aria-hidden="true">'
+    '<circle cx="12" cy="12" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"/>'
+    '<path d="M12 3.75c2.2 2.4 3.3 5.2 3.3 8.25s-1.1 5.85-3.3 8.25c-2.2-2.4-3.3-5.2-3.3-8.25s1.1-5.85 3.3-8.25z" '
+    'fill="none" stroke="currentColor" stroke-width="1.6"/>'
+    '<path d="M4.2 12h15.6M5.4 8.25h13.2M5.4 15.75h13.2" fill="none" stroke="currentColor" '
+    'stroke-width="1.6" stroke-linecap="round"/>'
+    '</svg>'
+)
+NAV_TOGGLE = (
+    '<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">'
+    '<svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">'
+    '<path d="M5 7h14M5 12h14M5 17h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>'
+    '</svg></button>'
+    '<p class="vis-nascosto" id="nav-label-close">Close menu</p>'
+)
+
+
 def switcher_html() -> str:
+    """Compact language menu: a globe and the current code, opening the five editions."""
     links = []
     for code in ('en',) + LOCALES:
         meta = LOCALE_META[code]
@@ -228,19 +247,92 @@ def switcher_html() -> str:
         href = home_href(code)
         links.append(
             f'<a href="{href}" hreflang="{meta["html"]}" lang="{meta["html"]}" data-lang="{code}" '
-            f'aria-label="{meta["name"]}"{current}>{meta["label"]}</a>'
+            f'aria-label="{meta["name"]}"{current}>{meta["name"]}</a>'
         )
-    return (
+    details = (
+        '<details class="lang" id="lang-details">'
+        '<summary class="lang-toggle" aria-label="Choose language">'
+        + GLOBE_SVG +
+        '<span class="lang-code">EN</span></summary>'
         '<nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language">'
-        + ''.join(links) + '</nav><script>' + DETECT_FN +
+        + ''.join(links) + '</nav></details>'
+    )
+    script = (
+        '<script>' + DETECT_FN +
         'try{var nav=document.getElementById("lang-switch");if(nav){var pages='
         + json.dumps(list(PAGES)) +
-        ';var current=document.documentElement.lang||"en";nav.querySelectorAll("[data-lang]").forEach(function(a){'
-        'var lang=a.getAttribute("data-lang");a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);'
+        ';var current=(document.documentElement.lang||"en").toLowerCase();'
+        'var codeEl=document.querySelector(".lang-code");if(codeEl)codeEl.textContent=current.toUpperCase();'
+        'nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");'
+        'a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);'
         'if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");'
-        'a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});}}catch(e){}'
-        '</script>'
+        'a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});'
+        'var langBox=document.getElementById("lang-details");'
+        'if(langBox){document.addEventListener("click",function(e){if(langBox.open&&!langBox.contains(e.target))langBox.open=false;});'
+        'langBox.addEventListener("keydown",function(e){if(e.key!=="ArrowDown"&&e.key!=="ArrowUp"&&e.key!=="Escape")return;'
+        'var items=[].slice.call(nav.querySelectorAll("[data-lang]"));'
+        'if(e.key==="Escape"){e.preventDefault();langBox.open=false;var summary=langBox.querySelector("summary");if(summary)summary.focus();return;}'
+        'if(!items.length)return;var i=items.indexOf(document.activeElement);'
+        'if(i<0){items[0].focus();e.preventDefault();return;}'
+        'e.preventDefault();items[(i+(e.key==="ArrowDown"?1:items.length-1))%items.length].focus();});}'
+        'var navBtn=document.querySelector(".nav-toggle");var siteNav=document.getElementById("site-nav");'
+        'var closeLabel=document.getElementById("nav-label-close");'
+        'if(navBtn&&siteNav){var openLabel=navBtn.getAttribute("aria-label");'
+        'var setOpen=function(open){navBtn.setAttribute("aria-expanded",open?"true":"false");'
+        'siteNav.classList.toggle("is-open",!!open);'
+        'if(closeLabel&&openLabel)navBtn.setAttribute("aria-label",open?closeLabel.textContent:openLabel);};'
+        'navBtn.addEventListener("click",function(){setOpen(navBtn.getAttribute("aria-expanded")!=="true");});'
+        'document.addEventListener("click",function(e){if(navBtn.getAttribute("aria-expanded")==="true"&&!siteNav.contains(e.target)&&!navBtn.contains(e.target))setOpen(false);});'
+        'document.addEventListener("keydown",function(e){if(e.key==="Escape"&&navBtn.getAttribute("aria-expanded")==="true"){setOpen(false);navBtn.focus();}});}'
+        '}}catch(e){}</script>'
     )
+    return details + script
+
+
+def replace_switcher(text: str) -> str:
+    """Swap either the old code row or the current menu for the canonical switcher."""
+    block = switcher_html()
+    start = text.find('<details class="lang" id="lang-details">')
+    if start < 0:
+        start = text.find('<nav class="menu" id="lang-switch"')
+    if start < 0:
+        return text
+    marker = 'getElementById("lang-switch")'
+    mid = text.find(marker, start)
+    if mid < 0:
+        return text
+    end = text.find('</script>', mid)
+    if end < 0:
+        return text
+    return text[:start] + block + text[end + len('</script>'):]
+
+
+def refresh_chrome(text: str) -> str:
+    """Language menu, section-menu button, clearer security label, and the i18n.css hash."""
+    needle = 'try{var saved=null;try{saved=localStorage.getItem("ast-lang");}'
+    if 'classList.add("js")' not in text and needle in text:
+        text = text.replace(
+            needle, 'try{document.documentElement.classList.add("js");}catch(e){}' + needle, 1)
+    text = replace_switcher(text)
+
+    def nav_repl(match: re.Match) -> str:
+        nav = match.group(0).replace('>Vuln discoveries</a>', '>Vulnerabilities</a>', 1)
+        return nav.replace(
+            '<nav class="menu" aria-label="Site sections">',
+            '<nav class="menu" id="site-nav" aria-label="Site sections">', 1)
+
+    text = re.sub(
+        r'<nav class="menu"(?: id="site-nav")? aria-label="Site sections">.*?</nav>',
+        nav_repl, text, count=1, flags=re.S)
+    if 'class="nav-toggle"' not in text and '<nav class="menu" id="site-nav"' in text:
+        text = text.replace('<nav class="menu" id="site-nav"', NAV_TOGGLE + '<nav class="menu" id="site-nav"', 1)
+    css = ROOT / 'assets' / 'i18n.css'
+    if css.is_file():
+        digest = hashlib.sha256(css.read_bytes()).hexdigest()[:12]
+        text = re.sub(
+            r'((?:\.\./)?assets/i18n\.css)\?v=[a-f0-9]+',
+            lambda m: f'{m.group(1)}?v={digest}', text)
+    return text
 
 
 def detect_html() -> str:
@@ -248,6 +340,7 @@ def detect_html() -> str:
     # explicit English choice, and the next load would bounce them back.
     return (
         '<script>' + DETECT_FN +
+        'try{document.documentElement.classList.add("js");}catch(e){}'
         'try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}'
         'if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}'
         'var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:'
@@ -286,6 +379,8 @@ def install_english_chrome(root: Path | None = None) -> None:
             if n != 1:
                 raise RuntimeError(f'{page}: could not insert the language switcher')
         text = refresh_detection(text)
+        text = refresh_embedded_detection(text)
+        text = refresh_chrome(text)
         text = rewrite_dirty_homes(text)
         text = clean_home_links(text, '/')
         text = set_switcher_hrefs(text)
@@ -483,7 +578,8 @@ def translate_document(page_html: str, table: dict, kept: set[str]) -> tuple[str
     missing: list[str] = []
     protected = protect(r'<script\b[^>]*>.*?</script>', page_html, vault)
     protected = protect(r'<style\b[^>]*>.*?</style>', protected, vault)
-    protected = protect(r'<nav\b[^>]*\bdata-i18n-skip\b[^>]*>.*?</nav>', protected, vault)
+    protected = protect(
+        r'<(nav|ol|ul|div)\b[^>]*\bdata-i18n-skip\b[^>]*>.*?</\1>', protected, vault)
     protected = translate_leaves(protected, table, kept, missing)
     protected = translate_attributes(protected, table, kept, missing)
     return restore(protected, vault), missing
@@ -536,6 +632,12 @@ def retarget_switcher(page_html: str, lang: str) -> str:
     return set_switcher_hrefs(page_html)
 
 
+def mark_lang_code(page_html: str, lang: str) -> str:
+    """Show this edition's code before JavaScript runs."""
+    label = LOCALE_META[lang]['label']
+    return page_html.replace('<span class="lang-code">EN</span>', f'<span class="lang-code">{label}</span>', 1)
+
+
 def mark_switcher(page_html: str, lang: str) -> str:
     def repl(match: re.Match) -> str:
         block = match.group(0).replace(' aria-current="true"', '')
@@ -571,6 +673,7 @@ def refresh_embedded_detection(text: str) -> str:
     if n < 1:
         raise RuntimeError('could not refresh the language detector')
     caller = (
+        'try{document.documentElement.classList.add("js");}catch(e){}'
         'try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}'
         'if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}'
         'var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:'
@@ -693,6 +796,7 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
                     problems.append(f'{lang}/{page}: {len(missing) - 8} more untranslated strings')
             text = retarget_head(text, page, lang)
             text = mark_switcher(text, lang)
+            text = mark_lang_code(text, lang)
             if page != '404.html':
                 text = retarget_switcher(text, lang)
             if page != '404.html':
