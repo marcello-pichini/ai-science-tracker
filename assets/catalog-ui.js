@@ -9,7 +9,7 @@ globalThis.CatalogUI = {
   // Semicolons separate organizations; commas and conjunctions can belong to a name.
   leadOrganization(name) { return name.split(';')[0].trim(); },
   messages: null,
-  dateLocale: 'en-GB',
+  dateLocale: globalThis.AST_INTL_LOCALE || 'en-GB',
   t(en, vars) {
     const table = this.messages || globalThis.AST_MESSAGES;
     let s = table && Object.prototype.hasOwnProperty.call(table, en) && typeof table[en] === 'string' ? table[en] : en;

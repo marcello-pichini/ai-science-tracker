@@ -58,7 +58,7 @@ DETECT_FN = r'''
 globalThis.astResolveLanguage = function (input) {
   var SUPPORTED = {it:1, de:1, fr:1, es:1};
   var ua = input.ua || '';
-  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
+  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|googleother|google-extended|google-inspectiontool|google-read-aloud|duplexweb|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
   var path = input.path || '/';
   if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
   var pages = input.pages || [];
@@ -92,6 +92,8 @@ globalThis.astResolveLanguage = function (input) {
   if (dir !== '/') return null;
   if (!file) file = 'index.html';
   if (pages.indexOf(file) < 0) return null;
+  // /index.html is the same document as /. Send people to the directory URL.
+  if (file === 'index.html') return '/' + target + '/' + search + hash;
   return '/' + target + '/' + file + search + hash;
 };
 globalThis.astEquivalent = function (lang, path, search, hash, pages) {
@@ -104,9 +106,12 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   var prefix = lang === 'en' ? '' : '/' + lang;
   var file = rest.split('/').pop();
   var dir = rest.slice(0, rest.length - file.length);
-  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) {
+    if (file === 'index.html') return (prefix || '') + '/' + search + hash;
+    return prefix + '/' + file + search + hash;
+  }
   var share = rest.match(/^\/share\/([^/]+)\.html$/);
-  if (share) return prefix + '/index.html#discovery=' + share[1];
+  if (share) return (prefix || '') + '/#discovery=' + share[1];
   if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
   return prefix + '/index.html' + search;
 };
@@ -137,21 +142,29 @@ def switcher_html() -> str:
 
 
 def detect_html() -> str:
+    # If storage throws, do not auto-redirect: the visitor could not keep an
+    # explicit English choice, and the next load would bounce them back.
     return (
         '<script>' + DETECT_FN +
-        'try{var saved=null;try{saved=localStorage.getItem("ast-lang");}catch(e){}'
-        'var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}'
+        'try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}'
+        'if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}'
         'var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:'
-        + json.dumps(list(PAGES)) + '});if(dest)location.replace(dest);}catch(e){}</script>'
+        + json.dumps(list(PAGES)) + '});if(dest)location.replace(dest);}}catch(e){}</script>'
     )
+
+
+def public_page_url(page: str, lang: str = 'en') -> str:
+    """URL search engines should use. Homepages are the directory, not index.html."""
+    if page == 'index.html':
+        return BASE if lang == 'en' else f'{BASE}{lang}/'
+    return BASE + page if lang == 'en' else f'{BASE}{lang}/{page}'
 
 
 def hreflang_html(page: str) -> str:
     lines = []
     for code in ('en',) + LOCALES:
-        href = BASE + page if code == 'en' else f'{BASE}{code}/{page}'
-        lines.append(f'<link rel="alternate" hreflang="{LOCALE_META[code]["html"]}" href="{href}">')
-    lines.append(f'<link rel="alternate" hreflang="x-default" href="{BASE}{page}">')
+        lines.append(f'<link rel="alternate" hreflang="{LOCALE_META[code]["html"]}" href="{public_page_url(page, code)}">')
+    lines.append(f'<link rel="alternate" hreflang="x-default" href="{public_page_url(page, "en")}">')
     for code in ('en',) + LOCALES:
         lines.append(f'<meta property="og:locale:alternate" content="{LOCALE_META[code]["og"]}">')
     # The primary og:locale is separate so a locale page can replace just that value.
@@ -192,11 +205,26 @@ def install_english_chrome(root: Path | None = None) -> None:
             text = re.sub(
                 r'(<link rel="stylesheet" href="styles\.css\?v=[a-f0-9]+">)',
                 lambda m: m.group(1) + link, text, count=1)
+        block = hreflang_html(page)
         if 'hreflang="x-default"' not in text:
-            block = hreflang_html(page)
             if '</head>' not in text:
                 raise RuntimeError(f'{page}: missing </head>')
             text = text.replace('</head>', block + '\n</head>', 1)
+        else:
+            text, n = re.subn(
+                r'<link rel="alternate" hreflang="en" href="https://aisciencetracker.org/[^"]*">'
+                r'(?:\n<link rel="alternate" hreflang="(?!x-default)[^"]+" href="https://aisciencetracker.org/[^"]*">)*'
+                r'\n<link rel="alternate" hreflang="x-default" href="https://aisciencetracker.org/[^"]*">'
+                r'\n<meta property="og:locale:alternate" content="en_GB">'
+                r'\n<meta property="og:locale:alternate" content="it_IT">'
+                r'\n<meta property="og:locale:alternate" content="de_DE">'
+                r'\n<meta property="og:locale:alternate" content="fr_FR">'
+                r'\n<meta property="og:locale:alternate" content="es_ES">'
+                r'\n<meta property="og:locale" content="[^"]+">',
+                block, text, count=1)
+            if n != 1:
+                raise RuntimeError(f'{page}: could not refresh hreflang links')
+        text = refresh_embedded_detection(text)
         path.write_text(text, encoding='utf-8')
 
 
@@ -440,17 +468,41 @@ def runtime_script(lang: str, messages: dict, discoveries: dict) -> str:
     return (
         '<script>Object.assign(globalThis,' + raw + ');'
         f'globalThis.AST_SITE_ROOT={json.dumps(root)};'
-        'if(globalThis.CatalogUI){CatalogUI.messages=AST_MESSAGES;CatalogUI.dateLocale='
-        + json.dumps(intl) + ';}</script>'
+        f'globalThis.AST_INTL_LOCALE={json.dumps(intl)};'
+        'if(globalThis.CatalogUI){CatalogUI.messages=AST_MESSAGES;CatalogUI.dateLocale=AST_INTL_LOCALE;}</script>'
     )
+
+
+def refresh_embedded_detection(text: str) -> str:
+    """Replace an already-inserted copy of the detector with the current one."""
+    if 'astResolveLanguage' not in text:
+        return text
+    fresh = DETECT_FN.strip()
+    text, n = re.subn(
+        r'globalThis\.astResolveLanguage = function \(input\) \{.*?globalThis\.astEquivalent = function \(lang, path, search, hash, pages\) \{.*?\n\};',
+        fresh, text, flags=re.S)
+    if n < 1:
+        raise RuntimeError('could not refresh the language detector')
+    caller = (
+        'try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}'
+        'if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}'
+        'var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:'
+        + json.dumps(list(PAGES)) + '});if(dest)location.replace(dest);}}catch(e){}'
+    )
+    text, n = re.subn(
+        r'try\{var saved=null;try\{saved=localStorage\.getItem\("ast-lang"\);\}catch\(e\)\{\}var tz="";try\{tz=Intl\.DateTimeFormat\(\)\.resolvedOptions\(\)\.timeZone\|\|"";\}catch\(e\)\{\}var dest=astResolveLanguage\(\{.*?\}\);if\(dest\)location\.replace\(dest\);\}catch\(e\)\{\}',
+        caller, text, count=1, flags=re.S)
+    if 'location.replace(dest)' in text and 'storageOk' not in text:
+        raise RuntimeError('could not refresh the language redirect')
+    return text
 
 
 def retarget_head(page_html: str, page: str, lang: str) -> str:
     meta = LOCALE_META[lang]
     page_html = re.sub(r'<html lang="en"', f'<html lang="{meta["html"]}"', page_html, count=1)
     if page != '404.html':
-        english = BASE + page
-        local = f'{BASE}{lang}/{page}'
+        english = public_page_url(page, 'en')
+        local = public_page_url(page, lang)
         page_html = page_html.replace(f'<link rel="canonical" href="{english}">', f'<link rel="canonical" href="{local}">')
         page_html = page_html.replace(f'<meta property="og:url" content="{english}">', f'<meta property="og:url" content="{local}">')
         page_html = page_html.replace('"inLanguage":"en"', f'"inLanguage":"{meta["html"]}"')
@@ -573,17 +625,14 @@ def sitemap_entries() -> str:
     """Extra <url> rows for language editions, with hreflang alternates on every static page."""
     rows = []
     for page in SITEMAP_PAGES:
-        alternates = [('en', BASE + page), ('x-default', BASE + page)]
-        alternates[1:1] = [(code, f'{BASE}{code}/{page}') for code in LOCALES]
-        # Insert language codes before x-default: rebuild cleanly.
-        links = [f'<xhtml:link rel="alternate" hreflang="en" href="{html.escape(BASE + page, quote=True)}"/>']
+        links = [f'<xhtml:link rel="alternate" hreflang="en" href="{html.escape(public_page_url(page, "en"), quote=True)}"/>']
         for code in LOCALES:
-            links.append(f'<xhtml:link rel="alternate" hreflang="{code}" href="{html.escape(f"{BASE}{code}/{page}", quote=True)}"/>')
-        links.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{html.escape(BASE + page, quote=True)}"/>')
+            links.append(f'<xhtml:link rel="alternate" hreflang="{code}" href="{html.escape(public_page_url(page, code), quote=True)}"/>')
+        links.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{html.escape(public_page_url(page, "en"), quote=True)}"/>')
         block = ''.join(links)
-        rows.append(f'<url><loc>{html.escape(BASE + page, quote=True)}</loc>{block}</url>\n')
+        rows.append(f'<url><loc>{html.escape(public_page_url(page, "en"), quote=True)}</loc>{block}</url>\n')
         for code in LOCALES:
-            rows.append(f'<url><loc>{html.escape(f"{BASE}{code}/{page}", quote=True)}</loc>{block}</url>\n')
+            rows.append(f'<url><loc>{html.escape(public_page_url(page, code), quote=True)}</loc>{block}</url>\n')
     return ''.join(rows)
 
 

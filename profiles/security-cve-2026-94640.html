@@ -39,7 +39,7 @@
 globalThis.astResolveLanguage = function (input) {
   var SUPPORTED = {it:1, de:1, fr:1, es:1};
   var ua = input.ua || '';
-  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|google-inspectiontool|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
+  if (/bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|googleother|google-extended|google-inspectiontool|google-read-aloud|duplexweb|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua)) return null;
   var path = input.path || '/';
   if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return null;
   var pages = input.pages || [];
@@ -73,6 +73,8 @@ globalThis.astResolveLanguage = function (input) {
   if (dir !== '/') return null;
   if (!file) file = 'index.html';
   if (pages.indexOf(file) < 0) return null;
+  // /index.html is the same document as /. Send people to the directory URL.
+  if (file === 'index.html') return '/' + target + '/' + search + hash;
   return '/' + target + '/' + file + search + hash;
 };
 globalThis.astEquivalent = function (lang, path, search, hash, pages) {
@@ -85,9 +87,12 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   var prefix = lang === 'en' ? '' : '/' + lang;
   var file = rest.split('/').pop();
   var dir = rest.slice(0, rest.length - file.length);
-  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) {
+    if (file === 'index.html') return (prefix || '') + '/' + search + hash;
+    return prefix + '/' + file + search + hash;
+  }
   var share = rest.match(/^\/share\/([^/]+)\.html$/);
-  if (share) return prefix + '/index.html#discovery=' + share[1];
+  if (share) return (prefix || '') + '/#discovery=' + share[1];
   if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
   return prefix + '/index.html' + search;
 };

@@ -823,21 +823,22 @@ def write_sitemap(items, models, archived=(), vulns=()):
     urls += [f'profiles/field-{slug(f)}.html' for f in sorted({d['field'] for d in items})]
     urls += [f'profiles/year-{y}.html' for y in sorted({d['publication_date'][:4] for d in items}, reverse=True)]
     urls += [f'share/{quote(d["id"])}.html' for d in [*items, *archived]]
-    from i18n_site import LOCALES, SITEMAP_PAGES
+    from i18n_site import LOCALES, SITEMAP_PAGES, public_page_url
 
     def alternates(page):
-        links = [f'<xhtml:link rel="alternate" hreflang="en" href="{esc(BASE + page)}"/>']
-        links += [f'<xhtml:link rel="alternate" hreflang="{code}" href="{esc(BASE + code + "/" + page)}"/>' for code in LOCALES]
-        links.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{esc(BASE + page)}"/>')
+        links = [f'<xhtml:link rel="alternate" hreflang="en" href="{esc(public_page_url(page, "en"))}"/>']
+        links += [f'<xhtml:link rel="alternate" hreflang="{code}" href="{esc(public_page_url(page, code))}"/>' for code in LOCALES]
+        links.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{esc(public_page_url(page, "en"))}"/>')
         return ''.join(links)
 
     rows = []
     for url in urls:
         block = alternates(url) if url in SITEMAP_PAGES else ''
-        rows.append(f'<url><loc>{esc(BASE + url)}</loc>{block}</url>\n')
+        loc = public_page_url(url, 'en') if url in SITEMAP_PAGES else BASE + url
+        rows.append(f'<url><loc>{esc(loc)}</loc>{block}</url>\n')
         if url in SITEMAP_PAGES:
             for code in LOCALES:
-                rows.append(f'<url><loc>{esc(BASE + code + "/" + url)}</loc>{block}</url>\n')
+                rows.append(f'<url><loc>{esc(public_page_url(url, code))}</loc>{block}</url>\n')
     (ROOT / 'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'

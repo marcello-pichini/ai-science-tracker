@@ -28,19 +28,26 @@ class LanguageCatalogTests(unittest.TestCase):
 const pages = """ + json.dumps(list(PAGES)) + """;
 const go = (extra) => astResolveLanguage(Object.assign({pages, path:'/index.html', search:'', hash:'', saved:'', languages:['en'], timezone:'', ua:'Mozilla/5.0'}, extra));
 if (go({ua:'Mozilla/5.0 (compatible; Googlebot/2.1)', languages:['it-IT','it']}) !== null) throw new Error('bot');
-if (go({languages:['it-IT','it','en']}) !== '/it/index.html') throw new Error('italian');
+if (go({languages:['it-IT','it','en']}) !== '/it/') throw new Error('italian');
+if (go({path:'/', languages:['de-CH','fr']}) !== '/de/') throw new Error('de-CH');
+if (go({path:'/index.html', search:'?q=1', hash:'#elenco', languages:['fr-CH']}) !== '/fr/?q=1#elenco') throw new Error('home query');
+if (go({path:'/models.html', languages:['es']}) !== '/es/models.html') throw new Error('models');
+if (go({ua:'Mozilla/5.0 (compatible; GoogleOther)', languages:['it-IT']}) !== null) throw new Error('googleother');
 if (go({saved:'en', languages:['it-IT']}) !== null) throw new Error('saved english');
-if (go({saved:'de', languages:['en']}) !== '/de/index.html') throw new Error('saved german');
+if (go({saved:'de', languages:['en']}) !== '/de/') throw new Error('saved german');
 if (go({path:'/share/halicin.html', languages:['it']}) !== null) throw new Error('share');
 if (go({path:'/it/methodology.html', languages:['de']}) !== null) throw new Error('already local');
-if (go({languages:['zh-CN'], timezone:'Europe/Rome'}) !== '/it/index.html') throw new Error('timezone');
+if (go({languages:['zh-CN'], timezone:'Europe/Rome'}) !== '/it/') throw new Error('timezone');
+if (go({languages:['en-CH'], timezone:'Europe/Zurich'}) !== null) throw new Error('en-CH');
 if (go({languages:['en-GB'], timezone:'Europe/Rome'}) !== null) throw new Error('english wins');
 const home = astEquivalent('fr', '/methodology.html', '?q=1', '#elenco', pages);
 if (home !== '/fr/methodology.html?q=1#elenco') throw new Error('switch '+home);
 const back = astEquivalent('en', '/de/security.html', '', '', pages);
 if (back !== '/security.html') throw new Error('back '+back);
 const share = astEquivalent('it', '/share/2020-02-halicin.html', '', '', pages);
-if (share !== '/it/index.html#discovery=2020-02-halicin') throw new Error('entry '+share);
+if (share !== '/it/#discovery=2020-02-halicin') throw new Error('entry '+share);
+const root = astEquivalent('es', '/index.html', '', '#discovery=x', pages);
+if (root !== '/es/#discovery=x') throw new Error('root '+root);
 """
         result = subprocess.run(['node', '-e', script], text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stderr)
@@ -79,6 +86,18 @@ if (share !== '/it/index.html#discovery=2020-02-halicin') throw new Error('entry
         self.assertIn("default-src 'self'", page)
         self.assertIn('ast-lang', page)
         self.assertIn('https://static.cloudflareinsights.com/beacon.min.js', page)
+        self.assertIn('storageOk', page)
+        self.assertIn('<link rel="canonical" href="https://aisciencetracker.org/">', page)
+        self.assertIn('<meta property="og:url" content="https://aisciencetracker.org/">', page)
+        self.assertIn('<link rel="alternate" hreflang="it" href="https://aisciencetracker.org/it/">', page)
+        self.assertIn('<link rel="alternate" hreflang="x-default" href="https://aisciencetracker.org/">', page)
+        self.assertNotIn('https://aisciencetracker.org/index.html"', page)
+        italian = (ROOT / 'it' / 'index.html').read_text()
+        self.assertIn('<link rel="canonical" href="https://aisciencetracker.org/it/">', italian)
+        self.assertIn('<meta property="og:url" content="https://aisciencetracker.org/it/">', italian)
+        self.assertIn('hreflang="de" href="https://aisciencetracker.org/de/"', italian)
+        self.assertNotIn('"@type":"Dataset"', (ROOT / 'methodology.html').read_text())
+        self.assertIn('"@type":"Dataset"', page)
         english = json.loads((MESSAGES / 'en.json').read_text())
         self.assertIn('{n} of {total} discoveries', english)
 
