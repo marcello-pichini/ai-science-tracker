@@ -134,7 +134,11 @@ class PublicationMonitorTest(unittest.TestCase):
                 (root / 'data' / name).write_text('[{"id":"sample"}]' if name.endswith('.json') else 'id\nsample\n')
             (root / 'api/v1/index.json').write_text('{}')
             raw = (root / 'data/citations.json').read_bytes()
-            (root / 'api/v1/manifest.json').write_text(json.dumps({'components': {'citations': {'path': 'data/citations.json', 'sha256': hashlib.sha256(raw).hexdigest()}}}))
+            (root / 'api/v1/manifest.json').write_text(json.dumps({'components': {
+                'citations': {'path': 'data/citations.json', 'sha256': hashlib.sha256(raw).hexdigest()},
+                'models': {'path': 'data/models.json', 'sha256': hashlib.sha256(raw).hexdigest()},
+            }}))
+            (root / 'data/models.json').unlink()
             (root / 'assets').mkdir()
             (root / 'assets/app.js').write_text('current-version')
             write_sample_pages(root)
@@ -151,7 +155,7 @@ class PublicationMonitorTest(unittest.TestCase):
                 return (root / path).read_bytes()
             results = monitor.check(root, 'https://site.test/', 'https://hf.test/', {'tagName':'v2026.11.18', 'publishedAt':'2026-11-18T00:00:00Z'}, fetcher=fetch, allow_legacy_benchmarks=True)
             failed = {r['check']: r['detail'] for r in results if r['status'] == 'fail'}
-            self.assertEqual(set(failed), {'site/data/citations.json', 'site/api/v1/manifest.json'})
+            self.assertEqual(set(failed), {'site/data/citations.json', 'site/data/models.json', 'site/api/v1/manifest.json'})
             self.assertIn('SHA-256', failed['site/data/citations.json'])
 
     def test_deployment_freshness_current_pending_then_stale(self):

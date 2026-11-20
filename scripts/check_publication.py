@@ -243,21 +243,18 @@ def check(root, site, hf, release=None, fetcher=fetch, deployment=None, now=None
         else:
             record('asset/' + relative, lambda url=url, relative=relative:
                    compare(root / relative, url))
-    for name in DATA:
-        local = root / 'data' / name
-        if local.exists():
-            record('site/data/' + name, lambda local=local, name=name:
-                   compare(local, urljoin(site, 'data/' + name)))
     record('site/api/v1/index.json', lambda:
            compare(root / 'api/v1/index.json', urljoin(site, 'api/v1/index.json')))
     if manifest is not None:
         record('site/api/v1/manifest.json', lambda:
                compare(manifest_path, urljoin(site, 'api/v1/manifest.json'), exact=True))
+    site_components = set(component_hashes)
+    site_components.update(f'data/{name}' for name in DATA if (root / 'data' / name).exists())
     if registry_path.exists():
-        record('site/data/benchmarks/index.json', lambda: compare(registry_path, urljoin(site, 'data/benchmarks/index.json')))
-    for relative in component_hashes:
-        if relative != 'data/benchmarks/index.json' and relative not in {'data/' + name for name in DATA}:
-            record('site/' + relative, lambda relative=relative: compare(root / relative, urljoin(site, relative)))
+        site_components.add('data/benchmarks/index.json')
+    for relative in sorted(site_components):
+        record('site/' + relative, lambda relative=relative:
+               compare(root / relative, urljoin(site, relative)))
     for name in HF_FILES:
         record('hugging-face/' + name, lambda name=name:
                compare(root / 'data' / name, hf.rstrip('/') + '/' + name))
