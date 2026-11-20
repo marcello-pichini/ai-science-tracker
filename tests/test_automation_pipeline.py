@@ -92,7 +92,14 @@ class PipelineTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             subprocess.run(['git', 'init', '-q', str(root)], check=True)
-            paths = ['data/new.json', 'scripts/public-benchmark-inputs.json', 'share/new.html', 'profiles/new.html', 'og/new.png', 'api/new.json', 'feed.xml', 'llms.txt', 'sitemap.xml', 'robots.txt', 'work/private.csv']
+            paths = [
+                'index.html', 'profile.html', 'models.html', 'search.html', 'security.html',
+                'model-progress.html', 'methodology.html', 'dataset.html',
+                'it/index.html', 'de/index.html', 'fr/index.html', 'es/index.html',
+                'data/new.json', 'scripts/public-benchmark-inputs.json', 'share/new.html',
+                'profiles/new.html', 'og/new.png', 'api/new.json', 'feed.xml', 'llms.txt',
+                'sitemap.xml', 'robots.txt', 'work/private.csv',
+            ]
             for path in paths:
                 target = root / path
                 target.parent.mkdir(parents=True, exist_ok=True)
