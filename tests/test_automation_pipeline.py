@@ -1,4 +1,5 @@
 import importlib.util
+import os
 import hashlib
 import json
 from pathlib import Path
@@ -156,9 +157,54 @@ class PipelineTests(unittest.TestCase):
         self.assertIn('actions/deploy-pages@v4', check)
         self.assertIn('git ls-remote origin refs/heads/main', check)
         daily = (ROOT / '.github/workflows/daily-refresh.yml').read_text()
-        self.assertIn('gh workflow run check.yml --ref main -f expected_sha=', daily)
+        self.assertIn('dispatch_and_wait check.yml -f "inputs[expected_sha]=$sha"', daily)
         self.assertNotIn('git add -A', daily)
         publisher = (ROOT / '.github/workflows/weekly-release.yml').read_text()
         self.assertIn('--require-check --require-current', publisher)
         self.assertIn("github.event.workflow_run.event != 'pull_request'", publisher)
         self.assertIn('--deployment-metadata', (ROOT / '.github/workflows/site-monitor.yml').read_text())
+
+    def test_refresh_dispatches_only_after_each_exact_head_succeeds(self):
+        workflow = (ROOT / '.github/workflows/daily-refresh.yml').read_text()
+        block = workflow.split('      - name: Commit and push if anything changed\n')[1].split('        run: |\n')[1]
+        fake = r'''
+git() {
+  case "$1" in
+    ls-remote) printf '%s\trefs/heads/main\n' "$GITHUB_SHA" ;;
+    rev-parse) printf '%s\n' "$GITHUB_SHA" ;;
+    add|diff) return 0 ;;
+    *) return 1 ;;
+  esac
+}
+gh() {
+  for arg; do
+    case "$arg" in
+      */workflows/check.yml/dispatches) echo dispatch:check >&2; echo 1; return ;;
+      */workflows/weekly-release.yml/dispatches) echo dispatch:publish >&2; echo 2; return ;;
+      */workflows/site-monitor.yml/dispatches) echo dispatch:monitor >&2; echo 3; return ;;
+      */actions/runs/[123])
+        id=${arg##*/}
+        echo "status:$id" >&2
+        result=success
+        sha=$GITHUB_SHA
+        if [ "$id" = "$FAILED_RUN" ]; then result=failure; fi
+        if [ "$id" = "$WRONG_HEAD" ]; then sha=wrong; fi
+        printf '%s\tcompleted\t%s\n' "$sha" "$result"
+        return ;;
+    esac
+  done
+  return 1
+}
+'''
+        for event, failed, wrong, expected in (
+            ('workflow_dispatch', '', '', ['dispatch:check', 'status:1', 'dispatch:publish', 'status:2', 'dispatch:monitor', 'status:3']),
+            ('workflow_dispatch', '2', '', ['dispatch:check', 'status:1', 'dispatch:publish', 'status:2']),
+            ('workflow_dispatch', '', '1', ['dispatch:check', 'status:1']),
+            ('schedule', '', '', []),
+        ):
+            with self.subTest(event=event, failed=failed, wrong=wrong):
+                env = dict(os.environ, GITHUB_EVENT_NAME=event, GITHUB_SHA='a' * 40,
+                           GITHUB_REPOSITORY='owner/repo', FAILED_RUN=failed, WRONG_HEAD=wrong)
+                result = subprocess.run(['bash', '-e', '-c', fake + block], env=env, capture_output=True, text=True)
+                self.assertEqual(result.returncode == 0, not (failed or wrong), result.stderr)
+                self.assertEqual(result.stderr.splitlines(), expected)

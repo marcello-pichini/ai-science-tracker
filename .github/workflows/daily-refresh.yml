@@ -43,9 +43,43 @@ jobs:
         run: |
           test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$GITHUB_SHA"
           git add -- index.html profile.html models.html search.html security.html model-progress.html methodology.html dataset.html it/ de/ fr/ es/ data/ scripts/public-benchmark-inputs.json share/ profiles/ og/ api/ feed.xml llms.txt sitemap.xml robots.txt
-          if git diff --cached --quiet; then echo "Nothing changed."; exit 0; fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Daily refresh: model data, licensed benchmarks and generated files"
-          git push origin HEAD:main
-          gh workflow run check.yml --ref main -f expected_sha="$(git rev-parse HEAD)"
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            if [ "$GITHUB_EVENT_NAME" != workflow_dispatch ]; then exit 0; fi
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Daily refresh: model data, licensed benchmarks and generated files"
+            git push origin HEAD:main
+          fi
+          sha=$(git rev-parse HEAD)
+          # A bot dispatch does not carry the usual workflow_run chain through publication.
+          dispatch_and_wait() {
+            local workflow="$1" run_id run run_sha status conclusion
+            shift
+            if [ "$(git ls-remote origin refs/heads/main | cut -f1)" != "$sha" ]; then
+              echo "Main advanced; leaving publication to the newer commit."
+              exit 0
+            fi
+            run_id=$(gh api --method POST -H 'X-GitHub-Api-Version: 2026-03-10' \
+              "repos/$GITHUB_REPOSITORY/actions/workflows/$workflow/dispatches" \
+              -f ref=main "$@" --jq .workflow_run_id)
+            [[ "$run_id" =~ ^[0-9]+$ ]]
+            echo "Waiting for $workflow: https://github.com/$GITHUB_REPOSITORY/actions/runs/$run_id"
+            for attempt in {1..120}; do
+              run=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id" \
+                --jq '[.head_sha, .status, .conclusion] | @tsv')
+              IFS=$'\t' read -r run_sha status conclusion <<< "$run"
+              test "$run_sha" = "$sha"
+              if [ "$status" = completed ]; then
+                test "$conclusion" = success
+                return
+              fi
+              sleep 10
+            done
+            echo "::error::$workflow did not finish within 20 minutes."
+            return 1
+          }
+          dispatch_and_wait check.yml -f "inputs[expected_sha]=$sha"
+          dispatch_and_wait weekly-release.yml -f "inputs[expected_sha]=$sha"
+          dispatch_and_wait site-monitor.yml
