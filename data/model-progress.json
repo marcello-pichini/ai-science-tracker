@@ -1,7 +1,7 @@
 {
-  "fetched_on": "2026-11-19",
+  "fetched_on": "2026-11-20",
   "source_url": "https://epoch.ai/data/benchmark_data.zip",
-  "zip_sha256": "312905d9b0b7550e5bb99616209d4ec908f4dde98607096ae020b77363df578c",
+  "zip_sha256": "deede2479e1aab4456c3ac51a9ab9e6c68a1ec2b0542653c5f2b47e8c231aa46",
   "catalog_snapshot": "0c411dbaafd96eb1166545cfe13f760131e4860f18a1d41d222ba77697341107",
   "license": "CC BY 4.0; attribute Epoch AI",
   "labs": [
@@ -38,6 +38,34 @@
   ],
   "unmatched_benchmark_rows": {},
   "models": [
+    {
+      "id": "Gemini 4 Neon",
+      "name": "Gemini 4 Neon",
+      "lab": "Google DeepMind",
+      "organization": "Google DeepMind",
+      "lab_inferred": false,
+      "date": "2026-11-18",
+      "date_basis": "Benchmark release date",
+      "catalog_date": null,
+      "catalog_releases": [],
+      "eci": null,
+      "eci_low": null,
+      "eci_high": null,
+      "access": "API access",
+      "domain": null,
+      "parameters": null,
+      "compute_flop": null,
+      "variants": [
+        "gemini-4-neon_high",
+        "gemini-4-neon_low",
+        "gemini-4-neon_medium",
+        "gemini-4-neon_unknown",
+        "gemini-4-neon_xhigh"
+      ],
+      "benchmarks": {},
+      "catalog_link": null,
+      "source": "https://epoch.ai/benchmarks"
+    },
     {
       "id": "GPT-6.2 Sol",
       "name": "GPT-6.2 Sol",
@@ -85,7 +113,13 @@
       "parameters": null,
       "compute_flop": null,
       "variants": [
-        "gpt-6.2-astra_max"
+        "gpt-6.2-astra_high",
+        "gpt-6.2-astra_low",
+        "gpt-6.2-astra_max",
+        "gpt-6.2-astra_medium",
+        "gpt-6.2-astra_promax",
+        "gpt-6.2-astra_unknown",
+        "gpt-6.2-astra_xhigh"
       ],
       "benchmarks": {
         "frontiermath_tier_4_v2.csv": {
