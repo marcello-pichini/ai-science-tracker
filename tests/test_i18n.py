@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 import sys
 sys.path.insert(0, str(ROOT / 'scripts'))
 from i18n_site import (DETECT_FN, LOCALES, PAGES, catalog_errors, load_json, translate_document,
-                       keep_english, MESSAGES)
+                       keep_english, MESSAGES, switcher_html)
 
 
 class LanguageCatalogTests(unittest.TestCase):
@@ -58,6 +58,28 @@ const englishHome = astEquivalent('en', '/index.html', '', '#elenco', pages);
 if (englishHome !== '/#elenco') throw new Error('english home '+englishHome);
 """
         result = subprocess.run(['node', '-e', script], text=True, capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_dossier_language_link_tracks_a_new_fragment(self):
+        chrome = switcher_html(PAGES).split('<script>', 1)[1].split('</script>', 1)[0]
+        harness = """
+const anchor = {getAttribute: () => 'es', addEventListener() {}, removeAttribute() {}};
+const mockNav = {querySelectorAll: () => [anchor]};
+const document = {documentElement: {lang: 'it'},
+  getElementById: id => id === 'lang-switch' ? mockNav : null, querySelector: () => null};
+const location = {pathname: '/it/mathematics-dossier.html', search: '', hash: ''};
+let update;
+const window = {addEventListener: (event, callback) => {
+  if (event === 'hashchange') update = callback;
+}};
+"""
+        verify = """
+if (anchor.href !== '/es/mathematics-dossier.html') throw new Error('initial language link');
+location.hash = '#riemann';
+update();
+if (anchor.href !== '/es/mathematics-dossier.html#riemann') throw new Error('fragment lost');
+"""
+        result = subprocess.run(['node', '-e', harness + chrome + verify], text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_translation_keeps_titles_and_uses_locale_copy(self):

@@ -244,6 +244,9 @@ NAV_TOGGLE = (
 
 def switcher_html(pages: tuple[str, ...]) -> str:
     """Compact language menu: a globe and the current code, opening the five editions."""
+    update_href = 'a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);'
+    watch_hash = ('window.addEventListener("hashchange",function(){' + update_href + '});'
+                  if pages != SHARED_PAGES else '')
     links = []
     for code in ('en',) + LOCALES:
         meta = LOCALE_META[code]
@@ -268,7 +271,7 @@ def switcher_html(pages: tuple[str, ...]) -> str:
         ';var current=(document.documentElement.lang||"en").toLowerCase();'
         'var codeEl=document.querySelector(".lang-code");if(codeEl)codeEl.textContent=current.toUpperCase();'
         'nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");'
-        'a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);'
+        + update_href + watch_hash +
         'if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");'
         'a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});'
         'var langBox=document.getElementById("lang-details");'
