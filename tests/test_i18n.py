@@ -34,6 +34,8 @@ if (go({languages:['it-IT','it','en']}) !== '/it/') throw new Error('italian');
 if (go({path:'/', languages:['de-CH','fr']}) !== '/de/') throw new Error('de-CH');
 if (go({path:'/index.html', search:'?q=1', hash:'#elenco', languages:['fr-CH']}) !== '/fr/?q=1#elenco') throw new Error('home query');
 if (go({path:'/models.html', languages:['es']}) !== '/es/models.html') throw new Error('models');
+if (go({path:'/mathematics-dossier.html', hash:'#riemann', languages:['it']}) !== '/it/mathematics-dossier.html#riemann') throw new Error('italian mathematics dossier');
+if (astEquivalent('de', '/fr/materials-dossier.html', '', '#mattergen', pages) !== '/de/materials-dossier.html#mattergen') throw new Error('german materials dossier');
 if (go({saved:'en', languages:['it-IT']}) !== '/') throw new Error('saved english cleans index');
 if (go({saved:'en', path:'/', languages:['it-IT']}) !== null) throw new Error('clean english stays');
 if (go({saved:'de', languages:['en']}) !== '/de/') throw new Error('saved german');
