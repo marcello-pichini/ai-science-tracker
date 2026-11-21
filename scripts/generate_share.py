@@ -263,7 +263,8 @@ PAGE = """<!doctype html>
 CREATOR = {'@type': 'Person', 'name': 'Marcello Pichini', 'url': 'https://github.com/marcello-pichini'}
 PUBLISHER = {'@type': 'Organization', '@id': BASE + '#organization', 'name': SITE, 'url': BASE,
              'sameAs': ['https://github.com/marcello-pichini/ai-science-tracker', 'https://doi.org/10.5281/zenodo.24217686',
-                        'https://huggingface.co/datasets/marcello-pichini/ai-science-tracker']}
+                        'https://huggingface.co/datasets/marcello-pichini/ai-science-tracker',
+                        'https://www.linkedin.com/company/aisciencetracker/']}
 LICENSE_URL = 'https://creativecommons.org/licenses/by/4.0/'
 DATASET_ID = BASE + 'dataset.html#scientific-dataset'
 SECURITY_DATASET_ID = BASE + 'dataset.html#security-dataset'
