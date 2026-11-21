@@ -1,5 +1,6 @@
 """Language catalogs, first-visit detection and static page translation."""
 import json
+import re
 import subprocess
 import unittest
 from pathlib import Path
@@ -119,6 +120,32 @@ if (englishHome !== '/#elenco') throw new Error('english home '+englishHome);
         self.assertIn('Chart heights show coarse editorial relevance, not scientific quality.', page)
         lead = page.split('id="lead">', 1)[1].split('</p>', 1)[0]
         self.assertNotIn('Chart heights', lead)
+
+    def test_linkedin_company_profile_is_on_every_edition(self):
+        url = 'https://www.linkedin.com/company/aisciencetracker/'
+        link = f'<a href="{url}" rel="me noopener">LinkedIn</a>'
+        same_as = ('"sameAs":["https://github.com/marcello-pichini/ai-science-tracker",'
+                   '"https://doi.org/10.5281/zenodo.24217686",'
+                   '"https://huggingface.co/datasets/marcello-pichini/ai-science-tracker",'
+                   f'"{url}"]')
+        footers = [ROOT / page for page in PAGES]
+        footers += [ROOT / 'materials-dossier.html', ROOT / 'mathematics-dossier.html']
+        for lang in LOCALES:
+            footers += [ROOT / lang / page for page in PAGES]
+        footers += [next((ROOT / 'share').glob('*.html')), ROOT / 'profiles' / 'index.html']
+        for path in footers:
+            text = path.read_text(encoding='utf-8')
+            with self.subTest(page=str(path.relative_to(ROOT))):
+                self.assertIn(link, text)
+                self.assertNotIn('target="_blank"', text[text.find('<footer'):text.find('</footer>')])
+                csp = re.search(r'Content-Security-Policy" content="([^"]+)"', text)
+                self.assertIsNotNone(csp)
+                self.assertNotIn('linkedin', csp.group(1))
+                self.assertIn("default-src 'self'", csp.group(1))
+        for path in (ROOT / 'index.html', ROOT / 'it' / 'index.html', ROOT / 'profiles' / 'index.html', next((ROOT / 'share').glob('*.html'))):
+            text = path.read_text(encoding='utf-8')
+            with self.subTest(sameAs=str(path.relative_to(ROOT))):
+                self.assertIn(same_as, text)
 
 
 if __name__ == '__main__':
