@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 import sys
 sys.path.insert(0, str(ROOT / 'scripts'))
 from i18n_site import (DETECT_FN, LOCALES, PAGES, catalog_errors, load_json, translate_document,
-                       keep_english, MESSAGES)
+                       keep_english, MESSAGES, switcher_html)
 
 
 class LanguageCatalogTests(unittest.TestCase):
@@ -35,6 +35,8 @@ if (go({languages:['it-IT','it','en']}) !== '/it/') throw new Error('italian');
 if (go({path:'/', languages:['de-CH','fr']}) !== '/de/') throw new Error('de-CH');
 if (go({path:'/index.html', search:'?q=1', hash:'#elenco', languages:['fr-CH']}) !== '/fr/?q=1#elenco') throw new Error('home query');
 if (go({path:'/models.html', languages:['es']}) !== '/es/models.html') throw new Error('models');
+if (go({path:'/mathematics-dossier.html', hash:'#riemann', languages:['it']}) !== '/it/mathematics-dossier.html#riemann') throw new Error('italian mathematics dossier');
+if (astEquivalent('de', '/fr/materials-dossier.html', '', '#mattergen', pages) !== '/de/materials-dossier.html#mattergen') throw new Error('german materials dossier');
 if (go({saved:'en', languages:['it-IT']}) !== '/') throw new Error('saved english cleans index');
 if (go({saved:'en', path:'/', languages:['it-IT']}) !== null) throw new Error('clean english stays');
 if (go({saved:'de', languages:['en']}) !== '/de/') throw new Error('saved german');
@@ -57,6 +59,28 @@ const englishHome = astEquivalent('en', '/index.html', '', '#elenco', pages);
 if (englishHome !== '/#elenco') throw new Error('english home '+englishHome);
 """
         result = subprocess.run(['node', '-e', script], text=True, capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_dossier_language_link_tracks_a_new_fragment(self):
+        chrome = switcher_html(PAGES).split('<script>', 1)[1].split('</script>', 1)[0]
+        harness = """
+const anchor = {getAttribute: () => 'es', addEventListener() {}, removeAttribute() {}};
+const mockNav = {querySelectorAll: () => [anchor]};
+const document = {documentElement: {lang: 'it'},
+  getElementById: id => id === 'lang-switch' ? mockNav : null, querySelector: () => null};
+const location = {pathname: '/it/mathematics-dossier.html', search: '', hash: ''};
+let update;
+const window = {addEventListener: (event, callback) => {
+  if (event === 'hashchange') update = callback;
+}};
+"""
+        verify = """
+if (anchor.href !== '/es/mathematics-dossier.html') throw new Error('initial language link');
+location.hash = '#riemann';
+update();
+if (anchor.href !== '/es/mathematics-dossier.html#riemann') throw new Error('fragment lost');
+"""
+        result = subprocess.run(['node', '-e', harness + chrome + verify], text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_translation_keeps_titles_and_uses_locale_copy(self):

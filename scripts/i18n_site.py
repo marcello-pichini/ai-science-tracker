@@ -37,13 +37,15 @@ LOCALE_META = {
     'es': {'html': 'es', 'og': 'es_ES', 'intl': 'es-ES', 'label': 'ES', 'name': 'Español'},
 }
 
-# Pages that receive a full translated copy. Order is the sitemap order.
-PAGES = (
+# Shared language routes embedded in the existing site chrome.
+SHARED_PAGES = (
     'index.html', 'models.html', 'security.html', 'dossiers.html', 'methodology.html',
     'guide.html', 'search.html', 'dataset.html', 'contributors.html', 'contact.html',
     'model-progress.html', 'profile.html', 'alphafold-dossier.html', 'antibiotic-dossier.html',
     '404.html',
 )
+NEW_DOSSIER_PAGES = ('materials-dossier.html', 'mathematics-dossier.html')
+PAGES = SHARED_PAGES + NEW_DOSSIER_PAGES
 SITEMAP_PAGES = tuple(page for page in PAGES if page != '404.html')
 
 ASSET_PREFIXES = ('assets/', 'data/', 'share/', 'profiles/', 'api/', 'og/')
@@ -190,13 +192,14 @@ def clean_home_links(text: str, home: str) -> str:
     return ''.join(part if part.startswith('<nav class="menu" id="lang-switch"') else rewrite(part) for part in parts)
 
 
-def set_switcher_hrefs(text: str) -> str:
+def set_switcher_hrefs(text: str, page: str = 'index.html') -> str:
     def repl(match: re.Match) -> str:
         block = match.group(0)
         for code in ('en',) + LOCALES:
+            href = home_href(code) + (page if page in NEW_DOSSIER_PAGES else '')
             block = re.sub(
                 rf'href="[^"]*"(\s[^>]*\bdata-lang="{code}")',
-                f'href="{home_href(code)}"\\1', block, count=1)
+                f'href="{href}"\\1', block, count=1)
         return block
     return re.sub(r'<nav class="menu" id="lang-switch".*?</nav>', repl, text, count=1, flags=re.S)
 
@@ -239,8 +242,11 @@ NAV_TOGGLE = (
 )
 
 
-def switcher_html() -> str:
+def switcher_html(pages: tuple[str, ...]) -> str:
     """Compact language menu: a globe and the current code, opening the five editions."""
+    update_href = 'a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);'
+    watch_hash = ('window.addEventListener("hashchange",function(){' + update_href + '});'
+                  if pages != SHARED_PAGES else '')
     links = []
     for code in ('en',) + LOCALES:
         meta = LOCALE_META[code]
@@ -261,11 +267,11 @@ def switcher_html() -> str:
     script = (
         '<script>' + DETECT_FN +
         'try{var nav=document.getElementById("lang-switch");if(nav){var pages='
-        + json.dumps(list(PAGES)) +
+        + json.dumps(list(pages)) +
         ';var current=(document.documentElement.lang||"en").toLowerCase();'
         'var codeEl=document.querySelector(".lang-code");if(codeEl)codeEl.textContent=current.toUpperCase();'
         'nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");'
-        'a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);'
+        + update_href + watch_hash +
         'if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");'
         'a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});'
         'var langBox=document.getElementById("lang-details");'
@@ -290,9 +296,8 @@ def switcher_html() -> str:
     return details + script
 
 
-def replace_switcher(text: str) -> str:
+def replace_switcher(text: str, block: str) -> str:
     """Swap either the old code row or the current menu for the canonical switcher."""
-    block = switcher_html()
     start = text.find('<details class="lang" id="lang-details">')
     if start < 0:
         start = text.find('<nav class="menu" id="lang-switch"')
@@ -308,13 +313,13 @@ def replace_switcher(text: str) -> str:
     return text[:start] + block + text[end + len('</script>'):]
 
 
-def refresh_chrome(text: str) -> str:
+def refresh_chrome(text: str, switcher: str) -> str:
     """Language menu, section-menu button, clearer security label, and the i18n.css hash."""
     needle = 'try{var saved=null;try{saved=localStorage.getItem("ast-lang");}'
     if 'classList.add("js")' not in text and needle in text:
         text = text.replace(
             needle, 'try{document.documentElement.classList.add("js");}catch(e){}' + needle, 1)
-    text = replace_switcher(text)
+    text = replace_switcher(text, switcher)
 
     def nav_repl(match: re.Match) -> str:
         nav = match.group(0).replace('>Vuln discoveries</a>', '>Vulnerabilities</a>', 1)
@@ -336,7 +341,7 @@ def refresh_chrome(text: str) -> str:
     return text
 
 
-def detect_html() -> str:
+def detect_html(pages: tuple[str, ...]) -> str:
     # If storage throws, do not auto-redirect: the visitor could not keep an
     # explicit English choice, and the next load would bounce them back.
     return (
@@ -345,7 +350,7 @@ def detect_html() -> str:
         'try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}'
         'if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}'
         'var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:'
-        + json.dumps(list(PAGES)) + '});if(dest)location.replace(dest);}}catch(e){}</script>'
+        + json.dumps(list(pages)) + '});if(dest)location.replace(dest);}}catch(e){}</script>'
     )
 
 
@@ -364,9 +369,10 @@ def hreflang_html(page: str) -> str:
 def install_english_chrome(root: Path | None = None) -> None:
     """Add the switcher, first-visit redirect and hreflang links to English pages."""
     root = root or ROOT
-    switcher = switcher_html()
-    detect = detect_html()
     for page in PAGES:
+        # The embedded routes only affect a visitor’s current page.
+        routes = PAGES if page in NEW_DOSSIER_PAGES else SHARED_PAGES
+        switcher = switcher_html(routes)
         path = root / page
         if not path.exists():
             continue
@@ -380,18 +386,18 @@ def install_english_chrome(root: Path | None = None) -> None:
             if n != 1:
                 raise RuntimeError(f'{page}: could not insert the language switcher')
         text = refresh_detection(text)
-        text = refresh_embedded_detection(text)
-        text = refresh_chrome(text)
+        text = refresh_embedded_detection(text, routes)
+        text = refresh_chrome(text, switcher)
         text = rewrite_dirty_homes(text)
         text = clean_home_links(text, '/')
-        text = set_switcher_hrefs(text)
+        text = set_switcher_hrefs(text, page)
         text = ensure_twitter(text)
         if 'astResolveLanguage' not in text.split('id="lang-switch"', 1)[0]:
             # Detection lives in <head>, before the switcher copy inside the header.
             marker = '<!-- End Cloudflare Web Analytics -->'
             if marker not in text:
                 raise RuntimeError(f'{page}: missing analytics marker for the language script')
-            text = text.replace(marker, marker + detect, 1)
+            text = text.replace(marker, marker + detect_html(routes), 1)
         if 'assets/i18n.css' not in text and '<link rel="stylesheet" href="styles.css' in text:
             digest = hashlib.sha256((ROOT / 'assets' / 'i18n.css').read_bytes()).hexdigest()[:12]
             link = f'<link rel="stylesheet" href="assets/i18n.css?v={digest}">'
@@ -417,7 +423,7 @@ def install_english_chrome(root: Path | None = None) -> None:
                 block, text, count=1)
             if n != 1:
                 raise RuntimeError(f'{page}: could not refresh hreflang links')
-        text = refresh_embedded_detection(text)
+        text = refresh_embedded_detection(text, routes)
         path.write_text(text, encoding='utf-8')
 
 
@@ -627,10 +633,10 @@ def rewrite_script_paths(page_html: str) -> str:
     return re.sub(r'(<script\b(?![^>]*\bsrc=)[^>]*>)(.*?)(</script>)', lambda m: repl_script(m), page_html, flags=re.S)
 
 
-def retarget_switcher(page_html: str, lang: str) -> str:
+def retarget_switcher(page_html: str, lang: str, page: str) -> str:
     """Language links are root URLs (/ and /it/), so they do not become /index.html."""
     del lang
-    return set_switcher_hrefs(page_html)
+    return set_switcher_hrefs(page_html, page)
 
 
 def mark_lang_code(page_html: str, lang: str) -> str:
@@ -662,7 +668,7 @@ def runtime_script(lang: str, messages: dict, discoveries: dict) -> str:
     )
 
 
-def refresh_embedded_detection(text: str) -> str:
+def refresh_embedded_detection(text: str, pages: tuple[str, ...]) -> str:
     """Replace an already-inserted copy of the detector with the current one."""
     if 'astResolveLanguage' not in text:
         return text
@@ -678,7 +684,7 @@ def refresh_embedded_detection(text: str) -> str:
         'try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}'
         'if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}'
         'var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:'
-        + json.dumps(list(PAGES)) + '});if(dest)location.replace(dest);}}catch(e){}'
+        + json.dumps(list(pages)) + '});if(dest)location.replace(dest);}}catch(e){}'
     )
     text, n = re.subn(
         r'try\{var saved=null;try\{saved=localStorage\.getItem\("ast-lang"\);\}catch\(e\)\{\}var tz="";try\{tz=Intl\.DateTimeFormat\(\)\.resolvedOptions\(\)\.timeZone\|\|"";\}catch\(e\)\{\}var dest=astResolveLanguage\(\{.*?\}\);if\(dest\)location\.replace\(dest\);\}catch\(e\)\{\}',
@@ -807,7 +813,7 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
             text = mark_switcher(text, lang)
             text = mark_lang_code(text, lang)
             if page != '404.html':
-                text = retarget_switcher(text, lang)
+                text = retarget_switcher(text, lang, page)
             if page != '404.html':
                 text = rewrite_script_paths(text)
             text = rewrite_attrs(text, lang, page)
