@@ -41299,5 +41299,40 @@
       "date": "2026-11-20",
       "scope": "Publisher full text, including Results and Discussion and main Methods; supporting information and raw datasets not reviewed."
     }
+  },
+  {
+    "id": "2023-05-geneformer-cardiac-target-functional-validation",
+    "title": "Geneformer identifies cardiac gene targets validated in engineered heart tissues",
+    "summary": "Geneformer used learned single-cell transcriptome representations to nominate genes affecting cardiac function. Laboratory tests found that loss of the predicted dosage-sensitive candidate TEAD4 reduced contractile stress in cardiac microtissues. In a separate disease-model application, targeting the Geneformer-nominated genes GSN or PLN improved contractile stress in microtissues carrying a TTN truncating mutation. These are same-study findings in engineered cell-derived tissues, not evidence of clinical benefit. The date records the journal online version; an earlier public version was not established in the bounded search.",
+    "field": "biology",
+    "ai_technology": "Geneformer attention-based pretrained transformer; in silico gene perturbation",
+    "organization": "Dana-Farber Cancer Institute; Broad Institute of MIT and Harvard; Massachusetts General Hospital",
+    "source_url": "https://www.nature.com/articles/s41586-023-06139-9",
+    "source_type": "paper",
+    "publication_date": "2023-05-31",
+    "added_date": "2026-11-21",
+    "verification_status": "verified",
+    "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10949956/",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Geneformer-nominated cardiac genes were tested in engineered iPSC-derived microtissues. TEAD4 loss impaired contractile stress; GSN or PLN targeting improved this readout in the TTN-mutant disease model.",
+      "unknown": "Clinical safety, therapeutic efficacy and generalization beyond the studied engineered tissues were not established by these experiments. Full supplements and independent replication were not reviewed.",
+      "ai_role": "A pretrained transformer supplied context-dependent cell embeddings. Simulated gene perturbations prioritized candidates; researchers performed the functional tissue experiments.",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10949956/",
+        "https://escholarship.org/content/qt8st2d5mx/qt8st2d5mx.pdf",
+        "https://pubmed.ncbi.nlm.nih.gov/37258680/"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-21",
+      "scope": "Primary author manuscript: bounded model/in-silico-perturbation Methods, cardiac Results and figures2/6; institutional manuscript and PubMed dates/affiliations. Supplements not fully reviewed."
+    }
   }
 ]
