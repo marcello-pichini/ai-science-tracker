@@ -1,0 +1,33 @@
+{
+  "id": "2025-10-study-10-1007-s10278-025-01722-0",
+  "title": "Echo networks detect vegetations in selected endocarditis images",
+  "summary": "YOLOv12 and RT-DETR models were evaluated on transesophageal echocardiography from 329 patients with confirmed left-sided endocarditis and visible vegetations, plus 70 controls without suspected endocarditis. Patient-separated internal testing reported diagnostic AUC 0.91 for YOLOv12. This selected case-control result does not establish screening performance or improved prognosis; other intracardiac structures can mimic vegetations, and right-sided disease was excluded.",
+  "field": "medicine",
+  "ai_technology": "YOLOv12; RT-DETR object detection",
+  "organization": "Hospital Clínico Universitario de Valladolid",
+  "source_url": "https://doi.org/10.1007/s10278-025-01722-0",
+  "source_type": "paper",
+  "publication_date": "2025-10-30",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant clinical selection/reference, annotation/model and patient-split Methods, Results and limitations; supplementary per-split metric tables not independently reviewed. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Expert-labeled cine-loop frames, with all images from each patient kept in one subset. Ten random train/optimization/test splits were averaged; each diagnostic comparison used sixty held-out positive cases and the same seventy controls. A frame-detection ratio was used for diagnostic scoring.",
+    "unknown": "Performance in a consecutive suspected-endocarditis population, other intracardiac masses, right-sided disease and clinical benefit remain unestablished. Positive cases were selected for visible vegetations, controls came from one center, and multiple-loop aggregation into a patient score is incompletely specified.",
+    "ai_role": "The networks learn image patterns to locate vegetation bounding boxes in echo frames; the proportion of detected frames supplies a diagnostic score compared with expert clinical-image labels.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13481939/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

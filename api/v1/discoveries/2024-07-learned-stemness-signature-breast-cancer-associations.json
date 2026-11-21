@@ -1,0 +1,33 @@
+{
+  "id": "2024-07-learned-stemness-signature-breast-cancer-associations",
+  "title": "A learned stemness index guides a signature associated with breast-cancer outcomes",
+  "summary": "Researchers used a pre-existing one-class logistic-regression stemness index to derive a breast-cancer expression signature. Higher positive-signature expression was associated with shorter relapse-free survival and with recorded five-year metastasis in a separate cohort. These are observational associations, not proof of a causal stem-cell mechanism.",
+  "field": "medicine",
+  "ai_technology": "One-class logistic regression-derived stemness index",
+  "organization": "Shandong University",
+  "source_url": "https://doi.org/10.1002/advs.202404853",
+  "source_type": "paper",
+  "publication_date": "2024-07-26",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Expression from 1,247 TCGA records was correlated with the learned index to define positive and negative signatures. Outcome analyses used 2,032 relapse-free-survival records and 1,979 METABRIC records.",
+    "unknown": "Existing learned index reused; signatures and cohorts may overlap, and no new independent risk-model accuracy or causal effect is claimed. Experimental mechanisms and compound results elsewhere in the paper are outside this record.",
+    "ai_role": "A previously trained one-class logistic-regression index supplies the stemness representation used to select the outcome-associated signature.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11516096/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary front metadata and computational signature, bioinformatics and nonactionable clinical-association Results; operational experimental sections excluded."
+  }
+}

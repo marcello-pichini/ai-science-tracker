@@ -1,0 +1,33 @@
+{
+  "id": "2026-02-generative-lattice-energy-acoustic-tests",
+  "title": "Generative lattice design produces experimentally tested energy-absorbing structures",
+  "summary": "A 3D convolutional predictor and conditional generative adversarial network guided lattice geometries for high energy absorption. Selected stainless-steel structures were 3D printed and compression tested, with favorable energy-absorption behavior relative to the compared conventional designs. An additional analytical-equation and genetic-algorithm step tuned acoustic cavities, producing measured broadband sound absorption. The learned model enables geometry generation for the mechanical objective; the separate acoustic optimization is not attributed to neural learning.",
+  "field": "materials",
+  "ai_technology": "3D convolutional energy-absorption prediction; conditional3D DCGAN geometry generation",
+  "organization": "Chinese University of Hong Kong; National University of Singapore; Newcastle University",
+  "source_url": "https://doi.org/10.1002/advs.202518923",
+  "source_type": "paper",
+  "publication_date": "2026-02-26",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Learned-generated 316L stainless-steel lattice samples were manufactured and evaluated under compression. The acoustically tuned structure was tested in an impedance tube, with an average reported absorption coefficient of 0.69 across the examined band.",
+    "unknown": "The predictor learns primarily from 1000 finite-element design/performance pairs; the 20,000design generative set is not 20,000 measured specimens. Comparisons to other lattice families combine source-defined densities, designs and literature context and do not establish universal superiority. Acoustic geometry was optimized with governing equations and a genetic algorithm, rather than a learned acoustic surrogate. Protective equipment, aerospace and infrastructure uses are proposed, not deployed outcomes.",
+    "ai_role": "The 3D CNN learns geometry-to-energy-absorption mappings and labels structures for conditional DCGAN training. The generative network then proposes geometries targeted to high absorption, which are fabricated and tested; neural learning is not credited with the separate analytical acoustic search.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13159119/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary article-front DOI/title/PMCID/date; full geometry-generation, CNN/DCGAN training, analytical acoustic-search Methods and experimental compression/acoustic Results, with fresh primary notice metadata."
+  }
+}

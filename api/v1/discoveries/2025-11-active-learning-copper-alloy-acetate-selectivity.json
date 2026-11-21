@@ -1,0 +1,34 @@
+{
+  "id": "2025-11-active-learning-copper-alloy-acetate-selectivity",
+  "title": "Active learning guides copper-alloy catalysts with improved acetate selectivity",
+  "summary": "An active-learning workflow combined learned adsorption-energy prediction with first-principles calculations to nominate copper–silver and copper–palladium catalyst compositions. Both synthesized candidates showed higher acetate selectivity than the pure-copper comparator in laboratory carbon-monoxide electrolysis. The result concerns these measured catalysts and conditions; mechanistic interpretation additionally depends on computational modelling, and commercial performance is not established.",
+  "field": "materials",
+  "ai_technology": "Random-forest and XGBoost adsorption-energy prediction; active learning with first-principles calculations",
+  "organization": "Worcester Polytechnic Institute",
+  "source_url": "https://doi.org/10.1038/s41467-025-66493-2",
+  "source_type": "paper",
+  "publication_date": "2025-11-20",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Learned-model-nominated Cu/Ag(3:1) and Cu/Pd(2:1) candidates were synthesized, characterized and evaluated against pure Cu in a zero-gap CO electrolyzer. Both improved measured acetate selectivity.",
+    "unknown": "The abstract and Results reverse the 47%/50% Faradaic-efficiency assignment between the two alloys; this record therefore does not assign those exact values or rank the alloys. It represents the final 2025 CO-electroreduction study, not an earlier differently titled CO2 preprint. Absolute first-public priority and full preprint-version equivalence are unestablished. Mechanistic predictions, global optimality, industrial lifetime and deployment are outside the represented finding.",
+    "ai_role": "Starting from 55 simulated alloy systems and 76 descriptors, iterative learned adsorption-energy prediction and new DFT calculations refine candidate selection. Random forest is the initial model and XGBoost the final comparison winner; the workflow selects the two compositions subsequently tested.",
+    "evidence_urls": [
+      "https://doi.org/10.1038/s41467-025-66493-2",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12748942/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Full primary journal/PMC text: exact identity, active-learning Methods, alloy selection, synthesis characterization, experimental Results/Fig8 caption and numerical-conflict caveat. Fresh primary bibliographic/status metadata."
+  }
+}

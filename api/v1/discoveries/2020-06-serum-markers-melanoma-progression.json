@@ -1,0 +1,33 @@
+{
+  "id": "2020-06-serum-markers-melanoma-progression",
+  "title": "Learned serum-marker combinations improve internal melanoma progression classification",
+  "summary": "In 323 early-stage melanoma patients, classifiers combined serum IL-4, GM-CSF and dermcidin with tumor thickness to distinguish subsequent metastatic progression. Nested internal validation supported added discrimination beyond thickness alone; this does not establish clinical benefit or external validity.",
+  "field": "medicine",
+  "ai_technology": "Regularized logistic regression; support vector machine; decision tree; naive Bayes; nearest neighbors",
+  "organization": "University of the Basque Country; Biocruces Bizkaia Health Research Institute",
+  "source_url": "https://doi.org/10.1002/1878-0261.12732",
+  "source_type": "paper",
+  "publication_date": "2020-06-02",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Classifiers were assessed with nested cross-validation in a clinical cohort with 74 metastatic outcomes. Scaling, oversampling, feature selection and tuning were assigned to the inner loop.",
+    "unknown": "Internal validation only; unequal follow-up and incomplete sentinel-node information limit interpretation. This is postoperative risk classification, not diagnosis-time screening or an intervention benefit. Publisher first-online June 2 differs from the June 24 date in primary indexing metadata; the publisher date represents this journal version.",
+    "ai_role": "Learned multivariable classifiers link measured circulating markers and tumor thickness to subsequent clinical outcomes.",
+    "evidence_urls": [
+      "https://febs.onlinelibrary.wiley.com/doi/10.1002/1878-0261.12732"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary publisher front date and safe clinical/statistical Methods and Results. Operational assay sections are outside the represented evidence."
+  }
+}

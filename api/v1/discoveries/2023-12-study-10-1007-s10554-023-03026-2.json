@@ -1,0 +1,33 @@
+{
+  "id": "2023-12-study-10-1007-s10554-023-03026-2",
+  "title": "Random forests link CT features to catheter-measured endpoints in CTEPH",
+  "summary": "Random forests combined CT measurements and qualitative findings to classify catheter-measured hemodynamic endpoints in patients with operable chronic thromboembolic pulmonary hypertension. Retrospective internal testing reported AUC 0.82 for a pulmonary-pressure category and 0.74 for a pulmonary-artery oxygen-saturation category. Replacement of invasive testing or improved management was not demonstrated.",
+  "field": "medicine",
+  "ai_technology": "Random forest",
+  "organization": "Technical University of Munich; Saarland University Medical Center; University Hospital Schleswig-Holstein; Robert Bosch Hospital",
+  "source_url": "https://doi.org/10.1007/s10554-023-03026-2",
+  "source_type": "paper",
+  "publication_date": "2023-12-24",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read primary cohort/reference, CT-feature assessment, normalization/random-forest evaluation Methods, endpoint Results and limitations. Actual source describes threefold random sampling; a more detailed nested validation design is not inferred. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Single-center retrospective cohort of 127 operable CTEPH patients from 2015–2020 with CT and preoperative right-heart catheterization. Pulmonary pressure was available in 127 patients and pulmonary-artery oxygen saturation in 55. Random forests used normalized quantitative and qualitative CT features, evaluated through a source-described threefold random-sampling procedure. Reported endpoint-classification AUCs were 0.82 and 0.74.",
+    "unknown": "Small selected surgical cohort, including only 55 patients for the oxygen endpoint; no external model validation. Exact normalization/filtering nesting and hyperparameter selection were incompletely specified. CT-feature associations are observational, and feature importance is not causation. Benefits for patient management and replacement of catheterization remain untested.",
+    "ai_role": "Random forests learned combinations of CT-derived measurements and qualitative imaging findings to classify catheter-referenced hemodynamic categories; feature filtering characterized the model-relevant signals.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10950991/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

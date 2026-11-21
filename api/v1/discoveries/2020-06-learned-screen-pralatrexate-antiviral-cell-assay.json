@@ -1,0 +1,35 @@
+{
+  "id": "2020-06-learned-screen-pralatrexate-antiviral-cell-assay",
+  "title": "Learned screening helps identify pralatrexate antiviral activity in cell assays",
+  "summary": "A hybrid screen combined learned drug–protein binding predictions with molecular simulations to select four existing drugs for laboratory evaluation. The study found antiviral activity for pralatrexate in cell assays. This is an in-vitro drug-repurposing result, with no established effectiveness or safety as a COVID-19 treatment; the computational target hypothesis does not by itself establish the cellular mechanism.",
+  "field": "biology",
+  "ai_technology": "DFCNN dense neural network; DeepBindBC learned binding classification; molecular simulation",
+  "organization": "Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences; Shenzhen Third People’s Hospital; Institute of Microbiology, Chinese Academy of Sciences",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-36439/v1",
+  "source_type": "paper",
+  "publication_date": "2020-06-23",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1371/journal.pcbi.1008489",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Four drugs selected after a hybrid learned-model and simulation screen underwent laboratory evaluation, including direct cell-assay evidence for pralatrexate activity. This is not clinical efficacy.",
+    "unknown": "Primary preprint v1 metadata dates June 23,2020 and its deposited abstract already reports this drug/result; v2 followed August 24 and journal December 31,2020. Detailed selection was read in primary v2, not full v1. Pralatrexate was already approved for an unrelated cancer indication. Patient efficacy, therapeutic window for this infection and definitive cellular target mechanism remain unestablished.",
+    "ai_role": "DFCNN and DeepBindBC learn protein–drug binding patterns and jointly filter candidates before molecular simulations select the laboratory follow-ups; attribution is to the hybrid workflow.",
+    "evidence_urls": [
+      "https://doi.org/10.21203/rs.3.rs-36439/v1",
+      "https://www.researchsquare.com/article/rs-36439/v2",
+      "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008489"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original preprint metadata/deposited abstract; relevant primary v2 learned-screening Methods/high-level result; current journal front/status. No operational pathogen protocol represented."
+  }
+}

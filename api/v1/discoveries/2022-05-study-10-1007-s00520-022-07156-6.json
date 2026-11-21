@@ -1,0 +1,33 @@
+{
+  "id": "2022-05-study-10-1007-s00520-022-07156-6",
+  "title": "Boosted trees characterize distressing hot flashes after breast cancer treatment",
+  "summary": "LightGBM analysis of cross-sectional surveys from 360 early-breast-cancer patients associated reported hot-flash frequency and age with symptom-related distress. Nested internal validation gave AUC 0.731, and partial-dependence analysis suggested greater distress around seventeen or more hot flashes per week. This characterizes concurrent symptoms, not future toxicity or treatment efficacy. Recall bias, inconsistent survey-scale origins and predictors reflecting responses to existing symptoms limit interpretation.",
+  "field": "medicine",
+  "ai_technology": "LightGBM gradient-boosted decision trees; conditional partial dependence",
+  "organization": "University of Ottawa; Ottawa Hospital Research Institute; Western University",
+  "source_url": "https://doi.org/10.1007/s00520-022-07156-6",
+  "source_type": "paper",
+  "publication_date": "2022-05-25",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant outcome definition, predictor construction, LightGBM and nested-validation Methods, results and limitations. Supplementary Appendix C was not inspected. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Survey-derived classification of current high versus low Hot Flush Night Sweats problem scores, with nested ten-fold outer/five-fold inner validation, Bayesian tuning and permutation-and-retraining importance.",
+    "unknown": "Prospective symptom forecasts, independent validation and benefits of symptom screening or medication remain unestablished. Drug use and cancer-treatment changes may follow rather than precede severe symptoms; the symptom threshold is exploratory.",
+    "ai_role": "Boosted trees learn nonlinear relationships among survey measurements and current reported symptom burden, with conditional partial dependence characterizing frequency/age associations.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9385785/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

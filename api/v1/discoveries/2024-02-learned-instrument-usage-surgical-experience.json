@@ -1,0 +1,33 @@
+{
+  "id": "2024-02-learned-instrument-usage-surgical-experience",
+  "title": "Learned video measurements associate surgical instrument use with operative experience",
+  "summary": "DeepLab-based recognition measured instrument appearance in 55 recorded robotic gastric-cancer operations. The study found shorter relative stapler and large-clip appearance times in the later-experience group than in the earlier cases. These are retrospective associations in four surgeons’ procedures, not a validated general skill score or evidence that AI improved surgery or patient outcomes.",
+  "field": "medicine",
+  "ai_technology": "DeepLab v3+ learned surgical-instrument image segmentation",
+  "organization": "Keio University; Harvard University",
+  "source_url": "https://doi.org/10.1002/ags3.12784",
+  "source_type": "paper",
+  "publication_date": "2024-02-27",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "An instrument-recognition model trained on 1234 annotated video images and assessed on 149 additional images was applied to 55 recorded operations. Comparing 22 earlier-experience cases with 33 later cases yielded associations between relative instrument-appearance time and experience.",
+    "unknown": "Frames were randomly selected from the 55 videos; separation by operation or surgeon in image testing is not established. Instrument appearance is an estimated proxy for use, not independently validated surgical skill. Case mix and operation duration differed, surgeon-level clustering is not established, and outcome differences do not demonstrate an AI intervention effect. The model sometimes confused partly visible instruments.",
+    "ai_role": "DeepLab v3+ learns instrument segmentation from annotated frames, then supplies per-instrument appearance-duration measurements for the retrospective experience-group comparison.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11216797/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary front identity/date, clinical cohort, instrument-model/statistical Methods, image evaluation and experience-group instrument-duration Results/Table3. Surgical procedure instructions are outside the represented evidence; fresh primary notice metadata checked."
+  }
+}

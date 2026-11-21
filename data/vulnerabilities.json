@@ -69605,6 +69605,19 @@
     "advisory_url": "https://raw.githubusercontent.com/wummel/patool/4.0.5/doc/changelog.txt",
     "remediation": "fix documented",
     "remediation_note": "The maintainer's release 4.0.5 changelog documents the correction for Python tarfile extraction on Python below 3.12. CodeAnt also identifies 4.0.5 as fixed. This does not establish installed updates or immunity in unreviewed extraction configurations.",
-    "checked_date": "2026-11-21"
+    "checked_date": "2026-11-21",
+    "remediation_details": {
+      "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-29509",
+      "checked_date": "2026-11-21",
+      "scope": "patool using Python's tarfile module on Python versions before 3.12",
+      "fixed_in": [
+        "4.0.5"
+      ],
+      "comparison": {
+        "upper_bound": "4.0.5",
+        "inclusive": false
+      },
+      "action": "Update patool to 4.0.5 or later for the documented correction. The advisory range applies to the specified extraction backend and Python runtime; it does not establish that every older release/configuration was independently tested."
+    }
   }
 ]

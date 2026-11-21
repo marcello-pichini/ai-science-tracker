@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-study-10-1007-s00520-026-10984-5",
+  "title": "Clinical-record models show modest discrimination of cardiac events after checkpoint therapy",
+  "summary": "Elastic-net regression, gradient-boosted trees and random forests showed similar exploratory discrimination of coded cardiac events after immune checkpoint therapy, with test AUCs around 0.72. Positive predictive values remained below 5%. The selected retrospective cohort and outcome-informed preprocessing limit interpretation as a ready-to-use baseline risk tool.",
+  "field": "medicine",
+  "ai_technology": "Elastic-net logistic regression; gradient-boosted trees; random forest",
+  "organization": "University of California, Irvine; Okayama University",
+  "source_url": "https://doi.org/10.1007/s00520-026-10984-5",
+  "source_type": "paper",
+  "publication_date": "2026-07-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary outcome/exposure definitions, selection window, feature construction, cohort-wide initial screening, patient partition, named model/tuning Methods, performance Results and limitations. Supplementary modeling tables were not independently inspected. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "TriNetX retrospective cohort of 61,117 patients receiving checkpoint therapy in 2010–2023, including 1,172 coded cardiac inflammatory events within 90 days. A stratified 70:30 patient split yielded 18,335 test patients. Models used baseline demographic, diagnosis and medication features with resampling and cross-validated tuning. Test AUCs were 0.718, 0.718 and 0.719; all models had positive predictive values below 5%.",
+    "unknown": "Diagnostic codes plus hospitalization, not adjudicated drug causation, defined events. Event-free patients needed at least 60 days on therapy, conditioning eligibility on post-baseline exposure. Initial feature prevalence screening used event cases from the entire cohort before splitting, so evaluation is not completely isolated from feature selection. Missing diagnoses/exposures were treated as absent; calibration and rare-event precision were limited. No independent prospective validation, prevention benefit or causal risk factors were established.",
+    "ai_role": "Learned regression/tree models mapped recorded baseline characteristics to coded 90-day events; comparisons measured their modest retrospective prognostic discrimination and false-positive limitations.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13415296/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

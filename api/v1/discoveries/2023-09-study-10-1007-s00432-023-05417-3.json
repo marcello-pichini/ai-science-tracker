@@ -1,0 +1,33 @@
+{
+  "id": "2023-09-study-10-1007-s00432-023-05417-3",
+  "title": "Learning classifies concurrent cardiac injury markers in cancer and COVID-19",
+  "summary": "A random forest combined eight laboratory and chest-imaging measures in 201 cancer patients with COVID-19. Internal evaluation distinguished patients with troponin-defined cardiac injury, with reported AUC 0.94. Predictor timing relative to injury was not established, and outcome-informed screening preceded validation. This supports an exploratory concurrent classification result, not prediction before injury or improved patient outcomes.",
+  "field": "medicine",
+  "ai_technology": "Random forest; LASSO feature screening",
+  "organization": "Jilin Cancer Hospital",
+  "source_url": "https://doi.org/10.1007/s00432-023-05417-3",
+  "source_type": "paper",
+  "publication_date": "2023-09-25",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective comparison with troponin-defined injury status in 67 cases and 134 non-cases, with reported ten-fold internal validation.",
+    "unknown": "Pre-injury forecasting, independent diagnostic validation and clinical benefit remain unestablished; imputation and outcome-informed feature ranking may introduce optimism.",
+    "ai_role": "A random forest learns relationships between selected laboratory/imaging measurements and recorded biochemical cardiac-injury status.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11797975/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

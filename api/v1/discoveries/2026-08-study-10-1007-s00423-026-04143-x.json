@@ -1,0 +1,33 @@
+{
+  "id": "2026-08-study-10-1007-s00423-026-04143-x",
+  "title": "XGBoost identifies pathological microvascular invasion risk in liver cancer",
+  "summary": "An XGBoost model combined tumor diameter and three preoperative blood measures in 1,106 liver-cancer patients from two hospitals. Against postoperative pathology, AUC was 0.845 in 130 internal test patients and 0.793 in 451 patients from the second hospital. This retrospective classification does not establish improved surgical choices, survival benefit or a causal role of inflammation.",
+  "field": "medicine",
+  "ai_technology": "XGBoost; recursive feature elimination",
+  "organization": "Yangzhou University; Northern Jiangsu People’s Hospital; Nanjing Drum Tower Hospital; Nanjing Medical University",
+  "source_url": "https://doi.org/10.1007/s00423-026-04143-x",
+  "source_type": "paper",
+  "publication_date": "2026-08-27",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Training-cohort feature selection with internal and separate-hospital validation against pathological microvascular invasion.",
+    "unknown": "Prospective clinical utility and treatment benefit remain unestablished; model selection compares multiple algorithms across validation cohorts and applicability beyond resected HCC is uncertain.",
+    "ai_role": "Boosted decision trees learn preoperative clinical associations with pathology-confirmed microvascular invasion.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13525009/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

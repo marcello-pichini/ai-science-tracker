@@ -1,0 +1,34 @@
+{
+  "id": "2023-05-learned-ester-hydrogenation-condition-tests",
+  "title": "Learned reaction models guide improved yields for three ester hydrogenations",
+  "summary": "Learned models of ruthenium-catalysed ester hydrogenation guided laboratory condition choices for four previously studied substrates. Three experiments gave higher alcohol yields than the corresponding literature conditions; a fourth failed despite a high predicted yield. The represented result is a bounded improvement of known reactions, rather than a new catalyst, transformation or universally accurate yield predictor.",
+  "field": "materials",
+  "ai_technology": "Gaussian-process regression and comparative learned reaction models",
+  "organization": "University of Cambridge; Université Paris Cité; University of St Andrews",
+  "source_url": "https://doi.org/10.1039/d3dd00029j",
+  "source_type": "paper",
+  "publication_date": "2023-05-01",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The journal paper reports measured alcohol yields of 96%,63% and 99% compared with corresponding literature values of 3%,0% and 32%. The fourth experiment yielded below 1% despite an 84% model prediction.",
+    "unknown": "An earlier matching preprint,10.26434/chemrxiv-2022-t1zsn, is dated January 10,2022; its full original body was not authenticated, so this record uses the documented May 1,2023 journal version and does not claim first public priority. The substrates and catalysts were known; improvements concern these conditions, not new chemical entities or general catalyst superiority. Prediction errors and high-yield-biased data limit generalization.",
+    "ai_role": "Learned regressors map substrate/catalyst descriptors and reaction conditions to measured yield and guide new condition choices subsequently tested in the laboratory.",
+    "evidence_urls": [
+      "https://doi.org/10.1039/d3dd00029j",
+      "https://research-repository.st-andrews.ac.uk/bitstream/10023/27623/1/Mishra_2023_DD_PredictingRuthenium_CC.pdf"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Full primary author-deposited journal PDF front, learned-model Methods, experimental validation and Table2; exact matching preprint relationship and current Crossref status. Journal-version result represented; original preprint result content not asserted."
+  }
+}

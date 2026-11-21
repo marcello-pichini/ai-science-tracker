@@ -1,0 +1,33 @@
+{
+  "id": "2020-08-cnn-flair-negative-dysplasia-localization",
+  "title": "A learned MRI model localizes known dysplasia lesions in FLAIR-negative images",
+  "summary": "A convolutional model trained on lesion-image patterns was evaluated on 18 FLAIR-negative images from 12 patients with histologically confirmed focal cortical dysplasia. The source reports localization in 15 of the 18 images. This is a small retrospective lesion-localization result, not validated population screening or proof of improved surgical outcomes.",
+  "ai_technology": "Net-Pos convolutional network; activation-maximization pattern localization",
+  "organization": "Beijing Institute of Technology; Sixth Medical Center of PLA General Hospital",
+  "publication_date": "2020-08-18",
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The overall source dataset has 34 FLAIR images from 19 patients; the FLAIR-negative evaluation contains 18 images from 12 patients. CNN training/test image-block sets are described as coming from unique patients. Localization is compared with lesion regions marked using operative locations.",
+    "unknown": "The abstract calls 15/18recall subject-wise, but its denominator is18 images from 12 patients; it is not presented here as 15 patients detected. Surgical/pathology-selected cases and marked lesion references do not establish accuracy in unselected MRI-negative epilepsy patients. The small dataset, image-block construction and modest segmentation overlap limit generalization; no independent clinical deployment is shown.",
+    "ai_role": "A six-layer CNN learns lesion-associated image-block features; activation maximization derives representative patterns used to localize suspected lesions in FLAIR-negative images.",
+    "test_type": "retrospective or benchmark",
+    "evidence_urls": [
+      "https://aapm.onlinelibrary.wiley.com/doi/full/10.1002/acm2.12985"
+    ]
+  },
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1002/acm2.12985",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary publisher title/DOI/date; relevant indexed primary cohort, learned-model and reference-validation Methods/Results and limitations. Fresh Crossref publication-status metadata, no linked update; direct full-page access limited."
+  }
+}

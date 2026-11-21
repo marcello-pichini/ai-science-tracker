@@ -1,0 +1,34 @@
+{
+  "id": "2023-11-explainable-regression-antimalarial-hits",
+  "title": "Explainable regression guides laboratory tests of malaria candidates",
+  "summary": "Piecewise-regression models learned activity relationships from 386 Open Source Malaria compounds and prioritized fragments for a commercial-library search. Researchers tested 22 selected compounds and followed three in concentration-response and human-cell cytotoxicity assays. A02 and A10 showed qualitatively consistent parasite-growth inhibition across the initial screen and follow-up curves. The third candidate, A22, has an unresolved screen-versus-curve discrepancy. These are modest-potency laboratory starting points, without established treatment efficacy or secure strongest-hit and selectivity claims.",
+  "field": "medicine",
+  "ai_technology": "modSAR supervised piecewise linear regression; SHAP",
+  "organization": "King's College London; London School of Economics and Political Science; London School of Hygiene and Tropical Medicine; University College London",
+  "source_url": "https://doi.org/10.1016/j.artmed.2023.102700",
+  "source_type": "paper",
+  "publication_date": "2023-11-22",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Twenty-two model-prioritized commercial compounds underwent direct parasite-growth screening. A02 and A10 showed consistent qualitative inhibition across screen and follow-up; the paper additionally reports A22 concentration-response and human-cell cytotoxicity measurements, with its conflicting screen result retained.",
+    "unknown": "Clinical efficacy, mechanism and independent replication are unestablished. A 22 shows only 18.6% mean inhibition at 10 micromolar in the initial screen despite a later reported IC 50 of 8.29 micromolar; the discrepancy is unresolved, so exact potency and selectivity are not represented as secure estimates.",
+    "ai_role": "The fitted model learns fingerprint breakpoints and region-specific activity coefficients, prioritizing fragments and predicting activity to narrow 934 commercial compounds to 97, then 22 after additional chemical filters.",
+    "evidence_urls": [
+      "https://eprints.lse.ac.uk/121101/1/Cardoso_Silva_optimisation_based_modelling_published.pdf",
+      "https://doi.org/10.1016/j.artmed.2023.102700"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary author-institution-deposited published version read through indexed PDF text for Methods, fragment-to-test selection, experimental results and front metadata; matched third-party journal-PDF figure inspected separately, with access distinction and numerical inconsistency retained. Current PubMed notice metadata checked."
+  }
+}

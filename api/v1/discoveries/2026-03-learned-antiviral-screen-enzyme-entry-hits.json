@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-learned-antiviral-screen-enzyme-entry-hits",
+  "title": "Learned screening identifies early antiviral candidates with enzyme and cell-entry assay activity",
+  "summary": "A two-stage learned screen combined SchNet molecular representations with XGBoost to prioritize compounds for laboratory evaluation. Follow-up assays identified early candidates with protease-inhibition and cell-entry activity, with additional cell and human-airway tissue-model tests. These are moderate-potency laboratory hits; direct target binding, clinical benefit and reduced resistance were not established.",
+  "field": "biology",
+  "ai_technology": "SchNet molecular graph classification; XGBoost candidate prioritization",
+  "organization": "National Center for Advancing Translational Sciences, National Institutes of Health; Texas Biomedical Research Institute; National Institute of Diabetes and Digestive and Kidney Diseases",
+  "source_url": "https://doi.org/10.3390/molecules31061043",
+  "source_type": "paper",
+  "publication_date": "2026-03-20",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The learned screen prioritized roughly 500 compounds from about 170000 library entries. The source reports 27 initial follow-up hits and examines a smaller representative subset using enzyme, cell-entry, cell-based and 3D airway-tissue assays. Four of eight detailed representatives showed moderate protease inhibition; others primarily showed entry-assay activity.",
+    "unknown": "This is not evidence that every hit has a confirmed dual mechanism. Direct specific target binding remains unconfirmed; aggregation or protein-destabilization artifacts were not excluded. Some tissue-model effects coincide with cytotoxicity, and incomplete inhibition complicates potency estimates. Reduced resistance, patient efficacy and a clinical therapeutic window were not tested. The current readable journal version is represented; the publisher version-history endpoint was rate-limited, so exact timing of any later text updates is unresolved.",
+    "ai_role": "SchNet learns molecular representations from prior screening measurements and filters library compounds; a second learned XGBoost layer incorporates descriptors to prioritize candidates before new laboratory measurements.",
+    "evidence_urls": [
+      "https://www.mdpi.com/1420-3049/31/6/1043"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary front DOI/title/date and fresh primary notice metadata; computational model/data Methods and high-level assay results/limitations read. No operational pathogen procedures represented or archived in the case evidence."
+  }
+}

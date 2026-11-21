@@ -1,0 +1,33 @@
+{
+  "id": "2020-10-study-10-1007-s10554-020-02050-w",
+  "title": "Early cardiac MRI images identify pleural effusions in retrospective testing",
+  "summary": "An adapted HRNet segmented early anatomical cardiac MRI images and quantified pleural fluid. In a 200-scan test set containing 42 report-positive effusions, fluid quantification distinguished report-positive scans with an AUC of 0.906. Adaptive scanning and patient benefits were proposed rather than tested.",
+  "field": "medicine",
+  "ai_technology": "HRNet convolutional neural network",
+  "organization": "Imperial College London; Imperial College Healthcare NHS Trust",
+  "source_url": "https://doi.org/10.1007/s10554-020-02050-w",
+  "source_type": "paper",
+  "publication_date": "2020-10-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read primary full-text cohort, HRNet training, reconstruction/calibration and statistical Methods, pleural-effusion Results and limitations. Author cardiac-MRI page checked; it provides a high-level description, not additional calibration documentation. Supplementary ROC figure not independently inspected. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective 575-scan study across two hospitals and two scanner manufacturers: 375 scans for training/validation and 200 for testing. Clinicians labelled 1,500 development slices. HRNet segmentation and 3D fluid quantification yielded pleural-effusion AUC 0.906 against final clinical reports; 42 of 200 test scans had reported effusions.",
+    "unknown": "Report-based reference rather than an independently adjudicated effusion standard; no prospective workflow or patient-benefit test. Generalization beyond these centers remains uncertain. Separate chamber-size claims require manufacturer-specific regression calibration whose fitting partition is unclear, and are not represented here. Threshold-specific accuracy is omitted because optimal cut-offs were evaluated in the study dataset.",
+    "ai_role": "An adapted HRNet learned pixel labels from clinician annotations; segmented slices were reconstructed into a 3D fluid volume used to distinguish report-positive pleural effusions.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7969571/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-01-study-10-1007-s10143-025-04070-3",
+  "title": "Boosted models classify INR-defined coagulopathy after brain injury",
+  "summary": "A glmBoost/gradient-boosting model classified INR-defined coagulopathy in older adults with traumatic brain injury, using 484 MIMIC-IV and 788 eICU records. The primary figure reports AUC 0.901 in derivation data and 0.701 in eICU. Both cohorts influenced model selection, so the latter is not an independent validation estimate. Timing, imputation and inconsistent narrative reporting limit interpretation; the study does not establish early warning or benefit from treatment changes.",
+  "field": "medicine",
+  "ai_technology": "glmBoost feature selection; gradient boosting machine",
+  "organization": "Huizhou Municipal Central Hospital",
+  "source_url": "https://doi.org/10.1007/s10143-025-04070-3",
+  "source_type": "paper",
+  "publication_date": "2026-01-31",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant cohort/reference, imputation/model-selection Methods, Results, actual Figure3 and limitations. Supplementary-file endpoint timed out; no supplementary table review claimed. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective classification against INR greater than 1.2 using clinical/laboratory features. Figure 3 identifies 13 selected variables and reported AUC .901/.701 in the two datasets; the model was chosen using average performance across both cohorts.",
+    "unknown": "Independent validation, prediction before coagulopathy and clinical benefit remain unestablished. Data extraction/imputation includes incompletely specified hospitalization timing. Text gives inconsistent average AUC/variable counts; the quoted cohort AUCs are explicitly those in the primary figure and corresponding Discussion.",
+    "ai_role": "glmBoost selects clinical/laboratory features, then a gradient boosting machine learns their relationship with the recorded INR-based coagulation label.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12858556/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

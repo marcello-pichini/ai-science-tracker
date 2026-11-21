@@ -1,0 +1,33 @@
+{
+  "id": "2022-04-study-10-1007-s10620-022-07506-8",
+  "title": "Claims-based models estimate later inflammatory-bowel-disease care events",
+  "summary": "Random forests and LASSO models used one year of insurance claims to estimate subsequent-year hospitalizations and surgery in patients with inflammatory bowel disease. In a temporally shifted cohort of 69,165 patients, reported AUCs were 0.73 for hospitalization and 0.71 for surgery. The training cohort contained 72,178 patients. This retrospective utilization prediction does not establish prevention benefit; possible patient overlap between annual cohorts, claims-based outcomes and validation-set threshold selection limit interpretation.",
+  "field": "medicine",
+  "ai_technology": "Random forest; LASSO logistic regression",
+  "organization": "University of California, Los Angeles; Leiden University Medical Center; Cedars-Sinai Medical Center",
+  "source_url": "https://doi.org/10.1007/s10620-022-07506-8",
+  "source_type": "paper",
+  "publication_date": "2022-04-27",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant cohort/timing, outcome definitions, model/threshold Methods, Results and limitations. Current linked Editorial/Comment metadata and publisher/author-repository access checked; editorial body and supplementary feature tables not read. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "2015 baseline claims/2016 events supplied training data, while 2016 baseline/2017 events supplied temporal evaluation. Outcomes were claims-defined IBD hospitalization and surgery; the model compared fitted predictions with later recorded events.",
+    "unknown": "Independent-patient generalization, biological disease mechanisms and improved treatment decisions remain unestablished. The source does not explicitly establish nonoverlapping patients across annual cohorts. Thresholds were selected on validation predictions; calibration was imperfect. A linked editorial was authenticated as an Editorial/Comment from primary metadata, but its subscription-only body was not reviewed.",
+    "ai_role": "Forests and penalized logistic models learn associations between prior-year utilization features and next-year claims-defined care events, enabling measured retrospective outcome-prediction comparisons.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9515047/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

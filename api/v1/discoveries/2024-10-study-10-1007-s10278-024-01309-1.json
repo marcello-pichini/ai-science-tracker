@@ -1,0 +1,33 @@
+{
+  "id": "2024-10-study-10-1007-s10278-024-01309-1",
+  "title": "Abdominal-X-ray network classifies recorded colorectal-cancer status",
+  "summary": "A DenseNet-121 analyzed abdominal X-rays against recorded colorectal-cancer labels in Taiwanese hospital data. It achieved AUC 0.738 in 16,875 internal-validation patients and 0.656 in 15,876 patients from a community hospital; external sensitivity was 47.7% at the selected cutoff. Cancer was uncommon, registry records could miss diagnoses elsewhere, and the one-year follow-up/label timing limits claims about detection at the image date. This retrospective study does not establish effective screening or earlier diagnosis.",
+  "field": "medicine",
+  "ai_technology": "DenseNet-121 convolutional neural network",
+  "organization": "Tri-Service General Hospital; National Defense Medical Center",
+  "source_url": "https://doi.org/10.1007/s10278-024-01309-1",
+  "source_type": "paper",
+  "publication_date": "2024-10-31",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant cohort/label, DenseNet operation and threshold Methods, validation Results and limitations; supplementary architecture/training appendix not independently read. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-separated development, tuning and validation cohorts, one randomly selected KUB radiograph per person, and registry/EMR colorectal-cancer labels. The threshold chosen in the tuning set was reused in both validation cohorts; external AUC .656 and sensitivity 47.7% were lower than internal results.",
+    "unknown": "Prospective screening performance, time gained before diagnosis and clinical benefit remain unestablished. Prior cancer was excluded and one-year follow-up used, but the precise diagnosis-to-image timing is not fully specified. Low case prevalence, distal-tumor imbalance and incomplete capture of outside-hospital diagnoses limit interpretation.",
+    "ai_role": "A 121-layer DenseNet learns radiographic patterns associated with recorded colorectal-cancer labels and returns a case probability for a single abdominal radiograph.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12092315/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

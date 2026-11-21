@@ -1,0 +1,33 @@
+{
+  "id": "2020-08-als-progression-model-external-validation",
+  "title": "External ALS trial data show limited added prediction accuracy from learned progression models",
+  "summary": "Random-forest and ensemble models trained on 3160 ALS trial participants were evaluated in a separate 509-patient trial dataset. They predicted later functional scores with performance similar to a linear mixed-effects model, with only marginal improvements in error and explained variation. Missing-data handling improved generalization. The result is retrospective clinical prediction validation; suggested clinical-trial power gains came from simulations, not an actual improved treatment trial.",
+  "field": "medicine",
+  "ai_technology": "Random forest; super learner ensemble; random-forest missing-data imputation",
+  "organization": "University of Michigan; Genentech",
+  "source_url": "https://doi.org/10.1002/acn3.51140",
+  "source_type": "paper",
+  "publication_date": "2020-08-30",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Final models trained on 3160 PRO-ACT patients were compared against observed ALSFRS-R trajectories in 509 patients from a separate completed olesoxime trial. The learned models marginally outperformed a conventional mixed-effects comparator, with roughly 1percentage-point additional explained variation.",
+    "unknown": "Both datasets were existing clinical-trial records. Prediction became poorer farther from baseline, and results do not establish treatment-effect estimation or patient benefit. A simulated16% effective-sample-size gain under a hypothetical treatment effect is not an observed clinical-trial gain. Random-forest and ensemble models do not explicitly account for within-person longitudinal correlation; missing-at-random assumptions may fail outside these data.",
+    "ai_role": "Random forests and an ensemble learn relationships between baseline clinical covariates, time from baseline and later functional scores. Predicted trajectories are evaluated against an independent historical trial and used separately in trial-power simulations.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7545604/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary XML article-front identity/date, clinical cohorts, covariates, model/imputation and validation Methods, observed prediction Results and simulation/longitudinal limitations; fresh primary notice metadata."
+  }
+}

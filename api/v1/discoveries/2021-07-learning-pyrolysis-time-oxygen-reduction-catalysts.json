@@ -1,0 +1,34 @@
+{
+  "id": "2021-07-learning-pyrolysis-time-oxygen-reduction-catalysts",
+  "title": "Machine learning identifies a synthesis-time relationship in oxygen-reduction catalysts",
+  "summary": "Learned models ranked factors in 225 literature-derived catalyst records and highlighted pyrolysis duration alongside temperature. Researchers then varied these conditions in iron-nitrogen-carbon catalysts and measured a volcano-like relationship between duration and oxygen-reduction half-wave potential, alongside changes in nitrogen species. This is a laboratory synthesis-performance relationship, not proof that model importance alone establishes an atomic mechanism or that the result generalizes to other catalyst families.",
+  "field": "materials",
+  "ai_technology": "Supervised tree ensembles; artificial neural networks; SHAP feature interpretation",
+  "organization": "Nanjing University",
+  "source_url": "https://doi.org/10.1021/acscatal.1c01473",
+  "source_type": "paper",
+  "publication_date": "2021-07-19",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Model-guided control experiments varied pyrolysis duration and temperature in ZIF-derived Fe-N-C catalysts, with electrochemical measurements and nitrogen-species characterization.",
+    "unknown": "Feature importance is associative; the represented relationship does not establish every proposed atomic mechanism. Independent replication, other catalyst families and practical fuel-cell benefits remain unestablished.",
+    "ai_role": "Nine learned model families, including tree ensembles and neural networks, related catalyst properties and synthesis parameters to activity and pyridinic-nitrogen content; model interpretation prioritized duration for controlled experiments.",
+    "evidence_urls": [
+      "https://doi.org/10.1021/acscatal.1c01473",
+      "https://doi.org/10.1021/acscatal.1c01473.s001"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary publisher front metadata and abstract; complete official supplementary modeling, synthesis and characterization sections, including model-importance tables and control-series captions. Main article body was paywalled and not read. Current Crossref update relationships checked."
+  }
+}

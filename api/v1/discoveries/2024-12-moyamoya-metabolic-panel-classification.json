@@ -1,0 +1,34 @@
+{
+  "id": "2024-12-moyamoya-metabolic-panel-classification",
+  "title": "Neural-network interpretation identifies a metabolic panel associated with Moyamoya disease",
+  "summary": "A neural network learned serum patterns distinguishing Moyamoya disease from healthy controls. Model interpretation helped select six metabolic signals; their later three-center evaluation reported AUC 0.867, rather than the higher full-fingerprint result.",
+  "field": "medicine",
+  "ai_technology": "Neural network; integrated gradients",
+  "organization": "Fudan University; Shanghai Jiao Tong University",
+  "source_url": "https://doi.org/10.1002/advs.202405580",
+  "source_type": "paper",
+  "publication_date": "2024-12-31",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Discovery data comprised 144 patients and 144 controls; repeated spectra were averaged per sample. The six-signal panel was evaluated in 86 later samples, including 49 cases.",
+    "unknown": "Selected case-control evaluation; preprocessing and feature-selection nesting are incompletely established. Metabolite assignments are tentative. No population screening, stroke prevention or mechanistic claim.",
+    "ai_role": "The network learns diagnostic patterns; integrated gradients guides signal selection alongside statistical comparisons.",
+    "evidence_urls": [
+      "https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202405580",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11848555/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary front identity/date and relevant clinical/model Methods and classification Results; operational sample procedures excluded."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2024-11-synthetic-ct-lung-dose-physical-validation",
+  "title": "Learned synthetic CT enables physically tested lung-radiotherapy dose planning",
+  "summary": "A UNet++ model converted cone-beam scans into synthetic CT images for lung-cancer radiotherapy planning. Plans based on 17 patients’ images were compared with planning-CT references and checked through actual phantom irradiation. Measured dose deviations were 2–7%, comparable to the reference-plan deviations in that experiment. This supports a bounded medical-physics feasibility result, not formal dosimetric equivalence, improved patient outcomes or demonstrated adaptive treatment delivery.",
+  "field": "medicine",
+  "ai_technology": "UNet++ with ResNet50 backbone for synthetic CT generation",
+  "organization": "Shanghai University of Traditional Chinese Medicine; MedMind Technology; Tsinghua University",
+  "source_url": "https://doi.org/10.1002/acm2.14582",
+  "source_type": "paper",
+  "publication_date": "2024-11-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Model development used 70 patients and image evaluation 15;17 additional patients supplied paired cone-beam/planning CT scans for offline planning comparisons. Generated-image plans underwent physical ArcCHECK and thermoluminescent-dose measurements on phantoms, with 2–7% dose deviations reported.",
+    "unknown": "The clinical images and plan comparison were retrospective; phantom irradiation does not establish actual adaptive patient-treatment benefit. Nonsignificant dose differences do not prove equivalence. The tumor-volume gradient index differed, and some tumor-dose metrics had weaker agreement. The source’s percentage image-MAE improvement is inconsistent with its displayed means and is not reproduced here. Validation is limited to the studied scanner/workflow and geometry.",
+    "ai_role": "UNet++ learns the image-to-image conversion needed to reduce cone-beam CT intensity errors before conventional dose calculation. The generated-image plans, rather than only image-quality scores, are tested against physical dose measurements.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11799926/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary XML front DOI/title/date; full patient/model Methods, generated-plan comparison and actual phantom/TLD measurement Results. Fresh Crossref publication-status metadata; PubMed/EPMC status access was limited."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-study-10-1001-jamanetworkopen-2026-42142",
+  "title": "Deployed delirium model retains discrimination at a second hospital",
+  "summary": "A frozen random-forest system combining clinical data and an NLP risk score was evaluated during deployment at a second Mount Sinai hospital. Retrospective workflow analysis reported AUC 0.91 and positive predictive value 25.9%; targeted assessments had a higher delirium yield than a historical period. Selective verification and changing workflows prevent a causal patient-benefit interpretation.",
+  "field": "medicine",
+  "ai_technology": "Random forest with structured clinical features and an NLP-derived risk score",
+  "organization": "Icahn School of Medicine at Mount Sinai; Mount Sinai Morningside Hospital; The Mount Sinai Hospital; NYC Health + Hospitals",
+  "source_url": "https://doi.org/10.1001/jamanetworkopen.2026.42142",
+  "source_type": "paper",
+  "publication_date": "2026-11-04",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary model operation, frozen deployment, cohort/reference and workflow Methods, performance and yield Results, limitations, plus publisher-linked invited-commentary context. Publication date follows original publisher and PMC Article Information November 4; indexed November 2 is retained separately without a first-ever-version claim. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Frozen model deployed without local retraining at Mount Sinai Morningside in November 2024. Retrospective analysis compared 9,020 admissions there with 21,186 contemporaneous development-hospital admissions and 2,889 historical predeployment admissions. At the second hospital, reported AUC was 0.91 and positive predictive value 25.9%. Only 2,649 of 9,020 admissions received CAM assessments; the rest relied on diagnosis codes. Mean monthly yield among CAM assessments rose from 9.23% to 19.59%.",
+    "unknown": "Same-health-system transportability, not independent-health-system validation. Model-guided CAM assessment creates incomplete verification and incorporation biases; remaining reference labels use diagnosis codes. Site thresholds differ, calibration was not the primary endpoint and false positives were frequent. Historical2018–2019 versus2024–2025 comparisons are confounded and measure yield per assessment, not incidence or improved outcomes. Linked invited commentary emphasizes these interpretation limits.",
+    "ai_role": "A trained random forest fused structured/semistructured clinical information with an NLP-derived note score to prioritize live clinical delirium assessments; the study measured its within-system transportability and operational assessment yield.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13735856/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2022-03-cyclegan-upper-abdominal-dose-validation",
+  "title": "Synthetic CT supports retrospective upper-abdominal radiotherapy dose validation",
+  "summary": "A CycleGAN trained on scans from 11 patients generated synthetic CT images for six other liver-cancer patients. Dose calculations on those images were compared with deformably registered planning-CT references and generally agreed more closely than calculations using raw cone-beam CT. This is a small retrospective medical-physics validation, with remaining air–tissue interface errors, not demonstrated improved treatment delivery.",
+  "ai_technology": "Cycle-consistent generative adversarial network for synthetic CT",
+  "organization": "Columbia University Irving Medical Center",
+  "publication_date": "2022-03-25",
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Seventeen historical hepatocellular-carcinoma cases supplied 11-patient training and six-patient testing groups. Synthetic-image dose-volume and profile calculations were compared with deformed-planning-CT and raw cone-beam calculations in the six test cases.",
+    "unknown": "The reference is a deformably registered planning image, not an independently measured true delivered patient dose. Model calibration is specific to the studied imaging-system pair; single-slice processing and limited field of view constrain use. Air–tissue interface errors remain. Gamma passing rates alone could miss evident dose underestimation. The study does not establish superior patient outcomes or formal clinical equivalence.",
+    "ai_role": "CycleGAN learns cone-beam/CT image-domain mappings that preserve anatomy while correcting intensity values needed for conventional dose calculations; the resulting generated-image dose estimates answer a defined upper-abdominal planning question.",
+    "test_type": "retrospective or benchmark",
+    "evidence_urls": [
+      "https://aapm.onlinelibrary.wiley.com/doi/full/10.1002/acm2.13595"
+    ]
+  },
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1002/acm2.13595",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary publisher title/DOI/date; relevant indexed primary cohort, learned-model and reference-validation Methods/Results and limitations. Fresh Crossref publication-status metadata, no linked update; direct full-page access limited."
+  }
+}

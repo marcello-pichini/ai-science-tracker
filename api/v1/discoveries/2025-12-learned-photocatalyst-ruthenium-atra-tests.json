@@ -1,0 +1,34 @@
+{
+  "id": "2025-12-learned-photocatalyst-ruthenium-atra-tests",
+  "title": "Learned photocatalyst recommendations identify a productive ruthenium alternative for an ATRA reaction",
+  "summary": "A reaction-language model trained on literature examples recommended photocatalysts for a previously reported atom-transfer radical addition reaction. A ruthenium catalyst omitted from the original catalyst screen gave the highest yield among the catalysts tested in the new study, with productive results also observed for two related substrates. This is a specific measured catalyst–reaction result within known chemistry, rather than discovery of a new transformation or proof that model confidence predicts yield.",
+  "field": "materials",
+  "ai_technology": "BERT-based reaction-language model for photocatalyst recommendation",
+  "organization": "University of St Andrews; Allchemy; Institute of Organic Chemistry, Polish Academy of Sciences",
+  "source_url": "https://doi.org/10.1002/anie.202514544",
+  "source_type": "paper",
+  "publication_date": "2025-12-09",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Top-five model recommendations were tested in the published ATRA system, with quantitative NMR yields from two independent experiment repeats. Source-labelled Ru1 was absent from the original screen and gave the highest measured yield among the newly compared catalysts; two related substrates also gave productive outcomes.",
+    "unknown": "The journal also evaluates other known reactions, but the represented finding is this specific catalyst alternative. Yield depends on photoreactor/light setup; the authors observe a discrepancy with an earlier eosin-Y result and explicitly state model confidence does not track yield. Co-catalysts, additives and reaction conditions are not model inputs. An earlier July 2025 preprint differs in the number of evaluated reactions; this record uses the fully read December 2025 journal version without claiming earliest public disclosure.",
+    "ai_role": "The learned language model maps substrate and reaction-core representations to rankings over 31 photocatalysts, selecting a previously unscreened catalyst alternative for subsequent laboratory comparison.",
+    "evidence_urls": [
+      "https://doi.org/10.1002/anie.202514544",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12828469/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Full primary journal/PMC data curation, BERT-model Methods, ATRA experiments/Fig3–4 captions and discussion; exact front identity/date and fresh primary notice metadata. Earlier preprint-version result equivalence not asserted."
+  }
+}

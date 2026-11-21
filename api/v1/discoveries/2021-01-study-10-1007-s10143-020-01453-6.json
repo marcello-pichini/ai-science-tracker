@@ -1,0 +1,33 @@
+{
+  "id": "2021-01-study-10-1007-s10143-020-01453-6",
+  "title": "Learning models show no clear gain in hemorrhage outcome prediction",
+  "summary": "In 388 patients with aneurysmal subarachnoid hemorrhage, tree boosting, neural networks and other models did not clearly outperform traditional models using admission clinical and imaging information. The best reported AUC was 0.78 for combined features, versus 0.76 using Glasgow Coma Scale information alone. This is a retrospective clinical comparison, not proof of equivalence or evidence that learning cannot help other cohorts or inputs. Single-institution sampling and incomplete outcome records limit generalization.",
+  "field": "medicine",
+  "ai_technology": "CatBoost tree boosting; multilayer perceptron; support-vector machine; generalized linear models",
+  "organization": "Charité – Universitätsmedizin Berlin",
+  "source_url": "https://doi.org/10.1007/s10143-020-01453-6",
+  "source_type": "paper",
+  "publication_date": "2021-01-20",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant patient/reference, predictor, preprocessing and model-validation Methods, Results and limitations; supplementary detailed metric tables not independently reviewed. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective admission-feature prediction against later favorable/unfavorable modified Rankin outcomes. Patient-level 80:20 splits repeated fifty times, with ten-fold tuning and training-set imputation/scaling; 388 analyzed after twenty patients lacking outcomes were excluded.",
+    "unknown": "Generalization to other centers, incremental value of different inputs and clinical decision benefit remain unestablished. Absence of a clear performance advantage in this cohort is not formal statistical equivalence, and no intervention allocation was tested.",
+    "ai_role": "Boosted trees, a multilayer perceptron and other fitted classifiers learn admission-feature/outcome relationships; their held-out clinical performance is compared with regression and models using established severity scores.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8490233/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

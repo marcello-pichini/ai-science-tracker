@@ -1,0 +1,34 @@
+{
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "id": "2024-03-decision-tree-cadmium-copper-antimony-laves-phase",
+  "title": "Decision-tree predictions guide synthesis of a cadmium-copper-antimony Laves phase",
+  "summary": "A decision-tree classifier trained on known intermetallic structures guided experiments on cadmium-copper-antimony compositions. The researchers synthesized a limited antimony-substitution range adopting the cubic MgCu 2-type Laves structure, supported by diffraction and elemental measurements. This is a measured structural finding; predictions for more than 400000 other candidates are not experimental discoveries, and the classifier also produced false positives.",
+  "field": "materials",
+  "ai_technology": "Decision-tree classifier",
+  "organization": "University of Alberta; Indian Institute of Technology Kharagpur",
+  "source_url": "https://doi.org/10.1021/acs.inorgchem.3c04647",
+  "publication_date": "2024-03-19",
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Primary supporting tables compare model predictions with experimental phase outcomes, including CdCu 1.8 Sb 0.2; diffraction patterns and elemental analysis support the synthesized limited solid-solution range.",
+    "unknown": "Functional material performance and broad predicted-candidate validity are unestablished. Nominal and measured compositions differ slightly; the optimized model predicts some compositions that did not form the target phase.",
+    "ai_role": "A decision tree learned structure classes from about 3700 known AB 2 phases using elemental descriptors, predicted candidate compositions and guided experimental targeting of the cadmium-copper-antimony system.",
+    "evidence_urls": [
+      "https://doi.org/10.1021/acs.inorgchem.3c04647",
+      "https://doi.org/10.1021/acs.inorgchem.3c04647.s001"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary publisher article-front metadata and abstract, complete official author supporting information Methods/model tables/experimental characterizations and result captions, and current PubMed notice metadata. Paywalled main article body was not read; no independent replication performed."
+  }
+}

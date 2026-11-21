@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-study-10-1007-s00484-026-03353-8",
+  "title": "Forest models link land-use patterns to recorded envenomation incidence",
+  "summary": "Random forests analyzed monthly reported scorpion, snake and spider envenomation across 645 São Paulo municipalities from 2010 to 2024. Urban land proportion had the highest permutation importance for observed incidence in all three models, ahead of weather variables. This is an ecological predictive association, not evidence that urbanization causes individual incidents. Random train/test splitting ignored spatial and temporal dependence, reporting may be incomplete, and hypothetical warming outputs are unmeasured sensitivity scenarios.",
+  "field": "climate",
+  "ai_technology": "Random forest; permutation feature importance",
+  "organization": "Federal University of Rio Grande; Federal University of Alagoas",
+  "source_url": "https://doi.org/10.1007/s00484-026-03353-8",
+  "source_type": "paper",
+  "publication_date": "2026-11-03",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary indexed PMC full text: data/model Methods, measured-incidence feature-importance results and limitations, exact canonical citation identity/date, current primary PubMed notice relationships. Warming scenarios reviewed as predictions; supplementary municipality rankings not inspected."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Random-forest models of existing municipal notification records, with 80:20 random train/test splitting and out-of-bag permutation importance. The represented result concerns predictor importance for observed 2010–2024 incidence.",
+    "unknown": "Causal individual risk, generalization under spatially or temporally separated validation and actual effects of future warming remain unestablished. Socioeconomic and surveillance differences were omitted; underreporting can affect recorded incidence.",
+    "ai_role": "Forest ensembles learn nonlinear relationships between municipal land-use/weather measurements and reported incidence; permutation increases in out-of-bag error identify the predictors most informative within each fitted model.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13731446/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

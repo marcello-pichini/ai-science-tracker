@@ -1,0 +1,33 @@
+{
+  "id": "2021-03-glioma-survival-clinical-dose-association",
+  "title": "Survival forests associate clinical and treatment-plan features with glioma survival",
+  "summary": "A retrospective 95-patient high-grade glioma study used random survival forests to relate clinical characteristics and radiotherapy dose-volume features to observed survival. Age, tumor volume, grade, performance status, IDH status and a dose-coverage feature were selected by the learned model. This is an exploratory cohort association; the study does not establish that changing radiation dose improves survival or that its prediction performance generalizes to new hospitals.",
+  "field": "medicine",
+  "ai_technology": "Random survival forest; support-vector-machine comparison",
+  "organization": "Zhejiang University",
+  "source_url": "https://doi.org/10.1002/cam4.3838",
+  "source_type": "paper",
+  "publication_date": "2021-03-24",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source analyzes 95 historical patients, randomly dividing 57 for model development and 38 for testing. The survival forest selects clinical factors and a treatment-plan dose-coverage feature associated with recorded outcomes.",
+    "unknown": "Continuous variables were converted using outcome-optimized cut points before the described split; preprocessing isolation is not established, so reported test accuracy may be optimistic. Feature selection and small-cohort risk thresholds need validation. Treatment choices, tumor size and case mix can confound dose–survival relationships. Decision-curve analysis is model-based, not demonstrated clinical utility, and no causal dose-prescription guidance follows.",
+    "ai_role": "The survival forest learns nonlinear relationships between clinical/dose-volume features and survival, selecting a multifeature risk representation for retrospective outcome analysis.",
+    "evidence_urls": [
+      "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_xml/PMC8026951/unicode"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary BioC document ID and article-front DOI/title/PMID; clinical/statistical model Methods and survival Results/limitations. Current primary notice metadata checked; treatment instructions are not represented."
+  }
+}

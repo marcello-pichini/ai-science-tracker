@@ -1,0 +1,33 @@
+{
+  "id": "2022-03-generative-model-plant-cooccurrence-estimates",
+  "title": "Generative models estimate higher-order plant co-occurrence patterns",
+  "summary": "A generative model fitted to 5153 observed plant patches in four Spanish dryland communities estimated that conditioning on additional species often weakens positive lower-order co-occurrence associations, with species-specific exceptions. The conditional frequencies were estimated from model-generated patches, not 300000 field observations. This is a descriptive relationship in a learned distribution; it does not establish causal ecological interactions or actual succession.",
+  "field": "biology",
+  "ai_technology": "Generative adversarial networks fitted to species-presence distributions",
+  "organization": "University of Valencia; Spanish National Research Council; University of Sussex",
+  "source_url": "https://doi.org/10.1111/2041-210X.13827",
+  "source_type": "paper",
+  "publication_date": "2022-03-06",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "GAN models learned joint species-presence distributions from 5153 recorded vegetation patches. Generated composition abundance and soil-affinity patterns were compared with the observed data; higher-order conditional association estimates were derived from generated configurations.",
+    "unknown": "The specific third- and fourth-order conditional frequencies were not independently checked in held-out field data. Generated patches and repeated model initializations are not independent field replication. Co-occurrence does not prove competition, facilitation or other mechanisms. VAE-generated succession, pioneer rankings and restoration benefits are outside this record; reconstruction accuracy is not ecological forecast accuracy.",
+    "ai_role": "GANs learn the high-dimensional joint distribution of plant presence and supply conditional co-occurrence estimates that describe how associations change when additional species are present.",
+    "evidence_urls": [
+      "https://www.uv.es/verducam/CoexistenceAI.pdf"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Full primary author-deposited published PDF front, input/model Methods, conditional-association Results and Discussion, plus independent Sol ecological-scope review and fresh primary publication metadata."
+  }
+}

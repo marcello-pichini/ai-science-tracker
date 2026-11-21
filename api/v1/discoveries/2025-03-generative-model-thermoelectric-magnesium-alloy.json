@@ -1,0 +1,34 @@
+{
+  "id": "2025-03-generative-model-thermoelectric-magnesium-alloy",
+  "title": "Generative design leads to a synthesized magnesium-based thermoelectric composition",
+  "summary": "A generative model combining a variational autoencoder, residual layers and discriminators proposed thermoelectric compositions from literature-derived data. Researchers synthesized the selected Mg 3.1 Sb 0.5 Bi 1.497 Te 0.003 composition and reported a thermoelectric figure of merit of 0.75 at 300 kelvin. This laboratory measurement is separate from the larger catalogue of predicted high-performance materials; it does not establish that all predictions were synthesized or that this room-temperature sample exceeded a figure of merit of 1.",
+  "field": "materials",
+  "ai_technology": "Variational autoencoder; residual neural network; learned discriminators",
+  "organization": "Harbin Institute of Technology; Chinese Academy of Sciences; University of Chinese Academy of Sciences",
+  "source_url": "https://doi.org/10.1021/acsami.4c19494",
+  "source_type": "paper",
+  "publication_date": "2025-03-20",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The official supporting TableS 7 explicitly marks Mg 3.1 Bi 1.497 Sb 0.5 Te 0.003 as synthesized in this study and reports its transport properties and thermoelectric figure of merit of 0.75 at 300 kelvin.",
+    "unknown": "Broad experimental success across the predicted catalogue, independent replication and practical device benefit remain unestablished. The reported 100 materials above a predicted figure of merit of 1 are computational candidates, not 100 newly tested materials.",
+    "ai_role": "A conditional generative architecture learns composition/property relationships using a variational encoder-decoder with residual layers, discriminators and a diversity-related loss, generating candidate compositions for experimental selection.",
+    "evidence_urls": [
+      "https://doi.org/10.1021/acsami.4c19494",
+      "https://doi.org/10.1021/acsami.4c19494.s001"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary publisher front metadata and abstract, complete official supporting information model architecture and measured-versus-predicted tables, plus current PubMed notice metadata. Paywalled main article body was not read; no independent replication performed."
+  }
+}

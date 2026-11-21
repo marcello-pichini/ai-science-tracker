@@ -1,0 +1,33 @@
+{
+  "id": "2020-06-study-10-1007-s10198-020-01213-9",
+  "title": "Nursing-record features improve estimation of home-care use",
+  "summary": "Random-forest analysis of 4,323 Dutch home-care clients found that recorded nursing diagnoses and symptoms added information beyond existing case-mix groups. Reported internal cross-validated R-squared for weekly care hours increased from 22.4% to 32.1% when nursing-record features were added. The result concerns observed service use at one provider, not objectively necessary care or improved payment policy. Documentation differences and underprediction of high-use clients limit generalization.",
+  "field": "medicine",
+  "ai_technology": "Random forest; recursive feature elimination",
+  "organization": "Dutch Healthcare Authority; Tilburg University",
+  "source_url": "https://doi.org/10.1007/s10198-020-01213-9",
+  "source_type": "paper",
+  "publication_date": "2020-06-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant client selection, outcome and forest/validation Methods, Results and limitations; supplementary parameter-tuning and feature-elimination details not independently reviewed. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "One randomly selected assessment per client was retained to prevent repeated-client leakage. Forest models were compared using ten-fold validation against average weekly care hours in the 28 days after assessment, with demographic/case-mix and nursing-record feature sets.",
+    "unknown": "Performance at other providers, clinically appropriate care need and reimbursement-policy effects remain unestablished. The primary body describes feature elimination but its exact nesting/tuning details are in an unreviewed supplement. Care hours combine nursing and personal care, and documentation practices can vary.",
+    "ai_role": "Forest ensembles learn interactions among demographic, case-mix and nursing-assessment variables to estimate recorded care-hour use; comparing feature sets measures the information added by nursing records.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7561562/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

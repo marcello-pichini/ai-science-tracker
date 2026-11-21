@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-study-10-1002-acm2-70825",
+  "title": "Low-field shoulder MRI with learned reconstruction agrees with surgical findings",
+  "summary": "A paired prospective study evaluated 0.55 T shoulder MRI reconstructed with Deep Resolve Boost against conventional 1.5 T imaging. Among 25 patients with suspected rotator-cuff injury, 16 underwent arthroscopy; MRI findings showed good to perfect agreement with surgery. Different coils, hardware and reconstruction prevent attributing the system comparison solely to AI.",
+  "field": "medicine",
+  "ai_technology": "Deep Resolve Boost convolutional neural-network MRI reconstruction",
+  "organization": "Peking University First Hospital; Siemens Healthineers",
+  "source_url": "https://doi.org/10.1002/acm2.70825",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read primary named CNN reconstruction operation, paired prospective cohorts, blinded reading/reference Methods, lesion Results and limitations. Original PMC article publication date October20 is distinguished from November issue date. Supplementary acquisition tables and vendor training datasets were not independently inspected. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prospectively enrolled 25 volunteers and 25 patients, each examined with both MRI systems. The 0.55 T system used a vendor-trained CNN reconstruction combining noise maps and raw sensor data; the 1.5 T comparator did not use DL. Blinded randomized readings compared image quality and lesion assessment. Sixteen patients received arthroscopy; source-reported lesion agreement was perfect for the senior reader and good to perfect for the junior reader. Both systems had closely agreeing lesion assessments.",
+    "unknown": "Small single-center selected rotator-cuff cohort and partial surgical verification; not an unbiased sensitivity/specificity screening study. Field strength, coils, hardware and reconstruction differ simultaneously, with no same-scanner DL ablation or 1.5 T DL comparator. The study validates the combined configuration, not an isolated causal AI benefit or improved patient outcome. Vendor training data and supplementary acquisition details were not independently inspected.",
+    "ai_role": "Deep Resolve Boost CNNs reconstructed the low-field images from raw measurements and noise maps, producing the images used for blinded clinical lesion evaluation and surgical-reference comparison.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13682617/"
+    ],
+    "test_type": "direct test"
+  }
+}

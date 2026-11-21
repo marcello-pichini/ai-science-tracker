@@ -1,0 +1,33 @@
+{
+  "id": "2026-01-study-10-1007-s10067-026-07950-1",
+  "title": "Forest-based gene selection links PGAP1 and TMBIM1 expression to systemic sclerosis",
+  "summary": "Boruta and random forests prioritized PGAP1 and TMBIM1 from systemic-sclerosis expression data. The selected genes showed opposite expression changes in two small human skin datasets, with corresponding expression changes reported in mouse fibrotic tissues. The result is an association and expression validation, not a demonstrated disease mechanism or treatment.",
+  "field": "biology",
+  "ai_technology": "Boruta random-forest feature selection; random forest",
+  "organization": "First Affiliated Hospital of Xi’an Jiaotong University",
+  "source_url": "https://doi.org/10.1007/s10067-026-07950-1",
+  "source_type": "paper",
+  "publication_date": "2026-01-31",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read primary data/cohort, Boruta/random-forest feature selection and validation-set filtering Methods, human expression Results, high-level mouse expression Results and mechanistic limitations. Operational experimental procedures and supplementary replicate details are outside the represented evidence scope. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Single-cell data from 12 systemic-sclerosis and 3 control skin samples informed candidate genes. Boruta-confirmed genes were intersected with top random-forest importance ranks. Human bulk datasets comprised 18 cases/15 controls and 10 cases/5 controls; the second dataset also participated in final gene filtering. PGAP1 was lower and TMBIM1 higher in affected human skin, with corresponding transcript/protein expression findings in source-reported mouse fibrotic tissues.",
+    "unknown": "Small reused human datasets; the nominal validation dataset helped select genes, so it is not an untouched external diagnostic test. Mouse expression association does not establish causal antagonism, Th17 specificity, human diagnostic utility or therapeutic efficacy. PGAP1 lung expression changed with time. Detailed experimental replicate counts and supplementary datasets were not independently inspected; drug/docking predictions are not represented as treatments.",
+    "ai_role": "Boruta and random-forest ranking reduced disease-associated candidates to genes taken forward for cross-dataset expression comparisons and targeted tissue-expression checks.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12923484/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

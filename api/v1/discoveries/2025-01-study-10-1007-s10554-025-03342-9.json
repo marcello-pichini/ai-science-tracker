@@ -1,0 +1,33 @@
+{
+  "id": "2025-01-study-10-1007-s10554-025-03342-9",
+  "title": "AI angiography detects more reference coronary lesions than visual estimation",
+  "summary": "An ensemble-based angiography system detected 1,705 of 1,828 manually defined coronary lesions in 420 patients, compared with 69% detection by visual estimation. Models trained on separate 2016 data were tested retrospectively on selected 2022 images from three hospitals. The result establishes reference-based lesion detection, not improved treatment outcomes.",
+  "field": "medicine",
+  "ai_technology": "MPXA-2000; DeepLabV3+, U-Net++ and U²-Net segmentation ensemble",
+  "organization": "Asan Medical Center; University of Ulsan College of Medicine; Ulsan University Hospital; Keimyung University Dongsan Medical Center",
+  "source_url": "https://doi.org/10.1007/s10554-025-03342-9",
+  "source_type": "paper",
+  "publication_date": "2025-01-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary cohort, separate model-training data, named segmentation ensemble, blinded manual/AI/visual-reference Methods, detection definition, statistical Methods, Results and limitations. Supplementary training tables were not independently inspected. Exact primary identity/date and fresh primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective three-center evaluation of 1,076 selected angiography images from 420 patients. Nine view-specific segmentation models combined DeepLabV3+/EfficientNet-B4, U-Net++/EfficientNet-B4 and U²-Net; training images from 2016 were separate from 2022 evaluation data. Against blinded manual QCA, the system detected 1,705/1,828 lesions (93%) versus 69% for visual estimation; on multiple-lesion images it identified all reference lesions in 86% versus 33%.",
+    "unknown": "Manual QCA is the anatomical reference, not physiological significance or clinical outcomes. Selected frames excluded occlusions and poor-quality images; only reference lesions meeting size/stenosis criteria were counted. Lesion observations repeat within patients, and reported significance does not establish cluster-adjusted uncertainty. No prospective procedural or patient benefit was tested; training details in the supplementary material were not independently inspected.",
+    "ai_role": "Learned vessel segmenters generated lumen boundaries; an ensemble and downstream lesion analysis located and quantified lesions for comparison with manual QCA and cardiologist visual estimates.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11880186/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2022-08-learned-rheology-printability-associations",
+  "title": "Random forests identify joint rheological relationships associated with hydrogel printability",
+  "summary": "A study of 180 hydrogel formulations combined measured rheology and printing scores with random forests, Boruta selection and SHAP interpretation. It identified 13 informative rheological measures whose combined behavior distinguished printable formulations within the study. The finding is a learned physical structure–performance relationship, not a universal printability rule or a prospective demonstration of an AI-designed new formulation.",
+  "field": "materials",
+  "ai_technology": "Random forest; Boruta feature selection; SHAP interpretation",
+  "organization": "University of Würzburg",
+  "source_url": "https://doi.org/10.1002/advs.202202638",
+  "source_type": "paper",
+  "publication_date": "2022-08-25",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Measured rheological and printing data for 180 formulations supplied 65 initial features. Repeated random-forest/Boruta selection identified 13 measures; repeated cross-validation and SHAP analysis described their joint associations with printability.",
+    "unknown": "Feature screening and interpretation use the same formulation library; independent composition-family validation is not established. Class resampling changes printable/nonprintable proportions and apparent metrics should not be transferred to real-world prevalence. The model shows conditional associations rather than causal rheological laws. No newly fabricated model-nominated formulation or clinical application is represented. A publisher note corrects a funding number only.",
+    "ai_role": "Random forests learn a nonlinear mapping from rheological measures to printability; Boruta and SHAP identify combinations and conditional contributions that support the specific material-property relationship.",
+    "evidence_urls": [
+      "https://advanced.onlinelibrary.wiley.com/doi/10.1002/advs.202202638"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary publisher front identity/date; full relevant indexed primary computational selection/interpretation Methods and physical printability Results. Funding-only correction recognized; no biological procedures represented."
+  }
+}
