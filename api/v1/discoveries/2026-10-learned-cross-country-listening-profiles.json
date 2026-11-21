@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-learned-cross-country-listening-profiles",
+  "title": "Learned listening groups span country boundaries in a LastFM sample",
+  "summary": "A fitted spectral-plus-k-means partition of 511 LastFM users identified groups spanning seven countries. Posthoc comparisons associated the learned groups with different listening breadth, activity and artist profiles. These are descriptive patterns in a selected historical sample, not universal listener types.",
+  "field": "humanities",
+  "ai_technology": "Sequential BiFLICKER spectral estimation; fitted k-means unsupervised clustering",
+  "organization": "National University of Singapore",
+  "source_url": "https://arxiv.org/abs/2610.25997v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-19",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Seven learned groups from binary user–artist incidence; posthoc event-count summaries and leave-one-user-out intervals characterized the same sample.",
+    "unknown": "Filtering removed low-degree users and very popular artists. Group number and genre interpretations are analysis-dependent. Breadth/artist profiles reuse clustering inputs; jackknife intervals and centralized agreement are not independent cohort validation. No causal country or preference claim.",
+    "ai_role": "K-means fits latent assignments in a federated spectral embedding, enabling group-specific listening comparisons.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.25997v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Actual primary Methods3, LastFM Results6 and implementation/posthoc summariesS1; exact current v1 history."
+  }
+}

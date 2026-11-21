@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-classifier-finetuning-concentrates-hallucination-labels",
+  "title": "Classifier training concentrated Qwen3 hallucination signals in middle layers",
+  "summary": "Researchers fitted linear probes at different stages of classifier-head fine-tuning and found that hallucination labels became readable in a band of Qwen3's upper-middle layers before appearing across later layers. Combining the later layers gave no improvement over a single-layer probe in held-out comparisons. Removing 31% of the layers above the signal-forming band and a stabilization margin preserved detection scores within seed variability in Qwen3-4B and Qwen3-8B.",
+  "field": "computer science",
+  "ai_technology": "Qwen3-4B; Qwen3-8B; linear probes",
+  "organization": "PAIR Systems; INSAIT, Sofia University",
+  "source_url": "https://arxiv.org/abs/2610.27711",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.27711",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "Original arXiv v1 metadata and full-text HTML §§3–6, readout and transfer appendix context",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors tracked linear probe performance across network layers and fine-tuning checkpoints. Controlled fusion tests on a six-corpus held-out split looked for complementary upper-layer information. Three-seed depth-truncation comparisons tested what happens when different layers are removed.",
+    "unknown": "The findings concern decodable binary hallucination labels in these task-trained models. They do not imply the same depth in other tasks, and measured early-exit scores varied on transfer backbones.",
+    "ai_role": "Classifier-head training and fitted linear probes expose where task labels are decodable in the learned models. Comparisons with sequence-to-sequence tuning, fusion probes and layer truncation test whether late-layer signals differ or are redundant for the classification.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.27711",
+      "https://arxiv.org/html/2610.27711"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

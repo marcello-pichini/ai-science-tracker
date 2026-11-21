@@ -1,0 +1,35 @@
+{
+  "id": "2021-05-learned-echo-covid-strain-association",
+  "title": "AI-assisted cardiac measurements show an in-hospital mortality association",
+  "summary": "In the retrospective international WASE-COVID cohort, left-ventricular longitudinal strain was associated with in-hospital mortality after adjustment. Left-ventricular measurements combined machine-learned software output with two blinded human reads. This is a selected-cohort association, not an AI-only mortality predictor or demonstrated clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Ultromics machine-learned left-ventricular measurement algorithms",
+  "organization": "University of Chicago; MedStar Health Research Institute; Ultromics",
+  "source_url": "https://doi.org/10.1016/j.echo.2021.05.010",
+  "source_type": "paper",
+  "publication_date": "2021-05-21",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "870 hospitalized patients at13 centers;722 had usable left-ventricular analysis. Final measurements averaged one automated and two blinded human reads. Adjusted strain association OR1.179,95%CI1.045–1.358.",
+    "unknown": "Retrospective first-wave population selected for clinically indicated echocardiograms; variable missing views and same-cohort stepwise adjustment. 89 missing two-chamber measurements imputed. No locked external mortality evaluation; individual strain discrimination limited. Right-ventricular measures used a separate semiautomated package. Software architecture/training supplement uninspected.",
+    "ai_role": "Previously learned commercial algorithms generated ventricular volumes, ejection fraction and strain used with human reads in the association analysis. Conventional regression estimated the association.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8137346/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8418014/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8817760/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Actual primary Methods/Results/limitations and both linked letters read in supported Chrome. Letters debate interpretation and utility; response clarifies odds ratios and all-cause in-hospital death, not PPV or COVID-specific death."
+  }
+}

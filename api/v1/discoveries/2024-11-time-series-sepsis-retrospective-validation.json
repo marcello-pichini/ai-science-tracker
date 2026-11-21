@@ -1,0 +1,34 @@
+{
+  "id": "2024-11-time-series-sepsis-retrospective-validation",
+  "title": "Time-series model tests sepsis prediction with an indeterminate option",
+  "summary": "An attention-based LSTM evaluated hospital-record sepsis labels retrospectively. External-dataset AUC was 0.971 six hours before recorded onset; withholding uncertain classifications reduced false positives. This does not establish improved care or prospective non-ICU performance.",
+  "field": "medicine",
+  "ai_technology": "Attention-based long short-term memory neural network; conformal prediction",
+  "organization": "Pennsylvania State University",
+  "source_url": "https://www.medrxiv.org/content/10.1101/2024.11.21.24317716v1",
+  "source_type": "paper",
+  "publication_date": "2024-11-22",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.compbiomed.2025.110497",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "MIMIC-IV development and eICU-CRD retrospective evaluation. The November2024 preprint already reports this result; peer-reviewed version followed in May2025.",
+    "unknown": "External labels used diagnosis strings rather than Sepsis-3. About 17% were indeterminate. Missingness eligibility used the six-hour window even for earlier forecasts. ICU-onset cases were included; preprocessing isolation is incompletely documented. No measured workflow benefit.",
+    "ai_role": "The LSTM learns laboratory trajectories; conformal sets flag unfamiliar inputs.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11601686/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12174992/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary metadata/version relationship; indexed primary clinical/model Methods, Results and limitations."
+  }
+}

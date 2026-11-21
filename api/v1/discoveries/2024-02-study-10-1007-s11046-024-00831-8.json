@@ -1,0 +1,33 @@
+{
+  "id": "2024-02-study-10-1007-s11046-024-00831-8",
+  "title": "A serum-protein classifier fails to reproduce its early-infection discrimination in a second clinical cohort",
+  "summary": "A random-forest model using four circulating proteins distinguished later invasive-aspergillosis cases from non-infected hematology controls in its derivation data, but the source reports that it failed to reproduce this performance in a second cohort. This negative retrospective validation is separate from the paper’s conventional differential-protein findings and does not establish a usable early diagnostic test.",
+  "field": "medicine",
+  "ai_technology": "Random forest classification of circulating-protein measurements",
+  "organization": "University Hospitals Leuven; Radboud University Medical Center; Medical University of Graz",
+  "publication_date": "2024-02-26",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The discovery study included 33 cases and two matched 33-person control groups. The RF used four selected proteins measured more than ten days before clinical diagnosis, and was then assessed in a separate cohort nominally comprising 20 cases and 20 non-infected controls. The source reports 87% derivation accuracy and 47% in the second cohort, explicitly concluding that the model did not replicate.",
+    "unknown": "The main paper does not fully specify RF tuning, the person-versus-serum-sample denominator for these accuracy figures, uncertainty intervals or all handling of repeated longitudinal samples. Cohorts came from the same center and differed in immune-status/treatment characteristics. No significant differential proteins distinguished cases from infected controls after multiplicity correction. The failed classifier is not evidence of an infection-specific mechanism, actionable screening rule or patient benefit.",
+    "ai_role": "A learned RF combined the four selected protein measurements into a case-classification rule. Its failure to transfer to a second observed clinical cohort is the represented clinical validation result; the separate IL-17C association was obtained through conventional differential analysis and is not attributed to AI.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s11046-024-00831-8"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s11046-024-00831-8",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read original clinical cohort/control and time-window definitions, RF construction and second-cohort model Results, conventional-marker analysis distinction and cohort/reference limitations. No biological operational protocol is represented or required. Original publisher February26 date verified. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

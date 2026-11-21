@@ -1,0 +1,36 @@
+{
+  "id": "2023-04-study-10-1007-s12519-023-00717-7",
+  "title": "Learned transcriptomic selection identifies a pediatric-sepsis blood-marker pattern",
+  "summary": "Three learned feature-selection approaches converged on CYSTM1, MMP8 and CD177 in public pediatric blood-expression data. The source reports higher expression and case-control discrimination in a further dataset. This is a retrospective molecular association, including a less-studied CYSTM1 candidate, without established diagnostic specificity, clinical utility or causal treatment relevance.",
+  "field": "biology",
+  "ai_technology": "Random forest, SVM recursive feature elimination and LASSO logistic feature selection",
+  "organization": "Zhejiang University; Shaoxing People’s Hospital; Columbia University",
+  "publication_date": "2023-04-28",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The analysis combined GSE26378 and GSE26440, with primary series metadata listing 180 septic-shock and 53 normal-control blood-expression profiles in total. Differential/module filtering preceded RF, SVM-RFE and tenfold-tuned LASSO selection. Their intersection identified CYSTM1, MMP8 and CD177. The paper reports increased expression and discrimination in GSE13904, a separately indexed pediatric inflammatory-spectrum dataset.",
+    "unknown": "Distinct series/sample identifiers do not prove independent people. GSE13904 includes inflammatory-response, sepsis and septic-shock samples; the exact analytic subset and repeated-person separation were not independently reconstructed. Feature filtering used clinical labels before selection, and healthy-control contrasts do not establish real-world diagnostic specificity. Source prose twice refers to rheumatoid arthritis despite the sepsis analysis; no RA result is adopted. MMP8/CD177 links to sepsis were already known, and CYSTM1 remains a candidate association without functional or therapeutic validation. Reported ROC/decision curves do not demonstrate clinical benefit.",
+    "ai_role": "The three learned selectors prioritized a shared measured-expression marker set after broad filtering, enabling the represented candidate-pattern and subsequent source-described case-control comparison. Immune deconvolution or network diagrams alone are not the admission basis.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10533616/",
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE26378",
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE26440",
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE13904"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s12519-023-00717-7",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read original computational cohort/filtering/RF/SVM-RFE/LASSO and ROC Methods, candidate/validation-expression Results and stated limits; separately read primary GEO series-level cohort metadata and exact GSM intersections. Patient-level independence and full validation subset were not reconstructed. No operational biological procedures or causal treatment claim. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

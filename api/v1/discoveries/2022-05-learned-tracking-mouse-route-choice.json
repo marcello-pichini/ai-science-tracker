@@ -1,0 +1,33 @@
+{
+  "id": "2022-05-learned-tracking-mouse-route-choice",
+  "title": "Learned tracking and agent models examine rapid mouse route choice",
+  "summary": "Neural tracking supported evidence that mice favor shorter routes and smaller shelter angles before escape experience. Model-based learning agents reproduced rapid route choice from recorded exploration, whereas the tested model-free agent failed under that limited experience.",
+  "field": "biology",
+  "ai_technology": "DeepLabCut neural pose estimation; model-based reinforcement learning",
+  "organization": "University College London",
+  "source_url": "https://doi.org/10.1016/j.cub.2022.05.020",
+  "source_type": "paper",
+  "publication_date": "2022-05-25",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Custom-trained pose estimation measured trajectories. Q-learning, DYNA-Q and Influence Zones agents were compared using42 retained exploration sessions.",
+    "unknown": "Agent agreement does not identify the biological learning algorithm. Recorded sessions and repeated trials are not independent neural-mechanism tests; alternative prior-knowledge explanations remain. No causal brain mechanism is claimed.",
+    "ai_role": "A learned pose network extracts movement; reinforcement-learning agents test algorithmic explanations of recorded behavior.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9616796/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Safe tracking/RL computational Methods and high-level Results/Discussion; primary date/status. No operational animal procedure needed for represented scope."
+  }
+}

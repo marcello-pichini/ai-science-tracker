@@ -1,0 +1,33 @@
+{
+  "id": "2021-05-learned-prostate-node-reference-validation",
+  "title": "Multimodal learned features classify prostate lymph-node involvement",
+  "summary": "A stacked model combined pretrained MRI image features, radiomics and clinical information to classify pathology-referenced pelvic lymph-node involvement. Its AUC was 0.92 in 71 internal test patients and0.76 in 50 second-center patients. This retrospective validation does not establish avoided surgery or routine clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Pretrained image-network embeddings; random-forest signatures; AutoGluon stacked ensemble",
+  "organization": "Nanjing Medical University; Soochow University",
+  "source_url": "https://doi.org/10.1016/j.ebiom.2021.103395",
+  "source_type": "paper",
+  "publication_date": "2021-05-25",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "401 selected surgical patients:280 development,71 internal test and50 second-center test. Only six second-center patients had positive nodes; sensitivity there was50% at the development-selected threshold.",
+    "unknown": "Retrospective surgical selection, small external positive count and site-specific readers limit transfer. Tumor segmentation used radiological-pathological correlation; preprocessing and feature-selection isolation are not completely specified. Source feature-importance description contains unrelated linker terminology. Surgery avoidance and decision-curve benefits are hypothetical.",
+    "ai_role": "ImageNet-pretrained networks embed tumor/peritumoral MRI regions; forests select/learn imaging signatures and an ensemble integrates them with clinical and reader variables.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8167242/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Actual primary clinical/model Methods2.1–2.8, diagnostic Results3.2 and limitations; fresh exact PubMed date/notice metadata. No independent implementation or supplementary detail reproduction."
+  }
+}

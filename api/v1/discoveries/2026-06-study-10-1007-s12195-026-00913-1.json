@@ -1,0 +1,33 @@
+{
+  "id": "2026-06-study-10-1007-s12195-026-00913-1",
+  "title": "Learned constitutive fitting identifies a composition–age tradeoff in hydrogel mechanics",
+  "summary": "Gaussian-process-guided optimization fitted constitutive coefficients to measured hydrogel stress–strain curves. The resulting analysis identified a compensatory relationship between fibrin concentration and matrix-source age at low to moderate strain, alongside coefficient-specific effects that did not extend uniformly to high strain. These are model-based interpretations of tested materials, without independent validation of newly designed formulations or demonstrated cellular effects.",
+  "field": "materials",
+  "ai_technology": "Gaussian-process surrogate Bayesian optimization with expected improvement for constitutive coefficient fitting",
+  "organization": "University of Zaragoza; CSIC; Carlos III University of Madrid; CIBERehd; ARAID Foundation",
+  "publication_date": "2026-06-30",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Experimental rheology curves from basal-membrane and fibrin/matrix hydrogel formulations were fitted with a second-order polynomial hyperelastic model. A Gaussian-process surrogate learned fit error across coefficient settings and expected improvement selected subsequent finite-element evaluations. Statistical analysis of fitted coefficients supported a concentration/source-age compensation at low to moderate strain; the higher-strain coefficient effects were not statistically established.",
+    "unknown": "Fit error is agreement to the same experimental curves, not held-out prediction. Constitutive assumptions, coefficient dependence and small replicate sets constrain mechanistic interpretation. Variability intervals were adjusted for physical plausibility rather than uniformly calibrated predictive coverage. Some compositional trends recover prior literature; the admitted result is the specific combined tradeoff, not first discovery that concentration or age affects stiffness. New formulations, cell behavior, tissue function and in-vivo benefit were not independently tested.",
+    "ai_role": "The learned Gaussian-process surrogate adaptively searched constitutive parameters against measured curves, enabling coefficient-level composition analysis and the represented mechanical tradeoff beyond reporting optimizer convergence alone.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13365100/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s12195-026-00913-1",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read primary computational Gaussian-process/Bayesian optimization, constitutive/statistical Methods, fit/variability and composition-age Results, and interpretation limits. Laboratory preparation procedures and supplements were not independently adjudicated. Represented result is a model-based mechanical relationship grounded in measured curves, not new formulation or biological validation. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

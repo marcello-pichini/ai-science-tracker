@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-consistency-training-preserves-cue-circuit",
+  "title": "Consistency training weakens answer cues while a cue-following circuit stays active",
+  "summary": "Researchers applied four consistency-training objectives to Gemma-2-2B-it and Llama-3.1-8B-Instruct. The trained models followed the training cue less often but also tended to discount correct suggestions, especially when cues appeared before the answer choices. Replacing activations in the known cue circuit with their uncued values corrected 59.8% to 91.0% of remaining cue-induced errors, compared with at most 12.1% for random attention heads in the same layers. This arXiv v1 preprint tests particular multiple-choice prompts in two models, with weaker transfer to unfamiliar cues and some circuit results based on one seed.",
+  "field": "computer science",
+  "ai_technology": "Gemma-2-2B-it; Llama-3.1-8B-Instruct; consistency training",
+  "organization": "University of Michigan; Jinesis Lab, University of Toronto & Vector Institute; University of Oxford; EuroSafeAI; Max Planck Institute for Intelligent Systems",
+  "source_url": "https://arxiv.org/abs/2610.25650v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-19",
+  "paper_url": "https://arxiv.org/html/2610.25650v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, abstract, submission history, introduction, setup and results through circuit intervention",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Four adapter-based training objectives used the same training prompts. Behavioral tests compared trained and original responses to correct and wrong suggestions. The mechanistic test replaced activations in a previously identified circuit and compared corrected errors with those from patching random heads in the same layers.",
+    "unknown": "Transfer to other model families, document formats and cue types was not assessed by this comparison. Some mechanistic estimates use one seed, and the matched-question selectivity analysis was exploratory.",
+    "ai_role": "In two pretrained language models, learned attention-head activations were intervened on to localize the cue-related errors that remained after consistency training.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.25650v1",
+      "https://arxiv.org/html/2610.25650v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-agent-proposed-vortex-scale-validation",
+  "title": "Agent-proposed vortex scale improves a reference-flow prediction",
+  "summary": "Claude-driven agents translated a human-supplied vortex-axis modeling idea into candidate subgrid length scales. The selected Liutex-based formulation predicted backward-step reattachment at 7.13 step heights versus the published experimental 6.67; the standard scale predicted 12.50. This is a selected computational closure result, not a new experimentally observed turbulence mechanism.",
+  "field": "physics",
+  "ai_technology": "Claude Opus 5.5 discovery, review, implementation and evaluation agents",
+  "organization": "Iowa State University; Pennsylvania State University",
+  "source_url": "https://arxiv.org/abs/2610.29850v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Candidate formulas were screened sequentially on four canonical/engineering flows using published references. The selected closure was similar to, or slightly better than, an expert shear-layer-adapted baseline.",
+    "unknown": "The same cases drove selection, not an untouched validation suite. Five runs repeated proposal/review/implementation but did not repeat expensive flow simulations. Human concept, reference data and fallback assumptions constrain discovery. No universal closure superiority or real-aircraft benefit is established.",
+    "ai_role": "LLM agents derived and implemented explicit vortex-axis-based formulas rather than merely executing a fully specified human closure. Subsequent numerical solvers evaluated their physical predictions.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.29850v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Actual primary candidate-generation Methods, selection workflow, reference-flow Results/Table6 and physical fallback interpretation; current v1 date/status."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-airmpa-station-pollution-forecast-validation",
+  "title": "Pollution forecasts are checked against three regional station networks",
+  "summary": "AirMPA’s learned meteorology-to-pollution forecasts were evaluated against monitoring stations in China, Europe and the United States. The study reports lower particulate-matter prediction error than CAMS and Aurora. This retrospective field-reference evaluation does not establish operational warning or health benefits.",
+  "field": "climate",
+  "ai_technology": "Swin Transformer; AirMPA; FuXi-2.0 meteorological forecasts",
+  "organization": "Fudan University; Shanghai Academy of AI for Science; University of Shanghai for Science and Technology",
+  "source_url": "https://arxiv.org/abs/2610.25797v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-19",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "June–November2022 retrospective station comparisons supplemented gridded-reference tests; learned pollutant evolution used forecast meteorology during inference.",
+    "unknown": "Development validation used 2023, later than the test period. Training references incorporate model outputs and satellite observations. Station matching details and site-level uncertainty were not independently reconciled. Resolution, empirical emissions and extreme-event underestimation limit transfer.",
+    "ai_role": "The Transformer learns pollutant evolution from meteorological, emissions and recent-concentration fields.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.25797v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary v1 architecture, training/evaluation partition, station Results/Figure10 description and limitations; exact current version/history."
+  }
+}

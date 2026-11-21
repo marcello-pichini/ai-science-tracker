@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-omega-centauri-cv-candidates",
+  "title": "Multiwavelength classification supports new Omega Centauri binary candidates",
+  "summary": "A cluster-adapted random forest helped identify candidate cataclysmic-variable counterparts in Omega Centauri. For newly proposed source 14e, the model favored this class with probability 0.59 alongside conventional optical and X-ray evidence. Candidate nature and counterpart association remain uncertain in the crowded field.",
+  "field": "physics",
+  "ai_technology": "MUWCLASS random forest with feature-matched training subsets and Gaussian-process imputation",
+  "organization": "George Washington University; NASA Goddard Space Flight Center; IRAP",
+  "source_url": "https://arxiv.org/abs/2610.30604v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Applied a training set assembled from 25 globular clusters to more than 200 Chandra sources, comparing class probabilities with conventional counterpart evidence. Source14e has six X-ray counts and a proposed blue optical counterpart.",
+    "unknown": "Crowding, missing photometry and class imbalance limit labels. Proper motion and radio information are outside the classifier; background galaxies can be confused with binaries. Source14e photometry may be unreliable and identification is not confirmed. No new measured population count or dynamical mechanism is asserted.",
+    "ai_role": "The trained classifier supplies candidate-specific class probabilities that guided the multiwavelength interpretation, rather than only providing a catalog or recovering known classes.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.30604v1",
+      "https://arxiv.org/abs/2610.30604"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Actual v1 classification procedure, source14e discussion/Table7 and training limitations; October22 v1 already contains result, November3 v2 metadata distinguished."
+  }
+}

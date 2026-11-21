@@ -1,0 +1,33 @@
+{
+  "id": "2024-05-study-10-1007-s10877-024-01177-8",
+  "title": "Clinical comparison finds automated and manual vena-cava indices are not interchangeable during assisted ventilation",
+  "summary": "In 23 intensive-care patients receiving pressure-support ventilation, the learned Auto IVC tool and conventional M-mode produced distensibility-index measurements with wide agreement limits. Measurements from different imaging windows also lacked adequate agreement. This is a small clinical measurement-validation study; it does not establish fluid responsiveness, patient benefit or that either method gives the true physiological value.",
+  "field": "medicine",
+  "ai_technology": "GE Venue Go R2 Auto IVC learned ultrasound localization and automated measurement",
+  "organization": "Medical University of Warsaw; University of Catania",
+  "publication_date": "2024-05-31",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Single-center prospective paired measurement comparison in 23 intubated patients on pressure-support ventilation. The same operator acquired M-mode and Auto IVC measurements in subcostal and trans-hepatic views; the latter view was unavailable in four patients. Offline manual measurement was blinded to automated results. Automated-minus-manual distensibility-index mean biases were about six percentage points, with broad Bland–Altman limits rather than interchangeable measurements.",
+    "unknown": "One operator and center, small cohort, fixed acquisition order and repeated automated measurements limit generalization. Manual M-mode is a comparator rather than a definitive physiological reference. The source did not test treatment decisions, fluid responsiveness or clinical outcomes. The proprietary model architecture and training cohort are not independently audited.",
+    "ai_role": "The study Methods identify Auto IVC on Venue Go R2 as the measurement tool; original vendor documentation describes training on thousands of ultrasound images to locate the vessel and place/track the measurement cursor before calculating respiratory diameter indices. Those learned measurements are directly evaluated in the paired clinical comparison.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s10877-024-01177-8"
+    ],
+    "test_type": "direct test"
+  },
+  "source_url": "https://doi.org/10.1007/s10877-024-01177-8",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual original cohort, named device/tool, paired acquisition/blinding, repeated-measurement agreement Methods, clinical Results and limitations; original vendor trained-algorithm description corroborates the learned enabling operation. Original publication May31 distinguished from later issue. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

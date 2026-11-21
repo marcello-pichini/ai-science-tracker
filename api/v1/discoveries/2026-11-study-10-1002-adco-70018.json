@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-study-10-1002-adco-70018",
+  "title": "Learned simulator analysis resolves interaction-dependent effects in a perovskite solar-cell model",
+  "summary": "A LightGBM surrogate of a specified perovskite solar-cell simulator identified absorber-thickness and acceptor-doping effects that largely cancel when averaged across the sampled parameter space but reverse direction under different defect-density or band-alignment conditions. Original simulator data supported those conditional patterns. The finding concerns a computational response surface; no fabricated device or experimentally realized efficiency improvement was demonstrated.",
+  "field": "physics",
+  "ai_technology": "LightGBM surrogate regression; Sobol global sensitivity analysis",
+  "organization": "Netaji Subhas University of Technology",
+  "source_url": "https://doi.org/10.1002/adco.70018",
+  "source_type": "paper",
+  "publication_date": "2026-11-07",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read indexed original publisher Methods2, global-sensitivity Results3.4, original-simulator stratification and doping branches3.5, verification sweeps3.6, optimization failures3.7 and computational-only Conclusion. Exact publisher DOI/title/date matched current canonical Crossref metadata; current relation/update fields and publisher notice context checked. Supplement not read."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A seven-parameter SCAPS-1D dataset retained 4,396 runs, with 3,525 training and 871 separately sampled test points. The selected LightGBM model was refitted on all retained runs for 262,144-evaluation sensitivity analysis. The source attributed 17.8% of modeled efficiency variance to interactions. Thickness and acceptor doping had near-zero first-order sensitivity but nonzero total effects; stratified original simulator data showed sign reversals. Separate simulator verification exposed wrong donor-density trends and overoptimistic ranking of the surrogate-selected optimum.",
+    "unknown": "Results depend on the chosen simulator, layer stack, sampled ranges and numerical assumptions. Known defect-density effects were recovered rather than established as new physics. Surrogate sensitivity shares are not measured device variance, and original simulator checks are not external experimental replication. Several trends and selected-optimum ranking disagreed with direct simulation; no global physical optimum or fabricated high-efficiency device is claimed.",
+    "ai_role": "The learned surrogate made a high-dimensional global sensitivity decomposition tractable and localized conditional parameter effects that pooled or single-parameter summaries concealed. Those interpretations were compared with original simulator data and explicit verification runs.",
+    "evidence_urls": [
+      "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adco.70018"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

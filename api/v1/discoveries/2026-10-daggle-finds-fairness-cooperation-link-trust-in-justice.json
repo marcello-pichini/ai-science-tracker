@@ -1,0 +1,35 @@
+{
+  "id": "2026-10-daggle-finds-fairness-cooperation-link-trust-in-justice",
+  "title": "Graph learning found a fairness–cooperation link in a British survey sample",
+  "summary": "A learned graph fitted to 1,805 Great Britain responses in the European Social Survey consistently linked perceived police procedural fairness with willingness to cooperate. The link appeared in all 20 near-best graph classes, whereas the link between moral alignment and cooperation was uncertain. Directions in the reported ordered graph came from the researchers' theory-based ordering, so the findings describe relationships in survey responses.",
+  "field": "humanities",
+  "ai_technology": "DAGGLE; latent Gaussian graph structure learning",
+  "organization": "East China Normal University; London School of Economics and Political Science",
+  "source_url": "https://arxiv.org/abs/2610.27873",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.27873",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original arXiv v1 abstract and history, HTML §3 and European Social Survey §§6.1–6.3; earlier related DAG-CLIP primary abstract",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study examined 15 survey measures and five latent constructs. It compared candidates with the published structural equation model and exhaustively assessed the small graph-class space in addition to the fitted search. The fairness–cooperation association was retained with the same sign in reported subgroup fits under the specified ordering.",
+    "unknown": "The associations are retrospective and model-dependent. The data do not identify the direction of the fairness–cooperation relationship, or show that changing policing would cause a change in willingness to cooperate.",
+    "ai_role": "DAGGLE learned latent-construct adjacency structure jointly with measurement and structural parameters. It used likelihood-based edge screening and comparison across graph equivalence classes; theory supplied any reported link orientation.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.27873",
+      "https://arxiv.org/html/2610.27873",
+      "https://arxiv.org/abs/2610.06086"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

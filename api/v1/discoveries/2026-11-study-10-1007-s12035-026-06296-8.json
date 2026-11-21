@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-study-10-1007-s12035-026-06296-8",
+  "title": "Learned blood-omics factors track Rett syndrome status and severity in a small cohort",
+  "summary": "Unsupervised integration of four blood-omics measurements identified a disease-associated molecular factor and a second factor correlated with clinical severity in nine people with Rett syndrome and eight controls. The learned factors connect measurements across molecular layers, but remain exploratory within-cohort associations. They are not validated diagnostic tests, causal disease mechanisms or demonstrated treatment-response markers.",
+  "field": "biology",
+  "ai_technology": "MOFA2 unsupervised multi-omics latent-factor learning",
+  "organization": "University of Sydney; Children’s Hospital at Westmead; Macquarie University; Translational Genomics Research Institute; Baylor College of Medicine; Emory University",
+  "publication_date": "2026-11-09",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Four matched molecular-data layers from nine Rett syndrome participants and eight controls were integrated using MOFA2 latent-factor learning. The main computational Methods specify normalized inputs, participant-identifier joins and associations between factor scores and clinical severity. Factor 1 separated the sampled clinical groups; Factor 2 correlated with severity among the nine affected participants, with reported Spearman rho 0.77 and nominal p 0.016.",
+    "unknown": "Seventeen people and nine severity observations are too few to establish generalizable biomarker performance. Factor selection and severity association used the same cohort, without held-out diagnostic evaluation or demonstrated multiplicity-adjusted confirmation of the severity result. Age, cell composition, medication, diet and systemic physiology may influence molecular profiles; peripheral blood does not directly establish brain mechanisms. Orthogonal measurement of an individual metabolite does not independently validate the learned latent factors. No longitudinal response-to-treatment or causal effect was tested.",
+    "ai_role": "MOFA2 learned shared variation across transcript, protein, phosphorylation and metabolite measurements, enabling the represented cross-layer disease and severity-associated factor analysis beyond separate differential-expression tests.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13745417/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s12035-026-06296-8",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read primary cohort/reference metadata, computational normalization/integration/MOFA2 factor and severity-association Methods, corresponding factor Results and clinical/confounding limitations. No laboratory procedures were independently adjudicated. Individual metabolite confirmation is not counted as independent latent-model validation. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

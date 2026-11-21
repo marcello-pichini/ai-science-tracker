@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-study-10-1002-adem-71360",
+  "title": "Learned resonance analysis separates stiffness and damping feature patterns in coated microcantilevers",
+  "summary": "Random-forest analysis of a large measured silicon-microcantilever dataset linked resonance frequency chiefly to effective modulus, thickness and geometry, while quality-factor variation emphasized coating thickness and effective modulus followed by surface descriptors. These are model-derived associations within the sampled wafers. Coating, roughness and material descriptors were correlated, so feature importance does not isolate causal dissipation mechanisms.",
+  "field": "physics",
+  "ai_technology": "Random forest feature importance; extra-trees regression",
+  "organization": "TU Wien",
+  "source_url": "https://doi.org/10.1002/adem.71360",
+  "source_type": "paper",
+  "publication_date": "2026-10-28",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read indexed original publisher Methods on measured endpoints, engineered features, RF importance and model families, plus feature-pattern Results, interpolation evaluation and limitations. Exact publisher front DOI/title/date matched current publisher-deposited Crossref canonical metadata; current relationship fields and indexed publisher notice context checked. Supplement and complete publisher HTML were not read."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The study fabricated and measured 12,060 cantilevers across six wafers with uncoated silicon and four metal coatings. Endpoint-specific filtering retained 10,450–11,429 measurements. RF nonlinear feature importance distinguished features associated with fundamental resonance frequency from those associated with quality factor. Twelve regression families were compared using random within-design splits, with a 70:30 split used for later interpolation analyses.",
+    "unknown": "Surface roughness was assigned per coating material and strongly correlated with surface category; several physical descriptors were nominal rather than device-specific measurements. Random splitting within sampled wafers tests interpolation, not unseen-material or independent-wafer generalization. Feature-importance rankings do not establish causal mechanisms, independently optimized devices or universal material laws.",
+    "ai_role": "RF learned nonlinear associations between engineered geometry/surface descriptors and experimentally measured resonance endpoints, enabling the reported contrast in predictive feature patterns. Extra trees modeled the same measured response space.",
+    "evidence_urls": [
+      "https://onlinelibrary.wiley.com/doi/10.1002/adem.71360"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

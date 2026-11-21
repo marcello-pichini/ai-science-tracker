@@ -1,0 +1,33 @@
+{
+  "id": "2022-05-study-10-1007-s11548-022-02680-6",
+  "title": "Neural phase-label flickering tracks atypical courses in a small surgical-video study",
+  "summary": "Researchers found that unstable phase labels from a pretrained surgical-video network coincided with complicated or atypical courses in fifteen recorded operations. The observed pattern supplied an exploratory alert signal beyond ordinary phase-recognition accuracy. Flicker measures and thresholds were developed on the same videos, so the result does not establish an independently validated complication detector or better clinical documentation.",
+  "field": "biology",
+  "ai_technology": "TeCNO convolutional temporal surgical-phase recognition with post-hoc flicker analysis",
+  "organization": "Technical University of Munich; Klinikum rechts der Isar",
+  "publication_date": "2022-05-28",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "TeCNO was trained on 52 surgical videos and applied to fifteen further cholecystectomy videos, independently phase-annotated by a highly experienced surgeon. Investigators then reviewed unstable label clusters and derived flicker thresholds on those same fifteen cases. The source reports that threshold rules identified five of six apparently divergent courses; one gallbladder perforation produced no substantial flicker increase.",
+    "unknown": "Post-hoc pattern recognition, same-cohort cutoff derivation and a very small event count create substantial optimism and selection risk. Independent blinded complication adjudication and external alert validation were not established. Phase-annotation agreement, report generation and exploratory event association do not demonstrate complete or safer operative documentation, real-time deployment, improved outcomes or reliable detection of specific complication types.",
+    "ai_role": "The neural network generated time-ordered surgical-phase predictions; instability in those learned predictions exposed the represented association with atypical observed operative courses. The reporting interface itself is not treated as a scientific discovery.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9515052/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s11548-022-02680-6",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read original training/inference video separation, expert annotation, learned phase and post-hoc flicker analysis Methods, observed atypical-case Results and discussion limitations. Represented result is the exploratory video-event association; generated reporting software is not an admission basis. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

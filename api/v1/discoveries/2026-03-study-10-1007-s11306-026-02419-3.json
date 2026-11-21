@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-study-10-1007-s11306-026-02419-3",
+  "title": "Learned metabolite selection supports a thrombosis classification panel in coronary-heart-disease patients",
+  "summary": "LASSO and random-forest selection identified a six-metabolite panel associated with Doppler-defined post-traumatic deep-vein thrombosis among patients with coronary heart disease. The source reports evaluation of the resulting classifier in a separate same-center clinical cohort. These are retrospective biomarker associations and diagnostic discrimination; the study does not establish that the metabolites cause thrombosis or that predicted drug candidates are effective.",
+  "field": "medicine",
+  "ai_technology": "LASSO regression and random-forest feature selection; logistic classification",
+  "organization": "Xi’an Jiaotong University; Honghui Hospital; Federal University Dutsin-Ma",
+  "publication_date": "2026-03-28",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source describes 218 discovery participants, comprising 93 thrombosis-plus-coronary-disease cases and 125 coronary-disease controls, and a separate 86-person validation cohort with 39 cases and 47 controls. A 2000-tree RF and LASSO selected six overlapping metabolite features, used in logistic diagnostic models. The original Methods describe clinical Doppler reference assessment, model construction and evaluation in the separate cohort.",
+    "unknown": "Both cohorts came from one hospital and underwent different analytical batches. Differential screening preceded internal train/test modeling; some preprocessing used dataset-wide information, so internal split results are not a wholly untouched pipeline evaluation. The paper describes different internal split ratios for feature-selection and final-model stages. Blood sampling and Doppler confirmation were not simultaneous in every patient, and causal pathway interpretation is not established. Metabolite/protein totals vary across source sections; those totals and simulated therapeutic candidates are not represented as verified findings.",
+    "ai_role": "Learned sparse regression and RF feature ranking selected the six-metabolite subset from measured profiles, enabling construction and separate-cohort evaluation of the represented clinical classification panel.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s11306-026-02419-3"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s11306-026-02419-3",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual clinical recruitment/reference timing, discovery/validation groups, preprocessing/feature-selection/model Methods, six-feature intersection and diagnostic-model Results. Causal sphingolipid and drug-screen claims are excluded from the represented finding. Original canonical online March 28 distinguished from April issue. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-learned-diamond-interstitial-pathway",
+  "title": "Learned interatomic potential identifies a diamond-defect pathway",
+  "summary": "A fine-tuned graph neural potential identified a two-stage formation pathway for a diamond di-interstitial absent from its training configurations. Selected density-functional calculations supported the pathway’s energetics. This is a computational defect-mechanism result, not an experimentally observed formation route.",
+  "field": "materials",
+  "ai_technology": "Fine-tuned CHGNet graph neural interatomic potential",
+  "organization": "University of North Carolina at Chapel Hill",
+  "source_url": "https://arxiv.org/abs/2610.26301v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-19",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Training used 989 structures; the new di-interstitial pathway was generated without further training and checked with selected DFT single-point energies.",
+    "unknown": "Checks support selected configurations, not a fully independently optimized or experimentally verified pathway. Correlated trajectory tests and approximate PBE energetics constrain accuracy. The separately discussed stepwise vacancy mechanism has prior literature precedent.",
+    "ai_role": "The learned potential screens structures and reaction paths beyond its training defect configuration.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.26301v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary v1 front/history and complete physical computational Methods/Results; no later-version backdating."
+  }
+}

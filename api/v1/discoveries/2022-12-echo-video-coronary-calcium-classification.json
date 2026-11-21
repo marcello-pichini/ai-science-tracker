@@ -1,0 +1,34 @@
+{
+  "id": "2022-12-echo-video-coronary-calcium-classification",
+  "title": "Echo videos estimate CT-referenced coronary-calcium categories",
+  "summary": "A video neural network estimated coronary-calcium categories from echocardiograms. In 92 patients from a separate hospital, AUC was 0.75 for zero calcium and 0.85 for high calcium. This retrospective clinical validation does not establish screening benefit or replacement of CT.",
+  "field": "medicine",
+  "ai_technology": "R2+1D convolutional neural network; EchoNet-Dynamic transfer learning",
+  "organization": "University of California, San Francisco; Cedars-Sinai Medical Center; Stanford University",
+  "source_url": "https://doi.org/10.1016/j.echo.2022.12.014",
+  "source_type": "paper",
+  "publication_date": "2022-12-23",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Development used 2,881 echocardiograms from 1,635 patients, paired with CT calcium scores; the reported external set contained 92 patients.",
+    "unknown": "Selected patients had both tests within one year. Internal splitting is described by echocardiograms rather than clearly separated patients; external results are represented separately. Preventive-treatment benefit and population-screening performance were not tested.",
+    "ai_role": "A pretrained spatiotemporal CNN learns echo-video features associated with CT-derived calcium labels.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10164107/",
+      "https://www.sciencedirect.com/science/article/pii/S0894731722006721"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary front DOI/title/PMCID/date, indexed primary clinical/model Methods and Results, fresh primary publication-status metadata. Author PDF returned HTTP202 and was not read."
+  }
+}

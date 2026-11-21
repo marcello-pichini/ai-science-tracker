@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-screening-sodium-oxide-redox-map",
+  "title": "Learned structural screening enables a comparative sodium-cathode redox map",
+  "summary": "Machine-learned interatomic energies screened stacking candidates before first-principles calculations across fifteen sodium layered-oxide chemistries. The resulting comparative map found a largely partner-independent order of redox couples, explaining modeled charge transfer and oxidation sequences. These are conditional computational relationships, not newly measured battery performance.",
+  "field": "materials",
+  "ai_technology": "MACE-OMAT-0 medium machine-learning interatomic potential",
+  "organization": "University of Houston; Purdue University",
+  "source_url": "https://arxiv.org/abs/2610.30591v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "More than 120,000 candidate structures screened before 1,025 first-principles calculations; five single-metal and ten equimolar mixed-metal chemistries. Selected comparisons use previously published measurements.",
+    "unknown": "Restricted ordering library, selected stackings and equimolar mixtures; zero-temperature energetics omit entropy and kinetic effects. Learned preselection may miss alternatives. Moment-derived oxidation states have covalency ambiguity and some experimental disagreements. No cycling-performance or universal composition prediction is established.",
+    "ai_role": "MACE relaxes and ranks stacking alternatives, determining which candidates proceed to first-principles analysis; downstream redox interpretation uses those selected structures.",
+    "evidence_urls": [
+      "https://arxiv.org/pdf/2610.30591v1",
+      "https://arxiv.org/abs/2610.30591"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Actual v1 primary computational selection Methods, comparative redox Results and discussion limitations; v1 October22 already contains represented result, later v2 October26 distinguished."
+  }
+}

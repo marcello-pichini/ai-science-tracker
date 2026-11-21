@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-agent-discovered-core-graph-routing",
+  "title": "Coding agents discover routing with conditional progress guarantees",
+  "summary": "Human-directed coding agents synthesized Core-Graph-Anchored Routing, combining recoverable motion commitments with throughput heuristics. Eight paired simulated runs on a calibrated warehouse layout showed 58.9% higher throughput than the proprietary baseline. The source supplies a conditional safety and finite-progress proof; no physical fleet deployment is established.",
+  "field": "computer science",
+  "ai_technology": "Codex 5.6 Sol and Codex Astra coding agents, with Fable model assistance",
+  "organization": "KNAPP; Massachusetts Institute of Technology; Columbia University; University of British Columbia",
+  "source_url": "https://arxiv.org/abs/2610.25946v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-19",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Six simulated warehouse layouts, eight paired two-hour runs per layout; one calibrated baseline and five uncalibrated baseline comparisons. An additional synthetic layout was evaluated without changing the policy.",
+    "unknown": "Human steering and simulation-specific selection limit transfer. The theorem assumes valid core-graph separation/connectivity/vacancies, finite motions, recoverable initialization, service coverage and correctly implemented runtime checks. Some storage nodes require extra vacancies beyond the simplified theorem. We did not reproduce the proof or execution; no deployment claim.",
+    "ai_role": "Coding agents proposed, implemented and diagnosed the new routing architecture from objectives and constraints, using simulation feedback. Models operate during discovery, not in the compiled planner.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.25946v1",
+      "https://arxiv.org/abs/2610.25946"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Actual v1 formulation, coding-agent Methods, warehouse Results, limitations and Appendix A proof read. Current history lists v1 October 19 and v2 October 20; represented result is already in v1, without an absolute-priority claim."
+  }
+}

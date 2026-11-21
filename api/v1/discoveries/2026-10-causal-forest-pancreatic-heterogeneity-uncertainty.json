@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-causal-forest-pancreatic-heterogeneity-uncertainty",
+  "title": "Causal forests find insufficient evidence for pancreatic treatment subgroups",
+  "summary": "In 130 pancreatic-cancer records, learned survival forests yielded overlapping patient-specific treatment-effect intervals across several priors. The cohort did not identify profiles with greater or smaller inferred radiotherapy benefit. This is model-dependent uncertainty, not evidence that treatment effects are identical.",
+  "field": "medicine",
+  "ai_technology": "Dirichlet-Tree Bayesian Causal Forest; Bayesian additive regression trees",
+  "organization": "TU Dortmund University; Amsterdam UMC; Vrije Universiteit Amsterdam",
+  "source_url": "https://arxiv.org/abs/2610.26728v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-19",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Retrospective TCGA cohort: 130 patients,36 receiving radiotherapy; censored accelerated-failure-time modeling with3,027 covariates and prior-sensitivity comparisons.",
+    "unknown": "Nonrandomized treatment requires untestable no-unmeasured-confounding assumptions. Small sample, censoring and prior sensitivity limit heterogeneity inference. No individual treatment recommendation or proven average benefit; cohort largely overlaps an earlier analysis.",
+    "ai_role": "Learned tree partitions and outcome/treatment ensembles estimate conditional survival contrasts and their uncertainty.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.26728v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary v1 Methods3.1, application5.5 and full cohort/model/result appendixF.5; exact front/history/status."
+  }
+}

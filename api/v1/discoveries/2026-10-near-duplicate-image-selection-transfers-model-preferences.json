@@ -1,0 +1,35 @@
+{
+  "id": "2026-10-near-duplicate-image-selection-transfers-model-preferences",
+  "title": "Near-duplicate image choices transferred preferences between vision-language models",
+  "summary": "Vision-language models used as curators chose among near-duplicate image variants for a student model’s training set. With underlying photos and human-written captions held fixed, students trained on selections from owl-preferring curators gave greater preference to owls in an image-free likelihood test across four tested model variants. The result concerns experimentally induced curator preferences under specified data and training conditions.",
+  "field": "computer science",
+  "ai_technology": "LLaVA-1.5; Qwen2.5-VL; Qwen3-VL; Gemma 4",
+  "organization": "MADI",
+  "source_url": "https://arxiv.org/abs/2610.27943",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.27943v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "Original arXiv version metadata, v1 abstract and controlled optical preference-transfer result and matched source-bank comparison, plus analogous v2 Methods §§2–3 and control appendix.",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Matched student groups saw image variants selected by target or neutral curators. The core comparison holds underlying source photographs and human-written captions fixed; supplementary follow-up timing is not used to establish the October 20 result.",
+    "unknown": "Initial curator preferences were experimentally induced, and transfer varied by model and training conditions. The primary readout measures relative answer likelihood in specified prompts. The result does not establish ordinary production curation transfers broader preferences.",
+    "ai_role": "Pretrained curator models selected one variant per photo using caption likelihood. Student models initialized from the same checkpoint as their curator learned from those image–caption pairs and were tested independently of the source images.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.27943",
+      "https://arxiv.org/html/2610.27943v1",
+      "https://arxiv.org/html/2610.27943v2"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

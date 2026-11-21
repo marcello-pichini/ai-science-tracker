@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-agent-assisted-agreement-consensus",
+  "title": "Agent-assisted consensus design lowers emulated-network latency",
+  "summary": "A human-supervised coding agent designed A-greement. In six emulated network configurations, mean latency improved by 12.2% for write-heavy and 33.3% for read-heavy workloads relative to the fastest baseline. Authors report Lean-checked linearizability of the encoded protocol, not a proof of every implementation behavior.",
+  "field": "computer science",
+  "ai_technology": "GPT-6.1 Sol High in the AI-greement Codex harness",
+  "organization": "École Polytechnique Fédérale de Lausanne",
+  "source_url": "https://arxiv.org/abs/2610.30114v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Implemented key-value workloads on a CPU cluster with emulated network conditions; twelve configurations, with headline averages restricted to six five/nine-replica configurations.",
+    "unknown": "Human experts removed benchmark shortcuts and corrected inherited flaws. Write-heavy p99 latency was worse despite lower mean latency. Model safety does not establish implementation equivalence; no independent proof reproduction. Crash-only, non-restarting replicas, majority availability, partial synchrony and bounded clock drift constrain the guarantees.",
+    "ai_role": "The agent proposed protocol mechanisms, implemented candidates and constructed Lean specifications/proofs; humans supplied criteria and reviewed designs.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.30114v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary model, agent-role, verification and evaluation sections; current v1 metadata. Vulnerability counterexamples excluded from review scope."
+  }
+}

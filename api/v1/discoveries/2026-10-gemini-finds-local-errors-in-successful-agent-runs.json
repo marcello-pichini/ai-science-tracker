@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-gemini-finds-local-errors-in-successful-agent-runs",
+  "title": "Gemini flags local execution errors in successful multi-agent runs",
+  "summary": "In 1,828 benchmark traces from nine multi-agent configurations, a Gemini 3.1 Pro judge flagged local execution errors in 54.3% of successful runs (140 of 258) and 75.2% of failed runs (1,181 of 1,570). In a 45-trace sample, two human auditors both retained 64 of 73 existing flags and found additional errors. The result describes the errors the judge flagged under the study's definition and does not estimate how many errors it missed across the full corpus.",
+  "field": "computer science",
+  "ai_technology": "Gemini 3.1 Pro",
+  "organization": "Hong Kong University of Science and Technology; Adobe Research",
+  "source_url": "https://arxiv.org/abs/2610.25852v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-19",
+  "paper_url": "https://arxiv.org/html/2610.25852v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, abstract, submission history, trace collection and annotation audit, matched replay methods and results",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors annotated 1,828 existing benchmark traces from nine configurations. Two people audited a stratified random sample of 45 traces. Three further language models reannotated a separate sample of 90 traces.",
+    "unknown": "Annotation completeness was uncertain. The human audit found 21 additional errors across 11 traces, including five found by both auditors. The observed percentages do not measure the full prevalence of execution errors or operational reliability.",
+    "ai_role": "A pretrained Gemini 3.1 Pro model assigned candidate local error labels within traces produced by other agent systems.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.25852v1",
+      "https://arxiv.org/html/2610.25852v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

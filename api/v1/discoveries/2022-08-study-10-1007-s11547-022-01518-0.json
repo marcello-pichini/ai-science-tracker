@@ -1,0 +1,33 @@
+{
+  "id": "2022-08-study-10-1007-s11547-022-01518-0",
+  "title": "AI-assisted CT risk score retains mortality discrimination in a later COVID-19 cohort",
+  "summary": "A five-variable model combining demographic data, oxygen saturation and automatically extracted CT measurements distinguished recorded mortality in a later COVID-19 cohort. Developed from 1,125 first-wave patients, AI-SCoRE achieved a reported AUC of 0.808 in 213 second-wave patients. This supports a bounded clinical prognostic validation, without demonstrated treatment benefit or proof that the predictor was locked before validation outcomes accrued.",
+  "field": "biology",
+  "ai_technology": "Pretrained U-Net lung segmentation with quantitative CT feature extraction, logistic risk modeling and CART risk binning",
+  "organization": "Vita-Salute San Raffaele University; IRCCS San Raffaele Scientific Institute",
+  "publication_date": "2022-08-29",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A multicenter first-wave dataset was reduced from 1,575 enrolled patients to 1,125 complete records, including 292 deaths. Repeated train/test splits and repeated cross-validation compared candidate models and selected a five-variable logistic model. Pretrained learned segmentation enabled automated lung measurements. A later, prospectively collected single-center cohort of 213 patients, including 31 deaths, yielded AUC 0.808 with reported 95% confidence interval 0.740–0.877.",
+    "unknown": "Prospective cohort collection does not establish that the model and thresholds were fixed before its outcomes were known. Complete-case selection, different pandemic waves, one-center later validation and historical treatment conditions limit transportability. The paper inconsistently describes 213 versus 214 validation patients and presents four low-risk deaths as 1.8% without a clearly appropriate low-risk denominator; those percentages and post-hoc exclusions are not adopted here. Supplemental acquisition/endpoint details were not independently read. No causal CT mechanism, intervention benefit or current clinical utility is established.",
+    "ai_role": "Pretrained neural segmentation converted patient CT scans into quantitative lung features used with clinical variables in the represented mortality score; learned risk modeling and binning enabled the patient-outcome discrimination analysis.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9423702/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s11547-022-01518-0",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read primary front identity/date, clinical study design, modeling and segmentation Methods, cohort/model/later-wave mortality Results and limitations. Supplemental Methods were not independently read. Later cohort collection was prospective; temporal predictor locking was not established. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

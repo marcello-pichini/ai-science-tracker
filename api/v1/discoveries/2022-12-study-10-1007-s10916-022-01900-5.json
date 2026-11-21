@@ -1,0 +1,33 @@
+{
+  "id": "2022-12-study-10-1007-s10916-022-01900-5",
+  "title": "Retrospective screening study measures the sensitivity–specificity trade-off of learned hypertension detection",
+  "summary": "A random-forest model evaluated on a held-out subset of an Italian blood-pressure screening campaign identified previously unrecognized high blood pressure with a different sensitivity–specificity trade-off from a simple risk-factor protocol. The endpoint was same-visit elevated blood pressure, not future hypertension. Results were modest and did not establish cost savings, better patient outcomes or universal superiority over clinical screening.",
+  "field": "medicine",
+  "ai_technology": "Random forest classification with training-set undersampling",
+  "organization": "University of Urbino Carlo Bo; Istituto Auxologico Italiano; University of Milano-Bicocca; University of Bologna; University of L’Aquila; University of Brescia",
+  "publication_date": "2022-12-29",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "From 37,110 campaign participants in 2015–2019, the analysis retained 20,206 adults without known or treated hypertension, including 4,192 newly detected cases defined by measured blood pressure. Data were randomly split into 14,144 training and 6,062 validation records; hyperparameter search used training cross-validation and resampling was applied to training data. The selected undersampled random forest reported sensitivity 0.818, specificity 0.629 and AUC 0.816.",
+    "unknown": "Volunteer participation, complete-case exclusions, self-reported predictors and same-visit blood-pressure labeling limit interpretation. The clinical risk-factor comparator was applied to the original dataset, while model performance used the validation subset; this is not a paired matched-set intervention comparison. Models/configurations were compared on one internal validation cohort, without independent geographic/temporal replication. Single-visit elevated pressure does not establish future onset or longitudinal clinical diagnosis.",
+    "ai_role": "The learned RF combined questionnaire and demographic predictors to classify measured previously unrecognized elevated blood pressure, enabling a specific retrospective clinical-screening validation and its observed sensitivity–specificity trade-off.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9800348/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s10916-022-01900-5",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual participant/reference definition, exclusions, features, 70:30 split, training-only resampling/tuning, held-out clinical Results and comparator scope. Original article-meta December29 publication date read. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

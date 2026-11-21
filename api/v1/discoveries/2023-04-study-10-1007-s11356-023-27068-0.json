@@ -1,0 +1,33 @@
+{
+  "id": "2023-04-study-10-1007-s11356-023-27068-0",
+  "title": "Learned satellite mapping characterizes mixed floating-debris accumulation along the Tisza",
+  "summary": "A support-vector classifier applied to 61 Sentinel-2 images mapped mixed natural and human-made floating-debris patches along 175 kilometers of the Middle Tisza River. The estimates identified a large persistent accumulation upstream of Kisköre Dam and changes across years and river stages. Moderate test performance, coarse pixels and biased visibility of large patches limit these estimates; they are not a plastic-mass inventory or proof that the dam caused the pattern.",
+  "field": "climate",
+  "ai_technology": "RBF support-vector classification of multispectral satellite pixels",
+  "organization": "University of Szeged; Tanta University",
+  "publication_date": "2023-04-28",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Training/validation used 1,974 labeled satellite pixels with an 80:20 random split; three separate litter-patch regions were used for size/generalization testing against higher-resolution imagery. The selected SVC had F1 approximately 0.62 on that broader test, below its random-pixel validation result. The model was then applied to 61 images from 2015–2021 across a 175-kilometer reach to estimate patch distributions and temporal changes.",
+    "unknown": "Mixed debris includes substantial natural vegetation and wood; artificial litter cannot be separately quantified. Labels emphasized large persistent accumulations, and reference imagery differed in acquisition time. Spatially correlated pixels, tuning on limited data, false positives from vegetation/shadows/structures and missed sub-pixel patches constrain estimates. Three patch regions do not establish broad independent geographic validation. Temporal map patterns are model-derived observations, without independent field verification of every mapped patch or causal attribution to dam operation.",
+    "ai_role": "The learned SVC separated debris-like from non-debris pixel signatures across repeated satellite observations, enabling the represented regional spatial and temporal accumulation analysis beyond the detector leaderboard.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s11356-023-27068-0"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s11356-023-27068-0",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read original labeling/scene acquisition, model/tuning and split Methods, three-patch test performance, SVC application to 61 mapping scenes and regional spatio-temporal Results/limitations. Represented finding is the bounded regional debris map analysis, not a benchmark-only detector claim. Original online April 28 distinguished from May issue. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

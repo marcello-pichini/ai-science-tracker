@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-kmeans-links-t-cell-coverage-and-gut-microbe-shifts",
+  "title": "Immune-reactivity clusters reveal a gut microbiota association in mice",
+  "summary": "Researchers grouped gut bacteria in existing mouse data using a fitted K-means model of measured T-cell reactivity. Among eight reactive clusters, greater estimated immune coverage was associated with smaller relative-abundance gains from week one to week two (R² 0.66). An analogous strain-level comparison gave R² 0.02. The preprint reanalyzed a defined microbial community across five biological replicates, so the result concerns a cluster-level association in that setting.",
+  "field": "biology",
+  "ai_technology": "K-means clustering",
+  "organization": "University of Washington; The Rockefeller University; École Normale Supérieure; CNRS; PSL University; Sorbonne University; Université Paris-Cité; Fred Hutchinson Cancer Center; Yale University",
+  "source_url": "https://arxiv.org/abs/2610.26779",
+  "source_type": "paper",
+  "publication_date": "2026-10-19",
+  "paper_url": "https://arxiv.org/html/2610.26779v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 abstract and front matter, cluster-level and strain-level results, Figure 3 and supplementary clustering methods",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Using existing longitudinal measurements, the study compared estimated immune coverage with changes in transformed relative abundance at cluster and strain levels. Sensitivity checks removed individual clusters or biological replicates.",
+    "unknown": "The result concerns one defined gut community in mice, with five biological replicates. The observational association cannot separate direct immune effects from ecological interactions, and applicability to human microbiota was not assessed. Estimated cluster coverage also uses baseline abundance weights, so shared-data dependence remains.",
+    "ai_role": "K-means learned groups from measured immune-reactivity profiles. Comparing abundance and immune coverage across those groups exposed an association that was weak at the individual-strain level.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.26779",
+      "https://arxiv.org/html/2610.26779v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

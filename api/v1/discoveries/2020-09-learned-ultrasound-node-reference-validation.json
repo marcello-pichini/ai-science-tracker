@@ -1,0 +1,33 @@
+{
+  "id": "2020-09-learned-ultrasound-node-reference-validation",
+  "title": "Learned ultrasound features classify breast sentinel-node involvement",
+  "summary": "Image-pretrained convolutional models were fine-tuned on breast ultrasound images and combined with axillary ultrasound findings. In a retrospective second-hospital test of 395 women, the combined model classified pathology-referenced sentinel-node involvement with an AUC of 0.848. Avoided surgery was hypothetical, not an observed clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "ImageNet-pretrained convolutional neural networks with ultrasound fine-tuning",
+  "organization": "Harbin Medical University",
+  "source_url": "https://doi.org/10.1016/j.ebiom.2020.103018",
+  "source_type": "paper",
+  "publication_date": "2020-09-24",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "937 patients from two hospitals: 542 for development and 395 for testing; 3,049 images. The reference was surgical lymph-node assessment. Radial and anti-radial image-model probabilities were fused.",
+    "unknown": "Retrospective exclusions and ultrasound-visible lesion selection limit transfer. Images were processed individually without explicitly modeling their correlation. The separate sequential non-sentinel-node analysis has conditional denominators and is not represented by the quoted AUC. Supplementary architecture and threshold-selection details were not independently inspected; no reduced surgery or outcome benefit was measured.",
+    "ai_role": "Convolutional networks pre-trained on 1.28 million ImageNet images learned ultrasound features through fine-tuning; their predicted probabilities enabled the node-involvement evaluation.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7519251/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Indexed primary clinical design, convolutional-model operation, reference evaluation and limitations; exact primary DOI/title/PMCID and fresh PubMed electronic date/notice metadata."
+  }
+}

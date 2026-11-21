@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-audio-model-neurons-shift-cognitive-impairment-answers",
+  "title": "Small neuron sets shifted cognitive-impairment answers in three audio models",
+  "summary": "Researchers screened eight audio-language models on recordings and transcripts from existing cognitive-impairment datasets. In three of five models that met the analysis criteria, disabling small neuron sets shifted the models' answers more than disabling matched random sets. Separately, fitted readouts from other neurons recovered similar classification information. The experiments distinguish influence over the model's answer from where class information is represented. They do not establish clinical diagnostic performance.",
+  "field": "computer science",
+  "ai_technology": "Qwen3-Omni-30B; MiniCPM-o-4.5; Kimi-Audio; activation ablation",
+  "organization": "Johns Hopkins University; Imperial College London",
+  "source_url": "https://arxiv.org/abs/2610.32061",
+  "source_type": "paper",
+  "publication_date": "2026-10-23",
+  "paper_url": "https://arxiv.org/html/2610.32061",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "ArXiv v1 front matter and metadata, speaker cohort and eligibility methods, activation interventions, controls, and independent readout comparisons",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study analyzed existing Pitt and PROCESS-2 materials. It separated the samples used to identify neuron sets from those used for evaluation, compared ablation with matched-size, matched-layer and activity-matched controls, and evaluated fitted readouts from selected, random and all available neurons.",
+    "unknown": "The effects apply to selected models, corpora and prompt conditions. The work does not establish clinical use or generalized diagnostic performance, and some exploratory small-readout differences did not survive correction.",
+    "ai_role": "Intervening on learned decoder activations changed output tendencies; trained probes separately measured how widely class information was recoverable.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.32061",
+      "https://arxiv.org/html/2610.32061"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

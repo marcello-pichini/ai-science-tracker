@@ -1,0 +1,35 @@
+{
+  "id": "2026-10-claude-traces-sighted-and-blind-computer-workflows",
+  "title": "AI trace analysis finds shared computer workflows among blind and sighted users",
+  "summary": "Claude Sonnet 5 helped label the procedures behind recorded computer actions in a reanalysis of A11y-CUA. Across 30 tasks performed by eight blind or low-vision users and eight sighted users, the groups were more similar at the level of methods such as searching and editing than at the level of input actions in 23 tasks. Similarity rose by an average of 42.3 points for those 23 tasks. The result comes from a small desktop-task sample and depends on the authors' semantic categories and similarity measures.",
+  "field": "computer science",
+  "ai_technology": "Claude Sonnet 5; Multi-level Action Parsing",
+  "organization": "University of California, Berkeley; University of Michigan",
+  "source_url": "https://arxiv.org/abs/2610.26703v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-19",
+  "paper_url": "https://arxiv.org/html/2610.26703",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, abstract, submission history, annotation methods and evaluation, human comparison results, and predecessor preprint abstract",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The team compared sequence, pattern and effort across layers of computer interaction on existing traces. A separate annotation evaluation compared the pipeline with manual labels on 30 traces from three datasets. Many method-label mismatches reflected differences in where action segments started or ended.",
+    "unknown": "The reported convergence depends on the taxonomy, desktop task mix and small participant sample. Transfer to mobile or other workflows was not established.",
+    "ai_role": "Claude Sonnet 5 semantically labeled and segmented actions into comparable methods and goals, permitting comparisons that go beyond the recorded input events.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.26703v1",
+      "https://arxiv.org/html/2610.26703",
+      "https://arxiv.org/abs/2602.09310"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

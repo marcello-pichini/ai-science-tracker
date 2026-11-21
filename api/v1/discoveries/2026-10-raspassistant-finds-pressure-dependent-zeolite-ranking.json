@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-raspassistant-finds-pressure-dependent-zeolite-ranking",
+  "title": "AI-guided simulations rank two zeolites differently as CO₂ pressure changes",
+  "summary": "RaspAssistant compared three literature-based adsorption models against existing MFI zeolite measurements, selected the one with the lowest aggregate error and used it to simulate CO₂ adsorption in 197 pure-silica structures. JBW had the highest simulated uptake at 1 kPa, while GIS led at 10 and 100 kPa and had the highest calculated working capacity from 1 to 100 kPa. These are model-dependent rankings of known structures. The reference measurements were for MFI.",
+  "field": "materials",
+  "ai_technology": "RaspAssistant; GPT-5.2; GPT-5.4",
+  "organization": "Eindhoven University of Technology",
+  "source_url": "https://arxiv.org/abs/2610.27572",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.27572",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 1
+  },
+  "source_review": {
+    "scope": "Original arXiv v1 abstract and submission metadata; HTML §§1, 2.4, 3–4 and Supplementary Table S5",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Three force-field combinations were compared against existing MFI adsorption isotherms at three temperatures. The selected model was used for 2,955 adsorption calculations on 197 structures. The outcome is relative simulated uptake and working capacity in the specified screening study.",
+    "unknown": "Quantitative transfer from MFI to other frameworks was not established. The screened candidates were not retested experimentally in this case study, and reported descriptors could not identify a pore-scale mechanism. Prior work already considered GIS and JBW for carbon capture.",
+    "ai_role": "The GPT-5.2 supervisor and GPT-based specialists compared candidate force fields with reference measurements, selected the model for the larger screen, coordinated simulations and analyzed pressure-specific rankings.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.27572",
+      "https://arxiv.org/html/2610.27572"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

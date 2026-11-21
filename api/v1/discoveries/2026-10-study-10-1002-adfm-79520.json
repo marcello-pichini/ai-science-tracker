@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-study-10-1002-adfm-79520",
+  "title": "Learned image analysis identifies interstitial zirconium in alloyed ceria films",
+  "summary": "A random-forest classifier trained on simulated electron-microscopy reconstructions helped distinguish isolated from overlapping zirconium interstitials in measured alloyed-ceria films. Author-deposited primary data describe octahedral interstitial zirconium at roughly 10²⁰ cm⁻³ and associated local disorder. The data were publicly released on October 22, before the November 16 journal article. A contribution to unusual electromechanical behavior remains a proposed interpretation.",
+  "field": "physics",
+  "ai_technology": "Random forest classification of multislice electron-ptychography features",
+  "organization": "Massachusetts Institute of Technology; Pennsylvania State University; Rice University",
+  "source_url": "https://datadryad.org/dataset/doi:10.5061/dryad.jsxksn0t1",
+  "source_type": "other",
+  "publication_date": "2026-10-22",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1002/adfm.79520",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read original author-deposited Dryad Methods/README identifying the simulated training configurations, RF classifier, experimental assignment and represented structural findings, plus the exact publisher-deposited article abstract. Canonical article DOI/title and November16 date matched fresh Crossref metadata; October22 is the distinct primary data-release date. Full journal Methods and raw19.64GB dataset were not inspected."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Depth-resolved electron-ptychography reconstructions of ceria and zirconium-alloyed films were compared with simulated known interstitial configurations. A 400-tree random forest used four integrated-potential/depth-width features to classify experimental interstitials as isolated, two- or three-atom overlaps, or weaker signals. The author deposit reports octahedral zirconium interstitials at approximately 10²⁰ cm⁻³ and associated lattice/oxygen-vacancy disorder.",
+    "unknown": "Experimental atom assignments depend on the reconstruction and simulated reference configurations. Classifier validation described in the deposit uses held-out simulations, not independently established atom-by-atom experimental labels. The final article Methods, full raw dataset and all classifier uncertainty figures were not reviewed. A causal explanation of giant electrostriction or a general defect mechanism is not established by this entry.",
+    "ai_role": "The RF learned simulation-derived signatures of isolated and overlapping interstitial atoms and assigned corresponding classes to experimental reconstruction features, enabling the represented interstitial interpretation.",
+    "evidence_urls": [
+      "https://datadryad.org/dataset/doi:10.5061/dryad.jsxksn0t1",
+      "https://doi.org/10.1002/adfm.79520"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2021-03-learned-dental-artifact-dose-comparison",
+  "title": "Learned artifact localization supports a bounded radiotherapy-dose comparison",
+  "summary": "An Inception-V3 classifier localized dental artifacts in CT images. In fifteen separate head-and-neck treatment plans, its outputs guided comparisons of artifact-management choices; calculated target-coverage differences stayed below 0.25 percentage points. This is a retrospective planning result, not measured delivered-dose equivalence or evidence of safer treatment.",
+  "field": "medicine",
+  "ai_technology": "Inception-V3 convolutional neural network",
+  "organization": "University of Texas MD Anderson Cancer Center",
+  "source_url": "https://doi.org/10.1016/j.compmedimag.2021.101907",
+  "source_type": "paper",
+  "publication_date": "2021-03-26",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Classifier development used 549 patients with patient-separated partitions. Fifteen other plans supplied comparisons of calculated dose after model-guided artifact localization.",
+    "unknown": "One institution and planning system; no independent physical dosimetry, clinical outcomes or general treatment recommendation. Dose calculations are comparisons between modeled management scenarios.",
+    "ai_role": "The learned slice classifier identifies locations used to define the compared artifact-management regions.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8180493/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Indexed primary full clinical/model Methods and dosimetric Results/discussion; exact front identity/date and current primary notice metadata."
+  }
+}

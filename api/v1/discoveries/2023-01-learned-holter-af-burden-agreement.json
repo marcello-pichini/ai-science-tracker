@@ -1,0 +1,33 @@
+{
+  "id": "2023-01-learned-holter-af-burden-agreement",
+  "title": "Learned Holter analysis agrees with physician AF-burden estimates",
+  "summary": "A trained ECG-analysis system estimated atrial-fibrillation burden in seven-day recordings. In 47 recordings with intermediate burden, correlation with physician review was 0.998 and agreement bias was −0.006. This validates measurement agreement in a selected cohort, not treatment or outcome benefit.",
+  "field": "medicine",
+  "ai_technology": "Cardiomatics trained ECG rhythm-classification system",
+  "organization": "University Hospital Basel; University of Basel",
+  "source_url": "https://doi.org/10.1016/j.cvdhj.2023.01.003",
+  "source_type": "paper",
+  "publication_date": "2023-01-27",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "100 recordings from82 patients;53 zero/full-burden recordings were separated from the47 intermediate-burden comparisons. Repeated recordings were assessed with a patient-random-intercept sensitivity analysis.",
+    "unknown": "Small sample and few women limit transfer. Paced rhythms were excluded. Training architecture and training/test overlap were not fully documented in the study; no efficiency or clinical-outcome benefit measured.",
+    "ai_role": "Previously trained algorithms classify ECG rhythm and aggregate detected AF duration into burden.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10123500/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary indexed clinical/reference/software/statistical Methods, results and study limitations; exact fresh PubMed date/status."
+  }
+}

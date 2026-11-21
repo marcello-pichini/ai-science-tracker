@@ -1,0 +1,33 @@
+{
+  "id": "2025-06-study-10-1007-s11357-025-01777-5",
+  "title": "Learned lipid panel distinguishes Alzheimer’s cases in a small clinical cohort",
+  "summary": "Supervised lipid analysis and a support-vector classifier identified a ten-lipid panel distinguishing 26 Alzheimer’s patients from 30 controls in one clinical cohort. The source reports strong internal discrimination, but features were screened using the same cohort before a random split. This is an exploratory clinical association, without external validation, demonstrated diagnostic utility or a causal lipid mechanism.",
+  "field": "biology",
+  "ai_technology": "PLS-DA feature ranking and support-vector classification of measured plasma lipid profiles",
+  "organization": "Fudan University; Fourth Military Medical University; Beijing University of Chinese Medicine",
+  "publication_date": "2025-06-27",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The single-center cohort comprised 26 clinically selected Alzheimer’s patients and 30 controls. Supervised PLS-DA importance and statistical filters identified differential lipids; an SVM evaluated a ten-lipid panel with a reported random 70:30 train/test split and cross-validation. The paper reports AUC 0.995 and 98.2% accuracy for the panel, without clearly assigning every headline estimate to an untouched test partition.",
+    "unknown": "Differential-feature screening precedes the described sample split, so the evaluation does not establish a fully isolated feature-selection pipeline. Small, selected clinical groups and one healthcare system limit generalization. No external validation set, prospective clinical use or causal mechanism was demonstrated. Correlations with cognitive scores are observational and do not establish neuroprotection or treatment targets.",
+    "ai_role": "The supervised latent model ranked measured lipid features and the SVM combined selected lipids into the represented disease-discrimination panel, beyond univariate lipid measurement alone.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12972415/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s11357-025-01777-5",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read exact PMC front identity/date, clinical participant/reference criteria, statistical/learned-model Methods, panel-selection and split Results, and stated limitations. Other laboratory procedures and supplements were not independently reviewed. Original online June 27, 2025 distinguished from February 2026 issue. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

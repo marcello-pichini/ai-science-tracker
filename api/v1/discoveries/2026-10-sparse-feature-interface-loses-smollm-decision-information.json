@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-sparse-feature-interface-loses-smollm-decision-information",
+  "title": "A two-feature interface lost information for controlling SmolLM2 responses",
+  "summary": "In a 96-state SmolLM2 evaluation, giving a response controller only two learned sparse features and the governing policy raised the best attainable average loss by 0.1166 and 0.1082 for two separately trained autoencoders, compared with access to the full state. Two human raters scored responses used in the calculation. The reported differences concern a fixed set of scored responses and a composite quality measure.",
+  "field": "computer science",
+  "ai_technology": "SmolLM2; sparse autoencoders",
+  "organization": "University of California, Irvine",
+  "source_url": "https://arxiv.org/abs/2610.27446",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.27446",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original arXiv v1 abstract/metadata and full-text HTML §§1, 4.3–4.4 and 5.1, including human ratings and Table 3",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Researchers computed best achievable scores for predefined strategies on the same outcomes under two inputs: full state, or policy plus two feature indicators. The 96 states were held out by policy area. Both autoencoders showed positive differences while keeping responses and scores fixed.",
+    "unknown": "The calculations concern finite scored tables and are not a tested policy's future error rate. The composite score is not an unsafe-event rate. Two selected features do not establish general information loss across sparse autoencoder interfaces.",
+    "ai_role": "Two separately trained sparse autoencoders encoded SmolLM2 activations. Restricting the controller to two selected binary feature indicators made different response states indistinguishable to it, allowing exact calculation of the information cost under the fixed outcome table.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.27446",
+      "https://arxiv.org/html/2610.27446"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

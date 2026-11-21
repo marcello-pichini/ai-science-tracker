@@ -1,0 +1,33 @@
+{
+  "id": "2024-12-gpt4o-osteoarthritis-questionnaire-validation",
+  "title": "GPT-4o recognizes osteoarthritis from patient questionnaires in a selected cohort",
+  "summary": "Researchers compared model-generated diagnoses from patient questionnaires with blinded clinician assessments. The primary results table records 85 correct GPT-4o diagnoses among 93 selected osteoarthritis cases. The study excluded non-osteoarthritis diagnoses, so it does not establish specificity, general triage accuracy or clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "GPT-4o questionnaire-based diagnostic generation",
+  "organization": "University of Regensburg; Asklepios Klinikum Bad Abbach",
+  "source_url": "https://doi.org/10.1016/j.csbj.2024.12.013",
+  "source_type": "paper",
+  "publication_date": "2024-12-26",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "115 questionnaires collected prospectively;93 clinician-confirmed osteoarthritis cases analyzed after exclusions. Clinicians were blinded to questionnaires; deidentified responses were subsequently submitted to pretrained models.",
+    "unknown": "Source headline sensitivity 92.3% conflicts with Table 2 count85/93 (91.4%); represented result follows the explicit count. Negative diagnoses were excluded and one entirely symptom-incomplete questionnaire removed. GPT-4o helped design the questionnaire; prompts/repeated-generation details in supplements were uninspected. No locked deployment or outcome benefit.",
+    "ai_role": "GPT-4o inferred diagnoses from patient-reported symptoms and history; its output was compared with independent clinician assessment.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11754967/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Actual primary cohort/model Methods, Results/Table2 and limitations in supported Chrome; source-front onlineDecember26,2024 versus2025collection distinguished. Internal headline/count discrepancy retained."
+  }
+}

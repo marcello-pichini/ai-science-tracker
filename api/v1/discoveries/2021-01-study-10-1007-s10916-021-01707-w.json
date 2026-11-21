@@ -1,0 +1,34 @@
+{
+  "id": "2021-01-study-10-1007-s10916-021-01707-w",
+  "title": "Learned CT block scores track reported opacity burden in a small COVID-19 cohort",
+  "summary": "In 30 COVID-19 patients from an Italian CT cohort, a learned block-analysis score correlated with source-reported ground-glass-opacity values. The paper describes generating each patient’s score using a model trained without that patient. This is a small retrospective imaging association, not evidence that the score predicts clinical deterioration or measures physiological disease severity.",
+  "field": "medicine",
+  "ai_technology": "Random forest and related learned CT block classifiers",
+  "organization": "Bennett University; University of Eastern Piedmont; AtheroPoint; University of Cagliari",
+  "publication_date": "2021-01-26",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source cohort contained 30 COVID-19 patients and 30 controls, contributing 705 and 990 CT slices respectively. Segmented lungs were divided into twelve spatial blocks and learned classifiers contributed to block-level scoring. For the specific patient-level association, Methods/Results state that all slices of each patient were scored by a system trained on all other patients. Appendix Table 12 lists 30 COVID-19 patients with the derived score and GGO values; the source reports correlation approximately 0.9145.",
+    "unknown": "The score and GGO comparator describe the same images, rather than independent clinical outcomes or a causal mechanism. Small single-center retrospective data, sex imbalance and incomplete score-reference documentation limit interpretation. Image-level classification leaderboard metrics are omitted because their cross-validation description does not establish patient-disjoint partitions. The severity label used by the authors is not treated as a validated measure of prognosis, physiology or treatment need.",
+    "ai_role": "Learned classifiers distinguish CT-block feature distributions and contribute to a patient-level block score, enabling the represented comparison with reported CT-opacity values.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s10916-021-01707-w",
+      "https://link.springer.com/article/10.1007/s10916-021-01707-w/tables/12"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s10916-021-01707-w",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual cohort/reference and preprocessing Methods, learned classification/block-score workflow, explicit leave-patient-out score evaluation paragraph68 and full original Appendix Table12. Kept this patient-level opacity association separate from image-fold classification benchmarks. Original publisher January26 date read. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

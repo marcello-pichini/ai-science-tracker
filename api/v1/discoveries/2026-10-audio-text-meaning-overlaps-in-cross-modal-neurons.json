@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-audio-text-meaning-overlaps-in-cross-modal-neurons",
+  "title": "Audio and text share neurons that influence recognition in three models",
+  "summary": "In three audio-language models, researchers found neurons associated with comparable audio and text concepts. Adjusting their activity using text-derived information changed audio recognition more than matched random neurons in 42 of 72 model–attribute combinations. Disabling the identified neurons affected the target task before the other tested tasks in 10 of 12 model–task combinations. Effects differed across models and covered a limited set of acoustic attributes.",
+  "field": "computer science",
+  "ai_technology": "Qwen2.5-Omni; DeSTA2.5-Audio; Audio Flamingo 3",
+  "organization": "University of Edinburgh; National Taiwan University",
+  "source_url": "https://arxiv.org/abs/2610.28189",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.28189",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "Original arXiv v1 abstract and submission history, HTML §§2–4.4 and robustness notes",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors evaluated four categories of acoustic recognition across three models, selected units on validation data and tested deactivation on separate recognition examples. They compared with random sets, unrelated recognition tasks and sets responsive to audio alone.",
+    "unknown": "This result is scoped to the chosen models, labels and intervention definitions. Steering was weaker in DeSTA2.5-Audio, and the result does not establish a universal audio–text or human perceptual mechanism.",
+    "ai_role": "The researchers located overlapping units in learned feed-forward activations, then altered or removed those activations to test effects on audio recognition.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.28189",
+      "https://arxiv.org/html/2610.28189"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

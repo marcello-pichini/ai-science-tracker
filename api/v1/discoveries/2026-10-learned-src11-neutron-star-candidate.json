@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-learned-src11-neutron-star-candidate",
+  "title": "Forest classification supports a newly resolved neutron-star candidate",
+  "summary": "MUWCLASS assigned the newly resolved X-ray source CXO J170144.5–421415 a neutron-star class probability of 66%. This is an object-specific candidate interpretation, not confirmation of its identity or association with HESS J1702–420A. Chandra imaging resolved the object conventionally.",
+  "field": "physics",
+  "ai_technology": "MUWCLASS random-forest multiwavelength classification",
+  "organization": "IRAP; George Washington University; NASA Goddard Space Flight Center",
+  "source_url": "https://arxiv.org/abs/2610.30378v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Forest trained on approximately 3,000 literature-classed sources, applied to 18 field sources. Src11 probability 66%, confidence statistic 1.20.",
+    "unknown": "Only 17 Src11 photons and poorly constrained spectrum; identity and PeVatron association remain unconfirmed. The classifier mislabels another likely cataclysmic variable because relevant variability/spectral-line features are omitted. Earlier PWN interpretation concerned the unresolved region.",
+    "ai_role": "The forest combines X-ray and multiwavelength features to provide a new object-specific candidate class, separate from conventional imaging.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.30378v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary Sections2.2 and3.2: newly resolved identity versus earlier unresolved interpretation, classifier Methods and result; current v1 date."
+  }
+}

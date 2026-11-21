@@ -1,0 +1,35 @@
+{
+  "id": "2026-10-transformer-learns-heavy-ball-without-heavy-ball-examples",
+  "title": "A trained transformer approximated Heavy-Ball updates without examples of them",
+  "summary": "A theoretical and numerical study found that a simplified transformer for linear regression can shift from imitating gradient descent to approximating the known Heavy-Ball method. It first learned gradient-descent trajectories and was then trained against the true regression weights, without Heavy-Ball trajectories as supervision. The proof concerns later steps under specific initialization, parameter and high-dimensional data assumptions. The result appeared in arXiv v1 on October 22.",
+  "field": "computer science",
+  "ai_technology": "Linear-attention transformer; trajectory-level supervision",
+  "organization": "The University of Hong Kong",
+  "source_url": "https://arxiv.org/abs/2610.31089",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.31089v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv version history, v1 introduction and v2 model, theorem, assumptions and experimental comparisons",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The analysis proves approximate Heavy-Ball behavior in later steps of a trained regression model under stated assumptions. Numerical experiments compare the transformer trained in two stages with gradient descent, Heavy-Ball and single-stage transformer training.",
+    "unknown": "The result concerns a simplified transformer and controlled linear regression. It does not establish the same training dynamics for frontier language models or arbitrary optimization problems.",
+    "ai_role": "A transformer trained in two stages produces the trajectory being characterized; no examples from the Heavy-Ball update rule were supplied as supervision.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.31089",
+      "https://arxiv.org/html/2610.31089v1",
+      "https://arxiv.org/html/2610.31089"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}
