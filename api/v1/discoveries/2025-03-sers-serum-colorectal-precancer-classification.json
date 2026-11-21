@@ -1,0 +1,34 @@
+{
+  "id": "2025-03-sers-serum-colorectal-precancer-classification",
+  "title": "Supervised spectral analysis distinguishes colorectal precancerous lesions in a 100-person serum study",
+  "summary": "A serum spectroscopy study analyzed 30 healthy controls,30 people with colorectal precancerous lesions and 40 with colorectal cancer. Supervised class-discrimination optimization after principal-component analysis distinguished these groups in five-fold cross-validation; the reported precancer-versus-other-groups AUC was 0.96. These are internal classification results from 100 participants, without an independent screening cohort or demonstrated clinical benefit. Spectral differences do not establish a molecular disease mechanism.",
+  "field": "medicine",
+  "ai_technology": "Optimal Class Discrimination and Compactness Optimization; support vector machine; k-nearest neighbors",
+  "organization": "Yangzhou University; Yangzhou Polytechnic Institute",
+  "source_url": "https://doi.org/10.1002/btm2.70019",
+  "source_type": "paper",
+  "publication_date": "2025-03-28",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Five-fold cross-validation of spectra from 100 participants across three diagnostic groups; source reports precancer-versus-other-groups AUC 0.96. Multiple measurements per sample were averaged before analysis.",
+    "unknown": "No external patient cohort, prospective screening validation or treatment-benefit study. Methods report averaging five spatial spectra per sample and five-fold cross-validation, but do not explicitly establish patient-grouped fold assignment or fold-local PCA and component selection; reported internal spectral classification is not established patient-level screening performance. Biochemical interpretations remain associations.",
+    "ai_role": "After PCA preprocessing, supervised Optimal Class Discrimination and Compactness Optimization learned separation of diagnostic classes from labeled spectra. SVM and nearest-neighbor classifiers provided comparison models; PCA alone is not the enabling AI contribution.",
+    "evidence_urls": [
+      "https://doi.org/10.1002/btm2.70019",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12478330/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary article-front DOI/title/PMCID and date; full relevant model Methods, Results and limitations; fresh PubMed publication types and correction/retraction relationship metadata."
+  }
+}

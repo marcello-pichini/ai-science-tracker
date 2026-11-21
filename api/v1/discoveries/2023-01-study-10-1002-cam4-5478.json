@@ -1,0 +1,33 @@
+{
+  "id": "2023-01-study-10-1002-cam4-5478",
+  "title": "OMRS pathology features associate with oral-leukoplakia progression",
+  "summary": "A modified Inception-v3 model learned normal and malignant oral-epithelium features, then scored leukoplakia slides from 62 patients without concurrent cancer. The high-score group had a reported adjusted hazard ratio of 4.52 for progression to oral cancer. This was a small retrospective prognostic analysis; the classifier used a separate 38-biopsy development set, and broader clinical utility and treatment benefit remain untested.",
+  "field": "medicine",
+  "ai_technology": "OMRS; Inception-v3",
+  "organization": "University of Texas Southwestern Medical Center; University of Texas MD Anderson Cancer Center",
+  "source_url": "https://doi.org/10.1002/cam4.5478",
+  "source_type": "paper",
+  "publication_date": "2023-01-31",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full paper relevant model Methods, study Results and limitations; exact primary front-matter identity and Europe PMC metadata checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Slide-separated development and 62-patient retrospective progression analysis; adjusted hazard ratio 4.52.",
+    "unknown": "Small training/cohort sizes, external transportability and intervention benefits remain unresolved.",
+    "ai_role": "Modified Inception-v3 classifies oral histology patches, quantifies tumor-like epithelium in leukoplakia and links scores to subsequent clinical progression.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10067069/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-02-random-forest-kinase-inhibitor-antimalarial-targets",
+  "title": "Random-forest screening helps identify kinase inhibitors with activity against two malaria targets",
+  "summary": "A random-forest classifier combined with molecular docking helped select five known kinase inhibitors for experimental evaluation. Afatinib and pexidartinib inhibited both synthetic hemozoin formation and the malaria parasite protein kinase G in vitro; their kinase IC 50 values were about 2.6 micromolar, and hemozoin-formation inhibition required much higher concentrations. The strongest compounds in the overall study came from a separate selection route based on chemical-space mapping and docking. These results identify laboratory starting points, not an effective malaria treatment.",
+  "field": "medicine",
+  "ai_technology": "Random-forest classifier",
+  "organization": "Stellenbosch University; University of Cape Town; GenAIRx",
+  "source_url": "https://doi.org/10.1002/cmdc.202500756",
+  "source_type": "paper",
+  "publication_date": "2026-02-15",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Five purchased compounds belonged to the random-forest-plus-docking selection route, including one shared with the other route. Afatinib and pexidartinib each had protein-kinase-G IC 50 values around 2.6 micromolar and synthetic-hemozoin-formation IC 50 values of 230 and 140 micromolar, respectively.",
+    "unknown": "These are in vitro enzyme and crystallization assays, not clinical efficacy or safety. The most promising overall compounds were selected without the random forest. The small test set does not establish one selection route as superior. PMC and Crossref record online publication on 15 February 2026 and an earlier issue date of 12 February; this entry uses the online date.",
+    "ai_role": "A random forest trained on 379 literature compounds and 1190 molecular fingerprint features predicted protein-kinase-G activity. Its probability threshold, applicability-domain filter and docking scores selected five purchased compounds; PCA enrichment and docking formed a separate route.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12907745/",
+      "https://doi.org/10.1002/cmdc.202500756"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full-text Methods, compound-level selection table and assays, exact article-front DOI/title/PMCID, deposited date metadata and current PubMed publication-status metadata."
+  },
+  "paper_url": ""
+}

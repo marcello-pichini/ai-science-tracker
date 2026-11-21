@@ -1,0 +1,33 @@
+{
+  "id": "2020-02-study-10-1002-hbm-24949",
+  "title": "LSTM microstate representations distinguish stress-associated EEG dynamics",
+  "summary": "LSTM autoencoder representations captured EEG microstate sequences at several timescales and distinguished baseline from post-stress recordings where conventional summary measures did not. A coupled classifier reported 67–73% accuracy across sequence lengths. The analysis used existing experimental datasets, including recordings in 34 men; it does not establish a general stress diagnostic or a causal interpretation of the learned temporal patterns.",
+  "field": "medicine",
+  "ai_technology": "LSTM autoencoder; recurrent neural network",
+  "organization": "Indian Institute of Technology Ropar",
+  "source_url": "https://doi.org/10.1002/hbm.24949",
+  "source_type": "paper",
+  "publication_date": "2020-02-24",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full paper relevant model Methods, study Results and limitations; exact primary front-matter identity and Europe PMC metadata checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Existing baseline/post-stress EEG analyses, reconstruction comparisons and coupled classification.",
+    "unknown": "Generalizability, subject-independent clinical stress diagnosis and causal interpretation remain unestablished.",
+    "ai_role": "LSTM encoder-decoder learns temporal microstate representations; a jointly trained dense classifier distinguishes stress-associated recordings.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7267981/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

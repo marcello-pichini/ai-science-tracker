@@ -1,0 +1,33 @@
+{
+  "id": "2020-12-study-10-1007-s00259-020-05140-y",
+  "title": "PET and MRI learning classifies prostate lesion risk",
+  "summary": "An ensemble of random forests combined PSMA PET and MRI features to classify 121 lesions from 52 surgical prostate-cancer patients as lower or higher risk against whole-mount pathology. Patient-separated repeated internal validation reported AUC 0.86. Additional models explored recurrence and overall risk in smaller subsets. This pilot does not establish biopsy replacement, external performance or clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Random-forest ensemble",
+  "organization": "Medical University of Vienna; Ludwig Boltzmann Institute Applied Diagnostics",
+  "source_url": "https://doi.org/10.1007/s00259-020-05140-y",
+  "source_type": "paper",
+  "publication_date": "2020-12-19",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Whole-mount pathology reference and repeated Monte Carlo validation that kept all lesions from each patient in one partition.",
+    "unknown": "External validation and clinical utility remain unestablished; this small surgical cohort, global redundancy filtering and histology-informed lesion localization constrain generalization.",
+    "ai_role": "An ensemble of nine random forests combines imaging features to classify pathology-defined lesion risk, with patient-level partitioning.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8113201/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

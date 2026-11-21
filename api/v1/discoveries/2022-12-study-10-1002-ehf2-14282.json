@@ -1,0 +1,33 @@
+{
+  "id": "2022-12-study-10-1002-ehf2-14282",
+  "title": "Deep-learning chest-radiograph pressure estimates associate with heart-failure prognosis",
+  "summary": "A post hoc analysis of 534 acute-heart-failure admissions applied a previously developed VGG16-based model to estimate pulmonary arterial wedge pressure from chest radiographs. Higher discharge estimates and smaller decreases during hospitalization were associated with death or heart-failure readmission after adjustment; 223 patients reached the composite endpoint. This single-centre observational analysis does not establish a causal treatment target or improved care. Imaging-view differences and exclusion of in-hospital deaths limit interpretation.",
+  "field": "medicine",
+  "ai_technology": "VGG16-based regression convolutional neural network",
+  "organization": "Nihon University School of Medicine",
+  "source_url": "https://doi.org/10.1002/ehf2.14282",
+  "source_type": "paper",
+  "publication_date": "2022-12-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full article Methods, Results and limitations plus Europe PMC bibliographic metadata; PMC full article."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective admission/discharge imaging and adjusted outcome association over median 289 days follow-up.",
+    "unknown": "Prospective clinical utility, multicentre transportability and equivalence across radiograph views remain unestablished.",
+    "ai_role": "Previously trained VGG16 regression CNN with global-average-pooling output estimates pressure; model trained on 748 and tested on 188 data in earlier study. Present post hoc 534-patient registry links estimated pressure to outcomes; original prospective registry collection does not establish frozen-model prospective validation.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10053257/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

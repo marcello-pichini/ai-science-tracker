@@ -1,0 +1,34 @@
+{
+  "id": "2024-06-speech-language-model-mci-progression",
+  "title": "Speech language features predict six-year Alzheimer dementia progression in a small cohort",
+  "summary": "In 166 Framingham Heart Study participants with mild cognitive impairment, pretrained language embeddings of recorded cognitive-test transcripts supported retrospective prediction of progression to Alzheimer dementia within six years. Nested, participant-grouped cross-validation gave the text-only model an AUC of 0.778 and accuracy of 78.2%. The predominantly White, older cohort and lack of prospective external validation limit generalization; this is not a demonstrated screening or treatment benefit.",
+  "field": "medicine",
+  "ai_technology": "Universal Sentence Encoder; ensemble logistic regression",
+  "organization": "Boston University",
+  "source_url": "https://doi.org/10.1002/alz.13886",
+  "source_type": "paper",
+  "publication_date": "2024-06-25",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Nested, stratified group cross-validation repeated three times on 166 participants:90 progressed and 76 remained MCI. Text-only AUC 0.778 compared with 0.713 for traditional neuropsychological test scores in this study.",
+    "unknown": "No prospective clinical deployment, independent external cohort or patient-benefit trial. Outcomes include Alzheimer dementia with stroke or mixed vascular disease; results are not a pathology-specific diagnosis.",
+    "ai_role": "Universal Sentence Encoder generated 512-dimensional transcript and subtest embeddings; feature selection and logistic-regression ensembles linked these semantic representations to subsequent dementia classifications.",
+    "evidence_urls": [
+      "https://doi.org/10.1002/alz.13886",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11350035/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary article-front DOI/title/PMCID and date; full relevant model Methods, Results and limitations; fresh PubMed publication types and correction/retraction relationship metadata."
+  }
+}

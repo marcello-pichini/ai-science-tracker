@@ -1,0 +1,33 @@
+{
+  "id": "2023-10-study-10-1007-s00216-023-04997-w",
+  "title": "Neural tissue mapping resolves pancreatic cancer spectral differences",
+  "summary": "Convolutional networks assigned Raman spectra to cellular regions in pancreatic tumor tissue from 15 patients. Region-specific analysis suggested different nuclear protein structures in conventional ductal cancer and intraductal papillary mucinous carcinoma, helping separate signals obscured in whole-tissue measurements. These are exploratory spectroscopic interpretations, without direct confirmation of particular protein identities, causal mechanisms or patient-level diagnostic accuracy.",
+  "field": "medicine",
+  "ai_technology": "One-dimensional convolutional neural network; shallow neural network",
+  "organization": "Jagiellonian University; University Hospital Krakow; AGH University of Krakow",
+  "source_url": "https://doi.org/10.1007/s00216-023-04997-w",
+  "source_type": "paper",
+  "publication_date": "2023-10-31",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "New tissue Raman measurements from 16 slides representing 15 patients, learned subcellular spectrum assignment, and region-specific spectral comparisons.",
+    "unknown": "Independent biological confirmation and clinical diagnostic utility remain unestablished; internal spectrum-level splitting and augmentation do not establish independent patient-level performance.",
+    "ai_role": "A CNN assigns spectra to tumor-type-specific nuclear and cytoplasmic regions, enabling subsequent region-specific interpretation of measured Raman bands.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10684650/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

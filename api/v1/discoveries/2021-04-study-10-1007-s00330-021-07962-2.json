@@ -1,0 +1,33 @@
+{
+  "id": "2021-04-study-10-1007-s00330-021-07962-2",
+  "title": "CT learning detects gastric cancer downstaging after chemotherapy",
+  "summary": "Linear support-vector models analyzed baseline and restaging CT in a retrospective 292-patient gastric-cancer study. Models were evaluated in two separate testing cohorts against downstaging defined by baseline clinical and postoperative pathological stages; restaging AUCs were 0.922 and 0.850. The study did not demonstrate improved surgical decisions, and selected images, small same-centre tests and inconsistent abstract cohort labels limit interpretation.",
+  "field": "medicine",
+  "ai_technology": "Linear support-vector classifier; radiomic feature selection",
+  "organization": "Nanjing University; Jinling Hospital; Deepwise",
+  "source_url": "https://doi.org/10.1007/s00330-021-07962-2",
+  "source_type": "paper",
+  "publication_date": "2021-04-28",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Model development with nested cross-validation, followed by two held-out same-centre clinical testing cohorts and a postoperative pathology-based stage reference.",
+    "unknown": "Prospective decision benefit and multicentre generalization remain unestablished; clinical baseline staging can be inaccurate, and low-quality images were excluded.",
+    "ai_role": "Linear support-vector classifiers learn relationships between selected CT texture features and recorded post-chemotherapy downstaging.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8523390/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

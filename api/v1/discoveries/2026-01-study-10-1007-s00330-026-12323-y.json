@@ -1,0 +1,33 @@
+{
+  "id": "2026-01-study-10-1007-s00330-026-12323-y",
+  "title": "Ultrasound neural maps identify pathology-defined prostate cancer tissue",
+  "summary": "A three-dimensional CNN and multilayer perceptron combined quantitative ultrasound features to map clinically significant prostate cancer. Development involved 250 patients, followed by 77 later-enrolled patients; reported voxel-level AUC was 0.884 in that later group. Pathology registration and a surgical-enriched cohort limit interpretation. This does not establish patient-level diagnostic accuracy, biopsy benefit or equivalence to MRI-guided care.",
+  "field": "medicine",
+  "ai_technology": "Three-dimensional convolutional neural network; multilayer perceptron",
+  "organization": "Eindhoven University of Technology; Amsterdam UMC; Leiden University Medical Center; Angiogenesis Analytics",
+  "source_url": "https://doi.org/10.1007/s00330-026-12323-y",
+  "source_type": "paper",
+  "publication_date": "2026-01-30",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-partitioned development and temporally separate same-centre testing, using reconstructed prostatectomy pathology or negative MRI/biopsy references.",
+    "unknown": "Lesion/patient-level clinical performance and treatment benefit remain unestablished; entire-dataset feature standardization and registration uncertainty limit a strictly untouched-test interpretation.",
+    "ai_role": "Three CNN feature branches learn ultrasound patterns and an MLP combines them into voxel-level cancer probability maps.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13212788/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

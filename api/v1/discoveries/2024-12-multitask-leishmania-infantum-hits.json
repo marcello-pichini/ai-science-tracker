@@ -1,0 +1,37 @@
+{
+  "id": "2024-12-multitask-leishmania-infantum-hits",
+  "title": "Multitask neural screening identifies compounds active against Leishmania infantum in vitro",
+  "summary": "Multitask neural classification and regression screened approximately 1.3 million purchasable compounds for Leishmania infantum activity. After physicochemical and human structural filtering, 20 selected compounds were tested; nine inhibited promastigotes in vitro. Three had more favorable source-reported selectivity, with LC-15 showing an IC50 of 1.05 µM and selectivity index 30.9. LC-15 was already disclosed in a 2023 antitrypanosomal study; this entry represents the Leishmania result, not a new chemical entity. Intracellular parasite activity, animal efficacy and a proposed proteasome mechanism were not established.",
+  "field": "biology",
+  "ai_technology": "Multitask deep neural network classification and regression; molecular fingerprints",
+  "organization": "Federal University of Goiás; University of Brasília",
+  "source_url": "https://doi.org/10.1021/acsomega.4c07994",
+  "source_type": "paper",
+  "publication_date": "2024-12-16",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Twenty model-prioritized, subsequently filtered compounds were evaluated against Leishmania infantum promastigotes. Nine were active; cytotoxicity and selectivity measurements were reported for selected active hits. Three had source-described selectivity indices above 9.",
+    "unknown": "No intracellular-amastigote efficacy, animal therapeutic efficacy or clinical benefit is established. Six active compounds had less favorable selectivity. LC-15 is the same chemical entity disclosed in the 2023 antitrypanosomal study, whose supplement also reports the same MRC-5 cytotoxicity value; independently new cytotoxicity evidence is not inferred. Its proteasome mechanism remains a hypothesis, and the observed hit rate is not a controlled comparison with conventional screening.",
+    "ai_role": "Multitask DNN classifiers and regressors transferred information across three Leishmania species to prioritize untested molecules; physicochemical filters, similarity analysis and human inspection then selected 20 for experiments.",
+    "evidence_urls": [
+      "https://doi.org/10.1021/acsomega.4c07994",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11696749/",
+      "https://doi.org/10.4155/fmc-2023-0074",
+      "https://doi.org/10.25402/FMC.24131556.v1",
+      "https://doi.org/10.1021/acsomega.4c07994.s001"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Corrected exact primary DOI/title/PMCID and electronic date; full computational prioritization and result-specific activity/selectivity paragraphs; current PubMed publication-status relationships. Earlier metadata lookup had retrieved a different paper and is not used as evidence. Compared the original 2023 and 2024 author supplements by exact LC-15 chemical name, structure, supplier identifier and NMR evidence; the represented novelty is the Leishmania assay, not chemical-entity novelty."
+  }
+}

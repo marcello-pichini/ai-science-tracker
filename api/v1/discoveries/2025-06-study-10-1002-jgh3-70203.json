@@ -1,0 +1,33 @@
+{
+  "id": "2025-06-study-10-1002-jgh3-70203",
+  "title": "CatBoost evaluates bleeding risk after gastric endoscopic resection",
+  "summary": "A multicentre retrospective study evaluated post-resection bleeding in 1,084 early-gastric-cancer patients, including 63 bleeding events. CatBoost achieved an internal-test AUC of 0.80, compared with 0.71 for a logistic score. A more detailed early-versus-late bleeding model performed less well. External validation and benefits from model-guided prophylaxis remain untested.",
+  "field": "medicine",
+  "ai_technology": "CatBoost",
+  "organization": "Niigata University",
+  "source_url": "https://doi.org/10.1002/jgh3.70203",
+  "source_type": "paper",
+  "publication_date": "2025-06-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full paper relevant model Methods, study Results and limitations; exact primary front-matter identity and Europe PMC metadata checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-data 70:30 internal split with a logistic-score comparator for bleeding within 28 days.",
+    "unknown": "External performance, late-bleeding discrimination and preventive clinical benefit remain unestablished.",
+    "ai_role": "Categorical boosting learns nonlinear risk from pre/peri-treatment variables and ranks candidate predictors.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12206847/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2020-08-eqtransformer-tottori-earthquake-catalog",
+  "title": "EQTransformer expands the earthquake catalog for the 2000 Tottori sequence",
+  "summary": "An attention-based neural detector and phase picker reanalyzed five weeks of seismic recordings from the 2000 western Tottori earthquake sequence. Using 18 stations, the study detected and located 21,092 events, compared with 8521 in an earlier manually picked catalog using 57 stations. The inferred catalog included smaller events and sparse seismicity beneath the eastern flank of Mount Daisen. These are retrospective source-reported detections and locations, not individually independently confirmed new earthquakes or a forecasting result.",
+  "field": "physics",
+  "ai_technology": "EQTransformer; hierarchical attention; convolutional and recurrent neural networks",
+  "organization": "Stanford University; Georgia Institute of Technology",
+  "source_url": "https://doi.org/10.1038/s41467-020-17591-w",
+  "source_type": "paper",
+  "publication_date": "2020-08-07",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A model trained without Japanese waveform data was applied to 18 Japanese stations. Phase association and relocation yielded 21,092 events. Approximately 42,000 common phase picks were compared with human picks; about 15%of associated events were not retained in the final catalog.",
+    "unknown": "Newly inferred events were not each independently confirmed. Simple phase association and station coverage limit catalog completeness and error assessment; no earthquake forecast or new physical mechanism is claimed.",
+    "ai_role": "A multitask attentive neural network detected earthquake waveforms and picked P/S arrivals; conventional association and relocation then converted those learned measurements into the regional event catalog.",
+    "evidence_urls": [
+      "https://doi.org/10.1038/s41467-020-17591-w",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7415159/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full model Methods and regional application Results; exact current PubMed DOI/title and publisher date/status. The qualifying result is the Tottori field catalog, beyond generic detector benchmarking."
+  }
+}

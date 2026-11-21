@@ -1,0 +1,33 @@
+{
+  "id": "2026-04-study-10-1002-eat-70107",
+  "title": "Wearable-data models evaluate near-term binge-eating risk",
+  "summary": "In a four-week observational study of 30 adults with recurrent binge eating, random-forest models used smartwatch physiology or self-reported affect to evaluate episode risk. The first three weeks trained models and the final week tested them within the same participants. Sensor-only AUROC was 0.78, with sensitivity 0.92 but specificity 0.35; macro-averaged accuracy did not significantly exceed self-report. No model met both prespecified sensitivity and specificity thresholds, and benefits from adaptive intervention remain untested.",
+  "field": "medicine",
+  "ai_technology": "Random forest; elastic-net feature selection",
+  "organization": "Dartmouth College",
+  "source_url": "https://doi.org/10.1002/eat.70107",
+  "source_type": "paper",
+  "publication_date": "2026-04-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full article Methods, Results and limitations plus Europe PMC bibliographic metadata; PMC full article."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Within-participant temporal hold-out comparison of sensor, self-report and combined models.",
+    "unknown": "New-participant performance, deployable specificity and benefits of model-triggered therapy remain unestablished.",
+    "ai_role": "Elastic-net selects sensor features on training data; RF combines person/group models with tuning inside first-three-week data and tests on last week. Chronological retrospective evaluation is not prospective model-guided intervention. Source discussion has a sensitivity/specificity wording error; numerical Results and tables support 0.92 sensitivity and 0.35 specificity.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13132026/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

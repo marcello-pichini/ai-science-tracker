@@ -1,0 +1,33 @@
+{
+  "id": "2021-11-study-10-1002-ima-22679",
+  "title": "Random forests classify CT-derived COVID severity in a retrospective cohort",
+  "summary": "A random forest used patient-level aggregates of CT texture features to distinguish four COVID severity groups in 956 patients from the MosMed dataset. Reported overall accuracy was 90.95%. Eight-fold validation was selected after comparing fold configurations, which can make performance optimistic. This retrospective severity-classification study does not establish prospective triage safety or clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Random forest",
+  "organization": "Shahid Beheshti University of Medical Sciences",
+  "source_url": "https://doi.org/10.1002/ima.22679",
+  "source_type": "paper",
+  "publication_date": "2021-11-26",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant Methods/results/limitations and exact front/canonical identity; current primary PubMed linked correction/retraction metadata checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-level CT feature aggregation, internal cross-validation and severity-reference comparisons.",
+    "unknown": "External validation and prospective clinical utility remain unestablished; selection among validation configurations can bias performance.",
+    "ai_role": "A 40-tree random forest learns severity relationships from aggregated CT texture measurements, compared with LDA and nearest-neighbor classifiers.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9015452/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

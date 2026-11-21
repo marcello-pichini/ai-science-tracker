@@ -1,0 +1,20 @@
+{
+  "id": "ghsa-g936-7jqj-mwv8",
+  "title": "TSDProxy internal authentication-token disclosure",
+  "product": "TSDProxy",
+  "ai_system": "sechub.dev AI-assisted research agent",
+  "organization": "TSDProxy; sechub.dev",
+  "summary": "The upstream TSDProxy advisory describes forwarding an internal proxy authentication token to backend services, potentially exposing management privileges when the affected identity-header behavior is enabled. The disclosure identifies the audit as work by an AI-assisted research agent.",
+  "ai_role": "The upstream advisory attributes the audit to the sechub.dev AI-assisted research agent; this is source attribution, not independent reconstruction of model steps.",
+  "disclosure_date": "2026-06-03",
+  "ai_attribution_date": "2026-06-03",
+  "classification": "disclosure",
+  "classification_note": "The reviewed original source documents public disclosure; unknown zero-day status is not inferred.",
+  "cves": [],
+  "source_url": "https://github.com/almeidapaulopt/tsdproxy/security/advisories/GHSA-g936-7jqj-mwv8",
+  "ai_source_url": "https://github.com/almeidapaulopt/tsdproxy/security/advisories/GHSA-g936-7jqj-mwv8",
+  "advisory_url": "https://github.com/almeidapaulopt/tsdproxy/security/advisories/GHSA-g936-7jqj-mwv8",
+  "remediation": "fix documented",
+  "remediation_note": "The advisory lists a corrected Go pseudo-version 1.4.4-0.20260603142855-434819b4421e. A documented correction does not establish deployment or current safety.",
+  "checked_date": "2026-11-21"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2024-05-study-10-1002-jsp2-1342",
+  "title": "An MRI system classifies lumbar disc herniation in held-out patients",
+  "summary": "A learned MRI pipeline localized discs, detected herniation and assigned severity categories using data from 217 patients, including 33 held-out patients. The study reported high internal agreement with expert reference labels. Its reader experiment sampled images from both development and test data, so it does not provide independent evidence that clinical readers benefit from the system. External validation remains needed.",
+  "field": "medicine",
+  "ai_technology": "Faster R-CNN; convolutional neural network; U-Net",
+  "organization": "Tianjin Medical University General Hospital",
+  "source_url": "https://doi.org/10.1002/jsp2.1342",
+  "source_type": "paper",
+  "publication_date": "2024-05-30",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant Methods/results/limitations and exact front/canonical identity; current primary PubMed linked correction/retraction metadata checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-separated development/test diagnostic classification against expert MRI labels.",
+    "unknown": "External accuracy and independent reader-assistance benefit remain unestablished; reader-study images overlapped the development pool.",
+    "ai_role": "Faster R-CNN localizes discs, a neural classifier detects herniation and U-Net-derived regions support severity classification.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11137648/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2023-12-study-10-1007-s00259-023-06566-w",
+  "title": "Neural uncertainty flags difficult dopamine transporter scans",
+  "summary": "Residual-network ensembles classified dopamine-transporter SPECT and flagged uncertain decisions. A separate 645-scan Parkinson progression dataset showed 98.0% binary classification accuracy against clinical diagnosis; the uncertainty module flagged 92.3% of classification errors. Performance varied across camera datasets. This retrospective evaluation does not establish improved patient management or reliable exclusion of neurodegeneration in individual borderline scans.",
+  "field": "medicine",
+  "ai_technology": "Residual convolutional neural-network ensembles",
+  "organization": "University Medical Center Hamburg-Eppendorf; Jung Diagnostics",
+  "source_url": "https://doi.org/10.1007/s00259-023-06566-w",
+  "source_type": "paper",
+  "publication_date": "2023-12-22",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Development on 1,250 scans, separate 490-scan development test, 640-scan camera test, and 645-scan external clinical-reference test.",
+    "unknown": "Prospective clinical utility remains unestablished; reference labels differ across cohorts, camera shifts affect performance, and uncertainty is binary rather than a calibrated probability.",
+    "ai_role": "Separate high-sensitivity and high-specificity learned ensembles flag disagreement around an independently generated image classification.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10957699/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

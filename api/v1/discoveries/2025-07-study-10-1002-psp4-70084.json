@@ -1,0 +1,33 @@
+{
+  "id": "2025-07-study-10-1002-psp4-70084",
+  "title": "XGBoost improves retrospective vancomycin concentration prediction",
+  "summary": "XGBoost selected or averaged pharmacokinetic models using routine patient characteristics in 343,636 adult vancomycin records from 156 centres. A separate test set showed better concentration prediction than individual models and simple averaging, although some gains were modest. This retrospective evaluation did not test resulting dose decisions, toxicity, treatment success or benefit to patients.",
+  "field": "medicine",
+  "ai_technology": "XGBoost; binary-relevance multilabel classification",
+  "organization": "Leiden University; Medical University of Vienna; Uppsala University; University of Bologna; InsightRX",
+  "source_url": "https://doi.org/10.1002/psp4.70084",
+  "source_type": "paper",
+  "publication_date": "2025-07-30",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Distinct-patient 70:15:15 development/validation/test split, with measured drug concentrations as the reference.",
+    "unknown": "Prospective dose decisions, toxicity reduction and clinical benefit remain untested; routinely recorded covariates explain only part of model-performance variation.",
+    "ai_role": "Six XGBoost classifiers estimate which pharmacokinetic models will predict concentrations acceptably, enabling patient-specific ranking or weighted averaging.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12521055/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

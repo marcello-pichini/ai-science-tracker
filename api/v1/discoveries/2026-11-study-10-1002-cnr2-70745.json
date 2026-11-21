@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-study-10-1002-cnr2-70745",
+  "title": "TGFBIp expression adds prognostic information in an ovarian-cancer ML study",
+  "summary": "In a retrospective tissue-microarray cohort of 155 epithelial ovarian-cancer patients, support vector machine and random forest models combined clinicopathological features with tumor and stromal TGFBIp expression. Adding both expression compartments improved held-out vital-status discrimination by a reported AUC difference of 0.038 (95% CI 0.002–0.092). Validation was internal, follow-up duration varied, and binary endpoints did not model event timing or censoring. Recurrence specificity and calibration were limited, and clinical utility remains unproven.",
+  "field": "medicine",
+  "ai_technology": "Support vector machine; random forest",
+  "organization": "Xuzhou Medical University",
+  "source_url": "https://doi.org/10.1002/cnr2.70745",
+  "source_type": "paper",
+  "publication_date": "2026-11-01",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full article Methods, Results and limitations plus Europe PMC bibliographic metadata; PMC full article."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal held-out prediction and paired-bootstrap incremental-value comparison.",
+    "unknown": "External validation, time-to-event performance, treatment confounding and clinical benefit remain unestablished.",
+    "ai_role": "Twelve algorithms compared across four expression-inclusion strategies; preprocessing/tuning/model selection limited to training data, 155-patient retrospective cohort and held-out final evaluation. Specific biomarker incremental-value result, not a clinical-benefit claim.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13749431/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2022-05-study-10-1007-s00068-022-01981-4",
+  "title": "Learning estimates mortality after femoral neck fracture",
+  "summary": "Machine-learning models estimated 90-day and two-year mortality in 2,478 operated patients aged 65 or older with femoral neck fractures. In an internal 495-person test set, selected models achieved concordance of about 0.74 and 0.70, respectively. Model selection on test performance and preprocessing can make these estimates optimistic; the study did not demonstrate improved treatment decisions or survival.",
+  "field": "medicine",
+  "ai_technology": "Stochastic gradient boosting; elastic-net regression",
+  "organization": "Amsterdam University Medical Centers; Harvard Medical School; Erasmus University Medical Center; University Medical Centre Groningen",
+  "source_url": "https://doi.org/10.1007/s00068-022-01981-4",
+  "source_type": "paper",
+  "publication_date": "2022-05-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective 80:20 patient split with measured 90-day and two-year mortality; training cross-validation and internal calibration assessment.",
+    "unknown": "Independent frozen-model evaluation and clinical benefit remain unestablished; only operated patients were included, and final model selection used internal test performance.",
+    "ai_role": "Supervised boosting and penalized regression learn mortality associations from recorded preoperative clinical characteristics.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9712294/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

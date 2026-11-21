@@ -1,0 +1,34 @@
+{
+  "id": "2025-04-random-forest-antichlamydial-compounds",
+  "title": "Random forest identifies experimentally active antichlamydial compounds",
+  "summary": "A random-forest model trained on measured compound activity screened ChEMBL and guided selection of 25 commercially available molecules for testing. Twelve showed antichlamydial activity below 10 micromolar and three were submicromolar in cell-culture assays, with the top three also checked by quantitative PCR. This entry covers the AI-selected subset; the larger experimental-screening hit set and FabH mechanism result are separate parts of the paper, and clinical efficacy is not established.",
+  "field": "medicine",
+  "ai_technology": "Random-forest classifier",
+  "organization": "Umeå University; Michigan State University",
+  "source_url": "https://doi.org/10.1371/journal.pbio.3003123",
+  "source_type": "paper",
+  "publication_date": "2025-04-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Twelve of 25 AI-selected compounds were active below 10 micromolar in cell-culture assays; the top three were also checked by quantitative PCR.",
+    "unknown": "Clinical efficacy and safety are not established. The authors warn that the simple classifier may overfit related scaffolds and may not generalize to chemically distant molecules.",
+    "ai_role": "A random forest used molecular descriptors to rank compounds, followed by chemical-similarity, availability and human selection filters.",
+    "evidence_urls": [
+      "https://doi.org/10.1371/journal.pbio.3003123",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12040169/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full article Methods, result-specific experiments, discussion, affiliations and journal publication metadata; no independent replication performed."
+  }
+}

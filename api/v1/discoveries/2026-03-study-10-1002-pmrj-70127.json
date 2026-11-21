@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-study-10-1002-pmrj-70127",
+  "title": "Learning exposes limits of predicting new running injuries",
+  "summary": "An Explainable Boosting Machine analyzed surveys and running logs from 643 marathon trainees, holding out all observations from test runners. Prediction was much weaker among runners not already modifying training: AUROC was 0.673 and precision-recall area 0.077, compared with 0.873 and 0.521 across all runner-weeks. Outcomes were self-reported training-limiting injuries; the study did not demonstrate prevention or real-time clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Explainable Boosting Machine; boosted generalized additive model",
+  "organization": "Hospital for Special Surgery; Weill Cornell Medicine",
+  "source_url": "https://doi.org/10.1002/pmrj.70127",
+  "source_type": "paper",
+  "publication_date": "2026-03-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Runner-grouped 80:20 train/test evaluation of upcoming-week self-reported injury using only earlier surveys/logs.",
+    "unknown": "External replication, medically confirmed injury outcomes and prevention benefit remain unestablished; persistent existing injury accounts for much overall predictive performance.",
+    "ai_role": "Boosted shallow trees learn nonlinear additive relationships between prior training/symptom measures and subsequent weekly injury status.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13193517/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

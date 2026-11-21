@@ -1,0 +1,33 @@
+{
+  "id": "2020-03-study-10-1007-s00262-020-02546-3",
+  "title": "Learned immune phenotypes associate with lung cancer survival",
+  "summary": "Unsupervised clustering identified two lung-adenocarcinoma immune-expression patterns, and a random forest assigned tumors in additional cohorts. The more immune-infiltrated pattern was associated with better overall survival, including in external gene-expression datasets. This observational classification does not establish treatment response or a causal protective effect of immune infiltration; immunotherapy outcomes were not available for validation.",
+  "field": "medicine",
+  "ai_technology": "Consensus unsupervised clustering; random forest",
+  "organization": "Fudan University; Zhongshan Hospital",
+  "source_url": "https://doi.org/10.1007/s00262-020-02546-3",
+  "source_type": "paper",
+  "publication_date": "2020-03-18",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Expression-derived phenotypes in 514 TCGA tumors, with classifier assignment and survival comparisons in 1,063 GEO tumors and a 34-patient institutional cohort.",
+    "unknown": "Prospective treatment-response utility and causal biology remain unestablished; immune-cell abundance is inferred from bulk expression and aggregate patient totals differ between the abstract and full text.",
+    "ai_role": "Unsupervised clustering learns infiltration patterns and a random forest transfers those patterns to additional cohorts for clinical survival-association analysis.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11027644/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

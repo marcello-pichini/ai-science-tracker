@@ -1,0 +1,33 @@
+{
+  "id": "2023-12-study-10-1002-mds-29593",
+  "title": "Video transformers quantify eye tics in adolescents with Tourette syndrome",
+  "summary": "A transformer classified eye-tic video segments from 11 adolescents with Tourette syndrome. Performance fell from an AUC of about 0.90 under random splitting to about 0.75 when patients were separated between training and validation. Validation data were monitored during optimization, so this is limited internal diagnostic measurement evidence rather than an untouched external test, a Tourette diagnosis or demonstrated clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Transformer; computer-vision facial landmarks",
+  "organization": "University of Minnesota",
+  "source_url": "https://doi.org/10.1002/mds.29593",
+  "source_type": "paper",
+  "publication_date": "2023-12-25",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant Methods/results/limitations and exact front/canonical identity; current primary PubMed linked correction/retraction metadata checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Manually labeled eye-tic segments and patient-separated validation, alongside a random-split comparison.",
+    "unknown": "External patient testing, broader tic recognition and clinical utility remain unestablished; monitored validation is not a pristine test set.",
+    "ai_role": "A shallow transformer learns temporal sequences of facial landmarks to identify manually annotated eye-tic events.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10895867/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

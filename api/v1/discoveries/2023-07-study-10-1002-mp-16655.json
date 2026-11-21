@@ -1,0 +1,33 @@
+{
+  "id": "2023-07-study-10-1002-mp-16655",
+  "title": "Pathology-guided neural modeling proposes six Alzheimer subtypes",
+  "summary": "PSSN combined reaction-diffusion biomarker trajectories with an LSTM and neural subtype assignments in 320 selected ADNI participants. It proposed six subtypes with different cognitive profiles. Cognitive scores also guided fitting and selection of subtype number, so these are exploratory model-dependent groups, without an independent subtype ground truth, causal disease mechanisms or demonstrated treatment utility.",
+  "field": "medicine",
+  "ai_technology": "PSSN; LSTM; fully connected neural networks",
+  "organization": "Wake Forest University",
+  "source_url": "https://doi.org/10.1002/mp.16655",
+  "source_type": "paper",
+  "publication_date": "2023-07-31",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant Methods/results/limitations and exact front/canonical identity; current primary PubMed linked correction/retraction metadata checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective multimodal longitudinal data, comparison with clustering baselines and cognitive-profile analyses.",
+    "unknown": "Independent subtype replication and biological ground truth remain unestablished; clinical-profile-based model selection limits independent validation claims.",
+    "ai_role": "An LSTM encodes modeled biomarker trajectories and neural networks jointly learn subtype probabilities and clinical-score relationships.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10828102/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2023-10-study-10-1002-jcsm-13356",
+  "title": "Pose-estimation gait features classify sarcopenia in musculoskeletal patients",
+  "summary": "BlazePose video landmarks and smart-insole gait measures supported sarcopenia classification in 83 musculoskeletal patients, including 23 classified using AWGS criteria. Random forest, support vector and neural models were evaluated after a patient-level train/test split. Some combinations performed strongly in this small internal sample, but external diagnostic accuracy and benefits for patient management were not established.",
+  "field": "medicine",
+  "ai_technology": "MediaPipe BlazePose; random forest; support vector machine; artificial neural network",
+  "organization": "Inha University Hospital",
+  "source_url": "https://doi.org/10.1002/jcsm.13356",
+  "source_type": "paper",
+  "publication_date": "2023-10-26",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full paper relevant model Methods, study Results and limitations; exact primary front-matter identity and Europe PMC metadata checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-level internal split in an 83-person cohort with clinical AWGS-based reference classification.",
+    "unknown": "Small-sample performance stability, external validation and clinical benefit remain unestablished.",
+    "ai_role": "CNN-based BlazePose extracts joint landmarks; learned classifiers combine gait variables and insole measurements to distinguish reference sarcopenia groups.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10751435/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2024-07-study-10-1002-cyto-a-24889",
+  "title": "Label-free mitochondrial imaging distinguishes perturbed retinal-cell states",
+  "summary": "AutoMitoNetwork combined learned image segmentation and support vector classification to analyze label-free mitochondrial images from a human retinal-cell line. Across 62 control, 65 respiration-inhibited and 62 glycolysis-inhibited cells, the study measured treatment-associated network changes and distinguished subtler perturbed states using combined image features. Cell-level train/test separation supported the bounded in-vitro finding; this does not establish a new causal mechanism, disease diagnosis or patient benefit.",
+  "field": "biology",
+  "ai_technology": "AutoMitoNetwork; ilastik; support vector machine",
+  "organization": "University of New South Wales",
+  "source_url": "https://doi.org/10.1002/cyto.a.24889",
+  "source_type": "paper",
+  "publication_date": "2024-07-30",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full article Methods, Results and limitations plus Europe PMC bibliographic metadata; indexed primary publisher full text."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "New in-vitro retinal-cell image measurements and cell-separated classification of perturbation-linked states.",
+    "unknown": "Disease diagnostic performance, independent laboratory replication and new causal mechanisms remain unestablished.",
+    "ai_role": "Ilastik learned segmentation enables feature extraction; PCA/LDA transform training features and linear SVM classifies cell-separated test sets. Newly measured treated-cell network states rather than software availability alone support admission.",
+    "evidence_urls": [
+      "https://onlinelibrary.wiley.com/doi/full/10.1002/cyto.a.24889"
+    ],
+    "test_type": "direct test"
+  }
+}

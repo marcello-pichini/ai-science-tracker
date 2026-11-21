@@ -1,0 +1,34 @@
+{
+  "id": "2023-12-mri-neural-network-gbs-prognosis",
+  "title": "MRI edema grades improve retrospective neural-network prognosis for Guillain–Barré syndrome",
+  "summary": "A two-institution retrospective study used a shallow neural network to estimate residual symptoms six months after discharge in 354 Guillain–Barré syndrome patients. Adding radiologist-assigned lumbosacral edema grades to clinical variables increased the source-reported external-cohort AUC from 0.84 to 0.97. The model includes a muscle-strength score measured at discharge, so it is not an admission-only forecast. External testing used 118 patients from a second institution; treatment benefit and prospective deployment were not tested.",
+  "field": "medicine",
+  "ai_technology": "Shallow neural network",
+  "organization": "Shandong University; Shandong First Medical University",
+  "source_url": "https://doi.org/10.1002/acn3.51984",
+  "source_type": "paper",
+  "publication_date": "2023-12-30",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective development on 236 patients and external testing on 118; source reports external AUC 0.84 for clinical variables versus 0.97 with MRI grading. MRI reader agreement was assessed separately.",
+    "unknown": "The predictor includes discharge muscle strength and does not establish early admission-only utility. Retrospective selection and source reporting inconsistencies limit interpretation; no causal or treatment benefit is inferred.",
+    "ai_role": "A shallow neural network learned six-month outcome classification from clinical factors, with and without radiologist-assigned MRI edema grades; comparison isolates the added predictive information in the MRI grade.",
+    "evidence_urls": [
+      "https://doi.org/10.1002/acn3.51984",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10963293/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary article-front DOI/title/PMCID and date; full relevant model Methods, Results and limitations; fresh PubMed publication types and correction/retraction relationship metadata."
+  }
+}

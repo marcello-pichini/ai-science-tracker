@@ -1,0 +1,32 @@
+{
+  "id": "ghsa-c4rw-cr8m-fpmm",
+  "title": "Yopass retains encrypted files beyond expiry when uploads are disabled",
+  "product": "Yopass",
+  "ai_system": "Anthropic OSS Scanner",
+  "organization": "Anthropic; Yopass",
+  "summary": "When uploads are disabled, the advisory says the configured file store and expiry cleanup were not initialized, allowing existing encrypted blobs to remain beyond expiry. It explicitly states the blobs did not become available over HTTP; no unauthorized retrieval or stronger downstream consequence is inferred.",
+  "ai_role": "The upstream advisory attributes discovery to Anthropic’s OSS Scanner under reference ANT-2026-M2X5ID3X. It reports local cleanup tests with dummy fixtures; live S3 and full process startup were not tested.",
+  "disclosure_date": "2026-10-17",
+  "ai_attribution_date": "2026-10-17",
+  "classification": "disclosure",
+  "classification_note": "Public upstream disclosure; unknown zero-day status is not inferred.",
+  "cves": [],
+  "source_url": "https://github.com/jhaals/yopass/security/advisories/GHSA-c4rw-cr8m-fpmm",
+  "ai_source_url": "https://github.com/jhaals/yopass/security/advisories/GHSA-c4rw-cr8m-fpmm",
+  "advisory_url": "https://github.com/jhaals/yopass/security/advisories/GHSA-c4rw-cr8m-fpmm",
+  "remediation": "fix documented",
+  "remediation_note": "The advisory lists 16.0.0 and commit b70db3bba7bb24e7d6fb210b8e67a01c306ec666 as the correction for affected versions 14.0.0 through15.1.0. A documented fix does not establish deployment or current safety.",
+  "checked_date": "2026-11-21",
+  "impacts": [
+    {
+      "cves": [],
+      "consequences": [
+        "other"
+      ],
+      "conditions": "Uploads disabled while existing encrypted files require expiry cleanup; the source says they are not available over HTTP.",
+      "exploitation": "The source reports a technical effect and researcher validation; no observed malicious exploitation is established by this review.",
+      "source_url": "https://github.com/jhaals/yopass/security/advisories/GHSA-c4rw-cr8m-fpmm",
+      "checked_date": "2026-11-21"
+    }
+  ]
+}

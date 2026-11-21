@@ -1,0 +1,33 @@
+{
+  "id": "2021-01-study-10-1007-s00330-021-07695-2",
+  "title": "Neural heart measurements reveal a chest-pain risk association",
+  "summary": "Two U-Net models measured heart volume in CT scans from 3,798 PROMISE participants. Smaller body-size-indexed volume was associated with subsequent major adverse events, particularly in patients with non-obstructive coronary disease. This retrospective secondary analysis is hypothesis-generating; it does not establish a causal mechanism, a normal-volume threshold or improved clinical decisions.",
+  "field": "medicine",
+  "ai_technology": "Cascaded U-Net convolutional neural networks",
+  "organization": "Massachusetts General Hospital; Harvard Medical School; Duke University",
+  "source_url": "https://doi.org/10.1007/s00330-021-07695-2",
+  "source_type": "paper",
+  "publication_date": "2021-01-26",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Automated CT measurements linked to independently adjudicated events over median 26-month follow-up in a randomized-trial cohort.",
+    "unknown": "Independent prognostic validation and clinical utility remain unestablished; patients with known coronary disease or heart failure were excluded and subgroup event counts were limited.",
+    "ai_role": "Two pretrained U-Nets localize and segment the heart, enabling standardized volumetric measurements for clinical event-association analysis.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8273107/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2025-06-random-forest-surface-attachment-design-rules",
+  "title": "Random forests identify surface geometry relationships associated with reduced bacterial attachment",
+  "summary": "A screen of 2176 polymer surface patterns supplied measurements for random-forest models linking geometry to bacterial attachment. Held-out topographies supported predictive associations between attachment and surface coverage, feature size and spacing; the models outperformed a simpler roughness descriptor. The anti-attachment hits themselves came from experimental screening, not AI selection. The represented result is a learned structure–response relationship, without attributing the separate biological mechanism or animal findings to AI.",
+  "field": "materials",
+  "ai_technology": "Random forest; SHAP feature interpretation",
+  "organization": "University of Nottingham; Maastricht University; Eindhoven University of Technology; La Trobe University",
+  "source_url": "https://doi.org/10.1038/s41467-025-60567-x",
+  "source_type": "paper",
+  "publication_date": "2025-06-18",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Random-forest models trained on 70% of measured surface-attachment data and evaluated on 30% across 50 resamples; source-reported test R² values were 0.851 and 0.810 for the two modeled bacterial species. A simpler roughness descriptor performed less well.",
+    "unknown": "No newly fabricated AI-selected surface was tested as a prospective design prediction. The experimental screen selected the best surfaces. Mechanistic and animal experiments are not represented as AI-enabled findings, and clinical device benefit remains unestablished.",
+    "ai_role": "Random forests learned geometry-to-attachment mappings from 68 topographical descriptors; SHAP identified influential geometric variables and conditional design relationships beyond a single roughness descriptor.",
+    "evidence_urls": [
+      "https://doi.org/10.1038/s41467-025-60567-x",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12177056/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact primary article-front identity/date; full relevant surface-screening, learned-model Methods and result paragraphs; fresh PubMed publication-status relationships. Only the material geometry/attachment association is represented."
+  }
+}

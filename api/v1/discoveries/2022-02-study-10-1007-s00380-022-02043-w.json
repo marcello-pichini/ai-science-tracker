@@ -1,0 +1,33 @@
+{
+  "id": "2022-02-study-10-1007-s00380-022-02043-w",
+  "title": "Chest radiograph learning estimates invasively measured filling pressure",
+  "summary": "A VGG16-based regression network estimated pulmonary artery wedge pressure from chest radiographs in 936 cardiovascular patients. In 188 held-out patients, estimates correlated moderately with catheter measurements (r = 0.62), with wide agreement limits around plus or minus 11 mmHg and underestimation at high pressures. This clinical measurement study does not establish catheter replacement, prognosis or improved care.",
+  "field": "medicine",
+  "ai_technology": "VGG16-based regression convolutional neural network",
+  "organization": "Nihon University",
+  "source_url": "https://doi.org/10.1007/s00380-022-02043-w",
+  "source_type": "paper",
+  "publication_date": "2022-02-27",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Separate 188-patient internal test against right-heart catheter pressure, after model tuning within the 748-patient development set.",
+    "unknown": "External clinical utility remains unestablished; radiographs and catheter measurements were not simultaneous, high pressures were underestimated and several lung/device conditions were excluded.",
+    "ai_role": "A transfer-learned convolutional network regresses radiograph features onto measured pulmonary artery wedge pressure.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9239946/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

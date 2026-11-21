@@ -1,0 +1,33 @@
+{
+  "id": "2023-06-study-10-1002-cncy-22725",
+  "title": "AutoParis-X quantifies longitudinal urine-cytology signals of bladder-cancer recurrence",
+  "summary": "AutoParis-X extracted cell and cluster features from 1,259 urine specimens from 135 bladder-cancer patients to explore longitudinal recurrence markers. Quantitative predictors were associated with recurrence, with reported concordance increasing from 0.672 at the initial diagnosis window to 0.77 when collecting information through 180 days. This exploratory retrospective study accounted for delayed entry but lacked external validation; treatment recording, sporadic follow-up and competing mortality limited inference. Clinical decision benefits remain untested.",
+  "field": "medicine",
+  "ai_technology": "AutoParis-X; UroNet; AtyNet",
+  "organization": "Dartmouth Hitchcock Medical Center; Dartmouth College",
+  "source_url": "https://doi.org/10.1002/cncy.22725",
+  "source_type": "paper",
+  "publication_date": "2023-06-26",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full article Methods, Results and limitations plus Europe PMC bibliographic metadata; PMC full article."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Exploratory retrospective cytology/recurrence associations and comparison with manual cytology and histology.",
+    "unknown": "External replication, reliable treatment adjustment and benefits of decision support remain unestablished.",
+    "ai_role": "UroNet CNN filters urothelial cells, AtyNet CNN scores cellular atypia and a learned classifier integrates atypia burden; features enter time-varying Cox and trajectory analyses. Source reports 135 patients before exclusions; do not equate this with every analysis denominator.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10527805/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

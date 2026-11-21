@@ -1,0 +1,33 @@
+{
+  "id": "2020-07-study-10-1007-s00259-020-04971-z",
+  "title": "PET radiomics classifies pathological prostate cancer risk",
+  "summary": "Random forests analyzed preoperative PSMA PET images from 76 patients with prostate cancer against pathology-confirmed disease features. Repeated internal cross-validation reported AUC 0.86 for lymph-node involvement and 0.81 for high Gleason grade. Radiomics had higher mean scores than standard PET measures, but the difference was not statistically significant. This does not establish improved care or external clinical performance.",
+  "field": "medicine",
+  "ai_technology": "Random forest; nested feature selection",
+  "organization": "Amsterdam UMC; Vrije Universiteit Amsterdam; University of Groningen",
+  "source_url": "https://doi.org/10.1007/s00259-020-04971-z",
+  "source_type": "paper",
+  "publication_date": "2020-07-31",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Pathology-confirmed endpoints in a 76-person cohort, with repeated five-fold cross-validation, training-fold preprocessing and nested model tuning.",
+    "unknown": "Multicentre frozen-model validation and clinical benefit remain unestablished; the small cohort and selection among analysis configurations limit generalizability.",
+    "ai_role": "Random forests learn relationships between PET intensity, shape and texture measurements and pathological risk categories.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7835295/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

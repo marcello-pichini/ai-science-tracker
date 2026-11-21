@@ -1,0 +1,33 @@
+{
+  "id": "2023-02-study-10-1002-hbm-26243",
+  "title": "MRI learning distinguishes histories of suicide attempt in bipolar depression",
+  "summary": "A two-level nearest-neighbor classifier used dynamic resting-state MRI features to distinguish bipolar-depression patients with a recent suicide-attempt history. After development in 176 patients, an additional 33-patient cohort yielded 72.72% accuracy. This is retrospective classification of an assessed clinical history, rather than prospective prediction of future attempts. Small external numbers, feature-selection optimism and clinical utility remain limitations.",
+  "field": "medicine",
+  "ai_technology": "Two-level k-nearest neighbors",
+  "organization": "Nanjing Medical University",
+  "source_url": "https://doi.org/10.1002/hbm.26243",
+  "source_type": "paper",
+  "publication_date": "2023-02-27",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant Methods/results/limitations, exact primary front identity and current primary PubMed notice metadata; version dates distinguished."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-level classification, permutation checks and an additional 33-patient cohort with psychiatrist-assessed attempt histories.",
+    "unknown": "Future-event prediction, causal brain mechanisms and clinical management benefit remain unestablished; internal supervised feature selection may be optimistic.",
+    "ai_role": "A first nearest-neighbor stage selects informative dynamic-activity voxels, and a second combines their features to classify assessed attempt histories.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10089096/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

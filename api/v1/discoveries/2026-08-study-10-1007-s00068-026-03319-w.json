@@ -1,0 +1,33 @@
+{
+  "id": "2026-08-study-10-1007-s00068-026-03319-w",
+  "title": "Neural mortality prediction matches simpler models after emergency laparotomy",
+  "summary": "A multilayer perceptron predicted 30-day mortality using 8,293 emergency laparotomy operations in an Australasian audit. Internal test AUROC was 0.817, without a significant advantage over logistic regression or the NELA score. Imputation before splitting could leak information, although complete-case sensitivity analysis gave similar discrimination. This retrospective result does not establish improved surgical decisions or patient outcomes.",
+  "field": "medicine",
+  "ai_technology": "Multilayer perceptron; radial-basis-function neural network",
+  "organization": "Adelaide University; Royal Adelaide Hospital",
+  "source_url": "https://doi.org/10.1007/s00068-026-03319-w",
+  "source_type": "paper",
+  "publication_date": "2026-08-31",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective internal 80:20 operation-level split, comparison with logistic regression and NELA, and complete-case sensitivity analysis.",
+    "unknown": "External clinical utility remains unestablished; pre-split imputation and selection among repeated model runs may inflate performance, and the denominator is operations rather than established unique patients.",
+    "ai_role": "Neural networks learn relationships between preoperative audit variables and recorded 30-day mortality.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13529842/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

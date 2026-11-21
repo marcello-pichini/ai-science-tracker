@@ -1,0 +1,33 @@
+{
+  "id": "2025-06-study-10-1007-s00259-025-07416-7",
+  "title": "Automated fat measurements associate with prostate therapy survival",
+  "summary": "Deep-learning body segmentation measured fat compartments on routine PET/CT in 86 men receiving PSMA radioligand therapy. A higher intramuscular-fat proportion was associated with shorter overall survival, with volumetric measurements adding information beyond a single lumbar slice in the same cohort. This retrospective association does not establish a causal effect of fat, independent prediction or improved treatment selection.",
+  "field": "medicine",
+  "ai_technology": "Body and Organ Analysis; deep-learning CT segmentation",
+  "organization": "University Hospital Münster; University of Münster; West German Cancer Centre",
+  "source_url": "https://doi.org/10.1007/s00259-025-07416-7",
+  "source_type": "paper",
+  "publication_date": "2025-06-28",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Clinical overall-survival associations of automated three-dimensional and single-slice fat measurements, with multivariable analysis in 86 treated patients.",
+    "unknown": "Independent validation and clinical decision benefit remain unestablished; selection, limited sample size and model fitting/evaluation in the same cohort can produce optimistic estimates.",
+    "ai_role": "The pretrained BOA segmentation framework delineates body compartments to derive volumetric fat fractions for clinical survival-association analysis.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12660389/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

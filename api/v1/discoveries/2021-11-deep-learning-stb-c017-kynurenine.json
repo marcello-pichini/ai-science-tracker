@@ -1,0 +1,34 @@
+{
+  "id": "2021-11-deep-learning-stb-c017-kynurenine",
+  "title": "Deep learning guides discovery of the STB-C017 kynurenine-pathway inhibitor",
+  "summary": "Convolutional neural-network models trained on prior IDO and TDO bioactivity guided screening and assay-driven refinement, leading to STB-C017. The study reports dual inhibition in biochemical and cell assays, reduced kynurenine in mice and enhanced antitumor responses when combined with immune-checkpoint inhibitors in mouse models. This entry represents the November 2021 journal version; an earlier 2021 Research Square manuscript concerns the same study, and efficacy or safety in patients is not established.",
+  "field": "medicine",
+  "ai_technology": "Convolutional neural-network bioactivity classifiers",
+  "organization": "CHA University; Syntekabio",
+  "source_url": "https://doi.org/10.1080/2162402X.2021.2005280",
+  "source_type": "paper",
+  "publication_date": "2021-11-26",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Biochemical and cell assays tested IDO/TDO inhibition, followed by mouse studies of kynurenine suppression and antitumor combinations in the originating study.",
+    "unknown": "Clinical efficacy and safety are not established; originating-study assays and mouse experiments are not independent replication.",
+    "ai_role": "Separate CNN classifiers ranked potential IDO and TDO inhibitors. Four cycles of predictions, selection and measured assays updated the models before lead selection.",
+    "evidence_urls": [
+      "https://doi.org/10.1080/2162402X.2021.2005280",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8632076/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full article Methods, result-specific experiments, discussion, affiliations and journal publication metadata; no independent replication performed."
+  }
+}

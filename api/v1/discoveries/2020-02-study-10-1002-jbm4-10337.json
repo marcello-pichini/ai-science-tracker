@@ -1,0 +1,33 @@
+{
+  "id": "2020-02-study-10-1002-jbm4-10337",
+  "title": "CatBoost evaluates fragility-fracture risk in a community cohort",
+  "summary": "CatBoost evaluated fragility-fracture risk in 2,227 participants from the Korean Ansung cohort followed for a mean 7.5 years. Reported total-fracture AUC was 0.688, compared with 0.663 for FRAX, using repeated internal cross-validation. The study also ranked candidate predictors, but did not estimate time to fracture or demonstrate benefit from model-guided prevention. External populations remain to be tested.",
+  "field": "medicine",
+  "ai_technology": "CatBoost",
+  "organization": "Seoul National University College of Medicine",
+  "source_url": "https://doi.org/10.1002/jbm4.10337",
+  "source_type": "paper",
+  "publication_date": "2020-02-10",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full paper relevant model Methods, study Results and limitations; exact primary front-matter identity and Europe PMC metadata checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective outcome modeling within a longitudinal cohort, with three-fold cross-validation repeated 1,000 times.",
+    "unknown": "External ethnic/population validation, time-to-event prediction and clinical benefit remain unestablished.",
+    "ai_role": "Categorical gradient boosting learns fracture-risk relationships from clinical variables and is compared with FRAX, SVM and logistic regression.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7059838/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

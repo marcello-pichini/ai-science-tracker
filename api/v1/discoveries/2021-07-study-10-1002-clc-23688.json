@@ -1,0 +1,33 @@
+{
+  "id": "2021-07-study-10-1002-clc-23688",
+  "title": "Random forest evaluates two-year risks in a Japanese atrial-fibrillation registry",
+  "summary": "Random forest models evaluated two-year thromboembolism, major bleeding and mortality risks in 7,406 patients from the J-RHYTHM atrial-fibrillation registry. Thromboembolism discrimination exceeded logistic regression (C-statistic 0.66 versus 0.59), while mortality discrimination was comparable. This retrospective model evaluation used internal cross-validation; participants were Japanese, most received warfarin, and no direct oral anticoagulants were used. Clinical benefits from using the predictions were not tested.",
+  "field": "medicine",
+  "ai_technology": "Random forest",
+  "organization": "Fujita Health University",
+  "source_url": "https://doi.org/10.1002/clc.23688",
+  "source_type": "paper",
+  "publication_date": "2021-07-28",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full article Methods, Results and limitations plus Europe PMC bibliographic metadata; PMC full article."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective 7,406-patient risk evaluation against logistic regression and established scores.",
+    "unknown": "External transportability, clinical benefit and performance under current anticoagulant regimens remain unestablished.",
+    "ai_role": "RF with 1,000 trees, training-only feature selection and hyperparameter tuning; 80:20 split and five-fold cross-validation. Prospective registry follow-up does not make this a prospective frozen-model evaluation.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8427975/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

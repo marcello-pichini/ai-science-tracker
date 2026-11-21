@@ -1,0 +1,33 @@
+{
+  "id": "2021-10-study-10-1002-path-5795",
+  "title": "Morphologic learning distinguishes CLL progression patterns in biopsy tissue",
+  "summary": "A random forest combined nuclear size, staining intensity, cell density and cell spacing to distinguish chronic lymphocytic leukemia, accelerated CLL and Richter transformation in biopsy regions. The combined model reported 82.4% region-level accuracy with patient-separated evaluation. Manual selection of informative regions and retrospective single-centre sampling limit its clinical interpretation; this does not establish autonomous patient diagnosis or treatment benefit.",
+  "field": "medicine",
+  "ai_technology": "Random forest",
+  "organization": "University of Texas MD Anderson Cancer Center",
+  "source_url": "https://doi.org/10.1002/path.5795",
+  "source_type": "paper",
+  "publication_date": "2021-10-25",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-separated biopsy-region classification against expert-confirmed lymphoma categories, with repeated patient-level splitting.",
+    "unknown": "Prospective diagnostic performance and clinical benefit remain unestablished; manually selected regions excluded difficult artifacts and residual disease patterns.",
+    "ai_role": "A random forest learns diagnostic relationships among quantified cytologic and spatial tissue features.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9526447/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

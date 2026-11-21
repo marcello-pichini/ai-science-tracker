@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-study-10-1002-cpt-70558",
+  "title": "MRI radiomics supports individualized Duchenne disease-trajectory reconstruction",
+  "summary": "XGBoost combined baseline MRI radiomics and clinical features to estimate muscle fat-fraction trajectory parameters in Duchenne muscular dystrophy. The final dataset included 98 unique participants, with 68 soleus and 64 vastus-lateralis analyses; held-out reconstructed trajectories had reported mean absolute errors of 0.04 and 0.06. Targets came from a previously fitted nonlinear mixed-effects model, rather than directly observed trajectory parameters. The retrospective analysis identified candidate progression subgroups but did not establish treatment response, prospective prediction or external generalizability.",
+  "field": "medicine",
+  "ai_technology": "XGBoost; MRI radiomics",
+  "organization": "University of Florida",
+  "source_url": "https://doi.org/10.1002/cpt.70558",
+  "source_type": "paper",
+  "publication_date": "2026-11-11",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full article Methods, Results and limitations plus Europe PMC bibliographic metadata; PMC full article."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out participant trajectory reconstruction compared with observed longitudinal fat fractions.",
+    "unknown": "Independent cohort validation, robustness of derived targets and benefits for clinical trial design remain unestablished.",
+    "ai_role": "Participant-level 80:20 train/test split; XGBoost estimates NLME-derived trajectory descriptors from baseline radiomic/clinical features; reconstruction compared with observed fat fraction. Derived targets can shrink sparse subject trajectories; this is not new prospective clinical utility.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13752581/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

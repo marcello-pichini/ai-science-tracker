@@ -1,0 +1,34 @@
+{
+  "id": "2023-03-random-forest-pcat19-breast-cancer",
+  "title": "Random-forest screening identifies a breast-cancer growth-suppressing role for PCAT19",
+  "summary": "A random-forest survival model helped prioritize lncRNAs from 1054 breast-cancer expression profiles; overlap with differential expression and a separate expression database nominated PCAT19. Knocking down PCAT19 increased proliferation in two breast-cancer cell lines, while overexpression reduced xenograft growth in mice. The work supports a preclinical growth-suppressing role, not a validated treatment. Predicted regulatory networks remain hypotheses, and inconsistent clinical-prognosis wording is not used to establish patient benefit.",
+  "field": "biology",
+  "ai_technology": "Random forest survival model",
+  "organization": "Harbin Medical University",
+  "source_url": "https://doi.org/10.1002/cam4.5872",
+  "source_type": "paper",
+  "publication_date": "2023-03-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Random-forest prioritization was followed by PCAT19 knockdown in two breast-cancer cell lines and overexpression in a mouse xenograft model, supporting an effect on growth. Migration and invasion changes were not statistically significant.",
+    "unknown": "No clinical intervention or treatment benefit is established. The paper contains inconsistent directions in its clinical-prognosis narrative and reports 151 versus 153 tissue cases in different sections; these clinical claims are not represented as validated findings. The proposed ceRNA network remains computational.",
+    "ai_role": "Random-forest survival feature importance selected the top 10% of lncRNAs from 1054 TCGA breast-cancer profiles; intersection with differential expression and external expression evidence helped select PCAT19 for functional experiments.",
+    "evidence_urls": [
+      "https://doi.org/10.1002/cam4.5872",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10242319/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Exact article-front DOI/title/PMCID and publication date; full primary Methods, Results and limitations. Admission represents the model-prioritized experimental growth result; contradictory clinical prognosis descriptions are explicitly excluded from the claim."
+  }
+}

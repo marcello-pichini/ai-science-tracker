@@ -1,0 +1,33 @@
+{
+  "id": "2021-02-study-10-1002-hep-31750",
+  "title": "Neural histology reveals NASH treatment-response signals missed by ordinal staging",
+  "summary": "Neural biopsy analysis quantified heterogeneous fibrosis in NASH trials. A threshold derived from STELLAR data identified fibrosis responses in 27% of 63 cilofexor-plus-firsocostat recipients versus 5% of 37 placebo recipients in ATLAS, where manual staging did not show a significant difference. This retrospective secondary analysis does not reverse the original trial endpoint or establish clinical treatment benefit; findings depend on the selected response threshold.",
+  "field": "medicine",
+  "ai_technology": "Deep convolutional neural network; DELTA Liver Fibrosis score",
+  "organization": "PathAI; Gilead Sciences",
+  "source_url": "https://doi.org/10.1002/hep.31750",
+  "source_type": "paper",
+  "publication_date": "2021-02-11",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant Methods/results/limitations, exact primary front identity and current primary PubMed notice metadata; version dates distinguished."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-separated histology development/testing, an ATLAS-only test cohort and retrospective treatment-response/clinical-progression analyses.",
+    "unknown": "Prospective endpoint validation and clinical outcome benefit remain unestablished; significance depends on the response threshold and post-hoc analysis.",
+    "ai_role": "Residual/inception-inspired CNNs quantify pixel-level fibrosis patterns; a distribution-change score measures treatment-associated tissue changes.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8361999/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

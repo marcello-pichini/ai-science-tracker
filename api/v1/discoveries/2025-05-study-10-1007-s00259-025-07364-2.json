@@ -1,0 +1,33 @@
+{
+  "id": "2025-05-study-10-1007-s00259-025-07364-2",
+  "title": "Automated PET measures track immunotherapy thyroid adverse events",
+  "summary": "TotalSegmentator and a tumor-segmentation network quantified organ uptake before and after checkpoint-inhibitor therapy in 64 patients. Larger thyroid uptake changes were associated with recorded thyroid adverse events, particularly hypothyroidism. This small retrospective association does not establish detection before symptoms, causal toxicity prediction or improved management, and thyroid laboratory follow-up was limited.",
+  "field": "medicine",
+  "ai_technology": "TotalSegmentator; nnU-Net; AutoPET-trained lesion segmentation",
+  "organization": "Medical University of Vienna",
+  "source_url": "https://doi.org/10.1007/s00259-025-07364-2",
+  "source_type": "paper",
+  "publication_date": "2025-05-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary relevant model Methods, Results and limitations; exact primary identity and current primary PubMed correction/retraction relationships checked."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Paired clinical PET/CT scans with independently recorded thyroid adverse events and exploratory organ-level uptake comparisons.",
+    "unknown": "Prospective early-warning utility and causal interpretation remain unestablished; only 11 thyroid adverse events occurred and thyroid-function testing was incomplete.",
+    "ai_role": "Pretrained neural networks delineate organs and remove tumor uptake, enabling organ-level tracer-change measurements linked to recorded adverse events.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12589324/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

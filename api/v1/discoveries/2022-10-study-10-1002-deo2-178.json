@@ -1,0 +1,33 @@
+{
+  "id": "2022-10-study-10-1002-deo2-178",
+  "title": "External frozen-image study evaluates AI colorectal-polyp characterization",
+  "summary": "An external study tested a ResNet152-based colorectal-polyp characterization system on 115 images from 66 patients, using histology as the reference. For diminutive polyps, reported negative predictive values were 80% with white light and 90.9% with image enhancement, with wide confidence intervals; surveillance-interval agreement exceeded 90%. Images came from colonoscopy videos but assessment used frozen images. Real-time procedural benefit, safety of avoiding histology and broader clinical performance were not established.",
+  "field": "medicine",
+  "ai_technology": "NEC CADx; ResNet152",
+  "organization": "Portsmouth Hospitals NHS Trust; NEC Corporation",
+  "source_url": "https://doi.org/10.1002/deo2.178",
+  "source_type": "paper",
+  "publication_date": "2022-10-28",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full article Methods, Results and limitations plus Europe PMC bibliographic metadata; PMC full article."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External 66-patient frozen-image diagnostic evaluation against polyp histology and endoscopist interpretation.",
+    "unknown": "Real-time colonoscopy performance, safe pathology omission and generalizability remain unestablished.",
+    "ai_role": "ResNet152 trained on 55,890 histologically labelled images from 11,068 lesions; distinct external clinical image evaluation. Frozen-image histology classification, not demonstrated real-time procedure outcomes.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9614381/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

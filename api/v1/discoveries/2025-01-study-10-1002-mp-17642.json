@@ -1,0 +1,33 @@
+{
+  "id": "2025-01-study-10-1002-mp-17642",
+  "title": "Automated coronary calcification ratios track atherectomy classification",
+  "summary": "Neural segmentation quantified coronary calcification and lumen volume in a 72-patient CT angiography study. Their ratio was associated with recorded rotational-atherectomy classifications. A threshold chosen from the same labeled cohort produced apparent accuracy of 0.75, so this is exploratory derivation-sample evidence. It does not establish independent diagnostic accuracy, replacement of invasive assessment or benefit from model-guided care.",
+  "field": "medicine",
+  "ai_technology": "Variational autoencoder; self-attention neural segmentation",
+  "organization": "PLA General Hospital",
+  "source_url": "https://doi.org/10.1002/mp.17642",
+  "source_type": "paper",
+  "publication_date": "2025-01-29",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary model/clinical-application Methods and Results, exact primary article identity and current PubMed notices checked; derivation-only threshold and demographic reporting discrepancy retained."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-wise segmentation evaluation and exploratory comparison of automated volume ratios with clinical atherectomy classification in the derivation cohort.",
+    "unknown": "Independent clinical threshold validation and patient benefit are unestablished; reported sex counts do not sum to the stated cohort total.",
+    "ai_role": "A variational autoencoder and attention-based neural system delineate vessels and calcification for clinical volume-ratio analysis.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12082760/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}
