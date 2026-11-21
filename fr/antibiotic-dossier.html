@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>Antibiotiques découverts avec l’IA : expériences et limites des éléments · AI Science Tracker</title>
-<meta name="description" content="Un dossier borné par les sources sur les antibiotiques découverts avec l’IA : criblage, conception générative, essais de laboratoire, modèles murins et lacunes restantes des preuves cliniques.">
+<title>Antibiotiques découverts par IA et testés en laboratoire et chez la souris · AI Science Tracker</title>
+<meta name="description" content="Comparez quatre études sur des antibiotiques découverts par IA, dont l’halicine et l’abaucine, et les conclusions des essais en laboratoire ou chez la souris.">
 <link rel="canonical" href="https://aisciencetracker.org/fr/antibiotic-dossier.html">
-<meta property="og:title" content="Antibiotiques découverts avec l’IA : expériences et limites des éléments · AI Science Tracker">
-<meta property="og:description" content="Quatre études bornées par les sources comparent criblage et conception par IA, expériences d’infection chez la souris, tests de toxicité et limites des preuves cliniques.">
+<meta property="og:title" content="Antibiotiques découverts par IA et testés en laboratoire et chez la souris · AI Science Tracker">
+<meta property="og:description" content="Comparez quatre études sur des antibiotiques découverts par IA, dont l’halicine et l’abaucine, et les conclusions des essais en laboratoire ou chez la souris.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Carte d’aperçu : AI Science Tracker, découvertes scientifiques rendues possibles par l’IA, suivies depuis les annonces officielles de 2020.">
 <meta name="twitter:image:alt" content="Carte d’aperçu : AI Science Tracker, découvertes scientifiques rendues possibles par l’IA, suivies depuis les annonces officielles de 2020.">
-<meta name="twitter:title" content="Antibiotiques découverts avec l’IA : expériences et limites des éléments · AI Science Tracker">
-<meta name="twitter:description" content="Quatre études bornées par les sources comparent criblage et conception par IA, expériences d’infection chez la souris, tests de toxicité et limites des preuves cliniques.">
+<meta name="twitter:title" content="Antibiotiques découverts par IA et testés en laboratoire et chez la souris · AI Science Tracker">
+<meta name="twitter:description" content="Comparez quatre études sur des antibiotiques découverts par IA, dont l’halicine et l’abaucine, et les conclusions des essais en laboratoire ou chez la souris.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/fr/antibiotic-dossier.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -192,14 +192,39 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><p class="nota">Dossier d’éléments · Relecture éditoriale du 16 nov. 2026</p><h1 id="page-title">Antibiotiques découverts avec l’IA : qu’a-t-on testé ?</h1><p class="lead">Jusqu’où les antibiotiques découverts avec l’IA sont-ils allés au-delà des essais de laboratoire ?</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><p class="nota">Dossier d’éléments · Relecture éditoriale du 16 nov. 2026</p><h1 id="page-title">Antibiotiques découverts par IA et testés en laboratoire et chez la souris</h1><p class="lead">Jusqu’où les antibiotiques découverts avec l’IA sont-ils allés au-delà des essais de laboratoire ?</p></div></section>
 <main>
-<section class="sez"><div class="wrap prosa"><h2>Ce que ces quatre études établissent</h2>
+<section class="sez" aria-labelledby="evidence-overview"><div class="wrap">
+  <h2 id="evidence-overview">Quelles études ont testé l’efficacité chez la souris ?</h2>
+  <div class="dossier-grid">
+    <article class="pannello">
+      <h3>Données animales dans quatre études sélectionnées</h3>
+      <p><strong>Trois études d’efficacité</strong> et un rapport avec des tests de toxicité seulement</p>
+      <svg viewBox="0 0 260 61" role="img" aria-labelledby="animal-chart-title animal-chart-desc">
+        <title id="animal-chart-title">Essais sur les animaux dans les quatre études sur les antibiotiques</title>
+        <desc id="animal-chart-desc">Trois blocs pleins représentent les études avec des tests d’efficacité chez la souris. Le bloc vide représente une étude avec des tests de toxicité animale seulement.</desc>
+        <rect class="col" x="4" y="4" width="57" height="22" rx="4"/>
+        <rect class="col" x="69" y="4" width="57" height="22" rx="4"/>
+        <rect class="col" x="134" y="4" width="57" height="22" rx="4"/>
+        <rect class="base" x="199" y="4" width="57" height="22" rx="4" fill="none"/>
+        <text class="lab" x="4" y="48">Tests d’efficacité</text>
+        <text class="lab" x="256" y="48" text-anchor="end">Toxicité seule</text>
+      </svg>
+      <p class="descr">Chaque bloc représente un rapport. Le graphique compte les rapports par type de test.</p>
+    </article>
+    <article class="pannello">
+      <h3>Données chez les patients</h3>
+      <p>Les quatre rapports laissent ouvertes les questions d’efficacité et de sécurité chez l’humain.</p>
+      <p><a href="#study-comparison">Comparer les quatre rapports</a></p>
+    </article>
+  </div>
+</div></section>
+<section class="sez"><div class="wrap prosa"><p><a href="dossiers.html">Tous les dossiers</a></p><h2>Ce que ces quatre études établissent</h2>
 <p>Plusieurs candidats ont atteint des expériences d’infection chez la souris ; c’est un pas au-delà d’un essai de croissance en laboratoire. Les rapports des sources retenues n’établissent pas d’efficacité chez les patients. Ils décrivent des composés, des organismes et des expériences différents, et ne peuvent pas être traités comme des étapes cliniques successives d’un même médicament.</p>
 <p>L’IA a contribué à la sélection de candidats ou à la conception moléculaire. Les chercheurs ont synthétisé ou obtenu des composés et mesuré l’activité expérimentalement. Une grande bibliothèque virtuelle est un espace de recherche, pas un décompte de médicaments efficaces.</p>
 <p class="nota"><b>Périmètre :</b> quatre études du catalogue, 2020–2025, choisies pour contraster criblage, conception générative, expériences d’infection et tests animaux de seule toxicité. C’est une synthèse illustrative, pas une revue exhaustive ou systématique. Les rapports institutionnels originaux liés ci-dessous ont été vérifiés le 16 nov. 2026 ; les articles complets, les registres d’essais et toute la littérature ultérieure n’ont pas été relus. L’absence dans ce dossier n’est pas une absence dans la littérature de recherche.</p>
 </div></section>
-<section class="sez"><div class="wrap"><h2>Comparer les expériences réellement faites</h2><p class="sez-sub">Unité de décompte : une étude déjà dans le catalogue par carte. Les candidats et les conditions diffèrent ; aucun taux de succès agrégé n’est calculé.</p>
+<section class="sez"><div class="wrap"><h2 id="study-comparison">Comparer les expériences réellement faites</h2><p class="sez-sub">Unité de décompte : une étude déjà dans le catalogue par carte. Les candidats et les conditions diffèrent ; aucun taux de succès agrégé n’est calculé.</p>
 <div class="tabella-scorre" tabindex="0" role="region" aria-label="Comparaison des éléments sur les antibiotiques">
 <table><caption>Éléments expérimentaux rapportés dans les quatre études retenues</caption>
 <thead><tr><th scope="col">Étude</th><th scope="col">Apport de l’IA</th><th scope="col">Éléments animaux dans le rapport cité</th></tr></thead>

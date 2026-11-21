@@ -24,6 +24,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://aisciencetracker.org/'
 MESSAGES = ROOT / 'i18n' / 'messages'
+DOSSIER_MESSAGES = ROOT / 'i18n' / 'dossiers.json'
 DISCOVERIES = ROOT / 'i18n' / 'discoveries'
 KEEP_PATH = ROOT / 'i18n' / 'keep-english.txt'
 
@@ -487,7 +488,7 @@ def restore(text: str, vault: list[str]) -> str:
 # names) use ⟦*⟧ and keep their original element.
 _STRUCT = r'p|li|h[1-4]|div|ul|ol|section|table|thead|tbody|tr|details|nav|form|figure|header|footer|main|article|script|style|blockquote|dl'
 _LEAF = re.compile(
-    rf'<(p|li|h[1-4]|figcaption|summary|button|label|dt|dd|caption|option|th|td|a|title)\b([^>]*)>'
+    rf'<(p|li|h[1-4]|figcaption|summary|button|label|dt|dd|caption|option|th|td|a|title|desc|text)\b([^>]*)>'
     rf'((?:[^<]|<(?!/?(?:{_STRUCT})\b))*?)</\1>',
     re.S)
 _INLINE = re.compile(r'<((?:a|b|strong|em|i|span|code|time|small|abbr))\b([^>]*)>(.*?)</\1>', re.S)
@@ -738,6 +739,7 @@ def required_keys(root: Path | None = None) -> tuple[set[str], list[str]]:
 def sync_english_catalog(root: Path | None = None) -> int:
     root = root or ROOT
     needed, _ = required_keys(root)
+    needed -= set(load_json(DOSSIER_MESSAGES))
     path = MESSAGES / 'en.json'
     current = load_json(path)
     for key in sorted(needed):
@@ -754,9 +756,13 @@ def catalog_errors(root: Path | None = None) -> list[str]:
     english = load_json(MESSAGES / 'en.json')
     errors = []
     needed, _ = required_keys(root)
-    for key in sorted(needed - set(english)):
+    dossier_messages = load_json(DOSSIER_MESSAGES)
+    for key in sorted(needed - set(english) - set(dossier_messages)):
         errors.append(f'en.json is missing {key!r}')
     for lang in LOCALES:
+        for key, translations in dossier_messages.items():
+            if not translations.get(lang):
+                errors.append(f'dossiers.json is missing {lang} for {key!r}')
         table = load_json(MESSAGES / f'{lang}.json')
         for key in sorted(set(english) - set(table)):
             errors.append(f'{lang}.json is missing {key!r}')
@@ -775,11 +781,14 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
     kept = keep_english()
     english = load_json(MESSAGES / 'en.json')
     problems = []
+    dossier_messages = load_json(DOSSIER_MESSAGES)
     for lang in LOCALES:
         table = load_json(MESSAGES / f'{lang}.json')
         discoveries = load_json(DISCOVERIES / f'{lang}.json')
         # English catalog values are the source strings; a locale file may omit nothing checked above.
         merged = dict(table)
+        # Editorial strings stay out of the runtime bundle shared by other pages.
+        dossier_table = merged | {key: values[lang] for key, values in dossier_messages.items()}
         out_dir = root / lang
         out_dir.mkdir(parents=True, exist_ok=True)
         for page in PAGES:
@@ -789,7 +798,7 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
             text = source.read_text(encoding='utf-8')
             if 'id="lang-switch"' not in text:
                 continue
-            text, missing = translate_document(text, merged, kept)
+            text, missing = translate_document(text, dossier_table if 'dossier' in page else merged, kept)
             if missing:
                 problems.extend(f'{lang}/{page}: {item}' for item in missing[:8])
                 if len(missing) > 8:

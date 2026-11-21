@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>Dossiers · AI Science Tracker</title>
-<meta name="description" content="Explore evidence dossiers on AI-assisted scientific discoveries, with primary sources and a clear account of what experiments established.">
+<title>AI Science Evidence Dossiers · AI Science Tracker</title>
+<meta name="description" content="Explore four source-linked dossiers on AlphaFold, AI-discovered antibiotics, materials tested in the lab and AI-assisted mathematics.">
 <link rel="canonical" href="https://aisciencetracker.org/dossiers.html">
-<meta property="og:title" content="Dossiers · AI Science Tracker">
-<meta property="og:description" content="Explore evidence dossiers on AI-assisted scientific discoveries, with primary sources and a clear account of what experiments established.">
+<meta property="og:title" content="AI Science Evidence Dossiers · AI Science Tracker">
+<meta property="og:description" content="Explore four source-linked dossiers on AlphaFold, AI-discovered antibiotics, materials tested in the lab and AI-assisted mathematics.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
-<meta name="twitter:title" content="Dossiers · AI Science Tracker">
-<meta name="twitter:description" content="Explore evidence dossiers on AI-assisted scientific discoveries, with primary sources and a clear account of what experiments established.">
+<meta name="twitter:title" content="AI Science Evidence Dossiers · AI Science Tracker">
+<meta name="twitter:description" content="Explore four source-linked dossiers on AlphaFold, AI-discovered antibiotics, materials tested in the lab and AI-assisted mathematics.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/dossiers.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -191,17 +191,25 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Dossiers</h1><p class="lead">Focused reviews of what AI helped scientists find and how they tested it.</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">AI Science Evidence Dossiers</h1><p class="lead">Focused reviews of what AI helped scientists find and how they tested it.</p></div></section>
 <main>
 <section class="sez"><div class="wrap">
   <h2>Available dossiers</h2>
   <div class="dossier-grid">
     <article class="pannello">
-      <h3><a href="alphafold-dossier.html">AlphaFold discoveries and experimental evidence</a></h3>
+      <h3><a href="/mathematics-dossier.html" hreflang="en">AI in Mathematics: Discoveries and Proposed Proofs</a></h3>
+      <p>See what FunSearch, AlphaEvolve and AlphaProof produced and track the Riemann and Navier–Stokes proof announcements.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="/materials-dossier.html" hreflang="en">AI-Designed Materials Tested in the Lab</a></h3>
+      <p>Compare the crystal predictions, synthesis results and property measurements reported by GNoME, A-Lab and MatterGen.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="alphafold-dossier.html">AlphaFold Predictions and Experimental Evidence</a></h3>
       <p>Compare six experimentally supported protein interfaces with the evidence from CASP14 and the scope of the AlphaFold Database.</p>
     </article>
     <article class="pannello">
-      <h3><a href="antibiotic-dossier.html">AI-discovered antibiotics</a></h3>
+      <h3><a href="antibiotic-dossier.html">AI-Discovered Antibiotics Tested in the Lab and in Mice</a></h3>
       <p>Compare four studies and see which findings were tested in the lab or in mouse infection models, and what remains open for patients.</p>
     </article>
   </div>

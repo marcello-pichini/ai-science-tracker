@@ -45,6 +45,19 @@ CHROME = os.environ.get('CHROME', '/Applications/Google Chrome.app/Contents/MacO
 SITE = 'AI Science Tracker'
 DEFAULT_ALT = 'Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.'
 NOT_ROOT_RELATIVE = re.compile(r'^(https?:|data:|mailto:|#|\.\./|/)')
+DOSSIERS = {
+    'materials': {
+        '2023-11-gnome': 'gnome',
+        '2023-11-a-lab': 'a-lab',
+        '2025-01-mattergen': 'mattergen',
+    },
+    'mathematics': {
+        '2023-12-funsearch': 'funsearch',
+        '2025-11-alphaevolve-tao': 'alphaevolve',
+        '2024-07-alphaproof-imo': 'alphaproof',
+        '2026-09-openai-navier-stokes': 'navier-stokes',
+    },
+}
 
 
 def esc(s):
@@ -393,6 +406,10 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
         lead = f'{esc(d["organization"])} &middot; {esc(nice_date(d["publication_date"]))} &middot; {esc(d["field"])}'
         if d['field'] in fields:
             more += f' <a href="profiles/field-{slug(d["field"])}.html">Browse {esc(d["field"])} discoveries</a>.'
+        field = d['field']
+        anchor = DOSSIERS.get(field, {}).get(d['id'])
+        if anchor and not archived:
+            more += f' <a href="{field}-dossier.html#{anchor}">Read the {field} evidence dossier</a>.'
         if archived:
             lead = f'Archived catalog entry &middot; {lead}'
         page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(describe(d['summary'])), base=BASE,
@@ -605,6 +622,8 @@ def write_profile_pages(items, models, archived=()):
                 'A lower bound constrains the possible value. The exact number remains a separate question.</dd>'
                 '</dl><p>Follow the linked records for sources and the limits of each check.</p></section>'
             ) + overview
+        if field in DOSSIERS:
+            overview = f'<p class="prosa"><a href="{field}-dossier.html">Read the {field} evidence dossier</a>.</p>' + overview
         emit(field, title, f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
              f'{plural(len(rows), "scientific discovery", "scientific discoveries")} in {field} made with AI, {years(rows)}, each linked to its original source.',
              rows, f'profiles/field-{slug(field)}.html', f'/?field={quote(field)}', label='filtered catalog',
@@ -825,6 +844,7 @@ def write_sitemap(items, models, archived=(), vulns=()):
     # search.html is a translated editorial page. profile.html and 404.html are noindex.
     # Localized copies exist only for translated editorial pages, not for share/ or profiles/.
     urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'search.html', 'dataset.html', 'contributors.html', 'contact.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
+    urls += [f'{field}-dossier.html' for field in DOSSIERS]
     urls += ['profiles/index.html']
     urls += ['profiles/catalog-evidence.html', 'profiles/security-index.html']
     urls += [f'profiles/security-{quote(v["id"])}.html' for v in vulns]

@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>AlphaFold discoveries and experimental evidence · AI Science Tracker</title>
-<meta name="description" content="What has AlphaFold helped scientists discover? Compare experimentally supported protein interfaces, the CASP14 benchmark and the AlphaFold Database.">
+<title>AlphaFold Predictions and Experimental Evidence · AI Science Tracker</title>
+<meta name="description" content="Which AlphaFold predictions have experimental support? Compare six human protein interfaces with the CASP14 benchmark and AlphaFold Database.">
 <link rel="canonical" href="https://aisciencetracker.org/alphafold-dossier.html">
-<meta property="og:title" content="AlphaFold discoveries and experimental evidence · AI Science Tracker">
-<meta property="og:description" content="What has AlphaFold helped scientists discover? Compare experimentally supported protein interfaces, the CASP14 benchmark and the AlphaFold Database.">
+<meta property="og:title" content="AlphaFold Predictions and Experimental Evidence · AI Science Tracker">
+<meta property="og:description" content="Which AlphaFold predictions have experimental support? Compare six human protein interfaces with the CASP14 benchmark and AlphaFold Database.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
-<meta name="twitter:title" content="AlphaFold discoveries and experimental evidence · AI Science Tracker">
-<meta name="twitter:description" content="What has AlphaFold helped scientists discover? Compare experimentally supported protein interfaces, the CASP14 benchmark and the AlphaFold Database.">
+<meta name="twitter:title" content="AlphaFold Predictions and Experimental Evidence · AI Science Tracker">
+<meta name="twitter:description" content="Which AlphaFold predictions have experimental support? Compare six human protein interfaces with the CASP14 benchmark and AlphaFold Database.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/alphafold-dossier.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -191,17 +191,52 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">AlphaFold discoveries and experimental evidence</h1><p class="lead">What did AlphaFold predict, and what did researchers confirm through experiments?</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">AlphaFold Predictions and Experimental Evidence</h1><p class="lead">What did AlphaFold predict, and what did researchers confirm through experiments?</p></div></section>
 <main>
+<section class="sez" aria-labelledby="evidence-overview"><div class="wrap">
+  <h2 id="evidence-overview">What did the tests establish?</h2>
+  <p class="sez-sub">CASP14 measured structure prediction accuracy. A separate study experimentally tested individual protein interfaces.</p>
+  <div class="dossier-grid">
+    <article class="pannello">
+      <h3><a href="#casp14">CASP14 benchmark</a></h3>
+      <p><strong>92.4 out of 100</strong> median Global Distance Test score</p>
+      <svg viewBox="0 0 260 54" role="img" aria-labelledby="casp-chart-title casp-chart-desc">
+        <title id="casp-chart-title">AlphaFold 2 median CASP14 score</title>
+        <desc id="casp-chart-desc">The median Global Distance Test score was 92.4 on a zero-to-100 scale.</desc>
+        <rect class="base" x="4" y="4" width="252" height="18" rx="4" fill="none"/>
+        <rect class="col" x="4" y="4" width="232.85" height="18" rx="4"/>
+        <text class="ax" x="4" y="43">0</text>
+        <text class="ax" x="256" y="43" text-anchor="end">100 GDT</text>
+      </svg>
+      <p class="descr">Predictions were compared with experimentally determined reference structures.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="#protein-interfaces">AlphaFold-Multimer study</a></h3>
+      <p><strong>Six protein interfaces</strong> with experimental support</p>
+      <svg viewBox="0 0 260 54" role="img" aria-labelledby="interfaces-chart-title interfaces-chart-desc">
+        <title id="interfaces-chart-title">Experimentally supported protein interfaces</title>
+        <desc id="interfaces-chart-desc">Each of six dots represents one previously unreported interface supported by experiments in the cited study.</desc>
+        <circle class="col" cx="18" cy="13" r="9"/>
+        <circle class="col" cx="63" cy="13" r="9"/>
+        <circle class="col" cx="108" cy="13" r="9"/>
+        <circle class="col" cx="153" cy="13" r="9"/>
+        <circle class="col" cx="198" cy="13" r="9"/>
+        <circle class="col" cx="243" cy="13" r="9"/>
+        <text class="ax" x="130" y="43" text-anchor="middle">One dot per supported interface</text>
+      </svg>
+      <p class="descr">The six interfaces come from one study of selected human protein interactions.</p>
+    </article>
+  </div>
+</div></section>
 <section class="sez" id="alphafold-evidence"><div class="wrap prosa">
   <p><a href="dossiers.html">All dossiers</a></p>
   <h2>What has AlphaFold helped scientists discover?</h2>
   <p>A study using AlphaFold-Multimer reported experimental support for six previously unreported protein interfaces. CASP14 and the database expansion provide context for the accuracy and availability of structure predictions.</p>
   <p class="nota">Editorial review 18 Nov 2026. Three catalog examples illustrate different kinds of evidence.</p>
-      <h3>Experiments supported six previously unreported protein interfaces</h3>
+      <h3 id="protein-interfaces">Experiments supported six previously unreported protein interfaces</h3>
       <p>A study of 62 selected human protein interactions used AlphaFold-Multimer to predict where proteins might contact one another. Follow-up experiments corroborated six previously unreported interfaces. The authors also reported limits in prediction specificity. The experimental support applies to the interfaces tested in this study. <a href="https://doi.org/10.1038/s44320-023-00005-6">Read the protein-interface study</a>.</p>
       <p><a href="share/2024-01-alphafold-multimer-guided-experiments-corroborate-six-novel-human-protein-interfaces.html">View the catalog record</a>.</p>
-      <h3>CASP14 tested prediction accuracy</h3>
+      <h3 id="casp14">CASP14 tested prediction accuracy</h3>
       <p>In the blind CASP14 assessment, AlphaFold 2 scored a median 92.4 on the Global Distance Test across targets, according to Google DeepMind. Organizers compared predictions with experimentally determined reference structures. That score describes benchmark performance on the assessed targets. <a href="https://deepmind.google/blog/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology/">Read the CASP14 announcement</a>.</p>
       <p><a href="share/2020-11-alphafold-casp14.html">View the catalog record</a>.</p>
       <h3>The AlphaFold Database expanded access to predictions</h3>

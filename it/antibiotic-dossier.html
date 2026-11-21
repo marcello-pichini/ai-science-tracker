@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>Antibiotici scoperti con l’IA: esperimenti e limiti dell’evidenza · AI Science Tracker</title>
-<meta name="description" content="Un dossier delimitato dalle fonti sugli antibiotici scoperti con l’IA: screening, progettazione generativa, saggi di laboratorio, modelli murini e i vuoti che restano nell’evidenza clinica.">
+<title>Antibiotici scoperti con l’IA e testati in laboratorio e nei topi · AI Science Tracker</title>
+<meta name="description" content="Confronta quattro studi su antibiotici scoperti con l’IA, tra cui alicina e abaucina. Scopri quali risultati provengono da test di laboratorio o sui topi e che cosa dimostrano.">
 <link rel="canonical" href="https://aisciencetracker.org/it/antibiotic-dossier.html">
-<meta property="og:title" content="Antibiotici scoperti con l’IA: esperimenti e limiti dell’evidenza · AI Science Tracker">
-<meta property="og:description" content="Quattro studi delimitati dalle fonti confrontano screening e progettazione con l’IA, esperimenti di infezione nel topo, test di tossicità e i limiti dell’evidenza clinica.">
+<meta property="og:title" content="Antibiotici scoperti con l’IA e testati in laboratorio e nei topi · AI Science Tracker">
+<meta property="og:description" content="Confronta quattro studi su antibiotici scoperti con l’IA, tra cui alicina e abaucina. Scopri quali risultati provengono da test di laboratorio o sui topi e che cosa dimostrano.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Scheda di anteprima: AI Science Tracker, scoperte scientifiche rese possibili dall’IA, seguite dagli annunci ufficiali dal 2020.">
 <meta name="twitter:image:alt" content="Scheda di anteprima: AI Science Tracker, scoperte scientifiche rese possibili dall’IA, seguite dagli annunci ufficiali dal 2020.">
-<meta name="twitter:title" content="Antibiotici scoperti con l’IA: esperimenti e limiti dell’evidenza · AI Science Tracker">
-<meta name="twitter:description" content="Quattro studi delimitati dalle fonti confrontano screening e progettazione con l’IA, esperimenti di infezione nel topo, test di tossicità e i limiti dell’evidenza clinica.">
+<meta name="twitter:title" content="Antibiotici scoperti con l’IA e testati in laboratorio e nei topi · AI Science Tracker">
+<meta name="twitter:description" content="Confronta quattro studi su antibiotici scoperti con l’IA, tra cui alicina e abaucina. Scopri quali risultati provengono da test di laboratorio o sui topi e che cosa dimostrano.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/it/antibiotic-dossier.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -192,14 +192,39 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><p class="nota">Dossier di evidenza · Revisione editoriale del 16 nov 2026</p><h1 id="page-title">Antibiotici scoperti con l’IA: che cosa è stato messo alla prova?</h1><p class="lead">Fino a che punto gli antibiotici scoperti con l’IA sono andati oltre i saggi di laboratorio?</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><p class="nota">Dossier di evidenza · Revisione editoriale del 16 nov 2026</p><h1 id="page-title">Antibiotici scoperti con l’IA e testati in laboratorio e nei topi</h1><p class="lead">Fino a che punto gli antibiotici scoperti con l’IA sono andati oltre i saggi di laboratorio?</p></div></section>
 <main>
-<section class="sez"><div class="wrap prosa"><h2>Che cosa stabiliscono questi quattro studi</h2>
+<section class="sez" aria-labelledby="evidence-overview"><div class="wrap">
+  <h2 id="evidence-overview">Quali studi hanno testato l’efficacia nei topi?</h2>
+  <div class="dossier-grid">
+    <article class="pannello">
+      <h3>Evidenze sugli animali in quattro studi selezionati</h3>
+      <p><strong>Tre studi di efficacia</strong> e uno con soli test di tossicità</p>
+      <svg viewBox="0 0 260 61" role="img" aria-labelledby="animal-chart-title animal-chart-desc">
+        <title id="animal-chart-title">Test sugli animali nei quattro studi sugli antibiotici</title>
+        <desc id="animal-chart-desc">I tre blocchi pieni rappresentano studi con test di efficacia nei topi. Il blocco con il solo contorno indica uno studio con soli test di tossicità sugli animali.</desc>
+        <rect class="col" x="4" y="4" width="57" height="22" rx="4"/>
+        <rect class="col" x="69" y="4" width="57" height="22" rx="4"/>
+        <rect class="col" x="134" y="4" width="57" height="22" rx="4"/>
+        <rect class="base" x="199" y="4" width="57" height="22" rx="4" fill="none"/>
+        <text class="lab" x="4" y="48">Test di efficacia</text>
+        <text class="lab" x="256" y="48" text-anchor="end">Solo tossicità</text>
+      </svg>
+      <p class="descr">Ogni blocco rappresenta uno studio. Il grafico conta gli studi per tipo di test.</p>
+    </article>
+    <article class="pannello">
+      <h3>Evidenze nei pazienti</h3>
+      <p>I quattro studi lasciano aperte le domande su efficacia e sicurezza nell’essere umano.</p>
+      <p><a href="#study-comparison">Confronta i quattro studi</a></p>
+    </article>
+  </div>
+</div></section>
+<section class="sez"><div class="wrap prosa"><p><a href="dossiers.html">Tutti i dossier</a></p><h2>Che cosa stabiliscono questi quattro studi</h2>
 <p>Diversi candidati sono arrivati a esperimenti di infezione nel topo; è un passo oltre un saggio di crescita in laboratorio. I rapporti delle fonti selezionate non stabiliscono efficacia nei pazienti. Descrivono composti, organismi ed esperimenti diversi, quindi non si possono trattare come stadi clinici successivi di uno stesso farmaco.</p>
 <p>L’IA ha contribuito alla selezione dei candidati o alla progettazione molecolare. I ricercatori hanno sintetizzato o ottenuto i composti e ne hanno misurato l’attività in esperimento. Una grande libreria virtuale è uno spazio di ricerca, non un conteggio di medicinali efficaci.</p>
 <p class="nota"><b>Ambito:</b> quattro studi del catalogo, 2020–2025, scelti per contrapporre screening, progettazione generativa, esperimenti di infezione e test animali di sola tossicità. È una sintesi illustrativa, non una revisione esaustiva o sistematica. I rapporti istituzionali originali collegati sotto sono stati controllati il 16 nov 2026; articoli completi, registri di trial e tutta la letteratura successiva non sono stati riesaminati. L’assenza da questo dossier non è assenza dalla letteratura di ricerca.</p>
 </div></section>
-<section class="sez"><div class="wrap"><h2>Confronta gli esperimenti effettivi</h2><p class="sez-sub">Unità di conteggio: uno studio già nel catalogo per scheda. Candidati e condizioni differiscono; non si calcola un tasso di successo aggregato.</p>
+<section class="sez"><div class="wrap"><h2 id="study-comparison">Confronta gli esperimenti effettivi</h2><p class="sez-sub">Unità di conteggio: uno studio già nel catalogo per scheda. Candidati e condizioni differiscono; non si calcola un tasso di successo aggregato.</p>
 <div class="tabella-scorre" tabindex="0" role="region" aria-label="Confronto dell’evidenza sugli antibiotici">
 <table><caption>Evidenza sperimentale riportata nei quattro studi selezionati</caption>
 <thead><tr><th scope="col">Studio</th><th scope="col">Contributo dell’IA</th><th scope="col">Evidenza animale nel rapporto citato</th></tr></thead>

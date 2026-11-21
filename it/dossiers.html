@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>Dossier · AI Science Tracker</title>
-<meta name="description" content="Esplora i dossier di evidenza sulle scoperte scientifiche assistite dall’IA, con le fonti primarie e un resoconto chiaro di che cosa hanno stabilito gli esperimenti.">
+<title>Dossier sulle evidenze scientifiche dell’IA · AI Science Tracker</title>
+<meta name="description" content="Esplora quattro dossier con fonti su AlphaFold, antibiotici scoperti con l’IA, materiali testati in laboratorio e matematica assistita dall’IA.">
 <link rel="canonical" href="https://aisciencetracker.org/it/dossiers.html">
-<meta property="og:title" content="Dossier · AI Science Tracker">
-<meta property="og:description" content="Esplora i dossier di evidenza sulle scoperte scientifiche assistite dall’IA, con le fonti primarie e un resoconto chiaro di che cosa hanno stabilito gli esperimenti.">
+<meta property="og:title" content="Dossier sulle evidenze scientifiche dell’IA · AI Science Tracker">
+<meta property="og:description" content="Esplora quattro dossier con fonti su AlphaFold, antibiotici scoperti con l’IA, materiali testati in laboratorio e matematica assistita dall’IA.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Scheda di anteprima: AI Science Tracker, scoperte scientifiche rese possibili dall’IA, seguite dagli annunci ufficiali dal 2020.">
 <meta name="twitter:image:alt" content="Scheda di anteprima: AI Science Tracker, scoperte scientifiche rese possibili dall’IA, seguite dagli annunci ufficiali dal 2020.">
-<meta name="twitter:title" content="Dossier · AI Science Tracker">
-<meta name="twitter:description" content="Esplora i dossier di evidenza sulle scoperte scientifiche assistite dall’IA, con le fonti primarie e un resoconto chiaro di che cosa hanno stabilito gli esperimenti.">
+<meta name="twitter:title" content="Dossier sulle evidenze scientifiche dell’IA · AI Science Tracker">
+<meta name="twitter:description" content="Esplora quattro dossier con fonti su AlphaFold, antibiotici scoperti con l’IA, materiali testati in laboratorio e matematica assistita dall’IA.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/it/dossiers.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -192,17 +192,25 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Dossier</h1><p class="lead">Rassegne mirate di che cosa l’IA ha aiutato gli scienziati a trovare e di come lo hanno messo alla prova.</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Dossier sulle evidenze scientifiche dell’IA</h1><p class="lead">Rassegne mirate di che cosa l’IA ha aiutato gli scienziati a trovare e di come lo hanno messo alla prova.</p></div></section>
 <main>
 <section class="sez"><div class="wrap">
   <h2>Dossier disponibili</h2>
   <div class="dossier-grid">
     <article class="pannello">
-      <h3><a href="alphafold-dossier.html">Scoperte di AlphaFold ed evidenza sperimentale</a></h3>
+      <h3><a href="/mathematics-dossier.html" hreflang="en">IA in matematica: scoperte e prove proposte (in inglese)</a></h3>
+      <p>Esamina i risultati di FunSearch, AlphaEvolve e AlphaProof e gli annunci sulle prove di Riemann e Navier–Stokes.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="/materials-dossier.html" hreflang="en">Materiali progettati con l’IA e testati in laboratorio (in inglese)</a></h3>
+      <p>Confronta le previsioni cristalline, le sintesi e le proprietà misurate nei lavori su GNoME, A-Lab e MatterGen.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="alphafold-dossier.html">Previsioni di AlphaFold ed evidenze sperimentali</a></h3>
       <p>Confronta sei interfacce proteiche sostenute da esperimenti con l’evidenza di CASP14 e l’ambito dell’AlphaFold Database.</p>
     </article>
     <article class="pannello">
-      <h3><a href="antibiotic-dossier.html">Antibiotici scoperti con l’IA</a></h3>
+      <h3><a href="antibiotic-dossier.html">Antibiotici scoperti con l’IA e testati in laboratorio e nei topi</a></h3>
       <p>Confronta quattro studi e vedi quali risultati sono stati provati in laboratorio o in modelli murini di infezione, e che cosa resta aperto per i pazienti.</p>
     </article>
   </div>

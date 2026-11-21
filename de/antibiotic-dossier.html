@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>Mit KI entdeckte Antibiotika: Experimente und Grenzen der Evidenz · AI Science Tracker</title>
-<meta name="description" content="Ein quellenbegrenztes Dossier zu mit KI entdeckten Antibiotika: Screening, generatives Design, Laborassays, Mausmodelle und verbleibende Lücken der klinischen Evidenz.">
+<title>KI-entdeckte Antibiotika in Labor- und Mausstudien · AI Science Tracker</title>
+<meta name="description" content="Vergleichen Sie vier Studien zu KI-entdeckten Antibiotika, darunter Halicin und Abaucin. Erfahren Sie, was die Labor- und Mausversuche zeigten.">
 <link rel="canonical" href="https://aisciencetracker.org/de/antibiotic-dossier.html">
-<meta property="og:title" content="Mit KI entdeckte Antibiotika: Experimente und Grenzen der Evidenz · AI Science Tracker">
-<meta property="og:description" content="Vier quellenbegrenzte Studien vergleichen KI-Screening und -Design, Maus-Infektionsexperimente, Toxizitätstests und die Grenzen der klinischen Evidenz.">
+<meta property="og:title" content="KI-entdeckte Antibiotika in Labor- und Mausstudien · AI Science Tracker">
+<meta property="og:description" content="Vergleichen Sie vier Studien zu KI-entdeckten Antibiotika, darunter Halicin und Abaucin. Erfahren Sie, was die Labor- und Mausversuche zeigten.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Vorschaukarte: AI Science Tracker, wissenschaftliche Entdeckungen mit KI, verfolgt anhand offizieller Ankündigungen seit 2020.">
 <meta name="twitter:image:alt" content="Vorschaukarte: AI Science Tracker, wissenschaftliche Entdeckungen mit KI, verfolgt anhand offizieller Ankündigungen seit 2020.">
-<meta name="twitter:title" content="Mit KI entdeckte Antibiotika: Experimente und Grenzen der Evidenz · AI Science Tracker">
-<meta name="twitter:description" content="Vier quellenbegrenzte Studien vergleichen KI-Screening und -Design, Maus-Infektionsexperimente, Toxizitätstests und die Grenzen der klinischen Evidenz.">
+<meta name="twitter:title" content="KI-entdeckte Antibiotika in Labor- und Mausstudien · AI Science Tracker">
+<meta name="twitter:description" content="Vergleichen Sie vier Studien zu KI-entdeckten Antibiotika, darunter Halicin und Abaucin. Erfahren Sie, was die Labor- und Mausversuche zeigten.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/de/antibiotic-dossier.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -192,14 +192,39 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><p class="nota">Evidenzdossier · Redaktionelle Prüfung 16. Nov. 2026</p><h1 id="page-title">Mit KI entdeckte Antibiotika: Was wurde geprüft?</h1><p class="lead">Wie weit sind mit KI entdeckte Antibiotika über Labortests hinausgekommen?</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><p class="nota">Evidenzdossier · Redaktionelle Prüfung 16. Nov. 2026</p><h1 id="page-title">KI-entdeckte Antibiotika in Labor- und Mausstudien</h1><p class="lead">Wie weit sind mit KI entdeckte Antibiotika über Labortests hinausgekommen?</p></div></section>
 <main>
-<section class="sez"><div class="wrap prosa"><h2>Was diese vier Studien belegen</h2>
+<section class="sez" aria-labelledby="evidence-overview"><div class="wrap">
+  <h2 id="evidence-overview">Welche Studien testeten die Wirksamkeit an Mäusen?</h2>
+  <div class="dossier-grid">
+    <article class="pannello">
+      <h3>Tierexperimentelle Evidenz in vier ausgewählten Berichten</h3>
+      <p><strong>Drei Studien zur Wirksamkeit</strong> und ein Bericht mit reinen Toxizitätstests</p>
+      <svg viewBox="0 0 260 61" role="img" aria-labelledby="animal-chart-title animal-chart-desc">
+        <title id="animal-chart-title">Tierversuche in den vier Antibiotikastudien</title>
+        <desc id="animal-chart-desc">Drei gefüllte Blöcke stehen für Studien mit Wirksamkeitstests an Mäusen. Der umrandete Block steht für eine Studie mit reinen Toxizitätstests an Tieren.</desc>
+        <rect class="col" x="4" y="4" width="57" height="22" rx="4"/>
+        <rect class="col" x="69" y="4" width="57" height="22" rx="4"/>
+        <rect class="col" x="134" y="4" width="57" height="22" rx="4"/>
+        <rect class="base" x="199" y="4" width="57" height="22" rx="4" fill="none"/>
+        <text class="lab" x="4" y="48">Wirksamkeitstests</text>
+        <text class="lab" x="256" y="48" text-anchor="end">Nur Toxizität</text>
+      </svg>
+      <p class="descr">Jeder Block steht für einen Bericht. Das Diagramm zählt die Berichte nach Testart.</p>
+    </article>
+    <article class="pannello">
+      <h3>Evidenz bei Patienten</h3>
+      <p>Die vier Berichte lassen Wirksamkeit und Sicherheit beim Menschen offen.</p>
+      <p><a href="#study-comparison">Alle vier Berichte vergleichen</a></p>
+    </article>
+  </div>
+</div></section>
+<section class="sez"><div class="wrap prosa"><p><a href="dossiers.html">Alle Dossiers</a></p><h2>Was diese vier Studien belegen</h2>
 <p>Mehrere Kandidaten erreichten Maus-Infektionsexperimente; das ist ein Schritt über einen Labor-Wachstumstest hinaus. Die ausgewählten Quellenberichte belegen keine Wirksamkeit bei Patientinnen und Patienten. Sie beschreiben verschiedene Verbindungen, Organismen und Experimente und können nicht als aufeinanderfolgende klinische Stufen eines Arzneimittels behandelt werden.</p>
 <p>Die KI trug zur Kandidatenauswahl oder zum Moleküldesign bei. Forschende synthetisierten oder beschafften Verbindungen und maßen die Aktivität experimentell. Eine große virtuelle Bibliothek ist ein Suchraum, keine Zählung wirksamer Arzneimittel.</p>
 <p class="nota"><b>Umfang:</b> vier Katalogstudien, 2020–2025, gewählt um Screening, generatives Design, Infektionsexperimente und reine Toxizitätstests an Tieren gegenüberzustellen. Das ist eine illustrative Synthese, keine erschöpfende oder systematische Übersicht. Die unten verlinkten ursprünglichen institutionellen Berichte wurden am 16. Nov. 2026 geprüft; Volltexte, Studienregister und die gesamte spätere Literatur wurden nicht erneut gelesen. Fehlen in diesem Dossier ist nicht Fehlen in der Forschungsliteratur.</p>
 </div></section>
-<section class="sez"><div class="wrap"><h2>Die tatsächlichen Experimente vergleichen</h2><p class="sez-sub">Zähleinheit: eine bereits im Katalog vorhandene Studie je Karte. Kandidaten und Bedingungen unterscheiden sich; es wird keine gepoolte Erfolgsrate berechnet.</p>
+<section class="sez"><div class="wrap"><h2 id="study-comparison">Die tatsächlichen Experimente vergleichen</h2><p class="sez-sub">Zähleinheit: eine bereits im Katalog vorhandene Studie je Karte. Kandidaten und Bedingungen unterscheiden sich; es wird keine gepoolte Erfolgsrate berechnet.</p>
 <div class="tabella-scorre" tabindex="0" role="region" aria-label="Vergleich der Antibiotika-Evidenz">
 <table><caption>Experimentelle Evidenz in den vier ausgewählten Studien</caption>
 <thead><tr><th scope="col">Studie</th><th scope="col">Beitrag der KI</th><th scope="col">Tierevidenz im zitierten Bericht</th></tr></thead>

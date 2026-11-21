@@ -43,6 +43,22 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('Source checked', text)
         self.assertFalse(any(line.rstrip() != line for line in text.splitlines()))
 
+    def test_dossiers_link_from_featured_records_collections_and_sitemap(self):
+        g = self.generator
+        rows = [dict(self.record, id='2025-01-mattergen', field='materials'),
+                dict(self.record, id='2026-09-openai-navier-stokes', field='mathematics')]
+        models = {'families': [], 'releases': []}
+        g.write_discovery_pages(rows, models, False)
+        g.write_profile_pages(rows, models)
+        g.write_sitemap(rows, models)
+        for row, dossier, anchor in zip(rows, ('materials', 'mathematics'), ('mattergen', 'navier-stokes')):
+            filename = f'{dossier}-dossier.html'
+            share = (g.ROOT / 'share' / f'{row["id"]}.html').read_text()
+            field = (g.ROOT / 'profiles' / f'field-{row["field"]}.html').read_text()
+            self.assertIn(f'href="../{filename}#{anchor}"', share)
+            self.assertIn(f'href="../{filename}"', field)
+            self.assertIn(g.BASE + filename, (g.ROOT / 'sitemap.xml').read_text())
+
     def test_collection_overview_uses_selected_counts_and_full_collection_links(self):
         g = self.generator
         rows = [dict(self.record, publication_date='2024-01-02', field='biology', evidence={}),

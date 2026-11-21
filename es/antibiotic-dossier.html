@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>Antibióticos descubiertos con IA: experimentos y límites de la evidencia · AI Science Tracker</title>
-<meta name="description" content="Un dossier acotado por las fuentes sobre antibióticos descubiertos con IA: cribado, diseño generativo, ensayos de laboratorio, modelos murinos y los huecos que quedan en la evidencia clínica.">
+<title>Antibióticos descubiertos con IA y probados en laboratorio y en ratones · AI Science Tracker</title>
+<meta name="description" content="Compara cuatro estudios de antibióticos descubiertos con IA, como la halicina y la abaucina, y las conclusiones de los ensayos de laboratorio o en ratones.">
 <link rel="canonical" href="https://aisciencetracker.org/es/antibiotic-dossier.html">
-<meta property="og:title" content="Antibióticos descubiertos con IA: experimentos y límites de la evidencia · AI Science Tracker">
-<meta property="og:description" content="Cuatro estudios acotados por las fuentes comparan el cribado y el diseño con IA, experimentos de infección en ratón, pruebas de toxicidad y los límites de la evidencia clínica.">
+<meta property="og:title" content="Antibióticos descubiertos con IA y probados en laboratorio y en ratones · AI Science Tracker">
+<meta property="og:description" content="Compara cuatro estudios de antibióticos descubiertos con IA, como la halicina y la abaucina, y las conclusiones de los ensayos de laboratorio o en ratones.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Tarjeta de vista previa: AI Science Tracker, descubrimientos científicos posibilitados por la IA, seguidos desde los anuncios oficiales de 2020.">
 <meta name="twitter:image:alt" content="Tarjeta de vista previa: AI Science Tracker, descubrimientos científicos posibilitados por la IA, seguidos desde los anuncios oficiales de 2020.">
-<meta name="twitter:title" content="Antibióticos descubiertos con IA: experimentos y límites de la evidencia · AI Science Tracker">
-<meta name="twitter:description" content="Cuatro estudios acotados por las fuentes comparan el cribado y el diseño con IA, experimentos de infección en ratón, pruebas de toxicidad y los límites de la evidencia clínica.">
+<meta name="twitter:title" content="Antibióticos descubiertos con IA y probados en laboratorio y en ratones · AI Science Tracker">
+<meta name="twitter:description" content="Compara cuatro estudios de antibióticos descubiertos con IA, como la halicina y la abaucina, y las conclusiones de los ensayos de laboratorio o en ratones.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/es/antibiotic-dossier.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -192,14 +192,39 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><p class="nota">Dossier de evidencia · Revisión editorial del 16 nov 2026</p><h1 id="page-title">Antibióticos descubiertos con IA: ¿qué se ha puesto a prueba?</h1><p class="lead">¿Hasta dónde han llegado los antibióticos descubiertos con IA más allá de los ensayos de laboratorio?</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><p class="nota">Dossier de evidencia · Revisión editorial del 16 nov 2026</p><h1 id="page-title">Antibióticos descubiertos con IA y probados en laboratorio y en ratones</h1><p class="lead">¿Hasta dónde han llegado los antibióticos descubiertos con IA más allá de los ensayos de laboratorio?</p></div></section>
 <main>
-<section class="sez"><div class="wrap prosa"><h2>Qué establecen estos cuatro estudios</h2>
+<section class="sez" aria-labelledby="evidence-overview"><div class="wrap">
+  <h2 id="evidence-overview">¿Qué estudios probaron la eficacia en ratones?</h2>
+  <div class="dossier-grid">
+    <article class="pannello">
+      <h3>Evidencia en animales en cuatro informes seleccionados</h3>
+      <p><strong>Tres estudios de eficacia</strong> y un informe con pruebas de toxicidad únicamente</p>
+      <svg viewBox="0 0 260 61" role="img" aria-labelledby="animal-chart-title animal-chart-desc">
+        <title id="animal-chart-title">Pruebas en animales en los cuatro estudios de antibióticos</title>
+        <desc id="animal-chart-desc">Tres bloques rellenos representan estudios con pruebas de eficacia en ratones. El bloque delineado representa un estudio con pruebas de toxicidad animal únicamente.</desc>
+        <rect class="col" x="4" y="4" width="57" height="22" rx="4"/>
+        <rect class="col" x="69" y="4" width="57" height="22" rx="4"/>
+        <rect class="col" x="134" y="4" width="57" height="22" rx="4"/>
+        <rect class="base" x="199" y="4" width="57" height="22" rx="4" fill="none"/>
+        <text class="lab" x="4" y="48">Pruebas de eficacia</text>
+        <text class="lab" x="256" y="48" text-anchor="end">Solo toxicidad</text>
+      </svg>
+      <p class="descr">Cada bloque representa un informe. El gráfico cuenta los informes por tipo de prueba.</p>
+    </article>
+    <article class="pannello">
+      <h3>Evidencia en pacientes</h3>
+      <p>Los cuatro informes dejan abiertas las preguntas sobre la eficacia y la seguridad en humanos.</p>
+      <p><a href="#study-comparison">Compara los cuatro informes</a></p>
+    </article>
+  </div>
+</div></section>
+<section class="sez"><div class="wrap prosa"><p><a href="dossiers.html">Todos los dossiers</a></p><h2>Qué establecen estos cuatro estudios</h2>
 <p>Varios candidatos llegaron a experimentos de infección en ratón; es un paso más allá de un ensayo de crecimiento en laboratorio. Los informes de las fuentes seleccionadas no establecen eficacia en pacientes. Describen compuestos, organismos y experimentos distintos, así que no pueden tratarse como etapas clínicas sucesivas de un mismo fármaco.</p>
 <p>La IA contribuyó a la selección de candidatos o al diseño molecular. Los investigadores sintetizaron u obtuvieron compuestos y midieron la actividad de forma experimental. Una gran biblioteca virtual es un espacio de búsqueda, no un recuento de medicamentos eficaces.</p>
 <p class="nota"><b>Alcance:</b> cuatro estudios del catálogo, 2020–2025, elegidos para contrastar cribado, diseño generativo, experimentos de infección y pruebas en animales solo de toxicidad. Es una síntesis ilustrativa, no una revisión exhaustiva o sistemática. Los informes institucionales originales enlazados abajo se comprobaron el 16 nov 2026; los artículos completos, los registros de ensayos y toda la literatura posterior no se volvieron a revisar. Que algo no esté en este dossier no significa que falte en la literatura de investigación.</p>
 </div></section>
-<section class="sez"><div class="wrap"><h2>Comparar los experimentos reales</h2><p class="sez-sub">Unidad de recuento: un estudio ya presente en el catálogo por ficha. Los candidatos y las condiciones difieren; no se calcula una tasa de éxito agrupada.</p>
+<section class="sez"><div class="wrap"><h2 id="study-comparison">Comparar los experimentos reales</h2><p class="sez-sub">Unidad de recuento: un estudio ya presente en el catálogo por ficha. Los candidatos y las condiciones difieren; no se calcula una tasa de éxito agrupada.</p>
 <div class="tabella-scorre" tabindex="0" role="region" aria-label="Comparación de la evidencia sobre antibióticos">
 <table><caption>Evidencia experimental informada en los cuatro estudios seleccionados</caption>
 <thead><tr><th scope="col">Estudio</th><th scope="col">Aportación de la IA</th><th scope="col">Evidencia animal en el informe citado</th></tr></thead>

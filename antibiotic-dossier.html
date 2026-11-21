@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>AI-discovered antibiotics: experiments and evidence limits · AI Science Tracker</title>
-<meta name="description" content="A source-bounded dossier on AI-discovered antibiotics: screening, generative design, laboratory assays, mouse models and remaining clinical evidence gaps.">
+<title>AI-Discovered Antibiotics Tested in the Lab and in Mice · AI Science Tracker</title>
+<meta name="description" content="Compare evidence from four AI antibiotic studies, including Halicin and Abaucin. See which results come from lab or mouse experiments and what the reports establish.">
 <link rel="canonical" href="https://aisciencetracker.org/antibiotic-dossier.html">
-<meta property="og:title" content="AI-discovered antibiotics: experiments and evidence limits · AI Science Tracker">
-<meta property="og:description" content="Four source-bounded studies compare AI screening and design, mouse infection experiments, toxicity tests and clinical evidence limits.">
+<meta property="og:title" content="AI-Discovered Antibiotics Tested in the Lab and in Mice · AI Science Tracker">
+<meta property="og:description" content="Compare evidence from four AI antibiotic studies, including Halicin and Abaucin. See which results come from lab or mouse experiments and what the reports establish.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
-<meta name="twitter:title" content="AI-discovered antibiotics: experiments and evidence limits · AI Science Tracker">
-<meta name="twitter:description" content="Four source-bounded studies compare AI screening and design, mouse infection experiments, toxicity tests and clinical evidence limits.">
+<meta name="twitter:title" content="AI-Discovered Antibiotics Tested in the Lab and in Mice · AI Science Tracker">
+<meta name="twitter:description" content="Compare evidence from four AI antibiotic studies, including Halicin and Abaucin. See which results come from lab or mouse experiments and what the reports establish.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/antibiotic-dossier.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -191,14 +191,39 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><p class="nota">Evidence dossier · Editorial review 16 Nov 2026</p><h1 id="page-title">AI-discovered antibiotics: what has been tested?</h1><p class="lead">How far have AI-discovered antibiotics progressed beyond laboratory assays?</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><p class="nota">Evidence dossier · Editorial review 16 Nov 2026</p><h1 id="page-title">AI-Discovered Antibiotics Tested in the Lab and in Mice</h1><p class="lead">How far have AI-discovered antibiotics progressed beyond laboratory assays?</p></div></section>
 <main>
-<section class="sez"><div class="wrap prosa"><h2>What these four studies establish</h2>
+<section class="sez" aria-labelledby="evidence-overview"><div class="wrap">
+  <h2 id="evidence-overview">Which studies tested efficacy in mice?</h2>
+  <div class="dossier-grid">
+    <article class="pannello">
+      <h3>Animal evidence in four selected reports</h3>
+      <p><strong>Three efficacy studies</strong> and one report with toxicity testing only</p>
+      <svg viewBox="0 0 260 61" role="img" aria-labelledby="animal-chart-title animal-chart-desc">
+        <title id="animal-chart-title">Animal testing in the four antibiotic studies</title>
+        <desc id="animal-chart-desc">Three filled blocks represent studies reporting efficacy tests in mice. The outlined block represents one study reporting animal toxicity tests only.</desc>
+        <rect class="col" x="4" y="4" width="57" height="22" rx="4"/>
+        <rect class="col" x="69" y="4" width="57" height="22" rx="4"/>
+        <rect class="col" x="134" y="4" width="57" height="22" rx="4"/>
+        <rect class="base" x="199" y="4" width="57" height="22" rx="4" fill="none"/>
+        <text class="lab" x="4" y="48">Efficacy tests</text>
+        <text class="lab" x="256" y="48" text-anchor="end">Toxicity only</text>
+      </svg>
+      <p class="descr">Each block is one report. The chart counts the type of test each report describes.</p>
+    </article>
+    <article class="pannello">
+      <h3>Evidence in patients</h3>
+      <p>The four reports leave human efficacy and safety unresolved.</p>
+      <p><a href="#study-comparison">Compare all four reports</a></p>
+    </article>
+  </div>
+</div></section>
+<section class="sez"><div class="wrap prosa"><p><a href="dossiers.html">All dossiers</a></p><h2>What these four studies establish</h2>
 <p>Several candidates reached mouse infection experiments; that is a step beyond a laboratory growth assay. The selected source reports do not establish efficacy in patients. They describe different compounds, organisms and experiments, so they cannot be treated as successive clinical stages of one drug.</p>
 <p>AI contributed candidate selection or molecular design. Researchers synthesized or obtained compounds and measured activity experimentally. A large virtual library is a search space, not a count of effective medicines.</p>
 <p class="nota"><b>Scope:</b> four catalog studies, 2020–2025, selected to contrast screening, generative design, infection experiments and toxicity-only animal testing. This is an illustrative synthesis, not an exhaustive or systematic review. The original institutional reports linked below were checked on 16 Nov 2026; full papers, trial registries and all later literature were not re-reviewed. Absence from this dossier is not absence from the research literature.</p>
 </div></section>
-<section class="sez"><div class="wrap"><h2>Compare the actual experiments</h2><p class="sez-sub">Counting unit: one existing catalog study per card. The candidates and conditions differ; no pooled success rate is calculated.</p>
+<section class="sez"><div class="wrap"><h2 id="study-comparison">Compare the actual experiments</h2><p class="sez-sub">Counting unit: one existing catalog study per card. The candidates and conditions differ; no pooled success rate is calculated.</p>
 <div class="tabella-scorre" tabindex="0" role="region" aria-label="Antibiotic evidence comparison">
 <table><caption>Experimental evidence reported in the four selected studies</caption>
 <thead><tr><th scope="col">Study</th><th scope="col">AI contribution</th><th scope="col">Animal evidence in the cited report</th></tr></thead>

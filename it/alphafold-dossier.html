@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>Scoperte di AlphaFold ed evidenza sperimentale · AI Science Tracker</title>
-<meta name="description" content="Che cosa ha aiutato a scoprire AlphaFold? Confronta interfacce proteiche sostenute da esperimenti, il benchmark CASP14 e l’AlphaFold Database.">
+<title>Previsioni di AlphaFold ed evidenze sperimentali · AI Science Tracker</title>
+<meta name="description" content="Quali previsioni di AlphaFold hanno un riscontro sperimentale? Confronta sei interfacce tra proteine umane, il benchmark CASP14 e il database AlphaFold.">
 <link rel="canonical" href="https://aisciencetracker.org/it/alphafold-dossier.html">
-<meta property="og:title" content="Scoperte di AlphaFold ed evidenza sperimentale · AI Science Tracker">
-<meta property="og:description" content="Che cosa ha aiutato a scoprire AlphaFold? Confronta interfacce proteiche sostenute da esperimenti, il benchmark CASP14 e l’AlphaFold Database.">
+<meta property="og:title" content="Previsioni di AlphaFold ed evidenze sperimentali · AI Science Tracker">
+<meta property="og:description" content="Quali previsioni di AlphaFold hanno un riscontro sperimentale? Confronta sei interfacce tra proteine umane, il benchmark CASP14 e il database AlphaFold.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Scheda di anteprima: AI Science Tracker, scoperte scientifiche rese possibili dall’IA, seguite dagli annunci ufficiali dal 2020.">
 <meta name="twitter:image:alt" content="Scheda di anteprima: AI Science Tracker, scoperte scientifiche rese possibili dall’IA, seguite dagli annunci ufficiali dal 2020.">
-<meta name="twitter:title" content="Scoperte di AlphaFold ed evidenza sperimentale · AI Science Tracker">
-<meta name="twitter:description" content="Che cosa ha aiutato a scoprire AlphaFold? Confronta interfacce proteiche sostenute da esperimenti, il benchmark CASP14 e l’AlphaFold Database.">
+<meta name="twitter:title" content="Previsioni di AlphaFold ed evidenze sperimentali · AI Science Tracker">
+<meta name="twitter:description" content="Quali previsioni di AlphaFold hanno un riscontro sperimentale? Confronta sei interfacce tra proteine umane, il benchmark CASP14 e il database AlphaFold.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/it/alphafold-dossier.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -192,17 +192,52 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Scoperte di AlphaFold ed evidenza sperimentale</h1><p class="lead">Che cosa ha predetto AlphaFold e che cosa hanno confermato i ricercatori con gli esperimenti?</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Previsioni di AlphaFold ed evidenze sperimentali</h1><p class="lead">Che cosa ha predetto AlphaFold e che cosa hanno confermato i ricercatori con gli esperimenti?</p></div></section>
 <main>
+<section class="sez" aria-labelledby="evidence-overview"><div class="wrap">
+  <h2 id="evidence-overview">Che cosa hanno dimostrato i test?</h2>
+  <p class="sez-sub">CASP14 ha valutato l’accuratezza delle previsioni strutturali. Un altro studio ha testato sperimentalmente singole interfacce proteiche.</p>
+  <div class="dossier-grid">
+    <article class="pannello">
+      <h3><a href="#casp14">Benchmark CASP14</a></h3>
+      <p><strong>92.4 su 100</strong> come punteggio mediano al Global Distance Test</p>
+      <svg viewBox="0 0 260 54" role="img" aria-labelledby="casp-chart-title casp-chart-desc">
+        <title id="casp-chart-title">Punteggio mediano di AlphaFold 2 al CASP14</title>
+        <desc id="casp-chart-desc">Il punteggio mediano del Global Distance Test è stato 92.4 su una scala da zero a 100.</desc>
+        <rect class="base" x="4" y="4" width="252" height="18" rx="4" fill="none"/>
+        <rect class="col" x="4" y="4" width="232.85" height="18" rx="4"/>
+        <text class="ax" x="4" y="43">0</text>
+        <text class="ax" x="256" y="43" text-anchor="end">100 GDT</text>
+      </svg>
+      <p class="descr">Le previsioni sono state confrontate con strutture di riferimento determinate sperimentalmente.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="#protein-interfaces">Studio su AlphaFold-Multimer</a></h3>
+      <p><strong>Sei interfacce proteiche</strong> con riscontro sperimentale</p>
+      <svg viewBox="0 0 260 54" role="img" aria-labelledby="interfaces-chart-title interfaces-chart-desc">
+        <title id="interfaces-chart-title">Interfacce proteiche supportate da esperimenti</title>
+        <desc id="interfaces-chart-desc">Ognuno dei sei punti rappresenta un’interfaccia mai descritta prima e supportata dagli esperimenti dello studio citato.</desc>
+        <circle class="col" cx="18" cy="13" r="9"/>
+        <circle class="col" cx="63" cy="13" r="9"/>
+        <circle class="col" cx="108" cy="13" r="9"/>
+        <circle class="col" cx="153" cy="13" r="9"/>
+        <circle class="col" cx="198" cy="13" r="9"/>
+        <circle class="col" cx="243" cy="13" r="9"/>
+        <text class="ax" x="130" y="43" text-anchor="middle">Un punto per interfaccia</text>
+      </svg>
+      <p class="descr">Le sei interfacce provengono da uno studio su interazioni selezionate tra proteine umane.</p>
+    </article>
+  </div>
+</div></section>
 <section class="sez" id="alphafold-evidence"><div class="wrap prosa">
   <p><a href="dossiers.html">Tutti i dossier</a></p>
   <h2>Che cosa ha aiutato a scoprire AlphaFold?</h2>
   <p>Uno studio con AlphaFold-Multimer ha riportato un sostegno sperimentale per sei interfacce proteiche prima non descritte. CASP14 e l’espansione della banca dati danno contesto all’accuratezza e alla disponibilità delle predizioni di struttura.</p>
   <p class="nota">Revisione editoriale del 18 nov 2026. Tre esempi del catalogo illustrano tipi diversi di evidenza.</p>
-      <h3>Gli esperimenti hanno sostenuto sei interfacce proteiche prima non descritte</h3>
+      <h3 id="protein-interfaces">Gli esperimenti hanno sostenuto sei interfacce proteiche prima non descritte</h3>
       <p>Uno studio su 62 interazioni proteiche umane selezionate ha usato AlphaFold-Multimer per predire dove le proteine potrebbero toccarsi. Esperimenti successivi hanno corroborato sei interfacce prima non descritte. Gli autori hanno anche riportato limiti nella specificità della predizione. Il sostegno sperimentale vale per le interfacce messe alla prova in questo studio. <a href="https://doi.org/10.1038/s44320-023-00005-6">Leggi lo studio sulle interfacce proteiche</a>.</p>
       <p><a href="../share/2024-01-alphafold-multimer-guided-experiments-corroborate-six-novel-human-protein-interfaces.html">View the catalog record</a>.</p>
-      <h3>CASP14 ha misurato l’accuratezza delle predizioni</h3>
+      <h3 id="casp14">CASP14 ha misurato l’accuratezza delle predizioni</h3>
       <p>Nella valutazione alla cieca CASP14, AlphaFold 2 ha ottenuto una mediana di 92.4 al Global Distance Test sui bersagli, secondo Google DeepMind. Gli organizzatori hanno confrontato le predizioni con strutture di riferimento determinate sperimentalmente. Quel punteggio descrive la prestazione di benchmark sui bersagli valutati. <a href="https://deepmind.google/blog/alphafold-a-solution-to-a-50-year-old-grand-challenge-in-biology/">Leggi l’annuncio di CASP14</a>.</p>
       <p><a href="../share/2020-11-alphafold-casp14.html">View the catalog record</a>.</p>
       <h3>L’AlphaFold Database ha ampliato l’accesso alle predizioni</h3>
