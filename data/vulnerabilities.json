@@ -69629,5 +69629,90 @@
       },
       "action": "Update patool to 4.0.5 or later for the documented correction. The advisory range applies to the specified extraction backend and Python runtime; it does not establish that every older release/configuration was independently tested."
     }
+  },
+  {
+    "id": "cve-2026-132644",
+    "title": "MISP Galaxy Cluster import authorization weakness",
+    "product": "MISP",
+    "ai_system": "Claude Opus 5.5",
+    "organization": "CIRCL; ENISA; CERT.pl",
+    "summary": "CIRCL disclosed a Galaxy Cluster import authorization weakness affecting organization boundaries in MISP. The CVE record documents a corrective change.",
+    "ai_role": "The CNA credits Claude Opus 5.5 as a discovery or identification tool and as a remediation developer. It credits ENISA and CERT.pl as reporters. The record does not specify the model's independent contribution.",
+    "disclosure_date": "2026-11-18",
+    "ai_attribution_date": "2026-11-18",
+    "classification": "disclosure",
+    "classification_note": "The dated public CNA record documents the finding and the AI credits.",
+    "cves": [
+      "CVE-2026-132644"
+    ],
+    "source_url": "https://www.cve.org/CVERecord?id=CVE-2026-132644",
+    "ai_source_url": "https://www.cve.org/CVERecord?id=CVE-2026-132644",
+    "advisory_url": "https://www.cve.org/CVERecord?id=CVE-2026-132644",
+    "remediation": "fix documented",
+    "remediation_note": "The CNA links a corrective change. The source does not identify a first fixed release.",
+    "checked_date": "2026-11-22"
+  },
+  {
+    "id": "cve-2026-28364",
+    "title": "OCaml Marshal deserialization buffer over-read",
+    "product": "OCaml",
+    "ai_system": "AI-assisted research (model unspecified)",
+    "organization": "Justin Timperio; OCaml maintainers",
+    "summary": "OCaml's security advisory documents a buffer over-read in Marshal deserialization and records fixes in the 4.14 and 5.4 release branches. This entry covers the original OSEC-2026-01 advisory.",
+    "ai_role": "Reporter Justin Timperio describes using AI in the discovery and explicitly identifies OSEC-2026-01 and CVE-2026-28364. The maintainer advisory establishes the finding and the correction. The report does not identify the specific AI model.",
+    "disclosure_date": "2026-02-17",
+    "ai_attribution_date": "2026-03-18",
+    "classification": "disclosure",
+    "classification_note": "The original OCaml advisory appeared on 17 February. The CNA published the CVE on 27 February, and the reporter's AI-attribution account is dated 18 March.",
+    "cves": [
+      "CVE-2026-28364"
+    ],
+    "source_url": "https://osv.dev/vulnerability/OSEC-2026-01",
+    "ai_source_url": "https://www.linkedin.com/pulse/economics-responsible-disclosure-age-ai-changing-justin-timperio-a2odc",
+    "advisory_url": "https://osv.dev/vulnerability/OSEC-2026-01",
+    "remediation": "fix documented",
+    "remediation_note": "The original advisory lists fixed releases 4.14.3 and 5.4.1 for its respective branches.",
+    "checked_date": "2026-11-22",
+    "remediation_details": {
+      "source_url": "https://osv.dev/vulnerability/OSEC-2026-01",
+      "checked_date": "2026-11-22",
+      "scope": "OCaml release branches covered by OSEC-2026-01",
+      "fixed_in": [
+        "4.14.3",
+        "5.4.1"
+      ]
+    }
+  },
+  {
+    "id": "cve-2026-73499",
+    "title": "etcd Watch API authorization weakness",
+    "product": "etcd",
+    "ai_system": "NCC Group LLM-assisted research pipeline (model unspecified)",
+    "organization": "NCC Group; etcd maintainers",
+    "summary": "NCC Group reported an etcd Watch API authorization weakness. The maintainers published a security advisory and list fixed releases for three etcd branches.",
+    "ai_role": "NCC Group identifies this case as one of the security hypotheses generated using an LLM and validated by its researchers. The report does not identify a specific model for the finding.",
+    "disclosure_date": "2026-07-23",
+    "ai_attribution_date": null,
+    "classification": "disclosure",
+    "classification_note": "The repository advisory was published on 23 July UTC. GitHub's advisory database entry followed on 24 July UTC. The linked attribution account does not establish a publication date.",
+    "cves": [
+      "CVE-2026-73499"
+    ],
+    "source_url": "https://github.com/etcd-io/etcd/security/advisories/GHSA-xg4h-6gfc-h4m8",
+    "ai_source_url": "https://www.nccgroup.com/research/finding-two-authorization-bypasses-in-etcd-through-a-vulnerability-research-llm-assisted-pipeline/",
+    "advisory_url": "https://github.com/etcd-io/etcd/security/advisories/GHSA-xg4h-6gfc-h4m8",
+    "remediation": "fix documented",
+    "remediation_note": "The maintainers list fixes in 3.5.33, 3.6.14 and 3.7.1 for the respective release branches.",
+    "checked_date": "2026-11-22",
+    "remediation_details": {
+      "source_url": "https://github.com/etcd-io/etcd/security/advisories/GHSA-xg4h-6gfc-h4m8",
+      "checked_date": "2026-11-22",
+      "scope": "etcd advisory release branches",
+      "fixed_in": [
+        "3.5.33",
+        "3.6.14",
+        "3.7.1"
+      ]
+    }
   }
 ]
