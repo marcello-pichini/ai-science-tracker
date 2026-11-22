@@ -44,7 +44,11 @@ SHARED_PAGES = (
     'model-progress.html', 'profile.html', 'alphafold-dossier.html', 'antibiotic-dossier.html',
     '404.html',
 )
-NEW_DOSSIER_PAGES = ('materials-dossier.html', 'mathematics-dossier.html')
+NEW_DOSSIER_PAGES = (
+    'materials-dossier.html', 'mathematics-dossier.html', 'seismology-dossier.html',
+    'astronomy-dossier.html', 'floods-dossier.html', 'vulnerabilities-dossier.html',
+    'model-releases-dossier.html',
+)
 PAGES = SHARED_PAGES + NEW_DOSSIER_PAGES
 SITEMAP_PAGES = tuple(page for page in PAGES if page != '404.html')
 

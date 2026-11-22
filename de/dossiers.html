@@ -77,10 +77,10 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
 <title>Dossiers zur KI-Forschung · AI Science Tracker</title>
-<meta name="description" content="Vier Dossiers mit Quellen zu AlphaFold, KI-entdeckten Antibiotika, im Labor getesteten Materialien und KI-gestützter Mathematik.">
+<meta name="description" content="Lesen Sie Dossiers mit Quellenlinks zu Softwaresicherheit, Modellveröffentlichungen, Mathematik, Materialwissenschaft, Biologie, Seismologie, Astronomie und Hochwasservorhersage.">
 <link rel="canonical" href="https://aisciencetracker.org/de/dossiers.html">
 <meta property="og:title" content="Dossiers zur KI-Forschung · AI Science Tracker">
-<meta property="og:description" content="Vier Dossiers mit Quellen zu AlphaFold, KI-entdeckten Antibiotika, im Labor getesteten Materialien und KI-gestützter Mathematik.">
+<meta property="og:description" content="Lesen Sie Dossiers mit Quellenlinks zu Softwaresicherheit, Modellveröffentlichungen, Mathematik, Materialwissenschaft, Biologie, Seismologie, Astronomie und Hochwasservorhersage.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
@@ -88,7 +88,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:image:alt" content="Vorschaukarte: AI Science Tracker, wissenschaftliche Entdeckungen mit KI, verfolgt anhand offizieller Ankündigungen seit 2020.">
 <meta name="twitter:image:alt" content="Vorschaukarte: AI Science Tracker, wissenschaftliche Entdeckungen mit KI, verfolgt anhand offizieller Ankündigungen seit 2020.">
 <meta name="twitter:title" content="Dossiers zur KI-Forschung · AI Science Tracker">
-<meta name="twitter:description" content="Vier Dossiers mit Quellen zu AlphaFold, KI-entdeckten Antibiotika, im Labor getesteten Materialien und KI-gestützter Mathematik.">
+<meta name="twitter:description" content="Lesen Sie Dossiers mit Quellenlinks zu Softwaresicherheit, Modellveröffentlichungen, Mathematik, Materialwissenschaft, Biologie, Seismologie, Astronomie und Hochwasservorhersage.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/de/dossiers.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -192,11 +192,19 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Dossiers zur KI-Forschung</h1><p class="lead">Gezielte Darstellungen dessen, was KI Wissenschaftlerinnen und Wissenschaftlern zu finden half und wie sie es prüften.</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Dossiers zur KI-Forschung</h1><p class="lead">Wie KI zu konkreten Forschungsbefunden beitrug und wie diese überprüft wurden.</p></div></section>
 <main>
 <section class="sez"><div class="wrap">
   <h2>Verfügbare Dossiers</h2>
   <div class="dossier-grid">
+    <article class="pannello">
+      <h3><a href="vulnerabilities-dossier.html">Mit KI entdeckte Schwachstellen: von der Meldung zur Behebung</a></h3>
+      <p>Vergleichen Sie anhand öffentlicher Quellen, wie SQLite und Firefox den Beitrag der KI, die Prüfung durch Fachleute und veröffentlichte Fehlerbehebungen dokumentieren.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="model-releases-dossier.html">KI-Modellreleases, Labore und Entdeckungen</a></h3>
+      <p>Erfahren Sie, welche Forschungseinrichtungen die meisten erfassten Modellveröffentlichungen haben und welche Organisationen und Modellfamilien am häufigsten in Entdeckungseinträgen vorkommen.</p>
+    </article>
     <article class="pannello">
       <h3><a href="mathematics-dossier.html">KI in der Mathematik: Resultate und mögliche Beweise</a></h3>
       <p>Ergebnisse von FunSearch, AlphaEvolve und AlphaProof sowie die angekündigten Beweise zu Riemann und Navier–Stokes.</p>
@@ -212,6 +220,18 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <article class="pannello">
       <h3><a href="antibiotic-dossier.html">KI-entdeckte Antibiotika in Labor- und Mausstudien</a></h3>
       <p>Vergleichen Sie vier Studien und sehen Sie, welche Befunde im Labor oder in Maus-Infektionsmodellen geprüft wurden und was für Patientinnen und Patienten offen bleibt.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="seismology-dossier.html">Was KI in seismischen Aufzeichnungen sichtbar macht</a></h3>
+      <p>Vergleichen Sie übersehene Erdbeben, die Kartierung geologischer Störungen und Muster, die im Rückblick vor früheren Erdbeben erkannt wurden.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="astronomy-dossier.html">Von astronomischen Signalen zu Entdeckungen</a></h3>
+      <p>Verfolgen Sie, wie Kepler-Transitsignale und Euclid-Linsenkandidaten mit unterschiedlichen wissenschaftlichen Verfahren geprüft werden.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="floods-dossier.html">Wie früh kann KI vor Hochwasser warnen?</a></h3>
+      <p>Erfahren Sie, wie Forschende den Vorhersagevorlauf in Einzugsgebieten mit wenigen lokalen Daten ermittelt haben.</p>
     </article>
   </div>
 </div></section>

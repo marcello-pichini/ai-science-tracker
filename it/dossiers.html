@@ -77,10 +77,10 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
 <title>Dossier sulle evidenze scientifiche dell’IA · AI Science Tracker</title>
-<meta name="description" content="Esplora quattro dossier con fonti su AlphaFold, antibiotici scoperti con l’IA, materiali testati in laboratorio e matematica assistita dall’IA.">
+<meta name="description" content="Esplora dossier con fonti sulla sicurezza del software, sui rilasci dei modelli, sulla matematica, sulla scienza dei materiali, sulla biologia, sulla sismologia, sull’astronomia e sulla previsione delle piene.">
 <link rel="canonical" href="https://aisciencetracker.org/it/dossiers.html">
 <meta property="og:title" content="Dossier sulle evidenze scientifiche dell’IA · AI Science Tracker">
-<meta property="og:description" content="Esplora quattro dossier con fonti su AlphaFold, antibiotici scoperti con l’IA, materiali testati in laboratorio e matematica assistita dall’IA.">
+<meta property="og:description" content="Esplora dossier con fonti sulla sicurezza del software, sui rilasci dei modelli, sulla matematica, sulla scienza dei materiali, sulla biologia, sulla sismologia, sull’astronomia e sulla previsione delle piene.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
@@ -88,7 +88,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:image:alt" content="Scheda di anteprima: AI Science Tracker, scoperte scientifiche rese possibili dall’IA, seguite dagli annunci ufficiali dal 2020.">
 <meta name="twitter:image:alt" content="Scheda di anteprima: AI Science Tracker, scoperte scientifiche rese possibili dall’IA, seguite dagli annunci ufficiali dal 2020.">
 <meta name="twitter:title" content="Dossier sulle evidenze scientifiche dell’IA · AI Science Tracker">
-<meta name="twitter:description" content="Esplora quattro dossier con fonti su AlphaFold, antibiotici scoperti con l’IA, materiali testati in laboratorio e matematica assistita dall’IA.">
+<meta name="twitter:description" content="Esplora dossier con fonti sulla sicurezza del software, sui rilasci dei modelli, sulla matematica, sulla scienza dei materiali, sulla biologia, sulla sismologia, sull’astronomia e sulla previsione delle piene.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/it/dossiers.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -192,11 +192,19 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Dossier sulle evidenze scientifiche dell’IA</h1><p class="lead">Rassegne mirate di che cosa l’IA ha aiutato gli scienziati a trovare e di come lo hanno messo alla prova.</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Dossier sulle evidenze scientifiche dell’IA</h1><p class="lead">Approfondimenti su ciò che l’IA ha aiutato i ricercatori a scoprire e su come hanno verificato i risultati.</p></div></section>
 <main>
 <section class="sez"><div class="wrap">
   <h2>Dossier disponibili</h2>
   <div class="dossier-grid">
+    <article class="pannello">
+      <h3><a href="vulnerabilities-dossier.html">Vulnerabilità individuate con l’IA: dalla segnalazione alla correzione</a></h3>
+      <p>Confronta le fonti pubbliche sul ruolo dell’IA, sulla revisione umana e sulle correzioni rilasciate per SQLite e Firefox.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="model-releases-dossier.html">Rilasci di modelli di IA, laboratori di ricerca e scoperte</a></h3>
+      <p>Scopri quali laboratori hanno più rilasci registrati e quali organizzazioni e famiglie di modelli compaiono più spesso nelle schede delle scoperte.</p>
+    </article>
     <article class="pannello">
       <h3><a href="mathematics-dossier.html">IA in matematica: scoperte e dimostrazioni proposte</a></h3>
       <p>Esamina i risultati di FunSearch, AlphaEvolve e AlphaProof e gli annunci sulle prove di Riemann e Navier–Stokes.</p>
@@ -212,6 +220,18 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <article class="pannello">
       <h3><a href="antibiotic-dossier.html">Antibiotici scoperti con l’IA e testati in laboratorio e nei topi</a></h3>
       <p>Confronta quattro studi e vedi quali risultati sono stati provati in laboratorio o in modelli murini di infezione, e che cosa resta aperto per i pazienti.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="seismology-dossier.html">Cosa rivela l’IA nelle registrazioni sismiche</a></h3>
+      <p>Confronta i terremoti sfuggiti al rilevamento, la mappatura delle faglie e gli andamenti individuati prima di terremoti già avvenuti.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="astronomy-dossier.html">Dai segnali astronomici alle scoperte</a></h3>
+      <p>Segui le verifiche scientifiche a cui sono sottoposti i segnali di transito di Kepler e le possibili lenti gravitazionali di Euclid.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="floods-dossier.html">Con quanto anticipo l’IA può avvertire di una piena?</a></h3>
+      <p>Scopri come i ricercatori hanno misurato l’anticipo delle previsioni nei bacini con pochi dati locali.</p>
     </article>
   </div>
 </div></section>

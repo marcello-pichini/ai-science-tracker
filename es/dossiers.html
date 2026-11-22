@@ -77,10 +77,10 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
 <title>Dosieres sobre la evidencia científica de la IA · AI Science Tracker</title>
-<meta name="description" content="Cuatro dosieres con fuentes sobre AlphaFold, antibióticos descubiertos con IA, materiales probados en laboratorio y matemáticas asistidas por IA.">
+<meta name="description" content="Explora dosieres con enlaces a las fuentes sobre seguridad del software, lanzamientos de modelos, matemáticas, ciencia de materiales, biología, sismología, astronomía y previsión de inundaciones.">
 <link rel="canonical" href="https://aisciencetracker.org/es/dossiers.html">
 <meta property="og:title" content="Dosieres sobre la evidencia científica de la IA · AI Science Tracker">
-<meta property="og:description" content="Cuatro dosieres con fuentes sobre AlphaFold, antibióticos descubiertos con IA, materiales probados en laboratorio y matemáticas asistidas por IA.">
+<meta property="og:description" content="Explora dosieres con enlaces a las fuentes sobre seguridad del software, lanzamientos de modelos, matemáticas, ciencia de materiales, biología, sismología, astronomía y previsión de inundaciones.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
@@ -88,7 +88,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:image:alt" content="Tarjeta de vista previa: AI Science Tracker, descubrimientos científicos posibilitados por la IA, seguidos desde los anuncios oficiales de 2020.">
 <meta name="twitter:image:alt" content="Tarjeta de vista previa: AI Science Tracker, descubrimientos científicos posibilitados por la IA, seguidos desde los anuncios oficiales de 2020.">
 <meta name="twitter:title" content="Dosieres sobre la evidencia científica de la IA · AI Science Tracker">
-<meta name="twitter:description" content="Cuatro dosieres con fuentes sobre AlphaFold, antibióticos descubiertos con IA, materiales probados en laboratorio y matemáticas asistidas por IA.">
+<meta name="twitter:description" content="Explora dosieres con enlaces a las fuentes sobre seguridad del software, lanzamientos de modelos, matemáticas, ciencia de materiales, biología, sismología, astronomía y previsión de inundaciones.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/es/dossiers.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -192,11 +192,19 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Dosieres sobre la evidencia científica de la IA</h1><p class="lead">Revisiones centradas de qué ayudó a encontrar la IA a los científicos y de cómo lo pusieron a prueba.</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Dosieres sobre la evidencia científica de la IA</h1><p class="lead">Análisis de lo que la IA ayudó a descubrir y de cómo los investigadores comprobaron los resultados.</p></div></section>
 <main>
 <section class="sez"><div class="wrap">
   <h2>Dossiers disponibles</h2>
   <div class="dossier-grid">
+    <article class="pannello">
+      <h3><a href="vulnerabilities-dossier.html">Vulnerabilidades detectadas con IA: del informe a la corrección</a></h3>
+      <p>Compara la evidencia pública sobre el papel de la IA, la revisión humana y las correcciones publicadas para SQLite y Firefox.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="model-releases-dossier.html">Lanzamientos de modelos de IA, laboratorios de investigación y descubrimientos</a></h3>
+      <p>Consulta qué laboratorios tienen más lanzamientos registrados y qué organizaciones y familias de modelos aparecen con más frecuencia en las fichas de descubrimientos.</p>
+    </article>
     <article class="pannello">
       <h3><a href="mathematics-dossier.html">IA en matemáticas: descubrimientos y pruebas propuestas</a></h3>
       <p>Consulta los resultados de FunSearch, AlphaEvolve y AlphaProof y los anuncios sobre las pruebas de Riemann y Navier–Stokes.</p>
@@ -212,6 +220,18 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <article class="pannello">
       <h3><a href="antibiotic-dossier.html">Antibióticos descubiertos con IA y probados en laboratorio y en ratones</a></h3>
       <p>Compare cuatro estudios y vea qué hallazgos se probaron en el laboratorio o en modelos murinos de infección, y qué queda abierto para los pacientes.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="seismology-dossier.html">Qué revela la IA en los registros sísmicos</a></h3>
+      <p>Compara los terremotos que pasaron inadvertidos, la cartografía de fallas y los patrones detectados antes de terremotos ya ocurridos.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="astronomy-dossier.html">De las señales astronómicas a los descubrimientos</a></h3>
+      <p>Sigue las distintas comprobaciones científicas por las que pasan las señales de tránsito de Kepler y las posibles lentes gravitacionales de Euclid.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="floods-dossier.html">¿Con cuánta antelación puede la IA avisar de una inundación fluvial?</a></h3>
+      <p>Consulta cómo midieron los investigadores la antelación de las previsiones en cuencas con escasos datos locales.</p>
     </article>
   </div>
 </div></section>

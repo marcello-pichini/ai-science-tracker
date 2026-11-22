@@ -811,6 +811,7 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [Organizations and model families]({BASE}profiles/index.html): static profile pages
 - [Model progress]({BASE}model-progress.html): exact model comparison, ECI, benchmark evidence and recorded release rhythm
 - [Search all collections]({BASE}search.html): literal retrieval with separate counts and match reasons
+- [Evidence dossiers]({BASE}dossiers.html): selected studies and public vulnerability disclosures with evidence limits
 - [Antibiotic evidence dossier]({BASE}antibiotic-dossier.html): dated, source-bounded synthesis
 - [Catalog coverage and evidence]({BASE}profiles/catalog-evidence.html): reproducible composition tables, counting limits and CSV
 - [Static AI-found security cases]({BASE}profiles/security-index.html): source-attributed case pages readable without JavaScript
@@ -845,7 +846,9 @@ def write_sitemap(items, models, archived=(), vulns=()):
     # search.html is a translated editorial page. profile.html and 404.html are noindex.
     # Localized copies exist only for translated editorial pages, not for share/ or profiles/.
     urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'search.html', 'dataset.html', 'contributors.html', 'contact.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
-    urls += [f'{field}-dossier.html' for field in DOSSIERS]
+    from i18n_site import LOCALES, NEW_DOSSIER_PAGES, SITEMAP_PAGES, public_url
+
+    urls.extend(NEW_DOSSIER_PAGES)
     urls += ['profiles/index.html']
     urls += ['profiles/catalog-evidence.html', 'profiles/security-index.html']
     urls += [f'profiles/security-{quote(v["id"])}.html' for v in vulns]
@@ -854,7 +857,6 @@ def write_sitemap(items, models, archived=(), vulns=()):
     urls += [f'profiles/field-{slug(f)}.html' for f in sorted({d['field'] for d in items})]
     urls += [f'profiles/year-{y}.html' for y in sorted({d['publication_date'][:4] for d in items}, reverse=True)]
     urls += [f'share/{quote(d["id"])}.html' for d in [*items, *archived]]
-    from i18n_site import LOCALES, SITEMAP_PAGES, public_url
 
     def alternates(page):
         links = [f'<xhtml:link rel="alternate" hreflang="en" href="{esc(public_url(page, "en"))}"/>']

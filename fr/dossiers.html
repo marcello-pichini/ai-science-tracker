@@ -77,10 +77,10 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
 <title>Dossiers sur les preuves scientifiques liées à l’IA · AI Science Tracker</title>
-<meta name="description" content="Quatre dossiers sourcés sur AlphaFold, les antibiotiques découverts par IA, les matériaux testés en laboratoire et les mathématiques assistées par IA.">
+<meta name="description" content="Consultez des dossiers qui renvoient aux sources sur la sécurité logicielle, les sorties de modèles, les mathématiques, la science des matériaux, la biologie, la sismologie, l’astronomie et la prévision des crues.">
 <link rel="canonical" href="https://aisciencetracker.org/fr/dossiers.html">
 <meta property="og:title" content="Dossiers sur les preuves scientifiques liées à l’IA · AI Science Tracker">
-<meta property="og:description" content="Quatre dossiers sourcés sur AlphaFold, les antibiotiques découverts par IA, les matériaux testés en laboratoire et les mathématiques assistées par IA.">
+<meta property="og:description" content="Consultez des dossiers qui renvoient aux sources sur la sécurité logicielle, les sorties de modèles, les mathématiques, la science des matériaux, la biologie, la sismologie, l’astronomie et la prévision des crues.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
@@ -88,7 +88,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:image:alt" content="Carte d’aperçu : AI Science Tracker, découvertes scientifiques rendues possibles par l’IA, suivies depuis les annonces officielles de 2020.">
 <meta name="twitter:image:alt" content="Carte d’aperçu : AI Science Tracker, découvertes scientifiques rendues possibles par l’IA, suivies depuis les annonces officielles de 2020.">
 <meta name="twitter:title" content="Dossiers sur les preuves scientifiques liées à l’IA · AI Science Tracker">
-<meta name="twitter:description" content="Quatre dossiers sourcés sur AlphaFold, les antibiotiques découverts par IA, les matériaux testés en laboratoire et les mathématiques assistées par IA.">
+<meta name="twitter:description" content="Consultez des dossiers qui renvoient aux sources sur la sécurité logicielle, les sorties de modèles, les mathématiques, la science des matériaux, la biologie, la sismologie, l’astronomie et la prévision des crues.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/fr/dossiers.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -192,11 +192,19 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Dossiers sur les preuves scientifiques liées à l’IA</h1><p class="lead">Revues ciblées de ce que l’IA a aidé les scientifiques à trouver et de la façon dont ils l’ont testé.</p></div></section>
+<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Dossiers sur les preuves scientifiques liées à l’IA</h1><p class="lead">Des dossiers ciblés sur ce que l’IA a aidé les chercheurs à trouver et sur la manière dont ils l’ont vérifié.</p></div></section>
 <main>
 <section class="sez"><div class="wrap">
   <h2>Dossiers disponibles</h2>
   <div class="dossier-grid">
+    <article class="pannello">
+      <h3><a href="vulnerabilities-dossier.html">Vulnérabilités détectées avec l’IA : du signalement au correctif</a></h3>
+      <p>Comparez les éléments publics qui documentent le rôle de l’IA, l’examen humain et la publication des correctifs dans SQLite et Firefox.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="model-releases-dossier.html">Sorties de modèles d’IA, laboratoires de recherche et découvertes</a></h3>
+      <p>Découvrez quels laboratoires comptent le plus de sorties recensées et quels organismes et familles de modèles figurent le plus souvent dans les fiches de découvertes.</p>
+    </article>
     <article class="pannello">
       <h3><a href="mathematics-dossier.html">IA en mathématiques : découvertes et preuves proposées</a></h3>
       <p>Découvrez les résultats de FunSearch, AlphaEvolve et AlphaProof et les annonces de preuves concernant Riemann et Navier–Stokes.</p>
@@ -212,6 +220,18 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <article class="pannello">
       <h3><a href="antibiotic-dossier.html">Antibiotiques découverts par IA et testés en laboratoire et chez la souris</a></h3>
       <p>Comparez quatre études et voyez quels résultats ont été testés au laboratoire ou dans des modèles murins d’infection, et ce qui reste ouvert pour les patients.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="seismology-dossier.html">Ce que l’IA révèle dans les enregistrements sismiques</a></h3>
+      <p>Comparez la détection de séismes passés inaperçus, la cartographie des failles et l’analyse de l’activité qui a précédé des séismes passés.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="astronomy-dossier.html">Des signaux astronomiques aux découvertes</a></h3>
+      <p>Suivez les signaux de transit de Kepler et les lentilles candidates d’Euclid à travers différents types de vérifications scientifiques.</p>
+    </article>
+    <article class="pannello">
+      <h3><a href="floods-dossier.html">Combien de temps à l’avance l’IA peut-elle prévoir une crue ?</a></h3>
+      <p>Découvrez comment les chercheurs ont mesuré l’échéance de prévision dans des bassins disposant de peu de données locales.</p>
     </article>
   </div>
 </div></section>

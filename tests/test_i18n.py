@@ -3,6 +3,7 @@ import json
 import re
 import subprocess
 import unittest
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -82,6 +83,37 @@ if (anchor.href !== '/es/mathematics-dossier.html#riemann') throw new Error('fra
 """
         result = subprocess.run(['node', '-e', harness + chrome + verify], text=True, capture_output=True)
         self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_dossier_order_and_localized_routes(self):
+        pages = ('vulnerabilities', 'model-releases', 'mathematics', 'materials',
+                 'alphafold', 'antibiotic', 'seismology', 'astronomy', 'floods')
+        existing = {'mathematics', 'materials', 'alphafold', 'antibiotic'}
+        sitemap = ET.parse(ROOT / 'sitemap.xml')
+        sitemap_urls = {loc.text for loc in sitemap.iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')}
+        for lang in ('en', *LOCALES):
+            prefix = '' if lang == 'en' else f'{lang}/'
+            directory = (ROOT / prefix / 'dossiers.html').read_text().split('<main>', 1)[1].split('</main>', 1)[0]
+            self.assertEqual(re.findall(r'href="([a-z-]+)-dossier\.html"', directory), list(pages))
+            for slug in (slug for slug in pages if slug not in existing):
+                page = f'{slug}-dossier.html'
+                with self.subTest(language=lang, dossier=slug):
+                    localized = (ROOT / prefix / page).read_text()
+                    url = f'https://aisciencetracker.org/{prefix}{page}'
+                    self.assertIn(f'<html lang="{lang}">', localized, page)
+                    self.assertIn(f'rel="canonical" href="{url}"', localized)
+                    self.assertIn(url, sitemap_urls)
+                    for edition in ('en', *LOCALES):
+                        edition_path = '' if edition == 'en' else f'{edition}/'
+                        self.assertIn(f'hreflang="{edition}" href="https://aisciencetracker.org/{edition_path}{page}"', localized)
+                    main = localized.split('<main>', 1)[1].split('</main>', 1)[0]
+                    anchors = re.findall(r'href="#([^"]+)"', main)
+                    self.assertEqual(anchors, re.findall(r'<h3 id="([^"]+)"', main))
+                    self.assertEqual(len(anchors), 3)
+                    if lang != 'en':
+                        english_heading = ('Three ways to count activity in the catalog' if slug == 'model-releases'
+                                           else 'Evidence from selected cases')
+                        self.assertNotIn(english_heading, main)
+                        self.assertNotIn("Open the catalog record", main)
 
     def test_translation_keeps_titles_and_uses_locale_copy(self):
         page = """<!doctype html><html lang="en"><head><title>Hello</title>
