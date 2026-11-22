@@ -57,7 +57,24 @@ DOSSIERS = {
         '2024-07-alphaproof-imo': 'alphaproof',
         '2026-09-openai-navier-stokes': 'navier-stokes',
     },
+    'seismology': {
+        '2025-09-ai-enhanced-seismic-catalog-exposes-a-ring-fault-system-at-campi-flegrei': 'campi-flegrei',
+        '2025-04-regional-deep-learning-phase-picking-reveals-24-additional-earthquakes-in-a-gorda-ridge-swarm': 'gorda-ridge',
+        '2024-08-machine-learning-identifies-regional-low-magnitude-seismic-unrest-before-the-ridgecrest-and-anchorage-earthquakes':
+            'ridgecrest-anchorage',
+    },
+    'astronomy': {
+        '2021-11-exominer': 'exominer',
+        '2023-05-exominer-69': 'kepler-multiplicity',
+        '2025-03-euclid-lenti': 'euclid',
+    },
+    'floods': {
+        '2024-03-previsione-alluvioni': 'ungauged-basins',
+        '2024-11-flood-hub-globale': 'seven-day-forecasts',
+    },
 }
+DOSSIER_IDS = {entry_id: (topic, section) for topic, cases in DOSSIERS.items()
+               for entry_id, section in cases.items()}
 
 
 def esc(s):
@@ -407,10 +424,9 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
         lead = f'{esc(d["organization"])} &middot; {esc(nice_date(d["publication_date"]))} &middot; {esc(d["field"])}'
         if d['field'] in fields:
             more += f' <a href="profiles/field-{slug(d["field"])}.html">Browse {esc(d["field"])} discoveries</a>.'
-        field = d['field']
-        anchor = DOSSIERS.get(field, {}).get(d['id'])
-        if anchor and not archived:
-            more += f' <a href="{field}-dossier.html#{anchor}">Read the {field} evidence dossier</a>.'
+        if d['id'] in DOSSIER_IDS and not archived:
+            topic, section = DOSSIER_IDS[d['id']]
+            more += f' <a href="{topic}-dossier.html#{section}">Read the {topic} evidence dossier</a>.'
         if archived:
             lead = f'Archived catalog entry &middot; {lead}'
         page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(describe(d['summary'])), base=BASE,
@@ -623,8 +639,13 @@ def write_profile_pages(items, models, archived=()):
                 'A lower bound constrains the possible value. The exact number remains a separate question.</dd>'
                 '</dl><p>Follow the linked records for sources and the limits of each check.</p></section>'
             ) + overview
+        topics = {DOSSIER_IDS[d['id']][0] for d in rows if d['id'] in DOSSIER_IDS}
         if field in DOSSIERS:
-            overview = f'<p class="prosa"><a href="{field}-dossier.html">Read the {field} evidence dossier</a>.</p>' + overview
+            topics.add(field)
+        if topics:
+            links = ' · '.join(f'<a href="{topic}-dossier.html">Read the {topic} evidence dossier</a>'
+                               for topic in sorted(topics))
+            overview = f'<p class="prosa">{links}.</p>' + overview
         emit(field, title, f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
              f'{plural(len(rows), "scientific discovery", "scientific discoveries")} in {field} made with AI, {years(rows)}, each linked to its original source.',
              rows, f'profiles/field-{slug(field)}.html', f'/?field={quote(field)}', label='filtered catalog',

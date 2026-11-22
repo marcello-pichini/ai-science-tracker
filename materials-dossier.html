@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "materials-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>AI-Designed Materials Tested in the Lab · AI Science Tracker</title>
-<meta name="description" content="Which AI-designed materials have been made? Compare crystal predictions, synthesis and measured properties in the GNoME, A-Lab and MatterGen studies.">
+<title>AI Materials Discovery: GNoME, A-Lab and MatterGen · AI Science Tracker</title>
+<meta name="description" content="Compare GNoME crystal predictions, A-Lab’s corrected synthesis results and MatterGen’s property test. See how later research challenged the sample’s novelty.">
 <link rel="canonical" href="https://aisciencetracker.org/materials-dossier.html">
-<meta property="og:title" content="AI-Designed Materials Tested in the Lab · AI Science Tracker">
-<meta property="og:description" content="Which AI-designed materials have been made? Compare crystal predictions, synthesis and measured properties in the GNoME, A-Lab and MatterGen studies.">
+<meta property="og:title" content="AI Materials Discovery: GNoME, A-Lab and MatterGen · AI Science Tracker">
+<meta property="og:description" content="Compare GNoME crystal predictions, A-Lab’s corrected synthesis results and MatterGen’s property test. See how later research challenged the sample’s novelty.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
-<meta name="twitter:title" content="AI-Designed Materials Tested in the Lab · AI Science Tracker">
-<meta name="twitter:description" content="Which AI-designed materials have been made? Compare crystal predictions, synthesis and measured properties in the GNoME, A-Lab and MatterGen studies.">
+<meta name="twitter:title" content="AI Materials Discovery: GNoME, A-Lab and MatterGen · AI Science Tracker">
+<meta name="twitter:description" content="Compare GNoME crystal predictions, A-Lab’s corrected synthesis results and MatterGen’s property test. See how later research challenged the sample’s novelty.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/materials-dossier.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -108,6 +108,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale" content="en_GB">
+<script type="application/ld+json" id="dossier-metadata">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"AI Materials Discovery: GNoME, A-Lab and MatterGen","description":"Compare GNoME crystal predictions, A-Lab’s corrected synthesis results and MatterGen’s property test. See how later research challenged the sample’s novelty.","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://aisciencetracker.org/materials-dossier.html"},"author":{"@type":"Organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/"},"publisher":{"@type":"Organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":"https://aisciencetracker.org/dossiers.html","name":"Dossiers"},{"@type":"ListItem","position":2,"item":"https://aisciencetracker.org/materials-dossier.html","name":"AI Materials Discovery: GNoME, A-Lab and MatterGen"}]}]}</script>
 </head>
 <body>
 <header class="header">
@@ -191,12 +192,31 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">AI-Designed Materials Tested in the Lab</h1><p class="lead">Which AI-designed materials were synthesized, and which properties did researchers measure?</p></div></section>
+<section class="banda banda-bassa" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">AI Materials Discovery: GNoME, A-Lab and MatterGen</h1><p class="lead">Compare GNoME crystal predictions, A-Lab’s corrected synthesis results and MatterGen’s property test. See how later research challenged the sample’s novelty.</p></div></section>
 <main>
-<section class="sez" aria-labelledby="evidence-overview"><div class="wrap">
-  <h2 id="evidence-overview">What researchers made and measured</h2>
-  <p class="sez-sub">A-Lab counts synthesized targets. MatterGen compares a design target with a physical measurement.</p>
-  <div class="dossier-grid">
+<section class="sez"><div class="wrap prosa">
+  <p><a href="dossiers.html" class="dossier-breadcrumb">Dossiers</a></p>
+  <p class="sez-sub">These projects support different claims. GNoME matched some predictions to existing experimental structures. A-Lab reported 36 successes from 57 synthesis targets after correction. MatterGen reported a sample test against a design target, and a later peer-reviewed analysis challenged the novelty of that sample.</p>
+  <h2 id="dossier-evidence">MatterGen: Target, calculation and sample estimate</h2>
+  <div class="pannello" id="dossier-figure" role="figure" aria-labelledby="dossier-evidence">
+    <h3><a href="#mattergen">Design target</a></h3>
+    <p><strong>200 GPa</strong></p>
+    <svg viewBox="0 0 600 20" aria-hidden="true"><path class="base" d="M8 10H592"/><path class="griglia" d="M154 4V16M300 4V16M446 4V16"/><rect class="col" x="8" y="5" width="526.13" height="10" rx="2"/></svg>
+    <p class="descr">The value the generation task aimed for.</p>
+    <h3><a href="#mattergen">Calculation for the ordered structure</a></h3>
+    <p><strong>222 GPa</strong></p>
+    <svg viewBox="0 0 600 20" aria-hidden="true"><path class="base" d="M8 10H592"/><path class="griglia" d="M154 4V16M300 4V16M446 4V16"/><rect class="col" x="8" y="5" width="584.00" height="10" rx="2"/></svg>
+    <p class="descr">The theoretical result for the structure the model proposed.</p>
+    <h3><a href="#mattergen">Estimate for the synthesized sample</a></h3>
+    <p><strong>169 GPa</strong></p>
+    <svg viewBox="0 0 600 20" aria-hidden="true"><path class="base" d="M8 10H592"/><path class="griglia" d="M154 4V16M300 4V16M446 4V16"/><rect class="col" x="8" y="5" width="444.58" height="10" rx="2"/></svg>
+    <p class="descr">The highest estimate among four measurements.</p>
+    <p class="descr">All three marks use gigapascals, the unit of bulk modulus. They show the design input, the calculation for the ordered model and the authors’ highest estimate for the synthesized sample.</p>
+  </div>
+  <p><a href="#dossier-analysis">Read the analysis</a></p>
+</div></section>
+<section class="sez" aria-labelledby="evidence-overview"><div class="wrap prosa">
+  <h2 id="evidence-overview">A-Lab success count after correction</h2>
     <article class="pannello">
       <h3><a href="#a-lab">A-Lab synthesis</a></h3>
       <p><strong>36 of 57 targets</strong> synthesized in the corrected report</p>
@@ -210,25 +230,11 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
       </svg>
       <p class="descr">The authors removed inconclusive diffraction results from the success count.</p>
     </article>
-    <article class="pannello">
-      <h3><a href="#mattergen">MatterGen bulk modulus</a></h3>
-      <p><strong>169 GPa measured</strong> against a 200 GPa design target</p>
-      <svg viewBox="0 0 260 54" role="img" aria-labelledby="mattergen-chart-title mattergen-chart-desc">
-        <title id="mattergen-chart-title">MatterGen measured bulk modulus and target</title>
-        <desc id="mattergen-chart-desc">The synthesized sample measured 169 gigapascals on a scale from zero to the 200-gigapascal target.</desc>
-        <rect class="base" x="4" y="4" width="252" height="18" rx="4" fill="none"/>
-        <rect class="col" x="4" y="4" width="212.94" height="18" rx="4"/>
-        <text class="lab" x="4" y="43">169 GPa measured</text>
-        <text class="ax" x="256" y="43" text-anchor="end">200 GPa target</text>
-      </svg>
-      <p class="descr">One synthesized sample showed differences from the proposed crystal structure.</p>
-    </article>
-  </div>
 </div></section>
 <section class="sez"><div class="wrap prosa">
   <p><a href="dossiers.html">All dossiers</a> · <a href="profiles/field-materials.html">Materials discoveries</a></p>
   <h2>Which AI-designed materials were made in the lab?</h2>
-  <p>MatterGen provides a specific example: researchers synthesized TaCr₂O₆ and measured its resistance to compression. A-Lab reports 36 compounds synthesized from 57 targets after a correction. GNoME reports 736 matches to structures made independently. Each number answers a different question.</p>
+  <p>The MatterGen team synthesized a tantalum–chromium oxide sample and estimated its resistance to compression. A-Lab reports 36 compounds synthesized from 57 targets after a correction. GNoME reports 736 matches to structures made independently. Each number answers a different question.</p>
   <p class="nota">Editorial review <time datetime="2026-11-22">22 Nov 2026</time>. Three selected studies illustrate different ways to test AI-enabled materials research.</p>
   <h2>From crystal prediction to a measured property</h2>
   <h3 id="gnome">GNoME screened crystal structures for stability</h3>
@@ -237,11 +243,30 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   <h3 id="a-lab">A-Lab tested whether a robot could make selected compounds</h3>
   <p>A-Lab used learned models to suggest recipes for computationally screened targets, then ran solid-state synthesis and analyzed products by X-ray diffraction. In their January 2026 correction, the authors retained 36 successes among 57 targets. Four previously counted successes were inconclusive from the diffraction data alone. The authors also clarified that novelty referred to the platform and its training data. Novelty in the wider scientific literature requires a separate check.</p>
   <p><a href="https://www.nature.com/articles/s41586-023-06734-w">Read the A-Lab paper</a> · <a href="https://doi.org/10.1038/s41586-025-09992-y">Read the author correction</a> · <a href="share/2023-11-a-lab.html">A-Lab catalog record</a></p>
-  <h3 id="mattergen">MatterGen targeted a property and researchers measured it</h3>
-  <p>A diffusion model proposed a TaCr₂O₆ structure with a target bulk modulus of 200 GPa. The synthesized sample measured 169 GPa and showed tantalum–chromium disorder relative to the proposed structure. The study demonstrates property-guided design and measurement in this example. The single example leaves the method’s experimental success rate open.</p>
+  <h3 id="mattergen">MatterGen targeted a property and researchers estimated it from measurements</h3>
+  <p>A diffusion model proposed an ordered TaCr₂O₆ structure with a target bulk modulus of 200 GPa. The authors selected 169 GPa as their best estimate from four measurements on the synthesized sample, which showed tantalum–chromium disorder. The example illustrates property-guided design and testing. The single example leaves the method’s experimental success rate open.</p>
   <p><a href="https://www.nature.com/articles/s41586-025-08628-5">Read the MatterGen paper</a> · <a href="share/2025-01-mattergen.html">MatterGen catalog record</a></p>
   <h2>What counts as experimental validation?</h2>
   <p>Ask which sample was made, how its structure was identified and whether the target property was measured. A crystal-database match addresses structure. A synthesis campaign estimates how often a specific workflow produced its selected targets. A property measurement tests a particular sample under stated conditions.</p>
+</div></section>
+<section class="sez"><div class="wrap prosa"><h2 id="dossier-analysis">How to interpret the evidence</h2>
+  <h3>What GNoME means by a stable crystal</h3>
+  <p>A stability calculation compares a candidate with possible phases and combinations at the same overall composition. A calculated stability boundary can give researchers a way to prioritize an unusually large set of structures. Experimental work still has to establish which phases are present in a physical sample.</p>
+  <p>The paper reported 736 structures for which it found independent experimental realizations. These matches are useful checks on a subset of predictions. To estimate the probability of making a proposed structure, one would need a defined set of attempted syntheses and their outcomes. A match count alone cannot supply that denominator.</p>
+  <p><a href="https://pubmed.ncbi.nlm.nih.gov/38030720/">GNoME research article</a></p>
+  <h3>What the A-Lab correction changed</h3>
+  <p>The corrected campaign reports 36 successful targets out of 57. The authors reanalyzed diffraction data from the 40 cases previously classified as successful in the corrected comparison. Four patterns were inconclusive. The classification changed after a review of the recorded evidence, without a new set of synthesis trials in the correction.</p>
+  <p>The correction also narrows the meaning of “new.” The targets were new to the prediction platform under the authors’ definition. Establishing novelty in the literature requires checking prior structures and compositions. A synthesis success and a new material are therefore two different units of evaluation.</p>
+  <p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12872444/">A-Lab author correction</a></p>
+  <h3>Why MatterGen’s property and novelty claims differ</h3>
+  <p>The original paper specified 200 GPa, calculated 222 GPa for the ordered structure and estimated up to 169 GPa for the synthesized sample from four measurements. The sample showed compositional disorder, and the estimates use experimental observations together with a calculated elastic parameter. This comparison concerns one selected example.</p>
+  <p>In 2026, Mikkel Juelsholt reanalyzed the published diffraction data and argued that the material belongs to a previously reported disordered series already represented in the training data. The follow-up challenges the novelty claim using the same underlying sample data. Keep the mechanical result, the structural interpretation and the novelty question separate when comparing these papers.</p>
+  <p><a href="https://edoc.hu-berlin.de/items/2081bca4-f044-43d3-a5f5-1d7c39f9e3e7">Juelsholt’s peer-reviewed reanalysis</a></p>
+  <h3>Related evidence dossiers</h3>
+  <ul>
+    <li><a href="alphafold-dossier.html">What AlphaFold Predicts and What Experiments Confirm</a></li>
+    <li><a href="antibiotic-dossier.html">AI Antibiotic Discovery: Lab, Animal and Human Evidence</a></li>
+  </ul>
 </div></section>
 </main>
 <footer class="footer">

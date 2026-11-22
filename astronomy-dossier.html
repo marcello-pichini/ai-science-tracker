@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "materials-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>From Astronomical Signals to Discoveries · AI Science Tracker</title>
-<meta name="description" content="How do astronomers use AI to screen telescope data? Compare statistical validation of Kepler exoplanets with expert grading of Euclid lens candidates.">
+<title>AI in Astronomy: Exoplanets and Gravitational Lenses · AI Science Tracker</title>
+<meta name="description" content="How ExoMiner validated planets in Kepler data and Euclid used AI and human review to select gravitational-lens candidates.">
 <link rel="canonical" href="https://aisciencetracker.org/astronomy-dossier.html">
-<meta property="og:title" content="From Astronomical Signals to Discoveries · AI Science Tracker">
-<meta property="og:description" content="How do astronomers use AI to screen telescope data? Compare statistical validation of Kepler exoplanets with expert grading of Euclid lens candidates.">
+<meta property="og:title" content="AI in Astronomy: Exoplanets and Gravitational Lenses · AI Science Tracker">
+<meta property="og:description" content="How ExoMiner validated planets in Kepler data and Euclid used AI and human review to select gravitational-lens candidates.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
-<meta name="twitter:title" content="From Astronomical Signals to Discoveries · AI Science Tracker">
-<meta name="twitter:description" content="How do astronomers use AI to screen telescope data? Compare statistical validation of Kepler exoplanets with expert grading of Euclid lens candidates.">
+<meta name="twitter:title" content="AI in Astronomy: Exoplanets and Gravitational Lenses · AI Science Tracker">
+<meta name="twitter:description" content="How ExoMiner validated planets in Kepler data and Euclid used AI and human review to select gravitational-lens candidates.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/astronomy-dossier.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -108,6 +108,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale" content="en_GB">
+<script type="application/ld+json" id="dossier-metadata">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"AI in Astronomy: Exoplanets and Gravitational Lenses","description":"How ExoMiner validated planets in Kepler data and Euclid used AI and human review to select gravitational-lens candidates.","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://aisciencetracker.org/astronomy-dossier.html"},"author":{"@type":"Organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/"},"publisher":{"@type":"Organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":"https://aisciencetracker.org/dossiers.html","name":"Dossiers"},{"@type":"ListItem","position":2,"item":"https://aisciencetracker.org/astronomy-dossier.html","name":"AI in Astronomy: Exoplanets and Gravitational Lenses"}]}]}</script>
 </head>
 <body>
 <header class="header">
@@ -191,8 +192,25 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">From Astronomical Signals to Discoveries</h1><p class="lead">How do astronomers use AI to screen telescope data? Compare statistical validation of Kepler exoplanets with expert grading of Euclid lens candidates.</p></div></section>
+<section class="banda banda-bassa" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">AI in Astronomy: Exoplanets and Gravitational Lenses</h1><p class="lead">How ExoMiner validated planets in Kepler data and Euclid used AI and human review to select gravitational-lens candidates.</p></div></section>
 <main>
+<section class="sez"><div class="wrap prosa">
+  <p><a href="dossiers.html" class="dossier-breadcrumb">Dossiers</a></p>
+  <p class="sez-sub">AI helps astronomers find signals worth following up in large surveys. ExoMiner used Kepler data to support statistical validation of exoplanets. Euclid’s machine-learning rankings guided reviewers to possible gravitational lenses, which specialists then graded using the images.</p>
+  <h2 id="dossier-evidence">How many known planets did ExoMiner recover?</h2>
+  <div class="pannello" id="dossier-figure" role="figure" aria-labelledby="dossier-evidence">
+    <h3><a href="#exominer">ExoMiner</a></h3>
+    <p><strong>93.6%</strong></p>
+    <svg viewBox="0 0 600 20" aria-hidden="true"><path class="base" d="M8 10H592"/><path class="griglia" d="M154 5V15M300 5V15M446 5V15M592 5V15"/><path class="linea" d="M8 10H554.62"/><circle class="col" cx="554.62" cy="10" r="5"/></svg>
+    <p class="descr">Recall at 99% precision.</p>
+    <h3><a href="#exominer">GPC classifier</a></h3>
+    <p><strong>76.3%</strong></p>
+    <svg viewBox="0 0 600 20" aria-hidden="true"><path class="base" d="M8 10H592"/><path class="griglia" d="M154 5V15M300 5V15M446 5V15M592 5V15"/><path class="linea" d="M8 10H453.59"/><circle class="col" cx="453.59" cy="10" r="5"/></svg>
+    <p class="descr">Same test set and precision.</p>
+    <p class="descr">Both results are recall on the ExoMiner paper’s test set at the same 99% precision. Recall measures the fraction of labelled planets recovered. Precision measures the fraction of selected test-set examples that are labelled planets.</p>
+  </div>
+  <p><a href="#dossier-analysis">Read the analysis</a></p>
+</div></section>
 <section class="sez"><div class="wrap prosa">
   <p><a href="dossiers.html">All dossiers</a></p>
   <h2>Evidence from selected cases</h2>
@@ -213,6 +231,25 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   <p><a href="https://arxiv.org/abs/2503.15324">Read the Euclid collaboration paper</a> · <a href="/#discovery=2025-03-euclid-lenti">Open the catalog record</a></p>
   <h2>How should readers compare the counts?</h2>
   <p>A screened candidate is a signal selected for scrutiny. Statistical validation depends on a stated false-positive assessment. An expert grade reflects judgement under a particular review protocol. Each count belongs to the survey and evidence standard that produced it.</p>
+</div></section>
+<section class="sez"><div class="wrap prosa"><h2 id="dossier-analysis">How to interpret the evidence</h2>
+  <h3>What an ExoMiner benchmark can tell us</h3>
+  <p>A dip in a star’s brightness can come from a planet passing in front of it. An eclipsing binary star, a nearby source or an instrument artefact can produce a similar signature. ExoMiner combines different diagnostics, helping with the vetting step after a survey has found a possible transit signal.</p>
+  <p>The comparison at fixed precision asks how many labelled examples each classifier can recover while keeping the selected set similarly clean. The 17.3 percentage-point difference is specific to the reported test. The separate set of 301 statistical validations concerns previously unvalidated Kepler objects selected under the study’s criteria.</p>
+  <p><a href="https://arxiv.org/abs/2111.10009">Original ExoMiner study</a></p>
+  <h3>Why several periodic signals change the assessment</h3>
+  <p>Several transit-like signals associated with one star carry context that a classifier looking at a single signal can miss. The multiplicity study used the number and status of signals in the system together with the classifier’s score. This allowed the authors to test whether system-level information made the existing screen more informative.</p>
+  <p>The 69 reported validations come from systems with multiple Kepler objects of interest. The same statistical boost cannot be assumed for isolated signals or transferred to another survey without checking its false positives and how it groups signals by host star.</p>
+  <p><a href="https://arxiv.org/abs/2305.02470">ExoMiner multiplicity study</a></p>
+  <h3>Can Euclid’s ranking miss convincing lenses?</h3>
+  <p>Euclid asks a different question of its images. Light from a background galaxy can be bent around a foreground galaxy, producing arcs or multiple images. The pipeline used machine learning to prioritise cutouts, then volunteers and experts inspected them. The 497 selected candidates include 250 grade A and 247 grade B entries.</p>
+  <p>To examine what ranking missed, Euclid also showed volunteers a random sample of about 40,000 sources. The authors estimated that the model-prioritised search recovered around 60% of the candidates an exhaustive visual review could have found. That estimate describes the Q1 selection procedure. Independent observations can add evidence about individual lenses.</p>
+  <p><a href="https://arxiv.org/html/2503.15324v1">Euclid Q1 grading and completeness analysis</a></p>
+  <h3>Related evidence dossiers</h3>
+  <ul>
+    <li><a href="seismology-dossier.html">Can AI Predict Earthquakes? Evidence from Three Studies</a></li>
+    <li><a href="alphafold-dossier.html">What AlphaFold Predicts and What Experiments Confirm</a></li>
+  </ul>
 </div></section>
 </main>
 <footer class="footer">

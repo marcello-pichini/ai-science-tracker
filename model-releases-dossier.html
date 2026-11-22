@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "materials-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>AI Model Releases, Research Labs and Discoveries · AI Science Tracker</title>
-<meta name="description" content="Compare recorded model releases, discovery records grouped by research organization and the model families most often linked to the catalog.">
+<title>AI Model Releases by Lab and Research Links · AI Science Tracker</title>
+<meta name="description" content="Compare OpenAI, Google DeepMind, Alibaba, Meta AI and Anthropic in an Epoch AI snapshot, then see how the catalog links model families to research.">
 <link rel="canonical" href="https://aisciencetracker.org/model-releases-dossier.html">
-<meta property="og:title" content="AI Model Releases, Research Labs and Discoveries · AI Science Tracker">
-<meta property="og:description" content="Compare recorded model releases, discovery records grouped by research organization and the model families most often linked to the catalog.">
+<meta property="og:title" content="AI Model Releases by Lab and Research Links · AI Science Tracker">
+<meta property="og:description" content="Compare OpenAI, Google DeepMind, Alibaba, Meta AI and Anthropic in an Epoch AI snapshot, then see how the catalog links model families to research.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
-<meta name="twitter:title" content="AI Model Releases, Research Labs and Discoveries · AI Science Tracker">
-<meta name="twitter:description" content="Compare recorded model releases, discovery records grouped by research organization and the model families most often linked to the catalog.">
+<meta name="twitter:title" content="AI Model Releases by Lab and Research Links · AI Science Tracker">
+<meta name="twitter:description" content="Compare OpenAI, Google DeepMind, Alibaba, Meta AI and Anthropic in an Epoch AI snapshot, then see how the catalog links model families to research.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/model-releases-dossier.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -108,6 +108,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale" content="en_GB">
+<script type="application/ld+json" id="dossier-metadata">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"AI Model Releases by Lab and Research Links","description":"Compare OpenAI, Google DeepMind, Alibaba, Meta AI and Anthropic in an Epoch AI snapshot, then see how the catalog links model families to research.","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://aisciencetracker.org/model-releases-dossier.html"},"author":{"@type":"Organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/"},"publisher":{"@type":"Organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":"https://aisciencetracker.org/dossiers.html","name":"Dossiers"},{"@type":"ListItem","position":2,"item":"https://aisciencetracker.org/model-releases-dossier.html","name":"AI Model Releases by Lab and Research Links"}]}]}</script>
 </head>
 <body>
 <header class="header">
@@ -191,8 +192,37 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">AI Model Releases, Research Labs and Discoveries</h1><p class="lead">Compare recorded model releases, discovery records grouped by research organization and the model families most often linked to the catalog.</p></div></section>
+<section class="banda banda-bassa" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">AI Model Releases by Lab and Research Links</h1><p class="lead">Compare OpenAI, Google DeepMind, Alibaba, Meta AI and Anthropic in an Epoch AI snapshot, then see how the catalog links model families to research.</p></div></section>
 <main>
+<section class="sez"><div class="wrap prosa">
+  <p><a href="dossiers.html" class="dossier-breadcrumb">Dossiers</a></p>
+  <p class="sez-sub">OpenAI leads this selection by recorded model entries. Google DeepMind leads among named first affiliations in discovery records, and AlphaFold has the most family links. Each result counts a different unit.</p>
+  <h2 id="dossier-evidence">Recorded model entries by lab</h2>
+  <div class="pannello" id="dossier-figure" role="figure" aria-labelledby="dossier-evidence">
+    <h3><a href="#release-leaders">OpenAI</a></h3>
+    <p><strong>72</strong></p>
+    <svg viewBox="0 0 600 20" aria-hidden="true"><path class="base" d="M8 10H592"/><path class="griglia" d="M154 3V17M300 3V17M446 3V17M592 3V17"/><path class="linea" d="M8 10H592.00"/><circle class="col" cx="592.00" cy="10" r="5"/></svg>
+    <p class="descr">16.4% of selected entries.</p>
+    <h3><a href="#release-leaders">Google DeepMind</a></h3>
+    <p><strong>37</strong></p>
+    <svg viewBox="0 0 600 20" aria-hidden="true"><path class="base" d="M8 10H592"/><path class="griglia" d="M154 3V17M300 3V17M446 3V17M592 3V17"/><path class="linea" d="M8 10H308.11"/><circle class="col" cx="308.11" cy="10" r="5"/></svg>
+    <p class="descr">Google and DeepMind labels stay separate.</p>
+    <h3><a href="#release-leaders">Alibaba</a></h3>
+    <p><strong>36</strong></p>
+    <svg viewBox="0 0 600 20" aria-hidden="true"><path class="base" d="M8 10H592"/><path class="griglia" d="M154 3V17M300 3V17M446 3V17M592 3V17"/><path class="linea" d="M8 10H300.00"/><circle class="col" cx="300.00" cy="10" r="5"/></svg>
+    <p class="descr">One fewer recorded entry than Google DeepMind.</p>
+    <h3><a href="#release-leaders">Meta AI</a></h3>
+    <p><strong>32</strong></p>
+    <svg viewBox="0 0 600 20" aria-hidden="true"><path class="base" d="M8 10H592"/><path class="griglia" d="M154 3V17M300 3V17M446 3V17M592 3V17"/><path class="linea" d="M8 10H267.56"/><circle class="col" cx="267.56" cy="10" r="5"/></svg>
+    <p class="descr">Source label as recorded.</p>
+    <h3><a href="#release-leaders">Anthropic</a></h3>
+    <p><strong>25</strong></p>
+    <svg viewBox="0 0 600 20" aria-hidden="true"><path class="base" d="M8 10H592"/><path class="griglia" d="M154 3V17M300 3V17M446 3V17M592 3V17"/><path class="linea" d="M8 10H210.78"/><circle class="col" cx="210.78" cy="10" r="5"/></svg>
+    <p class="descr">Recorded entries include variants.</p>
+    <p class="descr">Five most frequent source labels in the 440-entry snapshot on 22 November 2026. Bars share a baseline of zero. Tabulated counts and selection notes follow.</p>
+  </div>
+  <p><a href="#dossier-analysis">Read the analysis</a></p>
+</div></section>
 <section class="sez"><div class="wrap prosa">
   <p><a href="dossiers.html">All dossiers</a></p>
   <h2>Three ways to count activity in the catalog</h2>
@@ -240,6 +270,25 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     </tbody>
   </table>
   <p>Family links are based on catalog text and can overlap when one record names multiple families. The research team using a model can be different from the organization that released it. The links show where the catalog mentions a family and do not establish which exact variant produced a result.</p>
+</div></section>
+<section class="sez"><div class="wrap prosa"><h2 id="dossier-analysis">How to interpret the evidence</h2>
+  <h3>What does an AI model release count represent?</h3>
+  <p>The five labels in the figure account for 202 of the 440 records, or 45.9% of this selection. One record is an entry in the underlying data. Specific versions may have their own entry, source labels can differ after reorganizations, and a model’s recorded date can refer to an announcement, publication or release.</p>
+  <p>The 81 entries dated to 2026 run through 10 November in this snapshot. The 88 entries dated to 2025 cover the full calendar year. A comparison of release pace requires matching calendar windows and consistent rules for including versions.</p>
+  <p><a href="https://epoch.ai/data/ai-models">See Epoch AI’s original model data</a></p>
+  <h3>Why do model and research rankings differ?</h3>
+  <p>The organization named on a release record plays a different role from the one named in a scientific record. The organization view counts the first affiliation in each record after label normalization. The ordering of affiliations can reflect reporting conventions, and external groups can perform research with a model that they did not release.</p>
+  <p>Both series describe coverage of this selection. Comparing productivity or scientific value requires independent outcome measures and broader coverage.</p>
+  <p><a href="profiles/index.html">Explore research organization profiles</a></p>
+  <h3>How common are model-family links in the research catalog?</h3>
+  <p>The catalog links 287 of 4,270 active records to at least one family, about 6.7% in this snapshot. This measures coverage of recorded links. Research can use models that the catalog does not link to a family, and a single study can mention several families.</p>
+  <p>The family profiles show which entries support each count. To evaluate what a particular model contributed, open the underlying discovery record and the original study. Look for the role the researchers report and whether they identify a model version or only a family.</p>
+  <p><a href="profiles/family-alphafold.html">Explore the AlphaFold family profile</a></p>
+  <h3>Related evidence dossiers</h3>
+  <ul>
+    <li><a href="vulnerabilities-dossier.html">AI-Found Vulnerabilities: Disclosure and Patches</a></li>
+    <li><a href="mathematics-dossier.html">AI in Mathematics: Discoveries and Proof Claims</a></li>
+  </ul>
 </div></section>
 </main>
 <footer class="footer">

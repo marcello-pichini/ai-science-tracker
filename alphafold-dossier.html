@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>AlphaFold Predictions and Experimental Evidence · AI Science Tracker</title>
-<meta name="description" content="Which AlphaFold predictions have experimental support? Compare six human protein interfaces with the CASP14 benchmark and AlphaFold Database.">
+<title>What AlphaFold Predicts and What Experiments Confirm · AI Science Tracker</title>
+<meta name="description" content="How accurate is AlphaFold? Compare CASP14, database confidence scores and experiments on six protein interfaces, with limits for each kind of evidence.">
 <link rel="canonical" href="https://aisciencetracker.org/alphafold-dossier.html">
-<meta property="og:title" content="AlphaFold Predictions and Experimental Evidence · AI Science Tracker">
-<meta property="og:description" content="Which AlphaFold predictions have experimental support? Compare six human protein interfaces with the CASP14 benchmark and AlphaFold Database.">
+<meta property="og:title" content="What AlphaFold Predicts and What Experiments Confirm · AI Science Tracker">
+<meta property="og:description" content="How accurate is AlphaFold? Compare CASP14, database confidence scores and experiments on six protein interfaces, with limits for each kind of evidence.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
-<meta name="twitter:title" content="AlphaFold Predictions and Experimental Evidence · AI Science Tracker">
-<meta name="twitter:description" content="Which AlphaFold predictions have experimental support? Compare six human protein interfaces with the CASP14 benchmark and AlphaFold Database.">
+<meta name="twitter:title" content="What AlphaFold Predicts and What Experiments Confirm · AI Science Tracker">
+<meta name="twitter:description" content="How accurate is AlphaFold? Compare CASP14, database confidence scores and experiments on six protein interfaces, with limits for each kind of evidence.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/alphafold-dossier.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -108,6 +108,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale" content="en_GB">
+<script type="application/ld+json" id="dossier-metadata">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"What AlphaFold Predicts and What Experiments Confirm","description":"How accurate is AlphaFold? Compare CASP14, database confidence scores and experiments on six protein interfaces, with limits for each kind of evidence.","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://aisciencetracker.org/alphafold-dossier.html"},"author":{"@type":"Organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/"},"publisher":{"@type":"Organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":"https://aisciencetracker.org/dossiers.html","name":"Dossiers"},{"@type":"ListItem","position":2,"item":"https://aisciencetracker.org/alphafold-dossier.html","name":"What AlphaFold Predicts and What Experiments Confirm"}]}]}</script>
 </head>
 <body>
 <header class="header">
@@ -191,8 +192,28 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">AlphaFold Predictions and Experimental Evidence</h1><p class="lead">What did AlphaFold predict, and what did researchers confirm through experiments?</p></div></section>
+<section class="banda banda-bassa" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">What AlphaFold Predicts and What Experiments Confirm</h1><p class="lead">How accurate is AlphaFold? Compare CASP14, database confidence scores and experiments on six protein interfaces, with limits for each kind of evidence.</p></div></section>
 <main>
+<section class="sez"><div class="wrap prosa">
+  <p><a href="dossiers.html" class="dossier-breadcrumb">Dossiers</a></p>
+  <p class="sez-sub">AlphaFold predicts three-dimensional protein structure. CASP14 tested how close predictions came to experimental reference structures, while a separate AlphaFold-Multimer study reported experimental support for six previously unreported interfaces. The database makes predictions available at scale.</p>
+  <h2 id="dossier-evidence">Three kinds of evidence for AlphaFold</h2>
+  <div class="pannello" id="dossier-figure" role="figure" aria-labelledby="dossier-evidence">
+    <div class="dossier-grid">
+      <div class="pannello"><h3><a href="#casp14">CASP14</a></h3>
+        <p><strong>92.4 GDT</strong></p>
+        <p class="descr">Median score against reference structures in the reported benchmark.</p></div>
+      <div class="pannello"><h3><a href="#alphafold-evidence">AlphaFold Database</a></h3>
+        <p><strong>Over 200 million models</strong></p>
+        <p class="descr">Predicted structures made available in the July 2022 release.</p></div>
+      <div class="pannello"><h3><a href="#protein-interfaces">Interface study</a></h3>
+        <p><strong>6 supported interfaces</strong></p>
+        <p class="descr">Experimental corroboration in a study of 62 selected interactions.</p></div>
+    </div>
+    <p class="descr">The benchmark, the database and the interface study address different questions. Each result keeps its own unit and study scope.</p>
+  </div>
+  <p><a href="#dossier-analysis">Read the analysis</a></p>
+</div></section>
 <section class="sez" aria-labelledby="evidence-overview"><div class="wrap">
   <h2 id="evidence-overview">What did the tests establish?</h2>
   <p class="sez-sub">CASP14 measured structure prediction accuracy. A separate study experimentally tested individual protein interfaces.</p>
@@ -245,6 +266,25 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   <h2>Explore the evidence in the catalog</h2>
   <p>For each study, check what researchers measured and whether the evidence supports a structural prediction, a physical interaction, or a broader biological claim.</p>
   <p><a href="profiles/family-alphafold.html">Browse the AlphaFold family profile</a> · <a href="methodology.html">Read the evidence and selection rules</a>.</p>
+</div></section>
+<section class="sez"><div class="wrap prosa"><h2 id="dossier-analysis">How to interpret the evidence</h2>
+  <h3>What the CASP14 score measures</h3>
+  <p>CASP14 was a blind community assessment. Participants submitted a prediction before seeing the reference structure used for judging that target. Global Distance Test measures agreement in the positions of parts of that structure. A median summarizes the assessed targets and can hide differences between easy and difficult regions or examples.</p>
+  <p>A useful comparison starts with the target list and the scoring rule. CASP14 is strong evidence about geometric accuracy on those benchmark targets. A question about a specific protein in a particular cellular state needs evidence that covers that protein and state.</p>
+  <p><a href="https://pubmed.ncbi.nlm.nih.gov/34265844/">AlphaFold research article</a></p>
+  <h3>How to read confidence in the AlphaFold Database</h3>
+  <p>The database shows model confidence alongside the structure. The pLDDT score is local and can vary widely along the same chain. Predicted Aligned Error describes how confidently the model places one region relative to another. Two regions can look individually well determined even when their relative arrangement is uncertain.</p>
+  <p>The July 2022 release number describes the scale of available predictions. A database entry can help identify a region worth examining, and a linked experimental structure can provide a separate comparison. Keep the estimate of confidence attached to the visual when citing a predicted structure.</p>
+  <p><a href="https://www.alphafold.ebi.ac.uk/faq">AlphaFold Database documentation</a></p>
+  <h3>What experimental support adds for an interface</h3>
+  <p>The interface study asked where two proteins might meet. Its experiments support specific contact hypotheses, and the authors also reported limited specificity in their benchmarks. That distinction matters: a predictor can recover plausible contacts while still producing candidates that need to be ruled out.</p>
+  <p>The six experimentally supported interfaces belong to one study of 62 selected interactions. That study set and the validation subset should both accompany the result. Estimating performance on arbitrary protein pairs would require a defined sampling scheme and systematic assessment across positive and negative cases.</p>
+  <p><a href="https://pubmed.ncbi.nlm.nih.gov/38225382/">Protein-interface research article</a></p>
+  <h3>Related evidence dossiers</h3>
+  <ul>
+    <li><a href="antibiotic-dossier.html">AI Antibiotic Discovery: Lab, Animal and Human Evidence</a></li>
+    <li><a href="materials-dossier.html">AI Materials Discovery: GNoME, A-Lab and MatterGen</a></li>
+  </ul>
 </div></section>
 </main>
 <footer class="footer">

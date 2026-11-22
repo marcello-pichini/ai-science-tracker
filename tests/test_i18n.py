@@ -106,7 +106,8 @@ if (anchor.href !== '/es/mathematics-dossier.html#riemann') throw new Error('fra
                         edition_path = '' if edition == 'en' else f'{edition}/'
                         self.assertIn(f'hreflang="{edition}" href="https://aisciencetracker.org/{edition_path}{page}"', localized)
                     main = localized.split('<main>', 1)[1].split('</main>', 1)[0]
-                    anchors = re.findall(r'href="#([^"]+)"', main)
+                    case_list = re.search(r'<ul>(.*?)</ul>', main, re.S)[1]
+                    anchors = re.findall(r'href="#([^"]+)"', case_list)
                     self.assertEqual(anchors, re.findall(r'<h3 id="([^"]+)"', main))
                     self.assertEqual(len(anchors), 3)
                     if lang != 'en':
@@ -114,6 +115,30 @@ if (anchor.href !== '/es/mathematics-dossier.html#riemann') throw new Error('fra
                                            else 'Evidence from selected cases')
                         self.assertNotIn(english_heading, main)
                         self.assertNotIn("Open the catalog record", main)
+
+    def test_dossier_analysis_is_visible_and_schema_matches_each_edition(self):
+        dossier_pages = [p for p in PAGES if p.endswith('-dossier.html')]
+        self.assertEqual(len(dossier_pages), 9)
+        for page in dossier_pages:
+            for lang in ('en', *LOCALES):
+                with self.subTest(page=page, language=lang):
+                    prefix = '' if lang == 'en' else f'{lang}/'
+                    document = (ROOT / prefix / page).read_text()
+                    url = f'https://aisciencetracker.org/{prefix}{page}'
+                    matches = re.findall(r'<script type="application/ld\+json" id="dossier-metadata">(.*?)</script>', document)
+                    self.assertEqual(len(matches), 1)
+                    article, breadcrumbs = json.loads(matches[0])['@graph']
+                    self.assertEqual(article['@type'], 'Article')
+                    self.assertEqual(article['inLanguage'], lang)
+                    self.assertEqual(article['mainEntityOfPage']['@id'], url)
+                    self.assertEqual(breadcrumbs['itemListElement'][0]['item'],
+                                     f'https://aisciencetracker.org/{prefix}dossiers.html')
+                    self.assertEqual(breadcrumbs['itemListElement'][-1]['name'], article['headline'])
+                    main = document.split('<main>', 1)[1].split('</main>', 1)[0]
+                    self.assertIn('id="dossier-figure"', main)
+                    self.assertIn('id="dossier-analysis"', main)
+                    for target in re.findall(r'href="#([^"]+)"', main):
+                        self.assertIn(f'id="{target}"', main)
 
     def test_translation_keeps_titles_and_uses_locale_copy(self):
         page = """<!doctype html><html lang="en"><head><title>Hello</title>

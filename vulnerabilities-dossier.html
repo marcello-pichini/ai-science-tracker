@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "materials-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>Vulnerabilities Found with AI: From Report to Fix · AI Science Tracker</title>
-<meta name="description" content="Follow public SQLite and Firefox disclosures to see how model attribution, researcher validation, vendor fixes and deployment evidence fit together.">
+<title>AI-Found Vulnerabilities: Disclosure and Patches · AI Science Tracker</title>
+<meta name="description" content="How are AI-found vulnerabilities verified and fixed? Follow the evidence behind Claude in Firefox, Big Sleep in SQLite and the gap before patch deployment.">
 <link rel="canonical" href="https://aisciencetracker.org/vulnerabilities-dossier.html">
-<meta property="og:title" content="Vulnerabilities Found with AI: From Report to Fix · AI Science Tracker">
-<meta property="og:description" content="Follow public SQLite and Firefox disclosures to see how model attribution, researcher validation, vendor fixes and deployment evidence fit together.">
+<meta property="og:title" content="AI-Found Vulnerabilities: Disclosure and Patches · AI Science Tracker">
+<meta property="og:description" content="How are AI-found vulnerabilities verified and fixed? Follow the evidence behind Claude in Firefox, Big Sleep in SQLite and the gap before patch deployment.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
-<meta name="twitter:title" content="Vulnerabilities Found with AI: From Report to Fix · AI Science Tracker">
-<meta name="twitter:description" content="Follow public SQLite and Firefox disclosures to see how model attribution, researcher validation, vendor fixes and deployment evidence fit together.">
+<meta name="twitter:title" content="AI-Found Vulnerabilities: Disclosure and Patches · AI Science Tracker">
+<meta name="twitter:description" content="How are AI-found vulnerabilities verified and fixed? Follow the evidence behind Claude in Firefox, Big Sleep in SQLite and the gap before patch deployment.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/vulnerabilities-dossier.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -108,6 +108,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale" content="en_GB">
+<script type="application/ld+json" id="dossier-metadata">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"AI-Found Vulnerabilities: Disclosure and Patches","description":"How are AI-found vulnerabilities verified and fixed? Follow the evidence behind Claude in Firefox, Big Sleep in SQLite and the gap before patch deployment.","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https://aisciencetracker.org/vulnerabilities-dossier.html"},"author":{"@type":"Organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/"},"publisher":{"@type":"Organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":"https://aisciencetracker.org/dossiers.html","name":"Dossiers"},{"@type":"ListItem","position":2,"item":"https://aisciencetracker.org/vulnerabilities-dossier.html","name":"AI-Found Vulnerabilities: Disclosure and Patches"}]}]}</script>
 </head>
 <body>
 <header class="header">
@@ -191,8 +192,38 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </header>
 
-<section class="banda" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">Vulnerabilities Found with AI: From Report to Fix</h1><p class="lead">Follow public SQLite and Firefox disclosures to see how model attribution, researcher validation, vendor fixes and deployment evidence fit together.</p></div></section>
+<section class="banda banda-bassa" aria-labelledby="page-title"><div class="wrap"><h1 id="page-title">AI-Found Vulnerabilities: Disclosure and Patches</h1><p class="lead">How are AI-found vulnerabilities verified and fixed? Follow the evidence behind Claude in Firefox, Big Sleep in SQLite and the gap before patch deployment.</p></div></section>
 <main>
+<section class="sez"><div class="wrap prosa">
+  <p><a href="dossiers.html" class="dossier-breadcrumb">Dossiers</a></p>
+  <p class="sez-sub">An AI-assisted vulnerability disclosure is a chain of evidence. The reporter credits the model, maintainers validate the issue and publish a fix, and downstream update records show whether the corrected release reached users.</p>
+  <h2 id="dossier-comparison">From the documented fix to the public write-up</h2>
+  <div class="pannello" role="figure" aria-labelledby="dossier-comparison">
+    <h3>SQLite release notes and Google’s later account</h3>
+    <p><strong>17 days · 28 Jun to 15 Jul 2025</strong></p>
+<svg viewBox="0 0 600 59" aria-hidden="true"><path class="base" d="M8 14H592"/><path class="linea" d="M8.00 14H504.40"/><circle class="col su" cx="8.00" cy="14" r="5"/><circle class="col" cx="504.40" cy="14" r="7"/><path class="griglia" d="M8.00 24V31"/><text fill="var(--muted)" x="8.00" y="55" text-anchor="start" font-size="22">0</text><path class="griglia" d="M154.00 24V31"/><text fill="var(--muted)" x="154.00" y="55" text-anchor="middle" font-size="22">5</text><path class="griglia" d="M300.00 24V31"/><text fill="var(--muted)" x="300.00" y="55" text-anchor="middle" font-size="22">10</text><path class="griglia" d="M446.00 24V31"/><text fill="var(--muted)" x="446.00" y="55" text-anchor="middle" font-size="22">15</text><path class="griglia" d="M592.00 24V31"/><text fill="var(--muted)" x="592.00" y="55" text-anchor="end" font-size="22">20</text></svg>
+    <h3>Firefox advisory and Mozilla’s later account</h3>
+    <p><strong>10 days · 24 Feb to 6 Mar 2026</strong></p>
+<svg viewBox="0 0 600 59" aria-hidden="true"><path class="base" d="M8 14H592"/><path class="linea" d="M8.00 14H300.00"/><circle class="col su" cx="8.00" cy="14" r="5"/><circle class="col" cx="300.00" cy="14" r="7"/><path class="griglia" d="M8.00 24V31"/><text fill="var(--muted)" x="8.00" y="55" text-anchor="start" font-size="22">0</text><path class="griglia" d="M154.00 24V31"/><text fill="var(--muted)" x="154.00" y="55" text-anchor="middle" font-size="22">5</text><path class="griglia" d="M300.00 24V31"/><text fill="var(--muted)" x="300.00" y="55" text-anchor="middle" font-size="22">10</text><path class="griglia" d="M446.00 24V31"/><text fill="var(--muted)" x="446.00" y="55" text-anchor="middle" font-size="22">15</text><path class="griglia" d="M592.00 24V31"/><text fill="var(--muted)" x="592.00" y="55" text-anchor="end" font-size="22">20</text></svg>
+    <p class="descr">The intervals compare dates in public documents. Discovery, private reporting and installation dates are separate events.</p>
+  </div>
+  <h2 id="dossier-evidence">From AI attribution to deployed fix</h2>
+  <div class="pannello" id="dossier-figure" role="figure" aria-labelledby="dossier-evidence">
+    <div class="dossier-grid">
+      <div class="pannello"><h3><a href="#firefox">Human validation</a></h3>
+        <p><strong>Confirmed report</strong></p>
+        <p class="descr">A reported finding has been reviewed by maintainers.</p></div>
+      <div class="pannello"><h3><a href="#sqlite">Vendor release</a></h3>
+        <p><strong>Documented fix</strong></p>
+        <p class="descr">A vendor records the correction in a named release.</p></div>
+      <div class="pannello"><h3><a href="#deployment">Deployment</a></h3>
+        <p><strong>Installed update</strong></p>
+        <p class="descr">Protection depends on the package and version in use.</p></div>
+    </div>
+    <p class="descr">Three checkpoints for evaluating a vulnerability disclosure. The diagram identifies the evidence to look for at each stage.</p>
+  </div>
+  <p><a href="#dossier-analysis">Read the analysis</a></p>
+</div></section>
 <section class="sez"><div class="wrap prosa">
   <p><a href="dossiers.html">All dossiers</a></p>
   <h2>Evidence from selected cases</h2>
@@ -213,6 +244,25 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   <p><a href="https://blog.mozilla.org/en/firefox/privacy-security/defending-patch-gap/">Read Mozilla’s explanation of the patch gap</a> · <a href="security.html">Browse vulnerability records</a></p>
   <h2>What should a disclosure establish?</h2>
   <p>Look for the source that credits the model, the researchers or vendor who confirmed the report, and the advisory that documents the fix. These examples describe public vendor and researcher evidence. They support conclusions about the reported cases and releases within that scope.</p>
+</div></section>
+<section class="sez"><div class="wrap prosa"><h2 id="dossier-analysis">How to interpret the evidence</h2>
+  <h3>What does AI attribution establish?</h3>
+  <p>A report can credit a model and still describe work by human researchers. In the Firefox case, Mozilla says its engineers assessed the findings and landed fixes before the release. The sentence that credits the reporting team and the tool records how an issue was reported. The maintainer’s statement records a different step in the chain.</p>
+  <p>When comparing AI-assisted reports, check what the vendor confirmed and which findings received identifiers. Counts of initial suggestions, confirmed issues and published advisories measure different things. A published campaign total alone cannot reveal the rate of false positives or the effort spent on triage.</p>
+  <p><a href="https://blog.mozilla.org/en/firefox/hardening-firefox-anthropic-red-team/">Read Mozilla’s account of validation and fixes</a></p>
+  <h3>How do you read the evidence for a fix?</h3>
+  <p>A CVE identifier names a publicly tracked issue. A vendor advisory can identify the affected product and the release containing the correction. In the Firefox 148 advisory, the fixed release appears in the advisory header, while reporter attribution appears against individual findings. This lets readers verify who was credited and what update was published.</p>
+  <p>A database library may also appear inside a separate product. The version that fixes the upstream library and the version that fixes the downstream product can differ. Use the advisory for the product you actually run when checking the update.</p>
+  <p><a href="https://www.mozilla.org/en-US/security/advisories/mfsa2026-13/">Read the Firefox 148 security advisory</a></p>
+  <h3>What is the patch gap?</h3>
+  <p>The patch gap is the interval between the appearance of a correction in code and its broad deployment. A software vendor can document the correction while some installations still run a prior build. The release, distribution and local installation each have their own evidence.</p>
+  <p>For a practical check, identify the product and installed version, then compare them with the vendor’s update notice. A package may receive a backported correction while keeping an older base version. Consult the distribution’s records for that package instead of inferring protection from an upstream version number alone.</p>
+  <p><a href="https://blog.mozilla.org/en/firefox/privacy-security/defending-patch-gap/">Read Mozilla’s explanation of the patch gap</a></p>
+  <h3>Related evidence dossiers</h3>
+  <ul>
+    <li><a href="model-releases-dossier.html">AI Model Releases by Lab and Research Links</a></li>
+    <li><a href="mathematics-dossier.html">AI in Mathematics: Discoveries and Proof Claims</a></li>
+  </ul>
 </div></section>
 </main>
 <footer class="footer">

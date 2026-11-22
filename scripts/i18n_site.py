@@ -370,6 +370,39 @@ def hreflang_html(page: str) -> str:
     return '\n'.join(lines)
 
 
+def set_dossier_metadata(text: str, page: str, lang: str) -> str:
+    """Keep structured article and breadcrumb metadata aligned with the rendered edition."""
+    if not page.endswith('-dossier.html'):
+        return text
+    h1 = re.search(r'<h1 id="page-title">([^<]+)</h1>', text)
+    meta = re.search(r'<meta name="description" content="([^"]+)">', text)
+    breadcrumb = re.search(r'<a href="dossiers.html" class="dossier-breadcrumb">([^<]+)</a>', text)
+    if not (h1 and meta and breadcrumb):
+        return text
+    headline = html.unescape(h1[1])
+    url = public_url(page, lang)
+    publisher = {'@type': 'Organization', 'name': 'AI Science Tracker', 'url': BASE}
+    data = {
+        '@context': 'https://schema.org',
+        '@graph': [
+            {'@type': 'Article', 'headline': headline, 'description': html.unescape(meta[1]),
+             'inLanguage': lang, 'mainEntityOfPage': {'@type': 'WebPage', '@id': url},
+             'author': publisher, 'publisher': publisher},
+            {'@type': 'BreadcrumbList', 'itemListElement': [
+                {'@type': 'ListItem', 'position': 1, 'item': public_url('dossiers.html', lang),
+                 'name': html.unescape(breadcrumb[1])},
+                {'@type': 'ListItem', 'position': 2, 'item': url, 'name': headline},
+            ]},
+        ],
+    }
+    payload = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+    metadata = f'<script type="application/ld+json" id="dossier-metadata">{payload}</script>'
+    pattern = r'<script type="application/ld\+json" id="dossier-metadata">.*?</script>'
+    if re.search(pattern, text):
+        return re.sub(pattern, lambda _: metadata, text, count=1)
+    return text.replace('</head>', metadata + '\n</head>', 1)
+
+
 def install_english_chrome(root: Path | None = None) -> None:
     """Add the switcher, first-visit redirect and hreflang links to English pages."""
     root = root or ROOT
@@ -428,7 +461,7 @@ def install_english_chrome(root: Path | None = None) -> None:
             if n != 1:
                 raise RuntimeError(f'{page}: could not refresh hreflang links')
         text = refresh_embedded_detection(text, routes)
-        path.write_text(text, encoding='utf-8')
+        path.write_text(set_dossier_metadata(text, page, 'en'), encoding='utf-8')
 
 
 def load_json(path: Path) -> dict:
@@ -731,6 +764,7 @@ def required_keys(root: Path | None = None) -> tuple[set[str], list[str]]:
     root = root or ROOT
     kept = keep_english()
     needed = set(js_message_keys(root))
+    dossier_keys = load_json(DOSSIER_MESSAGES)
     missing_preview = []
     empty = {}
     for page in PAGES:
@@ -740,7 +774,7 @@ def required_keys(root: Path | None = None) -> tuple[set[str], list[str]]:
         _translated, missing = translate_document(path.read_text(encoding='utf-8'), empty, kept)
         for item in missing:
             template, nums = templatize(item)
-            key = template if nums else item
+            key = template if nums and item not in dossier_keys else item
             needed.add(key)
             missing_preview.append(f'{page}: {key}')
     return needed, missing_preview
@@ -808,7 +842,8 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
             text = source.read_text(encoding='utf-8')
             if 'id="lang-switch"' not in text:
                 continue
-            text, missing = translate_document(text, dossier_table if 'dossier' in page else merged, kept)
+            has_dossier_copy = 'dossier' in page or page in ('models.html', 'security.html')
+            text, missing = translate_document(text, dossier_table if has_dossier_copy else merged, kept)
             if missing:
                 problems.extend(f'{lang}/{page}: {item}' for item in missing[:8])
                 if len(missing) > 8:
@@ -820,11 +855,13 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
                 text = retarget_switcher(text, lang, page)
             if page != '404.html':
                 text = rewrite_script_paths(text)
+            text = set_dossier_metadata(text, page, lang)
             text = rewrite_attrs(text, lang, page)
             text = clean_home_links(text, home_href(lang))
             text = retarget_iamops(text, lang)
-            injection = runtime_script(lang, merged, discoveries)
-            text = text.replace('</head>', injection + '\n</head>', 1)
+            if 'dossier' not in page:
+                injection = runtime_script(lang, merged, discoveries)
+                text = text.replace('</head>', injection + '\n</head>', 1)
             (out_dir / page).write_text(text, encoding='utf-8')
     if problems and strict:
         preview = '\n'.join(problems[:40])
