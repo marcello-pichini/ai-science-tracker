@@ -1,0 +1,36 @@
+name: Kaggle dataset
+on:
+  schedule:
+    - cron: '30 6 * * *'  # daily, after Daily refresh (04:30 UTC)
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: kaggle
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    env:
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+      KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Upload a new version when the catalog changed
+        run: |
+          if [ -z "$KAGGLE_USERNAME" ] || [ -z "$KAGGLE_KEY" ]; then
+            echo "::warning::KAGGLE_USERNAME/KAGGLE_KEY secrets are not set; skipping."
+            exit 0
+          fi
+          # shortcut: a 25-hour git window detects changes; a skipped day needs a manual dispatch
+          if [ "$GITHUB_EVENT_NAME" != workflow_dispatch ] && \
+             [ -z "$(git log --since='25 hours ago' --format=%H -- data/discoveries.csv data/discoveries.json)" ]; then
+            echo "Catalog unchanged; nothing to upload."
+            exit 0
+          fi
+          pip install --quiet kaggle
+          mkdir -p work/kaggle
+          cp data/discoveries.csv data/discoveries.json work/kaggle/
+          echo '{"id": "marcellopichini/ai-science-tracker-ai-enabled-discoveries"}' > work/kaggle/dataset-metadata.json
+          kaggle datasets version -p work/kaggle -m "Catalog update $(git log -1 --format=%cs) ($(git rev-parse --short HEAD))"
