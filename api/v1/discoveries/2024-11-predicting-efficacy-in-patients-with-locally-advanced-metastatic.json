@@ -1,0 +1,36 @@
+{
+  "id": "2024-11-predicting-efficacy-in-patients-with-locally-advanced-metastatic",
+  "title": "Predicting efficacy in patients with locally advanced/metastatic urothelial carcinoma (mUC) treated with immunotherapy using explainable machine learning approaches: the SamUR-AI trial on behalf of the Meet-URO group.",
+  "summary": "The repository exposed a result-bearing thesis abstract by 20 Nov 2024 (thesis issued 11 Dec 2024); the peer-reviewed journal version appeared 30 Jan 2026. In the thesis and later 438-patient journal analysis, explainable ML had weak objective-response classification (best test F1 0.61) but moderate survival discrimination (OS C-index 0.67; PFS C-index 0.64); findings remain exploratory, not evidence of treatment benefit or validated biomarkers.",
+  "field": "medicine",
+  "ai_technology": "The study fits multiple classifiers and survival models to baseline clinical/laboratory variables and applies SHAP to interpret predicted ORR, PFS, and OS; the learned models produce the reported prediction results.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://hdl.handle.net/10589/231007",
+  "source_type": "other",
+  "publication_date": "2024-11-20",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.esmorw.2025.100681",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Not reported",
+    "tested": "For 438 patients, classification was weak (best test F1 0.61); extra survival trees reached OS C-index 0.67 and selected-feature survival SVM reached PFS C-index 0.64. SHAP highlighted ECOG status, treatment line/combinations, metastases and laboratory features.",
+    "unknown": "In a retrospective 438-patient, 34-center cohort, explainable ML had weak objective-response classification (best test F1 0.61) but moderate survival discrimination (OS C-index 0.67; PFS C-index 0.64); SHAP highlighted clinical prognostic factors. These findings are exploratory and do not show treatment benefit or establish predictive biomarkers. Retrospective multicenter data from 34 Italian institutions were divided into training, cross-validation, and test sets. The article identifies class imbalance and overfitting and calls for further validation; results support only modest predictive performance.",
+    "ai_role": "The study fits multiple classifiers and survival models to baseline clinical/laboratory variables and applies SHAP to interpret predicted ORR, PFS, and OS; the learned models produce the reported prediction results.",
+    "evidence_urls": [
+      "https://hdl.handle.net/10589/231007",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13040919/",
+      "https://politesi.polimi.it/oai/request?verb=GetRecord&metadataPrefix=datacite&identifier=oai:www.politesi.polimi.it:10589/231007",
+      "https://pubmed.ncbi.nlm.nih.gov/41930317/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-mass-producing-training-data-with-surprising-side-effects",
+  "title": "Mass Producing Training Data with Surprising Side Effects",
+  "summary": "Automated search and fine-tuning produced a large set of synthetic training datasets with surprising model-behavior side effects. Held-out scoring and a human study support a specific finding about training-data generalization; the source limits it to synthetic, mostly single-turn behaviors, with some effects unstable across retraining.",
+  "field": "computer science",
+  "ai_technology": "Automated search and language-model fine-tuning for synthetic training data",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://arxiv.org/pdf/2611.06324v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-04",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Results §§4–5 report 6,575 datasets across eight behaviors and show that effects can be induced by ordinary-looking synthetic data; the study investigates a specific LLM generalization phenomenon.",
+    "unknown": "Section 5 uses held-out metrics and Section 6 has 25 ML researchers annotate 64 datasets; human prediction is 63% versus 50% chance and the automated scores track judgments, with limitations stated in §7.",
+    "ai_role": "Methods §§3–4 use model fine-tuning, evolutionary/RL/subliminal search, and held-out LLM scoring to generate datasets with target behavior effects.",
+    "evidence_urls": [
+      "https://export.arxiv.org/api/query?id_list=2611.06324v1",
+      "https://arxiv.org/pdf/2611.06324v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

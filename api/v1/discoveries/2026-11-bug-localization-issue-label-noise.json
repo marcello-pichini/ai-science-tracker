@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-bug-localization-issue-label-noise",
+  "title": "Manual checks reveal label noise in bug-localization datasets",
+  "summary": "GenTag, an LLM issue classifier, was used to study issue-label quality in five information-retrieval bug-localization datasets. The paper reports label noise after checking a stratified sample against manual annotations and an independently hand-labeled dataset. The noise estimates depend on classifier decisions and the sampled issues.",
+  "field": "computer science",
+  "ai_technology": "GenTag large-language-model issue classifier with manual label checks",
+  "organization": "Affiliation not stated in the reviewed arXiv metadata",
+  "source_url": "https://arxiv.org/abs/2611.05314v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-03",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/html/2611.05314v1",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A stratified manually labeled sample and an independent hand-labeled dataset were used to assess GenTag; its labels indicated noise across five bug-localization datasets.",
+    "unknown": "The dataset-noise estimates depend partly on GenTag’s classification decisions and the reviewed samples.",
+    "ai_role": "GenTag uses an LLM with a fine-grained issue taxonomy to classify bug reports; manual annotations check its labels.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.05314v1",
+      "https://arxiv.org/html/2611.05314v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

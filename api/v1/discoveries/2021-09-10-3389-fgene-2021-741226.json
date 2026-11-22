@@ -1,0 +1,35 @@
+{
+  "id": "2021-09-10-3389-fgene-2021-741226",
+  "title": "Construction and Validation of an Immune Cell Signature Score to Evaluate Prognosis and Therapeutic Efficacy in Hepatocellular Carcinoma",
+  "summary": "Using gene-expression profiles from 1,447 HCC patients across TCGA, ICGC and GEO, the study quantified immune-cell signatures with ssGSEA and selected four signatures with Cox analyses and random-forest modeling to form ICSscore. The score stratified prognosis in TCGA and two independent cohorts and was associated with treatment-response datasets. These retrospective associations do not show treatment benefit.",
+  "field": "medicine",
+  "ai_technology": "Immune-cell signature score with Cox regression and XGBoost response classifier",
+  "organization": "University of Shanghai for Science and Technology; Shanghai Institute for Biomedical and Pharmaceutical Technologies",
+  "source_url": "https://doi.org/10.3389/fgene.2021.741226",
+  "source_type": "paper",
+  "publication_date": "2021-09-27",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Not reported",
+    "tested": "The ICSscore was developed from 1,447 HCC profiles and assessed for risk stratification across TCGA-LIHC and two independent cohorts; treatment-response associations were examined in HCC datasets and other cancer datasets.",
+    "unknown": "The cohort and treatment-response analyses are retrospective; the reported associations do not establish prospective treatment selection or patient benefit.",
+    "ai_role": "The study built an immune-cell signature score using multivariable Cox regression and used XGBoost to classify response associations in HCC datasets; these retrospective associations do not estimate treatment effects.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/genetics/articles/10.3389/fgene.2021.741226/full",
+      "https://europepmc.org/article/MED/34675983",
+      "https://pubmed.ncbi.nlm.nih.gov/34646307/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

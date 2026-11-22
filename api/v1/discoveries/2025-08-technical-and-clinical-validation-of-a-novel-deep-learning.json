@@ -1,0 +1,34 @@
+{
+  "id": "2025-08-technical-and-clinical-validation-of-a-novel-deep-learning",
+  "title": "Technical and clinical validation of a novel deep learning-based white matter hyperintensity segmentation tool.",
+  "summary": "The study trained MD-GRU and nnU-Net deep-learning models for white-matter-hyperintensity segmentation and tested them on datasets excluded from training. Against reference masks and comparator algorithms, the models showed improved agreement, reduced bias and improved repeatability and inter-scanner reproducibility. In the two-year DiViNAS data, nnU-Net yielded a calculated sample size 41% smaller than the best comparator for detecting a treatment effect; this is a statistical-power calculation, not evidence of an observed treatment effect or clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "MD-GRU and nnU-Net deep-learning segmentation models for MRI white matter hyperintensities.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12448020/",
+  "source_type": "paper",
+  "publication_date": "2025-08-29",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Technical tests used MarkVCID reference masks and scan-rescan/inter-scanner data plus SWISS-AF images; clinical-biomarker analysis used two-year DiViNAS follow-up. Models improved agreement, bias, precision and reproducibility versus benchmark algorithms; nnU-Net produced a 41% lower calculated sample size than the best comparator for treatment-effect detection.",
+    "unknown": "The treatment-effect result is a power calculation from existing follow-up data, not a measured treatment response. The study does not demonstrate improved patient outcomes.",
+    "ai_role": "Deep-learning segmentation generates WMH volumes; the resulting measurements were assessed against masks, repeat scans, scanners and longitudinal biomarker data.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12448020/",
+      "https://europepmc.org/article/MED/40979673"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

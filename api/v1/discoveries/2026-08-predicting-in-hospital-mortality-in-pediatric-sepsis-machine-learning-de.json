@@ -1,0 +1,34 @@
+{
+  "id": "2026-08-predicting-in-hospital-mortality-in-pediatric-sepsis-machine-learning-de",
+  "title": "Predicting In-Hospital Mortality in Pediatric Sepsis: Machine Learning Development and Multicenter Validation.",
+  "summary": "Eight algorithms were evaluated for in-hospital mortality using predictors from the first 24 hours of pediatric ICU admission. XGBoost had AUC 0.821 (95% CI 0.751–0.892) and was externally assessed on the PIC pediatric and MIMIC-IV adult databases; the latter tests biological generalizability, not pediatric clinical deployment.",
+  "field": "medicine",
+  "ai_technology": "Eight machine-learning algorithms use first-24-hour ICU variables; SHAP interpretation and spline calibration were applied to the selected XGBoost model.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13544363/",
+  "source_type": "paper",
+  "publication_date": "2026-08-31",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The retrospective development cohort was from Chongqing Children’s Hospital. XGBoost achieved AUC 0.821 (95% CI 0.751–0.892); external assessment used the PIC pediatric database and adult MIMIC-IV data.",
+    "unknown": "Development was retrospective at one hospital; the external MIMIC-IV cohort was adult and supports biological generalizability only. No prospective pediatric workflow or mortality benefit was tested.",
+    "ai_role": "Eight machine-learning algorithms use first-24-hour ICU variables; SHAP interpretation and spline calibration were applied to the selected XGBoost model.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13544363/",
+      "https://europepmc.org/article/MED/42699765"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

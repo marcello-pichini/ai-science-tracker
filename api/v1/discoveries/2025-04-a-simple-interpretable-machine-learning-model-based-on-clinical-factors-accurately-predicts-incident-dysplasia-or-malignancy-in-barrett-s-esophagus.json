@@ -1,0 +1,33 @@
+{
+  "id": "2025-04-a-simple-interpretable-machine-learning-model-based-on-clinical-factors-accurately-predicts-incident-dysplasia-or-malignancy-in-barrett-s-esophagus",
+  "title": "A Simple, Interpretable Machine Learning Model Based on Clinical Factors Accurately Predicts Incident Dysplasia or Malignancy in Barrett's Esophagus.",
+  "summary": "A decision tree trained on a retrospective Barrett esophagus cohort identified segment length alone as a useful risk-stratification predictor for observed progression. In 598 patients (61 progressors), the held-out test set achieved AUROC .79; lowering the threshold raised sensitivity to 93.3% with specificity 58.5%. This is single-center retrospective evidence and is not an externally validated surveillance recommendation.",
+  "field": "medicine",
+  "ai_technology": "Supervised decision tree among six ML classifiers uses five candidate predictors; the selected tree relies only on Barrett segment length.",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12587488/",
+  "source_type": "paper",
+  "publication_date": "2025-04-28",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In 598 patients with follow-up through Jan 2024, 61 progressed within five years. The tree’s held-out test AUROC was .79; default sensitivity/specificity were 73.3%/70.4%, and a lower threshold yielded 93.3% sensitivity/58.5% specificity; segment-length thresholds define four risk groups.",
+    "unknown": "The model was developed on 75% of a single-center veteran cohort and tested on a 25% held-out split (n=150); progressor pathology was independently verified by a second expert pathologist. No external cohort was used, calibration was suboptimal, and the sensitivity threshold trades specificity for fewer false negatives.",
+    "ai_role": "Supervised decision tree among six ML classifiers uses five candidate predictors; the selected tree relies only on Barrett segment length.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12587488/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2025-04-ai-beyond-sofa-and-apache-ii-novel-risk-stratification-models-using-readily-available-biomark",
+  "title": "Beyond SOFA and APACHE II, Novel Risk Stratification Models Using Readily Available Biomarkers in Critical Care.",
+  "summary": "A 19,720-patient ICU cohort produced a logistic risk model using biomarker ratios, ventilation and CRRT that internally discriminated in-hospital mortality (AUC 0.929), comparable to SOFA (0.931); the paper does not establish superiority or external generalization. The reviewed source supports this bounded result; external generalization, causal effects, and sustained operational impact remain unestablished where the source reports retrospective or internal evaluation.",
+  "field": "medicine",
+  "ai_technology": "XGBoost/SHAP ranks predictors before logistic mortality models; the enabled outcome is ICU mortality risk stratification.",
+  "organization": "Department of Thoracic and Cardiovascular Surgery, Samsung Medical Center, Sungkyunkwan University School of Medicine, Seoul 06351, Republic of Korea",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12071242/",
+  "source_type": "paper",
+  "publication_date": "2025-04-28",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The primary Results report 666 deaths and Model 3 (LAR, NPAR, mechanical ventilation, CRRT) AUC 0.929 (95% CI 0.921–0.937); SOFA AUC 0.931 and DeLong p=0.052. This supports a bounded internally tested clinical prediction result, not claimed improvement over SOFA.",
+    "unknown": "Primary Methods describe repeated 70/30 train/test splits; Results also report 10-fold internal cross-validation. No external cohort is reported, and the split descriptions are not fully consistent; conclusions are limited to internal retrospective performance.",
+    "ai_role": "XGBoost/SHAP ranks predictors before logistic mortality models; the enabled outcome is ICU mortality risk stratification.",
+    "evidence_urls": [
+      "https://europepmc.org/article/MED/40361939",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12071242/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

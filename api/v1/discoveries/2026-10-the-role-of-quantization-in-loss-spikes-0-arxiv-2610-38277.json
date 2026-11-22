@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-the-role-of-quantization-in-loss-spikes-0-arxiv-2610-38277",
+  "title": "The Role of Quantization in Loss Spikes",
+  "summary": "For 28M-parameter models, BF16-true runs spike earliest, mixed BF16 later, and FP32 stays stable over five seeds; precision-error growth accompanies the spikes. Five-seed comparisons at fixed 28M scale and long training horizon compare BF16 true, mixed BF16 and FP32; limits are the tested model/training regime.",
+  "field": "physics",
+  "ai_technology": "A GPT-2-style language model is pretrained while output-head precision is varied; same-state FP32 logits provide a reference for quantization error.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://arxiv.org/html/38277v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-28",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Five-seed comparisons at fixed 28M scale and long training horizon compare BF16 true, mixed BF16 and FP32; limits are the tested model/training regime.",
+    "unknown": "External replication and real-world or clinical benefit were not established by the reviewed study; author affiliation is not stated in the reviewed material.",
+    "ai_role": "A GPT-2-style language model is pretrained while output-head precision is varied; same-state FP32 logits provide a reference for quantization error.",
+    "evidence_urls": [
+      "https://arxiv.org/html/38277v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

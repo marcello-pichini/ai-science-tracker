@@ -1,0 +1,33 @@
+{
+  "id": "2021-09-prediction-of-storage-time-in-different-seafood-based-on-color-values-with-artificial-neural-network-modeling",
+  "title": "Prediction of storage time in different seafood based on color values with artificial neural network modeling.",
+  "summary": "A one-hidden-layer, 30-neuron feedforward ANN uses seafood colour coordinates (L*, a*, b*) to predict storage time. The primary paper compiled 205 literature datapoints and evaluated the model on an additional 45 literature datapoints from other seafood studies; the article reports R²=0.81 for the selected topology and a predicted/observed regression coefficient of 0.85 (the abstract rounds R² to 0.80). This is a narrow food-quality prediction result, not new measurements, and the pooled literature-derived validation is not prospective field validation.",
+  "field": "computer science",
+  "ai_technology": "A feedforward MLP uses measured L*, a*, b* values as inputs and one hidden layer to output storage time; topology was chosen by comparing R² and MSE.",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9114270/",
+  "source_type": "paper",
+  "publication_date": "2021-09-29",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The selected 30-neuron topology reports R²=0.81 and MSE=0.20 during optimization; the paper separately reports a predicted/observed regression coefficient of 0.85 (abstract R² rounded to 0.80).",
+    "unknown": "205 literature experiments were split into 145/30/30 train/test/validation; a distinct additional 45 literature datapoints from other species/studies were also used as validation. The evidence is pooled retrospective data, not prospective measured validation, and species/process heterogeneity limits generalization.",
+    "ai_role": "A feedforward MLP uses measured L*, a*, b* values as inputs and one hidden layer to output storage time; topology was chosen by comparing R² and MSE.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9114270/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

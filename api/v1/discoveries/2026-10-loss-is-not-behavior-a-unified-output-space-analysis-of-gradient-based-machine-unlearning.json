@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-loss-is-not-behavior-a-unified-output-space-analysis-of-gradient-based-machine-unlearning",
+  "title": "Loss is Not Behavior: A Unified Output-Space Analysis of Gradient-Based Machine Unlearning",
+  "summary": "Analysis and trained-model experiments show that similar loss-space behavior can coexist with different output-space gaps from retraining. The paper proposes leverage-based diagnostics; nonlinear conclusions are bounded by a local Gauss–Newton approximation.",
+  "field": "computer science",
+  "ai_technology": "Gradient-based machine-unlearning methods; output-space and leverage diagnostics",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://arxiv.org/html/38784v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-28",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Theoretical analysis derives output-gap expressions for linear regression and uses generalized Gauss–Newton/local-linearity approximations for nonlinear models; empirical evaluation compares forget/retain outputs with retraining.",
+    "unknown": "Nonlinear conclusions are limited to local approximations and tested methods; diagnostics do not guarantee successful unlearning.",
+    "ai_role": "The paper analyzes gradient-based machine unlearning through forget/retain losses and output-space deviations from retraining, deriving leverage diagnostics.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.38784"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

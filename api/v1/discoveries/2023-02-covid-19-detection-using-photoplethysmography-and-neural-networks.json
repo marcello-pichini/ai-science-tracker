@@ -1,0 +1,36 @@
+{
+  "id": "2023-02-covid-19-detection-using-photoplethysmography-and-neural-networks",
+  "title": "COVID-19 Detection Using Photoplethysmography and Neural Networks",
+  "summary": "A custom CNN classified PPG segments from 93 COVID-19 patients and 90 controls; patient-level holdout performance was 78% accuracy, 75% sensitivity and 81% specificity. This is a small retrospective screening result, not clinical utility evidence.",
+  "field": "medicine",
+  "ai_technology": "A custom convolutional neural network classifies raw PPG segments as COVID-19 or control after signal-quality filtering.",
+  "organization": "Department of Information Engineering, University of Florence, 50139 Florence, Italy",
+  "source_url": "https://doi.org/10.3390/s23052561",
+  "source_type": "paper",
+  "publication_date": "2023-02-25",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out patient-level results report 78% accuracy, 75% sensitivity and 81% specificity (the segment metrics are separately reported).",
+    "unknown": "The paper reports cross-validation and a held-out patient-level assessment on 32 patients; sample size and case-control design limit generalization.",
+    "ai_role": "A custom convolutional neural network classifies raw PPG segments as COVID-19 or control after signal-quality filtering.",
+    "evidence_urls": [
+      "https://doi.org/10.3390/s23052561",
+      "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC10007577/unicode",
+      "https://europepmc.org/article/MED/36904763",
+      "https://pubmed.ncbi.nlm.nih.gov/36904763/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

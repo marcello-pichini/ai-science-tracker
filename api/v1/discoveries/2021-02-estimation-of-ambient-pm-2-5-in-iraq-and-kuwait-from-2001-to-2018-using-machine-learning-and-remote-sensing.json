@@ -1,0 +1,33 @@
+{
+  "id": "2021-02-estimation-of-ambient-pm-2-5-in-iraq-and-kuwait-from-2001-to-2018-using-machine-learning-and-remote-sensing",
+  "title": "Estimation of ambient PM 2.5 in Iraq and Kuwait from 2001 to 2018 using machine learning and remote sensing.",
+  "summary": "A four-stage model combines satellite aerosol, meteorology, dust and land-use variables, random-forest visibility prediction and sparse ground PM2.5 monitoring to estimate 1-km daily historical exposure in Iraq/Kuwait for 2001–2018. It reports country means of 37 and 41 μg/m³ and spatial/temporal variation. These are model estimates, not a direct continuous monitor record; PM2.5 calibration is sparse.",
+  "field": "computer science",
+  "ai_technology": "Random forest predicts visibility from satellite/reanalysis/dust/land-use predictors; a visibility-to-PM2.5 stage and spatial models generate the exposure surface.",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8023768/",
+  "source_type": "paper",
+  "publication_date": "2021-02-19",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Results report cross-validation R² for visibility and PM2.5 stages, then 1-km historical exposure estimates and regional temporal/spatial patterns.",
+    "unknown": "Cross-validation withheld visibility stations; PM2.5 fit used sparse monitors in 2017–18 with 2004–05 validation. Three sites/two periods constrain calibration; modeled concentrations remain estimates.",
+    "ai_role": "Random forest predicts visibility from satellite/reanalysis/dust/land-use predictors; a visibility-to-PM2.5 stage and spatial models generate the exposure surface.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8023768/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

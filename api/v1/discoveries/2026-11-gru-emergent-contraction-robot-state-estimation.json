@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-gru-emergent-contraction-robot-state-estimation",
+  "title": "Unconstrained GRUs develop contracting dynamics in a robot state-estimation task",
+  "summary": "In a real mobile-robot state-estimation task, the paper reports that unconstrained GRUs converged to contracting dynamics during training. A recurrent estimator constrained by contraction theory outperformed a vanilla GRU with more stable training. The empirical observation is task-specific; the paper’s formal guarantees are a separate result.",
+  "field": "computer science",
+  "ai_technology": "GRU and recurrent state estimators analyzed through nonlinear observer theory",
+  "organization": "Affiliation not stated in the reviewed arXiv metadata",
+  "source_url": "https://arxiv.org/abs/2611.09217v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-06",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/pdf/2611.09217v1",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The source reports a robot-task comparison of a contraction-constrained recurrent estimator with a vanilla GRU, and observes unconstrained GRUs converging to contracting dynamics.",
+    "unknown": "The empirical observation comes from the reported mobile-robot task; it does not establish the behavior across other tasks or models.",
+    "ai_role": "The paper analyzes recurrent models and GRUs as learned state estimators and measures their training dynamics on a robot task.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.09217v1",
+      "https://arxiv.org/pdf/2611.09217v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

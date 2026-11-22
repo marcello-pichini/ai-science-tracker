@@ -1,0 +1,35 @@
+{
+  "id": "2023-11-a-fast-and-non-invasive-artificial-intelligence-olfactory-like-system",
+  "title": "A fast and non-invasive artificial intelligence olfactory-like system that aids diagnosis of Parkinson's disease",
+  "summary": "Three learned classifiers were evaluated on sebum VOC data from Parkinson’s patients and controls; the best separated these groups but did not predict disease progression. Clinical diagnoses under UK Brain Bank criteria and matched controls provide the reference; held-out test split and repeated sensor runs are reported. Authors disclose no GC-MS verification of identities, possible medication/sample-volume confounding, and need for larger rigorous studies; no severity result.",
+  "field": "medicine",
+  "ai_technology": "GBDT, random forest and XGBoost classifiers operate on measured skin-sebum VOC time-series to distinguish clinically diagnosed PD from matched healthy controls; this is the enabled diagnostic result.",
+  "organization": "The Fourth Affiliated Hospital of Zhejiang University Medical College",
+  "source_url": "https://onlinelibrary.wiley.com/doi/10.1111/ene.16167",
+  "source_type": "other",
+  "publication_date": "2023-11-27",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Methods report 121 PD and 129 controls split 80:20 (200 train, 50 test); held-out GBDT sensitivity 83.33%, specificity 84%, AUC 0.893. Severity prediction failed, so scope is cross-sectional case-control discrimination.",
+    "unknown": "Clinical diagnoses under UK Brain Bank criteria and matched controls provide the reference; held-out test split and repeated sensor runs are reported. Authors disclose no GC-MS verification of identities, possible medication/sample-volume confounding, and need for larger rigorous studies; no severity result. The source does not establish benefits beyond the reported evaluation.",
+    "ai_role": "GBDT, random forest and XGBoost classifiers operate on measured skin-sebum VOC time-series to distinguish clinically diagnosed PD from matched healthy controls; this is the enabled diagnostic result.",
+    "evidence_urls": [
+      "https://onlinelibrary.wiley.com/doi/10.1111/ene.16167",
+      "https://pubmed.ncbi.nlm.nih.gov/38009830/",
+      "https://pubmed.ncbi.nlm.nih.gov/35155895/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

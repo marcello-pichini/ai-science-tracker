@@ -1,0 +1,34 @@
+{
+  "id": "2023-07-artificial-intelligence-to-predict-the-braf-v595e-mutation-in-canine-u",
+  "title": "Artificial Intelligence to Predict the BRAF V595E Mutation in Canine Urinary Bladder Urothelial Carcinomas",
+  "summary": "U-Net analysis of H&E slides predicts PCR-confirmed canine BRAF V595E mutation in a held-out set of 84 cases; sensitivity/specificity are modest and materially depend on tissue quality, so the finding is a bounded veterinary diagnostic proof of concept. PCR is a reference standard in a case-held-out validation set; performance is limited (57/96 agreement; 58% sensitivity, 63% specificity) and quality-dependent, with no external site validation.",
+  "field": "materials",
+  "ai_technology": "Visiopharm decision-forest tissue segmentation and U-Net tumor segmentation/mutation prediction operate on H&E whole-slide images, trained against ddPCR and compared with PCR in held-out cases.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC10416820/unicode",
+  "source_type": "other",
+  "publication_date": "2023-07-25",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The result is prediction of a molecular tumor mutation from routine histology images, a specific diagnostic application; BRAF mutation itself was known before this paper.",
+    "unknown": "PCR is a reference standard in a case-held-out validation set; performance is limited (57/96 agreement; 58% sensitivity, 63% specificity) and quality-dependent, with no external site validation. The source does not establish benefits beyond the reported evaluation.",
+    "ai_role": "Visiopharm decision-forest tissue segmentation and U-Net tumor segmentation/mutation prediction operate on H&E whole-slide images, trained against ddPCR and compared with PCR in held-out cases.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC10416820/unicode",
+      "https://doi.org/10.3390/ani13152404"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

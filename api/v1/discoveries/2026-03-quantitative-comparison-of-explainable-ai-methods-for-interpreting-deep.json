@@ -1,0 +1,34 @@
+{
+  "id": "2026-03-quantitative-comparison-of-explainable-ai-methods-for-interpreting-deep",
+  "title": "Quantitative comparison of explainable AI methods for interpreting deep learning-based classification of 3D gait kinematics.",
+  "summary": "Across three gait datasets, ResNet/LSTM/InceptionTime classifiers predict diagnostic group labels and four XAI methods identify recurring joint-angle features; Integrated Gradients is most robust and feature masking improves accuracy. This is a specific clinical gait-data result, but diagnostic cohort interpretation and exact reference standard are limited to existing datasets.",
+  "field": "medicine",
+  "ai_technology": "ResNet, LSTM and InceptionTime classify diagnostic groups from 3D gait kinematics; LIME, DeepLift, Integrated Gradients and sequential feature selection identify influential joint-angle features.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://www.nature.com/articles/s41598-026-46243-0",
+  "source_type": "paper",
+  "publication_date": "2026-03-31",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Across three existing gait datasets, Integrated Gradients was the most robust explanation method in the reported comparisons, and feature masking improved classification accuracy. The findings are bounded to these datasets and reference labels.",
+    "unknown": "The three gait datasets are existing clinical datasets with their own diagnostic labels; explanation robustness and feature masking do not establish external clinical validity or patient benefit.",
+    "ai_role": "ResNet, LSTM and InceptionTime classify diagnostic groups from 3D gait kinematics; LIME, DeepLift, Integrated Gradients and sequential feature selection identify influential joint-angle features.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41598-026-46243-0",
+      "https://europepmc.org/article/MED/41917155"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

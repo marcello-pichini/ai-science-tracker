@@ -1,0 +1,34 @@
+{
+  "id": "2025-02-development-of-a-diagnostic-model-for-focal-segmental-glomerulosclerosis",
+  "title": "Development of a Diagnostic Model for Focal Segmental Glomerulosclerosis: Integrating Machine Learning on Activated Pathways and Clinical Validation",
+  "summary": "Across 163 patients with focal segmental glomerulosclerosis and 42 living-donor controls in GEO cohorts, the glmBoost+Ridge model using six genes distinguished FSGS from controls. Its AUCs were 1.000, 0.994 and 1.000 across three development/validation cohorts and 0.910 and 0.775 in two platforms of the external cohort (overall AUC about 0.885). Immunohistochemistry supported elevated CD99 and OAZ2 expression. These retrospective expression-cohort results and small tissue validation do not establish clinical diagnostic utility.",
+  "field": "medicine",
+  "ai_technology": "glmBoost+Ridge",
+  "organization": "The First Affiliated Hospital of Anhui Medical University; The Second People's Hospital of Hefei",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11872063/",
+  "source_type": "paper",
+  "publication_date": "2025-02-26",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The glmBoost+Ridge six-gene FSGS model was tested across three GEO cohorts and an independent GEO cohort; internal AUCs were 1.000, 0.994 and 1.000, while the external cohort platform AUCs were 0.910 and 0.775 (combined about 0.885). Immunohistochemistry in 16 FSGS patients and 7 controls supported CD99/OAZ2 expression differences.",
+    "unknown": "Near-perfect cohort AUCs may not generalize; the independent GEO platform results differed, and clinical diagnostic utility was not demonstrated.",
+    "ai_role": "glmBoost+Ridge combines six gene-expression features (BANF1, TUSC2, SMAD3, TGFB1, CD99 and OAZ2) to classify focal segmental glomerulosclerosis.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11872063/",
+      "https://europepmc.org/article/MED/40026806"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

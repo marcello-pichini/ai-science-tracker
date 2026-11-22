@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-the-verification-wall-in-microbial-metabolomics",
+  "title": "The Verification Wall in Microbial Metabolomics",
+  "summary": "A computational audit assessed confirmation routes for 10,645 database entries of computationally inferred microbial metabolites. Depending on thresholds, 5–37% had no route identified; this spread reflects analytical assumptions and does not constitute a measured count of unsynthesizable compounds or experimental confirmation.",
+  "field": "biology",
+  "ai_technology": "AiZynthFinder retrosynthesis-assisted route audit",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://arxiv.org/html/2610.39914v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-29",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2610.39914",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "An audit of 10,645 HMDB structures found 5–37% had no confirmation route identified under the tested assumptions; the abstract notes the range depends on threshold choices.",
+    "unknown": "Failure to identify a computational confirmation route does not prove a compound cannot be synthesized; the audit does not experimentally test compounds.",
+    "ai_role": "AiZynthFinder-assisted route analysis was used to assess candidate confirmation routes in a metabolomics database audit.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.39914"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

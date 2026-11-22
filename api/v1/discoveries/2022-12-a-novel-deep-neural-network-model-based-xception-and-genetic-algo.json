@@ -1,0 +1,33 @@
+{
+  "id": "2022-12-a-novel-deep-neural-network-model-based-xception-and-genetic-algo",
+  "title": "A novel deep neural network model based Xception and genetic algorithm for detection of COVID-19 from X-ray images.",
+  "summary": "The study optimized an Xception CNN with a genetic algorithm for COVID-19 classification on chest radiographs and reported held-out diagnostic performance on 277 images from a public 1,251-image collection. The study-specific task and test-set comparison support a retrospective diagnostic-validation result; they do not establish external clinical performance or patient benefit.",
+  "field": "computer science",
+  "ai_technology": "A genetic algorithm searches Xception CNN architecture/hyperparameters for classification of COVID-19, viral pneumonia, bacterial pneumonia and normal X-rays.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9790088/",
+  "source_type": "paper",
+  "publication_date": "2022-12-25",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "For the public 1,251-image dataset (974 train/277 test), the paper reports accuracy .996 for binary, .989 for three-class and .924 for four-class classification, compared with cited prior models.",
+    "unknown": "The 277-image held-out set includes 60 COVID-19 images and is compared with image labels/model baselines. This is retrospective validation on a public dataset, without external-site or prospective clinical evaluation.",
+    "ai_role": "A genetic algorithm searches Xception CNN architecture/hyperparameters for classification of COVID-19, viral pneumonia, bacterial pneumonia and normal X-rays.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9790088/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

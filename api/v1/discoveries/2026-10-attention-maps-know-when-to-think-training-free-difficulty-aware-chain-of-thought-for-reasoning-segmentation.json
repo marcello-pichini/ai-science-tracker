@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-attention-maps-know-when-to-think-training-free-difficulty-aware-chain-of-thought-for-reasoning-segmentation",
+  "title": "Attention Maps Know When to Think: Training-Free Difficulty-Aware Chain-of-Thought for Reasoning Segmentation",
+  "summary": "Attention-map entropy was used as a training-free difficulty signal to choose whether a multimodal language model should use chain-of-thought reasoning for reasoning segmentation. The framework also used bidirectional rethinking when initial output failed; benchmark results and efficiency are limited to the reported tasks.",
+  "field": "computer science",
+  "ai_technology": "Attention-map entropy used as a difficulty signal for reasoning segmentation",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://arxiv.org/html/2610.41618v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2610.41618",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "DA-CoT used attention entropy to gate chain-of-thought and reported state-of-the-art performance on the reported reasoning-segmentation benchmarks with improved inference efficiency.",
+    "unknown": "The benchmark result is limited to the evaluated models and tasks; it does not establish general reasoning gains across modalities or applications.",
+    "ai_role": "Attention-map entropy from a multimodal language model signals task difficulty and determines whether to trigger chain-of-thought; bidirectional rethinking can reverse the decision after a failed output.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.41618"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

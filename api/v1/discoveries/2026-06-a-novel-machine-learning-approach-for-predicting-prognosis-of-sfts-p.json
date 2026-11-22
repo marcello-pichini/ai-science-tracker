@@ -1,0 +1,33 @@
+{
+  "id": "2026-06-a-novel-machine-learning-approach-for-predicting-prognosis-of-sfts-p",
+  "title": "A Novel Machine Learning Approach for Predicting Prognosis of SFTS Patients in the Early Stages of Disease",
+  "summary": "In a retrospective study of 233 patients with severe fever with thrombocytopenia syndrome, a logistic-regression model using five early clinical and laboratory indicators predicted survival. It achieved AUC 0.913 in the internal test set and 0.923 in a separate 73-patient external cohort. These results do not establish prospective clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Logistic regression selected after comparison with XGBoost, LightGBM and random forest",
+  "organization": "Department of Laboratory Medicine, Tongji Medical College, Tongji Hospital, Huazhong University of Science and Technology, Wuhan, Hubei, China, hust.edu.cn",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13316448/",
+  "source_type": "paper",
+  "publication_date": "2026-06-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The study compared logistic regression, XGBoost, LightGBM and random forest. The selected logistic model used age, LDH, albumin, APTT and platelet count; AUC was 0.913 in the 31-patient internal test set and 0.923 in the external cohort.",
+    "unknown": "The study is retrospective; the internal test set and external cohort are small, and no prospective effect on clinical decisions or patient outcomes was measured.",
+    "ai_role": "Machine-learning models compared early clinical and laboratory indicators; the selected logistic-regression model estimated survival outcome from five indicators.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13316448/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

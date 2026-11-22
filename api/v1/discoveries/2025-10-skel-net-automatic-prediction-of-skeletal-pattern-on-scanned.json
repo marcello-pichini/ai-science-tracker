@@ -1,0 +1,33 @@
+{
+  "id": "2025-10-skel-net-automatic-prediction-of-skeletal-pattern-on-scanned",
+  "title": "Skel-Net: automatic prediction of skeletal pattern on scanned lateral cephalograms using anatomical prior-guided deep learning network.",
+  "summary": "Primary BMC Oral Health Methods/Results use five-year paired cephalograms from 245 children/adolescents; Skel-Net predicts future ANB angle changes with lower error than baseline networks. The dataset is single-center and no external validation is available. The bibliographic records retrieved do not state an author affiliation.",
+  "field": "medicine",
+  "ai_technology": "Two-stage Ceph-Net landmark/heatmap extraction and anatomy-prior-guided DL predict five-year ANB change.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://link.springer.com/article/10.1186/s12903-025-06771-z",
+  "source_type": "paper",
+  "publication_date": "2025-10-31",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "612 images from 245 untreated patients; held-out test split MAE 1.021 degrees, RMSE 1.338, R2 .517; beats listed DL baselines.",
+    "unknown": "Primary BMC Oral Health Methods/Results use five-year paired cephalograms from 245 children/adolescents; Skel-Net predicts future ANB angle changes with lower error than baseline networks. The dataset is single-center and no external validation is available. Temporal paired films provide actual growth outcome; internal train/validation/test only and no external center limit generalization.",
+    "ai_role": "Two-stage Ceph-Net landmark/heatmap extraction and anatomy-prior-guided DL predict five-year ANB change.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1186/s12903-025-06771-z"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

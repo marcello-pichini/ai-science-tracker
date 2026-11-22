@@ -1,0 +1,33 @@
+{
+  "id": "2025-05-glucobuddy-detecting-diabetes-risk-using-machine-learning",
+  "title": "Glucobuddy: Detecting Diabetes Risk Using Machine Learning",
+  "summary": "The v1 preprint evaluates supervised models for classifying the PIMA dataset diabetes label from health indicators; a held-out 80/20 evaluation reports performance. This qualifies only as a narrow retrospective dataset classification result, not future-risk prediction, clinical screening, or patient benefit.",
+  "field": "computer science",
+  "ai_technology": "Methods train supervised Logistic Regression, KNN, Gaussian Naive Bayes, Random Forest and SVM models using the dataset outcome label and health features; abstract and Methods differ on algorithm count, so the Results section’s five-model table was followed.",
+  "organization": "Affiliation not stated in the indexed abstract reviewed",
+  "source_url": "https://www.preprints.org/manuscript/202505.2269",
+  "source_type": "paper",
+  "publication_date": "2025-05-28",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Held-out table reports Random Forest accuracy 81.0% and ROC-AUC 85.4%; the text elsewhere selects Logistic Regression/Naive Bayes, so no single best-model claim is made.",
+    "unknown": "PIMA dataset has 768 records, 80/20 stratified split and five-fold training cross-validation. The source notes the narrow demographic dataset, no real-world patient testing and no clinical validation; outcome is existing diabetes status, not prospective risk.",
+    "ai_role": "Methods train supervised Logistic Regression, KNN, Gaussian Naive Bayes, Random Forest and SVM models using the dataset outcome label and health features; abstract and Methods differ on algorithm count, so the Results section’s five-model table was followed.",
+    "evidence_urls": [
+      "https://www.preprints.org/manuscript/202505.2269"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

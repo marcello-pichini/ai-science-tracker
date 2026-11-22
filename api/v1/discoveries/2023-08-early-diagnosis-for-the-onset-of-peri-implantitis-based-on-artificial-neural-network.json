@@ -1,0 +1,33 @@
+{
+  "id": "2023-08-early-diagnosis-for-the-onset-of-peri-implantitis-based-on-artificial-neural-network",
+  "title": "Early diagnosis for the onset of peri-implantitis based on artificial neural network.",
+  "summary": "Full publisher text reports a specific peri-implantitis diagnostic model: random forest selects transcriptomic hub genes, then a five-hidden-layer ANN classifies 35 GEO samples; test-split AUC is reported as 1.0. This is narrow retrospective diagnostic evidence with substantial small-sample/overfitting risk, not clinical utility.",
+  "field": "medicine",
+  "ai_technology": "RF feature selection among transcriptomic DEGs followed by five-hidden-layer ANN diagnostic classifier.",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://www.degruyterbrill.com/document/doi/10.1515/biol-2022-0691/html",
+  "source_type": "paper",
+  "publication_date": "2023-08-31",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "13 hub genes and test-split AUC 1.0 reported on 35 total GEO samples (19 peri-implantitis, 16 controls).",
+    "unknown": "Random split within a small retrospective dataset; authors note overfitting risk and need for larger validation; no clinical/imaging validation.",
+    "ai_role": "RF feature selection among transcriptomic DEGs followed by five-hidden-layer ANN diagnostic classifier.",
+    "evidence_urls": [
+      "https://www.degruyterbrill.com/document/doi/10.1515/biol-2022-0691/html"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

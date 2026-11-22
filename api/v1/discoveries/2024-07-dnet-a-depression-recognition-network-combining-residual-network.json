@@ -1,0 +1,33 @@
+{
+  "id": "2024-07-dnet-a-depression-recognition-network-combining-residual-network",
+  "title": "DNet: a depression recognition network combining residual network and vision transformer.",
+  "summary": "VOR reports MAE/RMSE 6.09/7.85 on AVEC2014 and 6.73/8.47 on CZ2023; first Research Square V1 contains the same severity-estimation task/result. Dual global/local facial feature modules, feature-pyramid fusion and ViT temporal representation predict BDI-II/HAMD scores. Testing: Held-out samples on public and hospital datasets, but no external-site test; AVEC multiple videos per person are split as sample units, so independence of test participants is not assured.. Primary BMC Psychiatry Methods/Results evaluate DNet against BDI-II/HAMD score labels on AVEC2014 and 373-person CZ2023. The model estimates questionnaire severity from facial video; it is not a depression diagnosis. AVEC videos from some participants are treated as independent samples, creating possible participant leakage. Source affiliation was not stated in the reviewed case checks and was unavailable in the local bibliographic cache.",
+  "field": "medicine",
+  "ai_technology": "Dual global/local facial feature modules, feature-pyramid fusion and ViT temporal representation predict BDI-II/HAMD scores.",
+  "organization": "Changzhou University",
+  "source_url": "https://link.springer.com/article/10.1186/s12888-025-07322-0",
+  "source_type": "paper",
+  "publication_date": "2024-07-02",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out samples on public and hospital datasets, but no external-site test; AVEC multiple videos per person are split as sample units, so independence of test participants is not assured.",
+    "unknown": "Generalizability beyond the reported study population, data, and protocol was not established in the reviewed material.",
+    "ai_role": "Dual global/local facial feature modules, feature-pyramid fusion and ViT temporal representation predict BDI-II/HAMD scores.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1186/s12888-025-07322-0"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

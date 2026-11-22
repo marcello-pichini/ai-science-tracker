@@ -1,0 +1,35 @@
+{
+  "id": "2025-09-development-and-validation-of-an-ai-foundation-model-for-endoscop",
+  "title": "Development and validation of an AI foundation model for endoscopic diagnosis of esophagogastric junction adenocarcinoma: a cohort and deep learning study.",
+  "summary": "Multicentre study of esophagogastric junction adenocarcinoma staging: 12,302 images/1,546 patients from seven hospitals; DINOv2 and ResNet50 encoders are gated in a mixture-of-experts classifier. Pathology is the reference; patient-disjoint held-out, external, and prospective cohorts plus an endoscopist reader comparison support a bounded diagnostic finding. It does not establish broader clinical benefit; data are from seven Chinese hospitals and image-level training is discussed. The arXiv v1 is the first located result-bearing version; its prospective accuracy was 0.8956, compared with 0.8963 in the later journal version.",
+  "field": "medicine",
+  "ai_technology": "DINOv2 extracts global appearance and ResNet50 local detail; element-wise gating/MoE fuses representations before three-class classification.",
+  "organization": "Shanghai Research Institute for Intelligent Autonomous Systems",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12510009/",
+  "source_type": "paper",
+  "publication_date": "2025-09-22",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Results at image and patient levels report accuracy/AUC across held-out, external and prospective sets and comparison with endoscopists.",
+    "unknown": "Histopathology defines early/advanced disease; held-out 112-patient, external 230-patient and prospective 198-patient sets; human reader comparisons. Regional sampling and image-level training limit generalizability; no patient outcome tested.",
+    "ai_role": "DINOv2 extracts global appearance and ResNet50 local detail; element-wise gating/MoE fuses representations before three-class classification.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2509.17533v1",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12510009/",
+      "https://pubmed.ncbi.nlm.nih.gov/41079024/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

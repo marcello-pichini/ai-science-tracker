@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-helios-a-spatial-omics-informed-multi-organ-cell-atlas-enables-ai",
+  "title": "HELIOS: A spatial omics-informed multi-organ cell atlas enables AI-based tumour microenvironment profiling and biomarker discovery from routine histopathology",
+  "summary": "Spatial-omics cell identities supervise a YOLOv10-m detector for routine H&E; the study reports cross-dataset cell-classification benchmarks and cancer-cohort associations. Prognostic analyses are retrospective and do not establish clinical utility.",
+  "field": "medicine",
+  "ai_technology": "YOLOv10-m detector trained with spatial-omics-derived cell labels",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://www.medrxiv.org/content/10.64898/2026.10.26.26366087v1.full.pdf",
+  "source_type": "paper",
+  "publication_date": "2026-10-29",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The paper reports 12.9 million cells from 60 specimens across 14 tissue types and eight cell classes; the held-out evaluation covers about 1.23 million cells, with performance varying by class. It reports cross-dataset F1 values of 0.66 (Lizard), 0.78 (MoNuSAC), and 0.59 (NuCLS), plus retrospective cancer-specific survival associations.",
+    "unknown": "Methods specify five-fold train/validation/test evaluation and external benchmark comparisons. Prognostic models use retrospective TCGA-type cohorts and adjustment; authors state clinical utility remains unproven and subgroup analyses are exploratory.",
+    "ai_role": "Spatial transcriptomics labels transferred to matched H&E train a multiclass YOLOv10-m cell detector; the learned operation supplies cell identity and density features for downstream analysis.",
+    "evidence_urls": [
+      "https://www.medrxiv.org/content/10.64898/2026.10.26.26366087v1.full.pdf",
+      "https://www.medrxiv.org/content/10.64898/2026.10.26.26366087v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "2025-01-using-large-language-models-to-detect-and-understand-drug-discontinuatio",
+  "title": "Using Large Language Models to Detect and Understand Drug Discontinuation Events in Web-Based Forums: Development and Validation Study",
+  "summary": "Zero-shot BART, GPT-4 Turbo, GPT-4o and DeBERTa classified drug-discontinuation events and root causes in MedHelp forum comments. In a dataset of 1,000 comments (107 labeled events), BART achieved F1 0.86 for event detection, with 2.8% false positives and 6.5% false negatives; GPT-4o had 12.9% Hamming loss for root-cause classification. The result is a text-mining evaluation on this annotated forum sample, not evidence of medication adherence or clinical outcomes.",
+  "field": "medicine",
+  "ai_technology": "BART, GPT-4o and DeBERTa zero-shot classifiers",
+  "organization": "The University of Florida",
+  "source_url": "https://doi.org/10.2196/54601",
+  "source_type": "paper",
+  "publication_date": "2025-01-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Evaluated zero-shot classifiers on MedHelp forum comments: among 1,000 comments, 107 were drug-discontinuation events; BART reached F1 0.86, 2.8% false-positive rate and 6.5% false-negative rate, while GPT-4o root-cause classification had 12.9% Hamming loss.",
+    "unknown": "Performance is established only on the annotated MedHelp forum sample; it does not establish population prevalence, medication adherence, or clinical outcomes.",
+    "ai_role": "BART, GPT-4 Turbo, GPT-4o and DeBERTa classify forum-comment sentences for drug-discontinuation events and root causes without task-specific fine-tuning.",
+    "evidence_urls": [
+      "https://europepmc.org/article/MED/39883487",
+      "https://europepmc.org/articles/PMC11826943",
+      "https://doi.org/10.2196/54601"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

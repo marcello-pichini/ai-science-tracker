@@ -1,0 +1,34 @@
+{
+  "id": "2026-01-exploration-of-the-correlation-between-clinical-indicators-and-pr",
+  "title": "Exploration of the correlation between clinical indicators and prognosis in hospitalized children with pneumonia and construction of a risk prediction model based on machine learning algorithms.",
+  "summary": "In a single-center retrospective cohort of 582 hospitalized children aged 1 month to 5 years with community-acquired pneumonia, XGBoost predicted a composite adverse outcome: stay longer than seven days, PICU admission, or in-hospital death. On a random 175-child validation split, it had AUC 0.84 (95% CI 0.78–0.90), accuracy 81.1%, sensitivity 78.6%, and specificity 82.3%, outperforming the compared random-forest and logistic-regression models. Etiology was unavailable for 41.2% of records; no external or prospective evaluation was reported.",
+  "field": "medicine",
+  "ai_technology": "XGBoost, compared with random forest and logistic regression; SHAP was used to rank indicators.",
+  "organization": "School of Medicine, Shaanxi University of International Trade and Commerce",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12891092/",
+  "source_type": "paper",
+  "publication_date": "2026-01-28",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective data from 582 children were split into 407 training and 175 validation records. XGBoost validation AUC was 0.84 (95% CI 0.78–0.90), with 81.1% accuracy, 78.6% sensitivity and 82.3% specificity. Top indicators included admission procalcitonin, C-reactive protein, respiratory rate, age under six months and oxygen saturation.",
+    "unknown": "This was a retrospective internal split, not a prospective clinical-impact evaluation. Etiologic data were missing for 240/582 children, and no external validation was reported. This was a single-center retrospective internal split, not a prospective clinical-impact evaluation.",
+    "ai_role": "XGBoost integrated admission clinical and laboratory indicators to classify the study-defined adverse prognosis; SHAP analyzed feature contributions.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12891092/",
+      "https://europepmc.org/article/MED/41684921"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2025-09-integrating-feature-selection-machine-learning-and-shap-explainab",
+  "title": "Integrating Feature Selection, Machine Learning, and SHAP Explainability to Predict Severe Acute Pancreatitis.",
+  "summary": "A retrospective single-center cohort of 743 adults (67 severe cases) was used to predict severe acute pancreatitis from ED-arrival variables; the top RFE-RF+kNN pipeline had test-set AUROC 0.826.",
+  "field": "medicine",
+  "ai_technology": "Six feature selectors were combined with six ML classifiers; SHAP ranked variable contributions.",
+  "organization": "Department of Emergency Medicine, Gönen State Hospital",
+  "source_url": "https://www.mdpi.com/2075-4418/15/19/2473",
+  "source_type": "paper",
+  "publication_date": "2025-09-27",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The best RFE-RF-feature+kNN pipeline predicted Revised Atlanta severe disease (AUROC 0.826; 95% CI 0.686–0.965) in the study cohort.",
+    "unknown": "A retrospective single-center cohort of 743 adults (67 severe cases) was used to predict severe acute pancreatitis from ED-arrival variables; the top RFE-RF+kNN pipeline had test-set AUROC 0.826. A random 70/30 split was used, with five-fold training CV and performance on the independent internal 30% test set; bootstrap CIs and calibration were reported. Retrospective single-center results need external validation and do not establish improved outcomes.",
+    "ai_role": "Six feature selectors were combined with six ML classifiers; SHAP ranked variable contributions.",
+    "evidence_urls": [
+      "https://www.mdpi.com/2075-4418/15/19/2473"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

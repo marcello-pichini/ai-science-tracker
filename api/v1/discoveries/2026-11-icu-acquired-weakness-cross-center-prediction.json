@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-icu-acquired-weakness-cross-center-prediction",
+  "title": "Cross-center prediction of ICU-acquired weakness from early admission data",
+  "summary": "In three Shanghai medical centers, five models predicted ICU-acquired weakness among 535 critically ill patients using variables available within 48 hours of admission. External AUROC was 0.853 for SVM and 0.841 for logistic regression; tree-based models showed overfitting. Model-guided care and improved patient outcomes were not tested.",
+  "field": "medicine",
+  "ai_technology": "Logistic regression, random forest, SVM, CART and XGBoost trained on early ICU clinical variables",
+  "organization": "Shanghai General Hospital, Shanghai Jiao Tong University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13744720/",
+  "source_type": "paper",
+  "publication_date": "2026-11-04",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.2147/IJGM.S646786",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Five machine-learning algorithms and logistic regression were compared in 395 internal-cohort patients and externally validated in 140 patients from two other centers. External AUROC was 0.853 for SVM and 0.841 for logistic regression; tree-based methods showed substantial performance attenuation consistent with overfitting.",
+    "unknown": "The study did not test whether model-guided care reduces ICU-acquired weakness or improves recovery; prospective interventional evaluation is still needed.",
+    "ai_role": "Five predictive algorithms were trained with 10-fold cross-validated grid search on data available within 48 hours of admission; a six-predictor logistic model was also converted to a nomogram.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13744720/",
+      "https://pubmed.ncbi.nlm.nih.gov/43001150/"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

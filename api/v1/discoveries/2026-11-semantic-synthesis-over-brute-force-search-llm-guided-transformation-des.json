@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-semantic-synthesis-over-brute-force-search-llm-guided-transformation-des",
+  "title": "Semantic Synthesis over Brute-Force Search: LLM-Guided Transformation Design for Efficient Learning",
+  "summary": "LLM-generated image transformations performed well in the reported CIFAR-10, CIFAR-100 and SVHN experiments, using fewer candidate evaluations than brute-force search. One-epoch selection scores predicted 20-epoch outcomes in some dataset/architecture pairs but were weak or uninformative in others.",
+  "field": "computer science",
+  "ai_technology": "Large language models generating executable image-transformation programs",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://arxiv.org/html/2611.10940v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-07",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Across image-classification datasets, generated transformations were evaluated with one-epoch selection and retrained for 20 epochs; outcomes varied across dataset/architecture pairs, with proxy-score correlations ranging from 0.756 to near zero.",
+    "unknown": "Short-budget selection is not a reliable proxy in every dataset/architecture pair; results are limited to the reported datasets and training setup.",
+    "ai_role": "LLMs synthesized transformation code; classifiers evaluated candidate transformations under short and longer training budgets.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.10940v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

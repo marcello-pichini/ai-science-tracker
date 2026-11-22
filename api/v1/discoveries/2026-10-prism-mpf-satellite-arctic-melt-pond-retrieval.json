@@ -1,0 +1,35 @@
+{
+  "id": "2026-10-prism-mpf-satellite-arctic-melt-pond-retrieval",
+  "title": "PRISM-MPF estimates Arctic sea-ice melt ponds from microwave observations",
+  "summary": "PRISM-MPF used satellite microwave data to estimate pan-Arctic melt-pond fractions across eight melt seasons. Against an optical reference product, the model achieved a pooled R² of 0.532 and RMSE of 0.077, with weaker performance at high pond fractions.",
+  "field": "climate",
+  "ai_technology": "XGBoost microwave sensor fusion",
+  "organization": "NOVA University Lisbon; University of Cambridge; ViaEO Consulting; University of Naples Federico II; CoNISMa",
+  "source_url": "https://arxiv.org/abs/2611.00940v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-31",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/pdf/2611.00940v1",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Leave-one-season-out evaluation over eight seasons and about 1.07 million co-located pixels, compared with an optical melt-pond fraction product.",
+    "unknown": "Independent field validation was not established. Higher melt-pond fractions were harder to estimate, and the evaluation inherits limits of the optical reference.",
+    "ai_role": "XGBoost fused active and passive microwave observations with thermal and spatiotemporal variables to estimate melt-pond fraction.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.00940v1",
+      "https://arxiv.org/pdf/2611.00940v1",
+      "https://export.arxiv.org/api/query?id_list=2611.00940"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

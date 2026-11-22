@@ -1,0 +1,33 @@
+{
+  "id": "2026-08-identification-of-core-differentially-expressed-genes-for-respiratory-syncytial-virus-infection",
+  "title": "Identification of core differentially expressed genes for respiratory syncytial virus infection.",
+  "summary": "Integrating transcriptomic differential analysis, WGCNA and machine learning yielded eight RSV-associated feature genes from patient blood-expression data; an external GEO dataset and qRT-PCR in 9 patients/3 controls supported selected expression findings, particularly RETN. The results identify candidate biomarkers and do not establish causality, clinical diagnostic performance, or therapeutic efficacy.",
+  "field": "medicine",
+  "ai_technology": "WGCNA identified correlated modules; LASSO cross-validation and random-forest feature importance filtered candidate hub genes to eight RSV-associated genes, with RF evaluated on an independent GEO test dataset.",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13563580/",
+  "source_type": "paper",
+  "publication_date": "2026-08-27",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The analysis selected eight feature genes; RETN and ARG1 also had colocalization signals with lower respiratory tract infection. The paper reports 72% test-set RF accuracy and candidate-gene expression differences.",
+    "unknown": "GSE38900 (28 RSV, 8 controls) was the independent dataset; expression patterns were assessed there. qRT-PCR in 9 RSV patients and 3 healthy controls significantly supported RETN; this small assay does not validate a clinical test or causal mechanism.",
+    "ai_role": "WGCNA identified correlated modules; LASSO cross-validation and random-forest feature importance filtered candidate hub genes to eight RSV-associated genes, with RF evaluated on an independent GEO test dataset.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13563580/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

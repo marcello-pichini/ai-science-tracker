@@ -1,0 +1,33 @@
+{
+  "id": "2023-11-early-detection-of-breast-cancer-in-mri-using-ai",
+  "title": "Early Detection of Breast Cancer in MRI Using AI.",
+  "summary": "A patient-level evaluated CNN predicts subsequent cancer risk from current MRI in a retrospective high-risk cohort. It is a single-site proof of concept with modest discrimination and low positive predictive value; the earliest located result-bearing version is the 2023 preprint.",
+  "field": "medicine",
+  "ai_technology": "A pretrained 2D CNN is fine-tuned using per-slice probabilities to predict one-year future cancer risk from current MRI; patient-level 10-fold evaluation avoids patient overlap between train/test.",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://doi.org/10.1016/j.acra.2024.10.014",
+  "source_type": "paper",
+  "publication_date": "2023-11-29",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The retrospective 910-woman cohort (3,029 exams, 5,128 breasts, 115 later cancers) yielded reported AUC 0.72 and a top-risk selection with 35/115 cancers at 30% sensitivity; study is described as proof of concept.",
+    "unknown": "Internal patient-level cross-validation with later cancer ascertainment; single-site retrospective cohort and low PPV/high false-discovery burden constrain use.",
+    "ai_role": "A pretrained 2D CNN is fine-tuned using per-slice probabilities to predict one-year future cancer risk from current MRI; patient-level 10-fold evaluation avoids patient overlap between train/test.",
+    "evidence_urls": [
+      "https://doi.org/10.1016/j.acra.2024.10.014"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

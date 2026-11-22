@@ -1,0 +1,33 @@
+{
+  "id": "2020-10-flannel-focal-loss-based-neural-network-ensemble-for-covid-19-detection",
+  "title": "FLANNEL: Focal Loss Based Neural Network Ensemble for COVID-19 Detection",
+  "summary": "FLANNEL classified COVID-19 in a four-class chest X-ray dataset. The learned ensemble improved on the study baselines in cross-validation, with relatively few COVID-19 images available.",
+  "field": "medicine",
+  "ai_technology": "Five CNN base learners feed a learned weighted ensemble; focal loss handles class imbalance.",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://academic.oup.com/jamia/article/28/3/444/5943880",
+  "source_type": "paper",
+  "publication_date": "2020-10-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Five-fold testing covered 5,508 radiographs from 2,874 patients, including 100 COVID-19 images.",
+    "unknown": "The study did not report an external clinical cohort or a prospective test of patient benefit.",
+    "ai_role": "Five CNN base learners feed a learned weighted ensemble; focal loss handles class imbalance.",
+    "evidence_urls": [
+      "https://academic.oup.com/jamia/article/28/3/444/5943880"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

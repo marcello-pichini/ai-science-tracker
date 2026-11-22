@@ -1,0 +1,33 @@
+{
+  "id": "2021-04-computationally-derived-cribriform-area-index-from-prostate-cancer-hematoxylin-and-eosin-images-is-associated-with-biochemical-recurrence-followin-522705bb164f",
+  "title": "Computationally Derived Cribriform Area Index from Prostate Cancer Hematoxylin and Eosin Images Is Associated with Biochemical Recurrence Following Radical Prostatectomy and Is Most Prognostic in Gleason Grade Group 2.",
+  "summary": "A UNet-inspired deep-learning model segmented invasive cribriform carcinoma on prostate H&E slides, enabling a computed cribriform area index (CAI). In a four-site cohort, higher CAI was associated with biochemical recurrence among ICC-positive cases (adjusted HR 1.19 per doubling, p=0.018); discrimination was modest and the association was weak in the overall cohort.",
+  "field": "medicine",
+  "ai_technology": "A UNet-inspired deep-learning segmentation model was trained on 325 annotated image tiles from 36 patients and applied to tumor regions; CAI is the proportion of annotated tumor area classified as cribriform carcinoma.",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8419103/",
+  "source_type": "paper",
+  "publication_date": "2021-04-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Among 411 patients with ICC morphology, CAI had c-index 0.62; doubling CAI was independently associated with biochemical recurrence among 298 ICC-positive patients (HR 1.19, 95% CI 1.03–1.38, p=0.018). Overall-cohort discrimination was weak (c-index 0.54).",
+    "unknown": "The segmentation model was applied to a multi-institutional validation cohort of 749 patients; the source reports site-level patterns and recurrence associations. The modest discrimination and retrospective association do not establish clinical utility.",
+    "ai_role": "A UNet-inspired deep-learning segmentation model was trained on 325 annotated image tiles from 36 patients and applied to tumor regions; CAI is the proportion of annotated tumor area classified as cribriform carcinoma.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8419103/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

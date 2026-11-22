@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-cnn-attention-decision-space-alignment",
+  "title": "CNN attention placement changes decision-space alignment in benchmark experiments",
+  "summary": "A decision-space analysis found that the relationship between predicted and observed classification-margin changes depends on where visual-attention modules are placed. The paper evaluates the effect on CIFAR-100 using SimAM and CBAM across five CNN backbones; the finding is bounded to those models and experiments.",
+  "field": "computer science",
+  "ai_technology": "Decision Alignment Score analysis with SimAM and CBAM attention modules",
+  "organization": "Affiliation not stated in the reviewed arXiv metadata",
+  "source_url": "https://arxiv.org/abs/2611.10571v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-07",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/html/2611.10571v1",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study compares attention placements and margin-alignment measures on CIFAR-100 across five CNN backbones, using SimAM and CBAM.",
+    "unknown": "The result concerns the studied architectures, attention modules and benchmark; it does not establish effects across other tasks or models.",
+    "ai_role": "The paper derives a decision-space measure and evaluates how learned visual attention changes CNN feature perturbations and classification margins.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.10571v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

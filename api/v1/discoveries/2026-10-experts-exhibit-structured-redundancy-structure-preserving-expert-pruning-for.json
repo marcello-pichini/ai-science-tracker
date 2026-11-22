@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-experts-exhibit-structured-redundancy-structure-preserving-expert-pruning-for",
+  "title": "Experts Exhibit Structured Redundancy: Structure-Preserving Expert Pruning for Mixture-of-Experts Large Language Models",
+  "summary": "Primary v1 §§4 and 7 report an empirical model-internal property: stable and entropy effective ranks remain far below nominal expert counts (reaching about 63–65%) and expert-output distributions have fewer effective modes across two MoE models. The resulting structured redundancy is a concrete CS finding, with pruning experiments as follow-up validation.",
+  "field": "computer science",
+  "ai_technology": "Learned MoE expert outputs and router statistics are analyzed to infer functional and distributional structure",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://arxiv.org/html/2610.41236v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Primary v1 §§4 and 7 report an empirical model-internal property: stable and entropy effective ranks remain far below nominal expert counts (reaching about 63–65%) and expert-output distributions have fewer effective modes across two MoE models. The resulting structured redundancy is a concrete CS finding, with pruning experiments as follow-up validation. Evaluation: Cross-model structural measurements and downstream pruning tests support the bounded CS finding.",
+    "unknown": "The result concerns two evaluated mixture-of-experts models; generalization to other architectures or downstream settings is not established.",
+    "ai_role": "Learned MoE expert outputs and router statistics are analyzed to infer functional and distributional structure.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.41236v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

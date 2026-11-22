@@ -1,0 +1,35 @@
+{
+  "id": "2022-07-ensemble-deep-learning-based-prognostic-and-prediction-for-recurr",
+  "title": "Ensemble Deep-Learning-Based Prognostic and Prediction for Recurrence of Sporadic Odontogenic Keratocysts on Hematoxylin and Eosin Stained Pathological Images of Incisional Biopsies.",
+  "summary": "Full MDPI text reviewed in Chrome: an ensemble of DenseNet-121, Inception-V3 and Inception-ResNet-V3 classifies recurrence of sporadic odontogenic keratocysts from histology images. The 60-patient cohort supplied about 1,660 annotated images; the 70/15/15 split and held-out results report up to 97% accuracy (abstract also reports ensemble AUC 0.9872). Approve narrowly as a small-cohort image-classification result; possible image-level leakage, no external validation and no prospective utility remain limitations.",
+  "field": "medicine",
+  "ai_technology": "learned CNN classifiers (DenseNet-121, Inception-V3, Inception-ResNet-V3) operate on H&E incisional-biopsy images; ensemble operation links histology to recurrence classification.",
+  "organization": "Department of Oral Pathology and Microbiology",
+  "source_url": "https://www.mdpi.com/2075-4426/12/8/1220",
+  "source_type": "paper",
+  "publication_date": "2022-07-27",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "recurrent/non-recurrent histologic features were distinguished; ensemble reports 97% accuracy, with source abstract reporting AUC 0.9872. Study has only 60 patients and about 1,660 images.",
+    "unknown": "Methods/Results: 70/15/15 train/validation/test split within 60 patients; no independent cohort. Image-level partitioning may overstate generalization if images from a patient cross splits; interpret as preliminary.",
+    "ai_role": "learned CNN classifiers (DenseNet-121, Inception-V3, Inception-ResNet-V3) operate on H&E incisional-biopsy images; ensemble operation links histology to recurrence classification.",
+    "evidence_urls": [
+      "https://www.mdpi.com/2075-4426/12/8/1220",
+      "https://europepmc.org/article/MED/35893314",
+      "https://pubmed.ncbi.nlm.nih.gov/35893314/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

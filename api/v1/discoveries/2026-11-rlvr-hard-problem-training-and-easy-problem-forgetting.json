@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-rlvr-hard-problem-training-and-easy-problem-forgetting",
+  "title": "RLVR training expands hard-problem coverage but can harm easier-task performance",
+  "summary": "Controlled RLVR experiments found that training on harder problems could expand observed solution coverage, while prolonged training also reduced performance on easier problems. The result concerns the tested models, training schedules and problem sets; it does not establish a general increase in reasoning capability.",
+  "field": "computer science",
+  "ai_technology": "Reinforcement learning with verifiable rewards (RLVR)",
+  "organization": "University of Notre Dame; The Pennsylvania State University; Virginia Tech; VinUniversity; University of Stuttgart",
+  "source_url": "https://arxiv.org/abs/2611.04061v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-02",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/html/2611.04061v1",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Controlled model-training experiments compared solution coverage across hard and easier problems and observed both increased hard-problem coverage and degradation on easier problems under prolonged training.",
+    "unknown": "The finding is bounded to the tested models, training schedules and problem sets; broad reasoning gains are not established.",
+    "ai_role": "RLVR training changes model parameters from verifiable task rewards; the study measures resulting problem-solving performance.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.04061v1",
+      "https://arxiv.org/html/2611.04061v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

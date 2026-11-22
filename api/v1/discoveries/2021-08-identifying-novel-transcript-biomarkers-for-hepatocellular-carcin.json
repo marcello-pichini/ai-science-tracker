@@ -1,0 +1,34 @@
+{
+  "id": "2021-08-identifying-novel-transcript-biomarkers-for-hepatocellular-carcin",
+  "title": "Identifying novel transcript biomarkers for hepatocellular carcinoma (HCC) using RNA-Seq datasets and machine learning.",
+  "summary": "Primary BMC Cancer Methods/Results used RNA-seq from 33 HCC cell models and machine-learning feature selection to nominate PARP2-202, SPON2-203 and CYREN-211; the work expressly has no patient or independent experimental biomarker validation. Approve only as a bounded cell-model transcript-discrimination result, not as clinically established biomarkers.",
+  "field": "biology",
+  "ai_technology": "SVM/RFE and other classifiers select transcript features from HCC-vs-healthy cell-model RNA-seq; use of ML is explicit in Methods.",
+  "organization": "Department of Toxicogenomics",
+  "source_url": "https://link.springer.com/article/10.1186/s12885-021-08704-9",
+  "source_type": "paper",
+  "publication_date": "2021-08-27",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Three transcripts discriminate HCC and healthy liver cell models in repeated cross-validation; paper reports the candidate signatures as putative biomarkers and explains the single-replicate limits.",
+    "unknown": "Cross-validation and random transcript comparisons are internal model checks, not patient validation; exact narrow claim limited to cell models.",
+    "ai_role": "SVM/RFE and other classifiers select transcript features from HCC-vs-healthy cell-model RNA-seq; use of ML is explicit in Methods.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1186/s12885-021-08704-9",
+      "https://pubmed.ncbi.nlm.nih.gov/34445986/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

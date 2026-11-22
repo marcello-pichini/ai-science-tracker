@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-study-agent-guided-discovery-of-exchange-correlation-functionals-with-physics-based-validation",
+  "title": "Agent-Guided Discovery of Exchange-Correlation Functionals with Physics-based Validation",
+  "summary": "Full arXiv Methods/Results describe LLM-agent-guided symbolic search of exchange-correlation functionals with self-consistent physics filters and held-out/external validation; the selected O159 functional retains an 11.7% held-out error improvement over ωB97M-V and comparable external GSCDB137 performance. The result is a computational chemistry functional candidate, not experimental validation.",
+  "field": "chemistry",
+  "ai_technology": "LLM-agent-guided symbolic search of density-functional exchange-correlation forms.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://arxiv.org/html/2611.13329",
+  "source_type": "paper",
+  "publication_date": "2026-11-09",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Agent-derived O159 was evaluated self-consistently on held-out MGCDB84 and on 36 GSCDB137 datasets; it improved held-out error versus ωB97M-V, while remaining computational rather than experimental validation.",
+    "unknown": "External generalization, independent replication and downstream real-world impact were not established by the reviewed source.",
+    "ai_role": "Frontier LLM agents propose exchange-correlation functional forms evaluated through a GPU fitting and self-consistent physics workflow.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.13329"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

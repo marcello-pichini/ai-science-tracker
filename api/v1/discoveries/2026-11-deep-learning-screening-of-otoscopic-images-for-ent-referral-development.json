@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-deep-learning-screening-of-otoscopic-images-for-ent-referral-development",
+  "title": "Deep learning screening of otoscopic images for ENT referral: development, validation and deployment of NHREF OtoScan",
+  "summary": "A MobileNetV2 screening model for ENT referral achieved 97.0% sensitivity and 75.6% specificity on 718 held-out otoscopic images. The retrospective evaluation used near-duplicate grouping and found source-dependent performance. The authors report no prospective clinical validation or clinician comparison; the software is described as research use with mandatory specialist review.",
+  "field": "medicine",
+  "ai_technology": "MobileNetV2 convolutional neural network",
+  "organization": "Nawaloka Hospitals Research and Education Foundation, Colombo, Sri Lanka",
+  "source_url": "https://www.medrxiv.org/content/10.64898/2026.11.04.26367286v1.full.pdf",
+  "source_type": "paper",
+  "publication_date": "2026-11-05",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "On a held-out set of 718 otoscopic images, the frozen referral threshold yielded 97.0% sensitivity and 75.6% specificity. Images were grouped to reduce near-duplicate leakage; performance varied by source dataset.",
+    "unknown": "Retrospective public-image validation only; no prospective clinical validation or comparison against clinicians. The paper says the system is research software, not a medical device, and requires specialist review.",
+    "ai_role": "A calibrated MobileNetV2 model estimates abnormal-ear probability to support an ENT-referral screening decision.",
+    "evidence_urls": [
+      "https://www.medrxiv.org/content/10.64898/2026.11.04.26367286v1.full.pdf",
+      "https://doi.org/10.64898/2026.11.04.26367286"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

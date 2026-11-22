@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-searched-intrinsic-rewards-transfer-and-tampering",
+  "title": "Searched intrinsic rewards transfer in one toy task but fail under a shortcut",
+  "summary": "In a preregistered reinforcement-learning study, search-selected intrinsic rewards transferred to a held-out task in one toy environment, but the learned agent failed a separate reset-action tampering test. The result demonstrates task-specific transfer and a tested failure mode; it does not establish general resistance to exploitation.",
+  "field": "computer science",
+  "ai_technology": "CMA-ES and random search for reward weights; PPO agents for task evaluation",
+  "organization": "Northeastern University, Boston, Massachusetts",
+  "source_url": "https://arxiv.org/abs/2611.04838v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-03",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/html/2611.04838v1",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Fresh-seed held-out comparisons assessed reward transfer; a separate reset-action intervention exposed a failure under tampering.",
+    "unknown": "The transfer result is from one toy environment and does not establish general exploit resistance.",
+    "ai_role": "Search methods tune intrinsic-reward weights; PPO evaluates task learning, transfer and response to the reset-action intervention.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.04838v1",
+      "https://arxiv.org/html/2611.04838v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

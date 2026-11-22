@@ -1,0 +1,35 @@
+{
+  "id": "2025-04-ai-machine-learning-identifies-clinical-sepsis-phenotypes-that-translate-to-the-plasma-proteo",
+  "title": "Machine learning identifies clinical sepsis phenotypes that translate to the plasma proteome.",
+  "summary": "In 384 prospective multicenter sepsis patients, clinical-data clustering identified three severity phenotypes; plasma proteomics characterized them and supervised ML classified them. This is an observational phenotype result, not evidence of treatment benefit. The reviewed source supports this bounded result; external generalization, causal effects, and sustained operational impact remain unestablished where the source reports retrospective or internal evaluation.",
+  "field": "medicine",
+  "ai_technology": "unsupervised clustering/PCA of routine ICU clinical variables defines phenotypes; supervised Random Forest classifies phenotypes, and mass-spectrometry proteomics characterizes them.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://link.springer.com/article/10.1007/s15010-025-02628-3",
+  "source_type": "paper",
+  "publication_date": "2025-04-11",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "384 prospective sepsis patients formed three severity phenotypes with different SOFA/mortality trajectories and corresponding plasma-proteome patterns.",
+    "unknown": "Methods: 70/30 training/test split and 100-iteration Monte Carlo cross-validation for classifier evaluation. The observed multicenter clinical outcomes and proteomics support phenotype characterization; this does not show a treatment effect.",
+    "ai_role": "unsupervised clustering/PCA of routine ICU clinical variables defines phenotypes; supervised Random Forest classifies phenotypes, and mass-spectrometry proteomics characterizes them.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s15010-025-02628-3",
+      "https://api.biorxiv.org/details/medrxiv/2025-04-11/2025-04-12/0",
+      "https://www.medrxiv.org/content/10.1101/2025.04.11.25325574v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "2021-12-fatigue-crack-evaluation-with-the-guided-wave-convolutional-neura",
+  "title": "Fatigue Crack Evaluation with the Guided Wave-Convolutional Neural Network Ensemble and Differential Wavelet Spectrogram.",
+  "summary": "A guided-wave CNN ensemble estimated fatigue-crack length on a tested lap-joint specimen; on held-out specimen D6 the reported RMSE was 1.7 mm, with crack lengths followed during fatigue loading.",
+  "field": "materials",
+  "ai_technology": "Differential time-frequency spectrograms from guided-wave signals were inputs to 20 CNNs; trained on specimens D1–D5, Methods §§2–3.",
+  "organization": "Research Center of Structural Health Monitoring and Prognosis",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8749601/?report=xml",
+  "source_type": "paper",
+  "publication_date": "2021-12-31",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Results §4 evaluates specimen D6 and reports agreement with measured crack lengths; maximum error 3 mm and RMSE 1.7 mm.",
+    "unknown": "One held-out specimen, 77 training images and laboratory fatigue testing; authors note small training data and dependence on collected training data.",
+    "ai_role": "Differential time-frequency spectrograms from guided-wave signals were inputs to 20 CNNs; trained on specimens D1–D5, Methods §§2–3.",
+    "evidence_urls": [
+      "https://europepmc.org/article/MED/35009843",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8749601/?report=xml",
+      "https://pubmed.ncbi.nlm.nih.gov/35009843/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

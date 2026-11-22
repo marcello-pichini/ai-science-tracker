@@ -1,0 +1,33 @@
+{
+  "id": "2026-06-risk-prediction-of-sepsis-associated-acute-kidney-injury-development-validatio",
+  "title": "Risk prediction of sepsis-associated acute kidney injury: development, validation of a machine learning model with multicenter data.",
+  "summary": "Using MIMIC-IV for development and two external ICU databases, XGBoost predicted sepsis-associated acute kidney injury with AUC 0.72 internally and 0.82/0.84 externally; differences across datasets and the retrospective design limit clinical interpretation.",
+  "field": "medicine",
+  "ai_technology": "Six machine-learning algorithms were optimized with grid search and five-fold cross-validation; XGBoost was selected and interpreted with SHAP.",
+  "organization": "Guangxi Medical University; First Affiliated Hospital of Guangxi Medical University",
+  "source_url": "https://link.springer.com/article/10.1186/s12911-026-03620-z",
+  "source_type": "paper",
+  "publication_date": "2026-06-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The retrospective model used MIMIC-IV for development and eICU-CRD and BB-ICU for external assessment. XGBoost AUC was 0.72 internally and 0.82 and 0.84 externally; calibration and decision-curve analyses were also reported.",
+    "unknown": "Performance and AKI incidence differed across data sources. Retrospective prediction does not establish causal benefit, prospective performance or clinical utility of the web calculator.",
+    "ai_role": "Six machine-learning algorithms were optimized with grid search and five-fold cross-validation; XGBoost was selected and interpreted with SHAP.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1186/s12911-026-03620-z"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

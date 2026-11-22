@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-locating-and-repairing-domain-shift-in-vlm-trajectory-planning",
+  "title": "Locating and Repairing Domain Shift in VLM Trajectory Planning",
+  "summary": "Activation patching showed that image and text tokens have distinct domain-shift patterns and that layer-wise patterns were stable across two driving datasets. The proposed MoLaRx selective-repair method had the lowest cross-city trajectory-error gap in six tested settings across three VLM planners; conclusions are limited to those models and benchmarks.",
+  "field": "computer science",
+  "ai_technology": "Vision-language models with layer-local image and text sensitivity",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://arxiv.org/html/2611.10720v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-07",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2611.10720",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Activation patching showed that image and text tokens have distinct domain-shift patterns and that layer-wise patterns were stable across two driving datasets. The proposed MoLaRx selective-repair method had the lowest cross-city trajectory-error gap in six tested settings across three VLM planners; conclusions are limited to those models and benchmarks.",
+    "unknown": "The study evaluates the reported models and datasets only; broader generalization and real-world deployment outcomes were not established.",
+    "ai_role": "Activation patching estimates modality-by-layer domain shift in three driving VLMs; MoLaRx applies matched selective repair to the affected layers.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.10720v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

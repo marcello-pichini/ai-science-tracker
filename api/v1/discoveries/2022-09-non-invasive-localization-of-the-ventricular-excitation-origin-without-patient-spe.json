@@ -1,0 +1,37 @@
+{
+  "id": "2022-09-non-invasive-localization-of-the-ventricular-excitation-origin-without-patient-spe",
+  "title": "Non-invasive localization of the ventricular excitation origin without patient-specific geometries using deep learning",
+  "summary": "Two CNNs trained on more than one million simulated body-surface-potential maps were evaluated on clinical ECG/BSPM data to localize ventricular excitation origin. The arXiv v1 reported median localization error of 32 mm and up to 82% transmural-position detection; this is a proof of principle, not clinical deployment or outcome benefit.",
+  "field": "medicine",
+  "ai_technology": "Two CNNs trained on simulated ECG/body-surface-potential maps localize ventricular excitation origin.",
+  "organization": "Institute of Biomedical Engineering, Karlsruhe Institute of Technology (KIT), Karlsruhe, Germany",
+  "source_url": "https://europepmc.org/article/MED/37673581",
+  "source_type": "paper",
+  "publication_date": "2022-09-16",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.artmed.2023.102619",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Preprint Results: clinical localization median error 32 mm, up to 82% transmural-position detection; ranked top-3 results improved localization. This is a proof of principle, with substantial residual error.",
+    "unknown": "Methods/Results use simulated test data plus a separate clinical dataset; the article reports clinical test error and classification performance but no clinical deployment or patient outcomes. Narrow technical clinical-reference validation only.",
+    "ai_role": "Two CNNs trained on simulated ECG/body-surface-potential maps localize ventricular excitation origin.",
+    "evidence_urls": [
+      "https://europepmc.org/article/MED/37673581",
+      "https://arxiv.org/abs/2209.08095",
+      "https://arxiv.org/pdf/2209.08095",
+      "https://www.sciencedirect.com/science/article/pii/S0933365723001331",
+      "https://pubmed.ncbi.nlm.nih.gov/37673581/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

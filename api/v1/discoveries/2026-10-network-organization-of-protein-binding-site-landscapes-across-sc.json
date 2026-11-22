@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-network-organization-of-protein-binding-site-landscapes-across-sc",
+  "title": "Network organization of protein binding-site landscapes across scales",
+  "summary": "ProtT5-based network analysis identifies multiscale organization and cross-protein recognition relationships among experimentally resolved binding sites; drug cross-reactivity remains a hypothesis.",
+  "field": "biology",
+  "ai_technology": "ProtT5 protein-language-model embeddings and binding-site network analysis",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://doi.org/10.64898/2026.10.17.759831",
+  "source_type": "paper",
+  "publication_date": "2026-10-19",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Results, “Structural calibration and a nonredundant binding site atlas” and “Local network neighborhoods”: 121,673-node network, ligand-class assortativity 0.72; communities resolve kinase-site environments and local relationships across low-sequence-identity proteins",
+    "unknown": "Results: embedding proximity associated with local ProBiS structural similarity; source is experimentally resolved BioLiP2/PDB sites. Source discussion limits pharmacological implications to hypotheses requiring follow-up",
+    "ai_role": "Materials and Methods, “Binding site embeddings and network construction”: ProtT5 residue vectors averaged into 1,024 dimensions, then mutual k-nearest-neighbor network analysis",
+    "evidence_urls": [
+      "https://doi.org/10.64898/2026.10.17.759831",
+      "https://api.crossref.org/works/10.64898/2026.10.17.759831"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

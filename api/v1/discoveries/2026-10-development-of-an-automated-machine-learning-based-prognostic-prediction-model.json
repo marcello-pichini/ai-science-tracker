@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-development-of-an-automated-machine-learning-based-prognostic-prediction-model",
+  "title": "Development of an automated machine learning-based prognostic prediction model for emergency septic shock patients.",
+  "summary": "In a retrospective single-center cohort of 913 emergency septic-shock patients, an Improved Red Fox Optimization algorithm tuned an AutoML model for 28-day mortality. On the held-out 183-patient test set, the model had ROC-AUC 0.891 and PR-AUC 0.879 and outperformed SOFA, APACHE II and qSOFA in the reported comparison. This internal evaluation does not establish prospective clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "A learned model predicted 28-day mortality in a defined emergency septic-shock patient cohort and was compared with clinical scores.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13745730/",
+  "source_type": "paper",
+  "publication_date": "2026-10-26",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The primary abstract reports 913 patients from one tertiary hospital, split into 730 training and 183 test records; an IRFO-optimized AutoML model achieved test ROC-AUC 0.8911 and PR-AUC 0.8790. The source also reports comparison with SOFA, APACHE II and qSOFA, plus decision-curve analysis. The evidence is retrospective and single-center, without external or prospective workflow validation.",
+    "unknown": "This retrospective single-center holdout does not establish external generalization or prospective clinical benefit; decision-curve analysis is not an observed improvement in patient outcomes.",
+    "ai_role": "A learned model predicted 28-day mortality in a defined emergency septic-shock patient cohort and was compared with clinical scores.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13745730/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

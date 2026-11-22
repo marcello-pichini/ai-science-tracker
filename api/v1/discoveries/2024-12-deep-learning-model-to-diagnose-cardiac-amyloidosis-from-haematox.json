@@ -1,0 +1,35 @@
+{
+  "id": "2024-12-deep-learning-model-to-diagnose-cardiac-amyloidosis-from-haematox",
+  "title": "Deep learning model to diagnose cardiac amyloidosis from haematoxylin/eosin-stained myocardial tissue.",
+  "summary": "Deep learning localized and classified amyloid in HE-stained myocardial biopsy patches against pathologist/stain reference labels, a specific diagnostic validation result with single-centre limits.",
+  "field": "medicine",
+  "ai_technology": "deep learning scored 224×224 HE biopsy patches from 166 patients; pathological labels were established by pathologists and amyloid staining.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11728699/",
+  "source_type": "paper",
+  "publication_date": "2024-12-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "patch AUC 0.965 and specimen-level AUC 1.0 in the evaluation set.",
+    "unknown": "Retrospective single-centre 2:1 development/evaluation; no external validation, so perfect specimen AUC is limited to this small cohort.",
+    "ai_role": "deep learning scored 224×224 HE biopsy patches from 166 patients; pathological labels were established by pathologists and amyloid staining.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11728699/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11728699/#methods",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11728699/#results"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

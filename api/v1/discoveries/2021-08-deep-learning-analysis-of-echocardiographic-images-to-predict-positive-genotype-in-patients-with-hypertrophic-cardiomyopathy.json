@@ -1,0 +1,33 @@
+{
+  "id": "2021-08-deep-learning-analysis-of-echocardiographic-images-to-predict-positive-genotype-in-patients-with-hypertrophic-cardiomyopathy",
+  "title": "Deep Learning Analysis of Echocardiographic Images to Predict Positive Genotype in Patients With Hypertrophic Cardiomyopathy.",
+  "summary": "Original publisher full text was reviewed through Methods and Results. The study reports a concrete AI-enabled scientific/clinical finding with identifiable cohort or dataset, comparison and quantitative result; this is eligible as an AI-enabled discovery/diagnostic result, with the stated validation limitations.",
+  "field": "medicine",
+  "ai_technology": "DCNN analyzes echocardiographic images and adds probability to established clinical scores; Grad-CAM localizes image features.",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://www.frontiersin.org/journals/cardiovascular-medicine/articles/10.3389/fcvm.2021.669860/full",
+  "source_type": "paper",
+  "publication_date": "2021-08-27",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "99 HCM patients (45 positive genotype, 54 negative); DCNN probability AUC 0.76 and combined Mayo+DCNN AUC 0.86 versus Mayo 0.72; Toronto+DCNN AUC 0.84 versus 0.75.",
+    "unknown": "Methods define genotype-labeled cohort and bootstrap AUC comparison; Results report sensitivity/specificity/PPV/NPV and sensitivity analysis, without external cohort.",
+    "ai_role": "DCNN analyzes echocardiographic images and adds probability to established clinical scores; Grad-CAM localizes image features.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/cardiovascular-medicine/articles/10.3389/fcvm.2021.669860/full"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

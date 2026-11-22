@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-similarity-based-labels-diverge-from-human-factuality-judgments-in-hallucination-detection",
+  "title": "When Ground Truth Is Not Ground Truth: Automatic Labeling for Hallucination Detection",
+  "summary": "Human validation compared automatic supervision labels with human assessments across hallucination-detection methods. Misclassification differed substantially by judge: QGen-9B had the lowest reported rate, while BLEURT-based labels performed worse. This is an evaluation finding, not a universal ranking across tasks.",
+  "field": "computer science",
+  "ai_technology": "Automatic supervision judges including BLEURT and QGen-9B",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://arxiv.org/html/2611.04697v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-03",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2611.04697",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Across two QA datasets, two generators and five languages, human validation reported misclassification rates of 12.86% for QGen-9B and about 47% for BLEURT and BLEURT-n.",
+    "unknown": "The comparison covers the study’s datasets, languages, judges and human-label protocol; rates may not transfer to other settings.",
+    "ai_role": "Automatic supervision judges including BLEURT and QGen-9B",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.04697"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

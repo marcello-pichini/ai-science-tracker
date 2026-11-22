@@ -1,0 +1,34 @@
+{
+  "id": "2022-07-prediction-of-influenza-complications-development-and-validation-of-a-machine-lear",
+  "title": "Prediction of Influenza Complications: Development and Validation of a Machine Learning Prediction Model to Improve and Expand the Identification of Vaccine-Hesitant Patients at Risk of Severe Influen",
+  "summary": "XGBoost risk scores predicted influenza complications using population-scale electronic health records and compared performance with age/sex and CDC/WHO-inspired scores. The authors report test performance and blinded subgroup validation; this is a specific epidemiological risk-stratification result, with confounding and transportability limits.",
+  "field": "medicine",
+  "ai_technology": "XGBoost predicts influenza complications from electronic health-record features.",
+  "organization": "Department of Laboratory Medicine, Diagnostic Medicine Institute, Geisinger, Danville, PA 17822, USA.",
+  "source_url": "https://mdpi-res.com/d_attachment/jcm/jcm-11-04342/article_deploy/jcm-11-04342.pdf",
+  "source_type": "paper",
+  "publication_date": "2022-07-26",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.3390/jcm11154342",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "XGBoost classifier developed from Geisinger EHR data (>641,000 unique individuals; final unvaccinated cohort 604,389), with 6-fold CV tuning, blinded random subsets and bootstrapped evaluation; GFlu-CxFlag AUC ~0.79, severe-complication cohort AUC ~0.828. Compared with CDC/WHO risk model and subgroup bias analysis.",
+    "unknown": "XGBoost risk scores predicted influenza complications using population-scale electronic health records and compared performance with age/sex and CDC/WHO-inspired scores. The authors report test performance and blinded subgroup validation; this is a specific epidemiological risk-stratification result, with confounding and transportability limits.",
+    "ai_role": "XGBoost predicts influenza complications from electronic health-record features.",
+    "evidence_urls": [
+      "https://mdpi-res.com/d_attachment/jcm/jcm-11-04342/article_deploy/jcm-11-04342.pdf",
+      "https://pubmed.ncbi.nlm.nih.gov/35893436/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

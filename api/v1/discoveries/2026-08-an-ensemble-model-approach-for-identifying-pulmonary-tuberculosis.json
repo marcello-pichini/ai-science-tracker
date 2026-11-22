@@ -1,0 +1,33 @@
+{
+  "id": "2026-08-an-ensemble-model-approach-for-identifying-pulmonary-tuberculosis",
+  "title": "An ensemble model approach for identifying pulmonary tuberculosis on chest X-ray.",
+  "summary": "Ensemble models detect pulmonary tuberculosis on chest radiographs with independent testing.",
+  "field": "computer science",
+  "ai_technology": "Transfer-learned CNNs and performance-weighted ensemble for chest-X-ray TB classification",
+  "organization": "Affiliated Hospital of Integrated Traditional Chinese and Western Medicine; Nanjing University of Chinese Medicine; Jiangsu Province Academy of Traditional Chinese Medicine",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13563563/",
+  "source_type": "paper",
+  "publication_date": "2026-08-28",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Nine transfer-learned CNNs and four ensembles were evaluated on internal and independent external CXR data. Performance-weighted averaging achieved external-validation AUC 0.880 and F1 0.861; the best single model, VGG19, achieved AUC 0.853.",
+    "unknown": "Performance fell on independent external validation; the study did not establish deployment benefit.",
+    "ai_role": "Classifies chest X-rays for pulmonary tuberculosis; the ensemble weights nine CNN prediction scores, with weights based on internal-test AUC.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13563563/"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-local-or-escalate-post-training-expert-routing-for-real-time-duplex",
+  "title": "Local or Escalate? Post-Training Expert Routing for Real-Time Duplex Speech Models",
+  "summary": "A probe trained on typed questions detected speech-answer failures in unseen human recordings, an experimentally measured cross-modal result.",
+  "field": "computer science",
+  "ai_technology": "Logistic probe on language-model hidden states for speech-answer failure detection",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://arxiv.org/html/2611.01639v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-01",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Primary results report discrimination on unseen human speech recordings, beyond the system-level routing result.",
+    "unknown": "Evaluation was on selected internal/external speech-QA datasets; it does not establish general calibration.",
+    "ai_role": "A logistic readout on typed-question hidden states was applied to speech-question states without refitting.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.01639v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

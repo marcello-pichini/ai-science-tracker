@@ -1,0 +1,34 @@
+{
+  "id": "2025-11-hyperspectral-inversion-model-of-ginkgo-leaf-yield-prediction-based",
+  "title": "Hyperspectral inversion model of ginkgo leaf yield prediction based on machine learning.",
+  "summary": "Airborne hyperspectral measurements were used to estimate ginkgo leaf yield in field cultivation. The best reported combination, using PSAMA-selected spectral bands, vegetation indices and a BiLSTM with grid search, achieved Rp² 0.8795 and RMSEP 0.1021; the SNV-PLSR baseline achieved Rp² 0.7831 and RMSEP 0.0325. This is a field-yield prediction result, not evidence of transfer across sites or seasons.",
+  "field": "biology",
+  "ai_technology": "Particle Swarm Attention Mechanism feature selection with BiLSTM grid-search regression",
+  "organization": "Nanjing Forestry University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12698573/",
+  "source_type": "paper",
+  "publication_date": "2025-11-28",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Hyperspectral reflectance and selected vegetation indices were used to predict measured ginkgo leaf yield. The paper compares preprocessing and feature-selection/model combinations; the best reported combination is PSAMA with BiLSTM-GS (Rp² 0.8795, RMSEP 0.1021).",
+    "unknown": "The reviewed result is from the study’s field data; performance across other sites, seasons or cultivars is not established.",
+    "ai_role": "Learned spectral regression models predicted ginkgo leaf yield from airborne hyperspectral features; PSAMA selected bands and the BiLSTM-GS model estimated yield.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12698573/",
+      "https://pubmed.ncbi.nlm.nih.gov/41393880/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

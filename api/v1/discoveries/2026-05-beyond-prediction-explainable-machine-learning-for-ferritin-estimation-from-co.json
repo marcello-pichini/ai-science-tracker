@@ -1,0 +1,33 @@
+{
+  "id": "2026-05-beyond-prediction-explainable-machine-learning-for-ferritin-estimation-from-co",
+  "title": "Beyond prediction: explainable machine learning for ferritin estimation from complete blood count.",
+  "summary": "In 12,450 adult laboratory records, five supervised models estimated low ferritin from complete blood count and demographic features. On the balanced 7,200-sample dataset, the artificial neural network had the best low-ferritin classification result (AUC 0.837; F1 0.760); regression had global R² 0.32, with stronger performance in lower ferritin ranges. The evaluation used one laboratory source and does not establish external screening validity.",
+  "field": "medicine",
+  "ai_technology": "Five supervised models, including logistic regression, XGBoost and an artificial neural network, classified ferritin below 30 ng/mL and also estimated continuous ferritin from CBC and demographic features; SHAP summarized feature contributions.",
+  "organization": "Ankara Etlik City Hospital; Ankara University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13439977/",
+  "source_type": "paper",
+  "publication_date": "2026-05-29",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The primary abstract and Results report analysis of 12,450 adult laboratory records, a balanced 7,200-sample dataset, five supervised algorithms, ANN low-ferritin classification AUC 0.837 and F1 0.760, and regression global R² 0.32. The input review notes cross-validation and held-out testing, with single-source records and moderate regression fit limiting screening interpretation.",
+    "unknown": "All records came from a single laboratory source; no independent external validation or clinically validated screening use is established, and continuous ferritin regression had global R² 0.32.",
+    "ai_role": "Five supervised models, including logistic regression, XGBoost and an artificial neural network, classified ferritin below 30 ng/mL and also estimated continuous ferritin from CBC and demographic features; SHAP summarized feature contributions.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13439977/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

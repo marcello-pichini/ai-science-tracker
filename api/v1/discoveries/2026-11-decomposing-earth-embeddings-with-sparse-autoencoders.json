@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-decomposing-earth-embeddings-with-sparse-autoencoders",
+  "title": "Decomposing Earth Embeddings with Sparse Autoencoders",
+  "summary": "Sparse autoencoders decomposed AlphaEarth and Tessera Earth-observation embeddings into sparse features. At matched sparsity they reconstructed the embeddings better than PCA, ICA, NMF and other baselines. Some feature-specificity measures also appeared with a frozen random decoder, so the result supports learned reconstruction quality rather than new geographic discoveries.",
+  "field": "computer science",
+  "ai_technology": "Sparse autoencoders (SAEs) applied to AlphaEarth and Tessera embeddings",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://arxiv.org/html/2611.11398v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-08",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "At matched sparsity, trained SAEs reconstructed AlphaEarth and Tessera embeddings better than the tested baselines. Sparse features aligned with fewer reference concept groups and carried more variance at fine spatial scales; a frozen random decoder shared those latter properties.",
+    "unknown": "This is a representation evaluation; application demonstrations are not yet reliable enough for practical use, and no newly established geographic classes are claimed.",
+    "ai_role": "Sparse autoencoders transform dense Earth-observation embeddings into sparse feature codes; evaluation compared reconstruction, concept alignment and spatial scale against PCA, ICA, NMF and frozen random-decoder baselines.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.11398v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-uav-computer-vision-quantifies-cattle-distribution-at-feed-bunks",
+  "title": "UAV-Based Computer Vision for Cattle Detection and Feed Bunk Spatial Analysis",
+  "summary": "YOLOv8 and YOLOv11 detected cattle in UAV imagery, and YOLOv8 small supported downstream spatial analysis with the Segment Anything Model used to segment feed-bunk regions. In one commercial feedlot dataset, derived metrics distinguished representative regular and irregular cattle distributions. The study reports no animal handling or intervention.",
+  "field": "biology",
+  "ai_technology": "YOLOv8/YOLOv11 object detectors; Segment Anything Model",
+  "organization": "University of São Paulo; Federal University of Grande Dourados; Embrapa Digital Agriculture",
+  "source_url": "https://arxiv.org/html/2611.08928v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-06",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2611.08928",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "In a dataset collected during commercial feedlot UAV flights, YOLOv8 small achieved 84.30% mAP50; geometric metrics distinguished representative regular and irregular cattle distributions.",
+    "unknown": "One feedlot dataset was studied; the metrics were not linked to measured animal welfare or production outcomes.",
+    "ai_role": "YOLOv8/YOLOv11 detected cattle; YOLOv8 small detections supported spatial measures, and Segment Anything Model segmented the feed-bunk region.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.08928"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

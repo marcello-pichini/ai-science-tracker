@@ -1,0 +1,34 @@
+{
+  "id": "2025-09-novel-multi-task-learning-for-alzheimer-s-stage-classification",
+  "title": "Novel multi-task learning for Alzheimer's stage classification using hippocampal MRI segmentation, feature fusion, and nomogram modeling.",
+  "summary": "A retrospective multi-center study of 2,956 people classified four Alzheimer disease stages from hippocampal MRI and fused radiomic, deep and clinical features. MedT produced the best reported external hippocampal segmentation Dice score (92.03%); a fused-feature XGBoost classifier reached external accuracy 92.8% and AUC 0.942. An end-to-end 3D CNN-LSTM had AUC 0.840. These dataset results do not establish prospective clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Hippocampal segmentation compared U-Net, nnU-Net, Swin-UNet and MedT; LSTM attention learned image features, and five classifiers including XGBoost classified stage. SHAP, a nomogram and decision-curve analysis were also reported.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12482563/",
+  "source_type": "paper",
+  "publication_date": "2025-09-29",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective multi-center MRI data from 2,956 patients across four stages; external segmentation Dice was 92.03% for MedT, and external classification accuracy/AUC were 92.8%/0.942 for the fused-feature XGBoost pipeline. The end-to-end 3D CNN-LSTM AUC was 0.840.",
+    "unknown": "The study is retrospective and evaluates classification against the included stage labels; external cohort performance does not establish prospective diagnostic utility or improved care.",
+    "ai_role": "Deep learning segmented the hippocampus and produced image features; fused radiomic, learned and clinical features fed stage classifiers, with XGBoost performing best in the reported external evaluation.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12482563/",
+      "https://europepmc.org/article/MED/41024255"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

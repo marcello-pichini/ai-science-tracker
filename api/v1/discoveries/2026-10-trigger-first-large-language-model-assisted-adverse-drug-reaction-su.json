@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-trigger-first-large-language-model-assisted-adverse-drug-reaction-su",
+  "title": "Trigger-first large language model-assisted adverse drug reaction surveillance: A pharmacist-supervised retrospective cohort study",
+  "summary": "Among 7,950 exposure episodes, pharmacists adjudicated 28 ADR-positive; trigger selected 167 candidates and caught all 28. LoRA improved false-positive control significantly; sensitivity increase was nonsignificant, and 2 positives remained model-non-positive.",
+  "field": "medicine",
+  "ai_technology": "Qwen3-4B-Instruct assesses structured EHR case records for ADR evidence; a local LoRA model trained on 410 patient-disjoint cases involving other medicines is compared against the base model after prespecified electronic-trigger filtering.",
+  "organization": "School of Electromechanical Engineering, Guangdong University of Technology, Guangzhou, Guangdong, 510006, China; Sun Yat-sen Memorial Hospital, Sun Yat-sen University, Guangzhou, Guangdong, 510120, China",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13718469/",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Among 7,950 exposure episodes, pharmacists adjudicated 28 ADR-positive; trigger selected 167 candidates and caught all 28. LoRA improved false-positive control significantly; sensitivity increase was nonsignificant, and 2 positives remained model-non-positive. Two blinded pharmacists adjudicated the full cohort with third-reviewer resolution; the LLM comparison is paired on 167 trigger-positive cases with exact McNemar testing. Internal single-center evaluation for one preparation; no temporal/external validation, explicitly bounded in interpretation.",
+    "unknown": "not significantly (P=.",
+    "ai_role": "Qwen3-4B-Instruct assesses structured EHR case records for ADR evidence; a local LoRA model trained on 410 patient-disjoint cases involving other medicines is compared against the base model after prespecified electronic-trigger filtering.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13718469/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

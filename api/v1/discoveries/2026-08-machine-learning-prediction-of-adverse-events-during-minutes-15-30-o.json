@@ -1,0 +1,33 @@
+{
+  "id": "2026-08-machine-learning-prediction-of-adverse-events-during-minutes-15-30-o",
+  "title": "Machine learning prediction of adverse events during minutes 15–30 of recovery in patients event-free at 15 min after sedated gastrointestinal endoscopy",
+  "summary": "In 1,070 patients undergoing sedated gastrointestinal endoscopy at West China Hospital, XGBoost predicted prespecified respiratory or hemodynamic events during minutes 15–30 of recovery among patients event-free at minute 15. The model achieved an AUC of 0.910 in the independent validation set (cross-validated training AUC 0.971). Prospective, temporally separated evaluation and external validation are still needed.",
+  "field": "medicine",
+  "ai_technology": "XGBoost with Boruta feature selection and SHAP interpretation",
+  "organization": "Department of Anesthesiology, West China Hospital, Sichuan University, Chengdu, China; West China School of Nursing, Sichuan University, Chengdu, China",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13558014/",
+  "source_type": "paper",
+  "publication_date": "2026-08-27",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The study evaluated six supervised models in a retrospective cohort; 103 of 1,070 patients had the prespecified event. XGBoost had validation AUC 0.910, PR-AUC 0.815 and Brier score 0.076, using five final predictors.",
+    "unknown": "The cohort came from one hospital and the study calls for prospective testing with predictor and outcome windows separated in time, plus external validation, before clinical implementation.",
+    "ai_role": "Boruta selected candidate predictors; XGBoost estimated risk of the specified post-anesthesia events, and SHAP described contributions without implying causality.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13558014/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

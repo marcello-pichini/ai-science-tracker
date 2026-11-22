@@ -1,0 +1,33 @@
+{
+  "id": "2021-08-oral-microbiome-random-forest-long-covid-associations",
+  "title": "Inflammation-type dysbiosis of the oral microbiome associates with COVID-19 symptom duration and long COVID",
+  "summary": "In a prospective cohort, Boruta-selected random-forest models with 5-fold cross-validation associated oral microbiome features with symptom duration among 27 followed patients. For long COVID, the best species-plus-clinical model had F1 0.615 and the pathway-only model had F1 0.689. This small observational analysis supports association, not causation or prospective clinical utility; the journal page gives first publication as 17 August 2021 and issue date as 22 October 2021.",
+  "field": "medicine",
+  "ai_technology": "Random-forest classification with Boruta feature selection and 5-fold cross-validation",
+  "organization": "University of Massachusetts Medical School",
+  "source_url": "https://insight.jci.org/articles/view/152346",
+  "source_type": "paper",
+  "publication_date": "2021-08-17",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Of 84 PCR-positive patients, 27 completed 4- and 10-week follow-up. Boruta feature selection and random-forest classification with 5-fold cross-validation gave F1 0.615 for a clinical-data-plus-microbiome-species long-COVID model and 0.689 for a pathway-only model; models without microbiome inputs showed no long-COVID signal.",
+    "unknown": "The small cohort does not establish causality, external replication, or performance of a frozen model in prospective clinical use.",
+    "ai_role": "Random-forest classifiers use oral microbiome and clinical features to estimate symptom-duration outcomes; Boruta selects features before 5-fold cross-validation.",
+    "evidence_urls": [
+      "https://insight.jci.org/articles/view/152346"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

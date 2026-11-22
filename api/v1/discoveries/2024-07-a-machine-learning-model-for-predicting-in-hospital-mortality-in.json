@@ -1,0 +1,37 @@
+{
+  "id": "2024-07-a-machine-learning-model-for-predicting-in-hospital-mortality-in",
+  "title": "A Machine Learning Model for Predicting In-Hospital Mortality in Chinese Patients With ST-Segment Elevation Myocardial Infarction: Findings From the China Myocardial Infarction Registry.",
+  "summary": "Machine-learning prediction on China Myocardial Infarction Registry data identified factors and estimated in-hospital mortality risk after ST-elevation myocardial infarction; conclusions are registry-specific.",
+  "field": "medicine",
+  "ai_technology": "XGBoost models use CAMI registry variables to estimate in-hospital mortality after ST-elevation myocardial infarction; SHAP interprets predictors.",
+  "organization": "State Key Laboratory of Cardiovascular Disease",
+  "source_url": "https://doi.org/10.2196/50067",
+  "source_type": "paper",
+  "publication_date": "2024-07-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Trained on 9,616 CAMI patients, the model achieved AUC 0.896 in a CAMI validation set and 0.840 in the independent China PEACE cohort, compared with lower GRACE/TIMI AUCs.",
+    "unknown": "Registry-based evaluation is retrospective; cross-cohort prediction does not establish prospective impact on patient management.",
+    "ai_role": "XGBoost models use CAMI registry variables to estimate in-hospital mortality after ST-elevation myocardial infarction; SHAP interprets predictors.",
+    "evidence_urls": [
+      "https://doi.org/10.2196/50067",
+      "https://europepmc.org/article/MED/39079111",
+      "https://europepmc.org/articles/PMC11322712",
+      "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC11322712/unicode",
+      "https://pubmed.ncbi.nlm.nih.gov/39079111/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

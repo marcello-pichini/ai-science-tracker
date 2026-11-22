@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-prism-primitive-routing-via-in-context-skill-mixing-for-retentive-vla-ad",
+  "title": "PRISM: Primitive Routing via In-context Skill Mixing for Retentive VLA Adaptation",
+  "summary": "The authors found that low-rank updates trained for individual skills occupied a distinguishable subspace and that a composite-task update concentrated roughly half its energy there, unlike a matched random-rotation control. PRISM then stored skill adapters as reusable primitives and routed among them. Benchmark and robot task results are separate from this representation result.",
+  "field": "computer science",
+  "ai_technology": "Vision-language model-conditioned router with frozen low-rank skill adapters",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://arxiv.org/html/2611.08917v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-06",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A composite-task update concentrated roughly half its Frobenius energy in the per-skill subspace, versus near-zero for a matched random-rotation control. RoboCasa365 and an AgileX PIPER setup were used for task evaluation.",
+    "unknown": "The representation result is limited to the reported model and task setup; broader generalization is not established.",
+    "ai_role": "The authors measured whether low-rank updates trained for individual manipulation skills occupy a shared parameter subspace, then proposed PRISM to preserve skill adapters as primitives and combine them with a vision-language-model-conditioned router.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.08917v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

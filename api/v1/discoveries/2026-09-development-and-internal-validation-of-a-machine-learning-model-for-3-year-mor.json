@@ -1,0 +1,33 @@
+{
+  "id": "2026-09-development-and-internal-validation-of-a-machine-learning-model-for-3-year-mor",
+  "title": "Development and internal validation of a machine-learning model for 3-year mortality after lung cancer resection: an online risk calculator and nomogram.",
+  "summary": "For an outcome-ascertained sample of 350 lung-resection patients, a seven-model comparison estimated three-year mortality using a 70/30 internal holdout. Logistic regression was selected with validation AUC 0.79 (95% CI 0.70–0.87); random forest fell from training AUC 1.00 to validation AUC 0.73. The selected sample’s mortality proportion is not a population risk estimate, and external validation is absent.",
+  "field": "medicine",
+  "ai_technology": "A machine-learning model estimated three-year mortality after lung-cancer resection from cohort data and underwent internal validation.",
+  "organization": "Department of Pathology, Tongling People’s Hospital, China; Department of Pathology, Heping Hospital Affiliated to Changzhi Medical College, China; Tongling Academy of Medical Sciences, China",
+  "source_url": "https://doi.org/10.3389/fmed.2026.1815915",
+  "source_type": "paper",
+  "publication_date": "2026-09-25",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The primary abstract reports LASSO feature selection followed by seven algorithms and a 70/30 internal split. In 350 outcome-ascertained patients, 166 had recorded death within 36 months; logistic regression achieved validation AUC 0.79 (95% CI 0.70–0.87), accuracy 0.75, F1 0.73 and Brier score 0.187. Random forest training AUC was 1.00 and validation AUC 0.73. The paper states the cohort event proportion must not be read as population mortality risk and that external validation is required.",
+    "unknown": "The outcome-ascertained cohort and internal-only validation do not establish population-level absolute risk or prospective clinical utility; independent multicenter validation is required.",
+    "ai_role": "A machine-learning model estimated three-year mortality after lung-cancer resection from cohort data and underwent internal validation.",
+    "evidence_urls": [
+      "https://doi.org/10.3389/fmed.2026.1815915"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

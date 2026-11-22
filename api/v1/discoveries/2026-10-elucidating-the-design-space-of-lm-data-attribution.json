@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-elucidating-the-design-space-of-lm-data-attribution",
+  "title": "Elucidating the Design Space of LM Data Attribution",
+  "summary": "A controlled attribution benchmark fine-tuned language models on fictitious knowledge, allowing ground-truth source tracing while varying redundancy and lexical distractors. Standard document-level averaging diluted localized attribution evidence; negative-log-odds gradients with top-token aggregation improved recall in the evaluated benchmarks.",
+  "field": "computer science",
+  "ai_technology": "Language models with token-level data-attribution scoring",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://arxiv.org/html/2610.40655v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-29",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/abs/2610.40655",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "On CATT, top-token aggregation with negative-log-odds gradients improved ground-truth recall by 35–72 percentage points across several baselines; the correction also improved counterfactual retraining performance on FTRACE-TREX by up to 4.9-fold.",
+    "unknown": "These results use controlled attribution benchmarks and do not establish reliable provenance for arbitrary language-model training data.",
+    "ai_role": "Token-level language-model attribution scores were evaluated under controlled fictitious-knowledge, redundancy and distractor settings.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.40655"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

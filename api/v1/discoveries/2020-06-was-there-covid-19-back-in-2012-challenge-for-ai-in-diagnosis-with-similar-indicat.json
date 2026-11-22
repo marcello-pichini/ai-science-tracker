@@ -1,0 +1,37 @@
+{
+  "id": "2020-06-was-there-covid-19-back-in-2012-challenge-for-ai-in-diagnosis-with-similar-indicat",
+  "title": "COVID-Net and CoroNet show weaker performance on external chest X-ray data",
+  "summary": "The v1 paper externally evaluates the pretrained COVID-Net and CoroNet chest-radiograph classifiers on three pre-pandemic public datasets and an Emory RT-PCR cohort. It finds markedly degraded generalization, including high false positives on pre-COVID images and poor COVID-Net sensitivity/precision on the institutional cohort; this is a specific retrospective diagnostic-validation result, not evidence of clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "The authors apply two already-trained deep-learning CXR classifiers, COVID-Net and CoroNet, to independent public and institutional datasets; the models provide the COVID-19 classi",
+  "organization": "Emory University; Indiana University Purdue University Indianapolis; Mentor Graphics India; K. N. Toosi University of Technology",
+  "source_url": "https://arxiv.org/pdf/2006.13262v1",
+  "source_type": "paper",
+  "publication_date": "2020-06-23",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The Results report COVID-Net false-positive rates of 55.3% on CheXpert and 23.4% on MIMIC-CXR, and on Emory 61.4% sensitivity, 0.54 F1 and 0.49 precision; CoroNet has a 93.7% false-negative rate on Emory. The central result is external generalization failure.",
+    "unknown": "Evaluation is retrospective and uses datasets with different label mechanisms; the paper notes PCR positivity and radiographic findings are not identical. No clinical benefit was tested. arXiv metadata did not provide an affiliation, so the record states that the affiliation was not provided.",
+    "ai_role": "The authors apply two already-trained deep-learning CXR classifiers, COVID-Net and CoroNet, to independent public and institutional datasets; the models provide the COVID-19 classifications under evaluation.",
+    "evidence_urls": [
+      "https://arxiv.org/pdf/2006.13262v1",
+      "https://arxiv.org/abs/2006.13262v1",
+      "https://export.arxiv.org/api/query?id_list=2006.13262",
+      "https://arxiv.org/pdf/2006.13262v1#Materials-and-Methods",
+      "https://arxiv.org/pdf/2006.13262v1#Results"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

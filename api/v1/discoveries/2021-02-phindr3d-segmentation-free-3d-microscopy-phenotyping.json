@@ -1,0 +1,34 @@
+{
+  "id": "2021-02-phindr3d-segmentation-free-3d-microscopy-phenotyping",
+  "title": "Rapid 3D phenotypic analysis of neurons and organoids using data-driven cell segmentation-free machine learning",
+  "summary": "Phindr3D combines unsupervised k-means voxel features with hierarchical supervoxel and megavoxel descriptors for segmentation-free 3D image phenotyping. In 8,100 neuronal image stacks across 9 biological replicates, it separated treatment-associated morphologies, including distinct responses to anti-apoptotic inhibitors, and it characterized oncogene-associated morphogenesis in mammary acinar organoids. These assay-bound results do not establish clinical utility.",
+  "field": "biology",
+  "ai_technology": "Phindr3D shallow-learning pipeline: unsupervised k-means voxel categories, hierarchical supervoxel/megavoxel features, affinity-propagation clustering, and random-forest classification",
+  "organization": "Sunnybrook Research Institute, University of Toronto",
+  "source_url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008630",
+  "source_type": "paper",
+  "publication_date": "2021-02-22",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The tool processed 8,100 three-channel neuronal image stacks from 9 biological replicates on 3 plates; affinity-propagation clustering yielded eight combined phenotype clusters and separated responses to anti-apoptotic inhibitors with similar profiles across replicates. In a reference 3D cell-line assay, concentration-response EC50 values were similar to conventional segmentation-based classification.",
+    "unknown": "Evidence is limited to the reported microscopy assays and models; generalization to other imaging tasks and clinical utility were not established.",
+    "ai_role": "Phindr3D derives hierarchical voxel-based image features without cell segmentation; unsupervised k-means builds pixel, supervoxel, and megavoxel categories, followed by affinity-propagation clustering or random-forest classification.",
+    "evidence_urls": [
+      "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008630",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7932518/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

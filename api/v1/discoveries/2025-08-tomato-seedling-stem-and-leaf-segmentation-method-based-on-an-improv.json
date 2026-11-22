@@ -1,0 +1,33 @@
+{
+  "id": "2025-08-tomato-seedling-stem-and-leaf-segmentation-method-based-on-an-improv",
+  "title": "Tomato seedling stem and leaf segmentation method based on an improved ResNet architecture",
+  "summary": "The proposed X-ResNet segmented tomato seedling stems and leaves from 3D point clouds and supported phenotypic measurement. The study reports 95.11% training accuracy, 3.26 percentage points above ResNet18, and manual-measurement correlations of R² 0.941 for plant height, 0.752 for stem diameter, 0.945 for leaf area and 0.943 for leaf inclination; reported absolute percentage errors were below 6%. The abstract does not provide a held-out segmentation accuracy.",
+  "field": "biology",
+  "ai_technology": "X-ResNet point-cloud segmentation with bottleneck, downsampling and specialized convolutional layers",
+  "organization": "College of Information Technology, Jilin Agricultural University, Changchun, China; College of Information Engineering, Changchun University of Finance and Economics, Changchun, China",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12444385/",
+  "source_type": "paper",
+  "publication_date": "2025-08-28",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "X-ResNet point-cloud segmentation and extracted plant traits were compared with manual measurements. The paper reports trait-specific R² values and errors, 95.11% training accuracy, and an inference time of 4.02 seconds versus 5.37 seconds for ResNet18.",
+    "unknown": "The 95.11% value is training accuracy; the abstract does not state held-out segmentation accuracy. Transfer to other cultivars or growing conditions is not established.",
+    "ai_role": "The learned X-ResNet segmented tomato stems and leaves from point clouds; the resulting height, diameter, area and inclination estimates were compared with manual measurements.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12444385/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

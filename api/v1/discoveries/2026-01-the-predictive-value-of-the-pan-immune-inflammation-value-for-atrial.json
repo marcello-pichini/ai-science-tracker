@@ -1,0 +1,34 @@
+{
+  "id": "2026-01-the-predictive-value-of-the-pan-immune-inflammation-value-for-atrial",
+  "title": "The Predictive Value of the Pan-Immune-Inflammation Value for Atrial Fibrillation Risk in Patients with Coronary Artery Disease: A Multicenter Machine Learning Study.",
+  "summary": "In a retrospective multicenter cohort of patients with coronary heart disease, pan-immune-inflammation value was higher in patients with atrial fibrillation and was selected with age and diabetes as an independent predictor in logistic regression. XGBoost achieved AUC 0.79 in training and 0.73 in testing, outperforming the multilayer perceptron (0.75 and 0.69). This establishes association and prediction within the study, not causation or clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "XGBoost and multilayer-perceptron risk models with SHAP interpretation",
+  "organization": "Minda Hospital of Hubei Minzu University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13012144/",
+  "source_type": "paper",
+  "publication_date": "2026-01-29",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The study compared XGBoost and a multilayer perceptron using patients from two tertiary hospitals. It reports training/test AUCs of 0.79/0.73 for XGBoost and 0.75/0.69 for MLP; PIV was the most influential XGBoost feature.",
+    "unknown": "The retrospective model does not establish that PIV causes atrial fibrillation or improves clinical outcomes; prospective external evaluation is not reported.",
+    "ai_role": "The learned models estimated atrial-fibrillation risk from clinical and laboratory data; SHAP assessed feature contributions, while logistic regression identified PIV, age and diabetes as predictors.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13012144/",
+      "https://pubmed.ncbi.nlm.nih.gov/41883473/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2025-12-deciphering-the-clinical-implication-of-an-obesity-related-gene",
+  "title": "Deciphering the clinical implication of an obesity-related gene signature as the novel biomarker for acute myocardial infarction diagnosis.",
+  "summary": "Machine-learning feature selection on four GEO training expression datasets produced a five-gene obesity-related signature for acute myocardial infarction (IL1RN, TLR2, NFKBIA, MMP9 and ITLN1). Its reported AUC was 0.924 in the training analysis and 0.825 in the separate GSE59876 dataset; RT-qPCR also confirmed differential expression in AMI and control samples. These retrospective biomarker results do not establish prospective diagnostic benefit.",
+  "field": "medicine",
+  "ai_technology": "Machine-learning feature-gene selection using obesity-related genes and GEO expression data; the resulting signature was evaluated with ROC analysis. The article also used GSEA, CIBERSORT and ssGSEA for downstream analyses.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://doi.org/10.1038/s41598-025-28461-0",
+  "source_type": "paper",
+  "publication_date": "2025-12-29",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Four GEO expression datasets were used for training analyses and one for validation. The five-gene signature had AUC 0.924 and AUC 0.825 in GSE59876; RT-qPCR confirmed differential expression in AMI and control samples.",
+    "unknown": "The GEO cohort analyses are retrospective; RT-qPCR confirms differential expression, not prospective diagnostic utility or improved patient outcomes.",
+    "ai_role": "Machine-learning feature selection identified an obesity-related gene signature for AMI diagnosis; ROC analysis assessed its discrimination, while immune-infiltration analyses characterized associated patterns.",
+    "evidence_urls": [
+      "https://doi.org/10.1038/s41598-025-28461-0",
+      "https://europepmc.org/article/MED/41461688"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

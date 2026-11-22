@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-estimating-vertical-ocean-velocity-from-horizontal-currents-linear-a",
+  "title": "Estimating Vertical Ocean Velocity from Horizontal Currents: Linear and Depth-Conditional Neural-Network Approaches on a High-Resolution Regional Ocean Model",
+  "summary": "A depth-conditioned CNN estimates vertical ocean velocity from local horizontal currents in a high-resolution western-Mediterranean simulation, with two independent out-of-sample regions. Results show a depth- and domain-limited nonlinear advantage at the deepest transition-region levels; the evidence is simulation-based, one winter snapshot, and not observational ocean validation.",
+  "field": "climate",
+  "ai_technology": "Depth-conditioned FiLM convolutional neural network",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://arxiv.org/html/2611.07969v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-05",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Results §§3.2–3.4 quantify depth-decaying vertical-velocity correlation and show the FiLM model’s limited deep-level advantage on the transition region, not uniformly across domains.",
+    "unknown": "Two out-of-sample geographic domains and 274 random-seed realizations evaluate transfer and numerical uncertainty; the source states sensitivity to input noise and seasonal limits.",
+    "ai_role": "Methods §§2.4–2.5 use local horizontal-velocity stencils with a per-level linear baseline and a depth-conditioned FiLM CNN to estimate vertical velocity.",
+    "evidence_urls": [
+      "https://export.arxiv.org/api/query?id_list=2611.07969v1",
+      "https://arxiv.org/html/2611.07969v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

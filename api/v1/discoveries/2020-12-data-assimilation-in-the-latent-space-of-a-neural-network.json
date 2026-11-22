@@ -1,0 +1,33 @@
+{
+  "id": "2020-12-data-assimilation-in-the-latent-space-of-a-neural-network",
+  "title": "Data Assimilation in the Latent Space of a Neural Network",
+  "summary": "autoencoder/LSTM latent dynamics with Kalman assimilation lowered physical-space error in an indoor CO2/air-transport case and ran far faster than standard assimilation; one offline case only.",
+  "field": "computer science",
+  "ai_technology": "Autoencoder maps states to latent space; LSTM predicts dynamics; Kalman filter assimilates observations there.",
+  "organization": "Not stated in the abstract reviewed",
+  "source_url": "https://arxiv.org/abs/2012.12056",
+  "source_type": "paper",
+  "publication_date": "2020-12-22",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Indoor office CO2 case reports lower MSE than standard assimilation and ~six orders faster runtime.",
+    "unknown": "One offline case, not deployment or health outcome.",
+    "ai_role": "Autoencoder maps states to latent space; LSTM predicts dynamics; Kalman filter assimilates observations there.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2012.12056"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

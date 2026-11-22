@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-intent-aware-caching-for-efficient-llm-serving",
+  "title": "Intent-Aware Caching for Efficient LLM Serving",
+  "summary": "An intent-aware eviction policy for LLM prefix caches was evaluated on WildChat and ShareChat workloads. In the reported setup it achieved a 34.6% cache hit rate and reduced average serving latency by up to 46.1%; the workload patterns are observational and do not establish performance on other traffic.",
+  "field": "computer science",
+  "ai_technology": "Intent classifier and intent-aware cache eviction policy",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://arxiv.org/html/2611.09715v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-06",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Analyses of WildChat and ShareChat traces found continuation probability and inter-turn delays differed by intent. Intent-aware caching reached 34.6% hit rate versus 18.8% for a prior learned approach and 12.2% for LRU, with latency reduction up to 46.1% in the reported evaluation.",
+    "unknown": "Trace patterns are observational and depend on the learned intent taxonomy; effects outside the evaluated workloads and setups are unknown.",
+    "ai_role": "An intent classifier labels requests; a learned eviction policy uses intent-conditioned reuse statistics to guide prefix-cache decisions.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.09715v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}

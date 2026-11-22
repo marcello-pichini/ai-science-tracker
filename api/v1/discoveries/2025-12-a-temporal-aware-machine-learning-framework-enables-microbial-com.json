@@ -1,0 +1,34 @@
+{
+  "id": "2025-12-a-temporal-aware-machine-learning-framework-enables-microbial-com",
+  "title": "A temporal-aware machine learning framework enables microbial community dynamics prediction with personalized precision.",
+  "summary": "MicroProphet, a time-aware Transformer with attention, forecasts subject-specific microbial abundance trajectories from incomplete longitudinal observations without data imputation. It uses only the first 30% of observed time points and was evaluated across synthetic communities, human gut microbiomes, infant gut development and corpse decomposition. The abstract reports cross-ecosystem predictive performance but gives no cohort sizes or numeric error measures; clinical or forensic decision outcomes were not tested.",
+  "field": "biology",
+  "ai_technology": "MicroProphet, a time-aware Transformer architecture with attention for subject-specific microbial trajectory forecasting.",
+  "organization": "Affiliation not stated in the reviewed material",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12751615/",
+  "source_type": "paper",
+  "publication_date": "2025-12-29",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The model forecasts trajectories using the first 30% of observations and is evaluated across synthetic communities, human gut microbiomes, infant gut development and corpse decomposition; the abstract reports cross-ecosystem generalization without numeric performance metrics.",
+    "unknown": "The reviewed abstract gives no sample counts or numeric error estimates. It does not demonstrate improved health outcomes, intervention timing, or forensic casework performance.",
+    "ai_role": "A temporal Transformer reconstructs subject-specific abundance trajectories from sparse time series, using attention to capture transitions.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12751615/",
+      "https://europepmc.org/article/MED/41462375"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary result-bearing material for the stated method, result and evaluation, with bibliographic version information."
+  }
+}
