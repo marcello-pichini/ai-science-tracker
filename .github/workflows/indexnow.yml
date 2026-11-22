@@ -1,14 +1,15 @@
 name: IndexNow
 on:
   workflow_run:
-    workflows: ['pages build and deployment']
+    # Check deploys Pages since the switch to Actions-based publishing
+    workflows: [Check]
     types: [completed]
     branches: [main]
 permissions:
   contents: read
 jobs:
   notify:
-    if: github.event.workflow_run.conclusion == 'success'
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
