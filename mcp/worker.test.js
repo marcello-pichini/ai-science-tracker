@@ -1,0 +1,94 @@
+import assert from 'node:assert/strict'
+import test from 'node:test'
+import { Client } from '@modelcontextprotocol/sdk/client/index.js'
+import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js'
+import worker from './worker.js'
+
+const origin = 'https://aisciencetracker.org'
+const endpoint = new URL('https://mcp.aisciencetracker.org/mcp')
+const discovery = {
+  id: '2025-04-example',
+  title: 'AI-guided materials testing',
+  field: 'Materials science',
+  publication_date: '2025-04-11',
+  ai_technology: 'Example model',
+  source_url: 'https://example.org/paper',
+  summary: 'A candidate was tested in one laboratory.',
+  evidence: { unknown: 'Independent replication is pending.' },
+}
+
+test('MCP clients can search and retrieve public discoveries with provenance', async (t) => {
+  t.mock.method(globalThis, 'fetch', async (url) => {
+    switch (String(url)) {
+      case origin + '/data/discoveries.json':
+        return Response.json([discovery, {
+          ...discovery,
+          id: '2024-04-example',
+          publication_date: '2024-04-11',
+        }, {
+          ...discovery,
+          id: '2023-04-laboratory-example',
+          title: 'Laboratory robots run catalyst trials',
+          publication_date: '2023-04-11',
+        }])
+      case origin + '/api/v1/discoveries/' + discovery.id + '.json':
+        return Response.json(discovery)
+      case origin + '/api/v1/discoveries/unknown.json':
+        return new Response(null, { status: 404 })
+      default:
+        throw new Error('Unexpected upstream URL')
+    }
+  })
+
+  const client = new Client({ name: 'catalog-test', version: '1.0.0' })
+  t.after(() => client.close())
+  await client.connect(new StreamableHTTPClientTransport(endpoint, {
+    fetch: (url, options) => worker.fetch(new Request(url, options)),
+  }))
+
+  const { tools } = await client.listTools()
+  assert.deepEqual(tools.map((tool) => tool.name).sort(), ['get_discovery', 'search_discoveries'])
+  assert.ok(tools.every((tool) => tool.annotations.readOnlyHint))
+
+  const search = await client.callTool({
+    name: 'search_discoveries',
+    arguments: { query: 'AI guided', year: 2025, limit: 1 },
+  })
+  const { results } = JSON.parse(search.content[0].text)
+  assert.deepEqual(results.map((row) => row.id), [discovery.id])
+  assert.equal(results[0].source_url, discovery.source_url)
+
+  const search_ids = async (query) => JSON.parse((await client.callTool({
+    name: 'search_discoveries', arguments: { query },
+  })).content[0].text).results.map((row) => row.id)
+  // whole-word prefixes: "test" finds "testing"/"tested", "sting" finds nothing
+  assert.deepEqual(await search_ids('sting'), [])
+  // summary-only matches count, but a title match ranks first
+  assert.deepEqual(await search_ids('laboratory'), ['2023-04-laboratory-example', discovery.id, '2024-04-example'])
+  const truncated = JSON.parse((await client.callTool({
+    name: 'search_discoveries', arguments: { query: 'laboratory', limit: 2 },
+  })).content[0].text)
+  assert.equal(truncated.truncated, true)
+  assert.equal(truncated.results.length, 2)
+
+  const get = await client.callTool({ name: 'get_discovery', arguments: { id: discovery.id } })
+  const record = JSON.parse(get.content[0].text)
+  assert.equal(record.evidence.unknown, discovery.evidence.unknown)
+  assert.equal(record.catalog_url, origin + '/share/' + discovery.id + '.html')
+  assert.equal(record.source_url, discovery.source_url)
+
+  const missing = await client.callTool({ name: 'get_discovery', arguments: { id: 'unknown' } })
+  assert.equal(missing.isError, true)
+  const traversal = await client.callTool({ name: 'get_discovery', arguments: { id: '../private' } })
+  assert.equal(traversal.isError, true)
+})
+
+test('foreign browser origins and unrelated paths cannot call the Worker', async () => {
+  const crossOrigin = await worker.fetch(new Request(endpoint, {
+    method: 'POST',
+    headers: { Origin: 'https://example.org' },
+  }))
+  assert.equal(crossOrigin.status, 403)
+  const other = await worker.fetch(new Request(new URL('/admin', endpoint)))
+  assert.equal(other.status, 404)
+})
