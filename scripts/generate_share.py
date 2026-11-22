@@ -863,11 +863,11 @@ def write_sitemap(items, models, archived=(), vulns=()):
     orgs = sorted({lead_org(d['organization']) for d in items})
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
     # Announcement and catalog-addition dates are not page-modification dates.
-    # Omit lastmod until a real page-change date is tracked; a guessed date would be wrong.
+    # Only dossiers with an explicit editorial update date have lastmod.
     # search.html is a translated editorial page. profile.html and 404.html are noindex.
     # Localized copies exist only for translated editorial pages, not for share/ or profiles/.
     urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'search.html', 'dataset.html', 'contributors.html', 'contact.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
-    from i18n_site import LOCALES, NEW_DOSSIER_PAGES, SITEMAP_PAGES, public_url
+    from i18n_site import LOCALES, NEW_DOSSIER_PAGES, SITEMAP_PAGES, dossier_modified_date, public_url
 
     urls.extend(NEW_DOSSIER_PAGES)
     urls += ['profiles/index.html']
@@ -889,6 +889,11 @@ def write_sitemap(items, models, archived=(), vulns=()):
     seen = set()
     for url in urls:
         block = alternates(url) if url in SITEMAP_PAGES else ''
+        lastmod = ''
+        if url.endswith('-dossier.html') and (ROOT / url).is_file():
+            updated = dossier_modified_date((ROOT / url).read_text(encoding='utf-8'))
+            if updated:
+                lastmod = f'<lastmod>{updated}</lastmod>'
         targets = [public_url(url, 'en')] if url in SITEMAP_PAGES else [BASE + url]
         if url in SITEMAP_PAGES:
             targets += [public_url(url, code) for code in LOCALES]
@@ -896,7 +901,7 @@ def write_sitemap(items, models, archived=(), vulns=()):
             if loc in seen or loc.endswith('/index.html'):
                 continue
             seen.add(loc)
-            rows.append(f'<url><loc>{esc(loc)}</loc>{block}</url>\n')
+            rows.append(f'<url><loc>{esc(loc)}</loc>{lastmod}{block}</url>\n')
     (ROOT / 'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'

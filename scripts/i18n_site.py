@@ -19,6 +19,7 @@ import html
 import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -370,6 +371,12 @@ def hreflang_html(page: str) -> str:
     return '\n'.join(lines)
 
 
+def dossier_modified_date(text: str) -> str:
+    """Read the explicitly maintained dossier update date."""
+    updated = re.search(r'<time class="dossier-updated" datetime="(\d{4}-\d{2}-\d{2})">', text)
+    return date.fromisoformat(updated[1]).isoformat() if updated else ''
+
+
 def set_dossier_metadata(text: str, page: str, lang: str) -> str:
     """Keep structured article and breadcrumb metadata aligned with the rendered edition."""
     if not page.endswith('-dossier.html'):
@@ -395,6 +402,24 @@ def set_dossier_metadata(text: str, page: str, lang: str) -> str:
             ]},
         ],
     }
+    article = data['@graph'][0]
+    updated = dossier_modified_date(text)
+    if updated:
+        article['dateModified'] = updated
+    cover = re.search(r'<img class="dossier-cover" src="(/assets/dossiers/[^"]+)" alt="([^"]+)"', text)
+    if cover:
+        image_url = BASE + cover[1].lstrip('/')
+        article['image'] = image_url
+        og_image = f'<meta property="og:image" content="{image_url}">'
+        twitter_image = f'<meta name="twitter:image" content="{image_url}">'
+        text = re.sub(r'<meta property="og:image" content="[^"]*">', lambda _: og_image, text, count=1)
+        if 'name="twitter:image"' in text:
+            text = re.sub(r'<meta name="twitter:image" content="[^"]*">', lambda _: twitter_image, text, count=1)
+        else:
+            text = text.replace(og_image, og_image + '\n' + twitter_image, 1)
+        text = re.sub(r'(<meta (?:property="og:image:alt"|name="twitter:image:alt") content=")[^"]*',
+                      lambda match: match[1] + cover[2], text)
+        text = text.replace('<meta property="og:type" content="website">', '<meta property="og:type" content="article">', 1)
     payload = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     metadata = f'<script type="application/ld+json" id="dossier-metadata">{payload}</script>'
     pattern = r'<script type="application/ld\+json" id="dossier-metadata">.*?</script>'
@@ -842,7 +867,7 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
             text = source.read_text(encoding='utf-8')
             if 'id="lang-switch"' not in text:
                 continue
-            has_dossier_copy = 'dossier' in page or page in ('models.html', 'security.html')
+            has_dossier_copy = 'dossier' in page or page in ('guide.html', 'models.html', 'security.html')
             text, missing = translate_document(text, dossier_table if has_dossier_copy else merged, kept)
             if missing:
                 problems.extend(f'{lang}/{page}: {item}' for item in missing[:8])

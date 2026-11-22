@@ -140,6 +140,40 @@ if (anchor.href !== '/es/mathematics-dossier.html#riemann') throw new Error('fra
                     for target in re.findall(r'href="#([^"]+)"', main):
                         self.assertIn(f'id="{target}"', main)
 
+    def test_each_dossier_has_a_contextual_route_an_update_date_and_a_cover(self):
+        pages = [page for page in PAGES if page.endswith('-dossier.html')]
+        sitemap = ET.parse(ROOT / 'sitemap.xml')
+        ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+        dates = {row.findtext('s:loc', namespaces=ns): row.findtext('s:lastmod', namespaces=ns)
+                 for row in sitemap.findall('s:url', ns)}
+        cover_by_page = {}
+        for lang in ('en', *LOCALES):
+            prefix = '' if lang == 'en' else f'{lang}/'
+            sections = [(ROOT / prefix / page).read_text().split('<main>', 1)[1].split('</main>', 1)[0]
+                        for page in ('guide.html', 'models.html', 'security.html')]
+            contextual_links = set(re.findall(r'href="([^"?#]+)(?:#[^"]*)?"', ''.join(sections)))
+            self.assertEqual(set(pages) - contextual_links, set(), lang)
+            for page in pages:
+                with self.subTest(language=lang, page=page):
+                    markup = (ROOT / prefix / page).read_text()
+                    url = f'https://aisciencetracker.org/{prefix}{page}'
+                    date = re.search(r'<time class="dossier-updated" datetime="([^"]+)">', markup)[1]
+                    cover = re.search(r'<img class="dossier-cover" src="(/assets/dossiers/[^"]+)" alt="([^"]+)"', markup)
+                    self.assertTrue((ROOT / cover[1][1:]).read_bytes().startswith(b'\xff\xd8'))
+                    self.assertEqual(dates[url], date)
+                    metadata = re.search(r'id="dossier-metadata">(.*?)</script>', markup)[1]
+                    article = json.loads(metadata)['@graph'][0]
+                    image = 'https://aisciencetracker.org' + cover[1]
+                    self.assertEqual(article['dateModified'], date)
+                    self.assertEqual(article['image'], image)
+                    self.assertIn(f'property="og:image" content="{image}"', markup)
+                    self.assertIn(f'name="twitter:image" content="{image}"', markup)
+                    self.assertEqual(cover_by_page.setdefault(page, image), image)
+                    if lang != 'en':
+                        english = (ROOT / page).read_text()
+                        self.assertNotIn(f'alt="{cover[2]}"', english)
+        self.assertEqual(len(set(cover_by_page.values())), 9)
+
     def test_translation_keeps_titles_and_uses_locale_copy(self):
         page = """<!doctype html><html lang="en"><head><title>Hello</title>
 <meta name="description" content="A short description of the catalog."></head>
