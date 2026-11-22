@@ -1,0 +1,35 @@
+{
+  "id": "2020-02-j-eng-2020-04-010",
+  "title": "A Deep Learning System to Screen Novel Coronavirus Disease 2019 Pneumonia.",
+  "summary": "The study distinguished COVID-19 from influenza-A viral pneumonia and healthy cases; overall accuracy was 86.7% on a held-out set of 90 CT cases (30 per category). The source reports 618 CT samples from three hospitals; 528 samples were used for training/validation and 90 were held out from patients not included in training. The test is an internal held-out sample, not an independent external cohort. Published abstract/full text do not establish clinical benefit or prospective utility.",
+  "field": "medicine",
+  "ai_technology": "A 3D deep-learning model segmented candidate infection regions; a location-attention classifier categorized CT regions and a Noisy-or Bayesian function combined confidence into a case-level prediction.",
+  "organization": "The First Affiliated Hospital, Zhejiang University School of Medicine",
+  "source_url": "https://arxiv.org/abs/2002.09334v1",
+  "source_type": "paper",
+  "publication_date": "2020-02-21",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "evidence": {
+    "ai_role": "A 3D deep-learning model segmented candidate infection regions; a location-attention classifier categorized CT regions and a Noisy-or Bayesian function combined confidence into a case-level prediction.",
+    "tested": "The study distinguished COVID-19 from influenza-A viral pneumonia and healthy cases; overall accuracy was 86.7% on a held-out set of 90 CT cases (30 per category).",
+    "unknown": "The source reports 618 CT samples from three hospitals; 528 samples were used for training/validation and 90 were held out from patients not included in training. The test is an internal held-out sample, not an independent external cohort. Published abstract/full text do not establish clinical benefit or prospective utility.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2002.09334v1",
+      "https://www.sciencedirect.com/science/article/pii/S2095809920301636",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7320702/"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "The first located result-bearing version is the authors’ arXiv v1 dated 2020-02-21; its abstract reports the same 86.7% CT-case accuracy later reported in the journal article. The original full-text study is a specific retrospective diagnostic-validation question, eligible under the project criteria. Active/archived catalog searches found no same-cohort record; the active Mount Sinai COVID-CT entry is a different model, input set and cohort. A later Applied Intelligence article was retracted for reusing this study’s data/text and is treated as the same underlying work, not a separate discovery."
+  }
+}

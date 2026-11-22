@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-1128-spectrum-00994-26",
+  "title": "Gut Clostridium aminophilum as a protective microbe in never-smoker lung cancer: insights from metagenomics and machine learning",
+  "summary": "The model prioritized Clostridium aminophilum as depleted in the LCINS cohort and as a candidate protective microbe; the paper reports supporting cell and mouse tumor-suppression experiments. Held-out test AUC 0.886 (mean 0.855); reduced abundance replicated in an independent NSCLC cohort (29 controls/27 cases), with in-vitro cell and in-vivo xenograft follow-up. The small cohort and non-LCINS replication limit clinical specificity; causal/organism-specific effects remain unresolved.",
+  "field": "biology",
+  "ai_technology": "glmBoost feature selection plus ridge classification, interpreted with SHAP to prioritize a candidate gut microbe",
+  "organization": "Department of Thoracic Surgery, Shaoxing people's hospital, Shaoxing, Zhejiang, China; Wenzhou Medical University, Wenzhou, Zhejiang, China; Department of Intensive Care Unit, Guangdong Provincial People's Hospital, Zhuhai Hospital (Jinwan Central Hospital of Zhuhai), Zhuhai, Guangdong, China; Shaoxing University, Shaoxing, Zhejiang, China",
+  "source_url": "https://journals.asm.org/doi/10.1128/spectrum.00994-26",
+  "source_type": "paper",
+  "publication_date": "2026-10-26",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The model prioritized Clostridium aminophilum as depleted in the LCINS cohort and as a candidate protective microbe; the paper reports supporting cell and mouse tumor-suppression experiments.",
+    "unknown": "Held-out test AUC 0.886 (mean 0.855); reduced abundance replicated in an independent NSCLC cohort (29 controls/27 cases), with in-vitro cell and in-vivo xenograft follow-up. The small cohort and non-LCINS replication limit clinical specificity; causal/organism-specific effects remain unresolved.",
+    "ai_role": "glmBoost feature selection plus ridge classification, interpreted with SHAP to prioritize a candidate gut microbe",
+    "evidence_urls": [
+      "https://journals.asm.org/doi/10.1128/spectrum.00994-26"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary source full text Methods and Results; version/date checked against bibliographic record."
+  }
+}

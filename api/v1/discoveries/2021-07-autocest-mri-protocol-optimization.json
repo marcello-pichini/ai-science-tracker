@@ -1,0 +1,33 @@
+{
+  "id": "2021-07-autocest-mri-protocol-optimization",
+  "title": "An end-to-end AI-based framework for automated discovery of rapid CEST/MT MRI acquisition protocols and molecular parameter quantification (AutoCEST)",
+  "summary": "AutoCEST jointly optimizes CEST/MT acquisition schedules and a deep reconstruction network. Phantom measurements showed concentration error of 2.42 ± 2.53 mM (r=0.992), versus 65.19 ± 34.48 mM with an unoptimized schedule; mouse-brain imaging is a proof of concept, not clinical validation.",
+  "field": "medicine",
+  "ai_technology": "AutoCEST differentiable acquisition-schedule optimization and deep neural reconstruction",
+  "organization": "Martinos Center, Massachusetts General Hospital and Harvard Medical School; Max Planck Institute for Biological Cybernetics; University Hospital Erlangen",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9305180/?report=xml",
+  "source_type": "paper",
+  "publication_date": "2021-07-10",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Generated schedules took 35–71 seconds; phantom concentration maps closely matched known values and mouse-brain maps showed expected tissue patterns.",
+    "unknown": "Validation is limited to chemical-exchange phantoms and one in-vivo mouse-brain setting; no clinical validation is reported.",
+    "ai_role": "A differentiable system jointly optimizes CEST/MT acquisition schedules and a deep neural network for parameter reconstruction.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9305180/?report=xml"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary full-text Methods and Results and arXiv v1 reviewed; version chronology checked."
+  }
+}

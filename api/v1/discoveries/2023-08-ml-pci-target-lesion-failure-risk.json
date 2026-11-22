@@ -1,0 +1,33 @@
+{
+  "id": "2023-08-ml-pci-target-lesion-failure-risk",
+  "title": "Machine-learning models estimate one-year target-lesion failure risk after coronary intervention",
+  "summary": "Five models were trained on 35,389 patients in the global e-ULTIMASTER percutaneous coronary intervention registry. On a random 20% test split, gradient boosting had an AUC of 0.72 (95% CI 0.69–0.75) for one-year target-lesion failure; component AUCs were 0.82 for cardiac death, 0.75 for target-vessel myocardial infarction, and 0.68 for clinically driven revascularization. The study lacks external validation outside this registry and calls for prospective evaluation; it does not establish clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Gradient boosting, linear discriminant analysis, naive Bayes, logistic regression, and k-nearest neighbors",
+  "organization": "Keele University",
+  "source_url": "https://academic.oup.com/ehjdh/article/4/6/433/7257453",
+  "source_type": "paper",
+  "publication_date": "2023-08-31",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Five risk models were evaluated on a held-out random test subset of the e-ULTIMASTER registry, with discrimination and calibration assessed.",
+    "unknown": "The authors report no external validation outside the registry and state that prospective evaluation is warranted; clinical utility is unestablished.",
+    "ai_role": "Learned risk models estimate one-year target-lesion failure and its component outcomes from patient and procedural characteristics.",
+    "evidence_urls": [
+      "https://academic.oup.com/ehjdh/article/4/6/433/7257453"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Full primary publisher article, including Methods, Results, author affiliations and publication history"
+  }
+}

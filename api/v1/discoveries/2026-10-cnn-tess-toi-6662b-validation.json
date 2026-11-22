@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-cnn-tess-toi-6662b-validation",
+  "title": "A CNN search exposes a real false-positive ceiling and supports validation of TOI-6662 b",
+  "summary": "Juan Francisco Pagés Navarrete reports a convolutional neural network pipeline for ultra-short-period planet candidates in TESS photometry. In the first arXiv version, replacing synthetic negative examples with real false positives reduced the reported AUC from 0.97 to 0.50; the author identified a blend-related ceiling and retrained using real false positives. The work also applies candidate prioritization and follow-up to statistically validate TOI-6662 b. The validated planet is a specific astronomy result, while the small candidate sample and selection process limit generalization of the benchmark findings.",
+  "field": "physics",
+  "ai_technology": "Convolutional neural network for TESS transit candidate detection",
+  "organization": "Independent researcher, Málaga, Spain",
+  "source_url": "https://arxiv.org/html/2610.42009v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The v1 compares a CNN against synthetic and real false positives, then uses candidate ranking and statistical follow-up evidence in a specific TOI-6662 b validation. This external/independent confirmation occurred within the same study rather than an independent later research-team follow-up.",
+    "unknown": "A small, selected sample limits generalization; statistical validation is not equivalent to a mass measurement, and the CNN is a candidate-prioritization tool.",
+    "ai_role": "A convolutional neural network ranks TESS transit candidates; the candidate TOI-6662 b was statistically validated using follow-up and other evidence.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.42009v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary source full text reviewed for title, authorship, Methods, Results, version date and stated limitations."
+  }
+}

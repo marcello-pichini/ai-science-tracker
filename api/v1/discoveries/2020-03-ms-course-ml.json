@@ -1,0 +1,33 @@
+{
+  "id": "2020-03-ms-course-ml",
+  "title": "Longitudinal records supported forecasts of multiple sclerosis progression",
+  "summary": "The study used routine records from 1,624 people with multiple sclerosis to forecast transition from relapsing-remitting to secondary-progressive disease at 180, 360 and 720 days. Visit-based models had 70–100% recall but 5–10% precision without confidence filtering; the history model reached 67% recall and 42% precision at 720 days. Few transitions and false positives limit treatment use; the study does not show clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Recurrent neural network (LSTM); random forest, SVM, KNN and AdaBoost",
+  "organization": "Sapienza University of Rome; IRCCS Istituto Neurologico Mediterraneo Neuromed",
+  "source_url": "https://doi.org/10.1371/journal.pone.0230219",
+  "source_type": "paper",
+  "publication_date": "2020-03-20",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A single-center retrospective cohort of 18,574 visits from 1,624 patients. Visit models used patient-wise leave-one-group-out evaluation; the history model used a train/test split because leave-one-group-out training was computationally infeasible.",
+    "unknown": "No independent, prospective or clinical-impact evaluation is reported unless specified in the tested field.",
+    "ai_role": "The models learned from clinical visits or longitudinal patient history to forecast disease-course transition.",
+    "evidence_urls": [
+      "https://doi.org/10.1371/journal.pone.0230219"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Read the original full text, including author affiliations, Methods and Results; checked the first result-bearing version and active/archive catalog for same-result records."
+  }
+}

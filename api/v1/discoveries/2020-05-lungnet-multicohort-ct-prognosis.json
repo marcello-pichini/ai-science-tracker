@@ -1,0 +1,33 @@
+{
+  "id": "2020-05-lungnet-multicohort-ct-prognosis",
+  "title": "A Shallow Convolutional Neural Network Predicts Prognosis of Lung Cancer Patients in Multi-Institutional CT-Image Data",
+  "summary": "LungNet uses pretreatment CT images to predict non-small-cell lung cancer survival across four medical-center cohorts, with concordance indices of 0.58–0.62. Transfer learning improved nodule-classification AUC from 0.82 to 0.85; these retrospective predictions do not demonstrate improved clinical outcomes.",
+  "field": "medicine",
+  "ai_technology": "LungNet, a shallow three-dimensional convolutional neural network with transfer learning",
+  "organization": "Stanford University; Charité – Universitätsmedizin Berlin; Moffitt Cancer Center; Stanford University Medical Center",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8008967/",
+  "source_type": "paper",
+  "publication_date": "2020-05-18",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Four independent NSCLC survival cohorts (n=129, 185, 311, 84) had C-indices 0.62, 0.62, 0.62, and 0.58; transfer learning reached AUC 0.85 for nodule malignancy classification versus 0.82 from scratch.",
+    "unknown": "All evidence is retrospective prediction; the study does not show improved patient outcomes or clinical utility.",
+    "ai_role": "A shallow 3D CNN extracts prognostic features from pretreatment CT scans and predicts survival; transfer learning applies the model to nodule malignancy classification.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8008967/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary full-text Methods and Results; bibliographic date and exact-result catalog comparison checked."
+  }
+}

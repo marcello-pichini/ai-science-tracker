@@ -1,0 +1,33 @@
+{
+  "id": "2021-09-j-xops-2021-100067",
+  "title": "Three-Dimensional Map of Descemet Membrane Endothelial Keratoplasty Detachment: Development and Application of a Deep Learning Model.",
+  "summary": "The model quantified graft detachment area and volume and was more sensitive than slit-lamp estimates in some substantial detachments; mean percent detachment exceeded specialists’ estimates by 8.2 percentage points (95% CI 6.2–10.2). Separate validation set: 20 scans/5,120 labeled images, Youden index 0.85, Dice 0.73 and R² 0.90 against manual labels. A prospective application set included 107 eyes; masked re-review of discrepant scans supported cases where clinicians underestimated detachment. No clinical outcome benefit was tested.",
+  "field": "multidisciplinary",
+  "ai_technology": "A supervised neural network segments posterior cornea and detached graft in anterior-segment OCT slices; the 3D maps aggregate the resulting cross-sectional segmentation.",
+  "organization": "Eye Center, Albert-Ludwigs-University of Freiburg, Freiburg, Germany",
+  "source_url": "https://doi.org/10.1016/j.xops.2021.100067",
+  "source_type": "paper",
+  "publication_date": "2021-09-29",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "ai_role": "A supervised neural network segments posterior cornea and detached graft in anterior-segment OCT slices; the 3D maps aggregate the resulting cross-sectional segmentation.",
+    "tested": "The model quantified graft detachment area and volume and was more sensitive than slit-lamp estimates in some substantial detachments; mean percent detachment exceeded specialists’ estimates by 8.2 percentage points (95% CI 6.2–10.2).",
+    "unknown": "Separate validation set: 20 scans/5,120 labeled images, Youden index 0.85, Dice 0.73 and R² 0.90 against manual labels. A prospective application set included 107 eyes; masked re-review of discrepant scans supported cases where clinicians underestimated detachment. No clinical outcome benefit was tested.",
+    "evidence_urls": [
+      "https://doi.org/10.1016/j.xops.2021.100067"
+    ],
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Read the primary full paper (publisher PDF copy via the University of Freiburg repository), including Methods and Results; checked both frozen catalogs for title/result duplicates. A U-Net segmentation model maps DMEK graft detachment from anterior-segment OCT, with separate manually labeled training and validation sets; the model was also applied to 107 prospectively followed eyes and identified detachments that clinicians underestimated. This is a specific clinical imaging result, not evidence of improved patient outcomes. The full text was accessed from an institutional repository copy after the PMC page presented a browser verification screen."
+  }
+}

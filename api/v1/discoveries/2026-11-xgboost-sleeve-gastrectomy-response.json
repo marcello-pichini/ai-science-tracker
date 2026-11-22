@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-xgboost-sleeve-gastrectomy-response",
+  "title": "Machine-learning prediction of suboptimal weight-loss response after sleeve gastrectomy",
+  "summary": "An XGBoost model using eight routine preoperative predictors estimated the risk of less than 25% total weight loss one year after sleeve gastrectomy. In retrospective cohorts from three hospitals (1,094 derivation patients and external cohorts of 84 and 134), external AUC was 0.761; the paper also reports better performance than ten clinicians in its comparison. This supports risk stratification in the studied cohorts, not a causal benefit from model-guided care.",
+  "field": "medicine",
+  "ai_technology": "Six candidate algorithms were compared; an XGBoost model using eight predictors was selected and interpreted with SHAP.",
+  "organization": "China-Japan Friendship Hospital; Third Xiangya Hospital; Second Hospital of Shandong University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13732101/",
+  "source_type": "paper",
+  "publication_date": "2026-11-03",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective derivation and two independent external hospital cohorts; internal AUC 0.821 and external AUC 0.761. The study compared model predictions with ten clinicians.",
+    "unknown": "All cohorts were retrospective and limited to the participating hospitals; no prospective impact study established that using the model improves weight-loss outcomes.",
+    "ai_role": "Six candidate algorithms were compared; an XGBoost model using eight predictors was selected and interpreted with SHAP.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13732101/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary full text and PubMed bibliographic record, including cohort design, model results and publication date."
+  }
+}

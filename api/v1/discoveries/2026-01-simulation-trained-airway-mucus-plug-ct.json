@@ -1,0 +1,33 @@
+{
+  "id": "2026-01-simulation-trained-airway-mucus-plug-ct",
+  "title": "Simulation-trained deep learning detected mucus plugs on non-contrast CT",
+  "summary": "Using simulated training data without manually annotated training images, nnU-Net detected and segmented airway mucus plugs on non-contrast CT. Detection sensitivity was 0.837 (95% CI 0.818–0.854) on a test set of 98 plug-positive scans. The study does not establish prospective clinical benefit, multisite transportability or improved patient outcomes.",
+  "field": "medicine",
+  "ai_technology": "Simulation-trained nnU-Net",
+  "organization": "University of Pennsylvania; Dokuz Eylül University; University of Pittsburgh; Wake Forest University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12938545/",
+  "source_type": "paper",
+  "publication_date": "2026-01-28",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.3390/bioengineering13020153",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Using simulated training data without manually annotated training images, nnU-Net detected and segmented airway mucus plugs on non-contrast CT. Detection sensitivity was 0.837 (95% CI 0.818–0.854) on a test set of 98 plug-positive scans.",
+    "unknown": "The study does not establish prospective clinical benefit, multisite transportability or improved patient outcomes.",
+    "ai_role": "Simulation-generated annotations trained nnU-Net to detect and segment mucus plugs in CT scans.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12938545/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Original full-text Methods and Results reviewed from the primary paper or preprint; first result-bearing version checked from the supplied source review; author affiliations checked against exact-DOI metadata where available."
+  }
+}

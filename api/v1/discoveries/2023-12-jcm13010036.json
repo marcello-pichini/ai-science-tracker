@@ -1,0 +1,33 @@
+{
+  "id": "2023-12-jcm13010036",
+  "title": "In-Advance Prediction of Pressure Ulcers via Deep-Learning-Based Robust Missing Value Imputation on Real-Time Intensive Care Variables.",
+  "summary": "AUROC .945 on-time and .912 at 48 hours; external AUROC improved after rescaling/fine-tuning. MIMIC-IV and KNUH data; external results depend on adaptation, so not untreated transportability.",
+  "field": "medicine",
+  "ai_technology": "GRU-D++ predicts ICU pressure-ulcer occurrence from time series with missing-data handling.",
+  "organization": "Department of Research & Development, Ziovision Co., Ltd., Chuncheon 24341, Republic of Korea",
+  "source_url": "https://www.mdpi.com/2077-0383/13/1/36",
+  "source_type": "paper",
+  "publication_date": "2023-12-20",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "ai_role": "GRU-D++ predicts ICU pressure-ulcer occurrence from time series with missing-data handling.",
+    "tested": "AUROC .945 on-time and .912 at 48 hours; external AUROC improved after rescaling/fine-tuning.",
+    "unknown": "MIMIC-IV and KNUH data; external results depend on adaptation, so not untreated transportability.",
+    "evidence_urls": [
+      "https://www.mdpi.com/2077-0383/13/1/36"
+    ],
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Full article reports ICU pressure-ulcer prediction with MIMIC-IV and external hospital data, including performance after adaptation."
+  }
+}

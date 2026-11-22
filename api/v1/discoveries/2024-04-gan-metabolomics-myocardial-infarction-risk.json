@@ -1,0 +1,33 @@
+{
+  "id": "2024-04-gan-metabolomics-myocardial-infarction-risk",
+  "title": "GAN augmentation improves retrospective metabolomic prediction of incident myocardial infarction",
+  "summary": "The study used KORA S4 and F4 data from 1,454 participants without prior myocardial infarction, including 78 incident cases, to model seven-year risk from clinical and metabolomic variables. A GAN generated minority-class samples for an MLP predictor, and the combined approach improved reported accuracy by about two percentage points over comparison models. This is retrospective prediction in an imbalanced observational cohort, not evidence of causation or clinical utility.",
+  "field": "medicine",
+  "ai_technology": "Generative adversarial network data augmentation and multilayer perceptron prediction",
+  "organization": "Technical University of Munich",
+  "source_url": "https://www.mdpi.com/2218-1989/14/5/258",
+  "source_type": "paper",
+  "publication_date": "2024-04-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The GAN-augmented MLP was evaluated on KORA cohort data for seven-year incident myocardial infarction prediction; the study reports 78 cases among 1,454 participants.",
+    "unknown": "The retrospective cohort is imbalanced and the review found no independent prospective validation or evidence of clinical utility.",
+    "ai_role": "A GAN synthesizes minority-class examples for training a metabolomics-plus-clinical risk prediction model.",
+    "evidence_urls": [
+      "https://www.mdpi.com/2218-1989/14/5/258"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Full primary publisher article, including Methods, Results, author affiliations and publication history"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2023-06-interoperable-and-explainable-machine-learning-models-to-predict-morbidity-and-mortality-in-acute-ne-24748556",
+  "title": "Interoperable and explainable machine learning models to predict morbidity and mortality in acute neurological injury in the pediatric intensive care unit: secondary analysis of the TOPICC study",
+  "summary": "In a TOPICC secondary analysis of 1,860 pediatric intensive-care patients flagged for possible acute neurological injury, an ensemble of machine-learning models improved mortality precision measures over the original logistic model. The work concerns retrospective risk prediction and does not establish that using the models improves care.",
+  "field": "medicine",
+  "ai_technology": "An ensemble meta-regressor combines random forest, gradient boosting, and SVM on admission physiology; SHAP ranks contributing predictors.",
+  "organization": "University of Utah; Intermountain Primary Children’s Hospital",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10338865/",
+  "source_type": "paper",
+  "publication_date": "2023-06-28",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "https://europepmc.org/articles/PMC10338865?pdf=render",
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary full text, including Methods and Results; primary publication record or first result-bearing version checked."
+  },
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Out-of-bag assessment reported mortality AUROC 0.91 and average precision 0.59 versus 0.49 for the original model; at specificity 0.995, PPV was 0.79 versus 0.60.",
+    "unknown": "Secondary retrospective analysis with internal resampling; no prospective decision impact or patient benefit was tested.",
+    "ai_role": "An ensemble meta-regressor combines random forest, gradient boosting, and SVM on admission physiology; SHAP ranks contributing predictors.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10338865/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

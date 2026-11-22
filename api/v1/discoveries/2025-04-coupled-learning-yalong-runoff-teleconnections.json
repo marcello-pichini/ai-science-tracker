@@ -1,0 +1,33 @@
+{
+  "id": "2025-04-coupled-learning-yalong-runoff-teleconnections",
+  "title": "Coupled statistical and deep-learning models link teleconnection indices with Yalong River runoff forecasts",
+  "summary": "Using monthly runoff records from four Yalong River Basin stations for 1953–2011 and atmospheric-circulation indices, the study reports a one-month index lag as most informative and identifies Northern Hemisphere Polar Vortex and East Asian Trough indices among predictive variables. SRA-MLPR reduced reported RMSE from 798.47 to 594.45 and MAPE from 34.79% to 22.90% versus the stated baseline, with NSE increasing from 0.67 to 0.76. The held-out data come from the same basin and time-series source; these predictive associations do not establish causal climate effects or transfer to other basins.",
+  "field": "climate",
+  "ai_technology": "Stepwise regression, support vector regression, multilayer perceptron regression, and SHAP analysis",
+  "organization": "Hohai University",
+  "source_url": "https://www.nature.com/articles/s41598-025-00115-1",
+  "source_type": "paper",
+  "publication_date": "2025-04-27",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Coupled models were evaluated on a held-out subset of four-station historical runoff data; the article reports 10-fold cross-validation and compares forecast metrics with baseline models.",
+    "unknown": "The evaluation uses a single basin and historical time series; external basin transfer and causal climate attribution are not established.",
+    "ai_role": "Stepwise regression selected atmospheric-index features and SVR/MLP models forecast runoff; SHAP was used to rank model predictors.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41598-025-00115-1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Full primary publisher article and primary bibliographic metadata, including Methods, Results, author affiliations and publication history"
+  }
+}

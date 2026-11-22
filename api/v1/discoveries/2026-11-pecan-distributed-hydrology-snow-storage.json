@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-pecan-distributed-hydrology-snow-storage",
+  "title": "Mass-constrained hydrologic networks reveal a snow-storage limitation in a Colorado watershed",
+  "summary": "Yihan Wang and colleagues at the University of Oklahoma, Lawrence Berkeley National Laboratory, the International Computer Science Institute and the University of Michigan present PECAN, a distributed convolutional LSTM framework with strict and relaxed mass-conservation variants. In a snow-dominated Colorado watershed, the models produced competitive streamflow simulations and spatial latent states resembling reference soil-moisture dynamics. Comparison of strict and relaxed constraints revealed that the strict variant prematurely removed winter snow storage rather than retaining it for spring release. This is a single-basin proof of concept, without cross-basin validation.",
+  "field": "climate",
+  "ai_technology": "Physics-enhanced conservation-augmented convolutional LSTM (PECAN)",
+  "organization": "University of Oklahoma; Lawrence Berkeley National Laboratory; International Computer Science Institute; University of Michigan",
+  "source_url": "https://arxiv.org/html/2611.13346v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-09",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The first arXiv version compares strict and relaxed mass-conserving distributed models with LSTM, MC-LSTM, MCR-LSTM and VIC baselines at two gauges; it compares latent states with SWE and soil-moisture references in the North Platte Headwaters watershed.",
+    "unknown": "Single-basin proof of concept; no cross-basin validation. The strict model’s premature loss of winter snow storage is a limitation identified by the study.",
+    "ai_role": "A convolutional LSTM models spatially distributed streamflow under strict or relaxed conservation constraints; interpreting internal states exposes a snow-storage mismatch.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.13346v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary source full text reviewed for title, authorship, Methods, Results, version date and stated limitations."
+  }
+}

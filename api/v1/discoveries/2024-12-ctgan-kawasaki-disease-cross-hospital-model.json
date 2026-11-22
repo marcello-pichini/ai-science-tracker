@@ -1,0 +1,33 @@
+{
+  "id": "2024-12-ctgan-kawasaki-disease-cross-hospital-model",
+  "title": "CTGAN-augmented model predicts Kawasaki disease in a second-hospital validation cohort",
+  "summary": "The authors developed stacked disease-classifier models, including a CTGAN-augmented version, using clinical data from febrile children. In validation at a second Taiwanese hospital, CTGAN-DC reported 95% sensitivity and 95% specificity for Kawasaki disease; the comparator model cited from prior work performed poorly on that cohort. This retrospective cross-hospital assessment is a model validation within the study, not prospective clinical testing or proof of improved care.",
+  "field": "medicine",
+  "ai_technology": "Stacked disease classifier with conditional tabular GAN (CTGAN) data augmentation",
+  "organization": "National Sun Yat-sen University",
+  "source_url": "https://doi.org/10.1371/journal.pone.0314995",
+  "source_type": "paper",
+  "publication_date": "2024-12-31",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The study evaluated the CTGAN-DC model using a second-hospital validation cohort and reported 95% sensitivity and specificity there.",
+    "unknown": "The evaluation is retrospective and does not establish prospective clinical utility or improved patient outcomes; comparator differences should not be interpreted as independent replication.",
+    "ai_role": "CTGAN augmentation and a stacked disease classifier were used to address class imbalance and predict Kawasaki disease among febrile children.",
+    "evidence_urls": [
+      "https://doi.org/10.1371/journal.pone.0314995"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Full primary publisher article, including Methods, Results, author affiliations and publication history"
+  }
+}

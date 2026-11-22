@@ -1,0 +1,33 @@
+{
+  "id": "2022-12-apple-fruitlet-vision-growth-tracking",
+  "title": "Autonomous apple fruitlet sizing and growth rate tracking using computer vision",
+  "summary": "Computer-vision models segment and associate apple fruitlets across days to estimate growth and thinning response. The first arXiv version reports orchard and robotic-field evaluations, with predicted persist/abscise rates within 3% of manual-caliper estimates; this is a measurement result, not a demonstrated yield gain.",
+  "field": "other",
+  "ai_technology": "Mask R-CNN and pix2pix fruitlet segmentation with an attentional graph neural network for cross-day association",
+  "organization": "Not stated in the reviewed arXiv v1",
+  "source_url": "https://arxiv.org/html/2212.01506v1",
+  "source_type": "paper",
+  "publication_date": "2022-12-03",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 4
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The v1 pipeline estimated fruitlet persistence/abscission rates within 3% of manual-caliper estimates and evaluated orchard growth tracking and a robotic field image set.",
+    "unknown": "Results are limited to evaluated sites and varieties; performance does not demonstrate increased yield or downstream agronomic benefit.",
+    "ai_role": "Mask R-CNN and pix2pix detect and segment fruitlets; an attentional graph neural network associates individuals across days for growth/thinning estimates.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2212.01506v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary arXiv v1 full text, Methods and Results; version-specific figures and chronology checked."
+  }
+}

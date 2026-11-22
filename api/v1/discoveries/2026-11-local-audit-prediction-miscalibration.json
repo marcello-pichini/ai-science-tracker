@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-local-audit-prediction-miscalibration",
+  "title": "Local audits reveal where an ICU mortality model’s errors concentrate",
+  "summary": "Bernardo Modenesi and colleagues at the University of Utah, Ohio State University, rpotential.ai and Google present a method for identifying subgroups in which a prediction model’s calibration error is concentrated. Applied retrospectively to an ICU mortality model, their audit localized previously reported overprediction to two of three testable subgroups while the audit found no statistically detected error in the moderate-risk subgroup. The result is an exploratory audit of an existing model, not a new clinical predictor or evidence of improved patient outcomes; the authors report limited support for broad generalization.",
+  "field": "computer science",
+  "ai_technology": "Outcome-learned random-forest similarity groups and ridge-based calibration audit",
+  "organization": "University of Utah; The Ohio State University; rpotential.ai; Google",
+  "source_url": "https://arxiv.org/html/2611.02639v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-02",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The first arXiv version reports a held-out retrospective ICU application and finds localized mortality overprediction in two of three testable subgroups, with no detected error in the moderate-risk subgroup.",
+    "unknown": "Exploratory retrospective audit; limited support and one application do not establish broad clinical generality or patient benefit.",
+    "ai_role": "Outcome-trained similarity structure defines local audit subgroups; calibration errors are estimated and compared with uncertainty.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.02639v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary source full text reviewed for title, authorship, Methods, Results, version date and stated limitations."
+  }
+}

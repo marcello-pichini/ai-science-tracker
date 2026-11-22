@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-memoir-vlm-a-multimodal-vision-language-model",
+  "title": "MEMOIR-VLM—a multimodal vision-language model for Alzheimer's disease classification and question answering",
+  "summary": "On held-out ADNI subjects, the corrected encoder reported 91.3% balanced accuracy for cognitively normal versus dementia classification and 68.2% for three-class diagnosis. Zero-shot OASIS-3 evaluation reported 78.7% balanced accuracy for cognitively normal versus impaired classification (AUC 0.889) with the DTI branch masked. Subject-level held-out ADNI test set (474 subjects) and separate zero-shot OASIS-3 cohort (1,048 subjects); retrospective dataset evaluations only. The paper notes that one initial configuration leaked CDR-SB as input and reports corrected evaluation excluding it. No prospective clinical-use or outcome validation is reported.",
+  "field": "medicine",
+  "ai_technology": "A multimodal learned encoder combines MRI, diffusion imaging and clinical variables for multi-task diagnosis and regression; a retrieval-augmented language layer supports case-based question answering.",
+  "organization": "Department of Neurology, University of California, San Francisco, San Francisco, California, USA",
+  "source_url": "https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2026.1902258/full",
+  "source_type": "paper",
+  "publication_date": "2026-10-01",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "On held-out ADNI subjects, the corrected encoder reported 91.3% balanced accuracy for cognitively normal versus dementia classification and 68.2% for three-class diagnosis. Zero-shot OASIS-3 evaluation reported 78.7% balanced accuracy for cognitively normal versus impaired classification (AUC 0.889) with the DTI branch masked.",
+    "unknown": "Subject-level held-out ADNI test set (474 subjects) and separate zero-shot OASIS-3 cohort (1,048 subjects); retrospective dataset evaluations only. The paper notes that one initial configuration leaked CDR-SB as input and reports corrected evaluation excluding it. No prospective clinical-use or outcome validation is reported.",
+    "ai_role": "A multimodal learned encoder combines MRI, diffusion imaging and clinical variables for multi-task diagnosis and regression; a retrieval-augmented language layer supports case-based question answering.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/computational-neuroscience/articles/10.3389/fncom.2026.1902258/full"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary source full text Methods and Results; version/date checked against bibliographic record."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-arxiv-2611-14975",
+  "title": "Aggregate Accuracy Hides Diagnosis-Specific Failure in Medical Vision-Language Models",
+  "summary": "On 6,048 balanced ChestX-ray14 cases, HuatuoGPT-Vision and Qwen2.5-VL detected none of 432 pneumothorax-positive cases; comparison models detected 38% and 67%. This model-specific failure also appeared at larger model scale. The failure replicated on an independent SIIM-ACR set with radiologist-drawn masks: the same models detected 0/432 confirmed pneumothoraces, including 0/144 largest lesions. Retrospective diagnostic evaluation only; no clinical benefit established.",
+  "field": "medicine",
+  "ai_technology": "Medical vision-language models directly answered per-finding questions from chest radiographs; the study evaluated their diagnosis-specific recall, confidence and internal representations.",
+  "organization": "Not stated in the reviewed material",
+  "source_url": "https://arxiv.org/html/2611.14975v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-11",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "ai_role": "Medical vision-language models directly answered per-finding questions from chest radiographs; the study evaluated their diagnosis-specific recall, confidence and internal representations.",
+    "tested": "On 6,048 balanced ChestX-ray14 cases, HuatuoGPT-Vision and Qwen2.5-VL detected none of 432 pneumothorax-positive cases; comparison models detected 38% and 67%. This model-specific failure also appeared at larger model scale.",
+    "unknown": "The failure replicated on an independent SIIM-ACR set with radiologist-drawn masks: the same models detected 0/432 confirmed pneumothoraces, including 0/144 largest lesions. Retrospective diagnostic evaluation only; no clinical benefit established.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.14975v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Read the primary preprint Methods and Results; its v1 record dates the result to 11 November 2026. The study directly evaluates medical VLMs on a specific diagnostic question: two models missed every pneumothorax in a balanced ChestX-ray14 audit while other models detected a substantial share; the failure replicated on an independent SIIM-ACR set with radiologist masks. Exact title/result comparison found no matching entry in either supplied catalog. This is retrospective diagnostic validation, not evidence of clinical benefit; ChestX-ray14 labels and binary prompts limit interpretation."
+  }
+}

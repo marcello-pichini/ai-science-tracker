@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-29-762938",
+  "title": "ChAI-Net learns a regulatory code for chromatin co-accessibility",
+  "summary": "Identifies distinct sequence motifs and motif arrangement/orientation patterns associated with co-accessibility at enhancers, promoters and CTCF-bound regions in mouse embryonic stem cells, including patterns missed by average-accessibility modeling. Held-out test set (MSE 0.0079; Pearson r=0.46) plus in-silico motif insertion/ablation; no direct experimental perturbation validation reported in the reviewed results.",
+  "field": "biology",
+  "ai_technology": "Deep convolutional neural network predicts chromatin co-accessibility maps from DNA sequence; interpretation provides motif-level regulatory hypotheses.",
+  "organization": "Not stated in the reviewed material",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13734088/",
+  "source_type": "paper",
+  "publication_date": "2026-10-31",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "ai_role": "Deep convolutional neural network predicts chromatin co-accessibility maps from DNA sequence; interpretation provides motif-level regulatory hypotheses.",
+    "tested": "Identifies distinct sequence motifs and motif arrangement/orientation patterns associated with co-accessibility at enhancers, promoters and CTCF-bound regions in mouse embryonic stem cells, including patterns missed by average-accessibility modeling.",
+    "unknown": "Held-out test set (MSE 0.0079; Pearson r=0.46) plus in-silico motif insertion/ablation; no direct experimental perturbation validation reported in the reviewed results.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13734088/"
+    ],
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Read the full bioRxiv v1 preprint in PMC (2026-10-31). Methods/Results show ChAI-Net is a deep CNN trained on ~3.4 million 2,048-bp windows of mouse embryonic stem-cell SAMOSA single-molecule footprint data to predict 16-bp-resolution co-accessibility maps. Held-out testing reports MSE 0.0079 and Pearson r=0.46; model interpretation and in-silico motif insertion/ablation identify sequence motifs and spacing/orientation patterns associated with co-accessibility, including patterns not recovered by average-accessibility modeling. This is a new, model-derived regulatory finding, with validation limited to held-out data and computational perturbations in one cell context (not causal wet-lab perturbation). The full text identifies Version 1 dated 2026-10-31 as containing the result. Exact DOI and title were checked and are absent from the active and archived catalog snapshots."
+  }
+}

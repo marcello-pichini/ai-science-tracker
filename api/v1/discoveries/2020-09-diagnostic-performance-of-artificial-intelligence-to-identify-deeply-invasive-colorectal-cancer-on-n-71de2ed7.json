@@ -1,0 +1,34 @@
+{
+  "id": "2020-09-diagnostic-performance-of-artificial-intelligence-to-identify-deeply-invasive-colorectal-cancer-on-n-71de2ed7",
+  "title": "Diagnostic performance of artificial intelligence to identify deeply invasive colorectal cancer on non-magnified plain endoscopic images",
+  "summary": "A fine-tuned ResNet-50 computer-aided diagnosis system classified deeply invasive T1b colorectal cancer from non-magnified endoscopic images. In a third-hospital test set of 44 lesions, it outperformed novice readers on specificity but was slightly below expert readers. The authors did not test real-time colonoscopy.",
+  "field": "medicine",
+  "ai_technology": "A pretrained ResNet-50 CNN is fine-tuned to estimate the probability that an endoscopic image depicts deeply invasive T1b colorectal cancer.",
+  "organization": "University of Tokyo; National Cancer Center Hospital East",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7508661/",
+  "source_type": "paper",
+  "publication_date": "2020-09-22",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary source full text, including Methods and Results; first result-bearing version checked against primary publication metadata."
+  },
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Third-hospital lesion-level evaluation reported AUC 0.888; at the study threshold, specificity was 87%, sensitivity 81% and accuracy 84%. The cohort contained 44 lesions.",
+    "unknown": "Small retrospective test set; performance was below experts and no real-time or clinical-outcome evaluation was performed.",
+    "ai_role": "A pretrained ResNet-50 CNN is fine-tuned to estimate the probability that an endoscopic image depicts deeply invasive T1b colorectal cancer.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7508661/",
+      "https://pubmed.ncbi.nlm.nih.gov/33015336/"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

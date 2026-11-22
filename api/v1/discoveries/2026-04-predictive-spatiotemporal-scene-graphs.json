@@ -1,0 +1,34 @@
+{
+  "id": "2026-04-predictive-spatiotemporal-scene-graphs",
+  "title": "Predictive Spatio-Temporal Scene Graphs for Semi-Static Scenes",
+  "summary": "PredictiveGraphs combines open-vocabulary scene mapping, language-model assistance, and state persistence modeling to predict where semi-static objects will be. The paper evaluates simulation tasks and 25 real-world queries during a three-week laboratory collection; this is a bounded robotics demonstration, not long-term deployment.",
+  "field": "computer science",
+  "ai_technology": "CLIP embeddings and an LLM verifier/planner support object recognition and scene queries; a Bayesian persistence filter predicts object-receptacle states.",
+  "organization": "Not stated in the reviewed arXiv full text",
+  "source_url": "https://arxiv.org/html/2605.00121v1",
+  "source_type": "paper",
+  "publication_date": "2026-04-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Evaluation covered 250 predictive and 125 adaptive simulation queries and 25 open-vocabulary real-world queries during three weeks in a laboratory.",
+    "unknown": "Bounded laboratory evaluation; not sustained deployment, and the paper notes potential language-model hallucinations.",
+    "ai_role": "The learned scene-state system predicts object locations over time and enables time-aware navigation queries.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2605.00121v1",
+      "https://arxiv.org/html/2605.00121v3"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary source full-text Methods and Results; version date and reported validation scope checked."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2021-11-machine-learning-organotropic-metastasis",
+  "title": "Are we there yet? A machine learning architecture to predict organotropic metastases",
+  "summary": "A tree-based machine-learning architecture classified metastatic sites from primary-tumor RNA profiles and identified overlapping enriched processes across several metastatic destinations. The analysis uses retrospective TCGA data and is limited to eligible cancer types and annotated cases; it does not establish prospective prediction.",
+  "field": "biology",
+  "ai_technology": "Statistical feature selection and tree-based classifiers for metastatic-site prediction from RNA profiles",
+  "organization": "University of Georgia; Weill Cornell Medicine",
+  "source_url": "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12920-021-01122-7",
+  "source_type": "paper",
+  "publication_date": "2021-11-24",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Across 35 cancer-site pairs, the study reported mean precision, recall, F1 and accuracy of 0.82 and overlapping enriched processes for four metastatic sites.",
+    "unknown": "A 30% holdout from TCGA is retrospective internal validation; findings cover 16 of 33 studied cancer types and depend on annotated profiles.",
+    "ai_role": "Machine-learning classifiers use primary-tumor transcript features to predict metastatic sites; selected features support pathway-enrichment analysis.",
+    "evidence_urls": [
+      "https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12920-021-01122-7"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary full-text Methods and Results; publication date and catalog comparisons checked."
+  }
+}

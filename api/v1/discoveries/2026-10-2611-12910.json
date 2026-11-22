@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-2611-12910",
+  "title": "Leveraging Large Language Models to Predict Atomic Oxygen Erosion of Polymers in Low Earth Orbit",
+  "summary": "On the restricted-group test, GPT-4o predicted erosion yield for polymer chemistries excluded from training; adding film thickness or layer count did not materially improve performance, indicating chemistry/exposure variables dominated those bulk descriptors in this dataset. 201 historical NASA-mission measurements, 55 chemistries; random and chemistry-disjoint restricted-group evaluation, with five restricted-group splits testing 29 held-out chemistries (26 for the thickness/layer ablation). Reported OME 0.154 and log-R² 0.719. This is retrospective prediction against measurements, not prospective or new flight validation.",
+  "field": "materials",
+  "ai_technology": "Fine-tuned GPT-4o predicts polymer atomic-oxygen erosion yield from polymer chemistry and exposure descriptors; the model supplies the feature-ablation evidence for the reported descriptor finding.",
+  "organization": "Department of Chemical Engineering, University of California, Santa Barbara, Santa Barbara, California, USA",
+  "source_url": "https://arxiv.org/html/2611.12910",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "On the restricted-group test, GPT-4o predicted erosion yield for polymer chemistries excluded from training; adding film thickness or layer count did not materially improve performance, indicating chemistry/exposure variables dominated those bulk descriptors in this dataset.",
+    "unknown": "201 historical NASA-mission measurements, 55 chemistries; random and chemistry-disjoint restricted-group evaluation, with five restricted-group splits testing 29 held-out chemistries (26 for the thickness/layer ablation). Reported OME 0.154 and log-R² 0.719. This is retrospective prediction against measurements, not prospective or new flight validation.",
+    "ai_role": "Fine-tuned GPT-4o predicts polymer atomic-oxygen erosion yield from polymer chemistry and exposure descriptors; the model supplies the feature-ablation evidence for the reported descriptor finding.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.12910"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary source full text Methods and Results; version/date checked against bibliographic record."
+  }
+}

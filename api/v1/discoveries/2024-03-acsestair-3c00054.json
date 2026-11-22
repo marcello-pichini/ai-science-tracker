@@ -1,0 +1,33 @@
+{
+  "id": "2024-03-acsestair-3c00054",
+  "title": "Enhancing Global Estimation of Fine Particulate Matter Concentrations by Including Geophysical <i>a Priori</i> Information in Deep Learning.",
+  "summary": "The resulting global monthly PM2.5 estimates remain consistent with monitors under sparse training; at 1% of monitors, R² was 0.73 with geophysical inputs versus 0.51 without. The paper also reports spatial/seasonal distribution estimates. Buffer leave-one-out spatial cross-validation up to 1,000-km exclusion radii plus region/global monitor comparisons; R² 0.75–0.87 in global monthly spatial CV. It remains a model-derived estimate, with uncertainty and spatial/temporal autocorrelation caveats.",
+  "field": "multidisciplinary",
+  "ai_technology": "A residual CNN learns local bias in geophysical a priori PM2.5 using satellite, simulation and monitor inputs; a tailored loss constrains estimates in sparse-monitor regions.",
+  "organization": "Department of Energy, Environmental, and Chemical Engineering, Washington University in St. Louis, St. Louis, Missouri 63130, United States",
+  "source_url": "https://pubs.acs.org/doi/pdf/10.1021/acsestair.3c00054",
+  "source_type": "paper",
+  "publication_date": "2024-03-27",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "ai_role": "A residual CNN learns local bias in geophysical a priori PM2.5 using satellite, simulation and monitor inputs; a tailored loss constrains estimates in sparse-monitor regions.",
+    "tested": "The resulting global monthly PM2.5 estimates remain consistent with monitors under sparse training; at 1% of monitors, R² was 0.73 with geophysical inputs versus 0.51 without. The paper also reports spatial/seasonal distribution estimates.",
+    "unknown": "Buffer leave-one-out spatial cross-validation up to 1,000-km exclusion radii plus region/global monitor comparisons; R² 0.75–0.87 in global monthly spatial CV. It remains a model-derived estimate, with uncertainty and spatial/temporal autocorrelation caveats.",
+    "evidence_urls": [
+      "https://pubs.acs.org/doi/pdf/10.1021/acsestair.3c00054"
+    ],
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Full primary ACS article reviewed (published online 2024-03-27). A residual CNN combines satellite, GEOS-Chem and monitor data to estimate monthly 1-km PM2.5 for 1998–2019, with a new buffer leave-one-out validation addressing spatial autocorrelation. Catalog checks found only distinct regional PM2.5 studies, no same global result."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-x-strata-aneurysm-angiography-layer-reconstruction",
+  "title": "X-Strata separates aneurysm sacs and overlapping vessels in two-view angiography",
+  "summary": "X-Strata uses learned decomposition of cine angiography and parallax between two views to infer aneurysm-sac and vessel layers and reconstruct a 3D sac surface. On 220 held-out patients from three centers, including 122 external cases, the method ranked first among 14 baselines for sac recovery in overlap regions and layer ordering. All evaluated patients had same-session 3D rotational angiography as reference; performance and clinical benefit for patients with only 2D angiography remain unestablished.",
+  "field": "medicine",
+  "ai_technology": "A neural network estimates angiographic layers and contrast curves; a second view supplies depth-order cues for 3D reconstruction.",
+  "organization": "Tsinghua University; Hunan University; Chinese PLA General Hospital; Air Force Medical Center of the Chinese PLA",
+  "source_url": "https://arxiv.org/abs/2611.17743v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-13",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Held-out patient evaluation across three centers compared two-view X-Strata with 14 baselines and same-session 3D rotational angiography references.",
+    "unknown": "The evaluated cohort had 3D rotational angiography; use in patients with only 2D imaging and any clinical-outcome benefit require separate evaluation.",
+    "ai_role": "A neural network estimates angiographic layers and contrast curves; a second view supplies depth-order cues for 3D reconstruction.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.17743v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary arXiv v1 full text, including Methods, held-out evaluation, limitations, author affiliations and version date."
+  }
+}

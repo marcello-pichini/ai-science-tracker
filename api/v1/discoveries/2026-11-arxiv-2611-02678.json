@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-arxiv-2611-02678",
+  "title": "Reap: Uncovering Monte Carlo proof search with a lightweight model",
+  "summary": "The authors report that later RL checkpoints make fewer explicit search decisions while completing more work per tactic action and organizing proofs around intermediate claims; Reaper-1 reaches 79.9% pass@32 on miniF2F-test. All successful proofs are replayed and checked by Lean’s kernel; evaluation covers miniF2F, ProofNet, FATE-M, PutnamBench, and CombiBench with benchmark decontamination. The paper frames the proof-search behavior claim as a pattern supported by quantitative traces and case studies.",
+  "field": "computer science",
+  "ai_technology": "Reaper-1 uses policy/value-guided MCTS in Lean; structured action logs analyze proof search as the model learns from continued pretraining, supervised tactic learning, and iterative reinforcement learning.",
+  "organization": "Not stated in the reviewed material",
+  "source_url": "https://arxiv.org/html/2611.02678v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-02",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "ai_role": "Reaper-1 uses policy/value-guided MCTS in Lean; structured action logs analyze proof search as the model learns from continued pretraining, supervised tactic learning, and iterative reinforcement learning.",
+    "tested": "The authors report that later RL checkpoints make fewer explicit search decisions while completing more work per tactic action and organizing proofs around intermediate claims; Reaper-1 reaches 79.9% pass@32 on miniF2F-test.",
+    "unknown": "All successful proofs are replayed and checked by Lean’s kernel; evaluation covers miniF2F, ProofNet, FATE-M, PutnamBench, and CombiBench with benchmark decontamination. The paper frames the proof-search behavior claim as a pattern supported by quantitative traces and case studies.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.02678v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "The canonical arXiv v1 HTML resolves the prior PDF-header identity conflict: it is arXiv:2611.02678v1, submitted 2026-11-02, with the assigned title and authors. The primary Methods and Results show a 1.7B policy-value model trained through MCTS-guided reinforcement learning; analyses across five Lean benchmarks and proof traces report a shift toward intermediate claims/compound tactic actions, alongside 79.9% pass@32 on miniF2F-test. Exact title/DOI searches of active and archived catalogs found no match."
+  }
+}

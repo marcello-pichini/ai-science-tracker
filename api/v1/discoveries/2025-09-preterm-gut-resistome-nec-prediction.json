@@ -1,0 +1,33 @@
+{
+  "id": "2025-09-preterm-gut-resistome-nec-prediction",
+  "title": "The Gut Resistome Atlas in Preterm Infants Enables Prediction of Necrotizing Enterocolitis Onset.",
+  "summary": "Machine-learning analysis of preterm-infant gut resistomes identified convergence before necrotizing enterocolitis (NEC) onset. A random-forest model achieved external-cohort AUROC 0.823 versus 0.727 for bacterial-species features; the external evaluation included only nine NEC cases and 16 controls, so this is an early predictive association, not clinical readiness or causation.",
+  "field": "medicine",
+  "ai_technology": "A 500-tree random forest uses gut-resistome features to predict impending NEC.",
+  "organization": "West China Second University Hospital, Sichuan University; Guangzhou Women and Children’s Medical Center; Zhujiang Hospital, Southern Medical University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12677589/",
+  "source_type": "paper",
+  "publication_date": "2025-09-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The study reports resistome convergence before NEC onset and external-validation AUROC 0.823, compared with 0.727 for bacterial-species features.",
+    "unknown": "The external cohort contains 9 NEC cases and 16 controls; the study does not establish causation or clinical readiness.",
+    "ai_role": "A random-forest model links infant gut resistome profiles to the reported NEC early-warning result.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12677589/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary source full-text Methods and Results; version date and reported validation scope checked."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2020-03-1038-s41598-020-62387-z",
+  "title": "Predicting Short-term Survival after Liver Transplantation using Machine Learning",
+  "summary": "Magnesium appeared among the leading selected features alongside INR, lymphocytes, platelets, WBC, sodium, age and BMI. The random-forest model achieved temporal-validation AUC 0.771, specificity 0.815 and sensitivity 0.50, outperforming the compared models by AUC. Derivation: 480 patients from 2004–2012 with 10-fold cross-validation. Temporal validation: 58 patients from 2013, including four deaths. This is existing-data temporal validation, not external validation; the small event count and lack of external testing limit generalizability. The article states external validation remains future work.",
+  "field": "medicine",
+  "ai_technology": "Random forest selected candidate predictors and produced the 30-day postoperative survival model from preoperative measurements; the source reports feature importance and compares the model with XGBoost, decision tree and logistic regression.",
+  "organization": "Department of Industrial Engineering and Management, National Chiao Tung University, Hsinchu, 300, Taiwan R.O.C; Department of General Surgery, Chang Gung Memorial Hospital, Keelung, Taiwan R.O.C; Chang Gung University College of Medicine, Taoyuan, Taiwan R.O.C; Laboratory of Immunology, Department of General Surgery, Chang Gung Memorial Hospital, Taipei, Taiwan R.O.C",
+  "source_url": "https://www.nature.com/articles/s41598-020-62387-z",
+  "source_type": "paper",
+  "publication_date": "2020-03-27",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Magnesium appeared among the leading selected features alongside INR, lymphocytes, platelets, WBC, sodium, age and BMI. The random-forest model achieved temporal-validation AUC 0.771, specificity 0.815 and sensitivity 0.50, outperforming the compared models by AUC.",
+    "unknown": "Derivation: 480 patients from 2004–2012 with 10-fold cross-validation. Temporal validation: 58 patients from 2013, including four deaths. This is existing-data temporal validation, not external validation; the small event count and lack of external testing limit generalizability. The article states external validation remains future work.",
+    "ai_role": "Random forest selected candidate predictors and produced the 30-day postoperative survival model from preoperative measurements; the source reports feature importance and compares the model with XGBoost, decision tree and logistic regression.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41598-020-62387-z",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7101323/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary source full text Methods and Results; version/date checked against bibliographic record."
+  }
+}

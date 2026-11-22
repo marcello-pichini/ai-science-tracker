@@ -1,0 +1,34 @@
+{
+  "id": "2026-03-mace-risk-models-peritoneal-dialysis",
+  "title": "Using machine learning algorithms to predict MACE in peritoneal dialysis patients.",
+  "summary": "Machine-learning models predicted major adverse cardiac events in a retrospective peritoneal-dialysis cohort and a separate hospital cohort. The study reports development AUCs of 0.80 overall, 0.86 at one year, and 0.75 at five years, with external-cohort AUC 0.768; its broad composite outcome and retrospective design do not establish intervention benefit.",
+  "field": "medicine",
+  "ai_technology": "XGBoost, random forest, and AdaBoost rank baseline clinical variables and predict overall, one-year, and five-year MACE risk.",
+  "organization": "Second Affiliated Hospital of Xiamen Medical College; Fujian Provincial Hospital, Fujian Medical University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13039696/",
+  "source_type": "paper",
+  "publication_date": "2026-03-30",
+  "added_date": "2026-11-22",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Among 1,006 patients, 606 formed the development cohort and 400 an external hospital cohort; reported external-validation AUC was 0.768.",
+    "unknown": "Retrospective data and a composite including cardiovascular hospitalization and all-cause mortality; prospective implementation and patient benefit were not tested.",
+    "ai_role": "Machine-learning models estimate MACE risk from baseline clinical factors.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13039696/",
+      "https://www.nature.com/articles/s41598-026-45362-y"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-22",
+    "scope": "Primary source full-text Methods and Results; version date and reported validation scope checked."
+  }
+}
