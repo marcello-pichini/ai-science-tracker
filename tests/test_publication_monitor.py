@@ -187,22 +187,37 @@ class PublicationMonitorTest(unittest.TestCase):
                    'targetSha': 'a' * 40}
         zip_url = 'https://zenodo.org/api/records/42/files/archive.zip/content'
 
-        def run_case(payload, deployed, checksum=None):
+        def run_case(payload, deployed, checksum=None, streamed=False, size_delta=0):
             stream = BytesIO()
             with ZipFile(stream, 'w') as archive:
                 prefix = 'owner-repo-aaaaaaa/'
                 archive.writestr(prefix + 'api/v1/manifest.json', manifest)
                 archive.writestr(prefix + 'data/sample.json', payload)
+                if streamed:
+                    archive.writestr(prefix + 'padding', b'x' * (1024 * 1024))
             zipped = stream.getvalue()
             metadata = {'doi': '10.5281/zenodo.42', 'id': 42,
                         'conceptdoi': '10.5281/zenodo.24217686',
                         'metadata': {'version': release['tagName'], 'license': {'id': 'cc-by-4.0'}},
-                        'files': [{'key': 'archive.zip', 'size': len(zipped),
+                        'files': [{'key': 'archive.zip', 'size': len(zipped) + size_delta,
                                    'checksum': checksum or 'md5:' + hashlib.md5(zipped).hexdigest(),
                                    'links': {'self': zip_url}}]}
-            def fetch(url):
-                return zipped if url == zip_url else json.dumps(metadata).encode()
-            return {r['check']: r for r in monitor.check_zenodo(release, manifest, deployed, fetch)}
+            class ArchiveResponse(BytesIO):
+                def read(self, size=-1):
+                    if not 0 < size <= 1024 * 1024:
+                        raise AssertionError('ZIP download must read in bounded chunks')
+                    return super().read(size)
+
+            def open_url(request, timeout):
+                if request.full_url == zip_url:
+                    if streamed:
+                        return ArchiveResponse(zipped)
+                    return BytesIO(zipped)
+                return BytesIO(json.dumps(metadata).encode())
+
+            with patch.object(monitor, 'urlopen', side_effect=open_url), patch.object(monitor.time, 'sleep'):
+                results = monitor.check_zenodo(release, manifest, deployed, monitor.fetch)
+            return {r['check']: r for r in results}
 
         earlier = run_case(component, 'b' * 64)
         integrity = earlier['zenodo/archive-integrity']
@@ -213,8 +228,14 @@ class PublicationMonitorTest(unittest.TestCase):
         self.assertEqual(earlier['zenodo/deployed-parity']['status'], 'different')
         self.assertEqual(earlier['zenodo/license-metadata']['status'], 'warning')
         self.assertEqual(run_case(component, snapshot)['zenodo/deployed-parity']['status'], 'pass')
+        self.assertEqual(run_case(component, snapshot, streamed=True)['zenodo/deployed-parity']['status'], 'pass')
         self.assertEqual(run_case(b'altered data!', snapshot)['zenodo/archive-integrity']['status'], 'fail')
         self.assertEqual(run_case(component, snapshot, 'md5:' + '0' * 32)['zenodo/archive-integrity']['status'], 'fail')
+        for delta, detail in ((-1, 'Response exceeds'), (1, 'ZIP length')):
+            with self.subTest(size_delta=delta):
+                result = run_case(component, snapshot, size_delta=delta)['zenodo/archive-integrity']
+                self.assertEqual(result['status'], 'fail')
+                self.assertIn(detail, result['detail'])
 
 
 

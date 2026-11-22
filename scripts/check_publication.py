@@ -3,10 +3,10 @@ import argparse
 import datetime as dt
 import hashlib
 from html.parser import HTMLParser
-from io import BytesIO
 import json
 from pathlib import Path
 import re
+from tempfile import TemporaryFile
 import time
 from urllib.parse import unquote, urljoin, urlsplit
 from urllib.request import Request, urlopen
@@ -19,17 +19,28 @@ DATA = ('discoveries.json', 'vulnerabilities.json', 'models.json',
         'model-progress.json', 'swe-bench.json')
 HF_FILES = ('discoveries.json', 'discoveries.csv', 'vulnerabilities.json', 'vulnerabilities.csv')
 MAX_BYTES = 64 * 1024 * 1024
-MAX_ARCHIVE_BYTES = 256 * 1024 * 1024
+MAX_ARCHIVE_BYTES = 2 * 1024 * 1024 * 1024
+CHUNK_BYTES = 1024 * 1024
 ZENODO_CONCEPT = '10.5281/zenodo.24217686'
 ZENODO_LATEST = 'https://zenodo.org/api/records/24217686/versions/latest'
 
 
-def fetch(url, attempts=3, inspect=False, max_bytes=MAX_BYTES):
+def fetch(url, attempts=3, inspect=False, max_bytes=MAX_BYTES, *, destination=None):
     for attempt in range(attempts):
         try:
             request = Request(url, headers={'User-Agent': 'AI-Science-Tracker-Monitor/1.0',
                                             'Cache-Control': 'no-cache'})
             with urlopen(request, timeout=20) as response:
+                if destination is not None:
+                    destination.seek(0)
+                    destination.truncate()
+                    remaining = max_bytes
+                    while chunk := response.read(min(CHUNK_BYTES, remaining + 1)):
+                        remaining -= len(chunk)
+                        if remaining < 0:
+                            raise ValueError('Response exceeds the monitor size limit')
+                        destination.write(chunk)
+                    return
                 body = response.read(max_bytes + 1)
                 if len(body) > max_bytes:
                     raise ValueError('Response exceeds the monitor size limit')
@@ -124,8 +135,17 @@ def component_entries(root, rows, prefix=None):
     return result
 
 
+def stream_digest(stream, digest):
+    while chunk := stream.read(CHUNK_BYTES):
+        digest.update(chunk)
+    return digest.hexdigest()
+
+
 def verify_archive(zipped, file, expected_manifest, target_sha):
-    if len(zipped) != file['size'] or file['checksum'] != 'md5:' + hashlib.md5(zipped, usedforsecurity=False).hexdigest():
+    length = zipped.seek(0, 2)
+    zipped.seek(0)
+    if length != file['size'] or file['checksum'] != 'md5:' + stream_digest(
+            zipped, hashlib.md5(usedforsecurity=False)):
         raise ValueError('ZIP length or checksum differs from the Zenodo record')
     manifest = json.loads(expected_manifest)
     components = manifest['components']
@@ -135,7 +155,7 @@ def verify_archive(zipped, file, expected_manifest, target_sha):
     if snapshot != manifest['snapshot_sha256']:
         raise ValueError('Tagged release manifest has an invalid snapshot digest')
     component_entries(ROOT, components.values(), 'data/')
-    with ZipFile(BytesIO(zipped)) as archive:
+    with ZipFile(zipped) as archive:
         names = archive.namelist()
         if len(names) != len(set(names)):
             raise ValueError('ZIP contains duplicate member names')
@@ -151,8 +171,9 @@ def verify_archive(zipped, file, expected_manifest, target_sha):
             member = archive.getinfo(prefix + '/' + descriptor['path'])
             if member.file_size != descriptor['bytes'] or member.file_size > MAX_BYTES:
                 raise ValueError(f"ZIP component length mismatch or size limit exceeded: {descriptor['path']}")
-            if hashlib.sha256(archive.read(member)).hexdigest() != descriptor['sha256']:
-                raise ValueError(f"ZIP component SHA-256 mismatch: {descriptor['path']}")
+            with archive.open(member) as data:
+                if stream_digest(data, hashlib.sha256()) != descriptor['sha256']:
+                    raise ValueError(f"ZIP component SHA-256 mismatch: {descriptor['path']}")
     return snapshot, components
 
 
@@ -182,10 +203,11 @@ def check_zenodo(release, expected_manifest, deployed_snapshot, fetcher, now=Non
         if (parsed.scheme != 'https' or parsed.netloc != 'zenodo.org' or parsed.query or parsed.fragment
                 or not parsed.path.startswith(f"/api/records/{report['id']}/files/")
                 or not parsed.path.endswith('.zip/content')
-                or not 0 < file['size'] <= MAX_ARCHIVE_BYTES):
+                or type(file['size']) is not int or not 0 < file['size'] <= MAX_ARCHIVE_BYTES):
             raise ValueError('Invalid Zenodo ZIP address or size')
-        zipped = fetcher(url, max_bytes=file['size']) if fetcher is fetch else fetcher(url)
-        archived_snapshot, components = verify_archive(zipped, file, expected_manifest, target_sha)
+        with TemporaryFile() as zipped:
+            fetcher(url, max_bytes=file['size'], destination=zipped)
+            archived_snapshot, components = verify_archive(zipped, file, expected_manifest, target_sha)
     except OSError as exc:
         record('archive-integrity', 'pending' if within_grace else 'fail', f'Zenodo archive unavailable: {exc}')
         return results

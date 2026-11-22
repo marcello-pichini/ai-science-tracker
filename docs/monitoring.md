@@ -31,11 +31,14 @@ publication automatically.
 - The Zenodo concept record must resolve to the latest GitHub release tag. A new
   release has a two-hour archival grace period, reported as pending. Later checks
   fail if the version remains missing. Once Zenodo exposes the expected version,
-  the monitor downloads its ZIP, verifies the published checksum and length,
+  the monitor downloads its ZIP in 1 MiB chunks to an automatically removed
+  temporary file. The runner needs disk space for the full ZIP, up to 2 GiB.
+  The monitor verifies the published checksum and length,
   matches the bundled manifest to the exact tagged Git commit, and checks the
   length and SHA-256 of every listed data component. The integrity result includes
-  the version DOI, Git commit and archived snapshot digest. ZIP members are read
-  directly. This verifies the archived data components and transport checksum.
+  the version DOI, Git commit and archived snapshot digest. Component hashes
+  are computed from chunks read directly from the ZIP. This verifies the
+  archived data components and transport checksum.
 - The archive's snapshot comparison reports whether the archived and deployed
   component digests differ. The GitHub release cadence allows one archived
   version per UTC day, while Hugging Face follows successful deployments. Two
