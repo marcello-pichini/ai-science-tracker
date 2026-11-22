@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-retention-endpoints-miss-finetuning-loss-history",
+  "title": "Matching final answers masked different forgetting patterns during fine-tuning",
+  "summary": "Researchers recovered 100% final performance on an old generation task across several replay budgets for a Qwen model. The same training runs nevertheless followed different trajectories in the probability assigned to correct old answers. The finding came from evaluating checkpoints throughout training as well as the final model.",
+  "field": "computer science",
+  "ai_technology": "Qwen and Mistral language-model fine-tuning",
+  "organization": "The Chinese University of Hong Kong; Beijing University of Posts and Telecommunications",
+  "source_url": "https://arxiv.org/abs/2610.30191",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.30191v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 controlled replay budgets and objective allocation, Table 7 and endpoint analysis",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study varied old-task replay budgets at matched training settings and separately measured old-task generation at the endpoint and negative log-likelihood across training checkpoints.",
+    "unknown": "The result is specific to these models, old-task response tests and replay schedules. Checkpoint behavior cannot establish whether knowledge was removed or merely harder to elicit. The qualified original Qwen retained-response bank contained only 17 examples; its 100% endpoint is not broad preservation of old-task knowledge.",
+    "ai_role": "Fine-tuned Qwen and Mistral models enabled direct measurement of task outputs and loss at multiple checkpoints under matched training protocols.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30191",
+      "https://arxiv.org/html/2610.30191v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

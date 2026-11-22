@@ -1,0 +1,33 @@
+{
+  "id": "2023-04-ai-assisted-pancreas-mri-fat-ct-correlation",
+  "title": "AI-assisted whole-pancreas MRI measurements correlate with CT attenuation",
+  "summary": "In 158 paired MRI/CT examinations, whole-pancreas fat fraction and CT attenuation showed a Spearman correlation of −.755. A locally trained U-Net assisted part of the MRI annotation, with manual correction of every assisted segmentation. The retrospective study also found substantial slice-to-slice variability; it did not independently validate automated segmentation or disease prediction.",
+  "field": "medicine",
+  "ai_technology": "U-Net pancreas annotation assistance and CNN-based liver segmentation",
+  "organization": "Mayo Clinic",
+  "source_url": "https://doi.org/10.1016/j.pan.2023.04.008",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12314592/",
+  "source_type": "paper",
+  "publication_date": "2023-04-26",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original publication metadata, computational/annotation Methods, Results and bounded prior-work/limitations Discussion passages actually read."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Of 543 potentially paired examinations, selection/exclusion yielded 158 subjects with MRI and non-contrast CT within six months, plus 59 MRI-only examinations for 217 total MRI measurements. Mean pancreatic MRI fat fraction correlated inversely with CT attenuation (Spearman −.755); slice-to-slice MRI variation increased with mean whole-pancreas fat fraction (Spearman .51). The prior CT-only study is acknowledged separately.",
+    "unknown": "All pancreas masks were manually drawn or manually corrected after CNN assistance. The source does not quantify how many final subjects required learned assistance, and this is not a model-accuracy validation. The locally trained MRI U-Net requires independent testing according to the authors. Referral-based inclusion, exclusion of inflammatory/neoplastic disease, image-quality selection, imperfect MRI resolution and up-to-six-month modality separation constrain interpretation. No pancreatic histological ground truth or equivalence of fat measures is established by correlation, and demographics/diabetes associations are observational. The source extends earlier CT-only measurements; it is not a first discovery that fat and CT attenuation are related.",
+    "ai_role": "A U-Net trained during the annotation process assisted later MRI masks before manual correction; a separate CNN estimated liver fat. Learned segmentation aided measurement collection, while conventional correlations provided the scientific result.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12314592/"
+    ]
+  }
+}

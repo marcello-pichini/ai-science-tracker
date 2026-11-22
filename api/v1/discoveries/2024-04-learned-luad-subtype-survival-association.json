@@ -1,0 +1,33 @@
+{
+  "id": "2024-04-learned-luad-subtype-survival-association",
+  "title": "Consensus-learned lung-cancer groups associate with survival",
+  "summary": "An ensemble of seven multi-omics clustering methods identified three lung-adenocarcinoma groups. The LIMOC2 group had shorter observed overall survival, with a similar ordering reported after template-based assignment in two additional archived cohorts. This is an exploratory model-defined clinical association, not proof of a biological taxonomy or vaccine/drug response.",
+  "field": "medicine",
+  "ai_technology": "LIMOC; consensus multi-omics clustering including CIMLR and MoCluster",
+  "organization": "Fujian University of Traditional Chinese Medicine; Shanghai University of Traditional Chinese Medicine",
+  "source_url": "https://spj.science.org/doi/10.1016/j.csbj.2024.04.056",
+  "source_type": "paper",
+  "publication_date": "2024-04-24",
+  "paper_url": "",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Exact primary identity and scoped safe computational/clinical Methods and high-level Results; evidence access distinguished in case ledger; no operational laboratory procedures evaluated",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Primary indexed Methods 2.2 describe seven fitted clustering algorithms, a co-assignment consensus matrix and hierarchical consensus grouping. The top subtype-associated expression features supplied nearest-template assignments in a meta-cohort and GSE72094. Results3.1 report the survival ordering.",
+    "unknown": "The subtype labels and selected features depend on preprocessing, immune-feature selection and consensus choices. Exact cohort-level numerical effect sizes and supplemental overlap checks were not inspected, so no independent causal or forecasting claim is made. Antigen immunogenicity, vaccine suitability and predicted compound response are not measured treatment effects and are outside the represented result. Primary PubMed records April24; the migrated SPJ publisher page says April30. The earlier documented article date is used with this conflict retained, not as an absolute-priority claim.",
+    "ai_role": "Data-fitted multi-omics partitions generate the patient groups whose clinical survival distributions are compared; dimensionality-reduction graphics alone are not the enabling evidence.",
+    "evidence_urls": [
+      "https://spj.science.org/doi/10.1016/j.csbj.2024.04.056"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

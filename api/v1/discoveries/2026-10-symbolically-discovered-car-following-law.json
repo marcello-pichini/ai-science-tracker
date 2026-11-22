@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-symbolically-discovered-car-following-law",
+  "title": "Data-guided equation search finds a flexible empirical car-following model",
+  "summary": "Agent-guided and evolutionary symbolic search identified AERM, an empirical equation combining relative-speed response with spacing-dependent restoration. On three driving datasets, its equation fitted complete trajectories more closely than seven classical models when each trajectory was independently calibrated. The result concerns fitted reconstruction, not forecasting unseen drivers or a universal behavioral law.",
+  "field": "physics",
+  "ai_technology": "Agent-guided symbolic regression; evolutionary equation learning",
+  "organization": "Tongji University",
+  "source_url": "https://arxiv.org/abs/2610.27836v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.27836v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original v1 front, actual structural/model Methods, specific result evaluation and source caveats",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Equation structure was selected using US-101, highD and exiD; Shanghai, I-80 and Waymo supplied additional reconstruction comparisons with recalibrated coefficients.",
+    "unknown": "Per-trajectory calibration fits the same complete trajectory subsequently reconstructed. Common-parameter results were mixed and Gipps was better on Waymo. The selected0.1-second delay is not established human reaction time; analytical stability assumes zero delay. The reasoning agent base model is not identified in the inspected primary Methods. No predictive transfer, traffic intervention or causal driver mechanism was established.",
+    "ai_role": "Data-fitted evolutionary symbolic search and evidence-guided structural proposals generated the equation form; this is not merely parameter fitting of a pre-specified classical model.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.27836v1",
+      "https://arxiv.org/html/2610.27836v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

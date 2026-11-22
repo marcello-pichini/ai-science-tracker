@@ -1,0 +1,36 @@
+{
+  "id": "2026-10-golay-logical-zero-44-gate-depth-six",
+  "title": "A Golay logical-zero circuit uses 44 two-qubit gates in six layers",
+  "summary": "An AI-assisted search found a circuit that prepares the logical-zero state of the 23-qubit Golay code with 44 two-qubit gates and two-qubit depth six. The author checked it by stabilizer algebra and full-state simulation. A previously posted 44-gate circuit used seven two-qubit layers under its stated labeling convention.",
+  "field": "physics",
+  "ai_technology": "Claude Sonnet 5.5; Infinity Machine research agent",
+  "organization": "Harish Santhanalakshmi Ganesan, independent researcher",
+  "publication_date": "2026-10-20",
+  "source_url": "https://doi.org/10.5281/zenodo.23509367",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Zenodo v1 author's circuit record; Infinity Machine §3.2 and Appendix A.4; earlier QuSynth table and September circuit",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The checks compare the output state with the target up to wire relabeling. The controlled-Z gates are equivalent to CNOTs up to free one-qubit Clifford gates in this comparison.",
+    "unknown": "The result assumes unrestricted connectivity and no extra qubits. It does not establish a depth or gate-count optimum, fault-tolerant preparation, or hardware performance.",
+    "ai_role": "Claude Sonnet 5.5 wrote a search program and found the circuit starting from a published depth-eight seed supplied by the operator.",
+    "evidence_urls": [
+      "https://zenodo.org/api/records/23509367",
+      "https://arxiv.org/html/2610.35579v1",
+      "https://arxiv.org/html/2603.17743v1",
+      "https://github.com/qecirc/qecirc-website/issues/198"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21",
+  "paper_url": "https://zenodo.org/records/23509367"
+}

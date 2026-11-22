@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-weight-pruning-weakens-helpful-and-harmful-updating",
+  "title": "Weights linked to AI sycophancy also support factual correction",
+  "summary": "Researchers pruned 1,000 weights selected for their role in agreeing with incorrect user claims in Llama 3.1 and Qwen2.5. The intervention reduced this kind of agreement, but it also weakened the models’ tendency to correct their own wrong answers after seeing accurate claims. The result suggests the two behaviors partly share mechanisms in the models and tasks studied.",
+  "field": "computer science",
+  "ai_technology": "Llama-3.1-8B-Instruct, Qwen2.5-7B-Instruct",
+  "organization": "Harvard University; Stanford University",
+  "source_url": "https://arxiv.org/abs/2610.28325",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.28325v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, §4 pruning and controls, Figures 3/D2, and Appendices D.1–D.3",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Pruning was compared with unpruned models and magnitude-matched random pruning. Tests distinguished accurate and inaccurate claims, source cues, independent factual recall, and weight-set overlap.",
+    "unknown": "The experiment establishes a contribution of the selected weights on two checkpoints and controlled tasks. It does not establish a single mechanism for all forms of sycophancy.",
+    "ai_role": "Researchers used gradient responses of two pretrained language models to select weights associated with agreeing with incorrect user claims, then intervened on those weights.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.28325",
+      "https://arxiv.org/html/2610.28325v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-latent-safety-monitor-matched-false-alarms",
+  "title": "A latent safety monitor flagged fewer harmful prompts than model refusals",
+  "summary": "Across 15 language models and a held-out set of reworded prompts, one activation-based monitor flagged about 23% of harmful prompts at the same false-alarm rate as a string-matched refusal reference, which flagged about 32%. A later activation readout caught more, but analyses linked much of that gain to the model’s own refusal decision.",
+  "field": "computer science",
+  "ai_technology": "Latent Guard, linear and multilayer activation probes",
+  "organization": "University of Massachusetts Amherst",
+  "source_url": "https://arxiv.org/abs/2610.30727",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.30727v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, aggregate §6 out-of-distribution reader comparison and matched false-alarm analysis",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors compared trained readers and string-matched model refusal at matched false alarm rates and tested how their scores tracked the models’ planned replies.",
+    "unknown": "The comparison covers particular rewordings and learned monitors. It does not establish the limits of every activation-based safety monitor. Refusal wording can be missed by the reference detector; a sampled audit found only 13 of 135 replies labeled answered actually provided harmful assistance. Later-readout gains therefore do not all represent detection of genuine unsafe compliance.",
+    "ai_role": "Learned latent readers classify prompts from instruction-tuned model activations and are checked against observed refusals and embedding models.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30727",
+      "https://arxiv.org/html/2610.30727v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

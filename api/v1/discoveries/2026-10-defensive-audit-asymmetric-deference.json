@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-defensive-audit-asymmetric-deference",
+  "title": "Language models trusted incorrect reassurances more than incorrect warnings in a defensive audit",
+  "summary": "In tests of a prerecorded defensive audit dataset, incorrect reassurances moved language-model verdicts toward agreement more than incorrect warnings did. A prespecified check on seven additional model configurations found a mean asymmetry of 0.16, with a 95% interval of 0.10–0.24. This measures verdict behavior under controlled evaluation conditions.",
+  "field": "computer science",
+  "ai_technology": "DeepSeek; Qwen; GLM; Kimi audit models",
+  "organization": "Seoul School of Integrated Sciences and Technologies; Liaoning Mechanical & Electrical College of Technology",
+  "publication_date": "2026-10-23",
+  "source_url": "https://arxiv.org/abs/2610.32876v1",
+  "paper_url": "https://arxiv.org/html/2610.32876v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 Methods, experimental setup and §6.4 aggregate defensive behavior",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study analyzed 16,572 evaluations on 916 matched pairs across eleven configurations. The seven-configuration confirmation used prerecorded samples and paired comparisons against valid evidence.",
+    "unknown": "The confirmation was conducted by the same team. The data and decision conditions are controlled and do not measure real-world incidence.",
+    "ai_role": "Eleven language model configurations independently evaluated prerecorded audit examples and supplied verdicts that were compared under paired evidence conditions.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.32876v1",
+      "https://arxiv.org/html/2610.32876v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

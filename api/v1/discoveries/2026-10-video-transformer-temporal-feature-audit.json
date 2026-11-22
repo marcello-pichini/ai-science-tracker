@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-video-transformer-temporal-feature-audit",
+  "title": "Controlled stimuli reveal motion information in video Transformer features",
+  "summary": "Under controlled motion stimuli, a statistical test flagged 28.7% to 92.1% of final-layer coordinate axes across the tested video Transformers, with zero flags in the frame-by-frame DINOv2 control. The study measured co-variation with specified motion profiles. Activation interventions gave mixed evidence that the flagged features drove model decisions.",
+  "field": "computer science",
+  "ai_technology": "VideoMAE; V-JEPA2; TimeSformer; DINOv2; sparse autoencoders",
+  "organization": "University of Chicago; Toyota Technological Institute at Chicago",
+  "publication_date": "2026-10-23",
+  "source_url": "https://arxiv.org/abs/2610.33353v1",
+  "paper_url": "https://arxiv.org/html/2610.33353v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 Methods §3–4, Table 1 and Appendix F",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors evaluated final-layer coordinates and learned sparse features on designed visual stimuli, with multiple-comparison thresholds and an image-encoder comparison.",
+    "unknown": "Positive tests indicate some temporal dependence under these stimuli and definitions. Rates do not measure pure temporal-feature prevalence or identify a mechanism.",
+    "ai_role": "Pretrained video Transformers provided learned features whose activation covariances were tested under controlled motion stimuli.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.33353v1",
+      "https://arxiv.org/html/2610.33353v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

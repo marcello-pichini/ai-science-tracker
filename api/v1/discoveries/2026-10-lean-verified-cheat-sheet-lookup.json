@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-lean-verified-cheat-sheet-lookup",
+  "title": "A coding agent made a verified Lean lookup 5.46 times as fast",
+  "summary": "Codex with GPT-5.6 Sol rewrote the sheet lookup in a Lean port of the Cheat command-line tool. The rewrite searched directly instead of building an intermediate list, and ran 5.46 times as fast as the original Lean function on withheld timing inputs. Lean checked that the two functions return the same result.",
+  "field": "computer science",
+  "ai_technology": "Codex with GPT-5.6 Sol, Lean 4",
+  "organization": "University of California, Berkeley; Amazon Web Services",
+  "source_url": "https://arxiv.org/abs/2610.30188",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.30188v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 §5.2 and Appendix D.3, named findConsolidated rewrite and proof scope",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study reports repeated paired performance trials and an equality theorem checked by the Lean kernel for the specific rewrite.",
+    "unknown": "The speedup concerns the named function on the study’s workloads. The equality theorem covers the migrated Lean reference, while agreement with the original Go program was assessed by differential testing.",
+    "ai_role": "Codex with GPT-5.6 Sol generated a direct reverse-search implementation and a Lean equality proof.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30188",
+      "https://arxiv.org/html/2610.30188v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

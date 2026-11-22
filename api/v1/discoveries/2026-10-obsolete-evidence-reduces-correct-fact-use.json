@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-obsolete-evidence-reduces-correct-fact-use",
+  "title": "Obsolete evidence reduced correct answers even when the latest fact was present",
+  "summary": "In a paired experiment on 74 questions, replacing one unrelated statement with an obsolete version of the answer reduced accuracy from 100% to 44.6% for Qwen2.5-7B and to 87.8% for Qwen3-14B. The newest statement remained present in both conditions.",
+  "field": "computer science",
+  "ai_technology": "Qwen2.5-7B-Instruct; Qwen3-14B; paired evidence interventions",
+  "organization": "Otto von Guericke University Magdeburg; University of Kerala; Technical University of Munich",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.36308v1",
+  "paper_url": "https://arxiv.org/html/2610.36308v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Paired design, frozen conditions, Table 16 and limitations",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The experiment held the four-statement evidence size and prompt fixed. Under the official normalized-substring metric, all 50 harmful flips across the two models were classified as using outdated information. A later manual audit found mixed latest/stale strings in two Qwen2.5 outputs; a stricter score gave 98.6% versus 43.2%, retaining the same paired discordance.",
+    "unknown": "The same 74 questions informed prompt development, so this is a within-cohort contrast and generalization remains open. The study concerns synthetic single-hop updates and two Qwen models. Obsolete values often match familiar real-world knowledge while the synthetic newest statements contradict it; the experiment does not isolate temporal obsolescence from pretrained-prior conflict. Output scoring and the measured behavioral effect do not establish attention or other internal mechanisms.",
+    "ai_role": "The two learned language models composed answers from matched evidence sets, enabling a direct test of which retrieved version they used.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.36308v1",
+      "https://arxiv.org/html/2610.36308v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

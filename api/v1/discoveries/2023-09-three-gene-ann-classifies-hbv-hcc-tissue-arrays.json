@@ -1,0 +1,33 @@
+{
+  "id": "2023-09-three-gene-ann-classifies-hbv-hcc-tissue-arrays",
+  "title": "Three-gene neural model distinguishes tumor from adjacent liver tissue arrays",
+  "summary": "A learned three-gene model distinguished known HBV-associated liver-tumor tissue from adjacent tissue in public expression datasets. The source reports validation AUC .849 across 140 arrays; the original dataset includes multiple samples from 11 patients. This is tissue classification, with no evidence of early screening or future cancer conversion.",
+  "ai_technology": "Random forest, SVM-RFE, LASSO and three-gene artificial neural network",
+  "organization": "Southwest Medical University; Ludwig Maximilian University of Munich; Ohio University; University of South Dakota",
+  "publication_date": "2023-09-27",
+  "evidence": {
+    "tested": "Intersecting RF, SVM-RFE and LASSO selections produced HHIP, CXCL14 and CDHR2. The source used GSE121248 with 70 tumor/37 adjacent arrays for development and GSE55092 with 49 tumor/91 adjacent arrays for reported validation AUC .849(95% CI .773–.916), compared with training AUC .948. Original GEO metadata describes up to 17 whole-liver tissue samples per liver from 11 HCC patients, with selected laser-capture samples also included.",
+    "unknown": "Array counts are not independent patient counts. Adjacent tissues come from livers already affected by HCC, not a prospective cohort of people with uncomplicated hepatitis B. Multiple regions and sample modalities can affect discrimination and uncertainty. GeneScore median thresholds were computed on each dataset, so the validation transformation is not a demonstrated frozen deployment rule. No blood test, prospective early detection, future HBV-to-cancer conversion, causal immune mechanism or clinical benefit was validated. The source association/subtype analyses reuse these datasets.",
+    "ai_role": "Learned feature-selection algorithms and an ANN discriminate tissue labels; conventional enrichment and inferred immune scores are not separately counted as new experimental biology.",
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10638043/"
+    ]
+  },
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.tvr.2023.200271",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10638043/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original data definition, learned feature screening, ANN Methods and reported validation Results actually read; original GEO indexed study-design metadata independently checked."
+  }
+}

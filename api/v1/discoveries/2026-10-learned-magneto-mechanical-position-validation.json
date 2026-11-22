@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-magneto-mechanical-position-validation",
+  "title": "Simulation-trained network locates a physical magnetic resonator",
+  "summary": "A convolutional-transformer regressor trained on simulated signals with measured noise located a physical magneto-mechanical resonator on a robot-positioned grid. Across repeated static recordings, median position error was 7.26 millimeters and the 95th percentile was 23.7 millimeters. This validates a specific laboratory readout under fixed-orientation conditions, without demonstrating clinical tracking.",
+  "field": "physics",
+  "ai_technology": "Convolutional-transformer regressor",
+  "organization": "Hamburg University of Technology; University Medical Center Hamburg-Eppendorf; Fraunhofer IMTE",
+  "source_url": "https://arxiv.org/abs/2610.29394v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.29394v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original v1 front, signal/data/model Methods, robot-reference experiment, evaluation Results and limitations",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A model trained on 100000 simulated signals was tested on physical recordings at75 grid positions,25 frames each, against robot positions.",
+    "unknown": "One resonator and fixed orientation, repeated static frames and one coil system limit generalization. Frame-level bootstrap uncertainty is not independent hardware replication. Errors were greater near the coil surface; normalized inputs can lose information there. No moving-device clinical test, outcome benefit or general parameter-estimation claim was established.",
+    "ai_role": "The learned inverse mapping estimates three-dimensional position directly from measured multichannel time signals, enabling the reported robot-reference localization evaluation.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.29394v1",
+      "https://arxiv.org/abs/2610.29394v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-05-study-10-1007-s12672-026-05185-9",
+  "title": "Learned tissue-feature panel distinguishes early-onset colorectal cancer in a small cohort",
+  "summary": "Random-forest selection identified a ten-feature metabolic pattern separating early-onset colorectal tumors from later-onset tumors and adjacent tissue in a 45-specimen study. Repeated internal cross-validation suggested discrimination, but whole-cohort feature filtering, small groups and putative metabolite identities limit the result. It is an exploratory tissue association, without validated screening utility or demonstrated gene–metabolite mechanisms.",
+  "field": "biology",
+  "ai_technology": "Random-forest feature ranking and repeated cross-validated classification of metabolomic tissue profiles",
+  "organization": "Zhejiang Cancer Hospital; Hangzhou Institute of Medicine; Chinese Academy of Sciences",
+  "publication_date": "2026-05-28",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source measured fifteen early-onset tumors, fifteen later-onset tumors and fifteen adjacent-normal tissue specimens. Differential filtering produced 141 features, followed by random-forest prioritization of ten. Tenfold cross-validation repeated ten times yielded a reported mean early-onset discrimination AUC 0.916. A separate public transcriptomic dataset was used only for pathway-level comparison, not validation of the metabolic classifier.",
+    "unknown": "Feature filtering/selection isolation within cross-validation was not established, making performance optimistic. Specimen-level versus patient-level separation of adjacent tissues was not reconstructed, and age, stage or other cohort differences may explain some signals. Metabolite annotations were mainly database matches without universal authentic-standard confirmation. No independent classifier validation or clinical screening utility was demonstrated. Transcript and metabolite measurements came from different people, so shared pathway enrichment does not establish individual gene–metabolite coupling, causal pathology or treatment targets.",
+    "ai_role": "The learned forest prioritized measured metabolic features and combined them into the represented tissue-classification pattern; pathway enrichment alone is not the AI-enabled finding.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s12672-026-05185-9"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s12672-026-05185-9",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual clinical specimen provenance, computational statistical/random-forest evaluation Methods, feature-panel Results and primary limitations. Laboratory preparation procedures not independently adjudicated. Putative chemical identities and independent-cohort pathway comparison are not promoted to validated biomarkers or causal coupling. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

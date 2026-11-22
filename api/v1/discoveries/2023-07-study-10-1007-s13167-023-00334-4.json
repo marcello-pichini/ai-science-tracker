@@ -1,0 +1,34 @@
+{
+  "id": "2023-07-study-10-1007-s13167-023-00334-4",
+  "title": "Unsupervised expression subtypes differ in measured lung function in pulmonary fibrosis",
+  "summary": "Consensus clustering of oxidative-stress-related expression profiles identified pulmonary-fibrosis subgroups with different measured respiratory function and symptom scores. Primary Figure1 shows subtypeB with better FVC, DLCO and respiratory quality-of-life scores, despite its higher computed oxidative-stress score. This direction conflicts with the abstract narrative, so the result is retained only as a retrospective subtype association, without causal or treatment claims.",
+  "field": "biology",
+  "ai_technology": "Unsupervised consensus clustering of gene-expression profiles; LASSO, random forests and SVM-RFE for ancillary marker selection",
+  "organization": "Beijing University of Chinese Medicine",
+  "publication_date": "2023-07-31",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The primary Methods used GSE32537 as the training dataset and ConsensusClusterPlus to learn two subgroups from154 oxidative-stress-related genes. Figure1H–J and main Results associate subtypeB with lower StGeorge respiratory-questionnaire scores and higher percent-predicted FVC and DLCO than subtypeA. These are measured patient characteristics rather than clustering-separation benchmarks.",
+    "unknown": "The abstract implies better respiratory status at lower oxidative-stress scores, whereas Figure1F/H–J and main Results show better function in the subgroup with higher computed scores. The biological direction is unresolved and is not adopted. The clustering relationship is retrospective; reproducible clinical subtype assignment, causal mechanisms, antioxidant treatment benefit and prospective utility are unestablished. Ancillary animal and drug claims are not independently adjudicated.",
+    "ai_role": "Unsupervised consensus learning defined expression-based patient subgroups whose association with measured respiratory function constitutes the represented clinical finding. PCA separation alone and biomarker classification benchmarks are not treated as discoveries.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10439879/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10439879/figure/Fig1/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s13167-023-00334-4",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary PMC cohort/consensus-clustering and marker-selection Methods, respiratory-function and clinical subgroup Results; directly viewed primary Figure1 to verify direction. Publisher canonical front metadata and fresh PubMed relationships checked. Operational animal/cell procedures, drug effects and supplementary implementation not adjudicated. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

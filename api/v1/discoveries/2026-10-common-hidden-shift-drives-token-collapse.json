@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-common-hidden-shift-drives-token-collapse",
+  "title": "A hidden-state shift can cause a language model to repeat one token",
+  "summary": "Researchers isolated a shift shared across responses during language-model preference training. Inserting the learned shift into an untreated model reproduced a failure in which one token dominated generation. The failure appeared in 14 of 17 tested model lineages under the study’s per-token ranking objective.",
+  "field": "computer science",
+  "ai_technology": "Preference-optimized language models, including Llama-2 and Llama-3.1",
+  "organization": "The University of Tokyo; TIER IV; Huawei",
+  "source_url": "https://arxiv.org/abs/2610.29410",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.29410v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, §§4–5 and 7, Appendix B.17, and primary intervention controls",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors isolated the shared offset, compared transplantation with magnitude-matched random directions, and tested masking of the component in the training loss.",
+    "unknown": "The failure depends on model and objective. Related hidden shifts were also observed without generation collapse in tested standard preference-training runs.",
+    "ai_role": "The researchers isolated a common direction learned during preference training and tested its contribution by transplanting it into an untreated language model.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.29410",
+      "https://arxiv.org/html/2610.29410v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

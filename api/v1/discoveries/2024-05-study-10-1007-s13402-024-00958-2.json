@@ -1,0 +1,33 @@
+{
+  "id": "2024-05-study-10-1007-s13402-024-00958-2",
+  "title": "Learned image segmentation reveals size-dependent pancreatic-organoid treatment responses",
+  "summary": "A trained StarDist image model enabled longitudinal measurement of pancreatic-cancer organoids. The study reports size-dependent gemcitabine responses, with larger organoids more affected, while highlighting limits of intensity-based health labels and endpoint viability assays. These are in-vitro model observations, without demonstrated patient treatment benefit or a validated clinical therapy-selection test.",
+  "field": "biology",
+  "ai_technology": "OrganoIDNet custom-trained StarDist segmentation of bright-field organoid images",
+  "organization": "Max Planck Institute for Multidisciplinary Sciences; University Medical Center Göttingen",
+  "publication_date": "2024-05-28",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "StarDist was trained on manually annotated human and mouse pancreatic-cancer-organoid images. Learned segmentation enabled image-derived counts, area and size-group trajectories during experimental treatment. The source reports greater gemcitabine-associated effects in larger organoids and comparison with an endpoint viability assay. The represented finding is a measured size-response pattern in experimental models, rather than segmentation accuracy alone.",
+    "unknown": "Small model panels and image-derived measurements limit generalization. Healthy/unhealthy labels were assigned by a fixed intensity threshold after segmentation, not learned biological-state classification; debris and merging affect counts. Endpoint viability and imaging disagreed in immune-cell co-cultures, so no secure immune-mediated killing or immunotherapy-potency claim is adopted. Operational culture/treatment procedures and independent assay replication were not adjudicated.",
+    "ai_role": "Learned StarDist segmentation extracted individual-organoid size and area from longitudinal images, enabling the reported size-dependent response observation. Fixed intensity thresholds and generic platform feasibility alone are not the admitted finding.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s13402-024-00958-2"
+    ],
+    "test_type": "direct test"
+  },
+  "source_url": "https://doi.org/10.1007/s13402-024-00958-2",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary section2.9 image-analysis Methods, trained StarDist operation and postprocessing; high-level size/response Results, health-label/debris limitation and imaging-versus-endpoint-assay disagreement. Complete abstract and original front metadata checked. Operational biological culture/treatment procedures and supplements were not adjudicated. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

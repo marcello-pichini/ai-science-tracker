@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-pose-errors-readable-in-cross-view-features",
+  "title": "Pose errors became easier to read after two vision models fused their views",
+  "summary": "On 903 valid difficult image pairs, linear probes distinguished VGGT pose errors with an AUC of 0.935 from its late features and about 0.65 from its per-image encoder. A second reconstruction model showed a similar layer pattern. The signal emerged after the networks began combining information across views.",
+  "field": "computer science",
+  "ai_technology": "VGGT; π³; fitted linear activation probes",
+  "organization": "University of Wisconsin-Madison; Chalmers University of Technology",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35806v1",
+  "paper_url": "https://arxiv.org/html/2610.35806v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "§§3–5, Figure 3 and Tables 3–4",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The probes used frozen activation features and category-held-out evaluation, with shuffled-label and image-size controls. The authors also compared predictions with confidence outputs and tested transfer to other datasets.",
+    "unknown": "The pairs were deliberately hard and the failure signal varied with dataset and rotation versus translation errors. Layer profiles show decodable information; they do not establish the causal computation or improvements in multi-view reconstruction.",
+    "ai_role": "Linear predictors fitted to features at successive layers measured where information about pose failure became available.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35806v1",
+      "https://arxiv.org/html/2610.35806v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

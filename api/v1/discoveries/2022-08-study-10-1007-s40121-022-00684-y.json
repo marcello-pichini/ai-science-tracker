@@ -1,0 +1,33 @@
+{
+  "id": "2022-08-study-10-1007-s40121-022-00684-y",
+  "title": "Learned sepsis groups show different observed hospital mortality in an ICU cohort",
+  "summary": "K-means clustering of eleven routine first-day measurements grouped 8,817 sepsis records into two clinical patterns. Observed hospital mortality differed between groups and remained associated after statistical adjustment. This is a retrospective cohort relationship, without established biological subtypes, causal treatment effects or validated bedside deployment.",
+  "field": "biology",
+  "ai_technology": "Unsupervised K-means clustering of routine ICU clinical measurements",
+  "organization": "Wuhan University; Zhongnan Hospital of Wuhan University",
+  "publication_date": "2022-08-25",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source selected 8,817 MIMIC-IV sepsis patients and used eleven expert-selected variables measured during the first ICU day. It compared two-to-eight clusters and selected two using clustering criteria. Hospital mortality was 29.4% in the smaller group versus 8.5% in the larger group; adjusted odds ratio was 2.214, 95% CI 1.780–2.754. Outcome differences are actual cohort observations beyond cluster-separation scores.",
+    "unknown": "The groups were derived and compared in the same retrospective single-center database, without external transportability testing. They may reflect severity and clinical heterogeneity rather than distinct biological entities. Missing lactate and oxygenation values required imputation; absent baseline SOFA and unmeasured infection characteristics may bias case definition and associations. No causal therapy-response difference, prospective prediction or operational benefit was shown.",
+    "ai_role": "K-means learned multivariable patient groups without using mortality as its clustering target; subsequent outcome analysis linked those learned groups to observed hospital mortality. PCA visualization alone and recovery of known individual severity markers are not the represented result.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s40121-022-00684-y"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s40121-022-00684-y",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary sepsis eligibility, variable selection/imputation, K-means cluster-number selection and adjusted-outcome Methods, group mortality Results and limitations. Supplementary implementation and individual records not independently reconstructed. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

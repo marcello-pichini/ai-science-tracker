@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-distilgpt2-two-circuits-show-different-preservation",
+  "title": "Two GPT-2 circuits showed different preservation after distillation",
+  "summary": "On tested prompts, DistilGPT-2 retained 87.3% accuracy on a number-comparison task versus GPT-2’s 94.0%, but fell to 35.2% on an indirect-object task where GPT-2 achieved 94.8%. Activation interventions found evidence for retained early comparison components and little recovery from the tested indirect-object heads.",
+  "field": "computer science",
+  "ai_technology": "GPT-2; DistilGPT-2; causal activation interventions",
+  "organization": "Informatics Institute of Technology, Sri Lanka",
+  "publication_date": "2026-10-27",
+  "source_url": "https://arxiv.org/abs/2610.37157v1",
+  "paper_url": "https://arxiv.org/html/2610.37157v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "§§3–6, Tables 4–6 and the single model-pair limitation",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study compared behavior, activation readouts and matched discovery/evaluation head tests across two previously characterized circuits, and reported activation patching results.",
+    "unknown": "One teacher–student pair and two tasks are represented. The result does not rule out alternate indirect-object mechanisms or establish what caused differences during the original training.",
+    "ai_role": "Interventions on the learned activations of two language models exposed different functional preservation across the tested circuits.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.37157v1",
+      "https://arxiv.org/html/2610.37157v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

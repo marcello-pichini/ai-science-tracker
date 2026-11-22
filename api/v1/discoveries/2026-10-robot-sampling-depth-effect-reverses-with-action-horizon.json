@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-robot-sampling-depth-effect-reverses-with-action-horizon",
+  "title": "Coarser AI robot planning helped only when feedback was less frequent",
+  "summary": "In four controlled tasks on a physical Franka robot, using fewer steps to sample actions from a learned policy lowered success under frequent replanning but improved success when the robot executed a longer action sequence before checking again. A moving-target task still needed frequent feedback.",
+  "field": "computer science",
+  "ai_technology": "Flow-matching vision-language-action policies including π₀ and π₀.₅",
+  "organization": "University of Chinese Academy of Sciences; Institute of Automation, Chinese Academy of Sciences",
+  "source_url": "https://arxiv.org/abs/2610.32102",
+  "source_type": "paper",
+  "publication_date": "2026-10-23",
+  "paper_url": "https://arxiv.org/html/2610.32102v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 matched solver-by-horizon interventions, trajectory assessment and physical Franka experiments, Figure 5",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study crossed two sampling depths and two execution horizons and ran 40 matched rollouts per setting for its physical evaluation.",
+    "unknown": "The interaction was observed in the tested policies and tasks. It does not support coarse sampling as a general strategy for contact-rich or highly dynamic settings.",
+    "ai_role": "Flow-matching control policies produce action trajectories with varied solver depths and replanning periods under matched evaluations.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.32102",
+      "https://arxiv.org/html/2610.32102v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

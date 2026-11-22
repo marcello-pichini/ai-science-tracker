@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-gemma-hidden-numeric-state-steers-later-digit",
+  "title": "A hidden Gemma arithmetic state steered the next answer digit",
+  "summary": "In Gemma 4 12B-IT, a learned activation subspace carried arithmetic results across text and image tasks apart from the directions used to read the current digit. With the same first digit supplied, changing the remaining numerical state made the counterfactual units digit the top prediction in 77.6% of 1,536 interventions.",
+  "field": "computer science",
+  "ai_technology": "Gemma 4 12B-IT; Distributed Alignment Search; activation interchange",
+  "organization": "Universitat Autònoma de Barcelona; Apple",
+  "publication_date": "2026-10-27",
+  "source_url": "https://arxiv.org/abs/2610.37422v1",
+  "paper_url": "https://arxiv.org/html/2610.37422v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 primary HTML §§3–6, Appendix D.1–D.2, E.1–E.2 and F",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Across four text/image and addition/subtraction conditions, the 13-dimensional component orthogonal to the current digit readout showed 75.5% numerical retrieval across conditions among 20 values excluded from alignment fitting. In 1,536 cache tests with the same first digit supplied, the counterfactual units digit was the top prediction in 77.6% of cases.",
+    "unknown": "The experiments used controlled arithmetic prompts and fitted subspaces. Numerical values held out for cross-condition alignment could still occur during earlier subspace training. A second model was tested in the same study.",
+    "ai_role": "Distributed Alignment Search learns activation subspaces in Gemma 4 from paired arithmetic instances. Component-specific activation swaps isolate a part orthogonal to the current digit readout and test its downstream effect.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.37422v1",
+      "https://arxiv.org/html/2610.37422v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-quasar-microlens-motion-accretion-disk-size-bias",
+  "title": "Coherent microlens motion led to smaller quasar disk estimates in simulations",
+  "summary": "Ridge models trained on light curves that omitted relative microlens motion underestimated accretion-disk half-light radii by about 6% to 28% when tested on more detailed simulations. The comparison covered three quadruply lensed quasar configurations and used information from all four images jointly.",
+  "field": "physics",
+  "ai_technology": "Ridge regression of simulated light-curve statistics",
+  "organization": "Stony Brook University; City University of New York; American Museum of Natural History; University of Toronto; Université de Montréal; Mila",
+  "publication_date": "2026-10-27",
+  "source_url": "https://arxiv.org/abs/2610.37475v1",
+  "paper_url": "https://arxiv.org/html/2610.37475v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 §§III, IV.2, IV.4 Table 2 and V.3",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Joint fits for three quadruply lensed quasar configurations and populations of 128 matched quads underestimated radii by 27.8%, 20.9% and 5.6% when training omitted relative motions. Matched-physics controls showed median biases between −0.003 and −0.001 dex.",
+    "unknown": "The experiment simulated three fixed lens and disk configurations. It omitted survey selection, photometric noise, observing gaps and intrinsic variability, so the offsets are not corrections established for observed quasars.",
+    "ai_role": "Fitted ridge regression maps simulated multiband light-curve statistics to logarithmic half-light radii. Models trained under simplified assumptions were applied to a separately partitioned target with independent lens motions and a lens mass distribution.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.37475v1",
+      "https://arxiv.org/html/2610.37475v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

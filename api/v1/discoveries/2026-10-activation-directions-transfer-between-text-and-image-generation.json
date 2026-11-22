@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-activation-directions-transfer-between-text-and-image-generation",
+  "title": "Activation directions shifted both image and text generation",
+  "summary": "In UniAR, Emu3.5 and Liquid, some activation directions derived from text also changed image outputs, and some image-derived directions changed text. Emotion transferred in both directions more consistently than size or left–right relations. Transfer also depended on model and layer.",
+  "field": "computer science",
+  "ai_technology": "UniAR, Emu3.5 and Liquid; activation interventions",
+  "organization": "Mila and McGill University; Carnegie Mellon University; MIT CSAIL; Northeastern University",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.36269v1",
+  "paper_url": "https://arxiv.org/html/2610.36269v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "§§3.1–4 and Appendix A.8, including held-out blinded human ratings",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study perturbed the shared model representations and compared outputs with unperturbed controls for eight concepts. Three reviewers each rated 320 separate randomized output pairs; their majority labels and the automated judge had agreement of κ=0.62.",
+    "unknown": "The concept sets include generated examples. The response varies by model, concept and intervention strength, and transferring a direction does not establish that the underlying computations are identical.",
+    "ai_role": "Activation directions derived from learned image or text representations were applied to generation in the other modality to measure how it changed.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.36269v1",
+      "https://arxiv.org/html/2610.36269v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

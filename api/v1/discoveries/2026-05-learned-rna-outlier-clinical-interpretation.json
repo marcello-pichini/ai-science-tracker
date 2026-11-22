@@ -1,0 +1,33 @@
+{
+  "id": "2026-05-learned-rna-outlier-clinical-interpretation",
+  "title": "Learned RNA outlier analysis supports rare-disease diagnosis",
+  "summary": "Denoising-autoencoder outlier analysis supported transcriptomic interpretation in 22 of 102 previously genetically undiagnosed patients, including 12 source-reported diagnoses. The remaining interpretations included support for known findings and proposed mechanisms. This is a clinical diagnostic-workflow yield, not 22 independently validated new diseases or a prospective comparison with standard care.",
+  "field": "medicine",
+  "ai_technology": "DROP; OUTRIDER; FRASER2.0; denoising autoencoders",
+  "organization": "The University of Hong Kong; Hong Kong Children’s Hospital",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13233572/",
+  "source_type": "paper",
+  "publication_date": "2026-05-28",
+  "paper_url": "",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Exact primary identity and scoped safe computational/clinical Methods and high-level Results; evidence access distinguished in case ledger; no operational laboratory procedures evaluated",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The 2021–2024 clinical cohort came from two Hong Kong hospitals after routine genetic testing. Primary indexed computational Methods specify DROP1.3.3, expression/splicing outlier modules with autoencoder confounder modeling, multiple-testing correction and manual clinical review. Ten interpretations were hypothesis-driven and twelve hypothesis-free.",
+    "unknown": "The authors combine model-derived outlier evidence with prior variants, phenotype and manual review; the whole diagnostic yield is not attributable to an autonomous model. This selected unsolved cohort has no randomized comparator or independent population sensitivity estimate. The six proposed mechanisms are not treated as established clinical diagnoses. Laboratory and variant-specific procedural material was not reviewed, and no operational genetic instructions are represented.",
+    "ai_role": "Autoencoders learn expected expression/splicing structure and flag patient deviations, supplying otherwise unavailable functional evidence for the scoped clinical interpretation process.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13233572/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

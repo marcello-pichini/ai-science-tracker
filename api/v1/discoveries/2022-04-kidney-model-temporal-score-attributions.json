@@ -1,0 +1,34 @@
+{
+  "id": "2022-04-kidney-model-temporal-score-attributions",
+  "title": "Kidney-injury models show changing laboratory contributions before recorded onset",
+  "summary": "A reweighted XGBoost analysis of hospital records compared feature contributions at24,48 and72 hours before kidney-injury onset. Laboratory measurements accounted for54.5% of the model-score contrast increase from72 to24 hours. This describes learned-model attributions in one hospital, not the causal effect of changing those measurements.",
+  "field": "medicine",
+  "ai_technology": "Reweighted XGBoost; SHAP",
+  "organization": "Jinan University; University of Kansas Medical Center",
+  "publication_date": "2022-04-29",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12516820/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original primary clinical/computational Methods, model evaluation and high-level Results read; no operational biological protocols",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "Modified feature-sampling weights emphasize prespecified modifiable feature views; fitted models and SHAP-derived score contrasts quantify how learned associations differ by retrospective prediction window.",
+    "tested": "The24-hour cohort contained144084 encounters; models trained on2010–2016 and tested on2017–2018. Cohort sizes differed for longer windows. Fifty random-seed repetitions informed mean attributions.",
+    "unknown": "Feature views were deliberately reweighted, so their importance is conditional on that modeling choice. AKI cases were anchored to first onset, controls to last creatinine measurement; repeated encounters and different window cohorts limit comparisons. Correlations among modifiable factors were not modeled explicitly. The source’s predicted intervention benefits are not measured treatment effects, patient-specific causal risks or prevention evidence. Supplementary algorithm/hyperparameter details were not independently read.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12516820/",
+      "https://doi.org/10.1016/j.ijmedinf.2022.104785"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-cohesive-laws-force-strain-identifiability",
+  "title": "Matching global force left local interface laws unresolved in a learned model",
+  "summary": "In a simulated three-fiber composite, matching the global force–displacement curve did not reliably recover the local interface laws, even when the reference and inverse fits used the same fixed learned constitutive prior. Adding local strain observations improved recovery of the known simulated reference. The study tests a conditional computational inference limit, without validation on physical specimens.",
+  "field": "materials",
+  "ai_technology": "Physics-constrained neural constitutive model; fitted latent coordinates",
+  "organization": "Northwestern University",
+  "publication_date": "2026-10-24",
+  "source_url": "https://arxiv.org/abs/2610.33711v1",
+  "paper_url": "https://arxiv.org/html/2610.33711v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 1
+  },
+  "source_review": {
+    "scope": "v1 Section 3 three-fiber simulation and Figures 24–29",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors held the learned constitutive network fixed and compared force-only, strain-only and combined inverse fits across 144 interface latent variables.",
+    "unknown": "General force-based nonidentifiability and the value of local strain observations were known; novelty is limited to this prior-restricted conditional example. Synthetic reference data were generated within the same learned family, so robustness to an incorrect prior, physical specimens or untested geometries is not established. Numerical failure of a fit is not a formal impossibility proof.",
+    "ai_role": "A pretrained physics-constrained constitutive network represented local adhesion laws. Fitted latent variables enabled comparing different observation regimes under a consistent learned family.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.33711v1",
+      "https://arxiv.org/html/2610.33711v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

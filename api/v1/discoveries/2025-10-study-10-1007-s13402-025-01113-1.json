@@ -1,0 +1,33 @@
+{
+  "id": "2025-10-study-10-1007-s13402-025-01113-1",
+  "title": "Random forests capture cancer-specific variation in measured immune-cell response assays",
+  "summary": "Random-forest models combined receptor–ligand expression measurements to estimate experimentally observed natural-killer-cell responses to tumor samples. Cancer-specific models generalized better within their studied cancer types than a pan-cancer model, whose separate-test AUC fell to 0.638. This is assay-level biological model validation, without established clinical treatment-selection benefit.",
+  "field": "biology",
+  "ai_technology": "Random forests combining receptor–ligand expression features for assay-response classification",
+  "organization": "University of Science and Technology of China",
+  "publication_date": "2025-10-31",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source analyzed 76 distinct NK-cell samples against fourteen ovarian-cancer cell lines, then extended modeling across cancers. Random forests used 70:30 training/test partitions, ten-fold grid-search tuning and twenty random repetitions. A separate pan-cancer test set produced AUC 0.638 and accuracy 63.52%; source-reported breast- and gastric-cancer models reached separate-test AUCs 0.831 and 0.865. The result concerns measured assay response and its cancer-dependent generalization.",
+    "unknown": "Random tumor–immune-cell pair partitions do not establish complete donor/cell-line independence; shared entities could affect apparent generalization. Upstream feature screening isolation and supplementary pair-level reconstruction were not verified. Five patient-derived AML samples and one treated patient do not establish prospective clinical efficacy or broad therapy-selection utility. Operational cell preparation, experimental manipulation and treatment protocols were not adjudicated.",
+    "ai_role": "Random forests learned nonlinear combinations of expression features linked to measured assay outcomes, enabling the observed distinction between cancer-specific and pan-cancer response prediction. Generic classifier benchmarks alone and untested clinical benefit are not the admitted claim.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s13402-025-01113-1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s13402-025-01113-1",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary computational model construction/tuning Methods and ovarian/pan-cancer/cancer-specific assay-prediction Results, plus high-level AML validation limitations. Operational biological preparation/manipulation protocols and supplements were not processed or adjudicated. Existing-data assay evaluation is classified retrospectively. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2025-06-ann-guided-silver-carp-oil-extraction-validation",
+  "title": "Neural-model optimization improves tested silver-carp oil extraction",
+  "summary": "An ANN-guided search selected extraction conditions for silver-carp viscera oil, followed by physical confirmation. The measured yield was 79.44%, compared with 76.68% at a response-surface-selected setting. This is a small process-optimization experiment; separate encapsulation improvements were not shown to be AI-selected.",
+  "ai_technology": "Multilayer perceptron with genetic-algorithm search over its learned response surface",
+  "organization": "China Agricultural University; Mississippi State University",
+  "publication_date": "2025-06-29",
+  "evidence": {
+    "tested": "The ANN learned from 17 response-surface-design experiments, with 70/15/15 training/test/validation allocation and a three-input, ten-hidden-node architecture selected through trials. Its learned response served as the genetic-search fitness function. The selected setting predicted 82.45% extraction; follow-up measurements yielded 79.44%, versus 76.68% for the response-surface setting, with source-reported significant difference.",
+    "unknown": "Seventeen training-design runs produce very small evaluation subsets, and architecture choice by trial/error limits generalization claims. The physical optimized-setting measurement is distinct from the reported high fit correlation; its 79.44% yield is below the 82.45% prediction. The result concerns one byproduct/process system rather than universal extraction efficiency. Gelatin/coacervation optimization, capsule stability and simulated digestion are separate conventional downstream experiments, so they are not credited as additional AI-guided discoveries.",
+    "ai_role": "A learned nonlinear extraction-response model actively supplied the search objective for a newly tested process setting, rather than only fitting previously measured yields.",
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "direct test",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12271628/"
+    ]
+  },
+  "field": "chemistry",
+  "source_url": "https://doi.org/10.1016/j.ultsonch.2025.107452",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12271628/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original ANN/search construction,17-experiment comparison/validation Methods and represented extraction Results actually read; later microencapsulation claims not attributed to learned optimization."
+  }
+}

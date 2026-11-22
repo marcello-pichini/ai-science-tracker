@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-linear-probes-transfer-despite-language-model-rotation",
+  "title": "Language-model safety probes transferred despite shifts in learned directions",
+  "summary": "Across four language-model families, the directions fitted to separate benign and harmful requests shifted by about 17° to 35° after distillation or instruction tuning. Applying the base probes unchanged shifted AUC by −0.011 to +0.027 on XSTest and −0.015 to +0.053 on an independent prompt set.",
+  "field": "computer science",
+  "ai_technology": "Fitted linear activation probes; Qwen2.5, Llama 3.1 and distilled DeepSeek-R1 variants",
+  "organization": "Independent researcher Marios Tsatsos",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35586v1",
+  "paper_url": "https://arxiv.org/html/2610.35586v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§§3–6, Appendix B and front matter",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Linear classifiers trained on the four base models were evaluated unchanged on two matched successors per family. Transfer was compared with the same probe’s performance on the base model.",
+    "unknown": "Similar observed accuracy does not establish equivalence, and XSTest fold intervals are too narrow. On OR-Bench the probes flagged 29% to 42% of benign prompts that sounded harmful.",
+    "ai_role": "Fitted activation classifiers estimated directions and classification performance on base and successor models. Their transfer separated change in direction from change in discrimination.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35586v1",
+      "https://arxiv.org/html/2610.35586v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-electro-optic-literature-extraction-audit",
+  "title": "An audit found errors in screened AI-extracted electro-optic values",
+  "summary": "A curated-reference audit found that 30 of 112 electro-optic records extracted with GPT-4o and accepted by automated checks were defective. Errors included incorrect tensor components, units and measurement conditions. The audit covered three selected legacy papers and does not estimate error rates for the full database.",
+  "field": "materials",
+  "ai_technology": "GPT-4o; materials literature extraction",
+  "organization": "New Jersey Institute of Technology; University of Illinois Urbana-Champaign",
+  "publication_date": "2026-10-25",
+  "source_url": "https://arxiv.org/abs/2610.34642v1",
+  "paper_url": "https://arxiv.org/pdf/2610.34642",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "primary v1-only PDF §§3 and 5.2, production audit and source comparison",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The audit reviewed records already accepted by the extraction pipeline against curated source information and physical consistency checks.",
+    "unknown": "These papers were selected as a stress test. Different formats and data complexity could yield different error rates.",
+    "ai_role": "GPT-4o extracted reported electro-optic property values and contexts from primary documents for database construction.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.34642v1",
+      "https://arxiv.org/pdf/2610.34642"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

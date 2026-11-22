@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-vlm-familiar-physics-persists-in-altered-simulations",
+  "title": "Familiar physics persisted in video-model answers after simulated rules changed",
+  "summary": "On matched questions about altered simulated dynamics, Qwen3.8-27B chose the incorrect Earth-normal answer on 94.76% of text-only trials and 63.69% when given ordered frames. Other model configurations showed different shifts.",
+  "field": "computer science",
+  "ai_technology": "Qwen3.8-27B; video-language models",
+  "organization": "Fudan University; The Chinese University of Hong Kong, Shenzhen",
+  "publication_date": "2026-10-24",
+  "source_url": "https://arxiv.org/abs/2610.33777v1",
+  "paper_url": "https://arxiv.org/html/2610.33777v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 model input conditions, reference definitions and Appendix H Table 8",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors varied visual evidence for the same questions. Nonanswers remained in the denominator and answer positions varied.",
+    "unknown": "The results come from generated scenes and a prompted answer format.",
+    "ai_role": "Video-language models infer altered physical rules from matched text and simulator frames.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.33777v1",
+      "https://arxiv.org/html/2610.33777v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2024-07-flap-imaging-model-expert-reference-agreement",
+  "title": "A small imaging study reproduces one surgeon’s recorded flap decisions",
+  "summary": "An ensemble nearest-neighbor classifier trained on seven surgical fluorescence videos reproduced one expert’s recorded tissue-label decisions in three held-out patient videos. It classified 148 of 149 sampled image grids consistently with the reference. This retrospective agreement test does not establish optimal tissue removal, viability prediction or better patient outcomes.",
+  "ai_technology": "Ensemble subspace k-nearest-neighbor classification of fluorescence-curve features",
+  "organization": "University College Dublin; Mater Misericordiae University Hospital",
+  "publication_date": "2024-07-31",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.jpra.2024.07.014",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11381603/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full-text bibliographic dates, computational classification Methods, held-out Results and explicit cohort/reference limitations."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Seven training videos supplied 28 sampled lines and 1,413 image grids; three test videos supplied three lines and 149 grids. Testing agreed on 138 of 138 reference retain labels and 10 of 11 reference excise labels, giving 99.3% overall grid accuracy.",
+    "unknown": "All ten patients were selected for absence of later partial or total flap necrosis. The reference was one experienced surgeon’s original decisions, not an independent tissue-viability endpoint. Many adjacent grids came from only three held-out patients; internal ten-fold grid validation is not independent-patient validation. Prospective recording of videos does not establish prospective deployment or clinical benefit of the learned model.",
+    "ai_role": "The fitted ensemble classified spatial fluorescence-feature samples using the surgeon’s labels, enabling an explicit held-video reference-agreement test.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11381603/"
+    ]
+  }
+}

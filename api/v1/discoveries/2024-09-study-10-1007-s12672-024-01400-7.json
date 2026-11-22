@@ -1,0 +1,33 @@
+{
+  "id": "2024-09-study-10-1007-s12672-024-01400-7",
+  "title": "Learned mutation score associates with survival in checkpoint-treated gastroesophageal cancer",
+  "summary": "An XGBoost mutation score separated observed survival groups in public cohorts of checkpoint-treated gastroesophageal cancer. The source used 123 patients for initial fitting and two additional cohort groups of 42 and 66 for model comparison. Because those comparison cohorts helped select the final model, the result is an exploratory prognostic association rather than untouched external validation or evidence of treatment benefit.",
+  "field": "biology",
+  "ai_technology": "XGBoost mutation-feature selection and boosted survival-risk modeling",
+  "organization": "Soochow University; Xuzhou Medical University; Nantong University; Nanjing Medical University",
+  "publication_date": "2024-09-29",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The paper defined overall survival in checkpoint-treated gastroesophageal cancer as the endpoint. A 123-person MSK cohort supplied initial prognostic-gene filtering. It compared 297 algorithm combinations using cohort groups of 42 and 66 and selected the highest mean test-cohort concordance. The selected XGBoost procedure retained twelve mutation features, with a training-derived median score threshold separating survival groups across the represented cohorts.",
+    "unknown": "The purported validation cohorts were used for final model selection and therefore do not establish an untouched external test. Participant overlap between public source cohorts was not independently reconstructed. Small cohort groups, extensive model searching and differing sequencing panels increase optimism and transportability concerns. Survival among treated patients does not identify benefit relative to no treatment or distinguish predictive treatment-response effects from general prognosis. Drug-sensitivity predictions and cell-line experiments are outside this admitted case, and no therapeutic efficacy is claimed.",
+    "ai_role": "The learned feature-selection and boosted model combined tumor mutation profiles into the represented survival-associated score; immune enrichment analyses alone are not the admission basis.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s12672-024-01400-7"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s12672-024-01400-7",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read original clinical cohort/overall-survival and computational model-selection Methods, XGBoost signature and survival Results. Experimental drug work is not an admission basis or independently adjudicated. Validation-cohort model selection and treatment-benefit distinction explicitly retained. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-gnome-stability-disagreement-by-chemistry",
+  "title": "Chemistry helps flag stability disagreements in GNoME materials",
+  "summary": "Within a selected subset of GNoME materials, a fitted ranking using composition and hull distance found 45.8% of the cases where two density functional workflows disagreed, compared with 40.4% for hull distance alone. Both figures use a 20% screening budget across held-out prototype-cluster splits. Either workflow’s verdict can differ from experimental stability.",
+  "field": "materials",
+  "ai_technology": "GNoME; fitted logistic regression",
+  "organization": "Accretion Labs",
+  "publication_date": "2026-10-22",
+  "source_url": "https://arxiv.org/abs/2610.33101v1",
+  "paper_url": "https://arxiv.org/html/2610.33101v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, data provenance, Sections 3 and 4.12 and limitations",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The ranking comparison used 117,018 records initially labeled stable with 7,822 structural-prototype proxy clusters, repeated over 20 cluster splits. The target was a precomputed change in stability verdict.",
+    "unknown": "The sample was selected for available recomputations. Relative ranking varied with chemistry and reference construction. Actual thermodynamic stability and out-of-catalog performance were untested.",
+    "ai_role": "The audited population comes from GNoME candidate discovery. Fitted logistic regression used chemistry-cell disagreement rates and distance to the reference hull to rank candidates for review.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.33101v1",
+      "https://arxiv.org/html/2610.33101v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

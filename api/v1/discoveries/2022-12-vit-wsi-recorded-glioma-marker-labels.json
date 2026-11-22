@@ -1,0 +1,34 @@
+{
+  "id": "2022-12-vit-wsi-recorded-glioma-marker-labels",
+  "title": "Histology transformer distinguishes recorded glioma marker labels",
+  "summary": "ViT-WSI used whole-slide histology to classify recorded IDH1 status in pooled institutional and TCGA glioma data, reporting a patient-level ROC area of0.960. The labels included clinical immunohistochemistry and sequencing references. This is retrospective label-discrimination evidence, not a new mutation discovery or replacement for molecular testing.",
+  "field": "medicine",
+  "ai_technology": "Vision transformer; weakly supervised multiple-instance learning",
+  "organization": "King Abdullah University of Science and Technology; Harbin Medical University",
+  "publication_date": "2022-12-24",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9839963/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Actual relevant primary computational/clinical Methods, model/result context and limitations read; no operational biological protocols",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "Pretrained patch embeddings and a learned attention aggregator produce slide representations, fine-tuned for recorded marker-label classification and aggregated across a patient’s slides.",
+    "tested": "The wider institutional dataset had5216 slides from1211 patients, with biomarker-defined subsets pooled with TCGA glioma slides for marker modeling. Methods explicitly keep patients distinct across splits; reported IDH1 AUC is patient-aggregated.",
+    "unknown": "TCGA was pooled rather than reserved as a wholly untouched external test. Molecular predictors were initialized from a subtype model, whose overlap with downstream test cases was not independently reconciled. The paper describes both ten random70:30 splits and tenfold evaluation; tuning containment is incomplete. Immunostaining proxies and direct sequencing are heterogeneous references. No causal genotype mechanism, real clinical benefit or independent replication is established.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9839963/",
+      "https://doi.org/10.1016/j.isci.2022.105872"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

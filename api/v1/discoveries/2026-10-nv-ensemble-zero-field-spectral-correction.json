@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-nv-ensemble-zero-field-spectral-correction",
+  "title": "Calibrated spin models better matched a measured diamond ensemble spectrum",
+  "summary": "For a measured zero-field nitrogen-vacancy ensemble spectrum, calibrating effective spin-model terms reduced held-frequency error from 0.008835 to 0.003872 across four folds. The source models were learned from single-center spectra, and both comparisons fitted the same linewidth and optical-readout terms.",
+  "field": "physics",
+  "ai_technology": "Symbolic regression; learned effective spin Hamiltonians",
+  "organization": "University of New South Wales; Cryo-X Tech; Xidian University",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35016v1",
+  "paper_url": "https://arxiv.org/pdf/2610.35016",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "primary v1-only PDF learned source models and Section IV experimental ensemble fits",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors used a matched comparison across held frequencies in a 38-point experimental scan and froze each learned source expression before fitting the target ensemble.",
+    "unknown": "Other effective compositions can produce comparable spectra, so this does not uniquely determine microscopic parameters. The independent field-condition test reported elsewhere in the paper uses simulation.",
+    "ai_role": "Constrained symbolic regression selected and fitted spin Hamiltonian models from measured single-center spectra. The models formed the starting point for ensemble calibration.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35016v1",
+      "https://arxiv.org/pdf/2610.35016"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

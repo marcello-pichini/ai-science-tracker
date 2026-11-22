@@ -1,0 +1,33 @@
+{
+  "id": "2025-07-community-liver-ultrasound-steatosis-validation",
+  "title": "A liver-ultrasound classifier is evaluated in a South Indian community sample",
+  "summary": "A study evaluated a neural ultrasound classifier using expert-agreed fatty-liver grades in a rural South Indian cohort. On a 66-person internal holdout, AUC was 0.90 for moderate-to-severe steatosis. Performance declined on an external dataset with a different reference and target; the result does not establish clinical outcomes or universal transfer.",
+  "ai_technology": "ImageNet-pretrained InceptionResNetV2 convolutional neural network",
+  "organization": "London School of Hygiene and Tropical Medicine; ICMR National Institute of Nutrition",
+  "publication_date": "2025-07-31",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.lansea.2025.100644",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12337209/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original community-analysis computational Methods, Table4 and primary article dates; systematic-review pooled findings kept separate."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Of 261 expert-review candidates, 219 had usable scans and agreement by two blinded radiologists. Training, validation and test splits were at participant level, and image probabilities were averaged within each participant at test. The 66-person internal holdout contained 15 moderate-to-severe cases and yielded AUC .90 (CI .77–1.00). Without additional fine-tuning, an external 55-person biopsy-referenced dataset yielded AUC .76 (CI .64–.89) for any steatosis, a different target.",
+    "unknown": "This record represents the original clinical analysis, not pooled performance of the accompanying systematic review. Selecting only radiologist-agreed cases removes difficult disagreements; initial inter-reader kappa was .44. Reference grades are visual ultrasound judgments, not biopsy confirmation for the community holdout. Different reported thresholds are optimized by Youden index, with independent threshold locking not established. External testing changes both outcome definition and reference, and subsequent fine-tuning uses that external population. No patient benefit, independent replication or broad population calibration is demonstrated.",
+    "ai_role": "A pretrained neural image model was fine-tuned on liver-ultrasound labels and generated participant-level probabilities from video-frame predictions.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12337209/"
+    ]
+  }
+}

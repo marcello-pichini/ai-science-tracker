@@ -1,0 +1,33 @@
+{
+  "id": "2021-06-consensus-learning-pah-mirna",
+  "title": "Consensus learning nominates a pulmonary-hypertension miRNA pattern",
+  "summary": "Four fitted feature-selection approaches consistently selected miR-636 and miR-187-5p in a pulmonary arterial hypertension study. The clinical miRNA models showed moderate discrimination in a small held-out subset. These are exploratory diagnostic-reference and feature-association findings, not established clinical utility or causal pulmonary mechanisms.",
+  "field": "medicine",
+  "ai_technology": "Boruta random forest; LASSO; regression partition trees; XGBoost",
+  "organization": "University of Sheffield; Imperial College London",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8243351/",
+  "source_type": "paper",
+  "publication_date": "2021-06-26",
+  "paper_url": "",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Exact primary front and selected computational/clinical Methods and corresponding high-level Results; operational laboratory protocols excluded from review",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The miRNA cohort comprised 64 PAH cases and 43 combined healthy/systemic-sclerosis-without-PH controls. Models were developed using 72 people and assessed on 35; repeated cross-validation supported feature selection and tuning. Both nominated miRNAs recurred across the four approaches and alternative selection analyses.",
+    "unknown": "Model and feature comparisons used the same small validation sample. The Results claim 30/35 correct for Boruta, while the table reports a different classification rate; no single accuracy is promoted here. Whole-data filtering and multiple selection analyses require caution. Whole-blood gene-target classification involved refitting on different features and is not external validation of the original miRNA classifier. A five-year follow-up does not make the already-collected diagnostic evaluation prospective. No pathway causality or laboratory mechanism is adopted.",
+    "ai_role": "Learned forests, boosted trees and regularized/partition models select diagnostic features and produce patient-level predictions; agreement of selected features and held-out reference discrimination supply the scoped finding.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8243351/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

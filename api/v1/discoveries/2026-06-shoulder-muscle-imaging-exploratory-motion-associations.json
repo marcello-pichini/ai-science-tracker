@@ -1,0 +1,33 @@
+{
+  "id": "2026-06-shoulder-muscle-imaging-exploratory-motion-associations",
+  "title": "Automated CT muscle measurements reveal exploratory shoulder-motion associations",
+  "summary": "In 13 patients contributing 14 shoulders, automated preoperative CT muscle measurements were associated with motion after reverse shoulder replacement. Larger deltoid volume correlated with anterior elevation (rho 0.640), while several other muscle measures showed exploratory associations. The small unadjusted study does not establish a clinical prediction rule or causal effects.",
+  "ai_technology": "TotalSegmentator deep-learning anatomical segmentation",
+  "organization": "Kyoto University; Kobe City Medical Center General Hospital",
+  "publication_date": "2026-06-26",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.jseint.2026.101753",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13416661/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original full-text bibliographic date, relevant computational/statistical Methods and Results, bounded cohort and selection caveats; no operational clinical instructions."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "A retrospective single-center cohort had at least one year of follow-up. TotalSegmentator segmented six muscles; conventional CT attenuation thresholds quantified composition. Scapular-volume-normalized deltoid volume correlated with anterior elevation at rho 0.640 (reported P=.014). No significant external-rotation associations were established.",
+    "unknown": "One patient contributed both shoulders, with within-person dependence not explicitly handled. Many exploratory correlations were tested without a stated multiplicity adjustment; no adjustment for age, sex, indication or baseline motion was performed. Some reported bootstrap confidence intervals cross zero despite nominal P<.05. Methods describe cuff-tear arthropathy, but Results also include osteonecrosis and rheumatoid arthritis. Repeating the same automated pipeline is not independent segmentation validation.",
+    "ai_role": "Learned anatomical segmentation supplied muscle regions; fixed attenuation thresholds and ordinary Spearman statistics then quantified composition and associations.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13416661/"
+    ]
+  }
+}

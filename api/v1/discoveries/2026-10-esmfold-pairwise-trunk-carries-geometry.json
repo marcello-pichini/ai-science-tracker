@@ -1,0 +1,35 @@
+{
+  "id": "2026-10-esmfold-pairwise-trunk-carries-geometry",
+  "title": "ESMFold’s pair representation carried more readable geometric information",
+  "summary": "A readout study found that ESMFold’s intermediate representations added up to 0.32 AUROC for recovering relationships within folded structures over the upstream ESM-2 representation. Single-position attributes were already largely recoverable upstream. The result distinguishes two kinds of information in the model.",
+  "field": "computer science",
+  "ai_technology": "ESMFold; ESM-2; fitted sparse autoencoders",
+  "organization": "University of Virginia",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.36226v1",
+  "paper_url": "https://arxiv.org/html/2610.36226v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§§3–4, readout and circuit-attribution checks; PDF front matter",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Learned dictionary readouts were compared with features from the upstream sequence model. The authors also checked whether changing interpretation prompts shifted the apparent division between representation types.",
+    "unknown": "The finding concerns information recoverable from one trained folding model. It does not establish that the attributed directions are causal or describe how a protein folds in a cell.",
+    "ai_role": "Fitted sparse dictionaries exposed features from the trained folding network. Comparative readouts assessed where geometry-related information became more accessible.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.36226v1",
+      "https://arxiv.org/html/2610.36226v1",
+      "https://arxiv.org/pdf/2610.36226v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

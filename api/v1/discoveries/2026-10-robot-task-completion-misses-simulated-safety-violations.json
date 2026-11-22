@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-robot-task-completion-misses-simulated-safety-violations",
+  "title": "Simulated robots sometimes completed tasks while violating safety requirements",
+  "summary": "In controlled simulations across six manipulation tasks, 82 valid executions completed their tasks while violating at least one separately checked safety rule. The tests evaluated learned ACT and RDT control policies under deliberately introduced faults. Counts refer to simulated executions in a focused test campaign.",
+  "field": "computer science",
+  "ai_technology": "ACT; RDT robotic manipulation policies; EAST digital-twin testing",
+  "organization": "Macau University of Science and Technology; Beihang University; University of Nottingham Ningbo China; Swinburne University of Technology",
+  "publication_date": "2026-10-25",
+  "source_url": "https://arxiv.org/abs/2610.34358v1",
+  "paper_url": "https://arxiv.org/html/2610.34358v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 1
+  },
+  "source_review": {
+    "scope": "v1 design, independent runtime outcome checks, equal-budget campaigns and unsafe-success results",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Five campaigns used the simulator to verify that test conditions occurred and evaluated task completion separately from predefined safety requirements.",
+    "unknown": "The cases may share tasks and scenarios. This fault-focused simulation does not estimate physical incident rates. Earlier safety benchmarks already reported successful-but-unsafe robot trajectories; this result is a further specific policy/task validation, not discovery of that general gap.",
+    "ai_role": "Two learned manipulation policy families, ACT and RDT, produced execution traces in which task completion and predefined safety rules were evaluated separately.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.34358v1",
+      "https://arxiv.org/html/2610.34358v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-cycleuncover-quadratic-fitness-queries",
+  "title": "Claude Fable produced a quadratic-query algorithm for a hidden cycle problem",
+  "summary": "Claude Fable 5.1 designed a solver for CycleUncover, a black-box problem that hides an even cycle in a bitstring fitness function. The solver reconstructs a two-coloring from fitness queries. Lean checked the expected O(n²) query bound, while the paper proves an exponential bound for the classical (1+1) evolutionary algorithm on this problem.",
+  "field": "computer science",
+  "ai_technology": "Claude Fable 5.1; staged algorithm design and Lean proof generation",
+  "organization": "University of Birmingham",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35595v1",
+  "paper_url": "https://arxiv.org/html/2610.35595v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§5.2/Theorem 5.1, Table 2, Appendices E and F.7 and front matter",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors defined the hidden-cycle oracle and supplied a staged formal framework. Their report gives a Lean-checked bound for the generated algorithm and a separate lower-bound argument for the comparator.",
+    "unknown": "This result concerns one constructed oracle family. It neither establishes that the bound is optimal nor demonstrates empirical speed or general maximum independent-set efficiency.",
+    "ai_role": "Claude Fable proposed the oracle-query solver and produced the formal expected-query proof under the supplied framework.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35595v1",
+      "https://arxiv.org/html/2610.35595v1"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "added_date": "2026-11-21"
+}

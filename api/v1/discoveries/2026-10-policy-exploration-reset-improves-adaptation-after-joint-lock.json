@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-policy-exploration-reset-improves-adaptation-after-joint-lock",
+  "title": "A policy exploration reset helped a robot controller adapt in simulation",
+  "summary": "In 30 simulation seeds, restoring an exploration parameter helped pretrained PPO controllers adapt to a reaching task after a robot joint was locked. A physical deployment also favored the reset condition for the single simulation-selected policy tested per method.",
+  "field": "computer science",
+  "ai_technology": "Proximal Policy Optimization with Gaussian policies",
+  "organization": "Politecnico di Torino; Istituto Italiano di Tecnologia",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.36309v1",
+  "paper_url": "https://arxiv.org/html/2610.36309v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "§§3 and 4.3, Figure 6, Table 1 and hardware sampling protocol",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The simulation compared continued training with a one-time exploration reset and different entropy penalties. Each physical policy was tested against the same 50 target points.",
+    "unknown": "The physical experiment used a single simulation-selected seed per method and consecutive target points. The result is specific to the studied Gaussian policy parameterization and adaptation task.",
+    "ai_role": "PPO-trained policies were tested with an intervention on their exploration distribution, showing a change in adaptation after the simulated task shifted.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.36309v1",
+      "https://arxiv.org/html/2610.36309v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2021-02-covidc-small-clinical-image-reference-test",
+  "title": "Small clinical CT-image check reveals COVIDC classification errors",
+  "summary": "In a radiologist-supervised hospital check using scans excluded from training, COVIDC classified9 of10 supplied COVID-labeled images and8 of10 non-COVID images correctly. A separate20-image severity check classified19 correctly. This small selected image-level reference evaluation does not establish patient-level diagnosis, prognosis or clinical utility.",
+  "field": "medicine",
+  "ai_technology": "Pretrained CNN feature extraction; support vector classifier",
+  "organization": "University of Azad Jammu and Kashmir; Abbas Institute of Medical Sciences",
+  "publication_date": "2021-02-23",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7901302/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original clinical dataset, pretrained feature/classifier Methods, cross-validation and separate AIMS evaluation Results read",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "ImageNet-pretrained CNN feature maps feed learned support-vector classifiers for supplied COVID/non-COVID and severe/mild image labels.",
+    "tested": "After development on public CT images, the source reports20 raw hospital images for COVID classification and another20 for severity, not included in training and evaluated under radiologist supervision. The observed confusion counts are retained rather than the near-perfect development benchmark.",
+    "unknown": "The source does not establish unique patient counts, PCR/reference-label ascertainment, blinded case selection or independence between the two small hospital sets. Development cross-validation shuffled images rather than demonstrating patient-grouped folds. Selecting model variants on development comparisons limits generalization; supplied severity labels are not future deterioration outcomes. No quarantine, intensive-care recommendation or patient benefit is adopted.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7901302/",
+      "https://doi.org/10.1016/j.imu.2021.100540"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

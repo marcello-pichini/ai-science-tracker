@@ -1,0 +1,33 @@
+{
+  "id": "2021-08-low-field-synthetic-ct-liver-planning-reference-comparison",
+  "title": "Low-field MRI-derived synthetic CT is tested in liver treatment replanning",
+  "summary": "In 37 liver cases, U-Net-generated synthetic CT images from low-field MRI were evaluated in retrospective treatment replanning. Both loss-function variants met the reported planning objectives in this source cohort. The study does not establish clinical equivalence, independent deployment safety or patient benefit.",
+  "field": "medicine",
+  "ai_technology": "U-Net with MSE and VGG16-based perceptual loss",
+  "organization": "University of Wisconsin-Madison",
+  "publication_date": "2021-08-24",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "test_type": "retrospective or benchmark",
+    "tested": "The 37 patients supplied 2,561 liver-region image slices. Ten-fold evaluation grouped patients, leaving 3–4 people out per fold. Synthetic images generated for held-out cases were compared with each patient’s original CT in target/organ-at-risk planning. Perceptual and MSE variants had mean absolute image errors of 35.64 and 35.67 HU, and all synthetic-CT plans met the source planning objectives.",
+    "unknown": "The same small single-system cohort informed preliminary training choices, so this is not an external independent validation. Missing fine structures such as ribs and registration between separately acquired MRI/CT remain limitations. Reported nonsignificant comparisons are not equivalence tests, and visual image quality is not delivered-dose safety. Manual target contours were transferred from original CT; an entirely CT-free clinical workflow was not tested. No actual treatment-outcome comparison or demonstrated clinical benefit is reported. The August 2021 online version is represented; its issue date is 2022.",
+    "ai_role": "Learned MRI-to-CT synthesis supplied images for a defined dosimetric reference comparison; conventional treatment-planning software computed the plans.",
+    "publication_status": "Peer-reviewed paper",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8741640/"
+    ]
+  },
+  "source_url": "https://doi.org/10.1016/j.prro.2021.08.007",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8741640/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original computational training/partition Methods, represented applied Results and relevant limitations actually read; no source code executed."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-hidden-suggestion-effects-at-question-and-filler-tokens",
+  "title": "Unacknowledged suggestions influenced AI reasoning through question and filler tokens",
+  "summary": "Researchers found that activation changes at questions and filler tokens carried part of an unacknowledged suggestion’s influence in two language models. Swapping those native activations partially shifted the models’ next-token predictions toward the predictions made without the suggestion.",
+  "field": "computer science",
+  "ai_technology": "Gemma-4-E4B-it, DeepSeek-R1-0528-Qwen3-8B",
+  "organization": "University of Wisconsin-Madison; University of Oxford",
+  "source_url": "https://arxiv.org/abs/2610.30630",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.30630v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 causal analysis §§4.1–4.2, Figures 5–7 and matched token controls",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The two-target patch recovered 16.2% of the counterfactual distribution shift in Gemma and 19.3% in the DeepSeek model, measured by the study’s KL-divergence recovery metric. Equal-size random token controls recovered less.",
+    "unknown": "The experiment concerns held-fixed responses under the tested suggestions. It establishes partial mediation at the selected locations, with effects that differ by model.",
+    "ai_role": "A fitted residual stream editor identified candidate locations where hidden representations preserve a suggestion’s influence, which researchers tested with independent native activation patching.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30630",
+      "https://arxiv.org/html/2610.30630v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

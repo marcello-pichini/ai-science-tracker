@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-grokking-rank-compression-follows-onset",
+  "title": "Rank compression followed delayed generalization in tested Transformers",
+  "summary": "In 29 one-layer Transformer runs that developed delayed generalization on modular arithmetic, the steepest effective-rank drop followed the rise in test accuracy by about 900 training steps. In a separate intervention, restricting embedding rank prevented delayed generalization in 15 of 20 runs.",
+  "field": "computer science",
+  "ai_technology": "One-layer Transformers; rank-constrained training",
+  "organization": "Lossfunk",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35112v1",
+  "paper_url": "https://arxiv.org/html/2610.35112v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "v1 one-layer Transformer results, rank intervention and Appendix E",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The paper used a predefined test-accuracy threshold and compared rank restrictions with factorized full-rank models across seeds.",
+    "unknown": "Results concern small arithmetic models. Timing and intervention findings do not exclude other roles for representation compression in other training regimes.",
+    "ai_role": "Trained modular-arithmetic Transformers and matched factorized controls serve as instruments for evaluating weight rank and generalization timing.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35112v1",
+      "https://arxiv.org/html/2610.35112v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

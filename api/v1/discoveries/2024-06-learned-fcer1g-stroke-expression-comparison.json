@@ -1,0 +1,34 @@
+{
+  "id": "2024-06-learned-fcer1g-stroke-expression-comparison",
+  "title": "Learned screening guides a blood-marker comparison between stroke subtypes",
+  "summary": "Learned feature screening nominated FCER1G for a subsequent clinical blood-expression check. In the source’s selected samples, the marker differed between 36 cardioembolic and 25 large-artery stroke cases, with an apparent AUC of 0.8444. This preliminary result does not establish an early diagnostic test or a causal immune mechanism.",
+  "field": "medicine",
+  "ai_technology": "LASSO; random forest",
+  "organization": "Nanyang Normal University; Nanyang Central Hospital",
+  "publication_date": "2024-06-28",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11283116/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Primary feature-selection Methods and high-level original clinical expression Results; assay protocols excluded",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "direct test",
+    "tested": "LASSO and RF intersected with a coexpression screen to select FCER1G. The original clinical assay series contained 98 samples across five groups; the represented contrast is cardioembolic versus large-artery stroke.",
+    "unknown": "Discovery combined blood and atrial-tissue datasets with different phenotypes, which limits interpretation of the screening model. The clinical comparison is small, selected and subject to age and cardiovascular comorbidity confounding. The apparent AUC comes from the same assayed cases, not an external diagnostic test. The separate nomogram includes cardiogenic-etiology information and is not represented as an independent prediction result. Laboratory procedures were not independently reviewed.",
+    "ai_role": "Fitted LASSO and random forest selected the marker for the later expression comparison; network analysis alone is not credited as enabling AI.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11283116/",
+      "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC11283116/unicode"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

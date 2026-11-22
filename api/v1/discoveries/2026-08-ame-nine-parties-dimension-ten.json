@@ -1,0 +1,37 @@
+{
+  "id": "2026-08-ame-nine-parties-dimension-ten",
+  "title": "A Lean proof constructs a maximally entangled state for nine ten-level parties",
+  "summary": "A formal proof generated with GPT-5.6 Sol constructs a pure state for nine ten-level quantum systems whose reduction to any four is maximally mixed. The exact result concerns existence of an AME(9,10) state.",
+  "field": "physics",
+  "ai_technology": "GPT-5.6 Sol; h1 Lean proof-search harness",
+  "organization": "Meta FAIR",
+  "publication_date": "2026-08-28",
+  "source_url": "https://github.com/facebookresearch/atlas-lean/blob/223d8bc0879b8ddd5b5c935ffe2a3a35f6e0b86d/Atlas/FC/OpenQuantumProblem35_ame_9_10_open_solution.lean#L1416",
+  "paper_url": "",
+  "source_type": "other",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 3,
+    "validation": 4,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "Pinned Atlas Lean theorem and August 28 merge; September Formal Conjectures proof acceptance; h1 Table 1 and Appendix D; follow-up Appendix B.1",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Not reported",
+    "tested": "The encoded construction supplies a normalized state and verifies its reductions. The Formal Conjectures maintainer linked the original work, and a later independent paper analyzes the construction.",
+    "unknown": "The early maintainer replay exceeded its time limit for this proof. Source review did not include replay. The mathematical construction does not demonstrate hardware preparation.",
+    "ai_role": "The h1 harness used GPT-5.6 Sol to generate a proof script with feedback from the Lean 4 checker.",
+    "evidence_urls": [
+      "https://github.com/facebookresearch/atlas-lean/blob/223d8bc0879b8ddd5b5c935ffe2a3a35f6e0b86d/Atlas/FC/OpenQuantumProblem35_ame_9_10_open_solution.lean#L1416",
+      "https://github.com/facebookresearch/atlas-lean/pull/7",
+      "https://arxiv.org/html/2610.35962v1",
+      "https://github.com/google-deepmind/formal-conjectures/pull/6008",
+      "https://arxiv.org/html/2611.17216v1"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "added_date": "2026-11-21"
+}

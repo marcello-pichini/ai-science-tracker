@@ -1,0 +1,33 @@
+{
+  "id": "2024-06-learned-liver-expression-panel-archived-cohorts",
+  "title": "Learned screening identifies liver-expression differences across archived cohorts",
+  "summary": "Three feature-selection methods nominated five expression candidates for fatty liver disease. The source reports concordant expression differences in pooled external liver datasets, with individual-marker AUCs of 0.652–0.751. This is a retrospective tissue association, not a diagnostic test or a causal immune mechanism.",
+  "field": "biology",
+  "ai_technology": "LASSO; support-vector-machine recursive feature elimination; random forest",
+  "organization": "Fudan University",
+  "publication_date": "2024-06-29",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11301246/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Primary front;computational Methods2.1,2.5 and Results3.4–3.5;primary deposited metadata status;experimental procedures not reviewed",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "LASSO,SVM-RFE and random forest fitted disease-label feature selectors; their intersection selected BBOX1,FOSB,NR4A2,RAB26 and SOCS2 for later expression comparisons.",
+    "tested": "Training combined50 disease and31 control samples. External pooled datasets contained271 disease and85 control samples; source-reported marker AUCs were0.734,0.751,0.709,0.670 and0.652.",
+    "unknown": "Original datasets and batch correction can confound retrospective comparisons; no prospective or separate-team clinical validation is established. BBOX1 was not significantly different in the206-case/10-control dataset alone, despite significance in the pooled set. Source figure captions inconsistently call the five-marker intersection seven markers; RF selection counts also vary. Earlier roles of FOSB and SOCS2 are acknowledged. Protein experiments, mechanistic claims and inferred immune-cell causality are outside this represented result.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11301246/"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

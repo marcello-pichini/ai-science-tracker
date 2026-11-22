@@ -1,0 +1,35 @@
+{
+  "id": "2026-10-low-hull-energy-crystals-harmonic-instability",
+  "title": "Nearly one in five near-hull Crystoria structures showed harmonic instability",
+  "summary": "An EquFlashV2 analysis found that 187,983 of 980,560 structures within 10 meV per atom of the model’s reference hull still had unstable harmonic modes. This is a computational result for the curated Crystoria collection, rather than a direct measurement of crystal stability.",
+  "field": "materials",
+  "ai_technology": "EquFlashV2 interatomic potential; harmonic phonon calculations",
+  "organization": "Yanshan University; Renmin University of China",
+  "publication_date": "2026-10-28",
+  "source_url": "https://arxiv.org/abs/2610.38195v1",
+  "paper_url": "https://arxiv.org/html/2610.38195v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 §§2, 4.2 and 5, Supplement S2, and dated Zenodo 1.0.0 source metadata",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "In the curated Crystoria population, 187,983 of 980,560 structures within 10 meV/atom of the reference hull remained dynamically unstable under the authors' harmonic criterion. Independent fixed-geometry DFT phonon comparison used 9,958 nonmagnetic semiconductors.",
+    "unknown": "The comparison covers an energy-selected collection that includes generated inversion partners sharing scalar calculations with parents. Harmonic modes do not account for finite-temperature stabilization. The external DFT comparison used fixed structures and only nonmagnetic semiconductors.",
+    "ai_role": "EquFlashV2 predicts forces for structural relaxation and displaced-structure harmonic phonon calculations, and supplies structure energies for positioning on a reference hull.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.38195v1",
+      "https://arxiv.org/html/2610.38195v1",
+      "https://zenodo.org/records/23572554"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2022-09-multiomic-hypertension-subtype-validation",
+  "title": "Multi-omics learning distinguishes endocrine hypertension subtypes retrospectively",
+  "summary": "A random-forest model using 57 selected multi-omics features distinguished four hypertension subtypes in an internal held-out test, with approximately 92% balanced accuracy and AUC .95. The best single-omics comparator had approximately 81% balanced accuracy. The study supports a sample-specific diagnostic-reference validation, without establishing prospective screening benefit or biological mechanisms.",
+  "field": "medicine",
+  "ai_technology": "Random forest; Boruta feature selection; multi-omics classification",
+  "organization": "University of Dundee; University of Glasgow; Technische Universität Dresden",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9520210/",
+  "source_type": "paper",
+  "publication_date": "2022-09-27",
+  "paper_url": "",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Exact primary front and scoped computational/clinical model Methods and corresponding Results; no operational laboratory protocols evaluated",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The main-table complete-data cohort comprises 307 hypertensive participants (100 primary aldosteronism, 69 pheochromocytoma/paraganglioma, 30 Cushing syndrome and 108 primary hypertension); 101 normotensive volunteers were excluded from model fitting/testing. Data were initially split 80:20, with 100 repeated development splits and a final test set.",
+    "unknown": "The abstract disease counts differ from the post-quality-control table; the represented cohort uses the latter rather than mixing denominators. Feature frequency cutoffs and outlier/class-balancing choices were developed empirically; their complete nesting requires supplemental detail not inspected here. This is an internal random holdout from expert referral centres, with small minority classes and no untouched external or prospective clinical evaluation. Comparing the best selected mono-omics and multi-omics models is study-specific, not a general guarantee of diagnostic improvement.",
+    "ai_role": "Learned forests combine selected measurements to classify established clinical subtypes; the scoped result is the observed held-out diagnostic-reference performance rather than PCA visualization or conventional correlations.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9520210/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

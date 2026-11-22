@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-decoder-failures-missed-verifiable-hidden-messages",
+  "title": "AI decoders missed 168 verifiable messages in a controlled audit",
+  "summary": "In an audit of 7,200 language-model outputs, researchers found 168 verifiable hidden messages that the original model decoders failed to recover. The result shows that decoder failure alone can miss successful encoding in this controlled test.",
+  "field": "computer science",
+  "ai_technology": "Gemini, Claude, GPT language-model encoders and decoders",
+  "organization": "University of Maryland, College Park",
+  "source_url": "https://arxiv.org/abs/2610.30516",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.30516v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 aggregate encoding/decoding contingency results and validity distinctions",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The researchers compared original model-decoder results with an independent deterministic verification of the output.",
+    "unknown": "The result applies to the tested synthetic messages and verification criteria. It does not estimate prevalence in real communications. Of the 168 cases, 58 were recovered with exploratory procedures added after inspecting the corpus. Verification also allowed normalized letter-sequence matches, rather than requiring byte-exact messages, and does not establish intentional encoding.",
+    "ai_role": "Learned language models produced and attempted to recover messages. An independent deterministic audit checked recoverability to evaluate what the model decoders missed.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30516",
+      "https://arxiv.org/html/2610.30516v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

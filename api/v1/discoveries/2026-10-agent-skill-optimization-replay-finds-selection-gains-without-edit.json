@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-agent-skill-optimization-replay-finds-selection-gains-without-edit",
+  "title": "Unchanged agent instructions could appear to improve during skill selection",
+  "summary": "Across 16 tuned instruction sets, held-out task success averaged only 0.1 percentage points above the starting instructions. In replay tests, the same acceptance logic often selected apparent improvements even when every candidate kept the original instructions.",
+  "field": "computer science",
+  "ai_technology": "DeepSeek-V4.1-Flash and GPT-6 Luna; model-driven skill optimizers",
+  "organization": "Shanghai AI Laboratory; Fudan University; Shanghai Jiao Tong University; University of Science and Technology of China; Tsinghua University",
+  "publication_date": "2026-10-27",
+  "source_url": "https://arxiv.org/abs/2610.37201v1",
+  "paper_url": "https://arxiv.org/html/2610.37201v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§§4–6, Table 1 and no-change replay protocol and Appendix C.3",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors tested three optimizers on three benchmarks. Their no-change replay draws task-success probabilities from a fitted beta-binomial posterior, simulates each candidate as another run of the seed instructions, and applies the original acceptance rule. Small development sets had at most 30 tasks.",
+    "unknown": "The no-change result concerns the studied acceptance rules and resampling design. An aggregate near-zero test result does not establish equivalence of every skill or model. The null replay assumes episodes are independent conditional on each task’s success probability; its prior is fitted using seed development and test episodes, so the replay is a model-based diagnostic rather than a newly executed unchanged-instruction optimization trial.",
+    "ai_role": "Learned agents performed each task under original and edited natural-language instructions. Their repeated scores supplied the null replay and the held-out comparison.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.37201v1",
+      "https://arxiv.org/html/2610.37201v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

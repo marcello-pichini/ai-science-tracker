@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-dominant-sparse-autoencoder-features-harder-to-explain",
+  "title": "Dominant sparse-autoencoder features were often harder to explain",
+  "summary": "In 65.2% of the sparse autoencoders tested, explanations of the highest-contribution quarter of features ranked activation examples less accurately than explanations for the remaining features. The pattern varied by autoencoder architecture.",
+  "field": "computer science",
+  "ai_technology": "Sparse autoencoders over pretrained language-model activations",
+  "organization": "Purdue University",
+  "source_url": "https://arxiv.org/abs/2610.30474",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.30474v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 §3 dominance and explanation tests, §4 Table 2 and Figure 3; same aggregate result in v2",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study tested a dominance-aware explanation-ranking measure across seven autoencoder architectures and checked robustness to firing-frequency matching and different explanation and judging models.",
+    "unknown": "This is an explanation-ranking proxy, not a complete account of each feature’s meaning or its causal role in downstream decisions.",
+    "ai_role": "Trained sparse autoencoders represent language-model activations, and model-generated feature explanations are checked using ranked activation evidence.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30474",
+      "https://arxiv.org/html/2610.30474v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2020-07-random-forest-corist-mortality-marker-ranking",
+  "title": "A random forest ranks mortality-associated markers in the Italian CORIST cohort",
+  "summary": "An exploratory random forest analysis of 3,894 hospitalized COVID-19 patients ranked renal function, C-reactive protein and age as influential mortality-classification features. Conventional survival analyses in the same cohort supported associated risks. These retrospective findings are neither causal effects nor an independently validated clinical risk tool.",
+  "ai_technology": "Random forest, permutation feature importance and k-nearest-neighbor imputation",
+  "organization": "Mediterranea Cardiocentro; IRCCS Neuromed; CORIST collaboration",
+  "publication_date": "2020-07-31",
+  "evidence": {
+    "tested": "The retrospective 30-center Italian cohort included 3,894 patients admitted from February 19 to May 23, 2020; 712 died and 532 were still hospitalized at the May 29 cutoff. RF development used 2,725 patients and a random 1,169-patient test subset, with training hyperparameter search. Renal function and C-reactive protein ranked above age in the reported feature-importance analysis; conventional Cox models analyzed associations with time to in-hospital death.",
+    "unknown": "Imputation and normalization are described before the train/test split, without clear fold-specific fitting. Although Methods discuss test-set importance, the primary figure caption places the permutation-importance analysis in the training sample; this record does not claim independently reproduced feature rankings. The test subset came from the same pooled cohort, not a new hospital or external population. Ongoing hospitalization at cutoff complicates a binary death/no-death target. High reported survival sensitivity coexisted with low specificity; overall accuracy is not validated mortality sensitivity. Missing smoking/obesity data, absent vital signs, treatment differences and residual confounding limit interpretation. Cox hazard ratios are conventional same-cohort associations, not AI-derived causal findings.",
+    "ai_role": "The learned forest and permutation analysis provided an exploratory nonlinear feature ranking; conventional survival modeling supplied complementary association estimates. Their agreement is not independent confirmation.",
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7833278/"
+    ]
+  },
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.numecd.2020.07.031",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7833278/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original primary computational Methods, cohort/reference definitions, represented Results and bounded limitations actually read; no code executed or independent reanalysis."
+  }
+}

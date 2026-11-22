@@ -1,0 +1,33 @@
+{
+  "id": "2022-03-learned-feature-selection-tnbc-survival",
+  "title": "Learned breast-cancer feature selection nominates survival-associated transcripts",
+  "summary": "Random-forest recursive feature elimination and XGBoost analysis of breast-cancer expression data nominated genes subsequently associated with distant-metastasis-free survival in a basal breast-cancer subgroup. Higher POU2AF1 and S100B expression was associated with longer survival in the reported analysis. These are exploratory expression–outcome associations, not causal mechanisms or a clinically validated prognostic test.",
+  "field": "medicine",
+  "ai_technology": "Random-forest recursive feature elimination; XGBoost",
+  "organization": "International Centre for Genetic Engineering and Biotechnology; Regional Centre for Biotechnology",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9014315/",
+  "source_type": "paper",
+  "publication_date": "2022-03-24",
+  "paper_url": "",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Exact primary front and scoped computational/clinical model Methods and corresponding Results; no operational laboratory protocols evaluated",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source pooled 1,150 expression samples, including 623 triple-negative cases, to learn subtype-discriminating gene sets. Genes passing further differential-expression filtering were examined with KM Plotter and Cox analysis for distant-metastasis-free survival.",
+    "unknown": "External subtype classification helped choose the final gene sets and is not an untouched evaluation of survival prognosis. Survival analysis used a St Gallen basal-subtype definition; exact survival sample counts, cutoff selection, overlap with discovery samples and multiplicity control are not fully resolved in the inspected main text. Whole-data batch adjustment and unclear feature-selection nesting can inflate classification performance, so those metrics are not the represented finding. CT83 p=.052 is not treated as significant. No perturbation or clinical-treatment effect is established.",
+    "ai_role": "Fitted random-forest feature elimination and boosted-tree classification narrow the candidate transcript sets before the scoped posthoc clinical-outcome association analysis.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9014315/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

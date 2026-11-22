@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-edgedeid-icu-transfer-gap",
+  "title": "A clinical de-identification model lost accuracy on intensive-care notes",
+  "summary": "EdgeDeID, trained on synthetic notes, scored 0.478 F1 on 2,434 MIMIC intensive-care nursing notes, compared with 0.994 on 100 synthetic notes. A separately trained clinical text model scored 0.675 on the intensive-care set. The test corpora differ in writing style and annotation conventions.",
+  "field": "medicine",
+  "ai_technology": "EdgeDeID; Qwen3-0.6B; clinical entity recognition",
+  "organization": "Sharif University of Technology; Mayo Clinic; Yale University",
+  "publication_date": "2026-10-24",
+  "source_url": "https://arxiv.org/abs/2610.33839v1",
+  "paper_url": "https://arxiv.org/html/2610.33839v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 §4.1 and Table 4 external clinical-text evaluation",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "External notes use replaced identifiers and human labels. The paper also reports an analysis limited to the 823 Safe Harbor spans.",
+    "unknown": "The evaluation does not establish safe redaction or portability. Style and label differences both affect the synthetic-to-clinical comparison.",
+    "ai_role": "Fine-tuned Qwen3-0.6B detects surrogate identifiers in clinical notes.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.33839v1",
+      "https://arxiv.org/html/2610.33839v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

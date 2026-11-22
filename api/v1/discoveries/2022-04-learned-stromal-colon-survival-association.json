@@ -1,0 +1,33 @@
+{
+  "id": "2022-04-learned-stromal-colon-survival-association",
+  "title": "Learned stromal expression score associates with colon-cancer outcomes",
+  "summary": "A 31-gene score selected using elastic-net and penalized survival learning was associated with worse relapse-free and overall survival in retrospective colon-cancer data. A higher score also showed adverse-outcome associations in a separate TCGA cohort. The result is a clinical expression–outcome association, not proof of chemotherapy resistance or a treatment-selection benefit.",
+  "field": "medicine",
+  "ai_technology": "Elastic-net learning; LASSO-Cox feature selection",
+  "organization": "Southern Medical University; Sun Yat-sen University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9118126/",
+  "source_type": "paper",
+  "publication_date": "2022-04-30",
+  "paper_url": "",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Exact primary front and selected computational/clinical Methods and corresponding high-level Results; operational laboratory protocols excluded from review",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The score was developed using five GEO datasets totalling 990 cases and examined in 382 TCGA-COAD cases. Outcome-informed resampling and expression cutoffs selected genes; the final score subtracts the mean expression of negatively signed selected genes from the positive group. The source reports adjusted survival associations.",
+    "unknown": "Prognostic outcomes inform development, selection and cutoffs; derivation-cohort associations are not independent validation. Treatment comparisons are observational and do not identify causal benefit or intrinsic resistance. Computational drug-response and pathway predictions are not measured clinical response. Supplemental implementation and treatment-confounding details were not inspected; separate experimental mechanisms are not represented.",
+    "ai_role": "Elastic-net models learn stromal-group discriminators, and repeated penalized Cox fits select the expression features that constitute the measured-outcome-associated score.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9118126/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

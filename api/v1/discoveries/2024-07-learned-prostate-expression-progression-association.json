@@ -1,0 +1,34 @@
+{
+  "id": "2024-07-learned-prostate-expression-progression-association",
+  "title": "A learned prostate-expression score associates with recorded progression",
+  "summary": "A CoxBoost and random-survival-forest score separated progression-free-survival groups across archived prostate-cancer datasets. Reported three-year AUCs ranged from 0.677 to 0.933 in the additional datasets. All those datasets informed final model selection, so they do not provide untouched external validation.",
+  "field": "medicine",
+  "ai_technology": "CoxBoost; random survival forest",
+  "organization": "Xinjiang Medical University",
+  "publication_date": "2024-07-26",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11336432/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original primary computational model-selection and cohort survival Methods/Results only",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "The source trained on 494 TCGA records and considered 101 algorithm combinations. Five additional dataset groups, totaling 597 records as reported, were used to choose the best average concordance model. The final signature contained 13 genes.",
+    "unknown": "The additional cohorts selected the final model, and group-specific median scores do not validate a fixed threshold. Cross-database patient independence and endpoint harmonization are not fully established. High training performance and retrospective associations do not establish calibrated clinical prediction, mast-cell causality or benefit from immunotherapy. Drug-sensitivity predictions are excluded.",
+    "ai_role": "CoxBoost and random survival forests fitted and selected a progression-related expression score; the learned model enables the represented survival association.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11336432/",
+      "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC11336432/unicode"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

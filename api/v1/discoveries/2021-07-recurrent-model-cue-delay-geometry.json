@@ -1,0 +1,34 @@
+{
+  "id": "2021-07-recurrent-model-cue-delay-geometry",
+  "title": "Trained recurrent model preserves cue geometry across a memory delay",
+  "summary": "A trained256-unit recurrent model of context-dependent decisions retained cue-specific population geometry across a delay despite changing single-unit activity. Numerical subspace analysis linked low-activity delay states with later context-specific integration. This is a conditional computational interpretation, not a newly observed biological memory mechanism.",
+  "field": "biology",
+  "ai_technology": "Rate-based recurrent neural network",
+  "organization": "South China University of Technology",
+  "publication_date": "2021-07-30",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8367843/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 1
+  },
+  "source_review": {
+    "scope": "Actual relevant primary computational/clinical Methods, model/result context and limitations read; no operational biological protocols",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "direct test",
+    "ai_role": "Training the recurrent weights for a delayed contextual task creates the dynamics being analyzed; epoch-specific subspace analysis tests how learned cue representations persist and guide integration.",
+    "tested": "Original model/training Methods and cue-delay/manifold Results were read. The model learned color-versus-motion context rules, and numerical trajectories and fixed/slow points were analyzed within its fitted dynamics.",
+    "unknown": "Known mixed-selectivity, dynamic-memory and low-activity theories are substantial precedents, limiting novelty. The analysis concerns a trained artificial model, without new neural recordings or independent biological validation. Dale-type excitatory/inhibitory constraints and biological plasticity were not implemented; numerical line-attractor analysis is not a formal proof or a universal account of working memory.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8367843/",
+      "https://doi.org/10.1016/j.isci.2021.102919"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

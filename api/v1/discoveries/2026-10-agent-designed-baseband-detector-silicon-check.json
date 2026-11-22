@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-agent-designed-baseband-detector-silicon-check",
+  "title": "Agent-designed detector uses fewer measured baseband cycles at unresolved error-rate difference",
+  "summary": "A Claude coding agent designed a platform-specific signal detector and tested its implementation on commercial baseband silicon. It used34010 cycles per frame versus39520 for the ported reference, a13.9% reduction. The error-rate evaluation could not resolve a difference between them; this is a bounded hardware-specific algorithm result, not an over-the-air network benefit.",
+  "field": "computer science",
+  "ai_technology": "Claude Fable5; agent-assisted algorithm design",
+  "organization": "German Research Center for Artificial Intelligence; NXP Semiconductors; RPTU University Kaiserslautern-Landau",
+  "source_url": "https://arxiv.org/abs/2610.27797v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.27797v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original v1 front, actual structural/model Methods, specific result evaluation and source caveats",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The new ec_frozen detector reuses a frozen inverse as a preconditioner, with measured platform profiles guiding agent structural choices. Cycle counts were reproduced exactly on silicon.",
+    "unknown": "One campaign and reduced workload dimensions limit transfer to the original large detector. Error intervals overlap and stored outcomes do not permit a fully paired comparison. No real radio-channel, power or network-level improvement was measured. Human constraints and frozen evaluators shaped the design; generic porting/coding speedups are not the represented discovery.",
+    "ai_role": "The agent selected the new detector structure from measured hardware costs, rather than only implementing a fully specified human algorithm.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.27797v1",
+      "https://arxiv.org/html/2610.27797v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

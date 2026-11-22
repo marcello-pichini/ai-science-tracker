@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-ibot-locality-scale-reversal",
+  "title": "Masked patch training changes visual correspondence differently at different model sizes",
+  "summary": "Under matched ImageNet-1K training, adding iBOT with its associated masking weakened patch correspondence in small and base Vision Transformers. Final-block patch matching improved by roughly 3.3 and 4.0 percentage points in the large and huge variants, while some local appearance details became harder to recover from deep features. These effects were measured with one training recipe.",
+  "field": "computer science",
+  "ai_technology": "DINO-style ViT-S/B/L/H; iBOT; fitted linear appearance probes",
+  "organization": "National University of Singapore; Nanyang Technological University",
+  "publication_date": "2026-10-23",
+  "source_url": "https://arxiv.org/abs/2610.33223v1",
+  "paper_url": "https://arxiv.org/html/2610.33223v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "v1 training §3, patch and appearance diagnostics §4, Limitations",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Within each scale, the comparison toggled the iBOT branch and student masking. The position diagnostic used paired local and global crops. Separate linear probes assessed appearance.",
+    "unknown": "Data volume, loss weight, training duration and specific diagnostics limit transfer to full-scale commercial checkpoints.",
+    "ai_role": "Vision Transformers trained with and without iBOT supplied patch embeddings for crop matching and linear appearance decoding.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.33223v1",
+      "https://arxiv.org/html/2610.33223v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

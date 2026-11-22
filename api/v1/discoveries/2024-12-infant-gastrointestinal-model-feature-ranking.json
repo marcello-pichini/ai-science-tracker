@@ -1,0 +1,34 @@
+{
+  "id": "2024-12-infant-gastrointestinal-model-feature-ranking",
+  "title": "An infant cohort model ranks perinatal features for gastrointestinal outcomes",
+  "summary": "A random-forest analysis of 6,060 infants ranked birth weight, cord-blood pH and maternal age as important features for recorded first-year gastrointestinal-disorder labels. The result describes model importance in one hospital cohort, not causal risk factors or a validated preventive-care tool.",
+  "field": "medicine",
+  "ai_technology": "Random forest",
+  "organization": "University of Salento; University of Naples Federico II",
+  "publication_date": "2024-12-27",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11743318/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 1
+  },
+  "source_review": {
+    "scope": "Official primary BioC original article sections: Participants/outcome reference;ML/preprocessing/feature selection;random-forest ranking Results and model limitations; no laboratory-method validation",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "A fitted random forest ranks variables by impurity reduction when classifying clinician-assessed colic, regurgitation and constipation outcomes. The learned ranking, not conventional regression alone, enables the represented feature pattern.",
+    "tested": "Outcomes were assessed by a trained pediatrician using RomeIV criteria during first-year follow-up. The source reports a 70:30 split, model comparisons and weighted-average F1 of0.74, without a complete condition-specific independent-validation account.",
+    "unknown": "Prospective enrollment is distinct from model locking before new outcomes. Preprocessing/feature-selection containment and class resampling details are incomplete. Impurity importance can favor continuous variables and does not establish effect direction or causation. The source alternates between the random-forest classification model and a logistic-regression web tool; no deployed-tool accuracy, prevention benefit or independent cohort confirmation is represented.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11743318/",
+      "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC11743318/unicode"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

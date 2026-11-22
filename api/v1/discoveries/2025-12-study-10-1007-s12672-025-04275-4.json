@@ -1,0 +1,33 @@
+{
+  "id": "2025-12-study-10-1007-s12672-025-04275-4",
+  "title": "Boosted survival models evaluated in women after bladder-cancer surgery",
+  "summary": "A gradient-boosting model was evaluated for postoperative survival in women after radical cystectomy, using 4,536 registry records and 67 patients from another hospital. The separate hospital cohort showed moderate discrimination with wide uncertainty. This is retrospective prognostic validation of established factors, without evidence that using the score improves treatment or that chemotherapy effects are causal.",
+  "field": "biology",
+  "ai_technology": "Gradient-boosting decision trees after training-cohort LASSO/Cox feature selection",
+  "organization": "Pingxiang Second People’s Hospital; Nanchang University; Anxi County Hospital",
+  "publication_date": "2025-12-27",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The primary Methods retained 4,536 eligible SEER records and split them 3,175:1,361 for training/internal testing. Feature screening and tenfold tuning were described within training. A separate hospital cohort contained 67 women. Overall survival was defined from surgery to all-cause death, with alive patients censored at last follow-up. External GBDT AUCs were reported as 0.839, 0.801 and 0.747 for one-, three- and five-year survival; external differences versus most alternative models were not statistically significant.",
+    "unknown": "The external cohort is small, retrospective and selected for complete clinical data. Registry treatment timing, exact binary-model handling of censoring and supplementary implementation detail were not independently reconstructed. Model-comparison optimism and transportability remain concerns. Established clinical/pathological predictors are not new biological discoveries. SHAP attribution and observational chemotherapy associations do not establish causal treatment effects; calibration/decision curves are not evidence of actual clinical benefit.",
+    "ai_role": "The trained boosting model combined clinical and pathological features into the represented postoperative survival estimates and their cross-cohort prognostic evaluation.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s12672-025-04275-4"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s12672-025-04275-4",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary patient selection, endpoint/censoring, training feature/model and evaluation Methods, internal/external Results and model-comparison limits. Supplemental implementation was not independently read. Original online December 27, 2025 distinguished from publisher issue metadata December 2026. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

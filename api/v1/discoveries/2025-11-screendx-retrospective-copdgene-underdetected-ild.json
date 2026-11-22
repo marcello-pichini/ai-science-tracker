@@ -1,0 +1,34 @@
+{
+  "id": "2025-11-screendx-retrospective-copdgene-underdetected-ild",
+  "title": "ScreenDx identifies previously underdetected interstitial lung disease in COPDGene scans",
+  "summary": "A retrospective COPDGene analysis used a learned CT model to detect cases subsequently relabeled as clinically significant interstitial lung disease. The original abstract reports 84.8% sensitivity and 98.0% specificity in a deliberately sampled cohort. This does not establish prospective screening benefit.",
+  "ai_technology": "ScreenDx deep learning CT classifier",
+  "organization": "Stanford University; IMVARIA; University of North Carolina; University of Utah; University of Alabama at Birmingham",
+  "publication_date": "2025-11-26",
+  "evidence": {
+    "tested": "The source selected patients subsequently relabeled by COPDGene investigators as ILD-positive and sampled COPD/control negatives to target approximately 1–2% ILD prevalence. At a previously selected threshold, abstract-reported sensitivity was 84.8%(95% CI 68.1–94.9%) and specificity 98.0%(97.3–98.5%).",
+    "unknown": "This review had the complete original abstract and primary bibliographic metadata, not full Methods. Exact sample counts, details of clinical adjudication, model-development overlap and threshold-lock timing were not authenticated. Positives had already been relabeled by investigators; these are not newly confirmed diagnoses made in a prospective AI screening program. Deliberate negative sampling limits prevalence-dependent interpretation. No improved patient outcomes or causal clinical benefit is established. The original journal history gives online publication November 26,2025, while PubMed records November 27; the represented date follows the original publisher.",
+    "ai_role": "A learned ScreenDx model evaluates CT features compatible with ILD; this is a retrospective test against subsequently assigned clinical reference labels.",
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/41314436/",
+      "https://www.resmedjournal.com/article/S0954-6111%2825%2900608-0/abstract"
+    ]
+  },
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.rmed.2025.108545",
+  "paper_url": "https://pubmed.ncbi.nlm.nih.gov/41314436/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Complete original PubMed/EuropePMC abstract plus indexed original journal abstract and original publisher publication history actually read; full Methods unavailable (journal403)."
+  }
+}

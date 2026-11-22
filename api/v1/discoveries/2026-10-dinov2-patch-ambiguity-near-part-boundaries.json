@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-dinov2-patch-ambiguity-near-part-boundaries",
+  "title": "DINOv2 patch features are more ambiguous near object-part boundaries",
+  "summary": "In an analysis of 26,459 foreground patches from PartImageNet, frozen DINOv2 features became less distinguishable near labeled object-part boundaries. Boundary distance correlated negatively with feature entropy (−0.38) and positively with the margin between the two closest part prototypes (+0.36). The study measured these relationships for one encoder and one labeled dataset.",
+  "field": "computer science",
+  "ai_technology": "DINOv2 ViT-B/14; learned visual embeddings",
+  "organization": "University of Illinois Urbana-Champaign",
+  "source_url": "https://arxiv.org/abs/2610.32293v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-23",
+  "paper_url": "https://arxiv.org/html/2610.32293v1",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, experimental setup, Section 5 and Appendix B",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Part prototypes were anchored to high-purity labeled training patches. Distances from foreground patches to the nearest labeled boundary were compared with entropy and the top-two margin in the learned feature space.",
+    "unknown": "The analysis uses one patch grid and one labeled dataset. It does not isolate grid size experimentally or measure the effect in other encoders.",
+    "ai_role": "Frozen DINOv2 ViT-B/14 embeddings were compared with part prototypes formed from high-purity training patches.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.32293v1",
+      "https://arxiv.org/html/2610.32293v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

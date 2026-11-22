@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-silicon-harmonic-orders-respond-oppositely-to-temperature",
+  "title": "Silicon simulations found opposite temperature trends across harmonic orders",
+  "summary": "Simulations of bulk silicon from 100 to 300 K predicted stronger third and fifth optical harmonics at higher temperatures and weaker ninth and higher harmonics. The calculations linked the lower-order increase to stronger local orbital coupling and the higher-order decrease to thermally induced disorder.",
+  "field": "physics",
+  "ai_technology": "DeePTB learned tight-binding Hamiltonians; NEP89 learned interatomic potential",
+  "organization": "Chinese Academy of Sciences; University of Chinese Academy of Sciences",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35991v1",
+  "paper_url": "https://arxiv.org/html/2610.35991v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§§II–III.4, Figures 7–12 and front matter",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A 216-atom simulation sampled five configurations per temperature. The authors checked smaller-cell electronic structure and spectra against prior calculations and compared thermal trends qualitatively with published experiments.",
+    "unknown": "The trends and proposed mechanisms come from modeled thermal configurations and a specific optical excitation. The study performed no new optical measurements.",
+    "ai_role": "NEP89 generated thermal configurations in molecular dynamics; DeePTB estimated their electronic Hamiltonians, which were used to calculate the optical spectra.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35991v1",
+      "https://arxiv.org/html/2610.35991v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

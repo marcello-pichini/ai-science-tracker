@@ -1,0 +1,33 @@
+{
+  "id": "2025-12-coronary-ischemia-model-sex-subgroup-validation",
+  "title": "A coronary CT model retains diagnostic discrimination in sex subgroups",
+  "summary": "A post-hoc analysis tested an existing coronary CT ischemia model against invasive pressure measurements in two cohorts. Vessel-level AUCs in women and men were 0.85 and 0.87 in CREDENCE and 0.81 and 0.86 in PACIFIC-1. These subgroup results do not establish equivalent performance, prospective clinical benefit or a newly developed model.",
+  "ai_technology": "Convolutional coronary CT analysis and random-forest ischemia classifier",
+  "organization": "Leiden University Medical Center; Amsterdam UMC",
+  "publication_date": "2025-12-30",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.jscai.2025.104064",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12923349/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original full-text bibliographic date, relevant computational/statistical Methods and Results, bounded cohort and selection caveats; no operational clinical instructions."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "The previously developed classifier used quantitative plaque and stenosis features from neural image analysis; its random forest was trained in a separate 307-patient CREDENCE derivation cohort. This post-hoc study evaluated the 305-patient/868-vessel CREDENCE validation cohort and 208-patient/612-vessel PACIFIC-1 cohort. Sex-specific AUCs exceeded SPECT/MPI comparators; differences from PET in PACIFIC-1 were not significant.",
+    "unknown": "Vessels are clustered within patients; subgroup tests were post hoc and do not establish equivalence or subgroup fairness. These are reused observational trial cohorts, not four independent samples or a new prospective deployment. Nonsignificant PET differences do not prove equivalence. Clinical outcomes and cost-effectiveness were not tested.",
+    "ai_role": "Existing neural segmentation/plaque quantification supplied features to a separately trained random forest for vessel-level ischemia prediction.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12923349/"
+    ]
+  }
+}

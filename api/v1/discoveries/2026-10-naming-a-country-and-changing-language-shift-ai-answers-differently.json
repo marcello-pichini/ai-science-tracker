@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-naming-a-country-and-changing-language-shift-ai-answers-differently",
+  "title": "Country names and query language shifted AI answers in different ways",
+  "summary": "In tests with three language models, naming a country in the user’s message moved open-ended responses 30–44% closer to the same model’s answers when assigned that country as a persona. Changing the query language instead shifted multiple-choice responses away from the associated persona in all three models.",
+  "field": "humanities",
+  "ai_technology": "Llama-3.1-8B-Instruct, Ministral-3-14B-Instruct-2512, Gemma-3-27B-IT",
+  "organization": "University of Copenhagen; Aalborg University Copenhagen; Bocconi University",
+  "source_url": "https://arxiv.org/abs/2610.31199",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.31199v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 §§3–5.2, Figure 2, annotation and translation sensitivity appendices",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The controlled study compared named-country and language cues across survey-derived choices and about 1.6 million open-ended responses.",
+    "unknown": "The reference was each model’s own persona-conditioned responses rather than people’s values. Country and language stand in for only a small part of cultural identity, and the measured shifts depended on prompt design.",
+    "ai_role": "Llama, Ministral and Gemma generate answers under matched national persona, named-country and language cues; learned annotation and translation models support value comparisons.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.31199",
+      "https://arxiv.org/html/2610.31199v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

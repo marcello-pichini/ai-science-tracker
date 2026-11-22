@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-barbican-component-repair-inversion",
+  "title": "Better classifier discrimination did not improve a defensive gateway’s recall",
+  "summary": "In a replay of 25,000 labeled prompts, repairing a learned classifier increased its stand-alone AUC from 0.392 to 0.855, while recall for the complete defensive gateway fell from 80.67% to 80.34%. The repair and substitution experiments measured divergence between component and system performance.",
+  "field": "computer science",
+  "ai_technology": "DeBERTa-v3-small; BARBICAN defensive classification",
+  "organization": "Iskenderun Technical University",
+  "publication_date": "2026-10-23",
+  "source_url": "https://arxiv.org/abs/2610.33198v1",
+  "paper_url": "https://arxiv.org/html/2610.33198v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "v1 defensive comparison with classifier and system outcomes",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The same benchmark corpus was evaluated under original and repaired conditions, with substitutions for additional comparisons.",
+    "unknown": "The labels and operating conditions are benchmark specific and do not estimate field incidents. The recall drop occurred entirely in the synthetic subset, with no recall change across the four public corpora. A stronger substituted classifier elsewhere in the paper slightly improved recall, so this repair result does not establish a general inverse relationship between component quality and system performance.",
+    "ai_role": "A quantized DeBERTa-v3-small classifier supplied learned verdicts in a layered defensive gateway.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.33198v1",
+      "https://arxiv.org/html/2610.33198v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

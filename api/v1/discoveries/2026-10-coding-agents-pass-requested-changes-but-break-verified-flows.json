@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-coding-agents-pass-requested-changes-but-break-verified-flows",
+  "title": "Coding agents broke verified site behavior after completing requested changes",
+  "summary": "In 107 of 586 benchmark runs that completed the requested website change and had comparable baseline checks, the coding agent broke an already verified browser state. In 78 of those 586 runs, a continuity check still failed at the end.",
+  "field": "computer science",
+  "ai_technology": "Coding agents evaluated with ProductWebBench",
+  "organization": "Beihang University; IQuest Research; Huawei Technologies",
+  "source_url": "https://arxiv.org/abs/2610.31118",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.31118v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 controlled task construction, §§4–5, Table 4 and Appendix C provenance comparison",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study replayed checks against untouched repositories and states that each run had previously passed. The 586-run subset had evidence from both comparisons.",
+    "unknown": "The rates are specific to the completing runs with both baselines available, and do not estimate production software regression rates.",
+    "ai_role": "Thirteen language-model systems implement requested code changes; browser checks on baseline and altered repositories expose regressions.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.31118",
+      "https://arxiv.org/html/2610.31118v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

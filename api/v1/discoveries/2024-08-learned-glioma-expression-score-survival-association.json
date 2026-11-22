@@ -1,0 +1,33 @@
+{
+  "id": "2024-08-learned-glioma-expression-score-survival-association",
+  "title": "A learned six-gene score associates with archived glioma survival",
+  "summary": "Random-forest and LASSO selection produced a six-gene score associated with overall survival in archived lower-grade glioma data. The source also reports survival separation in three additional datasets using each cohort’s own median cutoff. This does not establish a fixed clinical threshold, a causal tumor mechanism or benefit from a selected drug.",
+  "field": "biology",
+  "ai_technology": "Random survival forest; LASSO",
+  "organization": "Xinjiang Medical University",
+  "publication_date": "2024-08-28",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11402926/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Primary data/model-construction Methods and survival Results only; no operational laboratory procedures reviewed",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "Random forest and LASSO selected overlapping genes, followed by multivariable Cox scoring; the learned selection enables the represented expression-to-survival association.",
+    "tested": "The source divided 497 TCGA cases into 348 development and 149 internal-validation records. Six genes remained after intersecting selectors and Cox refinement; survival comparisons were repeated in CGGA325, CGGA693 and GSE16011.",
+    "unknown": "Prognostic screening before the split and reuse of the full TCGA cohort as Test2 limit independence. The three additional datasets used cohort-specific medians, so fixed-threshold validation is unestablished. Dataset overlap, endpoint harmonization and full preprocessing isolation were not independently reconstructed. Outcome-selected clusters are not newly verified biological subtypes; inferred immune activity and drug sensitivity are outside this result.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11402926/"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

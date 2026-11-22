@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-safety-probe-error-scales-with-model-size-and-labels",
+  "title": "Safety probe errors followed predictable scaling across three model families",
+  "summary": "Researchers fit scaling laws to safety probes trained on smaller language models. The fits predicted the error of the next larger model to within 0.02 in 52 of 72 comparisons at the largest label budget. They tested these held-out predictions in the Qwen2.5, Qwen3.5 and Gemma 4 families.",
+  "field": "computer science",
+  "ai_technology": "Learned activation probes on Qwen2.5, Qwen3.5 and Gemma 4",
+  "organization": "University of Washington; Anthropic",
+  "source_url": "https://arxiv.org/abs/2610.30678",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.30678v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 §§3–5.1, Figure 10 and E.6 held-out model-size comparisons, confirmed core claim in v2",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study trained two probe architectures across twenty models and compared held-out next-size forecasts with measured performance. Probe error was one minus AUROC.",
+    "unknown": "The held-out extrapolation covers three model families and the study’s six safety tasks. The fitted constants and accuracy may differ with other data or probe designs.",
+    "ai_role": "Learned activation probes trained on up to a million labels per setting generate measurement curves; power-law fits on smaller models predict performance on a held-out larger model.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30678",
+      "https://arxiv.org/html/2610.30678v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

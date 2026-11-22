@@ -1,0 +1,33 @@
+{
+  "id": "2021-11-voice-classifiers-small-covid-holdout",
+  "title": "Voice classifiers distinguish COVID groups in a small held-out sample",
+  "summary": "A study trained voice classifiers in 210 participants and tested their combined predictions in 30 additional participants. The system classified 24 of 30 correctly, including all 10 positive cases. The selected symptomatic, Italian-speaking sample does not establish asymptomatic screening performance or population-level accuracy.",
+  "ai_technology": "Radial-basis support vector machines on acoustic features",
+  "organization": "University of Pavia; University of Rome Tor Vergata",
+  "publication_date": "2021-11-26",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.jvoice.2021.11.004",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8616736/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full-text bibliographic dates, computational classification Methods, held-out Results and explicit cohort/reference limitations."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Three cohorts of 70 participants supplied voice recordings for feature selection and binary SVM training. Separately recruited test participants comprised 10 positive,10 recovered and 10 healthy individuals. Table 5 reports 24/30 correct,10/10 positive,8/10 healthy and 6/10 recovered. Majority voting combined three tasks and three binary comparisons.",
+    "unknown": "Training feature selection/ranking precedes the described ten-fold evaluation, so internal cross-validation is not clearly nested; repeated recordings also need participant-level separation. The 30-person test is a small balanced within-study sample, not independent replication. Table 5 includes one uncertain recovered participant, despite an abstract statement that all errors were classified positive. Most positive/recovered patients were symptomatic, and language/ethnicity restrictions constrain generalization. Long-term vocal effects and surveillance benefit were not demonstrated.",
+    "ai_role": "SVMs learned acoustic distinctions between clinically defined groups from extracted voice features; voting combined task-specific predictions.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8616736/"
+    ]
+  }
+}

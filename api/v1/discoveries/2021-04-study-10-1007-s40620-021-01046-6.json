@@ -1,0 +1,33 @@
+{
+  "id": "2021-04-study-10-1007-s40620-021-01046-6",
+  "title": "Urine-output neural model shows retrospective discrimination of severe kidney-injury events",
+  "summary": "A convolutional neural network analyzed urine-output trends in 35,573 ICU patients to estimate later severe kidney-injury events under a restrictive urine-plus-creatinine definition. Patient-separated retrospective testing reported AUC 0.89, above logistic regression. Clinical prevention, calibrated alarm yield and prospective bedside benefit were not established.",
+  "field": "biology",
+  "ai_technology": "Stacked and parallel convolutional neural networks with highway connections for urine-output time series",
+  "organization": "Politecnico di Torino; National Research Council of Italy; Perugia Hospital; Terni Hospital",
+  "publication_date": "2021-04-26",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source pooled eICU and MIMIC-III records and separated patients across training, validation, calibration and test sets. The CNN used twelve-hour urine-output windows, with case series truncated six hours before the defined event. In the 7,080-patient test cohort, reported AUC was 0.89 versus 0.85 for logistic regression. The target required both creatinine increase and urine-output reduction; dialysis patients were excluded.",
+    "unknown": "This was retrospective pooled-database evaluation, not a locked prospective clinical test. Urine output contributes to both model input and event definition; imputation and restrictive exclusions limit generalization to broader AKI. Reported likelihood ratios must not be read as positive predictive value or five true cases per six alarms. Individual-record timing, exact alarm yield and calibrated probabilities were not independently reconstructed. No reduced kidney injury, mortality or treatment benefit was demonstrated.",
+    "ai_role": "The CNN learned temporal urine-output features linked to later recorded severe-AKI labels and was compared with a logistic baseline. The admitted result is specific retrospective clinical discrimination, not recovery of a single urine-output cutoff or a validated intervention.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s40620-021-01046-6"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s40620-021-01046-6",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary AKI target/eligibility, urine imputation and time truncation, patient-separated training/validation/calibration/test, CNN architecture and evaluation Methods plus clinical discrimination Results. Alarm likelihood-ratio interpretation checked and excluded from represented yield claims; individual-record timing and supplement not reconstructed. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

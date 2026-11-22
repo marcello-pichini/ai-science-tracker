@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-plasma-spectra-exploratory-endocrine-response-classification",
+  "title": "Plasma spectra show exploratory endocrine-response discrimination",
+  "summary": "An exploratory ANNE-trial analysis used learned classifiers on plasma spectra from small breast-cancer groups. When classifier family was selected inside validation, AUC was .616 for baseline Ki 67 response and .854 for later PEPI response. These internal estimates do not establish clinical benefit or external generalization.",
+  "ai_technology": "RBF support vector machine, k-nearest neighbors and nested classifier selection",
+  "organization": "Barretos Cancer Hospital; Federal University of Uberlandia; Queen’s University",
+  "publication_date": "2026-11-11",
+  "evidence": {
+    "tested": "The original abstract reports 49 patients for Ki 67 classification (41 responders, eight nonresponders) and 36 for PEPI (10 responders, 26 nonresponders). Baseline plasma and plasma after 2–4 treatment weeks addressed different response labels. Joint hyperparameter/SMOTE selection used inner stratified four-fold validation within outer leave-one-out evaluation. Selecting classifier family within the inner loop gave AUC .616 and .854 respectively, below separately selected best-family values .738 and .869.",
+    "unknown": "Evidence access is limited to the complete original abstract and metadata, not full Methods or supplements. The parent trial was prospective, single-arm phase II; that label does not make this a prospective frozen-model evaluation. Cohorts are small and imbalanced, repeated spectra handling and detailed endpoint ascertainment remain unauthenticated, and the selected classifier-specific maximum can be optimistic. Spectral molecular assignments are tentative. No treatment selection benefit or external validation is established.",
+    "ai_role": "Learned spectral classifiers distinguish clinically defined response labels; the narrow contribution is exploratory response discrimination under explicitly reported internal model selection.",
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/43019920/"
+    ]
+  },
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.saa.2026.129105",
+  "paper_url": "https://pubmed.ncbi.nlm.nih.gov/43019920/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Complete original EuropePMC/PubMed abstract and primary bibliographic affiliations actually read; original institutional publication listing checked. No full Methods authenticated."
+  }
+}

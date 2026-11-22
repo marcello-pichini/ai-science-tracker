@@ -1,0 +1,33 @@
+{
+  "id": "2022-08-eeg-model-retrospective-critical-illness-prognosis-validation",
+  "title": "An EEG model retrospectively estimates outcomes across critical-illness etiologies",
+  "summary": "A one-dimensional convolutional network analyzed EEGs from 358 adults with acute consciousness impairment. Patient-held-out cross-validation yielded AUCs of .721 for six-month survival and .703 for favorable functional outcome. Higher-confidence subsets had better performance at reduced coverage; this was retrospective modeling, not a randomized test of AI-guided care.",
+  "field": "medicine",
+  "ai_technology": "t-VGG GAP one-dimensional convolutional neural network",
+  "organization": "University of Bern; Lausanne University Hospital; University of Lausanne; University Hospital Basel; Hôpital du Valais",
+  "source_url": "https://doi.org/10.1016/j.nicl.2022.103167",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9441331/",
+  "source_type": "paper",
+  "publication_date": "2022-08-27",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original publication/affiliation metadata, computational Methods2.1–2.4, clinical endpoints and Results3.2/Table2/Table3; bounded Discussion limitations actually read."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "This post-hoc analysis reused the four-hospital CERTA EEG trial. A fixed previously published CNN architecture used overlapping epochs, while stratified five-fold splitting kept all epochs from a patient together; patient predictions averaged epoch outputs. Prognosis used survival at six months and the best Cerebral Performance Category measured at four weeks or six months. All 358 patients contributed prognostic evaluation; diagnostic etiology classification used 277 eligible patients and reached 54.5% accuracy.",
+    "unknown": "Original trial randomization concerned EEG recording strategy, not this learned model. The best-of-two-timepoints functional endpoint is not a fixed six-month recovery measure. Model-output confidence selected progressively smaller subgroups and does not establish calibrated clinical certainty; higher-confidence performance must not be reported as whole-cohort accuracy. Earlier random-forest work used the same cohort, so this is not an independent replication of its findings. Treatment decisions and withdrawal of life support may affect observed prognosis; authors argue that using the first EEG reduced but did not remove that concern. There was no held-out new hospital, prospective model-guided treatment or demonstrated patient benefit. The represented date is the documented August 2022 online journal version, without an earliest-priority assertion.",
+    "ai_role": "The CNN learned EEG features directly to classify clinical outcomes and etiologies; Grad-CAM and visual review explored model behavior without proving a new causal mechanism.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9441331/"
+    ]
+  }
+}

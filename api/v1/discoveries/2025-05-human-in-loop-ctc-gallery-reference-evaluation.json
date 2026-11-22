@@ -1,0 +1,33 @@
+{
+  "id": "2025-05-human-in-loop-ctc-gallery-reference-evaluation",
+  "title": "A human-in-the-loop classifier reduces non-tumor-cell gallery review",
+  "summary": "A self-supervised image encoder and clinician-updated SVM were evaluated on additional blood-image data from 10 metastatic breast-cancer patients. Their proposed gallery contained higher fractions of expert-identified circulating tumor cells than CellSearch galleries, while each system found cells the other missed. This does not establish complete sensitivity or clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "DINO self-supervised XCiT encoder, SVM and cluster-targeted human-in-the-loop labeling",
+  "organization": "University Medical Center Hamburg-Eppendorf; Heidelberg University Hospital; German Cancer Research Center",
+  "source_url": "https://doi.org/10.1016/j.patter.2025.101285",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12191740/",
+  "source_type": "paper",
+  "publication_date": "2025-05-30",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original computational encoder/classifier Methods, patient-level partitions, human-labeling experiments and final 10-patient Results/Table2 actually read."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "The 90-patient archive supplied 60 patients for self-supervised training, 20 for downstream development/testing, and 10 additional patients for final comparison. In those 10, candidate-gallery positive predictive values ranged from .479 to .878 for the final HiL pipeline versus .094 to .365 for CellSearch events. Actual CTC counts were similar overall, but CellSearch-only cells averaged 7 per patient and HiL-only cells averaged 6.",
+    "unknown": "One expert reviewed both galleries, with blinding not stated; these labels are not an independent molecular ground truth. Selection of the uncertain development cluster used test-set performance before new examples were labeled, so development-test improvement is not untouched confirmation. The separate final 10-person comparison is small and selected; each pipeline missed cells found by the other, and complete CTC sensitivity is unknown. Higher gallery PPV does not establish improved diagnosis, survival or treatment selection. This extends prior learned cell-image representation work, rather than independently discovering a new encoder.",
+    "ai_role": "The trained encoder represented cell images and the SVM prioritized candidates after targeted human relabeling; the qualifying result is the additional-patient gallery/reference comparison, not a generic sampling benchmark.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12191740/"
+    ]
+  }
+}

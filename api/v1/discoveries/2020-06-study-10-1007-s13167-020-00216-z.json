@@ -1,0 +1,33 @@
+{
+  "id": "2020-06-study-10-1007-s13167-020-00216-z",
+  "title": "External dementia-risk evaluation shows cohort matching changes apparent performance",
+  "summary": "A revised gradient-boosted dementia-risk model trained on ADNI was evaluated in 244 AddNeuroMed participants, including thirty later dementia diagnoses. Performance differed when evaluation was restricted to demographically matched participants, demonstrating how cohort selection changes apparent validation results. This is retrospective clinical model validation, without proven preventive benefit or prospective clinical deployment.",
+  "field": "biology",
+  "ai_technology": "Stochastic gradient-boosted decision trees for time-dependent dementia-risk prediction",
+  "organization": "Fraunhofer Institute for Algorithms and Scientific Computing; University of Bonn; Erasmus MC; University of Oxford; UCB Biosciences",
+  "publication_date": "2020-06-22",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A feature-restricted GBM was retrained on ADNI to match available AddNeuroMed measurements, retaining thirty-two clinical, imaging and genetic features. It was then evaluated in 244 initially normal or mildly impaired AddNeuroMed participants, thirty of whom later received a dementia diagnosis. The reported external concordance index was approximately 0.81. Across one hundred propensity-score matchings, the average matched set contained 164 participants and twenty conversions, with concordance approximately 0.88.",
+    "unknown": "External evaluation was retrospective; prospective cohort follow-up does not establish predictor locking before clinical outcomes were known. Only thirty external events and fewer at long horizons limit precision. Matching changes the selected population and can improve apparent performance without improving the model or eliminating all bias. The revised model differs from the earlier full-feature model. No clinical prevention, treatment selection, economic benefit or general-population diagnostic utility was demonstrated.",
+    "ai_role": "The trained GBM combined multimodal baseline features into time-dependent risk estimates; its concrete external clinical evaluation exposed the effect of cohort composition on reported performance. Propensity-score matching alone is not treated as the enabling AI contribution.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s13167-020-00216-z"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s13167-020-00216-z",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary cohort comparison/matching, revised GBM feature/training and external evaluation Methods, unmatched/matched dementia Results and limitations. Supplement implementation was not independently read. Specific clinical external evaluation is distinguished from the earlier model publication and generic six-year-prediction headlines. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

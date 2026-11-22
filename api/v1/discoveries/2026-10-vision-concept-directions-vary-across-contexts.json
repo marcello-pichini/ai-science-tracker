@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-vision-concept-directions-vary-across-contexts",
+  "title": "Vision models often encoded the same concept change differently across contexts",
+  "summary": "Across 46 vision encoders, the direction for a change such as dry to wet was detectable within individual visual contexts much more often than across them: 97.8% versus 18.3% of the compared cases in that example. The contrast varied substantially by concept.",
+  "field": "computer science",
+  "ai_technology": "Pretrained vision encoders including ViT; learned embedding representations and fitted probes",
+  "organization": "University of Tübingen; KAIST",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35857v1",
+  "paper_url": "https://arxiv.org/html/2610.35857v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "§§3–5, Table 1 and probe-transfer analysis",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors matched image embeddings for ten concept families, then compared within-context and cross-context direction consistency against random baselines. They also tested linear probe transfer across contexts.",
+    "unknown": "Matching approximates changes in one concept using images that may differ in other ways. Detection rates depend on the chosen concepts, contexts, models, direction metric and statistical controls.",
+    "ai_role": "Learned vision embeddings supplied concept-transition vectors for within- and cross-context tests, and fitted probes tested whether aligned directions predicted transfer.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35857v1",
+      "https://arxiv.org/html/2610.35857v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2023-04-breast-tumor-lymphocyte-spatial-density-survival-associations",
+  "title": "Learned cell maps reveal opposing spatial-density associations with breast-cancer survival",
+  "summary": "An analysis of breast-cancer tissue images linked two tumor–lymphocyte spatial-density features with survival in opposite directions. Neural nucleus classification enabled the measurements in 822 selected TCGA cases. The retrospective associations and within-dataset prognosis evaluation do not establish immune mechanisms, treatment response or clinical benefit.",
+  "ai_technology": "HD-Yolo nucleus detection, classification and segmentation",
+  "organization": "UT Southwestern Medical Center; Northwestern University",
+  "publication_date": "2023-04-24",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.modpat.2023.100196",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11161202/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original clinical-cohort, neural-pipeline, survival-selection Methods and spatial-feature Results; model interpretation kept separate from immune causation."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "The study used 653 infiltrating-ductal and 169 infiltrating-lobular female breast-cancer cases with stage information. Patients were split into 658 training and 164 testing cases. Neural cell labels supported tumor, stromal and lymphocyte density maps; ElasticNet-regularized Cox models combined image and clinical features. Lymphocyte-to-tumor spatial projection had a negative model coefficient, while tumor-to-lymphocyte projection had a positive coefficient; training selection and test survival ranking were described.",
+    "unknown": "Feature/model selection and association estimates are exploratory within one public cohort. No lobular-only test analysis was possible because that subgroup had no deaths in the test set. Opposing spatial coefficients are model associations and do not prove lymphocyte suppression or tumor inhibition. Statements that the features were more prognostically significant than receptor status are not independent evidence of clinical superiority. No external survival replication, therapy-effect study or clinical decision benefit was established.",
+    "ai_role": "A learned nucleus detector/segmenter classified cell types, enabling spatial-density measurements subsequently analyzed using ordinary survival models.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11161202/"
+    ]
+  }
+}

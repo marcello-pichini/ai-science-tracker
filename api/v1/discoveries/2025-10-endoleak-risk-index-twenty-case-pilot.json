@@ -1,0 +1,33 @@
+{
+  "id": "2025-10-endoleak-risk-index-twenty-case-pilot",
+  "title": "A small vascular pilot compares simulated endoleak risk with observed outcomes",
+  "summary": "A single-center pilot assessed a learned endoleak risk index in 10 historical and 10 planned vascular-repair cases. In the historical group, four of six high-risk cases developed the target endoleak, while four low-risk cases did not. The small mixed study does not establish that model-guided planning reduces complications.",
+  "ai_technology": "Finite-element digital twins and machine-learned Endoleak Risk Index",
+  "organization": "Justus Liebig University Giessen; Saint-Joseph Hospital Marseille",
+  "publication_date": "2025-10-30",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.jvscit.2025.102037",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12704054/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full-text bibliographic dates, computational classification Methods, held-out Results and explicit cohort/reference limitations."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "The commercial model combines about 50 engineered simulation indicators using machine learning. In 10 retrospective cases with at least 3 years of follow-up,6 had elevated risk and 4 developed type 1a endoleak;2 elevated-risk cases remained event-free. The additional 10 planned cases assessed clinician decisions; not all underwent the originally planned intervention, and follow-up was short.",
+    "unknown": "Only 10 historical cases support the represented outcome comparison, with no controlled assessment of planning benefit. The learned algorithm architecture and training overlap are not detailed here. Prospective decisions changed treatment or prevented the planned intervention in some cases, so absence of an event cannot validate an untreated counterfactual. The planned cohort had only median 3 months follow-up and no target events.",
+    "ai_role": "Learned aggregation of geometric/biomechanical simulation indicators produced a patient-specific risk category; clinicians retained decision responsibility.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12704054/"
+    ]
+  }
+}

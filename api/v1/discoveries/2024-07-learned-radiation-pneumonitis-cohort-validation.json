@@ -1,0 +1,34 @@
+{
+  "id": "2024-07-learned-radiation-pneumonitis-cohort-validation",
+  "title": "Learned clinical and genetic features classify radiation pneumonitis in a small cohort",
+  "summary": "Learned feature selection and classifiers evaluated radiation-pneumonitis outcomes in 59 lung-cancer patients. A four-variable set combining clinical, treatment-volume and genetic information yielded a reported XGBoost AUC of 0.815 in repeated internal evaluation. This is exploratory cohort validation, without an independently tested pretreatment risk tool or demonstrated treatment benefit.",
+  "field": "medicine",
+  "ai_technology": "LASSO; recursive feature elimination; XGBoost; random forest; support-vector machine",
+  "organization": "Yonsei University; Hanyang University",
+  "source_url": "https://doi.org/10.1016/j.ctro.2024.100819",
+  "source_type": "paper",
+  "publication_date": "2024-07-26",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11332843/",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prospectively collected 2017-2019 cohort data were analyzed using internal nested cross-validation and training-fold oversampling. The endpoint was grade2-or-higher radiation pneumonitis, occurring in about20% of59 patients.",
+    "unknown": "Prospective collection does not establish a locked prospective predictor. Final features were aggregated across folds before another evaluation, so full selection-pipeline isolation is not established. Model/feature-set choice reused the same small cohort; no external or cross-ethnicity validation, causal genetic mechanism or clinical benefit was demonstrated. Supplementary details and operational laboratory procedures were not independently reviewed.",
+    "ai_role": "Learned regularized feature selection and classifiers link measured clinical/genetic inputs to recorded pneumonitis outcomes, supporting the bounded retrospective evaluation.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11332843/",
+      "https://doi.org/10.1016/j.ctro.2024.100819"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "scope": "Exact primary front, clinical cohort/endpoint, computational feature-selection/classifier Methods, Results and limitations; operational genotyping procedures not inspected",
+    "date": "2026-11-21"
+  }
+}

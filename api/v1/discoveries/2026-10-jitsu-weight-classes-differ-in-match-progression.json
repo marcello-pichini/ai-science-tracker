@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-jitsu-weight-classes-differ-in-match-progression",
+  "title": "The lightest and heaviest jiu-jitsu classes showed distinct match progression",
+  "summary": "A fitted model of 78 men’s no-gi Brazilian jiu-jitsu matches found that the 66 kg and over-99 kg groups differed from the middle weight classes in how recorded match states led to eventual outcomes. The matches came from one 2019 championship.",
+  "field": "other",
+  "ai_technology": "Hierarchical absorbing Markov model with Bayesian random-partition clustering",
+  "organization": "Texas A&M University; Brigham Young University; University of Brasília",
+  "source_url": "https://arxiv.org/abs/2610.31787",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.31787v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 data scope, hierarchical random-partition fit, and aggregate posterior comparisons for sports weight categories",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The model pooled recorded transitions across classes and compared posterior probabilities of eventual match outcomes separately by weight class. The analysis used 244 sequences after excluding the absolute division from the original 93-match dataset.",
+    "unknown": "The findings concern this tournament and the model’s grouping and state definitions. They do not establish a causal effect of body weight or generalize to other competitions.",
+    "ai_role": "A fitted hierarchical absorbing Markov model and an Ewens–Pitman attraction random-partition model infer transition patterns by weight class from recorded matches.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.31787",
+      "https://arxiv.org/html/2610.31787v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

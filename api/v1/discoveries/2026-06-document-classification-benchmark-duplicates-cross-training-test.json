@@ -1,0 +1,36 @@
+{
+  "id": "2026-06-document-classification-benchmark-duplicates-cross-training-test",
+  "title": "An expanded document audit found training matches for 35.2% of test pages",
+  "summary": "An expanded audit of the RVL-CDIP benchmark found training-set matches for 14,076 test pages, or 35.20%, and 14,151 validation pages, or 35.38%. The search used learned image matching and counted near-duplicates that shared a document template as well as copies. A smaller 2023 analysis had already identified substantial duplication.",
+  "field": "computer science",
+  "ai_technology": "CLIP, SuperPoint, LightGlue",
+  "organization": "Vanderbilt University",
+  "source_url": "https://arxiv.org/abs/2606.31446v1",
+  "source_type": "paper",
+  "publication_date": "2026-06-30",
+  "paper_url": "https://arxiv.org/html/2606.31446v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "June arXiv v1 front matter, §§4.1–4.2 learned matching and Table 3; October v1 extension introduction and stated matching result; EACL 2023 §5 sampled overlap estimate.",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Learned CLIP embeddings proposed likely cross-split matches before SuperPoint and LightGlue visual matching and a text-similarity check. The calibration set contained 403 matched pairs among 1,600 candidate pairs, with 82.9% recall at the chosen threshold.",
+    "unknown": "The audit includes same-template pages and may miss matches. The earlier 2023 sample-based estimate of about 32% uses a different method and is not a baseline for measuring a change in duplication.",
+    "ai_role": "Learned CLIP embeddings screen scanned documents for likely matching pairs, and SuperPoint and LightGlue match their visual structure before final duplicate classification.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2606.31446v1",
+      "https://arxiv.org/html/2606.31446v1",
+      "https://arxiv.org/html/2610.32126v1",
+      "https://aclanthology.org/2023.eacl-main.195.pdf"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2023-09-congenital-heart-reoperation-seven-feature-risk-model",
+  "title": "A seven-feature model estimates complications after congenital heart reoperation",
+  "summary": "Researchers trained a retrospective seven-feature risk model in 1,011 adults undergoing repeat congenital heart surgery. The selected gradient-boosted model reported test AUC 0.763 and validation AUC 0.782 for a composite of death and major complications. External validation and evidence of clinical benefit remain absent.",
+  "ai_technology": "XGBoost gradient boosting and SHAP feature analysis",
+  "organization": "Mayo Clinic",
+  "publication_date": "2023-09-28",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.jtcvs.2023.09.045",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10972775/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original full-text bibliographic date, relevant computational/statistical Methods and Results, bounded cohort and selection caveats; no operational clinical instructions."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "The 2010–2022 single-center cohort was randomly split 70%/20%/10% for training/testing/validation. Eighteen preselected clinical variables were reduced to seven using SHAP contribution. Systemic ventricular ejection fraction was most influential in the fitted models. Reduced-model test/validation AUCs were .763/.782, with reported validation CI .568–.804 and five-fold range .631–.764.",
+    "unknown": "Authors selected a model at the 90th percentile AUC from bootstrapped model distributions; this is not an unbiased locked-model estimate. Rare composite events, single-center surgical selection and feature/model selection constrain generalization. Logistic-regression AUC .727 had overlapping confidence intervals, so superiority is not established. Conventional survival analysis of heart failure is separate from the machine-learning result, and SHAP influence is not causation.",
+    "ai_role": "Gradient boosting fitted clinical variables to a composite postoperative outcome; SHAP ranked model contributions and supported a reduced seven-variable model.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10972775/"
+    ]
+  }
+}

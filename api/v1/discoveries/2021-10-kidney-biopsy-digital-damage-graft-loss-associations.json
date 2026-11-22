@@ -1,0 +1,33 @@
+{
+  "id": "2021-10-kidney-biopsy-digital-damage-graft-loss-associations",
+  "title": "Digital kidney-biopsy damage features are associated with later graft loss",
+  "summary": "Deep-learning image analysis quantified tissue damage in 789 kidney-transplant biopsy slides from two cohorts. A damage score from 12-month biopsies was associated with subsequent graft loss in both cohorts. Baseline-score survival association was not confirmed in the smaller Australian cohort, and clinical utility remains untested.",
+  "ai_technology": "Mask R-CNN and U-Net histopathology analysis",
+  "organization": "Icahn School of Medicine at Mount Sinai; University of Sydney",
+  "publication_date": "2021-10-30",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.kint.2021.09.028",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10285669/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full-text bibliographic dates, computational classification Methods, held-out Results and explicit cohort/reference limitations."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Networks were developed on 60 selected biopsy slides and tested on 33 others. The pipeline then analyzed 478 baseline and 311 twelve-month slides from 404 GoCAR and 212 AUSCAD participants. In 200 GoCAR and 111 AUSCAD twelve-month biopsies, composite tissue/inflammation scores were associated with later death-censored graft loss; thresholds were derived in GoCAR.",
+    "unknown": "This is retrospective image/outcome analysis of previously collected cohorts, not prospective evaluation of a frozen clinical tool. GoCAR supplies both selected model-development slides and outcome analyses, with exact patient overlap not separated here. Baseline ITAS survival association was not confirmed in AUSCAD. Observational associations, selected thresholds, limited graft-loss events and cohort differences prevent causal, treatment-benefit or universal surrogate-endpoint claims.",
+    "ai_role": "Neural tissue/immune-cell segmentation supplied quantitative damage features, which ordinary survival analysis related to subsequent graft outcomes.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10285669/"
+    ]
+  }
+}

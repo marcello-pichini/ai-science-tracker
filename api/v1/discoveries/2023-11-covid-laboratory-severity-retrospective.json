@@ -1,0 +1,33 @@
+{
+  "id": "2023-11-covid-laboratory-severity-retrospective",
+  "title": "A laboratory-data model classifies retrospective COVID-19 severity labels",
+  "summary": "Tuned logistic regression in 8,844 repeated blood tests from 2,935 unvaccinated patients estimated retrospective COVID-19 severity labels, reporting an AUC of 0.8512. Tuning raised sensitivity from 36.59% to 78.05% while lowering specificity from 96.38% to 77.00%. This internal test-level evaluation does not establish early prognosis for new patients.",
+  "field": "medicine",
+  "ai_technology": "Logistic regression",
+  "organization": "University of Alicante; University and Polytechnic La Fe Hospital of Valencia",
+  "publication_date": "2023-11-28",
+  "source_url": "https://doi.org/10.1016/j.heliyon.2023.e22878",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10731083/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary article full-text bibliographic metadata and relevant computational evaluation Methods/Results: se0030, se0080, se0120, se0150, se0160. Primary-source caveat and denominator review; candidate-panel identity corrected where relevant."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "Logistic regression fitted the represented classification or candidate-selection model; preprocessing and expert reference labels are distinguished from the learned contribution.",
+    "tested": "Five-fold stratified evaluation split blood tests, approximately 7,075 for training and 1,769 for testing per fold; model and scaler combinations were compared and logistic regression was tuned.",
+    "unknown": "Patient grouping across folds is not established. Availability-based feature selection and model tuning are not shown to be nested within independent patient-level validation; multiple tests per patient can inflate apparent generalization. Samples after ICU admission were excluded; no prospective benefit or new biomarker mechanism is established. Model/scaler selection used evaluation folds. A figure caption and cohort breakdown describe the nonsevere group differently; no conclusion about hospitalization status is drawn. The operating-point tradeoff is distinct from the small AUC change from 0.8418 to 0.8512.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10731083/"
+    ]
+  }
+}

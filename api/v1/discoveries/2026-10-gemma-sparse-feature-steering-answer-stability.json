@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-gemma-sparse-feature-steering-answer-stability",
+  "title": "Gemma’s error-linked features rarely corrected answers under intervention",
+  "summary": "Interventions on sparse autoencoder features linked to errors changed answer preferences in two Gemma 3 models. Across question and option spans, selected features corrected 0.19% of initially wrong intervention events versus 0.06% for random active features. Effect directions were unstable when the prompt format or answer order changed.",
+  "field": "computer science",
+  "ai_technology": "Gemma 3; Gemma Scope 2 sparse autoencoders",
+  "organization": "University of Luxembourg",
+  "publication_date": "2026-10-27",
+  "source_url": "https://arxiv.org/abs/2610.38067v1",
+  "paper_url": "https://arxiv.org/html/2610.38067v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 §§3–5.5 Table 5 and Appendix H",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Selected features changed answer margins more than randomly chosen active ones at question and option spans. Corrected proportions were 0.189% versus 0.058% of initially wrong intervention events. Matched format and option-order tests did not show a stable directional advantage.",
+    "unknown": "The experiment studied eight multiple-choice datasets and selected layers in two model sizes. Events combine features, prompts and intervention settings, so they are not independent questions. The finding does not exclude mechanisms outside the tested features.",
+    "ai_role": "Gemma Scope 2 sparse autoencoders decode learned features in Gemma 3 1B and 4B. Feature intervention and matched random-active controls test causal sensitivity in question and answer option spans.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.38067v1",
+      "https://arxiv.org/html/2610.38067v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

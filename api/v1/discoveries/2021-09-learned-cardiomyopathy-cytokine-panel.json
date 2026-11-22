@@ -1,0 +1,33 @@
+{
+  "id": "2021-09-learned-cardiomyopathy-cytokine-panel",
+  "title": "Penalized learning identifies a cardiomyopathy-associated cytokine pattern",
+  "summary": "A LASSO-selected four-cytokine combination distinguished chronic Chagas cardiomyopathy from rheumatic heart disease in a small cross-sectional clinical study. The represented finding is a cohort-specific multivariable immune-profile association, not a verified causal inflammatory pathway or a deployable diagnostic test.",
+  "field": "medicine",
+  "ai_technology": "LASSO-regularized logistic learning",
+  "organization": "Federal University of Minas Gerais; Federal University of Paraná",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8546740/",
+  "source_type": "paper",
+  "publication_date": "2021-09-27",
+  "paper_url": "",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Exact primary front and selected computational/clinical Methods and corresponding high-level Results; operational laboratory protocols excluded from review",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The study included 38 chronic Chagas cardiomyopathy cases, 17 rheumatic heart disease cases and 12 healthy controls. An 80:20 random split was described for LASSO logistic classification; the selected panel comprised IL-12p70, IL-7, IL-1Ra and IL-4.",
+    "unknown": "A claimed 100% separation comes from a very small selected sample; the main result does not establish precision, external generalization or a robust future-patient operating threshold. Disease groups have different sex distributions, and controls were much younger. Parameter-selection nesting and test counts are incompletely specified. Conventional pairwise cytokine differences, generic networks and t-SNE visualization are separate from the enabling penalized model. No pathogen experimentation or therapeutic intervention is represented.",
+    "ai_role": "Regularized fitted classification selects a joint cytokine pattern from measured clinical variables; the scoped finding concerns its observed disease-group association.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8546740/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

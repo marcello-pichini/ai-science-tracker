@@ -1,0 +1,33 @@
+{
+  "id": "2026-04-study-10-1007-s12672-026-05118-6",
+  "title": "Learned five-gene score associates with survival in triple-negative breast-cancer cohorts",
+  "summary": "A CoxBoost/elastic-net score built from five expression markers was associated with survival in public triple-negative breast-cancer cohorts of 121 and 107 patients. Model choice and risk thresholds used both cohorts, so the comparison does not establish an untouched external predictor. The result is a retrospective prognostic association, without validated treatment selection or proof that a cell-line finding validates the clinical model.",
+  "field": "biology",
+  "ai_technology": "CoxBoost plus elastic-net survival modeling after outcome-informed gene selection",
+  "organization": "Harbin Medical University Cancer Hospital",
+  "publication_date": "2026-04-30",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "TCGA-TNBC supplied 121 tumor profiles with complete survival data; GSE58812 supplied 107. Upstream gene filtering used clinical outcomes. The source compared 101 algorithm combinations and selected CoxBoost plus elastic net with alpha 0.1. Reported concordance was 0.780 in TCGA and 0.630 in GSE58812. The two cohorts used separately optimized risk cutoffs before comparing observed survival groups.",
+    "unknown": "Both cohorts contributed to model selection and their own optimized thresholds, preventing an independent prespecified-cutoff claim. Small samples and outcome-informed filtering increase optimism. Modest GSE58812 concordance is not robust clinical utility, and inferred drug sensitivity is not patient treatment response. Source cell-line SEPT3 experiments were not independently adjudicated or counted as validation of the survival model. No causal pyrimidine-metabolism mechanism or improved patient outcome is established.",
+    "ai_role": "The learned penalized/boosted survival model combined selected measured gene-expression features into the represented patient-outcome score and cohort comparisons.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s12672-026-05118-6"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s12672-026-05118-6",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual public clinical cohort, outcome filtering, CoxBoost/elastic-net and model-selection/evaluation Methods, final score and cohort-specific cutoff Results. Operational biological procedures excluded; cell-line experiments are not independently adjudicated or used as clinical model validation. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-medical-ai-privacy-risk-rankings-persist",
+  "title": "Medical model training changed privacy risk more than who ranked highest",
+  "summary": "Across six clinical datasets, privacy-risk rankings were broadly similar under many changes to model training. In one chest X-ray cohort, stronger regularization reduced the share of patients above the study’s risk threshold from 88% to 30%. The rankings were compared across training changes using an audit of 7,789 medical-model instances.",
+  "field": "medicine",
+  "ai_technology": "ResNet, EfficientNet, vision transformers, ECGFounder, MRI-CORE",
+  "organization": "University of Crete; Foundation for Research and Technology–Hellas; University of Maryland",
+  "source_url": "https://arxiv.org/abs/2610.30229",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/pdf/2610.30229v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 PDF affiliation, aggregate Figures 2 and 4, cohort and risk-stability comparison",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A defensive study compared aggregate risk distributions and ordinal stability under seed, architecture, regularization and fine-tuning changes, including comparisons with trained seed replicates.",
+    "unknown": "The outcomes measure estimated likelihood of training-set membership disclosure under the study’s audit. They do not represent observed patient disclosures or complete invariance across all settings.",
+    "ai_role": "Researchers trained several thousand medical-model instances, including ECGFounder and MRI-CORE adaptations, and compared aggregate distributions of measured privacy risk across training regimes.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30229",
+      "https://arxiv.org/pdf/2610.30229v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

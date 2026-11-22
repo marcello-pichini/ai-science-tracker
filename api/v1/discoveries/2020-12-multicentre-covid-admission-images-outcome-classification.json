@@ -1,0 +1,35 @@
+{
+  "id": "2020-12-multicentre-covid-admission-images-outcome-classification",
+  "title": "Admission images and records classify COVID outcomes across six Italian hospitals",
+  "summary": "A December 2020 preprint studied admission chest X-rays and records from 820 hospitalized patients. A combined image-feature and clinical classifier reported mean accuracy 0.743 in leave-one-center-out evaluation for a composite severe outcome. This retrospective first-wave study does not establish prospective benefit or superiority over clinical records alone.",
+  "ai_technology": "Convolutional image features with classical supervised classifiers",
+  "organization": "University Campus Bio-Medico of Rome; Fondazione Bruno Kessler",
+  "publication_date": "2020-12-14",
+  "field": "medicine",
+  "source_url": "https://arxiv.org/abs/2012.06531v1",
+  "paper_url": "https://arxiv.org/pdf/2012.06531v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original v1 archive metadata and PDF clinical-data/model-validation Methods and Tables4/5; exact results compared with later journal full text. Version-header and submission dates remain distinguished."
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "The six-hospital cohort had 820 admission examinations, with outcomes classified as mild versus non-invasive ventilation, intensive care or death. Training-fold normalization, feature selection and parameter fitting were described. In original v1 Table 5, GoogleNet image features plus clinical data and logistic regression achieved mean accuracy .743±.061, sensitivity .769±.189 and specificity .685±.155 across held-out centers; clinical-data SVM accuracy was .734±.044. The later August 2021 journal tables retain these values.",
+    "unknown": "Many configurations were compared, and displayed best performances do not constitute an untouched locked-model evaluation. Center-held-out evaluation reuses one first-wave study rather than independent replication. Severe outcome combines several care decisions and mortality; the results do not establish time-to-event prognosis, treatment effect, capacity improvement or clinically significant added value over records alone. The v1 archive says submitted December 11, 2020, while its PDF carries a December 14 version header; this entry uses the dated PDF version and does not assert a first-public-day priority. Journal publication was August 28, 2021.",
+    "ai_role": "Neural features extracted from admission radiographs were combined with clinical variables by supervised classifiers to estimate the recorded composite outcome.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2012.06531v1",
+      "https://arxiv.org/pdf/2012.06531v1",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8401374/"
+    ]
+  }
+}

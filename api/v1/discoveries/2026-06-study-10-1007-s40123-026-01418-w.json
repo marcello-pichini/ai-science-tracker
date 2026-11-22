@@ -1,0 +1,33 @@
+{
+  "id": "2026-06-study-10-1007-s40123-026-01418-w",
+  "title": "AI-measured retinal vessel features show modest associations with later colorectal cancer",
+  "summary": "Deep-learning retinal vessel measurements were associated with later colorectal-cancer diagnoses in 55,798 UK Biobank participants. Four vascular features retained associations after clinical adjustment, with modest effect sizes. This retrospective analysis of longitudinal records does not establish causal cancer mechanisms, validated screening accuracy or benefit from changing cancer-surveillance decisions.",
+  "field": "biology",
+  "ai_technology": "RMHAS deep-learning retinal vascular segmentation and automated feature measurement",
+  "organization": "Southern Medical University; Guangdong Provincial People’s Hospital; Hong Kong Polytechnic University; Shantou University; Chinese University of Hong Kong",
+  "publication_date": "2026-06-30",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source analyzed 55,798 initially colorectal-cancer-free participants with usable fundus images, documenting 652 incident cancers over median 11.32-year follow-up. RMHAS segmented arteries, veins and optic disc before quantifying vascular geometry. After adjustment, four features remained associated with incidence; greater arterial-tortuosity variability had a per-standard-deviation hazard ratio 1.03, 95% CI 1.01–1.06. Sensitivity analyses were reported, including exclusion of early diagnoses.",
+    "unknown": "Observational associations have modest effect sizes and may reflect shared risk factors, reverse causation or residual confounding. Multiple-feature screening and selective imaging eligibility limit interpretation; 93% of participants were White. This was retrospective analysis despite prospective original cohort collection. No independent screening model, incremental clinical utility, causal angiogenesis or reduced cancer mortality was established by the represented finding. Supplementary results were not independently reconstructed.",
+    "ai_role": "The pretrained RMHAS deep-learning pipeline segmented retinal structures at cohort scale, enabling quantitative vascular features linked to subsequent recorded cancer diagnoses. Cox regression alone and generic vessel-segmentation benchmarks are not treated as the enabling AI result.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s40123-026-01418-w"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s40123-026-01418-w",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary UK Biobank eligibility, RMHAS segmentation/feature-extraction, clinical outcome linkage, covariate/FDR/sensitivity-analysis Methods and incidence Results/limitations. Original RMHAS development paper and supplements not independently read. Specific measured cohort association, not screening deployment or causal mechanism, represented. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

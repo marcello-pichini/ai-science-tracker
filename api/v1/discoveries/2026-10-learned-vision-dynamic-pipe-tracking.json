@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-vision-dynamic-pipe-tracking",
+  "title": "A vision-assisted drone tracked moving pipes in a physical test",
+  "summary": "In a physical moving-pipe test, a small drone using learned visual label detection and a model-predictive controller recorded 6.73% average tracking error, compared with 15.13% under a standard PID controller. The study compared control methods in a bounded experimental rig.",
+  "field": "other",
+  "ai_technology": "YOLOv5; learned visual label detection; model predictive control",
+  "organization": "Northwestern Polytechnical University; Shanghai Jiao Tong University",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35342v1",
+  "paper_url": "https://arxiv.org/html/2610.35342v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 learned perception Methods and matched Tello experiments, Table III",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study used a Tello drone to compare controller behavior in three lab scenarios, with camera-based detection feeding position estimates.",
+    "unknown": "This tests the integrated labeled setup under controlled conditions and does not establish field inspection reliability or collision reduction.",
+    "ai_role": "YOLOv5 detects visual pipe labels so that both feedback designs can estimate relative position.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35342v1",
+      "https://arxiv.org/html/2610.35342v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

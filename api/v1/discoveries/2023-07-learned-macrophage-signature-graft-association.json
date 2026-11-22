@@ -1,0 +1,33 @@
+{
+  "id": "2023-07-learned-macrophage-signature-graft-association",
+  "title": "Learned macrophage expression signature associates with transplant outcomes",
+  "summary": "A data-derived Boolean expression signature was associated with kidney-graft loss in two archived recipient cohorts totalling 517 people. The signature summarizes a model-defined reactive–tolerant axis. This retrospective association does not establish a causal macrophage mechanism, a universal cell-state taxonomy or a clinical treatment benefit.",
+  "field": "medicine",
+  "ai_technology": "SMaRT; Boolean Network Explorer; adaptive threshold fitting and unsupervised implication-rule discovery",
+  "organization": "University of California San Diego",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10388732/",
+  "source_type": "paper",
+  "publication_date": "2023-07-27",
+  "paper_url": "",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 1
+  },
+  "source_review": {
+    "scope": "Exact primary front, safe computational threshold/rule-learning Methods and high-level clinical outcome Results; no operational biological interventions evaluated",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The model was built from 197 archived macrophage-expression samples. StepMiner fitted data thresholds, BooleanNet inferred implication relationships, and BoNE formed equivalence groups and selected paths; known activation labels oriented the axis. The source reports a reactive signature associated with graft loss across two kidney-transplant cohorts.",
+    "unknown": "Cluster/path selection and activation labels shape the signature; it is not a universally established biological state definition. The kidney-graft association is consistent with earlier inflammatory-macrophage findings, so novelty is limited to this derived signature/application. Primary Figure4 describes testing the StepMiner threshold and threshold plus or minus its noise margin, introducing adaptive cutoff selection and multiplicity concerns. Cohort overlap and adjusted effect sizes were not independently resolved from supplemental data. No reported genetic/pharmacological intervention, causal reprogramming or prospective clinical utility is adopted.",
+    "ai_role": "Data-fitted thresholds and unsupervised symbolic implication/cluster discovery derive the expression signature subsequently compared with observed clinical outcomes; the graph drawing itself is not the enabling operation.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10388732/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

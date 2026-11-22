@@ -1,0 +1,33 @@
+{
+  "id": "2021-09-environmental-exposures-classify-recorded-diabetes",
+  "title": "Environmental exposures classify recorded diabetes in NHANES",
+  "summary": "A learned exposure model distinguished recorded diabetes in a random NHANES holdout with AUC .78. The analysis used 8,501 participants from 2005–2016. It establishes a retrospective predictive association, with no proof that the measured chemicals cause diabetes or predict its future onset.",
+  "ai_technology": "Random-forest feature screening and LASSO regression",
+  "organization": "Nanjing Medical University; Nanjing University Medical School",
+  "publication_date": "2021-09-29",
+  "evidence": {
+    "tested": "The original abstract reports 5,953 discovery and 2,548 validation participants, training-set ten-fold feature selection using RF and LASSO, and diabetes AUC .80 versus .78. Separate linear-model validation R² values were .40 for insulin, .15 for fasting glucose and .17 for two-hour glucose; these are not additional independent discovery records.",
+    "unknown": "This review had the complete original abstract and metadata, not full computational Methods. Exact feature identities, endpoint definition, sampling/measurement subsets, survey weighting, missingness and detailed preprocessing containment were not authenticated. The random validation set comes from the same survey periods; no external cohort or prospective incident-diabetes prediction is established. Chemical levels can reflect correlated exposure or disease-related processes; prediction does not establish causation. A bibliographic trial label does not make this observational analysis a randomized intervention.",
+    "ai_role": "Learned feature selection and penalized regression quantify the predictive association between measured environmental exposures and recorded diabetes.",
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/34597539/"
+    ]
+  },
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.scitotenv.2021.150674",
+  "paper_url": "https://pubmed.ncbi.nlm.nih.gov/34597539/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Complete original primary abstract, dates and institutional affiliations actually read; full-text details were not available in this bounded review."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2024-10-birth-expression-early-sepsis-association",
+  "title": "Learned birth-expression signature associates with later neonatal sepsis",
+  "summary": "Retrospective LASSO analysis of blood collected while newborns appeared healthy identified a four-gene signature associated with early-onset sepsis during the following week. A small external diagnostic check gave AUC .72, but those external samples were collected after illness onset. This does not independently validate pre-symptom screening or clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "LASSO; sparse partial least-squares discriminant analysis",
+  "organization": "Simon Fraser University; University of British Columbia; London School of Hygiene and Tropical Medicine",
+  "source_url": "https://doi.org/10.1016/j.ebiom.2024.105411",
+  "source_type": "paper",
+  "publication_date": "2024-10-28",
+  "paper_url": "",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Exact primary identity and scoped safe computational/clinical Methods and high-level Results; evidence access distinguished in case ledger; no operational laboratory procedures evaluated",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The prospective source cohort enrolled 720 newborns; day-of-birth expression comparisons included 14 later early-onset cases, six late-onset cases, 12 localized-infection cases and 32 healthy controls. Repeated development splits selected features; the final four-gene model used all available birth samples. The separate GSE26440 check comprised six early-onset cases and six controls.",
+    "unknown": "Prospective sample collection does not establish that the fitted model was frozen before outcomes. The headline development AUC .94 is not a held-out future-patient estimate; Monte Carlo testing and final whole-cohort fitting are distinct analyses. External post-onset samples do not test prediction before clinical symptoms. Tiny case counts, clinical sepsis definitions and selected controls limit generalization. No prevention or causal immune-development mechanism is represented.",
+    "ai_role": "Penalized model fitting selects and combines expression features linked to subsequent clinical status; the learned signature, not conventional differential expression alone, supplies the scoped finding.",
+    "evidence_urls": [
+      "https://doi.org/10.1016/j.ebiom.2024.105411"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

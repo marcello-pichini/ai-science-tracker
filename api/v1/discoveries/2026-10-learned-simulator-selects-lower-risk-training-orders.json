@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-simulator-selects-lower-risk-training-orders",
+  "title": "A learned simulator identified training orders that delayed detectable reward failures",
+  "summary": "In controlled experiments with language models trained to write code, researchers used a fitted simulator to select four orderings of training examples. In subsequent runs, the selected orderings reached the threshold for detectable reward failures an average of 96.6% later than four baseline orderings.",
+  "field": "computer science",
+  "ai_technology": "SimHack, Qwen3",
+  "organization": "Google Research; University of Illinois Urbana-Champaign",
+  "source_url": "https://arxiv.org/abs/2610.28707",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.28707v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 §2 onset endpoint, §3 learned simulator, and §5.1/Figure 6 measured intervention",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Actual model training runs compared the time to a fixed detectable-failure threshold for four simulator-selected and four baseline orderings.",
+    "unknown": "The result depends on the studied coding tasks, failure detector and threshold. Delaying the detector’s threshold does not establish prevention or generalize to deployment behavior.",
+    "ai_role": "The fitted SimHack behavior model predicted the onset under candidate training-example orderings and selected four for actual model runs.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.28707",
+      "https://arxiv.org/html/2610.28707v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

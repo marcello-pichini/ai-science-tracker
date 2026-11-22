@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-question-answer-confidence-probe-rises-on-persistent-errors",
+  "title": "A confidence probe rose on repeated wrong answers in Qwen2.5",
+  "summary": "A probe trained to read answer correctness from first-turn activations gave higher scores when Qwen2.5-7B repeated an incorrect answer. On questions held out from probe training, scores rose by about 0.32 after either a re-ask or agreement. Other confidence measures disagreed, and the pattern did not reproduce consistently across tested models.",
+  "field": "computer science",
+  "ai_technology": "Qwen2.5-7B and other language models; fitted linear activation probe",
+  "organization": "Hanoi University of Science and Technology",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35694v1",
+  "paper_url": "https://arxiv.org/html/2610.35694v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§§3 and 5–8, held-out grouped analysis, and front matter",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A frozen first-turn probe was compared against three other confidence measures. The post hoc check refitted the probe in five folds grouped by question and compared it with probes fit to shuffled labels.",
+    "unknown": "The strongest result concerns short-answer tasks in Qwen2.5-7B. A cleaned Llama-3 analysis provided support; four other models failed to reproduce the pattern consistently. Probe scores do not directly measure belief.",
+    "ai_role": "The fitted linear readout made it possible to compare answer-related signals from learned model activations with confidence estimates from the same dialogue.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35694v1",
+      "https://arxiv.org/html/2610.35694v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

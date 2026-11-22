@@ -1,0 +1,34 @@
+{
+  "id": "2023-01-infant-single-ventricle-metabolome-group-pattern",
+  "title": "Learned serum profiles separate sampled cardiac and control infants",
+  "summary": "In a study of 52 infants with single-ventricle heart disease and 48 controls, random-forest analysis distinguished circulating metabolite profiles, reporting a 7.49% error and separate leave-one-out group discrimination. This represents an exploratory multivariate sample pattern, not an established diagnostic test or an AI discovery of the reported metabolic pathways.",
+  "field": "medicine",
+  "ai_technology": "Random forest",
+  "organization": "University of Colorado",
+  "publication_date": "2023-01-27",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9979841/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 1
+  },
+  "source_review": {
+    "scope": "Actual relevant original clinical/computational Methods and Results read;111 original v1 and later journal checked separately; no operational biological protocols",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "A fitted forest learns group-discriminating patterns from relative metabolite abundances and ranks features by permutation importance. Conventional differential/pathway analyses and univariate outcome trends are separate.",
+    "tested": "The source describes random-forest group classification, out-of-bag-style error reporting and leave-one-out evaluation on the sampled infant cohorts. The represented case/control comparison uses the existing metabolomic measurements.",
+    "unknown": "Cases and controls differ in age and blood-sampling site; medication, support and surgical context can confound profiles. Exact patient-level containment across repeated/multiple-site samples is not fully established in the reviewed model description. Clinical-outcome metabolite associations did not survive multiplicity correction and are not adopted. Relative measurements and one high-altitude centre limit transfer. The linked editorial is authenticated by primary metadata, but its body was not reviewed. No causal pathway, postoperative benefit or independently replicated clinical test is claimed.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9979841/",
+      "https://doi.org/10.1016/j.jacadv.2022.100169"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2022-12-learned-brain-patterns-link-pain-and-cognitive-measures",
+  "title": "Learned brain patterns link pain ratings and cognitive measures",
+  "summary": "A machine-learning mediation analysis identified brain patterns jointly related to heat intensity and pain ratings, and connectivity patterns related to fluid intelligence and working-memory accuracy. The December 2022 journal analysis used existing fMRI datasets; a related preprint appeared in October 2022. The authors explicitly avoid causal interpretation.",
+  "ai_technology": "3D convolutional neural network and ridge-regression connectome predictive modeling",
+  "organization": "Johns Hopkins University; Dartmouth College",
+  "publication_date": "2022-12-28",
+  "evidence": {
+    "tested": "Pain models used 209 training participants across seven studies and a 75-person eighth-study evaluation, with activation patterns related to heat intensity and pain ratings. The pain-model association was absent for aversive sound trials in that evaluation; leave-study-out mediation was significant for five of eight pain datasets. A separate HCP analysis used 558 training and 240 test participants, identifying connectivity patterns jointly related to fluid intelligence and working-memory accuracy.",
+    "unknown": "These are statistical mediation associations, not established neural causal pathways. Training Methods explicitly evaluated iteration-specific mediation on test data and selected the most stable indirect effect; those test results are therefore not a wholly untouched final confirmation. The pain data had previously been analyzed with a different mediation method, and familiar pain regions were recovered alongside exploratory differences. SHAP localization and its arbitrary threshold do not establish independent biological mechanisms. The primary preprint API dates version1 to October 11, 2022, but its full result tables were not read; journal-specific claims are not assigned that earlier date. The HCP split is within one source cohort, not a separate independently collected cohort.",
+    "ai_role": "A fitted CNN compressed activation maps into learned mediators optimized through the path model; ridge-regression connectome modeling supplied the second application. Conventional path analysis and bootstrapping tested the resulting associations.",
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10332048/"
+    ]
+  },
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.neuroimage.2022.119843",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10332048/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original primary computational training, clinical/sample definition, represented Results and bounded Discussion/limitations actually read; earlier primary preprint API metadata/abstract read, not its full tables."
+  }
+}

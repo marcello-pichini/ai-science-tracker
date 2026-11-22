@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-traffic-fine-process-temporal-patterns",
+  "title": "Learned process groups expose different time profiles in traffic-fine records",
+  "summary": "NMF-based process grouping in150370 traffic-fine records produced groups concentrated in different periods despite calendar dates being excluded from their encodings. Three groups had88-94% of traces ending in2000-2004, while two others had86-97% ending in2009-2013. These exploratory temporal associations do not identify the causes of process change.",
+  "field": "computer science",
+  "ai_technology": "TracePrism; non-negative matrix factorization; k-means",
+  "organization": "Fraunhofer IAIS; City St George’s, University of London; University of Seville; Eindhoven University of Technology; University of St. Gallen",
+  "source_url": "https://arxiv.org/abs/2610.28532v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.28532v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Primary v1 front and safe computational/model Methods, specific application Results and statistical limitations",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "An analyst iteratively fitted NMF topics and formed process groups, with k-means used on topic weights in a later round. Posthoc end-date distributions compared accepted group memberships.",
+    "unknown": "Group thresholds, encoding choices and commit order were analyst-selected on the same log. No reseed stability study or dedicated drift analysis separated behavior from calendar policy changes; late open cases can reflect right-censoring. The result is a data-specific association, not evidence of an administrative cause or improved process performance.",
+    "ai_role": "Fitted topic representations and learned partitions supply behavior-based groups whose subsequently examined date distributions reveal the temporal contrast. UMAP is a visual aid rather than the enabling operation.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.28532v1",
+      "https://arxiv.org/html/2610.28532v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

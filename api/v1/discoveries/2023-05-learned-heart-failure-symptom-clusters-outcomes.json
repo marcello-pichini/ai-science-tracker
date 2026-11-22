@@ -1,0 +1,34 @@
+{
+  "id": "2023-05-learned-heart-failure-symptom-clusters-outcomes",
+  "title": "Learned symptom clusters track heart-failure emergency outcomes",
+  "summary": "Fitted k-means partitioned nine recorded symptoms in438 emergency patients with prior heart failure into three groups. The indigestion group had adjusted odds ratios of1.8 for both acute heart-failure exacerbation and30-day adverse cardiac events compared with the group lacking indigestion and dyspnea. These are exploratory same-cohort associations, not a validated triage intervention.",
+  "field": "medicine",
+  "ai_technology": "K-means clustering",
+  "organization": "University of Pittsburgh; University of Pittsburgh Medical Center",
+  "publication_date": "2023-05-27",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10526960/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original primary clinical/computational Methods, reference definitions, model evaluation and Results independently read; no operational laboratory sections",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "Fitted k-means learns symptom-based patient partitions; the resulting assignments enable clinical outcome comparisons. PCA performed poorly and was not the retained partition.",
+    "tested": "A secondary analysis of prospectively collected emergency presentations used438 patients and nine binary symptoms. Silhouette analysis selected three clusters of178,100 and160 patients. Two reviewers adjudicated clinical outcomes; regression adjusted for selected baseline variables.",
+    "unknown": "The same selected cohort was used to discover and test clusters, with univariate-informed adjustment. Confidence intervals for the reported odds ratios round to1.0; no independent replication or causal interpretation is established. Outcomes include a heterogeneous composite; clustering is not proof of distinct disease mechanisms or improved emergency decisions.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10526960/",
+      "https://doi.org/10.1016/j.hrtlng.2023.05.012"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

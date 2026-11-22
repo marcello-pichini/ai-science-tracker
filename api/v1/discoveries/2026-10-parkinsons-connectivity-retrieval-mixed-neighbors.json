@@ -1,0 +1,35 @@
+{
+  "id": "2026-10-parkinsons-connectivity-retrieval-mixed-neighbors",
+  "title": "Parkinson’s connectivity retrieval found similarly mixed neighbors for cases and controls",
+  "summary": "Among 40 participants in the TaoWu cohort, the ten closest matches in a learned connectivity representation were 79.5% Parkinson’s cases for diagnosed participants and 81.0% for controls, on average. The source pool included 139 people with Parkinson’s among 169 participants. Retrieval did not consistently improve classification beyond pretraining alone.",
+  "field": "medicine",
+  "ai_technology": "Graph convolutional autoencoder; functional-connectivity retrieval",
+  "organization": "Carl von Ossietzky University of Oldenburg",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35107v1",
+  "paper_url": "https://arxiv.org/html/2610.35107v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 cohort Methods, Table 1 and Figure 2 controls; PDF author affiliation",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A frozen encoder was trained on external cohorts. The researchers summarized matched neighbor labels and compared prediction variants using repeated cross-validation in the separate TaoWu cohort.",
+    "unknown": "The study is small and the source lookup is label-imbalanced. Same-fold checkpoint selection and cohort differences limit interpretation of classification metrics.",
+    "ai_role": "A graph convolutional autoencoder learned functional-connectivity embeddings from 169 external individuals. Neighbor identities and a downstream classifier evaluated a separate 40-person sample.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35107v1",
+      "https://arxiv.org/html/2610.35107v1",
+      "https://arxiv.org/pdf/2610.35107"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

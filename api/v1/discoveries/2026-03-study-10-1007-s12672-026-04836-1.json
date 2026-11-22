@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-study-10-1007-s12672-026-04836-1",
+  "title": "Learned gene selection highlights IGSF9 in early-stage lung-tumor tissue comparisons",
+  "summary": "Random-forest and LASSO selection prioritized expression markers from 45 paired early-stage lung adenocarcinoma and adjacent-tissue samples. Additional public cohorts supported IGSF9 as a tissue discriminator and survival-associated candidate. These are retrospective molecular associations, without demonstrated early screening utility or proof that IGSF9 drives malignant transformation.",
+  "field": "biology",
+  "ai_technology": "Random-forest feature ranking and tenfold-tuned LASSO marker selection",
+  "organization": "China Three Gorges University; Yichang Central People’s Hospital",
+  "publication_date": "2026-03-29",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source used 45 paired early-stage tumor/adjacent specimens in GSE32863 for differential filtering and RF/LASSO selection, yielding nine candidate markers. Expression comparisons used further public series. In GSE63459, comprising 33 tumors and 32 adjacent controls, IGSF9 expression showed reported AUC 0.903 with 95% confidence interval 0.816–0.960. Survival associations were assessed separately in GSE31210 and TCGA expression cohorts.",
+    "unknown": "Candidate prioritization incorporated the additional cohort results, so the final singled-out marker is not an untouched independently selected test. Surgical tissue contrasts do not establish noninvasive screening, diagnostic specificity against other lung diseases or clinical benefit. Paired tissues, platform differences and cohort composition may confound expression signals. Prior lung-cancer work already implicated IGSF9; no first causal-role claim is made. Pseudotime, inferred cell communication and copy-number patterns do not prove that IGSF9 causes malignant differentiation, immune escape or invasion; the source explicitly lacked functional validation.",
+    "ai_role": "The learned RF/LASSO intersection reduced measured expression candidates for subsequent tissue-reference and outcome comparisons, enabling the represented marker prioritization. Generic pathway analysis or pseudotime alone is not treated as an enabling causal finding.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s12672-026-04836-1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s12672-026-04836-1",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual public clinical cohort/normalization, RF/LASSO selection, additional-cohort ROC and survival Methods/Results and source limitations. Functional/mechanistic claims from computational trajectories are not admitted. Original online March 29, 2026 distinguished from December issue metadata. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

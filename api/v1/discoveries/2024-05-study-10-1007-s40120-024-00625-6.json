@@ -1,0 +1,33 @@
+{
+  "id": "2024-05-study-10-1007-s40120-024-00625-6",
+  "title": "Post hoc neural gait analysis detects a tandem-walk metric difference in an ataxia trial",
+  "summary": "A deep pose-estimation pipeline extracted gait measurements from a small convenience subset of a randomized ataxia trial. Post hoc analysis found a tandem-walk metric difference between troriluzole and placebo, while the natural-walk comparison was nonsignificant and treatment did not reduce falls. The result supports a bounded retrospective measurement finding, without confirmatory evidence of clinical benefit.",
+  "field": "biology",
+  "ai_technology": "MPII-trained multi-stage deep neural network for human pose estimation; derived Pose Dispersion Index",
+  "organization": "Yale School of Medicine; Biohaven Pharmaceuticals; Massachusetts General Hospital; UCLA School of Medicine",
+  "publication_date": "2024-05-30",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Among 218 randomized participants, interpretable paired videos were available for 67 tandem-walk and 56 natural-walk participants. The pretrained deep network tracked body keypoints used to calculate pose dispersion. An adjusted treatment-by-visit mixed model reported a week 48 tandem-walk coefficient 0.584, 95% CI 0.137–1.031, p=0.010. The natural-walk difference was nonsignificant, and the source explicitly reports no treatment effect on falls.",
+    "unknown": "The video endpoint was post hoc and was not the original recording purpose. Convenience and quality selection retained only 30.7% and 25.7% of participants, respectively, introducing selection and measurement limitations. Only baseline/final recordings were analyzed, supplementary metric implementation was not independently reconstructed, and the finding does not establish prespecified efficacy, reduced falls or clinical utility.",
+    "ai_role": "The learned pose model extracted body coordinates from trial videos, enabling a source-specific gait metric and treatment-group comparison that standard clinician ratings did not directly provide. Trial randomization does not make this later AI-derived endpoint a locked prospective evaluation.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s40120-024-00625-6"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s40120-024-00625-6",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary trial/video eligibility, pretrained pose-model and derived-index Methods, post hoc mixed/Poisson evaluation, tandem/natural-walk Results, no-falls-benefit statement and convenience-video limitations. Supplementary metric implementation not independently reconstructed. No prospective locking or clinical-benefit claim adopted. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

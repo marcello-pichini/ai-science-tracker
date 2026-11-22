@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-openvla-activation-features-indicate-failure-before-estimated-point-of-no-return",
+  "title": "Robot model activations signaled failures before recovery became unlikely in simulation",
+  "summary": "Researchers found that OpenVLA activation features could distinguish eventual failures from successful rollouts before recovery became unlikely in a simulated robot benchmark. The predictor reached an AUROC of 0.71 before the study’s estimated point of no return.",
+  "field": "computer science",
+  "ai_technology": "OpenVLA-7B, sparse autoencoders",
+  "organization": "University of Utah",
+  "source_url": "https://arxiv.org/abs/2610.32208",
+  "source_type": "paper",
+  "publication_date": "2026-10-23",
+  "paper_url": "https://arxiv.org/html/2610.32208v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 §2 OpenVLA rollouts, §2.2/Table 1 and Appendix E recoverability estimates",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study used 500 rollouts over ten simulated manipulation tasks, held out 95 trajectories, and estimated recoverability with alternative branched rollouts.",
+    "unknown": "Recovery was defined using the study’s simulated branching protocol. The result does not establish reliable physical-robot intervention or superiority over raw activation predictors. Recoverability used only four alternative continuations per probe and depended on the tested policy and remaining time budget. Across reported alarm thresholds, false alarms ranged from 64% to 14% while actionable detections fell from 88% to 33%.",
+    "ai_role": "Fitted sparse autoencoders decompose OpenVLA activation patterns and fitted outcome predictors compute early warnings on held-out robot-policy traces.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.32208",
+      "https://arxiv.org/html/2610.32208v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

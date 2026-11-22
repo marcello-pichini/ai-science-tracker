@@ -1,0 +1,35 @@
+{
+  "id": "2026-10-acridine-metastable-polymorph-free-energy-landscape",
+  "title": "Learned simulations mapped a shallow free-energy landscape for acridine",
+  "summary": "Anharmonic simulations using a fine-tuned MACE potential placed four metastable acridine forms 2.27–2.83 kJ/mol above Form II at 300 K. In the simulations, Form VIII became the most stable member of that group at higher temperature. Laboratory transitions partly agreed with the predicted changes in ordering.",
+  "field": "materials",
+  "ai_technology": "MolCryst fine-tuned MACE-MH1 interatomic potential",
+  "organization": "New York University; NYU Shanghai; Flatiron Institute",
+  "publication_date": "2026-10-27",
+  "source_url": "https://arxiv.org/abs/2610.37597v1",
+  "paper_url": "https://arxiv.org/html/2610.37597v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 §§2.3, 4.3–4.4, Supplement S2.2, Fig. 5 and Table 5; earlier ACS static lattice-energy study",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "At 300 K the estimated Gibbs free energies of four metastable acridine forms were 2.27–2.83 kJ/mol above Form II. Form VIII was estimated to become the most stable member of that metastable group at higher temperature. Observed transitions partly agreed with the predicted crossovers.",
+    "unknown": "The absolute free-energy differences are computational estimates. The comparison is with observed phase transformations, and Form IV was omitted from the anharmonic calculation. The main text discusses a value near 350 K, while the supporting protocol lists temperature propagation over 280–340 K; that endpoint is not promoted here. Laboratory transitions only partly match: the calculation leaves Form III more stable throughout, unlike the observed Form VIII–III crossover.",
+    "ai_role": "A MACE-MH1 interatomic model fine-tuned on electronic-structure configurations supplied energies and forces for anharmonic thermodynamic integration.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.37597v1",
+      "https://arxiv.org/html/2610.37597v1",
+      "https://pubs.acs.org/doi/10.1021/acs.jctc.5c01610"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

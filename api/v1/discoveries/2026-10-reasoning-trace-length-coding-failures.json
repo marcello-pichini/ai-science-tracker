@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-reasoning-trace-length-coding-failures",
+  "title": "Judge-labeled invalid coding traces were longer in two related models",
+  "summary": "Code-generation reasoning traces labeled invalid by a model-judge ensemble averaged 17,163 tokens for DeepSeek-R1-0528, compared with 7,102 for valid-labeled traces. Its distilled 8B variant showed the same direction. These labels concern reasoning coherence and are explicitly distinct from whether the final code passes functional tests.",
+  "field": "computer science",
+  "ai_technology": "DeepSeek-R1-0528; DeepSeek-R1-0528-Qwen3-8B",
+  "organization": "Shanghai Jiao Tong University",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.34943v1",
+  "paper_url": "https://arxiv.org/html/2610.34943v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 task/model setup, trace taxonomy and §§4.1–4.2 differences by outcome",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Researchers collected traces under matched prompting and decoding. Three model judges each rated trace validity three times; confidence-weighted votes labeled high-confidence cases and two human annotators adjudicated the remainder. The reported length contrast groups these trace-validity labels, not final code correctness.",
+    "unknown": "Validity judgments include coherence and unnecessary detours, which may themselves relate to trace length; the contrast does not establish a causal effect of long reasoning or a functional-code failure rate. The models share a lineage, selected complete traces exclude incomplete or unparsable responses, and verbal traces need not faithfully reflect internal reasoning.",
+    "ai_role": "DeepSeek R1 models generated traces; DeepSeek-V3.2, Gemini-3-Flash and GLM-5.1 judged their validity, while learned semantic annotators classified reasoning actions.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.34943v1",
+      "https://arxiv.org/html/2610.34943v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

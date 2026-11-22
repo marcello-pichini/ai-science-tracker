@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-agent-found-software-defects-differ-from-maintainer-fixes",
+  "title": "Coding agents and maintainers surfaced different types of software defects",
+  "summary": "Across 20 open-source repositories, arithmetic and comparison errors made up 18.5% of agent reports and 9.9% of historical maintainer fixes. Missing branches for supported inputs made up 7.7% of agent reports and 18.0% of the fixes. The study compared 14 agent configurations with 2,457 fixes from 18 months of repository history.",
+  "field": "computer science",
+  "ai_technology": "Frontier coding agents including GPT-5.6 Sol, Claude Opus 5 and Gemini 3.5 Flash",
+  "organization": "LogicStar.ai; ETH Zurich",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35987v1",
+  "paper_url": "https://arxiv.org/html/2610.35987v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§§2–4, Table 4 and taxonomy Appendix D aggregate methods",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study categorized agent reports from historical snapshots and same-repository fixes using a shared bug taxonomy. Agent percentages were averages across configurations.",
+    "unknown": "The comparison contrasts reported findings with fixes that maintainers chose to complete. Some reports may be invalid, and unreported or unfixed historical bugs are outside the reference set.",
+    "ai_role": "Coding agents generated bug reports for historical snapshots. Additional learned classification and matching helped construct and categorize the analysis set.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35987v1",
+      "https://arxiv.org/html/2610.35987v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

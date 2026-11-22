@@ -1,0 +1,33 @@
+{
+  "id": "2021-02-learned-cervical-cancer-recurrence-internal-evaluation",
+  "title": "Learned cervical-cancer recurrence models show modest internal discrimination",
+  "summary": "In a retrospective four-hospital cervical-cancer analysis, learned models estimated recurrence and survival using recorded clinical and pathological factors. The 1,023-person test set was a random split of the same hospital pool. Site-specific recurrence discrimination was modest, and external clinical benefit was not established.",
+  "ai_technology": "Support vector machine and tree-based survival/classification models",
+  "organization": "Fudan University; Shanghai Key Laboratory of Female Reproductive Endocrine-Related Diseases; Shanghai Changjiang Science and Technology Development",
+  "publication_date": "2021-02-20",
+  "evidence": {
+    "tested": "The source analyzed 5,112 surgically treated patients, 268 deaths and 343 recurrences, with an 80:20 stratified split, training-only ADASYN and five-fold grid search. For all 22 variables, test recurrence AUC was .794 for SVM versus .785 for logistic regression; site-specific recurrence AUC was .781 versus .776. SVM local/distant test sensitivities were .472/.424 at the represented operating points.",
+    "unknown": "The source calls the test external, but Methods randomly divide patients pooled from the same four hospitals; this is internal evaluation. Some feature subsets are selected from whole-cohort Cox associations, and containment is not established. Inputs include postoperative pathology/adjuvant treatment, so this is not preoperative prediction or a causal treatment-effect model. Recurrence event counts differ 343 versus 344 across source locations. Binary risk endpoints do not supply a frozen future prediction horizon. Source claims of a universally best model are not supported across all displayed table cells; no clinical surveillance benefit is measured.",
+    "ai_role": "Learned classifiers and representations evaluate a defined clinical staging or recurrence target; conventional clinicopathologic associations are not separately counted as AI discoveries.",
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7907920/"
+    ]
+  },
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.tranon.2021.101032",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7907920/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original patient cohort, computational Methods and represented Results actually read"
+  }
+}

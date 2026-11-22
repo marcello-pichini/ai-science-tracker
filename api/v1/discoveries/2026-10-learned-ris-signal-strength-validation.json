@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-ris-signal-strength-validation",
+  "title": "Physics-guided learning reaches a measured radio-link threshold with fewer samples",
+  "summary": "A shallow physics-guided network fitted a radio-link model from received-signal-strength measurements for a fixed reconfigurable surface. In the tested setup it reached53dB with400 measurements, versus1600 for the compared CSM method. This is a setup-specific recorded-measurement validation, not a general mobile-network or energy-efficiency benefit.",
+  "field": "physics",
+  "ai_technology": "Parametric physics-guided neural blind beamforming; P-PGNBB",
+  "organization": "University of Warwick",
+  "source_url": "https://arxiv.org/abs/2610.27972v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.27972v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original v1 front, actual learned model Methods, clinical/physical-reference evaluation and limitations",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A14-parameter model learned from measured surface configurations and signal strengths. A256-element surface and fixed transmitter/receiver geometry supplied the field dataset.",
+    "unknown": "The comparison concerns one fixed setup and subsets of a recorded acquisition. Test prediction error was about4.38dB; noise, model mismatch and temporal variation were not separately isolated. More flexible PGNN had lower prediction error at larger budgets. Classical phase-coherence observations and perfect-CSI simulation bounds are separate from the learned result.",
+    "ai_role": "The fitted physics-guided network estimates a configuration-to-signal mapping used to select surface settings, enabling the measured sample-budget comparison.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.27972v1",
+      "https://arxiv.org/html/2610.27972v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

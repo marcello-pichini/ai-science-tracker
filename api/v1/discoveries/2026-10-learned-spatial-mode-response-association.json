@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-spatial-mode-response-association",
+  "title": "Learned spatial expression mode associates with treatment response in a small cohort",
+  "summary": "An unsupervised spatial-learning model fitted 20 expression modes in pretreatment samples from 21 cutaneous squamous-cell-cancer patients. A subsequently selected mode showed greater neighboring-cell contrast in responders than non-responders. This is an exploratory same-cohort spatial association, not an independently validated treatment-response predictor.",
+  "field": "medicine",
+  "ai_technology": "SAIL; unsupervised sparse spatial projection learning",
+  "organization": "University of Warwick",
+  "source_url": "https://arxiv.org/abs/2610.28806v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.28806v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original v1 front, computational objectiveIII-C, clinical applicationV-D and statistical limitations; no operational laboratory protocols",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Spatial modes were fitted without response labels from 28 pretreatment biopsies in 21 patients. Response comparisons subsequently selected the most discriminative of 20 modes.",
+    "unknown": "Post-training mode selection uses the same 21 response labels. Nominal comparisons across 20 modes do not establish multiplicity-adjusted confirmation or held-out predictive accuracy. Prior work already linked spatial organization to response; this refinement does not establish a causal immune mechanism or treatment benefit.",
+    "ai_role": "Learned sparse projections optimize spatial coherence rather than simply plotting coordinates. The resulting mode supplies the patient-level contrast examined against recorded response.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.28806v1",
+      "https://arxiv.org/abs/2610.28806v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

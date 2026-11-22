@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-ridge-etf-return-predictions-failed-zero-baseline",
+  "title": "Rolling ridge forecasts failed to beat zero in an ETF return backtest",
+  "summary": "In a 2005–2025 ETF study, a rolling ridge model using past return features produced negative mean out-of-sample R² at every tested regularization level against a zero-return forecast. Scores approached zero as stronger regularization shrank the predictions.",
+  "field": "other",
+  "ai_technology": "Ridge regression with rolling retraining",
+  "organization": "KTH Royal Institute of Technology; Stanford University",
+  "publication_date": "2026-10-27",
+  "source_url": "https://arxiv.org/abs/2610.36491v1",
+  "paper_url": "https://arxiv.org/html/2610.36491v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§§2, 5.3 and 6.3, Figure 25 and the disclosed universe selection",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The model was repeatedly fitted on trailing observations and scored on the following period. The paper compared multiple regularization levels with a zero forecast.",
+    "unknown": "The ETFs were selected from ones still trading at study time, producing survivorship bias. The result concerns the chosen predictors, horizons and historical universe.",
+    "ai_role": "The fitted regression generated return forecasts from past observations, enabling a retrospective comparison of predictive signal against the zero baseline.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.36491v1",
+      "https://arxiv.org/html/2610.36491v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-domino-cardiomegaly-hidden-subgroup",
+  "title": "Learned image groups reveal a low-sensitivity slice in cardiomegaly detection",
+  "summary": "A fitted subgroup model assigned chest X-rays in a 22,281-image CheXpert-Plus test set to image groups. Across discovered groups, cardiomegaly sensitivity ranged from 0.10 to 0.98. One group associated with higher BMI and male sex had sensitivity of 0.10 and specificity of 0.95. The group was defined by learned image features and classifier scores, and its demographic profile was assessed afterward.",
+  "field": "medicine",
+  "ai_technology": "DOMINO Gaussian mixture; CLIP; BiomedCLIP; ResNet-50",
+  "organization": "University of Bern; Bern University Hospital; Diabetes Center Berne; Technical University of Denmark; University of Tübingen; University of Lucerne",
+  "source_url": "https://arxiv.org/abs/2610.32362v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-23",
+  "paper_url": "https://arxiv.org/html/2610.32362v1",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, Results, Discussion example SG A0 and Methods including dataset, cluster fitting and classifier",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors fitted subgroup memberships on 22,263 validation images and then assigned an existing separate test partition. Real-world subgroup analyses were distinct from synthetic-artifact checks.",
+    "unknown": "The subgroup is defined by the fitted model, with demographic enrichment assessed afterward. The low sensitivity is imprecise (0.103 ± 0.097, reported 95% Wilson uncertainty). Methods describes an image split and does not establish patient-disjointness. The study does not establish causal effects of BMI or sex or externally reproduced clinical benefit.",
+    "ai_role": "A modified DOMINO Gaussian mixture learned image subgroups using pretrained CLIP or BiomedCLIP features and the predictions of a trained ResNet-50 cardiomegaly classifier. The mixture was fitted on the validation set and assigned memberships in the test set.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.32362v1",
+      "https://arxiv.org/html/2610.32362v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

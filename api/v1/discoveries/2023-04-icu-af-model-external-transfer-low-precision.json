@@ -1,0 +1,34 @@
+{
+  "id": "2023-04-icu-af-model-external-transfer-low-precision",
+  "title": "External ICU tests expose low positive predictive value for an AF model",
+  "summary": "A CatBoost model trained on Amsterdam ICU records reached ROC areas of0.77 in MIMIC-IV and0.84 at Ghent when transferred directly. In the respective imbalanced evaluation sets, positive predictive values were0.07 and0.02. Local retraining improved some metrics, but these retrospective tests do not establish a clinically useful alert.",
+  "field": "medicine",
+  "ai_technology": "CatBoost gradient boosting",
+  "organization": "Ghent University; Amsterdam University Medical Centers",
+  "publication_date": "2023-04-26",
+  "source_url": "https://biblio.ugent.be/publication/01H113A35SMY5KN5ZFDMD3SA3S/file/01H11SBMXA8H225D2R2PKH44NS.pdf",
+  "paper_url": "https://doi.org/10.1016/j.ijmedinf.2023.105086",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Actual original relevant clinical/computational Methods, reference labels, evaluation Results and limitations read",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "Learned CatBoost classifiers use12-hour clinical-feature windows ending before recorded AF and are tested for hospital transfer; Powershap selects features.",
+    "tested": "Development used18163 admissions, including2000 with nursing-chart AF. Matched AF/no-AF pairs stayed together in an80:20 split, and unmatched controls formed the imbalanced test set. External evaluation covered archived MIMIC-IV and Ghent cohorts; reported direct-transfer precision is specific to those sampled event/control constructions.",
+    "unknown": "Nursing-chart timing may lag actual arrhythmia; prior AF history was unavailable, so this is not securely new-onset AF. Admission-level splitting does not establish isolation of repeated people. External feature availability influenced the common feature set. What the source calls recalibration includes local model retraining, not merely a probability adjustment. Calibration/ROC metrics do not prove a calibrated patient-specific AF risk or clinical benefit; event-aligned retrospective windows are not live alarms. Online supplementary procedures were not independently read.",
+    "evidence_urls": [
+      "https://biblio.ugent.be/publication/01H113A35SMY5KN5ZFDMD3SA3S/file/01H11SBMXA8H225D2R2PKH44NS.pdf",
+      "https://doi.org/10.1016/j.ijmedinf.2023.105086"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-closest-clip-cross-class-pairs-share-shortcuts",
+  "title": "CLIP linked different car classes through shared backgrounds or objects",
+  "summary": "On UrbanCars, 94.8% of highly similar image pairs from different vehicle classes shared a background or a co-occurring object, compared with 18.1% of random cross-class pairs. Researchers selected the similar pairs using pretrained CLIP features before consulting the dataset’s attribute labels.",
+  "field": "computer science",
+  "ai_technology": "CLIP",
+  "organization": "Indian Institute of Technology Jodhpur",
+  "source_url": "https://arxiv.org/abs/2610.29688",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.29688v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, §4 similarity audit, Table 3 and Figure 2",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The audit compared randomly chosen cross-class training pairs with pairs selected using high cosine similarity in the frozen feature space.",
+    "unknown": "The reported proportions concern a dataset constructed with two labeled shortcut attributes and the study’s similarity selection. They do not measure real-world shortcut prevalence.",
+    "ai_role": "A frozen pretrained vision encoder determined which cross-class examples were closest without using known shortcut labels; audit labels were applied afterward.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.29688",
+      "https://arxiv.org/html/2610.29688v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

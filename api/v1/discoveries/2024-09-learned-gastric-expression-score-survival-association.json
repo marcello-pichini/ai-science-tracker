@@ -1,0 +1,34 @@
+{
+  "id": "2024-09-learned-gastric-expression-score-survival-association",
+  "title": "A learned gastric-expression score associates with recorded survival",
+  "summary": "An autoencoder-derived expression score was associated with survival in archived gastric-cancer cohorts and a TCGA comparison. The score used learned transcriptomic features followed by survival regression. The result does not establish a new stem-cell identity, treatment response or a clinically deployable risk threshold.",
+  "field": "medicine",
+  "ai_technology": "One-class logistic regression; autoencoder neural network",
+  "organization": "Zhengzhou University",
+  "publication_date": "2024-09-29",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11547969/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original selected computational/data Methods and represented cohort/physical Results; laboratory/sample preparation procedures excluded",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "One-class logistic regression derives a source-defined stemness index. A trained autoencoder learns nonlinear expression features subsequently selected and combined with Cox survival modeling, enabling the represented score-outcome association.",
+    "tested": "Five expression datasets containing 1,051 samples were split 4:1 for model development and internal assessment. The source reports survival separation in both subsets and in TCGA, where each cohort was divided at its own median score.",
+    "unknown": "Discovery preprocessing and stemness-feature selection can reuse cohort information; an untouched fixed-threshold test is not established. The text mentions nine selected prognostic features but displays a five-feature formula; full final coefficient selection remains unverified because the primary supplementary workbook was inaccessible. No reconstruction of the trained model was performed. Treatment-response extrapolations, inferred immune states and the cell-population identity claim are excluded.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11547969/",
+      "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC11547969/unicode"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

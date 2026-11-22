@@ -1,0 +1,34 @@
+{
+  "id": "2025-01-selected-plasma-ratios-alzheimer-label-association",
+  "title": "A plasma-ratio search identifies exploratory Alzheimer case-label associations",
+  "summary": "An SVM-guided search selected plasma-protein ratios associated with Alzheimer case labels in 60 stored donor samples. Candidate combinations included KYNU/MSR1, NCAN/PRTG and IL-5Rα/GFRα-1. The groups differed in average age by about 13 years, and the search reused the evaluation data; this is not independent diagnostic validation.",
+  "field": "medicine",
+  "ai_technology": "Linear support vector machine; feature-subset search",
+  "organization": "University of Massachusetts Lowell; Bedford VA Healthcare System",
+  "publication_date": "2025-01-28",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11840181/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 1
+  },
+  "source_review": {
+    "scope": "Official primary BioC original article sections: Clinical donor metadata;preprocessing;SVM and global feature search;ratio Results and age analysis; no laboratory-method validation",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "Linear SVM classification and exhaustive/forward subset search select protein ratios for separating donor-group labels; the learned selection enables the represented candidate associations.",
+    "tested": "The reanalysis used 38 control and22 Alzheimer-labeled samples, with82 protein measurements generating6,642 ordered ratios. Leave-one-out scores informed selection of best subsets; observed selected-ratio differences were then examined in the same samples.",
+    "unknown": "Feature search and hyperparameter selection reused the LOOCV results, so headline98–100percent separation is selection-informed and not a new independent test. Mean ages were66.5 versus79.7; adding age as another classifier input does not adjust that confounding. The source also mixes22 and23 disease-sample denominators in some results. This is a reanalysis of previously collected data, without new assays, causal protein interactions or demonstrated clinical utility.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11840181/",
+      "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC11840181/unicode"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

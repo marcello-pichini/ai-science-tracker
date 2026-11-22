@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-dream2assist-simulated-driver-torque-alignment",
+  "title": "Inferring driver intent increased aligned steering assistance in a simulator study",
+  "summary": "In an urban driving simulator, 8 of 11 participants with paired observations received more steering assistance aligned with their intent under the intent-conditioned policy. Collisions occurred in 4 of 147 intent-conditioned trials, 10 of 130 trials with assistance lacking intent inference, and 2 of 121 unassisted trials.",
+  "field": "computer science",
+  "ai_technology": "Dream2Assist; recurrent state-space world model; reinforcement learning",
+  "organization": "Toyota Research Institute",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.34650v1",
+  "paper_url": "https://arxiv.org/html/2610.34650v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 urban simulator human study, §6.4 objective results and preliminary on-vehicle scope",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Participants experienced within-subject simulator trials under intent-conditioned, non-intent, and unassisted conditions in randomized order. Physical driving was only a preliminary deployment.",
+    "unknown": "Trial counts are repeated within people and collisions were concentrated among a few participants. The measurements do not establish an on-road safety benefit.",
+    "ai_role": "A trained recurrent world model infers driver intent and conditions the assistance policy. The same architectural comparator omits the intent predictor.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.34650v1",
+      "https://arxiv.org/html/2610.34650v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

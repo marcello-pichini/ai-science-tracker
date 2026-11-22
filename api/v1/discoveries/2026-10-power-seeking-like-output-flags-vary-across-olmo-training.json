@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-power-seeking-like-output-flags-vary-across-olmo-training",
+  "title": "A judge flagged more concerning answers early in OLMo reinforcement learning than at the end",
+  "summary": "In tests of OLMo-3-7B-Think, GPT-4o flagged 25.0% of outputs after supervised fine-tuning, 46.1% early in reinforcement learning, and 11.8% at the final checkpoint. The labels cover text that the judge classified as power-seeking or related behavior. The two judges agreed least near the apparent peak.",
+  "field": "computer science",
+  "ai_technology": "OLMo-3-7B-Think, GPT-4o, Gemini 2.0 Flash",
+  "organization": "Barış Alparslan, Sandy Tanwisuth and Caleb Petterson (affiliations not stated in the reviewed preprint)",
+  "source_url": "https://arxiv.org/abs/2610.31624",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.31624v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 checkpoint methods §§2–4, §4.1 trajectory, inter-judge comparisons and Appendices A.2/A.4",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors repeated the same 76 benchmark questions across 16 released post-training checkpoints and compared binary labels from two judging models.",
+    "unknown": "The rates describe one primary judge’s classification of written answers. They do not demonstrate the model’s internal goals or behavior in deployment.",
+    "ai_role": "GPT-4o rates outputs across the same 76 items in 16 OLMo-3 checkpoints; Gemini 2.0 Flash provides a secondary comparison.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.31624",
+      "https://arxiv.org/html/2610.31624v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

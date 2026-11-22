@@ -1,0 +1,34 @@
+{
+  "id": "2024-04-learned-coronary-expression-candidates-small-cohort",
+  "title": "A small study checks AI-selected coronary disease expression markers",
+  "summary": "Learned feature selection in 198 archived blood-expression samples nominated five coronary disease candidates. In a separate laboratory check of 10 cases and 10 controls, higher NEFL and lower FAM166B and POLDIP3 expression matched the initial directions. PRSS37 showed no significant difference, while ZNF594 changed in the opposite direction. These preliminary associations do not establish a diagnostic test or a causal disease mechanism.",
+  "field": "medicine",
+  "ai_technology": "LASSO and support-vector-machine recursive feature elimination",
+  "organization": "Shaanxi Provincial People's Hospital",
+  "publication_date": "2024-04-25",
+  "source_url": "https://doi.org/10.1016/j.heliyon.2024.e30269",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11079106/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary article XML bibliographic dates, computational feature-selection Methods, expression Results and limitations; primary GEO study identity."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "direct test",
+    "ai_role": "LASSO and SVM-RFE selected five overlapping expression candidates from the discovery dataset, determining the markers examined in the subsequent blood-sample check.",
+    "tested": "Discovery used 198 whole-blood microarray samples: 99 angiographic coronary disease cases and 99 controls with less than 50% stenosis. The within-study expression check used 10 coronary disease cases and 10 healthy volunteers; three candidate directions agreed, one comparison was nonsignificant and one direction reversed.",
+    "unknown": "The small laboratory comparison was not a separate-team replication or a prospective clinical test. Nominal expression significance does not establish adjusted biomarker performance, disease mechanism or clinical benefit. The reported diagnostic AUC of 0.75 was evaluated in the discovery dataset and is not the represented validation result.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11079106/fullTextXML",
+      "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE20681"
+    ]
+  }
+}

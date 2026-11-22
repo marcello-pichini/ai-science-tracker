@@ -1,0 +1,35 @@
+{
+  "id": "2026-01-learned-brain-diffusion-index-reference-validation",
+  "title": "Learned brain-imaging measurements agree with expert references across separate cohorts",
+  "summary": "A CNN and YOLO-based pipeline automated region selection for a brain diffusion-imaging index. In a separate 1000-person UK Biobank test, agreement with the average of two neurologists’ measurements gave an intraclass correlation of 0.90; smaller OASIS3 and EPAD tests gave 0.80 and 0.78. These validate measurement agreement, not direct brain waste clearance or clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "VGG-style convolutional network; YOLOv5s; dALPS",
+  "organization": "Sun Yat-sen University",
+  "source_url": "https://doi.org/10.1016/j.ebiom.2026.106133",
+  "source_type": "paper",
+  "publication_date": "2026-01-30",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "https://orca.cardiff.ac.uk/id/eprint/184570/1/1-s2.0-S2352396426000149-main.pdf",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Development used 1000 subjects from four other cohorts, with subject-level training/validation splits. The finalized pipeline was tested against averaged expert measurements in 1000 UKB subjects and 200 each from OASIS3 and EPAD.",
+    "unknown": "Manual measurements are an imperfect expert reference, not a physiological gold standard. Cohort/scanner distributions differed. Abstract and discussion quote ICC 0.95, while specific independent-test Results give0.90/0.80/0.78; this entry follows those explicit test results. No causal genetic, medication or disease mechanism, treatment guidance or outcome benefit is represented. Supplementary methods were not independently inspected. The linked corrigendum adds OASIS acknowledgments without a stated scientific result change. External archived cohorts do not establish prospective new-data testing or separate-team replication.",
+    "ai_role": "CNN slice selection and learned object detection automate the original index region placement; the index formula itself is preserved. Their outputs enable the cross-cohort reference-agreement evaluation.",
+    "evidence_urls": [
+      "https://orca.cardiff.ac.uk/id/eprint/184570/1/1-s2.0-S2352396426000149-main.pdf",
+      "https://pubmed.ncbi.nlm.nih.gov/41619353/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12933589/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "scope": "Primary institution-deposited article front, computational imaging development, independent expert-reference testing Methods/Results and measurement caveats; primary linked correction body",
+    "date": "2026-11-21"
+  }
+}

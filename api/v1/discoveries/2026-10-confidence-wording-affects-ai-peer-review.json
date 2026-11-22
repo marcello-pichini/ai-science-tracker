@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-confidence-wording-affects-ai-peer-review",
+  "title": "AI reviewers favored confident wording in matched research papers",
+  "summary": "In a 504-paper experiment, all six model reviewers more often gave higher scores to rewrites with confident wording. Claude Sonnet 4.6 favored the confident version in 40% of pairs and the less confident version in 6%, with 54% tied. Researchers checked text similarity and wording shifts before comparing evaluations.",
+  "field": "computer science",
+  "ai_technology": "Claude Sonnet 4.6; GPT-5.5; Gemini; Gemma; Qwen; GLM",
+  "organization": "CISPA Helmholtz Center for Information Security; German Research Center for Artificial Intelligence; University of Technology Nuremberg; Inria",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35254v1",
+  "paper_url": "https://arxiv.org/html/2610.35254v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "v1 paired rewrite checks and 504-paper comparative review experiment, Table 4",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Each model independently evaluated one rewrite at a time for each pair under standardized review instructions. The study checked style manipulation and content similarity on the rewritten manuscripts.",
+    "unknown": "Rewriting can introduce small uncontrolled meaning changes. The experiment concerns model scores and does not measure actual conference decisions.",
+    "ai_role": "Language models generated matched high- and low-confidence prose variants and six model reviewers independently scored the rewritten versions.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35254v1",
+      "https://arxiv.org/html/2610.35254v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

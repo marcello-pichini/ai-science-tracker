@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-speech-representation-proxy-breaks-with-severe-degradation",
+  "title": "Speech model representations tracked estimated quality less well under severe distortion",
+  "summary": "Four pretrained speech encoders tracked estimated quality better for mildly distorted recordings than for severely distorted ones. Researchers compared clean and degraded versions of 100 English utterances across four levels of simulated distortion.",
+  "field": "computer science",
+  "ai_technology": "WavLM, HuBERT, SPEAR, Wav2Vec 2.0",
+  "organization": "KAIST",
+  "source_url": "https://arxiv.org/abs/2610.30869",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.30869v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, §2 severity and representation analysis and Figure 2",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study compared rank correlations between encoder distances and several quality estimators, including a conventional spectral-distance check, with bootstrapped uncertainty.",
+    "unknown": "The degradations were simulated and the outcomes were based on quality proxies. The study did not measure how listeners rated or understood the recorded speech.",
+    "ai_role": "WavLM, HuBERT, SPEAR and Wav2Vec 2.0 encode clean and artificially degraded speech, enabling direct comparisons of preserved acoustic information across severities.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30869",
+      "https://arxiv.org/html/2610.30869v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-g249-11-transit-candidate-from-tess-archives",
+  "title": "An AI-guided TESS search flagged a planet candidate around G 249-11",
+  "summary": "An agent-guided search of archived TESS observations found repeating dips around the nearby red dwarf G 249-11 at a period of about 5.31 days. An ephemeris fitted to two sectors predicted dips in two held-out sectors. If the signal comes from a planet, its fitted radius is about 1.6 times Earth’s.",
+  "field": "physics",
+  "ai_technology": "Claude Sonnet 5.5; Infinity Machine research agent",
+  "organization": "Harish Santhanalakshmi Ganesan, independent researcher",
+  "publication_date": "2026-10-25",
+  "source_url": "https://doi.org/10.5281/zenodo.23651677",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Zenodo v1 author research note record; Infinity Machine §3.6 and Appendix A.10 source and held-out test",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The author used two sectors for initial fitting and two other existing sectors for a timing check. A combined false-alarm probability of about 0.002 was estimated from 400 end-to-end null realizations.",
+    "unknown": "A bound eclipsing companion and a nearby faint source remain plausible alternatives. The candidate is unconfirmed; the held-out data came from existing observations.",
+    "ai_role": "Claude Sonnet 5.5 proposed and executed a box-least-squares search of TESS light curves. The author applied photometric, catalogue and held-out timing checks.",
+    "evidence_urls": [
+      "https://zenodo.org/api/records/23651677",
+      "https://arxiv.org/html/2610.35579v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21",
+  "paper_url": "https://zenodo.org/records/23651677"
+}

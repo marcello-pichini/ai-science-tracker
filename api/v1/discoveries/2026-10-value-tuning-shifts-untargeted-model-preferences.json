@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-value-tuning-shifts-untargeted-model-preferences",
+  "title": "Training AI models on one value shifted their responses on another",
+  "summary": "Researchers fine-tuned four language models using examples framed around restraint. On held-out scenarios, all four shifted toward responses labeled collectivist, although individualism was not the training target. The finding describes changes in model responses under a synthetic evaluation.",
+  "field": "computer science",
+  "ai_technology": "Llama-3.1-8B-Instruct, Qwen3-8B, Gemma-3-12B-Instruct, Ministral-3-8B-Instruct-2512",
+  "organization": "University of Copenhagen; University of Cambridge",
+  "source_url": "https://arxiv.org/abs/2610.29922",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.29922v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, §§3–4, Appendix C.3/C.4 and Tables 7–11",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Adapters and their original models scored the same held-out scenarios, with 1,500 examples per value pole. The shift in relative likelihood was significant in each of the four models under the reported multiple-comparison correction. For restraint-trained adapters, the signed table entries correspond to decreases in the raw high-individualism likelihood margin.",
+    "unknown": "The categories and response examples are synthetic operationalizations. The result does not establish model beliefs, human preferences or behavior in deployment.",
+    "ai_role": "The study separately fine-tuned four pretrained language models on synthetic examples of individual cultural-value dimensions and then tested labeled response preferences in unrelated dimensions.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.29922",
+      "https://arxiv.org/html/2610.29922v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

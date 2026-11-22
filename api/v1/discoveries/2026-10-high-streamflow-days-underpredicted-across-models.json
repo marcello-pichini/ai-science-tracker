@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-high-streamflow-days-underpredicted-across-models",
+  "title": "Eight learned streamflow models underestimated peak days in a basin audit",
+  "summary": "A 162-basin evaluation found median peak-day biases of 27% to 44% below observed flow across eight learned models, versus 13% below for the National Water Model. The learned models also underestimated peak days in a broader analysis of 1,139 basins.",
+  "field": "climate",
+  "ai_technology": "LSTM, GRU, EA-LSTM and five other learned streamflow models",
+  "organization": "Rutgers University; Apple; University of Alabama; University of Maryland",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35464v1",
+  "paper_url": "https://arxiv.org/html/2610.35464v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§§3–4.2, Tables 1–2 and front matter",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Models trained through water year 2010 were scored against recorded streamflow over 2011–2022. Bias was summarized over basins.",
+    "unknown": "Model tuning and inputs were constrained. The external National Water Model used its developers’ calibration, which may overlap the test period. Flow estimates at extremes carry observational uncertainty.",
+    "ai_role": "Eight models learned mappings from weather history and basin attributes to daily streamflow; their held-out errors revealed the common peak-day deficit.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35464v1",
+      "https://arxiv.org/html/2610.35464v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

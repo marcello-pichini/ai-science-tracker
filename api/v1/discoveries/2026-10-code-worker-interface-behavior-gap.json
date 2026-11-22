@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-code-worker-interface-behavior-gap",
+  "title": "Interface-name checks rejected some AI-written code that passed behavioral tests",
+  "summary": "In a post hoc analysis of AI-written code, 19 of 36 artifacts rejected solely for dropping leading underscores from parameter names passed the original hidden behavioral checks after only that name-comparison rule was bypassed. The original study kept those artifacts recorded as contract failures. The selection covers one specific failure reason in the study’s coding tasks.",
+  "field": "computer science",
+  "ai_technology": "Claude Opus 5.5; Qwen3-Coder; Nemotron Cascade 2",
+  "organization": "Independent researcher",
+  "publication_date": "2026-10-25",
+  "source_url": "https://arxiv.org/abs/2610.34241v1",
+  "paper_url": "https://arxiv.org/html/2610.34241v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 §§9.3–9.4 coding delegation and post hoc hidden-test diagnostic",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A secondary offline diagnostic applied selected generated artifacts unchanged to fresh task copies, bypassing only strict parameter-name comparison, then ran the original sealed behavioral checks. No parent review or end-to-end acceptance was replayed.",
+    "unknown": "This selected subset cannot estimate overall pass rates or establish that contract requirements were unnecessary in deployment. Original saved records were private and not independently auditable; passing these author-supplied checks does not prove general software correctness.",
+    "ai_role": "Existing language models acting as coding workers generated artifacts assessed under an interface contract and hidden behavioral tests.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.34241v1",
+      "https://arxiv.org/html/2610.34241v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

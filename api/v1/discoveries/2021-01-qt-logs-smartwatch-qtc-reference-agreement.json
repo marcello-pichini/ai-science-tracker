@@ -1,0 +1,34 @@
+{
+  "id": "2021-01-qt-logs-smartwatch-qtc-reference-agreement",
+  "title": "Smartwatch QT estimates show limited agreement with manual ECG readings",
+  "summary": "The QT-logs study applied a trained U-Net to smartwatch ECGs and compared QTc estimates with blinded manual12-lead measurements. Among66 day-ten comparisons, mean bias was about−1 millisecond, but agreement limits extended from−46 to45 milliseconds. The selected low-risk cohort contained very few critical QTc prolongations, leaving accuracy for dangerous prolongation uncertain.",
+  "field": "medicine",
+  "ai_technology": "U-Net convolutional neural network",
+  "organization": "Aix-Marseille University; Assistance Publique–Hôpitaux de Marseille; Cardiologs",
+  "publication_date": "2021-01-29",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7845555/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original clinical reference/readout Methods, CNN operation/training description, paired agreement Results/Table2 and limitations; drug efficacy not assessed",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "direct test",
+    "ai_role": "A U-Net trained on6315 annotated resting/Holter recordings identifies waveform boundaries; beat-level QTc estimates are aggregated for received smartwatch tracings. No smartwatch ECGs were used in training.",
+    "tested": "Newly transmitted smartwatch ECGs were automatically analyzed in a prospective paired-measurement study. Eighty-five people entered;76 received daily follow-up. Manual12-lead reference comparisons were available for71 baseline,53 day-six and66 day-ten visits, with blinded readers.",
+    "unknown": "Recordings were not consistently simultaneous and agreement was only moderate; very few critical prolongations prevented validation of clinically dangerous thresholds. Young selected participants, technical exclusions and incomplete transmissions limit transfer. No drug-safety, arrhythmia-prevention or treatment-effect conclusion is adopted. Validation3 reflects the direct paired measurement check, not independent replication or proven model-guided clinical benefit.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7845555/",
+      "https://doi.org/10.1016/j.ijcard.2021.01.002"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

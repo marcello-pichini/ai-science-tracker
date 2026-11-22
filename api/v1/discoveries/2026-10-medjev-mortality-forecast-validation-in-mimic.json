@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-medjev-mortality-forecast-validation-in-mimic",
+  "title": "A retrospective study evaluated MedJev for in-hospital mortality prediction",
+  "summary": "Using records available 24 hours after admission, MedJev ranked eventual in-hospital deaths with an AUROC of 0.926 (95% confidence interval 0.881 to 0.960). The supervised XGBoost comparison scored 0.902, with a paired interval that included no difference. MedJev’s unadjusted risk estimates were substantially miscalibrated.",
+  "field": "medicine",
+  "ai_technology": "MedJev, based on Qwen3.5-9B; Platt scaling",
+  "organization": "University of California, Los Angeles",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.36006v1",
+  "paper_url": "https://arxiv.org/html/2610.36006v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§§3.1–3.4 and 4.2–4.3, Tables 1 and 3–4 and front matter",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Adult patients still hospitalized at 24 hours were eligible. Evaluation examples and supervised-model/recalibration fitting used the source-described patient-disjoint MIMIC-IV MEDS partitions. Recalibration used separately partitioned labeled records and improved calibration without changing AUROC.",
+    "unknown": "The retrospective single-center data do not establish external performance or patient benefit. MedJev was first adapted on MIMIC-IV Note, but the primary Methods do not explicitly establish that this adaptation excluded the evaluated patients or their later notes. The described MEDS evaluation split therefore does not authenticate checkpoint-level patient independence or absence of note-derived outcome exposure. The discrimination comparison was against supervised models at the tested local-label budget, not unlimited supervised training.",
+    "ai_role": "MedJev converted patient-history events available at the prediction time into outcome-token probabilities, which were evaluated against recorded deaths.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.36006v1",
+      "https://arxiv.org/html/2610.36006v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

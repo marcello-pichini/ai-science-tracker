@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-effective-density-diffusion-changes-during-particle-assembly",
+  "title": "A microscopy analysis inferred changing diffusion during nanoparticle assembly",
+  "summary": "A model fitted to electron-microscopy video inferred a positive effective coefficient for density diffusion that increased in the mobile phase and decreased as crystalline clusters consolidated. The fitted coefficients for orientational order had the opposite sign over the analyzed trajectory.",
+  "field": "materials",
+  "ai_technology": "Fitted time-varying sparse autoregressive dynamics",
+  "organization": "University of Michigan; University of Illinois Urbana-Champaign; University of Southern California",
+  "publication_date": "2026-10-27",
+  "source_url": "https://arxiv.org/abs/2610.36498v1",
+  "paper_url": "https://arxiv.org/html/2610.36498v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "§§II.1–II.4, Figure 5 and the discussion of the continuum approximation",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors fit local evolution rules to density and orientational fields extracted from video, then computed spatially averaged coefficients from the learned operators.",
+    "unknown": "The coefficients are effective estimates under locality and smoothness assumptions, not directly measured material constants. The plotted time course represents one experimental trajectory.",
+    "ai_role": "Training sparse time-varying operators on successive microscopy frames converted image observations into inferred evolution equations for density and order.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.36498v1",
+      "https://arxiv.org/html/2610.36498v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

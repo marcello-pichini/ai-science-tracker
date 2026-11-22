@@ -1,0 +1,34 @@
+{
+  "id": "2026-03-phone-features-questionnaire-risk-screening",
+  "title": "Phone features complement self-reports for questionnaire-defined risk labels",
+  "summary": "In selected Korean smartphone participants, random-forest models combining passive features with daily self-reports achieved cross-validated ROC areas of0.82 for depression-risk labels and0.86 for anxiety-risk labels. These are weekly questionnaire-defined states, with overlapping symptom-report windows, not clinical diagnoses or future-onset forecasts.",
+  "field": "medicine",
+  "ai_technology": "Random forest; gradient boosting; XGBoost",
+  "organization": "Electronics and Telecommunications Research Institute; Korea University; Batoners",
+  "publication_date": "2026-03-30",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13068600/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Actual original relevant clinical/computational Methods, reference labels, evaluation Results and limitations read",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "Fitted tree ensembles combine mobility/activity summaries and brief symptom reports to classify weekly PHQ-9/GAD-7 threshold labels.",
+    "tested": "Of455 recruited adults,277 depression and275 anxiety participants met coverage requirements. Repeated observations remained with their participant in fivefold evaluation; fourteen-day observation windows preceded weekly questionnaire dates.",
+    "unknown": "Coverage thresholds and window length were selected using the same cross-validation framework, without an established untouched configuration test. Active daily mood/anxiety reports overlap conceptually and temporally with questionnaire references; weekly PHQ-9 repeats a two-week recall window. Many participants were excluded for coverage, and there was no external or temporal validation. Sleep features are phone-motion proxies. Average-precision numbers are not used here without independently resolving positive-class prevalence/encoding details. Prospective collection does not establish a prospectively frozen model or benefit.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13068600/",
+      "https://doi.org/10.1016/j.invent.2026.100934"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

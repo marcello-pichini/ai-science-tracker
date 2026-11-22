@@ -1,0 +1,33 @@
+{
+  "id": "2026-05-study-10-1007-s12672-026-05282-9",
+  "title": "Machine learning links a three-gene lung-cancer score to retrospective survival differences",
+  "summary": "LASSO and random-forest selection identified a three-gene lung-adenocarcinoma score associated with observed survival in public cohorts. Comparison cohorts showed limited and inconsistent discrimination: TCGA five-year AUC was approximately 0.50, while another cohort reached approximately 0.68. This supports a bounded retrospective association, without established clinical utility or causal gene effects.",
+  "field": "biology",
+  "ai_technology": "LASSO and random forests for prognostic gene selection; consensus clustering for RAS expression subtypes",
+  "organization": "The Third People’s Hospital of Chengdu",
+  "publication_date": "2026-05-28",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source reports 624 GEO lung-adenocarcinoma profiles used for derivation. LASSO with ten-fold cross-validation and random-forest feature selection intersected at MAPK10, PLA2G12B and SHC3. The resulting score was compared with observed survival in TCGA and GSE13213. Reported one-, three- and five-year AUCs were 0.608, 0.535 and 0.496 in TCGA, and 0.620, 0.654 and 0.682 in GSE13213.",
+    "unknown": "Outcome-optimized risk cutoffs limit interpretation of group survival differences as locked external prediction. Exact cohort eligibility accounting and supplementary implementation were not reconstructed. Weak TCGA discrimination limits clinical claims; decision-curve calculations do not demonstrate actual patient benefit. Transcriptomic associations and drug predictions do not establish causal mechanisms or treatment efficacy. Original online date is May 28, 2026; the assigned December issue is later.",
+    "ai_role": "Learned LASSO and random-forest feature selection produced the three-gene signature whose relationship with measured patient survival was evaluated across cohorts. General clustering benchmarks and untested drug predictions are not the admitted finding.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s12672-026-05282-9"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s12672-026-05282-9",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary cohort acquisition, consensus clustering, gene selection, LASSO/random-forest and risk-score evaluation Methods, cohort survival/AUC Results and limitations. Supplementary code and individual-patient eligibility were not independently reconstructed. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

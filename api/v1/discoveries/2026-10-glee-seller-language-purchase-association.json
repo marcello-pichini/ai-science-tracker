@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-glee-seller-language-purchase-association",
+  "title": "Seller message framing tracked purchases in live persuasion games",
+  "summary": "A retrospective analysis of 9,337 classifiable messages from one AI seller in 725 GLEE persuasion games found that buyers purchased after 65.8% of loyalty-framed messages and 30.9% of care-framed messages. The association persisted when the study adjusted for product quality and game round.",
+  "field": "computer science",
+  "ai_technology": "Online Thompson sampling bandit; language-model message generation",
+  "organization": "Korea Advanced Institute of Science and Technology",
+  "publication_date": "2026-10-27",
+  "source_url": "https://arxiv.org/html/2610.37397v1",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Versioned primary arXiv HTML front matter, §§3.3, 4 and 6, Appendix D Tables 7, 8 and 12",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Among 9,337 lexicon-classifiable outgoing messages in 725 live persuasion competition games, buyer response was 65.8% for loyalty-framed versus 30.9% for care-framed messages. Game-clustered, quality- and round-adjusted odds ratio was 3.98 (95% CI 3.31–4.79), or 2.18 (1.78–2.67) for pitches only.",
+    "unknown": "The agent chose framing adaptively and labels came from a lexicon. Opponents included humans and AI agents, and the aggregate does not identify a human-only effect. Repeat opponents could not be accounted for, and framing was not randomized. About half of care-labelled messages were honest recommendations not to buy, compared with 6–17% for other frames, so the raw purchase-rate contrast also reflects message intent. The pitches-only restriction reduces this difference but is itself a lexical approximation.",
+    "ai_role": "An online Thompson sampling bandit fitted framing success probabilities during play and supplied the framing for the language model that wrote the analyzed seller messages.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.37397v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

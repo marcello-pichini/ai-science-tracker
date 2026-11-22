@@ -1,0 +1,34 @@
+{
+  "id": "2025-03-ecg-image-model-left-ventricular-dysfunction",
+  "title": "ECG-image model identifies concurrent low ejection fraction in archived records",
+  "summary": "A DenseNet121 model learned to identify echocardiography-referenced ejection fraction below50% from ECG images. It reported ROC areas of0.92 on an internal ECG test set and0.88 at another healthcare centre. The study tests concurrent diagnostic-label discrimination, without establishing early warning or clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "DenseNet121 convolutional neural network",
+  "organization": "Narayana Health",
+  "publication_date": "2025-03-28",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12223524/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original primary clinical/computational Methods, reference definitions, model evaluation and Results independently read; no operational laboratory sections",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "A trained convolutional network maps cropped ECG trace images to a concurrent echocardiographic low-ejection-fraction label.",
+    "tested": "Development used119,281 same-day ECG/echo pairs from104,697 people. ECGs were randomly split into107,147 training,2,020 validation and10,114 test records. Another centre supplied roughly24,300 pairs; the internal-test Youden threshold0.18 was carried to that cohort.",
+    "unknown": "Random ECG-level splitting does not establish separation of repeated patients. The external denominator is24,323 in text versus24,319 in the table. The internal threshold was selected on test outcomes; the external data are archived, not a prospectively frozen workflow. Standardized device images and same-day selected imaging pairs limit generalization; no screening benefit or diagnosis of future dysfunction is established.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12223524/",
+      "https://doi.org/10.1016/j.ihj.2025.03.009"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

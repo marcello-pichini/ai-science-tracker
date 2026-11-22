@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-video-diffusion-window-sensitivity-stable-across-prompts",
+  "title": "Video diffusion models were sensitive at similar denoising steps across prompts",
+  "summary": "Researchers reduced attention in one denoising window at a time. Within each of four pretrained video models, the windows that most changed the final video were similar across eight prompts. Median rank correlations against the other prompts ranged from 0.95 to 1.00.",
+  "field": "computer science",
+  "ai_technology": "Wan2.1, Wan2.2, HunyuanVideo",
+  "organization": "University of Chinese Academy of Sciences; Institute of Automation, Chinese Academy of Sciences; KlingAI Research; Peking University",
+  "source_url": "https://arxiv.org/abs/2610.29441",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.29441v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, §3 attention sensitivity, Figure 2, Appendix D.1 leave-one-out tests",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The experiment compared final-video error with dense attention and ranked ten windows separately for each prompt, holding each prompt out from the comparison rank.",
+    "unknown": "The result concerns within-model rankings for a small set of prompts and the tested attention perturbation. It does not establish that the same window order applies to other models or sampling settings.",
+    "ai_role": "Researchers selectively altered attention in trained video diffusion models and measured how the resulting videos departed from the dense model output.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.29441",
+      "https://arxiv.org/html/2610.29441v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

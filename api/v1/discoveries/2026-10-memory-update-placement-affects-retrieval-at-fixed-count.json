@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-memory-update-placement-affects-retrieval-at-fixed-count",
+  "title": "Changing where memory updates occurred shifted model retrieval accuracy",
+  "summary": "Across 24 update schedules with the same number of updates, a 760-million-parameter language model’s retrieval accuracy ranged from 19.7% to 34.2% on the same 6,000 prompts. The test varied which layer groups updated most often while holding the checkpoint and evaluated prompts fixed.",
+  "field": "computer science",
+  "ai_technology": "Memory-as-Context MAC-760M; scheduled learned memory updates",
+  "organization": "Meta AI",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.36109v1",
+  "paper_url": "https://arxiv.org/html/2610.36109v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§§3–4, Figure 2 and Table 1",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors enumerated assignments of four update periods to four fixed layer bands and compared accuracy on each of the same exact-retrieval items.",
+    "unknown": "The response range applies to one checkpoint and one retrieval task. The best and worst schedules were identified retrospectively; the ranking need not transfer.",
+    "ai_role": "The learned model updated its persistent memory during the task. Controlled placement and frequency changes tested the effects of the same update count on retrieval.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.36109v1",
+      "https://arxiv.org/html/2610.36109v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

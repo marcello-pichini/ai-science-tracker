@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-orion-open-source-regression-audit",
+  "title": "An AI-assisted audit found eight maintainer-confirmed software regressions",
+  "summary": "An audit of 1,459 merged pull requests in four Python projects used language models to generate behavior checks. The study found nine reproducible regression candidates, of which eight were confirmed by maintainers. The result concerns a targeted software audit.",
+  "field": "computer science",
+  "ai_technology": "ORION; learned test generation and behavioral oracles",
+  "organization": "Beihang University; National University of Singapore",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35223v1",
+  "paper_url": "https://arxiv.org/html/2610.35223v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 ORION design and §V-E real-world regression evaluation",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "ORION flagged 28 requests. The authors retained and manually reviewed currently reproducible warnings before submitting nine candidates for maintainer confirmation.",
+    "unknown": "The reviewers did not comprehensively assess unflagged changes, so recall and general defect rates are unknown. This is not a count of security vulnerabilities.",
+    "ai_role": "ORION uses a learned model to infer intended software behavior and generate checks for regression candidates in existing projects.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35223v1",
+      "https://arxiv.org/html/2610.35223v1"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "added_date": "2026-11-21"
+}

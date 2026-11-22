@@ -1,0 +1,33 @@
+{
+  "id": "2024-08-learned-osteoarthritis-expression-candidates-cell-check",
+  "title": "Three selected expression candidates agree in an osteoarthritis cell comparison",
+  "summary": "A multi-algorithm expression screen nominated four osteoarthritis candidates. In the source’s subsequent cell comparison, MAP3K8 was higher and AGMAT and PER1 were lower, while XIST showed no significant difference. This limited assay result does not establish diagnostic performance, a causal disease role or treatment benefit.",
+  "field": "biology",
+  "ai_technology": "LASSO; random forest; bagged trees; Bayesian classifier; Boruta; learning vector quantization",
+  "organization": "Harbin Medical University",
+  "publication_date": "2024-08-28",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11402953/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 1
+  },
+  "source_review": {
+    "scope": "Primary computational selection Methods and high-level measured Results/Figure8; primary GEO metadata; no operational laboratory procedures reviewed",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "direct test",
+    "ai_role": "Six fitted feature-selection/classification methods nominated genes selected by at least five approaches, determining the four candidates checked in the later assay.",
+    "tested": "The computational screen used GSE12021 and GSE55235. The source’s original assay Results and Figure8 report three concordant candidate-expression directions and one nonsignificant comparison.",
+    "unknown": "The original GSE12021 counts are arrays, not unique people: its 20 osteoarthritis arrays represent 10 patients across paired platforms, and 13 control arrays represent nine people. The single-cell series comprises three osteoarthritis donors with relatively intact and damaged tissues, not independent healthy donors. Synovial screening and the later cartilage-cell comparison concern different contexts. Experimental replication details and procedures were not independently inspected; the result is not clinical or separate-team validation.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11402953/"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

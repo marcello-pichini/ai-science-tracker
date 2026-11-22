@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-ecg-electrolyte-reference-validation",
+  "title": "Manifold learning tests electrolyte categories against paired clinical measurements",
+  "summary": "A neural ECG model classified potassium, calcium and magnesium categories using paired laboratory measurements in MIMIC-IV. In the study cohort of8599 patients, potassium macro-F1 was0.61, calcium0.50 and magnesium0.40. This is retrospective clinical-reference evaluation, not a validated replacement for laboratory testing.",
+  "field": "medicine",
+  "ai_technology": "MINN; ResNet18; learned manifold-source network; metadata fusion",
+  "organization": "Harvard University; Duke Kunshan University; Duke University",
+  "source_url": "https://arxiv.org/abs/2610.28322v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.28322v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original v1 front, actual learned model Methods, clinical/physical-reference evaluation and limitations",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study paired18037 ECG recordings with nearby serum measurements and used patient-level time-based partitions. A learned source network and ECG encoder were jointly fitted with a graph residual objective.",
+    "unknown": "One-center archived data, imbalanced categories and up-to-one-hour pairing differences limit transportability. Medication/demographic metadata contribute to prediction, especially for calcium/magnesium; the result is not ECG-only inference. Preprocessing can truncate late waveform content. No prospective independent clinical validation, diagnostic deployment or patient benefit was established.",
+    "ai_role": "Learned waveform features, task-aware graph-source inference and metadata fusion enable the source-specific laboratory-referenced category classification.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.28322v1",
+      "https://arxiv.org/html/2610.28322v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

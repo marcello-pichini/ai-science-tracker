@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-quantization-bias-reductions-coincide-with-abstention",
+  "title": "Fewer biased answers after model compression often coincided with more abstention",
+  "summary": "On the BBQ question-answering benchmark, 20 of 26 quantization configurations with fewer biased answers also abstained more often on questions they could answer. The comparison covered models from the Qwen3, Gemma 3 and SmolLM2 families.",
+  "field": "computer science",
+  "ai_technology": "Qwen3, Gemma 3, SmolLM2",
+  "organization": "University of Hull",
+  "source_url": "https://arxiv.org/abs/2610.29657",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.29657v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, §§3–5, exact quantization comparison, prompt variation and forced-choice appendix",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors compared multiple quantization configurations and reported correct, biased, and abstaining answers separately. They also changed prompt wording and removed the abstention option in a separate comparison.",
+    "unknown": "The 20-of-26 result is conditional on configurations with lower observed bias in this benchmark. It does not measure fairness in real use or establish that all compression increases abstention.",
+    "ai_role": "The researchers compared outputs from Qwen3, Gemma 3 and SmolLM2 across model sizes and quantization settings, separating abstention from biased or non-biased answers.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.29657",
+      "https://arxiv.org/html/2610.29657v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

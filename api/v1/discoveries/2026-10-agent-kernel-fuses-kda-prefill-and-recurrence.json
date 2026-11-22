@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-agent-kernel-fuses-kda-prefill-and-recurrence",
+  "title": "An AI-written attention kernel accelerated prefill on an AMD GPU",
+  "summary": "A Claude Opus 5.5 team wrote a Kimi Delta Attention prefill kernel with fused input preparation and recurrent updates. Across 10 tested workloads on an AMD MI350X, it was 3.01 times as fast as the vLLM HIP kernel used for comparison.",
+  "field": "computer science",
+  "ai_technology": "Claude Opus 5.5; Evolving Agent Teams",
+  "organization": "University of California, Berkeley",
+  "publication_date": "2026-10-27",
+  "source_url": "https://arxiv.org/abs/2610.36848v1",
+  "paper_url": "https://arxiv.org/html/2610.36848v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§4.7 and Appendix C, MI350X construction, test definition and correctness gates",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The source reports five timing re-measurements and checks of outputs and final states under a numerical tolerance. The team added a slow-decay test after finding that earlier checks could miss state-handoff errors.",
+    "unknown": "The reported speedup is an arithmetic mean for the tested hardware and workloads. The result concerns a single constructed kernel and tolerance-based validation, not universal throughput or exact equivalence.",
+    "ai_role": "Claude Opus 5.5 agents developed the fused implementation and tested its scheduled state handoffs, starting from a port of the vLLM baseline.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.36848v1",
+      "https://arxiv.org/html/2610.36848v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

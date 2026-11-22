@@ -10,23 +10,27 @@
   "ai_attribution_date": "2026-11-03",
   "classification": "disclosure",
   "classification_note": "The vulnerability is documented as a public disclosure; the source does not establish prior defender knowledge or exploitation.",
-  "cves": [],
+  "cves": [
+    "CVE-2026-134311"
+  ],
   "source_url": "https://github.com/better-auth/better-auth/security/advisories/GHSA-g95c-wqvr-8c3j",
   "ai_source_url": "https://github.com/better-auth/better-auth/security/advisories/GHSA-g95c-wqvr-8c3j",
   "advisory_url": "https://github.com/better-auth/better-auth/security/advisories/GHSA-g95c-wqvr-8c3j",
   "remediation": "fix documented",
   "remediation_note": "Upgrade better-auth to 1.7.16 or 1.8.0-beta.5. Updates to phoneNumber or phoneNumberVerified now require user:set-phone; custom access-control roles must grant that permission where appropriate.",
-  "checked_date": "2026-11-16",
+  "checked_date": "2026-11-21",
   "impacts": [
     {
-      "cves": [],
+      "cves": [
+        "CVE-2026-134311"
+      ],
       "consequences": [
         "authentication bypass"
       ],
       "conditions": "Both admin and phone-number plugins are enabled; a non-full-admin role has user:update; attacker can use phone OTP after changing the target number.",
       "exploitation": "No observed exploitation is reported.",
       "source_url": "https://github.com/better-auth/better-auth/security/advisories/GHSA-g95c-wqvr-8c3j",
-      "checked_date": "2026-11-16"
+      "checked_date": "2026-11-21"
     }
   ]
 }

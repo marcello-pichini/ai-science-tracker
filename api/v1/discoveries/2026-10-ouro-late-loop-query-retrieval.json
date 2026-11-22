@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-ouro-late-loop-query-retrieval",
+  "title": "Later attention queries rescued selected early-loop retrieval errors",
+  "summary": "Moving same-item later-loop attention queries into the first loop corrected 89.8% and 96.9% of selected synthetic two-hop errors in two Ouro models. Queries shuffled between items corrected 23.7% and 20.6%, respectively. The result applies to questions answered incorrectly in the first loop and correctly later.",
+  "field": "computer science",
+  "ai_technology": "Ouro-1.4B; Ouro-2.6B; activation transplantation",
+  "organization": "University of British Columbia",
+  "publication_date": "2026-10-25",
+  "source_url": "https://arxiv.org/abs/2610.34639v1",
+  "paper_url": "https://arxiv.org/html/2610.34639v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "v1 query swap Methods, Table 2 and natural-question caveats",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The primary synthetic test included 600 scenes per model, with 245 and 223 qualifying early-loop errors, respectively. Same-item and shuffled queries were compared at aligned positions.",
+    "unknown": "Natural-question rescue was smaller and did not establish bridge redirection. A positional contribution remains possible. In Ouro-1.4B the rescue changes four-candidate ranking, not greedy generated answers. The intervention supplies a separate query at every layer/head, not one vector; the two model sizes share developmental history.",
+    "ai_role": "The authors intervened on pretrained Ouro attention query activations and compared matched late-loop and shuffled donors.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.34639v1",
+      "https://arxiv.org/html/2610.34639v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

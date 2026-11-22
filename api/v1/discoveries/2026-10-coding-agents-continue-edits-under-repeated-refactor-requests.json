@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-coding-agents-continue-edits-under-repeated-refactor-requests",
+  "title": "Coding agents continued editing after repeated refactoring requests",
+  "summary": "Across 3,000 refactoring turns on 60 Java codebases, coding agents made edits on 2,546 turns even though each follow-up supplied no new requirement. Some runs resumed editing after a no-change turn. The study observed this behavior in Codex and Claude Code across five models.",
+  "field": "computer science",
+  "ai_technology": "Codex with GPT-5.4, GPT-5.4-mini or GPT-5.5; Claude Code with Opus 4.8 or Sonnet 4.6",
+  "organization": "University of Southern California; OpenSciLab",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.36346v1",
+  "paper_url": "https://arxiv.org/html/2610.36346v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§§II–V, experimental protocol and Figures 3–4",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Each agent received up to ten nonspecific refactoring requests in a persistent session. The study measured diffs over 50 compact reference implementations and 10 highly graded object-oriented assignments.",
+    "unknown": "The starting projects were selected for quality, but not every individual edit was independently evaluated for usefulness. The finding measures continued modification under repeated requests, not code degradation in production.",
+    "ai_role": "The trained coding agents decided whether to edit after repeated nonspecific developer prompts, yielding directly observable behavior across sessions.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.36346v1",
+      "https://arxiv.org/html/2610.36346v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

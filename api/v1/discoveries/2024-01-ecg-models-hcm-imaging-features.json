@@ -1,0 +1,34 @@
+{
+  "id": "2024-01-ecg-models-hcm-imaging-features",
+  "title": "ECG models identify concurrent high-risk imaging features in hypertrophic cardiomyopathy",
+  "summary": "A pretrained variational-autoencoder ECG representation supported classifiers for four imaging findings in hypertrophic cardiomyopathy. In233 patients at another centre, ROC areas ranged from0.68 for extensive enhancement to0.91 for apical aneurysm, with only one aneurysm-positive patient. This is retrospective reference-label evaluation, not a demonstration that imaging can safely be omitted.",
+  "field": "medicine",
+  "ai_technology": "Variational autoencoder; dense neural-network classifiers",
+  "organization": "Johns Hopkins University; Tufts Medical Center; Amrita Institute of Medical Sciences",
+  "publication_date": "2024-01-26",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11272903/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Actual relevant primary computational/clinical Methods and high-level Results read; no operational biological protocols inspected",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "A VAE pretrained on88105 ECGs provides24 latent features to learned classifiers, alongside age, sex and heart rate, linking electrical patterns to contemporaneous imaging labels.",
+    "tested": "Tufts1930 patients were partitioned1544 development and386 holdout, followed by233 Amrita patients. Endpoints were reduced ejection fraction, extreme wall thickness, apical aneurysm and extensive late gadolinium enhancement.",
+    "unknown": "Only one external aneurysm-positive case makes that endpoint highly uncertain. CMR labels were available in selected1584/1930 development-site and104/233 external patients. Hypothetical imaging savings combined development and evaluation cases; they are not prospective savings or safety evidence. A linked editorial is authenticated as Comment/Editorial, not a correction; its full body was not reviewed. No clinical-benefit or causal interpretation is established.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11272903/",
+      "https://doi.org/10.1016/j.hrthm.2024.01.031"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

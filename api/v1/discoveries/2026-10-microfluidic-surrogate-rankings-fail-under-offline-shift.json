@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-microfluidic-surrogate-rankings-fail-under-offline-shift",
+  "title": "Random-split rankings poorly predicted microfluidic surrogate rankings under shift",
+  "summary": "Across 107 held-out groups from six published tables, a random-split ranking of six learned prediction models showed little agreement with their rankings in a simulated adaptive evaluation. Mean Kendall correlation was 0.08, with a reported interval from −0.04 to 0.19.",
+  "field": "computer science",
+  "ai_technology": "XGBoost, random and quantile forests, Gaussian processes and neural surrogate models",
+  "organization": "Zhiyuan Zhang, independent researcher",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.36395v1",
+  "paper_url": "https://arxiv.org/html/2610.36395v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Primary §6.4.3 and Table 20, frozen protocols and v1 front matter",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The analysis compared rankings from random-split error with rankings from held-out group performance under the same offline simulated evaluation, using previously published measurements.",
+    "unknown": "The comparisons reused finite public tables and modeled lab activity offline. The study did not perform a new laboratory experiment, and the interval does not rule out modest agreement.",
+    "ai_role": "Six fitted surrogates made predictions for previously recorded measurements. Comparing their errors under different evaluation procedures quantified how poorly random-split standings carried across the tested settings.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.36395v1",
+      "https://arxiv.org/html/2610.36395v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

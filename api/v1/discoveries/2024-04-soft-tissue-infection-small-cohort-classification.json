@@ -1,0 +1,33 @@
+{
+  "id": "2024-04-soft-tissue-infection-small-cohort-classification",
+  "title": "A small clinical dataset tests machine-learning infection classification",
+  "summary": "In 25 emergency patients selected for suspected severe limb infection and ultrasound-detected fascial fluid, a six-feature random forest reported apparent sensitivity of 90.4% and specificity of 92.2% for necrotizing infection versus cellulitis. These small-cohort estimates do not establish performance for general soft-tissue infections.",
+  "field": "medicine",
+  "ai_technology": "Random forest",
+  "organization": "Chang Gung Memorial Hospital",
+  "publication_date": "2024-04-25",
+  "source_url": "https://doi.org/10.1016/j.heliyon.2024.e29578",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11066613/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary article full-text bibliographic metadata and relevant computational evaluation Methods/Results: sec2.3, sec3.4. Primary-source caveat and denominator review; candidate-panel identity corrected where relevant."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "Random forest fitted the represented classification or candidate-selection model; preprocessing and expert reference labels are distinguished from the learned contribution.",
+    "tested": "Thirteen infection cases and twelve cellulitis controls contributed the dataset. Four algorithms were evaluated over ten random 80/20 splits; six features were selected using random-forest Gini importance.",
+    "unknown": "Initial significance screening and later feature selection are not shown to be nested inside held-out evaluation. Each nominal test split contains about five patients; repeated splits are not independent cohorts. No prospective utility, separate-team replication or causal mechanism is established. This was a selected fluid-positive cohort with different diagnostic ascertainment for infection cases and cellulitis controls, including pathology for the former. The six-feature table does not independently establish a new held-out evaluation after feature selection.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11066613/"
+    ]
+  }
+}

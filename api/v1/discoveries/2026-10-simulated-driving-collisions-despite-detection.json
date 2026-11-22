@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-simulated-driving-collisions-despite-detection",
+  "title": "Both driving models detected the other vehicle before most simulated collisions",
+  "summary": "On the NeuroNCAP simulator, object tracking met the study’s detection criterion before 95.9% of DiffusionDrive’s collisions and 95.8% of SparseDrive’s collisions. The audit distinguished missed actors from collision episodes in which the learned detection system had tracked the actor.",
+  "field": "computer science",
+  "ai_technology": "DiffusionDrive and SparseDrive, learned vehicle detection and planning",
+  "organization": "University of Stuttgart; Mercedes-Benz",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35448v1",
+  "paper_url": "https://arxiv.org/html/2610.35448v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§IV.A–B, Table I and front matter",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors separated stock-model simulation episodes by collision outcome and by whether vehicle tracking met a prespecified analysis criterion.",
+    "unknown": "The result depends on the simulator, models and tracking definition. The presence of a detection does not identify the cause of an individual crash or establish road performance.",
+    "ai_role": "The learned perception systems provided the actor tracks compared with closed-loop simulation outcomes.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35448v1",
+      "https://arxiv.org/html/2610.35448v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

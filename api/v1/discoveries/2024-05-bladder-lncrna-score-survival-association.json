@@ -1,0 +1,34 @@
+{
+  "id": "2024-05-bladder-lncrna-score-survival-association",
+  "title": "A learned RNA score associates with survival in archived bladder-cancer data",
+  "summary": "A ten-RNA LASSO score separated overall-survival groups in archived bladder-cancer data. The internal validation subset reported one-, two- and three-year AUCs of 0.663, 0.624 and 0.630. This is a retrospective association with outcome-informed screening, not a verified immunotherapy-response test.",
+  "field": "medicine",
+  "ai_technology": "LASSO",
+  "organization": "Wenzhou Medical University; Zhejiang University",
+  "publication_date": "2024-05-31",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11168393/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Primary computational Methods on score construction and cohort data; Results on TCGA survival; no experimental protocol review",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "The TCGA analysis split 406 cases into 204 training and 202 validation records after prognostic screening; cohort-specific median scores defined high and low groups.",
+    "unknown": "Outcome screening preceded the split, so the validation subset is not untouched. The separate 65-case local series is stated as collected in 2022–2023 yet reports three-year AUCs in a May 2024 article; that timeline is unresolved and its performance is excluded here. Cohort counts vary between 412 and 406. Treatment-response proxies, drug predictions and proposed molecular mechanisms are not validated clinical outcomes.",
+    "ai_role": "LASSO fitted the ten-RNA survival signature after univariate outcome screening, enabling the represented score-to-recorded-survival comparison.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11168393/",
+      "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC11168393/unicode"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

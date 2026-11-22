@@ -1,0 +1,34 @@
+{
+  "id": "2024-01-fat-omics-selected-event-cohort-evaluation",
+  "title": "CT fat-feature model predicts events within a deliberately enriched cohort",
+  "summary": "DeepFat-assisted segmentation and a 15-feature elastic-net Cox model yielded a test C-index of 0.69 in 80 held-out patients from a 400-person, event-enriched cohort. Test-set risk reclassification was not statistically established. The result was already present in the January 2024 preprint; it is not evidence of general-population risk calibration or clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "DeepFat deep-learning segmentation; elastic-net Cox model",
+  "organization": "Case Western Reserve University",
+  "publication_date": "2024-01-29",
+  "source_url": "https://arxiv.org/abs/2401.16190v1",
+  "paper_url": "https://doi.org/10.1016/j.jacadv.2024.101188",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Actual relevant original clinical/computational Methods and Results read;111 original v1 and later journal checked separately; no operational biological protocols",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "A previously developed learned segmenter provides manually checked epicardial-fat masks; selected handcrafted spatial/intensity features enter a fitted regularized survival model. AI credit concerns measurement and model fitting, not a new fat-inflammation mechanism.",
+    "tested": "The original v1 Methods and Results use 400 archived CT records, with 56% event prevalence and a random 320/80 development/test split. Feature selection is described as training-only. The v1 reports the same 0.69 test C-index as the later journal version.",
+    "unknown": "The cohort was deliberately enriched by event/calcium-score groups, so natural prevalence, absolute risk and transportability are not established. DeepFat masks were manually corrected. The test reclassification statistic had a confidence interval crossing zero and p=0.463 despite a favorable narrative; no significant incremental reclassification claim is adopted. The composite includes revascularization and all-cause death. Later journal Methods/Results were separately read; they are not treated as a new discovery or silently backdated to v1.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2401.16190v1",
+      "https://doi.org/10.1016/j.jacadv.2024.101188"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

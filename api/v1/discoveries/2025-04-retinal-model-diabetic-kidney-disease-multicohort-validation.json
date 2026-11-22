@@ -1,0 +1,34 @@
+{
+  "id": "2025-04-retinal-model-diabetic-kidney-disease-multicohort-validation",
+  "title": "Retinal-image models detect diabetic kidney disease across multiple cohorts",
+  "summary": "A retinal-image model trained for diabetic kidney disease achieved AUCs of 0.791–0.826 across ten external datasets totaling 65,406 participants. A separate task distinguished isolated diabetic nephropathy from other kidney disease in small biopsy-referenced cohorts. These results support diagnostic investigation without establishing improved patient outcomes or replacement of confirmatory tests.",
+  "ai_technology": "ResNet-50 with momentum-contrastive pretraining",
+  "organization": "Shanghai Sixth People’s Hospital; Shanghai Jiao Tong University",
+  "publication_date": "2025-04-30",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.landig.2025.02.008",
+  "paper_url": "https://discovery.ucl.ac.uk/id/eprint/10213219/1/Wu_1-s2.0-S2589750025000408-main.pdf",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Version-specific original computational/statistical Methods and Results plus primary bibliographic dates. Clinical benefit, causal effects and independent replication are not inferred."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "DeepDKD used 734,084 pretraining images and 486,312 development/internal-validation images from 121,578 participants. The image-only classifier averaged scores across each participant’s available images. Internal DKD AUC was .842; ten external cohorts had AUC .791–.826. The biopsy-related task used 267 development participants and 244 external participants, with external AUC .733–.844. A 325-person prospective primary-care proof-of-concept reported sensitivity 89.8% and specificity 47.6% against subsequent confirmatory findings.",
+    "unknown": "The represented principal result is retrospective multicohort diagnostic validation. External datasets and a prospectively collected cohort do not establish improved clinical outcomes. Camera/domain differences and population selection constrain transfer. The small prospective study selected a previously defined high-sensitivity operating point; specificity was low, and the apparent specificity improvement versus metadata was not significant (P=.072). Model-development split details and diagnostic-reference definitions are in an appendix not independently read here. The retinal model is an ancillary screen, not a non-invasive tissue biopsy or proven substitute for laboratory/biopsy confirmation.",
+    "ai_role": "Contrastively pretrained image features were supervised for kidney-disease categories; a frozen image encoder and linear classifier supported the separate nephropathy task.",
+    "evidence_urls": [
+      "https://discovery.ucl.ac.uk/id/eprint/10213219/1/Wu_1-s2.0-S2589750025000408-main.pdf",
+      "https://pubmed.ncbi.nlm.nih.gov/40312169/"
+    ]
+  }
+}

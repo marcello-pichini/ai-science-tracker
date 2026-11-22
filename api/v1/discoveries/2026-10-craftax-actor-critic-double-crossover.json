@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-craftax-actor-critic-double-crossover",
+  "title": "Actor–critic training showed a local reversal in model-size scaling",
+  "summary": "In Craftax, a larger actor–critic model outperformed a smaller one at 10¹⁴ training FLOPs, fell behind at 3×10¹⁴ FLOPs, and regained its lead by 10¹⁵ FLOPs. The result shows a local departure from monotonic scaling for the tested policy models. The authors proposed a learning-dynamics explanation based on in-game achievements.",
+  "field": "computer science",
+  "ai_technology": "Actor–critic reinforcement learning; empirical compute scaling",
+  "organization": "Google DeepMind",
+  "publication_date": "2026-10-24",
+  "source_url": "https://arxiv.org/abs/2610.33420v1",
+  "paper_url": "https://arxiv.org/html/2610.33420v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "v1 actor–critic setup, §4.4 and Figure 5",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The experiment trained model sizes across compute levels and examined the crossover alongside achievement frequencies.",
+    "unknown": "The crossover concerns the evaluated sizes, training setup and game environment. The proposed explanation is observational.",
+    "ai_role": "Trained actor–critic policies at different sizes and budgets generated behavior traces used to test local compute scaling.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.33420v1",
+      "https://arxiv.org/html/2610.33420v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

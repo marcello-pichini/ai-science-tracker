@@ -1,0 +1,35 @@
+{
+  "id": "2026-10-automated-trace-labels-miss-agent-verification",
+  "title": "An agent trace detector misread repeated calculator calls as verification",
+  "summary": "A human audit of calculator-assisted AI traces found that repeated calculator calls could be mislabeled as verification of earlier outputs. The October 21 preprint already reported this failure pattern and 14 disagreements. Its November 18 revision additionally reported fair agreement across 81 trace labels (κ = 0.29).",
+  "field": "computer science",
+  "ai_technology": "Tool-using language models",
+  "organization": "University of Illinois Chicago; Argonne National Laboratory",
+  "source_url": "https://arxiv.org/abs/2610.30491",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.30491v2",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 original human audit and failure pattern, checked against v2 §§2–5, Tables 4 and 8 and updated agreement statistic",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study introduced controlled calculator errors, measured agent behavior, and compared automated labels with human reading of the trace.",
+    "unknown": "A visible tool call cannot reveal every internal check. The annotated sample and controlled arithmetic setting do not establish reliability on other tools or tasks. One author audited a selected, flag-guided sample with automated labels visible; this was not a blind independent annotation. The agreement statistic was reported in v2, after the underlying audit appeared in v1.",
+    "ai_role": "Multiple learned agents produce calculator-assisted reasoning traces on controlled arithmetic tasks. Human auditors compare these traces with automatically generated labels.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30491",
+      "https://arxiv.org/html/2610.30491v2",
+      "https://arxiv.org/html/2610.30491v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

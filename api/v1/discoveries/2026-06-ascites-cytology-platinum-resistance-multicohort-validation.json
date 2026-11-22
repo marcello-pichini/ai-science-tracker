@@ -1,0 +1,33 @@
+{
+  "id": "2026-06-ascites-cytology-platinum-resistance-multicohort-validation",
+  "title": "Ascites-image models stratify recorded platinum resistance in ovarian cancer",
+  "summary": "OVCAP analyzed pretreatment ascites cytology from 438 women with advanced epithelial ovarian cancer. Internal and two additional-site validation cohorts yielded resistance-classification AUCs of 0.894, 0.863 and 0.828. This retrospective treatment-response study does not establish that model-guided treatment improves outcomes.",
+  "ai_technology": "Prov-GigaPath features, TransMIL and multi-scale late fusion",
+  "organization": "Fudan University Shanghai Cancer Center; Northern Jiangsu People’s Hospital",
+  "publication_date": "2026-06-28",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.neo.2026.101330",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13330694/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original model/clinical cohort, outcome definition, patient-level training selection and held-out Results; exploratory biological interpretation and clinical benefit kept bounded."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "The 2019–2023 cohort comprised 367 Xuhui-campus cases split into 254 training and 113 internal-validation patients, plus 51 Pudong-campus and 20 Northern-Jiangsu validation patients. Patient-level three-fold training cross-validation selected among 15 encoders and hyperparameters. The retained multi-scale predictor was applied unchanged to the held-out cohorts. Resistance meant progression during therapy or recurrence/progression within six months after completing platinum treatment; the reported internal/external AUCs were .894/.863/.828.",
+    "unknown": "The three sites represent two institutions; one additional-site cohort shares the same cancer center as development. The smallest cohort contains only 20 people. Retrospective selection of patients with evaluable outcomes, histologic concentration in high-grade serous cancer and preparation/scanner differences constrain transfer. AUCs are not treatment-benefit estimates. Attention-selected morphology and integrated single-cell associations are hypothesis-generating, not established mechanisms of resistance. Clinical vignettes and comparison with later-available kinetic biomarkers do not demonstrate prospective clinical utility.",
+    "ai_role": "Pathology foundation-model embeddings and attention-based multiple-instance learning estimated response risk from image patches; trained multi-scale fusion combined the prediction streams.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13330694/"
+    ]
+  }
+}

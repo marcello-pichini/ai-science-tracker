@@ -1,0 +1,34 @@
+{
+  "id": "2024-10-smartwatch-cardiovascular-pilot-weekly-classification",
+  "title": "A small smartwatch study shows uneven detection of known heart disease",
+  "summary": "A trained neural model classified weekly heart-rate patterns in a 12-person test set with known cardiovascular-disease labels. The selected contrastive-loss variant reported mean weekly sensitivity of 67% with a 47-point between-person standard deviation and specificity of 100%. Some affected participants were consistently missed; these results do not establish safe disease exclusion.",
+  "field": "medicine",
+  "ai_technology": "Neural curve classifier; weekly logistic aggregation",
+  "organization": "Delft University of Technology; Haga Teaching Hospital",
+  "publication_date": "2024-10-30",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11566672/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Official primary BioC original article sections: Curve classifier/weekly aggregation;ME-TIME cohort;subject-separated tuning;Table3 and clinical limitations; no laboratory-method validation",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "A trained two-layer neural classifier maps acceleration/deceleration heart-rate curves to disease labels; learned weekly aggregation and contrastive training enable the represented clinical-label test.",
+    "tested": "The ME-TIME cohort contained 42 participants. Thirty were used for development and subject-separated tuning; the test comprised six reference participants and six with atrial fibrillation or heart failure. Sensitivity/specificity average per-person weekly scores, not independent weekly patients.",
+    "unknown": "Reference and disease groups differ in age, BMI and comorbidity. Twelve test participants and correlated weeks limit precision and generalization. Variant comparisons are exploratory. Several discussion paragraphs conflict with Table3 or misinterpret high specificity as a rule-out guarantee; neither rule-out safety nor prevention benefit is represented. Prospective data collection does not establish a frozen prospective model evaluation.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11566672/",
+      "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC11566672/unicode"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

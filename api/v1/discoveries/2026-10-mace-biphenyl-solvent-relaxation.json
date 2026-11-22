@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-mace-biphenyl-solvent-relaxation",
+  "title": "Simulations estimate how solvents affect excited biphenyl’s relaxation",
+  "summary": "Using learned MACE potentials, simulations estimated excited-state torsional relaxation in unsubstituted biphenyl across nine solvents. Mean times to complete about 63% of the relaxation broadly increased with viscosity in six aprotic solvents, from 0.254 to 3.519 picoseconds. Three protic solvents fell below that trend. Earlier experiments reported a qualitatively similar pattern for a substituted molecule.",
+  "field": "chemistry",
+  "ai_technology": "MACE interatomic potential; PULSES multi-agent workflow",
+  "organization": "Emory University",
+  "publication_date": "2026-10-23",
+  "source_url": "https://arxiv.org/abs/2610.32392v1",
+  "paper_url": "https://arxiv.org/pdf/2610.32392v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 primary PDF Section 2.5, Figure 4 and supported solvent comparison",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The analysis used 48 trajectories per solvent. Held-out reference geometries gave force-prediction R² of 0.9721 on the excited-state surface. The solvent trend was evaluated from simulated threshold-crossing times.",
+    "unknown": "The relationship rests on a single-surface simulation and a classical solvent representation. Relaxation times for this specific molecule were not independently measured in the study.",
+    "ai_role": "Agent-trained MACE interatomic potentials supplied the excited-state solute forces for trajectory ensembles of unsubstituted biphenyl.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.32392v1",
+      "https://arxiv.org/pdf/2610.32392v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

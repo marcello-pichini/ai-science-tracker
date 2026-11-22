@@ -1,0 +1,34 @@
+{
+  "id": "2024-07-learned-metasurface-code-physical-beam-check",
+  "title": "Learned metasurface codes produce measured single and paired beams",
+  "summary": "A physics-assisted ResNet34 produced coding configurations applied to a programmable metasurface. Measurements of four designs showed fields in prescribed single- and dual-beam directions, with unequal beam strength in one case. This is a limited physical design check, without AI credit for a new electromagnetic law or autonomous tracking deployment.",
+  "field": "physics",
+  "ai_technology": "ResNet34; physics-assisted unsupervised learning",
+  "organization": "Southeast University",
+  "publication_date": "2024-07-26",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11379667/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original selected computational/clinical or physical Methods, model role, specific Results and limitations read; operational biological sections excluded",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "direct test",
+    "ai_role": "The trained inverse network outputs metasurface coding from human-specified beam targets; a conventional electromagnetic forward model supplies the learning loss. Learned coding is separate from the human-designed metasurface and macroscopic physics.",
+    "tested": "Four network-generated configurations were measured in an anechoic chamber for forward/slanted single beams and paired beams. Measurements covered only a limited angular region. Additional static target-position examples were shown.",
+    "unknown": "The forward model omits mutual coupling; the source reports degraded performance when interactions are included. Continuous network phase outputs approximate a binary physical surface. One dual-beam case showed unequal intensity attributed to specular reflection. Selected tests do not establish arbitrary-beam generalization, independent replication, real closed-loop tracking or a physical mechanism discovered by AI.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11379667/",
+      "https://doi.org/10.1016/j.isci.2024.110595"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

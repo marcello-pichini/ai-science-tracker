@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-hybrid-nerve-tumor-slide-small-heldout-evaluation",
+  "title": "An image model labels hybrid nerve-tumor slides in a small held-out set",
+  "summary": "A retrospective study of 115 nerve-sheath tumors compared image classifiers for hybrid neurofibroma/schwannoma and related diagnoses. In 17 held-out hybrid-only slides from another center/scanner, the best reported model reached mean accuracy 0.96. This selected positive-class test does not establish specificity against other tumors or clinical utility.",
+  "ai_technology": "ResNet50 features and clustering-constrained attention multiple instance learning",
+  "organization": "University of Augsburg; University Hospital Hamburg-Eppendorf",
+  "publication_date": "2026-07-28",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.jpi.2026.100700",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13524541/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full-text bibliographic dates, computational classification Methods, held-out Results and explicit cohort/reference limitations."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "The 115 tumors supplied 375 histological sections across three German centers. Authors report patient-separated cross-validation; a 17-slide hybrid-only holdout assessed scanner/center transfer. The reported best mCLAM/ResNet50 configuration with stain normalization achieved accuracy 0.96 ± 0.05 and F1 0.98 ± 0.03.",
+    "unknown": "The holdout contains only hybrid-tumor slides, so it does not measure external three-class specificity. Its distinct patient count is not clear from the main text. Different configurations were compared on the test set, and best test performance is not a locked-model estimate. Expert-curated referral cases, artifacts and center/scanner confounding limit generalization; prospective clinical outcomes were not tested.",
+    "ai_role": "Learned image features and multiple-instance classifiers predicted diagnostic slide labels; expert histology supplied reference diagnoses.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13524541/"
+    ]
+  }
+}

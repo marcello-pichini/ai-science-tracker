@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-askap-vast-extreme-scattering-event-candidates",
+  "title": "ASKAP survey identifies 148 stronger extreme scattering candidates",
+  "summary": "A learned light-curve filter helped astronomers identify 72 gold and 76 silver extreme scattering candidates in ASKAP's VAST survey, plus 88 less certain cases. For the gold and silver candidates above 5 mJy at 888 MHz, the study estimated 0.012 events per square degree per year. Candidates were more common toward the Galactic center.",
+  "field": "physics",
+  "ai_technology": "Gaussian-process light-curve regression; XGBoost classifier",
+  "organization": "University of North Carolina at Chapel Hill; Stanford University; Manly Astrophysics; University of Wisconsin–Milwaukee; University of Sydney; University of California, Santa Cruz; University of Toronto; CSIRO",
+  "publication_date": "2026-10-27",
+  "source_url": "https://arxiv.org/abs/2610.37464v1",
+  "paper_url": "https://arxiv.org/html/2610.37464v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 primary HTML §§II.2, III.1 Table 1, IV, V.6, VI and Appendix A",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The learned filter reduced 24,590 bright isolated radio sources to 4,446 for review. Researchers reported 72 gold and 76 silver extreme scattering candidates plus 88 bronze candidates. The gold and silver sample gave 0.012 candidate events per square degree per year above 5 mJy at 888 MHz in the study's survey estimate.",
+    "unknown": "Candidate grading prioritizes reliability over completeness and the rate is direction-dependent. Sparse sampling and competing explanations leave some events uncertain. The screening classifier was assessed on simulations.",
+    "ai_role": "Gaussian-process regression fitted individual light curves and extracted features. An XGBoost classifier trained on simulated light curves discarded likely stochastic variability from real ASKAP VAST data before visual and multi-frequency review.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.37464v1",
+      "https://arxiv.org/html/2610.37464v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

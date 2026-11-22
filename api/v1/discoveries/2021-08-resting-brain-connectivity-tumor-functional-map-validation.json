@@ -1,0 +1,33 @@
+{
+  "id": "2021-08-resting-brain-connectivity-tumor-functional-map-validation",
+  "title": "A brain-connectivity model maps task-defined functional regions in tumor patients",
+  "summary": "A graph neural model used resting-state brain scans to estimate language and motor regions in 62 brain-tumor patients. Repeated cross-validation against task-fMRI-derived labels reported language-region AUC 0.76. The reference was task-fMRI, and the study did not establish agreement with invasive mapping or improved surgical outcomes.",
+  "ai_technology": "Multi-task graph neural network for resting-state fMRI connectivity",
+  "organization": "Johns Hopkins University",
+  "publication_date": "2021-08-21",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.media.2021.102203",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9245684/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary clinical-cohort, computational model/split Methods and clinical Results; synthetic healthy-brain experiments kept distinct."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "The retrospective 62-patient tumor cohort supplied expert-confirmed task-fMRI pseudo-reference labels. Resting-state connectivity and manually identified tumor regions were used at inference. Repeated ten-fold evaluation reported parcel-level language AUC .76, finger .83, foot .78 and tongue .80, with different task denominators. Hyperparameters were selected using a separate healthy HCP dataset. An exploratory holdout trained on 57 unilateral-language patients and tested five bilateral cases.",
+    "unknown": "Task-fMRI labels and atlas parcels are indirect references rather than invasive stimulation mapping. The bilateral holdout is only five patients. Task participation, expert thresholding and tumor segmentations constrain applicability to patients unable to perform tasks, and a single-center retrospective cohort does not establish clinical benefit. Simulated tumors in healthy HCP subjects are a separate synthetic experiment, not additional tumor patients or independent clinical confirmation.",
+    "ai_role": "The learned graph model combined resting-state connectivity with tumor-region information to estimate multiple functional-network labels simultaneously.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9245684/"
+    ]
+  }
+}

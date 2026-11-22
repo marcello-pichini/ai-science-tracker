@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-mine-cavity-geometry-validation-varies-by-ground-history",
+  "title": "A mine-cavity study found that geometric prediction accuracy varied by ground history",
+  "summary": "On held-out cavity scans from one mine, a 3D U-Net achieved a mean overlap score of 0.601 versus 0.491 for the planning baseline. The ranking reversed in previously unexcavated ground: 0.525 for the learned model versus 0.592 for the baseline.",
+  "field": "other",
+  "ai_technology": "Ensemble of fitted three-dimensional U-Nets",
+  "organization": "University of Waterloo; Cameco",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.36303v1",
+  "paper_url": "https://arxiv.org/html/2610.36303v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "§4.1, Tables 2–4 and aggregate test-split provenance",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study randomly held out historical cavities and compared volume overlap against surveyed boundaries and the site’s geometric baseline.",
+    "unknown": "The data came from one mine and roughly 90% of training-domain examples involved neighboring filled excavations. The subgroup scores do not establish prospective or cross-site reliability.",
+    "ai_role": "The U-Net ensemble used recorded field inputs to estimate cavity geometry. Its predictions were compared with recorded cavity scans.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.36303v1",
+      "https://arxiv.org/html/2610.36303v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

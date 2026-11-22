@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-lean-prover-finds-ambiguous-formalizations",
+  "title": "A learned prover exposed ambiguous translations of unique-answer math problems",
+  "summary": "A learned prover found two distinct Lean-accepted answers for 5.4% of the tested formal statements pooled across three autoformalizers. The original problems had unique answers, so these examples expose a mismatch between the formal statements and their intended problems.",
+  "field": "mathematics",
+  "ai_technology": "Gobble-Prover 1.7B and 4B; Lean 4",
+  "organization": "University of California, Riverside",
+  "publication_date": "2026-10-25",
+  "source_url": "https://arxiv.org/abs/2610.34490v1",
+  "paper_url": "https://arxiv.org/html/2610.34490v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 Methods, unique-answer argument, Appendix D Table 5",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The audit combined evidence from two learned provers across three autoformalizers and five contest problem datasets. Lean checked acceptance of distinct answers.",
+    "unknown": "The detected rate is a lower bound for these tested versions. A translation can be wrong in ways this multiple-answer test does not flag.",
+    "ai_role": "Gobble-Prover models generated verifiable proof terms for numerical candidates under independently autoformalized competition problems.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.34490v1",
+      "https://arxiv.org/html/2610.34490v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

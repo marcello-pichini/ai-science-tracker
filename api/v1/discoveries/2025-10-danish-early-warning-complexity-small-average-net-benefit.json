@@ -1,0 +1,35 @@
+{
+  "id": "2025-10-danish-early-warning-complexity-small-average-net-benefit",
+  "title": "A Danish study estimates small average net-benefit gains from a complex warning model",
+  "summary": "An October 2025 preprint compared early-warning models in 2.16 million hospital encounters. Although its gradient-boosted model discriminated 24-hour mortality better than NEWS, the maximum average decision-curve net-benefit difference was 1.8 per 10,000 across tested thresholds. These are retrospective weighted estimates, not measured lives saved or proven clinical efficiency gains.",
+  "ai_technology": "XGBoost and distilled multilingual sentence embeddings",
+  "organization": "University of Copenhagen; Imperial College London",
+  "publication_date": "2025-10-14",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1101/2025.10.12.25337794",
+  "paper_url": "https://curis.ku.dk/ws/files/539588102/2025.10.12.25337794v1.full.pdf",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary full-text bibliographic dates, computational classification Methods, held-out Results and explicit cohort/reference limitations."
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "The original preprint analyzed 2,161,689 encounters from 829,610 individuals after excluding encounters with major subsequent interventions, then reweighted the remaining sample. Hospital-grouped ten-fold evaluation reported XGB-EWS AUC .932 versus NEWS .902. Decision-curve analysis reported maximum overall net-benefit differences of 1.8 per 10,000 for XGB-EWS versus NEWS and 1.7 for NEWS versus NEWS-Light.",
+    "unknown": "The represented claim uses the October 14, 2025 preprint; the November 2026 journal abstract changes the cohort and numerical results, which are not assigned to the earlier date. Encounters from one person can recur and were treated as independent; hospital grouping does not establish patient separation across hospitals. Weighting depends on exchangeability and measured treatment predictors; unmeasured clinical factors can bias the hypothetical no-intervention estimate. Net benefit is a threshold-dependent weighted statistic, not a count of lives saved. Simulated staff-time savings and real-world implementation effects were not tested.",
+    "ai_role": "Learned clinical-history embeddings and gradient boosting combined prior records, vital signs and laboratory values to estimate mortality risk; ordinary decision-curve analysis compared model outputs.",
+    "evidence_urls": [
+      "https://curis.ku.dk/ws/files/539588102/2025.10.12.25337794v1.full.pdf",
+      "https://www.medrxiv.org/content/10.1101/2025.10.12.25337794v1",
+      "https://pubmed.ncbi.nlm.nih.gov/42988715/"
+    ]
+  }
+}

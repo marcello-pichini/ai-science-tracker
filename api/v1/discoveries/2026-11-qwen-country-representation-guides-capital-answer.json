@@ -1,0 +1,36 @@
+{
+  "id": "2026-11-qwen-country-representation-guides-capital-answer",
+  "title": "An unstated country representation guides Qwen’s capital answers",
+  "summary": "In a controlled two-step geography task, researchers changed a representation of a country that was never named in the prompt. At the city token, the intervention redirected Qwen2.5-7B to the paired country’s capital in 79% of 1,038 pairs. The country was also readable later in the prompt, where the intervention had no effect at the tested layers. This experiment is reported in the November 11 preprint version.",
+  "field": "computer science",
+  "ai_technology": "Qwen2.5-7B, cross-fitted country subspaces",
+  "organization": "Independent research",
+  "source_url": "https://arxiv.org/abs/2610.28498",
+  "source_type": "paper",
+  "publication_date": "2026-11-11",
+  "paper_url": "https://arxiv.org/html/2610.28498v3",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv metadata and v3 §5 and Appendix E, with v1/v2 text checked for the country-to-capital experiment",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The preregistered intervention compared held-out matched city pairs against random and copied-embedding subspaces, whole-state replacement, and same-country pairs.",
+    "unknown": "The test concerns one model and a constrained task on cities the model already answered correctly. Other tasks and weak latent signals remain unestablished.",
+    "ai_role": "Country subspaces were estimated on one half of the pretrained Qwen2.5-7B city examples, then used in a controlled intervention on matched held-out city examples.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.28498",
+      "https://arxiv.org/html/2610.28498v3",
+      "https://arxiv.org/html/2610.28498v1",
+      "https://arxiv.org/html/2610.28498v2"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

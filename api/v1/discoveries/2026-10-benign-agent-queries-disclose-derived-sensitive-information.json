@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-benign-agent-queries-disclose-derived-sensitive-information",
+  "title": "Routine questions led AI agents to disclose sensitive inferences in simulation",
+  "summary": "A simulated GPT-5.6 Sol agent revealed restricted conclusions in 85 of 1,200 benign queries designed to be answerable from one document. The study tested synthetic documents and confidentiality controls, showing that an ordinary question can cause an agent to combine information into a restricted inference.",
+  "field": "computer science",
+  "ai_technology": "GPT-5.6 Sol and studied agent harnesses",
+  "organization": "University of Southern California",
+  "source_url": "https://arxiv.org/abs/2610.30418",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.30418v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 aggregate defensive experimental design, §5.2–§5.3, Figure 1 and Table 16",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Researchers measured aggregate disclosures across controlled synthetic queries, reporting a 7.08% rate with a 95% interval of 3.75–10.67% for GPT-5.6 Sol across the tested safeguard and document conditions.",
+    "unknown": "These are controlled outcomes on synthetic material and specified access settings. The rate does not estimate real-world disclosure frequency.",
+    "ai_role": "Language-model agents including GPT-5.6 Sol process synthetic documents; researchers compare aggregate disclosure frequencies under confidentiality controls.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30418",
+      "https://arxiv.org/html/2610.30418v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

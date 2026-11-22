@@ -1,0 +1,33 @@
+{
+  "id": "2023-12-gastric-radiopathomics-small-test-no-significant-combined-gain",
+  "title": "Combined gastric radiopathomics lacks a significant gain in a small test cohort",
+  "summary": "A retrospective gastric-cancer analysis combined CT features and learned pathology-slide features to classify stage groups. The combined model reached test AUC .837 in 60 patients, but its test advantage over the component models was not statistically established. Surgical slides limit claims of preoperative use.",
+  "ai_technology": "ResNet-18 features, LASSO, SVM and multilayer perceptron",
+  "organization": "Guangxi Medical University; Guangxi University of Chinese Medicine",
+  "publication_date": "2023-12-22",
+  "evidence": {
+    "tested": "Two hundred surgically resected cases were split 140/60 by patient. ResNet-18 learned tumor-region features from pathology patches; selected pathology and CT signatures were combined. Component test AUCs were .797 for CT and .792 for pathology; combined AUC was .837. Original Results explicitly state no significant test superiority over either component despite a training difference.",
+    "unknown": "This is one retrospective institution and a small random internal test. Methods do not clearly establish training-only fitting of every normalization, correlation filter and LASSO step. The best model families/signatures were selected after comparisons; untouched external confirmation is absent. Pathological slides came from surgical cases, with no demonstrated preoperative-biopsy deployment. Nonsignificant differences do not establish equivalence, and a nonsignificant goodness-of-fit test does not prove perfect calibration. Decision curves do not measure clinical benefit.",
+    "ai_role": "Learned classifiers and representations evaluate a defined clinical staging or recurrence target; conventional clinicopathologic associations are not separately counted as AI discoveries.",
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10788295/"
+    ]
+  },
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.tranon.2023.101864",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10788295/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original patient cohort, computational Methods and represented Results actually read"
+  }
+}

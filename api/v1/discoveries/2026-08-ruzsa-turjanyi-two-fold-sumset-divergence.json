@@ -1,0 +1,38 @@
+{
+  "id": "2026-08-ruzsa-turjanyi-two-fold-sumset-divergence",
+  "title": "A Lean proof establishes the two-sum Ruzsa–Turjányi limit",
+  "summary": "GPT-5.6 Sol proved that for a zero-density asymptotic additive basis, the ratio of the number of two-term sums up to 2N to the number of basis elements up to N tends to infinity. The statement is the two-sum variant of the older Ruzsa–Turjányi result for three-term sums.",
+  "field": "mathematics",
+  "ai_technology": "GPT-5.6 Sol; h1 Lean proof-search harness",
+  "organization": "Meta FAIR",
+  "publication_date": "2026-08-28",
+  "source_url": "https://github.com/facebookresearch/atlas-lean/blob/223d8bc0879b8ddd5b5c935ffe2a3a35f6e0b86d/Atlas/FC/Erdos337_ruzsa_turjanyi_solution.lean#L184",
+  "paper_url": "",
+  "source_type": "other",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Pinned Atlas Lean theorem and August 28 merge; h1 Table 1 and Appendix D; September separate formal proof and Formal Conjectures statement",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Not reported",
+    "tested": "The formal proof encodes zero density and asymptotic additive-basis coverage. It applies the Plünnecke–Ruzsa inequality to control truncated sumsets.",
+    "unknown": "This result concerns the density-zero two-sum variant. The originally posed bounded-limsup question in Erdős 337 is different and already has a counterexample.",
+    "ai_role": "The h1 harness used GPT-5.6 Sol to generate a proof script with feedback from the Lean 4 checker.",
+    "evidence_urls": [
+      "https://github.com/facebookresearch/atlas-lean/blob/223d8bc0879b8ddd5b5c935ffe2a3a35f6e0b86d/Atlas/FC/Erdos337_ruzsa_turjanyi_solution.lean#L184",
+      "https://github.com/facebookresearch/atlas-lean/pull/7",
+      "https://arxiv.org/html/2610.35962v1",
+      "https://github.com/google-deepmind/formal-conjectures/pull/6008",
+      "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/337.lean",
+      "https://github.com/mo271/formal-conjectures/commit/9e4cd5617edacb313fb1da32adb4751f1fa8f603"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "added_date": "2026-11-21"
+}

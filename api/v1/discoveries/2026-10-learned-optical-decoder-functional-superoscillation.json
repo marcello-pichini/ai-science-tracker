@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-optical-decoder-functional-superoscillation",
+  "title": "A trained optical processor reproduced functions with more harmonics than its input encoding",
+  "summary": "A visible-light processor refined through reinforcement learning approximated a nine-harmonic function using an input encoding with four harmonics. The measured output reproduced regions of rapid oscillation as the scalar input changed. The result concerns the bandwidth of the processor’s input–output function.",
+  "field": "physics",
+  "ai_technology": "Proximal policy optimization; learned diffractive optical decoder",
+  "organization": "University of California, Los Angeles; California NanoSystems Institute",
+  "publication_date": "2026-10-25",
+  "source_url": "https://arxiv.org/abs/2610.34111v1",
+  "paper_url": "https://arxiv.org/pdf/2610.34111v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "v1 visible-light experiment, in situ PPO and Figure 7",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors initialized the physical decoder from optical simulation, refined it from measured responses and compared its output with the target function.",
+    "unknown": "The physical test covers designed target functions on a finite input range. Deviations remain near sharp peaks and low signal amplitudes.",
+    "ai_role": "A trainable diffractive decoder initialized by optical simulation was refined in hardware with PPO using measured responses.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.34111v1",
+      "https://arxiv.org/pdf/2610.34111v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

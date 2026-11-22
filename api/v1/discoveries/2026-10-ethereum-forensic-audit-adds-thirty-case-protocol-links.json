@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-ethereum-forensic-audit-adds-thirty-case-protocol-links",
+  "title": "AI-assisted forensics found 30 additional bridge links in documented Ethereum cases",
+  "summary": "Researchers reexamined 20 documented Ethereum money-laundering cases and identified 30 links between individual cases and cross-chain bridge protocols that were absent from the public reports they collected. A trained classifier flagged likely uses, which the researchers checked manually.",
+  "field": "computer science",
+  "ai_technology": "XGBoost",
+  "organization": "Taiyuan University of Technology",
+  "source_url": "https://arxiv.org/abs/2610.32210",
+  "source_type": "paper",
+  "publication_date": "2026-10-23",
+  "paper_url": "https://arxiv.org/html/2610.32210v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 aggregate evaluation setup, trained classifier comparison and §IV-D/Table V manual case-level confirmation",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The forensic study recovered all 11 case–bridge pairs already documented in the collected reports and manually verified 30 additional pairs. A protocol used several times in a single case counted once.",
+    "unknown": "The selected cases are not representative of all Ethereum activity. The result does not establish legal responsibility or how common such links are outside the cases reviewed.",
+    "ai_role": "An XGBoost classifier identifies likely cross-chain use, enabling reviewers to manually confirm connections between known cases and protocols on the public ledger.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.32210",
+      "https://arxiv.org/html/2610.32210v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

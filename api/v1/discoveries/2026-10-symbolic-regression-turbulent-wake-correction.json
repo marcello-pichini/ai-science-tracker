@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-symbolic-regression-turbulent-wake-correction",
+  "title": "Symbolic regression fitted a finite-Reynolds-number correction for turbulent velocity profiles",
+  "summary": "A data-fitted expression adjusted the outer wake contribution in zero-pressure-gradient turbulent boundary layers as Reynolds number varied. The mean-velocity relation was compared with 35 simulation and experiment profiles across friction Reynolds numbers from 252 to 72,526. Its high-Reynolds-number limit was imposed during modeling.",
+  "field": "physics",
+  "ai_technology": "PySR; physics-constrained symbolic regression",
+  "organization": "Chinese Academy of Sciences; Northwestern Polytechnical University",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35276v1",
+  "paper_url": "https://arxiv.org/html/2610.35276v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 reference datasets, symbolic-regression implementation and Sections 4.1–4.2",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors identified the fitted correction from specified direct- and large-eddy-simulation profiles and compared the relation with other profiles including experimental datasets.",
+    "unknown": "Out-of-fit profiles were not an independent statistical validation set. The limiting value is a design constraint, and reported data sources differ in the outer layer.",
+    "ai_role": "PySR fit near-wall and finite-Reynolds-number corrections under prescribed physical asymptotes.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35276v1",
+      "https://arxiv.org/html/2610.35276v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-01-pediatric-pneumonia-severity-panel-evaluation",
+  "title": "Learned multi-omics panel is evaluated against pediatric pneumonia severity",
+  "summary": "A learned eight-feature panel combined five protein and three metabolite measurements to distinguish mild from severe pediatric pneumonia. The source reports an ROC area of 0.82 in a further 50 clinical samples. This is severity-label discrimination, not mortality prediction, a demonstrated early forecast or a treatment effect.",
+  "field": "medicine",
+  "ai_technology": "Random-forest feature ranking; logistic regression",
+  "organization": "Shenzhen University; Shenzhen Nanshan People's Hospital",
+  "publication_date": "2026-01-31",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12925244/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original selected computational/clinical or physical Methods, model role, specific Results and limitations read; operational biological sections excluded",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "The Results attribute feature ranking to a random-forest model, while the Methods describe the selected five-protein/three-metabolite panel entering a logistic classifier. AI credit is limited to learned panel nomination/evaluation, not pathways or treatment mechanisms.",
+    "tested": "Initial recruitment comprised 57 affected children and 10 healthy controls. The source describes a 70:30 development/test split and a separate 50-sample clinical validation for the severity panel, with reported AUC 0.82.",
+    "unknown": "Exact model ordering differs between Results and Methods and is not fully reconciled. Matched multi-omics sample counts, repeated-sample independence and additional cohort timing/composition are incompletely specified in reviewed passages. Some redundancy filtering is described before the split. Validation is retrospective and single-centre, not an established independently frozen clinical test. A heading mentions mortality, but modeled labels are mild versus severe disease. Operational laboratory/pathogen procedures were not inspected.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12925244/",
+      "https://doi.org/10.1016/j.isci.2026.114861"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

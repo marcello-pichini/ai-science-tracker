@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-fly-turn-prediction-digital-twin",
+  "title": "An intrinsically trained fly model matched an observed future-turn signal",
+  "summary": "Among 20 intrinsic learning objectives, DIAYN produced virtual fly policies that most closely matched the relationship between neural and behavioral prediction of future turns in prior fruit-fly recordings. The comparison evaluated signals 15 to 8 seconds before a turn. It supports a computational model of the observed behavior.",
+  "field": "biology",
+  "ai_technology": "DIAYN; NeuroMechFly; elastic-net logistic decoding",
+  "organization": "University of Maryland, College Park; Carnegie Mellon University",
+  "publication_date": "2026-10-25",
+  "source_url": "https://arxiv.org/abs/2610.34638v1",
+  "paper_url": "https://arxiv.org/html/2610.34638v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 policy comparison, prospective decoding Figure 3 and Results",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The researchers held the digital embodiment and comparison assay consistent while varying intrinsic learning objectives and comparing frozen policies with prior aggregate observations.",
+    "unknown": "The behavior and neural comparisons test a simulated model. They do not establish that live flies optimize the same objective. The comparison selected among 20 objectives and seven candidate internal representations; decoder hyperparameters were tuned on the biological data. Agreement is not an untouched validation of a uniquely identified biological objective.",
+    "ai_role": "DIAYN and other learned intrinsic-motivation algorithms train hierarchical policies. Fitted elastic-net decoders compare future-turn information in the models and prior fly recordings.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.34638v1",
+      "https://arxiv.org/html/2610.34638v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

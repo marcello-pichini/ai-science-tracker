@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-segmentation-measures-carbide-growth-in-steel",
+  "title": "Carbides became rounder and occupied more of a tempered steel",
+  "summary": "Researchers used a trained image classifier to separate carbide particles from the surrounding high-speed steel in electron micrographs. After isothermal holding, the measured carbide volume fraction was 9.9%, up from 8.3% in directly quenched reference samples, and mean particle circularity rose from 0.881 to 0.914.",
+  "field": "materials",
+  "ai_technology": "Trainable Weka Segmentation",
+  "organization": "Ruhr University Bochum; RWTH Aachen University",
+  "source_url": "https://arxiv.org/abs/2610.29599",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/pdf/2610.29599v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 PDF front matter, image segmentation methods, Figures 3–4, Tables 1–2, discussion and conclusions",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Microscopy with learned segmentation measured about 1,600 carbides per condition. The stereological measurement error reported for each volume fraction was ±0.4 percentage points.",
+    "unknown": "The population-level differences apply to the tested alloy and thermal conditions. They do not distinguish growth of existing particles from nucleation of new ones or prove an epitaxial growth mechanism. Carbide rounding during holding had been reported in earlier high-speed-steel research; the represented contribution is quantitative measurement in this alloy.",
+    "ai_role": "Trainable Weka Segmentation fit a classifier from manually labeled microscopy regions and separated carbide from matrix, enabling particle-area and shape measurements.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.29599",
+      "https://arxiv.org/pdf/2610.29599v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

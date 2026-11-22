@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-retrieval-component-gains-did-not-add-up",
+  "title": "Retrieval improvements shrank when combined in a RAG pipeline",
+  "summary": "Five changes to a retrieval-augmented generation pipeline each improved document ranking when tested alone. Adding their individual gains gave an expected score of 0.667, but the combined system scored 0.483 against a baseline of 0.412. The result concerns the tested retrieval components and queries.",
+  "field": "computer science",
+  "ai_technology": "HyDE query augmentation, cross-encoder reranking",
+  "organization": "IBM",
+  "source_url": "https://arxiv.org/abs/2610.29722",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.29722v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, §§4–5, Table 6, §D.14/Figure 9 and limitations on faithfulness additivity",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A matched component-composition experiment compared individual changes and the combined pipeline using NDCG@10, with a paired bootstrap over 93 queries.",
+    "unknown": "The result does not establish that every retrieval pipeline shows the same interaction. The paper’s answer-faithfulness comparison used different component configurations and did not directly establish additivity.",
+    "ai_role": "Learned query augmentation and cross-encoder reranking change query–document rankings; matched component perturbations test whether those changes add together.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.29722",
+      "https://arxiv.org/html/2610.29722v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

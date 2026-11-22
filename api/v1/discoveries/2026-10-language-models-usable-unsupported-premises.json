@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-language-models-usable-unsupported-premises",
+  "title": "Language models flagged missing evidence less often when an unsupported premise was usable",
+  "summary": "In paired arithmetic tasks, making an unsupported premise usable reduced missing-evidence flags by 8–30 percentage points across four tested language models. The source support was unchanged. Some answers may reflect conditional reasoning because the instructions did not require rejection of premises supplied in the question.",
+  "field": "computer science",
+  "ai_technology": "Gemma and Qwen language models",
+  "organization": "Google",
+  "publication_date": "2026-10-25",
+  "source_url": "https://arxiv.org/abs/2610.34488v1",
+  "paper_url": "https://arxiv.org/html/2610.34488v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "v1 Methods, paired premise design, §4 and Limitations",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The controlled factorial design varied actionability and the mention of relevant entities on GSM8K. All 16 primary paired contrasts survived Holm adjustment.",
+    "unknown": "The selected tasks and instructions limit how broadly the result applies. It does not show that all answers accept unsupported statements as facts. Pattern-based scoring was revised after a 40-response audit; residual condition-dependent scoring error was not bounded by that small check.",
+    "ai_role": "Four pretrained Gemma and Qwen language models answered mathematically matched prompts with equally unsupported premises that varied in usability.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.34488v1",
+      "https://arxiv.org/html/2610.34488v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

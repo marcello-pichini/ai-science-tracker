@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-state-shared-clone-evaluation-inflation",
+  "title": "Shared cell ancestry inflates apparent skill in a cell-response model",
+  "summary": "In a retrospective audit of STATE, mean correlation on expected-null cases in one donor fell from 0.260 with reference cells sharing ancestry to 0.005 with independently sampled references, against 0.081 for a context-mean baseline. The model also fell below baseline with independent references in three additional donors. The finding concerns apparent predictive skill under the tested evaluation design.",
+  "field": "biology",
+  "ai_technology": "STATE cell-response transfer model",
+  "organization": "National University of Singapore",
+  "source_url": "https://arxiv.org/abs/2610.32962v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-23",
+  "paper_url": "https://arxiv.org/html/2610.32962v1",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, section 2.7, Figure 7, relative baseline comparison and non-operational evaluation of reported model outcomes",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The audit compared reference overlap conditions, with equal reference sample sizes and the same learned predictions. The primary quantitative comparison uses one donor, with follow-up STATE comparisons across four available donors.",
+    "unknown": "This retrospective audit characterizes the tested data and model, with expected-null cases defined operationally. It does not measure biological benefit or imply all transfer estimates are inflated.",
+    "ai_role": "The trained STATE transfer model generated cell-response estimates whose accuracy could be compared against overlapping and independent reference samples.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.32962v1",
+      "https://arxiv.org/html/2610.32962v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  }
+}

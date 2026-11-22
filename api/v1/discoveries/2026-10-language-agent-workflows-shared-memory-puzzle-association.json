@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-language-agent-workflows-shared-memory-puzzle-association",
+  "title": "Saved shared notes were associated with better puzzle-solving workflows",
+  "summary": "An audit of 28,568 language-model workflows found that those using a persistent shared document tended to solve more puzzles correctly. Across ten testable puzzles in held-out searches, the median accuracy difference was 13.5 percentage points.",
+  "field": "computer science",
+  "ai_technology": "GPT-5.4 family workflow agents; LightGBM",
+  "organization": "Dartmouth College; Allen Institute for AI",
+  "source_url": "https://arxiv.org/abs/2610.31709",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.31709v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 workflow search corpus, LightGBM validation design, §V and fixed held-out association Table VI",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The authors mined features of executable workflow variants and evaluated the shared-memory association in held-out search runs. Six of ten comparable test puzzles had intervals strictly above zero.",
+    "unknown": "The comparison is observational across searched workflows on selected puzzles. Other choices can correlate with shared memory, and the analysis does not establish a causal advantage on other tasks.",
+    "ai_role": "Language models contribute executable workflow variants and mine feature hypotheses; a fitted LightGBM regressor checks predictive features before held-out searches are opened.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.31709",
+      "https://arxiv.org/html/2610.31709v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

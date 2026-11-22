@@ -1,0 +1,34 @@
+{
+  "id": "2026-03-cardiac-surgery-persistent-aki-temporal-test",
+  "title": "Later perioperative records improve persistent kidney-injury classification",
+  "summary": "An ensemble evaluated on 595 later-year cardiac-surgery patients reported ROC areas increasing from 0.807 with preoperative inputs to 0.878 with information through 48 hours after surgery. The target was postoperative kidney injury failing to recover within three days. This is retrospective temporal evaluation, not proof of live prevention or benefit from changing model-ranked factors.",
+  "field": "medicine",
+  "ai_technology": "Random forest; XGBoost; extra-trees soft-voting ensemble",
+  "organization": "Seoul National University; Yonsei University",
+  "publication_date": "2026-03-31",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13122831/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original selected computational/clinical or physical Methods, model role, specific Results and limitations read; operational biological sections excluded",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "Three learned tree ensembles combine progressively updated perioperative records; SHAP characterizes predictive contributions rather than causal intervention effects.",
+    "tested": "The cohort contained 2285 patients, including 168 persistent-injury cases. Earlier 2018-2022 patients trained/tuned models with patient-separated fourfold evaluation; 2023 patients formed the 595-person temporal test. Imputation was fitted inside development folds.",
+    "unknown": "Patients dying within two days or missing key biosignals were excluded, limiting applicability to the full preoperative population. The 48-hour model uses later information closer to the outcome, not real-time streaming. The comparator score targets dialysis-requiring failure rather than the same persistence endpoint, so broad clinical superiority is not claimed. Single-centre Korean data and retrospective development do not establish external transfer, a prospectively frozen workflow or modifiable causal targets.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13122831/",
+      "https://doi.org/10.1016/j.isci.2026.115416"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

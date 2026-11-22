@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-graphcast-features-track-future-cyclone-position",
+  "title": "Deep GraphCast features align with where cyclones are headed",
+  "summary": "An analysis of 205 tropical cyclones found that deeper GraphCast layers carried features that aligned better with cyclone position and pressure structure six hours ahead than at the input time. Researchers identified those features using fitted sparse autoencoders and compared them with historical cyclone tracks and pressure fields.",
+  "field": "climate",
+  "ai_technology": "GraphCast, sparse autoencoders",
+  "organization": "Tsinghua University; University College London",
+  "source_url": "https://arxiv.org/abs/2610.28904",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.28904v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, §2 data and feature fitting, §3.2/3.3 and Figure 4",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The retrospective analysis compared feature alignment at the input time and six hours ahead over 2,115 time steps, across 16 processing layers and five separate sparse decompositions of layer 8.",
+    "unknown": "Feature alignment does not demonstrate that GraphCast uses a particular feature causally or that the feature improves operational forecasts.",
+    "ai_role": "Sparse autoencoders learned features from GraphCast activations, allowing the researchers to compare feature patterns with distinct cyclone attributes at matching and later times.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.28904",
+      "https://arxiv.org/html/2610.28904v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-closed-form-orbital-instability-equations",
+  "title": "Distilled equations predicted instability in simulated multi-planet systems",
+  "summary": "Researchers distilled a neural network trained on three-planet simulations into compact equations for orbital instability time. Tested on previously simulated five-planet systems, the equations captured changes of orders of magnitude near strong orbital resonances. A systematic error remained for closely spaced planets.",
+  "field": "physics",
+  "ai_technology": "Sparse neural feature learning; PySR symbolic regression",
+  "organization": "Cornell University; MIT; Harvey Mudd College; University of Cambridge",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35617v1",
+  "paper_url": "https://arxiv.org/html/2610.35617v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "Model equations, Results, Figures 2–4, Appendices A–C and physical interpretation",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The equation used sparse statistics from short numerical integrations. It was tested on held-out three-planet simulations and on an existing five-planet grid under a neighboring-trio approximation.",
+    "unknown": "The five-planet grid used equal masses and circular coplanar orbits. Results are approximate predictions of simulated dynamics, with compressed prediction ranges and no observational validation.",
+    "ai_role": "The network learned sparse combinations of orbital elements. PySR converted its predicted instability times into closed-form expressions over those learned variables.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35617v1",
+      "https://arxiv.org/html/2610.35617v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

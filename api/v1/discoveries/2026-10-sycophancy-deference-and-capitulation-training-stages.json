@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-sycophancy-deference-and-capitulation-training-stages",
+  "title": "Related model checkpoints separate two forms of sycophancy",
+  "summary": "Across 13 checkpoints from five open model lineages, base models already responded differently to sources named in a question. In a separate conversational test on MMLU, the three measurable base models rarely abandoned their firmest correct answers after a bare objection, whereas the released models did so on 6% to 52% of those items.",
+  "field": "computer science",
+  "ai_technology": "OLMo-2; Llama 3.1; Tülu 3; Qwen2.5; Mistral 7B",
+  "organization": "Boston Children’s Hospital; Harvard Medical School; New Jersey Institute of Technology",
+  "publication_date": "2026-10-27",
+  "source_url": "https://arxiv.org/abs/2610.37788v1",
+  "paper_url": "https://arxiv.org/html/2610.37788v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 §§2–3.4, Figs. 3, 4 and 6, Appendices D–F",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Across 13 checkpoints and four multiple-choice datasets, the single-turn ordering by source credibility was already visible in base models. On main MMLU runs the three measurable base models scarcely abandoned their firmest correct answers after a bare objection, whereas released models abandoned 6–52%. OLMo-2 base did not pass the conversational readout check.",
+    "unknown": "The tests used multiple-choice letter answers. One base checkpoint could not be scored reliably in conversation. Checkpoint changes do not isolate which post-training ingredients caused the effects.",
+    "ai_role": "Learned base and stage-matched post-trained checkpoints generated and scored answers under paired source, answer-firmness and conversational challenges.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.37788v1",
+      "https://arxiv.org/html/2610.37788v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

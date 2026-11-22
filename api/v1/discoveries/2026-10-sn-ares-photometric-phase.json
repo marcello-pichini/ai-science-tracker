@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-sn-ares-photometric-phase",
+  "title": "Learned light-curve templates date the observed phase of supernova Ares",
+  "summary": "Gaussian-process light-curve templates estimated that the JWST spectrum of the lensed Type IIb supernova Ares was taken about 34 rest-frame days after peak brightness, with a reported 25–44 day interval. Fits to three nearby analogues gave similar estimates. The source’s classification and predicted future images came from separate spectroscopic and lens-model analyses.",
+  "field": "physics",
+  "ai_technology": "Gaussian-process regression; learned light-curve templates",
+  "organization": "Space Telescope Science Institute; Johns Hopkins University; University of Texas at Austin; Chiba University; University of Toronto; Princeton University",
+  "publication_date": "2026-10-23",
+  "source_url": "https://arxiv.org/abs/2610.33161v1",
+  "paper_url": "https://arxiv.org/html/2610.33161v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, Section V.2 Gaussian-process template learning and phase fit, spectroscopic cross-check",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study fit photometry to three nearby Type IIb supernova templates and a population template. Its phase estimates were consistent with spectral comparisons within uncertainty.",
+    "unknown": "The analysis covers one event. Population and individual templates share source observations, and spectroscopic estimates informed phase priors.",
+    "ai_role": "Gaussian-process regression inferred continuous light-curve templates from observed local Type IIb supernovae. The astronomy team fitted SN Ares photometry to these learned templates.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.33161v1",
+      "https://arxiv.org/html/2610.33161v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-models-inherit-wait-revision-marker",
+  "title": "Reasoning models usually inherited the revision marker “wait” before reinforcement learning",
+  "summary": "In 17 of 18 tested reinforcement-learning runs starting from models that rarely wrote “wait,” the word stayed rare even as math accuracy improved. In the traced OLMo-3 lineage, the word appeared during mid-training before reinforcement learning and became more frequent afterward.",
+  "field": "computer science",
+  "ai_technology": "OLMo-3, Qwen2.5, Qwen3, Mistral",
+  "organization": "The Hong Kong University of Science and Technology; Huawei Noah’s Ark Lab; Peking University",
+  "source_url": "https://arxiv.org/abs/2610.30882",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.30882v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 affiliations, main provenance contrasts, released-checkpoint lineage and robustness appendix",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The analysis compared published checkpoint histories and controlled training runs, using fewer than 0.05 occurrences per thousand generated tokens as its absence criterion.",
+    "unknown": "The result concerns a visible marker on the sampled tasks. It does not show whether a model reconsidered an answer without writing “wait.”",
+    "ai_role": "Researchers sampled language-model outputs across recorded training stages and externally released and newly trained reinforcement-learning checkpoints.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30882",
+      "https://arxiv.org/html/2610.30882v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

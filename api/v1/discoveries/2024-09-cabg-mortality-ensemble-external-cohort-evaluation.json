@@ -1,0 +1,34 @@
+{
+  "id": "2024-09-cabg-mortality-ensemble-external-cohort-evaluation",
+  "title": "A mortality model is evaluated in five retrospective bypass-surgery cohorts",
+  "summary": "A three-learner ensemble evaluated recorded mortality after isolated coronary bypass surgery. It reported AUCs of 0.9145 in a 952-person internal test and 0.8585 and 0.8553 in two additional hospital cohorts. These retrospective results do not establish a preoperative warning system or improved care.",
+  "field": "medicine",
+  "ai_technology": "XGBoost; CatBoost; LightGBM ensemble",
+  "organization": "Shandong University; Nanjing Medical University; Shanghai Jiao Tong University; Tongji University; Ningxia Medical University",
+  "publication_date": "2024-09-26",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11471463/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original clinical eligibility/outcome/model design and external-cohort discrimination Results;current PubMed bibliographic metadata",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "XGBoost,CatBoost and LightGBM classifiers were trained and combined as the XCL ensemble to estimate recorded postoperative mortality.",
+    "tested": "A 4,764-person pool from three hospitals was split into 3,812 development and 952 internal-test records. Additional hospital cohorts contained 1,733 and 415 patients. The outcome was death within 30 days or during postoperative hospitalization.",
+    "unknown": "Inputs include perioperative variables, and an exclusively preoperative prediction time is unestablished. Optimal thresholds used Youden indices; model/threshold comparisons do not establish locked prospective performance. Low event counts, retrospective missing-data exclusions and an Asian cohort limit generalization. AUC differences and decision-curve analyses do not demonstrate clinical benefit or causal effects.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11471463/",
+      "https://www.ncbi.nlm.nih.gov/research/bionlp/RESTful/pmcoa.cgi/BioC_json/PMC11471463/unicode"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

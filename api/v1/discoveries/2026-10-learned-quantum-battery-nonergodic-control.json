@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-quantum-battery-nonergodic-control",
+  "title": "Learned quantum-battery controls link high stored energy with suppressed participation",
+  "summary": "Soft actor-critic learning selected time-dependent couplings in a simulated anisotropic Dicke quantum battery with Kerr nonlinearity and photon loss. Compared with fixed couplings, the learned controls sustained higher stored energy alongside a persistently lower participation ratio. This is a conditional computed dynamical relationship, not a measured battery or proof of a general charging advantage.",
+  "field": "physics",
+  "ai_technology": "Soft actor-critic reinforcement learning",
+  "organization": "Northwest Normal University",
+  "source_url": "https://arxiv.org/abs/2610.28373v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.28373v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Primary v1 front, physical model, RL ResultsIII.3, conclusions and computational convergence context",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The learned policy changes rotating and counter-rotating couplings in the specified dissipative model. Participation-ratio trajectories were compared with a fixed-coupling reference across three Kerr strengths.",
+    "unknown": "The result depends on the Hamiltonian, initial state, dissipative model and numerical truncation. Optimized variable controls have a broader control space than the fixed-coupling baseline. The participation ratio is a dynamical diagnostic, not an independently established universal mechanism. Separate analytically computed phase-transition results are not credited to AI; no physical device or energy-efficiency benefit was measured.",
+    "ai_role": "A learned policy generates the time-dependent controls whose simulated energy and participation-ratio trajectories support the scoped dynamical finding.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.28373v1",
+      "https://arxiv.org/abs/2610.28373v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

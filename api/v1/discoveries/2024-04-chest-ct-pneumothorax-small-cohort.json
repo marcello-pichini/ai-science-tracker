@@ -1,0 +1,33 @@
+{
+  "id": "2024-04-chest-ct-pneumothorax-small-cohort",
+  "title": "A small CT study evaluates learned pneumothorax classification",
+  "summary": "A convolutional model classified selected, preprocessed coronal CT slices from 26 surgical patients with primary spontaneous pneumothorax and 26 surgical controls. EfficientNetB3 classified 43 of 46 unaugmented test images correctly. The image-level result does not establish screening performance or show that AI discovered the anatomical feature described by surgeons.",
+  "field": "medicine",
+  "ai_technology": "EfficientNetB3 transfer learning",
+  "organization": "National Tsing Hua University; Tungs' Taichung MetroHarbor Hospital",
+  "publication_date": "2024-04-30",
+  "source_url": "https://doi.org/10.1016/j.heliyon.2024.e30023",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11078867/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary article full-text bibliographic metadata and relevant computational evaluation Methods/Results: sec2.1, sec2.2, sec2.3, sec2.6, sec3, tbl2. Primary-source caveat and denominator review; candidate-panel identity corrected where relevant."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "EfficientNetB3 transfer learning fitted the represented classification or candidate-selection model; preprocessing and expert reference labels are distinguished from the learned contribution.",
+    "tested": "Twenty-six cases and twenty-six surgical controls supplied multiple CT images. Authors report assigning patients separately to training, validation and testing; the unaugmented test table contains 21 true positives, 22 true negatives, two false positives and one false negative.",
+    "unknown": "Only a small number of patients supplied test images; the exact patient denominator of the 46-image test is not explicit. Cases and controls differ in age, sex and body habitus. The 903 augmented test images are transformations, not independent patients. Two surgeons defined/reviewed the anatomical feature; the learned contribution is the classifier, not initial anatomical discovery.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11078867/"
+    ]
+  }
+}

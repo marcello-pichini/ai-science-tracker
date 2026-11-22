@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-image-captions-shift-from-unsupported-detail-to-vagueness",
+  "title": "AI captions added unsupported detail in the middle and more reference-unmatched content near the end",
+  "summary": "In long captions for 198 images, six AI models produced more reference-unsupported specifics in the middle. The mean share assigned to a residual reference-unmatched category rose from 10.3% in the first quarter to 28.1% in the last. This category need not mean that a sentence is objectively vague.",
+  "field": "computer science",
+  "ai_technology": "Qwen3-based claim extraction and verification; Qwen3-VL, InternVL3.5 and LLaVA captioners",
+  "organization": "Beihang University; Kuaishou Technology; Fudan University; Zhejiang University",
+  "source_url": "https://arxiv.org/abs/2610.31111",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.31111v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 §3, Figure 1/Table 1, appendix comparison to 347 human rubric judgments and sampled visual recheck",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Researchers divided captions into quarters, assessed claims against human-derived image rubrics, and checked a sample of verifier judgments with human reviewers.",
+    "unknown": "A caption can include a true detail omitted from its reference. The reported pattern concerns this sample and reference-based labeling, with only sampled image-level checks.",
+    "ai_role": "Qwen models extract and verify ordered atomic claims from human references and generated captions; human annotators validate a sample of judgments.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.31111",
+      "https://arxiv.org/html/2610.31111v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

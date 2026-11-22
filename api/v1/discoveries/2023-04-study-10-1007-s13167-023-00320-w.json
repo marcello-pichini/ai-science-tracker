@@ -1,0 +1,33 @@
+{
+  "id": "2023-04-study-10-1007-s13167-023-00320-w",
+  "title": "LASSO expression score distinguishes delayed kidney-graft function in retrospective cohorts",
+  "summary": "A three-gene LASSO score was evaluated against observed delayed graft function after kidney transplantation. The study reports AUC 0.730 in an internal test split and 0.773 in a small separate biopsy cohort. This is retrospective clinical discrimination, without demonstrated prevention, treatment benefit or prospective deployment.",
+  "field": "biology",
+  "ai_technology": "Ten-fold cross-validated LASSO for a three-gene delayed-graft-function score",
+  "organization": "Capital Medical University; Beijing Chao-Yang Hospital",
+  "publication_date": "2023-04-28",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "From 202 post-reperfusion samples with graft-function information, the source made a 70:30 training/internal-test split. Training-set LASSO selected ANXA1, HSP90AA1 and NFKBIA. Reported AUC was 0.730 internally and 0.773 in GSE90861, a separate cohort of 23 paired-biopsy recipients, twelve with delayed and eleven with immediate graft function.",
+    "unknown": "Small retrospective datasets and donor-type differences limit generalization. The separate cohort also informed earlier expression confirmation of candidate genes, so it is not a wholly untouched evaluation of the entire discovery workflow. Individual-patient split independence and supplementary implementation were not reconstructed. No causal necroptosis mechanism, reduced rejection, therapeutic benefit or locked prospective prediction was established by the represented model evaluation.",
+    "ai_role": "LASSO learned nonzero expression features and coefficients for a combined score evaluated against measured clinical graft-function outcomes. Generic pathway enrichment and recovery of known inflammatory biology are not the represented finding.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10141843/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s13167-023-00320-w",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary PMC cohort acquisition, gene-screening, LASSO training/internal split and external-evaluation Methods plus DGF Results through the web primary-text route. Publisher canonical front and fresh PubMed notice metadata checked. Graft-survival supplementary model and individual-patient reconstruction were not independently adjudicated. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

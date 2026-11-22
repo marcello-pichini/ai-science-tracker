@@ -1,0 +1,33 @@
+{
+  "id": "2024-08-learned-stroke-expression-candidates-across-datasets",
+  "title": "Selected stroke-expression candidates show uneven agreement across datasets",
+  "summary": "LASSO selected 19 expression candidates in archived stroke samples. Four candidates—SCO2, ARF1, APP and NFE2L2—were reported as elevated in both additional datasets, while the full sets of significant genes differed. This is a retrospective expression association, not validation of a 19-gene diagnostic test or a cell-death mechanism.",
+  "field": "biology",
+  "ai_technology": "LASSO",
+  "organization": "Guangxi Medical University",
+  "publication_date": "2024-08-30",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11408831/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 1
+  },
+  "source_review": {
+    "scope": "Primary data/LASSO Methods and external expression Results; primary GEO study metadata; no operational laboratory procedures reviewed",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "A fitted LASSO classifier selected 19 genes from 30 prefiltered candidates, determining the panel examined in the additional datasets.",
+    "tested": "The discovery dataset contains 69 stroke specimens sampled at three post-event times plus 23 control specimens. Additional datasets included 39 stroke/24 control records and 10 stroke/5 control specimens; the latter also has repeated time points.",
+    "unknown": "Repeated specimens are not independent patients. The discovery AUC of 1 is an apparent fit, not external diagnostic performance; additional analyses compare individual gene expression and ROC curves rather than a frozen combined panel. Screening, time-point and batch effects limit inference. The genes came from a previously defined pathway list, and no new causal role, biological subtype or clinical utility is established.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11408831/"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

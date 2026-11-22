@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-bubble-image-depth-distribution-validation",
+  "title": "Learned bubble reconstruction shows focus-dependent distribution agreement",
+  "summary": "A convolutional multitask model trained on simulated optical images was applied without experimental fine-tuning to bubble shadowgraphs at four radial planes. Reconstructed size distributions overlapped in-focus experimental references by approximately 68–92%, with poorer agreement farther from the focal reference. This is a configuration-specific population measurement validation; experimental three-dimensional coordinates were not independently known for each bubble.",
+  "field": "physics",
+  "ai_technology": "Focus-conditioned convolutional multitask neural network",
+  "organization": "Georgia Institute of Technology",
+  "source_url": "https://arxiv.org/abs/2610.28908v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.28908v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original v1 front, computational Methods, application Results and limitations; no independent reproduction",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The model jointly predicts depth relative to the known focal plane and physical-equivalent diameter. Experimental populations contained 142, 971, 859 and 204 reconstructed bubbles; distributions were compared with plane-specific in-focus references. A separate 11,679-bubble center-plane reference comparison is reported.",
+    "unknown": "The 97.6% normalized depth accuracy belongs to synthetic data, not experimental depth truth. Model training describes a randomized crop development split alongside a timestamp-separated test; these partitions should not be conflated. Experimental references are distribution-level and share the imaging facility. Center-reference comparisons use differing summaries (approximately 92% versus 86% overlap); no single pooled value is inferred. Optical configuration, segmentation, overlap and defocus limit transfer; no general three-dimensional accuracy or improved flow process was established.",
+    "ai_role": "A learned convolutional appearance representation, conditioned on focal-plane position, jointly infers size and depth from optical signatures and enables the scoped distribution-level reference comparison.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.28908v1",
+      "https://arxiv.org/abs/2610.28908v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

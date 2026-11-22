@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-search-epidemic-directional-prediction",
+  "title": "Learned forecasts distinguish directional search and COVID-data relationships",
+  "summary": "Matched LightGBM forecasts of eight Google-search and COVID-related series found that opposite directions could differ in both prediction error and error-distribution behavior. For US loss-of-smell searches and reported cases, adding search history gave a 9.9% equivalent mean RMSE reduction, while the reverse direction changed error-distribution descriptors without improving mean accuracy. These are model-dependent observational patterns, not causal effects or a validated real-time warning system.",
+  "field": "medicine",
+  "ai_technology": "LightGBM gradient-boosted regression trees",
+  "organization": "Petrozavodsk State University; University of Manouba",
+  "source_url": "https://arxiv.org/abs/2610.28563v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "paper_url": "https://arxiv.org/html/2610.28563v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Original v1 front, computational Methods, application Results and limitations; no independent reproduction",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Each 400-day window used 14-day histories, one- to fourteen-day horizons and chronological 223-origin training/150-origin evaluation. Target-only and source-augmented branches shared settings. Results Tables 6 and 9 separate mean log-RMSE and forecast-error distribution entropy (FEDE).",
+    "unknown": "Adjacent windows share 399 days and are not independent replications. Window/history settings were chosen sequentially for distributional stability. Relative Google Trends sampling, query wording, common media/seasonal/reporting effects and the fixed model class limit interpretation. No temporally constrained surrogate-source null test was included. Similar broad lead-lag findings were known; the represented refinement is the matched metric-dependent directional contrast, not the discovery that searches can precede cases.",
+    "ai_role": "Learned tree ensembles generate matched conditional forecasts whose held-out errors reveal the source- and direction-specific contrast; FEDE itself is a statistical descriptor, not a separate learned model.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2610.28563v1",
+      "https://arxiv.org/abs/2610.28563v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

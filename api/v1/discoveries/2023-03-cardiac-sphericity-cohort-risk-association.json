@@ -1,0 +1,33 @@
+{
+  "id": "2023-03-cardiac-sphericity-cohort-risk-association",
+  "title": "Automated heart-shape measurements are associated with later cardiomyopathy",
+  "summary": "The March 2023 journal analysis of 38,897 UK Biobank participants with normal conventional heart measurements linked greater left-ventricular roundness with later cardiomyopathy. The fully adjusted hazard ratio was 1.47 per standard-deviation increase in sphericity. This is an observational association, not proof that a rounder heart causes disease; an earlier 2022 preprint reported related findings.",
+  "ai_technology": "Fully convolutional neural-network cardiac segmentation",
+  "organization": "Cedars-Sinai Medical Center; Stanford University",
+  "publication_date": "2023-03-29",
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.medj.2023.02.009",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10106428/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original full-text clinical cohort and nonprocedural computational/statistical Methods and Results; model output distinguished from association and treatment effects."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "A pretrained cardiac-segmentation network enabled automated short-axis/long-axis shape measurement in 38,897 selected participants. Blinded comparison with two cardiologists used 100 random images. Cox analysis of later diagnosis codes adjusted for demographics, clinical factors, ejection fraction and ventricular volume; the journal fully adjusted cardiomyopathy HR was 1.47 (CI 1.10–1.98), and atrial-fibrillation HR 1.20 (CI 1.11–1.28).",
+    "unknown": "This entry represents the fully adjusted journal analysis, not a first-disclosure claim. The July 21, 2022 original preprint already described related cohort associations, with different reported adjustment/estimates; its direct full-text/PDF routes were blocked and only indexed primary segments were available. UK Biobank/MRI healthy-selection bias, diagnosis-code misclassification and single-cohort analysis constrain risk use. Genetic analysis found no evidence that sphericity causes cardiomyopathy or AF; reverse-causality evidence for cardiomyopathy influencing shape was sensitivity-method-dependent. Clinical prediction utility and independent replication were not demonstrated.",
+    "ai_role": "A pretrained neural segmenter measured ventricular shape at cohort scale; ordinary survival/genetic analyses related the derived shape phenotype to outcomes.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10106428/"
+    ]
+  }
+}

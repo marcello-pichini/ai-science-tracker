@@ -1,0 +1,33 @@
+{
+  "id": "2021-07-learned-masticatory-segmentation-radiotherapy-plan-evaluation",
+  "title": "Learned muscle segmentation adds constraints to head-and-neck radiotherapy replanning",
+  "summary": "In a retrospective ten-patient planning study, learned organ segmentations enabled additional masticatory-muscle constraints in an automated optimizer. All replanned cases then satisfied the selected muscle-dose criteria. This was a computational plan comparison using previously developed cases, not evidence of reduced trismus in treated patients.",
+  "field": "medicine",
+  "ai_technology": "UnetSA and DeepLabV3+ with ResNet-101 organ segmentation",
+  "organization": "Memorial Sloan Kettering Cancer Center",
+  "source_url": "https://doi.org/10.1016/j.phro.2021.07.009",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8552336/",
+  "source_type": "paper",
+  "publication_date": "2021-07-28",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original learned-segmentation Methods2.1, planning/measurement Methods2.2–2.3 and Results3.1 actually read; no clinical patient-outcome claim."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Each of 10 cases was replanned with the conventional ECHO optimizer under manual masks, learned replacement masks, and learned masks plus additional muscle constraints. The latter configuration met both selected muscle criteria for all cases, correcting one remaining violation in the other configurations. Comparisons used the 20-Gy boost phase, with criteria scaled from the full prescription; these units explain the differing table/abstract dose values.",
+    "unknown": "These ten cases had previously been used to develop the planning pipeline and are not a fresh independent validation cohort. The trismus criteria came from an earlier observational risk model; no prospective patient follow-up or reduction in actual trismus was measured. Learned masks and manually defined masks differed geometrically, so nominal plan dose changes are not directly established improvements in delivered anatomy. The additional constraints did not yield statistically significant overall organ-dose differences in the compared scenarios. Existing clinical ECHO use for other cancer sites does not validate this head-and-neck application.",
+    "ai_role": "Previously trained segmentation networks supplied organ/muscle masks that reduced the annotation burden for adding structures. ECHO optimization and dose calculation were conventional components, not silently attributed to learned AI.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8552336/"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2025-08-study-10-1007-s40262-025-01564-7",
+  "title": "Learned correction improves retrospective infliximab concentration estimates in young patients",
+  "summary": "XGBoost corrected errors from a population-pharmacokinetic Bayesian model using measured infliximab concentrations in young patients with Crohn’s disease. Internal cross-validation reduced concentration prediction error, but some cases worsened and no external or prospective treatment-benefit evaluation was shown. The result concerns measured drug concentrations, without established improvements in dosing safety or disease outcomes.",
+  "field": "biology",
+  "ai_technology": "XGBoost error correction integrated with population-pharmacokinetic Bayesian estimation",
+  "organization": "Cincinnati Children's Hospital Medical Center; University of Cincinnati; Connecticut Children’s Medical Center; Nationwide Children’s Hospital; Children’s Hospital of Wisconsin",
+  "publication_date": "2025-08-30",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The source analyzed 292 successive-concentration pairs from 93 patients aged 2–22 years. XGBoost learned prediction errors using clinical features and prior drug measurements. Five-fold evaluation reported RMSE 3.78 ± 0.85 micrograms/mL versus 4.8 for Bayesian estimation alone. Absolute error improved modestly on average; the source also reports worsened predictions in a subset.",
+    "unknown": "Multiple observations per patient were present, but explicit patient-grouped folds were not established in the reviewed Methods. Correlation-based feature selection and algorithm comparisons may affect internal performance; independent final evaluation was absent. Low concentrations below quantification were excluded. This is retrospective evaluation, without demonstrated clinical remission, safety improvement or validated continuous-learning deployment.",
+    "ai_role": "XGBoost learned residual prediction patterns and adjusted the prior pharmacokinetic estimates; comparison with measured subsequent concentrations supplies the specific clinical validation result. The pre-existing Bayesian model/dashboard alone is not treated as a new discovery.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s40262-025-01564-7"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_url": "https://doi.org/10.1007/s40262-025-01564-7",
+  "source_type": "paper",
+  "added_date": "2026-11-21",
+  "verification_status": "verified",
+  "paper_url": "",
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Read actual primary clinical cohort/consecutive-concentration design, Bayesian and XGBoost residual-learning/tuning/evaluation Methods, measured-concentration error Results and limitations. Patient-grouped fold independence and supplementary implementation were not established; dosing procedures or clinical recommendations not represented. Exact original article front DOI/title and fresh PubMed primary relationship metadata checked."
+  }
+}

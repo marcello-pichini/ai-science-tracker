@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-sparse-feature-controls-sawtooth-lead-in-ai-music",
+  "title": "A learned feature increased sawtooth-lead use in generated music",
+  "summary": "Researchers used a sparse autoencoder to find a feature associated with a sawtooth synthesizer lead in the text2midi model. Increasing the feature produced that instrument on 14 of 20 prompts, compared with 1 of 20 using a random direction. A second set of ten prompts showed a similar effect.",
+  "field": "computer science",
+  "ai_technology": "text2midi, sparse autoencoders",
+  "organization": "Warsaw University of Technology",
+  "source_url": "https://arxiv.org/abs/2610.32007",
+  "source_type": "paper",
+  "publication_date": "2026-10-23",
+  "paper_url": "https://arxiv.org/html/2610.32007v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 §§4–5, prespecified confirmation and Table 5, held-out matched random direction, dictionary recurrence and limitations",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The prespecified confirmation compared the feature edit with a matched random edit and unmodified generation. The second test used disjoint prompts and a different seed.",
+    "unknown": "The result concerns one feature in one selected model and an instrument represented explicitly in its MIDI vocabulary. It does not establish control of arbitrary musical attributes.",
+    "ai_role": "A fitted sparse autoencoder discovers a feature in text2midi, whose decoded direction is directly varied on paired prompts to test instrument control.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.32007",
+      "https://arxiv.org/html/2610.32007v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

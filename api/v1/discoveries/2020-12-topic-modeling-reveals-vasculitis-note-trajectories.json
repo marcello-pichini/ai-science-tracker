@@ -1,0 +1,33 @@
+{
+  "id": "2020-12-topic-modeling-reveals-vasculitis-note-trajectories",
+  "title": "Topic models reveal differing clinical-note trajectories around vasculitis treatment",
+  "summary": "An unsupervised analysis of 113,048 notes from 660 vasculitis patients found differing documentation trajectories around treatment initiation. Kidney-inflammation mentions peaked near treatment start, whereas other manifestations were more persistent; psychiatric symptoms also appeared before treatment. These are patterns in documentation, not measured disease incidence or causal treatment effects.",
+  "ai_technology": "Latent Dirichlet allocation with cross-run topic stabilization",
+  "organization": "Brigham and Women's Hospital; Massachusetts General Hospital; Harvard Medical School",
+  "publication_date": "2020-12-24",
+  "evidence": {
+    "tested": "Three learned 100-topic models yielded 90 stable topics, which two vasculitis experts independently labeled and reconciled. Notes were aligned from two years before to five years after treatment in three-month windows. Topics for glomerulonephritis peaked near treatment initiation while pulmonary and other symptom mentions persisted. Source-reported correlations with structured-data trends were .80 for treatment and .92 for glomerulonephritis.",
+    "unknown": "This is one retrospective healthcare-system cohort of prevalent PR3/MPO-ANCA-positive cases, with no non-vasculitis comparator or independent clinical validation. Before-treatment notes were fewer and involved fewer patients. Topic scores are fractions of assigned words within pooled documentation windows, not patient risks or incidence; copy-and-paste, templates, note density and outside-system care can affect trends. Psychiatric symptoms and diagnostic delays were already known in vasculitis; this analysis does not establish their first discovery. No causal treatment effect or prospective diagnostic performance is shown.",
+    "ai_role": "Unsupervised learned word-topic distributions expose documentation themes and temporal contrasts that would be missed by restricting analysis to structured codes.",
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC7902471/"
+    ]
+  },
+  "field": "medicine",
+  "source_url": "https://doi.org/10.1016/j.semarthrit.2020.10.012",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7902471/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Original cohort definition, note preparation, learned topic generation, statistical trend analysis, full represented Results and Discussion limitations actually read."
+  }
+}

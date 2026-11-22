@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-sales-agents-static-versus-action-compliance",
+  "title": "Sales agents applied policies more reliably in static probes than interactive tasks",
+  "summary": "In controlled sales scenarios based on the same policies as static questions, eight language-model backbones showed 89.9–99.1% compliance on the static probes and 3.0–17.3% on interactive tasks. Scoring the actions also required a verified safe ending, so the gap reflects several differences between conditions.",
+  "field": "computer science",
+  "ai_technology": "Qwen3-8B and other language-agent backbones; paired static and interactive evaluation",
+  "organization": "Tsinghua University; Futura Lab, Futura.AI",
+  "publication_date": "2026-10-25",
+  "source_url": "https://arxiv.org/abs/2610.34185v1",
+  "paper_url": "https://arxiv.org/html/2610.34185v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 Methods, confirmatory benchmark experiment and stated measurement limitations",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The confirmatory study included 21,888 runs over 19 semantic cores and 12 configurations. The comparison of ranges covers the eight backbone configurations.",
+    "unknown": "The scripted Chinese-language setting and stricter action criteria limit interpretation. The gap does not estimate an effect of sales pressure or real deployment failure rates. The semantic violation scorer had no released human-calibration accuracy estimate, and shared provider-family judging was not ruled out; its hard-violation flags materially influence action scores.",
+    "ai_role": "Eight language-model backbones reason about sales policies and choose actions in matched scripted interactions.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.34185v1",
+      "https://arxiv.org/html/2610.34185v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}

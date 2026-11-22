@@ -1,0 +1,34 @@
+{
+  "id": "2025-03-stemi-model-mortality-reference-evaluation",
+  "title": "Patient models distinguish recorded STEMI mortality outcomes",
+  "summary": "A random-forest model evaluated on an internal holdout from1700 STEMI patients reported ROC areas of0.808 for in-hospital mortality and0.783 for30-day mortality. This source-specific evaluation uses clinical and complication-related inputs; it does not establish a pre-treatment warning tool or improved care.",
+  "field": "medicine",
+  "ai_technology": "Random forest; multilayer perceptron; tree ensembles",
+  "organization": "Govind Ballabh Pant Institute of Post Graduate Medical Education and Research",
+  "publication_date": "2025-03-27",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12223519/",
+  "paper_url": "",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "Actual relevant primary computational/clinical Methods and high-level Results read; no operational biological protocols inspected",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "Supervised classifiers learn clinical-feature relationships to observed in-hospital and30-day mortality; SHAP describes model-used features.",
+    "tested": "Patients were recruited in2021–2023 and later divided1360/340 for training and internal evaluation, stratified by mortality; resampling was limited to training. The cohort had168 in-hospital and210 thirty-day deaths.",
+    "unknown": "Outcome-informed feature screening and data refinement are described before the isolated split, with incomplete nesting detail. Inputs include shock, treatment delay, mechanical complications and echocardiography, so an early pre-treatment prediction time is not established. The paper calls random forest best, but Table3 gives higher30-day ROC areas to other models; no overall-best or significance claim is adopted. Prospective recruitment alone does not establish prospective model validation; no external cohort or treatment benefit was demonstrated.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12223519/",
+      "https://doi.org/10.1016/j.ihj.2025.03.010"
+    ]
+  },
+  "added_date": "2026-11-21"
+}

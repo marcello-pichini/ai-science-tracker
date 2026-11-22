@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-contextual-rubric-wording-answer-gaps",
+  "title": "Language models missed more requirements with little wording in common with the final request",
+  "summary": "Across 405 CL-bench Life tasks, direct answers from four language models passed 67.4% of rubric criteria with low wording overlap with the final request, compared with 81.1% of higher-overlap criteria. The analysis uses word overlap as a proxy and does not establish that wording alone caused the difference.",
+  "field": "computer science",
+  "ai_technology": "GPT-6 Luna; Kimi K3; Grok 4.7; GLM-5",
+  "organization": "The Chinese University of Hong Kong; Macao Polytechnic University; The Hong Kong Polytechnic University",
+  "publication_date": "2026-10-26",
+  "source_url": "https://arxiv.org/abs/2610.35083v1",
+  "paper_url": "https://arxiv.org/html/2610.35083v1",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "v1 CL-bench Life task corpus description, lexical rubric groups and direct-answer results",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study grouped 5,333 classifiable rubric criteria by overlap with the final request. The evaluators assessed individual outputs under the benchmark rubric.",
+    "unknown": "Groups can differ in underlying difficulty and scoring criteria. Rubrics are nested within tasks, and the result does not establish effects in live workflows.",
+    "ai_role": "Four frozen language models generated corpus-task answers. A rubric judge scored outputs from the same benchmark before testing the proposed harness.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.35083v1",
+      "https://arxiv.org/html/2610.35083v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

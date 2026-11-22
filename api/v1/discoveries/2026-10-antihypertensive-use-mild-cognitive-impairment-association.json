@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-antihypertensive-use-mild-cognitive-impairment-association",
+  "title": "Antihypertensive use was linked to slightly longer time without recorded cognitive impairment",
+  "summary": "In a retrospective All of Us analysis targeting a high-risk population with model-derived weights, baseline antihypertensive use was associated with slightly longer time without a first recorded mild cognitive impairment diagnosis. The ratio of geometric mean time capped at 48 months was 1.012 overall and 1.026 in a subgroup with cardiometabolic and depressive multimorbidity.",
+  "field": "medicine",
+  "ai_technology": "Regularized logistic regression, cross-fitted XGBoost",
+  "organization": "Columbia University; University of Michigan",
+  "source_url": "https://arxiv.org/abs/2610.30709",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "paper_url": "https://arxiv.org/html/2610.30709v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "scope": "arXiv v1 §4 propensity/outcome models, logistic risk weights, sample construction, Table 3 and Figure 3",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The study trained its risk model in a non-overlapping internal reference set of 83,745 participants and estimated associations in a 37,577-participant analysis set with 500 first recorded MCI diagnoses within 48 months. Model-derived weights target a high-risk population without restricting the cohort to a directly observed high-risk stratum.",
+    "unknown": "The estimates are associations involving baseline medication use and the first recorded diagnosis. Treatment initiation, adherence, causal benefit and external validation were outside the study.",
+    "ai_role": "A regularized logistic model fitted to the non-overlapping reference sample estimates target high-risk membership; cross-fitted XGBoost models estimate treatment propensity and outcomes.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.30709",
+      "https://arxiv.org/html/2610.30709v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "added_date": "2026-11-21"
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2024-01-laparoscopic-landmark-retrospective-evaluation",
+  "title": "A video study measures missed landmarks and conditional clinician acceptance",
+  "summary": "A YOLOv7 study of 40 laparoscopic videos found test recall of 77.3% for one anatomical landmark and 88.0–91.7% for the other landmark subtypes. Both required landmarks were detected in 342 of 360 eligible test images. Three surgeons accepted an average of 95.71% of overlays only in that successfully detected subset; no surgical outcome improvement was established.",
+  "field": "medicine",
+  "ai_technology": "YOLOv7",
+  "organization": "Prince of Songkla University",
+  "publication_date": "2024-01-29",
+  "source_url": "https://doi.org/10.1016/j.heliyon.2024.e25210",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10847946/",
+  "source_type": "paper",
+  "verification_status": "verified",
+  "added_date": "2026-11-21",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-21",
+    "scope": "Primary article full-text bibliographic metadata and relevant computational evaluation Methods/Results: sec2.2, sec2.7, sec3.1, sec3.2. Primary-source caveat and denominator review; candidate-panel identity corrected where relevant."
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "ai_role": "YOLOv7 fitted the represented classification or candidate-selection model; preprocessing and expert reference labels are distinguished from the learned contribution.",
+    "tested": "The 3,200 annotated images were split into 2,240 training, 320 validation and 640 test images. Both landmarks were present in 360 test images; the model detected both in 342, which were rated by three surgeons.",
+    "unknown": "Video/patient separation between image splits is not established. Overlay acceptance excludes 18 images with missed joint detections and is an average of surgeon judgments, not a patient outcome. The live demonstration does not establish prospective comparative benefit.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC10847946/"
+    ]
+  }
+}

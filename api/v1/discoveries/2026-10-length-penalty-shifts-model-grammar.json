@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-length-penalty-shifts-model-grammar",
+  "title": "Penalizing length changed an AI model’s grammatical choices",
+  "summary": "Researchers trained Qwen2.5-1.5B-Instruct to turn structured events into English sentences. Penalizing longer answers increased its preference for shorter grammatical variants, including unfamiliar constructions with an optional “that.” Transfer to more distant constructions was limited.",
+  "field": "humanities",
+  "ai_technology": "Qwen2.5-1.5B-Instruct, spaCy en_core_web_trf",
+  "organization": "New York University; The University of Texas at Austin",
+  "source_url": "https://arxiv.org/abs/2610.29162",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "paper_url": "https://arxiv.org/html/2610.29162v1",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "scope": "arXiv v1 front matter, §§3–4, Figure 7, and Appendices B–C",
+    "date": "2026-11-21"
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Post-training varied the length penalty and KL regularization across three seeds, then tested unseen examples of trained and untrained grammatical alternatives.",
+    "unknown": "This controlled experiment used one small language model. It did not measure human comprehension or show that an analogous penalty caused the language patterns observed in frontier models.",
+    "ai_role": "A trained dependency parser and learned classifiers quantify linguistic features, and length-penalty post-training of Qwen2.5-1.5B-Instruct tests grammatical transfer.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2610.29162",
+      "https://arxiv.org/html/2610.29162v1"
+    ],
+    "test_type": "direct test"
+  },
+  "added_date": "2026-11-21"
+}
