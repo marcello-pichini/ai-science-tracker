@@ -32,7 +32,7 @@ def main(base, head):
         return
     body = json.dumps({'host': HOST, 'key': KEY, 'keyLocation': f'https://{HOST}/{KEY}.txt',
                        'urlList': urls}).encode()
-    req = urllib.request.Request('https://api.indexnow.org/indexnow', body,
+    req = urllib.request.Request('https://www.bing.com/indexnow', body,
                                  {'Content-Type': 'application/json; charset=utf-8'})
     with urllib.request.urlopen(req, timeout=30) as r:
         print(f'IndexNow: {len(urls)} URLs, HTTP {r.status}')
