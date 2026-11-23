@@ -366,6 +366,8 @@ STOP_WORDS = frozenset('''the and for with from into that this these those than 
 had not but its new using used use via based model models data study studies result results shows show showed
 identifies identified predicts predicted helps help can more most first after over under between across within
 which while when where also two three four five one all any per out who how what our its such'''.split())
+# Single-discovery organization pages mostly repeat their discovery page: keep them reachable but noindex.
+ORG_INDEX_MIN = 2
 RELATED_LIMIT = 5
 TOPIC_THRESHOLD = 0.12
 
@@ -582,13 +584,15 @@ def write_profile_pages(items, models, archived=()):
     def plural(n, one, many):
         return f'{n} {one if n == 1 else many}'
 
-    def emit(name, title, lead, desc, rows, path, interactive, extra='', organization=False, label='interactive profile', before=''):
+    def emit(name, title, lead, desc, rows, path, interactive, extra='', organization=False, label='interactive profile', before='', noindex=False):
         articles = ''.join(discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']], link_title=True) for d in rows)
         purpose = 'the timeline' if label == 'interactive profile' else 'charts and filters'
         more = f'<a href="{interactive}">Open the {label}</a> for {purpose}, or <a href="profiles/index.html">browse all organizations and model families</a>.'
         page = PAGE.format(title=esc(title), site=SITE, desc=esc(desc), base=BASE, path=path, img='default', imgalt=DEFAULT_ALT,
                            header=header, footer=footer, lead=lead, article=articles, more=more, extra=extra,
                            h2=before + '<h2 class="vis-nascosto">Discoveries</h2>', jsonld=profile_jsonld(title, desc, path, organization))
+        if noindex:
+            page = page.replace('<link rel="canonical"', '<meta name="robots" content="noindex, follow">\n<link rel="canonical"', 1)
         (ROOT / path).write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
         pages.append(path)
 
@@ -597,7 +601,8 @@ def write_profile_pages(items, models, archived=()):
         assert slugs.setdefault(slug(name), name) == name, f'organization slug collision: {name}'
         emit(name, name, f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
              f'{plural(len(rows), "AI-enabled scientific discovery", "AI-enabled scientific discoveries")} tracked from {name}, with sources.',
-             rows, f'profiles/org-{slug(name)}.html', f'profile.html?org={quote(name)}', organization=canonical_organization(rows[0]['organization'])['kind'] != 'unknown affiliation')
+             rows, f'profiles/org-{slug(name)}.html', f'profile.html?org={quote(name)}', organization=canonical_organization(rows[0]['organization'])['kind'] != 'unknown affiliation',
+             noindex=len(rows) < ORG_INDEX_MIN)
     archived_orgs = {}
     for d in archived:
         legacy = slug(d['organization'].replace(' and ', ',').split(',')[0].strip())
@@ -905,7 +910,8 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 
 
 def write_sitemap(items, models, archived=(), vulns=()):
-    orgs = sorted({lead_org(d['organization']) for d in items})
+    org_counts = Counter(lead_org(d['organization']) for d in items)
+    orgs = sorted(o for o, n in org_counts.items() if n >= ORG_INDEX_MIN)
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
     # Announcement and catalog-addition dates are not page-modification dates.
     # Only dossiers with an explicit editorial update date have lastmod.
