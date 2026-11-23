@@ -5,6 +5,7 @@ deleted with cleanup() once the data have been prepared for commit; only the man
 """
 import hashlib
 import json
+import os
 import shutil
 import time
 import urllib.parse
@@ -50,8 +51,16 @@ class _CheckedRedirect(urllib.request.HTTPRedirectHandler):
 _OPENER = urllib.request.build_opener(_CheckedRedirect)
 
 
+def _user_agent(url):
+    # Crossref's polite pool raises rate limits for clients that give a contact; kept out of Git.
+    mailto = os.environ.get("CROSSREF_MAILTO", "").strip()
+    if mailto and urllib.parse.urlparse(url).hostname == "api.crossref.org":
+        return f"{UA} (mailto:{mailto})"
+    return UA
+
+
 def _open(url, timeout=60):
-    return _OPENER.open(urllib.request.Request(check_url(url), headers={"User-Agent": UA}), timeout=timeout)
+    return _OPENER.open(urllib.request.Request(check_url(url), headers={"User-Agent": _user_agent(url)}), timeout=timeout)
 
 
 def get_json(url, max_bytes=MAX_JSON, timeout=60):
