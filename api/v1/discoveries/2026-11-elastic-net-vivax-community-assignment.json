@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-elastic-net-vivax-community-assignment",
+  "title": "Elastic-net analysis finds limited genomic separation of malaria infections in two connected Amazonian communities",
+  "summary": "An exploratory preprint applied elastic-net logistic regression to existing genomic data from 47 Plasmodium vivax infections detected in two neighboring Peruvian Amazon communities, including 12 people reporting recent local travel. Repeated nested cross-validation yielded an AUC of 0.625 (95% bootstrap interval 0.522–0.724), versus 0.529 (0.402–0.657) after restricting the sample to non-travelers. This supports a bounded finding that fine-scale assignment was weak and sensitive to sample composition in this dataset. The analyses used different, overlapping infection sets, so their comparison does not isolate a causal effect of travel. Self-reported travel did not establish infection origin; intervals were conditional on saved predictions, and no independent cohort or operational surveillance benefit was tested.",
+  "field": "biology",
+  "ai_technology": "Elastic-net logistic regression with nested cross-validation and K-nearest-neighbor imputation",
+  "organization": "University of Antwerp; University of Liège; KU Leuven; Universidad Peruana Cayetano Heredia; Yale University",
+  "source_url": "https://www.researchsquare.com/article/rs-11785416/v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Retrospective analysis of 47 infections from two communities; elastic-net classifier evaluated by 20 repetitions of five-fold outer cross-validation with inner tuning. Reported AUC 0.625 overall and 0.529 in a non-traveler subset; infection-level bootstrap intervals retained repeated predictions together.",
+    "unknown": "Small and overlapping sample sets; no independent cohort or intervention. Travel was self-reported and did not determine acquisition location. Bootstrap intervals condition on existing predictions without refitting models, and the comparison does not isolate travel as a cause.",
+    "ai_role": "A learned penalized classifier measures how much genomic variation distinguishes the two detection communities and how this assignment changes with the analyzed sample composition.",
+    "evidence_urls": [
+      "https://www.researchsquare.com/article/rs-11785416/v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Research Square v1 full PDF: primary abstract, study setting, modeling, validation and relevant results; no independent reanalysis or experimental pathogen work."
+  }
+}

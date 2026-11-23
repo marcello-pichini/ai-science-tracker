@@ -1,0 +1,33 @@
+{
+  "id": "2020-01-asd-clinical-cnv-process-associations",
+  "title": "Learned ASD subgroups show exploratory associations with disrupted biological processes",
+  "summary": "Clustering of clinical measures from 2,446 Autism Genome Project cases identified two ASD subgroups differing in severity, adaptive behavior, intellectual ability and verbal status. Analysis of copy-number variants and brain-gene functions linked the groups to disrupted biological processes. Random-forest importance analysis and a Naive Bayes classifier evaluated these relationships; in a higher-information subset, cluster prediction reached precision 0.82 but recall 0.39. These are exploratory genotype–phenotype associations, without experimental demonstration of causal mechanisms, a validated clinical biomarker or independent cohort confirmation. Missing clinical and functional-annotation information constrained prediction.",
+  "field": "biology",
+  "ai_technology": "Clinical hierarchical clustering; random-forest feature importance; Naive Bayes classification",
+  "organization": "Instituto Nacional de Saúde Doutor Ricardo Jorge; University of Lisbon; University of Coimbra",
+  "source_url": "https://doi.org/10.1038/s41398-020-0721-1",
+  "source_type": "paper",
+  "publication_date": "2020-01-28",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "2,446 ASD cases supplied clinical clustering data; functional enrichment and cross-validated learned analyses evaluated genotype–phenotype associations, with limited recall in the information-rich subgroup.",
+    "unknown": "Missing data and incomplete functional annotations constrain the usable subset. Mechanistic causation, diagnostic utility and transfer to independent cohorts are not established.",
+    "ai_role": "Clustering learned phenotypic groups; random forests ranked disrupted processes, and five-fold Naive Bayes classification assessed prediction of the groups from those processes.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41398-020-0721-1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independent primary publisher full-text abstract, clinical/model Methods, feature-importance/classifier cross-validation, relevant Results and Discussion limitations; publisher date/affiliations. No supplement review."
+  }
+}

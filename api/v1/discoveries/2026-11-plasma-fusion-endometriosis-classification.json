@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-plasma-fusion-endometriosis-classification",
+  "title": "Machine learning combines plasma spectroscopy and protein profiles for exploratory endometriosis classification",
+  "summary": "A single-center study collected plasma from 37 participants with endometriosis and 45 with other benign gynecological disorders. Seventy had paired infrared-spectroscopy and HPLC protein-profile measurements. Feature selection and a shallow neural-network classifier using mid-level data fusion achieved reported sensitivity of 80% and ROC AUC of 0.80 in repeated held-out splits with nested tuning. In a separate protein-profile analysis, K-nearest-neighbor classification and SHAP prioritized a plasma fraction for mass spectrometry, identifying five candidate proteins. This is exploratory retrospective diagnostic evidence: the cohort was small, participant ages differed between groups, there was no independent external validation, and the proteins require orthogonal validation before being considered reliable biomarkers. The work does not establish a clinically validated diagnostic test or improved patient outcomes.",
+  "field": "medicine",
+  "ai_technology": "SVM, K-nearest neighbors and shallow neural networks; genetic-algorithm, VIP and random-forest feature selection; SHAP",
+  "organization": "Manipal Academy of Higher Education",
+  "source_url": "https://www.nature.com/articles/s41598-026-75569-y",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41598-026-75569-y",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Single-center plasma classification in 82 participants: 37 with endometriosis and 45 benign gynecological controls; 70 paired samples (32 endometriosis/38 controls) used for data fusion. Authors report stratified 80/20 splits with inner 10-fold tuning, repeated five times, and fusion sensitivity 80%/AUC 0.80. SHAP-guided fraction selection was followed by exploratory mass spectrometry.",
+    "unknown": "No independent external cohort or prospective evaluation of a frozen classifier; age imbalance may limit interpretation. Protein candidates require orthogonal validation and are not established clinical biomarkers. No evidence of diagnostic deployment or patient benefit.",
+    "ai_role": "Learned feature-selection/classification models distinguish endometriosis from benign controls; SHAP contributions from a KNN model prioritize a chromatographic fraction for candidate-protein analysis.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41598-026-75569-y"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary abstract, relevant Methods, Results and Discussion, affiliations and publication metadata in full publisher HTML; no independent reanalysis or supplement verification."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-20-ai-optimized-magnetic-arginine-deiminase-citrulline-production",
+  "title": "AI-optimized magnetic nanobiocatalyst enables recyclable citrulline production",
+  "summary": "A neural-network-assisted optimization selected a magnetic-nanoparticle formulation of arginine deiminase for citrulline production. The prepared catalyst achieved 70.0% activity recovery, near the predicted 71.18%, and 81.4% immobilization efficiency. It retained approximately 64% activity after 40 days at 4 °C, exceeded 74% after seven reuse cycles, and converted 99.1% of arginine to citrulline. These are laboratory formulation results; model training used only 30 observations and industrial or continuous-flow performance remains untested.",
+  "field": "chemistry",
+  "ai_technology": "Hybrid Whale Optimization–artificial neural network (WO-ANN) for immobilization-condition optimization",
+  "organization": "Maharshi Dayanand University",
+  "source_url": "https://link.springer.com/article/10.1007/s44345-026-00081-9",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1007/s44345-026-00081-9",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Thirty designed experiments informed WO-ANN optimization; the selected conditions were experimentally tested (70.0% activity recovery vs predicted 71.18%, 81.4% immobilization efficiency). The immobilized enzyme retained about 64% activity after 40 days at 4 °C, was reused for seven cycles and achieved 99.1% L-arginine to L-citrulline conversion.",
+    "unknown": "Continuous-flow performance, process scale-up and industrial operating outcomes are not established. The ANN was trained on only 30 design observations (21/4/5 train/validation/test); generalization beyond the tested factor ranges remains uncertain.",
+    "ai_role": "A feed-forward neural network predicts activity recovery from four formulation variables; Whale Optimization uses the model to select immobilization conditions, which are then tested experimentally.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s44345-026-00081-9"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Source-provenanced primary publisher HTML abstract, WO-ANN methods, optimized formulation tests, stability/reuse/conversion results, prior-formulation comparison, affiliations and publication history. Full PDF was available but independent reading used HTML."
+  }
+}

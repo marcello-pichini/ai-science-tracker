@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-oral-epithelial-dysplasia-transfer-learning",
+  "title": "Transfer learning grades oral epithelial dysplasia in patient-level held-out histology images",
+  "summary": "A retrospective study compared learned classifiers for four-grade oral epithelial dysplasia assessment using 3,777 histopathology tissue strips from 94 patients. Images were divided into 15,108 patches after patient-level partitioning. Xception with ReLU achieved reported patch-level test accuracy of 85.19% and weighted F1 of 85.36%; several alternative configurations performed worse or failed to train. The result is limited to this institutional dataset and 128-by-128-pixel patches carrying labels inherited from their parent images. It does not establish whole-slide grading, prospective performance or clinical diagnostic utility.",
+  "field": "medicine",
+  "ai_technology": "ImageNet-pretrained CNN transfer learning, including Xception and DenseNet201; ViT comparison",
+  "organization": "Institute of Advanced Study in Science and Technology; Academy of Scientific and Innovative Research; Arya Wellness Centre; North East Cancer Hospital and Research Institute",
+  "source_url": "https://link.springer.com/article/10.1007/s44445-026-00233-0",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "On 3,777 H&E tissue strips from 94 patients, patient-level splits were used; best Xception/ReLU reached 85.19% test accuracy and 85.36% weighted F1 at patch level.",
+    "unknown": "Institutional dataset; patch-level evaluation with inherited image labels and possible local label noise; no independently external institution, whole-slide aggregation or prospective clinical validation established.",
+    "ai_role": "Transfer-learned image classifiers evaluated four-grade histopathology classification on held-out patients; AI provided the classifier performance and training-convergence findings.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s44445-026-00233-0"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Publisher abstract, relevant dataset/partitioning, model-training and evaluation Methods, Results and limitation sections independently read in full publisher HTML; no independent reanalysis."
+  }
+}

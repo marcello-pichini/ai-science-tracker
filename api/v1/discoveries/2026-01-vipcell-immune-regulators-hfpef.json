@@ -1,0 +1,33 @@
+{
+  "id": "2026-01-vipcell-immune-regulators-hfpef",
+  "title": "VIPcell prioritizes immune regulators associated with cardiac recovery in mouse heart failure",
+  "summary": "VIPcell combined learned partial-least-squares models and causal-graph inference with single-nucleus data to prioritize immune regulators associated with response to neonatal stromal cells or their secretome in mouse heart failure with preserved ejection fraction. The study measured treatment-associated functional improvement in two mouse models, cardiac regulatory-T-cell expansion, and loss of functional benefit after fingolimod treatment. Fingolimod sequesters lymphocytes broadly; these experiments support immune involvement without uniquely establishing a Treg-specific mechanism or individual predicted genes as causal. Modeling used four sequencing datasets with synthetic augmentation and internal cross-validation, not independent biological replication. Results are preclinical. This entry represents the January 2026 preprint; the later journal DOI is the same study, with online date and final-version changes unassessed.",
+  "field": "medicine",
+  "ai_technology": "VIPcell machine-learning framework (data augmentation, partial least-squares regression and causal-structure inference)",
+  "organization": "Ann & Robert H. Lurie Children’s Hospital of Chicago; Northwestern University; Georgia Institute of Technology; Emory University; University of Macau; Stony Brook University; University of Maryland; University of Nevada Las Vegas",
+  "source_url": "https://doi.org/10.64898/2026.01.29.702616",
+  "source_type": "paper",
+  "publication_date": "2026-01-30",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.jacbts.2026.101751",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Treatment outcomes in two mouse models; immune-cell measurements and fingolimod perturbation within the discovery study.",
+    "unknown": "No human efficacy or independent-team confirmation. Four sequencing datasets with synthetic augmentation do not provide independent replication. Fingolimod affects lymphocyte trafficking broadly, limiting Treg-specific causal interpretation. Later journal full-text changes not assessed.",
+    "ai_role": "VIPcell learned PLS associations to cardiac E/e′ values and used DAS causal-graph inference to prioritize regulator hypotheses; subsequent experiments tested immune involvement, not every predicted causal edge.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.01.29.702616v1.full.pdf"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independent full 48-page bioRxiv v1 PDF: Abstract, VIPcell model/causal-inference Methods(pp29–31), corresponding Results(pp12–15), immune-perturbation Results(pp17–18) and Discussion/limitations(pp20–21), source-header posting date 2026-01-30. No journal full-text/supplement review."
+  }
+}

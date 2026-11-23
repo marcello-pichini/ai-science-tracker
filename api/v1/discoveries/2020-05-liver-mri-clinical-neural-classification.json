@@ -1,0 +1,33 @@
+{
+  "id": "2020-05-liver-mri-clinical-neural-classification",
+  "title": "Neural MRI models classify liver tumors in a retrospective temporal validation cohort",
+  "summary": "Inception-ResNet V2 networks were trained on MRI images from 1,210 patients to classify liver lesions, with evaluation in 201 later patients from the same hospital. Unenhanced MRI distinguished malignant from benign lesions with reported AUC 0.946; adding clinical data supported classification among malignant tumor types. The authors describe the later cohort as external, but their Methods identify a single-center temporal split. Malignancies required pathology, whereas some benign reference labels came from imaging reports. This supports retrospective diagnostic evaluation without establishing reduced contrast-agent harm, cost savings or benefit after clinical deployment.",
+  "field": "medicine",
+  "ai_technology": "Inception-ResNet V2 convolutional networks with clinical-data fusion",
+  "organization": "Sir Run Run Shaw Hospital, Zhejiang University; Zhejiang University; Hwa Mei Hospital, University of Chinese Academy of Sciences",
+  "source_url": "https://doi.org/10.3389/fonc.2020.00680",
+  "source_type": "paper",
+  "publication_date": "2020-05-28",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Development: 1,210 patients/31,608images; later same-center evaluation: 201 patients/6,816images. Seven lesion classes and malignancy tasks were compared with radiologist assessments.",
+    "unknown": "Single-center retrospective study and mixed reference standards. The later cohort is temporally separate, not another center or independent-team replication. Prospective clinical outcomes and contrast avoidance benefit were not tested.",
+    "ai_role": "Fine-tuned Inception-ResNet V2 learned MRI lesion features; convolutional features and clinical variables were combined for subtype classification.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00680/full"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independent primary full Abstract, CNN/model and training/temporal-validation Methods, Results and limitations; source dates/affiliations. Corrected abstract external-cohort wording against single-center Methods."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-machine-learning-mirna-sepsis-discrimination",
+  "title": "MicroRNA classifiers show weak separation of sepsis from non-infectious inflammation",
+  "summary": "In 299 public whole-blood samples, learned classifiers evaluated literature-curated microRNAs for sepsis discrimination. The selected miR-150-5p/miR-486-5p pair had ROC-AUC 0.95 against healthy controls and 0.64 against non-infectious inflammation; adding the second marker gave no significant improvement. This is retrospective, cross-validated evidence from one cohort. Healthy controls differed demographically; an interstitial-fluid device was proposed but not built or validated.",
+  "field": "medicine",
+  "ai_technology": "Standardized logistic-regression screening; SVM, multilayer perceptron, random forest and XGBoost evaluation",
+  "organization": "University of Patras; Hellenic Pasteur Institute; Vin University; United Arab Emirates University",
+  "source_url": "https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2026.1968124/full",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.3389/fsysb.2026.1968124",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "158 sepsis cases, 82 healthy controls and 59 non-infectious inflammation controls; 263 candidate miRNAs. The paired marker gave nested-CV pooled AUC 0.83 (95% CI 0.78–0.88), with no independent cohort. Against non-infectious controls, no tested panel exceeded 0.64.",
+    "unknown": "Clinical utility, prospective performance and interstitial-fluid transfer are unestablished. Whole-blood cell composition and unmeasured clinical covariates may confound associations; no causal role is established.",
+    "ai_role": "Fixed logistic regression screened literature-curated single miRNAs and pairs under 10-fold cross-validation; further classifier families were compared under 5-fold cross-validation.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2026.1968124/xml"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Source-provenanced publisher JATS abstract, exhaustive miRNA screening, classifier comparison and limitations, plus affiliations and publication metadata. The represented result is retrospective host-biomarker discrimination; the proposed device and preliminary bench proof are not treated as clinical or AI validation."
+  }
+}

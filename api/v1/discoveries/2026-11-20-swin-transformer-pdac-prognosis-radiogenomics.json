@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-20-swin-transformer-pdac-prognosis-radiogenomics",
+  "title": "A CT-based deep-learning system stratifies postoperative pancreatic cancer prognosis",
+  "summary": "A retrospective three-hospital study of 592 surgically treated pancreatic cancer patients evaluated a CT-based Swin Transformer classifier. Its disease-free-survival C-index was 0.807–0.844, versus 0.631–0.656 for clinicopathological predictors; their integrated model reached 0.836–0.871. A 41-patient molecular subset linked predicted risk with tumor microenvironment features. These are retrospective prognostic and molecular associations; treatment benefit and prospective clinical utility were not established.",
+  "field": "medicine",
+  "ai_technology": "Multi-planar Swin Transformer-assisted deep-learning classifier for CT radiomics",
+  "organization": "Suzhou Ninth Hospital Affiliated to Soochow University; Suzhou Municipal Hospital, The Affiliated Suzhou Hospital of Nanjing Medical University; The First Affiliated Hospital of Nanchang University; Renji Hospital, Shanghai Jiao Tong University School of Medicine",
+  "source_url": "https://link.springer.com/article/10.1186/s13244-026-02451-w",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1186/s13244-026-02451-w",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Derivation: 308 patients; internal test: 78; separate external test: 206. A 41-patient derivation subset supported exploratory radiogenomic associations. Reported C-index ranges include derivation and test cohorts.",
+    "unknown": "Retrospective selection, semiautomatic segmentation and treatment differences limit inference. Molecular patterns need larger independent validation; model-guided patient benefit was not tested.",
+    "ai_role": "A multi-planar Swin Transformer learned CT prognostic features; IPSS-PDAC combined its risk output with clinicopathological factors.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1186/s13244-026-02451-w"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary publisher abstract, cohorts, CT preprocessing and Swin framework, radiogenomic methods, results/discussion/limitations, affiliations and online date; supplementary methods were not assessed."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-ai-maxillary-denture-base-feasibility",
+  "title": "AI reconstructs maxillary denture bases from intraoral scans in a clinical feasibility study",
+  "summary": "A PointNet++ model learned to reconstruct maxillary denture-base geometry from paired scans of 79 patients’ edentulous maxillae and existing dentures, using 57 training, seven validation and 15 test cases. Three randomly selected test outputs were manufactured and tried in patients; whole-surface registration RMSE ranged from 0.4 to 0.6 mm. Existing conventional dentures were subjectively more retentive than the newly printed AI bases. These descriptive, non-standardized try-ins do not establish clinical benefit, retention equivalence or border-specific reconstruction accuracy. Comparisons differed in material, manufacturing, prior wear and complete-denture versus base-only configuration. No objective retention or external validation was performed.",
+  "field": "medicine",
+  "ai_technology": "Enhanced PointNet++ deep-learning model with spatial border-attention and weighted loss",
+  "organization": "University of Freiburg; Boston University; Loma Linda University",
+  "source_url": "https://doi.org/10.1007/s00784-026-07279-8",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "79 single-center patient pairs; 57 training, 7 validation and 15 held-out test cases. AI-generated denture bases for three randomly selected held-out cases underwent additive manufacturing and exploratory, non-standardized clinical try-in. The three existing conventional dentures were subjectively described as more retentive.",
+    "unknown": "No external/multicenter validation; no objective retention-force or validated adaptation/stability measure; no border-specific quantitative accuracy test. Three try-ins were descriptive and comparators differed in age, material, manufacturing and prosthesis configuration. Clinical benefit is not established.",
+    "ai_role": "PointNet++ learned a mapping from edentulous maxillary intraoral scans to corresponding clinically acceptable denture-base geometry. A spatial border-attention mechanism and weighted loss emphasized peripheral points during training, but quantitative evaluation used whole-surface metrics.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s00784-026-07279-8",
+      "https://link.springer.com/content/pdf/10.1007/s00784-026-07279-8.pdf"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independently read primary 11-page publisher PDF: model/data partition/try-in Methods, Results and Discussion/limitations; original publisher HTML date and abstract. Three try-ins are descriptive; no supplement or independent patient assessment."
+  }
+}

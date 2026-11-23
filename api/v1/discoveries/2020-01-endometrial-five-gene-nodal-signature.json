@@ -1,0 +1,33 @@
+{
+  "id": "2020-01-endometrial-five-gene-nodal-signature",
+  "title": "Learned selection yields a five-gene panel associated with early endometrial-cancer nodal status",
+  "summary": "A study of early endometrial endometrioid carcinoma used random forests, sequential minimal optimization, J48 and Naive Bayes to develop a nodal-status panel from tumor sequencing and clinical data. Discovery used 24 hospital tumors and 289 TCGA cases; a separate 72-patient tissue cohort supported a five-gene PCR model. The reported combined panel AUC was 0.898, with sensitivity 88.9% and specificity 84.1%. The PCR cohort was also used for model construction/evaluation, so it is not a frozen-model prospective validation. Surgical-decision benefit and causal roles of the selected genes remain unestablished.",
+  "field": "medicine",
+  "ai_technology": "Random forest; sequential minimal optimization; J48; Naive Bayes",
+  "organization": "National Chiao Tung University; Cathay General Hospital; Fu Jen Catholic University; Chinese University of Hong Kong, Shenzhen; Taipei Medical University",
+  "source_url": "https://doi.org/10.3389/fonc.2019.01508",
+  "source_type": "paper",
+  "publication_date": "2020-01-21",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "24 hospital tumors and 289 TCGA cases; new PCR measurements in 72 additional patients informed model construction/evaluation of a five-gene panel associated with lymph-node status.",
+    "unknown": "No prospective frozen-model validation or demonstrated reduction in unnecessary surgery. Additional cohort measurements do not establish independent replication of a fixed diagnostic rule.",
+    "ai_role": "Four learned classifiers selected and evaluated sequencing/PCR feature combinations linking tumor expression and clinical variables to observed nodal status.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2019.01508/full"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independent complete primary Abstract; sequencing/model-selection and PCR-model Methods; relevant Results; visible publication/accepted dates and affiliations. No supplement review."
+  }
+}

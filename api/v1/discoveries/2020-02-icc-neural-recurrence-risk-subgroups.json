@@ -1,0 +1,33 @@
+{
+  "id": "2020-02-icc-neural-recurrence-risk-subgroups",
+  "title": "Deep learning stratifies postoperative cholangiocarcinoma recurrence risk in a multicenter cohort",
+  "summary": "A neural classifier used 12 clinical factors to stratify postoperative intrahepatic cholangiocarcinoma into higher- and lower-recurrence-risk groups. Development pooled 1,421 patients from three centers, with evaluation in 234 patients from another center; the source reports AUC 0.78 for the framework versus 0.60 for AJCC staging and 0.70 for a Cox model. Retrospective subgroup analyses also associated adjuvant treatment with better outcomes in the higher-risk group. Treatment was not randomized, so these comparisons do not demonstrate a causal treatment-selection benefit or justify clinical deployment.",
+  "field": "medicine",
+  "ai_technology": "Fully connected neural network with Cox-screened clinical features",
+  "organization": "Renji Hospital, Shanghai Jiao Tong University; Second Military Medical University; Fudan University; Fujian Medical University",
+  "source_url": "https://doi.org/10.3389/fonc.2020.00143",
+  "source_type": "paper",
+  "publication_date": "2020-02-19",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective derivation 1,421 patients/three centers and 234 patients/fourth center. Model recurrence-risk groups differed in survival; observational treatment subgroup comparisons remained nonrandomized.",
+    "unknown": "External retrospective cohort is not independent-team replication or prospective use. Treatment associations can be confounded; outcomes after algorithm-guided treatment were not evaluated.",
+    "ai_role": "A learned neural network mapped 12 Cox-screened clinical factors to recurrence-risk classes, enabling disease-specific prognostic stratification.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00143/full"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independent primary full Abstract, patient/network/prognostic-subtype Methods, relevant Results and Discussion; visible publication/accepted dates and affiliations. No supplement review."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2025-01-ad-five-gene-retrospective-panel",
+  "title": "Learned five-gene panel discriminates Alzheimer’s tissue samples in retrospective datasets",
+  "summary": "LASSO, support-vector recursive feature elimination and random forests selected five Alzheimer’s-associated genes after expression, co-expression and disease-pathway screening. A five-gene nomogram had reported AUCs of 0.907 in a 195-sample dataset and 0.776 in a separate 100-sample dataset; PLCB1 also correlated with pathology-stage and neuronal measures. These retrospective tissue associations do not establish a clinical diagnostic workflow, a causal disease mechanism or effective treatment. The selected genes were screened within an already annotated Alzheimer’s pathway; no first identification of these genes or experimental validation of proposed drugs is claimed.",
+  "field": "medicine",
+  "ai_technology": "LASSO; SVM-RFE; random forest; gene-expression nomogram",
+  "organization": "Affiliated Hospital of Guangdong Medical University; Guangdong Medical University",
+  "source_url": "https://doi.org/10.1038/s41598-025-88134-w",
+  "source_type": "paper",
+  "publication_date": "2025-01-31",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Training expression dataset: 97 Alzheimer’s/98 control samples. Separate dataset: 56 Alzheimer’s/44 control samples. Five-gene nomogram AUC 0.907/0.776; additional stage and single-cell analyses provided biological context.",
+    "unknown": "Retrospective tissue datasets, not clinical diagnostic utility or causal/therapeutic confirmation. Pathway-restricted screening can recover known biology; proposed drugs remain hypotheses.",
+    "ai_role": "Three learned feature-selection methods intersected expression/pathway candidates to construct a disease-specific five-gene panel and evaluate observed tissue-label discrimination.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41598-025-88134-w"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independent publisher full text: data processing, learned hub-gene selection, nomogram evaluation, Results and Discussion; visible date/affiliations. No supplement or new experiment review."
+  }
+}

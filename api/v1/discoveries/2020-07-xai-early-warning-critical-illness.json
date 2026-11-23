@@ -1,0 +1,33 @@
+{
+  "id": "2020-07-xai-early-warning-critical-illness",
+  "title": "Temporal neural networks predict three acute critical illnesses in retrospective Danish hospital records",
+  "summary": "An explainable early-warning system combined a temporal convolutional network with deep Taylor decomposition to predict sepsis, acute kidney injury and acute lung injury from routine hospital records. Evaluation included 163,050 admissions from 66,288 adults in the Danish CROSS-TRACKS cohort. Patient-separated five-fold testing assessed prediction up to 24 hours before onset and supplied variable/time explanations for clinicians to inspect. The study used retrospective data without influencing care. It does not establish deployed performance, improved patient outcomes or transfer outside the represented hospital population.",
+  "field": "medicine",
+  "ai_technology": "xAI-EWS: temporal convolutional network with deep Taylor decomposition",
+  "organization": "Enversion A/S; Aarhus University; Aalborg University; Aarhus University Hospital; Horsens Regional Hospital",
+  "source_url": "https://doi.org/10.1038/s41467-020-17431-x",
+  "source_type": "paper",
+  "publication_date": "2020-07-31",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective hospital admissions from 2012–2017; 163,050 admissions/66,288 adults. Patient-separated train/validation/test assignments in five-fold evaluation; outcomes were sepsis, acute kidney injury and acute lung injury.",
+    "unknown": "No prospective or treatment-impact evaluation. Clinical explanation review does not establish model causal reasoning, calibrated deployment or safety in new populations.",
+    "ai_role": "A temporal convolutional network learned risk from longitudinal laboratory/vital-sign data; deep Taylor decomposition attributed predictions to input variables and times.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-020-17431-x"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independent primary publisher full-text Abstract, model/result description, data/evaluation Methods and retrospective governance statement; publisher date/affiliations. No supplement review."
+  }
+}
