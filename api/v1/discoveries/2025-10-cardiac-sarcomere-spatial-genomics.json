@@ -1,0 +1,33 @@
+{
+  "id": "2025-10-cardiac-sarcomere-spatial-genomics",
+  "title": "AI-guided spatial genomics maps variant-intolerance regions in the cardiac sarcomere",
+  "summary": "A preprint first posted October7,2025 combined AlphaFold-family structures, AlphaMissense scores and observed clinical/population variants to map disease-associated regions in six cardiac sarcomeric genes. The reviewed November22,2026 v3 explains that selected high- and low-scoring predicted substitutions enlarged the variant analysis by50%, revealing nine additional candidate regions, including signals absent from observed-data-only analyses. These additions are predicted variant labels, not additional patients; the population databases overlap and the HCM registry subset differs from the full cardiomyopathy registry. ClinVar and clinical-onset checks were retrospective, and prediction-dependent regions require further validation rather than establishing causal mechanisms or prospective clinical prediction.",
+  "field": "biology",
+  "ai_technology": "AlphaFold2/3; ColabFold; AlphaMissense pathogenicity predictor",
+  "organization": "Stanford University; ETH Zurich",
+  "source_url": "https://doi.org/10.1101/2025.10.07.680947",
+  "source_type": "paper",
+  "publication_date": "2025-10-07",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Retrospective spatial scans used SHaRe data (over17,000 cardiomyopathy patients, including12,326 HCM and4,427 six-gene variant carriers), overlapping population databases, predicted structures and selected AlphaMissense substitutions. ClinVar annotations and clinical-onset associations supplied retrospective cross-checks.",
+    "unknown": "The nine additional signals depend on selected in-silico substitutions and require further validation. gnomAD and UK Biobank overlap, so their cohort sizes are not summed as unique people. Predicted labels do not establish HCM-specific causality/severity, and ClinVar/cohort checks are not prospective clinical validation or independent research replication.",
+    "ai_role": "AlphaFold-family structure prediction and AlphaMissense pathogenicity scoring provided model outputs used to expand variant cohorts and locate 3D regions of disease-associated enrichment.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.1101/2025.10.07.680947v3.full.pdf?download=1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary latest bioRxiv v3 PDF: model/AlphaMissense selection and variant-augmentation Methods; population-overlap/cohort descriptions; selected spatial/clinical Results and candidate-region limitations. Compared with v1 PDF sections and primary API version history; v2 body was not independently read."
+  }
+}

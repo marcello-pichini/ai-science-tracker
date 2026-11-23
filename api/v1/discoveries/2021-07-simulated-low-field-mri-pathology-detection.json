@@ -1,0 +1,34 @@
+{
+  "id": "2021-07-simulated-low-field-mri-pathology-detection",
+  "title": "Simulated low-field MRI retains pathology-detection signals with reduced small-lesion sensitivity",
+  "summary": "First posted in July 2021 and journal-published that December, this study used DenseNet-121 classifiers to compare pathology detection in 3T MRI and simulated 64mT-quality images from glioma, stroke and multiple-sclerosis datasets. Patient-separated tests reported similar slice-level AUCs, including 0.97 versus 0.98 for low-grade glioma, while simulated low-field sensitivity declined for smaller lesions. The transformation had limited paired-image and radiologist checks, but omitted field-dependent tissue contrast and device artifacts; these simulations do not establish diagnostic equivalence or clinical performance of an actual low-field scanner.",
+  "field": "medicine",
+  "ai_technology": "DenseNet-121 convolutional neural network for pathology detection",
+  "organization": "University of Pennsylvania",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8816889/",
+  "source_type": "paper",
+  "publication_date": "2021-07-05",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.mri.2021.12.007",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "A non-neural image transformation was fitted using three hydrocephalus patients and checked in three additional patients; three radiologists compared paired real/simulated images from ten MS patients. DenseNet-121 classifiers were trained separately on original/simulated images for low-grade glioma (76 subjects), high-grade glioma (259), stroke (28) and MS (20), using approximately 9:1 patient-separated train/test splits. Reported slice-level AUCs were respectively 0.97/0.98, 0.96/0.95, 0.94/0.94 and 0.90/0.87.",
+    "unknown": "The simulation approximates resolution/noise but not all field-strength contrast or device-specific artifacts. Separate disease classifiers perform simple lesion detection, not differential diagnosis or full radiologic assessment. Small test cohorts and degraded detection of small lesions limit generalization; prospective actual-device trials and patient benefit were not established.",
+    "ai_role": "DenseNet-121, initialized with ImageNet weights, learns lesion-present versus lesion-absent image classification. Comparing held-out original and simulated datasets probes a specific imaging-performance question; the image transformation itself was conventional rather than learned.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8816889/",
+      "https://www.medrxiv.org/content/10.1101/2021.07.02.21259789v1"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original journal full text: transformation and radiologist checks, model architecture, patient-separated training, Results, Discussion limits and publication metadata; original medRxiv v1 metadata/abstract compared. Supplements not assessed."
+  }
+}

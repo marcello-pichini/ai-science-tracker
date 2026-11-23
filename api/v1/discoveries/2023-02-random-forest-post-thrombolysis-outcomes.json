@@ -1,0 +1,33 @@
+{
+  "id": "2023-02-random-forest-post-thrombolysis-outcomes",
+  "title": "Random forest predicts three-month outcomes after stroke thrombolysis",
+  "summary": "Random-forest models predicted three-month functional outcome after intravenous thrombolysis in a retrospective 488-patient stroke cohort, with additional evaluation on two cohorts from another center. Day-seven NIHSS was the most important predictor, so this is a post-treatment prognosis result rather than a tool for choosing initial thrombolysis. Reported performance varied across cohorts; the study does not establish improved treatment decisions or patient outcomes.",
+  "field": "medicine",
+  "ai_technology": "Random forest with SHAP, LIME and eli5 explanations",
+  "organization": "Shanghai Pudong New Area People’s Hospital; Shanghai Eighth People’s Hospital; Fudan University",
+  "source_url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1146197/full",
+  "source_type": "paper",
+  "publication_date": "2023-02-22",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.3389/fnins.2023.1146197",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "488 patients split 70/30 for training/testing, with 10-fold cross-validation described; internal test mean F1 0.825 for RF versus 0.653 SVM and 0.777 logistic regression. Additional retrospective cohorts contained 316 conventional and 114 wake-up-stroke patients.",
+    "unknown": "No prospective decision-impact test or independent replication. Day-seven predictors are unavailable at treatment selection. Text and tables report inconsistent feature counts (16 versus20) and training sample totals (341 versus342); external metrics are source-reported and do not prove universal superiority.",
+    "ai_role": "A trained random forest combines clinical variables to predict three-month modified Rankin outcome; explanation methods identify influential features, especially day-seven NIHSS.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1146197/full"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Cached original Frontiers full main text: publication metadata, cohort definition, Methods, model splitting/tuning, Results including external validation, and limitations; supplements not independently read."
+  }
+}

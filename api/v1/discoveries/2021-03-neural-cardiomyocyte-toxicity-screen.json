@@ -1,0 +1,34 @@
+{
+  "id": "2021-03-neural-cardiomyocyte-toxicity-screen",
+  "title": "Neural imaging screen detects cardiotoxicity signals in human-derived heart cells",
+  "summary": "A ResNet50 image model screened human induced-pluripotent-stem-cell-derived cardiomyocytes for compound-associated toxicity signals. Follow-up mitochondrial-respiration assays supported cell-level liabilities for selected screen hits that simple staining measurements had missed. A further comparison separated proteasome inhibitors with similar biochemical potency but different neural toxicity scores. These are in vitro safety signals, with the core results already present in the March2021 preprint; they do not establish human cardiac risk or clinical safety.",
+  "field": "medicine",
+  "ai_technology": "ResNet50 convolutional neural network on the PhenoLearn platform",
+  "organization": "Tenaya Therapeutics; Stanford University; Dana Solutions",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8367386/",
+  "source_type": "paper",
+  "publication_date": "2021-03-24",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.7554/eLife.68714",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Original preprint and journal Methods describe image-based training/validation and a separate validation plate, screening1280 bioactive compounds plus1280 diverse compounds. Selected hits underwent secondary mitochondrial-respiration assays; proteasome activity was measured for a ten-inhibitor comparison. The cell experiments support the bounded measured result, beyond recovery of known liabilities alone.",
+    "unknown": "Cell-line/model-specific in vitro results; technical replicates and model-development validation are not independent clinical replication. Unknown-target-library hits remain phenotypic signals. Human exposure, arrhythmia risk and therapeutic safety were not established; no novel chemical toxicity mechanism is claimed.",
+    "ai_role": "A ResNet50 learns staining-image patterns from control and known-toxic conditions, produces a phenotypic toxicity score for screening compounds, and prioritizes hits for orthogonal cell assays.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.1101/2021.03.23.436666v1",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8367386/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original bioRxiv v1 full JATS Methods/Results, primary history API; corresponding eLife PMC full JATS model Methods, selected-hit orthogonal validation and proteasome comparison. First public core result dated2021-03-24; journal publication2021-08-02. No priority beyond located versions claimed."
+  }
+}

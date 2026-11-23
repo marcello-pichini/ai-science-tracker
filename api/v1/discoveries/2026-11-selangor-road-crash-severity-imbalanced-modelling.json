@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-selangor-road-crash-severity-imbalanced-modelling",
+  "title": "Imbalance-aware modelling identifies severe-crash patterns in Selangor records",
+  "summary": "A study used Random Forest, XGBoost and SVM to analyze 6,978 fatal or serious crash reports from Selangor, Malaysia, covering 2012–2020,with one stratified 70:30 split and training-only class balancing. The selected class-weighted Random Forest had 81.66% accuracy but only 20.53% recall and 30.10% precision for serious crashes. Tree-model feature importance emphasized collision type, while other rankings varied by model; low-capacity motorcycle involvement was described separately through record frequencies. The dataset excludes minor-injury crashes and lacks exposure denominators, so these associations do not establish causality, population risk or transfer beyond one state and split.",
+  "field": "other",
+  "ai_technology": "Random Forest, XGBoost and SVM with undersampling, SMOTE or class weighting",
+  "organization": "Sunway University; Universiti Sains Malaysia",
+  "source_url": "https://www.nature.com/articles/s41598-026-80019-w",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41598-026-80019-w",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Dataset of 6,978 fatal/serious crashes (2012–2020), with 70:30 stratified train/test split and resampling/weights applied only to training data. The selected RF with class weights achieved 81.66% overall accuracy, serious-crash recall 20.53% and precision 30.10%. Feature importance ranks collision type highly for RF/XGBoost; road surface type tops SVM permutation importance. Low-capacity motorcycles are the largest vehicle share among the analyzed fatal/serious crash records, particularly loss-of-control on bitumen.",
+    "unknown": "The analysis excludes slight-injury crashes, covers only Selangor, uses one train/test split, and has no vehicle-registration or vehicle-kilometre exposure denominators. The motorcycle frequency is descriptive and not evidence of increased per-vehicle risk; feature importance is not causal.",
+    "ai_role": "Supervised classifiers with class-balancing methods improve recognition of the underrepresented serious-crash class and support model-based feature/risk-profile analysis of the 2012–2020 crash dataset.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41598-026-80019-w",
+      "https://www.nature.com/articles/s41598-026-80019-w_reference.pdf"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original publisher reference PDF: cohort/severity definitions, stratified split and training-only balancing, class-specific performance, feature analysis and exposure/single-split limitations."
+  }
+}

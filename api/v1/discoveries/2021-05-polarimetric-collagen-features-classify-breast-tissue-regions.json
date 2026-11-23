@@ -1,0 +1,34 @@
+{
+  "id": "2021-05-polarimetric-collagen-features-classify-breast-tissue-regions",
+  "title": "Polarimetric collagen features classify breast-tumor regions in a limited tissue study",
+  "summary": "First posted in May 2021 and journal-published in 2022, this study used logistic regression on polarimetric second-harmonic-generation and texture features to distinguish tumor from normal breast-tissue regions. From one microarray originally containing 45 cores from 12 patients, the analysis retained 15 normal and 20 tumor cores; prediction on two held-out cores from that same array reported 91.3% subimage accuracy. Random subimage cross-validation and the small core-level hold-out do not establish patient-independent diagnosis, external validation or clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Logistic-regression classifier on polarimetric second-harmonic-generation and collagen-texture features",
+  "organization": "University of Toronto; University of Toronto Mississauga; Princess Margaret Cancer Centre, University Health Network; National Centre of Pathology; Vilnius University; Light Conversion",
+  "source_url": "https://www.biorxiv.org/content/10.1101/2021.05.26.445874v1",
+  "source_type": "paper",
+  "publication_date": "2021-05-27",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41598-022-13623-1",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "A binary logistic-regression classifier used 33 image-derived features and 544 normal/543 tumor subimages, evaluated using 1,000 repeated stratified five-fold partitions. Two cores (one normal, one tumor) were set aside before training; subimage prediction in these cores reported accuracy 91.3% and F1 90.7%. The original publisher PDF Fig. 5 and Results report cross-validation accuracy 94.2%; those performance measures are not interpreted as patient-level accuracy.",
+    "unknown": "The Methods treat subimages as data points without establishing patient/core-grouped cross-validation. Held-out prediction uses only two cores from the same microarray; external or patient-independent validation was not established. Adipose/no-signal areas and two rare stromal tumor cores were excluded, and subimage size affects predictive performance. Clinical utility, prospective workflow performance and patient benefit were not tested.",
+    "ai_role": "Logistic regression learns a normal-versus-tumor classifier from collagen ultrastructure statistics and texture features measured by widefield P-SHG microscopy, linking the learned operation to a specific ex-vivo tissue classification result.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.1101/2021.05.26.445874v1",
+      "https://www.nature.com/articles/s41598-022-13623-1.pdf"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original bioRxiv v1 abstract/date/affiliations and original journal publisher PDF: abstract, classification Results, Fig. 5/table, Statistical analysis and machine learning Methods, tissue-microarray Methods and Discussion. PDF Fig. 5 also visually checked. Supplementary files not assessed."
+  }
+}

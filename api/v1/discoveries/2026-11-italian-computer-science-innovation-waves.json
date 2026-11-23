@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-italian-computer-science-innovation-waves",
+  "title": "Transformer-assisted bibliometric analysis maps changes in Italian computer science",
+  "summary": "A study combined learned co-authorship and text representations with topic clustering to analyze a roster of 1,229 Italian computer-science scholars and publication records from 1980–2025. It identified three model-derived periods spanning foundational work, computer vision/machine learning, and later applied AI/health informatics. An ancillary Genoa pilot introduced 15 recommended researcher pairs, with four joint projects reported within six months. The topic patterns depend on metadata and analytical thresholds, 44.2% of paper abstracts were missing, and the small uncontrolled pilot does not establish a causal collaboration benefit.",
+  "field": "computer science",
+  "ai_technology": "Node2vec, all-MiniLM-L6-v2 sentence transformer, BERTopic/HDBSCAN, Falcon and Gemini topic-label generation",
+  "organization": "Utrecht University; University of Genoa",
+  "source_url": "https://journals.plos.org/complexsystems/article?id=10.1371/journal.pcsy.0000142",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1371/journal.pcsy.0000142",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The framework models 1,229 Italian CS scholars. Forecast backtesting trained on 2010–2020 and tested on 2021–2023 for 130 authors and 6,084 forecasts (reported SES MAE 7.75 vs. moving-average 8.08). In the University of Genoa pilot, 15 system-flagged researcher pairs were introduced at a showcase; the authors report four started joint projects within six months.",
+    "unknown": "Generalization beyond this national disciplinary population, metadata/disambiguation bias and model-dependent topic labels remain limitations. The15-pair pilot lacks a controlled comparator; a locked model and pre-specified prospective evaluation protocol are not established.",
+    "ai_role": "Graph and transformer representations are combined to identify semantic similarity and temporal topics; this enables the reported field-evolution patterns and candidate collaboration recommendations, with LLMs used to label discovered topics.",
+    "evidence_urls": [
+      "https://journals.plos.org/complexsystems/article?id=10.1371/journal.pcsy.0000142"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original PLOS full text: source population/metadata gaps, learned embeddings/topic modeling, longitudinal patterns, backtesting, ancillary collaboration pilot, affiliations and date."
+  }
+}

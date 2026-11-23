@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-long-covid-transcriptomic-cross-dataset-classification",
+  "title": "Transcriptomic classifier shows limited cross-dataset Long COVID discrimination",
+  "summary": "A bioRxiv preprint from the Institute of Bioinformatics and collaborators analyzes six RNA-sequencing datasets from Long COVID and recovered patients. Its primary abstract reports mean AUC0.664 for an RBF support-vector classifier across six leave-one-batch-out folds. Gene hypotheses were derived from three selected higher-performing folds and then used for pathway and interaction analyses; these do not establish causal mechanisms, effective drugs or clinical utility. This review covers the primary abstract and metadata; full-text HTML and PDF access were blocked.",
+  "field": "medicine",
+  "ai_technology": "RBF-kernel support vector classifier; SHAP",
+  "organization": "Institute of Bioinformatics, Bangalore; Indian Council of Medical Research; University of Delhi",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.20.768015v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-23",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.64898/2026.11.20.768015",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Retrospective leave-one-batch-out discrimination across six transcriptomic datasets, mean AUC0.664; SHAP-derived features from three selected folds support hypothesis generation.",
+    "unknown": "Full methods, patient counts, leakage controls and batch-specific performance were not assessed because full-text routes were inaccessible. Experimental mechanisms, drug benefit and clinical utility are not established.",
+    "ai_role": "The learned RBF support-vector classifier distinguishes Long COVID from recovered-patient transcriptomic profiles across held-out batches; SHAP nominates features for further analyses.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.11.20.768015v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary bioRxiv v1 abstract, author affiliations and posted date; full HTML/PDF routes returned403 and were not reviewed"
+  }
+}

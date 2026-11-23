@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-adenosine-gene-models-coronary-smooth-muscle-chd",
+  "title": "Machine-learning feature selection prioritizes two coronary-disease-associated genes",
+  "summary": "XGBoost, SVM recursive feature elimination and Boruta narrowed transcriptomic candidates to DYRK2 and SIGIRR, whose expression was lower in coronary heart disease. The study analyzed 141 discovery samples and 24 samples in a second public dataset, then confirmed lower expression in newly collected clinical samples from 5 patients and 5 controls. Both public datasets informed final gene selection, so the second dataset was not an untouched diagnostic test. Single-cell associations were exploratory; the work establishes neither causal gene roles nor clinical diagnostic utility.",
+  "field": "medicine",
+  "ai_technology": "XGBoost, support-vector-machine recursive feature elimination, and Boruta feature selection applied to transcriptomic data",
+  "organization": "The 941th Hospital of Joint Logistic Support Force of Chinese People’s Liberation Army",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.12.766320v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-21",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "XGBoost/SVM-RFE with fivefold tuning and Boruta selected features from141 PBMC samples (93 CHD/48 controls). Final DYRK2/SIGIRR selection additionally used expression/AUC criteria in24 public samples (13/11). New clinical qPCR samples (5/5) showed lower expression of both genes.",
+    "unknown": "The second public dataset informed feature selection and is not an untouched final diagnostic evaluation. Ten qPCR samples support expression patterns only. Causal mechanisms, independent replication and clinical utility remain unestablished; single-cell data included only2 CHD and2 control donors.",
+    "ai_role": "The intersection of XGBoost, SVM-RFE and Boruta selected17 common features from231 candidates; additional cross-dataset criteria narrowed these to DYRK2 and SIGIRR, followed by new expression measurements.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/early/2026/11/21/2026.11.12.766320.full.pdf",
+      "https://api.biorxiv.org/details/biorxiv/10.64898/2026.11.12.766320/na/json"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Full primary v1 PDF: data acquisition, machine-learning feature selection, cross-dataset filtering, RT-qPCR Methods and Results3.2/3.8; official bioRxiv first-posted metadata. Model, gene-expression and clinical-utility claims distinguished."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2020-01-peritumoral-ultrasound-features-improve-breast-nodal-prediction",
+  "title": "Peritumoral ultrasound features improve prediction of breast-cancer nodal metastasis",
+  "summary": "DenseNet-121 neural networks and random-forest radiomics models were evaluated on ultrasound images from 479 women with pathology-confirmed breast cancer. Including tissue around the tumor improved axillary-node metastasis prediction: the combined-region image-only CNN had a reported test AUC of 0.912, compared with 0.748 for the tumor-only CNN. The combined CNN also reached AUC 0.95 in an additional 16-patient cohort described as prospective, but this single-center paper reports inconsistent training/test counts and does not establish clinical benefit or the biological basis of the imaging association.",
+  "field": "medicine",
+  "ai_technology": "DenseNet-121 convolutional neural network; random-forest radiomics with Boruta feature selection",
+  "organization": "Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences; Peking University Shenzhen Hospital; Ultimage Lab; Peng Cheng Laboratory",
+  "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00053/full",
+  "source_type": "paper",
+  "publication_date": "2020-01-31",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "A single-center study used 2,395 images from 479 patients and histopathologic nodal labels. The combined image-only CNN reported test AUC 0.912 versus 0.748 for tumor-only images; differences from corresponding radiomics models were not statistically significant. A further 16-patient cohort reported combined-CNN AUC 0.95.",
+    "unknown": "The abstract/image-acquisition description gives training/test counts 343/136, whereas the population description/table gives 359/120. Locked-model timing before new outcomes in the additional cohort is not established by the reviewed Methods. The authors call for larger multicenter/different-machine studies and biological investigation; clinical benefit was not tested.",
+    "ai_role": "DenseNet-121 learns image features to classify pathology-confirmed nodal metastasis; Boruta-selected radiomic features feed random forests. Comparing input regions identifies the study-specific predictive information gained from peritumoral tissue.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00053/full"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original full-text source: abstract, publication metadata, relevant model/feature selection and validation Methods, Results and limitations. Supplementary files not assessed."
+  }
+}

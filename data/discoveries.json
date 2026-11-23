@@ -140917,5 +140917,1271 @@
       "date": "2026-11-23",
       "scope": "Publisher abstract, affiliations, publication metadata and visible ethics/data statements; subscription full paper not assessed"
     }
+  },
+  {
+    "id": "2026-11-ai-vocabulary-package-eight-class-trial",
+    "title": "Vocabulary app with Qwen tutoring shows a short-term score advantage in eight classes",
+    "summary": "A twelve-week teaching study randomized four matched pairs of university tutorial classes to a vocabulary application or non-adaptive word lists. The application bundled Qwen2.5-7B-Instruct examples, wav2vec2.0 pronunciation feedback and rule-based review scheduling. Among 92 completers from 100 allocated students, class-adjusted posttest scores favored the application by 6.6 points on a 100-point test (95% CI 1.3–11.9). This is a prospective comparison of the complete instructional package, not an isolated effect of AI. Eight classes, repeated test items, complete-case analysis and no delayed-retention measure limit generalization.",
+    "field": "humanities",
+    "ai_technology": "Qwen2.5-7B-Instruct; wav2vec 2.0 speech model; VocabPilot EDU 2.1.4",
+    "organization": "City University Malaysia",
+    "source_url": "https://system.wisacad-pub.com/index.php/lea/article/view/471",
+    "paper_url": "https://system.wisacad-pub.com/index.php/lea/article/download/471/420/3033",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "relevance": {
+      "impact": 2,
+      "validation": 4,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "prospective or independent check",
+      "tested": "March–June 2025 twelve-week application use after matched-pair class allocation, followed by week 12 testing. 100 students allocated, 92 analyzed (46 per condition); eight classes with four per arm. A class-random-intercept model estimated 6.6 points adjusted advantage, 95% CI 1.3–11.9, p=.022.",
+      "unknown": "The complete package includes deterministic scheduling, mobile delivery, language-model dialogue and speech feedback; the contribution of each component was not isolated. Same-item pre/post testing, only eight clusters, attrition and self-reported control study time constrain inference. Long-term retention and transfer to broader language performance were not tested.",
+      "ai_role": "A fixed named Qwen instruction model generated target-word examples/explanations, with output checks and instructor audits; a local wav2vec2.0 acoustic model supplied pronunciation practice feedback. The scheduling/recommendation rules themselves are not learned AI.",
+      "evidence_urls": [
+        "https://system.wisacad-pub.com/index.php/lea/article/download/471/420/3033",
+        "https://system.wisacad-pub.com/index.php/lea/article/view/471",
+        "https://system.wisacad-pub.com/index.php"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Independently recovered 24-page primary publisher PDF; read allocation, named model/intervention, measures/procedure, reported adjusted results and limitations. Original article publication metadata and publisher indexed journal peer-review statement checked. No raw-data reanalysis."
+    }
+  },
+  {
+    "id": "2026-11-eeg-fmri-language-difficulty-classification",
+    "title": "EEG–fMRI feature fusion distinguishes CELF-defined language difficulty in a retrospective cohort",
+    "summary": "Pairwise learned classifiers fused EEG microstate and fMRI-connectivity features to distinguish CELF-defined language difficulty from controls in 173 participants. The authors report 78.4% balanced accuracy under nested cross-validation with training-only feature selection. This is within-cohort discrimination, not a prospective screening result or evidence of a causal language mechanism. SHAP interpretation used an original non-nested model rather than the most frequent nested classifier. The main Methods body and complete fMRI preprocessing were unavailable in the reviewed publisher snapshot; subgroup counts do not fully describe the 173-person sample.",
+    "field": "medicine",
+    "ai_technology": "Random forest and Gaussian Naive Bayes feature fusion; nested classifier selection",
+    "organization": "Beijing Technology and Business University; Beijing Wuzi University",
+    "source_url": "https://www.nature.com/articles/s41598-026-80418-z",
+    "paper_url": "https://doi.org/10.1038/s41598-026-80418-z",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "Complete primary abstract and Appendix C describe 173-person nested evaluation, training-only screening/FDR and inner selection across 4221 model/fusion configurations. Most frequent nested pair was RF+GaussianNB; full-sample balanced accuracy 78.4%.",
+      "unknown": "Main Methods body, full fMRI preprocessing and hyperparameter grids not assessed. Listed age subgroups 5–17 sum to 165 versus 173 overall aged 5–21; exact remaining allocation not specified in the reviewed tables. External/prospective clinical performance, causal neural interpretation and benefit remain unestablished.",
+      "ai_role": "Learned classifier pairs combine EEG and fMRI features; nested selection evaluates their ability to discriminate language-test-defined groups. Correlated features and SHAP attributions do not establish biological mechanisms.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41598-026-80418-z",
+        "https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-026-80418-z/MediaObjects/41598_2026_80418_MOESM2_ESM.pdf"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Independently read original publisher abstract and accessible acquisition/quality, nested-validation/permutation, adjustment and SHAP appendices, plus 10-page supplementary model/age tables. Main Materials/Methods body was absent; ordinary PDF route returned HTML. No full-main-paper review claimed."
+    }
+  },
+  {
+    "id": "2026-11-sensor-lstm-injection-molded-part-quality",
+    "title": "Sensor LSTM predicts part dimensions in an injection-molding campaign",
+    "summary": "A shared bidirectional LSTM with four regression heads predicted weight and dimensions from injection-molding sensor sequences. The campaign collected 132 molding cycles, with 124 retained for regression. On a selected 24-cycle comparison subset, the model reported average MAPE 0.27%. This is an evaluation on the study’s campaign, with epoch selection using held-out folds. Comparators used different evaluation units and protocols, so the reported errors do not establish general model superiority. Generalization across molds, materials, machines and production periods remains untested.",
+    "field": "materials",
+    "ai_technology": "Bidirectional LSTM shared encoder with task-specific MLP regression heads",
+    "organization": "Clemson University; University of Delaware; University of South Carolina",
+    "source_url": "https://link.springer.com/article/10.1007/s00170-026-19582-5",
+    "paper_url": "https://doi.org/10.1007/s00170-026-19582-5",
+    "source_type": "paper",
+    "publication_date": "2026-11-21",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "Actual molded-part weight, length, width and thickness measurements in a controlled single-factor process campaign. LSTM evaluation used shuffled-cycle five-fold splits and retained each fold’s best epoch on that fold; the cross-method comparison used selected cycles and separate setting-level DOE evaluation.",
+      "unknown": "Fold-based epoch selection and selected comparison cycles limit untouched-test interpretation. The protocols/units differ across comparators, so average MAPE 0.27% versus 0.95%/2.03% is not a matched-protocol estimate of universal superiority. No independent production deployment or broader process transfer is established.",
+      "ai_role": "The shared LSTM learns temporal sensor features after each complete molding cycle; four MLP heads map them to measured part quality attributes. This is a manufacturing measurement-prediction result, not a newly discovered material property.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1007/s00170-026-19582-5"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original complete publisher Methods/Results text independently read, including 132-cycle campaign, 124-cycle regression, selected 24-cycle comparison and fold-based epoch selection. Publication date and affiliations authenticated in original HTML metadata. No raw sensor reanalysis."
+    }
+  },
+  {
+    "id": "2026-11-ml-prioritized-neuralgia-depressive-symptom-markers",
+    "title": "Machine learning prioritizes blood markers associated with neuralgia and depressive symptoms",
+    "summary": "LASSO and random forest prioritized four blood-expression markers shared by postherpetic-neuralgia and depression datasets. A separate 240-person clinical study found higher candidate-marker expression in neuralgia with depressive symptoms; serum LTF/sCD40L discrimination had AUC 0.818 within the 120 neuralgia patients. Symptoms were defined by PHQ-9 rather than a formal psychiatric interview. These are candidate associations, not a causal pain–depression mechanism or validated clinical diagnosis. The public-data four-gene model was refitted in its comparison cohort, so it was not fixed-coefficient external validation.",
+    "field": "medicine",
+    "ai_technology": "LASSO feature selection; random forest; logistic biomarker modeling",
+    "organization": "Shanxi Medical University; The People’s Hospital of Chongzuo; Sun Yat-sen University; Foshan Women and Children Hospital; Southern Medical University; South China University of Technology",
+    "source_url": "https://www.frontiersin.org/articles/10.3389/fimmu.2026.1920147/full",
+    "paper_url": "https://doi.org/10.3389/fimmu.2026.1920147",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "direct test",
+      "tested": "Learned selection of LTF, HLA-DPA1, CACNA2D4 and CD40LG was followed by new human blood expression/protein assays in four clinical groups of 60 each. Within PHN-only participants (n=120), the combined serum marker score had AUC 0.818 for PHQ-9-defined symptoms.",
+      "unknown": "Cross-sectional biomarkers and symptom thresholds do not prove causality, formal MDD diagnosis, prospective screening benefit or treatment effects. The discovery transcriptomic cohorts are small and initial screening exploratory. Public-data comparison coefficients were re-estimated.",
+      "ai_role": "LASSO and random forest prioritize the transcriptomic candidates subsequently measured as human clinical biomarkers. Learned selection is distinct from WGCNA/network enrichment and from the later descriptive clinical associations.",
+      "evidence_urls": [
+        "https://www.frontiersin.org/articles/10.3389/fimmu.2026.1920147/full"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary source-provenanced article text independently read for transcriptomic model selection, coefficient-refit limitation, human clinical cohort/assays/results, limitations, affiliations and date. The represented claim concerns human biomarker associations; no animal intervention efficacy is claimed. No underlying-data reanalysis."
+    }
+  },
+  {
+    "id": "2026-11-adenosine-gene-models-coronary-smooth-muscle-chd",
+    "title": "Machine-learning feature selection prioritizes two coronary-disease-associated genes",
+    "summary": "XGBoost, SVM recursive feature elimination and Boruta narrowed transcriptomic candidates to DYRK2 and SIGIRR, whose expression was lower in coronary heart disease. The study analyzed 141 discovery samples and 24 samples in a second public dataset, then confirmed lower expression in newly collected clinical samples from 5 patients and 5 controls. Both public datasets informed final gene selection, so the second dataset was not an untouched diagnostic test. Single-cell associations were exploratory; the work establishes neither causal gene roles nor clinical diagnostic utility.",
+    "field": "medicine",
+    "ai_technology": "XGBoost, support-vector-machine recursive feature elimination, and Boruta feature selection applied to transcriptomic data",
+    "organization": "The 941th Hospital of Joint Logistic Support Force of Chinese People’s Liberation Army",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.12.766320v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-21",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "XGBoost/SVM-RFE with fivefold tuning and Boruta selected features from141 PBMC samples (93 CHD/48 controls). Final DYRK2/SIGIRR selection additionally used expression/AUC criteria in24 public samples (13/11). New clinical qPCR samples (5/5) showed lower expression of both genes.",
+      "unknown": "The second public dataset informed feature selection and is not an untouched final diagnostic evaluation. Ten qPCR samples support expression patterns only. Causal mechanisms, independent replication and clinical utility remain unestablished; single-cell data included only2 CHD and2 control donors.",
+      "ai_role": "The intersection of XGBoost, SVM-RFE and Boruta selected17 common features from231 candidates; additional cross-dataset criteria narrowed these to DYRK2 and SIGIRR, followed by new expression measurements.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/early/2026/11/21/2026.11.12.766320.full.pdf",
+        "https://api.biorxiv.org/details/biorxiv/10.64898/2026.11.12.766320/na/json"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Full primary v1 PDF: data acquisition, machine-learning feature selection, cross-dataset filtering, RT-qPCR Methods and Results3.2/3.8; official bioRxiv first-posted metadata. Model, gene-expression and clinical-utility claims distinguished."
+    }
+  },
+  {
+    "id": "2026-06-inverse-optimal-control-tkr-squat-objectives",
+    "title": "Inverse optimal control infers shared and patient-specific squat objectives after knee replacement",
+    "summary": "Bi-level inverse optimal control inferred individual and shared movement-objective weights from recorded squats in six people after total knee replacement. Center-of-mass height and balance were dominant fitted terms, while balance weights varied across subjects; these are model-dependent inferences rather than direct measurements of neural control. The June 15, 2026 preprint reported within-sample trajectory reconstructions. A November 22 revision added leave-one-subject-out testing within the same six-person dataset, reporting mean RMSE 7.36° and correlation 0.95. Neither version establishes prediction from preoperative data, external-cohort generalization or improved clinical outcomes.",
+    "field": "medicine",
+    "ai_technology": "Bi-level inverse optimal control learning latent movement-objective weights from observed trajectories; OpenSim Moco forward model with PRIMA outer optimization",
+    "organization": "University of Liège",
+    "source_url": "https://doi.org/10.64898/2026.06.11.731549",
+    "source_type": "paper",
+    "publication_date": "2026-06-15",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://www.biorxiv.org/content/10.64898/2026.06.11.731549v2",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Version 1 fitted individual and pooled objective weights to existing CAMS-Knee squat recordings from six participants, collected 64–87 months after surgery, and compared reconstructed hip, knee and ankle trajectories with those recordings. Its fitted center-of-mass-height and balance terms were dominant in most cases; balance weights ranged from 0.0950 to 0.4158. The version-2 abstract and author update note report leave-one-subject-out fitting on five subjects and testing on the sixth, repeated across the same cohort, with mean RMSE 7.36°, normalized RMSE 17.75% and Pearson correlation 0.95.",
+      "unknown": "The inferred objective weights depend on the chosen cost terms, mechanical model, local optimization and simplified actuation; they do not directly measure human motor-control objectives. No independent external cohort, prospective prediction from preoperative inputs, improved patient outcome or independent replication is established. Uniform ligament parameters and imperfect movement-timing reproduction remain limitations.",
+      "ai_role": "Inverse optimal control learns the weights of hypothesized movement objectives from observed human trajectories, enabling patient-specific and shared objective inference and reconstruction of squat kinematics. The fixed mechanical simulator and PRIMA optimization routine alone are not the enabling learned result.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/early/2026/06/15/2026.06.11.731549.source.xml",
+        "https://www.biorxiv.org/content/early/2026/11/22/2026.06.11.731549.source.xml",
+        "https://api.biorxiv.org/details/biorxiv/10.64898/2026.06.11.731549/na/json"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Independently read the complete primary version-1 article sections on inverse weight estimation, cohort, recovered weights, trajectory validation and limitations, plus version-2 primary abstract and author Summary of Updates. Version-2 full article body was not inspected. Version-specific text distinguishes the original within-sample result from later same-cohort cross-validation; the API repeats updated abstract content under earlier metadata."
+    }
+  },
+  {
+    "id": "2025-12-nonparametric-motor-cortex-oscillatory-states",
+    "title": "A Bayesian nonparametric model identifies short-lived frequency-selective states in motor-cortex MEG",
+    "summary": "A Bayesian nonparametric mixture model inferred brief frequency-selective activity states in a public resting-state MEG dataset from one left motor-cortex parcel. The first preprint version, posted December 23, 2025, reported two aperiodic and five oscillatory states with marked variation in occupancy, frequency and power across people. Its Methods and Results disagree on whether the cohort contained 64 or 65 participants. A June 2026 revision retained the broad state decomposition but changed numerical frequency estimates; the November 2026 abstract retains the broad finding. These are model-inferred signal patterns, without independent neural-state ground truth, external replication or demonstrated behavioral/clinical meaning.",
+    "field": "biology",
+    "ai_technology": "Bayesian nonparametric Dirichlet-process Gaussian mixture model with time-delay embedding and stochastic variational inference",
+    "organization": "Ruhr University Bochum",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2025.12.20.695571v1.full",
+    "source_type": "paper",
+    "publication_date": "2025-12-23",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://www.biorxiv.org/content/10.64898/2025.12.20.695571v4.full",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "A DP-GMM fitted to time-delay-embedded observations was evaluated against thresholding and a time-delay HMM on synthetic signals with known labels, then applied to one left motor-cortex parcel in public resting MEG. Version 1 reported two aperiodic and five oscillatory states, peaks near 9.5/11.5/19.5/22.0/26.5 Hz and median mean lifetimes 0.202–0.263 s; these are historical v1 estimates. Version 3 retained the state-count pattern but revised frequency assignments. V1 Methods says 64 participants while its concatenation account and Results say 65.",
+      "unknown": "The empirical state labels are inferred by the model and depend on embedding choices, activity selection and post-processing; there is no independent neural-state ground truth or external replication. The original 64/65 cohort discrepancy and later revised state-frequency estimates limit numerical interpretation. No causal link to cognition, disease or clinical outcomes is established.",
+      "ai_role": "The DP-GMM clusters time-delay-embedded signal vectors and prunes inactive states, enabling unsupervised group-level decomposition of the MEG data. PSD candidate peaks guided embedding setup and k-NN post-processing was used.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2025.12.20.695571v1.full",
+        "https://www.biorxiv.org/content/10.64898/2025.12.20.695571v3.full",
+        "https://www.biorxiv.org/content/10.64898/2025.12.20.695571v4.full",
+        "https://api.biorxiv.org/details/biorxiv/10.64898/2025.12.20.695571/na/json"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Independently read primary version-1 Methods for mixture learning, inference/post-processing and empirical cohort, plus Results 3.4/figures 6–7 and posting footer. Checked version-3 cohort and revised empirical state-frequency text and version-4 primary abstract/posting date. Primary version metadata confirms the first result-bearing date; later numerics are not retroactively attributed to version 1. Version-4 full body was not exposed in the retrieved page."
+    }
+  },
+  {
+    "id": "2026-11-italian-computer-science-innovation-waves",
+    "title": "Transformer-assisted bibliometric analysis maps changes in Italian computer science",
+    "summary": "A study combined learned co-authorship and text representations with topic clustering to analyze a roster of 1,229 Italian computer-science scholars and publication records from 1980–2025. It identified three model-derived periods spanning foundational work, computer vision/machine learning, and later applied AI/health informatics. An ancillary Genoa pilot introduced 15 recommended researcher pairs, with four joint projects reported within six months. The topic patterns depend on metadata and analytical thresholds, 44.2% of paper abstracts were missing, and the small uncontrolled pilot does not establish a causal collaboration benefit.",
+    "field": "computer science",
+    "ai_technology": "Node2vec, all-MiniLM-L6-v2 sentence transformer, BERTopic/HDBSCAN, Falcon and Gemini topic-label generation",
+    "organization": "Utrecht University; University of Genoa",
+    "source_url": "https://journals.plos.org/complexsystems/article?id=10.1371/journal.pcsy.0000142",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1371/journal.pcsy.0000142",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The framework models 1,229 Italian CS scholars. Forecast backtesting trained on 2010–2020 and tested on 2021–2023 for 130 authors and 6,084 forecasts (reported SES MAE 7.75 vs. moving-average 8.08). In the University of Genoa pilot, 15 system-flagged researcher pairs were introduced at a showcase; the authors report four started joint projects within six months.",
+      "unknown": "Generalization beyond this national disciplinary population, metadata/disambiguation bias and model-dependent topic labels remain limitations. The15-pair pilot lacks a controlled comparator; a locked model and pre-specified prospective evaluation protocol are not established.",
+      "ai_role": "Graph and transformer representations are combined to identify semantic similarity and temporal topics; this enables the reported field-evolution patterns and candidate collaboration recommendations, with LLMs used to label discovered topics.",
+      "evidence_urls": [
+        "https://journals.plos.org/complexsystems/article?id=10.1371/journal.pcsy.0000142"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original PLOS full text: source population/metadata gaps, learned embeddings/topic modeling, longitudinal patterns, backtesting, ancillary collaboration pilot, affiliations and date."
+    }
+  },
+  {
+    "id": "2026-11-gpt4-prostate-cancer-inbox-response-evaluation",
+    "title": "A retrospective prostate-cancer messaging study finds different strengths in GPT-4 and clinician replies",
+    "summary": "A retrospective study compared clinical-team replies with a GPT-4-based bot for 158 prostate-cancer patient inquiries. Clinicians rated team replies higher on completeness, correctness and clarity, while bot replies scored higher on empathy and more often required major editing. Four LLM graders favored bot replies and showed lower inter-grader agreement than clinician graders. The reviewed publisher abstract describes an evolving rubric and response-quality evaluation, without establishing patient outcomes, prospective workflow utility or clinical safety effects; full Methods were inaccessible.",
+    "field": "medicine",
+    "ai_technology": "GPT-4-based patient-message drafting bot and LLM-based graders",
+    "organization": "Mayo Clinic; Massachusetts Institute of Technology; Cornell University",
+    "source_url": "https://www.nature.com/articles/s41598-026-80958-4",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41598-026-80958-4",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Retrospective comparative assessment of replies to 158 prostate-cancer patient inquiries, using three human evaluation rounds and one LLM-grader round. Clinicians rated team replies higher in completeness, correctness and clarity; the bot higher in empathy; bot replies required major edits more often. LLM graders favored bot replies and showed low agreement (alpha 0.07–0.18) versus clinician graders (0.53–0.81).",
+      "unknown": "The article abstract does not establish that patients received the generated replies, any effect on patient outcomes, or prospective clinical utility. Full Methods were not accessible from the Nature article route during this check; the rubric changed across the clinician rounds.",
+      "ai_role": "A GPT-4-based bot drafts responses in a specific oncology workflow and LLM graders evaluate the same response set; the study measures concrete strengths and limitations of this AI-assisted communication task.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41598-026-80958-4"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher original abstract, publication/acceptance metadata and author affiliations; detailed full Methods not accessible."
+    }
+  },
+  {
+    "id": "2026-11-selangor-road-crash-severity-imbalanced-modelling",
+    "title": "Imbalance-aware modelling identifies severe-crash patterns in Selangor records",
+    "summary": "A study used Random Forest, XGBoost and SVM to analyze 6,978 fatal or serious crash reports from Selangor, Malaysia, covering 2012–2020,with one stratified 70:30 split and training-only class balancing. The selected class-weighted Random Forest had 81.66% accuracy but only 20.53% recall and 30.10% precision for serious crashes. Tree-model feature importance emphasized collision type, while other rankings varied by model; low-capacity motorcycle involvement was described separately through record frequencies. The dataset excludes minor-injury crashes and lacks exposure denominators, so these associations do not establish causality, population risk or transfer beyond one state and split.",
+    "field": "other",
+    "ai_technology": "Random Forest, XGBoost and SVM with undersampling, SMOTE or class weighting",
+    "organization": "Sunway University; Universiti Sains Malaysia",
+    "source_url": "https://www.nature.com/articles/s41598-026-80019-w",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41598-026-80019-w",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Dataset of 6,978 fatal/serious crashes (2012–2020), with 70:30 stratified train/test split and resampling/weights applied only to training data. The selected RF with class weights achieved 81.66% overall accuracy, serious-crash recall 20.53% and precision 30.10%. Feature importance ranks collision type highly for RF/XGBoost; road surface type tops SVM permutation importance. Low-capacity motorcycles are the largest vehicle share among the analyzed fatal/serious crash records, particularly loss-of-control on bitumen.",
+      "unknown": "The analysis excludes slight-injury crashes, covers only Selangor, uses one train/test split, and has no vehicle-registration or vehicle-kilometre exposure denominators. The motorcycle frequency is descriptive and not evidence of increased per-vehicle risk; feature importance is not causal.",
+      "ai_role": "Supervised classifiers with class-balancing methods improve recognition of the underrepresented serious-crash class and support model-based feature/risk-profile analysis of the 2012–2020 crash dataset.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41598-026-80019-w",
+        "https://www.nature.com/articles/s41598-026-80019-w_reference.pdf"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original publisher reference PDF: cohort/severity definitions, stratified split and training-only balancing, class-specific performance, feature analysis and exposure/single-split limitations."
+    }
+  },
+  {
+    "id": "2026-02-therm-d-drosophila-temperature-rhythms",
+    "title": "Machine learning reveals distinct neural control of morning and evening body-temperature rhythms in Drosophila",
+    "summary": "The February 2026 THERM-D preprint used learned fly localization in camera images to track temperature-preference rhythms over several days. Body temperature was inferred from flies’ positions on a temperature gradient, rather than directly measured by thermal imaging, and targeted genetic perturbations implicated CRYPTOCHROME-negative clock neurons in the morning temperature rise without the same evening effect. Author-maintained software documents a trained YOLOv8 object detector supporting fly localization. These are Drosophila findings, not an established human mechanism; the later November 2026 journal version is distinct from the preprint summarized here.",
+    "field": "biology",
+    "ai_technology": "YOLOv8 object-detection model in the THERM-D computer-vision workflow",
+    "organization": "University of California, Davis; University of Würzburg; Okayama University",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12934746/",
+    "source_type": "paper",
+    "publication_date": "2026-02-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.64898/2026.02.19.706827",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Continuous computer-vision BTR measurement with genetic clock disruption and targeted Gal4 neuronal manipulations in Drosophila; control comparisons tested separate morning/evening circuits.",
+      "unknown": "Generalization beyond Drosophila and human relevance are unestablished. Preferred ambient position is a body-temperature proxy for these small ectotherms; the exact frozen preprint software/model snapshot was not identified.",
+      "ai_role": "The preprint uses learned camera-image localization to derive fly positions and temperature-preference time courses. The version-linked author software release identifies a trained YOLOv8 detector and ONNX bounding-box inference; exact frozen weights used for the February preprint were not established.",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12934746/",
+        "https://api.biorxiv.org/details/biorxiv/10.64898/2026.02.19.706827",
+        "https://github.com/ucdavisdatalab/therm-d_fly_detection/tree/v0.1.0"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original February2026 preprint XML: assay, fly-position/temperature proxy, neuronal perturbation results, affiliations and dates; bioRxiv API v1 history; author v0.1.0 README and ONNX detection code. Final journal metadata used only for version distinction."
+    }
+  },
+  {
+    "id": "2026-11-neuromorphic-self-aware-wings-flapping-microrobotics",
+    "title": "Learned wing sensing supports damage detection and lift recovery in a flapping robot",
+    "summary": "A prototype flapping-wing robot used integrated wing sensors with a learned Kriging surrogate to reconstruct wing motion and a linear SVM to classify damaged states. The SVM achieved 94.6% accuracy on 168 held-out samples, and a separate damaged-wing bench demonstration increased flapping frequency within 0.1 seconds to restore average lift near the intact baseline. These are device-specific physical sensing and control results, with calibration and comparison against binocular-vision measurements. They do not establish autonomous free-flight performance, generalization across robot designs or sustained field operation.",
+    "field": "other",
+    "ai_technology": "Physics-informed Kriging surrogate model and linear support vector machine (SVM)",
+    "organization": "University of Electronic Science and Technology of China; City University of Hong Kong; The University of Tokyo",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13787462/",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1126/sciadv.aei7313",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The Kriging model was calibrated using two signal cycles and evaluated on other cycles at each frequency against binocular-vision measurements; reported mean unit-pitching-angle error was below 10% and maximum flapping-angle error 1.1%. For fault diagnosis, 504 samples trained a linear SVM and 168 test samples yielded 94.6% accuracy across normal and three failure states. The authors also report a damaged-wing feedback demonstration with frequency rising from 12.9 to 19.3 Hz in 0.1 seconds and average lift restored near the intact baseline.",
+      "unknown": "Generalization to other wing structures, sensor builds, operating conditions, and untethered flight; evidence for field deployment or sustained operational use.",
+      "ai_role": "The physics-informed Kriging surrogate maps measured voltage/current amplitudes and flapping frequency to wing-motion angles; a linear SVM classifies faults from the derived signal features. These learned operations support the experimentally demonstrated intrinsic motion sensing, fault classification and lift-compensation control.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13787462/fullTextXML",
+        "https://api.crossref.org/works/10.1126/sciadv.aei7313"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original final-journal PMC/EuropePMC XML: learned Kriging/SVM operation, image-referenced wing-motion checks, train/test sample counts, damage-feedback lift results, device-calibration limitations, affiliations and date."
+    }
+  },
+  {
+    "id": "2026-11-alphafold3-cog4-syntaxin5-interface",
+    "title": "AlphaFold3 modeling supports a functional COG4–Syntaxin 5 interface",
+    "summary": "A preprint abstract reports that AlphaFold3 modeling placed COG4 against a Syntaxin5 loop/linker region, supporting a proposed interface in Golgi membrane trafficking. Targeted substitutions, co-precipitation and cell-based rescue assays linked that interface to protein glycosylation and Golgi organization. This is an abstract-scoped source check: full Methods, sample sizes and detailed controls were inaccessible, and no organism-level or clinical effect is established.",
+    "field": "biology",
+    "ai_technology": "AlphaFold 3",
+    "organization": "University of Arkansas for Medical Sciences",
+    "source_url": "https://doi.org/10.64898/2026.11.19.767949",
+    "source_type": "paper",
+    "publication_date": "2026-11-23",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The primary abstract reports targeted interface substitutions, co-precipitation, rescue, glycosylation, localization and Golgi-morphology assays in cells.",
+      "unknown": "Full Methods, sample sizes and detailed experimental controls were not assessed because primary full-text routes were inaccessible. The reviewed material does not establish organism-level or clinical effects.",
+      "ai_role": "AlphaFold3 predicted a COG4–Syntaxin5 contact arrangement; the reported cell perturbations test the functional interface described by that model.",
+      "evidence_urls": [
+        "https://api.crossref.org/works/10.64898/2026.11.19.767949",
+        "https://api.biorxiv.org/details/biorxiv/10.64898/2026.11.19.767949/na/json"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Complete publisher-deposited Crossref and bioRxiv v1 abstracts, posted date and author affiliations; full primary PDF/XML access attempts were blocked, so full Methods were not read."
+    }
+  },
+  {
+    "id": "2024-11-xgboost-meditation-eeg-coherence",
+    "title": "XGBoost links focused-attention meditation to frontal EEG coherence patterns",
+    "summary": "XGBoost and four feature-importance analyses characterized EEG differences between focused-attention meditation and instructed mind-wandering in 26 experienced meditators. The authors report 83% classification accuracy and higher-frequency power/coherence patterns, with reduced delta activity among the important features. Evaluation used repeated participant splits with calibration epochs from test participants added to training, so the result does not establish fully uncalibrated transfer. The small, previously collected dataset supports an association rather than a causal mechanism or clinical benefit.",
+    "field": "biology",
+    "ai_technology": "XGBoost with SHAP and permutation feature importance",
+    "organization": "University of Haifa; University of California, San Diego; University of Wisconsin-Madison",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11795585/",
+    "source_type": "paper",
+    "publication_date": "2024-11-26",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1016/j.bpsgos.2024.100423",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Previously collected EEG from 26 meditators; 50 repeated 80/20 participant splits, with 21 training and 5 test participants. Calibration epochs from test participants were included in training. Source-reported accuracy 83%, AUROC 0.79, F1 0.74.",
+      "unknown": "One small dataset and selected frontal electrodes; no external validation or uncalibrated unseen-participant performance. Feature importance does not establish causal neurophysiology.",
+      "ai_role": "XGBoost classifies recorded cognitive states and model-importance analyses identify EEG power/coherence features associated with the state contrast.",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11795585/"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary PMC full JATS: abstract, participant/data selection, performance evaluation, test-participant calibration, feature-importance Results and limitations; publication metadata."
+    }
+  },
+  {
+    "id": "2020-06-svm-interface-ordering-crystal-growth",
+    "title": "SVM analysis links liquid ordering at interfaces to slower crystal growth",
+    "summary": "A support-vector classifier of local atomic environments helped reveal how interface-induced ordering of liquid reduces atomic mobility and slows crystal growth in silicon and copper simulations. The learned structural quantity supported a growth model that predicted temperature-dependent rates beyond the fitted temperature range more effectively than the compared Wilson–Frenkel model. These are atomistic simulation and model-comparison results, with material/interface-specific limits rather than demonstrated industrial-process performance.",
+    "field": "materials",
+    "ai_technology": "Support-vector machine encoding of local atomic environments",
+    "organization": "Stanford University",
+    "source_url": "https://www.nature.com/articles/s41467-020-16892-4",
+    "source_type": "paper",
+    "publication_date": "2020-06-26",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41467-020-16892-4",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "SVM trained on 10,000 balanced atomic-environment examples; applied to 27.5 million held-out simulation data points. Crystal-growth models fitted at higher temperatures were compared against newly computed lower-temperature growth rates in silicon, with silicon/copper interface analyses.",
+      "unknown": "Simulation results depend on the atomistic models and interfaces studied; general industrial applicability and independent experimental confirmation of the full learned mechanism were not established in this review.",
+      "ai_role": "A trained SVM supplies a local structural softness coordinate that separates liquid/crystallizing environments and enables analysis of interface ordering, atom mobility and growth kinetics.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-020-16892-4"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary publisher full article: abstract, SVM/local-structure Results, classifier training and temperature-extrapolation Methods, model comparisons, publication metadata and affiliations."
+    }
+  },
+  {
+    "id": "2022-05-neural-reconstruction-two-dimensional-dna-storage",
+    "title": "Neural reconstruction supports rewritable two-dimensional DNA data storage",
+    "summary": "A molecular storage demonstration encoded image data in synthetic DNA sequence and rewritable metadata in DNA-backbone nicks. GatedConvolution and EdgeConnect neural inpainting helped reconstruct images after sequencing/readout errors, alongside non-neural detection, smoothing and enhancement steps. Experiments reconstructed an image library and erased/re-wrote metadata, demonstrating a bounded physical storage capability. Image inpainting produces approximate visual reconstructions and does not establish lossless recovery of arbitrary data or universal data-erasure guarantees.",
+    "field": "computer science",
+    "ai_technology": "GatedConvolution and EdgeConnect neural image inpainting",
+    "organization": "University of Illinois at Urbana-Champaign; Dorna Robotics",
+    "source_url": "https://www.nature.com/articles/s41467-022-30140-x",
+    "source_type": "paper",
+    "publication_date": "2022-05-27",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41467-022-30140-x",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Synthetic-DNA storage/readout of images, computational reconstruction using neural inpainting and other processing, and experimental metadata erasure/rewriting. Reconstruction was assessed in the demonstrated image-storage setting.",
+      "unknown": "Visual image reconstruction is approximate and setting-dependent. The main article was reviewed; detailed supplementary algorithm protocols and general reliability/privacy guarantees were not assessed.",
+      "ai_role": "Existing neural inpainting models replace masked, corrupted image pixels during decoding of experimentally read molecular data; they are components of a broader experimental storage platform.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-022-30140-x"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary publisher main article abstract, storage/reconstruction Results, named neural-inpainting workflow, main Methods, publication date and author affiliations; supplementary algorithms not reviewed."
+    }
+  },
+  {
+    "id": "2023-02-random-forest-post-thrombolysis-outcomes",
+    "title": "Random forest predicts three-month outcomes after stroke thrombolysis",
+    "summary": "Random-forest models predicted three-month functional outcome after intravenous thrombolysis in a retrospective 488-patient stroke cohort, with additional evaluation on two cohorts from another center. Day-seven NIHSS was the most important predictor, so this is a post-treatment prognosis result rather than a tool for choosing initial thrombolysis. Reported performance varied across cohorts; the study does not establish improved treatment decisions or patient outcomes.",
+    "field": "medicine",
+    "ai_technology": "Random forest with SHAP, LIME and eli5 explanations",
+    "organization": "Shanghai Pudong New Area People’s Hospital; Shanghai Eighth People’s Hospital; Fudan University",
+    "source_url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1146197/full",
+    "source_type": "paper",
+    "publication_date": "2023-02-22",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.3389/fnins.2023.1146197",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "488 patients split 70/30 for training/testing, with 10-fold cross-validation described; internal test mean F1 0.825 for RF versus 0.653 SVM and 0.777 logistic regression. Additional retrospective cohorts contained 316 conventional and 114 wake-up-stroke patients.",
+      "unknown": "No prospective decision-impact test or independent replication. Day-seven predictors are unavailable at treatment selection. Text and tables report inconsistent feature counts (16 versus20) and training sample totals (341 versus342); external metrics are source-reported and do not prove universal superiority.",
+      "ai_role": "A trained random forest combines clinical variables to predict three-month modified Rankin outcome; explanation methods identify influential features, especially day-seven NIHSS.",
+      "evidence_urls": [
+        "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1146197/full"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Cached original Frontiers full main text: publication metadata, cohort definition, Methods, model splitting/tuning, Results including external validation, and limitations; supplements not independently read."
+    }
+  },
+  {
+    "id": "2020-03-neural-radiomics-lung-nodule-invasiveness",
+    "title": "Neural and radiomics score fusion estimates lung-nodule invasiveness",
+    "summary": "A neural image model and radiomics SVM estimated invasive versus non-invasive or minimally invasive adenocarcinoma in surgically confirmed ground-glass lung nodules. Maximum-score fusion reached a reported AUC of 0.90 in a 127-nodule test cohort from a second center, compared with 0.83 for the neural model and 0.87 for radiomics alone. This retrospective, selected surgical cohort supports diagnostic discrimination, without establishing screening performance or clinical benefit; several fusion strategies were compared on the reported test cohort.",
+    "field": "medicine",
+    "ai_technology": "Recurrent residual U-Net, transfer-learned CNN, radiomics SVM and maximum-score fusion",
+    "organization": "Taizhou University; Fudan University Shanghai Cancer Center",
+    "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00418/full",
+    "source_type": "paper",
+    "publication_date": "2020-03-31",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.3389/fonc.2020.00418",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "373 pathology-confirmed nodules from323 patients:246 nodules/229 patients for training and validation at Taizhou;127 nodules/94 patients at Fudan for independent testing. Source reports maximum-fusion AUC0.90 (95%CI0.84–0.95) and accuracy80.3%; segmentation pretraining used257 LIDC-IDRI nodules.",
+      "unknown": "Retrospective selected stage-I surgical nodules, multiple nodules treated independently, small cohorts and varying scanner parameters. The report compares fusion choices on the same test set, so that performance is not a separately confirmed frozen-choice estimate. No prospective clinical-utility or survival benefit.",
+      "ai_role": "A recurrent residual U-Net segments nodules, a transfer-learned CNN predicts invasiveness, and an SVM classifies selected radiomics features; their prediction scores are fused.",
+      "evidence_urls": [
+        "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00418/full"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Cached original Frontiers full main text: publication metadata, cohort inclusion, segmentation and classifier Methods, fusion strategies, Results tables2/3 and limitations; supplements not independently read."
+    }
+  },
+  {
+    "id": "2023-12-cnn-rat-liver-fibrosis-mri",
+    "title": "CNN stages liver fibrosis from non-contrast MRI in rats",
+    "summary": "A convolutional neural network classified three liver-fibrosis stages from non-contrast T1-weighted MRI in a 99-rat study. The primary abstract reports stage-specific test AUCs of 0.76, 0.88 and 0.79 after an 80/20 split of one selected image per rat. These animal-model results do not establish human diagnosis; full reference-standard procedures and rat grouping for the separate segmentation evaluation were not available in the reviewed primary abstract.",
+    "field": "medicine",
+    "ai_technology": "nnU-Net segmentation and convolutional neural network classification",
+    "organization": "Qingdao University; The Affiliated Hospital of Qingdao University",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/38147969/",
+    "source_type": "paper",
+    "publication_date": "2023-12-24",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1016/j.mri.2023.12.006",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "99 male Wistar rats and2628 MRI slices. The abstract describes a70/30 image split for segmentation (test Dice0.8477), and one maximum-diameter image per rat with80/20 stage-stratified image selection for classification. Reported class accuracies0.73/0.89/0.84 and AUCs0.76/0.88/0.79.",
+      "unknown": "Primary abstract and indexed publisher excerpts only; no full article/supplement retrieved. Exact histologic reference/rater protocol and segmentation grouping by rat remain unverified; slice-level splitting may inflate segmentation results. Prospective animal acquisition does not establish prospective frozen-model performance or human transfer.",
+      "ai_role": "nnU-Net delineates liver regions and a CNN learns MRI features to classify no, early or progressive liver fibrosis in the induced rat model.",
+      "evidence_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/38147969/"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary PubMed XML complete abstract, publication history and author affiliations; corroborating publisher-indexed excerpts retained by researcher. Full publisher article unavailable; no full Methods claim."
+    }
+  },
+  {
+    "id": "2021-03-neural-cardiomyocyte-toxicity-screen",
+    "title": "Neural imaging screen detects cardiotoxicity signals in human-derived heart cells",
+    "summary": "A ResNet50 image model screened human induced-pluripotent-stem-cell-derived cardiomyocytes for compound-associated toxicity signals. Follow-up mitochondrial-respiration assays supported cell-level liabilities for selected screen hits that simple staining measurements had missed. A further comparison separated proteasome inhibitors with similar biochemical potency but different neural toxicity scores. These are in vitro safety signals, with the core results already present in the March2021 preprint; they do not establish human cardiac risk or clinical safety.",
+    "field": "medicine",
+    "ai_technology": "ResNet50 convolutional neural network on the PhenoLearn platform",
+    "organization": "Tenaya Therapeutics; Stanford University; Dana Solutions",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8367386/",
+    "source_type": "paper",
+    "publication_date": "2021-03-24",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.7554/eLife.68714",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Original preprint and journal Methods describe image-based training/validation and a separate validation plate, screening1280 bioactive compounds plus1280 diverse compounds. Selected hits underwent secondary mitochondrial-respiration assays; proteasome activity was measured for a ten-inhibitor comparison. The cell experiments support the bounded measured result, beyond recovery of known liabilities alone.",
+      "unknown": "Cell-line/model-specific in vitro results; technical replicates and model-development validation are not independent clinical replication. Unknown-target-library hits remain phenotypic signals. Human exposure, arrhythmia risk and therapeutic safety were not established; no novel chemical toxicity mechanism is claimed.",
+      "ai_role": "A ResNet50 learns staining-image patterns from control and known-toxic conditions, produces a phenotypic toxicity score for screening compounds, and prioritizes hits for orthogonal cell assays.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.1101/2021.03.23.436666v1",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8367386/"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original bioRxiv v1 full JATS Methods/Results, primary history API; corresponding eLife PMC full JATS model Methods, selected-hit orthogonal validation and proteasome comparison. First public core result dated2021-03-24; journal publication2021-08-02. No priority beyond located versions claimed."
+    }
+  },
+  {
+    "id": "2020-03-learned-hospital-access-audit-evaluation",
+    "title": "Hospital audit study identifies limits of learned access explanations",
+    "summary": "A hospital-field evaluation examined a machine-learning-based Explanation-Based Auditing System using staff access logs and scenario checks. The tool explained an average98.09% of accesses as appropriate; this measures explanation coverage, rather than breach-detection accuracy. Analysis linked many unexplained accesses to missing staff metadata and exceptional workflows, identifying limits that remained despite high overall coverage. This single-hospital evaluation does not establish fewer privacy breaches or generalizable detection performance.",
+    "field": "computer science",
+    "ai_technology": "Supervised learning in an Explanation-Based Auditing System (EBAS)",
+    "organization": "University of Toronto; Mackenzie Richmond Hill Hospital",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/32370950/",
+    "source_type": "paper",
+    "publication_date": "2020-03-24",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1016/j.ijmedinf.2020.104123",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Original paper abstract plus the author’s thesis chapter4, explicitly identified as the same2020 article, document a2017–2018 hospital study.13 clinical/non-clinical staff were selected for review, with additional constructed appropriate/inappropriate scenarios and longitudinal audit-output analysis. A seven-day analysis linked most unexplained accesses to absent role/department metadata.",
+      "unknown": "Article full text was not retrieved; detailed Methods were checked in the author’s later thesis, not silently treated as the publisher version. Tool internals were black-box and the source does not expose a reproducible trained-model architecture. Coverage is not sensitivity, specificity or accuracy against comprehensive breach ground truth. One hospital and partly constructed scenarios; no measured breach reduction.",
+      "ai_role": "The thesis identifies EBAS as a supervised-learning tool that combines electronic records and staff/scheduling data to generate learned access explanations; the study evaluates its outputs and operational failure patterns rather than training a new algorithm.",
+      "evidence_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/32370950/",
+        "https://hdl.handle.net/1807/123153"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary PubMed complete abstract and electronic publication date; author-deposited2022 doctoral thesis chapter4 original Methods and Results, including explicit relationship to the2020 article, EBAS identity, staff/scenario validation and unexplained-access analysis. Publisher full article remains unavailable."
+    }
+  },
+  {
+    "id": "2026-06-p2ry12-digital-pathology-nsclc",
+    "title": "Random-forest digital pathology quantifies P2RY12 differences in lung carcinoma subtypes",
+    "summary": "The November22 v2 of a preprint first posted June17 describes a QuPath random forest trained on manually annotated tumor, stromal and immune cells for tumor-specific P2RY12 quantification. In a cohort containing319 lung adenocarcinomas and157 squamous-cell carcinomas, P2RY12 was higher in squamous carcinomas and discriminated subtype (AUC0.916); digital measurements were concordant with microscopic scoring. Classifier training used project-wide annotations and ROC validation was internal; the reviewed v2 does not establish a significant overall-survival association, independent-cohort validity or treatment benefit.",
+    "field": "medicine",
+    "ai_technology": "QuPath random-forest tissue-classification model",
+    "organization": "University of Lübeck",
+    "source_url": "https://doi.org/10.64898/2026.06.13.732072",
+    "source_type": "paper",
+    "publication_date": "2026-06-17",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Random-forest tissue classification supported tumor-cell staining quantification. Manual scoring and digital measurements were compared; subtype ROC/cutoff assessment used internal bootstrap and repeated cross-validation, with no independent cohort.",
+      "unknown": "Classifier training used annotations from the project, while bootstrap/cross-validation assessed the biomarker cutoff internally; no independent cohort is established. The reviewed v2 reports nonsignificant survival association. The cached v1/v2 API abstracts both state nonsignificance, so no claim is made that v1 significance was reversed.",
+      "ai_role": "A trained QuPath random forest categorized cells as tumor, stroma or immune, allowing automated quantification of tumor-cell P2RY12 staining across tissue microarrays.",
+      "evidence_urls": [
+        "https://doi.org/10.64898/2026.06.13.732072"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary bioRxiv latest v2 PDF: abstract; QuPath random-forest tissue-classification Methods; retrospective cohort, ROC/statistical Methods and survival Results. Primary API v1/v2 version metadata/abstracts were compared; v1 full Methods not reviewed."
+    }
+  },
+  {
+    "id": "2026-11-spatial-adenoid-cystic-carcinoma",
+    "title": "Spatial models map malignant territories and immune exclusion in salivary gland cancer",
+    "summary": "A preprint used scVI and cell2location models to integrate single-cell references with Visium HD measurements from four salivary-gland adenoid cystic carcinoma sections from three patients. The spatial analysis inferred ordered malignant-cell states, millimeter-scale tumor territories, enrichment of immune signatures in stroma, and B7-H4 transcript enrichment in tumor nests. Cell-type abundances and lineage ordering are model-based inferences; the small descriptive cohort requires larger-cohort, protein-level and clinical validation, and does not establish a treatment effect.",
+    "field": "medicine",
+    "ai_technology": "scVI variational-inference model; cell2location hierarchical Bayesian spatial deconvolution",
+    "organization": "University of New Mexico; Centrillion Biosciences",
+    "source_url": "https://doi.org/10.64898/2026.11.10.765744",
+    "source_type": "paper",
+    "publication_date": "2026-11-22",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "scVI/cell2location-derived spatial mapping was checked against histologic annotations and marker patterns; permutation-based territory analysis tested spatial organization against random mixing.",
+      "unknown": "Only four sections from three patients were studied, and spatial bins are not independent patient replications. Model-inferred cell abundances/trajectories do not establish causal lineage transitions; larger-cohort, protein-level and clinical confirmation remain needed under the source conclusions.",
+      "ai_role": "Learned scVI batch correction and cell2location probabilistic deconvolution mapped cell types to 10-µm spatial bins, enabling spatially resolved lineage and immune analyses.",
+      "evidence_urls": [
+        "https://doi.org/10.64898/2026.11.10.765744"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary bioRxiv v1 PDF: abstract; scVI latent-model training and cell2location reference/spatial-abundance Methods; selected territory, histologic/marker and immune-signature Results; limitations and affiliations. Supplementary analyses not independently reproduced."
+    }
+  },
+  {
+    "id": "2024-06-neural-proteomics-transport-regulators",
+    "title": "Single-nucleus proteomics identifies regulators of protein transport",
+    "summary": "A preprint first posted June18,2024 linked protein-abundance variation across3,412 macrophage-like-cell nuclei to LPS-induced nucleocytoplasmic transport, then tested16 candidate regulators by knockdown;13 conditions changed transport in the expected direction. DIA-NN v1.8.1 neural-network processing identified and quantified proteins from mass-spectrometry data, while weighted PCA and statistical associations drove downstream candidate nomination. The November22,2026 v2 retains this measurement role and13-of-16 result. AI supported proteomic measurement rather than directly predicting regulators; the findings concern a cell-model study, not a demonstrated clinical intervention.",
+    "field": "biology",
+    "ai_technology": "DIA-NN v1.8.1 neural-network-based data-independent acquisition proteomics processing",
+    "organization": "Northeastern University; Parallel Squared Technology Institute",
+    "source_url": "https://doi.org/10.1101/2024.06.17.599449",
+    "source_type": "paper",
+    "publication_date": "2024-06-18",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11212961/",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "DIA-NN processed mass-spectrometry measurements; 13/16 targeted knockdown conditions changed transport in the predicted direction.",
+      "unknown": "The incremental contribution of DIA-NN versus another processing pipeline was not assessed here. Only13 of16 perturbation conditions changed transport in the expected direction; this is not confirmation of every candidate or evidence of clinical benefit.",
+      "ai_role": "Neural-network-based DIA-NN searches used in-silico-predicted spectral libraries to identify and quantify proteins, enabling high-depth proteomic measurement used for regulator prioritization.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.1101/2024.06.17.599449v2.full.pdf?download=1",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11212961/fullTextXML",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6949130/fullTextXML"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary latest bioRxiv v2 PDF: DIA-NN raw-search Methods and knockdown Results; v1 PMC primary XML abstract/computational Methods/Results; primary DIA-NN method-paper XML for neural signal/noise processing; primary API version history. Versions retain3,412 nuclei and13/16 directional effects."
+    }
+  },
+  {
+    "id": "2025-10-cardiac-sarcomere-spatial-genomics",
+    "title": "AI-guided spatial genomics maps variant-intolerance regions in the cardiac sarcomere",
+    "summary": "A preprint first posted October7,2025 combined AlphaFold-family structures, AlphaMissense scores and observed clinical/population variants to map disease-associated regions in six cardiac sarcomeric genes. The reviewed November22,2026 v3 explains that selected high- and low-scoring predicted substitutions enlarged the variant analysis by50%, revealing nine additional candidate regions, including signals absent from observed-data-only analyses. These additions are predicted variant labels, not additional patients; the population databases overlap and the HCM registry subset differs from the full cardiomyopathy registry. ClinVar and clinical-onset checks were retrospective, and prediction-dependent regions require further validation rather than establishing causal mechanisms or prospective clinical prediction.",
+    "field": "biology",
+    "ai_technology": "AlphaFold2/3; ColabFold; AlphaMissense pathogenicity predictor",
+    "organization": "Stanford University; ETH Zurich",
+    "source_url": "https://doi.org/10.1101/2025.10.07.680947",
+    "source_type": "paper",
+    "publication_date": "2025-10-07",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Retrospective spatial scans used SHaRe data (over17,000 cardiomyopathy patients, including12,326 HCM and4,427 six-gene variant carriers), overlapping population databases, predicted structures and selected AlphaMissense substitutions. ClinVar annotations and clinical-onset associations supplied retrospective cross-checks.",
+      "unknown": "The nine additional signals depend on selected in-silico substitutions and require further validation. gnomAD and UK Biobank overlap, so their cohort sizes are not summed as unique people. Predicted labels do not establish HCM-specific causality/severity, and ClinVar/cohort checks are not prospective clinical validation or independent research replication.",
+      "ai_role": "AlphaFold-family structure prediction and AlphaMissense pathogenicity scoring provided model outputs used to expand variant cohorts and locate 3D regions of disease-associated enrichment.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.1101/2025.10.07.680947v3.full.pdf?download=1"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary latest bioRxiv v3 PDF: model/AlphaMissense selection and variant-augmentation Methods; population-overlap/cohort descriptions; selected spatial/clinical Results and candidate-region limitations. Compared with v1 PDF sections and primary API version history; v2 body was not independently read."
+    }
+  },
+  {
+    "id": "2026-10-ml-selected-cecobi-ceirbi-thermoelectrics",
+    "title": "Machine learning selects CeCoBi and CeIrBi for thermoelectric calculations",
+    "summary": "An ICGM-led study used learned SISSO descriptors and other machine-learning models to screen half-Heusler compositions, selecting CeCoBi and CeIrBi for first-principles follow-up. The October 9, 2026 arXiv v2 reports calculated intrinsic power factors of 5.26 and 8.39 mW m−1 K−2 at 673 K under a constant relaxation-time assumption. These calculations support electronic transport potential, not measured performance, complete stability or the predicted thermoelectric figure of merit: lattice thermal conductivity, phase/mechanical/dynamical stability and synthesis remain for later work. A February 1 preprint already described the screening workflow; the journal accepted the work on November 20.",
+    "field": "materials",
+    "ai_technology": "SISSO symbolic regression; random forest; XGBoost; neural networks; Bayesian hyperparameter optimization",
+    "organization": "Institute Charles Gerhardt Montpellier, University of Montpellier; CNRS; ENSCM",
+    "source_url": "https://arxiv.org/html/2602.01149v2",
+    "source_type": "paper",
+    "publication_date": "2026-10-09",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1103/2ffk-zqn8",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Within-study DFT electronic-structure and transport calculations for two SISSO-selected compositions; power factors assume relaxation time10−14s. CeCoBi is calculated narrow-gap and CeIrBi semimetallic.",
+      "unknown": "The authors explicitly defer full phase, mechanical and dynamical stability and lattice thermal conductivity calculations. No synthesized materials, measured power factors or complete DFT zT validation are established.",
+      "ai_role": "SISSO predicts high zT for CeCoBi and CeIrBi from learned descriptor–property relations; these selections motivate their explicit DFT follow-up.",
+      "evidence_urls": [
+        "https://arxiv.org/html/2602.01149v2",
+        "https://arxiv.org/abs/2602.01149",
+        "https://journals.aps.org/prb/accepted/10.1103/2ffk-zqn8"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "arXiv v2 primary full HTML Methods context, Results3.4.1–3.4.6 and Conclusion; v1 cached abstract/introduction; APS accepted-paper abstract and date metadata"
+    }
+  },
+  {
+    "id": "2026-11-long-covid-transcriptomic-cross-dataset-classification",
+    "title": "Transcriptomic classifier shows limited cross-dataset Long COVID discrimination",
+    "summary": "A bioRxiv preprint from the Institute of Bioinformatics and collaborators analyzes six RNA-sequencing datasets from Long COVID and recovered patients. Its primary abstract reports mean AUC0.664 for an RBF support-vector classifier across six leave-one-batch-out folds. Gene hypotheses were derived from three selected higher-performing folds and then used for pathway and interaction analyses; these do not establish causal mechanisms, effective drugs or clinical utility. This review covers the primary abstract and metadata; full-text HTML and PDF access were blocked.",
+    "field": "medicine",
+    "ai_technology": "RBF-kernel support vector classifier; SHAP",
+    "organization": "Institute of Bioinformatics, Bangalore; Indian Council of Medical Research; University of Delhi",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.20.768015v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-23",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.64898/2026.11.20.768015",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Retrospective leave-one-batch-out discrimination across six transcriptomic datasets, mean AUC0.664; SHAP-derived features from three selected folds support hypothesis generation.",
+      "unknown": "Full methods, patient counts, leakage controls and batch-specific performance were not assessed because full-text routes were inaccessible. Experimental mechanisms, drug benefit and clinical utility are not established.",
+      "ai_role": "The learned RBF support-vector classifier distinguishes Long COVID from recovered-patient transcriptomic profiles across held-out batches; SHAP nominates features for further analyses.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.20.768015v1"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary bioRxiv v1 abstract, author affiliations and posted date; full HTML/PDF routes returned403 and were not reviewed"
+    }
+  },
+  {
+    "id": "2026-11-ml-ce-co-mof-ochratoxin-sensing",
+    "title": "Machine-learning regression assists dual-mode ochratoxin A sensing",
+    "summary": "A study led by COMSATS University reports a cerium–cobalt metal-organic-framework sensor for ochratoxin A, combining fluorescence and electrochemical measurements with machine-learning regression of fluorescence data for quantitative analysis. The publisher abstract reports real-sample recoveries of101.31–102.05% for fluorescence and103.05–105.50% for electrochemistry, checked against HPLC. This is a bounded experimental analytical result; the reviewed abstract does not name the regression algorithms or establish broad field deployment. Full subscription methods were not assessed in this review.",
+    "field": "chemistry",
+    "ai_technology": "Supervised machine-learning regression of fluorescence measurements (algorithms not named in reviewed abstract)",
+    "organization": "COMSATS University Islamabad; University of the Punjab; Islamic University of Madinah; King Fahd University of Petroleum and Minerals; Chinese Academy of Sciences",
+    "source_url": "https://link.springer.com/article/10.1007/s00604-026-08550-1",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1007/s00604-026-08550-1",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Initial dual-mode sensor experiments and real-sample recovery analysis, with HPLC comparison; the source says regression models analyze fluorescence data quantitatively.",
+      "unknown": "Named regression algorithms, training/test partitions and their incremental contribution were not stated in the reviewed abstract; subscription full methods were not assessed. Broad food-matrix generalization and field use are not established.",
+      "ai_role": "Learned regression maps fluorescence measurements to quantitative analyte predictions, supporting the reported sensor analysis; generative writing/code assistance acknowledged elsewhere is a separate role.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1007/s00604-026-08550-1"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary publisher abstract, affiliations, publication metadata and visible AI-assistance statement; subscription full methods not assessed"
+    }
+  },
+  {
+    "id": "2026-08-metacell-brca-fallopian-secretory-state",
+    "title": "Single-cell modeling identifies a BRCA-enriched fallopian secretory-cell state",
+    "summary": "A University of Cambridge-led preprint uses MetaCell clustering to analyze 168,679 fallopian-tube cells from 34 women, including 15 BRCA1/2 carriers, and identifies secretory-cell states enriched among carriers with high TP53 and histone expression. A trained QuPath image classifier also supports the spatial p53 analysis; matched protein measurements found increased DNA-damage markers in selected samples. These findings support a bounded replication-stress association, without establishing prospective cancer prediction or causal malignant transformation. This represents the August 27, 2026 first preprint; a November 22 revision is the same study.",
+    "field": "biology",
+    "ai_technology": "MetaCell unsupervised graph-based single-cell clustering; QuPath trained cell-type image classifier",
+    "organization": "University of Cambridge; University College London; Cambridge University Hospitals NHS Foundation Trust; Francis Crick Institute; University of British Columbia",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.08.26.746998v1",
+    "source_type": "paper",
+    "publication_date": "2026-08-27",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.64898/2026.08.26.746998",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Single-cell transcriptional analysis of 55 samples from 34 women, including 15 BRCA1/2 carriers, plus within-study p53 immunohistochemistry and matched multiplex protein-marker measurements.",
+      "unknown": "The study does not establish prospective cancer-risk prediction, causal transformation or clinical utility. Protein validation uses a subset of slides, and the cohort is modest; all figures and associations are source-reported.",
+      "ai_role": "MetaCell estimates homogeneous transcriptional states from noisy single-cell data, helping reveal rare secretory-cell subpopulations. Separately, QuPath uses a classifier trained on annotated epithelial, stromal and red-blood/debris examples to assign cell types for spatial p53 analysis.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.08.26.746998v1",
+        "https://api.biorxiv.org/details/biorxiv/10.64898/2026.08.26.746998/na/json",
+        "https://www.biorxiv.org/content/early/2026/09/02/2026.08.26.746998.source.xml"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Cached primary bioRxiv v1 full source XML: cell-state results, replication-stress validation, MetaCell and QuPath Methods, affiliations and publication tags; bioRxiv version metadata"
+    }
+  },
+  {
+    "id": "2020-01-peritumoral-ultrasound-features-improve-breast-nodal-prediction",
+    "title": "Peritumoral ultrasound features improve prediction of breast-cancer nodal metastasis",
+    "summary": "DenseNet-121 neural networks and random-forest radiomics models were evaluated on ultrasound images from 479 women with pathology-confirmed breast cancer. Including tissue around the tumor improved axillary-node metastasis prediction: the combined-region image-only CNN had a reported test AUC of 0.912, compared with 0.748 for the tumor-only CNN. The combined CNN also reached AUC 0.95 in an additional 16-patient cohort described as prospective, but this single-center paper reports inconsistent training/test counts and does not establish clinical benefit or the biological basis of the imaging association.",
+    "field": "medicine",
+    "ai_technology": "DenseNet-121 convolutional neural network; random-forest radiomics with Boruta feature selection",
+    "organization": "Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences; Peking University Shenzhen Hospital; Ultimage Lab; Peng Cheng Laboratory",
+    "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00053/full",
+    "source_type": "paper",
+    "publication_date": "2020-01-31",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "A single-center study used 2,395 images from 479 patients and histopathologic nodal labels. The combined image-only CNN reported test AUC 0.912 versus 0.748 for tumor-only images; differences from corresponding radiomics models were not statistically significant. A further 16-patient cohort reported combined-CNN AUC 0.95.",
+      "unknown": "The abstract/image-acquisition description gives training/test counts 343/136, whereas the population description/table gives 359/120. Locked-model timing before new outcomes in the additional cohort is not established by the reviewed Methods. The authors call for larger multicenter/different-machine studies and biological investigation; clinical benefit was not tested.",
+      "ai_role": "DenseNet-121 learns image features to classify pathology-confirmed nodal metastasis; Boruta-selected radiomic features feed random forests. Comparing input regions identifies the study-specific predictive information gained from peritumoral tissue.",
+      "evidence_urls": [
+        "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00053/full"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original full-text source: abstract, publication metadata, relevant model/feature selection and validation Methods, Results and limitations. Supplementary files not assessed."
+    }
+  },
+  {
+    "id": "2020-05-random-survival-forest-twelve-gene-luad-prognosis",
+    "title": "A learned twelve-gene signature stratifies lung-adenocarcinoma survival in archived cohorts",
+    "summary": "Cox screening and random-survival-forest selection identified a twelve-gene immune-related score associated with overall survival in 954 lung-adenocarcinoma patients across four archived datasets. A 204-patient discovery cohort was followed by GEO validation cohorts totaling 309 patients and a 441-patient TCGA cohort; high-score groups had worse survival and distinct inferred immune profiles. Validation used a separate median cutoff in each cohort, and these retrospective associations do not demonstrate treatment-response prediction, clinical benefit or causal immune mechanisms.",
+    "field": "medicine",
+    "ai_technology": "Random survival forest variable hunting; Cox regression risk scoring",
+    "organization": "Zhongshan Hospital, Fudan University",
+    "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00835/full",
+    "source_type": "paper",
+    "publication_date": "2020-05-27",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "GSE31210 supplied 204 discovery patients; GSE41271 and GSE50081 supplied 309 validation patients, and TCGA supplied 441. Cox screening followed by random-survival-forest selection produced twelve genes for a Cox-weighted score. High-score groups had worse survival in both validation groups (reported HR 1.66 in GEO and 1.93 in TCGA); inferred immune profiles were also compared.",
+      "unknown": "Each validation cohort used its own median cutoff, so this is not locked-threshold clinical validation. The authors identify the retrospective design and absence of immunotherapy-response data as limitations and call for prospective validation. Immune abundance is inferred and associations do not establish causality. An inconsistent GEO AUC/confidence-interval sentence is not used for performance claims.",
+      "ai_role": "A random survival forest selects prognostic immune-related genes after Cox screening; the selected genes define the survival-risk score whose associations and immune profiles are tested in archived clinical datasets.",
+      "evidence_urls": [
+        "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00835/full"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original full-text source: abstract, publication metadata, relevant model/feature selection and validation Methods, Results and limitations. Supplementary files not assessed."
+    }
+  },
+  {
+    "id": "2021-08-delfi-fragmentomes-detect-lung-cancer-in-clinical-cohorts",
+    "title": "Cell-free DNA fragmentomes distinguish lung cancer in two clinical cohorts",
+    "summary": "A LASSO-regularized classifier using genome-wide cell-free DNA fragmentation distinguished lung cancer in a prospectively collected 365-person clinical cohort, with cross-validated AUC 0.90. A fixed model was evaluated in an independent group of 385 non-cancer individuals and 46 lung-cancer patients, while a separate multimodal model was evaluated only within the original cohort. These results establish a diagnostic proof of concept, not screening benefit: a 2022 commentary questioned extrapolation from mostly symptomatic patients, and the authors agreed that screening-cohort development and validation were still needed.",
+    "field": "medicine",
+    "ai_technology": "DELFI fragmentomics; principal-component features and LASSO-regularized logistic regression",
+    "organization": "Johns Hopkins University School of Medicine; Herlev and Gentofte Hospital; Bispebjerg Hospital; Aarhus University Hospital; Herning Regional Hospital; Netherlands Cancer Institute; Delfi Diagnostics; Hvidovre Hospital",
+    "source_url": "https://www.nature.com/articles/s41467-021-24994-w",
+    "source_type": "paper",
+    "publication_date": "2021-08-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "Among 365 analyzed LUCAS participants, model training/evaluation used 158 without prior/baseline/future cancer and 129 with baseline lung cancer. PCA within training folds compressed fragment-size features; LASSO logistic regression included chromosomal-arm measures, with repeated fivefold cross-validation. A final model and cutoffs were applied to 385 non-cancer individuals and 46 predominantly early-stage lung-cancer patients from separate collections. The main-cohort AUC was 0.90 (95% CI 0.86–0.94).",
+      "unknown": "Most LUCAS participants were symptomatic and all had suspicious imaging; prospective collection does not establish prospective evaluation of a frozen model. The combined fragment/clinical/CEA model was not evaluated in the external cohort. A 2022 commentary challenged screening extrapolation, and the authors described the work as proof of concept needing screening-population validation; clinical benefit, sensitivity to very small lesions and safety of pre-CT triage were not established.",
+      "ai_role": "PCA is fitted within training folds, and LASSO-regularized logistic regression learns a cancer-risk score from fragmentome and chromosomal-arm features. A fixed learned model then predicts cancer status in an independent cohort.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-021-24994-w",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9270395/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9270318/"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original publisher full-text article: abstract, Methods (study populations, model and cross-validation), relevant Results, limitations, author affiliations and publication date. The two 2022 comment/reply texts were also read; supplementary files not assessed."
+    },
+    "follow_up_review": {
+      "date": "2026-11-23",
+      "scope": "Read the full original 2022 Matters Arising commentary and author reply through NCBI PMC BioC; this is a bounded follow-up check, not continuous monitoring."
+    }
+  },
+  {
+    "id": "2026-11-seasonal-climate-xgboost-west-nile-outbreak-forecast",
+    "title": "Seasonal climate forecasts support advance prediction of European West Nile outbreaks",
+    "summary": "An XGBoost model combined seasonal climate forecasts with past human-case and environmental data to estimate annual West Nile outbreak occurrence in Greece and 887 regions across 14 European countries. In held-out European years 2022–2024, it identified 81 of 91 first-recorded outbreaks in regions unaffected during training. This was an out-of-time evaluation of surveillance data, with variable false alarms and a marked decline in Greek municipal performance in 2025; it does not establish improved public-health outcomes.",
+    "field": "medicine",
+    "ai_technology": "XGBoost gradient-boosted classification; SHAP, SAGE and ALE interpretation",
+    "organization": "University of Patras",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13756117/",
+    "source_type": "paper",
+    "publication_date": "2026-11-02",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "Models trained on 2010–2021 were tested on later years (Greece 2022–2025; Europe 2022–2024). Rolling-origin development used earlier years only for preprocessing, feature selection and threshold setting. The European model identified 81/91 first-recorded regional outbreaks; Greek municipal AUCs were 0.94, 0.96, 0.92 and 0.74 across the four test years.",
+      "unknown": "Out-of-time evaluation is not evidence that a frozen model was deployed prospectively. Forecast skill and false alarms varied by region/year; Greece deteriorated in 2025. Reporting/surveillance intensity differed across countries, and entomological or near-real-time data were unavailable. Mechanistic causation and public-health benefit were not tested.",
+      "ai_role": "XGBoost learns an annual region-level outbreak classifier from pre-season climate forecasts and historical/environmental predictors. SHAP, SAGE and ALE describe learned predictive contributions rather than causal drivers.",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13756117/"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original full-text source: abstract, publication metadata, relevant model/feature selection and validation Methods, Results and limitations. Supplementary files not assessed."
+    }
+  },
+  {
+    "id": "2025-07-triage-models-flag-opioid-misuse-in-retrospective-ed-cohort",
+    "title": "Triage models flag opioid misuse in an enriched retrospective emergency cohort",
+    "summary": "First posted as a July 2025 preprint and journal-published in February 2026, this study reports machine-learning identification of opioid misuse from data available at emergency-department triage. Among 1,123 analyzed encounters, the latest 169 formed a temporal test set; gradient boosting reported AUROC 0.88, AUPRC 0.89 and F1 0.77 against expert chart-review labels. The single-center cohort was deliberately enriched for opioid misuse, and overlapping model confidence intervals and absent prospective or fairness validation limit claims about routine screening or patient benefit.",
+    "field": "medicine",
+    "ai_technology": "Random forest; gradient boosting; additional supervised classifiers on triage-time EHR features",
+    "organization": "University of Illinois Chicago; University of Wisconsin Madison",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034270/",
+    "source_type": "paper",
+    "publication_date": "2025-07-18",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1016/j.ajem.2026.02.037",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "The retrospective cohort covered September 2020–March 2023 and was chronologically partitioned 70/15/15 for training, validation and testing. Models used structured triage/history data and expert-adjudicated labels. The latest 169 encounters were held out; gradient boosting achieved AUROC 0.88, AUPRC 0.89 and F1 0.77. Models performed comparably to opioid-related diagnosis codes entered by encounter end; these codes were not a triage-time comparator.",
+      "unknown": "Enriched sampling does not estimate routine-population prevalence or predictive values. Most performance confidence intervals overlapped; model superiority was not established. The authors call for prospective multi-site calibration and bias/fairness checks before clinical trials. The demographic-table totals are inconsistent with the repeatedly stated 1,123 analyzed encounters; subgroup claims are not used.",
+      "ai_role": "Supervised classifiers learn associations between information available at triage and manually assigned opioid-misuse labels, permitting temporal hold-out assessment of early identification without waiting for encounter-end diagnosis codes.",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034270/",
+        "https://www.medrxiv.org/content/10.1101/2025.07.18.25331782v1"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original journal full text: cohort selection, chronological partition, triage feature processing, model Methods, Results, limitations and date/preprint metadata; original medRxiv v1 metadata and abstract compared. Supplements not assessed."
+    }
+  },
+  {
+    "id": "2021-07-simulated-low-field-mri-pathology-detection",
+    "title": "Simulated low-field MRI retains pathology-detection signals with reduced small-lesion sensitivity",
+    "summary": "First posted in July 2021 and journal-published that December, this study used DenseNet-121 classifiers to compare pathology detection in 3T MRI and simulated 64mT-quality images from glioma, stroke and multiple-sclerosis datasets. Patient-separated tests reported similar slice-level AUCs, including 0.97 versus 0.98 for low-grade glioma, while simulated low-field sensitivity declined for smaller lesions. The transformation had limited paired-image and radiologist checks, but omitted field-dependent tissue contrast and device artifacts; these simulations do not establish diagnostic equivalence or clinical performance of an actual low-field scanner.",
+    "field": "medicine",
+    "ai_technology": "DenseNet-121 convolutional neural network for pathology detection",
+    "organization": "University of Pennsylvania",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8816889/",
+    "source_type": "paper",
+    "publication_date": "2021-07-05",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1016/j.mri.2021.12.007",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "A non-neural image transformation was fitted using three hydrocephalus patients and checked in three additional patients; three radiologists compared paired real/simulated images from ten MS patients. DenseNet-121 classifiers were trained separately on original/simulated images for low-grade glioma (76 subjects), high-grade glioma (259), stroke (28) and MS (20), using approximately 9:1 patient-separated train/test splits. Reported slice-level AUCs were respectively 0.97/0.98, 0.96/0.95, 0.94/0.94 and 0.90/0.87.",
+      "unknown": "The simulation approximates resolution/noise but not all field-strength contrast or device-specific artifacts. Separate disease classifiers perform simple lesion detection, not differential diagnosis or full radiologic assessment. Small test cohorts and degraded detection of small lesions limit generalization; prospective actual-device trials and patient benefit were not established.",
+      "ai_role": "DenseNet-121, initialized with ImageNet weights, learns lesion-present versus lesion-absent image classification. Comparing held-out original and simulated datasets probes a specific imaging-performance question; the image transformation itself was conventional rather than learned.",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8816889/",
+        "https://www.medrxiv.org/content/10.1101/2021.07.02.21259789v1"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original journal full text: transformation and radiologist checks, model architecture, patient-separated training, Results, Discussion limits and publication metadata; original medRxiv v1 metadata/abstract compared. Supplements not assessed."
+    }
+  },
+  {
+    "id": "2020-08-entireaxon-reveals-coexisting-axon-degeneration-patterns",
+    "title": "EntireAxon reveals coexisting patterns of axonal degeneration in a cell-culture model",
+    "summary": "Initially reported in an August 2020 preprint and subsequently journal-published in 2021, EntireAxon combined neural image segmentation and temporal classification to track cortical axons in an in-vitro hemorrhagic-stroke model. The study found that axonal swellings preceded fragmentation and that granular, retraction, swelling and transport patterns could occur together. The finding is limited to unmyelinated axons and hemin exposure; small image-label validation sets, weak fragment segmentation and absent in-vivo confirmation limit generalization.",
+    "field": "biology",
+    "ai_technology": "EntireAxon U-Net/ResNet-50 segmentation ensemble; attention-based recurrent neural network",
+    "organization": "Fraunhofer Research Institution for Marine Biotechnology and Cell Technology; University of Lübeck; University Hospital Leipzig; Medical Laser Center Lübeck; University of Warwick",
+    "source_url": "https://www.biorxiv.org/content/10.1101/2020.08.26.269092v1.full",
+    "source_type": "paper",
+    "publication_date": "2020-08-27",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.3390/cells10102539",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "direct test",
+      "tested": "A U-Net/ResNet-50 ensemble learned pixel classes for background, axons, swellings and fragments from 33 labeled images and was compared with human labels on eight validation images. Its segmentation quantified newly recorded degeneration time courses from six independent cortical-neuron cultures per condition. An RNN analyzed temporal class transitions and was checked with ten-fold cross-validation over 162 labeled examples, supporting the finding that four degeneration patterns coexist and swellings precede fragmentation.",
+      "unknown": "The CNN fragment-class F1 was only 0.301 and the validation labels shared an annotator with the training labels. RNN folds were not established as independent by culture/biological replicate in the reviewed Methods. The source limits the biology to unmyelinated cultured axons and hemin-induced injury, notes that other hemorrhage products may differ, and does not establish in-vivo mechanisms or clinical benefit.",
+      "ai_role": "The CNN segments axon structures in time-lapse images; the RNN learns temporal changes in segmentation-class histograms. These operations provide the measurements and pattern classifications used for the new in-vitro biological finding.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.1101/2020.08.26.269092v1.full",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8534012/"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original bioRxiv v1 full text: abstract/date/affiliations, CNN architecture and labeling, validation Methods, RNN cross-validation, biological time-course/pattern Results and limitations. Journal primary XML abstract and publication metadata checked for the shared finding; supplements not assessed."
+    },
+    "follow_up": [
+      {
+        "id": "journal-publication-2021",
+        "kind": "publication",
+        "date": "2021-09-25",
+        "date_precision": "day",
+        "note": "Journal version retains the core observation of swellings preceding fragmentation and four axonal-degeneration patterns; publication is not independent replication.",
+        "source_urls": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC8534012/"
+        ],
+        "recorded_date": "2026-11-23"
+      }
+    ]
+  },
+  {
+    "id": "2021-05-polarimetric-collagen-features-classify-breast-tissue-regions",
+    "title": "Polarimetric collagen features classify breast-tumor regions in a limited tissue study",
+    "summary": "First posted in May 2021 and journal-published in 2022, this study used logistic regression on polarimetric second-harmonic-generation and texture features to distinguish tumor from normal breast-tissue regions. From one microarray originally containing 45 cores from 12 patients, the analysis retained 15 normal and 20 tumor cores; prediction on two held-out cores from that same array reported 91.3% subimage accuracy. Random subimage cross-validation and the small core-level hold-out do not establish patient-independent diagnosis, external validation or clinical benefit.",
+    "field": "medicine",
+    "ai_technology": "Logistic-regression classifier on polarimetric second-harmonic-generation and collagen-texture features",
+    "organization": "University of Toronto; University of Toronto Mississauga; Princess Margaret Cancer Centre, University Health Network; National Centre of Pathology; Vilnius University; Light Conversion",
+    "source_url": "https://www.biorxiv.org/content/10.1101/2021.05.26.445874v1",
+    "source_type": "paper",
+    "publication_date": "2021-05-27",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41598-022-13623-1",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "A binary logistic-regression classifier used 33 image-derived features and 544 normal/543 tumor subimages, evaluated using 1,000 repeated stratified five-fold partitions. Two cores (one normal, one tumor) were set aside before training; subimage prediction in these cores reported accuracy 91.3% and F1 90.7%. The original publisher PDF Fig. 5 and Results report cross-validation accuracy 94.2%; those performance measures are not interpreted as patient-level accuracy.",
+      "unknown": "The Methods treat subimages as data points without establishing patient/core-grouped cross-validation. Held-out prediction uses only two cores from the same microarray; external or patient-independent validation was not established. Adipose/no-signal areas and two rare stromal tumor cores were excluded, and subimage size affects predictive performance. Clinical utility, prospective workflow performance and patient benefit were not tested.",
+      "ai_role": "Logistic regression learns a normal-versus-tumor classifier from collagen ultrastructure statistics and texture features measured by widefield P-SHG microscopy, linking the learned operation to a specific ex-vivo tissue classification result.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.1101/2021.05.26.445874v1",
+        "https://www.nature.com/articles/s41598-022-13623-1.pdf"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original bioRxiv v1 abstract/date/affiliations and original journal publisher PDF: abstract, classification Results, Fig. 5/table, Statistical analysis and machine learning Methods, tissue-microarray Methods and Discussion. PDF Fig. 5 also visually checked. Supplementary files not assessed."
+    }
   }
 ]

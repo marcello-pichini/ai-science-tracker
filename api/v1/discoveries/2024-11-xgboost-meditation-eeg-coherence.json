@@ -1,0 +1,33 @@
+{
+  "id": "2024-11-xgboost-meditation-eeg-coherence",
+  "title": "XGBoost links focused-attention meditation to frontal EEG coherence patterns",
+  "summary": "XGBoost and four feature-importance analyses characterized EEG differences between focused-attention meditation and instructed mind-wandering in 26 experienced meditators. The authors report 83% classification accuracy and higher-frequency power/coherence patterns, with reduced delta activity among the important features. Evaluation used repeated participant splits with calibration epochs from test participants added to training, so the result does not establish fully uncalibrated transfer. The small, previously collected dataset supports an association rather than a causal mechanism or clinical benefit.",
+  "field": "biology",
+  "ai_technology": "XGBoost with SHAP and permutation feature importance",
+  "organization": "University of Haifa; University of California, San Diego; University of Wisconsin-Madison",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11795585/",
+  "source_type": "paper",
+  "publication_date": "2024-11-26",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.bpsgos.2024.100423",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Previously collected EEG from 26 meditators; 50 repeated 80/20 participant splits, with 21 training and 5 test participants. Calibration epochs from test participants were included in training. Source-reported accuracy 83%, AUROC 0.79, F1 0.74.",
+    "unknown": "One small dataset and selected frontal electrodes; no external validation or uncalibrated unseen-participant performance. Feature importance does not establish causal neurophysiology.",
+    "ai_role": "XGBoost classifies recorded cognitive states and model-importance analyses identify EEG power/coherence features associated with the state contrast.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11795585/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary PMC full JATS: abstract, participant/data selection, performance evaluation, test-participant calibration, feature-importance Results and limitations; publication metadata."
+  }
+}

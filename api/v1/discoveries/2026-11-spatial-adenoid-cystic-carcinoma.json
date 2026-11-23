@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-spatial-adenoid-cystic-carcinoma",
+  "title": "Spatial models map malignant territories and immune exclusion in salivary gland cancer",
+  "summary": "A preprint used scVI and cell2location models to integrate single-cell references with Visium HD measurements from four salivary-gland adenoid cystic carcinoma sections from three patients. The spatial analysis inferred ordered malignant-cell states, millimeter-scale tumor territories, enrichment of immune signatures in stroma, and B7-H4 transcript enrichment in tumor nests. Cell-type abundances and lineage ordering are model-based inferences; the small descriptive cohort requires larger-cohort, protein-level and clinical validation, and does not establish a treatment effect.",
+  "field": "medicine",
+  "ai_technology": "scVI variational-inference model; cell2location hierarchical Bayesian spatial deconvolution",
+  "organization": "University of New Mexico; Centrillion Biosciences",
+  "source_url": "https://doi.org/10.64898/2026.11.10.765744",
+  "source_type": "paper",
+  "publication_date": "2026-11-22",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "scVI/cell2location-derived spatial mapping was checked against histologic annotations and marker patterns; permutation-based territory analysis tested spatial organization against random mixing.",
+    "unknown": "Only four sections from three patients were studied, and spatial bins are not independent patient replications. Model-inferred cell abundances/trajectories do not establish causal lineage transitions; larger-cohort, protein-level and clinical confirmation remain needed under the source conclusions.",
+    "ai_role": "Learned scVI batch correction and cell2location probabilistic deconvolution mapped cell types to 10-µm spatial bins, enabling spatially resolved lineage and immune analyses.",
+    "evidence_urls": [
+      "https://doi.org/10.64898/2026.11.10.765744"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary bioRxiv v1 PDF: abstract; scVI latent-model training and cell2location reference/spatial-abundance Methods; selected territory, histologic/marker and immune-signature Results; limitations and affiliations. Supplementary analyses not independently reproduced."
+  }
+}

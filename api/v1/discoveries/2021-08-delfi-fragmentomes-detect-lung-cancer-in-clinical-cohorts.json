@@ -1,0 +1,39 @@
+{
+  "id": "2021-08-delfi-fragmentomes-detect-lung-cancer-in-clinical-cohorts",
+  "title": "Cell-free DNA fragmentomes distinguish lung cancer in two clinical cohorts",
+  "summary": "A LASSO-regularized classifier using genome-wide cell-free DNA fragmentation distinguished lung cancer in a prospectively collected 365-person clinical cohort, with cross-validated AUC 0.90. A fixed model was evaluated in an independent group of 385 non-cancer individuals and 46 lung-cancer patients, while a separate multimodal model was evaluated only within the original cohort. These results establish a diagnostic proof of concept, not screening benefit: a 2022 commentary questioned extrapolation from mostly symptomatic patients, and the authors agreed that screening-cohort development and validation were still needed.",
+  "field": "medicine",
+  "ai_technology": "DELFI fragmentomics; principal-component features and LASSO-regularized logistic regression",
+  "organization": "Johns Hopkins University School of Medicine; Herlev and Gentofte Hospital; Bispebjerg Hospital; Aarhus University Hospital; Herning Regional Hospital; Netherlands Cancer Institute; Delfi Diagnostics; Hvidovre Hospital",
+  "source_url": "https://www.nature.com/articles/s41467-021-24994-w",
+  "source_type": "paper",
+  "publication_date": "2021-08-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Among 365 analyzed LUCAS participants, model training/evaluation used 158 without prior/baseline/future cancer and 129 with baseline lung cancer. PCA within training folds compressed fragment-size features; LASSO logistic regression included chromosomal-arm measures, with repeated fivefold cross-validation. A final model and cutoffs were applied to 385 non-cancer individuals and 46 predominantly early-stage lung-cancer patients from separate collections. The main-cohort AUC was 0.90 (95% CI 0.86–0.94).",
+    "unknown": "Most LUCAS participants were symptomatic and all had suspicious imaging; prospective collection does not establish prospective evaluation of a frozen model. The combined fragment/clinical/CEA model was not evaluated in the external cohort. A 2022 commentary challenged screening extrapolation, and the authors described the work as proof of concept needing screening-population validation; clinical benefit, sensitivity to very small lesions and safety of pre-CT triage were not established.",
+    "ai_role": "PCA is fitted within training folds, and LASSO-regularized logistic regression learns a cancer-risk score from fragmentome and chromosomal-arm features. A fixed learned model then predicts cancer status in an independent cohort.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-021-24994-w",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9270395/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9270318/"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original publisher full-text article: abstract, Methods (study populations, model and cross-validation), relevant Results, limitations, author affiliations and publication date. The two 2022 comment/reply texts were also read; supplementary files not assessed."
+  },
+  "follow_up_review": {
+    "date": "2026-11-23",
+    "scope": "Read the full original 2022 Matters Arising commentary and author reply through NCBI PMC BioC; this is a bounded follow-up check, not continuous monitoring."
+  }
+}

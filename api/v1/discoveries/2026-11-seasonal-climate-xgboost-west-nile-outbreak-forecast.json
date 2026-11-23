@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-seasonal-climate-xgboost-west-nile-outbreak-forecast",
+  "title": "Seasonal climate forecasts support advance prediction of European West Nile outbreaks",
+  "summary": "An XGBoost model combined seasonal climate forecasts with past human-case and environmental data to estimate annual West Nile outbreak occurrence in Greece and 887 regions across 14 European countries. In held-out European years 2022–2024, it identified 81 of 91 first-recorded outbreaks in regions unaffected during training. This was an out-of-time evaluation of surveillance data, with variable false alarms and a marked decline in Greek municipal performance in 2025; it does not establish improved public-health outcomes.",
+  "field": "medicine",
+  "ai_technology": "XGBoost gradient-boosted classification; SHAP, SAGE and ALE interpretation",
+  "organization": "University of Patras",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13756117/",
+  "source_type": "paper",
+  "publication_date": "2026-11-02",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Models trained on 2010–2021 were tested on later years (Greece 2022–2025; Europe 2022–2024). Rolling-origin development used earlier years only for preprocessing, feature selection and threshold setting. The European model identified 81/91 first-recorded regional outbreaks; Greek municipal AUCs were 0.94, 0.96, 0.92 and 0.74 across the four test years.",
+    "unknown": "Out-of-time evaluation is not evidence that a frozen model was deployed prospectively. Forecast skill and false alarms varied by region/year; Greece deteriorated in 2025. Reporting/surveillance intensity differed across countries, and entomological or near-real-time data were unavailable. Mechanistic causation and public-health benefit were not tested.",
+    "ai_role": "XGBoost learns an annual region-level outbreak classifier from pre-season climate forecasts and historical/environmental predictors. SHAP, SAGE and ALE describe learned predictive contributions rather than causal drivers.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13756117/"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original full-text source: abstract, publication metadata, relevant model/feature selection and validation Methods, Results and limitations. Supplementary files not assessed."
+  }
+}

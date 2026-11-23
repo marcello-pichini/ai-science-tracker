@@ -1,0 +1,33 @@
+{
+  "id": "2020-03-neural-radiomics-lung-nodule-invasiveness",
+  "title": "Neural and radiomics score fusion estimates lung-nodule invasiveness",
+  "summary": "A neural image model and radiomics SVM estimated invasive versus non-invasive or minimally invasive adenocarcinoma in surgically confirmed ground-glass lung nodules. Maximum-score fusion reached a reported AUC of 0.90 in a 127-nodule test cohort from a second center, compared with 0.83 for the neural model and 0.87 for radiomics alone. This retrospective, selected surgical cohort supports diagnostic discrimination, without establishing screening performance or clinical benefit; several fusion strategies were compared on the reported test cohort.",
+  "field": "medicine",
+  "ai_technology": "Recurrent residual U-Net, transfer-learned CNN, radiomics SVM and maximum-score fusion",
+  "organization": "Taizhou University; Fudan University Shanghai Cancer Center",
+  "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00418/full",
+  "source_type": "paper",
+  "publication_date": "2020-03-31",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.3389/fonc.2020.00418",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "373 pathology-confirmed nodules from323 patients:246 nodules/229 patients for training and validation at Taizhou;127 nodules/94 patients at Fudan for independent testing. Source reports maximum-fusion AUC0.90 (95%CI0.84–0.95) and accuracy80.3%; segmentation pretraining used257 LIDC-IDRI nodules.",
+    "unknown": "Retrospective selected stage-I surgical nodules, multiple nodules treated independently, small cohorts and varying scanner parameters. The report compares fusion choices on the same test set, so that performance is not a separately confirmed frozen-choice estimate. No prospective clinical-utility or survival benefit.",
+    "ai_role": "A recurrent residual U-Net segments nodules, a transfer-learned CNN predicts invasiveness, and an SVM classifies selected radiomics features; their prediction scores are fused.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00418/full"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Cached original Frontiers full main text: publication metadata, cohort inclusion, segmentation and classifier Methods, fusion strategies, Results tables2/3 and limitations; supplements not independently read."
+  }
+}

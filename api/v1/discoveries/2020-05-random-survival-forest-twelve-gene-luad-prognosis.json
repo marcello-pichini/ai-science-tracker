@@ -1,0 +1,33 @@
+{
+  "id": "2020-05-random-survival-forest-twelve-gene-luad-prognosis",
+  "title": "A learned twelve-gene signature stratifies lung-adenocarcinoma survival in archived cohorts",
+  "summary": "Cox screening and random-survival-forest selection identified a twelve-gene immune-related score associated with overall survival in 954 lung-adenocarcinoma patients across four archived datasets. A 204-patient discovery cohort was followed by GEO validation cohorts totaling 309 patients and a 441-patient TCGA cohort; high-score groups had worse survival and distinct inferred immune profiles. Validation used a separate median cutoff in each cohort, and these retrospective associations do not demonstrate treatment-response prediction, clinical benefit or causal immune mechanisms.",
+  "field": "medicine",
+  "ai_technology": "Random survival forest variable hunting; Cox regression risk scoring",
+  "organization": "Zhongshan Hospital, Fudan University",
+  "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00835/full",
+  "source_type": "paper",
+  "publication_date": "2020-05-27",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "GSE31210 supplied 204 discovery patients; GSE41271 and GSE50081 supplied 309 validation patients, and TCGA supplied 441. Cox screening followed by random-survival-forest selection produced twelve genes for a Cox-weighted score. High-score groups had worse survival in both validation groups (reported HR 1.66 in GEO and 1.93 in TCGA); inferred immune profiles were also compared.",
+    "unknown": "Each validation cohort used its own median cutoff, so this is not locked-threshold clinical validation. The authors identify the retrospective design and absence of immunotherapy-response data as limitations and call for prospective validation. Immune abundance is inferred and associations do not establish causality. An inconsistent GEO AUC/confidence-interval sentence is not used for performance claims.",
+    "ai_role": "A random survival forest selects prognostic immune-related genes after Cox screening; the selected genes define the survival-risk score whose associations and immune profiles are tested in archived clinical datasets.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2020.00835/full"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original full-text source: abstract, publication metadata, relevant model/feature selection and validation Methods, Results and limitations. Supplementary files not assessed."
+  }
+}

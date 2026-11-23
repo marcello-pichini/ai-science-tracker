@@ -1,0 +1,34 @@
+{
+  "id": "2020-03-learned-hospital-access-audit-evaluation",
+  "title": "Hospital audit study identifies limits of learned access explanations",
+  "summary": "A hospital-field evaluation examined a machine-learning-based Explanation-Based Auditing System using staff access logs and scenario checks. The tool explained an average98.09% of accesses as appropriate; this measures explanation coverage, rather than breach-detection accuracy. Analysis linked many unexplained accesses to missing staff metadata and exceptional workflows, identifying limits that remained despite high overall coverage. This single-hospital evaluation does not establish fewer privacy breaches or generalizable detection performance.",
+  "field": "computer science",
+  "ai_technology": "Supervised learning in an Explanation-Based Auditing System (EBAS)",
+  "organization": "University of Toronto; Mackenzie Richmond Hill Hospital",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/32370950/",
+  "source_type": "paper",
+  "publication_date": "2020-03-24",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.ijmedinf.2020.104123",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Original paper abstract plus the author’s thesis chapter4, explicitly identified as the same2020 article, document a2017–2018 hospital study.13 clinical/non-clinical staff were selected for review, with additional constructed appropriate/inappropriate scenarios and longitudinal audit-output analysis. A seven-day analysis linked most unexplained accesses to absent role/department metadata.",
+    "unknown": "Article full text was not retrieved; detailed Methods were checked in the author’s later thesis, not silently treated as the publisher version. Tool internals were black-box and the source does not expose a reproducible trained-model architecture. Coverage is not sensitivity, specificity or accuracy against comprehensive breach ground truth. One hospital and partly constructed scenarios; no measured breach reduction.",
+    "ai_role": "The thesis identifies EBAS as a supervised-learning tool that combines electronic records and staff/scheduling data to generate learned access explanations; the study evaluates its outputs and operational failure patterns rather than training a new algorithm.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/32370950/",
+      "https://hdl.handle.net/1807/123153"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary PubMed complete abstract and electronic publication date; author-deposited2022 doctoral thesis chapter4 original Methods and Results, including explicit relationship to the2020 article, EBAS identity, staff/scenario validation and unexplained-access analysis. Publisher full article remains unavailable."
+  }
+}

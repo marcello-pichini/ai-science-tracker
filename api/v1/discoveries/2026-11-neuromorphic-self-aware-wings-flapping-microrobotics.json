@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-neuromorphic-self-aware-wings-flapping-microrobotics",
+  "title": "Learned wing sensing supports damage detection and lift recovery in a flapping robot",
+  "summary": "A prototype flapping-wing robot used integrated wing sensors with a learned Kriging surrogate to reconstruct wing motion and a linear SVM to classify damaged states. The SVM achieved 94.6% accuracy on 168 held-out samples, and a separate damaged-wing bench demonstration increased flapping frequency within 0.1 seconds to restore average lift near the intact baseline. These are device-specific physical sensing and control results, with calibration and comparison against binocular-vision measurements. They do not establish autonomous free-flight performance, generalization across robot designs or sustained field operation.",
+  "field": "other",
+  "ai_technology": "Physics-informed Kriging surrogate model and linear support vector machine (SVM)",
+  "organization": "University of Electronic Science and Technology of China; City University of Hong Kong; The University of Tokyo",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13787462/",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1126/sciadv.aei7313",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The Kriging model was calibrated using two signal cycles and evaluated on other cycles at each frequency against binocular-vision measurements; reported mean unit-pitching-angle error was below 10% and maximum flapping-angle error 1.1%. For fault diagnosis, 504 samples trained a linear SVM and 168 test samples yielded 94.6% accuracy across normal and three failure states. The authors also report a damaged-wing feedback demonstration with frequency rising from 12.9 to 19.3 Hz in 0.1 seconds and average lift restored near the intact baseline.",
+    "unknown": "Generalization to other wing structures, sensor builds, operating conditions, and untethered flight; evidence for field deployment or sustained operational use.",
+    "ai_role": "The physics-informed Kriging surrogate maps measured voltage/current amplitudes and flapping frequency to wing-motion angles; a linear SVM classifies faults from the derived signal features. These learned operations support the experimentally demonstrated intrinsic motion sensing, fault classification and lift-compensation control.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13787462/fullTextXML",
+      "https://api.crossref.org/works/10.1126/sciadv.aei7313"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original final-journal PMC/EuropePMC XML: learned Kriging/SVM operation, image-referenced wing-motion checks, train/test sample counts, damage-feedback lift results, device-calibration limitations, affiliations and date."
+  }
+}

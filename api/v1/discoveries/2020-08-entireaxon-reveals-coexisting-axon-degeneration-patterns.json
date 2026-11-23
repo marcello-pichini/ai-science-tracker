@@ -1,0 +1,47 @@
+{
+  "id": "2020-08-entireaxon-reveals-coexisting-axon-degeneration-patterns",
+  "title": "EntireAxon reveals coexisting patterns of axonal degeneration in a cell-culture model",
+  "summary": "Initially reported in an August 2020 preprint and subsequently journal-published in 2021, EntireAxon combined neural image segmentation and temporal classification to track cortical axons in an in-vitro hemorrhagic-stroke model. The study found that axonal swellings preceded fragmentation and that granular, retraction, swelling and transport patterns could occur together. The finding is limited to unmyelinated axons and hemin exposure; small image-label validation sets, weak fragment segmentation and absent in-vivo confirmation limit generalization.",
+  "field": "biology",
+  "ai_technology": "EntireAxon U-Net/ResNet-50 segmentation ensemble; attention-based recurrent neural network",
+  "organization": "Fraunhofer Research Institution for Marine Biotechnology and Cell Technology; University of Lübeck; University Hospital Leipzig; Medical Laser Center Lübeck; University of Warwick",
+  "source_url": "https://www.biorxiv.org/content/10.1101/2020.08.26.269092v1.full",
+  "source_type": "paper",
+  "publication_date": "2020-08-27",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.3390/cells10102539",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "direct test",
+    "tested": "A U-Net/ResNet-50 ensemble learned pixel classes for background, axons, swellings and fragments from 33 labeled images and was compared with human labels on eight validation images. Its segmentation quantified newly recorded degeneration time courses from six independent cortical-neuron cultures per condition. An RNN analyzed temporal class transitions and was checked with ten-fold cross-validation over 162 labeled examples, supporting the finding that four degeneration patterns coexist and swellings precede fragmentation.",
+    "unknown": "The CNN fragment-class F1 was only 0.301 and the validation labels shared an annotator with the training labels. RNN folds were not established as independent by culture/biological replicate in the reviewed Methods. The source limits the biology to unmyelinated cultured axons and hemin-induced injury, notes that other hemorrhage products may differ, and does not establish in-vivo mechanisms or clinical benefit.",
+    "ai_role": "The CNN segments axon structures in time-lapse images; the RNN learns temporal changes in segmentation-class histograms. These operations provide the measurements and pattern classifications used for the new in-vitro biological finding.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.1101/2020.08.26.269092v1.full",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC8534012/"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original bioRxiv v1 full text: abstract/date/affiliations, CNN architecture and labeling, validation Methods, RNN cross-validation, biological time-course/pattern Results and limitations. Journal primary XML abstract and publication metadata checked for the shared finding; supplements not assessed."
+  },
+  "follow_up": [
+    {
+      "id": "journal-publication-2021",
+      "kind": "publication",
+      "date": "2021-09-25",
+      "date_precision": "day",
+      "note": "Journal version retains the core observation of swellings preceding fragmentation and four axonal-degeneration patterns; publication is not independent replication.",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8534012/"
+      ],
+      "recorded_date": "2026-11-23"
+    }
+  ]
+}

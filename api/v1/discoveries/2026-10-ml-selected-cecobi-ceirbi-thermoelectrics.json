@@ -1,0 +1,35 @@
+{
+  "id": "2026-10-ml-selected-cecobi-ceirbi-thermoelectrics",
+  "title": "Machine learning selects CeCoBi and CeIrBi for thermoelectric calculations",
+  "summary": "An ICGM-led study used learned SISSO descriptors and other machine-learning models to screen half-Heusler compositions, selecting CeCoBi and CeIrBi for first-principles follow-up. The October 9, 2026 arXiv v2 reports calculated intrinsic power factors of 5.26 and 8.39 mW m−1 K−2 at 673 K under a constant relaxation-time assumption. These calculations support electronic transport potential, not measured performance, complete stability or the predicted thermoelectric figure of merit: lattice thermal conductivity, phase/mechanical/dynamical stability and synthesis remain for later work. A February 1 preprint already described the screening workflow; the journal accepted the work on November 20.",
+  "field": "materials",
+  "ai_technology": "SISSO symbolic regression; random forest; XGBoost; neural networks; Bayesian hyperparameter optimization",
+  "organization": "Institute Charles Gerhardt Montpellier, University of Montpellier; CNRS; ENSCM",
+  "source_url": "https://arxiv.org/html/2602.01149v2",
+  "source_type": "paper",
+  "publication_date": "2026-10-09",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1103/2ffk-zqn8",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Within-study DFT electronic-structure and transport calculations for two SISSO-selected compositions; power factors assume relaxation time10−14s. CeCoBi is calculated narrow-gap and CeIrBi semimetallic.",
+    "unknown": "The authors explicitly defer full phase, mechanical and dynamical stability and lattice thermal conductivity calculations. No synthesized materials, measured power factors or complete DFT zT validation are established.",
+    "ai_role": "SISSO predicts high zT for CeCoBi and CeIrBi from learned descriptor–property relations; these selections motivate their explicit DFT follow-up.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2602.01149v2",
+      "https://arxiv.org/abs/2602.01149",
+      "https://journals.aps.org/prb/accepted/10.1103/2ffk-zqn8"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "arXiv v2 primary full HTML Methods context, Results3.4.1–3.4.6 and Conclusion; v1 cached abstract/introduction; APS accepted-paper abstract and date metadata"
+  }
+}

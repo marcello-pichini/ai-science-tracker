@@ -1,0 +1,36 @@
+{
+  "id": "2025-12-nonparametric-motor-cortex-oscillatory-states",
+  "title": "A Bayesian nonparametric model identifies short-lived frequency-selective states in motor-cortex MEG",
+  "summary": "A Bayesian nonparametric mixture model inferred brief frequency-selective activity states in a public resting-state MEG dataset from one left motor-cortex parcel. The first preprint version, posted December 23, 2025, reported two aperiodic and five oscillatory states with marked variation in occupancy, frequency and power across people. Its Methods and Results disagree on whether the cohort contained 64 or 65 participants. A June 2026 revision retained the broad state decomposition but changed numerical frequency estimates; the November 2026 abstract retains the broad finding. These are model-inferred signal patterns, without independent neural-state ground truth, external replication or demonstrated behavioral/clinical meaning.",
+  "field": "biology",
+  "ai_technology": "Bayesian nonparametric Dirichlet-process Gaussian mixture model with time-delay embedding and stochastic variational inference",
+  "organization": "Ruhr University Bochum",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2025.12.20.695571v1.full",
+  "source_type": "paper",
+  "publication_date": "2025-12-23",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://www.biorxiv.org/content/10.64898/2025.12.20.695571v4.full",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "A DP-GMM fitted to time-delay-embedded observations was evaluated against thresholding and a time-delay HMM on synthetic signals with known labels, then applied to one left motor-cortex parcel in public resting MEG. Version 1 reported two aperiodic and five oscillatory states, peaks near 9.5/11.5/19.5/22.0/26.5 Hz and median mean lifetimes 0.202–0.263 s; these are historical v1 estimates. Version 3 retained the state-count pattern but revised frequency assignments. V1 Methods says 64 participants while its concatenation account and Results say 65.",
+    "unknown": "The empirical state labels are inferred by the model and depend on embedding choices, activity selection and post-processing; there is no independent neural-state ground truth or external replication. The original 64/65 cohort discrepancy and later revised state-frequency estimates limit numerical interpretation. No causal link to cognition, disease or clinical outcomes is established.",
+    "ai_role": "The DP-GMM clusters time-delay-embedded signal vectors and prunes inactive states, enabling unsupervised group-level decomposition of the MEG data. PSD candidate peaks guided embedding setup and k-NN post-processing was used.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2025.12.20.695571v1.full",
+      "https://www.biorxiv.org/content/10.64898/2025.12.20.695571v3.full",
+      "https://www.biorxiv.org/content/10.64898/2025.12.20.695571v4.full",
+      "https://api.biorxiv.org/details/biorxiv/10.64898/2025.12.20.695571/na/json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independently read primary version-1 Methods for mixture learning, inference/post-processing and empirical cohort, plus Results 3.4/figures 6–7 and posting footer. Checked version-3 cohort and revised empirical state-frequency text and version-4 primary abstract/posting date. Primary version metadata confirms the first result-bearing date; later numerics are not retroactively attributed to version 1. Version-4 full body was not exposed in the retrieved page."
+  }
+}

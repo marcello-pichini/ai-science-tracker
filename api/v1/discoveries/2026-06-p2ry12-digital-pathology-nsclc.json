@@ -1,0 +1,33 @@
+{
+  "id": "2026-06-p2ry12-digital-pathology-nsclc",
+  "title": "Random-forest digital pathology quantifies P2RY12 differences in lung carcinoma subtypes",
+  "summary": "The November22 v2 of a preprint first posted June17 describes a QuPath random forest trained on manually annotated tumor, stromal and immune cells for tumor-specific P2RY12 quantification. In a cohort containing319 lung adenocarcinomas and157 squamous-cell carcinomas, P2RY12 was higher in squamous carcinomas and discriminated subtype (AUC0.916); digital measurements were concordant with microscopic scoring. Classifier training used project-wide annotations and ROC validation was internal; the reviewed v2 does not establish a significant overall-survival association, independent-cohort validity or treatment benefit.",
+  "field": "medicine",
+  "ai_technology": "QuPath random-forest tissue-classification model",
+  "organization": "University of Lübeck",
+  "source_url": "https://doi.org/10.64898/2026.06.13.732072",
+  "source_type": "paper",
+  "publication_date": "2026-06-17",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Random-forest tissue classification supported tumor-cell staining quantification. Manual scoring and digital measurements were compared; subtype ROC/cutoff assessment used internal bootstrap and repeated cross-validation, with no independent cohort.",
+    "unknown": "Classifier training used annotations from the project, while bootstrap/cross-validation assessed the biomarker cutoff internally; no independent cohort is established. The reviewed v2 reports nonsignificant survival association. The cached v1/v2 API abstracts both state nonsignificance, so no claim is made that v1 significance was reversed.",
+    "ai_role": "A trained QuPath random forest categorized cells as tumor, stroma or immune, allowing automated quantification of tumor-cell P2RY12 staining across tissue microarrays.",
+    "evidence_urls": [
+      "https://doi.org/10.64898/2026.06.13.732072"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary bioRxiv latest v2 PDF: abstract; QuPath random-forest tissue-classification Methods; retrospective cohort, ROC/statistical Methods and survival Results. Primary API v1/v2 version metadata/abstracts were compared; v1 full Methods not reviewed."
+  }
+}

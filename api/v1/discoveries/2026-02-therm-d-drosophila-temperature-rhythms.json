@@ -1,0 +1,35 @@
+{
+  "id": "2026-02-therm-d-drosophila-temperature-rhythms",
+  "title": "Machine learning reveals distinct neural control of morning and evening body-temperature rhythms in Drosophila",
+  "summary": "The February 2026 THERM-D preprint used learned fly localization in camera images to track temperature-preference rhythms over several days. Body temperature was inferred from flies’ positions on a temperature gradient, rather than directly measured by thermal imaging, and targeted genetic perturbations implicated CRYPTOCHROME-negative clock neurons in the morning temperature rise without the same evening effect. Author-maintained software documents a trained YOLOv8 object detector supporting fly localization. These are Drosophila findings, not an established human mechanism; the later November 2026 journal version is distinct from the preprint summarized here.",
+  "field": "biology",
+  "ai_technology": "YOLOv8 object-detection model in the THERM-D computer-vision workflow",
+  "organization": "University of California, Davis; University of Würzburg; Okayama University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12934746/",
+  "source_type": "paper",
+  "publication_date": "2026-02-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.64898/2026.02.19.706827",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Continuous computer-vision BTR measurement with genetic clock disruption and targeted Gal4 neuronal manipulations in Drosophila; control comparisons tested separate morning/evening circuits.",
+    "unknown": "Generalization beyond Drosophila and human relevance are unestablished. Preferred ambient position is a body-temperature proxy for these small ectotherms; the exact frozen preprint software/model snapshot was not identified.",
+    "ai_role": "The preprint uses learned camera-image localization to derive fly positions and temperature-preference time courses. The version-linked author software release identifies a trained YOLOv8 detector and ONNX bounding-box inference; exact frozen weights used for the February preprint were not established.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC12934746/",
+      "https://api.biorxiv.org/details/biorxiv/10.64898/2026.02.19.706827",
+      "https://github.com/ucdavisdatalab/therm-d_fly_detection/tree/v0.1.0"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original February2026 preprint XML: assay, fly-position/temperature proxy, neuronal perturbation results, affiliations and dates; bioRxiv API v1 history; author v0.1.0 README and ONNX detection code. Final journal metadata used only for version distinction."
+  }
+}

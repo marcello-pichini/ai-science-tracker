@@ -1,0 +1,33 @@
+{
+  "id": "2022-05-neural-reconstruction-two-dimensional-dna-storage",
+  "title": "Neural reconstruction supports rewritable two-dimensional DNA data storage",
+  "summary": "A molecular storage demonstration encoded image data in synthetic DNA sequence and rewritable metadata in DNA-backbone nicks. GatedConvolution and EdgeConnect neural inpainting helped reconstruct images after sequencing/readout errors, alongside non-neural detection, smoothing and enhancement steps. Experiments reconstructed an image library and erased/re-wrote metadata, demonstrating a bounded physical storage capability. Image inpainting produces approximate visual reconstructions and does not establish lossless recovery of arbitrary data or universal data-erasure guarantees.",
+  "field": "computer science",
+  "ai_technology": "GatedConvolution and EdgeConnect neural image inpainting",
+  "organization": "University of Illinois at Urbana-Champaign; Dorna Robotics",
+  "source_url": "https://www.nature.com/articles/s41467-022-30140-x",
+  "source_type": "paper",
+  "publication_date": "2022-05-27",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-022-30140-x",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Synthetic-DNA storage/readout of images, computational reconstruction using neural inpainting and other processing, and experimental metadata erasure/rewriting. Reconstruction was assessed in the demonstrated image-storage setting.",
+    "unknown": "Visual image reconstruction is approximate and setting-dependent. The main article was reviewed; detailed supplementary algorithm protocols and general reliability/privacy guarantees were not assessed.",
+    "ai_role": "Existing neural inpainting models replace masked, corrupted image pixels during decoding of experimentally read molecular data; they are components of a broader experimental storage platform.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-022-30140-x"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary publisher main article abstract, storage/reconstruction Results, named neural-inpainting workflow, main Methods, publication date and author affiliations; supplementary algorithms not reviewed."
+  }
+}

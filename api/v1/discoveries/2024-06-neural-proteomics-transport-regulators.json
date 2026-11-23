@@ -1,0 +1,35 @@
+{
+  "id": "2024-06-neural-proteomics-transport-regulators",
+  "title": "Single-nucleus proteomics identifies regulators of protein transport",
+  "summary": "A preprint first posted June18,2024 linked protein-abundance variation across3,412 macrophage-like-cell nuclei to LPS-induced nucleocytoplasmic transport, then tested16 candidate regulators by knockdown;13 conditions changed transport in the expected direction. DIA-NN v1.8.1 neural-network processing identified and quantified proteins from mass-spectrometry data, while weighted PCA and statistical associations drove downstream candidate nomination. The November22,2026 v2 retains this measurement role and13-of-16 result. AI supported proteomic measurement rather than directly predicting regulators; the findings concern a cell-model study, not a demonstrated clinical intervention.",
+  "field": "biology",
+  "ai_technology": "DIA-NN v1.8.1 neural-network-based data-independent acquisition proteomics processing",
+  "organization": "Northeastern University; Parallel Squared Technology Institute",
+  "source_url": "https://doi.org/10.1101/2024.06.17.599449",
+  "source_type": "paper",
+  "publication_date": "2024-06-18",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11212961/",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "DIA-NN processed mass-spectrometry measurements; 13/16 targeted knockdown conditions changed transport in the predicted direction.",
+    "unknown": "The incremental contribution of DIA-NN versus another processing pipeline was not assessed here. Only13 of16 perturbation conditions changed transport in the expected direction; this is not confirmation of every candidate or evidence of clinical benefit.",
+    "ai_role": "Neural-network-based DIA-NN searches used in-silico-predicted spectral libraries to identify and quantify proteins, enabling high-depth proteomic measurement used for regulator prioritization.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.1101/2024.06.17.599449v2.full.pdf?download=1",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11212961/fullTextXML",
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6949130/fullTextXML"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary latest bioRxiv v2 PDF: DIA-NN raw-search Methods and knockdown Results; v1 PMC primary XML abstract/computational Methods/Results; primary DIA-NN method-paper XML for neural signal/noise processing; primary API version history. Versions retain3,412 nuclei and13/16 directional effects."
+  }
+}

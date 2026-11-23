@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-eeg-fmri-language-difficulty-classification",
+  "title": "EEG–fMRI feature fusion distinguishes CELF-defined language difficulty in a retrospective cohort",
+  "summary": "Pairwise learned classifiers fused EEG microstate and fMRI-connectivity features to distinguish CELF-defined language difficulty from controls in 173 participants. The authors report 78.4% balanced accuracy under nested cross-validation with training-only feature selection. This is within-cohort discrimination, not a prospective screening result or evidence of a causal language mechanism. SHAP interpretation used an original non-nested model rather than the most frequent nested classifier. The main Methods body and complete fMRI preprocessing were unavailable in the reviewed publisher snapshot; subgroup counts do not fully describe the 173-person sample.",
+  "field": "medicine",
+  "ai_technology": "Random forest and Gaussian Naive Bayes feature fusion; nested classifier selection",
+  "organization": "Beijing Technology and Business University; Beijing Wuzi University",
+  "source_url": "https://www.nature.com/articles/s41598-026-80418-z",
+  "paper_url": "https://doi.org/10.1038/s41598-026-80418-z",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Complete primary abstract and Appendix C describe 173-person nested evaluation, training-only screening/FDR and inner selection across 4221 model/fusion configurations. Most frequent nested pair was RF+GaussianNB; full-sample balanced accuracy 78.4%.",
+    "unknown": "Main Methods body, full fMRI preprocessing and hyperparameter grids not assessed. Listed age subgroups 5–17 sum to 165 versus 173 overall aged 5–21; exact remaining allocation not specified in the reviewed tables. External/prospective clinical performance, causal neural interpretation and benefit remain unestablished.",
+    "ai_role": "Learned classifier pairs combine EEG and fMRI features; nested selection evaluates their ability to discriminate language-test-defined groups. Correlated features and SHAP attributions do not establish biological mechanisms.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41598-026-80418-z",
+      "https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-026-80418-z/MediaObjects/41598_2026_80418_MOESM2_ESM.pdf"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independently read original publisher abstract and accessible acquisition/quality, nested-validation/permutation, adjustment and SHAP appendices, plus 10-page supplementary model/age tables. Main Materials/Methods body was absent; ordinary PDF route returned HTML. No full-main-paper review claimed."
+  }
+}

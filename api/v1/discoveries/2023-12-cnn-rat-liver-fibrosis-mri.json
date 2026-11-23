@@ -1,0 +1,33 @@
+{
+  "id": "2023-12-cnn-rat-liver-fibrosis-mri",
+  "title": "CNN stages liver fibrosis from non-contrast MRI in rats",
+  "summary": "A convolutional neural network classified three liver-fibrosis stages from non-contrast T1-weighted MRI in a 99-rat study. The primary abstract reports stage-specific test AUCs of 0.76, 0.88 and 0.79 after an 80/20 split of one selected image per rat. These animal-model results do not establish human diagnosis; full reference-standard procedures and rat grouping for the separate segmentation evaluation were not available in the reviewed primary abstract.",
+  "field": "medicine",
+  "ai_technology": "nnU-Net segmentation and convolutional neural network classification",
+  "organization": "Qingdao University; The Affiliated Hospital of Qingdao University",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/38147969/",
+  "source_type": "paper",
+  "publication_date": "2023-12-24",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1016/j.mri.2023.12.006",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "99 male Wistar rats and2628 MRI slices. The abstract describes a70/30 image split for segmentation (test Dice0.8477), and one maximum-diameter image per rat with80/20 stage-stratified image selection for classification. Reported class accuracies0.73/0.89/0.84 and AUCs0.76/0.88/0.79.",
+    "unknown": "Primary abstract and indexed publisher excerpts only; no full article/supplement retrieved. Exact histologic reference/rater protocol and segmentation grouping by rat remain unverified; slice-level splitting may inflate segmentation results. Prospective animal acquisition does not establish prospective frozen-model performance or human transfer.",
+    "ai_role": "nnU-Net delineates liver regions and a CNN learns MRI features to classify no, early or progressive liver fibrosis in the induced rat model.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/38147969/"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary PubMed XML complete abstract, publication history and author affiliations; corroborating publisher-indexed excerpts retained by researcher. Full publisher article unavailable; no full Methods claim."
+  }
+}

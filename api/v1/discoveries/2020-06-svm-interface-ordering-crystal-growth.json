@@ -1,0 +1,33 @@
+{
+  "id": "2020-06-svm-interface-ordering-crystal-growth",
+  "title": "SVM analysis links liquid ordering at interfaces to slower crystal growth",
+  "summary": "A support-vector classifier of local atomic environments helped reveal how interface-induced ordering of liquid reduces atomic mobility and slows crystal growth in silicon and copper simulations. The learned structural quantity supported a growth model that predicted temperature-dependent rates beyond the fitted temperature range more effectively than the compared Wilson–Frenkel model. These are atomistic simulation and model-comparison results, with material/interface-specific limits rather than demonstrated industrial-process performance.",
+  "field": "materials",
+  "ai_technology": "Support-vector machine encoding of local atomic environments",
+  "organization": "Stanford University",
+  "source_url": "https://www.nature.com/articles/s41467-020-16892-4",
+  "source_type": "paper",
+  "publication_date": "2020-06-26",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-020-16892-4",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "SVM trained on 10,000 balanced atomic-environment examples; applied to 27.5 million held-out simulation data points. Crystal-growth models fitted at higher temperatures were compared against newly computed lower-temperature growth rates in silicon, with silicon/copper interface analyses.",
+    "unknown": "Simulation results depend on the atomistic models and interfaces studied; general industrial applicability and independent experimental confirmation of the full learned mechanism were not established in this review.",
+    "ai_role": "A trained SVM supplies a local structural softness coordinate that separates liquid/crystallizing environments and enables analysis of interface ordering, atom mobility and growth kinetics.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-020-16892-4"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary publisher full article: abstract, SVM/local-structure Results, classifier training and temperature-extrapolation Methods, model comparisons, publication metadata and affiliations."
+  }
+}
