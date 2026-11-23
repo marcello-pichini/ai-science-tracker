@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 from model_families import discovery_links
 
 FIELDS = {'biology', 'chemistry', 'medicine', 'materials', 'climate',
-          'mathematics', 'physics', 'computer science', 'humanities',
+          'mathematics', 'physics', 'astronomy', 'computer science', 'humanities',
           'multidisciplinary', 'other'}
 
 
