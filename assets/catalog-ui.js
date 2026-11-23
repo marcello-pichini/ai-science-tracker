@@ -46,6 +46,28 @@ globalThis.CatalogUI = {
   sourceBadge(record) {
     return `<p class="source-status"><b>${this.t('Source check:')}</b> ${this.sourceStatus(record)}. <span>${this.t('Not independent scientific confirmation.')}</span></p>`;
   },
+  sourceLinks(record) {
+    const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const {source_url: source, paper_url: paper, source_type: type} = record;
+    const publication = record.evidence?.publication_status;
+    const isPreprint = url => /^https?:\/\/(?:(?:www\.)?(?:arxiv\.org|biorxiv\.org|medrxiv\.org|researchsquare\.com|chemrxiv\.org|preprints\.org)\/|doi\.org\/(?:10\.48550\/arxiv\.|10\.(?:1101|64898)\/\d{4}\.\d{2}\.\d{2}\.))/i.test(url || '');
+    const scholarly = (url, other) => {
+      if (isPreprint(url) || (publication === 'Preprint' && !isPreprint(other))) return this.t('Preprint');
+      if (publication === 'Peer-reviewed paper') return this.t('Published article');
+      return this.t('Scientific article');
+    };
+    const links = [];
+    if (source) {
+      let label = this.t('Discovery source');
+      if (type === 'paper' || source === paper) label = scholarly(source, paper);
+      else if (type === 'press release') label = this.t('Press release');
+      else if (type === 'blog') label = this.t('Blog post');
+      links.push([source, label]);
+    }
+    if (paper && paper !== source) links.push([paper, scholarly(paper, type === 'paper' ? source : '')]);
+    return links.filter(([url]) => /^https?:\/\//i.test(url))
+      .map(([url, label]) => `<a href="${esc(url)}" rel="noopener">${esc(label)}</a>`).join('');
+  },
   reviewCoverage(records) {
     return {total:records.length, annotated:records.filter(r => r.evidence).length,
       reviewed:records.filter(r => r.source_review?.date && r.source_review?.scope).length,
@@ -117,8 +139,8 @@ globalThis.CatalogUI = {
   historyBlock(record) {
     if (!record.follow_up?.length && !record.relationships?.length && !record.follow_up_review) return '';
     const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    const sources = urls => (urls || []).filter(url => { try { return /^https?:\/\//i.test(url) && ['http:', 'https:'].includes(new URL(url).protocol); } catch { return false; } }).map(url => `<a href="${esc(url)}" rel="noopener">${this.t('Source')}</a>`).join(' · ');
-    const events = (record.follow_up || []).map(event => `<li id="event-${esc(record.id)}-${esc(event.id)}"><b>${esc(event.kind)}</b> · ${esc(this.contextDate(event.date))}: ${esc(event.note)} ${sources(event.source_urls)}. ${this.t('Recorded {date}.', {date: esc(this.contextDate(event.recorded_date))})}</li>`).join('');
+    const sources = (urls, label = this.t('Source')) => (urls || []).filter(url => { try { return /^https?:\/\//i.test(url) && ['http:', 'https:'].includes(new URL(url).protocol); } catch { return false; } }).map(url => `<a href="${esc(url)}" rel="noopener">${esc(label)}</a>`).join(' · ');
+    const events = (record.follow_up || []).map(event => `<li id="event-${esc(record.id)}-${esc(event.id)}"><b>${esc(event.kind)}</b> · ${esc(this.contextDate(event.date))}: ${esc(event.note)} ${sources(event.source_urls, event.kind === 'correction' ? this.t('Correction notice') : undefined)}. ${this.t('Recorded {date}.', {date: esc(this.contextDate(event.recorded_date))})}</li>`).join('');
     const review = record.follow_up_review;
     const relationships = (record.relationships || []).map(link => `<li><a href="${this.sitePath('share/' + encodeURIComponent(link.target_id) + '.html')}">${esc(link.target_id)}</a> · ${esc(link.type)}: ${esc(link.reason)} ${sources(link.source_urls)}</li>`).join('');
     return `<details class="source-details"><summary>${this.t('Follow-up and relationships')}</summary>${events ? `<ul>${events}</ul>` : `<p>${this.t('No follow-up recorded; this is not a claim that no follow-up exists.')}</p>`}${review ? `<p>${this.t('Follow-up checked {date} within scope: {scope}.', {date: esc(this.contextDate(review.date)), scope: esc(review.scope)})}</p>` : `<p>${this.t('Follow-up review scope and date are not recorded.')}</p>`}${relationships ? `<p>${this.t('Directed relationships from this entry; they do not merge catalog counts.')}</p><ul>${relationships}</ul>` : `<p>${this.t('No source-supported relationships recorded.')}</p>`}</details>`;

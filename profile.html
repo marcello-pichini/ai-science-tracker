@@ -220,7 +220,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
 
 <script src="assets/catalog-data.js?v=7bf369c369e2"></script>
 <script src="assets/catalog-entities.js?v=0c51c8fa4441"></script>
-<script src="assets/catalog-ui.js?v=06b7dc42e783"></script>
+<script src="assets/catalog-ui.js?v=afec463fab3f"></script>
 <script src="assets/family-outcomes.js?v=d4a5cba26c45"></script>
 <script>
 // Object.groupBy is missing before Safari 17.4 and Chrome 117.
@@ -298,7 +298,7 @@ function entry(s) {
     <div class="voce-footer">
       <span class="punteggio" title="Impact ${s.relevance.impact}/5, validation ${s.relevance.validation}/5, novelty ${s.relevance.novelty}/5">Editorial relevance ${p}<span class="metro" aria-hidden="true"><i style="width:${p}%"></i></span></span>
       <span class="etich">${esc(s.field)}</span>
-      <span class="collegamenti"><a href="${esc(safeUrl(s.source_url))}" rel="noopener">Original source</a>${s.paper_url ? `<a href="${esc(safeUrl(s.paper_url))}" rel="noopener">Paper</a>` : ""} <a class="correction-link" href="${esc(CatalogUI.correctionUrl(s))}" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti">${CatalogUI.sourceLinks(s)} <a class="correction-link" href="${esc(CatalogUI.correctionUrl(s))}" rel="noopener">Suggest a correction</a></span>
     </div>${CatalogUI.sourceDetails(s)}</article>`;
 }
 const discoveriesSection = items => `<section class="sez" aria-labelledby="t-discoveries"><div class="wrap">

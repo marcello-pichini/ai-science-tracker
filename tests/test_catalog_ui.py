@@ -60,6 +60,24 @@ assert.ok(ui.sourceDetails({...d,verification_status:'needs verification'}).incl
 assert.ok(!ui.sourceDetails({...d,paper_url:'https://example.org/preprint'}).includes('peer-reviewed'));
 ''')
 
+    def test_source_links_describe_versions_and_hide_duplicates(self):
+        self.run_js('''
+const article = 'https://doi.org/10.1234/example';
+const preprint = 'https://arxiv.org/abs/2601.00001';
+const evidence = {publication_status: 'Peer-reviewed paper'};
+const render = (source_url, source_type, paper_url) => ui.sourceLinks({source_url, source_type, paper_url, evidence});
+const separate = render(preprint, 'paper', article);
+assert.ok(separate.includes(preprint + '\\" rel=\\"noopener\\">Preprint</a>'));
+assert.ok(separate.includes(article + '\\" rel=\\"noopener\\">Published article</a>'));
+assert.equal(render(article, 'paper', article).match(/<a /g).length, 1);
+assert.ok(render('https://example.org/news?x=1&y=2', 'press release', article).includes('x=1&amp;y=2\\" rel=\\"noopener\\">Press release</a>'));
+assert.ok(ui.sourceLinks({source_url: article, source_type: 'paper'}).includes('Scientific article'));
+const doiVersions = ui.sourceLinks({source_url: 'https://doi.org/10.64898/2026.01.29.702616', source_type: 'paper', paper_url: article, evidence: {publication_status: 'Preprint'}});
+assert.ok(doiVersions.includes(article + '\\" rel=\\"noopener\\">Scientific article</a>'));
+assert.ok(!ui.sourceLinks({source_url: 'https://doi.org/10.1101/gad.123456', source_type: 'paper', evidence}).includes('Preprint'));
+
+''')
+
     def test_csv_export_escapes_and_blocks_formula_cells(self):
         self.run_js('''
 const r = {id:'a', title:'=HYPERLINK("x")', summary:'one, "two"\\nthree', field:'biology', ai_technology:'', organization:'Org', source_url:'https://e.org', source_type:'blog', publication_date:'2025-01-02', added_date:'2025-01-03', verification_status:'verified', paper_url:'', relevance:{impact:5,validation:4,novelty:3}};

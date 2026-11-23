@@ -150,7 +150,7 @@ def site_frame():
 
 
 def run_catalog_ui(items):
-    """Render each record's source-check disclosure and correction-issue link with the same
+    """Render each record's source links, source-check disclosure and correction-issue link with the same
     assets/catalog-ui.js the live pages use (one Node process for all records), so a discovery
     page never repeats that wording or that URL-building logic in a second, Python copy."""
     cites_path = ROOT / 'data/citations.json'
@@ -160,7 +160,7 @@ def run_catalog_ui(items):
     script = ("require(process.argv[1]);"
               "const items = JSON.parse(require('fs').readFileSync(0, 'utf8'));"
               "const out = {};"
-              "for (const r of items) out[r.id] = {details: CatalogUI.sourceDetails(r), status: CatalogUI.sourceBadge(r), correction: CatalogUI.correctionUrl(r)};"
+              "for (const r of items) out[r.id] = {links: CatalogUI.sourceLinks(r), details: CatalogUI.sourceDetails(r), status: CatalogUI.sourceBadge(r), correction: CatalogUI.correctionUrl(r)};"
               "process.stdout.write(JSON.stringify(out));")
     result = subprocess.run(['node', '-e', script, str(ROOT / 'assets/catalog-ui.js')],
                             input=json.dumps(items), capture_output=True, text=True, check=True)
@@ -343,7 +343,6 @@ def discovery_article(d, fam, ui, link_title=False, archived=False):
     family = (f'<p class="modello">Family {esc(fam["name"])}: <a href="profiles/family-{quote(fam["id"])}.html">profile</a> '
               f'&middot; <a href="models.html#fam-{esc(fam["id"])}">models page</a></p>') if fam else ''
     tech = f'<p class="tech"><span>Technology:</span> {esc(d["ai_technology"])}</p>' if d['ai_technology'] else ''
-    paper = f'<a href="{esc(safe_url(d["paper_url"]))}" rel="noopener">Paper</a>' if d['paper_url'] else ''
     title_html = f'<a href="share/{esc(d["id"])}.html">{esc(d["title"])}</a>' if link_title else esc(d['title'])
     organization = esc(d['organization']) if archived else f'<a href="profiles/org-{slug(lead_org(d["organization"]))}.html">{esc(d["organization"])}</a>'
     return f"""<article class="voce" id="{esc(d['id'])}">
@@ -356,7 +355,7 @@ def discovery_article(d, fam, ui, link_title=False, archived=False):
     <div class="voce-footer">
       <span class="punteggio" title="Impact {d['relevance']['impact']}/5, validation {d['relevance']['validation']}/5, novelty {d['relevance']['novelty']}/5">Editorial relevance {p}<span class="metro" aria-hidden="true"><i style="width:{p}%"></i></span></span>
       <span class="etich">{esc(d['field'])}</span>
-      <span class="collegamenti"><a href="{esc(safe_url(d['source_url']))}" rel="noopener">Original source</a>{paper} <a class="correction-link" href="{esc(ui['correction'])}" rel="noopener">Suggest a correction</a></span>
+      <span class="collegamenti">{ui['links']} <a class="correction-link" href="{esc(ui['correction'])}" rel="noopener">Suggest a correction</a></span>
     </div>
     {ui['details']}
   </article>"""
