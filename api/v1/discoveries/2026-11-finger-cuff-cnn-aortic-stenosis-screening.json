@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-finger-cuff-cnn-aortic-stenosis-screening",
+  "title": "A finger-cuff waveform CNN screens for aortic stenosis in a multicenter cohort",
+  "summary": "A one-dimensional convolutional model learned to identify at least moderate aortic stenosis from noninvasive finger-cuff arterial pressure waveforms, using echocardiography as reference. Development included 3,634 participants and evaluation used a temporally distinct multicenter cohort of 1,336 participants. In that cohort, significant stenosis screening had AUC 0.893, sensitivity 92.5%, specificity 64.5% and positive predictive value 36.4%. These are cohort diagnostic results, not evidence of improved patient outcomes. Prospective participant recruitment alone does not establish a frozen-model prospective evaluation; model-selection timing and full Methods were not assessed in the abstract review.",
+  "field": "medicine",
+  "ai_technology": "One-dimensional convolutional neural network for arterial pressure waveforms",
+  "organization": "Cleveland Clinic Foundation; University of Texas Southwestern Medical Center; Edwards Lifesciences; Hospital Reina Sofia de Cordoba; Amsterdam UMC, University of Amsterdam",
+  "source_url": "https://doi.org/10.1016/j.jacadv.2026.103475",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Development cohort: 3,634 participants, 307 with significant stenosis; validation cohort: 1,336 participants, 241 with significant stenosis. Echo-referenced validation AUC 0.893, sensitivity 92.5%, specificity 64.5%, PPV 36.4%.",
+    "unknown": "Full manuscript Methods, prespecification and locked-model timing not assessed. Low positive predictive value implies confirmatory testing remains relevant; outcome benefit and deployment effectiveness not established.",
+    "ai_role": "A 1D convolutional network maps pressure waveforms to significant-stenosis classification; echocardiography supplied the diagnostic reference.",
+    "evidence_urls": [
+      "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=43063593&retmode=xml"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independent reading of original NCBI PubMed XML for the primary JACC article: complete structured Background/Objectives/Methods/Results/Conclusions, electronic publication date and author affiliations. Publisher DOI route was a redirect placeholder; no full manuscript/supplement read."
+  }
+}

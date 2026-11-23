@@ -139407,5 +139407,355 @@
       "date": "2026-11-23",
       "scope": "Research Square v1 full PDF: primary abstract, study setting, modeling, validation and relevant results; no independent reanalysis or experimental pathogen work."
     }
+  },
+  {
+    "id": "2026-11-finger-cuff-cnn-aortic-stenosis-screening",
+    "title": "A finger-cuff waveform CNN screens for aortic stenosis in a multicenter cohort",
+    "summary": "A one-dimensional convolutional model learned to identify at least moderate aortic stenosis from noninvasive finger-cuff arterial pressure waveforms, using echocardiography as reference. Development included 3,634 participants and evaluation used a temporally distinct multicenter cohort of 1,336 participants. In that cohort, significant stenosis screening had AUC 0.893, sensitivity 92.5%, specificity 64.5% and positive predictive value 36.4%. These are cohort diagnostic results, not evidence of improved patient outcomes. Prospective participant recruitment alone does not establish a frozen-model prospective evaluation; model-selection timing and full Methods were not assessed in the abstract review.",
+    "field": "medicine",
+    "ai_technology": "One-dimensional convolutional neural network for arterial pressure waveforms",
+    "organization": "Cleveland Clinic Foundation; University of Texas Southwestern Medical Center; Edwards Lifesciences; Hospital Reina Sofia de Cordoba; Amsterdam UMC, University of Amsterdam",
+    "source_url": "https://doi.org/10.1016/j.jacadv.2026.103475",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Development cohort: 3,634 participants, 307 with significant stenosis; validation cohort: 1,336 participants, 241 with significant stenosis. Echo-referenced validation AUC 0.893, sensitivity 92.5%, specificity 64.5%, PPV 36.4%.",
+      "unknown": "Full manuscript Methods, prespecification and locked-model timing not assessed. Low positive predictive value implies confirmatory testing remains relevant; outcome benefit and deployment effectiveness not established.",
+      "ai_role": "A 1D convolutional network maps pressure waveforms to significant-stenosis classification; echocardiography supplied the diagnostic reference.",
+      "evidence_urls": [
+        "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=43063593&retmode=xml"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Independent reading of original NCBI PubMed XML for the primary JACC article: complete structured Background/Objectives/Methods/Results/Conclusions, electronic publication date and author affiliations. Publisher DOI route was a redirect placeholder; no full manuscript/supplement read."
+    }
+  },
+  {
+    "id": "2026-11-hns-at-hook-dna-complex-talosn",
+    "title": "Hybrid NMR structure maps H-NS contacts with AT-rich DNA",
+    "summary": "A solution NMR structure of an E. coli H-NS domain bound to AT-rich DNA revealed auxiliary linker contacts beside its established AT-hook-like recognition motif. Mutational and NMR analyses supported their cooperative contribution to DNA binding. TALOS-N neural-network predictions supplied protein dihedral restraints alongside experimental NMR/NOE measurements and structural refinement. This is a hybrid experimental/computational result; the study did not isolate the learned component’s contribution or establish independent replication.",
+    "field": "biology",
+    "ai_technology": "TALOS-N neural-network-based protein torsion-angle prediction",
+    "organization": "Peking University; Soochow University",
+    "source_url": "https://www.sciltp.com/journals/hm/articles/2611005611",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://media.sciltp.com/articles/2611005611/2611005611.pdf",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The solution structure calculation used experimentally measured NOE restraints and TALOS-N-derived protein dihedral restraints; 20 lowest-energy conformers were selected. Mutational and NMR titration analyses tested the proposed H-NS/DNA contact contributions.",
+      "unknown": "The learned component was not isolated by ablation. An isolated domain/DNA complex does not establish the behavior of full-length oligomeric H-NS in cells; independent replication was not established.",
+      "ai_role": "TALOS-N, an artificial-neural-network-based hybrid predictor, supplied protein dihedral-angle restraints used in the H-NS85–137/AT-rich-DNA solution structure calculation. The structural interpretation also depends on NMR/NOE measurements, mutational/NMR analyses and other structure-refinement steps.",
+      "evidence_urls": [
+        "https://media.sciltp.com/articles/2611005611/2611005611.pdf",
+        "https://spin.niddk.nih.gov/bax/software/TALOS-N/"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Source-provenanced publisher PDF abstract, solution-structure Methods2.4, structural result and discussion, bounded mutational/NMR result summary, affiliations and publication date; original NIH TALOS-N developer documentation for its ANN operation. No experimental reproduction."
+    }
+  },
+  {
+    "id": "2026-06-hepatocyte-cell-line-regulatory-landscapes",
+    "title": "Machine learning shows hepatocyte-like cell lines poorly reproduce primary liver enhancer activity",
+    "summary": "The authors compared four immortalized hepatocyte-like cell lines with primary liver tissue using chromatin-accessibility assays, motif analysis and a previously trained multi-species liver-enhancer classifier. Classifier sensitivity was below 60% on the cell-line enhancers; only HepG2 exceeded 50%, supporting the bounded finding that these lines incompletely reproduce native liver regulatory landscapes. Modifying AML12 culture conditions did not substantially improve similarity. The first preprint version already reports this result on 9 June 2026; a later version was posted 22 November. The result concerns selected cell lines and enhancer datasets, not every liver experiment, and classifier output is an indirect readout of regulatory similarity rather than direct proof of enhancer function.",
+    "field": "biology",
+    "ai_technology": "Published multi-species liver-enhancer activity classifier trained on primary-liver sequences",
+    "organization": "Carnegie Mellon University",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.06.05.730479v1",
+    "source_type": "paper",
+    "publication_date": "2026-06-09",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The previously trained classifier was evaluated on held-out enhancer chromosomes; it had <60% sensitivity on HLC enhancers and >50% only on HepG2. Wet-lab RT-qPCR, flow cytometry and ATAC-seq characterized cell lines; four cell lines were compared with primary tissue.",
+      "unknown": "Preprint, selected cell lines and accessibility datasets; classifier sensitivity is an indirect sequence-pattern readout, not a direct functional assay of every enhancer. Architecture is not specified in the reviewed current paper. No universal suitability or clinical benefit is established.",
+      "ai_role": "A learned enhancer classifier trained on primary liver data was applied as a quantitative readout of liver-like enhancer activity across cell lines, helping identify their divergence from primary liver and HepG2 as closest among those tested.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.06.05.730479v1.full.pdf",
+        "https://www.biorxiv.org/content/10.64898/2026.06.05.730479v2.full.pdf"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "First-version primary PDF header, relevant model-evaluation Methods and comparative Results, plus matching later-version Methods/Results independently read. Architecture of prior classifier not authenticated; no independent reanalysis."
+    }
+  },
+  {
+    "id": "2026-11-alphafold3-native-mosquito-salivary-complexes",
+    "title": "AlphaFold3-aided cryo-EM resolves native Anopheles salivary protein complexes",
+    "summary": "Biochemical and mass-spectrometry analyses identified native interactions among Anopheles mosquito salivary proteins, including Saglin and SGS4/SGS5. AlphaFold predictions helped identify subunits, and AlphaFold3 models supplied initial structures for fitting into cryo-electron-microscopy density, followed by manual model building and refinement. The resulting Saglin–SGS4 structure and related complexes reveal native protein organization and partner-dependent conformations. AI assisted structural assignment; experimental maps and biochemical observations provide the direct evidence. The proposed relevance to malaria transmission remains a hypothesis: the study does not demonstrate parasite-invasion, transmission-blocking or clinical outcomes.",
+    "field": "biology",
+    "ai_technology": "AlphaFold and AlphaFold 3 protein-structure prediction, used to guide subunit identification and cryo-EM model building",
+    "organization": "University of California, Los Angeles; National Institute of Allergy and Infectious Diseases",
+    "source_url": "https://doi.org/10.1126/sciadv.aeb2411",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13787485/",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Mass spectrometry and biochemical analyses of native mosquito salivary-gland extracts/saliva established SGS4/SGS5 association with Saglin and other SG1 proteins; cryo-EM structures were fit and manually adjusted against experimental density. AlphaFold3 predictions supplied initial structural models and supported protein identification/model construction.",
+      "unknown": "No in vivo parasite-invasion, infection, or transmission-blocking assay is reported in this paper; the proposed role of the complexes in transmission is not established by these structural studies. AI-predicted structures were fitted into cryo-EM maps and are not alone the experimental finding.",
+      "ai_role": "AlphaFold predictions, including AlphaFold3 models, were used to help identify Saglin and build protein models into cryo-EM density, contributing to structural assignment of the newly characterized native protein complexes.",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13787485/"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary open-access article abstract, relevant native-complex Results, AlphaFold3/cryo-EM model-building Methods, affiliation/date metadata and functional-limitation context independently read; no pathogen experiments or independent reanalysis."
+    }
+  },
+  {
+    "id": "2026-05-kiaa0408-ovarian-b-cell-prognostic-signature",
+    "title": "Survival-model screening prioritizes KIAA0408 for ovarian-cancer B-cell experiments",
+    "summary": "A preprint compared 101survival-model combinations across three public ovarian-cancer cohorts (107, 80 and 101 participants), selecting a five-gene model in which KIAA0408 had the largest coefficient. This prioritized KIAA0408 for experiments in isolated B cells. Overexpression reduced a B-cell-receptor subunit and AKT signaling, altered cell-cycle distribution, and produced conditioned medium that increased SKOV3 ovarian-cancer-cell colony growth. These are in-vitro findings, not proof of an in-vivo tumor mechanism or clinical benefit. The cohorts also contributed to model selection, so their reported performance is not untouched external validation. The later accepted journal abstract describes independent validation as pending; its full final Methods were not reviewed. The entry represents the result-bearing May 2026 preprint with this version difference preserved.",
+    "field": "medicine",
+    "ai_technology": "StepCox-forward plus partial least squares Cox (plsRcox), selected from 101 survival-model combinations including LASSO, Ridge, elastic net, random survival forest, CoxBoost, GBM, SuperPC and survival-SVM",
+    "organization": "Nanchang University; Second Affiliated Hospital of Nanchang University",
+    "source_url": "https://www.researchsquare.com/article/rs-9681346/v1",
+    "source_type": "paper",
+    "publication_date": "2026-05-29",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://link.springer.com/article/10.1186/s13048-026-02352-y",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Five-gene survival model developed from GSE26193 (n=107) and retrospectively assessed on GSE14764 (n=80) and GSE63885 (n=101); model-based KIAA0408 nomination followed by B-cell overexpression assays, pathway/cell-cycle measurements, SC79 rescue, and ovarian-cancer-cell conditioned-medium assay.",
+      "unknown": "All functional experiments reviewed are in vitro. The three cohorts contribute to choosing the highest mean-C-index model, limiting independence of the reported validation. No prospective outcome, in-vivo tumor mechanism, independently replicated biology or clinical efficacy is established. The later accepted journal abstract says independent validation is pending; its final Methods/body were not available in the reviewed page.",
+      "ai_role": "A screen of 101 survival-model combinations selected a StepCox-forward/partial-least-squares-Cox signature; KIAA0408 had the highest coefficient, explicitly motivating subsequent B-cell functional experiments.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-9681346/v1",
+        "https://link.springer.com/article/10.1186/s13048-026-02352-y"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary Research Square v1 PDF header, relevant cohort/model-selection Methods, cell-assay Results and limitations independently read; later accepted journal abstract only. Represents preprint-version claims, not unreviewed final Methods."
+    },
+    "follow_up": [
+      {
+        "id": "2026-11-accepted-journal-version",
+        "kind": "publication",
+        "date": "2026-11-21",
+        "date_precision": "day",
+        "note": "A peer-reviewed accepted-version abstract reports the KIAA0408-associated five-gene model and cell findings, while describing independent validation as pending. The final article Methods/body were not available in the reviewed page; preprint cohort details are not silently treated as final-version claims.",
+        "source_urls": [
+          "https://link.springer.com/article/10.1186/s13048-026-02352-y"
+        ],
+        "recorded_date": "2026-11-23"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-mri-sequence-heterogeneity-brain-metastases-segmentation",
+    "title": "Sequence-diverse training improves retrospective brain-metastasis MRI segmentation across protocols",
+    "summary": "A single-center retrospective study analyzed 925 contrast-enhanced MRI studies from 720 patients using 3D Attention U-Net and DUCK-Net 3D. Testing on 36 patient-independent studies across three MRI sequence cohorts found more consistent cross-sequence performance with DUCK-Net 3D and multi-sequence training. Accuracy declined for lesions smaller than 0.4 mL, and resampling removed 14 of 547 reference test lesions, all in this size group. External multicenter validation, prospective performance and patient benefit were not established.",
+    "field": "medicine",
+    "ai_technology": "3D Attention U-Net and DUCK-Net 3D segmentation models",
+    "organization": "Gachon University Gil Medical Center; Gachon University",
+    "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0363055",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1371/journal.pone.0363055",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Patient-separated retrospective development and testing at one center: 889 development studies with grouped five-fold cross-validation and 36 held-out studies across three MRI sequence cohorts; comparison of two learned segmentation architectures and six training configurations.",
+      "unknown": "No external multicenter validation was performed; prospective performance and clinical benefit remain unestablished. Small-lesion performance was limited, including loss of 14 reference lesions after resampling.",
+      "ai_role": "The learned segmentation networks are directly evaluated to establish how MRI protocol heterogeneity and sequence-diverse training affect cross-cohort clinical image segmentation performance.",
+      "evidence_urls": [
+        "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0363055"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher full text: abstract, patient selection, architecture/training and patient-separated splits, results, affiliations, dates and limitations."
+    }
+  },
+  {
+    "id": "2026-11-psychiatric-disorder-plasma-metabolite-signatures",
+    "title": "Plasma metabolite classifiers distinguish psychiatric diagnoses in internal cohort testing",
+    "summary": "A study of 1,609 adults with bipolar disorder, major depressive disorder, schizophrenia or healthy-control status identified 297 metabolites associated across diagnostic comparisons after age/sex adjustment and false-discovery correction. Classifiers including random forest and XGBoost evaluated diagnostic separation using randomly selected metabolite subsets in internal train/test splits. This is retrospective model evaluation of a single Han Chinese cohort whose samples were collected during 2018–2024; it does not establish causal mechanisms or clinical benefit. Medication effects were not explicitly assessed, and targeted metabolomics plus external multicenter validation are needed before diagnostic application.",
+    "field": "medicine",
+    "ai_technology": "Logistic regression, LASSO, random forest and XGBoost classifiers",
+    "organization": "Suzhou Guangji Hospital; Soochow University; The University of Melbourne",
+    "source_url": "https://www.nature.com/articles/s41398-026-04559-5",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41398-026-04559-5",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Internal diagnostic discrimination in a 70/30 train/test split and 10-fold training cross-validation across 1,609 participants; age/sex adjusted; random subsets of associated metabolites.",
+      "unknown": "Medication effects were not explicitly assessed; lifestyle and illness-duration confounding, causal mechanisms, external multicenter performance and clinical utility remain unresolved.",
+      "ai_role": "Supervised classifiers evaluated whether plasma metabolite subsets predict diagnostic groups; mutual-information feature associations are statistical screening, not AI.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41398-026-04559-5",
+        "https://www.nature.com/articles/s41398-026-04559-5_reference.pdf"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher article-in-press full text: cohort, Methods, data split, mutual-information feature screen, model evaluation, Results, limitations and publication history."
+    }
+  },
+  {
+    "id": "2026-11-machine-learned-cdft-electrolyte-screening",
+    "title": "Machine-learned density functional theory reveals molecular control of electrolyte screening",
+    "summary": "Machine-learned neural classical density functional theory trained on grand-canonical Monte Carlo data enabled calculations of asymptotic screening behavior across increasingly molecularly detailed electrolyte models. The authors report that solvent attraction creates a monotonic decay mode, solvent polarity produces re-entrant behavior, and ionic architecture changes screening-length exponents, challenging a single universal scaling law. These are computational predictions for modelled systems; the reviewed paper reports no experimental validation of the new predictions.",
+    "field": "physics",
+    "ai_technology": "Neural classical density functional theory",
+    "organization": "University of Cambridge; Durham University; Stanford University",
+    "source_url": "https://arxiv.org/html/2611.27955",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://arxiv.org/abs/2611.27955",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Computed decay lengths across primitive and molecular electrolyte models; neural cDFT approach compared against known primitive-model behavior.",
+      "unknown": "No experimental validation of the new molecular-structure predictions is reported in the reviewed paper.",
+      "ai_role": "Neural cDFT trained on grand-canonical Monte Carlo samples supplies direct correlation functions and enables efficient screening-pole analysis across electrolyte models.",
+      "evidence_urls": [
+        "https://arxiv.org/html/2611.27955",
+        "https://arxiv.org/abs/2611.27955"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Full arXiv v1 HTML Results, Conclusions and Methods; official abstract page and submission history."
+    }
+  },
+  {
+    "id": "2026-06-deep-learning-parkfield-slow-slip",
+    "title": "Deep learning reveals 21 previously uncataloged slow-slip events at Parkfield",
+    "summary": "An unsupervised neural autoencoder and clustering helped identify 21 short slow-slip events absent from a manual catalog of historical borehole strain records on the San Andreas Fault near Parkfield. Nearby creepmeters recorded corresponding slip for 14 of the new events. In the retrospective study, nearby low-frequency earthquakes were more frequent around slow-slip events, with enhanced activity immediately following slow-slip onset. The association does not establish a causal link or prospective earthquake forecasting. A preprint reported the main findings on 14 August 2025.",
+    "field": "physics",
+    "ai_technology": "AutoencoderZ and K-means clustering",
+    "organization": "GFZ Helmholtz Centre for Geosciences; RWTH Aachen University; EarthScope Consortium; Stanford University",
+    "source_url": "https://www.nature.com/articles/s41467-026-74095-9",
+    "source_type": "paper",
+    "publication_date": "2026-06-09",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41467-026-74095-9",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "In 2009–2016 data, the method recovered 64 of 71 manual-catalog events at the reference station and identified 21 additional events after screening. Creepmeters corroborated 14 new detections. Figure 3 shows a new event across three borehole strainmeters and a surface creepmeter. Figure 5 compares nearby low-frequency earthquake activity with randomly selected non-event windows.",
+      "unknown": "Sparse station coverage limits source depth and geometry estimates. The slip–seismicity association is retrospective, and causal and prospective predictive performance remain unestablished.",
+      "ai_role": "AutoencoderZ learned features from daily strain wavelet representations. Two stages of K-means identified candidate slow-slip events for visual and instrument-based checks.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-026-74095-9",
+        "https://www.researchsquare.com/article/rs-7317566/v1"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Full publisher article, including Methods, Results and figure captions; official preprint landing-page abstract and posting date. Figure images and supplements were not independently inspected."
+    }
+  },
+  {
+    "id": "2024-01-deep-clustering-geldingadalir-pre-eruptive-tremor",
+    "title": "Deep clustering reveals weak tremor three days before the 2021 Geldingadalir eruption",
+    "summary": "Unsupervised deep clustering of historical seismic recordings revealed a weak tremor beginning around midday on 16 March 2021, roughly three days before the Geldingadalir eruption in Iceland. Harmonic–percussive signal separation on the same recordings supported the timing. The analysis covered one eruption and relied on one seismic station. Prospective eruption forecasting remains untested. The finding was reported in a preprint on 5 May 2023 and published in Communications Earth & Environment on 2 January 2024.",
+    "field": "physics",
+    "ai_technology": "Deep embedded clustering with a convolutional autoencoder",
+    "organization": "GFZ Helmholtz Centre for Geosciences; University of Potsdam; Stanford University",
+    "source_url": "https://www.nature.com/articles/s43247-023-01166-w",
+    "source_type": "paper",
+    "publication_date": "2024-01-02",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s43247-023-01166-w",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "Figure 3 shows the tremor after harmonic–percussive separation. A reanalysis restricted to 12–19 March recovered a similar cluster across several cluster counts, with some misassigned windows. Both checks use the same historical station records.",
+      "unknown": "Recurrence across eruptions, discrimination from non-eruptive unrest, and prospective alert performance remain unestablished.",
+      "ai_role": "A convolutional autoencoder and deep embedded clustering grouped one-hour seismic spectrograms by learned features. The continuous-tremor cluster directed the authors to check the pre-eruptive interval.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s43247-023-01166-w",
+        "https://api.crossref.org/works/10.21203/rs.3.rs-2716246/v1"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Full publisher article, including Methods, Results and figure captions; primary preprint Crossref abstract and posting metadata. Figure images and the linked GFZ PDF were not independently inspected."
+    }
   }
 ]

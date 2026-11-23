@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-psychiatric-disorder-plasma-metabolite-signatures",
+  "title": "Plasma metabolite classifiers distinguish psychiatric diagnoses in internal cohort testing",
+  "summary": "A study of 1,609 adults with bipolar disorder, major depressive disorder, schizophrenia or healthy-control status identified 297 metabolites associated across diagnostic comparisons after age/sex adjustment and false-discovery correction. Classifiers including random forest and XGBoost evaluated diagnostic separation using randomly selected metabolite subsets in internal train/test splits. This is retrospective model evaluation of a single Han Chinese cohort whose samples were collected during 2018–2024; it does not establish causal mechanisms or clinical benefit. Medication effects were not explicitly assessed, and targeted metabolomics plus external multicenter validation are needed before diagnostic application.",
+  "field": "medicine",
+  "ai_technology": "Logistic regression, LASSO, random forest and XGBoost classifiers",
+  "organization": "Suzhou Guangji Hospital; Soochow University; The University of Melbourne",
+  "source_url": "https://www.nature.com/articles/s41398-026-04559-5",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41398-026-04559-5",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal diagnostic discrimination in a 70/30 train/test split and 10-fold training cross-validation across 1,609 participants; age/sex adjusted; random subsets of associated metabolites.",
+    "unknown": "Medication effects were not explicitly assessed; lifestyle and illness-duration confounding, causal mechanisms, external multicenter performance and clinical utility remain unresolved.",
+    "ai_role": "Supervised classifiers evaluated whether plasma metabolite subsets predict diagnostic groups; mutual-information feature associations are statistical screening, not AI.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41398-026-04559-5",
+      "https://www.nature.com/articles/s41398-026-04559-5_reference.pdf"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Publisher article-in-press full text: cohort, Methods, data split, mutual-information feature screen, model evaluation, Results, limitations and publication history."
+  }
+}

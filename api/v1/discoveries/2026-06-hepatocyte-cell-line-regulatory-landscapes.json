@@ -1,0 +1,34 @@
+{
+  "id": "2026-06-hepatocyte-cell-line-regulatory-landscapes",
+  "title": "Machine learning shows hepatocyte-like cell lines poorly reproduce primary liver enhancer activity",
+  "summary": "The authors compared four immortalized hepatocyte-like cell lines with primary liver tissue using chromatin-accessibility assays, motif analysis and a previously trained multi-species liver-enhancer classifier. Classifier sensitivity was below 60% on the cell-line enhancers; only HepG2 exceeded 50%, supporting the bounded finding that these lines incompletely reproduce native liver regulatory landscapes. Modifying AML12 culture conditions did not substantially improve similarity. The first preprint version already reports this result on 9 June 2026; a later version was posted 22 November. The result concerns selected cell lines and enhancer datasets, not every liver experiment, and classifier output is an indirect readout of regulatory similarity rather than direct proof of enhancer function.",
+  "field": "biology",
+  "ai_technology": "Published multi-species liver-enhancer activity classifier trained on primary-liver sequences",
+  "organization": "Carnegie Mellon University",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.06.05.730479v1",
+  "source_type": "paper",
+  "publication_date": "2026-06-09",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The previously trained classifier was evaluated on held-out enhancer chromosomes; it had <60% sensitivity on HLC enhancers and >50% only on HepG2. Wet-lab RT-qPCR, flow cytometry and ATAC-seq characterized cell lines; four cell lines were compared with primary tissue.",
+    "unknown": "Preprint, selected cell lines and accessibility datasets; classifier sensitivity is an indirect sequence-pattern readout, not a direct functional assay of every enhancer. Architecture is not specified in the reviewed current paper. No universal suitability or clinical benefit is established.",
+    "ai_role": "A learned enhancer classifier trained on primary liver data was applied as a quantitative readout of liver-like enhancer activity across cell lines, helping identify their divergence from primary liver and HepG2 as closest among those tested.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.06.05.730479v1.full.pdf",
+      "https://www.biorxiv.org/content/10.64898/2026.06.05.730479v2.full.pdf"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "First-version primary PDF header, relevant model-evaluation Methods and comparative Results, plus matching later-version Methods/Results independently read. Architecture of prior classifier not authenticated; no independent reanalysis."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "2026-05-kiaa0408-ovarian-b-cell-prognostic-signature",
+  "title": "Survival-model screening prioritizes KIAA0408 for ovarian-cancer B-cell experiments",
+  "summary": "A preprint compared 101survival-model combinations across three public ovarian-cancer cohorts (107, 80 and 101 participants), selecting a five-gene model in which KIAA0408 had the largest coefficient. This prioritized KIAA0408 for experiments in isolated B cells. Overexpression reduced a B-cell-receptor subunit and AKT signaling, altered cell-cycle distribution, and produced conditioned medium that increased SKOV3 ovarian-cancer-cell colony growth. These are in-vitro findings, not proof of an in-vivo tumor mechanism or clinical benefit. The cohorts also contributed to model selection, so their reported performance is not untouched external validation. The later accepted journal abstract describes independent validation as pending; its full final Methods were not reviewed. The entry represents the result-bearing May 2026 preprint with this version difference preserved.",
+  "field": "medicine",
+  "ai_technology": "StepCox-forward plus partial least squares Cox (plsRcox), selected from 101 survival-model combinations including LASSO, Ridge, elastic net, random survival forest, CoxBoost, GBM, SuperPC and survival-SVM",
+  "organization": "Nanchang University; Second Affiliated Hospital of Nanchang University",
+  "source_url": "https://www.researchsquare.com/article/rs-9681346/v1",
+  "source_type": "paper",
+  "publication_date": "2026-05-29",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://link.springer.com/article/10.1186/s13048-026-02352-y",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Five-gene survival model developed from GSE26193 (n=107) and retrospectively assessed on GSE14764 (n=80) and GSE63885 (n=101); model-based KIAA0408 nomination followed by B-cell overexpression assays, pathway/cell-cycle measurements, SC79 rescue, and ovarian-cancer-cell conditioned-medium assay.",
+    "unknown": "All functional experiments reviewed are in vitro. The three cohorts contribute to choosing the highest mean-C-index model, limiting independence of the reported validation. No prospective outcome, in-vivo tumor mechanism, independently replicated biology or clinical efficacy is established. The later accepted journal abstract says independent validation is pending; its final Methods/body were not available in the reviewed page.",
+    "ai_role": "A screen of 101 survival-model combinations selected a StepCox-forward/partial-least-squares-Cox signature; KIAA0408 had the highest coefficient, explicitly motivating subsequent B-cell functional experiments.",
+    "evidence_urls": [
+      "https://www.researchsquare.com/article/rs-9681346/v1",
+      "https://link.springer.com/article/10.1186/s13048-026-02352-y"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary Research Square v1 PDF header, relevant cohort/model-selection Methods, cell-assay Results and limitations independently read; later accepted journal abstract only. Represents preprint-version claims, not unreviewed final Methods."
+  },
+  "follow_up": [
+    {
+      "id": "2026-11-accepted-journal-version",
+      "kind": "publication",
+      "date": "2026-11-21",
+      "date_precision": "day",
+      "note": "A peer-reviewed accepted-version abstract reports the KIAA0408-associated five-gene model and cell findings, while describing independent validation as pending. The final article Methods/body were not available in the reviewed page; preprint cohort details are not silently treated as final-version claims.",
+      "source_urls": [
+        "https://link.springer.com/article/10.1186/s13048-026-02352-y"
+      ],
+      "recorded_date": "2026-11-23"
+    }
+  ]
+}

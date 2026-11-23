@@ -1,0 +1,34 @@
+{
+  "id": "2026-06-deep-learning-parkfield-slow-slip",
+  "title": "Deep learning reveals 21 previously uncataloged slow-slip events at Parkfield",
+  "summary": "An unsupervised neural autoencoder and clustering helped identify 21 short slow-slip events absent from a manual catalog of historical borehole strain records on the San Andreas Fault near Parkfield. Nearby creepmeters recorded corresponding slip for 14 of the new events. In the retrospective study, nearby low-frequency earthquakes were more frequent around slow-slip events, with enhanced activity immediately following slow-slip onset. The association does not establish a causal link or prospective earthquake forecasting. A preprint reported the main findings on 14 August 2025.",
+  "field": "physics",
+  "ai_technology": "AutoencoderZ and K-means clustering",
+  "organization": "GFZ Helmholtz Centre for Geosciences; RWTH Aachen University; EarthScope Consortium; Stanford University",
+  "source_url": "https://www.nature.com/articles/s41467-026-74095-9",
+  "source_type": "paper",
+  "publication_date": "2026-06-09",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-026-74095-9",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "In 2009–2016 data, the method recovered 64 of 71 manual-catalog events at the reference station and identified 21 additional events after screening. Creepmeters corroborated 14 new detections. Figure 3 shows a new event across three borehole strainmeters and a surface creepmeter. Figure 5 compares nearby low-frequency earthquake activity with randomly selected non-event windows.",
+    "unknown": "Sparse station coverage limits source depth and geometry estimates. The slip–seismicity association is retrospective, and causal and prospective predictive performance remain unestablished.",
+    "ai_role": "AutoencoderZ learned features from daily strain wavelet representations. Two stages of K-means identified candidate slow-slip events for visual and instrument-based checks.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-026-74095-9",
+      "https://www.researchsquare.com/article/rs-7317566/v1"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Full publisher article, including Methods, Results and figure captions; official preprint landing-page abstract and posting date. Figure images and supplements were not independently inspected."
+  }
+}

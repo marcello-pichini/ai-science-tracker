@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-mri-sequence-heterogeneity-brain-metastases-segmentation",
+  "title": "Sequence-diverse training improves retrospective brain-metastasis MRI segmentation across protocols",
+  "summary": "A single-center retrospective study analyzed 925 contrast-enhanced MRI studies from 720 patients using 3D Attention U-Net and DUCK-Net 3D. Testing on 36 patient-independent studies across three MRI sequence cohorts found more consistent cross-sequence performance with DUCK-Net 3D and multi-sequence training. Accuracy declined for lesions smaller than 0.4 mL, and resampling removed 14 of 547 reference test lesions, all in this size group. External multicenter validation, prospective performance and patient benefit were not established.",
+  "field": "medicine",
+  "ai_technology": "3D Attention U-Net and DUCK-Net 3D segmentation models",
+  "organization": "Gachon University Gil Medical Center; Gachon University",
+  "source_url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0363055",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1371/journal.pone.0363055",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-separated retrospective development and testing at one center: 889 development studies with grouped five-fold cross-validation and 36 held-out studies across three MRI sequence cohorts; comparison of two learned segmentation architectures and six training configurations.",
+    "unknown": "No external multicenter validation was performed; prospective performance and clinical benefit remain unestablished. Small-lesion performance was limited, including loss of 14 reference lesions after resampling.",
+    "ai_role": "The learned segmentation networks are directly evaluated to establish how MRI protocol heterogeneity and sequence-diverse training affect cross-cohort clinical image segmentation performance.",
+    "evidence_urls": [
+      "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0363055"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Publisher full text: abstract, patient selection, architecture/training and patient-separated splits, results, affiliations, dates and limitations."
+  }
+}

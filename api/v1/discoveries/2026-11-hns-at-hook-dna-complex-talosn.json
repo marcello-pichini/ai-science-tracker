@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-hns-at-hook-dna-complex-talosn",
+  "title": "Hybrid NMR structure maps H-NS contacts with AT-rich DNA",
+  "summary": "A solution NMR structure of an E. coli H-NS domain bound to AT-rich DNA revealed auxiliary linker contacts beside its established AT-hook-like recognition motif. Mutational and NMR analyses supported their cooperative contribution to DNA binding. TALOS-N neural-network predictions supplied protein dihedral restraints alongside experimental NMR/NOE measurements and structural refinement. This is a hybrid experimental/computational result; the study did not isolate the learned component’s contribution or establish independent replication.",
+  "field": "biology",
+  "ai_technology": "TALOS-N neural-network-based protein torsion-angle prediction",
+  "organization": "Peking University; Soochow University",
+  "source_url": "https://www.sciltp.com/journals/hm/articles/2611005611",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://media.sciltp.com/articles/2611005611/2611005611.pdf",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The solution structure calculation used experimentally measured NOE restraints and TALOS-N-derived protein dihedral restraints; 20 lowest-energy conformers were selected. Mutational and NMR titration analyses tested the proposed H-NS/DNA contact contributions.",
+    "unknown": "The learned component was not isolated by ablation. An isolated domain/DNA complex does not establish the behavior of full-length oligomeric H-NS in cells; independent replication was not established.",
+    "ai_role": "TALOS-N, an artificial-neural-network-based hybrid predictor, supplied protein dihedral-angle restraints used in the H-NS85–137/AT-rich-DNA solution structure calculation. The structural interpretation also depends on NMR/NOE measurements, mutational/NMR analyses and other structure-refinement steps.",
+    "evidence_urls": [
+      "https://media.sciltp.com/articles/2611005611/2611005611.pdf",
+      "https://spin.niddk.nih.gov/bax/software/TALOS-N/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Source-provenanced publisher PDF abstract, solution-structure Methods2.4, structural result and discussion, bounded mutational/NMR result summary, affiliations and publication date; original NIH TALOS-N developer documentation for its ANN operation. No experimental reproduction."
+  }
+}
