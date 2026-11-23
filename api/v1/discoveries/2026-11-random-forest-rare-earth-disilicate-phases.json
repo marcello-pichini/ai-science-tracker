@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-random-forest-rare-earth-disilicate-phases",
+  "title": "Random forest guides experimentally checked rare-earth disilicate phase design",
+  "summary": "A random-forest classifier trained on 114 curated multicomponent rare-earth disilicate compositions identified cation-radius descriptors associated with retained high-temperature phases. Six new compositions were synthesized and characterized by X-ray diffraction and microscopy, supporting the predicted phase assignments and composition rules within two related material systems. The study establishes a specific phase-design result, not demonstrated coating service performance. The training corpus and experimental sample are small; seven withheld composition checks do not establish broad extrapolation across ceramics.",
+  "field": "materials",
+  "ai_technology": "Random forest phase classifier; SVM and artificial neural network comparators",
+  "organization": "Chinese Academy of Sciences; University of Science and Technology of China; Liaoning Academy of Materials; AECC Shenyang Liming AERO-ENGINE Science and Technology Co., Ltd.",
+  "source_url": "https://www.sciopen.com/article/10.26599/JAC.2026.9221385",
+  "paper_url": "https://www.sciopen.com/local/article_pdf/10.26599/JAC.2026.9221385.pdf",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "direct test",
+    "tested": "A 114-composition training corpus and repeated random splits supported model selection. Six compositions absent from that corpus were synthesized and their phase assignments checked by XRD and microscopy; a seven-sample leave-one-combination-out check was also reported.",
+    "unknown": "Small curated corpus, imbalanced phase categories and limited independent compositions restrict extrapolation. Coating lifetime, corrosion performance and operational engine outcomes were not established by these phase-characterization experiments.",
+    "ai_role": "Random forest learned phase categories from seven composition descriptors, prioritized mean cation radius and its dispersion, and predicted composition-dependent phases for subsequent synthesis and characterization.",
+    "evidence_urls": [
+      "https://www.sciopen.com/local/article_pdf/10.26599/JAC.2026.9221385.pdf",
+      "https://www.sciopen.com/article/10.26599/JAC.2026.9221385"
+    ]
+  },
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independently read source-provenanced full publisher 45-page Just Accepted PDF Methods, Results, validation, affiliation and date sections; original SciOpen HTML publication history."
+  }
+}

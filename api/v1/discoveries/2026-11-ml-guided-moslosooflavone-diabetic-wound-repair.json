@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-ml-guided-moslosooflavone-diabetic-wound-repair",
+  "title": "Machine learning helps prioritize a pathway for moslosooflavone wound repair in diabetic mice",
+  "summary": "Consensus machine learning on public diabetic-foot-ulcer expression data helped prioritize candidate targets for moslosooflavone, including NTRK2/TrkB. Follow-up macrophage assays and topical-hydrogel experiments in diabetic mice linked improved wound closure and macrophage polarization to TrkB/PI3K-Akt signaling. The mouse study reports three animals per group in each endpoint cohort. Pharmacological inhibition supports pathway involvement, but off-target effects, an absent osmotic control and missing NTRK2 genetic tests limit mechanistic specificity. Docking does not establish direct binding, and human efficacy remains untested.",
+  "field": "biology",
+  "ai_technology": "XGBoost; random forest; LASSO; Boruta feature selection; TargetNet",
+  "organization": "Chongqing Medical University; Chongqing University; Army Medical University",
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "direct test",
+    "tested": "Four learned feature-selection approaches prioritized five genes from two merged public transcriptomic datasets. High-glucose macrophage assays, TrkB/PI3K inhibitor experiments and a diabetic-mouse wound model tested the proposed intervention. Six groups were reported with n=3 per group and separate day-7 tissue and day-14 closure endpoint cohorts.",
+    "unknown": "The internally evaluated signature lacks fully external validation. The source reports no mannitol osmotic control and no NTRK2 genetic loss-of-function test; inhibitor off-target effects remain possible. Human benefit and direct biochemical target binding are not established by these assays or docking simulations.",
+    "ai_role": "XGBoost, random forest, LASSO and Boruta selected consensus DFU-associated genes, intersected with predicted compound targets to prioritize CYP1A1, MAOB and NTRK2 for subsequent pathway and functional experiments.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41598-026-69638-5"
+    ]
+  },
+  "source_url": "https://www.nature.com/articles/s41598-026-69638-5",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41598-026-69638-5",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independently read complete source-provenanced publisher text, including Methods, Results, limitations and affiliation/publication sections. Supplement files and underlying data were not independently reanalyzed."
+  }
+}

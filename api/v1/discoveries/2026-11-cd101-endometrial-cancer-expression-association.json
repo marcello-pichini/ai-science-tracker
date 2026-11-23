@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-cd101-endometrial-cancer-expression-association",
+  "title": "Machine-learning feature selection prioritizes CD101 in endometrial cancer expression data",
+  "summary": "LASSO, SVM-RFE, random forest and XGBoost converged on CXCL12, LAYN and CD101 in an integrated endometrial-cancer transcriptomic study. The three-gene classifier separated tumor and nonmalignant tissues with reported AUCs 0.888, 0.837 and 0.848 across three public datasets. High CD101 expression was associated with poorer survival in an unadjusted 415-person TCGA subset. Single-cell discovery used only two tumors; the smallest bulk dataset contained seven cancers and five controls. Cell assays confirmed expression direction and successful CD101 mRNA knockdown, without demonstrating a downstream tumor function or clinical utility.",
+  "field": "medicine",
+  "ai_technology": "LASSO; SVM-RFE; random forest; XGBoost",
+  "organization": "Ningxia Medical University",
+  "source_url": "https://www.frontiersin.org/articles/10.3389/fmed.2026.2021372/full",
+  "paper_url": "https://doi.org/10.3389/fmed.2026.2021372",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Three-gene tissue discrimination in TCGA-UCEC, GSE17025 and GSE63678: AUC 0.888/0.837/0.848. The TCGA survival analysis used 415 cases and dataset-specific cutoffs without adjusted prognostic effects. qRT-PCR in Normal-EEC/Ishikawa cells reproduced expression direction; two siRNAs reduced CD101 mRNA.",
+    "unknown": "Two-tumor single-cell discovery and small bulk comparisons limit generalization. Normal-only spatial references cannot establish tumor-specific localization. Protein localization, downstream function, causal immune regulation and clinical performance remain unestablished. Cell mRNA experiments do not convert the represented retrospective diagnostic/prognostic association into prospective validation.",
+    "ai_role": "Four learned feature-selection approaches reduce eight intersecting transcriptomic candidates to a common three-gene set, which is assessed for tissue-class discrimination and exploratory outcome association.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/articles/10.3389/fmed.2026.2021372/full"
+    ]
+  },
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Full source-provenanced publisher HTML text independently read: study data/cohorts, learned-model Methods, relevant Results, experimental limits, affiliation and publication metadata. No underlying data reanalysis or supplementary-figure validation."
+  }
+}

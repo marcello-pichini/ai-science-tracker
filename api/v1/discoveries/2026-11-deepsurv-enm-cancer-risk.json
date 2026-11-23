@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-deepsurv-enm-cancer-risk",
+  "title": "Deep survival model stratifies cancer incidence risk using metabolic disease and protein profiles",
+  "summary": "A DeepSurv neural survival model combined endocrine, nutritional and metabolic disease subtypes with clinical and molecular features to stratify cancer incidence in UK Biobank. The prediction analysis used 13,438 training and 5,758 randomly held-out participants, rather than all 405,023 people in the broader epidemiological study. The authors report time-dependent AUCs of 0.80–0.90 and improved discrimination over their Cox models. This is retrospective model evaluation within one cohort; observational protein mediation does not establish biological causation or clinical screening benefit.",
+  "field": "medicine",
+  "ai_technology": "DeepSurv neural survival model; elastic-net Cox feature selection",
+  "organization": "Wuhan University; Hubei Provincial Research Center for Precision Medicine of Cancer; Fudan University; Huazhong University of Science and Technology",
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "A random training/held-out split of 13,438/5,758 UK Biobank participants supported cancer-free survival prediction. Figure 7 reports better time-dependent discrimination and risk-group separation than the compared Cox models. The broader 405,023-person association analysis is a different analysis population.",
+    "unknown": "External population transportability and prospective clinical utility were not established in this study. Mediation estimates rely on observational assumptions and do not prove that the prioritized proteins cause cancer.",
+    "ai_role": "Elastic-net Cox models selected biochemical and blood-count features. DeepSurv learned nonlinear survival risk from clinical variables, ENM subtype and prioritized molecular mediators.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-026-78791-4"
+    ]
+  },
+  "source_url": "https://www.nature.com/articles/s41467-026-78791-4",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41467-026-78791-4",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independently read complete source-provenanced publisher text, including Methods, Results, limitations and affiliation/publication sections. Supplement files and underlying data were not independently reanalyzed."
+  }
+}

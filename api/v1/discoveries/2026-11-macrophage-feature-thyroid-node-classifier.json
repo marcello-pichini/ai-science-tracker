@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-macrophage-feature-thyroid-node-classifier",
+  "title": "Macrophage-derived features predict thyroid cancer lymph-node status in retrospective cohorts",
+  "summary": "Machine-learning combinations using SPP1-positive macrophage-derived molecular features classified lymph-node status in papillary thyroid cancer cohorts. The selected glmBoost/random-forest model had AUC 0.998 in training, 0.706 in held-out TCGA data and 0.657 in a combined GEO cohort. Those latter cohorts contributed to model prioritization, so the results are cross-cohort assessments rather than untouched external validation. Single-cell discovery involved three patients. Separate cell and small mouse experiments supported SPP1 as a therapeutic candidate; they do not validate clinical prediction or establish a human treatment benefit.",
+  "field": "medicine",
+  "ai_technology": "glmBoost and random forest; 111 combinations of 12 learned model strategies",
+  "organization": "Nanjing University of Chinese Medicine; Lanzhou University; Central South University; Zhengzhou University; Soochow University; Medical University of Graz; German Cancer Research Center; Nanjing Medical University; Charité – Universitätsmedizin Berlin; Chongqing University; Chongqing Medical University",
+  "source_url": "https://www.nature.com/articles/s41698-026-01774-7",
+  "paper_url": "https://doi.org/10.1038/s41698-026-01774-7",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Patient-level 70/30 TCGA partition; features selected in training and 111 model combinations compared. Selected model AUCs were 0.998/0.706/0.657 across training, held-out TCGA and Meta-PTC. Meta-PTC includes 21 pN0 and 50 pN1 tumors; model prioritization used held-out/meta-cohort performance.",
+    "unknown": "The three-patient single-cell discovery cohort and model-selection use of evaluation cohorts limit generalization. Prospective clinical benefit is unestablished. Separate SPP1-inhibitor cell and mouse experiments are ancillary preclinical evidence, not validation of a frozen clinical predictor.",
+    "ai_role": "Learned model combinations use macrophage-associated expression features to classify nodal status; glmBoost/random forest was selected through cross-cohort comparison. The represented claim is this clinical cohort result, not an autonomous AI discovery of SPP1 biology.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41698-026-01774-7"
+    ]
+  },
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Full source-provenanced publisher HTML text independently read: study data/cohorts, learned-model Methods, relevant Results, experimental limits, affiliation and publication metadata. No underlying data reanalysis or supplementary-figure validation."
+  }
+}

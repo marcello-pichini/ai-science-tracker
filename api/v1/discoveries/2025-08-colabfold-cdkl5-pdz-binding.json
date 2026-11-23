@@ -1,0 +1,47 @@
+{
+  "id": "2025-08-colabfold-cdkl5-pdz-binding",
+  "title": "ColabFold-supported binding tests identify CDKL5 interactions with synaptic scaffolds",
+  "summary": "A preprint first posted 28 August 2025 used ColabFold/AlphaFold modeling to support a proposed interaction between the neuronal CDKL5 isoform and a SHANK1 PDZ domain. Fluorescence-polarization and NMR experiments supported direct binding, while disrupting the terminal binding motif abolished it; the preprint reported an affinity of 8.5 micromolar. The November 2026 journal version reports 7.6 micromolar for the same interaction and further cellular/neuronal context. These are versions of one result. AI supported a structural interaction hypothesis; binding assays provide the direct evidence. The distinct talin-binding result is not attributed to AI here, and the work does not establish clinical effects or treatment for CDKL5 deficiency disorder.",
+  "field": "biology",
+  "ai_technology": "ColabFold/AlphaFold protein-complex modeling of the CDKL5 C-terminal peptide and SHANK1 PDZ domain",
+  "organization": "University of Liverpool; University of Helsinki",
+  "source_url": "https://www.biorxiv.org/content/10.1101/2025.08.27.672337v1",
+  "source_type": "paper",
+  "publication_date": "2025-08-28",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1126/sciadv.aed3338",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "ColabFold-supported PDZ-binding hypothesis tested by fluorescence polarization, NMR and disruption of the terminal binding motif, with tests of other synaptic PDZ domains. The 2025 v1 reported SHANK1 affinity 8.5 micromolar; the 2026 journal version reports 7.6 micromolar. Both support the same specific direct-binding finding.",
+    "unknown": "No atomic-resolution experimental structure of the predicted complex or patient-derived/in vivo disease validation is reported. Neuronal localization and spine effects use transfected/overexpression systems and do not establish treatment or clinical outcomes. The paper also reports talin binding; that result is not attributed to AlphaFold here.",
+    "ai_role": "ColabFold generated a complex model supporting a sequence/motif-based CDKL5–SHANK1 interaction hypothesis, which was tested with binding and perturbation assays. AI is not credited with the separate talin finding or clinical effects.",
+    "evidence_urls": [
+      "https://livrepository.liverpool.ac.uk/3194199/1/2025_Otani_bioRxiv.pdf",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13787487/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Author-institutional bioRxivv1PDF header and relevant ColabFold/binding Results independently extracted/read; final primary article abstract and relevant Results, model-use reference and metadata independently read. Numerical versions distinguished; no clinical reanalysis."
+  },
+  "follow_up": [
+    {
+      "id": "2026-11-journal-version",
+      "kind": "publication",
+      "date": "2026-11-20",
+      "date_precision": "day",
+      "note": "Peer-reviewed journal version of the same PDZ-binding result. The final article reports SHANK1 affinity 7.6 micromolar, versus 8.5 micromolar in preprint v1; this numerical revision is preserved rather than backdated.",
+      "source_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13787487/"
+      ],
+      "recorded_date": "2026-11-23"
+    }
+  ]
+}

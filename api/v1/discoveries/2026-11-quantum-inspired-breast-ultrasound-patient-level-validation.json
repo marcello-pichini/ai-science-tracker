@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-quantum-inspired-breast-ultrasound-patient-level-validation",
+  "title": "Patient-level tests evaluate a quantum-inspired transformer model for breast ultrasound lesion classification",
+  "summary": "A classical GAN/vision-transformer system jointly segmented breast-ultrasound lesions and classified malignancy in two public clinical-image datasets. The paper reports patient-level separation and bidirectional BUSI/UDIAT cross-dataset F1 scores of 97.14% and 96.81%. This is retrospective evaluation of existing images, and the authors state that actual clinical conditions were not reproduced. Larger heterogeneous clinical populations and prospective workflow evaluation are needed; the quantum-inspired components do not establish physical quantum computation or advantage.",
+  "field": "medicine",
+  "ai_technology": "Quantum-inspired generative adversarial segmentation with a vision-transformer classification head",
+  "organization": "Hindusthan Institute of Technology",
+  "source_url": "https://www.nature.com/articles/s41598-026-77715-y",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41598-026-77715-y",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-level validation on BUSI and UDIAT public breast-ultrasound image datasets, including cross-dataset testing in both directions; publisher reports cross-dataset F1 97.14% and 96.81%.",
+    "unknown": "Prospective workflow performance, external validation by independent investigators, performance on larger and more heterogeneous populations, and clinical utility.",
+    "ai_role": "Learned GAN image segmentation and a ViT classification head were evaluated on held-out patient images; the source explicitly describes the quantum-inspired components as classical operations, not physical quantum computation.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41598-026-77715-y",
+      "https://www.nature.com/articles/s41598-026-77715-y_reference.pdf"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Publisher Article in Press PDF: dataset and patient-level split methods, architecture and learned operations, cross-dataset validation results, limitations and data-availability statement."
+  }
+}

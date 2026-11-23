@@ -1,0 +1,35 @@
+{
+  "id": "2026-11-deep-learning-regulatory-atlas-mammals",
+  "title": "Human-trained neural model predicts regulatory maps across 447 mammalian genomes",
+  "summary": "Using an experimentally mapped human atlas of 5.33 million regulatory elements from 4,159 samples, researchers trained a cell-context-informed neural sequence model. It predicted cell-selective accessibility, generalized to observed mouse data and was applied to predict regulatory activity across 447 mammalian genomes. The human atlas was measured experimentally, while the broad cross-species maps remain computational predictions without validation in every species. Zenodo metadata dates this preprint November 20, 2026; the version record was created November 21, which does not establish a November 20 archive posting.",
+  "field": "biology",
+  "ai_technology": "LegNet-based convolutional sequence model with transcription-factor-repertoire cell-context embeddings",
+  "organization": "Altius Institute for Biomedical Sciences",
+  "source_url": "https://zenodo.org/records/24208044",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.5281/zenodo.24208044",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Sequence model assessed on held-out human biosamples, unseen ATAC-seq samples and mouse data; model reportedly identified the highest-activity cell type for ~85% of cell-selective DHSs.",
+    "unknown": "Predictions are not experimentally confirmed in all 447 species. Concept DOI10.5281/zenodo.24208043 and version DOI10.5281/zenodo.24208044 describe the same work; metadata publication date2026-11-20 differs from archive-record creation2026-11-21.",
+    "ai_role": "Deep-learning sequence-to-activity model, trained on the Atlas, predicts cell-selective regulatory DNA actuation from sequence and generalizes the predictions to mammalian genomes.",
+    "evidence_urls": [
+      "https://zenodo.org/records/24208044",
+      "https://api.datacite.org/dois/10.5281/zenodo.24208043",
+      "https://zenodo.org/api/records/24208044"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary Zenodo version PDF: abstract, cell-context model Results, cross-species inference, LegNet-based Methods/training and limitations; Zenodo/DataCite identity, version and publication metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-20-functional-mstn-variant-lean-mass-gwas",
+  "title": "GWAS identifies a functional MSTN variant associated with higher lean mass in humans",
+  "summary": "A genome-wide association meta-analysis of DXA-derived lean mass in about 79,000 people identified 63 loci, including a rare MSTN variant associated with higher leg lean mass. Supervised deep residual convolutional networks imputed missing DXA/MRI image-derived phenotypes from raw images for UK Biobank association analyses; statistical GWAS and researcher-led assays supplied the genetic and functional evidence. The findings are observational, largely from European-ancestry participants, and do not establish clinical benefit from myostatin inhibition.",
+  "field": "biology",
+  "ai_technology": "Supervised deep residual convolutional neural networks for DXA/MRI image-derived phenotype imputation",
+  "organization": "deCODE genetics",
+  "source_url": "https://www.nature.com/articles/s41467-026-77766-9",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Deep residual convolutional networks were trained on labeled DXA/MRI images with an 80/20 train/validation split; imputed phenotypes were used in GWAS. The main association analysis used BOLT-LMM; the paper also reports functional characterization of MSTN p.Ile225Thr.",
+    "unknown": "The paper does not establish causal clinical benefit from myostatin inhibition; imputed phenotypes and observational genetic associations have limitations.",
+    "ai_role": "Supervised deep residual convolutional networks imputed missing image-derived phenotypes from raw DXA and MRI images, increasing phenotype availability for the GWAS; the genetic association model and functional assays were separate statistical and experimental analyses.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-026-77766-9",
+      "https://api.crossref.org/works/10.1038/s41467-026-77766-9"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Publisher abstract, Results, UK Biobank imaging-processing Methods, Discussion limitations and publication metadata."
+  }
+}

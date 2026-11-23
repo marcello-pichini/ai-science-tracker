@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-plsda-osteopenia-metabolite-signatures",
+  "title": "PLS-DA nominates exploratory serum-metabolite patterns in osteopenia",
+  "summary": "Supervised PLS-DA and model-derived VIP feature scores helped nominate serum-metabolite patterns across bone-density groups in 220 adults. The study reported 30, 55 and 49 exploratory candidates for osteopenia versus controls, osteoporosis versus controls and osteoporosis versus osteopenia, using seven-fold cross-validation and permutation checks. All selected metabolites had FDR-adjusted q values above 0.05 and were retained under exploratory VIP, nominal-P and fold-change thresholds. The 135-person discovery and 85-person temporal replication groups came from one hospital; these findings do not establish prospective fracture prediction, external transport or clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Partial least-squares discriminant analysis (PLS-DA)",
+  "organization": "Wuhan Fourth Hospital; Wuchang University of Technology; Wuhan University; Fudan University",
+  "source_url": "https://link.springer.com/article/10.1007/s11306-026-02556-9",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "PLS-DA group discrimination with seven-fold cross-validation and 200-permutation testing; VIP scores helped select exploratory serum-metabolite candidates across BMD groups.",
+    "unknown": "All candidates had FDR-adjusted q>0.05; temporal replication was within the same hospital and study; no prospective fracture prediction, clinical benefit, or external transport was tested.",
+    "ai_role": "Supervised PLS-DA learned separation between BMD groups; model-derived VIP scores contributed to candidate metabolite selection.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s11306-026-02556-9"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary publisher PDF: abstract, cohort Methods, supervised PLS-DA training/VIP selection, cross-validation/permutation description, candidate q-value caveat and same-hospital temporal split."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-efferocytosis-prognostic-score-cohort-audit",
+  "title": "Cohort audit finds unstable performance in efferocytosis-related prognostic scores",
+  "summary": "A retrospective audit rebuilt an efferocytosis-related head-and-neck-cancer prognostic analysis in 519 primary tumors after detecting non-primary rows in the original cohort. A Cox-LASSO workflow selected a nine-gene sensitivity score, but its exact composition recurred in none of 500 full-pipeline bootstrap samples and repeated nested cross-validation yielded a mean C-index of 0.587. Survival associations persisted in some analyses while external performance was inconsistent, and a fixed cutoff did not transfer. The authors treat both this reconstruction and the historical six-gene score as hypotheses, with overlapping prior cohorts, no demonstrated causal mechanism and no established clinical utility.",
+  "field": "medicine",
+  "ai_technology": "Cox LASSO prognostic scoring",
+  "organization": "Loudi Central Hospital",
+  "source_url": "https://link.springer.com/article/10.1007/s12032-026-03535-9",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective prognostic-score audit in TCGA-HNSC primary tumors (n=519), two external cohorts, full-pipeline bootstrap (500 resamples), repeated nested cross-validation, and donor-aware single-cell analyses.",
+    "unknown": "No prospective clinical or experimental validation; the nine-gene signature was unstable and a transportable threshold was not established. Public cohorts overlap with earlier work and are not independent sample-level replication.",
+    "ai_role": "Cox-LASSO selected a nine-gene sensitivity score, while a locked six-gene score was audited. The model-based analysis is the clinical prognostic result; it does not establish causality or clinical utility.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1007/s12032-026-03535-9"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary publisher PDF: abstract, cohort definitions, Cox-LASSO Methods, bootstrap/nested-CV Results, external evaluation and limitations; publisher-deposited date metadata."
+  }
+}

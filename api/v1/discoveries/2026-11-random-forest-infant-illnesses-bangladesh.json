@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-random-forest-infant-illnesses-bangladesh",
+  "title": "Random forest classifies eight infant illnesses in a retrospective Bangladesh dataset",
+  "summary": "A Daffodil International University study compares four supervised models on 2,552 infant health records covering eight illness categories, assembled from hospital records and caregiver reports in Bangladesh. The publisher abstract reports 99.22% accuracy and 99.04% macro F1 for an optimized random forest using a stratified 80:20 split, with cross-validation, bootstrap and calibration analyses. These are retrospective internal evaluation results; clinical deployment, independent external validation and improved caregiver or patient outcomes are not established by the reviewed abstract. This source check covers the publisher abstract and metadata.",
+  "field": "medicine",
+  "ai_technology": "Random forest; logistic regression; decision tree; XGBoost; SHAP",
+  "organization": "Daffodil International University",
+  "source_url": "https://journals.diu.edu.bd/index.php/jegh/article/view/75",
+  "source_type": "paper",
+  "publication_date": "2026-11-21",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.36481/cynq5729",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective internal 80:20 train–test evaluation of eight illness classes in 2,552 infant records, with cross-validation, bootstrap and calibration analyses; all figures source-reported.",
+    "unknown": "Full methods were not assessed in this bounded review. Independent external performance, prospective utility and patient benefit are not established by the reviewed abstract.",
+    "ai_role": "Supervised random forest learns classification from symptom and demographic variables; other classifiers provide comparisons and SHAP supports feature interpretation.",
+    "evidence_urls": [
+      "https://journals.diu.edu.bd/index.php/jegh/article/view/75"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Publisher abstract, affiliations, article type and publication metadata; full paper not assessed by independent reviewer"
+  }
+}

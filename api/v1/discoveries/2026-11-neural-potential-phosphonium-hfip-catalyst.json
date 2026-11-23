@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-neural-potential-phosphonium-hfip-catalyst",
+  "title": "Neural-potential simulations clarify a phosphonium/HFIP catalyst for CO2 conversion",
+  "summary": "Researchers synthesized phosphonium-salt/HFIP catalysts for converting CO2 and epoxides into cyclic carbonates, reporting yields of 86–96% for monosubstituted and 66–88% for disubstituted epoxides at 25 °C and 1 atm CO2. Matlantis PFP v5.0.0, a trained neural interatomic potential, sampled the liquid-mixture structure; radial-distribution analysis supported strong association between HFIP and bromide. The calculated density differed from experiment by about 5%, while NMR and conventional DFT calculations provided complementary structural/mechanistic evidence. AI supported characterization of the new catalytic system; catalyst preparation and performance were experimentally established.",
+  "field": "chemistry",
+  "ai_technology": "Matlantis Preferred Potential Framework (PFP) v5.0.0, TeaNet-inspired neural network interatomic potential",
+  "organization": "University of Alicante; University of Almería; University of Salerno; University of Camerino",
+  "source_url": "https://doi.org/10.1021/acsomega.6c07310",
+  "source_type": "paper",
+  "publication_date": "2026-11-05",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Catalytic performance was experimentally measured across phosphonium/HFIP mixtures and multiple epoxide substrates. PFP neural-potential molecular dynamics modeled the DES organization; DFT and NMR provided complementary mechanistic evidence.",
+    "unknown": "The approximately5% density discrepancy limits the model check; no uncertainty-calibrated validation of every simulated intermolecular feature was assessed. AI supplied mechanistic support rather than autonomous catalyst selection, and external replication was not reviewed.",
+    "ai_role": "The learned PFP potential predicts energies for atomic configurations and enabled molecular-dynamics sampling of catalytic-mixture structure and intermolecular organization, supporting the hydrogen-bond mechanism interpretation.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13786355/fullTextXML",
+      "https://doi.org/10.1021/acsomega.6c07310"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary ACS Omega full-text XML via Europe PMC: abstract; catalyst-mixture organization and density/RDF Results; computational Methods4.8–4.9; publication dates and author affiliations. Supplementary material not reviewed."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-20-learning-shared-control-biopsy-robot",
+  "title": "Learned expert skills improve shared control in a CT-guided biopsy robot",
+  "summary": "A CT-guided biopsy robot used a variational autoencoder–hidden Markov model and dynamic motion primitives to learn procedural phases and trajectories from expert demonstrations. Its shared controller reduced interaction forces and targeting errors relative to manual, leader–follower and admittance control in phantom and rabbit experiments, with nine experiments per strategy; porcine work separately assessed robotic feasibility. These preclinical results do not establish safety or benefit in patients, and the learned skills came from a limited expert panel.",
+  "field": "medicine",
+  "ai_technology": "Variational autoencoder–hidden Markov model and dynamic motion primitives for expert-skill learning",
+  "organization": "Shanghai Jiao Tong University",
+  "source_url": "https://www.nature.com/articles/s41467-026-79622-2",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Expert data were collected from a 31-doctor panel including ten experts. Phantom and rabbit control comparisons used nine experiments per strategy; porcine work assessed feasibility. Manual, leader–follower and admittance control were the comparators.",
+    "unknown": "Clinical performance and patient benefit remain untested. Expert demonstrations and anatomical scenarios were limited, and phantom-to-living-tissue transfer remains a source-stated limitation.",
+    "ai_role": "A variational autoencoder–hidden Markov model segmented latent procedural phases from expert skills; dynamic motion primitives reconstructed representative trajectories. These learned representations informed phase-adaptive shared control.",
+    "test_type": "direct test",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-026-79622-2"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Publisher abstract, robot/control Results, expert-skill learning Methods and Discussion limitations, with phantom, rabbit and porcine distinctions checked."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-05-active-learning-electrocatalyst-composition-space",
+  "title": "Gaussian-process analysis identifies active Au–Ir–Rh regions in a measured electrocatalyst library",
+  "summary": "An autonomous electrochemical platform measured 966 areas across Au–Ir–Rh alloy libraries and used Gaussian-process active learning to map hydrogen-evolution activity. A noise-aware model, rerun retrospectively on the completed dataset, recovered the activity trend after 140 sampled areas and identified high-activity regions near Au30Ir20Rh50 and Au10Ir35Rh55. The approximately 15% measurement requirement is a retrospective result, and the tested library does not establish long-term catalyst stability or broader performance. This record describes the 30 May 2026 arXiv preprint; publisher-deposited metadata confirms a same-title journal version dated 20 November 2026.",
+  "field": "materials",
+  "ai_technology": "Multi-output Gaussian-process regression and cost-aware active learning for SECCM",
+  "organization": "Ruhr University Bochum",
+  "source_url": "https://arxiv.org/abs/2606.00779",
+  "source_type": "paper",
+  "publication_date": "2026-05-30",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Autonomous measurements of 966 areas supplied ground truth; a noise-aware multi-output Gaussian-process campaign was rerun retrospectively, with activity-map predictions assessed after 140 sampled areas.",
+    "unknown": "Long-term catalyst stability, external replication and transfer beyond the tested alloy library and conditions are not established by the reviewed material. Final journal full text was inaccessible; its deposited abstract matches the represented result.",
+    "ai_role": "Active learning guides measurement selection during autonomous electrochemical screening and predicts composition–activity trends from partial measurements; it is directly linked to finding high-activity Au–Ir–Rh compositions.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2606.00779",
+      "https://api.crossref.org/works/10.1002/ange.6024376"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original arXiv preprint full text: active-learning operation, completed measurement campaign, retrospective noise-aware rerun, composition/activity results; arXiv version metadata and publisher-deposited journal title/abstract/authors/date."
+  }
+}

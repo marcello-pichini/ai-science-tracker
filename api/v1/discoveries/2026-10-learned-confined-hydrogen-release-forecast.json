@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-learned-confined-hydrogen-release-forecast",
+  "title": "Two-stage learned model forecasts hydrogen dispersion from early sensor observations",
+  "summary": "An MLP ensemble estimated leak rate from early sensor readings, then a sparse Gaussian-process model predicted hydrogen concentration in a confined-channel dataset. The dataset combined 22 physical release tests and 10 CFD cases, representing 26 unique scenarios. Reported leak-rate MAE was 0.052 g/s; the selected dispersion model had concentration-volume-fraction MAE 0.0176 and RMSE 0.0226 on four test experiments. Candidate models were compared on that test set before final selection. This retrospective proof of concept does not establish ship-compartment transfer, operational safety benefit or prospective performance.",
+  "field": "physics",
+  "ai_technology": "MLP ensemble; sparse variational Gaussian process with Beta likelihood",
+  "organization": "Norwegian University of Science and Technology",
+  "source_url": "https://arxiv.org/abs/2610.23515v1",
+  "paper_url": "https://arxiv.org/pdf/2610.23515v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-16",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Existing channel-release sensor/CFD data were used for scenario-based training and evaluation. Seven MLPs estimated leak rate; the final SVGP model had MAE 0.0176/RMSE 0.0226 in concentration volume-fraction units. Four held-out test experiments also supported uncertainty-coverage analysis, but their performance influenced final model selection.",
+    "unknown": "One simplified channel geometry and few scenarios; high-flow cases had larger errors. No deployed ship-compartment or prospective safety benefit was demonstrated. Test-set candidate selection limits the interpretation as an untouched final performance estimate. A later journal DOI has January 2027 issue metadata; its online version date was not established here.",
+    "ai_role": "A learned MLP ensemble maps early sensor history to unknown release rate; a learned Gaussian-process regressor uses that estimate, position and time to predict concentration and uncertainty.",
+    "evidence_urls": [
+      "https://arxiv.org/pdf/2610.23515v1",
+      "https://api.crossref.org/works/10.1016/j.jlp.2026.106241"
+    ]
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independent primary 21-page arXiv v1 PDF text review, including model/data/split Methods, Results tables, calibration, limitations, affiliations and v1 date footer. Page 11 recovered separately with pdfplumber after pypdf extraction limit. Journal identity/issue metadata checked in original Crossref record."
+  }
+}

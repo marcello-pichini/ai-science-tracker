@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-bayesian-pinn-reliability-fdm-polymer-components",
+  "title": "Bayesian modeling estimates configuration-dependent uncertainty in printed PLA bending",
+  "summary": "A Research Square preprint trained a Bayesian physics-informed neural network on bending data from 60 groups of printed PLA specimens and combined it with finite-element simulation. In ten within-study validation configurations, predicted uncertainty varied by raster angle and infill, with the 60-degree and reduced-infill configurations exceeding twice the estimated variation of the 0-degree configuration. All ten experimental validation values lay within the reported 95% intervals, but the sample is too small to establish precise uncertainty calibration. The result is limited to the studied printer, material and bending conditions, without separate-team replication or demonstrated service reliability.",
+  "field": "materials",
+  "ai_technology": "Bayesian physics-informed neural network with Monte Carlo dropout embedded in finite-element analysis",
+  "organization": "Amirkabir University of Technology",
+  "source_url": "https://www.researchsquare.com/article/rs-11305412/v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.21203/rs.3.rs-11305412/v1",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "The PINN was developed from experimental data for 60 FDM polylactic-acid specimen groups, with ten independent configurations evaluated. Reported R² was 0.9935, MAPE 1.85%, and 95% confidence intervals contained all ten experimental validation values. Reliability analysis estimated coefficient-of-variation uncertainty of 3.8–9.0% across configurations and corresponding safety factors of 1.11–1.30.",
+    "unknown": "The ten configurations are within-study validation, not a separate-team replication. Sample size is limited; the results do not establish transfer to other printers, materials, component geometries, or load/service conditions.",
+    "ai_role": "A physics-constrained neural network with Monte Carlo dropout estimates flexural-modulus distributions; sampled moduli are propagated through finite-element simulations to estimate configuration-dependent prediction uncertainty.",
+    "evidence_urls": [
+      "https://www.researchsquare.com/article/rs-11305412/v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Source-provenanced original Research Square v1 full PDF/text: posting metadata, affiliations, learned operation, validation design, reported result and limitations."
+  }
+}

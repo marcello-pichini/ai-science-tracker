@@ -1,0 +1,37 @@
+{
+  "id": "2025-09-psychedelics-glmhmm-sensory-engaged-mouse-decisions",
+  "title": "A latent-state model links acute psychedelic treatment to sensory-guided mouse decisions",
+  "summary": "A fitted generalized-linear-model hidden Markov model identified sensory-engaged and history-biased choice states in a mouse perceptual-decision task. Acute psilocybin or ketamine shifted occupancy toward sensory-engaged states while increasing response time and accuracy. First posted in September 2025 and published in Science Advances in November 2026, the work used different cohorts across analyses; the final drug comparisons included 42 psilocybin and 30 ketamine mice. State-performance relationships were checked within the study. The experiment does not establish independent replication, human therapeutic benefits or a uniquely causal interpretation of the inferred states.",
+  "field": "biology",
+  "ai_technology": "Generalized linear model hidden Markov model (GLM-HMM) for latent decision-strategy inference",
+  "organization": "Boston University",
+  "source_url": "https://www.biorxiv.org/content/10.1101/2025.09.18.677110v1.full",
+  "source_type": "paper",
+  "publication_date": "2025-09-19",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1126/sciadv.aeb3041",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The final paper reports mouse drug cohorts of 42 for psilocybin and 30 for ketamine. Repeated-measures behavioral tests show improved accuracy and longer response times at relevant doses, and GLM-HMM analyses report increased sensory-engaged state occupancy. State-specific accuracy/response-time associations provide within-study construct checks.",
+    "unknown": "Inferred state-performance relationships were assessed within the study; independent validation of the state shift was not established. Sample denominators differ across versions and analyses. This acute mouse task does not establish human therapeutic benefit or a uniquely causal explanation of the latent states.",
+    "ai_role": "An expectation-maximization-fitted GLM-HMM inferred latent sensory-engaged and left/right-biased states from trial-by-trial choices. State occupancy under treatment directly supports the reported strategy shift. Drift-diffusion and the separate five-fold L1 neural decoder are distinct analyses; their validation is not attributed to the GLM-HMM.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.1101/2025.09.18.677110v1.full",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13787478/",
+      "https://doi.org/10.1126/sciadv.aeb3041",
+      "https://static1.squarespace.com/static/6102ca347474c263c40150cd/t/69af3051761dbc63ca9aca49/1773088849861/Cosyne2026_program_book.pdf",
+      "https://zenodo.org/records/21876566"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original bioRxiv v1 full Results/Methods and posted date; final primary journal full Results, Figure2 drug sample sizes and GLM-HMM Methods; preprint/final titles and affiliations. State and neural-decoder analyses distinguished."
+  }
+}

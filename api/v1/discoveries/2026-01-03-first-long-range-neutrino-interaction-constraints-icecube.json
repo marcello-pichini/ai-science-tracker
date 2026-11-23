@@ -1,0 +1,36 @@
+{
+  "id": "2026-01-03-first-long-range-neutrino-interaction-constraints-icecube",
+  "title": "IceCube DeepCore data constrain long-range neutrino interactions",
+  "summary": "First located in an arXiv version posted January 3, 2026, this study received a journal version on November 20 with revised event-score bins. It uses trained boosted-decision-tree scores from IceCube’s pre-applied classification pipeline to group released DeepCore events for oscillation fits. Analyzing eight years of atmospheric-neutrino data, the authors find no evidence for the tested long-range interactions and report constraints on their coupling strengths. The result depends on the specified physical hypotheses and experimental systematics; the classifier identifies event topology and was not newly trained by these authors.",
+  "field": "physics",
+  "ai_technology": "IceCube-pipeline boosted decision tree particle-identification classifier",
+  "organization": "Institute of Physics, Bhubaneswar; Aligarh Muslim University; Homi Bhabha National Institute",
+  "source_url": "https://arxiv.org/abs/2601.01220v1",
+  "source_type": "paper",
+  "publication_date": "2026-01-03",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://journals.aps.org/prd/abstract/10.1103/zx4x-89k6",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The arXiv v1 and peer-reviewed article analyze the released eight-year IceCube DeepCore high-purity νμ charged-current sample. The source describes a trained boosted decision tree that calculates a tracklike particle-identification score; the score defines mixed/tracklike event bins used in the fits. The published version reports constraints and no evidence for long-range interactions.",
+    "unknown": "The search found no evidence for long-range interactions. Results depend on the released sample, detector/flux/cross-section systematics, and the tested interaction hypotheses. The paper states that the event sample selection/reconstruction procedures were already applied by IceCube and that the sample was used without modification; the evidence does not establish that these authors trained a new classifier for this paper.",
+    "ai_role": "A trained boosted decision tree in the IceCube event-classification pipeline supplied particle-identification scores representing event tracklikeness. The study used these scores to define event-topology bins for its forward-folded oscillation fits. The study reused the IceCube golden-event sample without modification; do not attribute fresh model training to the paper’s authors.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2601.01220v1",
+      "https://journals.aps.org/prd/abstract/10.1103/zx4x-89k6",
+      "https://journals.aps.org/prd/pdf/10.1103/zx4x-89k6",
+      "https://export.arxiv.org/api/query?search_query=ti%3A%22First+constraints+on+long-range+neutrino+interactions+using+IceCube+DeepCore%22&max_results=10"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Official arXiv API identity and posting date; arXiv v1 and APS publisher PDFs, including abstracts, BDT particle-identification/binning Methods, main constraint results and conclusions."
+  }
+}

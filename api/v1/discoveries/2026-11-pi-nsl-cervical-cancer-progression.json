@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-pi-nsl-cervical-cancer-progression",
+  "title": "Physics-informed neural model predicts cervical cancer progression in retrospective cohorts",
+  "summary": "Researchers at Vellore Institute of Technology report a physics-informed neural model for two-year progression-free survival prediction in cervical cancer, evaluated retrospectively in a 20,287-patient analytical cohort and two external Indian cohorts totaling 15,967 patients. The primary abstract reports internal time-dependent AUC 0.91 and external AUCs 0.87 and 0.86; the 2,663-patient 2023 temporal subset is included within the 3,043-patient held-out test set. Model-derived clusters with differing survival outcomes remain hypotheses requiring prospective validation. This source check covers the publisher abstract and publication metadata; it does not establish prospective patient benefit or causal biological mechanisms.",
+  "field": "medicine",
+  "ai_technology": "Physics-Informed Neural Surrogate Learning (PI-NSL), a neural model with a variational physics encoder, differentiable PDE solver and dynamic risk operator",
+  "organization": "Vellore Institute of Technology",
+  "source_url": "https://www.nature.com/articles/s41598-026-79182-x",
+  "source_type": "paper",
+  "publication_date": "2026-11-21",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1038/s41598-026-79182-x",
+  "relevance": {
+    "impact": 3,
+    "validation": 2,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective internal held-out and historical external evaluation of progression-free survival prediction; reported latent patient-cluster survival differences.",
+    "unknown": "Prospective clinical benefit and causal interpretation of clusters are not established. Full-paper methods and supplements were not assessed in this bounded independent review; broad geographic transfer is not established by the reported Indian cohorts.",
+    "ai_role": "PI-NSL uses neural representations constrained by a mechanistic PDE system to estimate patient-specific parameters and predict progression-free survival; its latent representations support the reported patient clustering.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41598-026-79182-x"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Publisher article-in-press abstract, affiliations and publication metadata; full paper not assessed by independent reviewer"
+  }
+}

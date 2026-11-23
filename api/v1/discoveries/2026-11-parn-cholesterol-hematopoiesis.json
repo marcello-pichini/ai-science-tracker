@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-parn-cholesterol-hematopoiesis",
+  "title": "Cholesterol dysregulation contributes to hematopoietic failure in PARN-mutant zebrafish",
+  "summary": "Researchers found expanded hematopoietic stem/progenitor populations and reduced mature blood cells in PARN-loss zebrafish; cholesterol-pathway inhibition rescued expansion and anemia, and cholesterol-pathway activation was also observed in patient-derived iPSCs. Ilastik interactive machine learning generated image probability maps, followed by CellProfiler/Otsu segmentation, to quantify blood-lineage staining and cell counts supporting the phenotype and treatment comparisons. This AI role concerned image-based measurement; pathway identification and rescue conclusions also relied on experimental and transcriptomic assays. The treatment findings remain preclinical, and the iPSC observations do not establish patient benefit.",
+  "field": "biology",
+  "ai_technology": "Ilastik interactive machine learning for bioimage analysis",
+  "organization": "CHEO Research Institute; University of Ottawa",
+  "source_url": "https://www.nature.com/articles/s41467-026-79105-4",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Ilastik probability maps plus CellProfiler segmentation were used to quantify WISH/o-dianisidine staining and distinguish labeled-cell counts in zebrafish hematopoietic phenotyping; biological rescue results were experimentally tested in PARN-loss zebrafish and pathway activation was recapitulated in patient-derived iPSCs.",
+    "unknown": "Not stated in the reviewed Image analyses Methods: the incremental effect of ML segmentation versus manual/non-ML quantification. Clinical treatment benefit is not established by the zebrafish rescue and patient-derived iPSC experiments.",
+    "ai_role": "Interactive ML image segmentation measured stained/fluorescent blood-lineage markers and cell counts that support the PARN-mutant hematopoietic phenotype; it was not used to identify the cholesterol pathway.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41467-026-79105-4"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Publisher article abstract; selected hematopoietic phenotype, cholesterol/rescue Results; Image analyses Methods; author affiliations. Supplementary material was not reviewed."
+  }
+}

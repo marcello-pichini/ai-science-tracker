@@ -139757,5 +139757,1165 @@
       "date": "2026-11-23",
       "scope": "Full publisher article, including Methods, Results and figure captions; primary preprint Crossref abstract and posting metadata. Figure images and the linked GFZ PDF were not independently inspected."
     }
+  },
+  {
+    "id": "2026-11-deepsurv-enm-cancer-risk",
+    "title": "Deep survival model stratifies cancer incidence risk using metabolic disease and protein profiles",
+    "summary": "A DeepSurv neural survival model combined endocrine, nutritional and metabolic disease subtypes with clinical and molecular features to stratify cancer incidence in UK Biobank. The prediction analysis used 13,438 training and 5,758 randomly held-out participants, rather than all 405,023 people in the broader epidemiological study. The authors report time-dependent AUCs of 0.80–0.90 and improved discrimination over their Cox models. This is retrospective model evaluation within one cohort; observational protein mediation does not establish biological causation or clinical screening benefit.",
+    "field": "medicine",
+    "ai_technology": "DeepSurv neural survival model; elastic-net Cox feature selection",
+    "organization": "Wuhan University; Hubei Provincial Research Center for Precision Medicine of Cancer; Fudan University; Huazhong University of Science and Technology",
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "A random training/held-out split of 13,438/5,758 UK Biobank participants supported cancer-free survival prediction. Figure 7 reports better time-dependent discrimination and risk-group separation than the compared Cox models. The broader 405,023-person association analysis is a different analysis population.",
+      "unknown": "External population transportability and prospective clinical utility were not established in this study. Mediation estimates rely on observational assumptions and do not prove that the prioritized proteins cause cancer.",
+      "ai_role": "Elastic-net Cox models selected biochemical and blood-count features. DeepSurv learned nonlinear survival risk from clinical variables, ENM subtype and prioritized molecular mediators.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-026-78791-4"
+      ]
+    },
+    "source_url": "https://www.nature.com/articles/s41467-026-78791-4",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41467-026-78791-4",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Independently read complete source-provenanced publisher text, including Methods, Results, limitations and affiliation/publication sections. Supplement files and underlying data were not independently reanalyzed."
+    }
+  },
+  {
+    "id": "2026-11-ml-guided-moslosooflavone-diabetic-wound-repair",
+    "title": "Machine learning helps prioritize a pathway for moslosooflavone wound repair in diabetic mice",
+    "summary": "Consensus machine learning on public diabetic-foot-ulcer expression data helped prioritize candidate targets for moslosooflavone, including NTRK2/TrkB. Follow-up macrophage assays and topical-hydrogel experiments in diabetic mice linked improved wound closure and macrophage polarization to TrkB/PI3K-Akt signaling. The mouse study reports three animals per group in each endpoint cohort. Pharmacological inhibition supports pathway involvement, but off-target effects, an absent osmotic control and missing NTRK2 genetic tests limit mechanistic specificity. Docking does not establish direct binding, and human efficacy remains untested.",
+    "field": "biology",
+    "ai_technology": "XGBoost; random forest; LASSO; Boruta feature selection; TargetNet",
+    "organization": "Chongqing Medical University; Chongqing University; Army Medical University",
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "direct test",
+      "tested": "Four learned feature-selection approaches prioritized five genes from two merged public transcriptomic datasets. High-glucose macrophage assays, TrkB/PI3K inhibitor experiments and a diabetic-mouse wound model tested the proposed intervention. Six groups were reported with n=3 per group and separate day-7 tissue and day-14 closure endpoint cohorts.",
+      "unknown": "The internally evaluated signature lacks fully external validation. The source reports no mannitol osmotic control and no NTRK2 genetic loss-of-function test; inhibitor off-target effects remain possible. Human benefit and direct biochemical target binding are not established by these assays or docking simulations.",
+      "ai_role": "XGBoost, random forest, LASSO and Boruta selected consensus DFU-associated genes, intersected with predicted compound targets to prioritize CYP1A1, MAOB and NTRK2 for subsequent pathway and functional experiments.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41598-026-69638-5"
+      ]
+    },
+    "source_url": "https://www.nature.com/articles/s41598-026-69638-5",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41598-026-69638-5",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Independently read complete source-provenanced publisher text, including Methods, Results, limitations and affiliation/publication sections. Supplement files and underlying data were not independently reanalyzed."
+    }
+  },
+  {
+    "id": "2026-11-random-forest-rare-earth-disilicate-phases",
+    "title": "Random forest guides experimentally checked rare-earth disilicate phase design",
+    "summary": "A random-forest classifier trained on 114 curated multicomponent rare-earth disilicate compositions identified cation-radius descriptors associated with retained high-temperature phases. Six new compositions were synthesized and characterized by X-ray diffraction and microscopy, supporting the predicted phase assignments and composition rules within two related material systems. The study establishes a specific phase-design result, not demonstrated coating service performance. The training corpus and experimental sample are small; seven withheld composition checks do not establish broad extrapolation across ceramics.",
+    "field": "materials",
+    "ai_technology": "Random forest phase classifier; SVM and artificial neural network comparators",
+    "organization": "Chinese Academy of Sciences; University of Science and Technology of China; Liaoning Academy of Materials; AECC Shenyang Liming AERO-ENGINE Science and Technology Co., Ltd.",
+    "source_url": "https://www.sciopen.com/article/10.26599/JAC.2026.9221385",
+    "paper_url": "https://www.sciopen.com/local/article_pdf/10.26599/JAC.2026.9221385.pdf",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "direct test",
+      "tested": "A 114-composition training corpus and repeated random splits supported model selection. Six compositions absent from that corpus were synthesized and their phase assignments checked by XRD and microscopy; a seven-sample leave-one-combination-out check was also reported.",
+      "unknown": "Small curated corpus, imbalanced phase categories and limited independent compositions restrict extrapolation. Coating lifetime, corrosion performance and operational engine outcomes were not established by these phase-characterization experiments.",
+      "ai_role": "Random forest learned phase categories from seven composition descriptors, prioritized mean cation radius and its dispersion, and predicted composition-dependent phases for subsequent synthesis and characterization.",
+      "evidence_urls": [
+        "https://www.sciopen.com/local/article_pdf/10.26599/JAC.2026.9221385.pdf",
+        "https://www.sciopen.com/article/10.26599/JAC.2026.9221385"
+      ]
+    },
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Independently read source-provenanced full publisher 45-page Just Accepted PDF Methods, Results, validation, affiliation and date sections; original SciOpen HTML publication history."
+    }
+  },
+  {
+    "id": "2026-11-alphafold-assisted-wfs1-gnrh-development",
+    "title": "AlphaFold-assisted study links WFS1 dysfunction to GnRH-neuron developmental defects",
+    "summary": "An integrated human-genetics, structural-modeling and experimental study identified WFS1 as a candidate modifier of congenital hypogonadotropic hypogonadism. AlphaFold 3 models supported simulations of rare WFS1 variants, including altered protein motions that were not captured by a simple benign/damaging prediction. Cell assays found impaired protein behavior and ER-stress activation; zebrafish knockdown disrupted GnRH-neuron architecture and reduced isl1a expression, with partial pharmacological rescue. These results support a developmental mechanism in model systems, not proof that WFS1 alone causes the human disorder or that a treatment benefits patients.",
+    "field": "biology",
+    "ai_technology": "AlphaFold 3 structural modeling; PolyPhen-2 variant prediction",
+    "organization": "University of Milan; IRCCS Istituto Auxologico Italiano",
+    "source_url": "https://link.springer.com/article/10.1038/s44321-026-00554-x",
+    "paper_url": "https://doi.org/10.1038/s44321-026-00554-x",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "direct test",
+      "tested": "Two rare heterozygous WFS1 variants in two families were examined using predicted structural models, replicated molecular-dynamics simulations and cell assays. Embryonic expression studies and zebrafish wfs1b knockdown/rescue experiments assessed GnRH-neuron development and ER-stress/isl1a changes.",
+      "unknown": "Oligogenic inheritance and model-system results do not establish WFS1 as a sufficient human disease cause. Pharmacological rescue is partial and includes pleiotropic effects. Predicted structure/dynamics are not experimental structural confirmation; the model contribution was not isolated by ablation.",
+      "ai_role": "AlphaFold 3 supplied monomeric and tetrameric WFS1 models for variant-specific membrane simulations and structural interpretation. PolyPhen-2 assisted variant assessment; experimental genetics and functional assays supplied the biological evidence. AI did not independently identify the gene from the exomes.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1038/s44321-026-00554-x"
+      ]
+    },
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Independently read source-provenanced full publisher article text including variant-modeling Methods, structural Results, cell and developmental-model findings, limitations, affiliations and dates. Figure images and supplementary data not independently reanalyzed."
+    }
+  },
+  {
+    "id": "2026-11-macrophage-feature-thyroid-node-classifier",
+    "title": "Macrophage-derived features predict thyroid cancer lymph-node status in retrospective cohorts",
+    "summary": "Machine-learning combinations using SPP1-positive macrophage-derived molecular features classified lymph-node status in papillary thyroid cancer cohorts. The selected glmBoost/random-forest model had AUC 0.998 in training, 0.706 in held-out TCGA data and 0.657 in a combined GEO cohort. Those latter cohorts contributed to model prioritization, so the results are cross-cohort assessments rather than untouched external validation. Single-cell discovery involved three patients. Separate cell and small mouse experiments supported SPP1 as a therapeutic candidate; they do not validate clinical prediction or establish a human treatment benefit.",
+    "field": "medicine",
+    "ai_technology": "glmBoost and random forest; 111 combinations of 12 learned model strategies",
+    "organization": "Nanjing University of Chinese Medicine; Lanzhou University; Central South University; Zhengzhou University; Soochow University; Medical University of Graz; German Cancer Research Center; Nanjing Medical University; Charité – Universitätsmedizin Berlin; Chongqing University; Chongqing Medical University",
+    "source_url": "https://www.nature.com/articles/s41698-026-01774-7",
+    "paper_url": "https://doi.org/10.1038/s41698-026-01774-7",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "Patient-level 70/30 TCGA partition; features selected in training and 111 model combinations compared. Selected model AUCs were 0.998/0.706/0.657 across training, held-out TCGA and Meta-PTC. Meta-PTC includes 21 pN0 and 50 pN1 tumors; model prioritization used held-out/meta-cohort performance.",
+      "unknown": "The three-patient single-cell discovery cohort and model-selection use of evaluation cohorts limit generalization. Prospective clinical benefit is unestablished. Separate SPP1-inhibitor cell and mouse experiments are ancillary preclinical evidence, not validation of a frozen clinical predictor.",
+      "ai_role": "Learned model combinations use macrophage-associated expression features to classify nodal status; glmBoost/random forest was selected through cross-cohort comparison. The represented claim is this clinical cohort result, not an autonomous AI discovery of SPP1 biology.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41698-026-01774-7"
+      ]
+    },
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Full source-provenanced publisher HTML text independently read: study data/cohorts, learned-model Methods, relevant Results, experimental limits, affiliation and publication metadata. No underlying data reanalysis or supplementary-figure validation."
+    }
+  },
+  {
+    "id": "2026-11-cd101-endometrial-cancer-expression-association",
+    "title": "Machine-learning feature selection prioritizes CD101 in endometrial cancer expression data",
+    "summary": "LASSO, SVM-RFE, random forest and XGBoost converged on CXCL12, LAYN and CD101 in an integrated endometrial-cancer transcriptomic study. The three-gene classifier separated tumor and nonmalignant tissues with reported AUCs 0.888, 0.837 and 0.848 across three public datasets. High CD101 expression was associated with poorer survival in an unadjusted 415-person TCGA subset. Single-cell discovery used only two tumors; the smallest bulk dataset contained seven cancers and five controls. Cell assays confirmed expression direction and successful CD101 mRNA knockdown, without demonstrating a downstream tumor function or clinical utility.",
+    "field": "medicine",
+    "ai_technology": "LASSO; SVM-RFE; random forest; XGBoost",
+    "organization": "Ningxia Medical University",
+    "source_url": "https://www.frontiersin.org/articles/10.3389/fmed.2026.2021372/full",
+    "paper_url": "https://doi.org/10.3389/fmed.2026.2021372",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "Three-gene tissue discrimination in TCGA-UCEC, GSE17025 and GSE63678: AUC 0.888/0.837/0.848. The TCGA survival analysis used 415 cases and dataset-specific cutoffs without adjusted prognostic effects. qRT-PCR in Normal-EEC/Ishikawa cells reproduced expression direction; two siRNAs reduced CD101 mRNA.",
+      "unknown": "Two-tumor single-cell discovery and small bulk comparisons limit generalization. Normal-only spatial references cannot establish tumor-specific localization. Protein localization, downstream function, causal immune regulation and clinical performance remain unestablished. Cell mRNA experiments do not convert the represented retrospective diagnostic/prognostic association into prospective validation.",
+      "ai_role": "Four learned feature-selection approaches reduce eight intersecting transcriptomic candidates to a common three-gene set, which is assessed for tissue-class discrimination and exploratory outcome association.",
+      "evidence_urls": [
+        "https://www.frontiersin.org/articles/10.3389/fmed.2026.2021372/full"
+      ]
+    },
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Full source-provenanced publisher HTML text independently read: study data/cohorts, learned-model Methods, relevant Results, experimental limits, affiliation and publication metadata. No underlying data reanalysis or supplementary-figure validation."
+    }
+  },
+  {
+    "id": "2026-10-learned-confined-hydrogen-release-forecast",
+    "title": "Two-stage learned model forecasts hydrogen dispersion from early sensor observations",
+    "summary": "An MLP ensemble estimated leak rate from early sensor readings, then a sparse Gaussian-process model predicted hydrogen concentration in a confined-channel dataset. The dataset combined 22 physical release tests and 10 CFD cases, representing 26 unique scenarios. Reported leak-rate MAE was 0.052 g/s; the selected dispersion model had concentration-volume-fraction MAE 0.0176 and RMSE 0.0226 on four test experiments. Candidate models were compared on that test set before final selection. This retrospective proof of concept does not establish ship-compartment transfer, operational safety benefit or prospective performance.",
+    "field": "physics",
+    "ai_technology": "MLP ensemble; sparse variational Gaussian process with Beta likelihood",
+    "organization": "Norwegian University of Science and Technology",
+    "source_url": "https://arxiv.org/abs/2610.23515v1",
+    "paper_url": "https://arxiv.org/pdf/2610.23515v1",
+    "source_type": "paper",
+    "publication_date": "2026-10-16",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Existing channel-release sensor/CFD data were used for scenario-based training and evaluation. Seven MLPs estimated leak rate; the final SVGP model had MAE 0.0176/RMSE 0.0226 in concentration volume-fraction units. Four held-out test experiments also supported uncertainty-coverage analysis, but their performance influenced final model selection.",
+      "unknown": "One simplified channel geometry and few scenarios; high-flow cases had larger errors. No deployed ship-compartment or prospective safety benefit was demonstrated. Test-set candidate selection limits the interpretation as an untouched final performance estimate. A later journal DOI has January 2027 issue metadata; its online version date was not established here.",
+      "ai_role": "A learned MLP ensemble maps early sensor history to unknown release rate; a learned Gaussian-process regressor uses that estimate, position and time to predict concentration and uncertainty.",
+      "evidence_urls": [
+        "https://arxiv.org/pdf/2610.23515v1",
+        "https://api.crossref.org/works/10.1016/j.jlp.2026.106241"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Independent primary 21-page arXiv v1 PDF text review, including model/data/split Methods, Results tables, calibration, limitations, affiliations and v1 date footer. Page 11 recovered separately with pdfplumber after pypdf extraction limit. Journal identity/issue metadata checked in original Crossref record."
+    }
+  },
+  {
+    "id": "2026-11-gpt5-feedback-monitoring-hippocampal-ripples",
+    "title": "GPT-5 scoring links feedback monitoring reports with waking hippocampal ripple rates",
+    "summary": "In a nine-participant intracranial EEG neurofeedback study, GPT-5 scored participants’ free-text reports on ten cognitive dimensions. Higher GPT-5-scored feedback monitoring was associated with lower hippocampal ripple rate (β=−2.71 events/min per SD, 95% CI −4.21 to −1.21; FDR q=.0108) across up to 27 participant-condition observations after adjustment for condition. This is an exploratory association in a small epilepsy-monitoring sample; the AI-derived ratings were not validated against human ratings or independently replicated, and do not establish causality.",
+    "field": "biology",
+    "ai_technology": "GPT-5 large language model used to score free-text participant reports on ten cognitive dimensions",
+    "organization": "The University of Osaka; The University of Tokyo; Juntendo University",
+    "source_url": "https://www.researchsquare.com/article/rs-11492575/v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "In nine participants undergoing intracranial EEG monitoring, GPT-5 scored reports from neurofeedback sessions; model-derived feedback-monitoring scores were associated with hippocampal ripple rates after adjustment for cognitive condition.",
+      "unknown": "Only nine participants; no independent replication or human-rating comparison validated the GPT-5 scores. Prompt/model dependence and causal direction remain unresolved.",
+      "ai_role": "GPT-5 converted short free-text reports into ten structured cognitive-dimension scores; the feedback-monitoring score was the only one of ten dimensions associated with ripple rate after FDR correction.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11492575/v1",
+        "https://www.researchsquare.com/article/rs-11492575/v1.pdf",
+        "https://doi.org/10.21203/rs.3.rs-11492575/v1"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Full 30-page Research Square v1 primary preprint, including Methods pp.18–19 and Results figure legend p.30, plus abstract and source metadata."
+    }
+  },
+  {
+    "id": "2026-11-alphafold-guided-enzyme-residue-test-iboga",
+    "title": "AlphaFold 3-guided mutagenesis identifies a candidate substrate-orienting enzyme residue",
+    "summary": "For an enzyme studied in a plant natural-product pathway, the authors used an AlphaFold 3 structure model with substrate docking and molecular-dynamics analysis to nominate candidate pocket residues. Mutational tests found that replacing one predicted aromatic residue abolished measured activity, while a conservative aromatic substitution restored activity, supporting a role in substrate orientation. This is a bounded residue-level mechanistic result: the authors report that the mutations do not establish a comprehensive mechanism and the predicted protein and complex structures were not experimentally characterized.",
+    "field": "biology",
+    "ai_technology": "AlphaFold 3 structure prediction with substrate docking and molecular-dynamics-guided residue selection",
+    "organization": "Max Planck Institute for Chemical Ecology; University of Georgia; Max Planck Institute for Plant Breeding Research",
+    "source_url": "https://www.nature.com/articles/s41467-026-79750-9",
+    "source_type": "paper",
+    "publication_date": "2026-11-21",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "AlphaFold 3 structure modeling, putative-substrate docking and molecular-dynamics analysis nominated candidate residues; targeted mutations directly tested their contribution to activity. One aromatic-residue substitution eliminated measured activity and a conservative aromatic substitution restored it.",
+      "unknown": "The predicted protein and complex structures were not experimentally characterized; authors state the mutational analysis is not comprehensive. No independent replication is reported.",
+      "ai_role": "AlphaFold 3 structure modeling plus docking and molecular-dynamics analysis guided selection of residues for mutational testing, supporting a specific hypothesis about substrate orientation. The model was a guide to experiments, not an experimental structure or a complete mechanistic proof.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-026-79750-9"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Indexed primary publisher Results describing AlphaFold3-guided residue selection and mutational test, structural/mechanistic caveats, publication/version date and affiliations. No experimental reproduction."
+    }
+  },
+  {
+    "id": "2026-04-stardist-synapse-structure-camkii",
+    "title": "Neural segmentation reveals persistent postsynaptic-density enlargement after potentiation",
+    "summary": "In hippocampal slice neurons, StarDist neural-network segmentation identified postsynaptic densities for tracking over 16 hours. After CaMKII photoactivation, postsynaptic densities and spine heads enlarged rapidly; density enlargement persisted at 14 hours while spine-head expansion lasted about 6 hours. The original result was publicly posted on April 11, 2026, followed by a peer-reviewed version on November 20. The journal analysis included 6 activated and 5 control slice cultures, with thousands of nested synaptic measurements. Models were trained on a small manually annotated tile set and visually checked; held-out segmentation accuracy and independent replication were not reported.",
+    "field": "biology",
+    "ai_technology": "StarDist convolutional neural network for star-convex image segmentation, adapted to PSD microscopy",
+    "organization": "University Medical Center Hamburg-Eppendorf",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.04.09.717511v1.full",
+    "source_type": "paper",
+    "publication_date": "2026-04-11",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1126/sciadv.aeh9258",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "StarDist-based segmentation identified PSDs in activated and control hippocampal-slice microscopy time series, with 6 activated and 5 control slice cultures and 2,948/2,953 PSD objects in the reported comparison. The model-supported imaging showed PSD enlargement remained significant at 14 hours, whereas spine-head expansion lasted about 6 hours.",
+      "unknown": "Only a small manually annotated tile set was used for model training; predictions were inspected/retrained, but a held-out segmentation-accuracy metric is not reported. PSD counts are repeated objects nested within 11 slice cultures, not independent biological replicates. No independent replication is reported.",
+      "ai_role": "Custom StarDist neural-network models segmented PSD microscopy, followed by Mastodon temporal tracking and fluorescence-based quantification of PSD/spine changes. Learned segmentation contributed to the structural time course; separate electrophysiological pathway results were not produced by this model.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.04.09.717511v1.full",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13787482/",
+        "https://arxiv.org/abs/1908.03636",
+        "https://openaccess.thecvf.com/content_WACV_2020/papers/Weigert_Star-convex_Polyhedra_for_3D_Object_Detection_and_Segmentation_in_Microscopy_WACV_2020_paper.pdf"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Actual bioRxiv v1 and journal full text: StarDist training/segmentation and Mastodon tracking Methods, Fig1 and morphology time course, first-preprint posted date, journal sample counts/affiliation; original StarDist primary abstract for learned-model identity."
+    }
+  },
+  {
+    "id": "2025-09-psychedelics-glmhmm-sensory-engaged-mouse-decisions",
+    "title": "A latent-state model links acute psychedelic treatment to sensory-guided mouse decisions",
+    "summary": "A fitted generalized-linear-model hidden Markov model identified sensory-engaged and history-biased choice states in a mouse perceptual-decision task. Acute psilocybin or ketamine shifted occupancy toward sensory-engaged states while increasing response time and accuracy. First posted in September 2025 and published in Science Advances in November 2026, the work used different cohorts across analyses; the final drug comparisons included 42 psilocybin and 30 ketamine mice. State-performance relationships were checked within the study. The experiment does not establish independent replication, human therapeutic benefits or a uniquely causal interpretation of the inferred states.",
+    "field": "biology",
+    "ai_technology": "Generalized linear model hidden Markov model (GLM-HMM) for latent decision-strategy inference",
+    "organization": "Boston University",
+    "source_url": "https://www.biorxiv.org/content/10.1101/2025.09.18.677110v1.full",
+    "source_type": "paper",
+    "publication_date": "2025-09-19",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1126/sciadv.aeb3041",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The final paper reports mouse drug cohorts of 42 for psilocybin and 30 for ketamine. Repeated-measures behavioral tests show improved accuracy and longer response times at relevant doses, and GLM-HMM analyses report increased sensory-engaged state occupancy. State-specific accuracy/response-time associations provide within-study construct checks.",
+      "unknown": "Inferred state-performance relationships were assessed within the study; independent validation of the state shift was not established. Sample denominators differ across versions and analyses. This acute mouse task does not establish human therapeutic benefit or a uniquely causal explanation of the latent states.",
+      "ai_role": "An expectation-maximization-fitted GLM-HMM inferred latent sensory-engaged and left/right-biased states from trial-by-trial choices. State occupancy under treatment directly supports the reported strategy shift. Drift-diffusion and the separate five-fold L1 neural decoder are distinct analyses; their validation is not attributed to the GLM-HMM.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.1101/2025.09.18.677110v1.full",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13787478/",
+        "https://doi.org/10.1126/sciadv.aeb3041",
+        "https://static1.squarespace.com/static/6102ca347474c263c40150cd/t/69af3051761dbc63ca9aca49/1773088849861/Cosyne2026_program_book.pdf",
+        "https://zenodo.org/records/21876566"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original bioRxiv v1 full Results/Methods and posted date; final primary journal full Results, Figure2 drug sample sizes and GLM-HMM Methods; preprint/final titles and affiliations. State and neural-decoder analyses distinguished."
+    }
+  },
+  {
+    "id": "2025-08-colabfold-cdkl5-pdz-binding",
+    "title": "ColabFold-supported binding tests identify CDKL5 interactions with synaptic scaffolds",
+    "summary": "A preprint first posted 28 August 2025 used ColabFold/AlphaFold modeling to support a proposed interaction between the neuronal CDKL5 isoform and a SHANK1 PDZ domain. Fluorescence-polarization and NMR experiments supported direct binding, while disrupting the terminal binding motif abolished it; the preprint reported an affinity of 8.5 micromolar. The November 2026 journal version reports 7.6 micromolar for the same interaction and further cellular/neuronal context. These are versions of one result. AI supported a structural interaction hypothesis; binding assays provide the direct evidence. The distinct talin-binding result is not attributed to AI here, and the work does not establish clinical effects or treatment for CDKL5 deficiency disorder.",
+    "field": "biology",
+    "ai_technology": "ColabFold/AlphaFold protein-complex modeling of the CDKL5 C-terminal peptide and SHANK1 PDZ domain",
+    "organization": "University of Liverpool; University of Helsinki",
+    "source_url": "https://www.biorxiv.org/content/10.1101/2025.08.27.672337v1",
+    "source_type": "paper",
+    "publication_date": "2025-08-28",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1126/sciadv.aed3338",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "ColabFold-supported PDZ-binding hypothesis tested by fluorescence polarization, NMR and disruption of the terminal binding motif, with tests of other synaptic PDZ domains. The 2025 v1 reported SHANK1 affinity 8.5 micromolar; the 2026 journal version reports 7.6 micromolar. Both support the same specific direct-binding finding.",
+      "unknown": "No atomic-resolution experimental structure of the predicted complex or patient-derived/in vivo disease validation is reported. Neuronal localization and spine effects use transfected/overexpression systems and do not establish treatment or clinical outcomes. The paper also reports talin binding; that result is not attributed to AlphaFold here.",
+      "ai_role": "ColabFold generated a complex model supporting a sequence/motif-based CDKL5–SHANK1 interaction hypothesis, which was tested with binding and perturbation assays. AI is not credited with the separate talin finding or clinical effects.",
+      "evidence_urls": [
+        "https://livrepository.liverpool.ac.uk/3194199/1/2025_Otani_bioRxiv.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13787487/"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Author-institutional bioRxivv1PDF header and relevant ColabFold/binding Results independently extracted/read; final primary article abstract and relevant Results, model-use reference and metadata independently read. Numerical versions distinguished; no clinical reanalysis."
+    },
+    "follow_up": [
+      {
+        "id": "2026-11-journal-version",
+        "kind": "publication",
+        "date": "2026-11-20",
+        "date_precision": "day",
+        "note": "Peer-reviewed journal version of the same PDZ-binding result. The final article reports SHANK1 affinity 7.6 micromolar, versus 8.5 micromolar in preprint v1; this numerical revision is preserved rather than backdated.",
+        "source_urls": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC13787487/"
+        ],
+        "recorded_date": "2026-11-23"
+      }
+    ]
+  },
+  {
+    "id": "2026-11-mdd-gut-microbiome-nimetox-modules",
+    "title": "Machine learning links gut microbial modules with inflammatory and clinical features of major depression",
+    "summary": "A single-center cross-sectional study of 102 inpatients with major depression and 38 controls used machine-learning feature selection on gut-microbiome profiles to identify nine biologically annotated microbial modules. Random forest with recursive feature elimination selected genera, and module scores were associated with inflammation and symptom dimensions. Functional pathways were inferred from 16S data rather than directly measured, and the associations do not establish causality or clinical utility. The small cohort and in-sample symptom associations require independent replication.",
+    "field": "medicine",
+    "ai_technology": "Random forest with recursive feature elimination; PLS-based multivariate modeling",
+    "organization": "Sichuan Provincial People’s Hospital; University of Electronic Science and Technology of China; Deakin University",
+    "source_url": "https://link.springer.com/article/10.1186/s10020-026-01703-1",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1186/s10020-026-01703-1",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Cross-sectional comparison of 102 MDD inpatients and 38 matched controls; feature selection and train/test evaluation of microbial profiles and clinical phenome measures; random forest/PLS-based biomarker discovery.",
+      "unknown": "No independent external replication established; inferred functional potential is not measured microbial activity, and cross-sectional associations cannot establish causal effects or clinical benefit.",
+      "ai_role": "Random forest with recursive feature elimination selected a parsimonious genus set within training data; PLS-based modeling linked microbial profiles to clinical and inflammatory measures.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1186/s10020-026-01703-1",
+        "https://link.springer.com/content/pdf/10.1186/s10020-026-01703-1_reference.pdf"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher article-in-press PDF: abstract, introduction, full analysis strategy, participant and sample methods, AI/ML pipeline, and results including module/phenome associations."
+    }
+  },
+  {
+    "id": "2026-05-active-learning-electrocatalyst-composition-space",
+    "title": "Gaussian-process analysis identifies active Au–Ir–Rh regions in a measured electrocatalyst library",
+    "summary": "An autonomous electrochemical platform measured 966 areas across Au–Ir–Rh alloy libraries and used Gaussian-process active learning to map hydrogen-evolution activity. A noise-aware model, rerun retrospectively on the completed dataset, recovered the activity trend after 140 sampled areas and identified high-activity regions near Au30Ir20Rh50 and Au10Ir35Rh55. The approximately 15% measurement requirement is a retrospective result, and the tested library does not establish long-term catalyst stability or broader performance. This record describes the 30 May 2026 arXiv preprint; publisher-deposited metadata confirms a same-title journal version dated 20 November 2026.",
+    "field": "materials",
+    "ai_technology": "Multi-output Gaussian-process regression and cost-aware active learning for SECCM",
+    "organization": "Ruhr University Bochum",
+    "source_url": "https://arxiv.org/abs/2606.00779",
+    "source_type": "paper",
+    "publication_date": "2026-05-30",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Autonomous measurements of 966 areas supplied ground truth; a noise-aware multi-output Gaussian-process campaign was rerun retrospectively, with activity-map predictions assessed after 140 sampled areas.",
+      "unknown": "Long-term catalyst stability, external replication and transfer beyond the tested alloy library and conditions are not established by the reviewed material. Final journal full text was inaccessible; its deposited abstract matches the represented result.",
+      "ai_role": "Active learning guides measurement selection during autonomous electrochemical screening and predicts composition–activity trends from partial measurements; it is directly linked to finding high-activity Au–Ir–Rh compositions.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2606.00779",
+        "https://api.crossref.org/works/10.1002/ange.6024376"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original arXiv preprint full text: active-learning operation, completed measurement campaign, retrospective noise-aware rerun, composition/activity results; arXiv version metadata and publisher-deposited journal title/abstract/authors/date."
+    }
+  },
+  {
+    "id": "2026-11-geoai-indonesian-urban-land-heat-patterns",
+    "title": "Geo-AI mapping reveals contrasting land cover and heat patterns across four Indonesian cities",
+    "summary": "A Research Square preprint used Random Forest classification of 2025 satellite imagery to compare land cover, surface temperature and topographic wetness in four Indonesian cities. It found built-up land dominated Surakarta and Yogyakarta, while vegetation dominated Padang and Malang; Yogyakarta had the highest mean surface temperature in the analyzed scenes. Classification was checked using 200 higher-resolution-image reference points, with reported overall accuracy of 92.5–94.5%. These snapshot associations do not establish causal urban-heating effects or observed benefits from the proposed green-space planning recommendations.",
+    "field": "climate",
+    "ai_technology": "Random Forest land-cover classification",
+    "organization": "University of Brawijaya; Andalas University; State University of Malang; Bandung Institute of Technology",
+    "source_url": "https://www.researchsquare.com/article/rs-11570258/v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.21203/rs.3.rs-11570258/v1",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Random Forest land-cover classification compared with 200 reference points from higher-resolution Google satellite imagery (50 per class); overall accuracy 92.5–94.5% and Kappa 90–93%. LULC classifications were combined with Landsat surface temperature and SRTM-based TWI analyses for four Indonesian cities using 2025 imagery.",
+      "unknown": "Only four cities and 2025 scenes were analyzed; validation used 50 reference points per land-cover class. The proposed green-space allocation and heat/runoff implications have not been validated through observed planning or intervention outcomes.",
+      "ai_role": "Random Forest classification provides the land-cover maps used to quantify urbanization and compare those patterns with satellite-derived surface temperature and terrain wetness across four cities.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11570258/v1"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Source-provenanced original Research Square v1 full PDF/text: posting metadata, affiliations, learned operation, validation design, reported result and limitations."
+    }
+  },
+  {
+    "id": "2026-11-bayesian-pinn-reliability-fdm-polymer-components",
+    "title": "Bayesian modeling estimates configuration-dependent uncertainty in printed PLA bending",
+    "summary": "A Research Square preprint trained a Bayesian physics-informed neural network on bending data from 60 groups of printed PLA specimens and combined it with finite-element simulation. In ten within-study validation configurations, predicted uncertainty varied by raster angle and infill, with the 60-degree and reduced-infill configurations exceeding twice the estimated variation of the 0-degree configuration. All ten experimental validation values lay within the reported 95% intervals, but the sample is too small to establish precise uncertainty calibration. The result is limited to the studied printer, material and bending conditions, without separate-team replication or demonstrated service reliability.",
+    "field": "materials",
+    "ai_technology": "Bayesian physics-informed neural network with Monte Carlo dropout embedded in finite-element analysis",
+    "organization": "Amirkabir University of Technology",
+    "source_url": "https://www.researchsquare.com/article/rs-11305412/v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.21203/rs.3.rs-11305412/v1",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "The PINN was developed from experimental data for 60 FDM polylactic-acid specimen groups, with ten independent configurations evaluated. Reported R² was 0.9935, MAPE 1.85%, and 95% confidence intervals contained all ten experimental validation values. Reliability analysis estimated coefficient-of-variation uncertainty of 3.8–9.0% across configurations and corresponding safety factors of 1.11–1.30.",
+      "unknown": "The ten configurations are within-study validation, not a separate-team replication. Sample size is limited; the results do not establish transfer to other printers, materials, component geometries, or load/service conditions.",
+      "ai_role": "A physics-constrained neural network with Monte Carlo dropout estimates flexural-modulus distributions; sampled moduli are propagated through finite-element simulations to estimate configuration-dependent prediction uncertainty.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11305412/v1"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Source-provenanced original Research Square v1 full PDF/text: posting metadata, affiliations, learned operation, validation design, reported result and limitations."
+    }
+  },
+  {
+    "id": "2026-11-engineering-student-performance-determinants-nepal",
+    "title": "Machine-learning feature selection identifies student-performance factors in Nepal",
+    "summary": "A study analyzed 1,021 survey responses from engineering students reflecting on their first year at colleges affiliated with Tribhuvan University in Nepal. A feature-selection vote including Random Forest and AdaBoost selected 21 candidate academic, psychometric and demographic factors, triangulated with 11 focus-group themes and expert review. The reported set included adaptation, motivation, residence and travel-time factors alongside academic measures. These context-dependent selections do not establish causal effects, externally validated predictive performance or transfer beyond the sampled institution system.",
+    "field": "humanities",
+    "ai_technology": "Random Forest and AdaBoost within a multi-method feature-selection vote",
+    "organization": "Tribhuvan University",
+    "source_url": "https://www.nepjol.info/index.php/craiaj/article/view/102350",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Survey data contained 1,021 valid responses; quantitative feature selection used a voting threshold of three and produced 21 features, which were triangulated with 11 focus-group themes and expert review. Fourteen selected features were academic, four psychometric and three demographic.",
+      "unknown": "Single-context sample from IOE-affiliated Tribhuvan University colleges; qualitative collection may contain bias; the authors explicitly say the selected determinants are not causal. No external prediction-performance validation is reported.",
+      "ai_role": "Random Forest and AdaBoost were included in a multi-method feature-selection vote used to derive the reported student-performance correlates; qualitative focus-group themes and expert review were then used to triangulate them.",
+      "evidence_urls": [
+        "https://www.nepjol.info/index.php/craiaj/article/view/102350",
+        "https://www.nepjol.info/index.php/craiaj/article/download/102350/76869"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original journal PDF: posting and peer-review metadata, cohort/data collection, six-method feature-selection vote, triangulation, result categories and conclusions."
+    }
+  },
+  {
+    "id": "2026-11-quantum-inspired-breast-ultrasound-patient-level-validation",
+    "title": "Patient-level tests evaluate a quantum-inspired transformer model for breast ultrasound lesion classification",
+    "summary": "A classical GAN/vision-transformer system jointly segmented breast-ultrasound lesions and classified malignancy in two public clinical-image datasets. The paper reports patient-level separation and bidirectional BUSI/UDIAT cross-dataset F1 scores of 97.14% and 96.81%. This is retrospective evaluation of existing images, and the authors state that actual clinical conditions were not reproduced. Larger heterogeneous clinical populations and prospective workflow evaluation are needed; the quantum-inspired components do not establish physical quantum computation or advantage.",
+    "field": "medicine",
+    "ai_technology": "Quantum-inspired generative adversarial segmentation with a vision-transformer classification head",
+    "organization": "Hindusthan Institute of Technology",
+    "source_url": "https://www.nature.com/articles/s41598-026-77715-y",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41598-026-77715-y",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Patient-level validation on BUSI and UDIAT public breast-ultrasound image datasets, including cross-dataset testing in both directions; publisher reports cross-dataset F1 97.14% and 96.81%.",
+      "unknown": "Prospective workflow performance, external validation by independent investigators, performance on larger and more heterogeneous populations, and clinical utility.",
+      "ai_role": "Learned GAN image segmentation and a ViT classification head were evaluated on held-out patient images; the source explicitly describes the quantum-inspired components as classical operations, not physical quantum computation.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41598-026-77715-y",
+        "https://www.nature.com/articles/s41598-026-77715-y_reference.pdf"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher Article in Press PDF: dataset and patient-level split methods, architecture and learned operations, cross-dataset validation results, limitations and data-availability statement."
+    }
+  },
+  {
+    "id": "2025-10-multimodal-language-models-seizure-semiology-classification",
+    "title": "Multimodal language models extract seizure semiology and support patient-held-out seizure classification",
+    "summary": "An October 2025 preprint analyzed 90 video-EEG-confirmed events from 29 patients at one epilepsy-monitoring unit using vision-language and audio-language models to extract clinical features. With leave-one-patient-out testing, KNN using automated features achieved F1 and AUC of 0.76, below the classifier using expert features. Automated feature extraction itself had mean F1 of 0.51 against expert annotations, and the small retrospective cohort does not establish clinical utility or external generalization. A later journal version was dated November 2026; the detailed results here describe the accessible preprint.",
+    "field": "medicine",
+    "ai_technology": "InternVL vision-language models and Qwen audio/vision-language models with downstream KNN and other classifiers",
+    "organization": "University of California, Los Angeles; University of Alabama at Birmingham",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12632642/",
+    "source_type": "paper",
+    "publication_date": "2025-10-09",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1101/2025.10.07.25337538",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Ninety video-EEG-confirmed events from 29 patients; open-source vision/audio-language feature extraction and leave-one-patient-out ES/NES classification. Automated-feature KNN F1/AUC were0.76, and feature extraction meanF1 was0.51 versus experts; all results are from the accessible preprint.",
+      "unknown": "External multicenter performance, prospective clinical workflow utility and improvement in patient outcomes are unestablished. Detailed final-journal methods/results were not independently read.",
+      "ai_role": "Vision-language and audio-language models extract clinical seizure semiology from patient video/audio; classifier evaluation shows moderate patient-held-out discrimination between video-EEG-confirmed epileptic and nonepileptic events.",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12632642/"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Europe PMC XML full text of medRxiv preprint, including methods, patient cohort, MLLM operations, LOPO protocol and results; publisher-deposited final journal abstract and DOI date metadata."
+    }
+  },
+  {
+    "id": "2026-11-20-functional-mstn-variant-lean-mass-gwas",
+    "title": "GWAS identifies a functional MSTN variant associated with higher lean mass in humans",
+    "summary": "A genome-wide association meta-analysis of DXA-derived lean mass in about 79,000 people identified 63 loci, including a rare MSTN variant associated with higher leg lean mass. Supervised deep residual convolutional networks imputed missing DXA/MRI image-derived phenotypes from raw images for UK Biobank association analyses; statistical GWAS and researcher-led assays supplied the genetic and functional evidence. The findings are observational, largely from European-ancestry participants, and do not establish clinical benefit from myostatin inhibition.",
+    "field": "biology",
+    "ai_technology": "Supervised deep residual convolutional neural networks for DXA/MRI image-derived phenotype imputation",
+    "organization": "deCODE genetics",
+    "source_url": "https://www.nature.com/articles/s41467-026-77766-9",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Deep residual convolutional networks were trained on labeled DXA/MRI images with an 80/20 train/validation split; imputed phenotypes were used in GWAS. The main association analysis used BOLT-LMM; the paper also reports functional characterization of MSTN p.Ile225Thr.",
+      "unknown": "The paper does not establish causal clinical benefit from myostatin inhibition; imputed phenotypes and observational genetic associations have limitations.",
+      "ai_role": "Supervised deep residual convolutional networks imputed missing image-derived phenotypes from raw DXA and MRI images, increasing phenotype availability for the GWAS; the genetic association model and functional assays were separate statistical and experimental analyses.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-026-77766-9",
+        "https://api.crossref.org/works/10.1038/s41467-026-77766-9"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher abstract, Results, UK Biobank imaging-processing Methods, Discussion limitations and publication metadata."
+    }
+  },
+  {
+    "id": "2026-11-20-learning-shared-control-biopsy-robot",
+    "title": "Learned expert skills improve shared control in a CT-guided biopsy robot",
+    "summary": "A CT-guided biopsy robot used a variational autoencoder–hidden Markov model and dynamic motion primitives to learn procedural phases and trajectories from expert demonstrations. Its shared controller reduced interaction forces and targeting errors relative to manual, leader–follower and admittance control in phantom and rabbit experiments, with nine experiments per strategy; porcine work separately assessed robotic feasibility. These preclinical results do not establish safety or benefit in patients, and the learned skills came from a limited expert panel.",
+    "field": "medicine",
+    "ai_technology": "Variational autoencoder–hidden Markov model and dynamic motion primitives for expert-skill learning",
+    "organization": "Shanghai Jiao Tong University",
+    "source_url": "https://www.nature.com/articles/s41467-026-79622-2",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Expert data were collected from a 31-doctor panel including ten experts. Phantom and rabbit control comparisons used nine experiments per strategy; porcine work assessed feasibility. Manual, leader–follower and admittance control were the comparators.",
+      "unknown": "Clinical performance and patient benefit remain untested. Expert demonstrations and anatomical scenarios were limited, and phantom-to-living-tissue transfer remains a source-stated limitation.",
+      "ai_role": "A variational autoencoder–hidden Markov model segmented latent procedural phases from expert skills; dynamic motion primitives reconstructed representative trajectories. These learned representations informed phase-adaptive shared control.",
+      "test_type": "direct test",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-026-79622-2"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher abstract, robot/control Results, expert-skill learning Methods and Discussion limitations, with phantom, rabbit and porcine distinctions checked."
+    }
+  },
+  {
+    "id": "2026-11-20-vr-immersion-self-efficacy-ann",
+    "title": "Artificial neural network analysis links immersion with self-efficacy in VR upper-limb training",
+    "summary": "Artificial neural networks analyzed self-reports from 280 healthy adults who used a VR upper-limb training system. With ten-fold cross-validation, the ANN analysis ranked immersion above learning motivation as a predictor of task-specific self-efficacy, while linear structural-equation analysis ranked learning motivation higher. This preprint reports associations in young adults from one city, without causal evidence or rehabilitation outcomes.",
+    "field": "other",
+    "ai_technology": "Artificial neural networks with 10-fold cross-validation",
+    "organization": "Fujian University of Technology",
+    "source_url": "https://www.researchsquare.com/article/rs-10883988/v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "ANN models used immersion, learning motivation, interactive experience, and perceived incentives to predict affective trust and task-specific self-efficacy; the study reports 10-fold cross-validation and RMSE. The underlying data are self-reports from 280 users.",
+      "unknown": "All participants had normal upper-limb function, were aged 18–35 and came from one city. No causal effect or clinical rehabilitation improvement was tested. The manuscript inconsistently describes the system as immersive/non-immersive.",
+      "ai_role": "The ANN analysis modeled nonlinear relationships among survey constructs and identified immersion as the strongest predictor of task-specific self-efficacy, complementing PLS-SEM and necessary configuration analysis.",
+      "test_type": "retrospective or benchmark",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-10883988/v1",
+        "https://assets-eu.researchsquare.com/files/rs-10883988/v1_covered_01d482d8-6728-4e3d-b1c6-aad89aa9250e.pdf"
+      ]
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Research Square v1 full-text PDF: abstract, participant Methods, ANN analysis, cross-validation and limitations; Crossref version/publication metadata."
+    }
+  },
+  {
+    "id": "2026-11-efferocytosis-prognostic-score-cohort-audit",
+    "title": "Cohort audit finds unstable performance in efferocytosis-related prognostic scores",
+    "summary": "A retrospective audit rebuilt an efferocytosis-related head-and-neck-cancer prognostic analysis in 519 primary tumors after detecting non-primary rows in the original cohort. A Cox-LASSO workflow selected a nine-gene sensitivity score, but its exact composition recurred in none of 500 full-pipeline bootstrap samples and repeated nested cross-validation yielded a mean C-index of 0.587. Survival associations persisted in some analyses while external performance was inconsistent, and a fixed cutoff did not transfer. The authors treat both this reconstruction and the historical six-gene score as hypotheses, with overlapping prior cohorts, no demonstrated causal mechanism and no established clinical utility.",
+    "field": "medicine",
+    "ai_technology": "Cox LASSO prognostic scoring",
+    "organization": "Loudi Central Hospital",
+    "source_url": "https://link.springer.com/article/10.1007/s12032-026-03535-9",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Retrospective prognostic-score audit in TCGA-HNSC primary tumors (n=519), two external cohorts, full-pipeline bootstrap (500 resamples), repeated nested cross-validation, and donor-aware single-cell analyses.",
+      "unknown": "No prospective clinical or experimental validation; the nine-gene signature was unstable and a transportable threshold was not established. Public cohorts overlap with earlier work and are not independent sample-level replication.",
+      "ai_role": "Cox-LASSO selected a nine-gene sensitivity score, while a locked six-gene score was audited. The model-based analysis is the clinical prognostic result; it does not establish causality or clinical utility.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1007/s12032-026-03535-9"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary publisher PDF: abstract, cohort definitions, Cox-LASSO Methods, bootstrap/nested-CV Results, external evaluation and limitations; publisher-deposited date metadata."
+    }
+  },
+  {
+    "id": "2026-11-plsda-osteopenia-metabolite-signatures",
+    "title": "PLS-DA nominates exploratory serum-metabolite patterns in osteopenia",
+    "summary": "Supervised PLS-DA and model-derived VIP feature scores helped nominate serum-metabolite patterns across bone-density groups in 220 adults. The study reported 30, 55 and 49 exploratory candidates for osteopenia versus controls, osteoporosis versus controls and osteoporosis versus osteopenia, using seven-fold cross-validation and permutation checks. All selected metabolites had FDR-adjusted q values above 0.05 and were retained under exploratory VIP, nominal-P and fold-change thresholds. The 135-person discovery and 85-person temporal replication groups came from one hospital; these findings do not establish prospective fracture prediction, external transport or clinical benefit.",
+    "field": "medicine",
+    "ai_technology": "Partial least-squares discriminant analysis (PLS-DA)",
+    "organization": "Wuhan Fourth Hospital; Wuchang University of Technology; Wuhan University; Fudan University",
+    "source_url": "https://link.springer.com/article/10.1007/s11306-026-02556-9",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "PLS-DA group discrimination with seven-fold cross-validation and 200-permutation testing; VIP scores helped select exploratory serum-metabolite candidates across BMD groups.",
+      "unknown": "All candidates had FDR-adjusted q>0.05; temporal replication was within the same hospital and study; no prospective fracture prediction, clinical benefit, or external transport was tested.",
+      "ai_role": "Supervised PLS-DA learned separation between BMD groups; model-derived VIP scores contributed to candidate metabolite selection.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1007/s11306-026-02556-9"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary publisher PDF: abstract, cohort Methods, supervised PLS-DA training/VIP selection, cross-validation/permutation description, candidate q-value caveat and same-hospital temporal split."
+    }
+  },
+  {
+    "id": "2026-01-03-first-long-range-neutrino-interaction-constraints-icecube",
+    "title": "IceCube DeepCore data constrain long-range neutrino interactions",
+    "summary": "First located in an arXiv version posted January 3, 2026, this study received a journal version on November 20 with revised event-score bins. It uses trained boosted-decision-tree scores from IceCube’s pre-applied classification pipeline to group released DeepCore events for oscillation fits. Analyzing eight years of atmospheric-neutrino data, the authors find no evidence for the tested long-range interactions and report constraints on their coupling strengths. The result depends on the specified physical hypotheses and experimental systematics; the classifier identifies event topology and was not newly trained by these authors.",
+    "field": "physics",
+    "ai_technology": "IceCube-pipeline boosted decision tree particle-identification classifier",
+    "organization": "Institute of Physics, Bhubaneswar; Aligarh Muslim University; Homi Bhabha National Institute",
+    "source_url": "https://arxiv.org/abs/2601.01220v1",
+    "source_type": "paper",
+    "publication_date": "2026-01-03",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://journals.aps.org/prd/abstract/10.1103/zx4x-89k6",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The arXiv v1 and peer-reviewed article analyze the released eight-year IceCube DeepCore high-purity νμ charged-current sample. The source describes a trained boosted decision tree that calculates a tracklike particle-identification score; the score defines mixed/tracklike event bins used in the fits. The published version reports constraints and no evidence for long-range interactions.",
+      "unknown": "The search found no evidence for long-range interactions. Results depend on the released sample, detector/flux/cross-section systematics, and the tested interaction hypotheses. The paper states that the event sample selection/reconstruction procedures were already applied by IceCube and that the sample was used without modification; the evidence does not establish that these authors trained a new classifier for this paper.",
+      "ai_role": "A trained boosted decision tree in the IceCube event-classification pipeline supplied particle-identification scores representing event tracklikeness. The study used these scores to define event-topology bins for its forward-folded oscillation fits. The study reused the IceCube golden-event sample without modification; do not attribute fresh model training to the paper’s authors.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2601.01220v1",
+        "https://journals.aps.org/prd/abstract/10.1103/zx4x-89k6",
+        "https://journals.aps.org/prd/pdf/10.1103/zx4x-89k6",
+        "https://export.arxiv.org/api/query?search_query=ti%3A%22First+constraints+on+long-range+neutrino+interactions+using+IceCube+DeepCore%22&max_results=10"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Official arXiv API identity and posting date; arXiv v1 and APS publisher PDFs, including abstracts, BDT particle-identification/binning Methods, main constraint results and conclusions."
+    }
+  },
+  {
+    "id": "2026-11-deep-learning-regulatory-atlas-mammals",
+    "title": "Human-trained neural model predicts regulatory maps across 447 mammalian genomes",
+    "summary": "Using an experimentally mapped human atlas of 5.33 million regulatory elements from 4,159 samples, researchers trained a cell-context-informed neural sequence model. It predicted cell-selective accessibility, generalized to observed mouse data and was applied to predict regulatory activity across 447 mammalian genomes. The human atlas was measured experimentally, while the broad cross-species maps remain computational predictions without validation in every species. Zenodo metadata dates this preprint November 20, 2026; the version record was created November 21, which does not establish a November 20 archive posting.",
+    "field": "biology",
+    "ai_technology": "LegNet-based convolutional sequence model with transcription-factor-repertoire cell-context embeddings",
+    "organization": "Altius Institute for Biomedical Sciences",
+    "source_url": "https://zenodo.org/records/24208044",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.5281/zenodo.24208044",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Sequence model assessed on held-out human biosamples, unseen ATAC-seq samples and mouse data; model reportedly identified the highest-activity cell type for ~85% of cell-selective DHSs.",
+      "unknown": "Predictions are not experimentally confirmed in all 447 species. Concept DOI10.5281/zenodo.24208043 and version DOI10.5281/zenodo.24208044 describe the same work; metadata publication date2026-11-20 differs from archive-record creation2026-11-21.",
+      "ai_role": "Deep-learning sequence-to-activity model, trained on the Atlas, predicts cell-selective regulatory DNA actuation from sequence and generalizes the predictions to mammalian genomes.",
+      "evidence_urls": [
+        "https://zenodo.org/records/24208044",
+        "https://api.datacite.org/dois/10.5281/zenodo.24208043",
+        "https://zenodo.org/api/records/24208044"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary Zenodo version PDF: abstract, cell-context model Results, cross-species inference, LegNet-based Methods/training and limitations; Zenodo/DataCite identity, version and publication metadata."
+    }
+  },
+  {
+    "id": "2026-05-alphafold-homodimer-truncation-structural-grammar",
+    "title": "AlphaFold homodimer predictions link truncation to different interface outcomes",
+    "summary": "The May 9, 2026 preprint version compared 5,168 canonical/truncated human homodimer prediction pairs using AlphaFold-Multimer structures and interface-confidence scores. Among 234 pairs with high-confidence canonical homodimers, it classified 132 as conserved, 61 as interface-ablated and 41 as partially destabilized. These are computational classifications, without biochemical or cellular confirmation of the specific dimers. The later deposited abstract retains these headline proportions but revises interpretations of apparent interface emergence; those emergence and disorder claims are outside this entry.",
+    "field": "biology",
+    "ai_technology": "AlphaFold Database; AlphaFold-Multimer",
+    "organization": "Istanbul University",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.05.06.723091v1.full.pdf",
+    "source_type": "paper",
+    "publication_date": "2026-05-09",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.64898/2026.05.06.723091",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Computational comparison of 5168 AlphaFold-predicted canonical/truncated homodimer pairs, including confidence-tier classifications and within-study robustness analyses; the represented three-class counts refer to the234 high-confidence canonical pairs.",
+      "unknown": "No binding-affinity, cellular-complex or biochemical confirmation is established for individual predicted dimers. The later deposited abstract changes interpretation of apparent emergence; this entry represents only the common core classes documented in the May9v1.",
+      "ai_role": "AlphaFold-Multimer predicts/scored homodimer interfaces; comparisons of canonical and truncated-isoform structures yield the represented interface classes.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.05.06.723091v1.full.pdf",
+        "https://api.crossref.org/works/10.64898/2026.05.06.723091"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "May9v1 primary PDF abstract, Results class counts, AlphaFold-Multimer Methods and limitations; comparison with current publisher-deposited Crossref abstract to bound version-dependent claims."
+    }
+  },
+  {
+    "id": "2026-11-parn-cholesterol-hematopoiesis",
+    "title": "Cholesterol dysregulation contributes to hematopoietic failure in PARN-mutant zebrafish",
+    "summary": "Researchers found expanded hematopoietic stem/progenitor populations and reduced mature blood cells in PARN-loss zebrafish; cholesterol-pathway inhibition rescued expansion and anemia, and cholesterol-pathway activation was also observed in patient-derived iPSCs. Ilastik interactive machine learning generated image probability maps, followed by CellProfiler/Otsu segmentation, to quantify blood-lineage staining and cell counts supporting the phenotype and treatment comparisons. This AI role concerned image-based measurement; pathway identification and rescue conclusions also relied on experimental and transcriptomic assays. The treatment findings remain preclinical, and the iPSC observations do not establish patient benefit.",
+    "field": "biology",
+    "ai_technology": "Ilastik interactive machine learning for bioimage analysis",
+    "organization": "CHEO Research Institute; University of Ottawa",
+    "source_url": "https://www.nature.com/articles/s41467-026-79105-4",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Ilastik probability maps plus CellProfiler segmentation were used to quantify WISH/o-dianisidine staining and distinguish labeled-cell counts in zebrafish hematopoietic phenotyping; biological rescue results were experimentally tested in PARN-loss zebrafish and pathway activation was recapitulated in patient-derived iPSCs.",
+      "unknown": "Not stated in the reviewed Image analyses Methods: the incremental effect of ML segmentation versus manual/non-ML quantification. Clinical treatment benefit is not established by the zebrafish rescue and patient-derived iPSC experiments.",
+      "ai_role": "Interactive ML image segmentation measured stained/fluorescent blood-lineage markers and cell counts that support the PARN-mutant hematopoietic phenotype; it was not used to identify the cholesterol pathway.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-026-79105-4"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher article abstract; selected hematopoietic phenotype, cholesterol/rescue Results; Image analyses Methods; author affiliations. Supplementary material was not reviewed."
+    }
+  },
+  {
+    "id": "2026-11-c-glycosylation-substrate-gates",
+    "title": "Predicted enzyme structures support shared substrate gates in C-glycosylation",
+    "summary": "Analysis of structural models for 56 C-active UGT enzymes found acceptor gates throughout the set and two enzymes lacking a discernible donor gate; AlphaFold3 and source-labeled RobettaFold models supported variable open/closed gate conformations. These predictions extended a gating hypothesis derived from experimental structures and molecular simulations, rather than independently measuring dynamics across all enzymes. For maize ZmUGT708A6, crystallography, biochemical/mutational tests and QM/MM calculations supported a stepwise C-glycosylation mechanism involving water-mediated stabilization of a high-energy sigma complex. The AI contribution concerns comparison of predicted gate architectures; direct mechanistic tests focused on selected enzymes and substrates.",
+    "field": "chemistry",
+    "ai_technology": "AlphaFold 3; RobettaFold",
+    "organization": "Freie Universität Berlin; Technical University of Denmark",
+    "source_url": "https://www.nature.com/articles/s41467-026-79637-9",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "The predicted gate conformations were compared across 56 UGT models; mechanistic propositions were tested with crystallography, biochemical assays, mutational data, QM/MM and pH/substrate activity experiments.",
+      "unknown": "Predicted conformations across the 56 enzymes are not direct measurements of their dynamics. Supplementary model-generation details were not assessed here; the reviewed experimental/mechanistic scope centers on selected enzymes and substrates.",
+      "ai_role": "AlphaFold3 and source-labeled RobettaFold structural models were compared to assess gate architecture/conformational variability across 56 C-active UGTs; experimental structures and simulations established the core gating/mechanistic hypothesis.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41467-026-79637-9"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher article abstract; selected gate-architecture and reaction-mechanism Results; computational/crystallographic Methods; contributions and affiliations. Supplementary model-generation material was not reviewed."
+    }
+  },
+  {
+    "id": "2026-11-neural-potential-phosphonium-hfip-catalyst",
+    "title": "Neural-potential simulations clarify a phosphonium/HFIP catalyst for CO2 conversion",
+    "summary": "Researchers synthesized phosphonium-salt/HFIP catalysts for converting CO2 and epoxides into cyclic carbonates, reporting yields of 86–96% for monosubstituted and 66–88% for disubstituted epoxides at 25 °C and 1 atm CO2. Matlantis PFP v5.0.0, a trained neural interatomic potential, sampled the liquid-mixture structure; radial-distribution analysis supported strong association between HFIP and bromide. The calculated density differed from experiment by about 5%, while NMR and conventional DFT calculations provided complementary structural/mechanistic evidence. AI supported characterization of the new catalytic system; catalyst preparation and performance were experimentally established.",
+    "field": "chemistry",
+    "ai_technology": "Matlantis Preferred Potential Framework (PFP) v5.0.0, TeaNet-inspired neural network interatomic potential",
+    "organization": "University of Alicante; University of Almería; University of Salerno; University of Camerino",
+    "source_url": "https://doi.org/10.1021/acsomega.6c07310",
+    "source_type": "paper",
+    "publication_date": "2026-11-05",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Catalytic performance was experimentally measured across phosphonium/HFIP mixtures and multiple epoxide substrates. PFP neural-potential molecular dynamics modeled the DES organization; DFT and NMR provided complementary mechanistic evidence.",
+      "unknown": "The approximately5% density discrepancy limits the model check; no uncertainty-calibrated validation of every simulated intermolecular feature was assessed. AI supplied mechanistic support rather than autonomous catalyst selection, and external replication was not reviewed.",
+      "ai_role": "The learned PFP potential predicts energies for atomic configurations and enabled molecular-dynamics sampling of catalytic-mixture structure and intermolecular organization, supporting the hydrogen-bond mechanism interpretation.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13786355/fullTextXML",
+        "https://doi.org/10.1021/acsomega.6c07310"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary ACS Omega full-text XML via Europe PMC: abstract; catalyst-mixture organization and density/RDF Results; computational Methods4.8–4.9; publication dates and author affiliations. Supplementary material not reviewed."
+    }
+  },
+  {
+    "id": "2026-11-meningioma-aspirate-genomic-profiling",
+    "title": "Sonopet aspirates support genomic and epigenomic profiling of skull-base meningioma",
+    "summary": "In a prospectively collected paired feasibility series of seven patients, Sonopet aspirate and standard-resection skull-base meningioma specimens produced comparable sequencing yield, read quality and tumor purity. Copy-number profiles were highly concordant (Lin’s CCC0.99;95% CI0.76–1.00), whereas somatic variant-burden agreement was weaker and imprecise (CCC0.53;95% CI−0.28–0.99); promoter methylation was closely correlated. Learned Dorado models interpreted nanopore sequence/modified-base signals, and the ClairS-TO neural ensemble called somatic variants for the comparison. This small specimen-feasibility study, partly funded by Stryker, does not establish improved patient outcomes or independent replication.",
+    "field": "medicine",
+    "ai_technology": "Dorado high-accuracy and modified-base models; ClairS-TO trained neural-network ensemble",
+    "organization": "The University of Texas MD Anderson Cancer Center; Mayo Clinic",
+    "source_url": "https://link.springer.com/article/10.1007/s11060-026-05846-3",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Prospective paired specimen comparison in seven patients. Copy-number concordance CCC 0.99 (95% CI 0.76–1.00); somatic SNV burden CCC 0.53 (95% CI −0.28–0.99); promoter methylation reported as closely correlated.",
+      "unknown": "Somatic-variant agreement has wide uncertainty in seven patients; intratumoral heterogeneity is a possible explanation, not established here. Prospective specimen collection is not prospective clinical-outcome validation; separate replication and patient benefit were not assessed in this series.",
+      "ai_role": "Dorado learned models base-called genomic and methylation signal; ClairS-TO trained neural networks estimated somatic variants, enabling the comparison of aspirate and resection profiles.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1007/s11060-026-05846-3"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher article abstract; paired-specimen Methods; Dorado and ClairS-TO bioinformatic Methods; concordance Results; affiliations and funding/competing-interest declaration. Supplementary file not reviewed."
+    }
+  },
+  {
+    "id": "2026-11-pi-nsl-cervical-cancer-progression",
+    "title": "Physics-informed neural model predicts cervical cancer progression in retrospective cohorts",
+    "summary": "Researchers at Vellore Institute of Technology report a physics-informed neural model for two-year progression-free survival prediction in cervical cancer, evaluated retrospectively in a 20,287-patient analytical cohort and two external Indian cohorts totaling 15,967 patients. The primary abstract reports internal time-dependent AUC 0.91 and external AUCs 0.87 and 0.86; the 2,663-patient 2023 temporal subset is included within the 3,043-patient held-out test set. Model-derived clusters with differing survival outcomes remain hypotheses requiring prospective validation. This source check covers the publisher abstract and publication metadata; it does not establish prospective patient benefit or causal biological mechanisms.",
+    "field": "medicine",
+    "ai_technology": "Physics-Informed Neural Surrogate Learning (PI-NSL), a neural model with a variational physics encoder, differentiable PDE solver and dynamic risk operator",
+    "organization": "Vellore Institute of Technology",
+    "source_url": "https://www.nature.com/articles/s41598-026-79182-x",
+    "source_type": "paper",
+    "publication_date": "2026-11-21",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1038/s41598-026-79182-x",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Retrospective internal held-out and historical external evaluation of progression-free survival prediction; reported latent patient-cluster survival differences.",
+      "unknown": "Prospective clinical benefit and causal interpretation of clusters are not established. Full-paper methods and supplements were not assessed in this bounded independent review; broad geographic transfer is not established by the reported Indian cohorts.",
+      "ai_role": "PI-NSL uses neural representations constrained by a mechanistic PDE system to estimate patient-specific parameters and predict progression-free survival; its latent representations support the reported patient clustering.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41598-026-79182-x"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher article-in-press abstract, affiliations and publication metadata; full paper not assessed by independent reviewer"
+    }
+  },
+  {
+    "id": "2026-11-random-forest-infant-illnesses-bangladesh",
+    "title": "Random forest classifies eight infant illnesses in a retrospective Bangladesh dataset",
+    "summary": "A Daffodil International University study compares four supervised models on 2,552 infant health records covering eight illness categories, assembled from hospital records and caregiver reports in Bangladesh. The publisher abstract reports 99.22% accuracy and 99.04% macro F1 for an optimized random forest using a stratified 80:20 split, with cross-validation, bootstrap and calibration analyses. These are retrospective internal evaluation results; clinical deployment, independent external validation and improved caregiver or patient outcomes are not established by the reviewed abstract. This source check covers the publisher abstract and metadata.",
+    "field": "medicine",
+    "ai_technology": "Random forest; logistic regression; decision tree; XGBoost; SHAP",
+    "organization": "Daffodil International University",
+    "source_url": "https://journals.diu.edu.bd/index.php/jegh/article/view/75",
+    "source_type": "paper",
+    "publication_date": "2026-11-21",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.36481/cynq5729",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Retrospective internal 80:20 train–test evaluation of eight illness classes in 2,552 infant records, with cross-validation, bootstrap and calibration analyses; all figures source-reported.",
+      "unknown": "Full methods were not assessed in this bounded review. Independent external performance, prospective utility and patient benefit are not established by the reviewed abstract.",
+      "ai_role": "Supervised random forest learns classification from symptom and demographic variables; other classifiers provide comparisons and SHAP supports feature interpretation.",
+      "evidence_urls": [
+        "https://journals.diu.edu.bd/index.php/jegh/article/view/75"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher abstract, affiliations, article type and publication metadata; full paper not assessed by independent reviewer"
+    }
+  },
+  {
+    "id": "2026-11-ml-fasn-smoking-male-infertility",
+    "title": "Machine learning and cell assays prioritize FASN in a smoking–male-infertility study",
+    "summary": "Researchers at Meishan City Second People’s Hospital integrated three infertility transcriptomic datasets with network toxicology and used LASSO and support-vector-machine recursive feature elimination to prioritize candidate genes. The publisher abstract reports a genetic association between higher predicted FASN expression and male-infertility risk and increased FASN mRNA after cigarette-smoke-condensate exposure in mouse TM4 Sertoli cells. These findings nominate FASN for functional investigation; they do not show that FASN mediates smoke-induced reproductive injury or establish a treatment. This source check covers the publisher abstract, affiliations and publication metadata; full methods were not assessed.",
+    "field": "biology",
+    "ai_technology": "LASSO; support vector machine recursive feature elimination (SVM-RFE)",
+    "organization": "Meishan City Second People’s Hospital",
+    "source_url": "https://link.springer.com/article/10.1007/s00210-026-06123-w",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1007/s00210-026-06123-w",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Transcriptomic candidate selection and MR/SMR genetic associations, plus a within-study RT-qPCR assay reporting increased FASN mRNA in mouse TM4 Sertoli cells after smoke-condensate exposure.",
+      "unknown": "The source explicitly states that FASN-mediated smoke-induced injury is not established. Full-paper methods and supplements were not assessed; human causal mediation and therapeutic benefit are unestablished.",
+      "ai_role": "LASSO and SVM-RFE select candidate genes from integrated target and transcriptomic features, helping prioritize FASN for genetic analyses and a bounded cell-expression test.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1007/s00210-026-06123-w"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Publisher abstract, affiliations, publication metadata and visible ethics/data statements; subscription full paper not assessed"
+    }
   }
 ]

@@ -1,0 +1,36 @@
+{
+  "id": "2026-04-stardist-synapse-structure-camkii",
+  "title": "Neural segmentation reveals persistent postsynaptic-density enlargement after potentiation",
+  "summary": "In hippocampal slice neurons, StarDist neural-network segmentation identified postsynaptic densities for tracking over 16 hours. After CaMKII photoactivation, postsynaptic densities and spine heads enlarged rapidly; density enlargement persisted at 14 hours while spine-head expansion lasted about 6 hours. The original result was publicly posted on April 11, 2026, followed by a peer-reviewed version on November 20. The journal analysis included 6 activated and 5 control slice cultures, with thousands of nested synaptic measurements. Models were trained on a small manually annotated tile set and visually checked; held-out segmentation accuracy and independent replication were not reported.",
+  "field": "biology",
+  "ai_technology": "StarDist convolutional neural network for star-convex image segmentation, adapted to PSD microscopy",
+  "organization": "University Medical Center Hamburg-Eppendorf",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.04.09.717511v1.full",
+  "source_type": "paper",
+  "publication_date": "2026-04-11",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1126/sciadv.aeh9258",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "StarDist-based segmentation identified PSDs in activated and control hippocampal-slice microscopy time series, with 6 activated and 5 control slice cultures and 2,948/2,953 PSD objects in the reported comparison. The model-supported imaging showed PSD enlargement remained significant at 14 hours, whereas spine-head expansion lasted about 6 hours.",
+    "unknown": "Only a small manually annotated tile set was used for model training; predictions were inspected/retrained, but a held-out segmentation-accuracy metric is not reported. PSD counts are repeated objects nested within 11 slice cultures, not independent biological replicates. No independent replication is reported.",
+    "ai_role": "Custom StarDist neural-network models segmented PSD microscopy, followed by Mastodon temporal tracking and fluorescence-based quantification of PSD/spine changes. Learned segmentation contributed to the structural time course; separate electrophysiological pathway results were not produced by this model.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.04.09.717511v1.full",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13787482/",
+      "https://arxiv.org/abs/1908.03636",
+      "https://openaccess.thecvf.com/content_WACV_2020/papers/Weigert_Star-convex_Polyhedra_for_3D_Object_Detection_and_Segmentation_in_Microscopy_WACV_2020_paper.pdf"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Actual bioRxiv v1 and journal full text: StarDist training/segmentation and Mastodon tracking Methods, Fig1 and morphology time course, first-preprint posted date, journal sample counts/affiliation; original StarDist primary abstract for learned-model identity."
+  }
+}
