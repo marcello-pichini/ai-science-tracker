@@ -146,6 +146,38 @@ class SharePageTests(unittest.TestCase):
         self.assertLess(related.index('share/documented.html'), related.index('share/nearby.html'))
         self.assertNotIn('href="../share/archived.html"', related)
 
+    def test_same_field_topic_fallback_and_year_link(self):
+        g = self.generator
+        base = dict(self.record, organization='Lab A', ai_technology='x', relationships=[], field='biology', publication_date='2025-03-01')
+        current = dict(base, id='current', title='Enzyme promiscuity in Escherichia coli metabolism', summary='Metabolomics of enzymes.')
+        similar = dict(base, id='similar', organization='Lab B', ai_technology='y', title='Escherichia coli enzyme promiscuity atlas', summary='Metabolomics enzymes.')
+        other_field = dict(similar, id='other-field', field='physics')
+        g.write_discovery_pages([current, similar, other_field], {'families': []}, False)
+        page = (g.ROOT / 'share/current.html').read_text()
+        related = page.split('<h2>Related catalog entries</h2>', 1)[1]
+        self.assertIn('share/similar.html', related)
+        self.assertIn('Similar topic in the same field', related)
+        self.assertNotIn('share/other-field.html', related)
+        self.assertIn('profiles/year-2025.html', page)
+        g.write_discovery_pages([current, similar, other_field], {'families': []}, False)
+        self.assertEqual(page, (g.ROOT / 'share/current.html').read_text())
+
+    def test_search_title_is_short_and_keeps_full_heading(self):
+        g = self.generator
+        long_title = 'An AI-assisted proof establishes a long and very specific combinatorial bound with optimal examples through order 52'
+        row = dict(self.record, id='long', title=long_title, field='mathematics')
+        override = dict(self.record, id='override', title=long_title + ' again', search_title='Latin-square imbalance bound')
+        short = dict(self.record, id='short', title='Short result', field='physics')
+        g.write_discovery_pages([row, override, short], {'families': []}, False)
+        page = (g.ROOT / 'share/long.html').read_text()
+        title = __import__('re').search(r'<title>(.*?)</title>', page)[1]
+        self.assertLessEqual(len(title), g.TITLE_MAX)
+        self.assertTrue(title.endswith(' · mathematics'))
+        self.assertIn(f'<h1 id="titolo-pagina">{long_title}</h1>', page)
+        self.assertIn(f'<meta property="og:title" content="{long_title}">', page)
+        self.assertIn('<title>Latin-square imbalance bound</title>', (g.ROOT / 'share/override.html').read_text())
+        self.assertIn('<title>Short result · physics</title>', (g.ROOT / 'share/short.html').read_text())
+
     def test_skipping_image_rendering_preserves_existing_entry_previews(self):
         g = self.generator
         g.write_discovery_pages([self.record], {'families': []}, False)

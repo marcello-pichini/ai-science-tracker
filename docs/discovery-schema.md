@@ -18,6 +18,7 @@
 | `added_date` | date | Date added to the catalog. |
 | `verification_status` | string | `verified` or `needs verification`. |
 | `paper_url` | URL | Paper or preprint; may be empty. |
+| `search_title` | text | Optional, hand-reviewed short title (≤65 characters) used only for the share page `<title>`. When absent the generator clips `title` at a word boundary and appends the field. The heading, Open Graph title and JSON-LD keep the full `title`. |
 | `relevance` | object | `impact`, `validation`, `novelty`: integer scores 1–5. |
 | `evidence` | object | Optional evidence description and catalog test category. `publication_status` (`Peer-reviewed paper`, `Preprint`, `Announcement only`, `Not reported`), `tested`, `unknown`, `ai_role` (short text), `evidence_urls` (https pages actually read) and `test_type` (`not reported`, `retrospective or benchmark`, `direct test`, `prospective or independent check`, `replication or operational use`). When `test_type` is present it sets `relevance.validation` (1–5 in that order). The test category is an editorial classification under the precedence rules in methodology.html, not a source-assigned quality grade. Other scientific statements must be supported by the cited sources and are never inferred from the relevance score. The category changes validation and therefore can change the displayed score; impact and novelty are separate judgments. Review limitations are explicitly labeled; see below for legacy `Not reported` values. |
 

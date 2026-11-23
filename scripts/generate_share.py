@@ -362,16 +362,47 @@ def discovery_article(d, fam, ui, link_title=False, archived=False):
   </article>"""
 
 
+TITLE_MAX = 65
+STOP_WORDS = frozenset('''the and for with from into that this these those than then their there were was are has have
+had not but its new using used use via based model models data study studies result results shows show showed
+identifies identified predicts predicted helps help can more most first after over under between across within
+which while when where also two three four five one all any per out who how what our its such'''.split())
+RELATED_LIMIT = 5
+TOPIC_THRESHOLD = 0.12
+
+
+def search_title(d):
+    """Short <title> for search results; the H1, og:title and JSON-LD keep the full title."""
+    if d.get('search_title'):
+        return d['search_title']
+    suffix = '' if d['field'] in ('other', 'multidisciplinary') else f' · {d["field"]}'
+    if len(d['title']) + len(suffix) <= TITLE_MAX:
+        return d['title'] + suffix
+    if len(d['title']) <= TITLE_MAX:
+        return d['title']
+    return clip(d['title'], TITLE_MAX - len(suffix)) + suffix
+
+
+def topic_words(row):
+    text = f'{row["title"]} {row["summary"]} {row["ai_technology"]}'.lower()
+    return frozenset(w for w in re.findall(r'[a-z][a-z0-9-]{2,}', text) if w not in STOP_WORDS)
+
+
+def topic_similarity(a, b):
+    return len(a & b) / ((len(a) * len(b)) ** 0.5) if a and b else 0.0
+
+
 def related_section(d, candidates, families):
-    """Prefer recorded links, then exact catalog context and closeness in date."""
+    """Prefer recorded links, then exact catalog context, then similar wording in the same field."""
     current_id = d['id']
+    words = topic_words(d)
     outgoing = {link['target_id'] for link in d.get('relationships', [])}
     affiliation = canonical_organization(d['organization'])
     current_org = affiliation['label'] if affiliation['kind'] != 'unknown affiliation' else None
     current_date = datetime.date.fromisoformat(d['publication_date'])
     technology = d['ai_technology'].strip().casefold()
     ranked = []
-    for row, org, day, incoming, tech in candidates:
+    for row, org, day, incoming, tech, other_words in candidates:
         other_id = row['id']
         if other_id == current_id:
             continue
@@ -380,19 +411,23 @@ def related_section(d, candidates, families):
         same_field = d['field'] == row['field']
         same_technology = bool(technology and technology == tech)
         same_org = current_org == org
-        if not any((documented, shared_family, same_technology, same_field and same_org)):
+        similarity = topic_similarity(words, other_words) if same_field else 0.0
+        exact = any((documented, shared_family, same_technology, same_field and same_org))
+        if not exact and similarity < TOPIC_THRESHOLD:
             continue
         reason = ('Documented relationship' if documented else 'Shared model family' if shared_family
-                  else 'Same recorded technology' if same_technology else 'Same field and first-listed affiliation')
+                  else 'Same recorded technology' if same_technology
+                  else 'Same field and first-listed affiliation' if same_field and same_org
+                  else 'Similar topic in the same field')
         key = (not documented, not (same_field and (shared_family or same_technology)),
                not shared_family, not same_technology, not (same_field and same_org),
-               not same_field, abs((current_date - day).days), other_id)
+               not same_field, not exact, -round(similarity, 6), abs((current_date - day).days), other_id)
         ranked.append((key, row, reason))
     if not ranked:
         return ''
     links = ''.join(f'<li><a href="share/{quote(row["id"])}.html">{esc(row["title"])}</a>'
                     f' &middot; {esc(nice_date(row["publication_date"]))} · {reason}</li>'
-                    for _, row, reason in sorted(ranked)[:4])
+                    for _, row, reason in sorted(ranked)[:RELATED_LIMIT])
     return ('\n  <section class="sez"><div class="wrap prosa"><h2>Related catalog entries</h2>'
             '<p>Links use documented relationships where available, plus shared catalog context. '
             'A shared topic or model family does not establish a scientific dependency.</p>'
@@ -412,9 +447,18 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
             fam_by_discovery.setdefault(did, f)
             families_by_discovery.setdefault(did, set()).add(f['id'])
     candidates = [(row, lead_org(row['organization']), datetime.date.fromisoformat(row['publication_date']),
-                   {link['target_id'] for link in row.get('relationships', [])}, row['ai_technology'].strip().casefold())
+                   {link['target_id'] for link in row.get('relationships', [])}, row['ai_technology'].strip().casefold(),
+                   topic_words(row))
                   for row in (items if related_items is None else related_items)]
     fields = {row['field'] for row, *_ in candidates}
+    years = {row['publication_date'][:4] for row, *_ in candidates}
+    titles = {d['id']: search_title(d) for d in items}
+    seen = {}
+    for t in titles.values():
+        seen[t] = seen.get(t, 0) + 1
+    for d in items:
+        if seen[titles[d['id']]] > 1 and not d.get('search_title'):
+            titles[d['id']] = d['title']  # shortcut: duplicate short titles fall back to the full title
     ui = run_catalog_ui(items)
     for d in items:
         has_image = images or (ROOT / 'og' / f'{d["id"]}.png').is_file()
@@ -424,6 +468,9 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
         lead = f'{esc(d["organization"])} &middot; {esc(nice_date(d["publication_date"]))} &middot; {esc(d["field"])}'
         if d['field'] in fields:
             more += f' <a href="profiles/field-{slug(d["field"])}.html">Browse {esc(d["field"])} discoveries</a>.'
+        year = d['publication_date'][:4]
+        if year in years and not archived:
+            more += f' <a href="profiles/year-{year}.html">Browse {year} discoveries</a>.'
         if d['id'] in DOSSIER_IDS and not archived:
             topic, section = DOSSIER_IDS[d['id']]
             more += f' <a href="{topic}-dossier.html#{section}">Read the {topic} evidence dossier</a>.'
@@ -434,9 +481,8 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
                            imgalt=esc(f'Preview card: {d["title"]}') if has_image else DEFAULT_ALT, jsonld=discovery_jsonld(d),
                            h2='<h2 class="vis-nascosto">Discovery</h2>', more=more, extra=related_section(d, candidates, families_by_discovery),
                            header=header, footer=footer, lead=lead, article=article)
-        if archived:
-            page = page.replace(f'<title>{esc(d["title"])} · {SITE}</title>',
-                                f'<title>Archived: {esc(d["title"])} · {SITE}</title>', 1)
+        page = page.replace(f'<title>{esc(d["title"])} · {SITE}</title>',
+                            f'<title>{"Archived: " if archived else ""}{esc(titles[d["id"]])}</title>', 1)
         (out / f'{d["id"]}.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
 
 
