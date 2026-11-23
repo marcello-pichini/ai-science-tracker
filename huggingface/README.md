@@ -5,6 +5,9 @@ language:
 - en
 size_categories:
 - {size}
+task_categories:
+- text-classification
+- tabular-classification
 tags:
 - ai-for-science
 - scientific-discovery
