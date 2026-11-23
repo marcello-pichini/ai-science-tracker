@@ -35,5 +35,5 @@ jobs:
           mkdir -p work/kaggle
           cp data/discoveries.csv data/discoveries.json work/kaggle/
           # keywords must be repeated on every version, or Kaggle drops the dataset tags
-          echo '{"id": "marcellopichini/ai-science-tracker-ai-enabled-discoveries", "keywords": ["artificial intelligence", "science and technology", "biology", "healthcare", "chemistry"]}' > work/kaggle/dataset-metadata.json
+          echo '{"id": "marcellopichini/ai-science-tracker-ai-enabled-discoveries", "keywords": ["artificial intelligence", "science and technology", "biology", "chemistry", "research"]}' > work/kaggle/dataset-metadata.json
           kaggle datasets version -p work/kaggle -m "Catalog update $(git log -1 --format=%cs) ($(git rev-parse --short HEAD))"
