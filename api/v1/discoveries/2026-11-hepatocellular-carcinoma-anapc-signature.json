@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-hepatocellular-carcinoma-anapc-signature",
+  "title": "Machine-learning analysis identifies an ANAPC-related prognostic signature in hepatocellular carcinoma",
+  "summary": "An analysis of TCGA liver-cancer transcriptomic and clinical data used consensus clustering and LASSO-Cox modeling to derive an ANAPC-related three-gene survival-risk signature: SPP1, CDCA8 and CFHR4. The study initially clustered 371 cases and excluded six without survival information from survival analysis. Reported 1-, 3- and 5-year survival AUCs were 0.768, 0.683 and 0.668 within the source cohort. The signature was built and assessed only in TCGA-LIHC, without external validation. Drug-sensitivity and immunotherapy-response estimates were computational. Separate CDC27 cell experiments did not validate the signature. This is an exploratory retrospective association, without established clinical utility.",
+  "field": "medicine",
+  "ai_technology": "Machine learning (consensus clustering and LASSO-Cox prognostic modeling)",
+  "organization": "The Second Affiliated Hospital, Guangzhou Medical University; Sun Yat-sen University Cancer Center; Guangdong Medical University",
+  "source_url": "https://doi.org/10.1186/s12885-026-17420-1",
+  "source_type": "paper",
+  "publication_date": "2026-11-21",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.1186/s12885-026-17420-1",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "ANAPC clustering initially included 371 TCGA cases; six cases without survival information were excluded from survival analysis. A three-gene signature stratified survival within the source cohort, with no external validation. Separate Huh-7 CDC27 knockdown experiments did not validate the signature.",
+    "unknown": "No independent external cohort or prospective clinical validation; no observed drug-treatment response data.",
+    "ai_role": "Machine-learning analyses of TCGA expression and survival data (ANAPC consensus clustering and LASSO/multivariable Cox modeling) derived a three-gene risk signature for overall-survival stratification.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1186/s12885-026-17420-1",
+      "https://link.springer.com/content/pdf/10.1186/s12885-026-17420-1_reference.pdf"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Independently downloaded/read publisher 22-page Article in Press PDF: data-processing/model/validation Methods, signature Results and Discussion/limitations; primary publisher article abstract/date/affiliations. No supplement or independent validation."
+  }
+}

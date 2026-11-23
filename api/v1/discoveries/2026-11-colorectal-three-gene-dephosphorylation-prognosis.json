@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-colorectal-three-gene-dephosphorylation-prognosis",
+  "title": "LASSO identifies a three-gene signature associated with colorectal-cancer prognosis",
+  "summary": "LASSO selection of dephosphorylation-related candidates from TCGA colorectal-cancer data produced a SNAI1/TCF7L1/TIMP1 survival-risk signature. Prognostic analysis used 524 TCGA cases and 55 GSE17537 cases; reported 1-, 2- and 3-year AUCs were 0.604/0.626/0.658 in training and 0.687/0.764/0.652 in validation. New expression measurements in five paired tumors/adjacent tissues supported higher tumor SNAI1 and higher adjacent-tissue TCF7L1; TIMP1 did not differ significantly. These measurements do not validate survival prediction. The preprint reports retrospective associations and computational treatment-response estimates; phosphatase-dependent mechanisms, clinical utility and observed treatment benefit remain unestablished.",
+  "field": "medicine",
+  "ai_technology": "LASSO-regularized Cox prognostic modeling",
+  "organization": "The Third Affiliated Hospital of Chongqing Medical University",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-11528084/v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.21203/rs.3.rs-11528084/v1",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "524 survival-annotated TCGA colorectal tumors and 55 GSE17537 cases evaluated the three-gene signature. RT-qPCR in five paired clinical tissues assessed expression, not prognostic validity.",
+    "unknown": "Associational retrospective result; no causal phosphatase mechanism, prospective survival model validation or confirmed treatment-response prediction. Small external cohort and selected cutoff limit transfer.",
+    "ai_role": "After differential-expression and Cox/proportional-hazards screening, LASSO with 10-fold cross-validation selected nonzero prognostic features for a Cox risk signature.",
+    "evidence_urls": [
+      "https://doi.org/10.21203/rs.3.rs-11528084/v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Research Square v1 full 41-page PDF: data collection/feature-selection/evaluation Methods, model and expression Results, Discussion/limitations; cover posting date 2026-11-20. No supplement or independent validation."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-ml-prioritized-mir130b-nr3c2-kidney-cancer",
+  "title": "Learned prognostic screening links miR-130b-3p and NR3C2 to a putative kidney-cancer relationship",
+  "summary": "An integrative analysis of clear-cell renal cell carcinoma used learned prognostic models and co-expression/target-gene intersections to prioritize NR3C2 and examine its relationship with miR-130b-3p. In 786-O cells, inhibiting miR-130b-3p increased NR3C2 mRNA and reduced proliferation, migration and invasion. The authors present the combined relationship as an extension of earlier work on each marker. Direct binding and NR3C2-dependent mediation were not established; the assays used one cell line. Prognostic evaluation was retrospective and subject to model-selection and feature-screening optimism, and it does not establish clinical benefit.",
+  "field": "medicine",
+  "ai_technology": "Integrative learned survival models; StepCox forward selection and LASSO-Cox modeling",
+  "organization": "Southern Medical University; Hong Kong Baptist University; General Hospital of Southern Theater Command",
+  "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1976138/full",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.3389/fonc.2026.1976138",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "TCGA-KIRC model development used 516 patients/171 deaths and 99 candidate model combinations; the selected model retained 41 genes. Integrating its genes with co-expression modules and predicted targets identified NR3C2. Cell experiments in 786-O cells linked miR-130b-3p inhibition to increased NR3C2 mRNA and reduced proliferation, migration and invasion.",
+    "unknown": "Direct miRNA binding and NR3C2 mediation remain untested. The authors identify prior work on both markers. GSE40914 performance helped select the model, so it is not fully independent validation; feature screening was not nested, and the model had about 4.2 events per retained variable. Generalization and therapeutic benefit are not established.",
+    "ai_role": "Learned survival-model comparison and selection supplied a prognostic gene signature intersected with co-expression and predicted target-gene sets to prioritize NR3C2; LASSO-Cox modeling combined the two markers.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1976138/full"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Primary publisher full-text sections 2.1–2.6, 3.5–3.7, Discussion and Conclusions; complete abstract, article date/affiliations and source-reported cell-assay results. Publisher-deposited Crossref metadata. No independent experiment or supplement review."
+  }
+}

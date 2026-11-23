@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-crohns-seven-protein-anti-tnf-response",
+  "title": "Elastic-net analysis identifies an exploratory seven-protein anti-TNF response signature in Crohn’s disease",
+  "summary": "Elastic-net logistic models helped derive a seven-protein candidate signature associated with anti-TNF treatment outcomes in a cohort of 80 children and young adults with Crohn’s disease. A separate analysis fitted models to expression of the corresponding genes in 324 PANTS participants, reporting mean AUPRCs of 0.704 at baseline and 0.76 at week 14. This is exploratory, retrospective model evaluation on prospectively collected observational cohorts, not a locked-model prospective trial. The second analysis refitted transcriptomic models and does not independently validate plasma protein measurements. Modest cohort size, missing follow-up, non-standardized treatment and 90% White enrollment in the discovery cohort limit interpretation.",
+  "field": "medicine",
+  "ai_technology": "Elastic-net-regularized logistic regression",
+  "organization": "Cincinnati Children's Hospital Medical Center; University of Cincinnati College of Medicine; Connecticut Children’s Medical Center; Nationwide Children’s Hospital; Medical College of Wisconsin",
+  "source_url": "https://doi.org/10.64898/2026.11.18.26368439",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-23",
+  "verification_status": "verified",
+  "paper_url": "https://doi.org/10.64898/2026.11.18.26368439",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Discovery cohort: 80 participants; candidate proteins selected using outcome associations and regularized predictive models. Independent PANTS cohort analysis used 814 RNA-seq samples from 324 participants and separately trained/tested gene-expression models.",
+    "unknown": "No orthogonal protein-level validation; refitted cross-omic models are not an external frozen protein-panel validation. Feature/outcome exploration and observational treatment variation limit generalization; no causal or treatment-selection benefit established.",
+    "ai_role": "Elastic-net logistic regression evaluated candidate protein/outcome relationships and selected a seven-protein panel; corresponding gene-expression models were refitted and tested in PANTS.",
+    "evidence_urls": [
+      "https://doi.org/10.64898/2026.11.18.26368439"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-23",
+    "scope": "Original44-page medRxiv v1 PDF: relevant Materials and Methods(pp6–11), candidate-panel/cross-omic Results(pp12–15), Discussion and limitations(pp16–20); primary API abstract/version date. No supplement or independent experiment review."
+  }
+}

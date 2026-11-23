@@ -138710,5 +138710,171 @@
       "date": "2026-11-23",
       "scope": "Publisher Methods, Results, limitations and publication history; supplement and underlying patient data not reviewed."
     }
+  },
+  {
+    "id": "2026-11-ml-prioritized-mir130b-nr3c2-kidney-cancer",
+    "title": "Learned prognostic screening links miR-130b-3p and NR3C2 to a putative kidney-cancer relationship",
+    "summary": "An integrative analysis of clear-cell renal cell carcinoma used learned prognostic models and co-expression/target-gene intersections to prioritize NR3C2 and examine its relationship with miR-130b-3p. In 786-O cells, inhibiting miR-130b-3p increased NR3C2 mRNA and reduced proliferation, migration and invasion. The authors present the combined relationship as an extension of earlier work on each marker. Direct binding and NR3C2-dependent mediation were not established; the assays used one cell line. Prognostic evaluation was retrospective and subject to model-selection and feature-screening optimism, and it does not establish clinical benefit.",
+    "field": "medicine",
+    "ai_technology": "Integrative learned survival models; StepCox forward selection and LASSO-Cox modeling",
+    "organization": "Southern Medical University; Hong Kong Baptist University; General Hospital of Southern Theater Command",
+    "source_url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1976138/full",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.3389/fonc.2026.1976138",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "TCGA-KIRC model development used 516 patients/171 deaths and 99 candidate model combinations; the selected model retained 41 genes. Integrating its genes with co-expression modules and predicted targets identified NR3C2. Cell experiments in 786-O cells linked miR-130b-3p inhibition to increased NR3C2 mRNA and reduced proliferation, migration and invasion.",
+      "unknown": "Direct miRNA binding and NR3C2 mediation remain untested. The authors identify prior work on both markers. GSE40914 performance helped select the model, so it is not fully independent validation; feature screening was not nested, and the model had about 4.2 events per retained variable. Generalization and therapeutic benefit are not established.",
+      "ai_role": "Learned survival-model comparison and selection supplied a prognostic gene signature intersected with co-expression and predicted target-gene sets to prioritize NR3C2; LASSO-Cox modeling combined the two markers.",
+      "evidence_urls": [
+        "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2026.1976138/full"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary publisher full-text sections 2.1–2.6, 3.5–3.7, Discussion and Conclusions; complete abstract, article date/affiliations and source-reported cell-assay results. Publisher-deposited Crossref metadata. No independent experiment or supplement review."
+    }
+  },
+  {
+    "id": "2026-11-crohns-seven-protein-anti-tnf-response",
+    "title": "Elastic-net analysis identifies an exploratory seven-protein anti-TNF response signature in Crohn’s disease",
+    "summary": "Elastic-net logistic models helped derive a seven-protein candidate signature associated with anti-TNF treatment outcomes in a cohort of 80 children and young adults with Crohn’s disease. A separate analysis fitted models to expression of the corresponding genes in 324 PANTS participants, reporting mean AUPRCs of 0.704 at baseline and 0.76 at week 14. This is exploratory, retrospective model evaluation on prospectively collected observational cohorts, not a locked-model prospective trial. The second analysis refitted transcriptomic models and does not independently validate plasma protein measurements. Modest cohort size, missing follow-up, non-standardized treatment and 90% White enrollment in the discovery cohort limit interpretation.",
+    "field": "medicine",
+    "ai_technology": "Elastic-net-regularized logistic regression",
+    "organization": "Cincinnati Children's Hospital Medical Center; University of Cincinnati College of Medicine; Connecticut Children’s Medical Center; Nationwide Children’s Hospital; Medical College of Wisconsin",
+    "source_url": "https://doi.org/10.64898/2026.11.18.26368439",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.64898/2026.11.18.26368439",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Discovery cohort: 80 participants; candidate proteins selected using outcome associations and regularized predictive models. Independent PANTS cohort analysis used 814 RNA-seq samples from 324 participants and separately trained/tested gene-expression models.",
+      "unknown": "No orthogonal protein-level validation; refitted cross-omic models are not an external frozen protein-panel validation. Feature/outcome exploration and observational treatment variation limit generalization; no causal or treatment-selection benefit established.",
+      "ai_role": "Elastic-net logistic regression evaluated candidate protein/outcome relationships and selected a seven-protein panel; corresponding gene-expression models were refitted and tested in PANTS.",
+      "evidence_urls": [
+        "https://doi.org/10.64898/2026.11.18.26368439"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Original44-page medRxiv v1 PDF: relevant Materials and Methods(pp6–11), candidate-panel/cross-omic Results(pp12–15), Discussion and limitations(pp16–20); primary API abstract/version date. No supplement or independent experiment review."
+    }
+  },
+  {
+    "id": "2026-11-ct-mandibular-cancer-invasion-localization",
+    "title": "MedNeXt localizes mandibular cancer invasion in a small retrospective CT cohort",
+    "summary": "A single-center study trained a 3D MedNeXt model within nnU-Net on 30 CT examinations and evaluated it on 20 held-out patients with histopathologically confirmed mandibular invasion by oral squamous cell carcinoma. Predicted invasion overlapped expert-reviewed CT references in 18 of 20 examinations; mean invasion Dice was 0.553 and recall 0.483, with two cases missed. Among 18 evaluable cases, median absolute longitudinal invasion-span difference was 7.01 mm. This is a retrospective localization/segmentation study among invasion-positive patients, not an assessment of specificity, surgical outcomes or clinical benefit. Larger multicenter and prospective planning studies remain necessary.",
+    "field": "medicine",
+    "ai_technology": "3D MedNeXt convolutional network in nnU-Net v2; TotalSegmentator preprocessing",
+    "organization": "Ludwig Maximilian University of Munich; University of Freiburg",
+    "source_url": "https://doi.org/10.1186/s12903-026-10471-7",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1186/s12903-026-10471-7",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "50 positive-patient CT examinations, 30 development and 20 single-center held-out tests; expert-reviewed radiological references. Invasion overlapped 18/20, mean Dice 0.553, precision 0.742 and recall 0.483.",
+      "unknown": "No invasion-negative controls, histological voxel-level boundary reference, external-center or prospective surgical/planning outcome validation. All test patients had confirmed invasion; localization overlap does not establish diagnostic specificity or resection safety.",
+      "ai_role": "MedNeXt learned image-to-mask segmentation from expert-reviewed CTimages and estimated invasion location/extent; TotalSegmentator supplied initial mandibular cropping.",
+      "evidence_urls": [
+        "https://doi.org/10.1186/s12903-026-10471-7"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Primary full publisher Methods/data partitioning/model training, Results, Discussion/limitations and publication metadata; abstract. No supplement review or independent image adjudication."
+    }
+  },
+  {
+    "id": "2026-11-colorectal-three-gene-dephosphorylation-prognosis",
+    "title": "LASSO identifies a three-gene signature associated with colorectal-cancer prognosis",
+    "summary": "LASSO selection of dephosphorylation-related candidates from TCGA colorectal-cancer data produced a SNAI1/TCF7L1/TIMP1 survival-risk signature. Prognostic analysis used 524 TCGA cases and 55 GSE17537 cases; reported 1-, 2- and 3-year AUCs were 0.604/0.626/0.658 in training and 0.687/0.764/0.652 in validation. New expression measurements in five paired tumors/adjacent tissues supported higher tumor SNAI1 and higher adjacent-tissue TCF7L1; TIMP1 did not differ significantly. These measurements do not validate survival prediction. The preprint reports retrospective associations and computational treatment-response estimates; phosphatase-dependent mechanisms, clinical utility and observed treatment benefit remain unestablished.",
+    "field": "medicine",
+    "ai_technology": "LASSO-regularized Cox prognostic modeling",
+    "organization": "The Third Affiliated Hospital of Chongqing Medical University",
+    "source_url": "https://doi.org/10.21203/rs.3.rs-11528084/v1",
+    "source_type": "paper",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.21203/rs.3.rs-11528084/v1",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "524 survival-annotated TCGA colorectal tumors and 55 GSE17537 cases evaluated the three-gene signature. RT-qPCR in five paired clinical tissues assessed expression, not prognostic validity.",
+      "unknown": "Associational retrospective result; no causal phosphatase mechanism, prospective survival model validation or confirmed treatment-response prediction. Small external cohort and selected cutoff limit transfer.",
+      "ai_role": "After differential-expression and Cox/proportional-hazards screening, LASSO with 10-fold cross-validation selected nonzero prognostic features for a Cox risk signature.",
+      "evidence_urls": [
+        "https://doi.org/10.21203/rs.3.rs-11528084/v1"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Research Square v1 full 41-page PDF: data collection/feature-selection/evaluation Methods, model and expression Results, Discussion/limitations; cover posting date 2026-11-20. No supplement or independent validation."
+    }
+  },
+  {
+    "id": "2026-11-hepatocellular-carcinoma-anapc-signature",
+    "title": "Machine-learning analysis identifies an ANAPC-related prognostic signature in hepatocellular carcinoma",
+    "summary": "An analysis of TCGA liver-cancer transcriptomic and clinical data used consensus clustering and LASSO-Cox modeling to derive an ANAPC-related three-gene survival-risk signature: SPP1, CDCA8 and CFHR4. The study initially clustered 371 cases and excluded six without survival information from survival analysis. Reported 1-, 3- and 5-year survival AUCs were 0.768, 0.683 and 0.668 within the source cohort. The signature was built and assessed only in TCGA-LIHC, without external validation. Drug-sensitivity and immunotherapy-response estimates were computational. Separate CDC27 cell experiments did not validate the signature. This is an exploratory retrospective association, without established clinical utility.",
+    "field": "medicine",
+    "ai_technology": "Machine learning (consensus clustering and LASSO-Cox prognostic modeling)",
+    "organization": "The Second Affiliated Hospital, Guangzhou Medical University; Sun Yat-sen University Cancer Center; Guangdong Medical University",
+    "source_url": "https://doi.org/10.1186/s12885-026-17420-1",
+    "source_type": "paper",
+    "publication_date": "2026-11-21",
+    "added_date": "2026-11-23",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1186/s12885-026-17420-1",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "ANAPC clustering initially included 371 TCGA cases; six cases without survival information were excluded from survival analysis. A three-gene signature stratified survival within the source cohort, with no external validation. Separate Huh-7 CDC27 knockdown experiments did not validate the signature.",
+      "unknown": "No independent external cohort or prospective clinical validation; no observed drug-treatment response data.",
+      "ai_role": "Machine-learning analyses of TCGA expression and survival data (ANAPC consensus clustering and LASSO/multivariable Cox modeling) derived a three-gene risk signature for overall-survival stratification.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1186/s12885-026-17420-1",
+        "https://link.springer.com/content/pdf/10.1186/s12885-026-17420-1_reference.pdf"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-23",
+      "scope": "Independently downloaded/read publisher 22-page Article in Press PDF: data-processing/model/validation Methods, signature Results and Discussion/limitations; primary publisher article abstract/date/affiliations. No supplement or independent validation."
+    }
   }
 ]
