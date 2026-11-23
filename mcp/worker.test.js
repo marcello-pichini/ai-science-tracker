@@ -2,7 +2,22 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { Client } from '@modelcontextprotocol/sdk/client/index.js'
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js'
-import worker from './worker.js'
+import worker, { fold, queryTerms, tokens, termMatches } from './worker.js'
+
+test('search terms fold spelling, accents, abbreviations and synonyms', () => {
+  const matchesText = (term, text) => termMatches(term, tokens(text))
+  assert.equal(fold('tumours'), 'tumors')
+  assert.equal(fold('optimisation'), 'optimization')
+  assert.equal(fold('paediatric'), 'pediatric')
+  assert.equal(fold('Gödel'.toLowerCase()), 'godel')
+  assert.deepEqual(queryTerms('Large Language Models for chemistry'), ['llm', 'for', 'chemistry'])
+  assert.ok(matchesText('nasca', 'AI finds 303 new Nazca geoglyphs'))
+  assert.ok(matchesText('ercolano', 'A Herculaneum scroll read'))
+  assert.ok(matchesText('llm', 'A large language model proposes catalysts'))
+  assert.ok(matchesText(queryTerms('tumour')[0], 'Tumor boundaries from MRI'))
+  assert.ok(!matchesText('ai', 'Air quality forecasts'))
+  assert.ok(!matchesText('ants', 'Rare variants in cohorts'))
+})
 
 const origin = 'https://aisciencetracker.org'
 const endpoint = new URL('https://mcp.aisciencetracker.org/mcp')
@@ -29,6 +44,7 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
           ...discovery,
           id: '2023-04-laboratory-example',
           title: 'Laboratory robots run catalyst trials',
+          organization: 'Example Lab; Partner University',
           publication_date: '2023-04-11',
         }])
       case origin + '/api/v1/discoveries/' + discovery.id + '.json':
@@ -47,7 +63,7 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
   }))
 
   const { tools } = await client.listTools()
-  assert.deepEqual(tools.map((tool) => tool.name).sort(), ['get_discovery', 'search_discoveries'])
+  assert.deepEqual(tools.map((tool) => tool.name).sort(), ['get_discovery', 'list_fields', 'search_discoveries'])
   assert.ok(tools.every((tool) => tool.annotations.readOnlyHint))
 
   const search = await client.callTool({
@@ -70,6 +86,15 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
   })).content[0].text)
   assert.equal(truncated.truncated, true)
   assert.equal(truncated.results.length, 2)
+  assert.equal(truncated.total, 3)
+
+  const byOrg = JSON.parse((await client.callTool({
+    name: 'search_discoveries', arguments: { organization: 'Example Lab' },
+  })).content[0].text)
+  assert.deepEqual(byOrg.results.map((row) => row.id), ['2023-04-laboratory-example'])
+
+  const fields = JSON.parse((await client.callTool({ name: 'list_fields', arguments: {} })).content[0].text)
+  assert.deepEqual(fields, { fields: [{ name: 'Materials science', count: 3 }], total: 3 })
 
   const get = await client.callTool({ name: 'get_discovery', arguments: { id: discovery.id } })
   const record = JSON.parse(get.content[0].text)

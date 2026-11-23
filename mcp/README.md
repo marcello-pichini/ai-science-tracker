@@ -8,7 +8,9 @@ The configured production endpoint is `https://mcp.aisciencetracker.org/mcp`. An
 codex mcp add ai-science-tracker --url https://mcp.aisciencetracker.org/mcp
 ```
 
-Search supports optional terms, publication year, field and result limit. Each term must match the start of a word in the title, field, organization, AI technology or summary (so `whale` finds `whales`, but `ants` does not find `variants`). Title matches rank first. The Worker keeps the parsed catalog for up to 10 minutes per warm isolate. Look up a discovery by the ID returned by search to get its original source and full evidence notes. A truncated search result can be narrowed with additional filters.
+Tools: `search_discoveries`, `get_discovery` and `list_fields`.
+
+Search supports optional terms, publication year, field, organization and result limit, and reports the total number of matches. Each term must match the start of a word in the title, field, organization, AI technology or summary (so `whale` finds `whales`, but `ants` does not find `variants`); terms of three letters or fewer must match a whole word (`ai` does not find `air`). Matching ignores accents and British/American spelling (`tumour`/`tumor`, `optimisation`/`optimization`), expands common abbreviations (`LLM`, `ML`, `RL`, `GNN`, `CNN`, `MRI`, `CT`) and recognizes listed variants (`Nasca`/`Nazca`, `Herculaneum`/`Ercolano`). Add new variants to `synonymGroups` in `worker.js`. Title matches rank first. The Worker keeps the parsed, indexed catalog for up to 10 minutes per warm isolate. Look up a discovery by the ID returned by search to get its original source and full evidence notes. A truncated search result can be narrowed with additional filters.
 
 From this directory, use Node.js 22.12 or later.
 
