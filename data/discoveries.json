@@ -142779,5 +142779,71 @@
     "summary": "A preprint compared 45 survival-learning combinations in 439 colorectal-cancer training cases and selected a 17-gene LASSO signature including KLF2 and NT5E/CD73. Follow-on experiments using fibroblasts from three patients found that KLF2 overexpression reduced CD8 T-cell killing in co-culture, while KLF2 knockdown or CD73 inhibition reversed this effect. Tissue imaging used a four-protein proxy, not the transcriptomic score itself. Prognostic associations varied by endpoint and fixed-threshold transfer failed in external cohorts. This is a bounded cell-culture result, without proven patient treatment benefit.",
     "title": "Survival learning links a fibroblast signature to a tested KLF2–CD73 pathway",
     "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "Transfer-learned CenterNet HourGlass104 object detector",
+    "evidence": {
+      "ai_role": "Learned object detection classifies pollen states and tube tips, enabling time-resolved phenotyping across the accession panel.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.19.767983v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "New in-vitro pollen time courses with at least 7 usable replicates per condition/accession; learned counts checked against manual annotations.",
+      "unknown": "Confidence-threshold selection used count agreement; model accuracy may be optimistic. Image exclusions and varying replicate counts limit transfer. No field fertility, yield or causal genetic benefit established."
+    },
+    "field": "biology",
+    "id": "2026-11-tomato-pollen-heat-response-phenotyping",
+    "organization": "University of Arizona; Ohio State University",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 3,
+      "novelty": 2,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.19.767983v1",
+    "summary": "A preprint fine-tuned CenterNet HourGlass104 to count and track pollen in approximately 300,000 time-lapse images from 218 tomato accessions and wild relatives. In vitro, raising temperature from 26°C to 34°C increased mean bursting at two hours from 14.9% to 83.1%, while tube-length responses varied: 72% of accessions had shorter tubes and 28% had equal or greater length. Manual-count agreement supported image measurements. These are controlled pollen-assay phenotypes, not demonstrated field fertility or yield benefits; genotype effects and assay generalization need further testing.",
+    "title": "Computer vision measures diverse tomato pollen responses to heat",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "Linear support vector machine and linear discriminant analysis",
+    "evidence": {
+      "ai_role": "Learned linear classifiers test whether recorded population spike patterns distinguish stimulus conditions; direct spike-statistic findings are separate.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.20.768133v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Retrospective decoding of existing recordings: 33-mouse subset, balanced 100 ms windows, leave-one-out templates and fold-scaled linear SVM/LDA robustness checks.",
+      "unknown": "Within-mouse window validation may retain block/session dependencies; no between-mouse generalization or behavioral hearing benefit. Nonsignificant age/strain differences do not prove equivalence."
+    },
+    "field": "biology",
+    "id": "2026-11-aging-mouse-auditory-population-decoding",
+    "organization": "University of Strathclyde",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.20.768133v1",
+    "summary": "A preprint reanalyzed auditory-cortex recordings and tested whether population activity distinguished silence, natural sounds and noise. In 33 mice with all three conditions recorded, a linear SVM achieved 82.50±8.74% mean accuracy using held-out time windows; template and linear-discriminant decoders gave similar results. Decoding remained above chance in both hearing-loss-prone and hearing-preserving strains across age groups, despite changes in individual-neuron activity. This does not establish intact perception, equivalence across ages or generalization to new mice; conditions were recorded in separate blocks.",
+    "title": "Linear decoding distinguishes sound conditions in aging mouse cortex",
+    "verification_status": "verified"
   }
 ]

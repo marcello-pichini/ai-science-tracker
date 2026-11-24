@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "Linear support vector machine and linear discriminant analysis",
+  "evidence": {
+    "ai_role": "Learned linear classifiers test whether recorded population spike patterns distinguish stimulus conditions; direct spike-statistic findings are separate.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.11.20.768133v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Retrospective decoding of existing recordings: 33-mouse subset, balanced 100 ms windows, leave-one-out templates and fold-scaled linear SVM/LDA robustness checks.",
+    "unknown": "Within-mouse window validation may retain block/session dependencies; no between-mouse generalization or behavioral hearing benefit. Nonsignificant age/strain differences do not prove equivalence."
+  },
+  "field": "biology",
+  "id": "2026-11-aging-mouse-auditory-population-decoding",
+  "organization": "University of Strathclyde",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 2,
+    "novelty": 2,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.20.768133v1",
+  "summary": "A preprint reanalyzed auditory-cortex recordings and tested whether population activity distinguished silence, natural sounds and noise. In 33 mice with all three conditions recorded, a linear SVM achieved 82.50±8.74% mean accuracy using held-out time windows; template and linear-discriminant decoders gave similar results. Decoding remained above chance in both hearing-loss-prone and hearing-preserving strains across age groups, despite changes in individual-neuron activity. This does not establish intact perception, equivalence across ages or generalization to new mice; conditions were recorded in separate blocks.",
+  "title": "Linear decoding distinguishes sound conditions in aging mouse cortex",
+  "verification_status": "verified"
+}

@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "Transfer-learned CenterNet HourGlass104 object detector",
+  "evidence": {
+    "ai_role": "Learned object detection classifies pollen states and tube tips, enabling time-resolved phenotyping across the accession panel.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.11.19.767983v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "direct test",
+    "tested": "New in-vitro pollen time courses with at least 7 usable replicates per condition/accession; learned counts checked against manual annotations.",
+    "unknown": "Confidence-threshold selection used count agreement; model accuracy may be optimistic. Image exclusions and varying replicate counts limit transfer. No field fertility, yield or causal genetic benefit established."
+  },
+  "field": "biology",
+  "id": "2026-11-tomato-pollen-heat-response-phenotyping",
+  "organization": "University of Arizona; Ohio State University",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 3,
+    "novelty": 2,
+    "validation": 3
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.19.767983v1",
+  "summary": "A preprint fine-tuned CenterNet HourGlass104 to count and track pollen in approximately 300,000 time-lapse images from 218 tomato accessions and wild relatives. In vitro, raising temperature from 26°C to 34°C increased mean bursting at two hours from 14.9% to 83.1%, while tube-length responses varied: 72% of accessions had shorter tubes and 28% had equal or greater length. Manual-count agreement supported image measurements. These are controlled pollen-assay phenotypes, not demonstrated field fertility or yield benefits; genotype effects and assay generalization need further testing.",
+  "title": "Computer vision measures diverse tomato pollen responses to heat",
+  "verification_status": "verified"
+}
