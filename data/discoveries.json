@@ -1,5 +1,40 @@
 [
   {
+    "id": "2023-10-rosettafold-all-atom",
+    "title": "RoseTTAFold All-Atom designs proteins that bind small molecules",
+    "summary": "RoseTTAFold All-Atom extends deep-learning structure prediction from proteins alone to full assemblies with nucleic acids, small molecules, metals and covalent modifications. Its diffusion version, RFdiffusion All-Atom, built proteins around target small molecules, and designs binding digoxigenin, heme and bilin were confirmed by crystallography and binding measurements. Dated to the bioRxiv preprint of 9 October 2023, which already reports these validated designs; the peer-reviewed paper appeared in Science (issue of 19 April 2024). Success rates and affinities were not read for this entry.",
+    "field": "biology",
+    "ai_technology": "RoseTTAFold All-Atom; RFdiffusion All-Atom",
+    "organization": "University of Washington Institute for Protein Design",
+    "source_url": "https://doi.org/10.1101/2023.10.09.561603",
+    "source_type": "paper",
+    "publication_date": "2023-10-09",
+    "added_date": "2026-11-24",
+    "verification_status": "verified",
+    "paper_url": "https://doi.org/10.1126/science.adl2528",
+    "relevance": {
+      "impact": 4,
+      "novelty": 4,
+      "validation": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Designed binders for digoxigenin, heme and bilin were experimentally validated by crystallography and binding measurements; prediction accuracy was benchmarked against AlphaFold2 and on CAMEO small-molecule docking.",
+      "unknown": "The abstracts give no design success rates, numbers of designs tested or binding affinities; these figures were not read for this entry.",
+      "ai_role": "RoseTTAFold All-Atom, a deep network trained on PDB assemblies, models proteins with nucleic acids, small molecules, metals and covalent modifications; RFdiffusion All-Atom, fine-tuned from it on denoising, generated the small-molecule-binding protein designs.",
+      "evidence_urls": [
+        "https://api.biorxiv.org/details/biorxiv/10.1101/2023.10.09.561603",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:10.1126/science.adl2528&resultType=core&format=json",
+        "https://www.ipd.uw.edu/2023/10/introducing-rosettafold-and-rfdiffusion-all-atom/"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "bioRxiv v1 metadata and abstract, Europe PMC and PubMed metadata and abstract of the Science paper, IPD announcement of 30 October 2023."
+    }
+  },
+  {
     "id": "2026-11-optimal-scenario-design-climate-emulation",
     "title": "Unrealistic emissions scenarios help AI climate models prepare for unfamiliar futures",
     "summary": "MIT researchers with Imperial College London designed a small synthetic set of deliberately unrealistic emissions scenarios to train climate emulators, which normally need six to eight full Earth system model runs that each take months. The method needs only one model run, and the emulator predicted unseen scenarios and local pollutant-control effects where traditional emulators failed. It was validated with a simple climate model rather than a full Earth system model, and the article reports no quantitative accuracy metrics.",
