@@ -24,6 +24,21 @@ assert.deepEqual(ui.annualStats(entries), [
 assert.deepEqual(ui.annualStats([]), []);
 ''')
 
+    def test_publisher_links_use_the_doi_they_contain(self):
+        self.run_js('''
+const cases = {
+ 'https://pubs.acs.org/jcisd8/article/doi/10.1021/acs.jcim.6c02790/5466124/Slug': 'https://doi.org/10.1021/acs.jcim.6c02790',
+ 'https://www.biorxiv.org/content/10.1101/2025.09.18.677110v1.full': 'https://doi.org/10.1101/2025.09.18.677110',
+ 'https://www.frontiersin.org/journals/x/articles/10.3389/fncom.2026.1900553/full': 'https://doi.org/10.3389/fncom.2026.1900553',
+ 'https://iopscience.iop.org/article/10.3847/1538-4357/acc737': 'https://doi.org/10.3847/1538-4357/acc737',
+ 'https://onlinelibrary.wiley.com/doi/epdf/10.1126/science.adi2336': 'https://doi.org/10.1126/science.adi2336',
+ 'https://doi.org/10.1038/s41586-021-03819-2': 'https://doi.org/10.1038/s41586-021-03819-2',
+ 'https://www.nature.com/articles/s41586-021-03819-2': 'https://www.nature.com/articles/s41586-021-03819-2',
+};
+for (const [url, expected] of Object.entries(cases)) assert.equal(ui.doiLink(url), expected, url);
+assert.match(ui.sourceLinks({source_url: Object.keys(cases)[0], source_type: 'paper'}), /href="https:\\/\\/doi\\.org\\/10\\.1021\\/acs\\.jcim\\.6c02790"/);
+''')
+
     def test_correction_draft_preserves_identifiers_and_does_not_submit(self):
         self.run_js('''
 const d = {id:'test & α?', title:'A title & another', source_url:'https://example.org/paper?q=a&b=c'};

@@ -66,7 +66,19 @@ globalThis.CatalogUI = {
     }
     if (paper && paper !== source) links.push([paper, scholarly(paper, type === 'paper' ? source : '')]);
     return links.filter(([url]) => /^https?:\/\//i.test(url))
-      .map(([url, label]) => `<a href="${esc(url)}" rel="noopener">${esc(label)}</a>`).join('');
+      .map(([url, label]) => `<a href="${esc(this.doiLink(url))}" rel="noopener">${esc(label)}</a>`).join('');
+  },
+  // Publisher URLs move; the DOI they contain does not. The record keeps the original URL.
+  doiLink(url) {
+    if (/^https?:\/\/(?:dx\.)?doi\.org\//i.test(url)) return url;
+    let path;
+    try { path = decodeURIComponent(url.split('://')[1] || ''); } catch { return url; }
+    const match = path.match(/(?:^|\/)(10\.\d{4,9}\/[^?#]+)/);
+    if (!match) return url;
+    let doi = match[1].replace(/\/(?:full|abstract|pdf|epdf|html|meta|fulltext|full-text|supplementary)(?:\/.*)?$/i, '');
+    doi = /^10\.(?:1101|64898)\//.test(doi) ? doi.replace(/(?:v\d+)?(?:\.full)?(?:\.pdf|\.html)?$/, '') : doi.replace(/(?:\.full)?(?:\.pdf|\.html)$/, '');
+    doi = doi.replace(/\/\d+(?:\/.*)?$/, '').replace(/[/.]+$/, '');
+    return 'https://doi.org/' + doi.split('/').map(encodeURIComponent).join('/');
   },
   reviewCoverage(records) {
     return {total:records.length, annotated:records.filter(r => r.evidence).length,
