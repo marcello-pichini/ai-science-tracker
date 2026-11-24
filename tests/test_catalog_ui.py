@@ -176,7 +176,7 @@ assert.equal(ui.leadOrganization('Washington and Lee University'), 'Washington a
 const citation = {doi:'10.1234/example', cited_by:12, percentile:91.2, top_1:false, top_10:true, checked:'2026-11-15'};
 const html = ui.citationLine({citation});
 assert.ok(html.includes('15 Nov 2026'));
-assert.ok(html.includes('https://api.openalex.org/works/https://doi.org/10.1234/example'));
+assert.ok(html.includes('https://openalex.org/works?filter=doi:10.1234%2Fexample'));
 assert.ok(html.includes('12 citations'));
 assert.equal(ui.citationLine({citation:{...citation,cited_by:'<b>12</b>'}}), '');
 assert.equal(ui.citationLine({citation:{...citation,percentile:Infinity}}), '');

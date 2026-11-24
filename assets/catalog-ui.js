@@ -37,7 +37,7 @@ globalThis.CatalogUI = {
     const checked = /^\d{4}-\d{2}-\d{2}$/.test(c.checked || '') && !Number.isNaN(Date.parse(c.checked));
     const asOf = checked ? this.t('as of {date}', {date: new Intl.DateTimeFormat(this.dateLocale || 'en-GB', {day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(new Date(c.checked + 'T12:00:00Z'))}) : this.t('snapshot date unavailable');
     const source = /^10\.\d{4,9}\/\S+$/.test(c.doi || '')
-      ? `<a href="${esc('https://api.openalex.org/works/https://doi.org/' + encodeURI(c.doi))}" rel="noopener">${this.t('OpenAlex work metrics')}</a>` : 'OpenAlex';
+      ? `<a href="${esc('https://openalex.org/works?filter=doi:' + encodeURIComponent(c.doi))}" rel="noopener">${this.t('OpenAlex work metrics')}</a>` : 'OpenAlex';
     return `<p>${this.t('Citations:')} ${band} ${this.t('of works of the same type, year and subfield')} (${source}, ${esc(c.cited_by)} ${this.t('citations')}; ${asOf}). ${this.t('Attention, not a measure of correctness; not part of the score.')}</p>`;
   },
   sourceStatus(record) {
