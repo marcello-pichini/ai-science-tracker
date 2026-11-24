@@ -65,7 +65,8 @@ globalThis.AST_t ||= (en, vars) => {
           const component = before.components[id];
           if (!component || !component.path.endsWith('.json')) throw Error('Required component unavailable');
           const url = new URL(component.path, root); url.searchParams.set('v', component.sha256);
-          const bytes = await request(url.href, {cache:'no-store'}, async response => {
+          // URLs carry the content hash, so the HTTP cache is safe; a retry reloads in case a deploy cached stale bytes.
+          const bytes = await request(url.href, {cache: attempt ? 'reload' : 'default'}, async response => {
             if (!response.ok) throw Error('Data component unavailable');
             return response.arrayBuffer();
           });

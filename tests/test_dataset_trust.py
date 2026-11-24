@@ -33,9 +33,10 @@ const sha=crypto.createHash('sha256').update(bytes).digest('hex');
 const m={schema_version:1,snapshot_sha256:'a'.repeat(64),components:{discoveries:{path:'data/discoveries.json',sha256:sha,bytes:bytes.length}}};
 let dataCalls=0, calls=[];
 const fetch=async (url, options)=>{
- calls.push(url); assert.equal(options.cache,'no-store');
- if(new URL(url).pathname.endsWith('manifest.json'))return {ok:true,json:async()=>m};
+ calls.push(url);
+ if(new URL(url).pathname.endsWith('manifest.json')){assert.equal(options.cache,'no-store');return {ok:true,json:async()=>m};}
  assert.equal(new URL(url).searchParams.get('v'),sha);
+ assert.equal(options.cache,dataCalls===0?'default':'reload','Cached data first, bypass the cache on retry');
  return {ok:true,arrayBuffer:async()=>Uint8Array.from(++dataCalls===1?old:bytes).buffer};
 };
 (async()=>{
