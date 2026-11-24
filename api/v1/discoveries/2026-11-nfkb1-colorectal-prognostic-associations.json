@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "LASSO-Cox, ridge/elastic-net Cox and CoxBoost survival learning",
+  "evidence": {
+    "ai_role": "Learned survival models prioritize genes for prognostic association analysis; language assistants did not conduct scientific analysis.",
+    "evidence_urls": [
+      "https://www.wjgnet.com/2218-4333/full/v17/i11/125917.htm"
+    ],
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Existing TCGA development data and separate GEO cohort survival associations; heterogeneous endpoints and moderate discrimination.",
+    "unknown": "Association is not uniformly significant across cohorts or causal; one spatial specimen and exploratory protein-image comparisons constrain interpretation. Drug-response estimates are predictions."
+  },
+  "field": "medicine",
+  "id": "2026-11-nfkb1-colorectal-prognostic-associations",
+  "organization": "Fujian Medical University Union Hospital",
+  "paper_url": "",
+  "publication_date": "2026-11-24",
+  "relevance": {
+    "impact": 2,
+    "novelty": 2,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.wjgnet.com/2218-4333/full/v17/i11/125917.htm",
+  "summary": "A study used penalized Cox models and CoxBoost to prioritize NFKB1 for retrospective colorectal-cancer survival analysis. Higher expression was associated with favorable survival in selected external cohorts, but the adjusted association was not significant in TCGA-COAD. Model discrimination was modest: the best overall mean time-dependent AUC was 0.650. A separate spatial analysis used one tissue specimen and does not establish macrophage-specific causality. NFKB1 remains an exploratory association, without a validated clinical cutoff or demonstrated treatment benefit.",
+  "title": "Survival learning prioritizes cohort-specific NFKB1 associations in colorectal cancer",
+  "verification_status": "verified"
+}

@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "Logistic regression, random forest, XGBoost, LightGBM and KNN",
+  "evidence": {
+    "ai_role": "Supervised models compare event discrimination with and without existing metabolic indices.",
+    "evidence_urls": [
+      "https://www.researchsquare.com/article/rs-11455132/v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Stratified 70/30 training/test split; preprocessing learned on training data, five-fold training hyperparameter tuning, recorded follow-up event labels.",
+    "unknown": "Prospective clinical benefit and external transport unestablished; cohort follow-up does not make retrospective model evaluation prospective."
+  },
+  "field": "medicine",
+  "id": "2026-11-tyg-bmi-hypertension-cvd-prediction",
+  "organization": "Guangzhou University of Chinese Medicine; Shanghai University of Traditional Chinese Medicine; Heilongjiang University of Chinese Medicine; Shanxi University of Chinese Medicine",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 2,
+    "novelty": 2,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary full manuscript: cohort definition, actual model/input/preprocessing/split Methods and reported classification Results/limitations. No prospective utility claim."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.researchsquare.com/article/rs-11455132/v1",
+  "summary": "In 3,092 hypertensive CHARLS participants followed for a median eight years, a preprint compared learned cardiovascular-event predictors using baseline risk factors. Adding TyG-BMI increased reported AUC from 0.593 to 0.636; logistic regression performed best, with tree-based learners adding no advantage. This is retrospective modeling of recorded follow-up outcomes, not a prospective evaluation of a frozen model. Modest discrimination, self-reported outcomes and unresolved clinical utility limit application; the conventional epidemiological association is not itself a new AI-discovered mechanism.",
+  "title": "TyG-BMI adds modest discrimination in retrospective cardiovascular prediction",
+  "verification_status": "verified"
+}

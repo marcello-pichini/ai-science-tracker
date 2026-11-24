@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "TabPFN tabular foundation model; Gemini 3 Pro language model; agronomist-reviewed grower-in-the-loop scheduling",
+  "evidence": {
+    "ai_role": "TabPFN predicts yield anchors for a nitrogen-response curve; Gemini 3 Pro proposes bounded schedule revisions from grower/weather constraints, each reviewed by an agronomist.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.31044v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "direct test",
+    "tested": "Initial within-study field tests at two commercial sites in 2025–26, four plots per treatment; recommendations at sowing and agronomist-reviewed in-season adjustments preceded harvest measurements. Retrospective long-term model evaluations and earlier field seasons are ancillary evidence.",
+    "unknown": "Nonsignificant yield differences are not equivalence. Sites were not replicated within season; wider transfer, grain-quality trade-offs and environmental benefit remain unestablished. Earlier measured N2O differences were nonsignificant."
+  },
+  "field": "climate",
+  "id": "2026-11-grower-loop-ai-wheat-nitrogen-field-trials",
+  "organization": "University of Sheffield; Zhejiang University of Technology; Harper Adams University; Velcourt Limited; Rothamsted Research",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 3,
+    "novelty": 3,
+    "validation": 3
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary arXiv v1 fullHTML Results and Methods 3.7 field trials, 3.8 in-season protocol, 3.9 statistics; source date/affiliations, prior protein shortfalls, intervention-error logs and emissions limits checked. Level 3 classifies initial within-study pilot direct tests, not independent follow-up or sustained deployment."
+  },
+  "source_type": "paper",
+  "source_url": "https://arxiv.org/html/2611.31044v1",
+  "summary": "A preprint coupled TabPFN nitrogen-response recommendations with Gemini 3 Pro schedule adjustments reviewed by an agronomist. In 2025–26 commercial field trials at two sites, treatments used 24.1% and 12.5% less nitrogen than standard practice, with no statistically significant yield differences; four replicate plots per treatment and no equivalence test limit any claim of preserved yield. Earlier 2024–25 static recommendations lowered grain protein at all five sites, significantly at several; one in-season LLM error was caught by agronomist review. These small within-study pilots do not establish general farming benefit or reduced emissions.",
+  "title": "Grower-guided AI reduces nitrogen use in two wheat field pilots",
+  "verification_status": "verified"
+}

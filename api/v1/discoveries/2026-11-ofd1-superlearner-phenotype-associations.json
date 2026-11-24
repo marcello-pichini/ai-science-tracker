@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "SuperLearner ensemble of random forest, XGBoost, RBF-SVM and elastic-net GLM",
+  "evidence": {
+    "ai_role": "Learned ensembles map variant conservation, predicted structural features and domain position to phenotype labels; SHAP describes model associations.",
+    "evidence_urls": [
+      "https://www.researchsquare.com/article/rs-11400982/v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Repeated internal cross-validation with nested tuning/evaluation; phenotype labels are retrospectively compiled and benign variants supply an absent-phenotype class.",
+    "unknown": "External OFD1 performance, prospective utility and causal variant mechanisms remain unestablished; small missense subsets and literature ascertainment constrain interpretation."
+  },
+  "field": "medicine",
+  "id": "2026-11-ofd1-superlearner-phenotype-associations",
+  "organization": "Telethon Institute of Genetics and Medicine; University of Naples Federico II; Université Bourgogne Europe; University of Padua; Scuola Superiore Meridionale",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 2,
+    "novelty": 2,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary full manuscript: cohort/benign-control definitions, SuperLearner training, repeated/nested CV, SHAP Results and external-validation limitations."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.researchsquare.com/article/rs-11400982/v1",
+  "summary": "A preprint combined random forest, XGBoost, RBF-SVM and elastic-net learners to model OFD1 phenotype groups from variant features. The 356-case clinical compilation included 61 new cases, but prediction used a much smaller missense subset plus 39 benign variants assigned phenotype-absent labels; reported internal AUCs were 0.82–0.969. Model interpretation associated LisH-domain variants with higher predicted phenotype probabilities. These are retrospective model associations, not causal variant effects or demonstrated clinical utility. No independent OFD1 validation cohort was available; transfer to LMNA does not validate OFD1 predictions.",
+  "title": "Ensemble modeling explores OFD1 variant–phenotype associations retrospectively",
+  "verification_status": "verified"
+}

@@ -1,0 +1,34 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "MatEvolve; Claude Fable 5 agent with motif editing and first-principles validation",
+  "evidence": {
+    "ai_role": "A frozen learned language model translates crystals into motif profiles and edits profiles to propose structures; an evidence-based recommender prioritizes candidates for DFT.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2608.15900v1",
+      "https://www.researchsquare.com/article/rs-11807841/v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "direct test",
+    "tested": "Within-study DFT structural relaxation/stability and magnetic-property calculations; original v1 selected 300 of 600 proposals and found 63 joint-target candidates. Later ResearchSquare run selected 400 of 800 and found 80.",
+    "unknown": "No experimental synthesis or measured magnetic performance established. Validation budgets do not equalize proposal pools/ranking methods; database-relative novelty is not proof of absolute originality."
+  },
+  "field": "materials",
+  "id": "2026-08-matevolve-motif-designed-magnet-candidates",
+  "organization": "Japan Advanced Institute of Science and Technology; Institute of Science Tokyo; The Institute of Statistical Mathematics; Tohoku University",
+  "paper_url": "",
+  "publication_date": "2026-08-16",
+  "relevance": {
+    "impact": 3,
+    "novelty": 3,
+    "validation": 3
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Original arXiv v1 primary HTML: date, agent operation, design settings, Table1/S2, first-principles evaluation and novelty rules; later ResearchSquare full manuscript Methods/results independently read. Actual version differences explicitly retained; no figures imported from later run into v1."
+  },
+  "source_type": "paper",
+  "source_url": "https://arxiv.org/html/2608.15900v1",
+  "summary": "MatEvolve uses Claude Fable 5 to edit crystal motif descriptions and generate rare-earth-lean magnet candidates, with first-principles calculations assessing selected designs. The August 16 first preprint reported 63 of 300 selected candidates meeting its joint stability, uniqueness, database-novelty, magnetization and new-prototype criteria. The November 23 ResearchSquare version expands the run to 400 selected candidates and reports 80 meeting its joint target; these versions are the same study, not independent replication. Results are DFT-computed candidates, not experimentally synthesized or measured magnets; novelty is relative to the specified databases and structural-matching rules.",
+  "title": "MatEvolve designs candidate magnetic crystals with new structural prototypes",
+  "verification_status": "verified"
+}

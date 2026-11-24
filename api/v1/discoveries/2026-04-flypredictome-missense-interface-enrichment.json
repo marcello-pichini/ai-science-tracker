@@ -1,0 +1,34 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "AlphaFold-Multimer; integrated Local Interaction Score",
+  "evidence": {
+    "ai_role": "Learned structural predictions supply residue-level interface features for a specific analysis of observed genetic phenotypes.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.04.14.718529v1",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13104844.1/"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Existing FlyBase phenotype-associated missense variants mapped to predicted interfaces; within-gene permutation and conservation-adjusted association analyses.",
+    "unknown": "Ascertainment bias and structural-model error remain; no new interaction-specific assay or causal phenotype test is represented. Novemberv5 higher-order assembly claims were not authenticated by this v1 review."
+  },
+  "field": "biology",
+  "id": "2026-04-flypredictome-missense-interface-enrichment",
+  "organization": "Harvard Medical School",
+  "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13104844.1/",
+  "publication_date": "2026-04-16",
+  "relevance": {
+    "impact": 2,
+    "novelty": 2,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Official v1 full Methods/Results: AFM interface definitions, 2,761 alleles/995 genes, permutation/conservation tests and structural limitations; official version history."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.04.14.718529v1",
+  "summary": "FlyPredictome used AlphaFold-Multimer structures to test where previously reported Drosophila missense alleles occur. Across 2,761 mapped mutations in 995 genes, the highest predicted interaction-domain frequency bin had a 6.3-fold higher mutation rate than residues outside such domains; within-domain contact frequency added a 2.1-fold enrichment. Within-gene permutations and conservation adjustment supported a residue-level association. This retrospective structural–genetic association does not confirm every predicted interaction or establish causality. The represented result was public in the April 16 preprint; a November 23 version update surfaced it during this run.",
+  "title": "Predicted fly protein interfaces are enriched for phenotype-associated mutations",
+  "verification_status": "verified"
+}

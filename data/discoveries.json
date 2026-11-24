@@ -142315,5 +142315,469 @@
     "summary": "A hierarchical mixture-of-experts classifier transferred mouse dopaminergic-neuron labels to human single-nucleus datasets, identifying an Anxa1-associated population. The preprint reports this population was more depleted in Parkinson’s disease than comparator subtypes in a postmortem analysis of eight control and seven Parkinson’s donors. The model uses logistic-regression experts trained on a mouse reference; donor-aware abundance models support an association rather than a causal mechanism. Cross-species label transfer, small donor cohorts and retrospective tissue limit generalization; inferred connectivity and candidate drug targets are not direct human tracing or demonstrated therapy.",
     "title": "Cross-species classifier identifies a human dopaminergic subtype depleted in Parkinson’s disease",
     "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "MatEvolve; Claude Fable 5 agent with motif editing and first-principles validation",
+    "evidence": {
+      "ai_role": "A frozen learned language model translates crystals into motif profiles and edits profiles to propose structures; an evidence-based recommender prioritizes candidates for DFT.",
+      "evidence_urls": [
+        "https://arxiv.org/html/2608.15900v1",
+        "https://www.researchsquare.com/article/rs-11807841/v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Within-study DFT structural relaxation/stability and magnetic-property calculations; original v1 selected 300 of 600 proposals and found 63 joint-target candidates. Later ResearchSquare run selected 400 of 800 and found 80.",
+      "unknown": "No experimental synthesis or measured magnetic performance established. Validation budgets do not equalize proposal pools/ranking methods; database-relative novelty is not proof of absolute originality."
+    },
+    "field": "materials",
+    "id": "2026-08-matevolve-motif-designed-magnet-candidates",
+    "organization": "Japan Advanced Institute of Science and Technology; Institute of Science Tokyo; The Institute of Statistical Mathematics; Tohoku University",
+    "paper_url": "",
+    "publication_date": "2026-08-16",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Original arXiv v1 primary HTML: date, agent operation, design settings, Table1/S2, first-principles evaluation and novelty rules; later ResearchSquare full manuscript Methods/results independently read. Actual version differences explicitly retained; no figures imported from later run into v1."
+    },
+    "source_type": "paper",
+    "source_url": "https://arxiv.org/html/2608.15900v1",
+    "summary": "MatEvolve uses Claude Fable 5 to edit crystal motif descriptions and generate rare-earth-lean magnet candidates, with first-principles calculations assessing selected designs. The August 16 first preprint reported 63 of 300 selected candidates meeting its joint stability, uniqueness, database-novelty, magnetization and new-prototype criteria. The November 23 ResearchSquare version expands the run to 400 selected candidates and reports 80 meeting its joint target; these versions are the same study, not independent replication. Results are DFT-computed candidates, not experimentally synthesized or measured magnets; novelty is relative to the specified databases and structural-matching rules.",
+    "title": "MatEvolve designs candidate magnetic crystals with new structural prototypes",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "MatterSim v1.0.0-5M machine-learning interatomic potential",
+    "evidence": {
+      "ai_role": "The pretrained potential supplies relaxed structures and force responses for scalable phonon screening, enabling selection of specific low-thermal-conductivity lithium binaries.",
+      "evidence_urls": [
+        "https://arxiv.org/html/2611.30344v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "MatterSim phonon screening, separate 3,558-material DFT comparison and within-study first-principles third-order force-constant/Boltzmann calculations for LiPt, LiTl and LiBi. The latter check the specific low-conductivity candidate result computationally.",
+      "unknown": "No new synthesis or experimental phonon/thermal-conductivity validation is reported. Model errors, dynamic-stability filtering and gap cutoffs affect candidate counts; not every candidate receives separate DFT confirmation."
+    },
+    "field": "materials",
+    "id": "2026-11-mattersim-phononic-gap-lithium-binaries",
+    "organization": "University of Jyväskylä",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary arXiv v1 full HTML: Computational methods, Benchmark and validation, High-throughput calculations, Phonon gap and thermal conductivity, Origins of low thermal conductivity and Conclusions. Source header v1 date and affiliations read."
+    },
+    "source_type": "paper",
+    "source_url": "https://arxiv.org/html/2611.30344v1",
+    "summary": "A preprint used the MatterSim learned interatomic potential to calculate phonons for 42,347 stable, previously observed compounds and flag 11,176 with predicted phonon gaps larger than 1 THz. Screening and existing-database thermal descriptors prioritized lithium-metal binaries; targeted first-principles Boltzmann calculations then predicted room-temperature lattice thermal conductivities of 2.47, 0.63 and 0.33 W m−1 K−1 for LiPt, LiTl and LiBi, respectively. These are computational properties of known compounds, not new synthesis or experimentally measured performance. The large candidate list is model-derived; a separate DFT benchmark does not independently validate every screened material.",
+    "title": "MatterSim screening identifies low-conductivity lithium-metal candidates",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "AlphaFold2-Multimer; molecular dynamics and electrophysiological tests",
+    "evidence": {
+      "ai_role": "Learned multimer structure predictions identify tail conformations and candidate gating contacts that are checked experimentally.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.20.768188v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Within-study electrophysiology of predicted channel constructs and interface changes, supported by molecular dynamics.",
+      "unknown": "Sequence-wide structural generalization is predicted; model confidence is not experimental confirmation of every bacterial channel or human-channel mechanism."
+    },
+    "field": "biology",
+    "id": "2026-11-alphafold-bacterial-channel-temperature-gating",
+    "organization": "University of Texas at Austin; Flatiron Institute; Max Planck Institute of Biophysics",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.20.768188v1",
+    "summary": "A preprint combined AlphaFold2-Multimer predictions, molecular dynamics and electrophysiology to study a sodium channel from the marine bacterium Ruegeria pomeroyi. Predicted tail conformations suggested contacts that stabilize channel opening and reduce temperature sensitivity; targeted substitutions altered temperature responses in the predicted contexts. The study argues that the tail modulates gating rather than serving as a temperature sensor itself. Predictions across more than 800 bacterial sequences suggest broader conservation, but those channels were not all experimentally tested. The result concerns bacterial-channel biophysics, not a demonstrated mechanism in human neurons.",
+    "title": "AlphaFold-guided tests link bacterial channel tails to temperature gating",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "TabPFN tabular foundation model; Gemini 3 Pro language model; agronomist-reviewed grower-in-the-loop scheduling",
+    "evidence": {
+      "ai_role": "TabPFN predicts yield anchors for a nitrogen-response curve; Gemini 3 Pro proposes bounded schedule revisions from grower/weather constraints, each reviewed by an agronomist.",
+      "evidence_urls": [
+        "https://arxiv.org/html/2611.31044v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Initial within-study field tests at two commercial sites in 2025–26, four plots per treatment; recommendations at sowing and agronomist-reviewed in-season adjustments preceded harvest measurements. Retrospective long-term model evaluations and earlier field seasons are ancillary evidence.",
+      "unknown": "Nonsignificant yield differences are not equivalence. Sites were not replicated within season; wider transfer, grain-quality trade-offs and environmental benefit remain unestablished. Earlier measured N2O differences were nonsignificant."
+    },
+    "field": "climate",
+    "id": "2026-11-grower-loop-ai-wheat-nitrogen-field-trials",
+    "organization": "University of Sheffield; Zhejiang University of Technology; Harper Adams University; Velcourt Limited; Rothamsted Research",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary arXiv v1 fullHTML Results and Methods 3.7 field trials, 3.8 in-season protocol, 3.9 statistics; source date/affiliations, prior protein shortfalls, intervention-error logs and emissions limits checked. Level 3 classifies initial within-study pilot direct tests, not independent follow-up or sustained deployment."
+    },
+    "source_type": "paper",
+    "source_url": "https://arxiv.org/html/2611.31044v1",
+    "summary": "A preprint coupled TabPFN nitrogen-response recommendations with Gemini 3 Pro schedule adjustments reviewed by an agronomist. In 2025–26 commercial field trials at two sites, treatments used 24.1% and 12.5% less nitrogen than standard practice, with no statistically significant yield differences; four replicate plots per treatment and no equivalence test limit any claim of preserved yield. Earlier 2024–25 static recommendations lowered grain protein at all five sites, significantly at several; one in-season LLM error was caught by agronomist review. These small within-study pilots do not establish general farming benefit or reduced emissions.",
+    "title": "Grower-guided AI reduces nitrogen use in two wheat field pilots",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "NSGA-II multiobjective evolutionary optimization",
+    "evidence": {
+      "ai_role": "Evolutionary search changes doping-mask geometry to minimize VπL and doping-induced optical loss. The downstream neural-network application is motivation, not evidence of AI operation.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11653411/v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "CHARGE carrier simulations and MODE optical calculations evaluate the NSGA-II-selected doping geometry; INTERCONNECT simulates the converter.",
+      "unknown": "No fabrication or independent experimental validation; representative-profile comparisons are source-reported and process assumptions constrain transfer."
+    },
+    "field": "physics",
+    "id": "2026-11-rubezh-evolutionary-photonic-junction",
+    "organization": "University of Florida",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-11653411/v1",
+    "summary": "A preprint used NSGA-II evolutionary optimization to vary doping-mask geometry and jointly reduce modulation voltage–length product and optical loss in a silicon microring junction. The resulting C-shaped profile reached a simulated VπL of about 0.39 V·cm, compared with 0.44–0.72 V·cm for representative profiles listed by the authors. Carrier and optical simulations fed a four-bit photonic converter model. These are computational device-design results under stated process assumptions; no fabricated junction, measured bandwidth or demonstrated neural-network acceleration was reported.",
+    "title": "Evolutionary optimization designs a simulated low-voltage photonic junction",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "CoxBoost gene selection and random survival forest (CDIS)",
+    "evidence": {
+      "ai_role": "Learned gene selection and survival-forest predictions define CDIS for risk and immune-state comparisons.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1186/s40364-026-01049-0"
+      ],
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "Existing-cohort survival scoring; three validation cohorts also informed selection. Separate cell-line BAFF assays concern a candidate pathway.",
+      "unknown": "Prospective clinical benefit and portable preprocessing/cutoffs remain unestablished. Cell-line effects are not patient therapeutic evidence."
+    },
+    "field": "medicine",
+    "id": "2026-11-cdis-dlbcl-prognostic-cohort-transport",
+    "organization": "Jinan University; You Jiang Medical University for Nationalities",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary full Methods and Results: model selection, cohort C-indices, frozen-scaling/cutoff failure, single-cell inference and BAFF assays; validation 2 applies prognostic claim."
+    },
+    "source_type": "paper",
+    "source_url": "https://link.springer.com/article/10.1186/s40364-026-01049-0",
+    "summary": "CoxBoost plus a random survival forest produced a 16-gene DLBCL risk score after comparison of 101 model combinations. Reported validation C-indices were 0.613, 0.732 and 0.632, but those cohorts contributed to model selection. More strictly frozen preprocessing lowered discrimination to 0.547, 0.591 and 0.596; the training cutoff classified almost all external patients as high risk. Downstream transcriptomic analyses suggested a BAFF/APRIL pathway, with BAFF effects tested in cell lines. These findings establish neither clinical benefit nor a validated treatment mechanism, and the cell-line assays do not independently validate prognostic transport.",
+    "title": "Learned lymphoma risk score shows retrospective associations and transport limits",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "LASSO-Cox, ridge/elastic-net Cox and CoxBoost survival learning",
+    "evidence": {
+      "ai_role": "Learned survival models prioritize genes for prognostic association analysis; language assistants did not conduct scientific analysis.",
+      "evidence_urls": [
+        "https://www.wjgnet.com/2218-4333/full/v17/i11/125917.htm"
+      ],
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "Existing TCGA development data and separate GEO cohort survival associations; heterogeneous endpoints and moderate discrimination.",
+      "unknown": "Association is not uniformly significant across cohorts or causal; one spatial specimen and exploratory protein-image comparisons constrain interpretation. Drug-response estimates are predictions."
+    },
+    "field": "medicine",
+    "id": "2026-11-nfkb1-colorectal-prognostic-associations",
+    "organization": "Fujian Medical University Union Hospital",
+    "paper_url": "",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.wjgnet.com/2218-4333/full/v17/i11/125917.htm",
+    "summary": "A study used penalized Cox models and CoxBoost to prioritize NFKB1 for retrospective colorectal-cancer survival analysis. Higher expression was associated with favorable survival in selected external cohorts, but the adjusted association was not significant in TCGA-COAD. Model discrimination was modest: the best overall mean time-dependent AUC was 0.650. A separate spatial analysis used one tissue specimen and does not establish macrophage-specific causality. NFKB1 remains an exploratory association, without a validated clinical cutoff or demonstrated treatment benefit.",
+    "title": "Survival learning prioritizes cohort-specific NFKB1 associations in colorectal cancer",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "AlphaFold-Multimer; integrated Local Interaction Score",
+    "evidence": {
+      "ai_role": "Learned structural predictions supply residue-level interface features for a specific analysis of observed genetic phenotypes.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.04.14.718529v1",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13104844.1/"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Existing FlyBase phenotype-associated missense variants mapped to predicted interfaces; within-gene permutation and conservation-adjusted association analyses.",
+      "unknown": "Ascertainment bias and structural-model error remain; no new interaction-specific assay or causal phenotype test is represented. Novemberv5 higher-order assembly claims were not authenticated by this v1 review."
+    },
+    "field": "biology",
+    "id": "2026-04-flypredictome-missense-interface-enrichment",
+    "organization": "Harvard Medical School",
+    "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13104844.1/",
+    "publication_date": "2026-04-16",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Official v1 full Methods/Results: AFM interface definitions, 2,761 alleles/995 genes, permutation/conservation tests and structural limitations; official version history."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.04.14.718529v1",
+    "summary": "FlyPredictome used AlphaFold-Multimer structures to test where previously reported Drosophila missense alleles occur. Across 2,761 mapped mutations in 995 genes, the highest predicted interaction-domain frequency bin had a 6.3-fold higher mutation rate than residues outside such domains; within-domain contact frequency added a 2.1-fold enrichment. Within-gene permutations and conservation adjustment supported a residue-level association. This retrospective structural–genetic association does not confirm every predicted interaction or establish causality. The represented result was public in the April 16 preprint; a November 23 version update surfaced it during this run.",
+    "title": "Predicted fly protein interfaces are enriched for phenotype-associated mutations",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "Random forest and nested group-aware MEG connectivity classification",
+    "evidence": {
+      "ai_role": "Learned classifiers map multi-band wPLI connectivity to case/control labels; SHAP characterizes model contributions.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-10929075/v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Nested group-aware internal cross-validation in 70 participants, keeping all data from each subject together and tuning inside training folds.",
+      "unknown": "No external clinical performance or mechanism established; high fold variance and small cohort limit interpretation."
+    },
+    "field": "medicine",
+    "id": "2026-11-meg-lumbar-stenosis-classification",
+    "organization": "Beihang University; Qilu Hospital of Shandong University; Shandong First Medical University",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary full manuscript: cohort definition, actual model/input/preprocessing/split Methods and reported classification Results/limitations. No prospective utility claim."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-10929075/v1",
+    "summary": "A preprint evaluated subject-level MEG connectivity classifiers in 39 lumbar-stenosis patients and 31 controls. Random forest achieved mean nested-cross-validation AUC 0.723 with fold standard deviation 0.262, indicating substantial uncertainty and variation. SHAP identified features contributing to model discrimination; independently tested physiological group differences are separate results, not all AI-discovered mechanisms. The small cross-sectional study provides neither external validation nor clinical diagnostic utility.",
+    "title": "MEG connectivity classifier shows limited lumbar-stenosis discrimination",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "Logistic regression, random forest, XGBoost, LightGBM and KNN",
+    "evidence": {
+      "ai_role": "Supervised models compare event discrimination with and without existing metabolic indices.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11455132/v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Stratified 70/30 training/test split; preprocessing learned on training data, five-fold training hyperparameter tuning, recorded follow-up event labels.",
+      "unknown": "Prospective clinical benefit and external transport unestablished; cohort follow-up does not make retrospective model evaluation prospective."
+    },
+    "field": "medicine",
+    "id": "2026-11-tyg-bmi-hypertension-cvd-prediction",
+    "organization": "Guangzhou University of Chinese Medicine; Shanghai University of Traditional Chinese Medicine; Heilongjiang University of Chinese Medicine; Shanxi University of Chinese Medicine",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary full manuscript: cohort definition, actual model/input/preprocessing/split Methods and reported classification Results/limitations. No prospective utility claim."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-11455132/v1",
+    "summary": "In 3,092 hypertensive CHARLS participants followed for a median eight years, a preprint compared learned cardiovascular-event predictors using baseline risk factors. Adding TyG-BMI increased reported AUC from 0.593 to 0.636; logistic regression performed best, with tree-based learners adding no advantage. This is retrospective modeling of recorded follow-up outcomes, not a prospective evaluation of a frozen model. Modest discrimination, self-reported outcomes and unresolved clinical utility limit application; the conventional epidemiological association is not itself a new AI-discovered mechanism.",
+    "title": "TyG-BMI adds modest discrimination in retrospective cardiovascular prediction",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "MediaPipe Pose; gradient boosting and histogram gradient boosting; supervised regression comparison",
+    "evidence": {
+      "ai_role": "Learned pose estimation supplies gait inputs; boosting regressors estimate selected spirometric targets. Ordinary linear models lead on several other targets.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11706261/v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Prospectively collected single-centre cohort, but retrospective repeated internal train/test evaluation; no external validation.",
+      "unknown": "Video contribution was not ablated against clinical-only models; small test sets and model selection on evaluation splits limit reliability. COPD classification used pre-bronchodilator spirometry."
+    },
+    "field": "medicine",
+    "id": "2026-11-video-gait-spirometry-estimation",
+    "organization": "Ondokuz Mayıs University; Samsun University; Duke University School of Medicine; University of Massachusetts Amherst",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-11706261/v1",
+    "summary": "A preprint used MediaPipe Pose to extract walking features and compared 13 regressors in 100 participants (33 classified with COPD). Five repeated 90/10 internal splits gave FEV1/FVC correlation 0.701±0.135 with gradient boosting and mid-expiratory-flow correlation 0.730±0.078 with histogram boosting; linear or regularized models were strongest for several volume targets. Test sets contained about 10 people and selecting models on the same splits can inflate performance. The study did not establish an incremental benefit from video features, external validity, replacement of spirometry or clinical benefit.",
+    "title": "Video gait features and clinical models estimate lung function in a small cohort",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "SuperLearner ensemble of random forest, XGBoost, RBF-SVM and elastic-net GLM",
+    "evidence": {
+      "ai_role": "Learned ensembles map variant conservation, predicted structural features and domain position to phenotype labels; SHAP describes model associations.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11400982/v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Repeated internal cross-validation with nested tuning/evaluation; phenotype labels are retrospectively compiled and benign variants supply an absent-phenotype class.",
+      "unknown": "External OFD1 performance, prospective utility and causal variant mechanisms remain unestablished; small missense subsets and literature ascertainment constrain interpretation."
+    },
+    "field": "medicine",
+    "id": "2026-11-ofd1-superlearner-phenotype-associations",
+    "organization": "Telethon Institute of Genetics and Medicine; University of Naples Federico II; Université Bourgogne Europe; University of Padua; Scuola Superiore Meridionale",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary full manuscript: cohort/benign-control definitions, SuperLearner training, repeated/nested CV, SHAP Results and external-validation limitations."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-11400982/v1",
+    "summary": "A preprint combined random forest, XGBoost, RBF-SVM and elastic-net learners to model OFD1 phenotype groups from variant features. The 356-case clinical compilation included 61 new cases, but prediction used a much smaller missense subset plus 39 benign variants assigned phenotype-absent labels; reported internal AUCs were 0.82–0.969. Model interpretation associated LisH-domain variants with higher predicted phenotype probabilities. These are retrospective model associations, not causal variant effects or demonstrated clinical utility. No independent OFD1 validation cohort was available; transfer to LMNA does not validate OFD1 predictions.",
+    "title": "Ensemble modeling explores OFD1 variant–phenotype associations retrospectively",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "CatBoost; training-fold XGBoost feature selection",
+    "evidence": {
+      "ai_role": "Gradient-boosted decision trees learn baseline features predicting a later eGFR-category label.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11503634/v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Patient-level 80/20 split; fold-refitted preprocessing/feature selection and development-only 10-fold model selection; reserved internal test.",
+      "unknown": "Single-centre retrospective inclusion depends on follow-up availability; post hoc threshold and medication scenarios are exploratory, not treatment effects."
+    },
+    "field": "medicine",
+    "id": "2026-11-catboost-six-month-egfr-decline",
+    "organization": "Shanghai Pudong Hospital; Fudan University",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-11503634/v1",
+    "summary": "A preprint evaluated baseline clinical prediction of six-month eGFR-category worsening in 2,022 adults with diabetes and renal dysfunction. CatBoost was selected within development data and reached AUROC 0.91 in a reserved 405-patient internal test set. Inputs were restricted to baseline and pre-index records. A post hoc top 5% prioritization rule identified19 of48 test-set events, missing more than half. Category worsening did not require 90-day persistence, so this is not confirmed chronic progression. The single-centre retrospective study establishes no external clinical utility or causal benefit from medication exposure.",
+    "title": "CatBoost estimates six-month kidney-function category decline retrospectively",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "Nested-CV LASSO survival learning; comparison of45 algorithm combinations",
+    "evidence": {
+      "ai_role": "Training-only learned survival selection includes KLF2/NT5E and organizes downstream tissue and functional investigation; no claim that AI alone identified causality.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11670662/v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "New primaryCAF perturbation and CD73-rescue/co-culture experiments with3 patient donors;60 paired tissue mIF samples use a proxy; external survival analyses are retrospective.",
+      "unknown": "No clinical intervention benefit; mIF proxy contains KLF2/CD73 and is not independent validation of the full learned score. Single-sample spatial analysis; DFS and fixed-cutoff portability failures."
+    },
+    "field": "medicine",
+    "id": "2026-11-cmir-klf2-cd73-fibroblast-immune-exclusion",
+    "organization": "Hainan Medical University; Hainan General Hospital",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 3,
+      "novelty": 2,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-11670662/v1",
+    "summary": "A preprint compared 45 survival-learning combinations in 439 colorectal-cancer training cases and selected a 17-gene LASSO signature including KLF2 and NT5E/CD73. Follow-on experiments using fibroblasts from three patients found that KLF2 overexpression reduced CD8 T-cell killing in co-culture, while KLF2 knockdown or CD73 inhibition reversed this effect. Tissue imaging used a four-protein proxy, not the transcriptomic score itself. Prognostic associations varied by endpoint and fixed-threshold transfer failed in external cohorts. This is a bounded cell-culture result, without proven patient treatment benefit.",
+    "title": "Survival learning links a fibroblast signature to a tested KLF2–CD73 pathway",
+    "verification_status": "verified"
   }
 ]

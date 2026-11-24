@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "CatBoost; training-fold XGBoost feature selection",
+  "evidence": {
+    "ai_role": "Gradient-boosted decision trees learn baseline features predicting a later eGFR-category label.",
+    "evidence_urls": [
+      "https://www.researchsquare.com/article/rs-11503634/v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Patient-level 80/20 split; fold-refitted preprocessing/feature selection and development-only 10-fold model selection; reserved internal test.",
+    "unknown": "Single-centre retrospective inclusion depends on follow-up availability; post hoc threshold and medication scenarios are exploratory, not treatment effects."
+  },
+  "field": "medicine",
+  "id": "2026-11-catboost-six-month-egfr-decline",
+  "organization": "Shanghai Pudong Hospital; Fudan University",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 2,
+    "novelty": 2,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.researchsquare.com/article/rs-11503634/v1",
+  "summary": "A preprint evaluated baseline clinical prediction of six-month eGFR-category worsening in 2,022 adults with diabetes and renal dysfunction. CatBoost was selected within development data and reached AUROC 0.91 in a reserved 405-patient internal test set. Inputs were restricted to baseline and pre-index records. A post hoc top 5% prioritization rule identified19 of48 test-set events, missing more than half. Category worsening did not require 90-day persistence, so this is not confirmed chronic progression. The single-centre retrospective study establishes no external clinical utility or causal benefit from medication exposure.",
+  "title": "CatBoost estimates six-month kidney-function category decline retrospectively",
+  "verification_status": "verified"
+}

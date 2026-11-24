@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "Random forest and nested group-aware MEG connectivity classification",
+  "evidence": {
+    "ai_role": "Learned classifiers map multi-band wPLI connectivity to case/control labels; SHAP characterizes model contributions.",
+    "evidence_urls": [
+      "https://www.researchsquare.com/article/rs-10929075/v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Nested group-aware internal cross-validation in 70 participants, keeping all data from each subject together and tuning inside training folds.",
+    "unknown": "No external clinical performance or mechanism established; high fold variance and small cohort limit interpretation."
+  },
+  "field": "medicine",
+  "id": "2026-11-meg-lumbar-stenosis-classification",
+  "organization": "Beihang University; Qilu Hospital of Shandong University; Shandong First Medical University",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 2,
+    "novelty": 2,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary full manuscript: cohort definition, actual model/input/preprocessing/split Methods and reported classification Results/limitations. No prospective utility claim."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.researchsquare.com/article/rs-10929075/v1",
+  "summary": "A preprint evaluated subject-level MEG connectivity classifiers in 39 lumbar-stenosis patients and 31 controls. Random forest achieved mean nested-cross-validation AUC 0.723 with fold standard deviation 0.262, indicating substantial uncertainty and variation. SHAP identified features contributing to model discrimination; independently tested physiological group differences are separate results, not all AI-discovered mechanisms. The small cross-sectional study provides neither external validation nor clinical diagnostic utility.",
+  "title": "MEG connectivity classifier shows limited lumbar-stenosis discrimination",
+  "verification_status": "verified"
+}

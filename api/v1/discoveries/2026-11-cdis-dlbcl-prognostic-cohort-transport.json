@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "CoxBoost gene selection and random survival forest (CDIS)",
+  "evidence": {
+    "ai_role": "Learned gene selection and survival-forest predictions define CDIS for risk and immune-state comparisons.",
+    "evidence_urls": [
+      "https://link.springer.com/article/10.1186/s40364-026-01049-0"
+    ],
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Existing-cohort survival scoring; three validation cohorts also informed selection. Separate cell-line BAFF assays concern a candidate pathway.",
+    "unknown": "Prospective clinical benefit and portable preprocessing/cutoffs remain unestablished. Cell-line effects are not patient therapeutic evidence."
+  },
+  "field": "medicine",
+  "id": "2026-11-cdis-dlbcl-prognostic-cohort-transport",
+  "organization": "Jinan University; You Jiang Medical University for Nationalities",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 2,
+    "novelty": 2,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary full Methods and Results: model selection, cohort C-indices, frozen-scaling/cutoff failure, single-cell inference and BAFF assays; validation 2 applies prognostic claim."
+  },
+  "source_type": "paper",
+  "source_url": "https://link.springer.com/article/10.1186/s40364-026-01049-0",
+  "summary": "CoxBoost plus a random survival forest produced a 16-gene DLBCL risk score after comparison of 101 model combinations. Reported validation C-indices were 0.613, 0.732 and 0.632, but those cohorts contributed to model selection. More strictly frozen preprocessing lowered discrimination to 0.547, 0.591 and 0.596; the training cutoff classified almost all external patients as high risk. Downstream transcriptomic analyses suggested a BAFF/APRIL pathway, with BAFF effects tested in cell lines. These findings establish neither clinical benefit nor a validated treatment mechanism, and the cell-line assays do not independently validate prognostic transport.",
+  "title": "Learned lymphoma risk score shows retrospective associations and transport limits",
+  "verification_status": "verified"
+}

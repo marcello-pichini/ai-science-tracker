@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "MediaPipe Pose; gradient boosting and histogram gradient boosting; supervised regression comparison",
+  "evidence": {
+    "ai_role": "Learned pose estimation supplies gait inputs; boosting regressors estimate selected spirometric targets. Ordinary linear models lead on several other targets.",
+    "evidence_urls": [
+      "https://www.researchsquare.com/article/rs-11706261/v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Prospectively collected single-centre cohort, but retrospective repeated internal train/test evaluation; no external validation.",
+    "unknown": "Video contribution was not ablated against clinical-only models; small test sets and model selection on evaluation splits limit reliability. COPD classification used pre-bronchodilator spirometry."
+  },
+  "field": "medicine",
+  "id": "2026-11-video-gait-spirometry-estimation",
+  "organization": "Ondokuz Mayıs University; Samsun University; Duke University School of Medicine; University of Massachusetts Amherst",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 2,
+    "novelty": 2,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary full manuscript Methods, Results, validation protocol and limitations independently reviewed."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.researchsquare.com/article/rs-11706261/v1",
+  "summary": "A preprint used MediaPipe Pose to extract walking features and compared 13 regressors in 100 participants (33 classified with COPD). Five repeated 90/10 internal splits gave FEV1/FVC correlation 0.701±0.135 with gradient boosting and mid-expiratory-flow correlation 0.730±0.078 with histogram boosting; linear or regularized models were strongest for several volume targets. Test sets contained about 10 people and selecting models on the same splits can inflate performance. The study did not establish an incremental benefit from video features, external validity, replacement of spirometry or clinical benefit.",
+  "title": "Video gait features and clinical models estimate lung function in a small cohort",
+  "verification_status": "verified"
+}

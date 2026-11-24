@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "MatterSim v1.0.0-5M machine-learning interatomic potential",
+  "evidence": {
+    "ai_role": "The pretrained potential supplies relaxed structures and force responses for scalable phonon screening, enabling selection of specific low-thermal-conductivity lithium binaries.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.30344v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "direct test",
+    "tested": "MatterSim phonon screening, separate 3,558-material DFT comparison and within-study first-principles third-order force-constant/Boltzmann calculations for LiPt, LiTl and LiBi. The latter check the specific low-conductivity candidate result computationally.",
+    "unknown": "No new synthesis or experimental phonon/thermal-conductivity validation is reported. Model errors, dynamic-stability filtering and gap cutoffs affect candidate counts; not every candidate receives separate DFT confirmation."
+  },
+  "field": "materials",
+  "id": "2026-11-mattersim-phononic-gap-lithium-binaries",
+  "organization": "University of Jyväskylä",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 3,
+    "novelty": 3,
+    "validation": 3
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary arXiv v1 full HTML: Computational methods, Benchmark and validation, High-throughput calculations, Phonon gap and thermal conductivity, Origins of low thermal conductivity and Conclusions. Source header v1 date and affiliations read."
+  },
+  "source_type": "paper",
+  "source_url": "https://arxiv.org/html/2611.30344v1",
+  "summary": "A preprint used the MatterSim learned interatomic potential to calculate phonons for 42,347 stable, previously observed compounds and flag 11,176 with predicted phonon gaps larger than 1 THz. Screening and existing-database thermal descriptors prioritized lithium-metal binaries; targeted first-principles Boltzmann calculations then predicted room-temperature lattice thermal conductivities of 2.47, 0.63 and 0.33 W m−1 K−1 for LiPt, LiTl and LiBi, respectively. These are computational properties of known compounds, not new synthesis or experimentally measured performance. The large candidate list is model-derived; a separate DFT benchmark does not independently validate every screened material.",
+  "title": "MatterSim screening identifies low-conductivity lithium-metal candidates",
+  "verification_status": "verified"
+}
