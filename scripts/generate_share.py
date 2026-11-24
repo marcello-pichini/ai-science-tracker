@@ -498,6 +498,11 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
         year = d['publication_date'][:4]
         if year in years and not archived:
             more += f' <a href="profiles/year-{year}.html">Browse {year} discoveries</a>.'
+        # The card names only the first family; link the others so their profiles are not orphaned.
+        other_families = [f for f in models['families'] if d['id'] in f['discoveries'] and f is not fam_by_discovery.get(d['id'])]
+        if other_families and not archived:
+            more += ' Also linked model families: ' + ', '.join(
+                f'<a href="profiles/family-{quote(f["id"])}.html">{esc(f["name"])}</a>' for f in other_families) + '.'
         if d['id'] in DOSSIER_IDS and not archived:
             topic, section = DOSSIER_IDS[d['id']]
             more += f' <a href="{topic}-dossier.html#{section}">Read the {topic} evidence dossier</a>.'
