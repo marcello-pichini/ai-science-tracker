@@ -1,0 +1,34 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "Agentic Inventory-Policy Discovery System; LLM-guided symbolic search",
+  "evidence": {
+    "ai_role": "LLMs propose structured symbolic policy edits using evaluation feedback; numerical parameter fitting and cost evaluation are separate.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.29440",
+      "https://arxiv.org/html/2611.29440v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "direct test",
+    "tested": "Numerical evaluation across four inventory settings and an analytical cost-gap proof for a restricted three-period lost-sales case.",
+    "unknown": "No real-world deployment, general optimality or separate-team/proof-kernel confirmation established in reviewed material. Prior related LLM-guided inventory work is acknowledged."
+  },
+  "field": "mathematics",
+  "id": "2026-11-llm-inventory-policy-cost-bound",
+  "organization": "New York University; Tsinghua University; Beijing Institute of Mathematical Sciences and Applications",
+  "paper_url": "",
+  "publication_date": "2026-11-22",
+  "relevance": {
+    "impact": 2,
+    "novelty": 3,
+    "validation": 3
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "arXiv v1 metadata; HTML Introduction/related work, Theorem6.3 and proof9.3, policy-search implementation and evaluation constraints."
+  },
+  "source_type": "paper",
+  "source_url": "https://arxiv.org/abs/2611.29440",
+  "summary": "A preprint reports LLM-guided symbolic inventory-policy discovery and numerical evaluation across 15,600 instances. The authors prove a capped dual-shortfall specialization has lower long-run cost than the specified adjacent-integer capped-base-stock benchmark family in a three-period lost-sales setting under restrictive small-mean integer-demand and cost-ratio assumptions. LLMs propose formula edits; a numerical engine fits and tests candidates. The analytical proof is source-reported, without proof-kernel checking or independent confirmation established here; the result does not establish global optimality, real-world savings or first priority for LLM policy discovery.",
+  "title": "LLM-discovered inventory rule improves a bounded cost benchmark",
+  "verification_status": "verified"
+}

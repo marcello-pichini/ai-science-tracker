@@ -142913,5 +142913,72 @@
     "summary": "A preprint used trained RootPainter segmentation of root photos to estimate nodule growth in soybean plants inoculated separately with 20 rhizobial field isolates. The measurements indicated that much of the yield variation tracked total nodule mass rather than benefit per nodule mass; three isolates with the greatest nodulation gave the lowest yield benefit. A repeat experiment mostly preserved isolate rankings, with exceptions. These growth-pouch results do not establish benefits under mixed field infections: segmentation and mass calibration introduce errors, and relatedness among isolates limits independence and definitive regression claims.",
     "title": "RootPainter separates nodulation from soybean yield benefits",
     "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "Agentic Inventory-Policy Discovery System; LLM-guided symbolic search",
+    "evidence": {
+      "ai_role": "LLMs propose structured symbolic policy edits using evaluation feedback; numerical parameter fitting and cost evaluation are separate.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.29440",
+        "https://arxiv.org/html/2611.29440v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Numerical evaluation across four inventory settings and an analytical cost-gap proof for a restricted three-period lost-sales case.",
+      "unknown": "No real-world deployment, general optimality or separate-team/proof-kernel confirmation established in reviewed material. Prior related LLM-guided inventory work is acknowledged."
+    },
+    "field": "mathematics",
+    "id": "2026-11-llm-inventory-policy-cost-bound",
+    "organization": "New York University; Tsinghua University; Beijing Institute of Mathematical Sciences and Applications",
+    "paper_url": "",
+    "publication_date": "2026-11-22",
+    "relevance": {
+      "impact": 2,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "arXiv v1 metadata; HTML Introduction/related work, Theorem6.3 and proof9.3, policy-search implementation and evaluation constraints."
+    },
+    "source_type": "paper",
+    "source_url": "https://arxiv.org/abs/2611.29440",
+    "summary": "A preprint reports LLM-guided symbolic inventory-policy discovery and numerical evaluation across 15,600 instances. The authors prove a capped dual-shortfall specialization has lower long-run cost than the specified adjacent-integer capped-base-stock benchmark family in a three-period lost-sales setting under restrictive small-mean integer-demand and cost-ratio assumptions. LLMs propose formula edits; a numerical engine fits and tests candidates. The analytical proof is source-reported, without proof-kernel checking or independent confirmation established here; the result does not establish global optimality, real-world savings or first priority for LLM policy discovery.",
+    "title": "LLM-discovered inventory rule improves a bounded cost benchmark",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "VISTA3D (SegResNet); 3D vision transformer",
+    "evidence": {
+      "ai_role": "VISTA3D segments CT tumors; radiomic feature maps and CT inputs feed a 3D vision transformer for response prediction.",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13789539/"
+      ],
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "Retrospective 517-patient three-center study: 185 development and 42 internal-test patients at A, 215 supervised-pretraining patients at B, 75 external-test patients at C. Source reports external AUC 0.81 with automated segmentation.",
+      "unknown": "Clinical utility and causal adjuvant-treatment effects are unestablished. Internal-test segmentation-strategy selection is reported despite broader untouched-test claims."
+    },
+    "field": "medicine",
+    "id": "2026-11-vista3d-lung-treatment-response-validation",
+    "organization": "Shandong Cancer Hospital and Institute; West China Hospital, Sichuan University; Chinese Academy of Sciences; Peking University",
+    "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13789539/",
+    "publication_date": "2026-11-22",
+    "relevance": {
+      "impact": 3,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary PMC full XML: publication metadata, affiliations, Methods2.1 and model-development/segmentation sections, pCR Results and clinical limitations."
+    },
+    "source_type": "paper",
+    "source_url": "https://doi.org/10.1002/advs.78906",
+    "summary": "A retrospective three-center study of 517 patients combined VISTA3D tumor segmentation with a 3D vision transformer to predict pathological complete response after neoadjuvant immunochemotherapy in non-small-cell lung cancer. Automated-segmentation predictions reached AUC 0.83 in the internal test and 0.81 in a 75-patient external center. Model-defined immune differences and apparent adjuvant-treatment survival associations were exploratory; they do not establish mechanism, causal treatment benefit or clinical utility. Small test cohorts and segmentation-strategy selection using internal-test performance limit interpretation; prospective validation remains needed.",
+    "title": "CT deep learning predicts lung cancer treatment response",
+    "verification_status": "verified"
   }
 ]
