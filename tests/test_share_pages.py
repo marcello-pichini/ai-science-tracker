@@ -427,7 +427,7 @@ class SharePageTests(unittest.TestCase):
         g = self.generator
         data = json.loads(g.discovery_jsonld(self.record).split('\n')[1])
         self.assertEqual(data['@type'], 'WebPage')
-        self.assertEqual(data['mainEntity']['@type'], 'CreativeWork')
+        self.assertEqual(data['mainEntity']['@type'], 'Article')
         self.assertEqual(data['mainEntity']['headline'], self.record['title'])
         self.assertNotIn('name', data['isPartOf'])
         self.assertEqual(data['isPartOf']['@id'], g.BASE + 'dataset.html#scientific-dataset')

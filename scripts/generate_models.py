@@ -46,7 +46,7 @@ for r in rows:
     recent_lab = date >= '2020-01-01' and LAB.search(org)
     if not (recent_lab or fam):
         continue
-    link = (r.get('Link') or '').strip().split(' ')[0]
+    link = (r.get('Link') or '').strip().split(' ')[0].rstrip(',;')
     if re.match(r'^arxiv\.org/abs/[^\s]+$', link, re.I):
         link = 'https://' + link
     compute = (r.get('Training compute (FLOP)') or '').strip()

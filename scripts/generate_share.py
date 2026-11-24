@@ -104,9 +104,13 @@ def clip(text, n):
 SENTENCE_END = re.compile(r'(?<=[.!?])\s+(?=[A-Z0-9“"(])')
 
 
-def describe(text, n=200, hard=230):
+DESC_MIN = 110  # search snippets: shorter reads as thin, longer than hard is cut off
+
+
+def describe(text, n=155, hard=160, lead=None):
     """Meta description made of whole sentences: as many as fit in n characters, or the first
-    sentence alone when it fits in hard; only longer first sentences fall back to clip()."""
+    sentence alone when it fits in hard; only longer first sentences fall back to clip().
+    A too-short result is prefixed with lead (usually the title) when given."""
     parts = SENTENCE_END.split(text.strip())
     out = ''
     for part in parts:
@@ -116,7 +120,22 @@ def describe(text, n=200, hard=230):
         out = candidate
     if not out and len(parts[0]) <= hard:
         out = parts[0]
-    return out or clip(text, n)
+    out = out or clip(text, n)
+    if lead and len(out) < DESC_MIN:
+        combined = f'{lead.rstrip(".")}. {text}'
+        out = describe(combined, n, hard)
+        return out if len(out) >= DESC_MIN else clip(combined, n)
+    return out
+
+
+def fit_title(page, limit=60):
+    """Drop the site suffix, then clip, so search titles stay within limit characters."""
+    def fix(m):
+        title = html.unescape(m.group(1))
+        if len(title) > limit:
+            title = title.removesuffix(f' · {SITE}')
+        return f'<title>{esc(clip(title, limit))}</title>'
+    return re.sub(r'<title>(.*?)</title>', fix, page, count=1, flags=re.S)
 
 
 def relocate(fragment):
@@ -300,10 +319,10 @@ def breadcrumb(name, path):
 
 
 def discovery_jsonld(d):
-    # WebPage plus a CreativeWork for the catalog record. This is not the paper itself,
+    # WebPage plus an Article for the catalog record (our summary). This is not the paper itself,
     # so it is not a ScholarlyArticle. datePublished is the source announcement date.
     url = f'{BASE}share/{d["id"]}.html'
-    work = {'@type': 'CreativeWork', 'name': d['title'], 'headline': d['title'], 'abstract': clip(d['summary'], 300),
+    work = {'@type': 'Article', 'name': d['title'], 'headline': clip(d['title'], 110), 'author': CREATOR, 'publisher': PUBLISHER, 'abstract': clip(d['summary'], 300),
             'datePublished': d['publication_date'], 'inLanguage': 'en', 'url': url, 'keywords': d['field'],
             'isBasedOn': d['source_url']}
     data = {'@context': 'https://schema.org/', '@type': 'WebPage', 'name': d['title'], 'description': clip(d['summary'], 300),
@@ -361,13 +380,14 @@ def discovery_article(d, fam, ui, link_title=False, archived=False):
   </article>"""
 
 
-TITLE_MAX = 65
+TITLE_MAX = 60
 STOP_WORDS = frozenset('''the and for with from into that this these those than then their there were was are has have
 had not but its new using used use via based model models data study studies result results shows show showed
 identifies identified predicts predicted helps help can more most first after over under between across within
 which while when where also two three four five one all any per out who how what our its such'''.split())
 # Single-discovery organization pages mostly repeat their discovery page: keep them reachable but noindex.
 ORG_INDEX_MIN = 2
+PROFILE_FULL_CARDS = 100
 RELATED_LIMIT = 5
 TOPIC_THRESHOLD = 0.12
 
@@ -459,7 +479,13 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
         seen[t] = seen.get(t, 0) + 1
     for d in items:
         if seen[titles[d['id']]] > 1 and not d.get('search_title'):
-            titles[d['id']] = d['title']  # shortcut: duplicate short titles fall back to the full title
+            titles[d['id']] = clip(d['title'], TITLE_MAX - 7) + f' ({d["publication_date"][:4]})'
+    seen = {}
+    for t in titles.values():
+        seen[t] = seen.get(t, 0) + 1
+    for d in items:
+        if seen[titles[d['id']]] > 1 and not d.get('search_title'):
+            titles[d['id']] = d['title']  # shortcut: still-duplicate short titles fall back to the full title
     ui = run_catalog_ui(items)
     for d in items:
         has_image = images or (ROOT / 'og' / f'{d["id"]}.png').is_file()
@@ -477,7 +503,7 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
             more += f' <a href="{topic}-dossier.html#{section}">Read the {topic} evidence dossier</a>.'
         if archived:
             lead = f'Archived catalog entry &middot; {lead}'
-        page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(describe(d['summary'])), base=BASE,
+        page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(describe(d['summary'], lead=d['title'])), base=BASE,
                            path=f'share/{d["id"]}.html', img=d['id'] if has_image else 'default',
                            imgalt=esc(f'Preview card: {d["title"]}') if has_image else DEFAULT_ALT, jsonld=discovery_jsonld(d),
                            h2='<h2 class="vis-nascosto">Discovery</h2>', more=more, extra=related_section(d, candidates, families_by_discovery),
@@ -585,7 +611,15 @@ def write_profile_pages(items, models, archived=()):
         return f'{n} {one if n == 1 else many}'
 
     def emit(name, title, lead, desc, rows, path, interactive, extra='', organization=False, label='interactive profile', before='', noindex=False):
-        articles = ''.join(discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']], link_title=True) for d in rows)
+        # Full cards made field/year pages exceed 9 MB; older rows keep a crawlable link to their own page.
+        articles = ''.join(discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']], link_title=True) for d in rows[:PROFILE_FULL_CARDS])
+        if len(rows) > PROFILE_FULL_CARDS:
+            articles += ('<h2>Earlier discoveries</h2><ul class="elenco-profili">' + ''.join(
+                f'<li><a href="share/{quote(d["id"])}.html">{esc(d["title"])}</a> ({d["publication_date"]})</li>'
+                for d in rows[PROFILE_FULL_CARDS:]) + '</ul>')
+        if len(desc) < DESC_MIN:
+            desc += ' Each entry states the AI role, the evidence and its limits.'
+        desc = clip(desc, 160)
         purpose = 'the timeline' if label == 'interactive profile' else 'charts and filters'
         more = f'<a href="{interactive}">Open the {label}</a> for {purpose}, or <a href="profiles/index.html">browse all organizations and model families</a>.'
         page = PAGE.format(title=esc(title), site=SITE, desc=esc(desc), base=BASE, path=path, img='default', imgalt=DEFAULT_ALT,
@@ -593,7 +627,7 @@ def write_profile_pages(items, models, archived=()):
                            h2=before + '<h2 class="vis-nascosto">Discoveries</h2>', jsonld=profile_jsonld(title, desc, path, organization))
         if noindex:
             page = page.replace('<link rel="canonical"', '<meta name="robots" content="noindex, follow">\n<link rel="canonical"', 1)
-        (ROOT / path).write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
+        (ROOT / path).write_text('\n'.join(line.rstrip() for line in relocate(fit_title(page)).splitlines()) + '\n')
         pages.append(path)
 
     slugs = {}
@@ -737,7 +771,7 @@ def write_collection_page(title, description, path, article, lead, more, securit
         page = page.replace(f'<title>{esc(title)} · {SITE}</title>',
                             f'<title>{esc(search_title)} · {SITE}</title>', 1)
     (ROOT / path).parent.mkdir(exist_ok=True)
-    (ROOT / path).write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
+    (ROOT / path).write_text('\n'.join(line.rstrip() for line in relocate(fit_title(page)).splitlines()) + '\n')
 
 
 def write_catalog_evidence(items):
@@ -826,7 +860,7 @@ def write_security_pages(items):
         summary = record['summary']
         if cves:
             summary = f'{cves[0]} in {record["product"]} — {summary}'
-        description = describe(summary)
+        description = describe(summary, lead=f'Source-attributed AI discovery report for {record["product"]}')
         attribution = (f'AI attribution dated {nice_date(record["ai_attribution_date"])}'
                        if record['ai_attribution_date'] else 'AI attribution date not established by the source')
         sources = ''.join(f'<li><a href="{esc(safe_url(record[key]))}" rel="noopener">{label}</a></li>' for key, label in

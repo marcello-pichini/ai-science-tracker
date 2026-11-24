@@ -53,7 +53,7 @@ NEW_DOSSIER_PAGES = (
 PAGES = SHARED_PAGES + NEW_DOSSIER_PAGES
 SITEMAP_PAGES = tuple(page for page in PAGES if page != '404.html')
 
-ASSET_PREFIXES = ('assets/', 'data/', 'share/', 'profiles/', 'api/', 'og/')
+ASSET_PREFIXES = ('assets/', 'data/', 'share/', 'profiles/', 'api/', 'og/', 'docs/', 'schema/')
 ASSET_FILES = {'styles.css', 'feed.xml', 'sitemap.xml', 'llms.txt', 'robots.txt'}
 SKIP_TAGS = {'script', 'style'}
 NUMBER = re.compile(r'\d+(?:\.\d+)?')
@@ -714,6 +714,9 @@ def mark_switcher(page_html: str, lang: str) -> str:
     return re.sub(r'<nav class="menu" id="lang-switch".*?</nav>', repl, page_html, count=1, flags=re.S)
 
 
+RUNTIME_FILE = 'runtime.js'
+
+
 def runtime_script(lang: str, messages: dict, discoveries: dict) -> str:
     root = '' if lang == 'en' else '../'
     payload = {
@@ -723,11 +726,19 @@ def runtime_script(lang: str, messages: dict, discoveries: dict) -> str:
     raw = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     intl = LOCALE_META[lang]['intl']
     return (
-        '<script>Object.assign(globalThis,' + raw + ');'
+        'Object.assign(globalThis,' + raw + ');'
         f'globalThis.AST_SITE_ROOT={json.dumps(root)};'
         f'globalThis.AST_INTL_LOCALE={json.dumps(intl)};'
-        'if(globalThis.CatalogUI){CatalogUI.messages=AST_MESSAGES;CatalogUI.dateLocale=AST_INTL_LOCALE;}</script>'
+        'if(globalThis.CatalogUI){CatalogUI.messages=AST_MESSAGES;CatalogUI.dateLocale=AST_INTL_LOCALE;}\n'
     )
+
+
+def runtime_tag(lang: str, page: str, body: str) -> str:
+    """One cacheable bundle per language instead of ~2.4 MB inlined into every page."""
+    digest = hashlib.sha256(body.encode('utf-8')).hexdigest()[:12]
+    # 404.html resolves against a site-root <base>.
+    src = f'{lang}/{RUNTIME_FILE}' if page == '404.html' else RUNTIME_FILE
+    return f'<script src="{src}?v={digest}"></script>'
 
 
 def refresh_embedded_detection(text: str, pages: tuple[str, ...]) -> str:
@@ -860,6 +871,8 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
         dossier_table = merged | {key: values[lang] for key, values in dossier_messages.items()}
         out_dir = root / lang
         out_dir.mkdir(parents=True, exist_ok=True)
+        runtime_body = runtime_script(lang, merged, discoveries)
+        (out_dir / RUNTIME_FILE).write_text(runtime_body, encoding='utf-8')
         for page in PAGES:
             source = root / page
             if not source.exists():
@@ -885,7 +898,7 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
             text = clean_home_links(text, home_href(lang))
             text = retarget_iamops(text, lang)
             if 'dossier' not in page:
-                injection = runtime_script(lang, merged, discoveries)
+                injection = runtime_tag(lang, page, runtime_body)
                 text = text.replace('</head>', injection + '\n</head>', 1)
             (out_dir / page).write_text(text, encoding='utf-8')
     if problems and strict:
