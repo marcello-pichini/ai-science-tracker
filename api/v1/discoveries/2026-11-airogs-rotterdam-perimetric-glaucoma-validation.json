@@ -1,0 +1,34 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "AIROGS challenge winning deep-learning fundus-image classifier",
+  "evidence": {
+    "ai_role": "A learned image classifier supplied glaucoma scores used in external diagnostic evaluation.",
+    "evidence_urls": [
+      "https://pubmed.ncbi.nlm.nih.gov/42971439/",
+      "https://www.aaojournal.org/article/S0161-6420(26)00846-8/fulltext"
+    ],
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "External existing-cohort diagnostic evaluation; not a prospective test of clinical benefit.",
+    "unknown": "Clinical benefit and deployment outcomes are unestablished. The reported ROC-derived operating point is cohort-specific; prospective validation remains needed. Direct full-text access was blocked; bounded publisher-indexed Methods and Results were reviewed."
+  },
+  "field": "medicine",
+  "id": "2026-11-airogs-rotterdam-perimetric-glaucoma-validation",
+  "organization": "The Rotterdam Eye Hospital; Erasmus Medical Center; Radboud University Medical Center; Institute of Molecular and Clinical Ophthalmology Basel",
+  "paper_url": "https://www.aaojournal.org/article/S0161-6420(26)00846-8/fulltext",
+  "publication_date": "2026-11-02",
+  "relevance": {
+    "impact": 3,
+    "novelty": 2,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary PubMed abstract/date/affiliations and publisher-indexed DL-algorithm-development, Validation dataset, participant ROC-threshold Results and Discussion passages. Direct publisher full-text fetch403; no full-PDF review claimed."
+  },
+  "source_type": "paper",
+  "source_url": "https://pubmed.ncbi.nlm.nih.gov/42971439/",
+  "summary": "An existing deep-learning fundus-image classifier was evaluated on 19,088 eyes from 9,837 Rotterdam Study participants, including 201 eyes with perimetric glaucoma. Eye-level sensitivity was 70.6% at 95% specificity, with ROC-AUC 0.911. Among 61 true positives with earlier images,33 were flagged before diagnosis. This retrospective evaluation of a prospectively collected cohort does not establish improved patient outcomes; image quality affected false positives. The reported specificity operating point was derived from this cohort’s ROC analysis, rather than a separately locked clinical cutoff.",
+  "title": "AIROGS classifier detects glaucoma in retrospective Rotterdam validation",
+  "verification_status": "verified"
+}

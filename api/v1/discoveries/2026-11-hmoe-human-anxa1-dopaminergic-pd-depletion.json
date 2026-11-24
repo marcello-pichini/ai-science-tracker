@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-24",
+  "ai_technology": "Hierarchical mixture-of-experts classifier (logistic-regression experts)",
+  "evidence": {
+    "ai_role": "A tree of trained logistic-regression experts predicts subtype labels from gene expression and transfers mouse taxonomy to human nuclei, enabling the subtype-specific disease comparison.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.11.20.766782v1.full.pdf"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Existing mouse/human transcriptomic data; 24,419 mouse reference cells, five-fold cell-stratified validation and a held-out test; human depletion comparison uses eight control and seven Parkinson’s donors with donor-aware mixed models.",
+    "unknown": "Causal susceptibility, in-vivo human projections and therapeutic benefit are not established. Cells are not independent donor replicates; cross-species annotation may constrain inferred subtype identity."
+  },
+  "field": "biology",
+  "id": "2026-11-hmoe-human-anxa1-dopaminergic-pd-depletion",
+  "organization": "Northwestern University; Shirley Ryan AbilityLab; Karolinska Institutet; University of California, San Diego; McGill University",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 3,
+    "novelty": 3,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-24",
+    "scope": "Primary v1 full-text HMoE training/validation and Human transfer Methods, human population-depletion/MASC Methods, subtype Results and limitations; primary bioRxiv API date independently checked. Numerical drug-target and inferred projection claims not admitted as independent findings."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.20.766782v1.full.pdf",
+  "summary": "A hierarchical mixture-of-experts classifier transferred mouse dopaminergic-neuron labels to human single-nucleus datasets, identifying an Anxa1-associated population. The preprint reports this population was more depleted in Parkinson’s disease than comparator subtypes in a postmortem analysis of eight control and seven Parkinson’s donors. The model uses logistic-regression experts trained on a mouse reference; donor-aware abundance models support an association rather than a causal mechanism. Cross-species label transfer, small donor cohorts and retrospective tissue limit generalization; inferred connectivity and candidate drug targets are not direct human tracing or demonstrated therapy.",
+  "title": "Cross-species classifier identifies a human dopaminergic subtype depleted in Parkinson’s disease",
+  "verification_status": "verified"
+}

@@ -142216,5 +142216,106 @@
     "summary": "A preprint combined the gradient-boosted SL-XGBRanker with retrospective pharmacogenomic analyses to prioritize drug hypotheses for MBD4 loss of function. In existing GDSC2 measurements, TP53-mutant MBD4-loss cell lines were associated with greater ceralasertib sensitivity than wild-type comparators (11 versus 619 lines; reported BH-FDR q=0.036); the ranker placed ceralasertib second when MBD4 was held out during training. The ranking includes pharmacogenomic features from these datasets, so the association is not an independent experimental validation of the model. The small observational cell-line study establishes neither causal synthetic lethality nor clinical benefit; isogenic knockout/rescue experiments remain necessary. The represented findings appear in the November 12 first public version; a November 20 revision changes author affiliations while retaining the central findings.",
     "title": "Learned ranking prioritizes ceralasertib for MBD4-deficient cell lines",
     "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "AIROGS challenge winning deep-learning fundus-image classifier",
+    "evidence": {
+      "ai_role": "A learned image classifier supplied glaucoma scores used in external diagnostic evaluation.",
+      "evidence_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/42971439/",
+        "https://www.aaojournal.org/article/S0161-6420(26)00846-8/fulltext"
+      ],
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "External existing-cohort diagnostic evaluation; not a prospective test of clinical benefit.",
+      "unknown": "Clinical benefit and deployment outcomes are unestablished. The reported ROC-derived operating point is cohort-specific; prospective validation remains needed. Direct full-text access was blocked; bounded publisher-indexed Methods and Results were reviewed."
+    },
+    "field": "medicine",
+    "id": "2026-11-airogs-rotterdam-perimetric-glaucoma-validation",
+    "organization": "The Rotterdam Eye Hospital; Erasmus Medical Center; Radboud University Medical Center; Institute of Molecular and Clinical Ophthalmology Basel",
+    "paper_url": "https://www.aaojournal.org/article/S0161-6420(26)00846-8/fulltext",
+    "publication_date": "2026-11-02",
+    "relevance": {
+      "impact": 3,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary PubMed abstract/date/affiliations and publisher-indexed DL-algorithm-development, Validation dataset, participant ROC-threshold Results and Discussion passages. Direct publisher full-text fetch403; no full-PDF review claimed."
+    },
+    "source_type": "paper",
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/42971439/",
+    "summary": "An existing deep-learning fundus-image classifier was evaluated on 19,088 eyes from 9,837 Rotterdam Study participants, including 201 eyes with perimetric glaucoma. Eye-level sensitivity was 70.6% at 95% specificity, with ROC-AUC 0.911. Among 61 true positives with earlier images,33 were flagged before diagnosis. This retrospective evaluation of a prospectively collected cohort does not establish improved patient outcomes; image quality affected false positives. The reported specificity operating point was derived from this cohort’s ROC analysis, rather than a separately locked clinical cutoff.",
+    "title": "AIROGS classifier detects glaucoma in retrospective Rotterdam validation",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "Multilingual neural-network language models (including mBERT, XLM-R and NLLB); ridge-regression brain encoding",
+    "evidence": {
+      "ai_role": "Learned multilingual embeddings supply a common feature space for brain-response models and cross-language transfer tests.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12667947/fullTextXML",
+        "https://pubmed.ncbi.nlm.nih.gov/41332565/"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Cross-participant and held-out-language encoding on fMRI data; existing 12-language data and 27 new participants across nine languages. Reviewed v2 uses nested regularization and sequential validation with controls for temporal structure.",
+      "unknown": "Fine-grained language differences and causality remain unresolved. Small cohorts and selection by response reliability constrain conclusions. The 2026 journal version was not reviewed in full."
+    },
+    "field": "biology",
+    "id": "2025-02-multilingual-model-cross-language-brain-encoding",
+    "organization": "University of Milano-Bicocca; Massachusetts Institute of Technology; Harvard University",
+    "paper_url": "",
+    "publication_date": "2025-02-02",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary bioRxiv v2 archived full text through Europe PMC: language models, encoding design, participant selection, Results and limitations. Primary v1 metadata/abstract establishes earlier core result date; v2 Methods are not asserted identical to v1. Final 2026 Nature full text inaccessible."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.1101/2025.02.01.636044v2",
+    "summary": "Multilingual neural-language-model embeddings enabled ridge-regression models of fMRI language-network responses that transferred to held-out languages across a 21-language study. The study combined existing data in 12 languages with newly collected data in nine more, supporting a shared representational component related to meaning. Small samples per language, reliability-based filtering and modest predictive correlations limit generalization; the results establish neither identical processing across languages nor a causal universal neural code. The core result was public in the February 2, 2025 preprint; the reviewed November 18, 2025 revision added analyses. A November 23, 2026 journal announcement is later source context, with final journal Methods not reviewed.",
+    "title": "Multilingual model representations predict shared brain responses across languages",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "Hierarchical mixture-of-experts classifier (logistic-regression experts)",
+    "evidence": {
+      "ai_role": "A tree of trained logistic-regression experts predicts subtype labels from gene expression and transfers mouse taxonomy to human nuclei, enabling the subtype-specific disease comparison.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.20.766782v1.full.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Existing mouse/human transcriptomic data; 24,419 mouse reference cells, five-fold cell-stratified validation and a held-out test; human depletion comparison uses eight control and seven Parkinson’s donors with donor-aware mixed models.",
+      "unknown": "Causal susceptibility, in-vivo human projections and therapeutic benefit are not established. Cells are not independent donor replicates; cross-species annotation may constrain inferred subtype identity."
+    },
+    "field": "biology",
+    "id": "2026-11-hmoe-human-anxa1-dopaminergic-pd-depletion",
+    "organization": "Northwestern University; Shirley Ryan AbilityLab; Karolinska Institutet; University of California, San Diego; McGill University",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "Primary v1 full-text HMoE training/validation and Human transfer Methods, human population-depletion/MASC Methods, subtype Results and limitations; primary bioRxiv API date independently checked. Numerical drug-target and inferred projection claims not admitted as independent findings."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.20.766782v1.full.pdf",
+    "summary": "A hierarchical mixture-of-experts classifier transferred mouse dopaminergic-neuron labels to human single-nucleus datasets, identifying an Anxa1-associated population. The preprint reports this population was more depleted in Parkinson’s disease than comparator subtypes in a postmortem analysis of eight control and seven Parkinson’s donors. The model uses logistic-regression experts trained on a mouse reference; donor-aware abundance models support an association rather than a causal mechanism. Cross-species label transfer, small donor cohorts and retrospective tissue limit generalization; inferred connectivity and candidate drug targets are not direct human tracing or demonstrated therapy.",
+    "title": "Cross-species classifier identifies a human dopaminergic subtype depleted in Parkinson’s disease",
+    "verification_status": "verified"
   }
 ]
