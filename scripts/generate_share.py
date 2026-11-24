@@ -2,7 +2,8 @@
 """Generate the files that make discoveries shareable and the site indexable.
 
 Outputs (all generated, never edit by hand; rerun this script instead):
-  og/<id>.png      1200x630 social preview card, rendered with headless Chrome
+  og/<id>.png      1200x630 social preview card, rendered with headless Chrome and
+                   saved as a 32-color PNG with Pillow (`python3 -m pip install --user pillow`)
   share/<id>.html  full, indexable discovery page (self-canonical; no redirect, no noindex),
                    reusing the live header/footer from index.html and assets/catalog-ui.js
                    for the same source-check and correction text as the catalog (IMP-011)
@@ -202,10 +203,15 @@ def card_html(css, title, meta, score_row=''):
 
 
 def screenshot(page, out):
+    from PIL import Image  # Only needed when a card is actually rendered, so CI parity checks skip it.
     subprocess.run([CHROME, '--headless=new', '--disable-gpu', '--hide-scrollbars',
                     '--force-device-scale-factor=1', '--window-size=1200,630',
                     '--virtual-time-budget=2000', f'--screenshot={out}', page.as_uri()],
                    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    # Cards are flat two-color layouts: a 32-color palette looks the same and is about 3x smaller.
+    with Image.open(out) as image:
+        card = image.convert('RGB').quantize(32, method=Image.Quantize.FASTOCTREE)
+    card.save(out, optimize=True)
 
 
 def render_cards(items, force, reuse_images=False):
