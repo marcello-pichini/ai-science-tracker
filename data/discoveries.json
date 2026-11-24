@@ -142845,5 +142845,39 @@
     "summary": "A preprint reanalyzed auditory-cortex recordings and tested whether population activity distinguished silence, natural sounds and noise. In 33 mice with all three conditions recorded, a linear SVM achieved 82.50±8.74% mean accuracy using held-out time windows; template and linear-discriminant decoders gave similar results. Decoding remained above chance in both hearing-loss-prone and hearing-preserving strains across age groups, despite changes in individual-neuron activity. This does not establish intact perception, equivalence across ages or generalization to new mice; conditions were recorded in separate blocks.",
     "title": "Linear decoding distinguishes sound conditions in aging mouse cortex",
     "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-24",
+    "ai_technology": "DeepDOSReasoner",
+    "evidence": {
+      "ai_role": "Graph Transformer, atom-to-energy attention and learned mass-conserving spectral refinement rank candidates.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.29132",
+        "https://arxiv.org/html/2611.29132v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "New DFT calculations on an enriched 100-candidate set.",
+      "unknown": "Experimental performance and independent replication were not established in the reviewed sections."
+    },
+    "field": "materials",
+    "id": "2026-11-deepdosreasoner-valence-band-gap-materials",
+    "organization": "Cornell University; Université catholique de Louvain; Matgenix; Griffith University; Toyota Research Institute; California Institute of Technology",
+    "paper_url": "",
+    "publication_date": "2026-11-22",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-24",
+      "scope": "arXiv v1 metadata; HTML affiliations, architecture, benchmarks and prospective VB-gap results."
+    },
+    "source_type": "paper",
+    "source_url": "https://arxiv.org/abs/2611.29132",
+    "summary": "The DeepDOSReasoner preprint reports screening 8,106 crystal structures and confirming valence-band gaps in 25 of its top 50 candidates through new density-functional-theory calculations, versus 19 of 50 for Mat2Spec. Its learned crystal-to-spectrum model guided candidate selection. The 100-material evaluation set was enriched from both models; these are computational findings, without experimental synthesis or independent replication established in the reviewed sections.",
+    "title": "DeepDOSReasoner identifies materials with valence-band gaps",
+    "verification_status": "verified"
   }
 ]
