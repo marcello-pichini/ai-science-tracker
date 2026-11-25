@@ -1,0 +1,36 @@
+{
+  "id": "2026-11-openai-math-matrix-multiplication",
+  "title": "OpenAI model claims the matrix multiplication exponent is 9/4",
+  "summary": "OpenAI added to its openai/math repository manuscripts produced by an unnamed internal model claiming that the exponent of square matrix multiplication is exactly 9/4 over every field, with a lower bound of n^(9/4)/2 multiplication or division gates. The same release claims separations of Valiant's classes VF, VBP, VP and VNP (subsuming a VP ≠ VNP manuscript added on 23 November), circuit lower bounds for the permanent, the Erdős–Rado sunflower conjecture with an exponential bound, a strongly polynomial algorithm for linear programming (Smale's ninth problem) and a disproof of the polynomial Hirsch conjecture. The abstract describes the 9/4 upper bound as known; this record does not assess that statement against published bounds. No referee or independent review is reported.",
+  "field": "computer science",
+  "ai_technology": "OpenAI internal models",
+  "organization": "OpenAI",
+  "source_url": "https://github.com/openai/math/blob/main/history.md",
+  "source_type": "other",
+  "publication_date": "2026-11-24",
+  "added_date": "2026-11-25",
+  "verification_status": "verified",
+  "paper_url": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+  "relevance": {
+    "impact": 5,
+    "validation": 3,
+    "novelty": 5
+  },
+  "evidence": {
+    "publication_status": "Announcement only",
+    "tested": "Per the repository's Lean scope notes, Lean states ω = 9/4 and the dual exponent α = 1/2 over every field in a division-free model, that allowing division preserves the square exponent, the strict inclusions VF ⊊ VBP ⊊ VP ⊊ VNP, strongly polynomial rational linear programming and a family of polytopes disproving the polynomial Hirsch conjecture. The paper's explicit lower bound of ⌈n^(9/4)/2⌉ gates at each size and several other explicit bounds remain unformalized.",
+    "unknown": "No referee or independent expert review is reported in the reviewed material. OpenAI states that results in the collection could have issues and has withdrawn manuscripts before. Whether the Lean statements faithfully encode the standard definitions was not assessed.",
+    "ai_role": "An unnamed internal OpenAI model produced the manuscripts; OpenAI says the VP ≠ VNP result was obtained on 6 November 2026.",
+    "evidence_urls": [
+      "https://github.com/openai/math/blob/main/history.md",
+      "https://github.com/openai/math/blob/main/CONTENTS.md",
+      "https://github.com/openai/math/blob/main/lean/docs/379.md",
+      "https://github.com/openai/math/blob/main/lean/docs/380.md"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-25",
+    "scope": "openai/math release history, manuscript map abstracts for families 379 and 380 and their Lean scope notes; manuscript PDFs not read"
+  }
+}
