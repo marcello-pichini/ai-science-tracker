@@ -103,6 +103,7 @@ class DesignTests(unittest.TestCase):
                 self.assertIn("default-src 'self'", text)
                 self.assertIn("connect-src 'self'", text)
                 self.assertIn('<script type="speculationrules">', text)
+                self.assertIn('classList.add("js")', text)  # without it the narrow-screen menu never collapses
 
 if __name__ == '__main__':
     unittest.main()
