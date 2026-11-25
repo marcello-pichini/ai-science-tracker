@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-25",
+  "ai_technology": "Stacked ridge classifiers and regularized logistic meta-learner; interpretable feature ablation and cross-cohort prediction",
+  "evidence": {
+    "ai_role": "Ridge base classifiers learned complementary lesion representations and a logistic stacking model combined out-of-fold predictions. Ablation, stable coefficients and unseen-cohort tests linked predictive gains to specific network anatomy rather than lesion volume alone.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.11.10.765579v1.full.pdf"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Nested repeated cross-validation evaluated 3,034 patients from 13 cohorts. Adding anatomy and connectivity improved six of seven targets; any-domain impairment AUPRC rose from 0.67 to 0.71. Leave-one-cohort-out tests retained significant gains for three of seven targets by normalized AUPRC. Stable model coefficients highlighted shared thalamic connectivity and domain-specific anatomical profiles.",
+    "unknown": "Retrospective pooled cohorts were heterogeneous and predominantly represented mild strokes and Asian or European ancestry. Cognitive outcomes were binary at one assessment within a year, with premorbid cognition unavailable. Cross-cohort performance varied and several domain gains did not transfer significantly. Prediction and coefficient stability do not prove causation or clinical utility."
+  },
+  "field": "medicine",
+  "id": "2026-11-stroke-lesion-networks-cognitive-impairment",
+  "organization": "University Medical Center Utrecht; Meta VCI Map consortium; Heinrich Heine University Düsseldorf; Research Centre Jülich",
+  "paper_url": "https://doi.org/10.64898/2026.11.10.765579",
+  "publication_date": "2026-11-24",
+  "relevance": {
+    "impact": 3,
+    "novelty": 3,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-25",
+    "scope": "Primary 44-page preprint PDF relevant nested-model Methods, ablation and cross-cohort Results, anatomical interpretation and limitations; bioRxiv API version history. Supplementary analyses not exhaustively audited."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.10.765579v1",
+  "summary": "A November 24, 2026 preprint analyzed 3,034 patients across 13 stroke cohorts using learned models of lesion anatomy, network connectivity and clinical characteristics. Structural lesion connectivity supplied most of the gain beyond clinical information and infarct size, with left anterior thalamic connectivity consistently informative across cognitive outcomes. Benefits persisted for several outcomes when entire cohorts were held out. The results support a bounded lesion-in-context account of cognitive impairment, without establishing causal circuitry or clinical readiness.",
+  "title": "Learned lesion-network models identify shared and specific stroke cognition patterns",
+  "verification_status": "verified"
+}

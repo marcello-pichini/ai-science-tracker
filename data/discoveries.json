@@ -1,5 +1,774 @@
 [
   {
+    "added_date": "2026-11-25",
+    "ai_technology": "XGBoost learns COD-removal response from experimental and literature-derived process data; SHAP attributes nonlinear, condition-dependent associations to operating variables.",
+    "evidence": {
+      "ai_role": "XGBoost learns COD-removal response from experimental and literature-derived process data; SHAP attributes nonlinear, condition-dependent associations to operating variables.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11299105/v1",
+        "https://www.researchsquare.com/article/rs-11299105/v1.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Seven-model comparison on a mixed 1,423-sample dataset; interpretation of Fe/C ratio, pH and other process conditions.",
+      "unknown": "Model selection used the held-out test set; literature/source dependence, causal interpretation, real-effluent transfer and industrial-scale outcomes are unresolved."
+    },
+    "field": "chemistry",
+    "id": "2026-11-xgboost-pva-treatment-associations",
+    "organization": "Xinjiang Institute of Technology; Lanzhou University; Lanzhou Jiaotong University",
+    "paper_url": "https://www.researchsquare.com/article/rs-11299105/v1.pdf",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary manuscript Methods, relevant Results, limitations and first-version publication metadata reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-11299105/v1",
+    "summary": "An XGBoost model fitted to 1,423 experimental and literature-derived samples linked iron/carbon ratio and operating conditions to chemical oxygen demand removal in polyvinyl-alcohol wastewater treatment. SHAP analysis identified iron/carbon ratio as the strongest modeled factor and a pH-dependent interaction window. Reported test R² was 0.8045, but the paper selected its final model using that test set, limiting an unbiased generalization claim. The preprint offers model-derived process associations, not a confirmed causal mechanism or validated industrial-scale control policy.",
+    "title": "Interpretable machine learning maps wastewater treatment conditions",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "Stacked ridge classifiers and regularized logistic meta-learner; interpretable feature ablation and cross-cohort prediction",
+    "evidence": {
+      "ai_role": "Ridge base classifiers learned complementary lesion representations and a logistic stacking model combined out-of-fold predictions. Ablation, stable coefficients and unseen-cohort tests linked predictive gains to specific network anatomy rather than lesion volume alone.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.10.765579v1.full.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Nested repeated cross-validation evaluated 3,034 patients from 13 cohorts. Adding anatomy and connectivity improved six of seven targets; any-domain impairment AUPRC rose from 0.67 to 0.71. Leave-one-cohort-out tests retained significant gains for three of seven targets by normalized AUPRC. Stable model coefficients highlighted shared thalamic connectivity and domain-specific anatomical profiles.",
+      "unknown": "Retrospective pooled cohorts were heterogeneous and predominantly represented mild strokes and Asian or European ancestry. Cognitive outcomes were binary at one assessment within a year, with premorbid cognition unavailable. Cross-cohort performance varied and several domain gains did not transfer significantly. Prediction and coefficient stability do not prove causation or clinical utility."
+    },
+    "field": "medicine",
+    "id": "2026-11-stroke-lesion-networks-cognitive-impairment",
+    "organization": "University Medical Center Utrecht; Meta VCI Map consortium; Heinrich Heine University Düsseldorf; Research Centre Jülich",
+    "paper_url": "https://doi.org/10.64898/2026.11.10.765579",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary 44-page preprint PDF relevant nested-model Methods, ablation and cross-cohort Results, anatomical interpretation and limitations; bioRxiv API version history. Supplementary analyses not exhaustively audited."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.10.765579v1",
+    "summary": "A November 24, 2026 preprint analyzed 3,034 patients across 13 stroke cohorts using learned models of lesion anatomy, network connectivity and clinical characteristics. Structural lesion connectivity supplied most of the gain beyond clinical information and infarct size, with left anterior thalamic connectivity consistently informative across cognitive outcomes. Benefits persisted for several outcomes when entire cohorts were held out. The results support a bounded lesion-in-context account of cognitive impairment, without establishing causal circuitry or clinical readiness.",
+    "title": "Learned lesion-network models identify shared and specific stroke cognition patterns",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "Random Forest, logistic regression, gradient boosting and SVM learn multidomain associations with past-year fall-history strata; feature importance characterizes the internally evaluated profile.",
+    "evidence": {
+      "ai_role": "Random Forest, logistic regression, gradient boosting and SVM learn multidomain associations with past-year fall-history strata; feature importance characterizes the internally evaluated profile.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11438391/v1",
+        "https://www.researchsquare.com/article/rs-11438391/v1.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Stratified five-fold internal classification of fall-history strata in 147 adults, excluding specified post-fall variables.",
+      "unknown": "Cross-sectional history, self-report and small uneven strata; no external validation, causal effects or demonstrated future-fall prediction."
+    },
+    "field": "medicine",
+    "id": "2026-11-ml-fall-history-profiles",
+    "organization": "Shahid Bahonar University of Kerman; University of Saskatchewan; Sport Science Research Institute",
+    "paper_url": "https://www.researchsquare.com/article/rs-11438391/v1.pdf",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary manuscript Methods, relevant Results, limitations and first-version publication metadata reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-11438391/v1",
+    "summary": "In a cross-sectional study of 147 community-dwelling adults aged 55 and older, machine-learning models classified ordered past-year fall-history groups from physical-function, activity, health and social measures. Random Forest reported four-class accuracy of 0.946 and binary AUC of 0.968 under internal five-fold validation after excluding fall-location, fall-situation and fear-of-falling variables. The preprint describes associations with recorded fall history, not prediction of future falls. A small, imbalanced single-region sample and self-reported measures limit generalization; external and prospective validation remain necessary.",
+    "title": "Machine learning links multidomain profiles to fall history",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "GPT-6.2; SolubleMPNN; specialized protein-model candidate filtering",
+    "evidence": {
+      "ai_role": "A prerelease GPT-6.2 generated proposed three-dimensional minibinder backbones from target structures through reasoning and general-purpose code; SolubleMPNN supplied sequences and specialized structure-prediction models filtered candidates before laboratory tests.",
+      "evidence_urls": [
+        "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "The first-party announcement reports 35 binding-positive proteins among 322 laboratory-tested minibinders across five targets, based on GPT-6.2 backbone designs followed by specialized sequence generation and filtering. Onava was the study laboratory partner, not independent follow-up.",
+      "unknown": "The linked preprint Methods were not read in this review; detailed assay conditions and binding thresholds were not assessed. Binding does not establish specificity, useful biological activity, safety or therapeutic efficacy. End-to-end design without specialized-model assistance and independent replication are not established."
+    },
+    "field": "biology",
+    "id": "2026-11-gpt6-protein-binder-lab-tests",
+    "organization": "OpenAI; Onava",
+    "paper_url": "https://cdn.openai.com/pdf/gpt-6-a-universal-foundation-model-for-protein-biology.pdf",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Full first-party OpenAI announcement, including laboratory workflow, measured hit counts and limitations. Linked 89 MB preprint exceeded the web reader limit and its Methods were not read."
+    },
+    "source_type": "blog",
+    "source_url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
+    "summary": "OpenAI reports that Onava laboratory tests found binding for 35 of 322 minibinders based on GPT-6.2-designed structures, with at least one hit for each of five targets. GPT-6.2 generated backbone designs using reasoning and general-purpose code, while SolubleMPNN supplied sequences and specialized models helped select candidates. The November 24, 2026 announcement links a preprint; the findings do not establish an end-to-end workflow without specialized models, independent replication, specificity, therapeutic activity or clinical benefit.",
+    "title": "GPT-6.2 protein designs show binding across five targets in laboratory tests",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "Edge-activation direct coupling analysis (DCA); learned Potts sequence model combined with RNA thermodynamics",
+    "evidence": {
+      "ai_role": "An edge-activation DCA model learned family-specific sequence constraints from an alignment of 817 natural sequences. Combining its generative prior with a separately derived thermodynamic score guided designs whose catalytic activity was then measured.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.21.768297v1.full.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Laboratory activity measurements compared 1,500 jointly favored designs with 500 evolutionary-score and 500 physical-score designs, pooled across ten starting sequences. High-temperature activity hit rates were 72.5%, 7.8% and 0.4%, respectively, under the study’s reference-normalized threshold.",
+      "unknown": "The study examines one self-splicing RNA family and uses a pooled enrichment assay rather than general application performance. Molecular dynamics provides mechanistic interpretation, not independent experimental confirmation of the proposed structural explanation. Independent replication and transfer to other families remain unestablished."
+    },
+    "field": "biology",
+    "id": "2026-11-generative-ribozyme-thermal-activity",
+    "organization": "Sorbonne Université; CNRS; ESPCI Paris; Institut Polytechnique de Paris; Sapienza University of Rome",
+    "paper_url": "https://doi.org/10.64898/2026.11.21.768297",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary 13-page preprint PDF: relevant model and assay Methods, experimental Results and Table II, limitations; primary bioRxiv API version history. Supplement not independently audited."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.21.768297v1",
+    "summary": "A November 24, 2026 preprint reports laboratory-tested catalytic RNA designs that remain active at 60°C. A learned evolutionary sequence model combined with an independent RNA thermodynamic score generated variants that preserved function more often than either score alone. Across 2,500 designed variants from ten starting sequences, the jointly favored group had a 72.5% high-temperature activity hit rate, compared with 7.8% for the evolutionary-score group and 0.4% for the physical-score group. The result is limited to one ribozyme family and the study’s assay.",
+    "title": "Generative models guide ribozymes that retain activity at high temperature",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "DorsalNet; learned neural visual model and gradient-based stimulus synthesis",
+    "evidence": {
+      "ai_role": "DorsalNet, trained on self-motion from naturalistic videos, enabled stimulus synthesis selectively separating early or late model-layer responses. Human tests supplied new behavioral evidence relevant to competing perceptual-learning accounts.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.23.768712v1.full.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Nineteen observers trained for three days. Late-stage-group sensitivity increased (n=10; paired p=0.001); early-stage-group change was not significant (n=9; p=0.100), while its response criterion changed. Transfer across location and stimulus type informed comparisons with alternative model readouts.",
+      "unknown": "A difference in within-group significance does not itself prove a between-group learning interaction. Separate groups may differ before training; stimulus-to-cortical-stage correspondence was inferred from the model rather than directly measured. Model–human specificity agreement was assessed qualitatively, and energetic interpretations remain speculative."
+    },
+    "field": "biology",
+    "id": "2026-11-dorsalnet-perceptual-learning-readout",
+    "organization": "McGill University; Université de Montréal; Mila",
+    "paper_url": "https://doi.org/10.64898/2026.11.23.768712",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 2,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary 30-page preprint PDF: relevant stimulus-generation and observer Methods, sensitivity and transfer Results, model-comparison and causal limitations; bioRxiv API version history. Supplement not audited."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.23.768712v1",
+    "summary": "A November 24, 2026 preprint used the learned DorsalNet visual model to design motion stimuli targeting different model stages, then tested training in 19 human observers. After three days, ten observers trained on late-stage stimuli showed increased perceptual sensitivity, while nine trained on early-stage stimuli mainly changed response bias. Transfer tests and model comparisons were consistent with a late-stage readout account. Cortical stages were not directly recorded, and separate participant groups limit causal comparison.",
+    "title": "AI-designed visual stimuli probe how perceptual learning changes decisions",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "Neural networks predict age and epigenetic lifestyle/health biomarker proxies from methylation principal components; a learned additive combination enables interpretable retrospective response analysis.",
+    "evidence": {
+      "ai_role": "Neural networks predict age and epigenetic lifestyle/health biomarker proxies from methylation principal components; a learned additive combination enables interpretable retrospective response analysis.",
+      "evidence_urls": [
+        "https://doi.org/10.64898/2026.11.21.768329",
+        "https://www.biorxiv.org/content/10.64898/2026.11.21.768329v1.full.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Person-grouped nested cross-validation, replicate testing and retrospective analysis of existing intervention/control and external methylation datasets.",
+      "unknown": "Lifestyle-weighted score is not a validated biological-aging or health-benefit endpoint; small external trial, tissue transfer and proxy interpretation limit inference."
+    },
+    "field": "biology",
+    "id": "2026-11-cheekai-lifestyle-intervention-signature",
+    "organization": "Tally Health; University of California, San Diego; TruDiagnostic",
+    "paper_url": "https://www.biorxiv.org/content/10.64898/2026.11.21.768329v1.full.pdf",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 2,
+      "novelty": 3,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary manuscript Methods, relevant Results, limitations and first-version publication metadata reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://doi.org/10.64898/2026.11.21.768329",
+    "summary": "CheekAI neural networks trained on 25,400 buccal methylation profiles from 14,716 adults were applied retrospectively to external datasets. In an existing eight-week randomized lifestyle trial with 18 intervention and 20 control participants, the model’s age-adjusted score decreased by 1.34 model-years relative to controls (p = 0.021), largely through dietary and metabolic proxy components. This preprint reports a learned methylation-score response, not demonstrated reversal of biological aging or improved health. The score was designed to reflect lifestyle proxies; a separate semaglutide analysis did not significantly reduce the overall score and showed tissue-transfer limitations.",
+    "title": "Epigenetic deep learning detects a lifestyle-trial signature",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "Support-vector classification with an RBF kernel and logistic regression learn transit signatures from cell/nuclear contour trajectories; feature selection and Shapley analysis identify predictive shape descriptors.",
+    "evidence": {
+      "ai_role": "Support-vector classification with an RBF kernel and logistic regression learn transit signatures from cell/nuclear contour trajectories; feature selection and Shapley analysis identify predictive shape descriptors.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.32990",
+        "https://arxiv.org/html/2611.32990v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Trajectory-level train/validation/test partitions, comparison with random-classifier baselines and transfer to narrower constrictions and adhesive surfaces.",
+      "unknown": "One cell line; observational predictive associations, no causal perturbation establishing morphology as mechanism and no clinical metastasis validation."
+    },
+    "field": "biology",
+    "id": "2026-11-cell-shape-confined-transit",
+    "organization": "Laboratoire de Physique de l’École Normale Supérieure, ENS, Université PSL, CNRS, Sorbonne Université, Université Paris Cité; Laboratoire Jean Perrin, Sorbonne Université, CNRS",
+    "paper_url": "https://arxiv.org/html/2611.32990v1",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary manuscript Methods, relevant Results, limitations and first-version publication metadata reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://arxiv.org/abs/2611.32990",
+    "summary": "Support-vector and logistic classifiers linked cell area and circularity to whether MDA-MB-231 breast-cancer cells would traverse microfluidic constrictions. Less circular cells were more likely to transit, and trajectory features about 30 minutes before an event were most informative. Models transferred without retraining to narrower constrictions and more adhesive surfaces. This preprint reports a condition-dependent association in one cell line, not a causal mechanism or a predictor of metastasis in patients.",
+    "title": "Learned cell-shape signatures predict confined transit",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "CNSDIP; consensus clustering and random-forest ranking of brain-activity maps",
+    "evidence": {
+      "ai_role": "Consensus clustering linked drug-induced brain-activity patterns to a therapeutic reference class; a random forest trained on 363 CNS/non-CNS drugs then ranked candidates for new behavioral and cellular tests. The measured follow-up, rather than classifier accuracy alone, is the admitted result.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11797074/v1.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Sixteen top-ranked conditions underwent follow-up; after toxicity exclusions, five compounds and one pair improved movement in tested conditions. Behavioral comparisons used n=10 and dopamine-reporter cell-count comparisons n=5. Blinded imaging counts supported preservation of identifiable reporter-positive cells for some candidates across three larval toxin models.",
+      "unknown": "The assays are small and preclinical; not every candidate worked across every model or outcome. Five conditions showed long-term toxicity. Reporter loss or preservation can reflect neuronal phenotype rather than irreversible death or true neuroprotection. Known drug mechanisms explain some effects, and neither efficacy nor safety in people is established."
+    },
+    "field": "biology",
+    "id": "2026-11-brain-profile-zebrafish-drug-leads",
+    "organization": "Sun Yat-sen University; Guangdong Pharmaceutical University; East China Normal University",
+    "paper_url": "https://doi.org/10.21203/rs.3.rs-11797074/v1",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary 37-page preprint PDF relevant CNSDIP model description, experimental Results, blinded counting Methods and Figure 6–7 sample counts; primary version metadata. Earlier cited platform abstracts reviewed for result identity; supplements not audited."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-11797074/v1",
+    "summary": "A November 24, 2026 preprint combined large-scale zebrafish brain imaging, learned clustering and random-forest ranking to select drug conditions for follow-up. Several candidates improved movement in larval toxin models and preserved dopamine-neuron reporter signals under some conditions. These are preliminary, compound- and model-dependent findings rather than evidence of Parkinson’s disease treatment in people. Some screened conditions were toxic, and retained fluorescence does not by itself establish prevention of neuronal death.",
+    "title": "Learned brain-activity profiles guide tested drug leads in zebrafish models",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "Bivexia; four-output random-forest classifiers",
+    "evidence": {
+      "ai_role": "Four random forests predicted disruption or preservation of four LAG-3 interactions from molecular fingerprints and physicochemical descriptors; their combined selectivity score ranked compounds for successive experimental batches, with retraining on returned results.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.23.768516v1.full.pdf",
+        "https://api.biorxiv.org/details/biorxiv/10.64898/2026.11.23.768516"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "BVX-01 bound human LAG-3 at 42 +/- 4.0 nM. The study reports biochemical selectivity, donor-derived neuronal assays, receptor-dependence tests and pathology reductions in PS19 and 5xFAD mice, with two cohorts per model and 12 mice per arm.",
+      "unknown": "No human clinical efficacy is established. The full preclinical cascade rests on one compound; the role of each disrupted interaction in mouse pathology remains unresolved. Additional-target tests stopped at primary screening. The exploratory chemist comparison had unequal access to candidates and lacked contemporaneous proof of chemist-selection timing."
+    },
+    "field": "chemistry",
+    "id": "2026-11-bivexia-selective-lag3-inhibitor",
+    "organization": "Columbia University Irving Medical Center",
+    "paper_url": "",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary v1 PDF Results, Discussion and Materials and Methods, including selection policy, biochemical and cellular tests, mouse-study design and limitations; bioRxiv API version/date/abstract metadata. Supplementary files and repository commitments were not independently audited."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.23.768516v1",
+    "summary": "A November 24, 2026 bioRxiv preprint reports that Bivexia used random-forest predictions of four protein-interaction assays to select BVX-01, a small molecule that disrupted LAG-3 interactions with tau and amyloid-beta while preserving two other tested interactions. The authors report nanomolar LAG-3 binding, activity in donor-derived neurons, and reduced pathology readouts in two mouse models, with two cohorts per model. This is preclinical evidence from the discovery study, not peer-reviewed or independent confirmation or evidence of clinical benefit; the full cascade rests on one compound, and broader target campaigns stopped at primary screening.",
+    "title": "Bivexia selects an interaction-selective LAG-3 inhibitor tested in mouse models",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "Donor-resolved non-smooth non-negative matrix factorization; cross-donor consensus gene-program discovery",
+    "evidence": {
+      "ai_role": "NMF learned additive gene-expression programs separately in donor/cell-type units; cross-donor consensus construction identified recurring programs before outcome testing. This learned program discovery, rather than visualization or dimensionality reduction alone, enabled the fixed beta-cell signature and its subsequent functional association tests.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.23.768764v1.full.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Program discovery used 48 donors. Primary independent single-cell validation used 55 eligible HPAP donors, with additional pooled Smart-seq2 and bulk analyses. Functional associations used 52 UPenn and 42 Vanderbilt donors, of whom 39 overlapped; higher frozen program scores tracked stimulated insulin release after diagnosis and preparation-quality adjustments.",
+      "unknown": "Existing-data associations are retrospective and do not establish that the program causes secretory dysfunction. Two laboratories largely measured the same donors; bulk cell-composition adjustment was not robust across platforms. Patient-level clinical utility, causal perturbation and independent biological replication remain unestablished."
+    },
+    "field": "medicine",
+    "id": "2026-11-beta-cell-program-insulin-secretion",
+    "organization": "Jinggangshan University; The Chinese University of Hong Kong; Shenzhen University of Advanced Technology; Shenzhen People’s Hospital",
+    "paper_url": "https://doi.org/10.64898/2026.11.23.768764",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 2,
+      "novelty": 3,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary 71-page preprint PDF relevant donor-resolved NMF and consensus construction Methods, fixed-score validation and matched perifusion Methods/Results, and limitations; cached primary bioRxiv v1 metadata. Supplements not exhaustively audited."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.23.768764v1",
+    "summary": "A November 24, 2026 preprint used donor-resolved non-negative matrix factorization and consensus program discovery to identify a beta-cell gene program reduced in type 2 diabetes. Learned program definitions were fixed before testing in other datasets. Higher program scores were associated with greater stimulated insulin release in donor-matched measurements from two laboratories. The laboratories shared most donors, so these are complementary measurements rather than independent biological replications, and the association does not establish a causal mechanism or treatment target.",
+    "title": "Unsupervised program learning links a beta-cell signature to insulin secretion",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "Interpretable Bayesian network structure learning from molecular-dynamics interaction-energy time series",
+    "evidence": {
+      "ai_role": "Bayesian networks learned conditional dependencies among residue interaction-energy time series in active and inactive receptor simulations. Differences in learned network participation helped select a functionally coupled pocket for virtual screening and experimental compound testing.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11606425/v1.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Screening of nine prioritized compounds identified Q2. Cellular signaling and radioligand assays, repeated in at least three experiments for key comparisons, showed altered agonist responses. Receptor mutations and G-protein-knockout tests supported the proposed allosteric interpretation; a six-receptor panel showed preferential, incomplete selectivity.",
+      "unknown": "Q2 is an early low-affinity fragment with effects at high micromolar concentrations. Functional mutational effects do not independently prove its precise binding site or pose. Bootstrap stability was conditional on fixed inferred network topology. Generalization, independent replication, safety and therapeutic efficacy remain unestablished."
+    },
+    "field": "biology",
+    "id": "2026-11-bayesian-network-at1r-modulator",
+    "organization": "City of Hope; McGill University",
+    "paper_url": "https://doi.org/10.21203/rs.3.rs-11606425/v1",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary 47-page preprint PDF: relevant network construction and resampling Methods, screening and pharmacology Results, Table 1 and Discussion limitations; primary Research Square version metadata. Supplements not audited."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-11606425/v1",
+    "summary": "A November 24, 2026 preprint reports that learned Bayesian networks of receptor dynamics helped prioritize an intracellular region of the angiotensin II type 1 receptor for compound screening. Laboratory signaling, radioligand and mutational tests supported a proposed negative allosteric effect of the resulting low-affinity fragment Q2. The experiments establish a bounded cellular pharmacology finding; they do not directly resolve the fragment’s binding pose or demonstrate therapeutic efficacy.",
+    "title": "Learned receptor networks guide an experimentally tested AT1R modulator",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "A convolutional neural network trained on independently annotated ultrasound data segments skin, adipose tissue, fascia and muscle, enabling compartment-specific optoacoustic spectral and oxygenation analysis.",
+    "evidence": {
+      "ai_role": "A convolutional neural network trained on independently annotated ultrasound data segments skin, adipose tissue, fascia and muscle, enabling compartment-specific optoacoustic spectral and oxygenation analysis.",
+      "evidence_urls": [
+        "https://doi.org/10.64898/2026.11.22.26368599",
+        "https://www.medrxiv.org/content/10.64898/2026.11.22.26368599v1.full.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Single-center physiological imaging study in 46 volunteers, with compartment-resolved spectra and responses during oxygenation challenges.",
+      "unknown": "No independent oxygen-saturation reference; unequal groups, coarse pigmentation classification and single anatomical region/system limit generalization; no direct pulse-oximeter validation."
+    },
+    "field": "medicine",
+    "id": "2026-11-ai-segmented-oximetry-pigmentation",
+    "organization": "University Hospital Erlangen; Friedrich-Alexander-Universität Erlangen-Nürnberg; iThera Medical GmbH; Julius-Maximilians-Universität Würzburg",
+    "paper_url": "https://www.medrxiv.org/content/10.64898/2026.11.22.26368599v1.full.pdf",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary manuscript Methods, relevant Results, limitations and first-version publication metadata reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://doi.org/10.64898/2026.11.22.26368599",
+    "summary": "A pretrained convolutional network separated tissue compartments in an optoacoustic imaging study of 46 healthy volunteers spanning six Fitzpatrick skin types. Across 3,016 scans and 41 wavelengths, superficial skin signals showed stronger pigmentation associations and unreliable oxygenation responses, while deeper muscle signals responded more clearly to physiological challenges. This preprint characterizes tissue- and wavelength-dependent optoacoustic measurements; it does not directly quantify pulse-oximeter error, validate oxygen saturation against an independent reference or demonstrate clinical benefit.",
+    "title": "AI-segmented imaging localizes pigmentation bias in oximetry",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "Video Swin Transformer trained on Something-Something V2; CORnet-S and Kinetics-400 model comparisons",
+    "evidence": {
+      "ai_role": "Pretrained networks transformed identical images into learned feature vectors and category dissimilarity matrices. Comparing the same Video Swin architecture trained on broad actions versus fine-grained hand–object interactions enabled the specific finding that interaction-oriented learned geometry better corresponded to dorsal cortical representations.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.24.768489v1.full.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Whole-brain fMRI used 121 runs across three macaques; functional ultrasound sampled parietal cortex in two separate macaques. Learned category representations from four model stages or training conditions were compared with neural geometry. The interaction-trained model retained positive associations in several parietal and prefrontal regions after controlling other models and checking predictor sensitivity.",
+      "unknown": "Only five animals and static stimuli were studied. Model geometries were highly correlated, with variance inflation factors of 6.40–11.71. Shape, posture, affordance and dataset statistics remain possible contributors. Similarity does not establish computational equivalence, evolutionary history or a causal effect of observing human tool use."
+    },
+    "field": "biology",
+    "id": "2026-11-action-model-macaque-hand-tool-geometry",
+    "organization": "KU Leuven; VIB; NeuroSpin; University of Trento; Massachusetts General Hospital",
+    "paper_url": "https://doi.org/10.64898/2026.11.24.768489",
+    "publication_date": "2026-11-24",
+    "relevance": {
+      "impact": 2,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary preprint PDF title, DOI and November 24 version authenticated; computational representation and RSA Methods, model-comparison Results, animal counts and discussion limitations independently read. Cached primary v1 metadata checked; supplements not exhaustively audited."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.24.768489v1",
+    "summary": "A November 24, 2026 preprint compared learned visual representations with macaque brain responses to static images. A Video Swin Transformer trained on fine-grained hand–object interactions matched parietal and prefrontal hand–tool geometry better than static-object and general-action models. Functional ultrasound in two other monkeys independently supported spatial alignment of tool and human-hand responses. The findings concern representational similarity; they do not establish that interaction experience caused the cortical organization or that monkeys understand tool functions.",
+    "title": "Action-trained models reveal a hand–tool representational link in macaque cortex",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "VirTues-M2; multimodal vision transformer and learned cell-signature transfer",
+    "evidence": {
+      "ai_role": "A marker-aware multimodal transformer learned joint H&E and spatial-proteomics representations. Clustering enabled annotation-free cell-state discovery; Cox screening selected survival-linked populations and random-forest classifiers transferred their membership to another cohort.",
+      "evidence_urls": [
+        "https://arxiv.org/html/2611.31451v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Signature selection used 737 discovery patients and evaluation used 316 held-out patients. Combined signatures reached C-index 0.646 and hazard ratio 3.09 in the test set. Unchanged signature classifiers transferred to 39 external patients; combined signatures had C-index 0.636 and hazard ratio 2.87 (p=0.039).",
+      "unknown": "Retrospective survival associations do not establish causation or treatment-response prediction. External validation is small; the H&E-only external signature was not significant at p<0.05. Test patients used pre-specified tertiles, whereas external patients used a median split. Prospective clinical utility and robustness require further evaluation."
+    },
+    "field": "medicine",
+    "id": "2026-11-virtues-m2-lung-cancer-risk-signatures",
+    "organization": "EPFL; University Hospital Zurich; University of Zurich; University of Bern",
+    "paper_url": "https://arxiv.org/html/2611.31451",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary arXiv HTML relevant model description, spatial biomarker discovery Methods, Figure 6 Results and clinical limitations; primary submission history. Supplements and other benchmark tasks not audited."
+    },
+    "source_type": "paper",
+    "source_url": "https://arxiv.org/abs/2611.31451",
+    "summary": "A November 23, 2026 preprint reports that VirTues-M2 learned joint tissue morphology and spatial-protein representations to discover survival-associated cellular signatures in lung cancer. Signatures selected on 737 patients stratified survival in 316 held-out patients and transferred without retraining to a separate 39-patient cohort. Low-risk signatures marked organized immune-rich neighborhoods; high-risk signatures marked more disorganized tumor-rich tissue. These are retrospective prognostic associations with small external validation and no demonstrated treatment benefit.",
+    "title": "Multimodal AI finds lung-cancer tissue signatures associated with survival",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "Decision trees, support-vector machines and kernel logistic regression; Bayesian hyperparameter optimization",
+    "evidence": {
+      "ai_role": "Learned decision trees selected compression level as an informative split; SVM and kernel-logistic classifiers tested whether dynamic cord-motion measurements add information to static MRI features for severity classification.",
+      "evidence_urls": [
+        "https://link.springer.com/article/10.1007/s00586-026-10522-1"
+      ],
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "A 90-patient training set and 22-patient internal test set were formed from 112 patients. In the 75-patient training subgroup without maximum compression at C3/4, adding motion improved repeated cross-validated accuracy from 69.6% to 73.7% (p=0.0059); the final internal test comparison gained one correct classification.",
+      "unknown": "A small, single-center and imbalanced cohort with data-driven model selection remains vulnerable to overfitting. The 15-patient C3/4 training subgroup was too small for the motion-feature comparison. No external validation, causal interaction, longitudinal prognosis or treatment utility was established; acquisition and physiological confounding limit generalization."
+    },
+    "field": "medicine",
+    "id": "2026-11-spinal-cord-motion-myelopathy-severity",
+    "organization": "Balgrist University Hospital; University of Zurich",
+    "paper_url": "https://doi.org/10.1007/s00586-026-10522-1",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary publisher full article: MRI and classifier Methods, feature ranking, subgroup and internal-test Results, Discussion and limitations; publisher publication date and Crossref online date. Supplement not independently audited."
+    },
+    "source_type": "paper",
+    "source_url": "https://link.springer.com/article/10.1007/s00586-026-10522-1",
+    "summary": "A November 23, 2026 study analyzed MRI measurements from 112 patients with degenerative cervical myelopathy. Learned hierarchical classifiers identified compression at C3/4 as a severity-associated feature. In the larger training subgroup with compression elsewhere, adding spinal cord motion improved cross-validated severity classification accuracy from 69.6% to 73.7%. Internal testing on 22 patients produced one additional correct classification. This single-center result supports a limited diagnostic association, without establishing causation, future disease progression or treatment benefit.",
+    "title": "Learned MRI models link cord motion and compression level to myelopathy severity",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "SCOPE DeepGCN structural-graph learning with ProtT5 sequence embeddings and a Gaussian auxiliary training objective",
+    "evidence": {
+      "ai_role": "Deep graph learning combined residue-level structure, evolutionary information and protein-language-model embeddings to rank candidate functional positions. These rankings guided new functional tests, linking the learned operation to measured enzyme activity rather than only benchmark performance.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.20.768221v1.full.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Model-prioritized positions were tested in four enzymes using activity assays with three independent experiments and reference-enzyme normalization. Eleven tested positions had 0–4.1% residual activity; protein expression was checked. Two tested copper-coordinating sites were explicitly already established, while other model-selected positions included active-pocket and distal contexts.",
+      "unknown": "Activity loss does not prove that every position directly catalyzes a reaction; folding, stability or subunit organization can explain some effects. Selection of the tested sites using SCOPE makes relative-model comparisons descriptive, not unbiased. Known-site recovery is not counted as a new discovery, and independent replication or broad applicability remains unestablished."
+    },
+    "field": "biology",
+    "id": "2026-11-scope-enzyme-functional-residue-tests",
+    "organization": "Northwest A&F University; Adelaide University; Monash University; Beijing University of Chemical Technology",
+    "paper_url": "https://doi.org/10.64898/2026.11.20.768221",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary 30-page preprint PDF relevant graph-model Methods, experimental enzyme selection, functional-test Results and Discussion caveats; primary bioRxiv version history. Supplementary tables not independently audited."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.20.768221v1",
+    "summary": "A November 23, 2026 preprint used SCOPE, a learned structural-graph model, to prioritize enzyme positions for laboratory tests. Across four low-homology enzymes, substitutions at 11 selected positions left 0–4.1% of reference activity. The tested set included established sites and additional predicted positions, so the result is a bounded functional map rather than 11 newly discovered catalytic residues. Activity loss supports functional importance but can reflect stability or structural effects instead of direct reaction chemistry.",
+    "title": "Graph-learning-guided tests identify functionally important enzyme positions",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "Random Forest learns land-cover classes from fused Sentinel-1 SAR and Sentinel-2 optical bands; recursive feature elimination selects the inputs for temporal mapping.",
+    "evidence": {
+      "ai_role": "Random Forest learns land-cover classes from fused Sentinel-1 SAR and Sentinel-2 optical bands; recursive feature elimination selects the inputs for temporal mapping.",
+      "evidence_urls": [
+        "https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2026.1983976/full"
+      ],
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "Retrospective satellite classification and temporal transfer to 2019–2021 imagery; mapped class proportions compared across years.",
+      "unknown": "No direct geohazard outcomes or causal attribution; one highway region and reference-label uncertainty limit transfer."
+    },
+    "field": "climate",
+    "id": "2026-11-sar-optical-highway-land-cover",
+    "organization": "Indian Institute of Technology Roorkee; National Institute of Technology Patna; Madhav Institute of Technology & Science",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary manuscript Methods, relevant Results, limitations and first-version publication metadata reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2026.1983976/full",
+    "summary": "Random Forest classification of fused Sentinel optical and radar observations mapped land-cover change along a section of India’s National Highway 344 from 2016 to 2021. Tall vegetation decreased from 32.73% of the mapped area in 2016 to 24.02% in 2018, with partial later recovery; urban cover increased. Feature selection yielded reported classification accuracy of 92.75%. These are retrospective land-cover estimates, not measured erosion, landslide or flood outcomes, and the study does not isolate a causal highway effect.",
+    "title": "Satellite machine learning maps vegetation change near a highway",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "AlphaFold 3; structural comparison supported by molecular dynamics",
+    "evidence": {
+      "ai_role": "AlphaFold3-based domain comparisons predicted a local linker conformational difference that motivated targeted functional substitution tests. Conventional experiments, not the structural model alone, established the measured activity changes.",
+      "evidence_urls": [
+        "https://langtaosha.org.cn/lts/en/preprint/view/398/1763"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Biochemical reconstitution, native-host genetic tests and substrate profiling supported distinct condensation-domain functions. Structural-model-guided linker substitutions restored detectable product in a disabled-domain background; full-linker rescue was approximately 0.25% of the reference.",
+      "unknown": "Modelled conformations are predictions; experiments support a bounded linker contribution, not a complete molecular mechanism or broad generality across peptide synthetases. The small restoration does not establish an efficient production platform or therapeutic benefit."
+    },
+    "field": "chemistry",
+    "id": "2026-11-model-guided-nrps-linker-function",
+    "organization": "Shenzhen Bay Laboratory; The University of Hong Kong; Peking University",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary 30-page preprint PDF relevant structural-modelling Methods, Results linking predicted linker difference to functional tests, limitations and posted-date stamp; no supplement audit."
+    },
+    "source_type": "paper",
+    "source_url": "https://doi.org/10.65215/LTSpreprints.2026.11.23.000398",
+    "summary": "A November 23, 2026 preprint reports that structural predictions helped identify a linker associated with repeated chain extension by the nonribosomal peptide synthetase DidA. AlphaFold-guided comparisons led to targeted experiments supporting a role for the linker in the different activities of two condensation domains. Transferred linker regions restored detectable peptide production in a disabled-domain background, but rescue was small relative to the reference and the work does not establish broad portability across synthetases.",
+    "title": "Model-guided experiments identify a linker role in iterative peptide assembly",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "LASSO, Random Forest and SVM-RFE cross-screen transcriptomic candidate genes to prioritize hub targets for subsequent animal pathway tests.",
+    "evidence": {
+      "ai_role": "LASSO, Random Forest and SVM-RFE cross-screen transcriptomic candidate genes to prioritize hub targets for subsequent animal pathway tests.",
+      "evidence_urls": [
+        "https://www.researchsquare.com/article/rs-11670764/v1",
+        "https://www.researchsquare.com/article/rs-11670764/v1.pdf"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "direct test",
+      "tested": "Rat injury and pathway-marker assays, sham electroacupuncture comparison and exogenous TRAIL reversal after model-assisted gene prioritization.",
+      "unknown": "Acute animal model, no demonstrated human benefit or long-term protection; no gene knockdown or conditional knockout validation."
+    },
+    "field": "biology",
+    "id": "2026-11-ml-trail-stroke-electroacupuncture",
+    "organization": "The Affiliated Hospital of Panzhihua University",
+    "paper_url": "https://www.researchsquare.com/article/rs-11670764/v1.pdf",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 3,
+      "novelty": 3,
+      "validation": 3
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary manuscript Methods, relevant Results, limitations and first-version publication metadata reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-11670764/v1",
+    "summary": "LASSO, Random Forest and SVM feature selection prioritized five hub genes, including TNFSF10/TRAIL, from cross-species stroke and electroacupuncture transcriptomic analyses. In an acute rat ischemia-reperfusion study, electroacupuncture reduced injury and apoptosis/inflammation markers; added TRAIL reversed the reported protective effects, supporting involvement of the TRAIL/DR4/DR5 pathway. This preprint concerns a three-day animal experiment, with no human efficacy or long-term outcome evidence. The rescue experiment supports pathway involvement but does not replace targeted genetic validation.",
+    "title": "Machine learning nominates a stroke pathway tested in rats",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "MAPLE; AgenTile vision transformer; pathology CLIP; Qwen3-14B PathLLM",
+    "evidence": {
+      "ai_role": "AgenTile segments and classifies nuclei to prioritize regions; learned CLIP representations and PathLLM, coupling a vision encoder with Qwen3-14B, integrate image features and text to produce slide diagnoses.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.21.768223v1.full.pdf",
+        "https://api.biorxiv.org/details/biorxiv/10.64898/2026.11.21.768223"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Authors report agreement with a breast-pathology specialist on all 15 whole-slide images at two magnifications. The source describes a separate Johns Hopkins clinical image source and TCGA-only training. Patch classification additionally used pooled-cohort threshold selection and leave-one-slide-out threshold evaluation; these are distinct from the whole-slide diagnostic agreement claim.",
+      "unknown": "The small single-institution image cohort does not establish prospective patient benefit, broad external generalization or independent replication. Fifteen images are reported, not an established count of unique patients. Training was separate from the clinical image source, but a prospective locked-model protocol and independent cohort replication are not established."
+    },
+    "field": "medicine",
+    "id": "2026-11-maple-breast-pathology-cohort",
+    "organization": "Johns Hopkins University",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary v1 PDF clinical Results, Discussion/limitations, training and clinical-evaluation Methods and data availability; official bioRxiv version/date metadata. Supplemental visual examples and unavailable private clinical images were not independently validated."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.21.768223v1",
+    "summary": "A November 23, 2026 bioRxiv preprint reports that MAPLE, a hierarchical pathology vision-language system, matched expert reference diagnoses for 15 breast whole-slide images from Johns Hopkins at both 20x and 40x magnification. The series comprised nine invasive carcinoma, three ductal carcinoma in situ and three benign cases; the system combined learned nucleus-based region selection, a pathology CLIP encoder and a Qwen3-14B-based language model. This small, single-institution retrospective test is not evidence of prospective diagnostic benefit or readiness for routine deployment; the paper also reports separate benchmark results.",
+    "title": "MAPLE matches reference diagnoses in a small breast-pathology slide cohort",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "DBSCAN unsupervised density-based clustering identifies seasonal spatial concentrations in geolocated ranger encounter records.",
+    "evidence": {
+      "ai_role": "DBSCAN unsupervised density-based clustering identifies seasonal spatial concentrations in geolocated ranger encounter records.",
+      "evidence_urls": [
+        "https://doi.org/10.55674/cs.v19i1.268385"
+      ],
+      "publication_status": "Peer-reviewed paper",
+      "test_type": "retrospective or benchmark",
+      "tested": "Descriptive seasonal clustering of 474 ranger encounters and spatial overlay of forest, roads and crop boundaries.",
+      "unknown": "No patrol-effort correction, individual animal identity or prospective deterrence evaluation; summer cluster totals conflict in the source."
+    },
+    "field": "biology",
+    "id": "2026-11-gaur-encroachment-spatial-clusters",
+    "organization": "Thailand Institute of Scientific and Technological Research",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 2,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary manuscript Methods, relevant Results, limitations and first-version publication metadata reviewed."
+    },
+    "source_type": "paper",
+    "source_url": "https://doi.org/10.55674/cs.v19i1.268385",
+    "summary": "DBSCAN analysis of 474 ranger-recorded gaur encounters in Thailand’s Khao Phaeng Ma Non-Hunting Area identified seasonal concentrations near the western forest boundary, roads and crop plantations. The study used observations from October 2023 to April 2026 to map local forest-agriculture interfaces and inform patrol planning. These are clusters of recorded encounters rather than animal movement or population estimates. Unmeasured patrol effort and missing logging periods can shape the patterns; conflicting summer-cluster counts in the source prevent a precise summer count from being reported.",
+    "title": "Spatial clustering locates seasonal gaur encroachment patterns",
+    "verification_status": "verified"
+  },
+  {
+    "added_date": "2026-11-25",
+    "ai_technology": "DDRTree in Monocle 2; modified k-nearest-neighbor projection; MissForest",
+    "evidence": {
+      "ai_role": "DDRTree learned a branching representation of age/sex-adjusted clinical measures and continuous profile scores; modified nearest-neighbor projection transferred the learned framework to the SSC cohort for comparison with clinical and genetic features.",
+      "evidence_urls": [
+        "https://assets-eu.researchsquare.com/files/rs-11451986/v1_covered_a8453517-0d53-43a5-89ee-95e147b75df9.pdf",
+        "https://www.researchsquare.com/article/rs-11451986/v1",
+        "https://api.crossref.org/works/10.21203/rs.3.rs-11451986/v1"
+      ],
+      "publication_status": "Preprint",
+      "test_type": "retrospective or benchmark",
+      "tested": "Retrospective discovery in 6,355 SPARK participants and projection into 2,717 SSC participants, with clinical/service/medication associations and common- and rare-genetic-variant analyses. DDRTree parameters were refined against clinical observations; external projection used imputed/harmonized measures.",
+      "unknown": "The proposed profiles are not validated diagnostic categories, treatment-selection rules or causal genetic explanations. Genetic analyses were preliminary and some findings did not reproduce in SSC; cohort size, imputation and phenotype harmonization limit inference."
+    },
+    "field": "medicine",
+    "id": "2026-11-autism-phenotypic-subtypes-genetic-associations",
+    "organization": "University of Southern California; Simons Foundation",
+    "paper_url": "",
+    "publication_date": "2026-11-23",
+    "relevance": {
+      "impact": 3,
+      "novelty": 2,
+      "validation": 2
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary 29-page v1 PDF relevant clinical/genetic Results, DDRTree/projection Methods and limitations; primary Research Square embedded version metadata and Crossref posting metadata. Supplements were not independently audited."
+    },
+    "source_type": "paper",
+    "source_url": "https://www.researchsquare.com/article/rs-11451986/v1",
+    "summary": "A November 23, 2026 preprint used DDRTree to learn three clinical profiles and continuous scores from 14 measures in 6,355 autistic children in SPARK, then projected the framework into 2,717 children in the Simons Simplex Collection. The authors report preserved clinical and medication-use patterns and preliminary differences in common- and rare-variant associations. These are retrospective, researcher-tuned dimensions, not established diagnostic categories or causal genetic mechanisms; some genetic results differed between cohorts and require larger-sample validation.",
+    "title": "Learned autism profiles show different clinical and genetic associations",
+    "verification_status": "verified"
+  },
+  {
     "id": "2026-11-claude-riemann-hypothesis",
     "title": "Mathematician and Claude release a Lean proof of the Riemann hypothesis",
     "summary": "Levent Alpöge, a mathematician at Anthropic, released a Lean library of about 17 million lines that he states proves the Riemann hypothesis and the generalized Riemann hypothesis for Dirichlet L-functions, developed with Claude. His accompanying note says he guided the argument from a toy setting while Claude supplied much of the technical work, including the √X length of a chain of theta lifts; the note's timeline runs from 6 October to 16 November 2026. A day after release, the Lean FRO and the Mathlib Initiative certified that the library proves Mathlib's statement of the Riemann hypothesis and passes several independent proof checkers. No human-readable proof has been published, and Alpöge writes that he has not yet mastered parts of the argument.",

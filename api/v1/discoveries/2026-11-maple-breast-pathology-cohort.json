@@ -1,0 +1,34 @@
+{
+  "added_date": "2026-11-25",
+  "ai_technology": "MAPLE; AgenTile vision transformer; pathology CLIP; Qwen3-14B PathLLM",
+  "evidence": {
+    "ai_role": "AgenTile segments and classifies nuclei to prioritize regions; learned CLIP representations and PathLLM, coupling a vision encoder with Qwen3-14B, integrate image features and text to produce slide diagnoses.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.11.21.768223v1.full.pdf",
+      "https://api.biorxiv.org/details/biorxiv/10.64898/2026.11.21.768223"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Authors report agreement with a breast-pathology specialist on all 15 whole-slide images at two magnifications. The source describes a separate Johns Hopkins clinical image source and TCGA-only training. Patch classification additionally used pooled-cohort threshold selection and leave-one-slide-out threshold evaluation; these are distinct from the whole-slide diagnostic agreement claim.",
+    "unknown": "The small single-institution image cohort does not establish prospective patient benefit, broad external generalization or independent replication. Fifteen images are reported, not an established count of unique patients. Training was separate from the clinical image source, but a prospective locked-model protocol and independent cohort replication are not established."
+  },
+  "field": "medicine",
+  "id": "2026-11-maple-breast-pathology-cohort",
+  "organization": "Johns Hopkins University",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 2,
+    "novelty": 2,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-25",
+    "scope": "Primary v1 PDF clinical Results, Discussion/limitations, training and clinical-evaluation Methods and data availability; official bioRxiv version/date metadata. Supplemental visual examples and unavailable private clinical images were not independently validated."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.21.768223v1",
+  "summary": "A November 23, 2026 bioRxiv preprint reports that MAPLE, a hierarchical pathology vision-language system, matched expert reference diagnoses for 15 breast whole-slide images from Johns Hopkins at both 20x and 40x magnification. The series comprised nine invasive carcinoma, three ductal carcinoma in situ and three benign cases; the system combined learned nucleus-based region selection, a pathology CLIP encoder and a Qwen3-14B-based language model. This small, single-institution retrospective test is not evidence of prospective diagnostic benefit or readiness for routine deployment; the paper also reports separate benchmark results.",
+  "title": "MAPLE matches reference diagnoses in a small breast-pathology slide cohort",
+  "verification_status": "verified"
+}

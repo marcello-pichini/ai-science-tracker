@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-25",
+  "ai_technology": "Random Forest learns land-cover classes from fused Sentinel-1 SAR and Sentinel-2 optical bands; recursive feature elimination selects the inputs for temporal mapping.",
+  "evidence": {
+    "ai_role": "Random Forest learns land-cover classes from fused Sentinel-1 SAR and Sentinel-2 optical bands; recursive feature elimination selects the inputs for temporal mapping.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2026.1983976/full"
+    ],
+    "publication_status": "Peer-reviewed paper",
+    "test_type": "retrospective or benchmark",
+    "tested": "Retrospective satellite classification and temporal transfer to 2019–2021 imagery; mapped class proportions compared across years.",
+    "unknown": "No direct geohazard outcomes or causal attribution; one highway region and reference-label uncertainty limit transfer."
+  },
+  "field": "climate",
+  "id": "2026-11-sar-optical-highway-land-cover",
+  "organization": "Indian Institute of Technology Roorkee; National Institute of Technology Patna; Madhav Institute of Technology & Science",
+  "paper_url": "",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 2,
+    "novelty": 2,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-25",
+    "scope": "Primary manuscript Methods, relevant Results, limitations and first-version publication metadata reviewed."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2026.1983976/full",
+  "summary": "Random Forest classification of fused Sentinel optical and radar observations mapped land-cover change along a section of India’s National Highway 344 from 2016 to 2021. Tall vegetation decreased from 32.73% of the mapped area in 2016 to 24.02% in 2018, with partial later recovery; urban cover increased. Feature selection yielded reported classification accuracy of 92.75%. These are retrospective land-cover estimates, not measured erosion, landslide or flood outcomes, and the study does not isolate a causal highway effect.",
+  "title": "Satellite machine learning maps vegetation change near a highway",
+  "verification_status": "verified"
+}

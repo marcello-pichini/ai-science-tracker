@@ -1,0 +1,34 @@
+{
+  "added_date": "2026-11-25",
+  "ai_technology": "A convolutional neural network trained on independently annotated ultrasound data segments skin, adipose tissue, fascia and muscle, enabling compartment-specific optoacoustic spectral and oxygenation analysis.",
+  "evidence": {
+    "ai_role": "A convolutional neural network trained on independently annotated ultrasound data segments skin, adipose tissue, fascia and muscle, enabling compartment-specific optoacoustic spectral and oxygenation analysis.",
+    "evidence_urls": [
+      "https://doi.org/10.64898/2026.11.22.26368599",
+      "https://www.medrxiv.org/content/10.64898/2026.11.22.26368599v1.full.pdf"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "direct test",
+    "tested": "Single-center physiological imaging study in 46 volunteers, with compartment-resolved spectra and responses during oxygenation challenges.",
+    "unknown": "No independent oxygen-saturation reference; unequal groups, coarse pigmentation classification and single anatomical region/system limit generalization; no direct pulse-oximeter validation."
+  },
+  "field": "medicine",
+  "id": "2026-11-ai-segmented-oximetry-pigmentation",
+  "organization": "University Hospital Erlangen; Friedrich-Alexander-Universität Erlangen-Nürnberg; iThera Medical GmbH; Julius-Maximilians-Universität Würzburg",
+  "paper_url": "https://www.medrxiv.org/content/10.64898/2026.11.22.26368599v1.full.pdf",
+  "publication_date": "2026-11-24",
+  "relevance": {
+    "impact": 3,
+    "novelty": 3,
+    "validation": 3
+  },
+  "source_review": {
+    "date": "2026-11-25",
+    "scope": "Primary manuscript Methods, relevant Results, limitations and first-version publication metadata reviewed."
+  },
+  "source_type": "paper",
+  "source_url": "https://doi.org/10.64898/2026.11.22.26368599",
+  "summary": "A pretrained convolutional network separated tissue compartments in an optoacoustic imaging study of 46 healthy volunteers spanning six Fitzpatrick skin types. Across 3,016 scans and 41 wavelengths, superficial skin signals showed stronger pigmentation associations and unreliable oxygenation responses, while deeper muscle signals responded more clearly to physiological challenges. This preprint characterizes tissue- and wavelength-dependent optoacoustic measurements; it does not directly quantify pulse-oximeter error, validate oxygen saturation against an independent reference or demonstrate clinical benefit.",
+  "title": "AI-segmented imaging localizes pigmentation bias in oximetry",
+  "verification_status": "verified"
+}

@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-25",
+  "ai_technology": "SCOPE DeepGCN structural-graph learning with ProtT5 sequence embeddings and a Gaussian auxiliary training objective",
+  "evidence": {
+    "ai_role": "Deep graph learning combined residue-level structure, evolutionary information and protein-language-model embeddings to rank candidate functional positions. These rankings guided new functional tests, linking the learned operation to measured enzyme activity rather than only benchmark performance.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.11.20.768221v1.full.pdf"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "direct test",
+    "tested": "Model-prioritized positions were tested in four enzymes using activity assays with three independent experiments and reference-enzyme normalization. Eleven tested positions had 0–4.1% residual activity; protein expression was checked. Two tested copper-coordinating sites were explicitly already established, while other model-selected positions included active-pocket and distal contexts.",
+    "unknown": "Activity loss does not prove that every position directly catalyzes a reaction; folding, stability or subunit organization can explain some effects. Selection of the tested sites using SCOPE makes relative-model comparisons descriptive, not unbiased. Known-site recovery is not counted as a new discovery, and independent replication or broad applicability remains unestablished."
+  },
+  "field": "biology",
+  "id": "2026-11-scope-enzyme-functional-residue-tests",
+  "organization": "Northwest A&F University; Adelaide University; Monash University; Beijing University of Chemical Technology",
+  "paper_url": "https://doi.org/10.64898/2026.11.20.768221",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 2,
+    "novelty": 2,
+    "validation": 3
+  },
+  "source_review": {
+    "date": "2026-11-25",
+    "scope": "Primary 30-page preprint PDF relevant graph-model Methods, experimental enzyme selection, functional-test Results and Discussion caveats; primary bioRxiv version history. Supplementary tables not independently audited."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.20.768221v1",
+  "summary": "A November 23, 2026 preprint used SCOPE, a learned structural-graph model, to prioritize enzyme positions for laboratory tests. Across four low-homology enzymes, substitutions at 11 selected positions left 0–4.1% of reference activity. The tested set included established sites and additional predicted positions, so the result is a bounded functional map rather than 11 newly discovered catalytic residues. Activity loss supports functional importance but can reflect stability or structural effects instead of direct reaction chemistry.",
+  "title": "Graph-learning-guided tests identify functionally important enzyme positions",
+  "verification_status": "verified"
+}

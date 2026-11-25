@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-25",
+  "ai_technology": "Edge-activation direct coupling analysis (DCA); learned Potts sequence model combined with RNA thermodynamics",
+  "evidence": {
+    "ai_role": "An edge-activation DCA model learned family-specific sequence constraints from an alignment of 817 natural sequences. Combining its generative prior with a separately derived thermodynamic score guided designs whose catalytic activity was then measured.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.11.21.768297v1.full.pdf"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "direct test",
+    "tested": "Laboratory activity measurements compared 1,500 jointly favored designs with 500 evolutionary-score and 500 physical-score designs, pooled across ten starting sequences. High-temperature activity hit rates were 72.5%, 7.8% and 0.4%, respectively, under the study’s reference-normalized threshold.",
+    "unknown": "The study examines one self-splicing RNA family and uses a pooled enrichment assay rather than general application performance. Molecular dynamics provides mechanistic interpretation, not independent experimental confirmation of the proposed structural explanation. Independent replication and transfer to other families remain unestablished."
+  },
+  "field": "biology",
+  "id": "2026-11-generative-ribozyme-thermal-activity",
+  "organization": "Sorbonne Université; CNRS; ESPCI Paris; Institut Polytechnique de Paris; Sapienza University of Rome",
+  "paper_url": "https://doi.org/10.64898/2026.11.21.768297",
+  "publication_date": "2026-11-24",
+  "relevance": {
+    "impact": 3,
+    "novelty": 3,
+    "validation": 3
+  },
+  "source_review": {
+    "date": "2026-11-25",
+    "scope": "Primary 13-page preprint PDF: relevant model and assay Methods, experimental Results and Table II, limitations; primary bioRxiv API version history. Supplement not independently audited."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.21.768297v1",
+  "summary": "A November 24, 2026 preprint reports laboratory-tested catalytic RNA designs that remain active at 60°C. A learned evolutionary sequence model combined with an independent RNA thermodynamic score generated variants that preserved function more often than either score alone. Across 2,500 designed variants from ten starting sequences, the jointly favored group had a 72.5% high-temperature activity hit rate, compared with 7.8% for the evolutionary-score group and 0.4% for the physical-score group. The result is limited to one ribozyme family and the study’s assay.",
+  "title": "Generative models guide ribozymes that retain activity at high temperature",
+  "verification_status": "verified"
+}

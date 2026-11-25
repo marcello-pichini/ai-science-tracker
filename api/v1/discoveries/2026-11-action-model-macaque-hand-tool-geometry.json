@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-25",
+  "ai_technology": "Video Swin Transformer trained on Something-Something V2; CORnet-S and Kinetics-400 model comparisons",
+  "evidence": {
+    "ai_role": "Pretrained networks transformed identical images into learned feature vectors and category dissimilarity matrices. Comparing the same Video Swin architecture trained on broad actions versus fine-grained hand–object interactions enabled the specific finding that interaction-oriented learned geometry better corresponded to dorsal cortical representations.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.11.24.768489v1.full.pdf"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "direct test",
+    "tested": "Whole-brain fMRI used 121 runs across three macaques; functional ultrasound sampled parietal cortex in two separate macaques. Learned category representations from four model stages or training conditions were compared with neural geometry. The interaction-trained model retained positive associations in several parietal and prefrontal regions after controlling other models and checking predictor sensitivity.",
+    "unknown": "Only five animals and static stimuli were studied. Model geometries were highly correlated, with variance inflation factors of 6.40–11.71. Shape, posture, affordance and dataset statistics remain possible contributors. Similarity does not establish computational equivalence, evolutionary history or a causal effect of observing human tool use."
+  },
+  "field": "biology",
+  "id": "2026-11-action-model-macaque-hand-tool-geometry",
+  "organization": "KU Leuven; VIB; NeuroSpin; University of Trento; Massachusetts General Hospital",
+  "paper_url": "https://doi.org/10.64898/2026.11.24.768489",
+  "publication_date": "2026-11-24",
+  "relevance": {
+    "impact": 2,
+    "novelty": 3,
+    "validation": 3
+  },
+  "source_review": {
+    "date": "2026-11-25",
+    "scope": "Primary preprint PDF title, DOI and November 24 version authenticated; computational representation and RSA Methods, model-comparison Results, animal counts and discussion limitations independently read. Cached primary v1 metadata checked; supplements not exhaustively audited."
+  },
+  "source_type": "paper",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.24.768489v1",
+  "summary": "A November 24, 2026 preprint compared learned visual representations with macaque brain responses to static images. A Video Swin Transformer trained on fine-grained hand–object interactions matched parietal and prefrontal hand–tool geometry better than static-object and general-action models. Functional ultrasound in two other monkeys independently supported spatial alignment of tool and human-hand responses. The findings concern representational similarity; they do not establish that interaction experience caused the cortical organization or that monkeys understand tool functions.",
+  "title": "Action-trained models reveal a hand–tool representational link in macaque cortex",
+  "verification_status": "verified"
+}

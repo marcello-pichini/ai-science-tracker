@@ -1,0 +1,33 @@
+{
+  "added_date": "2026-11-25",
+  "ai_technology": "VirTues-M2; multimodal vision transformer and learned cell-signature transfer",
+  "evidence": {
+    "ai_role": "A marker-aware multimodal transformer learned joint H&E and spatial-proteomics representations. Clustering enabled annotation-free cell-state discovery; Cox screening selected survival-linked populations and random-forest classifiers transferred their membership to another cohort.",
+    "evidence_urls": [
+      "https://arxiv.org/html/2611.31451v1"
+    ],
+    "publication_status": "Preprint",
+    "test_type": "retrospective or benchmark",
+    "tested": "Signature selection used 737 discovery patients and evaluation used 316 held-out patients. Combined signatures reached C-index 0.646 and hazard ratio 3.09 in the test set. Unchanged signature classifiers transferred to 39 external patients; combined signatures had C-index 0.636 and hazard ratio 2.87 (p=0.039).",
+    "unknown": "Retrospective survival associations do not establish causation or treatment-response prediction. External validation is small; the H&E-only external signature was not significant at p<0.05. Test patients used pre-specified tertiles, whereas external patients used a median split. Prospective clinical utility and robustness require further evaluation."
+  },
+  "field": "medicine",
+  "id": "2026-11-virtues-m2-lung-cancer-risk-signatures",
+  "organization": "EPFL; University Hospital Zurich; University of Zurich; University of Bern",
+  "paper_url": "https://arxiv.org/html/2611.31451",
+  "publication_date": "2026-11-23",
+  "relevance": {
+    "impact": 3,
+    "novelty": 3,
+    "validation": 2
+  },
+  "source_review": {
+    "date": "2026-11-25",
+    "scope": "Primary arXiv HTML relevant model description, spatial biomarker discovery Methods, Figure 6 Results and clinical limitations; primary submission history. Supplements and other benchmark tasks not audited."
+  },
+  "source_type": "paper",
+  "source_url": "https://arxiv.org/abs/2611.31451",
+  "summary": "A November 23, 2026 preprint reports that VirTues-M2 learned joint tissue morphology and spatial-protein representations to discover survival-associated cellular signatures in lung cancer. Signatures selected on 737 patients stratified survival in 316 held-out patients and transferred without retraining to a separate 39-patient cohort. Low-risk signatures marked organized immune-rich neighborhoods; high-risk signatures marked more disorganized tumor-rich tissue. These are retrospective prognostic associations with small external validation and no demonstrated treatment benefit.",
+  "title": "Multimodal AI finds lung-cancer tissue signatures associated with survival",
+  "verification_status": "verified"
+}
