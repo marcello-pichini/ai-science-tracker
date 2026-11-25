@@ -1,0 +1,39 @@
+{
+  "id": "2026-10-openai-math-release",
+  "title": "OpenAI releases claimed proofs of the quasi-Riemann hypothesis and other open problems",
+  "summary": "OpenAI published a GitHub collection of manuscripts produced by an unnamed internal model. Headline claims include a zero-free half-plane Re(s) > 7/8 for the Riemann zeta function and all Dirichlet L-functions (the quasi-Riemann hypothesis) with a uniform exclusion of Landau–Siegel zeros, the irrationality exponent of π equal to 2, a negative answer to Hilbert's tenth problem over the rationals, the Kakeya maximal conjecture in three dimensions with full Hausdorff dimension for four-dimensional Kakeya sets, and a uniform bound on limit cycles for Hilbert's sixteenth problem. OpenAI describes the manuscripts as raw research data, not polished papers; Lean formalizations cover selected statements only, and no referee review is reported. The later local-smoothing and Exponential Time Hypothesis results are a separate catalog entry.",
+  "field": "mathematics",
+  "ai_technology": "OpenAI internal models",
+  "organization": "OpenAI",
+  "source_url": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+  "source_type": "press release",
+  "publication_date": "2026-10-06",
+  "added_date": "2026-11-25",
+  "verification_status": "verified",
+  "paper_url": "https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf",
+  "relevance": {
+    "impact": 5,
+    "validation": 3,
+    "novelty": 5
+  },
+  "evidence": {
+    "publication_status": "Announcement only",
+    "tested": "Per the repository's Lean scope notes, formal statements were checked for the 7/8 zero-free half-plane for zeta and every Dirichlet L-function, the uniform logarithmic exclusion region for Landau–Siegel zeros, and the irrationality exponent of π equal to 2; for Hilbert's sixteenth problem only the exact two-cycle bound for quintic Liénard systems is formalized. No Lean formalization is linked for the Hilbert's tenth problem over Q or the Kakeya three- and four-dimensional manuscripts.",
+    "unknown": "No referee or independent expert review is reported in the reviewed material. OpenAI states that unformalized results could have issues; on 7 October 2026 it withdrew three Hodge-related manuscripts from the same collection after a sign error. Not all consequences in the papers (for example the Flint–Hills series convergence) are inside the formalized statements.",
+    "ai_role": "An unnamed internal OpenAI model produced the manuscripts, at about three hours of ChatGPT Pro thinking compute per result across roughly 4,000 posed problems; the zeta zero-free work did not follow the fixed procedure, and the 11/12 companion write-up was human edited.",
+    "evidence_urls": [
+      "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+      "https://github.com/openai/math",
+      "https://github.com/openai/math/blob/main/CONTENTS.md",
+      "https://github.com/openai/math/blob/main/history.md",
+      "https://github.com/openai/math/blob/main/lean/docs/003.md",
+      "https://github.com/openai/math/blob/main/lean/docs/017.md",
+      "https://github.com/openai/math/blob/main/lean/docs/143.md"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-25",
+    "scope": "OpenAI announcement, repository README, manuscript map abstracts, release history and Lean scope notes for families 003, 017 and 143; manuscript PDFs not read"
+  }
+}
