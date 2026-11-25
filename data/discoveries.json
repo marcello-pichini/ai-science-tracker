@@ -1,5 +1,39 @@
 [
   {
+    "id": "2026-11-claude-riemann-hypothesis",
+    "title": "Mathematician and Claude release a Lean proof of the Riemann hypothesis",
+    "summary": "Levent Alpöge, a mathematician at Anthropic, released a Lean library of about 17 million lines that he states proves the Riemann hypothesis and the generalized Riemann hypothesis for Dirichlet L-functions, developed with Claude. His accompanying note says he guided the argument from a toy setting while Claude supplied much of the technical work, including the √X length of a chain of theta lifts; the note's timeline runs from 6 October to 16 November 2026. A day after release, the Lean FRO and the Mathlib Initiative certified that the library proves Mathlib's statement of the Riemann hypothesis and passes several independent proof checkers. No human-readable proof has been published, and Alpöge writes that he has not yet mastered parts of the argument.",
+    "field": "mathematics",
+    "ai_technology": "Anthropic Claude",
+    "organization": "Anthropic",
+    "source_url": "https://alpo.ge/remark.pdf",
+    "source_type": "other",
+    "publication_date": "2026-11-20",
+    "added_date": "2026-11-25",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 5,
+      "validation": 4,
+      "novelty": 5
+    },
+    "evidence": {
+      "publication_status": "Announcement only",
+      "tested": "The Lean FRO and Mathlib Initiative state that dozens of people reproduced compilation, that two comparison tools confirmed the proved theorem is exactly Mathlib's RiemannHypothesis statement, and that the exported proof passed Lean's kernel and several independent checkers, including formally verified ones.",
+      "unknown": "No natural-language proof or peer-reviewed paper is available; the mathematical ideas have not yet been explained or checked by independent mathematicians. The exact Claude model version is not stated in the author's note.",
+      "ai_role": "Per the author, Claude carried out much of the technical development and the Lean formalization after he guided it to the setting analogous to a toy argument; he credits Claude with tens of such transfers, including the choice of chain length of theta lifts.",
+      "evidence_urls": [
+        "https://alpo.ge/remark.pdf",
+        "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/"
+      ],
+      "test_type": "prospective or independent check"
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Author's four-page note (alpo.ge/remark.pdf) and the Lean FRO and Mathlib Initiative statement; the Lean library itself not inspected"
+    }
+  },
+  {
     "id": "2026-11-openai-math-matrix-multiplication",
     "title": "OpenAI model claims the matrix multiplication exponent is 9/4",
     "summary": "OpenAI added to its openai/math repository manuscripts produced by an unnamed internal model claiming that the exponent of square matrix multiplication is exactly 9/4 over every field, with a lower bound of n^(9/4)/2 multiplication or division gates. The same release claims separations of Valiant's classes VF, VBP, VP and VNP (subsuming a VP ≠ VNP manuscript added on 23 November), circuit lower bounds for the permanent, the Erdős–Rado sunflower conjecture with an exponential bound, a strongly polynomial algorithm for linear programming (Smale's ninth problem) and a disproof of the polynomial Hirsch conjecture. The abstract describes the 9/4 upper bound as known; this record does not assess that statement against published bounds. No referee or independent review is reported.",
