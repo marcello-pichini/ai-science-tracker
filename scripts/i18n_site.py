@@ -329,6 +329,8 @@ def refresh_chrome(text: str, switcher: str) -> str:
 
     def nav_repl(match: re.Match) -> str:
         nav = match.group(0).replace('>Vuln discoveries</a>', '>Vulnerabilities</a>', 1)
+        if 'href="insights.html"' not in nav:
+            nav = re.sub(r'(<a href="dossiers\.html"[^>]*>Dossiers</a>)', r'\1<a href="insights.html">Insights</a>', nav, count=1)
         return nav.replace(
             '<nav class="menu" aria-label="Site sections">',
             '<nav class="menu" id="site-nav" aria-label="Site sections">', 1)

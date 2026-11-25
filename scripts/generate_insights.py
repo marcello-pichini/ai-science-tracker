@@ -529,6 +529,7 @@ def closing():
 def render(items, models, plain, root=ROOT):
     ctx = Context(items, models, plain)
     header, footer = gs.site_frame()
+    header = header.replace('<a href="insights.html">', '<a href="insights.html" aria-current="page">', 1)
     desc = DESCRIPTION
     head = gs.PAGE.split('<body', 1)[0].replace('content="article"', 'content="website"')
     head = head.format_map(_Defaults(title=esc(TITLE), site=gs.SITE, desc=esc(desc), base=gs.BASE, path=PATH,
