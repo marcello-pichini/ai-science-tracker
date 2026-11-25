@@ -140,6 +140,17 @@ if (anchor.href !== '/es/mathematics-dossier.html#riemann') throw new Error('fra
                     for target in re.findall(r'href="#([^"]+)"', main):
                         self.assertIn(f'id="{target}"', main)
 
+    def test_dossier_list_shows_each_dossiers_cover(self):
+        for lang in ('en', *LOCALES):
+            prefix = '' if lang == 'en' else f'{lang}/'
+            grid = (ROOT / prefix / 'dossiers.html').read_text().split('class="dossier-grid"', 1)[1].split('</section>', 1)[0]
+            cards = re.findall(r'<img class="dossier-thumb" src="(/assets/dossiers/[^"]+)" alt=""[^>]*>\s*<h3><a href="([^"]+)"', grid)
+            with self.subTest(language=lang):
+                self.assertEqual(len(cards), grid.count('<article'))
+                for image, page in cards:
+                    target = (ROOT / prefix / page).read_text()
+                    self.assertIn(f'property="og:image" content="https://aisciencetracker.org{image}"', target)
+
     def test_each_dossier_has_a_contextual_route_an_update_date_and_a_cover(self):
         pages = [page for page in PAGES if page.endswith('-dossier.html')]
         sitemap = ET.parse(ROOT / 'sitemap.xml')
