@@ -100,7 +100,7 @@ globalThis.CatalogUI = {
     const status = checked ? this.t('Source checked') : this.t('Needs source check');
     const checkedSentence = checked ? this.t('The source page was checked against this entry.') : this.t('The source has not been fully checked or contains conflicting information.');
     const review = record.source_review
-      ? `${this.t('Review date:')} ${esc(this.contextDate(record.source_review.date))}. ${this.t('Review scope:')} ${esc(record.source_review.scope)}.`
+      ? `${this.t('Review date:')} ${esc(this.contextDate(record.source_review.date))}. ${this.t('Review scope:')} ${esc(String(record.source_review.scope).replace(/[.\s]+$/, ''))}.`
       : this.t('Review scope and date are not recorded; source checked does not establish full-text review.');
     return `${this.evidenceSummary(record)}${this.readingContext(record)}${record.evidence ? `<details class="source-details"><summary>${this.t('Evidence sources and annotation context')}</summary>${this.evidenceBlock(record, false)}</details>` : ''}<details class="source-details"><summary>${status} · ${this.t('editorial details')}</summary>
       <p>${checkedSentence} ${this.t('Independent confirmation is not assessed by this label.')}</p>
@@ -155,7 +155,7 @@ globalThis.CatalogUI = {
     const events = (record.follow_up || []).map(event => `<li id="event-${esc(record.id)}-${esc(event.id)}"><b>${esc(event.kind)}</b> · ${esc(this.contextDate(event.date))}: ${esc(event.note)} ${sources(event.source_urls, event.kind === 'correction' ? this.t('Correction notice') : undefined)}. ${this.t('Recorded {date}.', {date: esc(this.contextDate(event.recorded_date))})}</li>`).join('');
     const review = record.follow_up_review;
     const relationships = (record.relationships || []).map(link => `<li><a href="${this.sitePath('share/' + encodeURIComponent(link.target_id) + '.html')}">${esc(link.target_id)}</a> · ${esc(link.type)}: ${esc(link.reason)} ${sources(link.source_urls)}</li>`).join('');
-    return `<details class="source-details"><summary>${this.t('Follow-up and relationships')}</summary>${events ? `<ul>${events}</ul>` : `<p>${this.t('No follow-up recorded; this is not a claim that no follow-up exists.')}</p>`}${review ? `<p>${this.t('Follow-up checked {date} within scope: {scope}.', {date: esc(this.contextDate(review.date)), scope: esc(review.scope)})}</p>` : `<p>${this.t('Follow-up review scope and date are not recorded.')}</p>`}${relationships ? `<p>${this.t('Directed relationships from this entry; they do not merge catalog counts.')}</p><ul>${relationships}</ul>` : `<p>${this.t('No source-supported relationships recorded.')}</p>`}</details>`;
+    return `<details class="source-details"><summary>${this.t('Follow-up and relationships')}</summary>${events ? `<ul>${events}</ul>` : `<p>${this.t('No follow-up recorded; this is not a claim that no follow-up exists.')}</p>`}${review ? `<p>${this.t('Follow-up checked {date} within scope: {scope}.', {date: esc(this.contextDate(review.date)), scope: esc(String(review.scope).replace(/[.\s]+$/, ''))})}</p>` : `<p>${this.t('Follow-up review scope and date are not recorded.')}</p>`}${relationships ? `<p>${this.t('Directed relationships from this entry; they do not merge catalog counts.')}</p><ul>${relationships}</ul>` : `<p>${this.t('No source-supported relationships recorded.')}</p>`}</details>`;
   },
   correctionUrl(record) {
     const query = new URLSearchParams({template:'correction.yml', title:`[Correction] ${record.id}`, record_id:record.id,

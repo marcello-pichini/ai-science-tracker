@@ -43,6 +43,10 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('Source checked', text)
         self.assertFalse(any(line.rstrip() != line for line in text.splitlines()))
 
+    def test_review_scopes_ending_in_a_period_render_one_period(self):
+        published = [p.name for p in (ROOT / 'share').glob('*.html') if '..</p>' in p.read_text(encoding='utf-8')]
+        self.assertEqual(published, [])
+
     def test_dossiers_link_from_featured_records_collections_and_sitemap(self):
         g = self.generator
         rows = [dict(self.record, id='2025-01-mattergen', field='materials'),
