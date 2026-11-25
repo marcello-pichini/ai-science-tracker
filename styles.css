@@ -703,3 +703,143 @@ body.model-progress .progress-jumps a:focus-visible { outline:2px solid var(--on
 .dataset-matrix table{font-size:.8rem;min-width:1000px}.dataset-matrix th,.dataset-matrix td{vertical-align:top}.dataset-matrix code{overflow-wrap:anywhere;white-space:normal}.dataset-matrix small{display:block;margin-top:.4rem}
 @media(max-width:600px){.collection-facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media print{.snapshot-status button{display:none}.snapshot-status{color:var(--ink);padding:.3rem 0}.collection-facts{break-inside:avoid}.dataset-matrix table{min-width:0;font-size:7pt}.dataset-matrix{overflow:visible}.dataset-matrix td,.dataset-matrix th{overflow-wrap:anywhere}}
+
+/* Evidence meter: four steps plus a text label (scripts/evidence_levels.py). Meaning is in the label, not the color. */
+.evidence-meter{display:inline-flex;align-items:center;gap:.4rem;font-weight:600}
+.evidence-steps{display:inline-flex;gap:2px}
+.evidence-steps i{width:14px;height:9px;border-radius:2px;box-shadow:inset 0 0 0 2px var(--ink-2)}
+.evidence-steps i.on{background:var(--ink-2)}
+@media print{.evidence-steps i.on{background:var(--ink)}}
+/* Prose lists: an unbroken string such as a URL used as a title must wrap instead of widening the page. */
+.prosa li{overflow-wrap:anywhere}
+/* Banner headings: a long compound word (German "Wissenschaftliche") breaks, with a hyphen where the language allows, instead of widening the page at 320 px. */
+.banda h1{overflow-wrap:anywhere}
+html:not([lang="en"]) .banda h1{hyphens:auto}
+/* Insights page (scripts/generate_insights.py): keep every rule for it between these two markers */
+/* insights:start */
+/* Insights page (scripts/generate_insights.py): static chart marks, colors from the site variables only. */
+.banda .insight-facts{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:28px}
+.banda .insight-facts div{background:var(--sheet);color:var(--ink)}
+.insight-facts dd{font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.03em}
+.insight-facts dd small{font-size:.875rem;color:var(--muted);font-weight:500;letter-spacing:0}
+.insight-card{background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);padding:clamp(18px,3vw,32px);display:grid;gap:14px}
+.insight-card>*{min-width:0}
+.insight-card h2{margin:0;font-size:clamp(1.375rem,3.2vw,2rem);line-height:1.15;letter-spacing:-.025em;max-width:32ch;text-wrap:balance}
+.insight-kicker{margin:0;font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.insight-tag{margin-left:8px;padding:2px 8px;border-color:var(--sole);letter-spacing:.02em;text-transform:none;font-weight:600;white-space:nowrap}
+.insight-sub{margin:0;color:var(--ink-2);font-size:1.0625rem;max-width:60ch}
+.insight-chart{margin:10px 0 4px;min-width:0}
+.insight-empty{margin:0;color:var(--muted)}
+.insight-note,.insight-source{margin:0;font-size:.875rem;color:var(--ink-2);max-width:72ch}
+.insight-source{color:var(--muted);font-size:.8125rem}
+.insight-share{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.insight-share a{font-weight:600;font-size:.875rem;padding:8px 14px;border-radius:999px;border:1px solid var(--line-2);color:var(--ink);text-decoration:none}
+.insight-share a:hover{border-color:var(--accent);color:var(--accent)}
+.insight-share a:focus-visible,.insight-timeline a:focus-visible,.insight-data summary:focus-visible,.insight-scroll:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.insight-data summary{cursor:pointer;font-weight:600;font-size:.875rem;color:var(--accent)}
+.insight-scroll{overflow-x:auto;max-width:100%}
+.insight-table{border-collapse:collapse;min-width:100%;font-size:.8125rem;margin-top:8px}
+.insight-table caption{text-align:left;color:var(--muted);padding-bottom:4px}
+.insight-table th,.insight-table td{text-align:left;padding:4px 10px 4px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;vertical-align:top}
+.insight-legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 12px;font-size:.875rem;color:var(--ink-2)}
+.insight-legend span{display:inline-flex;align-items:center;gap:6px}
+.insight-legend i{display:inline-block;width:12px;height:12px;border-radius:3px;flex:none}
+.insight-scroll+.insight-legend{margin:12px 0 0}
+/* 1 landmarks: vertical timeline */
+.insight-timeline{list-style:none;margin:0;padding:0}
+.insight-timeline li{display:grid;grid-template-columns:3.4rem 16px minmax(0,1fr);gap:0 12px}
+.insight-timeline time{font-size:1.25rem;font-weight:800;letter-spacing:-.03em;text-align:right;line-height:1.3;font-variant-numeric:tabular-nums}
+.insight-pin{position:relative}
+.insight-pin::before{content:"";position:absolute;left:7px;top:0;bottom:0;border-left:2px solid var(--line-2)}
+.insight-pin::after{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--sheet)}
+.insight-timeline li:last-child .insight-pin::before{bottom:auto;height:10px}
+.insight-timeline li>div{padding-bottom:18px}
+.insight-timeline a{font-size:1.0625rem;font-weight:700;line-height:1.3;color:var(--ink);text-decoration:none}
+.insight-timeline a:hover{text-decoration:underline}
+.insight-timeline p{margin:4px 0 0;font-size:.8125rem;color:var(--ink-2)}
+.insight-timeline .etich{margin-right:6px;padding:0 8px}
+/* 2 topics: circle area = entries */
+.insight-bubbles{display:flex;flex-wrap:wrap;gap:14px 10px;align-items:flex-end;justify-content:center;--bs:150}
+.insight-bubble{display:grid;justify-items:center;gap:6px;width:calc(var(--bs)*1px + 8px);text-align:center}
+.insight-bubble span{display:grid;place-content:center;width:calc(var(--d)*var(--bs)*1px);height:calc(var(--d)*var(--bs)*1px);border-radius:50%;background:var(--accent);color:var(--sheet);font-weight:800;font-size:calc(var(--d)*1.5rem + .35rem);font-variant-numeric:tabular-nums}
+.insight-bubble.is-first span{background:var(--sole);color:var(--prussia);box-shadow:inset 0 0 0 2px var(--ink)}
+.insight-bubble b{font-size:.875rem;line-height:1.15}
+/* 3 who: top three emphasized; the type is written out, not only colored */
+.insight-podium{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.insight-podium li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 12px;align-items:center;border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:var(--r);padding:10px 14px}
+.insight-podium li.is-lab{border-left-color:var(--sole);box-shadow:-1px 0 0 var(--ink),inset 1px 0 0 var(--ink)}
+.insight-podium i{grid-row:1/3;font-style:normal;font-weight:800;font-size:1.5rem;letter-spacing:-.03em;color:var(--muted);font-variant-numeric:tabular-nums}
+.insight-podium b{line-height:1.2;overflow-wrap:anywhere}
+.insight-podium span{font-size:.8125rem;color:var(--ink-2)}
+.insight-podium li:nth-child(-n+3){grid-template-columns:1fr;background:var(--accent-wash);padding:16px}
+.insight-podium li:nth-child(-n+3) i{grid-row:auto;font-size:2.5rem;line-height:1;color:var(--ink)}
+.insight-podium li:nth-child(-n+3) b{font-size:1.125rem}
+.insight-podium li:nth-child(n+4){grid-column:span 3}
+/* 4 kind of AI: heat grid */
+.insight-heat{border-collapse:separate;border-spacing:3px;width:100%;min-width:560px;font-size:.875rem}
+.insight-heat th{font-weight:600;text-align:left;padding:4px 6px 4px 0;line-height:1.15}
+.insight-heat thead th{font-size:.75rem;color:var(--ink-2);vertical-align:bottom;text-align:center}
+.insight-heat thead th:first-child{text-align:left}
+.insight-heat td{text-align:center;padding:9px 2px;border-radius:6px;font-variant-numeric:tabular-nums;background:color-mix(in srgb,var(--accent) calc(var(--v)*100%),var(--sheet))}
+.insight-heat td.is-strong{color:var(--sheet);font-weight:700}
+.insight-heat td.is-leading{box-shadow:inset 0 0 0 2px var(--ink)}
+.insight-legend .insight-key-lead{background:none;box-shadow:inset 0 0 0 2px var(--ink)}
+/* 5 which models: bubble matrix, first-release year shaded */
+.insight-matrix{border-collapse:collapse;width:100%;min-width:440px;font-size:.875rem;table-layout:fixed}
+.insight-matrix th:first-child{width:6.2em}
+.insight-matrix .insight-total,.insight-matrix thead th:last-child{width:2.4em;text-align:right;font-weight:800}
+.insight-matrix thead th{font-size:.75rem;color:var(--ink-2);font-weight:600;padding-bottom:4px}
+.insight-matrix tbody th{text-align:left;font-weight:600;line-height:1.15}
+.insight-matrix .insight-group th{padding:12px 0 4px;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+.insight-matrix td{height:46px;text-align:center;border-bottom:1px solid var(--line)}
+.insight-matrix td.is-release,.insight-legend .insight-key-release{background:var(--accent-wash);box-shadow:inset 0 -1px 0 var(--ink),inset 0 -4px 0 var(--sole),inset 0 -5px 0 var(--ink)}
+.insight-matrix td span{display:inline-grid;place-content:center;width:calc(14px + var(--d)*28px);height:calc(14px + var(--d)*28px);border-radius:50%;background:var(--accent);color:var(--sheet);font-weight:700;font-size:.75rem;font-variant-numeric:tabular-nums}
+.insight-legend .insight-key-release{width:16px;height:14px;border-radius:2px}
+.insight-legend .insight-key-dot{border-radius:50%;background:var(--accent)}
+.insight-matrix-wide{min-width:600px}.insight-matrix-wide thead th{overflow-wrap:anywhere}
+/* 6 by year: stacked columns */
+.insight-cols{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:clamp(4px,1.5vw,14px);text-align:center}
+.insight-col-area{height:270px;display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;gap:4px}
+.insight-col-area b{font-size:.875rem;font-variant-numeric:tabular-nums}
+.insight-col>span{display:block;margin-top:6px;font-size:.875rem;color:var(--ink-2);border-top:2px solid var(--line-2);padding-top:4px}
+.insight-col-area em{font-style:normal;font-size:.6875rem;font-weight:700;line-height:1.1;color:var(--ink-2);border:1px solid var(--sole);border-radius:6px;padding:2px}
+.insight-stack{height:calc(var(--h)*2.1px);display:flex;flex-direction:column;gap:2px}
+.insight-stack i{border-radius:3px;min-height:2px}
+.insight-stack .peer,.insight-legend .peer{background:var(--accent)}
+.insight-stack .preprint,.insight-legend .preprint{background:var(--tratto-2)}
+.insight-stack .other,.insight-legend .other{background:var(--line-2)}
+.insight-col.is-latest .insight-stack{outline:2px dashed var(--muted);outline-offset:3px}
+.insight-legend .insight-key-latest{background:none;outline:2px dashed var(--muted);outline-offset:1px}
+@media (max-width:640px){.insight-podium{grid-template-columns:1fr}.insight-podium li:nth-child(n+4){grid-column:auto}.insight-bubbles{--bs:104}.banda .insight-facts{grid-template-columns:1fr}}
+@media (max-width:520px){.insight-col-area b{font-size:.6875rem}.insight-col>span{font-size:.75rem}.insight-col-area em{display:none}.insight-timeline li{grid-template-columns:2.6rem 16px minmax(0,1fr);gap:0 8px}.insight-timeline time{font-size:1rem}}
+@media print{.insight-share{display:none}.insight-card{break-inside:avoid;border-color:var(--line-2)}.insight-scroll{overflow:visible}.insight-heat,.insight-matrix{min-width:0}}
+/* insights:end */
+/* Plain-language block, share row and Start-here cards (scripts/generate_share.py): keep every rule between these two markers */
+/* plain:start */
+/* Short-version panel above a discovery record */
+.plain-short{margin-bottom:40px;background:var(--accent-wash);border:1px solid var(--line-2);border-radius:var(--r);padding:20px 22px;display:grid;gap:16px}
+.plain-short h2{margin:0;font-size:1.25rem;font-weight:800;letter-spacing:-.02em}
+.plain-short h3{margin:0 0 2px;font-size:.8125rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.plain-short p{margin:0;font-size:1.125rem;line-height:1.45;max-width:62ch;overflow-wrap:anywhere}
+.plain-short .plain-note{margin-top:4px;font-size:.8125rem;color:var(--muted)}
+/* Responsive two-column grid inside the panel */
+.plain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.plain-grid:empty{display:none}
+/* Share row: plain links styled as buttons */
+.plain-share{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.plain-share a{display:inline-block;font-weight:600;font-size:.9375rem;padding:9px 14px;border:1px solid var(--line-2);border-radius:10px;background:var(--sheet);color:var(--ink);text-decoration:none}
+.plain-share a:hover{border-color:var(--accent)}
+/* Start-here label above the home cards */
+.plain-kicker{margin:16px 0 4px;font-size:.8125rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+/* Home card grid */
+.plain-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px;margin-top:12px}
+/* One home card */
+.plain-card{background:var(--sheet);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;gap:10px;align-content:start}
+.plain-card h3{margin:0;font-size:1.1875rem}
+.plain-card p{margin:0;font-size:1.0625rem;line-height:1.4}
+.plain-card .plain-level{font-size:.8125rem}
+.plain-meta{display:flex;justify-content:space-between;gap:8px;align-items:center;color:var(--muted);font-size:.875rem}
+/* Closing link under the cards */
+.plain-more{margin:16px 0 0;font-weight:600}
+@media print{.plain-short{background:none;border-color:var(--ink);break-inside:avoid}.plain-share{display:none}.plain-card{break-inside:avoid;border-color:var(--ink)}}
+/* plain:end */

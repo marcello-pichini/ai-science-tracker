@@ -54,7 +54,8 @@ PAGES = SHARED_PAGES + NEW_DOSSIER_PAGES
 SITEMAP_PAGES = tuple(page for page in PAGES if page != '404.html')
 
 ASSET_PREFIXES = ('assets/', 'data/', 'share/', 'profiles/', 'api/', 'og/', 'docs/', 'schema/')
-ASSET_FILES = {'styles.css', 'feed.xml', 'sitemap.xml', 'llms.txt', 'robots.txt'}
+# insights.html is generated in English only, so language editions link to the root copy.
+ASSET_FILES = {'styles.css', 'feed.xml', 'sitemap.xml', 'llms.txt', 'robots.txt', 'insights.html'}
 SKIP_TAGS = {'script', 'style'}
 NUMBER = re.compile(r'\d+(?:\.\d+)?')
 KEEP_LINE = re.compile(
@@ -622,6 +623,24 @@ def translate_leaves(text: str, table: dict, kept: set[str], missing: list[str])
     return _LEAF.sub(repl, text)
 
 
+# Opt-in: a plain-text <span data-i18n> is translated wherever it sits, even inside a locked
+# share link or nested inline markup that the leaf pass skips. Editorial text only, never source titles.
+_MARKED = re.compile(r'(<span\b[^>]*\bdata-i18n\b[^>]*>)([^<]*)(</span>)')
+
+
+def translate_marked(text: str, table: dict, kept: set[str], missing: list[str]) -> str:
+    def repl(match: re.Match) -> str:
+        key = html.unescape(match.group(2)).strip()
+        translated, found = lookup(key, table)
+        if not found:
+            if should_translate(key, kept):
+                missing.append(key)
+            return match.group(0)
+        return f'{match.group(1)}{html.escape(translated, quote=False)}{match.group(3)}'
+
+    return _MARKED.sub(repl, text)
+
+
 def translate_attributes(text: str, table: dict, kept: set[str], missing: list[str]) -> str:
     def repl(match: re.Match) -> str:
         space, name, eq, quote, raw = match.group(1), match.group(2), match.group(3), match.group(4), match.group(5)
@@ -650,6 +669,7 @@ def translate_document(page_html: str, table: dict, kept: set[str]) -> tuple[str
     protected = protect(
         r'<(nav|ol|ul|div)\b[^>]*\bdata-i18n-skip\b[^>]*>.*?</\1>', protected, vault)
     protected = translate_leaves(protected, table, kept, missing)
+    protected = translate_marked(protected, table, kept, missing)
     protected = translate_attributes(protected, table, kept, missing)
     return restore(protected, vault), missing
 

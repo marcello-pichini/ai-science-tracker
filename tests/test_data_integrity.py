@@ -1,5 +1,6 @@
 import json
 import datetime
+import re
 import sys
 import unittest
 from itertools import combinations
@@ -30,6 +31,11 @@ class DataIntegrityTests(unittest.TestCase):
                 value = norm(r[key])
                 self.assertNotIn(value, seen, f'{key} of {r["id"]} duplicates {seen.get(value)}')
                 seen[value] = r['id']
+
+    def test_titles_are_text_not_links(self):
+        # A harvested record once carried its announcement URL as the title.
+        bad = [d['id'] for d in RECORDS if re.match(r'\s*(https?://|www\.)', d['title'])]
+        self.assertEqual(bad, [])
 
     def test_shared_doi_requires_a_documented_result_split(self):
         by_doi = {}

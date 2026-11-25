@@ -1,0 +1,139 @@
+{
+  "about": "Plain-language layer for selected discoveries. English. Every sentence must be supported by the same record in data/discoveries.json (summary and evidence); it never adds a claim, a number or a degree of certainty the record does not have.",
+  "home": [
+    "2020-02-halicin",
+    "2024-05-alphafold-3",
+    "2021-11-exominer",
+    "2023-11-graphcast",
+    "2025-05-alphaevolve",
+    "2024-02-ercolano-grand-prize"
+  ],
+  "landmarks": [
+    "2020-11-alphafold-casp14",
+    "2022-07-alphafold-200-milioni",
+    "2023-11-graphcast",
+    "2024-01-composer-sepsis-ucsd",
+    "2024-02-ercolano-grand-prize",
+    "2024-10-flywire-connettoma",
+    "2025-02-ecmwf-aifs",
+    "2025-06-instantaneous-voice-bci",
+    "2025-07-echonext-structural-heart-disease",
+    "2025-11-rfdiffusion-de-novo-antibodies",
+    "2026-05-openai-distanza-unitaria",
+    "2026-11-claude-riemann-hypothesis"
+  ],
+  "records": {
+    "2020-02-halicin": {
+      "headline": "AI model flags an antibiotic, halicin, that works in lab and mouse tests",
+      "plain": "A computer model trained on about 2,500 molecules screened roughly 6,000 compounds and picked halicin, which killed many resistant bacteria in the lab and cleared A. baumannii infections in mice within 24 hours.",
+      "why": "It shows an AI model can point researchers to a candidate antibiotic that then passes direct laboratory tests.",
+      "unknown": "Whether halicin is safe and works in people is not reported.",
+      "source": "7aaa0abe8b21"
+    },
+    "2024-05-alphafold-3": {
+      "headline": "AlphaFold 3 predicts how proteins, DNA, RNA and small molecules fit together",
+      "plain": "AlphaFold 3 predicts the joint 3D structures of proteins, nucleic acids, small molecules and ions; its developers report at least 50% greater accuracy than existing methods for protein interactions with other molecules.",
+      "why": "Seeing how molecules fit together is central to biology, and a free tool for non-commercial research makes such predictions widely available.",
+      "unknown": "How accurate it is on new experimental targets beyond the benchmarks is not described.",
+      "source": "b9c3a4821da0"
+    },
+    "2021-11-exominer": {
+      "headline": "ExoMiner AI statistically validates 301 more Kepler planets",
+      "plain": "Researchers used a neural network called ExoMiner to sort through leftover planet candidates from the Kepler telescope and statistically validated 301 new planets, none of them Earth-like.",
+      "why": "It shows an AI classifier can help vet many telescope signals that people would otherwise have to check one by one.",
+      "unknown": "Validation is statistical, not confirmation, and the article gives no false-positive rates.",
+      "source": "6b31ea86d337"
+    },
+    "2023-11-graphcast": {
+      "headline": "GraphCast produces global 10-day weather forecasts",
+      "plain": "GraphCast is an AI weather model that makes a 10-day global forecast in under a minute on one chip, and it beat ECMWF's HRES forecast system on over 90% of 1,380 tested targets.",
+      "why": "It suggests a learned model can beat a major conventional forecast system on most tested measures while running in under a minute.",
+      "unknown": "How it compares with ensemble forecasting systems is not described.",
+      "source": "752697de7489"
+    },
+    "2025-05-alphaevolve": {
+      "headline": "AlphaEvolve uses Gemini to evolve better algorithms and solutions",
+      "plain": "Google's AlphaEvolve lets Gemini models propose code that automatic checkers score and improve; it matched the best known result on about 75% of more than 50 open math problems and improved about 20%.",
+      "why": "It shows AI can find useful algorithm improvements when each answer can be checked automatically.",
+      "unknown": "It only works on problems whose solutions can be checked automatically, and broader access is not yet available.",
+      "source": "fb2f40088a18"
+    },
+    "2024-02-ercolano-grand-prize": {
+      "headline": "Prize-winning AI methods read parts of a burned Herculaneum scroll",
+      "plain": "A Vesuvius Challenge submission used AI models to find ink in CT scans of a burned scroll and recovered over 2,000 characters, about 5% of the first scroll; papyrologists judged it to yield the most text.",
+      "why": "It shows ancient text can be recovered from a scroll that cannot be unrolled.",
+      "unknown": "Only about 5% has been read, only rough draft transcriptions exist, and tracing the papyrus surfaces is still largely manual.",
+      "source": "069a36593ac2"
+    },
+    "2020-11-alphafold-casp14": {
+      "headline": "AlphaFold tops a blind protein-structure contest",
+      "plain": "In the CASP14 blind contest, DeepMind's AlphaFold predicted 3D protein shapes from sequences with a median score of 92.4, and organizers judged it a solution to the single-protein structure problem.",
+      "why": "Contest organizers judged that a computer can now predict the structure of a single protein well enough to call the problem solved.",
+      "unknown": "Protein complexes, interactions with other molecules and side-chain placement remain open, and not every predicted structure will be perfect.",
+      "source": "0ed74501a283"
+    },
+    "2022-07-alphafold-200-milioni": {
+      "headline": "Predicted structures for over 200 million proteins are released for free",
+      "plain": "The AlphaFold Database, run with EMBL-EBI, grew from nearly 1 million to over 200 million predicted protein structures, free to use and download.",
+      "why": "Researchers anywhere can look up a predicted shape for almost any known protein.",
+      "unknown": "These are predictions, not measurements, and the announcement gives no accuracy figures for the new structures.",
+      "source": "99b9aac31eb8"
+    },
+    "2024-01-composer-sepsis-ucsd": {
+      "headline": "A hospital sepsis alert model is linked to 17% lower in-hospital sepsis deaths",
+      "plain": "At two UC San Diego emergency departments, 6,217 sepsis patients were compared before and after nurses got alerts from the COMPOSER model; in-hospital sepsis deaths were 1.9 points (17% relative) lower afterward, an association.",
+      "why": "It links an AI alert tool to fewer sepsis deaths among real emergency patients, not only to scores on test data.",
+      "unknown": "It was not a randomized trial, and several authors co-founded a company that commercializes the tools.",
+      "source": "75e77a061636"
+    },
+    "2024-10-flywire-connettoma": {
+      "headline": "The complete wiring map of a fruit-fly brain is finished",
+      "plain": "Researchers mapped nearly 140,000 neurons and over 15 million connections in an adult fruit-fly brain, with AI tracing the neurons in microscope images and humans correcting its many errors.",
+      "why": "A full wiring map lets scientists study how a whole brain is connected.",
+      "unknown": "Connection signs were predicted rather than measured, and about 0.5% of neurons had developmental wiring defects.",
+      "source": "9743e7c41b74"
+    },
+    "2025-02-ecmwf-aifs": {
+      "headline": "ECMWF puts an AI forecast model into operation beside its physics-based one",
+      "plain": "The European weather centre ECMWF began running AIFS Single, a machine-learning forecast model, on February 25, 2025 alongside its physics-based model.",
+      "why": "ECMWF reports gains of up to 20% on tropical-cyclone tracks and about 1,000 times lower energy use.",
+      "unknown": "The page does not describe how forecasts were checked, and ensemble forecasting is only a future step.",
+      "source": "89ce5cc4bcba"
+    },
+    "2025-06-instantaneous-voice-bci": {
+      "headline": "A brain implant lets a man with ALS speak through a synthetic voice in near real time",
+      "plain": "A man with ALS with 256 microelectrodes implanted in his brain used a decoder to turn his attempted speech into a synthetic voice, and listeners understood almost 60% of words versus 4% without the device.",
+      "why": "It points toward devices that could let people who cannot speak talk more naturally.",
+      "unknown": "It was a single participant in one trial, and the authors describe the technology as early stage.",
+      "source": "4afa1a924dbd"
+    },
+    "2025-07-echonext-structural-heart-disease": {
+      "headline": "EchoNext estimates structural heart disease risk from ECGs",
+      "plain": "EchoNext, an AI model trained on over one million records, estimates the risk of structural heart disease from ECGs, and the authors report it outperformed cardiologists in a controlled comparison.",
+      "why": "It could help guide who gets imaging-based screening, and a clinical trial found undiagnosed disease in patients without previous cardiac imaging.",
+      "unknown": "It is not shown that using it improves patient outcomes, and independent replication is not claimed.",
+      "source": "354625020a7c"
+    },
+    "2025-11-rfdiffusion-de-novo-antibodies": {
+      "headline": "RFdiffusion designs antibodies from scratch for chosen targets",
+      "plain": "Researchers fine-tuned the AI tool RFdiffusion to design new antibody fragments aimed at chosen targets, and imaging confirmed how two designs bind flu and C. difficile proteins.",
+      "why": "It points toward designing antibodies from scratch with AI, aimed at specific spots on a target.",
+      "unknown": "Therapeutic benefit is not shown, and other designs and targets were characterized less deeply.",
+      "source": "3252c73e9d75"
+    },
+    "2026-05-openai-distanza-unitaria": {
+      "headline": "OpenAI presents a disproof of the unit-distance conjecture",
+      "plain": "OpenAI presents a construction of points in the plane with more pairs at distance one than the Erdős conjecture predicts, found by one of its reasoning models; the announcement says outside mathematicians checked it.",
+      "why": "If it holds, it would show an AI model can produce a result in an open mathematics problem.",
+      "unknown": "This record checks the announcement, not an independent reconstruction of the proof.",
+      "source": "b95ae23974b9"
+    },
+    "2026-11-claude-riemann-hypothesis": {
+      "headline": "Mathematician and Claude release a Lean library claimed to prove the Riemann hypothesis",
+      "plain": "Levent Alpöge of Anthropic released a Lean library, developed with Claude, that he states proves the Riemann hypothesis, and Lean groups report it passes several independent proof checkers.",
+      "why": "If the claim stands, it would be a major result, though only the computer-checked form exists so far.",
+      "unknown": "No human-readable proof or peer-reviewed paper exists yet, and independent mathematicians have not yet explained or checked the ideas.",
+      "source": "9b569ea9817d"
+    }
+  }
+}

@@ -39,6 +39,7 @@ from urllib.parse import quote
 from model_families import discovery_links
 from entities import organization as canonical_organization
 from dataset_manifest import write_manifest, stamp_pages, write_component_jsonld
+import evidence_levels
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://aisciencetracker.org/'
@@ -461,7 +462,7 @@ def related_section(d, candidates, families):
             f'<ul>{links}</ul></div></section>')
 
 
-def write_discovery_pages(items, models, images, archived=False, related_items=None):
+def write_discovery_pages(items, models, images, archived=False, related_items=None, plain=None):
     """Each page is a full, self-canonical page in the shared frame, indexable without
     JavaScript (IMP-011) — replacing the earlier noindex/meta-refresh stub."""
     out = ROOT / 'share'
@@ -514,10 +515,13 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
             more += f' <a href="{topic}-dossier.html#{section}">Read the {topic} evidence dossier</a>.'
         if archived:
             lead = f'Archived catalog entry &middot; {lead}'
+        short = '' if archived else plain_short_version(d, plain or {}, has_image)
+        specialists = ('<h2>For specialists</h2>' if plain_text(plain or {}, d['id']) and not archived
+                       else '<h2 class="vis-nascosto">Discovery</h2>')
         page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(describe(d['summary'], lead=d['title'])), base=BASE,
                            path=f'share/{d["id"]}.html', img=d['id'] if has_image else 'default',
                            imgalt=esc(f'Preview card: {d["title"]}') if has_image else DEFAULT_ALT, jsonld=discovery_jsonld(d),
-                           h2='<h2 class="vis-nascosto">Discovery</h2>', more=more, extra=related_section(d, candidates, families_by_discovery),
+                           h2=short + specialists, more=more, extra=related_section(d, candidates, families_by_discovery),
                            header=header, footer=footer, lead=lead, article=article)
         page = page.replace(f'<title>{esc(d["title"])} · {SITE}</title>',
                             f'<title>{"Archived: " if archived else ""}{esc(titles[d["id"]])}</title>', 1)
@@ -916,6 +920,7 @@ def write_llms_txt(items, models):
     fields = len({d['field'] for d in items})
     orgs = len({lead_org(d['organization']) for d in items if canonical_organization(d['organization'])['kind'] != 'unknown affiliation'})
     newest = max(d['added_date'] for d in items)
+    insights_line = f'- [Insights]({BASE}insights.html): the whole catalog in plain-language charts\n' if (ROOT / 'insights.html').is_file() else ''
     (ROOT / 'llms.txt').write_text(f'''# {SITE}
 
 > A catalog of {len(items)} entries about scientific results enabled by AI across {fields} fields and {orgs} organizations since 2020. Each entry links to an original paper, preprint or institutional announcement. Entry counts are not counts of independent findings: methodological contributions can overlap other entries, and one entry can describe several related results. Figures are reported by the sources and are not independently verified; relevance scores are coarse editorial judgments, not evidence grades.
@@ -927,7 +932,7 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [Organizations and model families]({BASE}profiles/index.html): static profile pages
 - [Model progress]({BASE}model-progress.html): exact model comparison, ECI, benchmark evidence and recorded release rhythm
 - [Search all collections]({BASE}search.html): literal retrieval with separate counts and match reasons
-- [Evidence dossiers]({BASE}dossiers.html): selected studies and public vulnerability disclosures with evidence limits
+{insights_line}- [Evidence dossiers]({BASE}dossiers.html): selected studies and public vulnerability disclosures with evidence limits
 - [Antibiotic evidence dossier]({BASE}antibiotic-dossier.html): dated, source-bounded synthesis
 - [Catalog coverage and evidence]({BASE}profiles/catalog-evidence.html): reproducible composition tables, counting limits and CSV
 - [Static AI-found security cases]({BASE}profiles/security-index.html): source-attributed case pages readable without JavaScript
@@ -966,6 +971,8 @@ def write_sitemap(items, models, archived=(), vulns=()):
     from i18n_site import LOCALES, NEW_DOSSIER_PAGES, SITEMAP_PAGES, dossier_modified_date, public_url
 
     urls.extend(NEW_DOSSIER_PAGES)
+    if (ROOT / 'insights.html').is_file():
+        urls.append('insights.html')
     urls += ['profiles/index.html']
     urls += ['profiles/catalog-evidence.html', 'profiles/security-index.html']
     urls += [f'profiles/security-{quote(v["id"])}.html' for v in vulns]
@@ -1180,6 +1187,7 @@ def validate_inputs(items, archived, models, vulns):
 
 BROWSE_START, BROWSE_END = '<!-- browse:start -->', '<!-- browse:end -->'
 PULSE_START, PULSE_END = '<!-- pulse:start -->', '<!-- pulse:end -->'
+PLAIN_START, PLAIN_END = '<!-- plain:start -->', '<!-- plain:end -->'
 
 
 def hero_pulse_html(items):
@@ -1259,6 +1267,138 @@ def write_hero_pulse(items):
     path.write_text(page[:start] + hero_pulse_html(items) + page[end:])
 
 
+PLAIN_LIMITS = {'headline': 90, 'plain': 240, 'why': 180, 'unknown': 180}
+TESTED_NOTE = ('The level reflects the test the original source reports. This site does not rerun it, '
+               'and it does not say whether the result is correct.')
+
+
+def load_plain():
+    """data/plain-language.json, or an empty layer when the file does not exist."""
+    path = ROOT / 'data/plain-language.json'
+    if not path.is_file():
+        return {'home': [], 'landmarks': [], 'records': {}}
+    return json.loads(path.read_text())
+
+
+def plain_source(d):
+    """Fingerprint of the discovery fields the plain-language texts were written from."""
+    ev = d.get('evidence') or {}
+    parts = [d.get('title') or '', d.get('summary') or '', ev.get('tested') or '', ev.get('unknown') or '',
+             ev.get('test_type') or '']
+    return hashlib.sha256(json.dumps(parts, ensure_ascii=False).encode('utf-8')).hexdigest()[:12]
+
+
+def validate_plain(plain):
+    """Fail before any output is written when the layer is structurally broken (only a human edit can do that)."""
+    for key in ('home', 'landmarks'):
+        if not isinstance(plain.get(key, []), list) or not all(isinstance(i, str) for i in plain.get(key, [])):
+            raise ValueError(f'plain-language.json {key}: must be a list of ids')
+    for did, rec in plain.get('records', {}).items():
+        if not isinstance(rec, dict) or set(rec) != set(PLAIN_LIMITS) | {'source'}:
+            raise ValueError(f'plain-language.json {did}: needs exactly the fields {sorted(set(PLAIN_LIMITS) | {"source"})}')
+        for field in list(PLAIN_LIMITS) + ['source']:
+            if not isinstance(rec[field], str):
+                raise ValueError(f'plain-language.json {did}.{field}: must be a string')
+        for field, limit in PLAIN_LIMITS.items():
+            if len(rec[field]) > limit:
+                raise ValueError(f'plain-language.json {did}.{field}: {len(rec[field])} characters, limit {limit}')
+
+
+def usable_plain(plain, items):
+    """The layer for this catalog: records for retired ids or written from an older version of the record are dropped with a warning."""
+    by_id = {d['id']: d for d in items}
+    records = {}
+    for did, rec in plain.get('records', {}).items():
+        if did not in by_id:
+            print(f'warning: plain-language.json {did}: not an active discovery, skipped', file=sys.stderr)
+        elif rec['source'] != plain_source(by_id[did]):
+            print(f'warning: plain-language.json {did}: the discovery record changed since the text was reviewed, skipped',
+                  file=sys.stderr)
+        else:
+            records[did] = rec
+    return dict(plain, records=records, home=[i for i in plain.get('home', []) if i in records],
+                landmarks=[i for i in plain.get('landmarks', []) if i in records])
+
+
+def stamp_plain(items):
+    """Rewrite only the source fingerprints in data/plain-language.json, after a human re-reviewed the texts."""
+    path = ROOT / 'data/plain-language.json'
+    plain = json.loads(path.read_text())
+    by_id = {d['id']: d for d in items}
+    for did, rec in plain.get('records', {}).items():
+        if did in by_id:
+            rec['source'] = plain_source(by_id[did])
+    path.write_text(json.dumps(plain, ensure_ascii=False, indent=2) + '\n')
+
+
+def plain_text(plain, did):
+    return (plain.get('records', {}).get(did) or {}).get('plain', '').strip()
+
+
+def plain_share_links(d):
+    """Plain links, no JavaScript: X, LinkedIn and the existing preview card."""
+    url = f'{BASE}share/{d["id"]}.html'
+    x = f'https://x.com/intent/post?text={quote(d["title"], safe="")}&url={quote(url, safe="")}'
+    li = f'https://www.linkedin.com/sharing/share-offsite/?url={quote(url, safe="")}'
+    return [f'<a href="{esc(x)}" target="_blank" rel="noopener">Share on X</a>',
+            f'<a href="{esc(li)}" target="_blank" rel="noopener">Share on LinkedIn</a>']
+
+
+def plain_short_version(d, plain, has_image):
+    """The plain-language block above a discovery page's record content."""
+    rec = plain.get('records', {}).get(d['id']) or {}
+    text = rec.get('plain', '').strip()
+    cells = []
+    if text:
+        cells.append(('In plain words', text))
+        cells.append(('Why it matters', rec.get('why', '').strip()))
+    def cell(head, body):
+        return f'<div><h3>{esc(head)}</h3><p>{esc(body)}</p></div>' if body else ''
+    top = ''.join(cell(*c) for c in cells)
+    meter = f'<p>{evidence_levels.meter_html(d)}</p><p class="plain-note">{esc(TESTED_NOTE)}</p>'
+    tested = f'<div><h3>{esc(evidence_levels.HEADING)}</h3>{meter}</div>' if text else f'<div>{meter}</div>'
+    unknown = cell('What we still do not know', rec.get('unknown', '').strip()) if text else ''
+    links = plain_share_links(d)
+    if has_image:
+        links.append(f'<a href="og/{quote(d["id"])}.png" download>Download image</a>')
+    share = ('<ul class="plain-share" aria-label="Share this discovery">'
+             + ''.join(f'<li>{a}</li>' for a in links) + '</ul>')
+    grid = f'<div class="plain-grid">{top}</div>' if top else ''
+    heading = 'The short version' if text else evidence_levels.HEADING
+    return (f'<section class="plain-short" aria-labelledby="plain-short-h"><h2 id="plain-short-h">{esc(heading)}</h2>'
+            f'{grid}<div class="plain-grid">{tested}{unknown}</div>{share}</section>')
+
+
+def plain_home_html(items, plain):
+    """Start-here cards for the home page: one per complete id in plain["home"]."""
+    by_id = {d['id']: d for d in items}
+    cards = []
+    for did in plain.get('home', []):
+        rec = plain.get('records', {}).get(did) or {}
+        if did not in by_id or not rec.get('headline', '').strip() or not rec.get('plain', '').strip():
+            continue
+        d = by_id[did]
+        cards.append(
+            f'<article class="plain-card"><div class="plain-meta"><span class="etich" data-i18n>{esc(d["field"])}</span>'
+            f'<time datetime="{esc(d["publication_date"][:4])}">{esc(d["publication_date"][:4])}</time></div>'
+            f'<h3><a href="share/{esc(did)}.html"><span data-i18n>{esc(rec["headline"])}</span></a></h3>'
+            f'<p>{esc(rec["plain"])}</p><p class="plain-level">{evidence_levels.meter_html(d)}</p></article>')
+    if not cards:
+        return f'{PLAIN_START}\n{PLAIN_END}'
+    return (f'{PLAIN_START}\n<p class="plain-kicker">Start here</p>\n<div class="plain-cards">{"".join(cards)}</div>\n'
+            '<p class="plain-more"><a href="insights.html">See the whole catalog in charts</a></p>\n'
+            f'{PLAIN_END}')
+
+
+def write_plain_home(items, plain):
+    path = ROOT / 'index.html'
+    page = path.read_text()
+    if PLAIN_START not in page or PLAIN_END not in page:
+        return
+    start, end = page.index(PLAIN_START), page.index(PLAIN_END) + len(PLAIN_END)
+    path.write_text(page[:start] + plain_home_html(items, plain) + page[end:])
+
+
 def write_page_summaries(items, models):
     summaries = {
         'index.html': (f'<b>{len(items)} discoveries</b> in {len({d["field"] for d in items})} fields and '
@@ -1308,12 +1448,16 @@ def write_home_browse(items):
 
 def main():
     from i18n_site import install_english_chrome, write_locale_pages
-    install_english_chrome(ROOT)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--force', action='store_true')
     ap.add_argument('--no-images', action='store_true', help='Skip PNG rendering; reuse existing per-entry images where present')
     ap.add_argument('--reuse-images', action='store_true', help='Refresh image hashes without rendering only after verifying every existing card is visually unchanged')
+    ap.add_argument('--stamp-plain', action='store_true', help='Only rewrite the source fingerprints in data/plain-language.json, after re-reviewing the texts, and exit')
     args = ap.parse_args()
+    if args.stamp_plain:
+        stamp_plain(json.loads((ROOT / 'data/discoveries.json').read_text()))
+        return
+    install_english_chrome(ROOT)
     if args.reuse_images and (args.force or args.no_images):
         ap.error('--reuse-images cannot be combined with --force or --no-images')
     items = json.loads((ROOT / 'data/discoveries.json').read_text())
@@ -1322,12 +1466,18 @@ def main():
     models = json.loads((ROOT / 'data/models.json').read_text())
     vulns = json.loads((ROOT / 'data/vulnerabilities.json').read_text())
     validate_inputs(items, archived, models, vulns)
+    plain = load_plain()
+    validate_plain(plain)
+    plain = usable_plain(plain, items)
     write_page_summaries(items, models)
     write_hero_pulse(items)
+    write_plain_home(items, plain)
+    from generate_insights import write_insights
+    write_insights(items, models, plain, root=ROOT)
     write_home_browse(items)
     if not args.no_images:
         render_cards(items + archived, args.force, args.reuse_images)
-    write_discovery_pages(items, models, not args.no_images)
+    write_discovery_pages(items, models, not args.no_images, plain=plain)
     write_discovery_pages(archived, models, not args.no_images, archived=True, related_items=items)
     write_profile_pages(items, models, archived)
     write_catalog_evidence(items)
