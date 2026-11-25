@@ -143897,5 +143897,38 @@
     "summary": "A retrospective three-center study of 517 patients combined VISTA3D tumor segmentation with a 3D vision transformer to predict pathological complete response after neoadjuvant immunochemotherapy in non-small-cell lung cancer. Automated-segmentation predictions reached AUC 0.83 in the internal test and 0.81 in a 75-patient external center. Model-defined immune differences and apparent adjuvant-treatment survival associations were exploratory; they do not establish mechanism, causal treatment benefit or clinical utility. Small test cohorts and segmentation-strategy selection using internal-test performance limit interpretation; prospective validation remains needed.",
     "title": "CT deep learning predicts lung cancer treatment response",
     "verification_status": "verified"
+  },
+  {
+    "id": "2026-02-ann-interpretability-flags-candidate-schizophrenia-loci-estonian-biobank",
+    "title": "Interpreted neural networks flag candidate schizophrenia loci in the Estonian Biobank",
+    "summary": "Feedforward neural networks trained on genome-wide genotypes of 1,814 schizophrenia cases and 7,325 matched controls from the Estonian Biobank were interpreted post hoc (integrated gradients, with permuted-label models to estimate P-values) to flag potentially associated loci. One locus passed the strict threshold and seven loci (14 SNPs) the relaxed threshold, in regions not identified by the authors' linear baseline; the strongest overlaps a known bipolar-disorder locus. Only 6, 3 or 1 of 1,370 previously established schizophrenia loci were recovered, depending on the overlap rule. The authors report concordance with schizophrenia and bipolar-disorder loci and brain-related enrichment, but P-values were not well calibrated in a small type 1 diabetes test, no uncertainty quantification or ground truth exists, and replication in other populations and biobanks is still needed. The flagged loci are statistical candidates, not validated associations or treatment targets. This is primarily a method paper; the earlier arXiv preprint (2024) did not contain the schizophrenia analysis, so the journal version is dated.",
+    "field": "biology",
+    "ai_technology": "Feedforward neural networks with post hoc feature attribution (integrated gradients)",
+    "organization": "Estonian Genome Centre, Institute of Genomics, University of Tartu; CNRS, INRIA, LISN, Paris-Saclay University",
+    "source_url": "https://doi.org/10.1093/nargab/lqag019",
+    "source_type": "paper",
+    "publication_date": "2026-02-23",
+    "added_date": "2026-11-25",
+    "verification_status": "verified",
+    "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12964191/",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Retrospective analysis of existing Estonian Biobank genotypes (1,814 cases, 7,325 controls) and six simulated phenotypes; flagged loci compared with the GWAS Catalog (1,370 schizophrenia loci), a linear baseline and literature.",
+      "unknown": "Whether the flagged loci are true associations: no replication cohort, no uncertainty quantification and no ground truth are reported, and only 1 to 6 known loci were recovered.",
+      "ai_role": "Neural networks predict case status from genotypes; post hoc attribution scores identify candidate loci.",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12964191/"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-25",
+      "scope": "Primary PMC full text: abstract, Methods (cohort, network, attribution and P-value procedure), simulations, schizophrenia Results and Discussion; arXiv v1 checked for the schizophrenia analysis."
+    }
   }
 ]
