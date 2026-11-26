@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-eeg-respiratory-gap-sleep-apnea-mortality",
+  "title": "Deep learning EEG metric linked to mortality in obstructive sleep apnea",
+  "summary": "A deep-learning model trained on 22,044 polysomnography recordings estimated the apnea-hypopnea index from a single EEG channel, correlating r=0.88 with the scored index in internal testing and r=0.50 to 0.62 in three external test sets. Two derived metrics, the discrepancy between the EEG-based and scored index and an estimate from epochs without scored respiratory events, were associated with all-cause and non-cardiovascular mortality among participants free of cardiovascular disease after adjustment for the apnea-hypopnea index and clinical risk factors; the event-free estimate was also associated with cardiovascular mortality in the highest versus lowest quartile. Data came from the KISS, MESA, MrOS and SHHS cohorts. The findings are retrospective associations in a preprint, external agreement is weaker, hazard ratios and per-cohort sizes were not reviewed, and the authors suggest the discrepancy is not solely model error.",
+  "field": "medicine",
+  "ai_technology": "Deep-learning model estimates the apnea-hypopnea index from a single EEG channel; derived discrepancy metrics are tested against mortality.",
+  "organization": "Seoul National University",
+  "source_url": "https://www.medrxiv.org/content/10.64898/2026.11.22.26368628v1.full",
+  "source_type": "paper",
+  "publication_date": "2026-11-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Internal and three external test sets for index estimation, then retrospective cohort association of the derived metrics with mortality after adjustment for the apnea-hypopnea index and clinical risk factors.",
+    "unknown": "Weaker external agreement; no causal or clinical-utility evidence; hazard ratios, covariate list, follow-up and per-cohort sizes not reviewed; not peer reviewed; one author holds related patents and leads a company.",
+    "ai_role": "The deep-learning model produces the EEG-based index whose discrepancy from the scored index is the tested metric.",
+    "evidence_urls": [
+      "https://www.medrxiv.org/content/10.64898/2026.11.22.26368628v1.full"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "medRxiv v1 page read: abstract, model and cohort description, mortality associations, affiliations, competing interests and version history; full manuscript tables not read. Europe PMC title search found only this version."
+  }
+}

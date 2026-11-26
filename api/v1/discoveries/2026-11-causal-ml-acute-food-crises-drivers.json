@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-causal-ml-acute-food-crises-drivers",
+  "title": "Machine learning forecasts acute food crises and separates predictive from causal drivers",
+  "summary": "Missing-data-resilient machine-learning pipelines, including gradient boosting and a tabular foundation model, forecast acute food crisis occurrence 3, 6 and 9 months ahead across 80 countries using monthly subnational data for 2007-2024, exceeding no-skill baselines by 15 to 50 percentage points in PR-AUC under nested cross-validation. TreeSHAP profiles fell into three recurring archetypes. Doubly robust causal estimates indicated that acute conflict events, which carried the weakest predictive signal, are primary causal drivers, while agroclimatology was the only dimension where predictive and causal importance agreed. The authors report that skill tracks crisis prevalence, that the causal effects are modest and only moderately robust to unmeasured confounding, and that they depend on an assumed causal graph; several variables were reported as non-identifiable. The work is a preprint.",
+  "field": "multidisciplinary",
+  "ai_technology": "Tree-based and tabular foundation-model classifiers with TreeSHAP attribution and cross-fitted doubly robust causal estimation.",
+  "organization": "European Commission, Joint Research Centre; University of Valencia; Integrated Food Security Phase Classification Global Support Unit",
+  "source_url": "https://arxiv.org/abs/2611.34629",
+  "source_type": "paper",
+  "publication_date": "2026-11-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Retrospective nested cross-validation on harmonized food-insecurity data with FEWS NET and IPC/CH labels, plus a held-out explainability period.",
+    "unknown": "Skill tracks crisis prevalence; causal estimates are modest, depend on an assumed causal graph and are only moderately robust to unmeasured confounding; no prospective operational test; not peer reviewed.",
+    "ai_role": "The learned forecasters produce the crisis predictions whose attributions are compared with the causal estimates.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.34629",
+      "https://arxiv.org/html/2611.34629v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "arXiv abstract page (v1 submission date and version history) and the experimental HTML full text read for affiliations, models, PR-AUC values and stated causal-estimate limitations (first 100,000 of about 117,000 characters)."
+  }
+}

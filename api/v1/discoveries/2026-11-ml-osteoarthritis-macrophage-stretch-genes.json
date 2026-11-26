@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-ml-osteoarthritis-macrophage-stretch-genes",
+  "title": "Machine learning prioritises osteoarthritis genes tested under macrophage stretch",
+  "summary": "Random forest ranking and LASSO regression narrowed a 168-gene synovial co-expression module to five candidates (E2F3, C6orf211, NDUFC2, SPCS2, DOCK10) using public datasets (discovery 29 normal and 30 osteoarthritis samples; auxiliary GSE89408 with 28 and 22). The combined score reached AUC 0.817 in discovery and 0.797 in the auxiliary cohort. In LPS-activated RAW264.7 macrophages (six biological replicates per group), cyclic stretch lowered E2F3, SPCS2 and DOCK10 and raised NDUFC2 relative to LPS alone, alongside lower inflammatory readouts. The authors note the auxiliary cohort also informed selection and is not independent validation, the sample is small, the cell line is murine, there was no stretch-only or time-course control, and the LPS-induced E2F3 protein increase was not significant.",
+  "field": "medicine",
+  "ai_technology": "Random forest importance ranking and LASSO regression select candidate genes from a WGCNA co-expression module; ridge logistic regression with bootstrap replicates estimates optimism.",
+  "organization": "Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine; Shanghai Academy of Traditional Chinese Medicine",
+  "source_url": "https://www.frontiersin.org/articles/10.3389/fimmu.2026.1944015/full",
+  "source_type": "paper",
+  "publication_date": "2026-11-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Four selected genes measured by qPCR and Western blot in LPS-activated RAW264.7 macrophages with and without cyclic stretch (six replicates per group); score AUC in discovery and auxiliary cohorts.",
+    "unknown": "No independent human validation cohort; no causal evidence; murine cell line only; no stretch-only or time-course control; weak module-to-macrophage association.",
+    "ai_role": "Random forest and LASSO selected the five candidate genes that were then measured in cells.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/articles/10.3389/fimmu.2026.1944015/full"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Frontiers full text read for datasets, Methods, Results, experiment design and stated limitations (first 100,000 of about 129,000 characters); Europe PMC preprint search run."
+  }
+}

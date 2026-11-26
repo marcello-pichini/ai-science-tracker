@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-claudin182-ihc-deep-learning-gastric",
+  "title": "Deep learning scores Claudin18.2 staining in gastric cancer slides across clones",
+  "summary": "A pipeline that scores Claudin18.2 immunohistochemistry on whole-slide images used a LoRA-adapted UNI pathology foundation model for tumour recognition, adapter-based staining-intensity classification and two rounds of active learning. Agreement with pathologist-consensus 2/3+ scoring was ICC 0.849 on 195 internal test slides and 0.894 on 135 prospectively collected slides, and ICC 0.792-0.827 for three other antibody clones tested without retraining. In a non-randomised reader study, AI assistance improved every pathologist's agreement with the reference standard and shortened review time. The authors state the study is single-centre with limited prospective and cross-clone cohorts, uses expert consensus rather than absolute ground truth, may propagate errors across modules, and provides no treatment-response or outcome data; at the 50% cutoff the retrospective AUC was lower than one pathologist's.",
+  "field": "medicine",
+  "ai_technology": "UNI pathology foundation model (ViT-L/16) adapted with LoRA and inserted adapters, plus active learning, for tumour recognition and staining-intensity scoring.",
+  "organization": "Sun Yat-sen University Cancer Center; Sun Yat-sen University School of Computer Science and Engineering; Guangzhou Women and Children's Medical Center",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13794020/",
+  "source_type": "paper",
+  "publication_date": "2026-11-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Slide-level agreement with pathologist consensus on 195 internal test slides and 135 prospectively collected slides, cross-clone evaluation of three further antibody clones, and a six-pathologist reader study.",
+    "unknown": "Single centre; limited prospective and cross-clone cohorts; reader study not randomised; no therapy-response or outcome data; the paper does not state whether the model was frozen before prospective enrolment, so this is treated as evaluation on collected slides rather than prospective workflow use.",
+    "ai_role": "Foundation-model-based tumour recognition and staining-intensity modules produce the slide-level Claudin18.2 score.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13794020/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "PMC full text read: model components, cohorts, ICC results, reader study and author limitations; Europe PMC preprint search found no earlier version."
+  }
+}

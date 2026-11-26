@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-generative-ai-type-i-photosensitizer-design",
+  "title": "Generative AI designs Type I photosensitizers tested in cells and mice",
+  "summary": "A cross-attention classifier trained on 1,338 curated photosensitizers (85.8% accuracy and ROC-AUC 0.918 on a scaffold split) and an RNN scaffold-decorating generator proposed candidates on a redesigned tetracyclic scaffold. Six were synthesised and all produced superoxide under light. The lead compound had IC50 3.3 micromolar in 4T1 cells under normoxia and 4.5 micromolar at 2% oxygen, with similar values in HepG2 and MCF-7, and markedly slowed 4T1 tumour growth in mice over 14 days with four animals per group. Validation covers one scaffold and six molecules, the lead was also phototoxic to normal HUVEC cells (IC50 3.5 micromolar under normoxia), hypoxia attenuated but did not abolish its effect, and the in vivo group size was small.",
+  "field": "chemistry",
+  "ai_technology": "Cross-attention classifier for Type I photosensitizer activity and an RNN SMILES scaffold decorator pretrained on general chemistry data and fine-tuned on photosensitizers.",
+  "organization": "Hunan University; Hengyang Normal University; Second Xiangya Hospital, Central South University",
+  "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13795365/",
+  "source_type": "paper",
+  "publication_date": "2026-11-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Six generated molecules synthesised and characterised; reactive-oxygen-species measurements, cell phototoxicity under normoxia and hypoxia, and a 14-day mouse tumour study with four animals per group.",
+    "unknown": "One scaffold and six molecules only; small dataset and animal groups; the lead is also phototoxic to normal cells; long-term safety and selectivity not established; lower prediction accuracy on unseen scaffolds.",
+    "ai_role": "The predictor and generator proposed and ranked the photosensitizer candidates that were then synthesised and tested.",
+    "evidence_urls": [
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC13795365/"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "PMC full text read for dataset, model performance, synthesis, in vitro and in vivo results and caveats (DOI 10.1039/d6sc07010h); Europe PMC search found no earlier preprint."
+  }
+}

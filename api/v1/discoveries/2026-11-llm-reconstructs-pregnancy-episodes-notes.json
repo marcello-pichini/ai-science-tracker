@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-llm-reconstructs-pregnancy-episodes-notes",
+  "title": "Language model beats billing codes at reconstructing pregnancy episodes from notes",
+  "summary": "A large language model given chronologically concatenated clinical notes and messages identified pregnancy episodes and extracted gestational age, outcome, assisted-reproduction treatment and complications for 30 patients with 74 pregnancies. On a held-out set of 20 patients (54 pregnancies), checked against manual chart review, it found 53 pregnancies with 3 spurious episodes, against 40 found and 24 spurious for a hierarchical ICD-code algorithm (F1 0.96 versus 0.68), with median absolute start-date error 0 versus 25.5 days. The authors state that the two methods used different input data, so the gain reflects both the information in notes and the model; this is a single-health-system proof of concept in a preprint.",
+  "field": "medicine",
+  "ai_technology": "A large language model (GPT-5) extracts pregnancy episodes, dates, outcomes and complications from unstructured clinical notes.",
+  "organization": "University of California, San Francisco; U.S. Food and Drug Administration, Center for Biologics Evaluation and Research",
+  "source_url": "https://www.medrxiv.org/content/10.64898/2026.11.19.26368521v1.full",
+  "source_type": "paper",
+  "publication_date": "2026-11-23",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Retrospective comparison with manual chart review on 20 held-out patients covering 54 pregnancies.",
+    "unknown": "Note content and model contribution cannot be separated; small single-institution sample; not peer reviewed; larger multi-institutional evaluation not done.",
+    "ai_role": "The language model identified and characterized pregnancy episodes from clinical notes.",
+    "evidence_urls": [
+      "https://www.medrxiv.org/content/10.64898/2026.11.19.26368521v1.full"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "medRxiv v1 page read: abstract, cohort and result details, author affiliations, version history and data statement; supplement not read."
+  }
+}

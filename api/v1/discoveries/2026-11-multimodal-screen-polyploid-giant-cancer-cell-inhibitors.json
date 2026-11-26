@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-multimodal-screen-polyploid-giant-cancer-cell-inhibitors",
+  "title": "Multimodal machine learning prioritizes candidate inhibitors of giant cancer cells",
+  "summary": "A multimodal ensemble combining chemical fingerprints, drug-induced cell morphology, transcriptomic perturbation profiles and biological annotations was trained on screening data from four breast cancer cell lines, reaching mean Pearson correlation 0.403 and recovering 27.9% of experimentally identified hits in held-out screening data. The model ranked 21,367 compounds from an external library for testing; six candidates preferentially suppressed polyploid giant cancer cells in at least three paclitaxel-treated cell lines, and AZD-8055 and voxtalisib reduced their abundance by at least 70% in all four. Evidence is limited to cell lines and modest predictive accuracy, selectivity against normal cells was not read, and the preprint is not peer reviewed.",
+  "field": "biology",
+  "ai_technology": "Multimodal machine-learning ensemble over chemical fingerprints, cell-morphology and transcriptomic perturbation features ranks compounds for suppressing polyploid giant cancer cells.",
+  "organization": "UPMC Hillman Cancer Center, University of Pittsburgh; Carnegie Mellon University",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.22.767421v1.full",
+  "source_type": "paper",
+  "publication_date": "2026-11-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Held-out screening-data hit recovery for the model, then laboratory testing of prioritized compounds in four paclitaxel-treated breast cancer cell lines.",
+    "unknown": "Modest predictive accuracy; cell-line readout only; assay design, selectivity against normal cells and in vivo efficacy not reviewed; not peer reviewed.",
+    "ai_role": "The multimodal ensemble ranked the compounds that were then tested for suppressing polyploid giant cancer cells.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.11.22.767421v1.full"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "bioRxiv v1 page read: abstract, author affiliations, model description, performance and experimental outcomes; full Methods and limitations not available on the fetched page. Europe PMC preprint-title search found no earlier version."
+  }
+}

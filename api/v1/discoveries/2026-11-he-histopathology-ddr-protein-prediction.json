@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-he-histopathology-ddr-protein-prediction",
+  "title": "Deep learning predicts DNA damage response protein levels from routine slides",
+  "summary": "Gated attention-based multiple-instance learning on frozen pathology foundation-model tile embeddings predicted reverse-phase protein array pathway scores from 1,673 TCGA haematoxylin-and-eosin whole-slide images covering 1,527 patients with breast, endometrial, cervical and ovarian cancer and uterine carcinosarcoma. For the 11-protein DNA damage composite the out-of-fold Spearman correlation was 0.43 against 0.31 for a cancer-type-mean baseline, about 0.29-0.30 within cancer type, and at most 0.00 with shuffled targets. Cross-validation was cancer-type-stratified and site-grouped. This is a moderate retrospective association in one public cohort: there is no external validation, no clinical or treatment-response outcome, and the authors list separating the signal from proliferation as future work, noting the cell-cycle score was predicted more strongly.",
+  "field": "medicine",
+  "ai_technology": "Gated attention-based multiple-instance learning over frozen UNI2-h and Virchow2 tile embeddings jointly regresses six RPPA pathway scores.",
+  "organization": "Johns Hopkins University; Johns Hopkins School of Medicine",
+  "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.17.766760v1.full",
+  "source_type": "paper",
+  "publication_date": "2026-11-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Five-fold cancer-type-stratified, site-grouped cross-validation against measured RPPA values, compared with a cancer-type-mean baseline and a shuffled-target control.",
+    "unknown": "No external cohort; no clinical or therapy-response outcome; the signal is not separated from proliferation; within-type correlation is moderate; not peer reviewed.",
+    "ai_role": "The attention-based model predicts DNA damage response protein scores from slide-tile embeddings.",
+    "evidence_urls": [
+      "https://www.biorxiv.org/content/10.64898/2026.11.17.766760v1.full"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "bioRxiv v1 page read: author affiliations, cohort, model, validation design, results and stated next steps; Europe PMC title search found no earlier version."
+  }
+}

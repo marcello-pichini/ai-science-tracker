@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-sasp-gene-score-pmos",
+  "title": "Machine learning selects an exploratory senescence-related gene score in PMOS",
+  "summary": "Using two public ovarian-cell datasets (13 PMOS and 9 control samples), univariate logistic regression, SVM-RFE and LASSO selected a five-gene SASP-related score (DYNLRB2, MMP9, A1BG, PGD, APLP2) with apparent AUC 0.991 on the development data and AUC 0.838 in an exploratory skeletal-muscle dataset (10 versus 13 samples). The authors state the apparent AUC should not be interpreted as evidence of diagnostic ability: dataset origin is confounded with cell type, the muscle dataset is not tissue-matched, no individual gene there remained significant after Benjamini-Hochberg correction, and virtual screening against MMP9 is unvalidated. No laboratory experiments were reported.",
+  "field": "medicine",
+  "ai_technology": "Logistic regression, SVM-RFE and LASSO select a five-gene score from public transcriptomes; DrugCLIP screens compounds against MMP9 in silico.",
+  "organization": "Seventh People's Hospital Affiliated to Shanghai University of Traditional Chinese Medicine; Shanghai University of Traditional Chinese Medicine; Changhai Hospital, Naval Medical University",
+  "source_url": "https://www.frontiersin.org/articles/10.3389/fendo.2026.1929626/full",
+  "source_type": "paper",
+  "publication_date": "2026-11-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Five-gene score evaluated on the development data as an apparent AUC and on a non-tissue-matched skeletal-muscle dataset with fixed coefficients.",
+    "unknown": "No independent tissue-matched validation; very small samples; no bootstrap or nested cross-validation; no comparator diseases; no experimental test.",
+    "ai_role": "Logistic regression, SVM-RFE and LASSO selected the five genes forming the score.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/articles/10.3389/fendo.2026.1929626/full"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Frontiers article text read through abstract, datasets, methods, results and stated limitations (first 100,000 of about 170,000 characters); end of Discussion not read."
+  }
+}

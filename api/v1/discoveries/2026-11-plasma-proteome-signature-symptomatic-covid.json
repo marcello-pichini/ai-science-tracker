@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-plasma-proteome-signature-symptomatic-covid",
+  "title": "Machine learning links a plasma protein signature to symptomatic SARS-CoV-2 infection",
+  "summary": "In the population-based Gutenberg COVID-19 Study, mass-spectrometry plasma proteomics of 494 post-infection and 190 pre-infection samples (paired samples from 189 participants) was analyzed with bootstrap mRMR ensemble feature selection and ridge regression, identifying 49 proteins associated with symptomatic rather than asymptomatic infection (10-fold cross-validated AUC 0.85). A score from the signature was associated with acute symptom burden, disease severity and post-COVID sequelae, and higher pre-infection HDL concentrations were inversely associated with it. The authors note that feature selection was performed outside the cross-validation folds, so discrimination may be optimistic, that the signature lacks external validation, and that post-COVID symptoms were self-reported.",
+  "field": "medicine",
+  "ai_technology": "Bootstrap mRMR ensemble feature selection with ridge regression builds a 49-protein score from plasma proteomics.",
+  "organization": "University Medical Center of the Johannes Gutenberg University Mainz; Charité Universitätsmedizin Berlin; Institute of Molecular Biology (IMB), Mainz",
+  "source_url": "https://www.nature.com/articles/s41598-026-80627-6",
+  "source_type": "paper",
+  "publication_date": "2026-11-23",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Signature evaluated by 10-fold cross-validation within one cohort; derived score tested for association with symptoms, severity and self-reported sequelae.",
+    "unknown": "No external validation cohort; feature selection outside the cross-validation folds may inflate discrimination; mild infections were excluded from signature training; associations only.",
+    "ai_role": "Ensemble feature selection and ridge regression identified the protein signature separating symptomatic from asymptomatic infection.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41598-026-80627-6"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Nature article HTML read: abstract, Methods (cohort, feature selection, ridge regression, nested cross-validation), limitations and publication dates; Europe PMC preprint search run."
+  }
+}

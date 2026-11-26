@@ -143930,5 +143930,369 @@
       "date": "2026-11-25",
       "scope": "Primary PMC full text: abstract, Methods (cohort, network, attribution and P-value procedure), simulations, schizophrenia Results and Discussion; arXiv v1 checked for the schizophrenia analysis."
     }
+  },
+  {
+    "id": "2026-11-hsp-gene-signature-gastric-cancer",
+    "title": "Machine learning derives an exploratory two-gene signature in gastric cancer",
+    "summary": "Differential expression and summary-data-based Mendelian randomization on TCGA gastric cancer data prioritized 24 heat-shock-protein-associated genes, consensus clustering defined two molecular clusters, and LASSO-Cox regression derived an exploratory F7-PRNP prognostic signature. siRNA knockdown of F7 or PRNP inhibited proliferation, migration and invasion in HGC27 and AGS cells. The authors state that derivation and evaluation used the same TCGA cohort, so the performance estimates are likely optimistic and independent validation is required; compound prioritization, docking and molecular dynamics are computational only.",
+    "field": "medicine",
+    "ai_technology": "LASSO-Cox regression selects the prognostic genes from TCGA transcriptomes; oncoPredict models trained on GDSC2 cell-line data prioritize compounds in silico.",
+    "organization": "China-Japan Union Hospital of Jilin University, Jilin University",
+    "source_url": "https://doi.org/10.1186/s12935-026-04515-9",
+    "source_type": "paper",
+    "publication_date": "2026-11-24",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Signature derived and evaluated within the same TCGA cohort; siRNA knockdown of F7 and PRNP tested in HGC27 and AGS gastric cancer cells.",
+      "unknown": "No independent cohort validation; performance estimates likely optimistic; no in vivo or clinical test; full text not reviewed.",
+      "ai_role": "LASSO-Cox regression selected the two genes whose function was then tested by knockdown.",
+      "evidence_urls": [
+        "https://api.openalex.org/works/doi:10.1186/s12935-026-04515-9"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and author affiliations read from OpenAlex and Crossref metadata for this DOI; Europe PMC preprint search run. Publisher full text not accessed."
+    }
+  },
+  {
+    "id": "2026-11-sasp-gene-score-pmos",
+    "title": "Machine learning selects an exploratory senescence-related gene score in PMOS",
+    "summary": "Using two public ovarian-cell datasets (13 PMOS and 9 control samples), univariate logistic regression, SVM-RFE and LASSO selected a five-gene SASP-related score (DYNLRB2, MMP9, A1BG, PGD, APLP2) with apparent AUC 0.991 on the development data and AUC 0.838 in an exploratory skeletal-muscle dataset (10 versus 13 samples). The authors state the apparent AUC should not be interpreted as evidence of diagnostic ability: dataset origin is confounded with cell type, the muscle dataset is not tissue-matched, no individual gene there remained significant after Benjamini-Hochberg correction, and virtual screening against MMP9 is unvalidated. No laboratory experiments were reported.",
+    "field": "medicine",
+    "ai_technology": "Logistic regression, SVM-RFE and LASSO select a five-gene score from public transcriptomes; DrugCLIP screens compounds against MMP9 in silico.",
+    "organization": "Seventh People's Hospital Affiliated to Shanghai University of Traditional Chinese Medicine; Shanghai University of Traditional Chinese Medicine; Changhai Hospital, Naval Medical University",
+    "source_url": "https://www.frontiersin.org/articles/10.3389/fendo.2026.1929626/full",
+    "source_type": "paper",
+    "publication_date": "2026-11-24",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Five-gene score evaluated on the development data as an apparent AUC and on a non-tissue-matched skeletal-muscle dataset with fixed coefficients.",
+      "unknown": "No independent tissue-matched validation; very small samples; no bootstrap or nested cross-validation; no comparator diseases; no experimental test.",
+      "ai_role": "Logistic regression, SVM-RFE and LASSO selected the five genes forming the score.",
+      "evidence_urls": [
+        "https://www.frontiersin.org/articles/10.3389/fendo.2026.1929626/full"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Frontiers article text read through abstract, datasets, methods, results and stated limitations (first 100,000 of about 170,000 characters); end of Discussion not read."
+    }
+  },
+  {
+    "id": "2026-11-plasma-proteome-signature-symptomatic-covid",
+    "title": "Machine learning links a plasma protein signature to symptomatic SARS-CoV-2 infection",
+    "summary": "In the population-based Gutenberg COVID-19 Study, mass-spectrometry plasma proteomics of 494 post-infection and 190 pre-infection samples (paired samples from 189 participants) was analyzed with bootstrap mRMR ensemble feature selection and ridge regression, identifying 49 proteins associated with symptomatic rather than asymptomatic infection (10-fold cross-validated AUC 0.85). A score from the signature was associated with acute symptom burden, disease severity and post-COVID sequelae, and higher pre-infection HDL concentrations were inversely associated with it. The authors note that feature selection was performed outside the cross-validation folds, so discrimination may be optimistic, that the signature lacks external validation, and that post-COVID symptoms were self-reported.",
+    "field": "medicine",
+    "ai_technology": "Bootstrap mRMR ensemble feature selection with ridge regression builds a 49-protein score from plasma proteomics.",
+    "organization": "University Medical Center of the Johannes Gutenberg University Mainz; Charité Universitätsmedizin Berlin; Institute of Molecular Biology (IMB), Mainz",
+    "source_url": "https://www.nature.com/articles/s41598-026-80627-6",
+    "source_type": "paper",
+    "publication_date": "2026-11-23",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Signature evaluated by 10-fold cross-validation within one cohort; derived score tested for association with symptoms, severity and self-reported sequelae.",
+      "unknown": "No external validation cohort; feature selection outside the cross-validation folds may inflate discrimination; mild infections were excluded from signature training; associations only.",
+      "ai_role": "Ensemble feature selection and ridge regression identified the protein signature separating symptomatic from asymptomatic infection.",
+      "evidence_urls": [
+        "https://www.nature.com/articles/s41598-026-80627-6"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Nature article HTML read: abstract, Methods (cohort, feature selection, ridge regression, nested cross-validation), limitations and publication dates; Europe PMC preprint search run."
+    }
+  },
+  {
+    "id": "2026-11-llm-reconstructs-pregnancy-episodes-notes",
+    "title": "Language model beats billing codes at reconstructing pregnancy episodes from notes",
+    "summary": "A large language model given chronologically concatenated clinical notes and messages identified pregnancy episodes and extracted gestational age, outcome, assisted-reproduction treatment and complications for 30 patients with 74 pregnancies. On a held-out set of 20 patients (54 pregnancies), checked against manual chart review, it found 53 pregnancies with 3 spurious episodes, against 40 found and 24 spurious for a hierarchical ICD-code algorithm (F1 0.96 versus 0.68), with median absolute start-date error 0 versus 25.5 days. The authors state that the two methods used different input data, so the gain reflects both the information in notes and the model; this is a single-health-system proof of concept in a preprint.",
+    "field": "medicine",
+    "ai_technology": "A large language model (GPT-5) extracts pregnancy episodes, dates, outcomes and complications from unstructured clinical notes.",
+    "organization": "University of California, San Francisco; U.S. Food and Drug Administration, Center for Biologics Evaluation and Research",
+    "source_url": "https://www.medrxiv.org/content/10.64898/2026.11.19.26368521v1.full",
+    "source_type": "paper",
+    "publication_date": "2026-11-23",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Retrospective comparison with manual chart review on 20 held-out patients covering 54 pregnancies.",
+      "unknown": "Note content and model contribution cannot be separated; small single-institution sample; not peer reviewed; larger multi-institutional evaluation not done.",
+      "ai_role": "The language model identified and characterized pregnancy episodes from clinical notes.",
+      "evidence_urls": [
+        "https://www.medrxiv.org/content/10.64898/2026.11.19.26368521v1.full"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "medRxiv v1 page read: abstract, cohort and result details, author affiliations, version history and data statement; supplement not read."
+    }
+  },
+  {
+    "id": "2026-11-ml-osteoarthritis-macrophage-stretch-genes",
+    "title": "Machine learning prioritises osteoarthritis genes tested under macrophage stretch",
+    "summary": "Random forest ranking and LASSO regression narrowed a 168-gene synovial co-expression module to five candidates (E2F3, C6orf211, NDUFC2, SPCS2, DOCK10) using public datasets (discovery 29 normal and 30 osteoarthritis samples; auxiliary GSE89408 with 28 and 22). The combined score reached AUC 0.817 in discovery and 0.797 in the auxiliary cohort. In LPS-activated RAW264.7 macrophages (six biological replicates per group), cyclic stretch lowered E2F3, SPCS2 and DOCK10 and raised NDUFC2 relative to LPS alone, alongside lower inflammatory readouts. The authors note the auxiliary cohort also informed selection and is not independent validation, the sample is small, the cell line is murine, there was no stretch-only or time-course control, and the LPS-induced E2F3 protein increase was not significant.",
+    "field": "medicine",
+    "ai_technology": "Random forest importance ranking and LASSO regression select candidate genes from a WGCNA co-expression module; ridge logistic regression with bootstrap replicates estimates optimism.",
+    "organization": "Shuguang Hospital Affiliated to Shanghai University of Traditional Chinese Medicine; Shanghai Academy of Traditional Chinese Medicine",
+    "source_url": "https://www.frontiersin.org/articles/10.3389/fimmu.2026.1944015/full",
+    "source_type": "paper",
+    "publication_date": "2026-11-24",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Four selected genes measured by qPCR and Western blot in LPS-activated RAW264.7 macrophages with and without cyclic stretch (six replicates per group); score AUC in discovery and auxiliary cohorts.",
+      "unknown": "No independent human validation cohort; no causal evidence; murine cell line only; no stretch-only or time-course control; weak module-to-macrophage association.",
+      "ai_role": "Random forest and LASSO selected the five candidate genes that were then measured in cells.",
+      "evidence_urls": [
+        "https://www.frontiersin.org/articles/10.3389/fimmu.2026.1944015/full"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Frontiers full text read for datasets, Methods, Results, experiment design and stated limitations (first 100,000 of about 129,000 characters); Europe PMC preprint search run."
+    }
+  },
+  {
+    "id": "2026-11-multimodal-screen-polyploid-giant-cancer-cell-inhibitors",
+    "title": "Multimodal machine learning prioritizes candidate inhibitors of giant cancer cells",
+    "summary": "A multimodal ensemble combining chemical fingerprints, drug-induced cell morphology, transcriptomic perturbation profiles and biological annotations was trained on screening data from four breast cancer cell lines, reaching mean Pearson correlation 0.403 and recovering 27.9% of experimentally identified hits in held-out screening data. The model ranked 21,367 compounds from an external library for testing; six candidates preferentially suppressed polyploid giant cancer cells in at least three paclitaxel-treated cell lines, and AZD-8055 and voxtalisib reduced their abundance by at least 70% in all four. Evidence is limited to cell lines and modest predictive accuracy, selectivity against normal cells was not read, and the preprint is not peer reviewed.",
+    "field": "biology",
+    "ai_technology": "Multimodal machine-learning ensemble over chemical fingerprints, cell-morphology and transcriptomic perturbation features ranks compounds for suppressing polyploid giant cancer cells.",
+    "organization": "UPMC Hillman Cancer Center, University of Pittsburgh; Carnegie Mellon University",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.22.767421v1.full",
+    "source_type": "paper",
+    "publication_date": "2026-11-24",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Held-out screening-data hit recovery for the model, then laboratory testing of prioritized compounds in four paclitaxel-treated breast cancer cell lines.",
+      "unknown": "Modest predictive accuracy; cell-line readout only; assay design, selectivity against normal cells and in vivo efficacy not reviewed; not peer reviewed.",
+      "ai_role": "The multimodal ensemble ranked the compounds that were then tested for suppressing polyploid giant cancer cells.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.22.767421v1.full"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "bioRxiv v1 page read: abstract, author affiliations, model description, performance and experimental outcomes; full Methods and limitations not available on the fetched page. Europe PMC preprint-title search found no earlier version."
+    }
+  },
+  {
+    "id": "2026-11-claudin182-ihc-deep-learning-gastric",
+    "title": "Deep learning scores Claudin18.2 staining in gastric cancer slides across clones",
+    "summary": "A pipeline that scores Claudin18.2 immunohistochemistry on whole-slide images used a LoRA-adapted UNI pathology foundation model for tumour recognition, adapter-based staining-intensity classification and two rounds of active learning. Agreement with pathologist-consensus 2/3+ scoring was ICC 0.849 on 195 internal test slides and 0.894 on 135 prospectively collected slides, and ICC 0.792-0.827 for three other antibody clones tested without retraining. In a non-randomised reader study, AI assistance improved every pathologist's agreement with the reference standard and shortened review time. The authors state the study is single-centre with limited prospective and cross-clone cohorts, uses expert consensus rather than absolute ground truth, may propagate errors across modules, and provides no treatment-response or outcome data; at the 50% cutoff the retrospective AUC was lower than one pathologist's.",
+    "field": "medicine",
+    "ai_technology": "UNI pathology foundation model (ViT-L/16) adapted with LoRA and inserted adapters, plus active learning, for tumour recognition and staining-intensity scoring.",
+    "organization": "Sun Yat-sen University Cancer Center; Sun Yat-sen University School of Computer Science and Engineering; Guangzhou Women and Children's Medical Center",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13794020/",
+    "source_type": "paper",
+    "publication_date": "2026-11-24",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Slide-level agreement with pathologist consensus on 195 internal test slides and 135 prospectively collected slides, cross-clone evaluation of three further antibody clones, and a six-pathologist reader study.",
+      "unknown": "Single centre; limited prospective and cross-clone cohorts; reader study not randomised; no therapy-response or outcome data; the paper does not state whether the model was frozen before prospective enrolment, so this is treated as evaluation on collected slides rather than prospective workflow use.",
+      "ai_role": "Foundation-model-based tumour recognition and staining-intensity modules produce the slide-level Claudin18.2 score.",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13794020/"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "PMC full text read: model components, cohorts, ICC results, reader study and author limitations; Europe PMC preprint search found no earlier version."
+    }
+  },
+  {
+    "id": "2026-11-he-histopathology-ddr-protein-prediction",
+    "title": "Deep learning predicts DNA damage response protein levels from routine slides",
+    "summary": "Gated attention-based multiple-instance learning on frozen pathology foundation-model tile embeddings predicted reverse-phase protein array pathway scores from 1,673 TCGA haematoxylin-and-eosin whole-slide images covering 1,527 patients with breast, endometrial, cervical and ovarian cancer and uterine carcinosarcoma. For the 11-protein DNA damage composite the out-of-fold Spearman correlation was 0.43 against 0.31 for a cancer-type-mean baseline, about 0.29-0.30 within cancer type, and at most 0.00 with shuffled targets. Cross-validation was cancer-type-stratified and site-grouped. This is a moderate retrospective association in one public cohort: there is no external validation, no clinical or treatment-response outcome, and the authors list separating the signal from proliferation as future work, noting the cell-cycle score was predicted more strongly.",
+    "field": "medicine",
+    "ai_technology": "Gated attention-based multiple-instance learning over frozen UNI2-h and Virchow2 tile embeddings jointly regresses six RPPA pathway scores.",
+    "organization": "Johns Hopkins University; Johns Hopkins School of Medicine",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.11.17.766760v1.full",
+    "source_type": "paper",
+    "publication_date": "2026-11-25",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Five-fold cancer-type-stratified, site-grouped cross-validation against measured RPPA values, compared with a cancer-type-mean baseline and a shuffled-target control.",
+      "unknown": "No external cohort; no clinical or therapy-response outcome; the signal is not separated from proliferation; within-type correlation is moderate; not peer reviewed.",
+      "ai_role": "The attention-based model predicts DNA damage response protein scores from slide-tile embeddings.",
+      "evidence_urls": [
+        "https://www.biorxiv.org/content/10.64898/2026.11.17.766760v1.full"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "bioRxiv v1 page read: author affiliations, cohort, model, validation design, results and stated next steps; Europe PMC title search found no earlier version."
+    }
+  },
+  {
+    "id": "2026-11-causal-ml-acute-food-crises-drivers",
+    "title": "Machine learning forecasts acute food crises and separates predictive from causal drivers",
+    "summary": "Missing-data-resilient machine-learning pipelines, including gradient boosting and a tabular foundation model, forecast acute food crisis occurrence 3, 6 and 9 months ahead across 80 countries using monthly subnational data for 2007-2024, exceeding no-skill baselines by 15 to 50 percentage points in PR-AUC under nested cross-validation. TreeSHAP profiles fell into three recurring archetypes. Doubly robust causal estimates indicated that acute conflict events, which carried the weakest predictive signal, are primary causal drivers, while agroclimatology was the only dimension where predictive and causal importance agreed. The authors report that skill tracks crisis prevalence, that the causal effects are modest and only moderately robust to unmeasured confounding, and that they depend on an assumed causal graph; several variables were reported as non-identifiable. The work is a preprint.",
+    "field": "multidisciplinary",
+    "ai_technology": "Tree-based and tabular foundation-model classifiers with TreeSHAP attribution and cross-fitted doubly robust causal estimation.",
+    "organization": "European Commission, Joint Research Centre; University of Valencia; Integrated Food Security Phase Classification Global Support Unit",
+    "source_url": "https://arxiv.org/abs/2611.34629",
+    "source_type": "paper",
+    "publication_date": "2026-11-25",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Retrospective nested cross-validation on harmonized food-insecurity data with FEWS NET and IPC/CH labels, plus a held-out explainability period.",
+      "unknown": "Skill tracks crisis prevalence; causal estimates are modest, depend on an assumed causal graph and are only moderately robust to unmeasured confounding; no prospective operational test; not peer reviewed.",
+      "ai_role": "The learned forecasters produce the crisis predictions whose attributions are compared with the causal estimates.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2611.34629",
+        "https://arxiv.org/html/2611.34629v1"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "arXiv abstract page (v1 submission date and version history) and the experimental HTML full text read for affiliations, models, PR-AUC values and stated causal-estimate limitations (first 100,000 of about 117,000 characters)."
+    }
+  },
+  {
+    "id": "2026-11-generative-ai-type-i-photosensitizer-design",
+    "title": "Generative AI designs Type I photosensitizers tested in cells and mice",
+    "summary": "A cross-attention classifier trained on 1,338 curated photosensitizers (85.8% accuracy and ROC-AUC 0.918 on a scaffold split) and an RNN scaffold-decorating generator proposed candidates on a redesigned tetracyclic scaffold. Six were synthesised and all produced superoxide under light. The lead compound had IC50 3.3 micromolar in 4T1 cells under normoxia and 4.5 micromolar at 2% oxygen, with similar values in HepG2 and MCF-7, and markedly slowed 4T1 tumour growth in mice over 14 days with four animals per group. Validation covers one scaffold and six molecules, the lead was also phototoxic to normal HUVEC cells (IC50 3.5 micromolar under normoxia), hypoxia attenuated but did not abolish its effect, and the in vivo group size was small.",
+    "field": "chemistry",
+    "ai_technology": "Cross-attention classifier for Type I photosensitizer activity and an RNN SMILES scaffold decorator pretrained on general chemistry data and fine-tuned on photosensitizers.",
+    "organization": "Hunan University; Hengyang Normal University; Second Xiangya Hospital, Central South University",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13795365/",
+    "source_type": "paper",
+    "publication_date": "2026-11-24",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 3,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Six generated molecules synthesised and characterised; reactive-oxygen-species measurements, cell phototoxicity under normoxia and hypoxia, and a 14-day mouse tumour study with four animals per group.",
+      "unknown": "One scaffold and six molecules only; small dataset and animal groups; the lead is also phototoxic to normal cells; long-term safety and selectivity not established; lower prediction accuracy on unseen scaffolds.",
+      "ai_role": "The predictor and generator proposed and ranked the photosensitizer candidates that were then synthesised and tested.",
+      "evidence_urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13795365/"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "PMC full text read for dataset, model performance, synthesis, in vitro and in vivo results and caveats (DOI 10.1039/d6sc07010h); Europe PMC search found no earlier preprint."
+    }
+  },
+  {
+    "id": "2026-11-eeg-respiratory-gap-sleep-apnea-mortality",
+    "title": "Deep learning EEG metric linked to mortality in obstructive sleep apnea",
+    "summary": "A deep-learning model trained on 22,044 polysomnography recordings estimated the apnea-hypopnea index from a single EEG channel, correlating r=0.88 with the scored index in internal testing and r=0.50 to 0.62 in three external test sets. Two derived metrics, the discrepancy between the EEG-based and scored index and an estimate from epochs without scored respiratory events, were associated with all-cause and non-cardiovascular mortality among participants free of cardiovascular disease after adjustment for the apnea-hypopnea index and clinical risk factors; the event-free estimate was also associated with cardiovascular mortality in the highest versus lowest quartile. Data came from the KISS, MESA, MrOS and SHHS cohorts. The findings are retrospective associations in a preprint, external agreement is weaker, hazard ratios and per-cohort sizes were not reviewed, and the authors suggest the discrepancy is not solely model error.",
+    "field": "medicine",
+    "ai_technology": "Deep-learning model estimates the apnea-hypopnea index from a single EEG channel; derived discrepancy metrics are tested against mortality.",
+    "organization": "Seoul National University",
+    "source_url": "https://www.medrxiv.org/content/10.64898/2026.11.22.26368628v1.full",
+    "source_type": "paper",
+    "publication_date": "2026-11-24",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Internal and three external test sets for index estimation, then retrospective cohort association of the derived metrics with mortality after adjustment for the apnea-hypopnea index and clinical risk factors.",
+      "unknown": "Weaker external agreement; no causal or clinical-utility evidence; hazard ratios, covariate list, follow-up and per-cohort sizes not reviewed; not peer reviewed; one author holds related patents and leads a company.",
+      "ai_role": "The deep-learning model produces the EEG-based index whose discrepancy from the scored index is the tested metric.",
+      "evidence_urls": [
+        "https://www.medrxiv.org/content/10.64898/2026.11.22.26368628v1.full"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "medRxiv v1 page read: abstract, model and cohort description, mortality associations, affiliations, competing interests and version history; full manuscript tables not read. Europe PMC title search found only this version."
+    }
   }
 ]
