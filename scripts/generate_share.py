@@ -626,7 +626,7 @@ def write_profile_pages(items, models, archived=()):
     def plural(n, one, many):
         return f'{n} {one if n == 1 else many}'
 
-    def emit(name, title, lead, desc, rows, path, interactive, extra='', organization=False, label='interactive profile', before='', noindex=False):
+    def emit(name, title, lead, desc, rows, path, interactive, extra='', organization=False, label='interactive profile', before='', noindex=False, head_title=None):
         # Full cards made field/year pages exceed 9 MB; older rows keep a crawlable link to their own page.
         articles = ''.join(discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']], link_title=True) for d in rows[:PROFILE_FULL_CARDS])
         if len(rows) > PROFILE_FULL_CARDS:
@@ -641,6 +641,9 @@ def write_profile_pages(items, models, archived=()):
         page = PAGE.format(title=esc(title), site=SITE, desc=esc(desc), base=BASE, path=path, img='default', imgalt=DEFAULT_ALT,
                            header=header, footer=footer, lead=lead, article=articles, more=more, extra=extra,
                            h2=before + '<h2 class="vis-nascosto">Discoveries</h2>', jsonld=profile_jsonld(title, desc, path, organization))
+        if head_title and len(head_title) <= 60:
+            # Search titles say what the page offers; a bare lab name loses the click to the lab's own site.
+            page = page.replace(f'<title>{esc(title)} · ', f'<title>{esc(head_title)} · ', 1)
         if noindex:
             page = page.replace('<link rel="canonical"', '<meta name="robots" content="noindex, follow">\n<link rel="canonical"', 1)
         (ROOT / path).write_text('\n'.join(line.rstrip() for line in relocate(fit_title(page)).splitlines()) + '\n')
@@ -650,9 +653,9 @@ def write_profile_pages(items, models, archived=()):
     for name, rows in by_org.items():
         assert slugs.setdefault(slug(name), name) == name, f'organization slug collision: {name}'
         emit(name, name, f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
-             f'{plural(len(rows), "AI-enabled scientific discovery", "AI-enabled scientific discoveries")} tracked from {name}, with sources.',
+             describe(f'{plural(len(rows), "AI-enabled discovery", "AI-enabled discoveries")} from {name}, {"with" if len(rows) == 1 else "each with"} the original paper, AI role and evidence limits. Latest: {rows[0]["title"]}.', 160),
              rows, f'profiles/org-{slug(name)}.html', f'profile.html?org={quote(name)}', organization=canonical_organization(rows[0]['organization'])['kind'] != 'unknown affiliation',
-             noindex=len(rows) < ORG_INDEX_MIN)
+             noindex=len(rows) < ORG_INDEX_MIN, head_title=f'{name}: {plural(len(rows), "AI science discovery", "AI science discoveries")}')
     archived_orgs = {}
     for d in archived:
         legacy = slug(d['organization'].replace(' and ', ',').split(',')[0].strip())
@@ -699,7 +702,8 @@ def write_profile_pages(items, models, archived=()):
                        'Read the AlphaFold evidence dossier</a>.</p>')
         emit(fam['name'], fam['name'], f'{plural(len(rows), "discovery", "discoveries")} name this family, {years(rows)}, across {len({d["field"] for d in rows})} scientific fields. Links are name-based family associations; exact versions and causal attribution are not verified.',
              description,
-             rows, f'profiles/family-{quote(fam["id"])}.html', f'profile.html?family={quote(fam["id"])}', releases_table(rel), before=dossier + family_affiliations(rows) + family_summary(rows, fam['name']))
+             rows, f'profiles/family-{quote(fam["id"])}.html', f'profile.html?family={quote(fam["id"])}', releases_table(rel), before=dossier + family_affiliations(rows) + family_summary(rows, fam['name']),
+             head_title=f'{fam["name"]}: {plural(len(rows), "scientific discovery", "scientific discoveries")}')
     for fid, ids in discovery_links(archived).items():
         if ids and fid not in active_families:
             redirect(f'family-{quote(fid)}.html', {f'../share/{quote(did)}.html' for did in ids})
