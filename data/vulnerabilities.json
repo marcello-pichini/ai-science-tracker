@@ -71159,5 +71159,99 @@
     "source_url": "https://cveawg.mitre.org/api/cve/CVE-2026-82446",
     "summary": "The official CNA record documents CVE-2026-82446 in Apache StormCrawler. The CNA explicitly lists The ASF using Claude Agents as a finder alongside n0mi1k. The notice does not establish the model version or autonomous operation. Public disclosure is documented in the requested window; no exploitation or installed-patch status is assessed.",
     "title": "Apache StormCrawler finding CVE-2026-82446"
+  },
+  {
+    "id": "cve-2026-132675",
+    "title": "CheckUser temporary-account IP reveal exposes suppressed AbuseLog performers",
+    "product": "MediaWiki CheckUser extension",
+    "ai_system": "Claude (specific model undisclosed; Wikimedia vuln-audit skill)",
+    "organization": "Wikimedia Foundation",
+    "summary": "The CheckUser batch temporary-account IP reveal endpoint did not check whether the requester could see the AbuseLog entries named in a request, so hidden entries could be tied to a temporary account and its IP by trial and error. Wikimedia credits Claude as reporter.",
+    "ai_role": "The public Wikimedia Phabricator task T439716 states the issue was found by Claude using the WMF vuln-audit skill and manually verified; the CVE record credits Claude as reporter. The model version used for discovery is not stated (the fix commit separately notes Claude Opus 5.5 assistance).",
+    "disclosure_date": "2026-11-24",
+    "ai_attribution_date": "2026-11-24",
+    "classification": "disclosure",
+    "classification_note": "Public vulnerability and AI-discovery attribution are documented; sources do not establish exploitation in the wild or zero-day status.",
+    "cves": [
+      "CVE-2026-132675"
+    ],
+    "source_url": "https://phabricator.wikimedia.org/T439716",
+    "ai_source_url": "https://phabricator.wikimedia.org/T439716",
+    "remediation": "fix documented",
+    "remediation_note": "Fixed in CheckUser 1.45.7 and 1.46.3 and on master; the fix drops AbuseLog IDs the user cannot see.",
+    "advisory_url": "https://gerrit.wikimedia.org/r/q/I0890c5020f7838178071f7b51c84384702671080",
+    "checked_date": "2026-11-26",
+    "cvss": [
+      {
+        "cve": "CVE-2026-132675",
+        "version": "4.0",
+        "score": 5.1,
+        "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+        "source_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/132xxx/CVE-2026-132675.json",
+        "source_name": "wikimedia-foundation (CNA; CVE Program record)",
+        "checked_date": "2026-11-26"
+      }
+    ],
+    "impacts": [
+      {
+        "cves": [
+          "CVE-2026-132675"
+        ],
+        "consequences": [
+          "data disclosure"
+        ],
+        "conditions": "Exposure of Sensitive Information in the MediaWiki CheckUser extension (src/Api/Rest/Handler/BatchTemporaryAccountHandler.php). Requires an account that can view temporary-account IPs but not hidden AbuseLog entries; affects 1.45.0 before 1.45.7, 1.46.0 before 1.46.3 and 1.47. CWE-200.",
+        "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+        "source_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/132xxx/CVE-2026-132675.json",
+        "checked_date": "2026-11-26"
+      }
+    ]
+  },
+  {
+    "id": "cve-2026-132677",
+    "title": "CheckUser \"Get actions\" exposes suppressed page titles",
+    "product": "MediaWiki CheckUser extension",
+    "ai_system": "Claude (specific model undisclosed; Wikimedia vuln-audit skill)",
+    "organization": "Wikimedia Foundation",
+    "summary": "Special:CheckUser \"Get actions\" and the equivalent API showed a logs link whose URL contained suppressed page titles to users not allowed to see them. Wikimedia credits Claude as reporter.",
+    "ai_role": "The public Wikimedia Phabricator task T439722 states the issue was found by Claude using the WMF vuln-audit skill and manually verified; the CVE record credits Claude as reporter. The model version used for discovery is not stated (the fix commit separately notes Claude Opus 5.5 assistance).",
+    "disclosure_date": "2026-11-24",
+    "ai_attribution_date": "2026-11-24",
+    "classification": "disclosure",
+    "classification_note": "Public vulnerability and AI-discovery attribution are documented; sources do not establish exploitation in the wild or zero-day status.",
+    "cves": [
+      "CVE-2026-132677"
+    ],
+    "source_url": "https://phabricator.wikimedia.org/T439722",
+    "ai_source_url": "https://phabricator.wikimedia.org/T439722",
+    "remediation": "fix documented",
+    "remediation_note": "Fixed in CheckUser 1.43.12, 1.45.7 and 1.46.3 and on master; the logs link is hidden when the log target is not viewable.",
+    "advisory_url": "https://gerrit.wikimedia.org/r/q/I7a9345b8698a27e5f5c9fc6482db538bf88d2bbd",
+    "checked_date": "2026-11-26",
+    "cvss": [
+      {
+        "cve": "CVE-2026-132677",
+        "version": "4.0",
+        "score": 5.1,
+        "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:N/VC:L/VI:N/VA:N/SC:N/SI:N/SA:N",
+        "source_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/132xxx/CVE-2026-132677.json",
+        "source_name": "wikimedia-foundation (CNA; CVE Program record)",
+        "checked_date": "2026-11-26"
+      }
+    ],
+    "impacts": [
+      {
+        "cves": [
+          "CVE-2026-132677"
+        ],
+        "consequences": [
+          "data disclosure"
+        ],
+        "conditions": "Exposure of Sensitive Information in the MediaWiki CheckUser extension (ApiQueryCheckUserActionsResponse.php, CheckUserGetActionsPager.php). Requires CheckUser access without suppression rights; affects 1.43.0 before 1.43.12, 1.45.0 before 1.45.7, 1.46.0 before 1.46.3 and 1.47. CWE-200.",
+        "exploitation": "The cited source does not state whether this issue was exploited in the wild.",
+        "source_url": "https://raw.githubusercontent.com/CVEProject/cvelistV5/main/cves/2026/132xxx/CVE-2026-132677.json",
+        "checked_date": "2026-11-26"
+      }
+    ]
   }
 ]
