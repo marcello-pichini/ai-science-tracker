@@ -653,10 +653,13 @@ def write_profile_pages(items, models, archived=()):
     slugs = {}
     for name, rows in by_org.items():
         assert slugs.setdefault(slug(name), name) == name, f'organization slug collision: {name}'
+        known = canonical_organization(rows[0]['organization'])['kind'] != 'unknown affiliation'
+        source = f'from {name}' if known else 'whose sources report no author affiliation'
+        head = f'{name}: {plural(len(rows), "AI science discovery", "AI science discoveries")}' if known else f'Unattributed AI science: {plural(len(rows), "discovery", "discoveries")}'
         emit(name, name, f'{plural(len(rows), "discovery", "discoveries")} from {years(rows)}',
-             describe(f'{plural(len(rows), "AI-enabled discovery", "AI-enabled discoveries")} from {name}, {"with" if len(rows) == 1 else "each with"} the original paper, AI role and evidence limits. Latest: {rows[0]["title"]}.', 160),
-             rows, f'profiles/org-{slug(name)}.html', f'profile.html?org={quote(name)}', organization=canonical_organization(rows[0]['organization'])['kind'] != 'unknown affiliation',
-             noindex=len(rows) < ORG_INDEX_MIN, head_title=f'{name}: {plural(len(rows), "AI science discovery", "AI science discoveries")}')
+             describe(f'{plural(len(rows), "AI-enabled discovery", "AI-enabled discoveries")} {source}, {"with" if len(rows) == 1 else "each with"} the original paper, AI role and evidence limits. Latest: {rows[0]["title"]}.', 160),
+             rows, f'profiles/org-{slug(name)}.html', f'profile.html?org={quote(name)}', organization=known,
+             noindex=len(rows) < ORG_INDEX_MIN, head_title=head)
     archived_orgs = {}
     for d in archived:
         legacy = slug(d['organization'].replace(' and ', ',').split(',')[0].strip())
