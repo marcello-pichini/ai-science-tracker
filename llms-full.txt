@@ -1,6 +1,6 @@
 # AI Science Tracker: full catalog
 
-> All 5322 active entries, newest first. Figures are reported by the sources and are not independently verified; cite the linked original source, not this catalog. Licensed CC BY 4.0 (attribute "AI Science Tracker" with a link). Structured data: https://aisciencetracker.org/data/discoveries.json
+> All 5333 active entries, newest first. Figures are reported by the sources and are not independently verified; cite the linked original source, not this catalog. Licensed CC BY 4.0 (attribute "AI Science Tracker" with a link). Structured data: https://aisciencetracker.org/data/discoveries.json
 
 ## LLM-agent workflow reports new proofs on positivity problems in algebraic combinatorics
 2026-11-25 · mathematics · University of Washington; Pacific Northwest National Laboratory
@@ -1276,6 +1276,13 @@ Source: https://arxiv.org/abs/2611.19596v1
 
 Machine learning on 11,520 experimentally fabricated radiative-cooling coatings showed power-law decreases in prediction error as training data increased. Experimentally tested inverse designs matched a broadband-emitter target more closely with larger datasets, but did not outperform the best original sample.
 
+## Machine learning-guided composition gives heat-treatment-free high-strength ductile iron
+2026-11-14 · materials · Qilu University of Technology; Shandong Academy of Sciences
+Page: https://aisciencetracker.org/share/2026-11-ml-heat-treatment-free-ductile-iron.html
+Source: https://doi.org/10.1007/s40962-026-02208-7
+
+An ensemble learning model fit to orthogonal-experiment data guided composition optimization of ductile iron. The resulting as-cast alloy, produced with cored-wire spheroidization and triple inoculation, reached tensile strength 974 MPa, yield strength 613 MPa and elongation 6.2% without heat treatment, and industrial production is reported. Only the abstract was reviewed, so the ensemble algorithm and dataset size are not specified.
+
 ## Machine-learning screening guides a measured reversal of the anomalous Nernst signal
 2026-11-14 · materials · Haofu Wen and coauthors
 Page: https://aisciencetracker.org/share/2026-11-ml-bipolar-anomalous-nernst-effect.html
@@ -1765,6 +1772,13 @@ Page: https://aisciencetracker.org/share/2026-11-comparative-evaluation-of-resne
 Source: https://www.frontiersin.org/journals/systems-biology/articles/10.3389/fsysb.2026.1921782/full
 
 ResNet-18/50 compared on 681 images/391 cases with patient-level splitting, 10-fold CV and a separate external set (73 normal and 6 abnormal images); internal AUCs are high, but external sample is small. Compared with active record 2020-01-screening-seno (large UK/US cohorts and a different screening system), this article uses a separate 391-case DM/DBT dataset and ResNet architecture; no same-result identity.
+
+## Machine learning prioritizes C16orf74 as an EMT regulator in head and neck cancer
+2026-11-10 · medicine · Institute of Science Tokyo
+Page: https://aisciencetracker.org/share/2026-11-c16orf74-emt-regulator-hnscc.html
+Source: https://doi.org/10.1111/cas.70548
+
+After single-cell RNA sequencing identified a malignant EMT epithelial subpopulation in head and neck squamous cell carcinoma, an ensemble of six machine learning algorithms ranked 13 candidate genes and prioritized C16orf74. Gain- and loss-of-function assays in cells confirmed effects on EMT, migration, invasion and tumor-sphere formation, and a pathomics prognostic model was built from H&E slides, with an external CPTAC-HNSCC cohort. Validation of the gene is in vitro only, the ML ranked pre-filtered candidates, and prognostic findings are retrospective.
 
 ## Molecular-interaction foundation model yields de novo compounds validated in wet-lab tests
 2026-11-10 · chemistry · Not stated in the reviewed material
@@ -3440,6 +3454,13 @@ Source: https://arxiv.org/html/2611.03891v1
 
 For next-day motor-insurance claims, a six-qubit reservoir was evaluated on held-out days and IBM quantum hardware. Hardware-aware placement reduced simulation-to-device forecast distortion relative to tested layouts; forecasting accuracy was comparable with classical baselines on this task.
 
+## Machine learning target deconvolution identifies GAK as a kinase dependency in DLBCL
+2026-11-02 · medicine · Sheila and David Fuente Graduate Program in Cancer Biology, Miami, FL, USA
+Page: https://aisciencetracker.org/share/2026-11-gak-kinase-target-dlbcl-idtrax.html
+Source: https://doi.org/10.1038/s41375-026-03174-z
+
+A phenotypic screen of kinase probes across diffuse large B-cell lymphoma models, analyzed with the iterative machine-learning method idTRAX, identified cyclin G-associated kinase (GAK) as a tumor-selective target. GAK inhibition caused G2/M arrest and cell death, stronger in RB-null cells, and GAK inhibitors including repurposed clinical compounds showed single-agent anti-DLBCL activity in vivo. Only the abstract was reviewed and idTRAX details were not read.
+
 ## From Benchmarks to Behaviors: A Framework for Auditing AI Agents
 2026-11-02 · computer science · Affiliation not stated in the reviewed material
 Page: https://aisciencetracker.org/share/2026-11-from-benchmarks-to-behaviors-a-framework-for-auditing-ai-agents.html
@@ -4441,6 +4462,13 @@ Source: https://www.medrxiv.org/content/10.64898/2026.10.27.26366616v1.full.pdf
 
 Results report five-class accuracy of 81.4% in the external CHOA cohort (88.7% among non-abstained cases) and 92.5% across 40 independently processed WCH cases (97.3% among non-abstained cases); WCH contained only three histologies, and the preprint also reports confidently incorrect OOD cases. Methods describe a frozen pretrained 3DINO backbone, multi-crop MRI sampling, calibrated class probabilities and confidence-based abstention; the deployed workflow also includes a quality-control agent. Testing: Methods/results distinguish discovery (n=492), replication (n=114), external CHOA (n=129) and independent WCH workflow cases (n=40), with pathology/clinical diagnoses and stated exclusions. The independent cohorts support the narrow diagnostic-performance result; small WCH sample, missing two histologies, unreviewed preprint and no evidence of improved patient outcomes limit interpretation.. Independent external evaluation of a pediatric posterior-fossa tumor MRI classifier and full workflow reports performance on separate CHOA and WCH cohorts; bounded to diagnostic classification, not clinical benefit. Source affiliation was not stated in the reviewed case checks and was unavailable in the local bibliographic cache.
 
+## OocystMeter segments malaria oocysts and reveals clustering in the mosquito midgut
+2026-10-29 · biology · Harvard University
+Page: https://aisciencetracker.org/share/2026-10-oocystmeter-plasmodium-oocyst-clustering.html
+Source: https://doi.org/10.1038/s41598-026-77277-z
+
+A fine-tuned Mask R-CNN, trained on 11,178 expert-annotated Plasmodium falciparum oocysts in Anopheles gambiae midguts, matched human parasitologists (Spearman 0.998 for counts, 0.978 for sizes). Tool-assisted annotations with spatial analysis showed non-random oocyst clustering at short spatial scales in infections of 4-74 oocysts per midgut, with no consistent anatomical region explaining it. This is mainly a tool paper read at abstract level, and clustering statistics were not reviewed.
+
 ## NeurEO: dissecting Earth observation embeddings with computational neuroscience
 2026-10-29 · climate · Affiliation not stated in the reviewed material
 Page: https://aisciencetracker.org/share/2026-10-neureo-dissecting-earth-observation-embeddings-with-computational.html
@@ -5008,6 +5036,13 @@ Source: https://doi.org/10.3389/fendo.2026.1935223
 
 Longitudinal trajectories of muscle strength and walking speed across four aging cohorts were associated with new-onset diabetes among older adults without ADL impairment; this is observational.
 
+## Pretrained model screening nominates Astragalus-ginseng for ovarian aging
+2026-10-28 · medicine · Sichuan Academy of Traditional Chinese Medicine
+Page: https://aisciencetracker.org/share/2026-10-ai-screened-astragalus-ginseng-ovarian-aging.html
+Source: https://doi.org/10.64898/2026.10.22.755587
+
+A multi-strategy framework combining single-cell analysis, literature mining and a 712-molecule compound library used the ESM-T5 pretrained protein-molecule model (best of six combinations) to predict compound-target affinity, pointing to the Astragalus-ginseng pair. SPR and molecular dynamics supported binding to CYP19A1, SERPINE1 and MDK targets, and the pair ameliorated granulosa cell senescence and diminished ovarian function in cyclophosphamide-treated rats. It is a preprint at abstract level; the model is one of several strategies, and only cell and rat models were used.
+
 ## Agentic AI Reasoning and Learned Sampling for Task-Aware Projection Selection in Sparse-View CT: Predicting Hemodynamics
 2026-10-28 · medicine · University of Utah; University of Wisconsin–Milwaukee
 Page: https://aisciencetracker.org/share/2026-10-agentic-ai-reasoning-and-learned-sampling-for-task-aware-projection.html
@@ -5161,6 +5196,13 @@ Page: https://aisciencetracker.org/share/2026-10-multimodal-oocyte-fertilization
 Source: https://www.nature.com/articles/s41598-026-77149-6
 
 In the reported retrospective ICSI cohort, XGBoost performed best with numerical features; adding first polar body images raised peak fertilization-prediction AUC to 0.82. The result is limited to the evaluated clinical data and does not establish improved reproductive outcomes.
+
+## Machine learning optimizes carbon dot synthesis for Co2+ and Cu2+ nanosensors
+2026-10-27 · chemistry · Moscow State University
+Page: https://aisciencetracker.org/share/2026-10-ml-optimized-carbon-dot-synthesis-metal-ion-sensor.html
+Source: https://doi.org/10.3390/molecules31213875
+
+Neural-network and regression models predicted Co2+ and Cu2+ concentrations from carbon dot photoluminescence excitation-emission matrices, with test mean absolute error 0.55 mM (Co2+) and 0.62 mM (Cu2+). Error maps against synthesis parameters gave optimal hydrothermal conditions of citric acid:ethylenediamine 1:2, 150-155 C and 210-230 min, which the authors report were validated experimentally. The work covers a single sensor system, and improvement over standard synthesis was not assessed in this review.
 
 ## Integrating machine learning and traditional statistics to evaluate the Uric acid-to-HDL cholesterol ratio for identification of prevalent COPD in older adults.
 2026-10-27 · medicine · Department of Geriatrics
@@ -6408,6 +6450,13 @@ Page: https://aisciencetracker.org/share/2026-10-people-retained-falsehoods-from
 Source: https://arxiv.org/abs/2610.31579
 
 In a study with 32 volunteers, participants selected an assistant’s planted false answer for about 60% of quiz items assigned false information, compared with 11% of items assigned correct information. Mean scores fell from 7.4 to 2.9 out of 10 between fully accurate and fully falsified GPT-5-mini briefings.
+
+## Machine learning and mutant assays map a navigable AAV2 capsid sequence subspace
+2026-10-22 · biology · Wyss Institute for Biologically Inspired Engineering
+Page: https://aisciencetracker.org/share/2026-10-navigable-aav2-capsid-sequence-subspace.html
+Source: https://doi.org/10.64898/2026.10.18.759989
+
+Combining high-throughput DNA synthesis with machine learning, the authors assayed 232,123 AAV2 capsid mutants around 15 seed neighborhoods and report a percolating network of function-preserving ridges with trajectories up to 667 steps. Designed variants with mutations largely absent from evolution, combining up to 7 individually lethal mutations, retained packaging in the tested backgrounds. This is a preprint read at abstract level; held-out prediction accuracy is not stated.
 
 ## Country names and query language shifted AI answers in different ways
 2026-10-22 · humanities · University of Copenhagen; Aalborg University Copenhagen; Bocconi University
@@ -8236,6 +8285,13 @@ Source: https://blog.google/innovation-and-ai/models-and-research/google-deepmin
 
 A model that learns from real-time geostationary satellite data and produces hourly forecasts, at resolutions down to 5 km for temperature and humidity (about five times finer than WeatherNext 2). For short-term precipitation, Google reports improvements of up to 60% over NASA's IMERG. These are ‘up to’ figures from Google's evaluations, with an independent ranking by Brightband.
 
+## Exosomal miRNA machine learning model for occult liver metastasis in pancreatic cancer
+2026-09-02 · medicine · City of Hope; Tokushima University
+Page: https://aisciencetracker.org/share/2026-09-exosomal-mirna-model-occult-liver-metastasis-pdac.html
+Source: https://doi.org/10.1001/jamasurg.2026.3840
+
+In a multicenter retrospective case-control study of 372 patients at four centers in China, Japan and South Korea, a seven-exosomal-miRNA XGBoost classifier detected occult early liver metastasis after pancreatectomy. AUC was 0.899 in training and 0.876 and 0.862 in two external validation cohorts. The design is retrospective, confidence intervals in the second external cohort are wide, and the authors call for prospective validation.
+
 ## ERTransformer-generated TCR candidates activate T cells in defined receptor contexts
 2026-09-02 · biology · Tencent AI for Life Sciences Lab; City University of Hong Kong; The University of Hong Kong; Xijing Hospital of Digestive Diseases; Harvard Medical School, Harvard University; Monash University
 Page: https://aisciencetracker.org/share/2026-09-ertransformer-generated-tcr-candidates-activate-t-cells.html
@@ -8326,6 +8382,13 @@ Page: https://aisciencetracker.org/share/2026-08-interpretable-machine-learning-
 Source: https://doi.org/10.3389/fonc.2026.1904589
 
 Temporal discrimination is moderate (AUC about 0.69–0.70); authors bound treatment conclusions as observational.
+
+## Locked AI model simulates the VESALIUS-CV trial before its results were public
+2026-08-31 · medicine · Not stated in the reviewed material
+Page: https://aisciencetracker.org/share/2026-08-in-silico-prospective-simulation-vesalius-cv.html
+Source: https://doi.org/10.64898/2026.08.26.26361436
+
+A semi-mechanistic machine learning model combining real-world patient data with knowledge-graph drug representations simulated the evolocumab versus placebo VESALIUS-CV trial using a locked model and prespecified design. It predicted a major adverse cardiovascular event hazard ratio of 0.78 (95% CI 0.70-0.87) at 54 months; the trial later reported 0.75 (0.65-0.86). Retrospectively, patient-level time-dependent AUC was 0.80-0.90 and trial-level accuracy across 22 trials was 0.91. This is a preprint with one prospective trial and the exact architecture is not stated in the abstract.
 
 ## GPT-5.6 helps prove an exact mapping between frustrated and field-driven spin chains
 2026-08-31 · physics · Brookhaven National Laboratory
@@ -19198,6 +19261,13 @@ Source: https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2
 
 A learned six-gene SepxFindeR model distinguished sepsis from septic shock across datasets and was checked with newly recruited RT-qPCR samples. The bibliographic records retrieved do not state an author affiliation.
 
+## Machine learning-designed TADF molecules synthesized and characterized
+2024-11-28 · materials · Chengdu Polytechnic; Sichuan Provincial Engineering Research Center of Thermoelectric Materials and Devices
+Page: https://aisciencetracker.org/share/2024-11-machine-learning-designed-tadf-molecules.html
+Source: https://doi.org/10.1016/j.heliyon.2024.e40750
+
+Two molecules chosen from 19 screened ML-designed thermally activated delayed fluorescence (TADF) candidates were synthesized by palladium-catalyzed coupling and showed delayed fluorescence; photoluminescence quantum yield was 9.9% (mol_12, chloroform) and 19.8% (mol_16, toluene), with a singlet-triplet gap of 0.0084 eV for mol_12. Structures were confirmed by NMR and photophysics by steady-state and transient PL, supported by quantum-chemical calculations. The ML design model comes from the authors' earlier work; quantum yields are modest, measurements are in solution only, and only two molecules were made.
+
 ## Identification of Biomarkers Associated with Oxidative Stress in Aortic Dissection Based on Bulk Transcriptome Analyses
 2024-11-28 · medicine · Department of Cardiothoracic Surgery, The First Affiliated Hospital of Chongqing Medical University, Chongqing, People's Republic of China
 Page: https://aisciencetracker.org/share/2024-11-identification-of-biomarkers-associated-with-oxidative-str-10-2147-ijgm-s478146.html
@@ -23201,6 +23271,13 @@ Page: https://aisciencetracker.org/share/2024-02-radiomics-for-residual-tumour-d
 Source: https://europepmc.org/article/MED/38403632
 
 original article tests radiomics/deep-learning methods on PET/MRI for residual tumour detection and outcome prediction; independent test supports detection claim, prognostic estimates remain cohort-bound. AI role: Radiomics and 3D convolutional neural networks on MET-PET and MRI. The article appeared in Scientific Reports.
+
+## Machine learning derives a five-protein plasma classifier of COVID-19 mortality
+2024-02-25 · medicine · Second Affiliated Hospital of Zhejiang University School of Medicine
+Page: https://aisciencetracker.org/share/2024-02-plasma-protein-classifier-covid19-mortality.html
+Source: https://doi.org/10.1111/cpr.13617
+
+Using plasma proteomics, an XGBoost model trained on 88 discovery admission samples with 5-fold cross-validation selected a five-protein classifier (CRP, ECM1, IGFALS, HECW1, LCAT) for 28-day mortality. It reached AUC 0.88 in the discovery group and 0.80 in an independent 97-patient cohort from a second hospital, better than the 4C mortality and E-CURB65 scores. Cohorts are small (277 discovery, 97 validation), from a single country, and the result is prognostic rather than causal.
 
 ## Machine learning predicts inhaled corticosteroid response in asthma from GWAS variants
 2024-02-25 · medicine · PRecisiOn Medicine Translational Research (PROMoTeR) Center, Department of Population Medicine, Harvard Medical School and Harvard Pilgrim Health Care, Boston, USA

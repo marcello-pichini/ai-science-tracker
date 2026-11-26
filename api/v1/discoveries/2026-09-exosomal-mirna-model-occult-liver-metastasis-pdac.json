@@ -1,0 +1,33 @@
+{
+  "id": "2026-09-exosomal-mirna-model-occult-liver-metastasis-pdac",
+  "title": "Exosomal miRNA machine learning model for occult liver metastasis in pancreatic cancer",
+  "summary": "In a multicenter retrospective case-control study of 372 patients at four centers in China, Japan and South Korea, a seven-exosomal-miRNA XGBoost classifier detected occult early liver metastasis after pancreatectomy. AUC was 0.899 in training and 0.876 and 0.862 in two external validation cohorts. The design is retrospective, confidence intervals in the second external cohort are wide, and the authors call for prospective validation.",
+  "field": "medicine",
+  "ai_technology": "XGBoost classifier on a seven-exosomal-miRNA panel",
+  "organization": "City of Hope; Tokushima University",
+  "source_url": "https://doi.org/10.1001/jamasurg.2026.3840",
+  "source_type": "paper",
+  "publication_date": "2026-09-02",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Training and two independent external validation cohorts across four centers, retrospectively.",
+    "unknown": "Prospective performance and clinical benefit were not tested. Full text not reviewed.",
+    "ai_role": "Built the classifier from miRNA expression to flag occult early liver metastasis.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1001/jamasurg.2026.3840%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read; no usable full text in this pass and author affiliations from Europe PMC metadata for this DOI; publisher full text not accessed."
+  }
+}

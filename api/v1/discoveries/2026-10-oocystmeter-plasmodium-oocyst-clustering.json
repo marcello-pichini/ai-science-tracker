@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-oocystmeter-plasmodium-oocyst-clustering",
+  "title": "OocystMeter segments malaria oocysts and reveals clustering in the mosquito midgut",
+  "summary": "A fine-tuned Mask R-CNN, trained on 11,178 expert-annotated Plasmodium falciparum oocysts in Anopheles gambiae midguts, matched human parasitologists (Spearman 0.998 for counts, 0.978 for sizes). Tool-assisted annotations with spatial analysis showed non-random oocyst clustering at short spatial scales in infections of 4-74 oocysts per midgut, with no consistent anatomical region explaining it. This is mainly a tool paper read at abstract level, and clustering statistics were not reviewed.",
+  "field": "biology",
+  "ai_technology": "Fine-tuned Mask R-CNN instance segmentation of oocysts giving counts, sizes and spatial coordinates",
+  "organization": "Harvard University",
+  "source_url": "https://doi.org/10.1038/s41598-026-77277-z",
+  "source_type": "paper",
+  "publication_date": "2026-10-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Segmentation agreement with expert parasitologists; spatial analysis of tool-assisted annotations.",
+    "unknown": "Clustering statistics and mechanism of the pattern. Full text not reviewed.",
+    "ai_role": "Segmented oocysts to enable counting, sizing and spatial analysis.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41598-026-77277-z%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1038/s41598-026-77277-z"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read and author affiliations from Europe PMC metadata for this DOI; publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

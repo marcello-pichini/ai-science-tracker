@@ -1,0 +1,33 @@
+{
+  "id": "2026-08-in-silico-prospective-simulation-vesalius-cv",
+  "title": "Locked AI model simulates the VESALIUS-CV trial before its results were public",
+  "summary": "A semi-mechanistic machine learning model combining real-world patient data with knowledge-graph drug representations simulated the evolocumab versus placebo VESALIUS-CV trial using a locked model and prespecified design. It predicted a major adverse cardiovascular event hazard ratio of 0.78 (95% CI 0.70-0.87) at 54 months; the trial later reported 0.75 (0.65-0.86). Retrospectively, patient-level time-dependent AUC was 0.80-0.90 and trial-level accuracy across 22 trials was 0.91. This is a preprint with one prospective trial and the exact architecture is not stated in the abstract.",
+  "field": "medicine",
+  "ai_technology": "Semi-mechanistic machine learning combining real-world data and knowledge-graph drug embeddings to predict time-to-event outcomes and simulate virtual trial arms",
+  "organization": "Not stated in the reviewed material",
+  "source_url": "https://doi.org/10.64898/2026.08.26.26361436",
+  "source_type": "paper",
+  "publication_date": "2026-08-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Prospective locked-model simulation compared with the later published trial result, plus retrospective patient-level and 22-trial evaluation.",
+    "unknown": "Generalization beyond a single prospective trial; full model architecture. Full text not reviewed.",
+    "ai_role": "Predicted patient-level outcomes and aggregated them into virtual trial arms.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.08.26.26361436%22&resultType=core&format=json"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read and author affiliations from Europe PMC metadata for this DOI; publisher full text not accessed."
+  }
+}
