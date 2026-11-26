@@ -32,3 +32,7 @@ With a Cloudflare account authorized for the project's zone and using Workers Fr
 mcp-publisher login github
 mcp-publisher publish
 ```
+
+## Privacy
+
+The server is read-only and has no accounts, cookies or storage. It runs on Cloudflare Workers, which receives each request; the client IP address is used only by Cloudflare's rate limiter, to cap requests per client per minute. The project does not log or keep tool calls, queries or IP addresses (Workers logging is not enabled), and nothing is sent to third parties other than Cloudflare as hosting processor. Tool calls read only the public catalog files on aisciencetracker.org. The website's own privacy note is in the footer of every page. Questions or objections: [open an issue](https://github.com/marcello-pichini/ai-science-tracker/issues).
