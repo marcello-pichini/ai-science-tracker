@@ -400,17 +400,17 @@ RELATED_LIMIT = 5
 TOPIC_THRESHOLD = 0.12
 
 
-def search_title(d):
+def search_title(d, limit=TITLE_MAX):
     """Short <title> for search results; the H1, og:title and JSON-LD keep the full title."""
     if d.get('search_title'):
         return d['search_title']
     # The suffix tells searchers this is an AI-discovery review, not the paper itself.
     suffix = ' · AI discovery' if d['field'] in ('other', 'multidisciplinary') else f' · AI in {d["field"]}'
-    if len(d['title']) + len(suffix) <= TITLE_MAX:
+    if len(d['title']) + len(suffix) <= limit:
         return d['title'] + suffix
-    if len(d['title']) <= TITLE_MAX:
+    if len(d['title']) <= limit:
         return d['title']
-    return clip(d['title'], TITLE_MAX - len(suffix)) + suffix
+    return clip(d['title'], limit - len(suffix)) + suffix
 
 
 def topic_words(row):
@@ -482,19 +482,20 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
                   for row in (items if related_items is None else related_items)]
     fields = {row['field'] for row, *_ in candidates}
     years = {row['publication_date'][:4] for row, *_ in candidates}
-    titles = {d['id']: search_title(d) for d in items}
+    budget = TITLE_MAX - len('Archived: ') if archived else TITLE_MAX
+    titles = {d['id']: search_title(d, budget) for d in items}
     seen = {}
     for t in titles.values():
         seen[t] = seen.get(t, 0) + 1
     for d in items:
         if seen[titles[d['id']]] > 1 and not d.get('search_title'):
-            titles[d['id']] = clip(d['title'], TITLE_MAX - 7) + f' ({d["publication_date"][:4]})'
+            titles[d['id']] = clip(d['title'], budget - 7) + f' ({d["publication_date"][:4]})'
     seen = {}
     for t in titles.values():
         seen[t] = seen.get(t, 0) + 1
     for d in items:
         if seen[titles[d['id']]] > 1 and not d.get('search_title'):
-            titles[d['id']] = d['title']  # shortcut: still-duplicate short titles fall back to the full title
+            titles[d['id']] = clip(d['title'], budget - 10) + f' ({d["publication_date"][:7]})'  # month separates same-year twins
     ui = run_catalog_ui(items)
     for d in items:
         has_image = images or (ROOT / 'og' / f'{d["id"]}.png').is_file()
