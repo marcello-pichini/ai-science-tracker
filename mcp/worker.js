@@ -234,7 +234,7 @@ function createServer() {
       limit: z.number().int().min(1).max(20).default(10).describe('Results per page, 1 to 20.'),
       offset: z.number().int().min(0).max(10000).default(0).describe('Number of results to skip, for the next page.'),
     },
-    annotations: readOnly,
+    annotations: { ...readOnly, title: 'Search AI-enabled discoveries' },
   }, async ({ query, year, field, organization, limit, offset }) => {
     // A DOI in the query is looked up in the source and paper links instead of the text.
     const doi = query?.match(/10\.\d{4,9}\/[^\s"<>]+/)?.[0].toLowerCase().replace(/[.,;)\]]+$/, '')
@@ -276,7 +276,7 @@ function createServer() {
     title: 'List catalog fields',
     description: 'List the catalog fields (for the search_discoveries field filter) with their record counts.',
     inputSchema: {},
-    annotations: readOnly,
+    annotations: { ...readOnly, title: 'List catalog fields' },
   }, async () => {
     try {
       const entries = await loadCatalog()
@@ -297,7 +297,7 @@ function createServer() {
       id: z.string().trim().min(1).max(200).regex(/^[a-z0-9][a-z0-9-]*$/)
         .describe('Stable discovery ID as returned by search_discoveries, for example "2020-11-alphafold-casp14".'),
     },
-    annotations: readOnly,
+    annotations: { ...readOnly, title: 'Get a discovery record' },
   }, async ({ id }) => {
     // A warm catalog already holds the same record as the per-record API, and stays usable if the site is down.
     const cached = loadCatalog.find(id)
@@ -327,7 +327,7 @@ function createServer() {
       limit: z.number().int().min(1).max(20).default(10).describe('Results per page, 1 to 20.'),
       offset: z.number().int().min(0).max(10000).default(0).describe('Number of results to skip, for the next page.'),
     },
-    annotations: readOnly,
+    annotations: { ...readOnly, title: 'Search AI-found vulnerabilities' },
   }, async ({ query, year, ai_system, limit, offset }) => {
     const cve = query?.match(/cve-\d{4}-\d{4,}/i)?.[0].toLowerCase()
     const terms = query && !cve ? queryTerms(query) : []
@@ -366,7 +366,7 @@ function createServer() {
       id: z.string().trim().min(1).max(200).regex(/^[a-z0-9][a-z0-9-]*$/)
         .describe('Stable case ID as returned by search_vulnerabilities, for example "cve-2026-34197".'),
     },
-    annotations: readOnly,
+    annotations: { ...readOnly, title: 'Get a vulnerability case' },
   }, async ({ id }) => {
     const cached = loadVulnerabilities.find(id)
     if (cached) return toolResult({ ...cached, catalog_url: vulnerabilityUrl(id) })
