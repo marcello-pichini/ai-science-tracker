@@ -134,6 +134,8 @@ main { padding:0 0 72px; }
 .tab-mini td + td, .tab-mini th + th { text-align:right; }
 
 /* Keep distant records searchable while deferring their layout and paint. */
+/* Reserve the list height so deep links to #elenco do not shift the page when entries load. */
+#lista { min-height:100vh; }
 .static-page .piatto > .voce:nth-of-type(n+5), #lista .voce:nth-of-type(n+5), #cases > .voce:nth-of-type(n+5) {
   content-visibility:auto; contain-intrinsic-size:none auto 650px;
 }

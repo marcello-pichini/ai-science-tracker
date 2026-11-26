@@ -17,7 +17,8 @@ def git(*args):
 
 def substantive(text):
     # Regeneration rewrites every page's snapshot hash and catalog counts; those alone are not worth a recrawl.
-    return re.sub(r'\d+', '0', re.sub(r'data-page-snapshot="[0-9a-f]+"', '', text))
+    text = re.sub(r'data-page-snapshot="[0-9a-f]+"|\?v=[0-9a-f]+', '', text)  # asset cache-busting hashes too
+    return re.sub(r'\d+', '0', text)
 
 
 def changed_urls(base, head):

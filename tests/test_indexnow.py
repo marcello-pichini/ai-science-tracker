@@ -8,8 +8,8 @@ from indexnow import substantive
 
 class SubstantiveTest(unittest.TestCase):
     def test_snapshot_and_count_changes_are_ignored(self):
-        old = '<main data-page-snapshot="ab12"><p class="lead">191 discoveries</p>'
-        new = '<main data-page-snapshot="cd34"><p class="lead">192 discoveries</p>'
+        old = '<link href="styles.css?v=ab12"><main data-page-snapshot="ab12"><p class="lead">191 discoveries</p>'
+        new = '<link href="styles.css?v=cd34"><main data-page-snapshot="cd34"><p class="lead">192 discoveries</p>'
         self.assertEqual(substantive(old), substantive(new))
 
     def test_text_changes_are_kept(self):

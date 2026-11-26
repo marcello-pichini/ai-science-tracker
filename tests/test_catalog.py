@@ -105,7 +105,7 @@ class CatalogTests(unittest.TestCase):
                 if not parts.scheme and not parts.netloc and parts.path:
                     # The homepage is the directory URL (/ and /it/), which GitHub Pages
                     # serves from index.html. Other links stay relative to a real file.
-                    if parts.path in {'/', '/it/', '/de/', '/fr/', '/es/'}:
+                    if parts.path in {'/', '/it/', '/de/', '/fr/', '/es/', './'}:
                         continue
                     self.assertFalse(parts.path.startswith('/'), url)
                     self.assertTrue((ROOT / unquote(parts.path)).is_file(), url)

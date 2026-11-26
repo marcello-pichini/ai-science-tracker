@@ -1238,7 +1238,7 @@ def hero_pulse_html(items):
         klass = 'hero-bar hero-bar-now' if year == current else 'hero-bar'
         delay = i * 40
         parts.append(
-            f'<a href="index.html?year={year}#elenco" aria-label="{esc(f"{year}: {count} catalog entries")}">'
+            f'<a href="./?year={year}#elenco" aria-label="{esc(f"{year}: {count} catalog entries")}">'
             f'<rect class="{klass}" style="--d:{delay}ms" x="{x}" y="{y}" width="{bw}" height="{bar_h}" rx="3"/>'
             f'<text class="hero-count" x="{round(x + bw / 2, 2)}" y="{max(11, round(y - 4, 2))}" text-anchor="middle">{count}</text>'
             f'<text class="hero-year" x="{round(x + bw / 2, 2)}" y="{height - 4}" text-anchor="middle">{year}</text></a>'

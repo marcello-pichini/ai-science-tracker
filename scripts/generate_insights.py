@@ -522,7 +522,7 @@ def closing():
             '<p>You may reuse and adapt these charts under CC BY 4.0: credit “AI Science Tracker” and link to this page. '
             'Model release data comes from <a href="https://epoch.ai/data/ai-models">Epoch AI</a>, also CC BY 4.0.</p>\n'
             '<p>Figures describe what original sources report and have not been independently verified. '
-            '<a href="index.html">Browse the full catalog</a> to see every entry and its source.</p>\n'
+            '<a href="./">Browse the full catalog</a> to see every entry and its source.</p>\n'
             '</div></div></section>')
 
 
