@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-airway-nodule-detection-low-dose-ct",
+  "title": "Deep learning detects and classifies airway nodules on low-dose CT",
+  "summary": "A center-point matching detection network, adapted from lung nodule detection, reached 73.7% sensitivity on an independent test of 738 proximal airway nodules across four hospitals. In a human-AI interaction test, radiologist sensitivity rose from 39.5% to 72.9% and F1 from 49.4% to 77.2% with AI assistance. A separate 3D SEResNeXt101 model classified 286 airway nodules (121 benign, 165 malignant) and was evaluated on an independent set; the study is retrospective and the classification set is small.",
+  "field": "medicine",
+  "ai_technology": "Center-points matching detection network (transfer from lung nodules, with coordinate and multiscale attention) and a 3D SEResNeXt101 classifier on low-dose CT",
+  "organization": "Nanhua Hospital, University of South China; Xiangya Hospital, Central South University",
+  "source_url": "https://doi.org/10.1186/s13244-026-02446-7",
+  "source_type": "paper",
+  "publication_date": "2026-11-05",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent multi-hospital test set (738 proximal nodules) plus a human-AI reader comparison; retrospective data.",
+    "unknown": "Prospective performance, effect on interval or post-screen cancer outcomes and generalization of the classifier; full text not reviewed.",
+    "ai_role": "Detects overlooked airway nodules and classifies benign versus malignant ones as a second-reading tool.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s13244-026-02446-7%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations from Europe PMC or Crossref. Full text not accessed."
+  }
+}

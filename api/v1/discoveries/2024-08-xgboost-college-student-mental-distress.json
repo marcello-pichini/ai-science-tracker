@@ -1,0 +1,33 @@
+{
+  "id": "2024-08-xgboost-college-student-mental-distress",
+  "title": "Machine learning predicts severe mental distress in college students from survey data",
+  "summary": "Six machine learning models were trained on survey data from 2088 students at five universities; extreme gradient boosting performed best (AUC 0.932, 95% CI 0.911-0.949) and gave an AUC of 0.918 in external validation on 751 students from three universities. The model was deployed as a web application. The data are cross-sectional questionnaires, so the result is a risk-prediction tool, not evidence of causes or of intervention benefit.",
+  "field": "medicine",
+  "ai_technology": "Extreme gradient boosting selected among six machine learning models, deployed as a web app",
+  "organization": "Xiamen University of Technology",
+  "source_url": "https://doi.org/10.1186/s12888-024-06017-2",
+  "source_type": "paper",
+  "publication_date": "2024-08-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Random 80/20 training and validation split and external validation on 751 students.",
+    "unknown": "Whether use of the tool improves intervention outcomes; cross-sectional design; full text not reviewed.",
+    "ai_role": "Predicts severe mental distress from demographics, eating, lifestyle and sport habits.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12888-024-06017-2%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

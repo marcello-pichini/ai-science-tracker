@@ -1,0 +1,34 @@
+{
+  "id": "2025-11-post-hepatectomy-liver-failure-pilot-ml",
+  "title": "Time-phased ML with regeneration biomarkers predicts post-hepatectomy liver failure",
+  "summary": "The PILOT architecture used 55 perioperative variables, including GATA3, RAMP2, VEGFA and PEDF, to predict post-hepatectomy liver failure in 1,071 patients at three centers, with two external cohorts of 206 and 242. PILOT-Pre and PILOT-Intra used LightGBM and PILOT-Post used XGBoost, with AUCs of 0.740-0.895 in the validation cohorts, superior to traditional models (AUCs 0.502-0.644). The study is retrospective.",
+  "field": "medicine",
+  "ai_technology": "LightGBM and XGBoost models on time-phased perioperative data and liver regeneration biomarkers",
+  "organization": "Tongji University; Second Military Medical University; Shanghai Tenth People's Hospital",
+  "source_url": "https://doi.org/10.1016/j.eclinm.2025.103661",
+  "source_type": "paper",
+  "publication_date": "2025-11-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Thirteen algorithms were evaluated across preoperative, intraoperative and postoperative datasets with two external cohorts.",
+    "unknown": "Prospective validation and clinical benefit are not shown. Abstract-based; full text not reviewed.",
+    "ai_role": "Gradient-boosted tree models integrated biomarkers and perioperative data to predict liver failure early.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.eclinm.2025.103661%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.eclinm.2025.103661"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

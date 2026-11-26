@@ -1,0 +1,34 @@
+{
+  "id": "2023-08-transformer-msi-prediction-crc-histology",
+  "title": "Transformer pipeline predicts MSI from colorectal cancer histology across 16 cohorts",
+  "summary": "A transformer encoder combined with transformer patch aggregation predicted biomarkers from H&E slides, using over 13,000 patients from 16 colorectal cancer cohorts. For microsatellite instability on resection specimens it reached sensitivity 0.99 with negative predictive value above 0.99, and resection-only training reached clinical-grade performance on endoscopic biopsies. The study is retrospective.",
+  "field": "medicine",
+  "ai_technology": "Pre-trained transformer encoder with a transformer network for patch aggregation on pathology slides",
+  "organization": "Helmholtz Munich; Else Kröner Fresenius Center for Digital Health; Technical University of Munich",
+  "source_url": "https://doi.org/10.1016/j.ccell.2023.08.002",
+  "source_type": "paper",
+  "publication_date": "2023-08-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Biomarker prediction was evaluated on large multicenter cohorts, including biopsy tissue.",
+    "unknown": "Prospective clinical use is not tested. Abstract-based; full text not reviewed.",
+    "ai_role": "The transformer pipeline predicted MSI and other biomarkers directly from routine H&E slides.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.ccell.2023.08.002%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.ccell.2023.08.002"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

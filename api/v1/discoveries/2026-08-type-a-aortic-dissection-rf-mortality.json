@@ -1,0 +1,33 @@
+{
+  "id": "2026-08-type-a-aortic-dissection-rf-mortality",
+  "title": "Random forest predicts in-hospital mortality after type A aortic dissection surgery",
+  "summary": "A random forest trained on clustering-selected features predicted in-hospital mortality among 983 postoperative type A aortic dissection patients, with AUROC 0.8899 internally and 0.8331 externally on postoperative day 1, outperforming EuroSCORE II. It is a retrospective two-center study without prospective testing.",
+  "field": "medicine",
+  "ai_technology": "Random forest on clustering-selected features predicting postoperative in-hospital mortality",
+  "organization": "Zhongshan Hospital, Fudan University",
+  "source_url": "https://doi.org/10.31083/rcm49025",
+  "source_type": "paper",
+  "publication_date": "2026-08-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective two-center data with an external validation cohort from the second center, compared with EuroSCORE II.",
+    "unknown": "Prospective performance and clinical benefit; full text not reviewed.",
+    "ai_role": "A random forest produced the mortality risk prediction tool, with SHAP quantifying feature contributions.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.31083/rcm49025%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

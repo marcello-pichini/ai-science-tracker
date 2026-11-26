@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-ct-lesion-foundation-model-hepatocellular",
+  "title": "CT lesion foundation model assesses hepatocellular carcinoma aggressiveness and recurrence",
+  "summary": "A CT lesion foundation model was pretrained by self-supervised learning on 32 120 generic lesion and 6387 HCC-specific patches. Across one internal and two external cohorts it reached AUCs of 0.916, 0.846 and 0.920 for microvascular invasion and 0.833, 0.885 and 0.795 for pathological grade. Its risk score stratified recurrence-free survival with an externally validated C-index of 0.701.",
+  "field": "medicine",
+  "ai_technology": "Self-supervised CT lesion foundation model for microvascular invasion, grade and recurrence",
+  "organization": "Shanghai Jiao Tong University; Ruijin Hospital",
+  "source_url": "https://doi.org/10.1002/advs.78587",
+  "source_type": "paper",
+  "publication_date": "2026-11-01",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "One internal and two external retrospective cohorts.",
+    "unknown": "Retrospective; modest C-index; full text not reviewed.",
+    "ai_role": "Foundation model extracts imaging phenotypes used for prediction.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/advs.78587%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1002/advs.78587"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

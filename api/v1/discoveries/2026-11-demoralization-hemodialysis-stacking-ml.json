@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-demoralization-hemodialysis-stacking-ml",
+  "title": "Interpretable stacking model predicts demoralization syndrome in hemodialysis patients",
+  "summary": "A 12-predictor Stacking-Ridge model was developed in a prospective cohort of 592 maintenance hemodialysis patients and had AUC 0.922 (95% CI 0.883-0.955) in external validation (n = 245), with recall 0.652 and precision 0.714. SHAP highlighted urinary microalbumin, PHQ-9 and HALP score. Follow-up was 5 months and recall is modest.",
+  "field": "medicine",
+  "ai_technology": "Stacking ensemble with Bayesian-optimized base learners and SHAP interpretation",
+  "organization": "Wuhan University of Science and Technology",
+  "source_url": "https://doi.org/10.1016/j.jad.2026.122759",
+  "source_type": "paper",
+  "publication_date": "2026-11-19",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation, decision curve analysis and ablation analyses.",
+    "unknown": "Prospective use and impact on interventions are untested. Abstract-based; full text not reviewed.",
+    "ai_role": "A stacking ensemble selected 12 predictors from 87 and predicted incident demoralization.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jad.2026.122759%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.jad.2026.122759"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-ai-prostate-biopsy-isup-grading",
+  "title": "AI tool screens prostate needle biopsies and suggests ISUP grade groups",
+  "summary": "An AI system trained on 2115 annotated whole-slide images was tested on an independent set of 150 prostate needle biopsy slides against pathologist-consensus ground truth. It identified all 109 malignant slides with no false negatives, whereas the pathologist consensus missed two, and it correctly classified 38 of 41 benign slides. The test set is small and retrospective.",
+  "field": "medicine",
+  "ai_technology": "Strongly supervised AI segmentation system for tumour detection and ISUP Grade Group suggestion",
+  "organization": "Department of Anatomical Pathology, Singapore General Hospital, Singapore; Qritive Pte. Ltd., Singapore",
+  "source_url": "https://doi.org/10.3390/life16081257",
+  "source_type": "paper",
+  "publication_date": "2026-07-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent external test of 150 slides compared with 11 pathologists reading without AI.",
+    "unknown": "Prospective performance in routine reporting and effects on pathologist workflow; authors include a vendor affiliation; full text not reviewed.",
+    "ai_role": "An AI system detected tumour and segmented Gleason patterns to suggest ISUP grade groups.",
+    "evidence_urls": [
+      "https://api.crossref.org/works/10.3390/life16081257"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from the review input and author affiliations from Crossref metadata for this DOI. Publisher full text not accessed."
+  }
+}

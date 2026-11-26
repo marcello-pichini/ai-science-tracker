@@ -1,0 +1,33 @@
+{
+  "id": "2024-07-mtl-ai-cervical-cancer-preop",
+  "title": "Multi-task neural network predicts cervical cancer stage, histology, grade, nodes",
+  "summary": "A multi-task artificial neural network trained on 223 retrospectively enrolled cervical cancer cases predicted stage, histology, grade and lymph node metastasis from preoperative clinical information. On a prospectively collected independent set of 58 cases, accuracies were 75%, 95%, 86% and 76%. Except for lymph node metastasis, it beat single-task models, 20 gynecologists and AI-assisted doctors. The validation set is small and from one hospital.",
+  "field": "medicine",
+  "ai_technology": "Multi-task learning artificial neural network on preoperative clinical information",
+  "organization": "Beijing Friendship Hospital, Capital Medical University; Maastricht University Medical Centre+",
+  "source_url": "https://doi.org/10.1186/s12905-024-03270-1",
+  "source_type": "paper",
+  "publication_date": "2024-07-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective training (n = 223), an independent prospective validation set (n = 58) and a Turing test with 20 gynecologists.",
+    "unknown": "Performance in larger multi-center cohorts; full text not reviewed.",
+    "ai_role": "Predicts four clinical-pathological features at once from preoperative data.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12905-024-03270-1%22&resultType=core&format=json"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

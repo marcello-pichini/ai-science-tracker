@@ -1,0 +1,33 @@
+{
+  "id": "2023-12-psoriasis-adam23-ml-biomarker",
+  "title": "Machine learning nominates ADAM23 as a psoriasis biomarker, checked in patients and mice",
+  "summary": "Random forest, LASSO, SVM-RFE and WGCNA applied to Gene Expression Omnibus psoriasis datasets nominated ADAM23 as a diagnostic biomarker, which was checked in an independent dataset (GSE41662). ADAM23 expression was upregulated in macrophages of psoriatic lesions in patients and mice. The abstract reports no AUC and no experimental sample sizes, and the work is a bioinformatic biomarker study.",
+  "field": "medicine",
+  "ai_technology": "Random forest, LASSO logistic regression, WGCNA and SVM-RFE screening of psoriasis transcriptomes",
+  "organization": "First Affiliated Hospital of USTC, University of Science and Technology of China",
+  "source_url": "https://doi.org/10.2147/ijgm.s441262",
+  "source_type": "paper",
+  "publication_date": "2023-12-22",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "ADAM23 expression was checked in an independent GEO dataset (GSE41662) and by experimental expression assays in patient and mouse samples.",
+    "unknown": "Experimental sample sizes and diagnostic accuracy are not given in the abstract; whether ADAM23 has a causal role; full text not reviewed.",
+    "ai_role": "Four machine-learning algorithms screened differentially expressed genes to nominate the candidate biomarker ADAM23.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2147/ijgm.s441262%22&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

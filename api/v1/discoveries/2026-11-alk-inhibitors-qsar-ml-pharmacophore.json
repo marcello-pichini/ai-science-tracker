@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-alk-inhibitors-qsar-ml-pharmacophore",
+  "title": "QSAR and machine learning screening finds NCI compounds that inhibit ALK",
+  "summary": "QSAR (GFA-MLR; R2 0.60) and genetic-algorithm-optimized classifier models built on 287 ALK inhibitors (test n=57) guided pharmacophore screening of the NCI library. In a dose-response ALK assay, 8 of 28 screened compounds inhibited ALK at 10 uM, and NSC 290954, NSC 196403 and NSC 715055 had IC50 values of 2.15, 4.02 and 5.95 uM. The QSAR fit is modest, the 98.7% random forest accuracy is a classifier metric, and the abstract does not state testing against the G1202R mutant; this is a version 1 preprint.",
+  "field": "chemistry",
+  "ai_technology": "GFA-MLR QSAR model and genetic-algorithm-optimized ensemble classifiers (random forest, XGBoost, k-NN, Naive Bayes) guiding pharmacophore-based virtual screening",
+  "organization": "Hashemite University",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-11515269/v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-11",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Dose-response ALK assay of screened compounds, with docking, molecular dynamics and NCI-60 profiling.",
+    "unknown": "Activity against the resistant G1202R mutant, selectivity and cellular efficacy; full text not reviewed.",
+    "ai_role": "Models structure-activity relationships and prioritizes compounds for experimental testing.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-11515269/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-11515269/v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Version 1 abstract read from Europe PMC metadata for this DOI; author affiliations not retrieved. Full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

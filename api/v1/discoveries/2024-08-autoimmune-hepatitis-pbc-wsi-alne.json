@@ -1,0 +1,34 @@
+{
+  "id": "2024-08-autoimmune-hepatitis-pbc-wsi-alne",
+  "title": "Deep learning separates autoimmune hepatitis from primary biliary cholangitis on biopsies",
+  "summary": "The ALNE transformer-based model was trained without human annotations on 354 cases (266 AIH, 102 PBC) and reached AUC 0.81 in external validation of 92 cases (62 AIH, 30 PBC) from European centers. Attention heatmaps focused on inflamed areas, and agreement among general pathologists was low (Fleiss kappa 0.09). The study is retrospective and the external set is small.",
+  "field": "medicine",
+  "ai_technology": "Transformer-based deep-learning model on H&E whole-slide images",
+  "organization": "University of Milano-Bicocca",
+  "source_url": "https://doi.org/10.1016/j.jhepr.2024.101198",
+  "source_type": "paper",
+  "publication_date": "2024-08-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation against clinico-pathological diagnoses and interobserver agreement testing.",
+    "unknown": "AUC is modest and prospective performance is not tested. Abstract-based; full text not reviewed.",
+    "ai_role": "ALNE learned slide-level differences between AIH and PBC without annotations.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jhepr.2024.101198%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.jhepr.2024.101198"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-ecg-deep-learning-attr-cm",
+  "title": "Deep learning on ECG images to prioritize testing for transthyretin amyloid cardiomyopathy",
+  "summary": "A locally deployable AI-ECG model was developed at Yale New Haven Health (28 174 ECGs, 11 291 patients, 293 with ATTR-CM) and temporally validated. Internal AUROC was 0.84 with sensitivity 0.72 and specificity 0.86; across 5 external cohorts AUROCs ranged from 0.78 to 0.89, and in 3 screening cohorts (n = 121-645) from 0.76 to 0.91. Sequential AI-ECG then AI-enabled echocardiography raised positive predictive value from 0.24 to 0.66 and lowered sensitivity from 0.84 to 0.68. The study was retrospective and diagnostic; the authors state intended use and calibration need prospective evaluation.",
+  "field": "medicine",
+  "ai_technology": "Deep-learning AI-ECG model applied to routine ECG images or raw 12-lead signals to flag ATTR-CM",
+  "organization": "Yale University; Amsterdam UMC; Amsterdam Cardiovascular Sciences",
+  "source_url": "https://doi.org/10.1001/jama.2026.16785",
+  "source_type": "paper",
+  "publication_date": "2026-11-01",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Temporal and external retrospective validation against cardiac amyloid radionuclide imaging or biopsy.",
+    "unknown": "Prospective benefit, calibration and intended use not tested; screening cohorts small; full text not reviewed.",
+    "ai_role": "Model flags patients with possible ATTR-CM from ECG images for confirmatory testing.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1001/jama.2026.16785%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1001/jama.2026.16785"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

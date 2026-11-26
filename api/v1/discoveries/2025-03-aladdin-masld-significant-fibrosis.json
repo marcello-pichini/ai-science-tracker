@@ -1,0 +1,33 @@
+{
+  "id": "2025-03-aladdin-masld-significant-fibrosis",
+  "title": "Machine learning ensemble estimates significant fibrosis in metabolic liver disease",
+  "summary": "ALADDIN, an ensemble of random forest, gradient boosting and XGBoost, estimates the likelihood of significant fibrosis (F2 or higher) in MASLD from routine laboratory parameters with or without elastography. In an external validation set of 1,299 biopsy-characterized patients from 9 centers, the version using VCTE reached an AUC of 0.791 (95% CI 0.764-0.819) against 0.745 for VCTE alone. It was trained on 827 patients and tested on 504 from 6 centers; the study is retrospective.",
+  "field": "medicine",
+  "ai_technology": "Ensemble of random forest, gradient boosting machines and XGBoost on routine laboratory parameters with or without VCTE",
+  "organization": "Arizona Liver Health",
+  "source_url": "https://doi.org/10.14309/ajg.0000000000003432",
+  "source_type": "paper",
+  "publication_date": "2025-03-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent external validation set (n=1,299, 9 centers) against biopsy; retrospective.",
+    "unknown": "Prospective use for resmetirom patient selection and benefit over existing algorithms in other populations; full text not reviewed.",
+    "ai_role": "Predicts the probability of significant fibrosis to help select patients for treatment.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.14309/ajg.0000000000003432%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations from Europe PMC or Crossref. Full text not accessed."
+  }
+}

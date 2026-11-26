@@ -1,0 +1,33 @@
+{
+  "id": "2020-10-rectal-cancer-ncrt-response-adc-dl",
+  "title": "Deep learning on pretreatment ADC MRI predicts chemoradiotherapy response in rectal cancer",
+  "summary": "A deep convolutional network trained on pretreatment ADC (and T2) MRI patches from 700 patients with locally advanced rectal cancer, split chronologically into training (n = 500) and test (n = 200) groups, classified good responders to neoadjuvant chemoradiotherapy with AUC 0.851 versus 0.723 for mean ADC. Sensitivity was 94.3% and specificity 68.3%. The study is retrospective with a time-split test set and the abstract is the only source reviewed.",
+  "field": "medicine",
+  "ai_technology": "Deep convolutional neural network on pretreatment ADC and T2 MRI patches classifying good versus non-good responders",
+  "organization": "Peking University Cancer Hospital & Institute",
+  "source_url": "https://doi.org/10.3389/fonc.2020.574337",
+  "source_type": "paper",
+  "publication_date": "2020-10-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Chronologically held-out test group (n = 200) with a pathology reference.",
+    "unknown": "Independent-center and prospective performance; full text not reviewed.",
+    "ai_role": "A deep convolutional network learned response-related features from ADC images across scanners.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fonc.2020.574337%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

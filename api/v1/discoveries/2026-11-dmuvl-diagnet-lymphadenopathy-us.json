@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-dmuvl-diagnet-lymphadenopathy-us",
+  "title": "Deep learning on dual-modality ultrasound videos characterizes superficial lymphadenopathy",
+  "summary": "A multicenter study of 4026 patients with pathologically confirmed lymphadenopathy built DMUVL-DiagNet, which combines B-mode and color Doppler videos with basic clinical information. The abstract reports AUCs of 0.91-0.95 for benign versus malignant and 0.87-0.91 for lymphoma versus metastasis across test sets, including a prospective external video set (n = 454) and an external static image set (n = 1956). Junior radiologist AUCs rose from 0.72 to 0.88 and from 0.58 to 0.77 with model assistance. This is a diagnostic accuracy study, not an outcome study; full text was not reviewed.",
+  "field": "medicine",
+  "ai_technology": "DMUVL-DiagNet, a deep learning model that integrates B-mode and color Doppler ultrasound videos with basic clinical information",
+  "organization": "Lanzhou University Second Hospital; Gansu Province Medical Engineering Research Center for Intelligence Ultrasound",
+  "source_url": "https://doi.org/10.1148/ryai.260131",
+  "source_type": "paper",
+  "publication_date": "2026-11-01",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Trained and internally tested on a retrospective video set (n = 1616); externally tested on a prospective dual-modality video set (n = 454) and a static image set (n = 1956), with a reader study.",
+    "unknown": "Whether the model changes clinical decisions or outcomes; performance outside the five participating centers; full text not reviewed.",
+    "ai_role": "Classifies benign versus malignant superficial lymph nodes and lymphoma versus metastasis from ultrasound videos.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1148/ryai.260131%22&resultType=core&format=json"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2023-12-evir-antiviral-repurposing-sars-cov-2",
+  "title": "eVir network model identifies repurposed oral drugs active against SARS-CoV-2",
+  "summary": "The eVir pipeline uses Node2Vec embeddings of drug-protein and protein-protein networks with a Siamese network and MLPs to rank drugs by similarity to antiviral peptides. Compounds including mebendazole, gefitinib and topotecan were tested in SARS-CoV-2-infected Calu-3 cells and a lead compound in K18-hACE2 mice. The similarity model reported accuracy 97.28% and AUC 99.47%, a similarity task rather than antiviral efficacy.",
+  "field": "medicine",
+  "ai_technology": "Node2Vec graph embeddings feeding a Siamese network and MLPs to score drug similarity to antiviral peptides",
+  "organization": "Louisiana State University",
+  "source_url": "https://doi.org/10.3389/fphar.2023.1297924",
+  "source_type": "paper",
+  "publication_date": "2023-12-22",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Experimental testing of selected compounds in infected cells and mice.",
+    "unknown": "Quantitative antiviral potency and mouse outcomes are not given in the abstract; full text not reviewed.",
+    "ai_role": "Ranked existing drugs for antiviral repurposing.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fphar.2023.1297924%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3389/fphar.2023.1297924"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations were not retrievable. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

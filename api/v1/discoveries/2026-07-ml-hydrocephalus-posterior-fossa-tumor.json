@@ -1,0 +1,34 @@
+{
+  "id": "2026-07-ml-hydrocephalus-posterior-fossa-tumor",
+  "title": "Machine learning predicts postoperative hydrocephalus after posterior fossa tumor surgery",
+  "summary": "Seven ML algorithms were evaluated on 1073 patients from five centers (854 development, 219 external). The final model used three preoperative variables: Evans index, tumor-fourth ventricle relationship and preoperative CSF diversion status. The support vector machine reached external AUC 0.877, accuracy 81.3%, sensitivity 80.8% and specificity 81.7%, with calibration suggesting dataset shift.",
+  "field": "medicine",
+  "ai_technology": "Support vector machine among seven ML algorithms with SHAP-based feature ranking",
+  "organization": "Army Medical University; Southwest Hospital",
+  "source_url": "https://doi.org/10.1007/s10143-026-04403-w",
+  "source_type": "paper",
+  "publication_date": "2026-07-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation cohort of 219 patients.",
+    "unknown": "Retrospective; dataset shift; not a stand-alone indication for CSF diversion; full text not reviewed.",
+    "ai_role": "Model predicts hydrocephalus risk.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s10143-026-04403-w%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1007/s10143-026-04403-w"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

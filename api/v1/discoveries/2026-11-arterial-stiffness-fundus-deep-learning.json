@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-arterial-stiffness-fundus-deep-learning",
+  "title": "Deep learning predicts arterial stiffness from retinal fundus images in diabetes",
+  "summary": "A deep-learning model trained on 64,440 images from 36,412 adults with diabetes reached AUC 0.780 internally and 0.772 externally (6,217 images, two hospitals). A fusion model with clinical factors reached AUC 0.853 on the test set and 0.801 externally. Ablation analyses suggested retinal arteries are associated with arterial stiffness; this retrospective analysis is exploratory on mechanism.",
+  "field": "medicine",
+  "ai_technology": "Deep-learning model on fundus images, fused with clinical factors",
+  "organization": "Shanghai Jiao Tong University; Ruijin Hospital",
+  "source_url": "https://doi.org/10.1016/j.isci.2026.118046",
+  "source_type": "paper",
+  "publication_date": "2026-11-02",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Performance was assessed on internal test and two external hospital sets, with ablation by retinal structure.",
+    "unknown": "AUCs are modest; pulse wave velocity is the reference and mechanism is not established. Abstract-based; full text not reviewed.",
+    "ai_role": "A deep-learning model estimated pulse wave velocity-defined arterial stiffness from retinal photographs.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.isci.2026.118046%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.isci.2026.118046"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

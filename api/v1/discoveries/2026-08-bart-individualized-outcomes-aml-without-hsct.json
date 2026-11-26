@@ -1,0 +1,34 @@
+{
+  "id": "2026-08-bart-individualized-outcomes-aml-without-hsct",
+  "title": "Bayesian additive regression trees predict AML outcomes without first-remission transplant",
+  "summary": "A BART model integrating clinical and genomic data was built on 2550 intensively treated AML patients from the HARMONY database who did not receive allo-HSCT in first remission. Time-dependent AUC beat ELN2022 for 5-year overall survival (0.741 vs 0.700), relapse-free survival (0.752 vs 0.705) and cumulative relapse incidence (0.742 vs 0.708), confirmed in 714 UK-NCRI patients. Some ELN favorable-risk patients had predicted 5-year relapse above 40%.",
+  "field": "medicine",
+  "ai_technology": "Bayesian Additive Regression Trees integrating clinical variables and genomic aberrations",
+  "organization": "Universidad de Salamanca; Instituto de Investigación Biomédica de Salamanca; Centro de Investigación del Cáncer",
+  "source_url": "https://doi.org/10.1002/hem3.70461",
+  "source_type": "paper",
+  "publication_date": "2026-08-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation in 714 UK-NCRI trial patients.",
+    "unknown": "Retrospective; no measurable residual disease; transplant benefit not tested; full text not reviewed.",
+    "ai_role": "Non-parametric ML gives individualized outcome estimates.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/hem3.70461%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1002/hem3.70461"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

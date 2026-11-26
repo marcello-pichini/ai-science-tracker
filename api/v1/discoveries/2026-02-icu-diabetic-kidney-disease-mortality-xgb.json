@@ -1,0 +1,33 @@
+{
+  "id": "2026-02-icu-diabetic-kidney-disease-mortality-xgb",
+  "title": "XGBoost model predicts in-hospital mortality in ICU patients with diabetic kidney disease",
+  "summary": "An XGBoost model, the best of eight algorithms with LASSO feature selection, was developed on 3,403 ICU patients with diabetic kidney disease from MIMIC-IV (AUROC 0.738 internally) and externally validated on 260 patients at the First Affiliated Hospital of Yangtze University (AUROC 0.746, accuracy 72.69%). Discrimination is modest, the external cohort is small and no comparator score is reported.",
+  "field": "medicine",
+  "ai_technology": "XGBoost (best of eight algorithms, LASSO feature selection) predicting in-hospital mortality in ICU diabetic kidney disease",
+  "organization": "First Affiliated Hospital of Yangtze University",
+  "source_url": "https://doi.org/10.3389/fendo.2026.1699647",
+  "source_type": "paper",
+  "publication_date": "2026-02-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective external validation cohort of 260 patients (YTU-ICU) after development on MIMIC-IV.",
+    "unknown": "Comparison with existing scores, prospective performance and clinical benefit; full text not reviewed.",
+    "ai_role": "A gradient boosting model predicted in-hospital mortality from ICU data.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fendo.2026.1699647%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

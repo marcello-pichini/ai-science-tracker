@@ -1,0 +1,34 @@
+{
+  "id": "2021-09-vindr-cxr-explainable-chest-radiograph",
+  "title": "Explainable deep learning classifies and localizes findings on chest radiographs",
+  "summary": "VinDr-CXR was trained on 51,485 chest radiographs with radiologist bounding boxes. On a retrospective validation set of 3,000 scans it reached a mean AUROC of 0.967 (95% CI 0.958-0.975) for six common thoracic diseases, comparable to experienced radiologists, with sensitivity 0.933 and specificity 0.900. The abstract also reports improved interobserver agreement when radiologists used the system. Retrospective data; preprint of 2021-09-30.",
+  "field": "medicine",
+  "ai_technology": "Explainable deep learning system (VinDr-CXR) that classifies thoracic diseases and localizes findings on chest radiographs",
+  "organization": "VinUniversity",
+  "source_url": "https://doi.org/10.1101/2021.09.28.21264286",
+  "source_type": "paper",
+  "publication_date": "2021-09-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Retrospective validation on 3,000 scans (mean AUROC 0.967) and a reader assessment of interobserver agreement.",
+    "unknown": "Performance in other populations, prospective clinical benefit and peer-reviewed status are not established from the abstract; full text not reviewed.",
+    "ai_role": "A deep learning system classified and localized thoracic findings on chest radiographs and assisted readers.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2021.09.28.21264286%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1101/2021.09.28.21264286"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations were not available. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

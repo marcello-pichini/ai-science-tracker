@@ -1,0 +1,33 @@
+{
+  "id": "2020-06-msi-detection-colorectal-histology-deep-learning",
+  "title": "Deep learning detects microsatellite instability in colorectal tumours from H&E slides",
+  "summary": "A deep learning detector was trained on H&E slides from 8,836 colorectal tumours in the MSIDETECT consortium to identify microsatellite instability or mismatch-repair deficiency. Cross-validation (n = 6,406) gave a mean AUROC of 0.92, and performance in an external cohort of 771 specimens was reported at 0.95 to 0.96. The data are retrospective.",
+  "field": "medicine",
+  "ai_technology": "Deep-learning detector for MSI/dMMR on H&E whole-slide images",
+  "organization": "RWTH Aachen University Hospital; Maastricht University Medical Center",
+  "source_url": "https://doi.org/10.1053/j.gastro.2020.06.021",
+  "source_type": "paper",
+  "publication_date": "2020-06-17",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "AUROC and AUPRC for MSI/dMMR detection by cross-validation and in an external multi-site cohort.",
+    "unknown": "Retrospective data; clinical use and effect on treatment decisions not shown; full text not reviewed.",
+    "ai_role": "Deep learning detector classifying MSI/dMMR from routine histology slides.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1053/j.gastro.2020.06.021%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; affiliations from Europe PMC or Crossref where stated. Publisher full text not accessed."
+  }
+}

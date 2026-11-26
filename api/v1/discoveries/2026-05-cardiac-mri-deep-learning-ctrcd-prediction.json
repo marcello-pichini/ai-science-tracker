@@ -1,0 +1,34 @@
+{
+  "id": "2026-05-cardiac-mri-deep-learning-ctrcd-prediction",
+  "title": "Deep learning on pre-therapy cardiac MRI predicts cancer therapy cardiac dysfunction",
+  "summary": "Deep CNNs on pre-treatment cardiac MRI cine images predicted subsequent cardiac dysfunction in 229 women with HER2+ breast cancer (176 Toronto derivation, 53 Calgary external). AUC was 0.85 internally and 0.80 (95% CI 0.66-0.92) externally, versus 0.59-0.66 for clinical, CMR and echocardiographic models. The external cohort had 14 events, so confidence intervals are wide.",
+  "field": "medicine",
+  "ai_technology": "Deep convolutional neural networks on cardiac MRI short-axis cine images",
+  "organization": "University Health Network; University of Toronto; Toronto General Hospital",
+  "source_url": "https://doi.org/10.1016/j.jcmg.2026.04.007",
+  "source_type": "paper",
+  "publication_date": "2026-05-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation in a Calgary cohort drawn from a prospective study.",
+    "unknown": "Small external cohort; no prospective deployment. Abstract-based; full text not reviewed.",
+    "ai_role": "A deep CNN predicted future cardiac dysfunction from pre-therapy cine MRI.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jcmg.2026.04.007%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.jcmg.2026.04.007"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

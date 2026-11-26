@@ -1,0 +1,33 @@
+{
+  "id": "2021-11-weakly-supervised-he-breast-multiomics",
+  "title": "Weakly supervised deep learning links breast cancer histology to molecular status",
+  "summary": "Weakly supervised deep-learning models on H&E slides performed tumor detection and subtype classification, validated in independent cohorts with AUC of at least 0.950. The models also predicted estrogen/progesterone/HER2 receptor status, PAM50 status and TP53 mutation status from morphology, and learned lymphocyte-specific signals for estrogen receptor status.",
+  "field": "medicine",
+  "ai_technology": "Weakly supervised deep-learning models on hematoxylin-and-eosin whole slide images",
+  "organization": "Harvard Medical School",
+  "source_url": "https://doi.org/10.1038/s41523-021-00357-y",
+  "source_type": "paper",
+  "publication_date": "2021-11-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent cohorts for detection and subtyping (AUC at least 0.950).",
+    "unknown": "Retrospective; performance for receptor, PAM50 and TP53 prediction not stated in the abstract; abstract only; full text not reviewed.",
+    "ai_role": "Deep learning predicted molecular status from slide morphology and revealed lymphocyte-related signal.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41523-021-00357-y%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

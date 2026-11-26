@@ -1,0 +1,34 @@
+{
+  "id": "2024-02-radiomics-rf-prostate-cspca-mri",
+  "title": "Random forest MRI radiomics predicts clinically significant prostate cancer",
+  "summary": "Random forest radiomics models on MRI from 1616 patients at four centers predicted clinically significant prostate cancer with AUCs of 0.874 (internal test) and 0.876 and 0.893 (external tests). Adjusting PI-RADS with the model improved AUC and specificity at a slight cost to sensitivity, and the Rad-score correlated with ISUP grade (r > 0.600). The study is retrospective, and the authors state prospective validation is still needed.",
+  "field": "medicine",
+  "ai_technology": "Random forest radiomics model (best of four machine learning algorithms) on MRI",
+  "organization": "First Affiliated Hospital of Soochow University",
+  "source_url": "https://doi.org/10.1186/s13244-024-01631-w",
+  "source_type": "paper",
+  "publication_date": "2024-02-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal testing and two external testing cohorts across four centers.",
+    "unknown": "Prospective performance and effect on biopsy decisions; full text not reviewed.",
+    "ai_role": "Predicts clinically significant prostate cancer and ISUP grade from MRI radiomic features.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s13244-024-01631-w%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s13244-024-01631-w"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations not retrieved. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2023-04-dl-lymph-node-metastasis-colorectal",
+  "title": "Deep-learning histology features add to colorectal cancer lymph node metastasis prediction",
+  "summary": "Deep-learning embeddings of small tumor patches were clustered by k-means and the clusters that added value were combined with six clinicopathologic variables in a logistic regression model. The machine-learned features carried independent signal for lymph node metastasis (AUROC 0.638) and improved prediction in an external validation set (likelihood ratio test).",
+  "field": "medicine",
+  "ai_technology": "Deep-learning patch embeddings clustered by k-means and added to logistic regression",
+  "organization": "Google Health",
+  "source_url": "https://doi.org/10.1038/s43856-023-00282-0",
+  "source_type": "paper",
+  "publication_date": "2023-04-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation set tested by likelihood ratio test.",
+    "unknown": "Modest discrimination (AUROC 0.638); retrospective; abstract only; full text not reviewed.",
+    "ai_role": "Deep learning embeddings of tumor histology supplied the extra predictive features.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s43856-023-00282-0%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

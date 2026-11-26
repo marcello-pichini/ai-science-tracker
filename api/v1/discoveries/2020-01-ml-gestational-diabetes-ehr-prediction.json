@@ -1,0 +1,34 @@
+{
+  "id": "2020-01-ml-gestational-diabetes-ehr-prediction",
+  "title": "Machine learning predicts gestational diabetes from nationwide electronic health records",
+  "summary": "Models trained on retrospective records of 588,622 pregnancies in Israel predicted gestational diabetes at pregnancy initiation with an auROC of 0.85 against 0.68 for a baseline risk score. Results held on a future validation set and a geographical validation set from Jerusalem, and a nine-question model reached an auROC of 0.80.",
+  "field": "medicine",
+  "ai_technology": "Machine-learning (gradient boosting) models on electronic health record data",
+  "organization": "Weizmann Institute of Science",
+  "source_url": "https://doi.org/10.1038/s41591-019-0724-8",
+  "source_type": "paper",
+  "publication_date": "2020-01-13",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Future temporal and geographic (Jerusalem) validation sets: auROC 0.85 at pregnancy initiation versus 0.68 baseline.",
+    "unknown": "Retrospective; the authors state prospective studies and other populations are needed; abstract only; full text not reviewed.",
+    "ai_role": "Machine learning predicted risk and identified previously unreported risk factors such as earlier glucose challenge test results.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41591-019-0724-8%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1038/s41591-019-0724-8"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

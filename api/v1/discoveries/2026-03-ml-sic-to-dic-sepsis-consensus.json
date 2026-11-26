@@ -1,0 +1,34 @@
+{
+  "id": "2026-03-ml-sic-to-dic-sepsis-consensus",
+  "title": "Cross-algorithm machine learning predicts DIC progression in sepsis-induced coagulopathy",
+  "summary": "In 4874 patients with sepsis-induced coagulopathy (1629 local and 3245 from MIMIC-IV), a two-stage framework combined 16 machine learning algorithms and 11 feature-ranking methods to pick consensus features for a minimalist model. The final seven-feature gradient boosting model reached F1 0.71 and AUC 0.75 internally, with external validation on MIMIC-IV. External figures were not visible in the abstract, and discrimination is modest.",
+  "field": "medicine",
+  "ai_technology": "Gradient boosting classifier with cross-algorithm consensus feature selection, interpreted with SHAP and a nomogram",
+  "organization": "Wenzhou Medical University; First Affiliated Hospital of Wenzhou Medical University",
+  "source_url": "https://doi.org/10.1186/s12967-026-08067-4",
+  "source_type": "paper",
+  "publication_date": "2026-03-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective multicenter study with external validation in the MIMIC-IV cohort.",
+    "unknown": "External validation figures and prospective utility; full text not reviewed.",
+    "ai_role": "Selects stable features and builds the model that predicts progression to DIC.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12967-026-08067-4%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12967-026-08067-4"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations not retrieved. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

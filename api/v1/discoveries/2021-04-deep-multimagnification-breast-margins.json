@@ -1,0 +1,33 @@
+{
+  "id": "2021-04-deep-multimagnification-breast-margins",
+  "title": "Deep multi-magnification network segments carcinoma in breast shaved-margin slides",
+  "summary": "A deep multi-magnification network was applied to whole slide images of breast lumpectomy shaved margins. On a validation set of 408 slides the initial model reached an AUC of 0.941 and 0.968 after fine-tuning; on a testing set of 427 slides AUC was 0.900 and 0.927 and the model had 92% sensitivity and 78% specificity. The four false negatives were small foci of DCIS or well-differentiated invasive carcinoma, and the authors call it a proof-of-principle study.",
+  "field": "medicine",
+  "ai_technology": "Deep multi-magnification convolutional neural network for carcinoma segmentation in whole slide images",
+  "organization": "Memorial Sloan Kettering Cancer Center",
+  "source_url": "https://doi.org/10.1038/s41379-021-00807-9",
+  "source_type": "paper",
+  "publication_date": "2021-04-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Separate validation (408 slides) and testing (427 slides) sets of shave-margin slides.",
+    "unknown": "Single-institution retrospective proof of principle; no clinical benefit shown; abstract only; full text not reviewed.",
+    "ai_role": "The network segmented carcinoma from benign tissue as a possible screening aid for margin assessment.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41379-021-00807-9%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

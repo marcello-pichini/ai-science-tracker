@@ -1,0 +1,34 @@
+{
+  "id": "2023-11-ligand-transformer-sequence-drug-design",
+  "title": "Ligand-Transformer screens kinase inhibitors and Abeta aggregation modulators",
+  "summary": "Ligand-Transformer, a deep learning framework based on the AlphaFold2 transformer architecture, predicts protein-ligand binding affinity. It was used to screen inhibitors of the mutant EGFR LTC kinase, identifying compounds with low nanomolar potency, and to find small molecules that delayed aggregation of the Alzheimer's Abeta peptide. The abstract does not give the number of hits tested. Preprint v1 of 2023-11-27.",
+  "field": "chemistry",
+  "ai_technology": "Ligand-Transformer, a deep learning model based on AlphaFold2 transformer architecture predicting protein-ligand binding affinity",
+  "organization": "University of Cambridge",
+  "source_url": "https://doi.org/10.1101/2023.11.27.568880",
+  "source_type": "paper",
+  "publication_date": "2023-11-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Experimental potency measurements for EGFR LTC kinase inhibitors and aggregation assays for Abeta-binding compounds.",
+    "unknown": "Hit rates, selectivity and peer-reviewed status are not stated in the abstract; full text not reviewed.",
+    "ai_role": "A transformer model ranked compounds by predicted binding affinity for experimental testing.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2023.11.27.568880%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1101/2023.11.27.568880"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations were not available. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

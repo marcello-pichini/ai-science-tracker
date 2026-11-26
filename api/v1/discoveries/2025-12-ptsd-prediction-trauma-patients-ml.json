@@ -1,0 +1,34 @@
+{
+  "id": "2025-12-ptsd-prediction-trauma-patients-ml",
+  "title": "Machine learning predicts PTSD at 1, 3 and 6 months in hospitalized trauma patients",
+  "summary": "Five models (logistic regression, random forest, SVM, XGBoost, neural network) used psychosocial and routine biochemical variables from 382 trauma patients and were externally validated in 204. Best AUCs were 0.84 (SVM, 1 month), 0.78 and 0.87 (random forest, 3 and 6 months). SHAP ranked ASDS scores as the top predictor at all time points.",
+  "field": "medicine",
+  "ai_technology": "Five machine-learning models with SHAP interpretation",
+  "organization": "Zunyi Medical University",
+  "source_url": "https://doi.org/10.1016/j.jad.2025.121096",
+  "source_type": "paper",
+  "publication_date": "2025-12-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation in an independent trauma cohort.",
+    "unknown": "Cohorts are small and from one country. Abstract-based; full text not reviewed.",
+    "ai_role": "ML models predicted PTSD from routine clinical data and psychosocial scores.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jad.2025.121096%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.jad.2025.121096"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

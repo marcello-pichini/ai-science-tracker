@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-rotator-cuff-mri-yolo11m-vs-physicians",
+  "title": "YOLO11m model compared with physician panels for rotator cuff tears on MRI",
+  "summary": "A locked YOLO11m model classified posterosuperior rotator cuff MRI as intact, partial or full-thickness tear in 258 arthroscopy-referenced patients, with accuracy 0.841 (95% CI 0.792-0.881). It outperformed senior-resident (0.729) and junior-resident (0.671) panels, and did not differ significantly from specialist panels (senior specialists 0.911, Holm p=0.060). The study is single-center and retrospective, and equivalence to specialists is not established.",
+  "field": "medicine",
+  "ai_technology": "YOLO11m deep learning model for three-category rotator cuff MRI classification",
+  "organization": "Istinye University Gaziosmanpasa Hospital",
+  "source_url": "https://doi.org/10.3390/diagnostics16213535",
+  "source_type": "paper",
+  "publication_date": "2026-10-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Blinded multi-reader comparison against arthroscopy; separate 300-patient development set.",
+    "unknown": "Benefit of AI-assisted reading and generalization beyond one center are not established; full text not reviewed.",
+    "ai_role": "Classified rotator cuff integrity from MRI.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/diagnostics16213535%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

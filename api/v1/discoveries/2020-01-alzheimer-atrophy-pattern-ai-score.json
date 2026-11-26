@@ -1,0 +1,33 @@
+{
+  "id": "2020-01-alzheimer-atrophy-pattern-ai-score",
+  "title": "Supervised machine learning gives an MRI atrophy-pattern score for Alzheimer's disease",
+  "summary": "A supervised model trained on ADNI-1 MRI scans assigned a continuous AD score from regional atrophy patterns. It separated patients from controls with accuracy 89% (AUC 0.95) in ADNI-1 and 87% (AUC 0.93) in the independent OASIS-1 sample, and the score was associated with MMSE and weakly with verbal memory in a population sample (SHIP-Trend). The data are retrospective public cohorts.",
+  "field": "medicine",
+  "ai_technology": "Supervised machine learning model producing an atrophy-pattern AD score from structural MRI",
+  "organization": "University Medicine Greifswald",
+  "source_url": "https://doi.org/10.3389/fpsyt.2019.00953",
+  "source_type": "paper",
+  "publication_date": "2020-01-14",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Validation within ADNI-1 and in the independent OASIS-1 sample, plus association analyses in SHIP-Trend.",
+    "unknown": "The specific algorithm is not named in the abstract; clinical use is not tested; full text not reviewed.",
+    "ai_role": "Converted regional atrophy into a continuous score that detects AD.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fpsyt.2019.00953%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

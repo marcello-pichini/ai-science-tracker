@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-echofocus-chd-echo-ai",
+  "title": "EchoFocus-CHD detects congenital heart disease lesions from echocardiography",
+  "summary": "EchoFocus-CHD, a transformer-based multitask model built on the PanEcho architecture, was trained to detect 12 critical and 8 noncritical congenital heart lesions from echocardiograms. The internal cohort had 54,727 echos (3.4 million videos) from Boston Children's Hospital, and a referral cohort had 3356 echos from external US and international centers. The abstract text available here is truncated before the performance figures, so no AUC values are reported; the work is retrospective.",
+  "field": "medicine",
+  "ai_technology": "EchoFocus-CHD, a multitask view-agnostic transformer model (extending PanEcho) for echocardiography",
+  "organization": "Boston Children’s Hospital; Harvard Medical School",
+  "source_url": "https://doi.org/10.1161/circulationaha.126.079781",
+  "source_type": "paper",
+  "publication_date": "2026-03-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internally trained (80%) and tested (20%) on Boston Children's Hospital echos and evaluated on an external referral cohort.",
+    "unknown": "Performance figures were not visible in the abstract text reviewed; prospective effect on triage; full text not reviewed.",
+    "ai_role": "Detects critical and noncritical congenital heart lesions from echo videos.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1161/circulationaha.126.079781%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; first-author affiliations from Crossref. Publisher full text not accessed."
+  }
+}

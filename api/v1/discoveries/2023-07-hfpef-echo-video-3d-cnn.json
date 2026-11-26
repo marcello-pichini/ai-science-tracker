@@ -1,0 +1,34 @@
+{
+  "id": "2023-07-hfpef-echo-video-3d-cnn",
+  "title": "Echocardiography video AI detects heart failure with preserved ejection fraction",
+  "summary": "A 3D convolutional neural network on a single apical 4-chamber echo clip, trained on 2,971 cases and 3,785 controls, had AUC 0.95 in validation. In independent testing (646 cases, 638 controls) sensitivity was 87.8% and specificity 81.9%, with 7.3% nondiagnostic outputs, and it correctly reclassified 73.5% and 73.6% of indeterminate HFA-PEFF and H2FPEF results. Patients classified as HFpEF by AI had higher mortality (HR 1.9).",
+  "field": "medicine",
+  "ai_technology": "3D convolutional neural network on echocardiographic video clips",
+  "organization": "Ultromics, Ltd. (United Kingdom)",
+  "source_url": "https://doi.org/10.1016/j.jacadv.2023.100452",
+  "source_type": "paper",
+  "publication_date": "2023-07-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Testing used an independent multisite dataset and comparison with HFA-PEFF and H2FPEF scores.",
+    "unknown": "Case-control labels are retrospective; prospective impact is unknown. Abstract-based; full text not reviewed.",
+    "ai_role": "A 3D CNN classified HFpEF from one routine echo clip, with a nondiagnostic category for uncertain cases.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jacadv.2023.100452%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.jacadv.2023.100452"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

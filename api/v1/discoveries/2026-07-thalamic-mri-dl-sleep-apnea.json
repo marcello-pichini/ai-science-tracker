@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-thalamic-mri-dl-sleep-apnea",
+  "title": "Thalamic MRI deep learning, guided by mouse data, identifies obstructive sleep apnea",
+  "summary": "In mice, intermittent hypoxia increased c-Fos-positive cells in the central lateral thalamus (62.50 +/- 11.67 vs 9.67 +/- 4.89, n = 6). Guided by this, a dual-branch 3D CNN with Transformer fusion was trained on bilateral thalamic MRI regions from 760 adults at two centers to identify obstructive sleep apnea, with the second center as an independent external test set. The external AUC was not visible in the abstract; the clinical data are retrospective.",
+  "field": "medicine",
+  "ai_technology": "Dual-branch 3D CNN with Transformer-based feature fusion on bilateral thalamic MRI",
+  "organization": "Affiliated Hospital of Qingdao University",
+  "source_url": "https://doi.org/10.1186/s12888-026-08472-5",
+  "source_type": "paper",
+  "publication_date": "2026-07-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Mouse immunofluorescence and calcium imaging to select thalamic regions, plus an independent external test set from a second center.",
+    "unknown": "External performance figures and whether the model aids diagnosis in practice; full text not reviewed.",
+    "ai_role": "Classifies adults with obstructive sleep apnea from thalamic MRI regions chosen from the animal experiments.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12888-026-08472-5%22&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2022-09-pediatric-septic-shock-mods-gene-signature",
+  "title": "Machine learning derives a persistent-MODS gene signature in pediatric septic shock",
+  "summary": "A secondary analysis of public datasets used supervised machine learning (ExtraTrees with repeated cross-validation) to derive a 109-gene signature of persistent multiple organ dysfunction. The risk model reached AUROC 0.87 (0.85-0.88) and top-20-gene models 0.77-0.96 across four validation cohorts of children and adults. Novel subclasses from unsupervised clustering were not independently validated; this is a version 1 preprint abstract.",
+  "field": "medicine",
+  "ai_technology": "ExtraTrees supervised machine learning with repeated cross-validation selecting genes for a MODS classification model and hierarchical clustering",
+  "organization": "Cincinnati Children's Hospital Medical Center; University of Cincinnati",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-2093663/v1",
+  "source_type": "paper",
+  "publication_date": "2022-09-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Four independent public validation cohorts of children and adults.",
+    "unknown": "Prospective performance, biological meaning of the signatures and validation of the new subclasses; full text not reviewed.",
+    "ai_role": "Selects genes and builds the classifier forecasting persistent organ dysfunction.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-2093663/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-2093663/v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Version 1 abstract read from Europe PMC metadata for this DOI; author affiliations not retrieved. Full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

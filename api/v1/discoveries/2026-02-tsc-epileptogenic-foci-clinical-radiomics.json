@@ -1,0 +1,33 @@
+{
+  "id": "2026-02-tsc-epileptogenic-foci-clinical-radiomics",
+  "title": "Machine learning predicts epileptogenic foci and surgical outcomes in tuberous sclerosis",
+  "summary": "On 665 cortical foci (161 epileptogenic) from three epilepsy centers, a super-learner ensemble of clinical and radiomic features reached AUCs of 0.92 in a prospective cohort and 0.91 and 0.87 in two retrospective cohorts. Models also predicted 1-, 3- and 5-year surgical outcomes with AUCs of 0.93, 0.91 and 0.92, and junior clinician accuracy rose from 0.61 to 0.78 with the tool. The data are focus-level in a rare disease with few patients, and the web tool has no external validation.",
+  "field": "medicine",
+  "ai_technology": "Nineteen machine learning models and three ensembles (voting, averaging, super-learner) on clinical and radiomic features of CT, MRI and FDG-PET",
+  "organization": "Xinqiao Hospital, Army Medical University",
+  "source_url": "https://doi.org/10.1371/journal.pdig.0001259",
+  "source_type": "paper",
+  "publication_date": "2026-02-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prospective cohort and two retrospective cohorts across three centers with surgical follow-up; classified as retrospective or benchmark because model derivation used retrospective data.",
+    "unknown": "Patient-level performance, external validation of the web tool and effect on surgical decisions; full text not reviewed.",
+    "ai_role": "Ranks cortical foci as epileptogenic or not and forecasts post-surgical seizure outcome.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1371/journal.pdig.0001259%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations from Europe PMC or Crossref. Full text not accessed."
+  }
+}

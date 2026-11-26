@@ -1,0 +1,34 @@
+{
+  "id": "2020-12-deep-learning-covid-19-pneumonia-chest-ct",
+  "title": "Deep learning distinguishes COVID-19 from other pneumonia on chest CT",
+  "summary": "U-Net lung extraction and a ResNet-50-based network (IDANNet) were trained on 563 CT scans from 380 patients at 5 hospitals, with AUC 0.906 in internal validation. On 318 scans from 316 patients prospectively enrolled at 2 other hospitals, AUC was 0.868 with sensitivity 0.811 and specificity 0.822, non-inferior to three experienced radiologists.",
+  "field": "medicine",
+  "ai_technology": "U-Net lung segmentation with a ResNet-50-based classification network",
+  "organization": "Fudan University; Huashan Hospital",
+  "source_url": "https://doi.org/10.1007/s00330-020-07553-7",
+  "source_type": "paper",
+  "publication_date": "2020-12-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Real-world dataset from two other hospitals, compared with three radiologists.",
+    "unknown": "Diagnostic task; threshold set on internal data; full text not reviewed.",
+    "ai_role": "Network classifies COVID-19 vs other pneumonia.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s00330-020-07553-7%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1007/s00330-020-07553-7"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-06-sepsis-aki-progression-ml-shap",
+  "title": "Machine learning predicts progression of sepsis-associated kidney injury",
+  "summary": "Six machine learning algorithms were trained on MIMIC-IV to predict progression of sepsis-associated AKI to stage 3 within seven days. The random forest reached an AUC of 0.779 in MIMIC-IV and 0.758 in temporal validation, with external validation in eICU-CRD (10,332 patients) and SICdb (1,701). The data are retrospective and discrimination is modest.",
+  "field": "medicine",
+  "ai_technology": "Random forest with Lasso/RFE feature selection and SHAP",
+  "organization": "First Affiliated Hospital of Nanjing Medical University",
+  "source_url": "https://doi.org/10.1093/ckj/sfag216",
+  "source_type": "paper",
+  "publication_date": "2026-06-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prediction of AKI progression with temporal and external database validation.",
+    "unknown": "Retrospective; modest AUC; clinical benefit not shown; full text not reviewed.",
+    "ai_role": "Random forest model predicting AKI stage progression.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1093/ckj/sfag216%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; affiliations from Europe PMC or Crossref where stated. Publisher full text not accessed."
+  }
+}

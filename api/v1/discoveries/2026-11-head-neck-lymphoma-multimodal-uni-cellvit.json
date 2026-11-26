@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-head-neck-lymphoma-multimodal-uni-cellvit",
+  "title": "Multimodal pathology model improves classification of head and neck lymphoid lesions",
+  "summary": "Using 610 cases from ten institutions, a UNI-based pathology foundation model alone generalized poorly (AUROC 0.66). Adding CellViT++ nuclear morphometry and clinicopathological variables raised internal AUROC to 0.87 (accuracy 0.91) and held at 0.84 and 0.80 in two external cohorts. The study is retrospective and aimed at diagnostic triage.",
+  "field": "medicine",
+  "ai_technology": "UNI pathology foundation model features with CellViT++ nuclear segmentation, integrated with clinical variables and SHAP",
+  "organization": "Universidade Estadual de Campinas (UNICAMP)",
+  "source_url": "https://doi.org/10.1016/j.isci.2026.118165",
+  "source_type": "paper",
+  "publication_date": "2026-11-10",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Performance was compared between image-only and multimodal models in internal and two external cohorts.",
+    "unknown": "Prospective use and performance on rare subtypes are not reported. Abstract-based; full text not reviewed.",
+    "ai_role": "Foundation-model features and nuclear morphometry were combined in a classifier of lymphoid lesions.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.isci.2026.118165%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.isci.2026.118165"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

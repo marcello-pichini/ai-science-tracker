@@ -1,0 +1,33 @@
+{
+  "id": "2020-06-dl-cancer-specific-vulnerabilities",
+  "title": "Deep learning predicts tumor-specific vulnerabilities from loss-of-function screens",
+  "summary": "A deep learning method trained on in vitro loss-of-function screens predicted tumor-specific vulnerabilities in patient samples. It nominated Ran GTPase nucleocytoplasmic transport as a vulnerability in Her2-positive breast cancers and Ku70/80 for tumors defective in homologous recombination. Experiments in patient-derived cells for Ran, Ku70/80 and a proteasome subunit showed they could be targeted specifically in the tumors predicted to depend on them.",
+  "field": "biology",
+  "ai_technology": "Deep learning model trained on in vitro loss-of-function screening data",
+  "organization": "KAIST",
+  "source_url": "https://doi.org/10.1186/s13059-020-02077-1",
+  "source_type": "paper",
+  "publication_date": "2020-06-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Experimental validation of three predicted dependencies in patient-derived cells.",
+    "unknown": "How many predictions were tested, the sample numbers and whether the targets work clinically; full text not reviewed.",
+    "ai_role": "Infers each tumor's dependencies from its mutations and expression using learned relationships from screens.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s13059-020-02077-1%22&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

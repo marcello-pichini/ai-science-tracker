@@ -1,0 +1,34 @@
+{
+  "id": "2022-08-xgboost-ptsd-trajectories-trauma-injury",
+  "title": "XGBoost predicts PTSD symptom trajectories after traumatic injury",
+  "summary": "XGBoost classifiers using baseline biological and clinical self-report data from 192 hospitalized patients were externally validated on 214 discharged patients. External AUCs were about 0.70 for nonremitting versus other trajectories and 0.73-0.76 versus resilient, but 0.46-0.48 versus remitting. Precision was below 0.57 across models, indicating limited generalizability.",
+  "field": "medicine",
+  "ai_technology": "XGBoost classifiers trained on early post-injury data",
+  "organization": "Medical College of Wisconsin",
+  "source_url": "https://doi.org/10.1002/jts.22868",
+  "source_type": "paper",
+  "publication_date": "2022-08-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation on a separate discharged-patient sample.",
+    "unknown": "Fair performance and one failed comparison; poor precision; full text not reviewed.",
+    "ai_role": "Classifier predicts trajectory class.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/jts.22868%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1002/jts.22868"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

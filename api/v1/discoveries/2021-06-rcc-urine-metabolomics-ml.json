@@ -1,0 +1,33 @@
+{
+  "id": "2021-06-rcc-urine-metabolomics-ml",
+  "title": "Machine learning derives a seven-metabolite urine panel for renal cell carcinoma",
+  "summary": "LC-MS and NMR urine metabolomics from 105 renal cell carcinoma patients and 179 controls were analysed with univariate, wrapper and embedded feature selection and three machine-learning classifiers. A seven-metabolite panel predicted RCC in the held-out test subcohort with 88% accuracy, 94% sensitivity, 85% specificity and 0.98 AUC. The test cohort is a split of the same study; no external cohort is reported.",
+  "field": "medicine",
+  "ai_technology": "Three machine-learning classifiers with univariate, wrapper and embedded feature selection on urine LC-MS and NMR metabolomics",
+  "organization": "University of Georgia; Georgia Institute of Technology",
+  "source_url": "https://doi.org/10.1021/acs.jproteome.1c00213",
+  "source_type": "paper",
+  "publication_date": "2021-06-23",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out test subcohort of one study (105 RCC, 179 controls in total): 88% accuracy, 94% sensitivity, 85% specificity, AUC 0.98.",
+    "unknown": "External validation and clinical utility are not established; abstract only; full text not reviewed.",
+    "ai_role": "Machine learning selected the metabolite features and trained the classifiers that predict RCC status.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1021/acs.jproteome.1c00213%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2024-10-biamil-brca-variants-he-slides",
+  "title": "Interpretable deep learning detects BRCA pathogenic variants from H&E breast cancer slides",
+  "summary": "BiAMIL, a bi-directional self-attention multiple-instance learning model, predicted BRCA pathogenic variant status from H&E slides with AUC 0.819 in internal testing and 0.817 in a separate external test set. Attention-based analyses linked tumor-infiltrating lymphocytes and tumor-cell morphology to BRCA status. The data are small (319 slides from 254 patients) with wide confidence intervals.",
+  "field": "medicine",
+  "ai_technology": "BiAMIL bi-directional self-attention multiple-instance learning model",
+  "organization": "School of Medicine, Chongqing University, Chongqing, China; Chongqing University Cancer Hospital, Chongqing, China",
+  "source_url": "https://doi.org/10.7717/peerj.18098",
+  "source_type": "paper",
+  "publication_date": "2024-10-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal and external test-set evaluation against genetic testing labels.",
+    "unknown": "Performance in larger cohorts and whether it can replace or triage genetic testing; full text not reviewed.",
+    "ai_role": "A deep neural network predicted BRCA status from slide images and highlighted associated features.",
+    "evidence_urls": [
+      "https://api.crossref.org/works/10.7717/peerj.18098"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from the review input and author affiliations from Crossref metadata for this DOI. Publisher full text not accessed."
+  }
+}

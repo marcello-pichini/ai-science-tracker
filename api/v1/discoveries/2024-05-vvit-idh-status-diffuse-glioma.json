@@ -1,0 +1,33 @@
+{
+  "id": "2024-05-vvit-idh-status-diffuse-glioma",
+  "title": "Vision transformer predicts IDH status in diffuse glioma from MRI and radiomics",
+  "summary": "vViT predicted IDH status in adult diffuse glioma; on an external test set of 291 patients (872 images) it reached accuracy 0.935 and AUC-ROC 0.887 (0.798-0.956). Enhancing-tumor radiomic features, age and sex had the highest importance. Counts are image-level with balanced classes, the study is retrospective, and the internal test set (35 patients) was predicted perfectly.",
+  "field": "medicine",
+  "ai_technology": "Variable Vision Transformer (vViT) combining sex, age, radiomic features and contrast-enhanced T1-weighted MRI",
+  "organization": "Tohoku University Hospital, Japan; Miyagi Cancer Center, Japan",
+  "source_url": "https://doi.org/10.1016/j.mri.2024.05.012",
+  "source_type": "paper",
+  "publication_date": "2024-05-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External test set of 291 patients (872 images).",
+    "unknown": "Abstract only; image-level counts, balanced images; retrospective; internal test n=35 perfect; full text not reviewed.",
+    "ai_role": "Variable Vision Transformer (vViT) combining patient characteristics, radiomic features and CE-T1WI predicts IDH status in diffuse glioma",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.mri.2024.05.012%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2024-04-colorectal-cancer-wsi-transfer-learning",
+  "title": "Transfer-learning model localizes colorectal cancer on whole slide images",
+  "summary": "A model transferred from an endoscopic polyp segmentation network localized colorectal cancer in 0.25 mm2 grids of whole slide images. On 858 consecutive cases (1,418 slides) from an external center it reached grid-level sensitivity 90.25%, specificity 96.60% and AUC 0.962, and slide-level sensitivity 99.39%. The evaluation was a retrospective emulation of prospective use, and the abstract does not show the effect on pathologists in detail.",
+  "field": "medicine",
+  "ai_technology": "Transfer learning from a polyp segmentation model to grid-level colorectal cancer localization on whole slide images",
+  "organization": "Tongji Hospital, Tongji University; Tongren Hospital, Shanghai Jiaotong University",
+  "source_url": "https://doi.org/10.3389/fonc.2024.1365364",
+  "source_type": "paper",
+  "publication_date": "2024-04-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Emulated prospective, retrospective evaluation on consecutive cases from an external center.",
+    "unknown": "Pathologist diagnostic behavior and clinical benefit are not established in the abstract; full text not reviewed.",
+    "ai_role": "Localized colorectal cancer in whole slide image grids.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fonc.2024.1365364%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

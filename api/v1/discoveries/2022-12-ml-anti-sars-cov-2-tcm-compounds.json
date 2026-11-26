@@ -1,0 +1,33 @@
+{
+  "id": "2022-12-ml-anti-sars-cov-2-tcm-compounds",
+  "title": "Machine learning screens traditional Chinese medicine compounds against SARS-CoV-2",
+  "summary": "Random forest and SVM models trained on ChEMBL anti-SARS-CoV-2 bioactivity data reached AUC values of 0.90 and predicted 1011 active compounds from the TCMSP database. Six compounds with highly potent predicted activity were confirmed in anti-SARS-CoV-2 experiments. Assay details were not reviewed.",
+  "field": "chemistry",
+  "ai_technology": "Random forest and support vector machine activity prediction models",
+  "organization": "State Key Laboratory of Primate Biomedical Research, Institute of Primate Translational Medicine, Kunming University of Science and Technology, Kunming, China",
+  "source_url": "https://doi.org/10.3390/molecules28010208",
+  "source_type": "paper",
+  "publication_date": "2022-12-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Benchmark prediction with AUC 0.90, followed by experimental confirmation of six compounds.",
+    "unknown": "Mechanism, potency relative to approved antivirals and clinical relevance; full text not reviewed.",
+    "ai_role": "Machine learning models predicted antiviral activity and prioritized compounds for testing.",
+    "evidence_urls": [
+      "https://api.crossref.org/works/10.3390/molecules28010208"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from the review input and author affiliations from Crossref metadata for this DOI. Publisher full text not accessed."
+  }
+}

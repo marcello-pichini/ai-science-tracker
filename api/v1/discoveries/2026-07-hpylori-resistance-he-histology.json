@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-hpylori-resistance-he-histology",
+  "title": "Deep learning predicts H. pylori antibiotic resistance from routine H&E gastric biopsies",
+  "summary": "A weakly supervised framework predicted PCR-confirmed Helicobacter pylori resistance from gastric biopsy whole-slide images in a multicenter cohort of 755 patients. In the independent test set (n = 151) the AUC was 0.903 for clarithromycin and 0.959 for fluoroquinolone resistance, with sensitivity of 85.2% and 98.1% at the default threshold. Vision-language models (Qwen3-VL, MedGemma) filtered patches before VIRCHOW2 encoding and cross-attention aggregation. The test set came from the same multicenter cohort and the abstract itself calls for prospective validation.",
+  "field": "medicine",
+  "ai_technology": "VLM patch filtering (Qwen3-VL, MedGemma), VIRCHOW2 foundation-model encoder and cross-attention aggregation predicting clarithromycin and fluoroquinolone resistance",
+  "organization": "The Eighth Affiliated Hospital of Sun Yat-Sen University",
+  "source_url": "https://doi.org/10.2147/idr.s624553",
+  "source_type": "paper",
+  "publication_date": "2026-07-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent test set (n = 151) within a multicenter cohort of 755 patients, with PCR-confirmed resistance phenotypes as ground truth.",
+    "unknown": "Performance on a separate prospective cohort; the abstract states prospective validation is pending.",
+    "ai_role": "Zero-shot vision-language patch filtering, a pathology foundation-model encoder and attention-based slide-level aggregation predicted resistance phenotypes from H&E slides.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2147/idr.s624553%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

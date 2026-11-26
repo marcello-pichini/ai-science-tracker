@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-vap-ct-lesion-burden-swin-unetr",
+  "title": "Deep learning segments CT lesions and grades burden in ventilator-associated pneumonia",
+  "summary": "A multimodal framework using TotalSegmentator anatomical priors, a 3D Swin UNETR multitask network and cross-attention fusion with ventilation parameters was developed on 512 patients clinically diagnosed with VAP. Internal validation gave Dice 0.847, macro AUC 0.919 and weighted kappa 0.826, and external validation Dice 0.821; burden grade was independently associated with 28-day mortality (HR 2.34, P < 0.001). The study is retrospective, VAP was clinically diagnosed without a microbiological gold standard and the external cohort size is not in the abstract.",
+  "field": "medicine",
+  "ai_technology": "3D Swin UNETR multitask network with TotalSegmentator priors for voxel-level lesion segmentation and radiological burden grading",
+  "organization": "Universiti Sains Malaysia",
+  "source_url": "https://doi.org/10.3389/fmed.2026.1966805",
+  "source_type": "paper",
+  "publication_date": "2026-10-23",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal validation, external validation across scanner manufacturers and adjusted survival analysis with APACHE II.",
+    "unknown": "External cohort size, microbiological confirmation and prospective performance; full text not reviewed.",
+    "ai_role": "A multitask segmentation network graded lesion burden on CT in VAP.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fmed.2026.1966805%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

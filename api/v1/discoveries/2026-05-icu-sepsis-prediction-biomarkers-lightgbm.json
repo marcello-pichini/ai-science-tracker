@@ -1,0 +1,34 @@
+{
+  "id": "2026-05-icu-sepsis-prediction-biomarkers-lightgbm",
+  "title": "Machine learning with inflammatory and endothelial biomarkers predicts ICU sepsis",
+  "summary": "In 1,209 ICU patients from retrospective and prospective multicenter datasets, LightGBM predicted sepsis from first-24-hour data with AUC 87.9% and AUPRC 64.2% on prospective data. Adding IL-6, procalcitonin, CRP and soluble EPCR significantly improved performance (AUC p=4.1e-4). Training data were retrospective, the prospective subset size is not stated, and impact on care is untested; this is a version 1 preprint.",
+  "field": "medicine",
+  "ai_technology": "LightGBM, random forest, XGBoost, AdaBoost and logistic regression on first-24-hour ICU clinical and biomarker data",
+  "organization": "National and Kapodistrian University of Athens; Evangelismos Hospital",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-9703299/v1",
+  "source_type": "paper",
+  "publication_date": "2026-05-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Evaluation on prospectively collected multicenter data and biomarker feature ablation.",
+    "unknown": "Prospective subset size, clinical impact and generalization; full text not reviewed.",
+    "ai_role": "Predicts which ICU patients will develop sepsis and quantifies the contribution of biomarkers.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-9703299/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-9703299/v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Version 1 abstract read from Europe PMC metadata for this DOI; author affiliations not retrieved. Full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2022-05-sepsis-hla-gene-classifier",
+  "title": "Machine learning builds a five-gene HLA classifier for sepsis diagnosis and prognosis",
+  "summary": "Across nine transcriptome datasets (1,251 patients), random forest and a modified Lasso selected five HLA genes (B2M, HLA-DQA1, HLA-DPA1, TAP1, TAP2) for a classifier with diagnostic AUC 0.997 in the discovery cohort and mortality AUC 0.716. ArrayExpress datasets served as external validation, and qRT-PCR in clinical samples confirmed expression differences. The data are public and retrospective, and prognostic accuracy is modest.",
+  "field": "medicine",
+  "ai_technology": "Random forest and modified Lasso penalized regression for hub gene selection and classifier construction",
+  "organization": "The First People's Hospital of Shunde; Southern Medical University",
+  "source_url": "https://doi.org/10.3389/fphys.2022.870657",
+  "source_type": "paper",
+  "publication_date": "2022-05-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External ArrayExpress validation and qRT-PCR of HLA gene expression in clinical samples.",
+    "unknown": "The qRT-PCR sample size and clinical benefit are not given in the abstract; full text not reviewed.",
+    "ai_role": "Identified the five hub genes and built the classifier.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fphys.2022.870657%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3389/fphys.2022.870657"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations were not retrievable. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

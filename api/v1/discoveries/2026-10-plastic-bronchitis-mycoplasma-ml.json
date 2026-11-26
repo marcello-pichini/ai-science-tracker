@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-plastic-bronchitis-mycoplasma-ml",
+  "title": "Machine learning predicts plastic bronchitis in children with Mycoplasma pneumonia",
+  "summary": "In 702 hospitalized children with Mycoplasma pneumoniae pneumonia (225 with plastic bronchitis), eight models using nine Lasso-Boruta-selected predictors reached test ROC-AUC 0.854 to 0.881 (random forest 0.881). Temporal validation and bootstrap optimism correction were also performed. The study is single-center and retrospective.",
+  "field": "medicine",
+  "ai_technology": "Lasso-Boruta feature selection with CatBoost, XGBoost, random forest and other classifiers, interpreted with SHAP",
+  "organization": "Affiliated Hospital of Yan'an University",
+  "source_url": "https://doi.org/10.3389/fped.2026.1983032",
+  "source_type": "paper",
+  "publication_date": "2026-10-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out test set, temporal validation and bootstrap optimism correction at one center.",
+    "unknown": "Performance in other centers and effect on care are not reported; full text not reviewed.",
+    "ai_role": "Selected predictors and trained models to predict plastic bronchitis risk.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fped.2026.1983032%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

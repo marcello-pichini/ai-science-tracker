@@ -1,0 +1,34 @@
+{
+  "id": "2023-12-deeprescore2-phosphopeptide-identification",
+  "title": "DeepRescore2 improves phosphopeptide identification and finds EGFR hyperactivation",
+  "summary": "DeepRescore2 rescores phosphoproteomics identifications with deep-learning retention-time and fragment-ion intensity predictions. It increased correct peptide-spectrum matches by 17% in a synthetic dataset and found 19% to 46% more phosphopeptides in biological datasets. In a liver cancer dataset it uniquely identified EGFR hyperactivation in poor-prognosis tumors, which was validated experimentally.",
+  "field": "biology",
+  "ai_technology": "Deep-learning retention-time and fragment-ion intensity prediction used to rescore peptide identifications",
+  "organization": "Baylor College of Medicine",
+  "source_url": "https://doi.org/10.1016/j.mcpro.2023.100707",
+  "source_type": "paper",
+  "publication_date": "2023-12-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "EGFR hyperactivation was validated experimentally; the workflow was benchmarked against a state-of-the-art pipeline.",
+    "unknown": "Details of the EGFR experiment are not in the abstract. Abstract-based; full text not reviewed.",
+    "ai_role": "Deep-learning predictions rescored spectra to recover phosphopeptides missed by the benchmark workflow.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.mcpro.2023.100707%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.mcpro.2023.100707"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

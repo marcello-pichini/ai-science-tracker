@@ -1,0 +1,33 @@
+{
+  "id": "2021-07-gbm-aki-after-liver-transplant",
+  "title": "Gradient boosting model predicts acute kidney injury after liver transplantation",
+  "summary": "Five classifiers were compared on 780 included liver transplant cases (430 with AKI, 55.1%) from 894 collected; gradient boosting performed best, with an AUC of 0.76 (CI 0.70-0.82) internally and 0.75 (CI 0.67-0.81) in an independent set of 195 later cases. SHAP identified high preoperative indirect bilirubin, low urine output, long anesthesia time, low platelets and graft steatosis as top predictors. Validation is temporal at one center and discrimination is modest.",
+  "field": "medicine",
+  "ai_technology": "Gradient boosting machine with SHAP explanation",
+  "organization": "Third Affiliated Hospital of Sun Yat-sen University",
+  "source_url": "https://doi.org/10.1186/s12967-021-02990-4",
+  "source_type": "paper",
+  "publication_date": "2021-07-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal validation and an independent temporal dataset of 195 cases (October 2019 to March 2021).",
+    "unknown": "Multi-center performance and clinical impact; full text not reviewed.",
+    "ai_role": "Predicts post-transplant AKI and ranks the contributing variables.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12967-021-02990-4%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

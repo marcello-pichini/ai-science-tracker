@@ -1,0 +1,33 @@
+{
+  "id": "2020-08-stored-blood-quality-deep-learning",
+  "title": "Deep learning assesses stored red blood cell quality from label-free images",
+  "summary": "A neural network trained on brightfield imaging flow cytometry images agreed with experts on seven red blood cell morphologies in 76.7% of cases, against 82.5% agreement between different experts. A weakly supervised network trained only on storage duration produced a feature space showing chronological morphological change that predicted physiological hemolytic assay readouts better than expert morphology classification. The authors note clinical multi-site testing is needed.",
+  "field": "medicine",
+  "ai_technology": "Neural networks on brightfield imaging flow cytometry images (supervised and weakly supervised)",
+  "organization": "Broad Institute of MIT and Harvard; Ryerson University",
+  "source_url": "https://doi.org/10.1073/pnas.2001227117",
+  "source_type": "paper",
+  "publication_date": "2020-08-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Agreement with expert annotations and comparison of learned features with hemolytic assay readouts of stored blood.",
+    "unknown": "Single-site data; multi-site clinical testing not done; full text not reviewed.",
+    "ai_role": "Neural networks classifying red blood cell storage lesions and learning storage-time features.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1073/pnas.2001227117%22&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; affiliations from Europe PMC or Crossref where stated. Publisher full text not accessed."
+  }
+}

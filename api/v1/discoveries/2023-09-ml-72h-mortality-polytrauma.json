@@ -1,0 +1,33 @@
+{
+  "id": "2023-09-ml-72h-mortality-polytrauma",
+  "title": "Machine learning predicts 72-hour mortality in polytrauma patients",
+  "summary": "Random forest, neural network and XGBoost models were derived on a Dryad polytrauma database and externally validated on patients from the authors' institution. The random forest had an internal AUROC of 0.87 (95% CI 0.84-0.89) and an external AUROC of 0.98 (0.97-0.99), with SHAP and LIME explanations. The much higher external AUROC suggests different case mix, and the data are retrospective.",
+  "field": "medicine",
+  "ai_technology": "Random forest (compared with a neural network and XGBoost), explained with SHAP and LIME",
+  "organization": "Quzhou People's Hospital",
+  "source_url": "https://doi.org/10.1186/s12967-023-04487-8",
+  "source_type": "paper",
+  "publication_date": "2023-09-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal validation on the Dryad dataset and an external cohort from the authors' institution.",
+    "unknown": "Why external performance exceeds internal and multi-center generalization; full text not reviewed.",
+    "ai_role": "Predicts 72-hour mortality from age, BMI, GCS, ISS, pH, base excess and lactate.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12967-023-04487-8%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

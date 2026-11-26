@@ -1,0 +1,34 @@
+{
+  "id": "2021-12-deep-learning-inflamed-fat-colorectal-lnm",
+  "title": "Deep learning flags inflamed fat as a lymph node metastasis risk in colorectal cancer",
+  "summary": "An end-to-end deep-learning model on digitized slides of primary colorectal cancer and surrounding tissue, tested in two population-based cohorts, predicted more than one positive node in pT2 cancer with AUROC 0.733 and any node in pT2 with 0.711. In pT1, AUROCs were 0.733 for more than one node and 0.567 for any node. Pathologists reviewing model-highlighted regions identified inflamed adipose tissue as the most predictive feature.",
+  "field": "medicine",
+  "ai_technology": "End-to-end deep-learning algorithm on whole-slide histopathology images",
+  "organization": "University of Leeds",
+  "source_url": "https://doi.org/10.1002/path.5831",
+  "source_type": "paper",
+  "publication_date": "2021-12-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Two population-based cohorts; expert review of highly predictive regions.",
+    "unknown": "Modest AUROC, pT1 any-node 0.567; mechanism not tested; full text not reviewed.",
+    "ai_role": "Model flags regions that humans then characterize.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/path.5831%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1002/path.5831"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2022-07-realtime-ml-inpatient-hypoglycemia-prospective",
+  "title": "Real-time machine learning is associated with fewer weeks of inpatient hypoglycemia",
+  "summary": "A previously validated gradient-boosted model predicting inpatient hypoglycemia was implemented on a cardiovascular and vascular surgery ward. Across 3,989 pre-implementation and 1,916 post-implementation hospitalizations, more than 5% of patients had hypoglycemia in 9.4% of weeks (12/127) before versus 0% (0/79) after implementation (p=0.012). The design is a non-randomized pre/post comparison on one ward and may be confounded. Preprint of 2022-07-24.",
+  "field": "medicine",
+  "ai_technology": "Supervised machine learning (extreme gradient boosting) predicting inpatient hypoglycemia from medications, labs and clinical data",
+  "organization": "Sinai Health System; Unity Health Toronto",
+  "source_url": "https://doi.org/10.1101/2022.07.21.22277774",
+  "source_type": "paper",
+  "publication_date": "2022-07-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Prospective pre/post implementation analysis of the deployed model on 3,989 pre- and 1,916 post-implementation hospitalizations.",
+    "unknown": "Causal effect of the model, generalizability beyond one ward and peer-reviewed status are not established; full text not reviewed.",
+    "ai_role": "A deployed machine learning model predicted hypoglycemia risk to support prevention.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2022.07.21.22277774%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1101/2022.07.21.22277774"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations were not available. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-04-chd-risk-stacked-ensemble-framingham",
+  "title": "Stacked machine-learning ensemble predicts coronary heart disease risk from routine data",
+  "summary": "A stacked ensemble of gradient boosting, random forest and XGBoost with a logistic-regression meta-learner, trained on the Framingham cohort (n = 4,240), reached internal AUC 0.977 and, on a retrospective hospital cohort (n = 200), external AUC 0.929 and accuracy 0.885. SHAP identified systolic blood pressure, age, total cholesterol and fasting glucose among top predictors. The external cohort is small, resampling (SMOTEENN) may inflate the internal AUC, and the study yields a risk model rather than a new causal finding.",
+  "field": "medicine",
+  "ai_technology": "Stacked ensemble of gradient boosting, random forest and XGBoost with a logistic-regression meta-learner",
+  "organization": "Affiliated Hospital of Nantong University",
+  "source_url": "https://doi.org/10.3389/fcvm.2026.1821221",
+  "source_type": "paper",
+  "publication_date": "2026-04-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External retrospective hospital cohort (2024-2025, n = 200) separate from the Framingham training data.",
+    "unknown": "Prospective performance and clinical benefit; full text not reviewed.",
+    "ai_role": "A stacked machine-learning ensemble predicted coronary heart disease risk from ten routine variables.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fcvm.2026.1821221%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2025-03-pbm-cox2-radiopathomics-children",
+  "title": "Radiopathomics deep learning predicts biliary COX-2 expression in pediatric maljunction",
+  "summary": "In a retrospective study of 219 children with pancreaticobiliary maljunction, a deep learning radiopathomics model combining CT and H&E histology features predicted biliary COX-2 expression (immunohistochemistry reference) with AUCs of 0.851 in an internal test set (n=71) and 0.841 in an external test set (n=44) from a second center. Single-modality radiomics, deep learning radiomics and pathomics models reached AUCs of 0.532-0.602, 0.658-0.660 and 0.787-0.805. The authors state that prospective multicenter studies with larger cohorts are needed.",
+  "field": "medicine",
+  "ai_technology": "Deep learning radiopathomics model integrating portal venous-phase CT and H&E histopathology features to predict COX-2 expression",
+  "organization": "Soochow University",
+  "source_url": "https://doi.org/10.1186/s13244-025-01951-5",
+  "source_type": "paper",
+  "publication_date": "2025-03-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective internal test (n=71) and external-center test (n=44) against immunohistochemistry-measured COX-2 expression.",
+    "unknown": "Generalizability beyond two centers, prospective performance and any effect on postoperative management; full text not reviewed.",
+    "ai_role": "Combines radiomic, deep learning and pathomic signatures into one classifier predicting a biopsy-defined molecular marker.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s13244-025-01951-5%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s13244-025-01951-5"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations not retrieved. Full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

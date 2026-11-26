@@ -1,0 +1,34 @@
+{
+  "id": "2022-05-yolov3-early-gastric-cancer-nbi",
+  "title": "YOLOv3 diagnoses early gastric cancer on narrow-band endoscopy and assists endoscopists",
+  "summary": "A YOLOv3 system was trained on 13 151 NBI images (810 patients) and tested on internal data, four external sets (1577 images, 147 patients) and 20 videos. AUCs were 0.888-0.951 and all cancers in the videos were diagnosed. Accuracy was 93.2%, above senior (85.9%) and junior (79.5%) endoscopists, and assistance raised them to 89.4% and 84.9%.",
+  "field": "medicine",
+  "ai_technology": "YOLOv3 object-detection model on narrow-band endoscopy images",
+  "organization": "Nanjing Drum Tower Hospital; Nanjing University",
+  "source_url": "https://doi.org/10.1007/s00464-022-09319-2",
+  "source_type": "paper",
+  "publication_date": "2022-05-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Four external image sets and a video set.",
+    "unknown": "Retrospective, image-level; prospective validation needed; full text not reviewed.",
+    "ai_role": "System detects and classifies lesions.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s00464-022-09319-2%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1007/s00464-022-09319-2"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2020-04-rice-drought-tf-network-ml",
+  "title": "Network-based machine learning ranks rice transcription factors for drought response",
+  "summary": "A network-based supervised machine learning framework ranked all rice transcription factors by association with drought tolerance, with top-ranked regulators falling mainly into two age groups. Nested cross-validation showed that models trained on regulatory network patterns outperformed models trained on heterogeneous genomic features at predicting known drought regulators. The authors tested the system by RNA sequencing of OsbHLH148 knockout mutants under drought and protein-DNA interaction assays; only this one transcription factor is described as experimentally tested in the abstract.",
+  "field": "biology",
+  "ai_technology": "Network-based supervised machine learning ranking transcription factors; DroughtApp web application",
+  "organization": "University of Arkansas at Fayetteville",
+  "source_url": "https://doi.org/10.1101/2020.04.29.068379",
+  "source_type": "paper",
+  "publication_date": "2020-04-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Nested cross-validation on known drought regulators; experimental test of the OsbHLH148 prediction by knockout-mutant RNA sequencing and protein-DNA interaction assays.",
+    "unknown": "Whether other top-ranked transcription factors function in drought tolerance is not stated; abstract-level review only; full text not reviewed.",
+    "ai_role": "Supervised machine learning on regulatory network patterns ranked transcription factors for drought response and nominated candidates for testing.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2020.04.29.068379%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1101/2020.04.29.068379"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations were not available. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

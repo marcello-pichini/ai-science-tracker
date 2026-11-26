@@ -1,0 +1,33 @@
+{
+  "id": "2026-03-ml-hub-biomarkers-renal-fibrosis-agr2-dock2",
+  "title": "Interpretable machine learning identifies AGR2 and DOCK2 as renal fibrosis biomarkers",
+  "summary": "LASSO hub-gene selection followed by XGBoost (96% accuracy) and a deep neural network (92%) on GEO transcriptomic data, with SHAP, identified AGR2 and DOCK2 as top predictors among 26 fibrosis-related genes. Histological staining, Western blotting and functional assays in rat renal fibroblasts and mouse renal fibrosis models confirmed them as upregulated and functional in fibrosis. The classification accuracy is internal, and the docking-based drug candidates are computational.",
+  "field": "biology",
+  "ai_technology": "LASSO hub-gene selection with XGBoost and deep neural network classifiers and SHAP attribution on renal fibrosis transcriptomes",
+  "organization": "Shanxi Medical University; Shanxi University of Medicine",
+  "source_url": "https://doi.org/10.2147/dddt.s536281",
+  "source_type": "paper",
+  "publication_date": "2026-03-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Histological staining, Western blot and cellular assays in rat renal fibroblasts and mouse renal fibrosis models.",
+    "unknown": "Sample sizes, human validation, and therapeutic effect of the docked drugs; full text not reviewed.",
+    "ai_role": "Selects and ranks candidate hub genes whose roles were then tested in the lab.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2147/dddt.s536281%22&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations from Europe PMC or Crossref. Full text not accessed."
+  }
+}

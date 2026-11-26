@@ -1,0 +1,33 @@
+{
+  "id": "2024-03-dl-cxr-clinical-copd-screening",
+  "title": "Deep learning on chest X-rays and clinical data screens for and stages COPD",
+  "summary": "An ensemble deep learning model fused chest X-ray features and clinical parameters from 1055 participants. It reached an AUC of 0.969 in internal testing (n = 284) and 0.934 in an external set of 105 participants, better than clinical-only (0.963) or image-only (0.946) internal results. For severity, the AUC was 0.894 for three classes and 0.852 for five classes. The study is retrospective and the external set is small.",
+  "field": "medicine",
+  "ai_technology": "Ensemble deep learning and transfer learning models fusing chest X-ray images and clinical parameters",
+  "organization": "Third Affiliated Hospital of Sun Yat-sen University",
+  "source_url": "https://doi.org/10.1186/s12890-024-02945-7",
+  "source_type": "paper",
+  "publication_date": "2024-03-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Trained on 666 participants, internal test on 284 and external test on 105.",
+    "unknown": "Prospective performance and effect on diagnosis; full text not reviewed.",
+    "ai_role": "Classifies COPD and predicts severity grades from chest X-ray images plus clinical data.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12890-024-02945-7%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

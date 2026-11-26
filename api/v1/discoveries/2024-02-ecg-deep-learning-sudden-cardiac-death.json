@@ -1,0 +1,33 @@
+{
+  "id": "2024-02-ecg-deep-learning-sudden-cardiac-death",
+  "title": "Deep learning on 12-lead ECGs separates sudden cardiac death cases from controls",
+  "summary": "A 12-lead ECG deep learning model was developed on 1,827 pre-arrest ECGs from 1,796 out-of-hospital sudden cardiac death cases in the Portland area plus control ECGs. It reached an AUROC of 0.889 for cases versus controls in the internal held-out set and 0.820 in an external cohort of 714 cases from Ventura County, versus 0.712 and 0.743 for a conventional six-variable ECG model. The design is case-control with retrospectively collected ECGs; the authors say further investigation is needed before it contributes to risk stratification.",
+  "field": "medicine",
+  "ai_technology": "12-lead ECG deep learning model for sudden cardiac death risk",
+  "organization": "Cedars-Sinai Medical Center",
+  "source_url": "https://doi.org/10.1038/s43856-024-00451-9",
+  "source_type": "paper",
+  "publication_date": "2024-02-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "AUROC for sudden cardiac death cases versus controls in an internal held-out set and an external cohort, compared with a conventional ECG risk model.",
+    "unknown": "Case-control design with retrospectively collected ECGs; prospective use for risk stratification and clinical benefit not shown; full text not reviewed.",
+    "ai_role": "Deep learning model trained on 12-lead ECG signals to score sudden cardiac death risk.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s43856-024-00451-9%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; affiliations from Europe PMC or Crossref where stated. Publisher full text not accessed."
+  }
+}

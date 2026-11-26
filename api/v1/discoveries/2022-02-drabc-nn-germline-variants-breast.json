@@ -1,0 +1,34 @@
+{
+  "id": "2022-02-drabc-nn-germline-variants-breast",
+  "title": "DrABC neural network predicts germline pathogenic variant carrier status in breast cancer",
+  "summary": "In 3041 breast cancer patients from seven hospitals tested for 50 cancer predisposition genes, 332 (11.3%) carried pathogenic variants. The hierarchical neural network DrABC predicted BRCA1/2 carrier status with AUC 0.79 (95% CI 0.74-0.85) in an independent multicenter cohort, versus 0.57-0.70 for BRCAPRO, BOADICEA, Myriad, PENN II and NCCN criteria. It reached AUC 0.74 for any predisposition gene. The study is retrospective and the abstract does not state the validation size.",
+  "field": "medicine",
+  "ai_technology": "DrABC, a hierarchical neural network on phenotype data",
+  "organization": "Chinese Academy of Medical Sciences & Peking Union Medical College; Wenzhou Medical University; Cancer Hospital of Chinese Academy of Medical Sciences",
+  "source_url": "https://doi.org/10.1186/s13073-022-01027-9",
+  "source_type": "paper",
+  "publication_date": "2022-02-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Validation in an independent multicenter cohort, compared with existing risk models and NCCN criteria.",
+    "unknown": "Validation cohort size and performance in other populations; full text not reviewed.",
+    "ai_role": "Predicts carrier status from age at diagnosis, cancer and family history, and pathology.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s13073-022-01027-9%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s13073-022-01027-9"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations not retrieved. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

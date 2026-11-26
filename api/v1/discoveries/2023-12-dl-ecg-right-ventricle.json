@@ -1,0 +1,33 @@
+{
+  "id": "2023-12-dl-ecg-right-ventricle",
+  "title": "Deep learning ECG model estimates right ventricular size and function",
+  "summary": "A deep learning ECG model was trained against cardiac MRI in UK Biobank (n = 42,938), fine-tuned in Mount Sinai Hospital data (n = 3019) and prospectively validated over 4 months (n = 115). AUROCs for RV dysfunction were 0.86, 0.81 and 0.77, and for RV dilation 0.91, 0.81 and 0.92 across the three cohorts. RVEF prediction was associated with transplant-free survival. The prospective set is small and RV dysfunction prevalence was low in UK Biobank (1.0%).",
+  "field": "medicine",
+  "ai_technology": "Deep learning model on 12-lead ECG predicting RV dilation, RV dysfunction, RVEF and RVEDV against cardiac MRI",
+  "organization": "Icahn School of Medicine at Mount Sinai",
+  "source_url": "https://doi.org/10.1161/jaha.123.031671",
+  "source_type": "paper",
+  "publication_date": "2023-12-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Training in UK Biobank, fine-tuning at Mount Sinai Hospital and prospective validation over 4 months (n = 115).",
+    "unknown": "Performance in larger prospective cohorts and in other health systems; clinical benefit; full text not reviewed.",
+    "ai_role": "Predicts right ventricular volume and ejection fraction from the ECG instead of imaging.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1161/jaha.123.031671%22&resultType=core&format=json"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; first-author affiliations from Crossref. Publisher full text not accessed."
+  }
+}

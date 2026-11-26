@@ -1,0 +1,33 @@
+{
+  "id": "2020-09-five-tf-colon-cancer-prognosis-ml",
+  "title": "Random forest and Cox regression give a five-transcription-factor colon cancer model",
+  "summary": "Combining a Cox proportional hazards model with random forest ranking, the authors selected five transcription factors (HOXC9, ZNF556, HEYL, HOXC4, HOXC6) from TCGA colon cancer data and built a prognostic model. Kaplan-Meier and log-rank analyses separated low- and high-risk groups in four public GEO datasets (GSE39582, GSE17536, GSE37892, GSE17537). The work is computational on public data without experimental confirmation; the abstract gives patient numbers of 925 and 1584 for the validation sets.",
+  "field": "medicine",
+  "ai_technology": "Random forest feature ranking combined with Cox proportional hazards regression",
+  "organization": "Indiana University Purdue University Indianapolis",
+  "source_url": "https://doi.org/10.1186/s12920-020-00775-0",
+  "source_type": "paper",
+  "publication_date": "2020-09-21",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Validation of the TCGA-derived model on four independent public GEO datasets.",
+    "unknown": "Biological role of the five factors and clinical utility; the abstract gives two different validation patient counts (925 and 1584); full text not reviewed.",
+    "ai_role": "Ranks transcription factors by predictive importance for survival.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12920-020-00775-0%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2025-08-postoperative-recovery-swarm-ml",
+  "title": "Swarm-optimized machine learning predicts poor recovery after general anesthesia",
+  "summary": "In 1,128 patients from one hospital, a swarm-intelligence-optimized model with XGBoost as base learner and seven Lasso-selected variables reached test AUC 0.88 (F1 0.77) for poor postoperative recovery and AUC 0.84 on a second dataset from an affiliated hospital. The study is retrospective and the external cohort size is not stated in the abstract.",
+  "field": "medicine",
+  "ai_technology": "Swarm-intelligence machine learning with XGBoost base learner and Lasso variable selection",
+  "organization": "Sir Run Run Shaw Hospital; Zhejiang University",
+  "source_url": "https://doi.org/10.3389/fphys.2025.1565548",
+  "source_type": "paper",
+  "publication_date": "2025-08-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective test split and external validation on a second hospital dataset.",
+    "unknown": "Cohort size of the external set and effect on care are not stated; full text not reviewed.",
+    "ai_role": "Predicted poor recovery (hypothermia, delayed PACU discharge or awakening) from clinical variables.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fphys.2025.1565548%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3389/fphys.2025.1565548"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations were not retrievable. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

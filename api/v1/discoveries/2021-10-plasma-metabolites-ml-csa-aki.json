@@ -1,0 +1,33 @@
+{
+  "id": "2021-10-plasma-metabolites-ml-csa-aki",
+  "title": "Machine learning on plasma metabolites predicts acute kidney injury after cardiac surgery",
+  "summary": "In 214 individuals (122 with acute kidney injury, 92 controls), untargeted and targeted metabolomics with several machine learning algorithms identified plasma metabolites associated with cardiac surgery-associated AKI; gluconic acid, fumaric acid and pseudouridine were upregulated. A random forest with clinical parameters and metabolites reached an AUC of 0.939 (95% CI 0.879-0.998), and the three metabolites rose over time in a swine AKI model. The abstract states a validation cohort confirmed the model, but its figure was truncated; the cohort is small.",
+  "field": "medicine",
+  "ai_technology": "Random forest and other machine learning algorithms on plasma metabolomics and clinical parameters",
+  "organization": "Fuwai Hospital, Chinese Academy of Medical Sciences and Peking Union Medical College",
+  "source_url": "https://doi.org/10.1161/jaha.121.021825",
+  "source_type": "paper",
+  "publication_date": "2021-10-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Discovery in 214 patients, a swine AKI model for time-dependent metabolite changes (ancillary), and a separate validation cohort.",
+    "unknown": "Validation-cohort performance figure was not visible in the abstract text; generalization beyond a small cohort; full text not reviewed.",
+    "ai_role": "Selects discriminating metabolites and combines them with clinical parameters in a random forest classifier.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1161/jaha.121.021825%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

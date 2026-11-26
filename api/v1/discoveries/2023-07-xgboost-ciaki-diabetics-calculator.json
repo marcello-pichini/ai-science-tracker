@@ -1,0 +1,33 @@
+{
+  "id": "2023-07-xgboost-ciaki-diabetics-calculator",
+  "title": "Machine learning calculator predicts contrast-induced kidney injury in diabetics",
+  "summary": "Six machine learning models were developed on 3514 diabetic patients from four hospitals; extreme gradient boosting performed best (AUC 0.816 internally and 0.816 externally) and its top 15 predictors defined a brief model (BCPMD) with an online calculator. Per the abstract, BCPMD gave AUC 0.819 internally, and a prospective cohort of 172 patients was used for further validation. Performance is moderate.",
+  "field": "medicine",
+  "ai_technology": "XGBoost-derived BCPMD model with SHAP explanation and an online calculator",
+  "organization": "Sir Run Run Hospital, Nanjing Medical University",
+  "source_url": "https://doi.org/10.1186/s12967-023-04387-x",
+  "source_type": "paper",
+  "publication_date": "2023-07-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal and external validation across four hospitals and validation on a prospective cohort of 172 patients.",
+    "unknown": "Results beyond the internal-validation figure were truncated in the abstract; effect of the calculator on outcomes; full text not reviewed.",
+    "ai_role": "Predicts contrast-induced acute kidney injury after PCI in diabetic patients.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12967-023-04387-x%22&resultType=core&format=json"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-08-breast-cancer-rcb-spatial-features-xai",
+  "title": "Explainable AI spatial features estimate residual cancer burden in breast cancer",
+  "summary": "Deep learning segmented tumor, necrosis and lymphocytes on H&E patches and 11 spatial features were built. In 347 post-neoadjuvant patients (182 development, 165 external), XGBoost reached external AUC 0.781, 0.896 and 1.000 for the three RCB tasks, with TCGA-BRCA (843 cases) exploratory. The AUC of 1.000 reflects complete separation and may reflect few events.",
+  "field": "medicine",
+  "ai_technology": "Deep learning segmentation (VGG-16), multiple instance learning and XGBoost with SHAP and Grad-CAM",
+  "organization": "Nanchang University",
+  "source_url": "https://doi.org/10.3390/diagnostics16172798",
+  "source_type": "paper",
+  "publication_date": "2026-08-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Second-center external validation (n=165) and exploratory TCGA-BRCA analysis.",
+    "unknown": "Prospective performance and clinical benefit are not reported; full text not reviewed.",
+    "ai_role": "Segmented tissue compartments and modeled residual cancer burden.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/diagnostics16172798%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

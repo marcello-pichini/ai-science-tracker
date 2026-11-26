@@ -1,0 +1,34 @@
+{
+  "id": "2024-02-set8-methylation-ml-hybrid-substrate-search",
+  "title": "ML-hybrid search predicts SET8 methylation sites, tested by peptide arrays and MS",
+  "summary": "A machine learning model trained with high-throughput peptide synthesis data to predict enzyme-substrate selection reached 37.4% experimentally validated precision and proposed 885 SET8 candidate methylation sites, described as a 19-fold gain over traditional in vitro methods. Mass spectrometry confirmed methylation of several sites in cells overexpressing SET8. Predicted gain (376) and loss (62) of substrates from cancer missense mutations are predictions only; this is a version 1 preprint abstract.",
+  "field": "biology",
+  "ai_technology": "Machine-learning-hybrid search combining ML models with high-throughput peptide synthesis to predict SET8 enzyme-substrate selection",
+  "organization": "Carleton University",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-3771179/v1",
+  "source_type": "paper",
+  "publication_date": "2024-02-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Peptide-array experimental validation (37.4% precision) and mass spectrometry confirmation of several sites in mammalian cells.",
+    "unknown": "How many of the 885 candidates are real substrates in cells and the effect of the mutations; full text not reviewed.",
+    "ai_role": "Predicts which proteome sites SET8 methylates and guides experiments.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-3771179/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-3771179/v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Version 1 abstract read from Europe PMC metadata for this DOI; author affiliations not retrieved. Full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

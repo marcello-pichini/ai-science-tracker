@@ -1,0 +1,33 @@
+{
+  "id": "2024-01-ai-model-pea-vs-vf-cardiac-arrest",
+  "title": "Gradient boosting model separates PEA from VF as initial rhythm in cardiac arrest",
+  "summary": "Using demographics and clinical variables from 421 EMS-witnessed out-of-hospital arrests in the Portland area, an extreme gradient boosting model separated PEA from VF as the true initial rhythm, with an AUC of 0.68 (95% CI 0.61-0.76). External validation in 220 EMS-witnessed arrests from Ventura, CA gave an AUC of 0.72 (95% CI 0.59-0.84). Anemia, older age, increased weight and dyspnea as a warning symptom weighed toward PEA. Performance is modest and the feature associations are observational, not causal.",
+  "field": "medicine",
+  "ai_technology": "Extreme gradient boosting model on demographics and detailed clinical variables",
+  "organization": "Cedars-Sinai Health System (Smidt Heart Institute)",
+  "source_url": "https://doi.org/10.1161/circep.123.012338",
+  "source_type": "paper",
+  "publication_date": "2024-01-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal cohort of 421 EMS-witnessed arrests and external validation in 220 EMS-witnessed arrests from Ventura, CA.",
+    "unknown": "Whether the predictors have a causal role or help develop treatments; performance beyond modest discrimination; full text not reviewed.",
+    "ai_role": "Predicts the true initial rhythm (PEA versus VF) and ranks the clinical features that drive the prediction.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1161/circep.123.012338%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

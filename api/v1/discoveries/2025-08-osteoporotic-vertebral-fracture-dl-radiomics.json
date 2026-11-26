@@ -1,0 +1,33 @@
+{
+  "id": "2025-08-osteoporotic-vertebral-fracture-dl-radiomics",
+  "title": "CT deep-learning radiomics model classifies osteoporotic vertebral fracture types",
+  "summary": "A ResNet-50 deep transfer-learning model (RadImageNet versus ImageNet pretraining) fused with radiomics features classified osteoporotic vertebral fractures into three ASTLOF classes in 981 patients (1,098 vertebrae) from three centres. Macro-AUC for the RadImageNet fused model was 0.837 versus 0.648 internally, 0.773 versus 0.633 externally and 0.852 versus 0.648 in the prospective cohort (n = 51). External and prospective cohorts are small and training macro-AUCs of 0.934 versus 0.996 suggest overfitting.",
+  "field": "medicine",
+  "ai_technology": "ResNet-50 deep transfer learning (RadImageNet versus ImageNet) fused with radiomics, LASSO and eight machine-learning classifiers",
+  "organization": "Sir Run Run Hospital, Nanjing Medical University",
+  "source_url": "https://doi.org/10.2196/75665",
+  "source_type": "paper",
+  "publication_date": "2025-08-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal (n = 187), external (n = 110) and prospective (n = 51) validation cohorts from three centres against an MRI-based ASTLOF reference.",
+    "unknown": "Frozen-model status of the prospective cohort and clinical benefit; full text not reviewed.",
+    "ai_role": "Deep transfer learning and radiomics features classified fracture types on CT.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2196/75665%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2025-02-tloc-machine-learning-decision-aid",
+  "title": "Random forest questionnaire classifier aids diagnosis of transient loss of consciousness",
+  "summary": "In 178 prospectively recruited patients with transient loss of consciousness, a random forest trained on nine patient questionnaire items correctly identified 63 of 78 diagnoses (80.8%, 95% CI 70.0-88.5) in an independent validation sample, versus 70.5% for assessing clinicians. Diagnoses were set by two expert raters after 6 months of follow-up. Witness recruitment was low so the model uses patient answers only, the validation sample is small and sensitivity was low for some diagnoses.",
+  "field": "medicine",
+  "ai_technology": "Random forest classifier on patient questionnaire responses, compared with penalized linear regression and referrer diagnosis",
+  "organization": "Sheffield Teaching Hospitals NHS Foundation Trust; University of Sheffield",
+  "source_url": "https://doi.org/10.1212/cpj.0000000000200448",
+  "source_type": "paper",
+  "publication_date": "2025-02-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent development and validation samples from prospectively recruited patients; 6-month expert-rated reference diagnosis. Classified as retrospective or benchmark because the model was not shown to be tested as a frozen model in new clinical use.",
+    "unknown": "Use in routine assessment, performance for low-sensitivity diagnoses and results with witness data; full text not reviewed.",
+    "ai_role": "Predicts the cause of transient loss of consciousness from questionnaire answers.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1212/cpj.0000000000200448%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations from Europe PMC or Crossref. Full text not accessed."
+  }
+}

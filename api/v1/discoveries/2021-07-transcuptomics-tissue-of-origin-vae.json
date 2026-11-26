@@ -1,0 +1,34 @@
+{
+  "id": "2021-07-transcuptomics-tissue-of-origin-vae",
+  "title": "TransCUPtomics autoencoder predicts tissue of origin in cancers of unknown primary",
+  "summary": "A variational autoencoder trained on 20,918 samples (94 categories) predicted tissue of origin from RNA-seq with 96% accuracy on reference data. The origin was identified in 38 of 48 CUP patients (79%), and eight of 11 prospective patients (73%) received first-line therapy guided by the prediction, with responses in most. The clinical cohorts are small.",
+  "field": "medicine",
+  "ai_technology": "Variational autoencoder classifier on RNA-sequencing data",
+  "organization": "INSERM; Université Paris Sciences et Lettres; La Ligue Contre le Cancer",
+  "source_url": "https://doi.org/10.1016/j.jmoldx.2021.07.009",
+  "source_type": "paper",
+  "publication_date": "2021-07-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Application to 37 retrospective and 11 prospective CUP patients.",
+    "unknown": "Responses are not causal proof of benefit; cohort size is small. Abstract-based; full text not reviewed.",
+    "ai_role": "A variational autoencoder predicted tissue of origin and supported interpretation by linking predictions to fusions and variants.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jmoldx.2021.07.009%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.jmoldx.2021.07.009"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

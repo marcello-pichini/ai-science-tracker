@@ -1,0 +1,34 @@
+{
+  "id": "2023-04-ovarian-cancer-segmentation-radiomics-prognosis",
+  "title": "Automated segmentation and radiomics stratify risk in serous ovarian cancer",
+  "summary": "An end-to-end pipeline combined U-Net-based automated segmentation of primary ovarian cancer lesions on contrast-enhanced CT with radiomics and machine learning survival models, in 607 retrospectively collected scans. Segmentation Dice scores were 0.90, 0.88 and 0.80 across validation and two test sets; the best radiomics model had C-index 0.66 (validation), 0.72 (TCIA) and 0.60 (KEM). It improved risk stratification over CA-125, residual disease and FIGO stage in the authors' comparison. Retrospective; preprint of 2023-04-28.",
+  "field": "medicine",
+  "ai_technology": "U-Net-based automated segmentation plus radiomics with 13 feature reduction methods and 12 machine learning algorithms for survival prediction",
+  "organization": "Imperial College London",
+  "source_url": "https://doi.org/10.1101/2023.04.26.23289155",
+  "source_type": "paper",
+  "publication_date": "2023-04-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "External test sets from TCIA (n=73) and Kliniken Essen-Mitte (n=323).",
+    "unknown": "Prospective validation, clinical benefit and peer-reviewed status are not established; C-indices are moderate; full text not reviewed.",
+    "ai_role": "Deep learning segmented tumors and machine learning models predicted survival from radiomic features.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2023.04.26.23289155%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1101/2023.04.26.23289155"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations were not available. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

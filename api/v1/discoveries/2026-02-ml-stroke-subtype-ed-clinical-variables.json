@@ -1,0 +1,34 @@
+{
+  "id": "2026-02-ml-stroke-subtype-ed-clinical-variables",
+  "title": "Machine learning separates hemorrhagic from ischemic stroke using clinical variables",
+  "summary": "An XGBoost model using clinical variables in 2,418 development patients reached an internal AUROC of 0.937, and in an independent external cohort of 580 patients from a third center the AUROC was 0.841. SHAP values were used to assess feature contributions. The study is retrospective and the model is decision support, not a replacement for neuroimaging.",
+  "field": "medicine",
+  "ai_technology": "XGBoost model with SHAP feature attribution",
+  "organization": "Chungbuk National University; Chungbuk National University Hospital",
+  "source_url": "https://doi.org/10.4266/acc.004925",
+  "source_type": "paper",
+  "publication_date": "2026-02-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Four-fold internal validation and independent external validation at a third stroke center.",
+    "unknown": "Prospective emergency-department performance and effect on care; full text not reviewed.",
+    "ai_role": "A gradient-boosted model distinguished stroke subtype from presentation variables.",
+    "evidence_urls": [
+      "https://api.crossref.org/works/10.4266/acc.004925",
+      "https://api.openalex.org/works/doi:10.4266/acc.004925"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from the review input; affiliations not available in Crossref metadata. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

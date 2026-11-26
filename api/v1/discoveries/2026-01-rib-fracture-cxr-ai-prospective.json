@@ -1,0 +1,33 @@
+{
+  "id": "2026-01-rib-fracture-cxr-ai-prospective",
+  "title": "AI rib fracture detection on chest radiographs evaluated prospectively in emergency care",
+  "summary": "A Faster R-CNN model deployed passively in an emergency department analysed 23,251 chest radiographs prospectively: sensitivity was 74.5%, specificity 93.3%, PPV 24.2% and NPV 99.2%, and median inference time was 10.6 seconds versus 3.3 hours for the radiology report. The reference standard was the radiologists' final reports, with post hoc CT review of discordant cases. It was a single hospital, the PPV is low and the AI did not influence clinical decisions.",
+  "field": "medicine",
+  "ai_technology": "Faster R-CNN model passively analysing chest radiographs for rib fractures",
+  "organization": "MacKay Memorial Hospital; Taipei Medical University",
+  "source_url": "https://doi.org/10.2196/77965",
+  "source_type": "paper",
+  "publication_date": "2026-01-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prospective data collection of 23,251 emergency-department radiographs (April-July 2023) with the AI running passively against radiology reports.",
+    "unknown": "Effect on clinical decisions or outcomes; performance at other hospitals; full text not reviewed.",
+    "ai_role": "A convolutional neural network detected rib fractures on chest radiographs in a live workflow.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2196/77965%22&resultType=core&format=json"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

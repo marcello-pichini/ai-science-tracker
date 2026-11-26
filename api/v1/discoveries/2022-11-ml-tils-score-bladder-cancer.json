@@ -1,0 +1,33 @@
+{
+  "id": "2022-11-ml-tils-score-bladder-cancer",
+  "title": "Machine-learning TILs score predicts survival in muscle-invasive bladder cancer",
+  "summary": "A neural network cell classifier built in QuPath on H&E slides produced four tumor-infiltrating lymphocyte (TILs) variables. All four were significantly associated with survival (p < 0.001), with higher TILs linked to better prognosis, and remained independently associated with overall survival after adjustment for clinicopathological factors. The discovery set had 133 patients and an independent external validation set 247; the design is retrospective.",
+  "field": "medicine",
+  "ai_technology": "Artificial neural network cell classifier (QuPath) on H&E slide images producing quantitative TILs variables",
+  "organization": "Department of Urology, Renmin Hospital of Wuhan University, Wuhan, China; Institute of Urologic Disease, Renmin Hospital of Wuhan University, Wuhan, China",
+  "source_url": "https://doi.org/10.3390/jcm11237081",
+  "source_type": "paper",
+  "publication_date": "2022-11-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prognostic association of ML-derived TILs variables in 133 discovery patients, checked in an independent external set of 247 patients.",
+    "unknown": "Whether TILs scoring changes treatment decisions or outcomes; the retrospective cohorts only show prognostic association; full text not reviewed.",
+    "ai_role": "A neural network classified tumor cells, lymphocytes and stromal cells on slides to quantify TILs.",
+    "evidence_urls": [
+      "https://api.crossref.org/works/10.3390/jcm11237081"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from the review input and author affiliations from Crossref metadata for this DOI. Publisher full text not accessed."
+  }
+}

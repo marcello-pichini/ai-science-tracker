@@ -1,0 +1,34 @@
+{
+  "id": "2024-06-dna-methylation-image-cup-origin",
+  "title": "Vision transformer on DNA-methylation images predicts cancer of unknown primary origin",
+  "summary": "Trained on 8233 TCGA primary tumors in 18 organ classes, the model reached 96.95% accuracy on 394 TCGA metastatic samples and 96.39% (primary) and 94.37% (metastatic) in 995 samples from 20 external studies. Known-origin tumors serve as a proxy: no true cancer-of-unknown-primary cohort was tested, and the data are retrospective and public.",
+  "field": "medicine",
+  "ai_technology": "Vision transformer trained on organ-specific DNA-methylation images built from differentially methylated CpG sites",
+  "organization": "Korea University Anam Hospital",
+  "source_url": "https://doi.org/10.1016/j.neo.2024.101021",
+  "source_type": "paper",
+  "publication_date": "2024-06-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "394 TCGA-meta + 995 external samples, 20 studies",
+    "unknown": "Retrospective public data; known-origin tumours used as proxy for CUP; no true CUP cohort; full text not reviewed.",
+    "ai_role": "Vision transformer on DNA-methylation images classifies origin of cancer of unknown primary",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.neo.2024.101021%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.neo.2024.101021"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2020-06-routine-labs-ml-sars-cov-2",
+  "title": "Machine learning on routine blood tests predicts SARS-CoV-2 RT-PCR result",
+  "summary": "A gradient boosted decision tree combined age, sex, race and 27 routine laboratory tests to predict SARS-CoV-2 RT-PCR status, trained on 3,356 tested patients (1,402 positive). It reached an AUC of 0.854 (95% CI 0.829-0.878) and an AUC of 0.838 in an independent dataset from a separate hospital. The model also predicted RT-PCR positivity in 66% of individuals whose result changed from negative to positive within two days. Retrospective; this is the 2020-06-19 preprint.",
+  "field": "medicine",
+  "ai_technology": "Gradient boosted decision tree on demographics and 27 routine laboratory tests to predict RT-PCR-confirmed SARS-CoV-2 infection",
+  "organization": "Weill Cornell Medicine; New York-Presbyterian Hospital",
+  "source_url": "https://doi.org/10.1101/2020.06.17.20133892",
+  "source_type": "paper",
+  "publication_date": "2020-06-19",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Training on 3,356 patients (AUC 0.854); independent dataset from a separate hospital (AUC 0.838).",
+    "unknown": "Prospective performance, clinical utility and peer-reviewed status are not established from the abstract; full text not reviewed.",
+    "ai_role": "A gradient boosted decision tree predicted infection status from routine laboratory results.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2020.06.17.20133892%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

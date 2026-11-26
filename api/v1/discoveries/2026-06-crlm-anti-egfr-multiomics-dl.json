@@ -1,0 +1,33 @@
+{
+  "id": "2026-06-crlm-anti-egfr-multiomics-dl",
+  "title": "CT deep-learning and genetic model predicts cetuximab benefit in liver metastases",
+  "summary": "A ResNet18 model on CT images and a random forest on genetic data, fused with fixed weights, predicted cetuximab sensitivity in RAS wild-type colorectal liver metastases with AUC 0.75 (radiomic), 0.81 (genetic) and 0.86 (combined). In an external cohort enrolled from other institutions in 2018, the fusion signature separated progression-free survival of 9.0 versus 5.0 months (HR 0.44, p = 0.047) and did not predict chemotherapy response (AUC 0.54). The authors describe the external cohort as relatively small, and the hazard ratio confidence interval for the fusion versus established biomarkers (HR 17.9, 3.22-154.31) is very wide.",
+  "field": "medicine",
+  "ai_technology": "Pretrained ResNet18 on CT images and random forest on genetic data, weighted-fused to predict cetuximab sensitivity",
+  "organization": "Zhongshan Hospital, Fudan University",
+  "source_url": "https://doi.org/10.2174/0115680096454400260619162910",
+  "source_type": "paper",
+  "publication_date": "2026-06-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Performance in an independent external cohort of RAS wild-type colorectal liver metastases patients enrolled in 2018, with chemotherapy response as a control.",
+    "unknown": "Frozen-model status of the prospective enrolment, external cohort size and clinical benefit; training data came from a prior study; full text not reviewed.",
+    "ai_role": "A deep-learning radiomic model and a random-forest genetic model were fused to predict anti-EGFR therapy response.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2174/0115680096454400260619162910%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

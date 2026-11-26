@@ -1,0 +1,34 @@
+{
+  "id": "2023-05-amr-gene-discovery-svm-pangenomes",
+  "title": "Support vector machines on pangenomes nominate antimicrobial resistance gene candidates",
+  "summary": "A workflow combining pangenomics, annotation and machine learning was applied to 12 species, 27,155 genomes and 69 drugs. Discovery-oriented support vector machines recovered 263 known resistance genes versus 145 for Pyseer and identified 142 novel candidates. Two candidates were validated in E. coli BW25113 (cycA deletion, frdD V111D), showing conditional resistance. Only 2 of 142 candidates were tested. Preprint of 2023-05-28.",
+  "field": "biology",
+  "ai_technology": "Support vector machines on pangenome features to identify antimicrobial resistance genes",
+  "organization": "University of California San Diego",
+  "source_url": "https://doi.org/10.1101/2023.05.26.542542",
+  "source_type": "paper",
+  "publication_date": "2023-05-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Benchmark against Pyseer for known genes and experimental validation of two candidates in E. coli BW25113.",
+    "unknown": "Resistance function of the other 140 candidates is not established; full text not reviewed.",
+    "ai_role": "Support vector machines ranked genes associated with resistance across species.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2023.05.26.542542%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1101/2023.05.26.542542"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations were not available. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

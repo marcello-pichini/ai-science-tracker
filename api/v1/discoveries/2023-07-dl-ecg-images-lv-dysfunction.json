@@ -1,0 +1,33 @@
+{
+  "id": "2023-07-dl-ecg-images-lv-dysfunction",
+  "title": "Deep learning detects left ventricular systolic dysfunction from ECG images",
+  "summary": "A convolutional neural network was trained on 385,601 ECGs with paired echocardiograms from Yale New Haven Hospital to detect reduced ejection fraction from ECG images in multiple formats. Internal AUROC was 0.91, and six external sets across US hospitals and a Brazilian cohort gave AUROCs of 0.90-0.95. An ECG flagged as suggestive of dysfunction carried more than 27-fold higher odds of dysfunction. This is a retrospective screening-performance study; full text was not reviewed.",
+  "field": "medicine",
+  "ai_technology": "Convolutional neural network applied to 12-lead ECG images in multiple formats",
+  "organization": "Yale University",
+  "source_url": "https://doi.org/10.1161/circulationaha.122.062646",
+  "source_type": "paper",
+  "publication_date": "2023-07-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal validation plus six external ECG image sets from Cedars-Sinai, Yale outpatient clinics, community hospitals and the Brazilian ELSA-Brasil cohort.",
+    "unknown": "Prospective clinical benefit of ECG-image screening; full text not reviewed.",
+    "ai_role": "Detects a reduced left ventricular ejection fraction from photographed or plotted ECG images.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1161/circulationaha.122.062646%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

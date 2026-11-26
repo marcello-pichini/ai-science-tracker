@@ -1,0 +1,34 @@
+{
+  "id": "2026-03-rsfmri-ml-mcs-versus-uws",
+  "title": "Resting-state fMRI classifier separates minimally conscious from unresponsive wakefulness",
+  "summary": "In 94 patients from two centers (discovery n=48, external validation n=46), L1-regularized logistic regression selected 10 core fMRI features dominated by default-mode, cerebellar and subcortical coupling. The best classifier, an SVM, reached an AUC of 0.859, accuracy of 82.6% and sensitivity of 90.5% in the external cohort. SHAP circuit interpretation is correlational, and the cohorts are very small; this is a version 1 preprint.",
+  "field": "medicine",
+  "ai_technology": "L1-regularized logistic regression feature selection, nine optimized classifiers (best SVM) and SHAP on regional and network rs-fMRI markers",
+  "organization": "Qilu Hospital of Shandong University",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-8959330/v1",
+  "source_type": "paper",
+  "publication_date": "2026-03-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "External validation cohort from an independent center (n=46).",
+    "unknown": "Larger-cohort performance, causal role of the networks and clinical use; full text not reviewed.",
+    "ai_role": "Classifies disorder-of-consciousness diagnosis from fMRI markers and ranks contributing circuits.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-8959330/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-8959330/v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Version 1 abstract read from Europe PMC metadata for this DOI; author affiliations not retrieved. Full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

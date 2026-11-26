@@ -1,0 +1,34 @@
+{
+  "id": "2024-05-deep-learning-gist-ultrasound-segmentation",
+  "title": "Deep learning segments and risk-stratifies gastrointestinal stromal tumors on ultrasound",
+  "summary": "Five segmentation networks and a ResNet18 classifier were compared on 980 ultrasound images from 245 GIST patients; the SegNeXt-ResNet18 pair performed best. On the internal test set Dice was 90.2% and risk-prediction AUC 92.0%; on 188 images from 47 prospectively collected patients Dice was 89.5% and AUC 92.5%.",
+  "field": "medicine",
+  "ai_technology": "Two-stage SegNeXt segmentation and ResNet18 classification on ultrasound images",
+  "organization": "Union Hospital",
+  "source_url": "https://doi.org/10.1002/jum.16489",
+  "source_type": "paper",
+  "publication_date": "2024-05-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal test set and a prospective set of 47 patients.",
+    "unknown": "Small external set; retrospective training; full text not reviewed.",
+    "ai_role": "Network segments tumors and classifies risk.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/jum.16489%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1002/jum.16489"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2021-10-skull-fracture-ct-yolov3-attention-unet",
+  "title": "Deep learning identifies skull fractures on cranial CT by detection and segmentation",
+  "summary": "YOLOv3 object detection and a modified attention U-Net segmentation network were developed on CT scans of 4,782 patients with skull fractures (development n = 4,168, test n = 614) plus 7,856 healthy people. On an external test set of 235 patients (93 with fracture) the attention U-Net had sensitivity 82.80% and specificity 88.73% versus 80.64% and 85.92% for YOLOv3. Labels came from neurologists at one source, sensitivity is moderate and there are no outcome data.",
+  "field": "medicine",
+  "ai_technology": "YOLOv3 object detection and modified attention U-Net segmentation for skull fracture identification on cranial CT",
+  "organization": "Beijing Tiantan Hospital, Capital Medical University; Beijing Institute for Brain Disorders",
+  "source_url": "https://doi.org/10.3389/fneur.2021.687931",
+  "source_type": "paper",
+  "publication_date": "2021-10-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External test set of 235 patients (93 with fracture).",
+    "unknown": "Effect on clinical care and outcomes; full text not reviewed.",
+    "ai_role": "Two deep-learning approaches identified skull fractures on CT.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fneur.2021.687931%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

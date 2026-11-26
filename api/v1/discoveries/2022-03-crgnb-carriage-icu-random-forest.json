@@ -1,0 +1,34 @@
+{
+  "id": "2022-03-crgnb-carriage-icu-random-forest",
+  "title": "Random forest predicts carbapenem-resistant Gram-negative carriage in ICU patients",
+  "summary": "Models were built on 1,385 positive and 1,535 negative patients, and a random forest outperformed XGBoost, a decision tree and logistic regression (accuracy 84% vs 72% for logistic regression; AUROC 0.91 vs 0.78). In a 4-month prospective daily prediction across ICU patients accuracy was 85.92% and AUROC 92.02%. It is single-center work.",
+  "field": "medicine",
+  "ai_technology": "Random forest compared with XGBoost, decision tree and multivariable logistic regression",
+  "organization": "Second Affiliated Hospital of Zhejiang University",
+  "source_url": "https://doi.org/10.1016/j.jgar.2022.03.019",
+  "source_type": "paper",
+  "publication_date": "2022-03-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A 4-month prospective study of daily weekly-risk predictions for all ICU patients.",
+    "unknown": "Generalization to other hospitals is unknown. Abstract-based; full text not reviewed.",
+    "ai_role": "ML models predicted CR-GNB culture positivity within one week.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jgar.2022.03.019%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.jgar.2022.03.019"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

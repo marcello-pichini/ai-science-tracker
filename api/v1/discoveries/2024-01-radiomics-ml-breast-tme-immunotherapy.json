@@ -1,0 +1,33 @@
+{
+  "id": "2024-01-radiomics-ml-breast-tme-immunotherapy",
+  "title": "MRI radiomics signature estimates breast cancer immune phenotype and treatment response",
+  "summary": "A random forest on DCE-MRI radiomics features, trained on 94 TCIA patients with matched RNA-seq, estimated RNA-seq-derived tumor microenvironment phenotypes (immune-inflamed versus immune-desert) with an AUC of 0.855 (95% CI 0.777-0.932). The signature was tested in internal and two external sets, related to CD8 infiltration in a 158-patient cohort, and to response in 77 patients treated with anti-PD-1/PD-L1. The work is retrospective with a small training set.",
+  "field": "medicine",
+  "ai_technology": "Random forest radiomics signature trained on DCE-MRI features",
+  "organization": "South China University of Technology; Guangdong Provincial People’s Hospital",
+  "source_url": "https://doi.org/10.1186/s13058-024-01776-y",
+  "source_type": "paper",
+  "publication_date": "2024-01-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal validation, two independent external sets and an immunotherapy-treated cohort (n = 77).",
+    "unknown": "Prospective validation as a response biomarker; full text not reviewed.",
+    "ai_role": "Predicts the RNA-defined phenotype from MRI features and is tested against treatment response.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s13058-024-01776-y%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

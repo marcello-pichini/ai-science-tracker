@@ -1,0 +1,33 @@
+{
+  "id": "2024-02-ml-inhaled-corticosteroid-response-asthma",
+  "title": "Machine learning predicts inhaled corticosteroid response in asthma from GWAS variants",
+  "summary": "GWAS-selected SNPs were used to train LASSO and random forest models in 1371 patients of European ancestry (448 children, 916 adults). In an independent test cohort the AUCs were 0.71 (LASSO) and 0.74 (random forest), and contributing genes included TPSAB1 and FBXL16. Discrimination is modest and clinical benefit was not tested.",
+  "field": "medicine",
+  "ai_technology": "LASSO regression and random forest on GWAS-identified SNPs",
+  "organization": "PRecisiOn Medicine Translational Research (PROMoTeR) Center, Department of Population Medicine, Harvard Medical School and Harvard Pilgrim Health Care, Boston, USA",
+  "source_url": "https://doi.org/10.3390/jpm14030246",
+  "source_type": "paper",
+  "publication_date": "2024-02-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prediction of ICS response in an independent test cohort, with AUCs of 0.71 and 0.74.",
+    "unknown": "Whether predictions guide better treatment and performance in other ancestries; full text not reviewed.",
+    "ai_role": "Two machine learning models predicted treatment response from genetic variants.",
+    "evidence_urls": [
+      "https://api.crossref.org/works/10.3390/jpm14030246"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from the review input and author affiliations from Crossref metadata for this DOI. Publisher full text not accessed."
+  }
+}

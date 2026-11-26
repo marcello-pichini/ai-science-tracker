@@ -1,0 +1,34 @@
+{
+  "id": "2023-04-dl-ecg-right-ventricular-size-function",
+  "title": "Deep learning on the ECG estimates right ventricular size and function",
+  "summary": "A deep learning model on 12-lead ECGs predicted right ventricular dilation and dysfunction. For RV dysfunction, AUROC was 0.86 (UK Biobank), 0.81 (original) and 0.77 (validation) cohorts; for RV dilation 0.91, 0.81 and 0.92. Predicted RVEF was independently associated with a composite outcome over 2.3 years median follow-up (HR 1.37 per 10% decrease, p=0.046). RV dysfunction prevalence in UK Biobank was only 1.0%. Preprint of 2023-04-26.",
+  "field": "medicine",
+  "ai_technology": "Deep learning on 12-lead electrocardiograms predicting RV dilation, RV dysfunction, RVEF and RVEDV",
+  "organization": "Icahn School of Medicine at Mount Sinai",
+  "source_url": "https://doi.org/10.1101/2023.04.25.23289130",
+  "source_type": "paper",
+  "publication_date": "2023-04-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Independent validation cohort and UK Biobank external set; association of predicted RVEF with clinical outcome.",
+    "unknown": "Prospective utility and peer-reviewed status are not established; full text not reviewed.",
+    "ai_role": "Deep learning estimated right ventricular size and function from ECG waveforms.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2023.04.25.23289130%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1101/2023.04.25.23289130"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations were not available. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

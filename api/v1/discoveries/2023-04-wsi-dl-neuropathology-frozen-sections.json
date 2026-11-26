@@ -1,0 +1,33 @@
+{
+  "id": "2023-04-wsi-dl-neuropathology-frozen-sections",
+  "title": "Whole-slide deep learning distinguishes germinoma, oligodendroglioma and astrocytoma",
+  "summary": "A tile-level deep learning classifier with majority voting was developed on 500 frozen and 832 HE-stained sections from 379 patients. Internal accuracy was 93.9% (frozen) and 95.3% (HE), but external validation accuracy was 82.0% and 76.9%. The models predicted Ki-67 positive area (R2 0.81 and 0.86), and model assistance raised pathologists' accuracy from 54.6-69.7% to 87.9-93.9% for frozen sections. Retrospective; external accuracy is markedly lower than internal.",
+  "field": "medicine",
+  "ai_technology": "Tile-level deep learning classification of whole-slide images with majority voting",
+  "organization": "University of Science and Technology of China; Suzhou Institute of Biomedical Engineering and Technology, Chinese Academy of Sciences",
+  "source_url": "https://doi.org/10.1111/bpa.13160",
+  "source_type": "paper",
+  "publication_date": "2023-04-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal validation and external validation at other centers; assisted-reader comparison with pathologists.",
+    "unknown": "Prospective clinical benefit is not established; full text not reviewed.",
+    "ai_role": "Deep learning classified tumor type and predicted Ki-67 area on digitized slides.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1111/bpa.13160%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

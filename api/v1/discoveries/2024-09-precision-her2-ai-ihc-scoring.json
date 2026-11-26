@@ -1,0 +1,33 @@
+{
+  "id": "2024-09-precision-her2-ai-ihc-scoring",
+  "title": "AI system scores HER2 immunohistochemistry and filters DCIS in breast cancer slides",
+  "summary": "An AI system uses calponin staining to identify and filter ductal carcinoma in situ, then scores HER2 immunohistochemistry (0, 1+, 2+, 3+) on whole-slide images. In a two-phase reader study on 112 slides with a 2-week washout, pathologist accuracy rose from 0.710 to 0.902 with AI, and HER2 1+ cases misread as 0 fell from 65/279 to 32/279. Intra-class correlation also improved, most among junior pathologists. The same slides and readers were used in both phases.",
+  "field": "medicine",
+  "ai_technology": "AI models for DCIS filtering (calponin staining) and HER2 whole-slide image scoring",
+  "organization": "Third Affiliated Hospital of Guangzhou Medical University",
+  "source_url": "https://doi.org/10.1186/s12885-024-12980-6",
+  "source_type": "paper",
+  "publication_date": "2024-09-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Two-phase reader validation on 112 HER2 whole-slide images, without and with AI assistance.",
+    "unknown": "Performance on independent slide sets and in routine practice; full text not reviewed.",
+    "ai_role": "Segments DCIS and scores HER2 staining to assist pathologists.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12885-024-12980-6%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

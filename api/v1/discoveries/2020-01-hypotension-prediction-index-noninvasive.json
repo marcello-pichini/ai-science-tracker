@@ -1,0 +1,34 @@
+{
+  "id": "2020-01-hypotension-prediction-index-noninvasive",
+  "title": "Hypotension Prediction Index evaluated on non-invasive arterial pressure waveforms",
+  "summary": "A machine-learning-derived Hypotension Prediction Index was re-evaluated on ClearSight non-invasive waveforms from a trial of 320 adults aged 45 or older at moderate-to-high risk in non-cardiac surgery. It predicted hypotension 5 minutes ahead with sensitivity 0.86 (95% CI 0.82-0.89) and specificity 0.86, and 0.83 for both at 10 minutes. This is a re-analysis of existing trial data for a proprietary algorithm, and clinical benefit is not shown.",
+  "field": "medicine",
+  "ai_technology": "Machine-learning-derived Hypotension Prediction Index applied to non-invasive arterial waveform estimates",
+  "organization": "Cleveland Clinic",
+  "source_url": "https://doi.org/10.1007/s10877-020-00463-5",
+  "source_type": "paper",
+  "publication_date": "2020-01-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Sensitivity, specificity and positive predictive value (0.83 at an index threshold of 85) were calculated on trial data from 320 patients.",
+    "unknown": "Reduction of hypotension in practice is not tested; the algorithm was developed on invasive waveforms and is proprietary. Abstract-based; full text not reviewed.",
+    "ai_role": "A machine-learning algorithm predicts intraoperative hypotension minutes ahead from the arterial pressure waveform.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s10877-020-00463-5%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1007/s10877-020-00463-5"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2025-09-schizophrenia-impulsivity-biomarker-catboost",
+  "title": "CatBoost on routine biomarkers predicts future impulsivity in schizophrenia",
+  "summary": "In 1,496 first-admission schizophrenia patients from four hospitals, a CatBoost model on 99 routine features reached AUROC 0.749 in cross-validation (n=993) and 0.719 in an independent external cohort (n=503); SHAP ranked uric acid, globulin and APOE among key biomarkers. Adding biomarkers to clinical data raised AUROC from 0.652 to 0.749 and from 0.655 to 0.721. The study is retrospective, performance is modest and no causal claim is made.",
+  "field": "medicine",
+  "ai_technology": "CatBoost and four other machine learning models on routine laboratory features, interpreted with SHAP",
+  "organization": "Shanghai Putuo District Mental Health Center",
+  "source_url": "https://doi.org/10.3389/fpsyt.2025.1620131",
+  "source_type": "paper",
+  "publication_date": "2025-09-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Ten-fold cross-validation and an independent external cohort (n=503).",
+    "unknown": "Causal relations and clinical benefit are not tested; full text not reviewed.",
+    "ai_role": "Trained models and ranked biomarkers to predict impulsivity risk.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fpsyt.2025.1620131%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2025-12-ctdna-svm-nsclc-immunotherapy-response",
+  "title": "ctDNA support vector machine predicts immunotherapy benefit in advanced NSCLC",
+  "summary": "An SVM trained on 41 LASSO-selected somatic mutations from baseline ctDNA exome data in the OAK trial (n=303) predicted durable clinical benefit from immune checkpoint inhibitors, with AUC 0.87 in OAK, 0.92 in the independent POPLAR cohort (n=97) and 0.83 in a regional multicenter cohort (n=41). It also stratified survival by SVM score. The data are retrospective trial data and validation cohorts are small.",
+  "field": "medicine",
+  "ai_technology": "Support vector machine on 41 LASSO-selected somatic mutations from pretreatment ctDNA whole-exome sequencing",
+  "organization": "Guizhou Medical University",
+  "source_url": "https://doi.org/10.21037/tcr-2025-1182",
+  "source_type": "paper",
+  "publication_date": "2025-12-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent validation in the POPLAR trial cohort (n=97) and a regional multicenter cohort (n=41); retrospective.",
+    "unknown": "Prospective validation, larger cohorts and effect on treatment choice; full text not reviewed.",
+    "ai_role": "Learns a mutation-based score predicting immunotherapy benefit.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21037/tcr-2025-1182%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations from Europe PMC or Crossref. Full text not accessed."
+  }
+}

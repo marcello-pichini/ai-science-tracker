@@ -1,0 +1,33 @@
+{
+  "id": "2020-06-host-guest-svm-cucurbituril-binding",
+  "title": "Support vector machine predicts drug binding to cucurbit[7]uril, tested experimentally",
+  "summary": "A kernel support vector machine trained on density functional theory data was used to predict small-molecule binding to cucurbit[7]uril (CB[7]). The abstract says it may confer some predictive ability; it predicted strong binding for TAK-580 and poor binding for selumetinib, and experiments confirmed both. Selumetinib was found to bind the larger cucurbit[8]uril. Only two drugs were tested.",
+  "field": "chemistry",
+  "ai_technology": "Support vector machine regression trained on DFT-derived data",
+  "organization": "University of Cambridge",
+  "source_url": "https://doi.org/10.1039/c9cp05800a",
+  "source_type": "paper",
+  "publication_date": "2020-06-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Experimental binding of two drugs (TAK-580 and selumetinib) predicted by the model, plus mass transfer simulations.",
+    "unknown": "Only two drugs tested; predictive ability described as modest; full text not reviewed.",
+    "ai_role": "Support vector machine predicting host-guest binding coefficients from DFT training data.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1039/c9cp05800a%22&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; affiliations from Europe PMC or Crossref where stated. Publisher full text not accessed."
+  }
+}

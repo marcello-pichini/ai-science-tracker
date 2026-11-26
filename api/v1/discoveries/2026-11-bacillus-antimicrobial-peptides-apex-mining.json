@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-bacillus-antimicrobial-peptides-apex-mining",
+  "title": "Genome mining and deep learning prioritize antimicrobial peptides from Bacillus genomes",
+  "summary": "Mining 3,283 Bacillus genomes yielded 6,532 putative antimicrobial peptides in 682 cluster families. APEX-based MIC predictions prioritized 73 candidates, four of which were synthesized; they showed species-dependent antibacterial activity, strongest against Clostridium perfringens. Prediction and experiment correlated at r = 0.967-0.970 for three species but negatively for A. baumannii (r = -0.557) and Salmonella Typhimurium (r = -0.619).",
+  "field": "biology",
+  "ai_technology": "APEX deep-learning model predicting minimum inhibitory concentrations, used to prioritize mined peptides",
+  "organization": "Northwest A&F University",
+  "source_url": "https://doi.org/10.1007/s10822-026-00977-1",
+  "source_type": "paper",
+  "publication_date": "2026-11-13",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Four peptides chosen from 73 predicted high-potency candidates were chemically synthesized and tested for antibacterial activity.",
+    "unknown": "Only four peptides were tested; prediction-experiment agreement was negative for two species; clinical potential is not assessed. Abstract-based; full text not reviewed.",
+    "ai_role": "APEX MIC predictions ranked 6,532 mined peptide sequences down to 73 candidates for synthesis.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s10822-026-00977-1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1007/s10822-026-00977-1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

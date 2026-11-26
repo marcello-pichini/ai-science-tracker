@@ -1,0 +1,33 @@
+{
+  "id": "2022-05-trforest-trna-fragment-target-prediction",
+  "title": "Random forest predicts targets of tRNA-derived fragments",
+  "summary": "tRForest applies miRNA-style target features in a random forest to predict targets of tRNA-derived fragments of all classes, which the authors report improves prediction, and predictions were tested in two independent cell lines. Gene Ontology analysis suggested neuronal functions among predicted targets. The abstract gives no numeric performance metrics.",
+  "field": "biology",
+  "ai_technology": "Random forest algorithm (tRForest)",
+  "organization": "University of Virginia School of Medicine",
+  "source_url": "https://doi.org/10.1093/nargab/lqac037",
+  "source_type": "paper",
+  "publication_date": "2022-05-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Experimental validation of predicted tRF targets in two independent cell lines.",
+    "unknown": "No numeric metrics in the abstract; extent of experimental testing not stated; full text not reviewed.",
+    "ai_role": "Random forest classifier predicting tRNA fragment target genes.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1093/nargab/lqac037%22&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; affiliations from Europe PMC or Crossref where stated. Publisher full text not accessed."
+  }
+}

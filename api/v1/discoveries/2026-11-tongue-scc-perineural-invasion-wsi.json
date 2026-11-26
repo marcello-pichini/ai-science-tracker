@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-tongue-scc-perineural-invasion-wsi",
+  "title": "Weakly supervised deep learning predicts perineural invasion in tongue cancer slides",
+  "summary": "Using 1,511 H&E whole-slide images from 629 patients at two centers, a ResNet50 feature extractor with multiple-instance aggregation and a Transformer fusion model predicted perineural invasion. AUCs were 0.968 internally and 0.940 in an external cohort of 192 patients. The study is retrospective, and workflow effects need prospective evaluation.",
+  "field": "medicine",
+  "ai_technology": "ResNet50 patch model with multiple-instance learning and a cross-attention Transformer on whole-slide images",
+  "organization": "Central South University; Xiangya Hospital, Central South University",
+  "source_url": "https://doi.org/10.1016/j.ijmedinf.2026.106781",
+  "source_type": "paper",
+  "publication_date": "2026-11-03",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Performance was assessed in an internal validation cohort and an external test cohort.",
+    "unknown": "Clinical utility and prospective performance are untested. Abstract-based; full text not reviewed.",
+    "ai_role": "A weakly supervised pipeline predicted PNI from slide images without region annotation.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.ijmedinf.2026.106781%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.ijmedinf.2026.106781"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

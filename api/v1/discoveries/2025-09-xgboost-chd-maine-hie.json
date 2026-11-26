@@ -1,0 +1,33 @@
+{
+  "id": "2025-09-xgboost-chd-maine-hie",
+  "title": "Statewide health-record model predicts one-year coronary heart disease risk",
+  "summary": "An XGBoost pipeline with feature selection and isotonic calibration was trained on a retrospective Maine Health Information Exchange cohort (N = 1,042,124) and validated on a later prospective cohort (N = 1,040,158). The AUC was 0.952 (95% CI 0.950-0.954) in the retrospective cohort and 0.888 (0.885-0.890) in the later cohort. Of 19 people in the very-high-risk group, 11 (57.89%) developed CHD within one year. Data come from one state and are from health records.",
+  "field": "medicine",
+  "ai_technology": "XGBoost feature selection and risk prediction with isotonic calibration on electronic health records",
+  "organization": "Guangdong Polytechnic Normal University; Stanford University",
+  "source_url": "https://doi.org/10.1186/s12889-025-24266-y",
+  "source_type": "paper",
+  "publication_date": "2025-09-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Temporal validation in a 2016-2018 cohort after training on 2015-2017 data.",
+    "unknown": "Performance in other states and effect on prevention outcomes; full text not reviewed.",
+    "ai_role": "Predicts one-year CHD risk and stratifies a population into five risk categories.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12889-025-24266-y%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

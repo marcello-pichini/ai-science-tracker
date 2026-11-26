@@ -1,0 +1,33 @@
+{
+  "id": "2026-08-ml-hospital-acquired-vte-padua-improve",
+  "title": "Machine learning outperforms Padua and IMPROVE scores for hospital-acquired VTE",
+  "summary": "On 379,720 MIMIC-IV admissions (674 with imaging-confirmed VTE) out-of-fold AUCs were 0.79 to 0.81, against 0.707 for Padua and 0.688 for IMPROVE. Frozen models in 29,144 Beijing admissions did better than both scores, with the admission-safe model at AUC 0.706 versus 0.678. Discrimination is modest, and the authors call for recalibration and prospective validation; this is a retrospective preprint.",
+  "field": "medicine",
+  "ai_technology": "XGBoost and logistic regression models on EHR data",
+  "organization": "Department of Hematology, Peking Union Medical College Hospital, Beijing, China",
+  "source_url": "https://doi.org/10.64898/2026.08.25.26361123",
+  "source_type": "paper",
+  "publication_date": "2026-08-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "External validation of frozen models in a separate tertiary hospital in Beijing.",
+    "unknown": "Prospective performance and effect on prophylaxis decisions; full text not reviewed.",
+    "ai_role": "Machine-learning models predicted imaging-confirmed in-hospital VTE.",
+    "evidence_urls": [
+      "https://api.crossref.org/works/10.64898/2026.08.25.26361123"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from the review input and author affiliations from Crossref metadata for this DOI. Publisher full text not accessed."
+  }
+}

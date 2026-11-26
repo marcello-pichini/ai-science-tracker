@@ -1,0 +1,34 @@
+{
+  "id": "2026-05-easypath-cmv-gi-biopsy-deep-learning",
+  "title": "Deep learning detects cytomegalovirus in GI biopsies using IHC-validated ground truth",
+  "summary": "A convolutional neural network (the no-code EasyPath platform) was trained on 120 CMV-infected cases using H&E decolorization and IHC restaining for cell-for-cell ground truth. On an independent validation cohort of 100 whole-slide images it reached overall sensitivity of 94.3% and specificity of 80.0%, with 100% sensitivity in high-burden cases and 80% in low-burden cases. The validation set is small and the specificity moderate; this is a version 1 preprint.",
+  "field": "medicine",
+  "ai_technology": "Convolutional neural network built on the EasyPath no-code platform to detect CMV inclusions on H&E whole-slide images",
+  "organization": "Taipei Veterans General Hospital",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-9670266/v1",
+  "source_type": "paper",
+  "publication_date": "2026-05-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Independent validation cohort of 100 whole-slide images against IHC-derived ground truth.",
+    "unknown": "Multi-site performance, effect on pathologist workflow and false-positive burden; full text not reviewed.",
+    "ai_role": "Finds sparse or atypical CMV inclusions in H&E slides.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-9670266/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-9670266/v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Version 1 abstract read from Europe PMC metadata for this DOI; author affiliations not retrieved. Full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-ec-transfer-learning-shmt2-mthfd2-dti",
+  "title": "EC-guided transfer learning finds SHMT2/MTHFD2 compounds that lower fibroblast collagen",
+  "summary": "Pre-training a deep feedforward network on the nearest Enzyme Commission family with enough ChEMBL data gave usable drug-target models for SHMT2 (6 known actives) and MTHFD2 (29), where training from scratch failed (MCC 0.00 for SHMT2). Virtual screening of DrugBank gave six candidates; carbimazole, crizotinib and GSK-2018682 reduced TGF-beta-induced collagen production and glycine accumulation in human lung fibroblasts. This is a version 1 preprint abstract; the training sets are very small.",
+  "field": "medicine",
+  "ai_technology": "Deep feedforward network pre-trained on EC-hierarchy-selected ChEMBL data and fine-tuned for SHMT2 and MTHFD2 drug-target interaction prediction",
+  "organization": "University of Edinburgh",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-10999675/v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-18",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Cell-based assays of three of six screened candidates in TGF-beta-stimulated human lung fibroblasts.",
+    "unknown": "Target engagement, specificity and in vivo effect of the repurposed compounds; full text not reviewed.",
+    "ai_role": "Predicts drug-target interactions that drive a DrugBank virtual screen.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-10999675/v1%22&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Version 1 abstract read from Europe PMC metadata for this DOI; author affiliations from Europe PMC or Crossref. Full text not accessed."
+  }
+}

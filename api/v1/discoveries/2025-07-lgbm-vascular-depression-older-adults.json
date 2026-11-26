@@ -1,0 +1,33 @@
+{
+  "id": "2025-07-lgbm-vascular-depression-older-adults",
+  "title": "Explainable machine learning model diagnoses vascular depression in older adults",
+  "summary": "A LightGBM model with SHAP-based feature reduction was developed in 602 participants (236 vascular depression patients, 366 controls) and kept 8 features, including white matter hyperintensity score, age, VEGF, IL-6, BDNF, TNF-alpha, lacune counts and serotonin level. AUROC was 0.937 internally and 0.896 in an external set of 171 participants, marginally exceeding clinician-level performance. The design is case-control.",
+  "field": "medicine",
+  "ai_technology": "LightGBM selected among six algorithms, with SHAP interpretation",
+  "organization": "Zhongnan Hospital of Wuhan University",
+  "source_url": "https://doi.org/10.1186/s12916-025-04283-9",
+  "source_type": "paper",
+  "publication_date": "2025-07-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Cross-validation and internal validation, with an independent external set of 171 participants from surrounding areas.",
+    "unknown": "Performance in prospective, general-clinic populations; full text not reviewed.",
+    "ai_role": "Combines clinical, neuropsychological, blood and MRI features to classify vascular depression.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12916-025-04283-9%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

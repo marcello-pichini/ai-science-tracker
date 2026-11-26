@@ -1,0 +1,34 @@
+{
+  "id": "2026-08-ai-he-slides-myc-rearrangement-dlbcl",
+  "title": "AI on H&E slides captures MYC-rearrangement morphology and prognosis in B-cell lymphoma",
+  "summary": "A multiple-instance deep learning model was trained on 1035 H&E slides to identify MYC rearrangement, from a collection of 2018 annotated DLBCL/HGBCL slides, and tested on an external cohort of 499. The score was associated with overall and progression-free survival, confirmed in a further 484-case cohort without FISH labels, and remained prognostic after adjusting for IPI factors. Scores correlated with MYC and BCL2 expression and microenvironment features.",
+  "field": "medicine",
+  "ai_technology": "Multiple-instance deep learning on H&E whole-slide images",
+  "organization": "Universitätsmedizin Göttingen",
+  "source_url": "https://doi.org/10.1002/hem3.70463",
+  "source_type": "paper",
+  "publication_date": "2026-08-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External test cohort and an additional unlabeled clinical cohort.",
+    "unknown": "Abstract gives no numeric metrics; retrospective; full text not reviewed.",
+    "ai_role": "Model scores a morphological MYC-rearrangement signal.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/hem3.70463%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1002/hem3.70463"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-pneumatosis-intestinalis-ai-diagnostic-system",
+  "title": "Two-stage AI system distinguishes ischemic from benign pneumatosis intestinalis on imaging",
+  "summary": "From CT and X-ray data of 612 patients with pneumatosis intestinalis (398 benign, 214 ischemic) at three hospitals, the authors built a CT severity score and a two-level AI system using EfficientNet-B3 for X-ray screening and 3D nnU-Net for gas segmentation with feature fusion. For ischemic cases the AUC was 0.947 internally and 0.931 on an external set of 106 cases, versus 0.876 for senior radiologists. The data are retrospective.",
+  "field": "medicine",
+  "ai_technology": "EfficientNet-B3 screening, 3D nnU-Net segmentation and cross-attention fusion",
+  "organization": "Shaanxi Nuclear Industry 215 Hospital",
+  "source_url": "https://doi.org/10.1063/5.0351586",
+  "source_type": "paper",
+  "publication_date": "2026-11-02",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "AUC for ischemic pneumatosis internally and on an external validation set of 106 cases, compared with radiologists.",
+    "unknown": "Retrospective rare-disease cohort; prospective use not shown; full text not reviewed.",
+    "ai_role": "Two-level deep learning system screening X-rays and segmenting intestinal wall gas on CT.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1063/5.0351586%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; affiliations from Europe PMC or Crossref where stated. Publisher full text not accessed."
+  }
+}

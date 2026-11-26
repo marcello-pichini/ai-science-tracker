@@ -1,0 +1,33 @@
+{
+  "id": "2024-10-ct-texture-ml-pulmonary-perfusion-pe",
+  "title": "Machine learning on non-contrast CT texture predicts lung perfusion in suspected PE",
+  "summary": "Texture features from non-contrast CT were selected and used in machine learning models to predict regional lung perfusion measured by Q-SPECT/CT, using 76 patients internally (12 for testing) and 49 externally. The model reached an AUC of 0.863 in internal testing and 0.828 on the external cohort, and voxel-wise perfusion surrogates were synthesized from selected feature maps. The study is retrospective with small cohorts and moderate AUCs.",
+  "field": "medicine",
+  "ai_technology": "Machine learning models on quantitative CT intensity and texture features",
+  "organization": "Hong Kong Polytechnic University",
+  "source_url": "https://doi.org/10.1186/s12931-024-03004-9",
+  "source_type": "paper",
+  "publication_date": "2024-10-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal testing (12 patients) and an external test cohort of 49 patients, with spatial agreement against Q-SPECT scans.",
+    "unknown": "Diagnostic value for PE in larger cohorts; full text not reviewed.",
+    "ai_role": "Selects CT features related to perfusion and builds models and surrogate perfusion maps from them.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12931-024-03004-9%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2021-11-acs-1-year-mortality-survival-ml",
+  "title": "Random survival forest predicts 1-year mortality after acute coronary syndrome",
+  "summary": "Random survival forest and DeepSurv were compared with Cox models on the ACSIS survey and externally validated on the UK MINAP data. RSF performed best with Harrell C-index 0.924 on the test set and 0.811 externally (IPCW 0.844, Brier 0.093), against 0.689-0.790 for Cox models in validation. The study is retrospective and the gap between training and external results needs prospective evaluation.",
+  "field": "medicine",
+  "ai_technology": "Random survival forest and DeepSurv deep-learning survival model",
+  "organization": "Ben-Gurion University of the Negev; Bar-Ilan University; Tel Aviv University",
+  "source_url": "https://doi.org/10.1016/j.jjcc.2021.11.006",
+  "source_type": "paper",
+  "publication_date": "2021-11-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation on an independent national audit dataset.",
+    "unknown": "Prospective performance and clinical benefit are unknown. Abstract-based; full text not reviewed.",
+    "ai_role": "ML survival models predicted time to death after ACS.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jjcc.2021.11.006%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.jjcc.2021.11.006"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2022-06-icu-vte-cancer-mortality-ml-external-validation",
+  "title": "Machine learning predicts ICU mortality in patients with thromboembolism or cancer",
+  "summary": "Using the MIMIC-III and eICU databases, ML models predicted early mortality with AUC-ROC 0.93 (VTE, MIMIC-III), 0.87 (VTE, eICU) and 0.94 (cancer, MIMIC-III); a 35-feature VTE model from 1,651 patients was validated in 2,659 eICU patients. Late-mortality AUCs were lower (VTE 0.82, cancer 0.74 to 0.88). The models outperformed traditional scoring systems on retrospective public data.",
+  "field": "medicine",
+  "ai_technology": "Interpretable machine learning models with class-imbalance handling on ICU records",
+  "organization": "Sphynx Technology Solutions; European University of Cyprus",
+  "source_url": "https://doi.org/10.3390/ijms23137132",
+  "source_type": "paper",
+  "publication_date": "2022-06-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation of the VTE model on eICU data.",
+    "unknown": "Prospective performance and clinical effect are not reported; full text not reviewed.",
+    "ai_role": "Trained and compared mortality prediction models.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/ijms23137132%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata and author affiliations from Crossref for this DOI. Publisher full text not accessed."
+  }
+}

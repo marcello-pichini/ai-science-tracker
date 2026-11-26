@@ -1,0 +1,33 @@
+{
+  "id": "2026-06-age-related-hearing-loss-blood-ml-model",
+  "title": "Machine learning on routine blood biomarkers predicts age-related hearing loss",
+  "summary": "From 542 NHANES participants (271 cases, 271 controls), comparing 113 algorithm combinations selected a glmBoost plus Stepglm model with AUC 0.948 in training and 0.893 and 0.945 in two internal sets. In 92 patients from Chongqing People's Hospital it kept AUC 0.839 (accuracy 77.2%). HbA1c, MCV and blood glucose were the top SHAP features. The external cohort is small and from one center.",
+  "field": "medicine",
+  "ai_technology": "Selection among 113 machine learning algorithm combinations (glmBoost plus Stepglm) with SHAP",
+  "organization": "Chongqing Medical University",
+  "source_url": "https://doi.org/10.3390/diagnostics16132025",
+  "source_type": "paper",
+  "publication_date": "2026-06-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Two internal validation sets and an external single-center cohort (n=92).",
+    "unknown": "Prospective performance and clinical benefit are not reported; full text not reviewed.",
+    "ai_role": "Selected the model and ranked predictive biomarkers.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/diagnostics16132025%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata and author affiliations from Crossref for this DOI. Publisher full text not accessed."
+  }
+}

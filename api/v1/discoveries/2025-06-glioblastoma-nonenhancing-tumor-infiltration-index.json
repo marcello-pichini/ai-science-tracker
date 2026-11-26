@@ -1,0 +1,34 @@
+{
+  "id": "2025-06-glioblastoma-nonenhancing-tumor-infiltration-index",
+  "title": "Automated non-enhancing tumor segmentation gives a prognostic index in glioblastoma",
+  "summary": "A deep learning model segmented enhancing tumor, edema and necrosis on MRI from 940 patients, and a finite mixture model isolated edema subregions containing non-contrast-enhancing tumor to compute a Diffuse Infiltration Index (DII). A high DII doubled the hazard of death in the NCT03439332 cohort (HR 2.09, 95% CI 1.34-3.25), with smaller effects in the other cohorts (pooled HR 1.28). Retrospective, and deep learning is only the segmentation step. Preprint of 2025-06-28.",
+  "field": "medicine",
+  "ai_technology": "Deep learning segmentation of enhancing tumor, edema and necrosis, followed by a non-local spatially varying finite mixture model",
+  "organization": "Universitat Politècnica de València",
+  "source_url": "https://doi.org/10.1101/2025.06.26.25327675",
+  "source_type": "paper",
+  "publication_date": "2025-06-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Survival analysis across four multicenter cohorts (940 patients) with confirmation of smaller effects in other cohorts.",
+    "unknown": "Surgical benefit of using DII and peer-reviewed status are not established; full text not reviewed.",
+    "ai_role": "Deep learning segmentation supplied the regions from which the infiltration index was computed.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2025.06.26.25327675%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1101/2025.06.26.25327675"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations were not available. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

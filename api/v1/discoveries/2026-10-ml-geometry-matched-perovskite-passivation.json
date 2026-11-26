@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-ml-geometry-matched-perovskite-passivation",
+  "title": "Interpretable machine learning guides perovskite passivation molecule screening",
+  "summary": "A SHAP-interpreted ML model relating six features to photovoltaic performance (about 100 literature data points) ranked hydrogen-bonding capacity and adsorption strength as most influential and guided screening of nine unexplored molecules. The lead molecule ATC raised the calculated iodide-migration barrier from 0.39 to 0.67 eV, and ATC cells reached 27.13% efficiency (26.59% certified stabilized) and kept 90% after 1460 h unencapsulated. Modules of 20.98 and 21.0 cm2 reached 24.01% and 21.14%.",
+  "field": "materials",
+  "ai_technology": "Interpretable machine learning with SHAP on literature data for molecule screening",
+  "organization": "Fuzhou University",
+  "source_url": "https://doi.org/10.1002/ange.9718249",
+  "source_type": "paper",
+  "publication_date": "2026-10-23",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Synthesis and device measurement, including certified efficiency.",
+    "unknown": "Small training set; the benefit over unscreened molecules is not detailed in the abstract; full text not reviewed.",
+    "ai_role": "ML ranked features and guided choice of candidate molecules.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/ange.9718249%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1002/ange.9718249"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

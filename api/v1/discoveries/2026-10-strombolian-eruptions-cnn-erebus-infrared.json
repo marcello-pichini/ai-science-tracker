@@ -1,0 +1,33 @@
+{
+  "id": "2026-10-strombolian-eruptions-cnn-erebus-infrared",
+  "title": "CNN detects small Strombolian eruptions in infrared images of Erebus lava lake",
+  "summary": "A CNN trained on more than 54,000 denoised multitemporal infrared images of the Erebus lava lake classified images as no, small or large eruption. On the held-out test set it reached a macro F1 of 0.9782 and MCC of 0.9397, and it detected small eruptions below the limits of conventional automated methods. The study covers one volcano with partly curated labels.",
+  "field": "other",
+  "ai_technology": "Convolutional neural network on denoised multitemporal infrared images",
+  "organization": "University of Louisiana at Lafayette",
+  "source_url": "https://doi.org/10.1093/pnasnexus/pgag359",
+  "source_type": "paper",
+  "publication_date": "2026-10-22",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out test performance and temporal generalisation to later images after a change in lake morphology.",
+    "unknown": "Single volcano; labels partly curated; full text not reviewed.",
+    "ai_role": "CNN classifying thermal image sequences by eruption size.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1093/pnasnexus/pgag359%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; affiliations from Europe PMC or Crossref where stated. Publisher full text not accessed."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-glycated-proteomics-ml-cvd-peritoneal-dialysis",
+  "title": "Glycated peptides and machine learning predict cardiovascular disease in dialysis",
+  "summary": "Mass spectrometry in 96 matched patients found 257 differentially abundant glycated peptides. Two peptides plus six clinical indicators were combined by elastic-net logistic regression, giving ROC-AUC 0.784 (training), 0.781 (internal test) and 0.822 in a multicentre external cohort of 102, higher than three published cardiovascular risk models. High-risk patients had higher 1-year CVD incidence in both validation cohorts.",
+  "field": "medicine",
+  "ai_technology": "Glmnet feature selection and elastic-net logistic regression on glycated peptides and clinical indicators",
+  "organization": "Fudan University; Zhongshan Hospital",
+  "source_url": "https://doi.org/10.1002/ctm2.70889",
+  "source_type": "paper",
+  "publication_date": "2026-11-01",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prospective derivation cohort (n = 240) and multicentre external validation (n = 102).",
+    "unknown": "Modest AUC; small cohorts; full text not reviewed.",
+    "ai_role": "Penalized regression selects biomarkers and builds the model.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/ctm2.70889%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1002/ctm2.70889"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

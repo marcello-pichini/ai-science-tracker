@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-ntm-vs-tb-extra-trees-lab-data",
+  "title": "Eight-variable Extra Trees model separates nontuberculous mycobacteria from tuberculosis",
+  "summary": "An Extra Trees model using eight routine laboratory variables was developed in Hospital A (n = 1,090; 130 NTM) and evaluated frozen in Hospital B (n = 1,160; 128 NTM). External AUC was 0.849 and AUPRC 0.505; at the fixed threshold sensitivity was 67.2% and specificity 83.7%, with 42 of 128 external NTM cases below threshold. The study is retrospective and the model cannot support stand-alone diagnosis.",
+  "field": "medicine",
+  "ai_technology": "Extra Trees machine-learning classifier on eight routine laboratory variables",
+  "organization": "North China University of Science and Technology",
+  "source_url": "https://doi.org/10.1016/j.diagmicrobio.2026.117713",
+  "source_type": "paper",
+  "publication_date": "2026-10-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The frozen model was evaluated on an independent hospital, with a post-hoc nested analysis (AUC 0.875).",
+    "unknown": "Prospective performance, reference-diagnosis timing and clinical impact are not tested. Abstract-based; full text not reviewed.",
+    "ai_role": "An Extra Trees model estimated the probability of NTM versus tuberculosis from routine lab results.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.diagmicrobio.2026.117713%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.diagmicrobio.2026.117713"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2025-04-rf-severe-complications-crs-hipec",
+  "title": "Random forest predicts severe complications after cytoreductive surgery with HIPEC",
+  "summary": "A random forest trained on 1955 UPMC patients (37% with severe complications) used 15 variables and reached AUC 0.71 internally. In external validation on 617 patients from the US HIPEC collaborative (22% severe complications), AUC ranged from 0.60 to 0.73, mean 0.65. High peritoneal cancer index, subtotal gastrectomy and low albumin were among the most important variables.",
+  "field": "medicine",
+  "ai_technology": "Random forest with recursive feature elimination and SHAP",
+  "organization": "University of California, San Francisco",
+  "source_url": "https://doi.org/10.1002/wjs.12601",
+  "source_type": "paper",
+  "publication_date": "2025-04-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation in the US HIPEC collaborative dataset.",
+    "unknown": "Modest AUC; full text not reviewed.",
+    "ai_role": "Model predicts complications from perioperative variables.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/wjs.12601%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1002/wjs.12601"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

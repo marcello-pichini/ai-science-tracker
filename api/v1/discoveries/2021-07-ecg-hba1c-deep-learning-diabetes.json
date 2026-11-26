@@ -1,0 +1,33 @@
+{
+  "id": "2021-07-ecg-hba1c-deep-learning-diabetes",
+  "title": "Deep learning estimates HbA1c from the electrocardiogram in a retrospective cohort",
+  "summary": "A deep learning model was trained on 104,823 ECGs to estimate HbA1c. In a follow-up cohort it reached an AUC of 0.8255 (sensitivity 71.9%, specificity 77.7%) for distinguishing diabetes, and higher ECG-HbA1c was linked to future mortality, new chronic kidney disease and new heart failure. The study is retrospective at a single health system with modest discrimination.",
+  "field": "medicine",
+  "ai_technology": "Deep learning model estimating HbA1c from ECG",
+  "organization": "Division of Cardiology, Department of Internal Medicine, Tri-Service General Hospital, National Defense Medical Center, Taipei, Taiwan",
+  "source_url": "https://doi.org/10.3390/jpm11080725",
+  "source_type": "paper",
+  "publication_date": "2021-07-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Validation in 1539 cases (2190 ECGs) and a 3293-case follow-up cohort for diabetes detection and complication prediction.",
+    "unknown": "Prospective or multi-system performance and any effect on diabetes management; full text not reviewed.",
+    "ai_role": "A deep learning model converted ECG signals into an HbA1c estimate used for detection and risk prediction.",
+    "evidence_urls": [
+      "https://api.crossref.org/works/10.3390/jpm11080725"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from the review input and author affiliations from Crossref metadata for this DOI. Publisher full text not accessed."
+  }
+}

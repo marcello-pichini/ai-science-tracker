@@ -1,0 +1,33 @@
+{
+  "id": "2022-08-hydroxide-oer-random-forest",
+  "title": "Random forest predicts oxygen evolution activity and guides a new hydroxide catalyst",
+  "summary": "A random forest model fitted composition, morphology, phase, electrolyte pH, electrode type and overpotential for transition metal hydroxide OER catalysts and predicted new experiments with a mean relative error of 4.74%. A designed Ni0.77Fe0.13La0.1 hydroxide was synthesised and showed an overpotential of 226 mV at 10 mA/cm2. The abstract does not state the training-set size or compare with other catalysts.",
+  "field": "materials",
+  "ai_technology": "Random forest regression over hydroxide composition and condition descriptors",
+  "organization": "University of Science and Technology Beijing",
+  "source_url": "https://doi.org/10.1021/acsami.2c13435",
+  "source_type": "paper",
+  "publication_date": "2022-08-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Synthesis and electrochemical testing of the designed catalyst; model error 4.74% on new experiments.",
+    "unknown": "Training data size and benchmark comparison not stated in the abstract; full text not reviewed.",
+    "ai_role": "A random forest predicted OER overpotential across doping space and was used to select the new composition.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1021/acsami.2c13435%22&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

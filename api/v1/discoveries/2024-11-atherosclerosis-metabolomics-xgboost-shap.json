@@ -1,0 +1,33 @@
+{
+  "id": "2024-11-atherosclerosis-metabolomics-xgboost-shap",
+  "title": "Explainable XGBoost on metabolomics separates atherosclerotic cardiovascular disease cases",
+  "summary": "In 63 patients with atherosclerotic cardiovascular disease and 52 matched controls from FLEMENGHO, PLS-DA selected 56 metabolites and an XGBoost model reached test AUC 0.75; the selected metabolites reached AUC 0.93 in an independent external cohort. SHAP ranked cholesterol and 3-methylhistidine among the top contributors. The cohort is small and cross-sectional.",
+  "field": "medicine",
+  "ai_technology": "PLS-DA dimension reduction followed by XGBoost with SHAP on plasma metabolites",
+  "organization": "KU Leuven",
+  "source_url": "https://doi.org/10.3390/ijms252312905",
+  "source_type": "paper",
+  "publication_date": "2024-11-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Evaluation of the selected metabolites in an independent external cohort.",
+    "unknown": "The external cohort size and causal links are not established here; full text not reviewed.",
+    "ai_role": "Classified ASCVD status and ranked metabolites.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/ijms252312905%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

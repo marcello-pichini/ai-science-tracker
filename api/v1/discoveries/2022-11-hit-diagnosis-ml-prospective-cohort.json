@@ -1,0 +1,34 @@
+{
+  "id": "2022-11-hit-diagnosis-ml-prospective-cohort",
+  "title": "Machine-learning model reduces misdiagnosis of heparin-induced thrombocytopenia",
+  "summary": "A prospective cohort of 1,393 patients with suspected HIT from 10 centers (119 confirmed by the HIPA reference assay) was used to train models on six predictors, with a 25% validation set. AUROC was 0.99 (95% CI 0.97-1.00) for all models, and false negatives fell by 50.0%, 66.7% and 64.3% versus the recommended algorithm for ELISA, PaGIA and CLIA. Validation was a hold-out within one cohort, so wider validation is still needed.",
+  "field": "medicine",
+  "ai_technology": "Support vector machine and gradient boosting machine on clinical and immunoassay data",
+  "organization": "University of Bern; University Hospital of Bern",
+  "source_url": "https://doi.org/10.1016/j.eclinm.2022.101745",
+  "source_type": "paper",
+  "publication_date": "2022-11-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Models were compared against the 4Ts score plus immunoassay in a 25% hold-out set of a prospective cohort, with HIPA as reference.",
+    "unknown": "Performance in other settings is unknown. Abstract-based; full text not reviewed.",
+    "ai_role": "SVM and gradient boosting models combined immunoassay results and clinical variables to diagnose HIT.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.eclinm.2022.101745%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.eclinm.2022.101745"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

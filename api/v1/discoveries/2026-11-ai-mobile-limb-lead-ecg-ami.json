@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-ai-mobile-limb-lead-ecg-ami",
+  "title": "AI on mobile limb-lead ECG detects acute myocardial infarction in a prospective cohort",
+  "summary": "A deep learning ECG model applied without retraining to mobile limb-lead ECGs reached an AUC of 0.843 (95% CI 0.758-0.928) for acute myocardial infarction in 153 patients (25 with AMI) referred for coronary angiography. At a high-sensitivity threshold its sensitivity was 88.0% versus 20.0% for cardiologists reading limb leads and 40.0% for 12-lead reading. This is a single-center prospective cohort with 25 events, a version 1 preprint abstract.",
+  "field": "medicine",
+  "ai_technology": "Deep learning AMI-detection model developed on 12-lead ECGs, applied without retraining to mobile limb-lead ECGs at two prespecified thresholds",
+  "organization": "Ajou University",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-11476883/v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-10",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Prospective observational cohort with angiography in all patients and prespecified thresholds; comparison with three cardiologists.",
+    "unknown": "Specificity trade-offs, larger multicenter performance and outcome benefit; full text not reviewed.",
+    "ai_role": "Detects AMI from a short mobile recording where clinicians perform poorly.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-11476883/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-11476883/v1"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Version 1 abstract read from Europe PMC metadata for this DOI; author affiliations not retrieved. Full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

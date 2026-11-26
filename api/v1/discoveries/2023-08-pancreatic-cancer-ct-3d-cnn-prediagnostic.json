@@ -1,0 +1,33 @@
+{
+  "id": "2023-08-pancreatic-cancer-ct-3d-cnn-prediagnostic",
+  "title": "3D CNN detects pancreatic cancer on diagnostic and some prediagnostic CT scans",
+  "summary": "A 3D convolutional neural network was trained on 696 diagnostic CTs with pancreatic ductal adenocarcinoma and 1,080 controls. On the intramural test subset it reached a mean accuracy of 0.92 and an AUROC of 0.97, it was evaluated on multi-institutional public sets (194 cases, 80 controls), and it detected visually occult cancer on prediagnostic CTs. The study is retrospective and case-control; screening utility is simulated.",
+  "field": "medicine",
+  "ai_technology": "3D convolutional neural network on portal-phase CT",
+  "organization": "Mayo Clinic",
+  "source_url": "https://doi.org/10.1053/j.gastro.2023.08.034",
+  "source_type": "paper",
+  "publication_date": "2023-08-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Accuracy on an intramural hold-out set, public multi-institutional data, a simulated screening cohort and a prediagnostic CT cohort.",
+    "unknown": "Retrospective case-control design; prospective screening benefit not shown; full text not reviewed.",
+    "ai_role": "3D CNN classifying CT scans for pancreatic ductal adenocarcinoma.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1053/j.gastro.2023.08.034%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; affiliations from Europe PMC or Crossref where stated. Publisher full text not accessed."
+  }
+}

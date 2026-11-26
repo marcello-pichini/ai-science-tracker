@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-he-predicted-expression-prognosis-hnsc",
+  "title": "H&E-predicted expression yields a 32-gene prognostic signature in head and neck cancer",
+  "summary": "A transformer framework (CTransPath) predicted gene expression from H&E slides, and a 32-gene signature (MGP_HNSC32) built with random survival forest stratified TCGA-HNSC patients (progression-free interval HR 4.13, overall survival HR 2.42, disease-specific survival HR 4.88). In the independent HANCOCK cohort (n = 701) the prespecified score was associated with progression-free survival (HR 1.40, 95% CI 1.03-1.90), but the continuous score was not. The authors call the expression-prediction step proof of concept.",
+  "field": "medicine",
+  "ai_technology": "CTransPath transformer predicting gene expression from H&E images, with random survival forest signature",
+  "organization": "Second Affiliated Hospital of Zhejiang University",
+  "source_url": "https://doi.org/10.1002/cam4.72427",
+  "source_type": "paper",
+  "publication_date": "2026-11-01",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent HANCOCK cohort using prespecified coefficients and cutoff.",
+    "unknown": "Weak external association; continuous score not significant; no prospective validation; full text not reviewed.",
+    "ai_role": "Transformer predicts expression from slides to build the signature.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/cam4.72427%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1002/cam4.72427"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

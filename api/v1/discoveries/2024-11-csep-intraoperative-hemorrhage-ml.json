@@ -1,0 +1,34 @@
+{
+  "id": "2024-11-csep-intraoperative-hemorrhage-ml",
+  "title": "Interpretable ML predicts hemorrhage in cesarean scar ectopic pregnancy surgery",
+  "summary": "Eight machine-learning methods were trained on 1,680 patients with cesarean scar ectopic pregnancy from three hospitals, using nine selected variables; the best model (Bayes) had AUC 0.882. External validation at a fourth hospital gave AUC 0.853, accuracy 0.936, sensitivity 0.954 and specificity 0.5. The study is retrospective, specificity is low, and the model was deployed as a web application.",
+  "field": "medicine",
+  "ai_technology": "Random forest, Lasso, Boruta and XGBoost feature selection with eight machine-learning models",
+  "organization": "Shandong University; Qilu Hospital of Shandong University",
+  "source_url": "https://doi.org/10.1016/j.eclinm.2024.102969",
+  "source_type": "paper",
+  "publication_date": "2024-11-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal and external validation were run on retrospective electronic medical record data.",
+    "unknown": "Prospective validation is still needed. Abstract-based; full text not reviewed.",
+    "ai_role": "ML feature selection and model comparison produced a risk model for intraoperative hemorrhage.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.eclinm.2024.102969%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.eclinm.2024.102969"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

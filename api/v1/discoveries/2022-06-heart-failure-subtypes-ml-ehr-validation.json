@@ -1,0 +1,34 @@
+{
+  "id": "2022-06-heart-failure-subtypes-ml-ehr-validation",
+  "title": "Unsupervised machine learning identifies five heart failure subtypes across EHR sources",
+  "summary": "Four unsupervised clustering methods applied to 87 factors in primary-care records identified five heart failure subtypes (early-onset, late-onset, AF-related, metabolic, cardiometabolic) in CPRD (188,799 cases) and THIN (124,263 cases). Subtypes were similar across datasets, differed in one-year mortality and other outcomes, and showed genetic associations in UK Biobank (9,573 cases). The subtype labels are descriptive and the data retrospective; preprint of 2022-06-28.",
+  "field": "medicine",
+  "ai_technology": "Unsupervised clustering (K-means, hierarchical, K-medoids, mixture model) on electronic health record factors",
+  "organization": "University College London Hospitals NHS Foundation Trust; Barts Health NHS Trust; UCL Biomedical Research Centre",
+  "source_url": "https://doi.org/10.1101/2022.06.27.22276961",
+  "source_type": "paper",
+  "publication_date": "2022-06-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "External validity across CPRD and THIN, prognostic validity for one-year mortality, and genetic validity in UK Biobank.",
+    "unknown": "Whether subtypes change management or trial design is not shown; full text not reviewed.",
+    "ai_role": "Unsupervised machine learning clustered patients into candidate heart failure subtypes.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2022.06.27.22276961%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1101/2022.06.27.22276961"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations were not available. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

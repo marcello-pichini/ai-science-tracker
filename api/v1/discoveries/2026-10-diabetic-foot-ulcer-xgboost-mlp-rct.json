@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-diabetic-foot-ulcer-xgboost-mlp-rct",
+  "title": "Explainable ML ensemble predicts diabetic foot ulcer outcomes, with randomized evaluation",
+  "summary": "An ST-XGBoost and ST-MLP ensemble predicted cure, recurrence, amputation and mortality from 763 patients at two centers, and reached macro-averaged AUC 0.901 on 100 external patients (amputation 0.953, mortality 0.951, recurrence 0.820). In a randomized evaluation of 202 participants (200 analysed), AI-assisted recommendations scored 7.77 versus 6.47 for clinicians (mean difference 1.30, 95% CI 1.08-1.52). The outcome was a recommendation quality score, and recurrence estimates need caution.",
+  "field": "medicine",
+  "ai_technology": "Ensemble of single-task XGBoost and multilayer perceptron models with SHAP explanations",
+  "organization": "Xuzhou Medical College",
+  "source_url": "https://doi.org/10.1016/j.eclinm.2026.104284",
+  "source_type": "paper",
+  "publication_date": "2026-10-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The locked ensemble was externally validated and then compared with usual care in a randomized evaluation of recommendation quality.",
+    "unknown": "Effects on patient outcomes are not measured; the external cohort is small. Abstract-based; full text not reviewed.",
+    "ai_role": "Gradient-boosted trees and neural networks predicted multiple ulcer outcomes to support physician recommendations.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.eclinm.2026.104284%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.eclinm.2026.104284"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations could not be retrieved (Europe PMC unreachable, Crossref lists none). Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

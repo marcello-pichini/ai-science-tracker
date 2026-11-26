@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-ami-malignant-arrhythmia-28d-mortality-svm",
+  "title": "SVM model predicts 28-day mortality in myocardial infarction with malignant arrhythmia",
+  "summary": "Using 952 patients from MIMIC-IV (28-day mortality 32.46%) and 100 patients from Maoming People's Hospital for external validation, a linear-kernel SVM on eight predictors reached AUC 0.865 internally and 0.898 externally, against 0.771 for a biomarker-only model externally. The external cohort is only 100 patients, the study is retrospective and the authors acknowledge residual treatment confounding.",
+  "field": "medicine",
+  "ai_technology": "Linear-kernel SVM on eight predictors, selected among seven machine-learning algorithms",
+  "organization": "Maoming People's Hospital",
+  "source_url": "https://doi.org/10.3389/fcvm.2026.1908251",
+  "source_type": "paper",
+  "publication_date": "2026-07-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation on 100 patients at Maoming People's Hospital, after development on MIMIC-IV.",
+    "unknown": "Prospective performance and early-prediction value; full text not reviewed.",
+    "ai_role": "A support vector machine predicted 28-day mortality from eight clinical predictors.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fcvm.2026.1908251%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

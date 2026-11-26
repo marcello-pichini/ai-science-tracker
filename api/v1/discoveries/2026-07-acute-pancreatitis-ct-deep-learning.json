@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-acute-pancreatitis-ct-deep-learning",
+  "title": "Deep learning detects acute pancreatitis on contrast-enhanced abdominal CT",
+  "summary": "A convolutional network using arterial and portal venous phase CT from 552 patients at two university centers reached an AUROC of 0.89 and F1 of 0.83 on an internal hold-out set (n=116). On an independent external cohort of 95 patients it reached an AUROC of 0.99 (0.96-1.00) and F1 of 0.92. The study is retrospective, the control group were patients with suspected pancreatitis, and the authors call for prospective validation.",
+  "field": "medicine",
+  "ai_technology": "Convolutional neural network classifier on monophasic and biphasic contrast-enhanced CT, with ensembling for biphasic studies",
+  "organization": "University Hospital Bonn",
+  "source_url": "https://doi.org/10.1186/s41747-026-00775-2",
+  "source_type": "paper",
+  "publication_date": "2026-07-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Patient-level internal hold-out test (n=116) and independent external cohort (n=95); retrospective data.",
+    "unknown": "Prospective performance and clinical impact, and whether the very high external AUROC holds in larger cohorts; full text not reviewed.",
+    "ai_role": "Image-based detection of acute pancreatitis on CT.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s41747-026-00775-2%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations from Europe PMC or Crossref. Full text not accessed."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "2021-09-covid-mortality-gru-d-mayo",
+  "title": "Deep learning predicts COVID-19 mortality from routine labs in a large health-record set",
+  "summary": "A GRU-D recurrent neural network (with AutoGluon stacked learners) predicted COVID-19 mortality within 72 hours of the first positive test from routine laboratory results and covariates in 11,807 Mayo Clinic patients. Cross-validation AUROC was 0.938 and a prospective testing cohort gave AUROC 0.901 with significantly different survival between risk groups. The data come from a single health system in 2020-21 and the abstract does not give the prospective cohort size.",
+  "field": "medicine",
+  "ai_technology": "GRU-D recurrent neural network and AutoGluon stacked learners on laboratory and covariate time series",
+  "organization": "Mayo Clinic",
+  "source_url": "https://doi.org/10.2196/30157",
+  "source_type": "paper",
+  "publication_date": "2021-09-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Cross-validation in 11,807 patients plus a prospective testing cohort at the Mayo Clinic.",
+    "unknown": "Prospective cohort size; performance outside this health system and later pandemic periods; full text not reviewed.",
+    "ai_role": "A recurrent neural network predicted mortality from irregularly sampled routine laboratory data.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2196/30157%22&resultType=core&format=json"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

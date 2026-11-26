@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-masld-ferroptosis-genes-ml",
+  "title": "Single-cell data and machine learning prioritize five ferroptosis genes in MASLD",
+  "summary": "An integrated analysis of six MASLD single-nucleus RNA-seq samples (48,081 cells) with 101 machine-learning combinations (glmBoost plus randomForestSRC best) and SHAP ranking prioritized five core genes: ERBB2, BACH1, RBMS1, NDRG2 and CTSD. The model, trained on GSE48452 (n = 73), reached an average AUC of 0.967 across three cohorts, validated in GSE135251 and GSE89632. There was no wet-lab validation, and pseudotime, virtual knockout and docking results are computational.",
+  "field": "medicine",
+  "ai_technology": "101 two-stage machine-learning combinations (glmBoost plus randomForestSRC best) with SHAP ranking on hdWGCNA module genes",
+  "organization": "Guangxi University of Chinese Medicine",
+  "source_url": "https://doi.org/10.2147/jir.s641204",
+  "source_type": "paper",
+  "publication_date": "2026-11-12",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Model trained on GSE48452 (n = 73) and evaluated on two independent public cohorts, GSE135251 and GSE89632.",
+    "unknown": "Experimental confirmation of the five genes; the average AUC includes the training cohort; full text not reviewed.",
+    "ai_role": "Ensemble machine learning ranked ferroptosis-related module genes to select core candidates for MASLD.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2147/jir.s641204%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}
