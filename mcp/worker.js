@@ -100,9 +100,9 @@ function tokens(value) {
 function queryTerms(query, { dropStopwords = true } = {}) {
   let joined = ` ${words(query).map(spellFold).join(' ')} `
   for (const [abbr, phrase] of phrases) joined = joined.replaceAll(phrase, ` ${abbr} `)
-  const all = [...new Set(joined.trim().split(' ').filter(Boolean).map(singular))]
-  const topical = dropStopwords ? all.filter((term) => !stopwords.has(term)) : all
-  return topical.length ? topical : all
+  const raw = joined.trim().split(' ').filter(Boolean)
+  const topical = dropStopwords ? raw.filter((term) => !stopwords.has(term)) : raw
+  return [...new Set((topical.length ? topical : raw).map(singular))]
 }
 
 // Short terms such as "ai" or "ml" must match a whole word, or "ai" would find "air".
@@ -179,7 +179,9 @@ function createServer() {
       for (const [index, entry] of entries.entries()) {
         const { record } = entry
         if (expectedYear && record.publication_date?.slice(0, 4) !== expectedYear) continue
-        if (expectedField && !normalize(record.field ?? '').includes(expectedField)) continue
+        // "materials science" finds field "materials" and "bio" finds "biology".
+        const recordField = normalize(record.field ?? '')
+        if (expectedField && !recordField.includes(expectedField) && !` ${expectedField} `.includes(` ${recordField} `)) continue
         if (!orgTerms.every((term) => inField(term, entry, 'organization'))) continue
         let score = 0
         let matched = 0
@@ -259,6 +261,8 @@ export default {
   async fetch(request, env = {}) {
     const url = new URL(request.url)
     if (url.pathname !== '/mcp') return new Response('Not found', { status: 404 })
+    // Stateless server: no standalone SSE stream (GET) and no session to end (DELETE).
+    if (request.method !== 'POST') return new Response('Method not allowed', { status: 405, headers: { Allow: 'POST' } })
     const origin = request.headers.get('Origin')
     if (origin && origin !== url.origin) return new Response('Forbidden origin', { status: 403 })
     // Per-client limit protects the free Workers quota; the binding is absent in local tests.

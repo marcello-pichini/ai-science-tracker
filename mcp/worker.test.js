@@ -13,6 +13,7 @@ test('search terms fold spelling, accents, abbreviations and synonyms', () => {
   assert.deepEqual(queryTerms('Large Language Models for chemistry'), ['llm', 'chemistry'])
   assert.deepEqual(queryTerms('how AI helps discover new antibiotics'), ['antibiotic'])
   assert.deepEqual(queryTerms('AI'), ['ai'])
+  assert.deepEqual(queryTerms('studies of whales'), ['whale'])
   assert.deepEqual(queryTerms('LLMs and GNNs'), ['llm', 'gnn'])
   assert.deepEqual(queryTerms('New York University', { dropStopwords: false }), ['new', 'york', 'university'])
   assert.deepEqual(queryTerms('the'), ['the'])
@@ -115,6 +116,11 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
   })).content[0].text)
   assert.deepEqual(byOrg.results.map((row) => row.id), ['2023-04-laboratory-example'])
 
+  const byField = JSON.parse((await client.callTool({
+    name: 'search_discoveries', arguments: { field: 'Materials science research' },
+  })).content[0].text)
+  assert.equal(byField.total, 3)
+
   const fields = JSON.parse((await client.callTool({ name: 'list_fields', arguments: {} })).content[0].text)
   assert.deepEqual(fields, { fields: [{ name: 'Materials science', count: 3 }], total: 3 })
 
@@ -146,6 +152,11 @@ test('foreign browser origins and unrelated paths cannot call the Worker', async
   assert.equal(crossOrigin.status, 403)
   const other = await worker.fetch(new Request(new URL('/admin', endpoint)))
   assert.equal(other.status, 404)
+  for (const method of ['GET', 'DELETE']) {
+    const response = await worker.fetch(new Request(endpoint, { method }))
+    assert.equal(response.status, 405)
+    assert.equal(response.headers.get('Allow'), 'POST')
+  }
 })
 
 test('a failed catalog refresh keeps serving the previous copy', async (t) => {
