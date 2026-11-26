@@ -1,0 +1,33 @@
+{
+  "id": "2022-12-gut-microbiome-incident-asthma-copd-xgboost",
+  "title": "Gut microbiome gradient boosting predicts incident asthma and COPD",
+  "summary": "Shallow metagenomic sequencing of stool from 7,115 adults in the FINRISK02 cohort was linked to register-based incident asthma and COPD up to 15 years later. Gradient boosting of baseline microbiome abundance predicted incident asthma and COPD in validation data sets with mean AUCs of 0.608 and 0.780, and Cox analysis gave C-indices of 0.623 and 0.817. Adding conventional risk factors improved prediction. The study is observational and the asthma AUC is modest.",
+  "field": "medicine",
+  "ai_technology": "Extreme gradient boosting models on baseline gut microbiome taxa abundances, alone and with conventional risk factors, to predict incident asthma and COPD",
+  "organization": "Department of Clinical Pathology, Melbourne Medical School, The University of Melbourne; Baker Heart and Diabetes Institute",
+  "source_url": "https://doi.org/10.1016/j.jaci.2022.12.810",
+  "source_type": "paper",
+  "publication_date": "2022-12-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prediction of incident asthma and COPD in validation data sets from a 7,115-adult cohort.",
+    "unknown": "Causality; whether validation sets are independent of the cohort is not stated in the abstract; full text not reviewed.",
+    "ai_role": "XGBoost models predicting incident respiratory disease from gut microbiome abundances",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jaci.2022.12.810%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations from the same record. Publisher full text not accessed."
+  }
+}

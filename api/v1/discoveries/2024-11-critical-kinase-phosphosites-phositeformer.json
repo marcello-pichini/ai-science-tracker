@@ -1,0 +1,33 @@
+{
+  "id": "2024-11-critical-kinase-phosphosites-phositeformer",
+  "title": "PhoSiteformer and CSPred identify critical kinase phosphorylation sites",
+  "summary": "The bimodal CSPred classifier combining PhoSiteformer and ProtT5 embeddings identified 77 critical phosphorylation sites on 58 human kinases that enhance kinase activity. Two of these sites, T517 on PKG1 and T735 on PRKD3, were experimentally verified. The abstract describes this as the first systematic computational approach for the task; only two predictions are reported as tested.",
+  "field": "biology",
+  "ai_technology": "PhoSiteformer transformer-inspired embeddings of phosphosites from mass spectrometry data fused with ProtT5 protein language model embeddings in the CSPred classifier",
+  "organization": "State Key Laboratory of Cardiovascular Diseases and Medical Innovation Center, Tongji University",
+  "source_url": "https://doi.org/10.1016/j.mcpro.2024.100889",
+  "source_type": "paper",
+  "publication_date": "2024-11-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Two predicted sites (PKG1 T517, PRKD3 T735) experimentally verified.",
+    "unknown": "Status of the other 75 predictions; full text not reviewed.",
+    "ai_role": "Transformer-based phosphosite embedding model fused with a protein language model for classification",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.mcpro.2024.100889%22&resultType=core&format=json"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations from the same record. Publisher full text not accessed."
+  }
+}

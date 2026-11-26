@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-siren-rna-small-molecule-language-model",
+  "title": "SIREN language model ranks small molecules for RNA targets without structure",
+  "summary": "SIREN outperformed RNAmigos2, RNAmigos++ and rDock on four held-out ROBIN riboswitch targets and performed well on an independent HIV-1 TAR benchmark without a conformational ensemble. Prospective screening against IRES-derived RNA hairpins from cMyc and XIAP mRNAs identified multiple experimentally validated micromolar-affinity binders. The number of binders and hit rate are not given in the abstract; this is a preprint.",
+  "field": "chemistry",
+  "ai_technology": "SIREN sequence-based model integrating a pretrained RNA language model, molecular language model embeddings and physicochemical descriptors",
+  "organization": "Korea University",
+  "source_url": "https://doi.org/10.64898/2026.11.19.768003",
+  "source_type": "paper",
+  "publication_date": "2026-11-20",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Prospective screening against cMyc and XIAP hairpins with experimentally validated micromolar binders.",
+    "unknown": "Number of binders and hit rate; preprint; full text not reviewed.",
+    "ai_role": "Pretrained RNA and molecular language models for RNA-small molecule interaction ranking",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.11.19.768003%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.11.19.768003"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; affiliations not available. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

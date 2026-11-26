@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-morchella-medium-ann-nsga2",
+  "title": "Neural network and NSGA-II optimize liquid culture medium for Morchella mycelium",
+  "summary": "A multilayer perceptron trained on a 27-run full factorial design (malt extract, yeast extract, inorganic salt) reproduced mycelial dry weight with R2 = 0.9648 and was coupled with NSGA-II to trade off biomass against medium cost. The maximum predicted dry weight was 14.20 g/L, 20.44% above the base medium. Three Pareto solutions were validated in shake flasks with relative errors of 1.69%, 0.65% and 0.84%. Only biomass was quantified, and this is a preprint.",
+  "field": "biology",
+  "ai_technology": "3-5-1 multilayer perceptron (Levenberg-Marquardt) as surrogate model coupled with NSGA-II multi-objective optimization of medium yield and cost",
+  "organization": "Qinghai University",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-11095265/v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Three Pareto-optimal media tested in shake flasks; relative errors 1.69%, 0.65%, 0.84% versus predictions.",
+    "unknown": "Effect on any metabolite or scale-up performance; small 27-run dataset; preprint; full text not reviewed.",
+    "ai_role": "Multilayer perceptron surrogate model with NSGA-II multi-objective optimization of culture medium",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-11095265/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-11095265/v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; affiliations not available. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

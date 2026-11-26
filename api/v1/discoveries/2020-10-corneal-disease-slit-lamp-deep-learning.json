@@ -1,0 +1,33 @@
+{
+  "id": "2020-10-corneal-disease-slit-lamp-deep-learning",
+  "title": "Hierarchical deep learning identifies corneal diseases from slit-lamp photographs",
+  "summary": "A hierarchical deep learning network was trained end-to-end on 5,325 retrospective ocular surface images and tested against 10 ophthalmologists in a prospective clinic-based dataset of 510 outpatients (infectious keratitis, non-infectious keratitis, corneal dystrophy or degeneration, corneal neoplasm). The area under the ROC curve was over 0.910 for each corneal disease type, with sensitivity and specificity similar to or better than the average of the ophthalmologists. The algorithm also outperformed four previously reported methods. The abstract describes it as possibly useful for computer-assisted diagnosis; clinical benefit was not tested.",
+  "field": "medicine",
+  "ai_technology": "Hierarchical multi-task multi-label deep learning network with a multi-level disease-guided loss, trained on slit-lamp images to classify corneal diseases",
+  "organization": "Department of Ophthalmology, The Affiliated Hospital of Guizhou Medical University",
+  "source_url": "https://doi.org/10.1038/s41598-020-75027-3",
+  "source_type": "paper",
+  "publication_date": "2020-10-20",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Algorithm tested on 510 newly enrolled outpatients against 10 ophthalmologists; AUC over 0.910 per disease type.",
+    "unknown": "Whether performance holds in other centres and whether it improves clinical outcomes; full text not reviewed.",
+    "ai_role": "Deep learning classifier of corneal diseases from slit-lamp photographs",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41598-020-75027-3%22&resultType=core&format=json"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; author affiliations from the same record. Publisher full text not accessed."
+  }
+}
