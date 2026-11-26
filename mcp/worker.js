@@ -55,10 +55,15 @@ function words(value) {
 
 // Query words that carry no topic; dropped unless the query has nothing else.
 const stopwords = new Set(('a an and are as at be by can do does for from has have how in into is it its of on or ' +
-  'that the their this to was what when where which who why with about using used new study studies ' +
+  'that the their this to was were did been any all some there what when where which who why with about using used ' +
+  'new study studies ' +
   'help helps find finds found discover discovers discovered show shows ' +
   // Every record is AI-enabled, so these words filter nothing useful and only drop records that say "ML".
   'ai artificial intelligence').split(' '))
+
+// Model and variant names such as "GPT-5" or "COVID-19" are also indexed joined ("gpt5"), and a query
+// writes them joined, so "GPT-5" does not match every record containing "GPT" and the number 5.
+const compound = /\b([a-z]+)-(\d[a-z0-9]*)\b/g
 
 // Query-side plural folding: the match is a word-start prefix, so "antibiotic" also finds "antibiotics".
 function singular(term) {
@@ -79,7 +84,7 @@ const abbreviations = new Set(phrases.map(([abbr]) => abbr))
 // Spelling variants and names in other languages that refer to the same thing.
 const synonymGroups = [
   ['nasca', 'nazca'], ['herculaneum', 'ercolano'], ['vesuvius', 'vesuvio'],
-  ['covid', 'sars', 'coronavirus'], ['cancer', 'tumor', 'oncology'],
+  ['covid', 'covid19', 'sars', 'coronavirus'], ['cancer', 'tumor', 'oncology'],
   ['exoplanet', 'extrasolar'], ['earthquake', 'seismic', 'seismicity'],
 ].map((group) => group.map(fold))
 const synonyms = new Map(synonymGroups.flatMap((group) => group.map((word) => [word, group])))
@@ -94,11 +99,12 @@ function tokens(value) {
   const folded = spellFold(text)
   if (folded !== text) text += folded.slice(1)
   for (const [abbr, phrase] of phrases) if (text.includes(phrase)) text += `${abbr} `
+  for (const [, name, number] of plain.matchAll(compound)) text += `${name}${number} `
   return text
 }
 
 function queryTerms(query, { dropStopwords = true } = {}) {
-  let joined = ` ${words(query).map(spellFold).join(' ')} `
+  let joined = ` ${words(query.toLowerCase().replace(compound, '$1$2')).map(spellFold).join(' ')} `
   for (const [abbr, phrase] of phrases) joined = joined.replaceAll(phrase, ` ${abbr} `)
   const raw = joined.trim().split(' ').filter(Boolean)
   const topical = dropStopwords ? raw.filter((term) => !stopwords.has(term)) : raw
