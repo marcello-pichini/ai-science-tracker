@@ -284,7 +284,11 @@ class SharePageTests(unittest.TestCase):
         self.assertNotIn(g.BASE + 'it/share/test-discovery.html', urls)
         self.assertIn(g.BASE + 'share/test-discovery.html', urls)
         self.assertEqual(len(urls), len(set(urls)))
-        self.assertEqual(len(root.findall('s:url/s:lastmod', ns)), 0)
+        # lastmod tracks substantive content changes, so an unchanged rebuild keeps every date.
+        dates = [n.text for n in root.findall('s:url/s:lastmod', ns)]
+        self.assertTrue(dates)
+        g.write_sitemap([self.record], {'families': []})
+        self.assertEqual(dates, [n.text for n in ET.fromstring((g.ROOT / 'sitemap.xml').read_text()).findall('s:url/s:lastmod', ns)])
 
     def test_static_profiles_are_indexable_and_sitemap_uses_them(self):
         g = self.generator

@@ -972,8 +972,9 @@ def write_sitemap(items, models, archived=(), vulns=()):
     org_counts = Counter(lead_org(d['organization']) for d in items)
     orgs = sorted(o for o, n in org_counts.items() if n >= ORG_INDEX_MIN)
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
-    # Announcement and catalog-addition dates are not page-modification dates.
-    # Only dossiers with an explicit editorial update date have lastmod.
+    # Announcement and catalog-addition dates are not page-modification dates. lastmod is the date the
+    # generator first saw the page's current substantive content (snapshot hashes and counts ignored),
+    # kept in data/page-lastmod.json; dossiers with an explicit editorial update date use that date.
     # search.html is a translated editorial page. profile.html and 404.html are noindex.
     # Localized copies exist only for translated editorial pages, not for share/ or profiles/.
     urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'search.html', 'dataset.html', 'contributors.html', 'contact.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
@@ -997,15 +998,23 @@ def write_sitemap(items, models, archived=(), vulns=()):
         links.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{esc(public_url(page, "en"))}"/>')
         return ''.join(links)
 
+    from indexnow import substantive
+    state_path = ROOT / 'data/page-lastmod.json'
+    state = json.loads(state_path.read_text()) if state_path.is_file() else {}
+    today = datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+    dates = {}
     rows = []
     seen = set()
     for url in urls:
         block = alternates(url) if url in SITEMAP_PAGES else ''
         lastmod = ''
-        if url.endswith('-dossier.html') and (ROOT / url).is_file():
-            updated = dossier_modified_date((ROOT / url).read_text(encoding='utf-8'))
-            if updated:
-                lastmod = f'<lastmod>{updated}</lastmod>'
+        if (ROOT / url).is_file():
+            text = (ROOT / url).read_text(encoding='utf-8')
+            digest = hashlib.sha256(substantive(text).encode()).hexdigest()[:16]
+            known = state.get(url, '').split(' ')
+            dates[url] = f'{digest} {known[1] if known[0] == digest and len(known) == 2 else today}'
+            updated = dossier_modified_date(text) if url.endswith('-dossier.html') else None
+            lastmod = f'<lastmod>{updated or dates[url].split(" ")[1]}</lastmod>'
         targets = [public_url(url, 'en')] if url in SITEMAP_PAGES else [BASE + url]
         if url in SITEMAP_PAGES:
             targets += [public_url(url, code) for code in LOCALES]
@@ -1014,6 +1023,8 @@ def write_sitemap(items, models, archived=(), vulns=()):
                 continue
             seen.add(loc)
             rows.append(f'<url><loc>{esc(loc)}</loc>{lastmod}{block}</url>\n')
+    state_path.parent.mkdir(exist_ok=True)
+    state_path.write_text(json.dumps(dates, indent=0, sort_keys=True) + '\n')
     (ROOT / 'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
@@ -1429,28 +1440,28 @@ def write_page_summaries(items, models):
         progress_page.write_text(re.sub(r'(<span id="(?:import-date|cadence-period)">)[^<]*(</span>)',
                                         lambda m: m[1] + retrieved + m[2], progress_page.read_text()))
 
-def write_home_browse(items):
-    """Write plain links to every entry page into index.html, grouped by year, so search
-    engines and readers without JavaScript reach each entry in one step from the home page."""
+def write_home_browse(items, latest=50):
+    """Write plain links into index.html: every year page (which links each of its entries) and the
+    newest entries, so search engines and readers without JavaScript reach every entry within two
+    steps without a 1 MB home page."""
     path = ROOT / 'index.html'
     page = path.read_text()
     if BROWSE_START not in page:
         return
-    years = {}
-    for d in sorted(items, key=lambda d: d['publication_date'], reverse=True):
-        years.setdefault(d['publication_date'][:4], []).append(d)
+    rows = sorted(items, key=lambda d: d['publication_date'], reverse=True)
+    years = Counter(d['publication_date'][:4] for d in rows)
     fields = ' · '.join(f'<a href="profiles/field-{slug(f)}.html">{esc(f)}</a>' for f in sorted({d['field'] for d in items}))
-    blocks = ''.join(
-        f'    <details><summary>{y} ({len(rows)}) · <a href="profiles/year-{y}.html">page for {y}</a></summary><ul>'
-        + ''.join(f'<li><a href="share/{esc(d["id"])}.html">{esc(d["title"])}</a></li>' for d in rows)
-        + '</ul></details>\n' for y, rows in years.items())
+    by_year = ' · '.join(f'<a href="profiles/year-{y}.html">{y} ({n})</a>' for y, n in sorted(years.items(), reverse=True))
+    newest = ''.join(f'<li><a href="share/{esc(d["id"])}.html">{esc(d["title"])}</a></li>' for d in rows[:latest])
     section = (f'{BROWSE_START}\n  <section class="sez" aria-labelledby="t-browse"><div class="wrap prosa">\n'
                f'    <h2 id="t-browse">All entries by year</h2>\n'
-               f'    <p>Plain links to the page of each of the {len(items)} entries, newest first.</p>\n'
+               f'    <p>Each year page links every one of its entries; {len(items)} in total.</p>\n'
+               f'    <h3>By year</h3><p>{by_year}</p>\n'
                f'    <p>By field: {fields}.</p>\n'
                '    <p><a href="profiles/catalog-evidence.html">Compare catalog coverage and evidence by year and field</a> · '
                '<a href="profiles/security-index.html">Browse source-linked AI-found vulnerability cases</a>.</p>\n'
-               f'{blocks}  </div></section>\n  {BROWSE_END}')
+               f'    <h3>Newest {min(latest, len(rows))} entries</h3><ul>{newest}</ul>\n'
+               f'  </div></section>\n  {BROWSE_END}')
     start, end = page.index(BROWSE_START), page.index(BROWSE_END) + len(BROWSE_END)
     path.write_text(page[:start] + section + page[end:])
 
