@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de" data-page-snapshot="b4878a273dd800024bae1405dec801e8ff7202b1c849c4679fb31cd879482769">
+<html lang="de" data-page-snapshot="d305fc8edbae049cf7a22f816b3764a93bcce9ced3b52c09cbf3ebe5460cb9e3">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -367,7 +367,7 @@ function labView(name, discoveries, models) {
       const matches = archived.filter(s => leadOrg(s) === name || matchesLegacy(s));
       if (matches.length === 1) location.replace("../share/" + encodeURIComponent(matches[0].id) + ".html");
       else if (!matches.length) {
-        const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+        const slug = name.toLowerCase().replace(/[øßæœłđıþðħ]/g, c => ({ø:"o",ß:"ss",æ:"ae",œ:"oe",ł:"l",đ:"d",ı:"i",þ:"th",ð:"d",ħ:"h"})[c]).normalize("NFKD").replace(/\p{M}/gu, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
         const url = "../profiles/org-" + slug + ".html";
         fetch(url, {method:"HEAD"}).then(response => {
           if (response.ok && location.search === query) location.replace(url);

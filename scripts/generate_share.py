@@ -28,6 +28,7 @@ import hashlib
 import json
 import os
 import re
+import unicodedata
 import csv
 import subprocess
 import sys
@@ -356,7 +357,18 @@ def profile_jsonld(name, desc, path, organization=False, security=False, page_ty
     return jsonld(data)
 
 
+# Letters NFKD does not decompose; anything else outside ASCII still becomes a separator.
+SLUG_LETTERS = str.maketrans({'ø': 'o', 'ß': 'ss', 'æ': 'ae', 'œ': 'oe', 'ł': 'l', 'đ': 'd', 'ı': 'i', 'þ': 'th', 'ð': 'd', 'ħ': 'h'})
+
+
 def slug(text):
+    # Accented letters keep their base letter ("Skåne" -> "skane"), so a slug never loses letters.
+    folded = ''.join(c for c in unicodedata.normalize('NFKD', text.lower().translate(SLUG_LETTERS)) if not unicodedata.combining(c))
+    return re.sub(r'[^a-z0-9]+', '-', folded).strip('-')
+
+
+def legacy_slug(text):
+    """Slug used before 27 November 2026, which dropped accented letters; kept only to redirect old URLs."""
     return re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
 
 
@@ -616,10 +628,10 @@ def write_profile_pages(items, models, archived=()):
         legacy_names = {d['organization'].split(';')[0].strip(), d['organization'].replace(' and ', ',').split(',')[0].strip(),
                         re.split(r'[,;]| and ', d['organization'], flags=re.I)[0].strip()}
         new = slug(lead_org(d['organization']))
-        for legacy in legacy_names:
-            old = slug(legacy)
-            if old != new:
-                aliases.setdefault(old, set()).add(new)
+        for legacy in legacy_names | {lead_org(d['organization']), d['organization'].split(';')[0].strip()}:
+            for old in {slug(legacy), legacy_slug(legacy)}:
+                if old != new:
+                    aliases.setdefault(old, set()).add(new)
 
     def years(rows):
         ys = sorted(d['publication_date'][:4] for d in rows)
@@ -666,7 +678,9 @@ def write_profile_pages(items, models, archived=()):
         legacy = slug(d['organization'].replace(' and ', ',').split(',')[0].strip())
         previous = slug(re.split(r'[,;]| and ', d['organization'], flags=re.I)[0].strip())
         lead = slug(lead_org(d['organization']))
-        for old in {legacy, previous, lead}:
+        old_forms = {legacy_slug(d['organization'].replace(' and ', ',').split(',')[0].strip()),
+                     legacy_slug(re.split(r'[,;]| and ', d['organization'], flags=re.I)[0].strip()), legacy_slug(lead_org(d['organization']))}
+        for old in {legacy, previous, lead} | old_forms:
             if old not in slugs:
                 target = f'org-{lead}.html' if lead in slugs else f'../share/{quote(d["id"])}.html'
                 archived_orgs.setdefault(old, set()).add(target)
