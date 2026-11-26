@@ -1,0 +1,34 @@
+{
+  "id": "2021-05-random-forest-landslide-susceptibility-ruijin",
+  "title": "Random forests map landslide susceptibility in Ruijin, Jiangxi, China",
+  "summary": "Random forest and support vector machine models were trained on 19 geo-environmental factors and 155 observed landslides, with three ways of processing categorical factors. The three random forest models reached overall accuracy of 89.61%, 91.47% and 94.54% on validation sets, clearly above the SVM models (81.79% to 83%). In a check against 26 landslides from 2017 to 2020, the weight-assignment random forest map placed 23 in high or very high susceptibility zones. One region, retrospective validation only.",
+  "field": "other",
+  "ai_technology": "Random forest and support vector machine models on 19 geo-environmental raster layers",
+  "organization": "East China University of Technology",
+  "source_url": "https://doi.org/10.3390/ijerph18115906",
+  "source_type": "paper",
+  "publication_date": "2021-05-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Hold-out validation sets (30%) and a check against 26 newer landslide events.",
+    "unknown": "Transfer to other regions and operational use; full text not reviewed.",
+    "ai_role": "Predicts landslide occurrence probability for susceptibility zonation.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/ijerph18115906%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3390/ijerph18115906"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

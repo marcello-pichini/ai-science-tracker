@@ -1,0 +1,34 @@
+{
+  "id": "2022-02-ct-radiomics-gastric-cancer-tumor-regression",
+  "title": "CT radiomics model predicts tumor regression grade in gastric cancer neoadjuvant therapy",
+  "summary": "373 patients with advanced gastric cancer from five cohorts were studied: three retrospective neoadjuvant chemotherapy cohorts (training, internal and external validation), a prospective Dragon III cohort (NCT03636893) and a prospective SOXA cohort receiving neoadjuvant targeted therapy (ChiCTR-OPC-16010061). From 2,452 CT radiomics features per patient, mutual information and random forest selected 28 features and built the model. The model is reported to generalize across chemotherapy and targeted-therapy regimens; AUC values were not visible in the reviewed abstract excerpt.",
+  "field": "medicine",
+  "ai_technology": "Random forest on CT radiomics features selected by mutual information",
+  "organization": "Shanghai Jiao Tong University; Ruijin Hospital",
+  "source_url": "https://doi.org/10.3389/fonc.2022.758863",
+  "source_type": "paper",
+  "publication_date": "2022-02-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal, external and two prospective cohorts.",
+    "unknown": "AUC values and whether prospective cohorts were evaluated with a frozen model; full text not reviewed.",
+    "ai_role": "Builds the tumor regression prediction model",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fonc.2022.758863%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3389/fonc.2022.758863"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
+  }
+}

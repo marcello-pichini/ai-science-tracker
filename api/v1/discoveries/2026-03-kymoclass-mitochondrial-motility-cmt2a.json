@@ -1,0 +1,34 @@
+{
+  "id": "2026-03-kymoclass-mitochondrial-motility-cmt2a",
+  "title": "KymoClass classifies CMT2A mitochondrial motility phenotypes in iPSC motor neurons",
+  "summary": "KymoClass, an image classifier trained on kymographs of mitochondrial movement, discriminated isogenic MFN2 WT from MFN2 R364W iPSC motor neurons more accurately than speed or stationary-fraction summary statistics and stayed accurate on a held-out biological replicate. Attention scores and vision transformer patch embeddings revealed a previously undescribed stationary-mitochondria subtype, termed jitter, associated with R364W. On three mutations excluded from training (T105A, W740S, R94W), pathogenicity scores were consistent with reported clinical severity. Cell-model preprint.",
+  "field": "biology",
+  "ai_technology": "KymoClass vision-transformer kymograph classifier",
+  "organization": "Gladstone Institutes",
+  "source_url": "https://doi.org/10.64898/2026.03.16.712192",
+  "source_type": "paper",
+  "publication_date": "2026-03-17",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Held-out biological replicate and three MFN2 mutations excluded from training.",
+    "unknown": "Relevance to patients and to screening use; full text not reviewed.",
+    "ai_role": "Predicts disease phenotype from mitochondrial kymographs and highlights a new motility subtype.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.03.16.712192%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.03.16.712192"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-rarres2-glycolysis-ccrcc-machine-learning",
+  "title": "Machine learning nominates RARRES2 as glycolysis marker in clear cell renal cell carcinoma",
+  "summary": "Single-cell RNA-seq (GSE156632) and TCGA-KIRC data showed elevated glycolysis scores in ccRCC tumor epithelial cells, with highly glycolytic cells showing enhanced MIF-CD74/CXCR4 signaling and poorer prognosis. Machine learning with SHAP interpretation selected a stable five-gene signature from 11 candidate genes, and the SVM classifier gave the best diagnostic performance (AUC 0.982, from public data without an independent cohort). In vitro experiments in ccRCC cells are reported to support a role of RARRES2 in glycolysis and malignant progression. Machine learning is one of several analyses and this is a preprint.",
+  "field": "medicine",
+  "ai_technology": "Machine-learning classifiers (SVM best) with SHAP interpretation to select a five-gene signature",
+  "organization": "University Hospital Bonn",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-9544849/v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-20",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "In vitro functional experiments in ccRCC cells on RARRES2 and glycolysis; diagnostic models evaluated on public data.",
+    "unknown": "Experimental effect sizes (not visible in the reviewed abstract) and performance in an independent cohort; preprint not peer reviewed; full text not reviewed.",
+    "ai_role": "Selects candidate biomarkers and builds diagnostic models",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-9544849/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-9544849/v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
+  }
+}

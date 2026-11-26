@@ -1,0 +1,34 @@
+{
+  "id": "2025-10-lightgbm-vomiting-pediatric-oncology",
+  "title": "Machine learning predicts vomiting in children admitted for cancer or stem cell transplant",
+  "summary": "Models were trained on electronic health record data from 7,408 paediatric oncology and hematopoietic cell transplant admissions; the best, a LightGBM model with 2,859 features trained on all inpatients, reached an AUROC of 0.730 (95% CI 0.694 to 0.765). In a prospective silent trial of 340 admissions the AUROC was 0.716 (95% CI 0.649 to 0.784). Discrimination is moderate and the model was not deployed, so benefit for vomiting control is untested.",
+  "field": "medicine",
+  "ai_technology": "LightGBM model (also tested: L2 logistic regression, XGBoost) on electronic health record data",
+  "organization": "The Hospital for Sick Children",
+  "source_url": "https://doi.org/10.1186/s12885-025-15137-1",
+  "source_type": "paper",
+  "publication_date": "2025-10-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prospective silent trial of 340 admissions: AUROC 0.716.",
+    "unknown": "Not deployed; effect on vomiting control unknown; full text not reviewed.",
+    "ai_role": "A gradient boosting model predicted vomiting risk within 96 hours from routine record data.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12885-025-15137-1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12885-025-15137-1"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

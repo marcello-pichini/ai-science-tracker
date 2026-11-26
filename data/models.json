@@ -5348,14 +5348,19 @@
     "2023-11-ligand-transformer-sequence-drug-design",
     "2025-10-rpa-telomerase-processivity-alphafold",
     "2026-10-alphafold-svep1-ang2-tie1-signaling",
-    "2021-10-honey-bee-vitellogenin-structure-prediction"
+    "2021-10-honey-bee-vitellogenin-structure-prediction",
+    "2026-01-alphafold3-gli-sufu-complex-interfaces",
+    "2026-06-alphafold-multimer-cyclin-cdk-docking-motifs",
+    "2026-10-golgifold-alphafold-golgi-complexes",
+    "2026-11-boltzgen-sidetrak-kinesin1-miniprotein",
+    "2026-11-rfdiffusion3-zapp1-phosphotriesterase-structure"
    ],
    "models": [
     "AlphaFold-Multimer",
     "AlphaFold 2",
     "AlphaFold"
    ],
-   "discovery_count": 54,
+   "discovery_count": 59,
    "model_count": 3
   },
   {
@@ -5402,7 +5407,8 @@
     "2026-11-spinless-modular-bootstrap-optimal-bound",
     "2026-11-reasoning-in-the-loop-antibody-lead-optimization-by-probing-mechanism-and-measurement",
     "2026-11-certified-improvements-to-best-known-thomson-problem-configurations-with-a-search-pipe",
-    "2026-08-matevolve-motif-designed-magnet-candidates"
+    "2026-08-matevolve-motif-designed-magnet-candidates",
+    "2026-11-claude-agentic-ige-disruptor-antibody-design"
    ],
    "models": [
     "Claude Mythos 5.2",
@@ -5431,7 +5437,7 @@
     "Claude 2",
     "Claude"
    ],
-   "discovery_count": 41,
+   "discovery_count": 42,
    "model_count": 25
   },
   {
@@ -5497,6 +5503,43 @@
    ],
    "discovery_count": 33,
    "model_count": 21
+  },
+  {
+   "id": "esm",
+   "name": "ESM / ESMFold",
+   "discoveries": [
+    "2024-06-esm3-esmgfp",
+    "2022-11-esm-atlas",
+    "2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine",
+    "2025-09-machine-learning-guided-mining-identifies-91-previously-unknown-pet-hydrolases-including-acid-active-enzymes",
+    "2025-08-beaut-uncovers-new-gut-microbial-bile-acid-enzymes-and-the-novel-bile-acid-3-acetodca",
+    "2024-11-chooser-uses-protein-foundation-models-to-discover-functional-cas-homologs",
+    "2025-08-esm-guided-metagenome-mining-identifies-seven-new-cas12a-subtypes-with-distinct-activities",
+    "2026-08-esm-fep-combines-protein-language-model-fitness-screening-and-free-energy-calculations-to-engineer-herbicide-detoxifying-maize-dioxygenase",
+    "2025-04-esm-ezy-mining-identifies-multicopper-oxidases-and-asparaginases-with-experimentally-improved-catalytic-properties",
+    "2025-08-pepmlm-designs-experimentally-binding-target-conditioned-peptide-ligands-including-peptides-used-for-targeted-protein-degradation",
+    "2025-02-mal-id-maps-disease-associated-immune-receptor-patterns-across-infections-and-autoimmune-conditions",
+    "2026-06-few-shot-protein-language-model-design-yields-high-output-bicyclogermacrene-synthase-variants",
+    "2026-07-enzgfm-agent-experimentally-prioritizes-activity-enhancing-secreted-alkaline-phosphatase-variants",
+    "2025-07-venusmine-kbpetase",
+    "2024-07-esmif1-antibody-variant-selection",
+    "2026-07-arcadiamp-arcinin",
+    "2025-05-rlxf-aligns-esm2-for-brighter-creilov-variants",
+    "2026-08-evolvepro-guided-hpabc-l-dopa",
+    "2026-01-epilepsy-tract-network-language-change-association",
+    "2026-10-esmfold-pairwise-trunk-carries-geometry",
+    "2024-01-ai-structure-of-the-space-of-folding-protein-sequences-defined-by-large-language-models",
+    "2025-12-prioritizing-missense-mutations-via-a-deep-learning-phosphorylation-prediction-model",
+    "2026-10-yak-collagen-anti-aging-peptides-mmp1",
+    "2026-11-esmc-monoyield-protein-yield-prediction"
+   ],
+   "models": [
+    "ESM3 (98B)",
+    "ESM2-15B",
+    "ESM1b"
+   ],
+   "discovery_count": 24,
+   "model_count": 3
   },
   {
    "id": "gemini",
@@ -5595,42 +5638,6 @@
    "model_count": 5
   },
   {
-   "id": "esm",
-   "name": "ESM / ESMFold",
-   "discoveries": [
-    "2024-06-esm3-esmgfp",
-    "2022-11-esm-atlas",
-    "2026-04-ai-guided-design-enables-e-coli-ribosomal-proteins-without-isoleucine",
-    "2025-09-machine-learning-guided-mining-identifies-91-previously-unknown-pet-hydrolases-including-acid-active-enzymes",
-    "2025-08-beaut-uncovers-new-gut-microbial-bile-acid-enzymes-and-the-novel-bile-acid-3-acetodca",
-    "2024-11-chooser-uses-protein-foundation-models-to-discover-functional-cas-homologs",
-    "2025-08-esm-guided-metagenome-mining-identifies-seven-new-cas12a-subtypes-with-distinct-activities",
-    "2026-08-esm-fep-combines-protein-language-model-fitness-screening-and-free-energy-calculations-to-engineer-herbicide-detoxifying-maize-dioxygenase",
-    "2025-04-esm-ezy-mining-identifies-multicopper-oxidases-and-asparaginases-with-experimentally-improved-catalytic-properties",
-    "2025-08-pepmlm-designs-experimentally-binding-target-conditioned-peptide-ligands-including-peptides-used-for-targeted-protein-degradation",
-    "2025-02-mal-id-maps-disease-associated-immune-receptor-patterns-across-infections-and-autoimmune-conditions",
-    "2026-06-few-shot-protein-language-model-design-yields-high-output-bicyclogermacrene-synthase-variants",
-    "2026-07-enzgfm-agent-experimentally-prioritizes-activity-enhancing-secreted-alkaline-phosphatase-variants",
-    "2025-07-venusmine-kbpetase",
-    "2024-07-esmif1-antibody-variant-selection",
-    "2026-07-arcadiamp-arcinin",
-    "2025-05-rlxf-aligns-esm2-for-brighter-creilov-variants",
-    "2026-08-evolvepro-guided-hpabc-l-dopa",
-    "2026-01-epilepsy-tract-network-language-change-association",
-    "2026-10-esmfold-pairwise-trunk-carries-geometry",
-    "2024-01-ai-structure-of-the-space-of-folding-protein-sequences-defined-by-large-language-models",
-    "2025-12-prioritizing-missense-mutations-via-a-deep-learning-phosphorylation-prediction-model",
-    "2026-10-yak-collagen-anti-aging-peptides-mmp1"
-   ],
-   "models": [
-    "ESM3 (98B)",
-    "ESM2-15B",
-    "ESM1b"
-   ],
-   "discovery_count": 23,
-   "model_count": 3
-  },
-  {
    "id": "gpt4",
    "name": "GPT-4",
    "discoveries": [
@@ -5655,7 +5662,8 @@
     "2024-10-3389-fmed-2024-1469227",
     "2026-11-gpt4-prostate-cancer-inbox-response-evaluation",
     "2024-08-gpt4-fabp4-lower-respiratory-tract-infection",
-    "2025-01-llm-suicide-risk-discharge-notes"
+    "2025-01-llm-suicide-risk-discharge-notes",
+    "2025-03-llm-oac-nonprescription-afib-notes"
    ],
    "models": [
     "GPT-4o (Mar 2025)",
@@ -5671,7 +5679,7 @@
     "GPT-4 (Jun 2023)",
     "GPT-4 (Mar 2023)"
    ],
-   "discovery_count": 22,
+   "discovery_count": 23,
    "model_count": 12
   },
   {
@@ -5692,10 +5700,13 @@
     "2026-06-ai-designed-bacterial-anti-defense-proteins-enable-phage-infection-and-plasmid-retention",
     "2026-10-designed-metalloproteases",
     "2025-11-rfdiffusion-de-novo-antibodies",
-    "2024-04-generative-mdm2-computational-candidates"
+    "2024-04-generative-mdm2-computational-candidates",
+    "2026-10-de-novo-enantioselective-photoenzymes-rfdiffusion",
+    "2026-11-rfdiffusion3-de-novo-ubiquitin-ligases",
+    "2026-11-rfdiffusion3-zapp1-phosphotriesterase-structure"
    ],
    "models": [],
-   "discovery_count": 15,
+   "discovery_count": 18,
    "model_count": 0
   },
   {
@@ -5715,12 +5726,13 @@
     "2026-11-alphafold-guided-enzyme-residue-test-iboga",
     "2026-11-c-glycosylation-substrate-gates",
     "2026-11-alphafold3-cog4-syntaxin5-interface",
-    "2026-04-ml-monkeypox-g9-m142i-alphafold3"
+    "2026-04-ml-monkeypox-g9-m142i-alphafold3",
+    "2026-11-alphafold3-cohesin-acetylation-complex"
    ],
    "models": [
     "AlphaFold 3"
    ],
-   "discovery_count": 14,
+   "discovery_count": 15,
    "model_count": 1
   },
   {
@@ -5738,10 +5750,12 @@
     "2025-11-rfd2-mi-cysteine-proteases",
     "2024-03-cosann-induced-fit-glucokinase-design",
     "2026-08-evolvepro-guided-hpabc-l-dopa",
-    "2024-04-generative-mdm2-computational-candidates"
+    "2024-04-generative-mdm2-computational-candidates",
+    "2026-08-maxwell-protein-language-model-stability-mutations",
+    "2026-11-bindcraft-pacap38-miniprotein-binders"
    ],
    "models": [],
-   "discovery_count": 12,
+   "discovery_count": 14,
    "model_count": 0
   },
   {
@@ -5911,10 +5925,11 @@
     "2025-09-evo-fagi",
     "2025-02-evo2",
     "2024-11-evo-science",
-    "2025-11-evo-genomic-language-model-designs-functional-toxin-antitoxin-and-anti-crispr-systems"
+    "2025-11-evo-genomic-language-model-designs-functional-toxin-antitoxin-and-anti-crispr-systems",
+    "2026-10-dape-pd-diffusion-promoter-design"
    ],
    "models": [],
-   "discovery_count": 5,
+   "discovery_count": 6,
    "model_count": 0
   },
   {
@@ -6058,6 +6073,17 @@
    "model_count": 1
   },
   {
+   "id": "boltz",
+   "name": "Boltz",
+   "discoveries": [
+    "2026-10-sandan-ai-cdr-h3-design-phage-display-tigit",
+    "2026-10-cdk2-inhibitors-boltz2-screening"
+   ],
+   "models": [],
+   "discovery_count": 2,
+   "model_count": 0
+  },
+  {
    "id": "gnome",
    "name": "GNoME",
    "discoveries": [
@@ -6111,6 +6137,19 @@
    ],
    "discovery_count": 2,
    "model_count": 6
+  },
+  {
+   "id": "progen",
+   "name": "ProGen",
+   "discoveries": [
+    "2021-07-progen-enzimi",
+    "2026-11-xampgen-progen-antimicrobial-peptides"
+   ],
+   "models": [
+    "ProGen2-xlarge"
+   ],
+   "discovery_count": 2,
+   "model_count": 1
   },
   {
    "id": "trrosetta",
@@ -6194,16 +6233,6 @@
    "name": "Aurora",
    "discoveries": [
     "2024-06-aurora"
-   ],
-   "models": [],
-   "discovery_count": 1,
-   "model_count": 0
-  },
-  {
-   "id": "boltz",
-   "name": "Boltz",
-   "discoveries": [
-    "2026-10-sandan-ai-cdr-h3-design-phage-display-tigit"
    ],
    "models": [],
    "discovery_count": 1,
@@ -6321,18 +6350,6 @@
    ],
    "models": [
     "Pangu-Weather"
-   ],
-   "discovery_count": 1,
-   "model_count": 1
-  },
-  {
-   "id": "progen",
-   "name": "ProGen",
-   "discoveries": [
-    "2021-07-progen-enzimi"
-   ],
-   "models": [
-    "ProGen2-xlarge"
    ],
    "discovery_count": 1,
    "model_count": 1
@@ -6499,6 +6516,7 @@
   "2025-02-evo2",
   "2025-02-fragfold-identifies-inhibitory-fragments-within-bacterial-proteins",
   "2025-02-mal-id-maps-disease-associated-immune-receptor-patterns-across-infections-and-autoimmune-conditions",
+  "2025-03-llm-oac-nonprescription-afib-notes",
   "2025-04-alphafold-structure-analysis-helps-reveal-phgdh-transcriptional-activity-linked-to-alzheimers-amyloid-pathology",
   "2025-04-esm-ezy-mining-identifies-multicopper-oxidases-and-asparaginases-with-experimentally-improved-catalytic-properties",
   "2025-04-gpt4-alcohol-counseling-pilot",
@@ -6543,6 +6561,7 @@
   "2025-12-rfdiffusion2-enzyme-active-sites",
   "2025-12-riff-diff-enzyme-design",
   "2025-12-tfold-designs-experimentally-binding-antibodies",
+  "2026-01-alphafold3-gli-sufu-complex-interfaces",
   "2026-01-claude-biology-labs",
   "2026-01-co-funsearch-bin-packing",
   "2026-01-epilepsy-tract-network-language-change-association",
@@ -6576,6 +6595,7 @@
   "2026-05-mattersim-tap",
   "2026-05-weathernext-melissa",
   "2026-06-ai-designed-bacterial-anti-defense-proteins-enable-phage-infection-and-plasmid-retention",
+  "2026-06-alphafold-multimer-cyclin-cdk-docking-motifs",
   "2026-06-few-shot-protein-language-model-design-yields-high-output-bicyclogermacrene-synthase-variants",
   "2026-06-gpt54-chan-lam",
   "2026-06-large-language-models-for-breast-cancer-treatment-planning-a-blin",
@@ -6591,6 +6611,7 @@
   "2026-08-evolvepro-guided-hpabc-l-dopa",
   "2026-08-gpt-5-6-helps-prove-an-exact-mapping-between-frustrated-and-field-driven-spin-chains",
   "2026-08-matevolve-motif-designed-magnet-candidates",
+  "2026-08-maxwell-protein-language-model-stability-mutations",
   "2026-08-oeis-a108081-word-count",
   "2026-08-physics-informed-retrieval-augmented-language-model-guides-synthesis-of-five-previously-unreported-inorganic-crystals",
   "2026-08-ruzsa-turjanyi-two-fold-sumset-divergence",
@@ -6627,6 +6648,7 @@
   "2026-10-arc-think-aloud-qualitative-representation",
   "2026-10-astra-assisted-gauge-invariant-lattice-fermion-measure",
   "2026-10-benign-agent-queries-disclose-derived-sensitive-information",
+  "2026-10-cdk2-inhibitors-boltz2-screening",
   "2026-10-circuiti-quantistici",
   "2026-10-claude-discovers-algorithms-that-refute-the-3sum-and-apsp-time-complexity-hypotheses",
   "2026-10-claude-traces-sighted-and-blind-computer-workflows",
@@ -6638,6 +6660,8 @@
   "2026-10-consistency-training-preserves-cue-circuit",
   "2026-10-contextual-rubric-wording-answer-gaps",
   "2026-10-cycleuncover-quadratic-fitness-queries",
+  "2026-10-dape-pd-diffusion-promoter-design",
+  "2026-10-de-novo-enantioselective-photoenzymes-rfdiffusion",
   "2026-10-dealsflow-analyst-time-validation",
   "2026-10-decoder-failures-missed-verifiable-hidden-messages",
   "2026-10-defensive-audit-asymmetric-deference",
@@ -6651,6 +6675,7 @@
   "2026-10-generative-design-and-graph-neural-network-screening-of-novel-bimetallic-alloy-catalysts-for-the-hydrogen-evolution-reaction",
   "2026-10-gnome-stability-disagreement-by-chemistry",
   "2026-10-golay-logical-zero-44-gate-depth-six",
+  "2026-10-golgifold-alphafold-golgi-complexes",
   "2026-10-gpt-6-astra-proves-a-linear-coloring-bound-for-graphs-excluding-clique-minors",
   "2026-10-gpt-6-astra-resolves-the-spectral-isometry-conjecture-for-arbitrary-unital-c-algebras",
   "2026-10-gpt-6-pro-proves-a-quadratic-size-threshold-suffices-for-random-permutations-to-contain-every-length-n-pattern",
@@ -6696,14 +6721,19 @@
   "2026-11-alphafold-bacterial-channel-temperature-gating",
   "2026-11-alphafold-guided-enzyme-residue-test-iboga",
   "2026-11-alphafold3-cog4-syntaxin5-interface",
+  "2026-11-alphafold3-cohesin-acetylation-complex",
   "2026-11-alphafold3-native-mosquito-salivary-complexes",
+  "2026-11-bindcraft-pacap38-miniprotein-binders",
+  "2026-11-boltzgen-sidetrak-kinesin1-miniprotein",
   "2026-11-c-glycosylation-substrate-gates",
   "2026-11-calibrated-ai-detectors-estimate-state-court-drafting",
   "2026-11-certified-improvements-to-best-known-thomson-problem-configurations-with-a-search-pipe",
   "2026-11-chabauty-kim-dimension-inequality",
+  "2026-11-claude-agentic-ige-disruptor-antibody-design",
   "2026-11-claude-riemann-hypothesis",
   "2026-11-decoding-complications-large-language-model-based-classification-of-free-text-entries",
   "2026-11-ehrhart-positivity-polypositroids",
+  "2026-11-esmc-monoyield-protein-yield-prediction",
   "2026-11-gpt-6-astra-constructs-mutually-orthogonal-latin-squares-that-improve-lower-bounds-at-33-orders",
   "2026-11-gpt4-prostate-cancer-inbox-response-evaluation",
   "2026-11-gpt5-feedback-monitoring-hippocampal-ripples",
@@ -6720,6 +6750,8 @@
   "2026-11-qwen-country-representation-guides-capital-answer",
   "2026-11-reasoning-in-the-loop-antibody-lead-optimization-by-probing-mechanism-and-measurement",
   "2026-11-reinhardt-conjecture-computer-assisted-proof",
+  "2026-11-rfdiffusion3-de-novo-ubiquitin-ligases",
+  "2026-11-rfdiffusion3-zapp1-phosphotriesterase-structure",
   "2026-11-sol-assisted-non-kahler-ricci-soliton",
   "2026-11-spinless-modular-bootstrap-optimal-bound",
   "2026-11-study-10-1038-s41401-026-01957-9",
@@ -6728,6 +6760,7 @@
   "2026-11-three-dimensional-passive-quantum-memory-stability",
   "2026-11-vault-claude",
   "2026-11-weak-coupling-hawking-page-transition",
-  "2026-11-weighted-lucas-reciprocal-sum-field-exclusion"
+  "2026-11-weighted-lucas-reciprocal-sum-field-exclusion",
+  "2026-11-xampgen-progen-antimicrobial-peptides"
  ]
 }

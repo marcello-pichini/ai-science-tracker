@@ -1,0 +1,34 @@
+{
+  "id": "2022-09-pericoronary-radiomics-functional-ischemia",
+  "title": "Pericoronary radiomics signature from machine learning associates with functional ischemia",
+  "summary": "A retrospective two-center study of 350 patients with coronary CT angiography (training 134, validation 66, testing 150 with invasive angiography) extracted 1,691 radiomic features from pericoronary tissue. Boruta with random forest selected the top 8 features to form a Rad-signature for CT-FFR of 0.8 or less, with AUCs 0.83, 0.82 and 0.82 (training, validation, testing) versus 0.55, 0.55 and 0.52 for fat attenuation index; the combined model reached 0.86, 0.85 and 0.83. Another 45 patients with invasive FFR were included to check performance. The reference for training was CT-FFR rather than invasive FFR.",
+  "field": "medicine",
+  "ai_technology": "Boruta feature selection with random forest on pericoronary radiomic features",
+  "organization": "Shanghai Jiao Tong University; Shanghai First People's Hospital; Nanjing Medical University",
+  "source_url": "https://doi.org/10.3389/fphys.2022.980996",
+  "source_type": "paper",
+  "publication_date": "2022-09-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent testing group (n=150) and 45 further patients with invasive FFR.",
+    "unknown": "Clinical benefit of the signature; full text not reviewed.",
+    "ai_role": "Builds the radiomics signature for functional ischemia",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fphys.2022.980996%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3389/fphys.2022.980996"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
+  }
+}

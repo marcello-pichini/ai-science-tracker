@@ -1,0 +1,34 @@
+{
+  "id": "2024-04-febuxostat-inadequate-response-prediction",
+  "title": "Machine learning predicts inadequate urate response to low-dose febuxostat in gout",
+  "summary": "Data from 340 male gout patients (an observational cohort and two clinical trials) receiving febuxostat 20 mg/day for at least 3 months were pooled; 68.9% and 51.8% were non-responders in short- and mid-term follow-up. LASSO selected serum urate, triglycerides, age, BMI and CRP, and a stochastic gradient descent classifier on these five features reached an AUC of 0.873 (95% CI 0.763-0.942) in the internal and 0.706 (95% CI 0.636-0.727) in the external test set. External performance is weak and the data are retrospective pooled data.",
+  "field": "medicine",
+  "ai_technology": "LASSO feature selection and a stochastic gradient descent classifier",
+  "organization": "Affiliated Hospital of Qingdao University",
+  "source_url": "https://doi.org/10.2147/jir.s458250",
+  "source_type": "paper",
+  "publication_date": "2024-04-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal and external test-set evaluation on pooled cohort and trial data (n=340).",
+    "unknown": "Whether predictions would change treatment decisions; full text not reviewed.",
+    "ai_role": "Predicts inadequate response to low-dose febuxostat",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2147/jir.s458250%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.2147/jir.s458250"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
+  }
+}

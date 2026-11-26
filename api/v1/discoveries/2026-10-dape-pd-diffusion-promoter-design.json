@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-dape-pd-diffusion-promoter-design",
+  "title": "Diffusion-adapted Evo genomic model generates functional promoters in gut commensals",
+  "summary": "DAPE-PD adapts the autoregressive Evo genomic foundation model into a bidirectional masked diffusion model to generate cis-regulatory DNA without foundation-scale retraining. After genus-specific fine-tuning, generated sequences kept genus-associated compositional features despite low similarity to the fine-tuning data. Experimental validation identified functional de novo promoters, and in silico prioritization recovered active designs from small candidate sets in three non-model gut commensals; the abstract gives no yield rate.",
+  "field": "biology",
+  "ai_technology": "DAPE-PD: Evo genomic foundation model adapted to a masked diffusion model, fine-tuned per genus to generate promoters",
+  "organization": "Hong Kong University of Science and Technology",
+  "source_url": "https://doi.org/10.64898/2026.10.24.761598",
+  "source_type": "paper",
+  "publication_date": "2026-10-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Experimental testing of generated promoters in gut commensals.",
+    "unknown": "Fraction of designs that were functional and the activity levels, which the abstract does not state; full text not reviewed.",
+    "ai_role": "The adapted diffusion model generated the promoter sequences that were tested.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.10.24.761598%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.10.24.761598"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

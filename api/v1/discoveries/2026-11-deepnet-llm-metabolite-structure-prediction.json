@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-deepnet-llm-metabolite-structure-prediction",
+  "title": "LLM reasoning over molecular neighborhoods predicts metabolite structures from spectra",
+  "summary": "DEEPNET-LLM restricts the search for a query spectrum to its local neighborhood in a molecular network and applies LLM reasoning to propagate structural information from neighbors. For 900 authentic standards (2,249 spectra) never publicly released, it returned the correct structure as top prediction for 84.7% of spectra, and 85.9% top-1 accuracy (excluding stereochemistry) on a random subset of MassSpecGym. It also found a bile acid tryptamine amidate in mouse gut, confirmed against a synthetic standard. Only the abstract was reviewed.",
+  "field": "chemistry",
+  "ai_technology": "DEEPNET-LLM: large language model reasoning over Molecular Community Networking neighborhoods to predict structures from MS/MS spectra",
+  "organization": "University of South Florida",
+  "source_url": "https://doi.org/10.64898/2026.10.28.762558",
+  "source_type": "paper",
+  "publication_date": "2026-11-03",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Unreleased authentic standards and confirmation of one discovered metabolite with a synthetic standard.",
+    "unknown": "Performance on real unknowns beyond the single showcased compound; full text not reviewed.",
+    "ai_role": "LLM reasoning propagated structural information from network neighbors to the query spectrum.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.10.28.762558%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.10.28.762558"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

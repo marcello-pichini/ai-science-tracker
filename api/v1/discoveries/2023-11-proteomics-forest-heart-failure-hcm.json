@@ -1,0 +1,34 @@
+{
+  "id": "2023-11-proteomics-forest-heart-failure-hcm",
+  "title": "Plasma proteomics random forest predicts worsening heart failure in HCM",
+  "summary": "In a multicentre prospective cohort of 389 patients with hypertrophic cardiomyopathy, plasma levels of 4986 proteins were measured at enrolment. An 11-protein random forest model trained at one institution (n=268) predicted worsening heart failure with an AUC of 0.87 (95% CI 0.76 to 0.98) in a test set from another institution (n=121). Pathway analysis of dysregulated proteins implicated the Ras-MAPK pathway, an association rather than a demonstrated mechanism.",
+  "field": "medicine",
+  "ai_technology": "Random forest model on an 11-protein plasma proteomics signature",
+  "organization": "Columbia University Irving Medical Center",
+  "source_url": "https://doi.org/10.1136/heartjnl-2023-322644",
+  "source_type": "paper",
+  "publication_date": "2023-11-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External-institution test set (n=121) after training on n=268, AUC 0.87.",
+    "unknown": "Mechanism of the pathway association; small cohort; full text not reviewed.",
+    "ai_role": "A random forest selected and combined 11 plasma proteins to predict worsening heart failure.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1136/heartjnl-2023-322644%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1136/heartjnl-2023-322644"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

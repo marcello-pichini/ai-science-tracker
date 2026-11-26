@@ -1,0 +1,34 @@
+{
+  "id": "2025-03-llm-oac-nonprescription-afib-notes",
+  "title": "GPT-4 extracts reasons for missing anticoagulation from atrial fibrillation clinical notes",
+  "summary": "Of 35,737 patients with atrial fibrillation in one health system, 7712 (21.6%) had no active oral anticoagulation prescription. Annotators labelled notes for 771 patients; GPT-4 with engineered prompts outperformed a trained ClinicalBERT (macro-F1 0.79 vs 0.69). Applied to the remaining notes, GPT-4 found a documented reason in 61.1%, most often alternative antiplatelet use (23.3%), therapeutic inertia (21.0%) and low AF burden (17.1%). The data come from a single health system and the inference-set output was not separately validated.",
+  "field": "medicine",
+  "ai_technology": "GPT-4 prompting and trained ClinicalBERT extracting reasons for anticoagulation nonprescription from clinical notes",
+  "organization": "Stanford University",
+  "source_url": "https://doi.org/10.1161/jaha.124.040419",
+  "source_type": "paper",
+  "publication_date": "2025-03-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Models scored against three annotators' labels on a 10% annotation set, then run on the 90% inference set.",
+    "unknown": "Single health system; accuracy on the inference set was not independently checked; full text not reviewed.",
+    "ai_role": "A large language model read clinical notes to classify why patients were not prescribed anticoagulants.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1161/jaha.124.040419%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1161/jaha.124.040419"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

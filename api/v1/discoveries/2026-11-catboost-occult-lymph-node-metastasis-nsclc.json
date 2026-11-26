@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-catboost-occult-lymph-node-metastasis-nsclc",
+  "title": "CatBoost model predicts occult lymph node metastasis in early lung cancer",
+  "summary": "Among 12 machine-learning algorithms using 46 preoperative features, a 10-feature CatBoost model predicted occult lymph node metastasis in clinical T1N0 NSCLC with consolidation-to-tumour ratio above 0.5. Occult metastasis occurred in 16.5% of 1,784 development patients and 18.5% of 525 external patients, with AUC 0.870 (0.827-0.906) internally and 0.855 (0.814-0.895) externally, and SHAP explained features. External calibration overestimated risk at intermediate-to-high probabilities, and prospective validation is required.",
+  "field": "medicine",
+  "ai_technology": "CatBoost gradient boosting selected among 12 machine-learning algorithms, with SHAP attribution",
+  "organization": "Not stated in the reviewed material",
+  "source_url": "https://europepmc.org/article/PPR/PPR1365507",
+  "source_type": "paper",
+  "publication_date": "2026-11-12",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Retrospective external validation at an independent center with pathology-confirmed nodal status.",
+    "unknown": "Clinical utility for guiding nodal dissection; full text not reviewed.",
+    "ai_role": "The model estimated preoperative metastasis risk from clinical and imaging features.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.23060"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

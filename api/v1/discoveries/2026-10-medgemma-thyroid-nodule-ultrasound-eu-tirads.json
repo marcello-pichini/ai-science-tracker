@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-medgemma-thyroid-nodule-ultrasound-eu-tirads",
+  "title": "Fine-tuned MedGemma matches EU-TIRADS for thyroid nodule malignancy on ultrasound",
+  "summary": "MedGemma 1.5 4B was fine-tuned with low-rank adaptation on thyroid ultrasound images from two Tunisian centers (training n = 942, validation 258, test sealed before training n = 256 with 51 malignant). With the radiologist's structured descriptors (Config D), AUROC was 0.953 versus 0.948 for EU-TIRADS, meeting non-inferiority; image-only configurations reached 0.883 to 0.892. Against EU-TIRADS 4 or higher it reclassified 72 of 94 false positives as negative while missing two more cancers, and raw probabilities were miscalibrated. Retrospective, same-centre test set, no external site; positioned as a second reader pending validation.",
+  "field": "medicine",
+  "ai_technology": "MedGemma 1.5 4B vision-language model fine-tuned with LoRA",
+  "organization": "University of Monastir",
+  "source_url": "https://doi.org/10.64898/2026.10.21.26366156",
+  "source_type": "paper",
+  "publication_date": "2026-10-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Sealed patient-level test set of 256 nodules against EU-TIRADS with a fine-needle or histology reference.",
+    "unknown": "Prospective external validation; the gain rests on only three cancers in category 4; full text not reviewed.",
+    "ai_role": "Classifies nodules as benign or malignant from images and structured descriptors.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.10.21.26366156%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.10.21.26366156"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

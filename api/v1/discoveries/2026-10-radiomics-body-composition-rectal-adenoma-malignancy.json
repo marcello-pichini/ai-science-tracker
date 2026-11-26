@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-radiomics-body-composition-rectal-adenoma-malignancy",
+  "title": "MRI radiomics and body-composition model stratifies malignancy risk in rectal adenomas",
+  "summary": "In a retrospective two-center study of 359 surgically treated patients (143 training, 61 internal validation, 155 external validation), five machine learning algorithms were compared on HRT2WI and DWI radiomics, and a logistic regression combined their predicted probabilities with clinical and CT body-composition predictors. The combined model reached AUCs of 0.956, 0.908 and 0.867 in the training, internal and external cohorts and outperformed its component models and a junior radiologist in external validation. SHAP analysis highlighted the visceral-to-subcutaneous fat ratio, the DWI radiomics probability and the neutrophil-to-lymphocyte ratio. The reader comparison used two radiologists and is exploratory; prospective evaluation is required.",
+  "field": "medicine",
+  "ai_technology": "Five machine learning algorithms on MRI radiomics combined with logistic regression and SHAP interpretation",
+  "organization": "Sir Run Run Shaw Hospital; Zhejiang University",
+  "source_url": "https://doi.org/10.3390/healthcare14213596",
+  "source_type": "paper",
+  "publication_date": "2026-10-23",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation cohort of 155 patients from a second center.",
+    "unknown": "Prospective multicenter performance and clinical impact; full text not reviewed.",
+    "ai_role": "Radiomics classifiers whose outputs feed a combined risk model.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/healthcare14213596%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3390/healthcare14213596"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

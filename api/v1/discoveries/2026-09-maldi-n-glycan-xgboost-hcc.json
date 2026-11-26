@@ -1,0 +1,34 @@
+{
+  "id": "2026-09-maldi-n-glycan-xgboost-hcc",
+  "title": "Spatial N-glycan imaging and XGBoost classify hepatocellular carcinoma tissue",
+  "summary": "MALDI mass spectrometry imaging of N-glycans was done on tissue sections from two cohorts (discovery n=88, validation n=60), and an XGBoost classifier was trained on 90 glycan features. Pixel-level AUCs were 0.95 (cross-validation) and 0.89 (external validation); biopsy-level AUCs were 1.0 and 0.97, identifying 97% of tumour-containing biopsies. Glutamine synthetase (GS) status was discriminated with an AUC of 0.75 (GS+ n=45, GS- n=17). The study is retrospective and the GS result is modest.",
+  "field": "medicine",
+  "ai_technology": "XGBoost classifier on 90 N-glycan imaging features",
+  "organization": "Medical University of South Carolina",
+  "source_url": "https://doi.org/10.1172/jci.insight.209628",
+  "source_type": "paper",
+  "publication_date": "2026-09-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent validation cohort (n=60) after training on a discovery cohort (n=88); biopsy AUC 0.97.",
+    "unknown": "Retrospective; small GS subgroups; clinical use untested; full text not reviewed.",
+    "ai_role": "XGBoost classified tumour versus non-tumour regions and GS status from spatial glycan signals.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1172/jci.insight.209628%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1172/jci.insight.209628"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

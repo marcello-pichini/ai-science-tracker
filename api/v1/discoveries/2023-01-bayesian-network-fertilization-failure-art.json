@@ -1,0 +1,34 @@
+{
+  "id": "2023-01-bayesian-network-fertilization-failure-art",
+  "title": "Bayesian network predicts low or failed fertilization in IVF and ICSI cycles",
+  "summary": "A Bayesian network learned from 106,640 fresh IVF/ICSI cycles at one Chinese centre (4,339 low fertilization rate and 5,199 total fertilization failure cases) used 18 of 24 predictors; infertility type, ART method and number of retrieved oocytes directly influenced the probabilities. With tenfold cross-validation, accuracy was 91.7%, and AUC was 0.779 (95% CI 0.766 to 0.791) for total failure versus controls and 0.807 (0.790 to 0.824) for total failure versus low rate. The authors note single-centre data and the need for external verification.",
+  "field": "medicine",
+  "ai_technology": "Bayesian network machine learning model on 24 clinical predictors",
+  "organization": "Peking University; Peking University Third Hospital",
+  "source_url": "https://doi.org/10.1186/s12958-023-01065-x",
+  "source_type": "paper",
+  "publication_date": "2023-01-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Tenfold cross-validation on 106,640 retrospective cycles; AUC 0.779 and 0.807.",
+    "unknown": "Single centre; external verification and laboratory sperm and oocyte parameters missing; full text not reviewed.",
+    "ai_role": "Bayesian network learning predicted fertilization failure from patient and treatment variables.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12958-023-01065-x%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12958-023-01065-x"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

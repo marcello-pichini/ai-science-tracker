@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-deepmast-spatial-transcriptomics-icam1",
+  "title": "A multi-agent LLM system for spatial transcriptomics nominates ICAM1 in lung fibrosis",
+  "summary": "DeepMAST, a multi-agent system that runs spatial transcriptomics analysis on locally deployed large language models with a retrieval-augmented literature system and guardrails, nominated ICAM1 as a candidate therapeutic target in idiopathic pulmonary fibrosis. The abstract reports support from human-tissue immunostaining and ICAM-1 blockade in a preclinical fibrosis model, and better evidence retrieval and fewer unsupported interpretations than baseline conditions in benchmarks. ICAM-1 was already studied in fibrosis, and only the abstract was reviewed.",
+  "field": "medicine",
+  "ai_technology": "DeepMAST multi-agent LLM system with MCP-enabled spatial analysis tools and retrieval-augmented generation, prioritizing targets from Visium data",
+  "organization": "Cedars-Sinai Medical Center",
+  "source_url": "https://doi.org/10.64898/2026.10.22.760550",
+  "source_type": "paper",
+  "publication_date": "2026-10-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Target nomination by DeepMAST was followed by human-tissue immunostaining and ICAM-1 blockade in a preclinical fibrosis model.",
+    "unknown": "Whether ICAM-1 blockade has therapeutic benefit beyond the preclinical model; quantitative effect sizes, which the abstract does not give; full text not reviewed.",
+    "ai_role": "LLM agents orchestrated the spatial transcriptomics analysis and nominated ICAM1 from curated evidence.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.10.22.760550%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.10.22.760550"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2025-09-bosd-detector-mri-pet-epilepsy",
+  "title": "Neural network detector finds bottom-of-sulcus dysplasia on MRI plus FDG-PET",
+  "summary": "Bottom-of-sulcus dysplasia (BOSD) is often missed on MRI. Using the Multi-centre Epilepsy Lesion Detection group's machine-learning method with added FDG-PET features, neural network classifiers were trained on 54 patients with BOSD. On MRI+PET features, 87% of BOSDs were overlapped by one of the top five output clusters (69% top cluster) in training, 94% (88% top cluster) in 17 subsequently diagnosed patients from the same centre, and 75% (58% top cluster) in 12 published patients from another centre; MRI-only or PET-only training generally did worse. The test sets are small and the detector only suggests regions to scrutinize.",
+  "field": "medicine",
+  "ai_technology": "Neural network classifiers (MELD-based method plus FDG-PET features) detecting BOSD on MRI and PET",
+  "organization": "Royal Children's Hospital; The University of Melbourne; Florey Institute of Neuroscience and Mental Health",
+  "source_url": "https://doi.org/10.1111/epi.18628",
+  "source_type": "paper",
+  "publication_date": "2025-09-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Neural network detection of bottom-of-sulcus dysplasia on MRI plus FDG-PET in 54 training patients, tested on 17 later same-centre patients and 12 published patients.",
+    "unknown": "Performance in larger independent cohorts and effect on clinical decisions; full text not reviewed.",
+    "ai_role": "Neural networks trained on MRI and FDG-PET cortical features flag candidate dysplasia regions.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1111/epi.18628%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1111/epi.18628"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

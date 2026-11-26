@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-cnn-ecg-blood-chemistry-abnormalities",
+  "title": "Convolutional networks infer abnormal blood chemistry from standard ECG",
+  "summary": "Two CNN architectures classified 55 parameter-threshold combinations of 29 laboratory tests as normal or abnormal from 12-lead or lead II ECG with age and sex, using 266,896 MIMIC-IV samples from 104,664 subjects. In the 12-lead setting 20 of 55 combinations had a lower ROC-AUC bound above 0.7, with hypokalemia (potassium below 3.3 mEq/L) best at 0.834 (0.817-0.849). Evaluation on MIMIC-III-WDB ICU traces (79,855 samples, 5,292 subjects) showed reduced single-lead generalization; precision limits caution against interruptive alerts.",
+  "field": "medicine",
+  "ai_technology": "Convolutional neural networks classifying laboratory abnormalities from ECG waveforms",
+  "organization": "Not stated in the reviewed material",
+  "source_url": "https://doi.org/10.20944/preprints202611.1199.v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-11",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Temporal subject-level split in MIMIC-IV and evaluation on MIMIC-III-WDB ICU recordings.",
+    "unknown": "Prospective clinical performance and benefit; full text not reviewed.",
+    "ai_role": "CNNs learned the ECG signatures of laboratory abnormalities.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.20944/preprints202611.1199.v1%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

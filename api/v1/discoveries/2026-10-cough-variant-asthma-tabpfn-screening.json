@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-cough-variant-asthma-tabpfn-screening",
+  "title": "TabPFN model screens for cough variant asthma from routine laboratory data",
+  "summary": "A multicenter study used a retrospective development set (n=533; 428 training, 105 internal testing) and two prospective validation sets (internal n=59, external n=78) with 54 routine biochemical, coagulation and hematological markers. A TabPFN model was benchmarked against XGBoost; in external validation TabPFN reached AUC 0.858 (95% CI 0.763-0.943), accuracy 79.5%, sensitivity 71.4% and specificity 86%. XGBoost had a higher external AUC (0.912) and sensitivity (91.4%) but lower accuracy (75.6%) and specificity (62.8%) at a fixed 0.5 threshold; validation sets are small.",
+  "field": "medicine",
+  "ai_technology": "Tabular Prior-Data Fitted Network (TabPFN) classifier benchmarked against XGBoost",
+  "organization": "Renmin Hospital of Wuhan University",
+  "source_url": "https://doi.org/10.2196/92211",
+  "source_type": "paper",
+  "publication_date": "2026-10-23",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prospective internal and external validation sets (n=59 and n=78) after retrospective development.",
+    "unknown": "Whether the validation was done with a frozen model before outcomes were known, and performance in larger cohorts; full text not reviewed.",
+    "ai_role": "Screens for cough variant asthma from routine laboratory values",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2196/92211%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.2196/92211"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
+  }
+}

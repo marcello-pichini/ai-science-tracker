@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-cfdna-fragmentomics-stacked-ml-ovarian-masses",
+  "title": "Stacked machine learning on cfDNA fragments separates malignant from benign ovarian masses",
+  "summary": "Low-pass whole-genome sequencing of plasma cell-free DNA from 743 participants supplied four fragmentomic feature classes (fragment size, nucleosome footprint, copy number, repeat elements) to a stacked machine-learning model. Trained on one cohort with cutoffs fixed there, it reached AUCs of 0.930 (internal test) and 0.932 (external test). Adding CA125 and HE4 raised AUCs to 0.964 in both and specificity from 77.9% to 88.4% and from 78.9% to 91.5% at sensitivities of 88.4% and 89.2%. The authors call for prospective evaluation.",
+  "field": "medicine",
+  "ai_technology": "Stacked machine-learning model on cfDNA fragmentomic features from low-pass whole-genome sequencing",
+  "organization": "Kunming Medical University; Peking University Cancer Hospital",
+  "source_url": "https://doi.org/10.1186/s43556-026-00652-9",
+  "source_type": "paper",
+  "publication_date": "2026-11-09",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal-test and external-test cohorts with cutoffs fixed in the training cohort.",
+    "unknown": "Observational diagnostic modelling; prospective performance unknown; full text not reviewed.",
+    "ai_role": "A stacked model combined four cfDNA feature classes to estimate ovarian cancer risk before surgery.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s43556-026-00652-9%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s43556-026-00652-9"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2025-01-vgg19-radiomics-fusion-dual-phenotype-hcc",
+  "title": "Radiomics and VGG19 fusion model separates dual-phenotype hepatocellular carcinoma on MRI",
+  "summary": "In 381 patients from four centres (138 HCC, 122 dual-phenotype HCC, 121 intrahepatic cholangiocarcinoma), radiomics, deep transfer learning and fusion models were built on contrast-enhanced MRI (244 training, 62 internal test, 75 external test). The VGG19-based fusion model reached a macro-AUC of 0.990 in the internal test set and 0.988 (95% CI 0.964 to 1.000) in the external set, with accuracy 0.875 and F1 0.885 externally. The study is retrospective and the external set is small.",
+  "field": "medicine",
+  "ai_technology": "VGG19 deep transfer learning fused with radiomics on contrast-enhanced MRI",
+  "organization": "First Affiliated Hospital of Soochow University",
+  "source_url": "https://doi.org/10.1186/s13244-025-01904-y",
+  "source_type": "paper",
+  "publication_date": "2025-01-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External test set from two further centres (n=75): macro-AUC 0.988.",
+    "unknown": "Retrospective; modest external sample; clinical impact untested; full text not reviewed.",
+    "ai_role": "A pretrained VGG19 network and radiomic features were fused to classify three liver tumour types.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s13244-025-01904-y%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s13244-025-01904-y"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

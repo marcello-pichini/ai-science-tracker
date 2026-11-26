@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-cystatin-c-egfr-discordance-xgboost",
+  "title": "XGBoost model prioritizes cystatin C testing for eGFR discordance in adults with diabetes",
+  "summary": "In a retrospective two-center study of adults with diabetes, a nine-predictor XGBoost model for large negative eGFR discordance reached AUROC 0.863 (95% CI 0.833-0.889) and AUPRC 0.600 in development. In independent external validation AUROC was 0.806 (95% CI 0.769-0.840) and AUPRC 0.258, versus 0.661 and 0.126 for a clinical core model. Testing 20% of patients by risk identified 61.2% of discordant cases in development and 55.4% externally (3.06-fold and 2.77-fold enrichment), but raw external probabilities overestimated risk and AUPRC is low.",
+  "field": "medicine",
+  "ai_technology": "XGBoost nine-predictor classifier",
+  "organization": "First Affiliated Hospital of Anhui Medical University",
+  "source_url": "https://doi.org/10.3389/fendo.2026.2002540",
+  "source_type": "paper",
+  "publication_date": "2026-10-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent external validation in a second center.",
+    "unknown": "Calibration after recalibration and prospective effect on testing efficiency; full text not reviewed.",
+    "ai_role": "Ranks patients for targeted cystatin C testing",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fendo.2026.2002540%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3389/fendo.2026.2002540"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
+  }
+}

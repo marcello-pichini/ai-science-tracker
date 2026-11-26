@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-kinbert-phospho-pca-kinase-substrates",
+  "title": "KINBERT and phospho-PCA map kinase-substrate interactions, including understudied kinases",
+  "summary": "KINBERT, a protein language model encoding catalytic domains and substrate peptides, was combined with the pooled phospho-PCA screening assay and Bayesian hierarchical modeling. The framework identified novel high-confidence substrates for 23 kinase constructs representing 21 kinases, including the understudied ADCK1 and CaMKK1. Trained on literature-curated data, KINBERT outperformed existing models on standard and out-of-distribution benchmarks, and improved when phospho-PCA data were added. Only the abstract was reviewed.",
+  "field": "biology",
+  "ai_technology": "KINBERT protein language model for kinase-substrate interaction prediction, trained with phospho-PCA data",
+  "organization": "California Institute of Technology",
+  "source_url": "https://doi.org/10.64898/2026.10.26.762004",
+  "source_type": "paper",
+  "publication_date": "2026-10-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Pooled phospho-PCA experiments and applications including live-cell biosensors for TBK1 and IKKbeta.",
+    "unknown": "Per-substrate validation rates and effect sizes, not given in the abstract; full text not reviewed.",
+    "ai_role": "The language model learned interaction rules and, with the assay data, ranked candidate substrates.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.10.26.762004%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.10.26.762004"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

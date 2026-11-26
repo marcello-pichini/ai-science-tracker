@@ -1,0 +1,34 @@
+{
+  "id": "2023-05-explainable-ml-carotid-atherosclerosis-screening",
+  "title": "Explainable machine learning screens for carotid atherosclerosis from check-up data",
+  "summary": "From 69,601 health check-up records at one hospital in Shenyang, ten machine learning algorithms were compared to screen for carotid atherosclerosis (6315 records had carotid ultrasonography). The gradient boosting decision tree model was best, with an auROC of 0.860 (95% CI 0.839 to 0.880) in the internal test set and 0.851 (0.837 to 0.863) in a temporally separate 2018 external set. Negative predictive value was low in people with diabetes or over 65, and SHAP ranked age, sex and non-HDL cholesterol highest.",
+  "field": "medicine",
+  "ai_technology": "Gradient boosting decision tree (best of ten ML algorithms) with SHAP on routine check-up indicators",
+  "organization": "First Hospital of China Medical University",
+  "source_url": "https://doi.org/10.1186/s12967-023-04093-8",
+  "source_type": "paper",
+  "publication_date": "2023-05-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal test set and a separate 2018 validation dataset from the same centre; auROC 0.851 externally.",
+    "unknown": "Single-centre; applicability beyond this population untested; full text not reviewed.",
+    "ai_role": "Machine learning models predicted carotid plaque from routine health examination data.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12967-023-04093-8%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12967-023-04093-8"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

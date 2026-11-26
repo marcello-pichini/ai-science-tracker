@@ -1,0 +1,34 @@
+{
+  "id": "2026-03-multimodal-mri-xgboost-csvd-depression",
+  "title": "XGBoost on multimodal MRI identifies depression in cerebral small vessel disease",
+  "summary": "A retrospective three-centre study of 198 participants built models from structural, functional and diffusion tensor MRI features with nine classifiers. An XGBoost model on 12 features reached AUCs of 0.958 (training, n=113), 0.893 (external cohort 1, n=85) and 0.917 (external cohort 2, n=102). SHAP analysis pointed to higher low-frequency fluctuation amplitude in the superior frontal gyrus and lower fractional anisotropy in the default mode network. The cohorts are small and the study is retrospective.",
+  "field": "medicine",
+  "ai_technology": "XGBoost classifier (best of nine) on 12 multimodal MRI features",
+  "organization": "Wenzhou Medical University; Lishui Central Hospital",
+  "source_url": "https://doi.org/10.1186/s12880-026-02319-x",
+  "source_type": "paper",
+  "publication_date": "2026-03-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Two external validation cohorts (n=85, n=102): AUC 0.893 and 0.917.",
+    "unknown": "Retrospective, small cohorts; clinical use untested; full text not reviewed.",
+    "ai_role": "XGBoost selected and combined MRI features to separate patients with and without depression.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12880-026-02319-x%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12880-026-02319-x"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

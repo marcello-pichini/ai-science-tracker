@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-esmc-monoyield-protein-yield-prediction",
+  "title": "ESMC-MonoYield predicts monomeric protein yield in E. coli from sequence",
+  "summary": "A pooled assay combining peptide barcodes, size-exclusion chromatography and mass spectrometry measured monomeric yield for over 39,000 protein domain variants, de novo proteins and nanobodies in E. coli. The data were used to benchmark inverse-folding methods and structure-confidence metrics, and to fine-tune the protein language model ESMC into ESMC-MonoYield. The abstract states that it prospectively enriched high-yield candidates among BindCraft-designed binders, but gives no effect size.",
+  "field": "biology",
+  "ai_technology": "ESMC protein language model fine-tuned to predict monomeric yield from sequence",
+  "organization": "The University of Tokyo",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-11632080/v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-18",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Prospective experimental test of yield enrichment among BindCraft binders, plus the 39,000-variant dataset.",
+    "unknown": "Magnitude of enrichment and performance on other protein classes; full text not reviewed.",
+    "ai_role": "The fine-tuned language model ranked designs by predicted yield.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-11632080/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-11632080/v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

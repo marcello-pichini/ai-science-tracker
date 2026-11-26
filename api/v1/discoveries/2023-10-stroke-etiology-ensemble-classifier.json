@@ -1,0 +1,34 @@
+{
+  "id": "2023-10-stroke-etiology-ensemble-classifier",
+  "title": "StrokeClassifier ensemble predicts ischemic stroke etiology from discharge summaries",
+  "summary": "StrokeClassifier is an ensemble meta-model of 9 machine learning classifiers applied to NLP-extracted features from discharge summaries of 2,039 non-cryptogenic ischemic stroke patients at 2 academic hospitals, predicting a 4-level etiology set by agreement of at least 2 vascular neurologists. Base classifiers reached a mean cross-validated AUROC of 0.90; the ensemble reached cross-validated accuracy 0.74 and weighted F1 0.74, and in 406 MIMIC-III summaries accuracy 0.70 and weighted F1 0.71. The abstract also describes a consensus-based certainty heuristic aimed at cryptogenic strokes; those reclassifications are not verified, and accuracy is moderate.",
+  "field": "medicine",
+  "ai_technology": "Ensemble consensus meta-model of 9 machine learning classifiers on NLP-extracted EHR text features",
+  "organization": "Yale University",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-3367169/v1",
+  "source_type": "paper",
+  "publication_date": "2023-10-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Etiology prediction against neurologist adjudication in 2,039 patients with cross-validation and external testing in 406 MIMIC-III discharge summaries.",
+    "unknown": "Whether reclassification of cryptogenic strokes is correct and whether the tool helps clinical care; full text not reviewed.",
+    "ai_role": "Classifies stroke etiology from features extracted from discharge summaries",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-3367169/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-3367169/v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
+  }
+}

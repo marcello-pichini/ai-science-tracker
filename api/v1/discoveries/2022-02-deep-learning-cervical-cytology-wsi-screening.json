@@ -1,0 +1,34 @@
+{
+  "id": "2022-02-deep-learning-cervical-cytology-wsi-screening",
+  "title": "Deep learning classifies cervical cytology whole-slide images as neoplastic or not",
+  "summary": "A deep learning model was trained on 1605 whole-slide images of liquid-based cervical cytology to classify slides as neoplastic or non-neoplastic. On three test sets totaling 1468 slides it reached ROC AUCs of 0.89 to 0.96 for slide-level diagnosis. The authors present it as a promising aid for screening workflows. The abstract does not describe the independence of the test sets or any prospective use.",
+  "field": "medicine",
+  "ai_technology": "Deep learning classifier on digitised liquid-based cytology whole-slide images",
+  "organization": "Medmain (Japan)",
+  "source_url": "https://doi.org/10.3390/cancers14051159",
+  "source_type": "paper",
+  "publication_date": "2022-02-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Slide-level ROC AUC on three test sets totaling 1468 whole-slide images.",
+    "unknown": "Independence of test sets from the training source and real-world screening performance; full text not reviewed.",
+    "ai_role": "Classifies whole-slide cytology images as neoplastic or non-neoplastic.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/cancers14051159%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3390/cancers14051159"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

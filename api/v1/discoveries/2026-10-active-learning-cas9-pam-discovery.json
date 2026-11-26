@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-active-learning-cas9-pam-discovery",
+  "title": "Active learning discovers Cas9 PAMs from a few cleavage assays, including AlkaCas9",
+  "summary": "An active learning algorithm selects the most informative candidate sequences for iterative cleavage assays to infer Cas9 PAMs without sequencing. On public data for 7 orthologs it recovered canonical PAMs (Matthews correlation 0.8 or higher) with up to twenty times less data than conventional machine learning. In vitro it identified NGG for SpCas9 and NNNNRT for PpCas9 in four to seven rounds, and for the uncharacterized AlkaCas9 found an NNGAV PAM confirmed by a positional scan. Preprint; one new ortholog.",
+  "field": "biology",
+  "ai_technology": "Active learning algorithm guiding iterative Cas9 cleavage assays",
+  "organization": "Sechenov University",
+  "source_url": "https://doi.org/10.64898/2026.10.20.760532",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Benchmarks on public datasets and in vitro cleavage assays including a positional scan for AlkaCas9.",
+    "unknown": "Generality across other Cas9 orthologs; full text not reviewed.",
+    "ai_role": "Chooses which sequences to assay next and infers the PAM.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.10.20.760532%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.10.20.760532"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

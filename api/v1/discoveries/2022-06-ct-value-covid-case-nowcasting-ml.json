@@ -1,0 +1,34 @@
+{
+  "id": "2022-06-ct-value-covid-case-nowcasting-ml",
+  "title": "Machine learning nowcasts weekly COVID-19 cases from past viral load measurements",
+  "summary": "Using cycle threshold (Ct) values and prior case counts from three patient groups (n = 6296, 3228 and 12,096) for training, validation and independent validation, three machine learning and three deep learning algorithms predicted case numbers 7 weeks ahead. A sequence-to-sequence model was best in validation (MSE 0.025), while polynomial regression (OLS) and support vector regression generalized better in independent validation (MSE 0.1596 and 0.16754). OLS and SVR were then applied to an external institution and showed promise for cross-institution prediction. Retrospective data; the authors call for prospective validation.",
+  "field": "medicine",
+  "ai_technology": "Sequence-to-sequence deep model, OLS and support vector regression on Ct values and case counts",
+  "organization": "Rafik Hariri University Hospital; Case Western Reserve University",
+  "source_url": "https://doi.org/10.3390/v14071414",
+  "source_type": "paper",
+  "publication_date": "2022-06-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent validation cohort and data from an external institution.",
+    "unknown": "Prospective forecasting performance; full text not reviewed.",
+    "ai_role": "Forecasts future case counts from viral load and prior cases.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/v14071414%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3390/v14071414"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

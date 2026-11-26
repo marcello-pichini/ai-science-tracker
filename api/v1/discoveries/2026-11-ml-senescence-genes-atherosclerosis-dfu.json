@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-ml-senescence-genes-atherosclerosis-dfu",
+  "title": "Machine learning selects senescence genes shared by atherosclerosis and diabetic foot",
+  "summary": "From 72 senescence-related genes differentially expressed in both diseases, LASSO, random forest and SVM-RFE consensus selected CALCOCO1, CCND2 and FUCA1. A nomogram using them reached AUC 0.96 for diabetic foot ulcer and 0.90 for atherosclerosis in the public datasets. An independent clinical cohort of 22 patients (11 ulcer, 11 non-diabetic controls) showed senescent cell accumulation and dysregulated expression, and metformin attenuated induced fibroblast senescence in vitro. The validation cohort is very small and the AUCs come from training data.",
+  "field": "medicine",
+  "ai_technology": "LASSO, random forest and SVM-RFE feature selection on transcriptomic data",
+  "organization": "Shenzhen Second People's Hospital",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-11347381/v1",
+  "source_type": "paper",
+  "publication_date": "2026-11-01",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Single-cell data, a 22-patient tissue cohort and in vitro fibroblast experiments.",
+    "unknown": "Diagnostic validity in larger cohorts and causal roles of the genes; full text not reviewed.",
+    "ai_role": "Machine-learning feature selection prioritized the three core genes.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-11347381/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-11347381/v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

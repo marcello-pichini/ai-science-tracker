@@ -1,0 +1,34 @@
+{
+  "id": "2022-10-cnn-neurofibrillary-tangles-part",
+  "title": "CNN-measured tau tangle burden is linked to cognitive impairment in PART",
+  "summary": "In 706 post-mortem brains from elderly people with mild or no amyloid plaques, a convolutional neural network trained to segment neurofibrillary tangles on p-tau-stained hippocampal sections gave tangle counts, positive pixel density and a graph-theory spatial metric. Several of these metrics predicted antemortem cognitive impairment in the hippocampus and entorhinal cortex (p < 0.0001); controlling for age, tangle counts remained significant (p = 0.04). Braak stage did not predict impairment. This is a retrospective association, and CNN validation details are not in the abstract.",
+  "field": "medicine",
+  "ai_technology": "Convolutional neural network segmenting neurofibrillary tangles on p-tau stained hippocampus sections",
+  "organization": "Icahn School of Medicine at Mount Sinai",
+  "source_url": "https://doi.org/10.1186/s40478-022-01457-x",
+  "source_type": "paper",
+  "publication_date": "2022-10-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective autopsy cohort of 706 brains compared with antemortem cognitive status.",
+    "unknown": "CNN accuracy against pathologists is not stated in the abstract; association only; full text not reviewed.",
+    "ai_role": "A CNN segmented tangles to give quantitative burden metrics beyond Braak staging.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s40478-022-01457-x%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s40478-022-01457-x"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

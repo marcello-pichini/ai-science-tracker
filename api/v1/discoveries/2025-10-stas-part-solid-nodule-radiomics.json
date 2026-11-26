@@ -1,0 +1,34 @@
+{
+  "id": "2025-10-stas-part-solid-nodule-radiomics",
+  "title": "Nodule-region radiomics predicts spread through air spaces in lung adenocarcinoma",
+  "summary": "333 patients with part-solid nodule lung adenocarcinoma from three hospitals were studied retrospectively, with one institution used for training (n=223) and the other two as an external test set (n=110). CT radiomic features from ground-glass, solid, gross and perinodular regions were used to build SVM, LightGBM and logistic regression models. In the external test set the LightGBM model combining ground-glass, solid and perinodular features reached an AUC of 0.840 (95% CI 0.758-0.921), better than the clinical model (AUC 0.622). The cohort is modest and retrospective.",
+  "field": "medicine",
+  "ai_technology": "SVM, LightGBM and logistic regression on CT radiomic features",
+  "organization": "Affiliated Hospital of Qingdao University",
+  "source_url": "https://doi.org/10.3389/fonc.2025.1700843",
+  "source_type": "paper",
+  "publication_date": "2025-10-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External test set of 110 patients from two hospitals.",
+    "unknown": "Prospective performance; full text not reviewed.",
+    "ai_role": "Predicts spread through air spaces from region-specific radiomics",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fonc.2025.1700843%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3389/fonc.2025.1700843"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
+  }
+}

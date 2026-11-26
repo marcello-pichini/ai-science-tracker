@@ -1,0 +1,34 @@
+{
+  "id": "2026-09-multidiseasepred-ed-triage-risk",
+  "title": "MultiDiseasePred estimates risk of seven acute conditions at emergency triage",
+  "summary": "MultiDiseasePred is an interpretable multi-task gated mixture-of-experts model that estimates risk of seven acute conditions and two disposition endpoints from 12 triage variables in one pass. Across 2,203,437 encounters from three health systems it reached macro-AUROC 0.900 (0.897-0.903) for the conditions internally, with external values of 0.793 and 0.866 at two other systems without retraining, and outperformed NEWS. The study is retrospective and was reviewed from the abstract only.",
+  "field": "medicine",
+  "ai_technology": "Interpretable multi-task gated mixture-of-experts risk prediction model",
+  "organization": "University of Minnesota",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-10963805/v1",
+  "source_type": "paper",
+  "publication_date": "2026-09-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Internal and external retrospective validation at two health systems.",
+    "unknown": "Prospective effect on triage decisions and outcomes; full text not reviewed.",
+    "ai_role": "The model produced multi-condition risk estimates with feature attributions.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-10963805/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-10963805/v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2022-01-cnn-pleural-plaque-quantification-asbestos-ct",
+  "title": "Deep learning quantifies pleural plaques on CT in asbestos-exposed former workers",
+  "summary": "A 2D convolutional neural network was trained on 8280 images from 138 CT scans of 69 participants to segment pleural plaques, and tested on 2160 images from 36 scans of 18 participants. Volume agreement with ground truth was almost perfect (concordance correlation coefficient above 0.98); Dice was 0.63 for plaques and 0.82 for calcified plaques. In 54 participants with longitudinal CT, the method showed a significant increase in plaque volume over time. Retrospective data and a small test set.",
+  "field": "medicine",
+  "ai_technology": "2D convolutional neural network segmentation of pleural plaques on maximum-intensity-projection CT",
+  "organization": "Université de Bordeaux; Inserm; Centre Hospitalier Universitaire de Bordeaux",
+  "source_url": "https://doi.org/10.3390/ijerph19031417",
+  "source_type": "paper",
+  "publication_date": "2022-01-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out test participants against expert delineations and a longitudinal comparison in 54 participants.",
+    "unknown": "Performance in other cohorts and clinical value; full text not reviewed.",
+    "ai_role": "Segments pleural plaques to measure their volume automatically.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/ijerph19031417%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3390/ijerph19031417"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

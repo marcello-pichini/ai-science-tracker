@@ -1,0 +1,34 @@
+{
+  "id": "2021-08-nationwide-claims-cancer-prediction",
+  "title": "Deep anomaly and boosting models predict seven cancers from national health checkup data",
+  "summary": "Korean National Insurance System checkup data (adults 40 and over, checked every 2 years) were analyzed with logistic regression, LightGBM, neural networks, survival analysis and a one-class embedding classifier based on deep learning anomaly detection. The one-class embedding classifier had the highest AUC for each cancer: 0.868 liver, 0.849 lung, 0.798 colorectal, 0.746 pancreatic, 0.800 gastric, 0.749 breast and 0.790 cervical; models were externally validated on a tertiary hospital checkup database. The study is retrospective, several AUCs are moderate, and the abstract excerpt does not state which cohort each AUC refers to.",
+  "field": "medicine",
+  "ai_technology": "One-class embedding deep anomaly classifier and LightGBM on health-checkup variables",
+  "organization": "Pohang University of Science and Technology",
+  "source_url": "https://doi.org/10.2196/29807",
+  "source_type": "paper",
+  "publication_date": "2021-08-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation on a tertiary hospital health checkup database.",
+    "unknown": "Which cohort the reported AUCs refer to; clinical utility; full text not reviewed.",
+    "ai_role": "Predicts cancer risk at patient level",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2196/29807%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.2196/29807"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2024-09-kinase-variant-effect-predictors",
+  "title": "Machine learning classifies activating, deactivating and resistance kinase variants",
+  "summary": "The authors curated 375 activating, 1,028 deactivating, 98 resistance and 1,004 neutral variants in 441 human kinases and described each by 7 types of sequence, evolutionary and structural features. Machine learning predictors reached a mean AUC of 0.941 and were applied to somatic cancer, hereditary disease and healthy-genome variants, predicting more activating variants in cancers and more deactivating ones in hereditary disease. Several cancer mutations were assessed experimentally, including PIM1 p.Ser97Asn (phosphorylation analysis suggests increased activity) and MAP2K3 p.Ala84Thr (reduced mitochondrial function). Only a few variants were tested and the AUC is not an independent-cohort result.",
+  "field": "biology",
+  "ai_technology": "Supervised machine learning classifiers on sequence, evolutionary and structural features of kinase variants",
+  "organization": "Heidelberg University",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-5001235/v1",
+  "source_type": "paper",
+  "publication_date": "2024-09-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Predictor performance on a curated variant dataset, plus experimental assessment of selected predicted cancer variants (PIM1 p.Ser97Asn, MAP2K3 p.Ala84Thr).",
+    "unknown": "How well predictions hold for variants beyond the few tested; preprint not peer reviewed; full text not reviewed.",
+    "ai_role": "Predicts functional class of kinase variants",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-5001235/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-5001235/v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
+  }
+}

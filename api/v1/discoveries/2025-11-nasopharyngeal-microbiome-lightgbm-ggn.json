@@ -1,0 +1,34 @@
+{
+  "id": "2025-11-nasopharyngeal-microbiome-lightgbm-ggn",
+  "title": "Nasopharyngeal microbiome LightGBM model predicts malignancy of lung ground-glass nodules",
+  "summary": "In 748 patients with pulmonary ground-glass nodules enrolled prospectively at three centres, nasopharyngeal swabs and bronchoalveolar lavage were profiled by 16S rRNA sequencing. Of seven machine learning algorithms, LightGBM on the nasopharyngeal microbiota performed best (AUC 0.808; 95% CI 0.769 to 0.850), with Fusobacterium, Gemella, TM7x, Lachnoanaerobaculum, Rothia and Veillonella as key markers. The markers were checked in external cohorts and added to the Mayo Clinic Model (AUC 0.835; 0.801 to 0.873). Functional links are predicted, not tested.",
+  "field": "medicine",
+  "ai_technology": "LightGBM (best of seven algorithms) with SHAP on nasopharyngeal 16S microbiome profiles",
+  "organization": "Chengdu University of Traditional Chinese Medicine",
+  "source_url": "https://doi.org/10.1186/s12967-025-07483-2",
+  "source_type": "paper",
+  "publication_date": "2025-11-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External independent dataset used to check marker specificity; models built on a prospective three-centre cohort.",
+    "unknown": "Benign and malignant group sizes are 251 and 136 of 748; external performance values not given in the abstract; full text not reviewed.",
+    "ai_role": "LightGBM predicted nodule malignancy from microbiome composition and SHAP identified candidate markers.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12967-025-07483-2%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12967-025-07483-2"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

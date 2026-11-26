@@ -1,0 +1,34 @@
+{
+  "id": "2025-04-mifaps-pcr-breast-cancer-chemotherapy",
+  "title": "Multimodal deep learning predicts complete response to chemotherapy in breast cancer",
+  "summary": "The multimodal integrated fully automated pipeline system (MIFAPS) combines pretreatment MRI, whole slide images and clinical risk factors to forecast pathological complete response to neoadjuvant chemotherapy, using a multicenter prospective dataset of 1004 patients with locally advanced breast cancer. It reached an AUC of 0.882 in the pooled external test set and 0.909 in the prospective test set, and outperformed single-modality models (P < 0.05). High deep learning scores were associated with immune-related pathways, which is an association only.",
+  "field": "medicine",
+  "ai_technology": "Multimodal deep learning pipeline (MIFAPS) on MRI, whole slide images and clinical features",
+  "organization": "Qingdao University; Capital Medical University; Yuhuangding Hospital",
+  "source_url": "https://doi.org/10.1126/sciadv.adr1576",
+  "source_type": "paper",
+  "publication_date": "2025-04-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Pooled external test set (AUC 0.882) and prospective test set (AUC 0.909) in 1004 patients.",
+    "unknown": "Whether it changes treatment decisions; the biological association is not causal; full text not reviewed.",
+    "ai_role": "Deep learning models on MRI and pathology images, fused with clinical factors, predict response to chemotherapy.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1126/sciadv.adr1576%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1126/sciadv.adr1576"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

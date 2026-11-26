@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-echojepa-physiology-sepsis-cardiomyopathy",
+  "title": "Physiology-informed deep learning detects sepsis cardiomyopathy on echocardiography",
+  "summary": "A deep learning model combining EchoJEPA visual representations, phase-aware modeling, left-ventricular area features and multi-cycle aggregation classified sepsis-induced cardiomyopathy from apical four-chamber echo cine loops. In 530 development patients (305 with the condition) cross-validated AUROC was 0.933 (0.910-0.954); in an external MIMIC-IV-ECHO cohort of 93 patients (39 cases) it was 0.929 (0.864-0.980) versus 0.735 for direct EchoJEPA. The study is retrospective, with a small external cohort and a troponin-based label that differs from the development definition.",
+  "field": "medicine",
+  "ai_technology": "EchoJEPA-based physiology-informed deep learning on echocardiographic cine loops",
+  "organization": "Jiangsu Province Hospital; Nanjing Medical University",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-11318108/v1",
+  "source_type": "paper",
+  "publication_date": "2026-10-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Cross-validation in two centers and external evaluation in MIMIC-IV-ECHO.",
+    "unknown": "Prospective clinical use and benefit; full text not reviewed.",
+    "ai_role": "The model classified the condition from echo cine loops.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-11318108/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-11318108/v1"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

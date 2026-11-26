@@ -1,0 +1,34 @@
+{
+  "id": "2026-06-transcriptomic-ml-biomarkers-alcohol-liver-cirrhosis",
+  "title": "Machine learning selects a five-gene signature for alcohol-associated liver cirrhosis",
+  "summary": "NHANES data from 17,007 adults showed heavy drinking conferred a 5.14-fold increased cirrhosis risk. Four GEO transcriptomic datasets were analyzed with WGCNA and three machine learning algorithms (LASSO, random forest, SVM-RFE), yielding a five-gene signature (including IL1B, CCL3, LUM, SPP1 and ITGA6) that distinguished alcohol-associated cirrhosis from normal liver with an AUC of 0.824 in an independent cohort of 93 samples. Fluvastatin and honokiol were suggested as candidate therapeutics by database querying and molecular docking only. Tissue-derived signature; blood-based translation is untested.",
+  "field": "medicine",
+  "ai_technology": "LASSO, random forest and SVM-RFE feature selection on liver transcriptomes",
+  "organization": "Anhui Jianzhu University",
+  "source_url": "https://doi.org/10.3390/ijms27135809",
+  "source_type": "paper",
+  "publication_date": "2026-06-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation in an independent cohort of 93 samples; docking for drug candidates.",
+    "unknown": "Prospective clinical validation, circulating-sample assay and wet-lab testing of drug candidates; full text not reviewed.",
+    "ai_role": "Selects diagnostic genes from multi-cohort transcriptomic data.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/ijms27135809%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3390/ijms27135809"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

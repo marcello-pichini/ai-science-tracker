@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-mitochondrial-biomarkers-saureus-osteomyelitis",
+  "title": "Machine learning nominates mitochondria-related biomarkers for S. aureus osteomyelitis",
+  "summary": "Blood transcriptome datasets GSE16129 and GSE6269 were used for training and GSE30119 as an external cohort; limma DEGs were intersected with MitoCarta3.0, and LASSO, SVM-RFE and random forest selected core genes for eight diagnostic machine learning models. The reviewed material lists QTRT1, ABCB6, PPIF, ACSL1 and GLRX5 as candidate biomarkers, and their expression was further validated in a mouse model of S. aureus osteomyelitis by RT-qPCR and Western blot and in human bone tissue. Validation is at the expression level and the discovery data are public.",
+  "field": "medicine",
+  "ai_technology": "LASSO, SVM-RFE and random forest gene selection with eight machine learning diagnostic models",
+  "organization": "Zunyi Medical University",
+  "source_url": "https://doi.org/10.3389/fcimb.2026.1923149",
+  "source_type": "paper",
+  "publication_date": "2026-11-05",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External GEO cohort plus expression validation in a mouse model and human bone tissue.",
+    "unknown": "Diagnostic performance in patients and causal role of the genes; full text not reviewed.",
+    "ai_role": "Selects core genes and trains diagnostic models",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fcimb.2026.1923149%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3389/fcimb.2026.1923149"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
+  }
+}

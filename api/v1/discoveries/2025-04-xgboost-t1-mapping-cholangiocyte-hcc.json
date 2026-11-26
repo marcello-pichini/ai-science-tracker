@@ -1,0 +1,34 @@
+{
+  "id": "2025-04-xgboost-t1-mapping-cholangiocyte-hcc",
+  "title": "XGBoost on T1-mapping MRI predicts cholangiocyte-phenotype hepatocellular carcinoma",
+  "summary": "In 180 patients with histologically confirmed HCC from two institutions, clinical and gadoxetic acid-enhanced MRI features were screened with LASSO and logistic regression and five machine learning models were built. The XGBoost model reached AUCs of 0.835, 0.830, 0.816 and 0.776 in training, internal, external and prospective validation cohorts. Its predictions also stratified relapse-free survival (HR 1.986; 95% CI 1.061 to 3.717; P = 0.029). The cohort is small and prospective validation numbers are not given in the abstract.",
+  "field": "medicine",
+  "ai_technology": "XGBoost model (best of five) on T1 mapping MRI and clinical features, explained with SHAP",
+  "organization": "The First People's Hospital of Shunde; Southern Medical University",
+  "source_url": "https://doi.org/10.1186/s12885-025-14147-3",
+  "source_type": "paper",
+  "publication_date": "2025-04-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External (AUC 0.816) and prospective (AUC 0.776) validation cohorts among 180 patients.",
+    "unknown": "Prospective cohort size not stated in the abstract; two institutions; full text not reviewed.",
+    "ai_role": "XGBoost combined imaging and clinical features to predict the cholangiocyte phenotype before surgery.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12885-025-14147-3%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12885-025-14147-3"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

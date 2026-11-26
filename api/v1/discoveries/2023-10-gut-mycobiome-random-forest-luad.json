@@ -1,0 +1,34 @@
+{
+  "id": "2023-10-gut-mycobiome-random-forest-luad",
+  "title": "Gut fungal profiles with random forest predict lung adenocarcinoma",
+  "summary": "Fecal samples from 299 people in Beijing, Suzhou and Hainan were profiled by ITS2 sequencing. A random forest on 19 fungal markers, chosen from five algorithms, reached an AUC of 0.9350 in the discovery cohort (105 patients with lung adenocarcinoma, 61 controls) and AUCs of 0.9538, 0.9628 and 0.8833 in Beijing, Suzhou and Hainan validation cohorts (15 to 44 patients each). Fungal biodiversity and richness were higher in patients. The study is cross-sectional with small validation cohorts.",
+  "field": "medicine",
+  "ai_technology": "Random forest (best of five supervised algorithms) on 19 gut fungal OTU markers",
+  "organization": "Chinese PLA General Hospital; Chinese People's Liberation Army",
+  "source_url": "https://doi.org/10.1186/s12916-023-03095-z",
+  "source_type": "paper",
+  "publication_date": "2023-10-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Three geographically separate validation cohorts (AUC 0.8833 to 0.9628).",
+    "unknown": "Cross-sectional design; small validation cohorts; clinical screening value untested; full text not reviewed.",
+    "ai_role": "A random forest combined fungal markers to separate patients from healthy controls.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12916-023-03095-z%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12916-023-03095-z"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

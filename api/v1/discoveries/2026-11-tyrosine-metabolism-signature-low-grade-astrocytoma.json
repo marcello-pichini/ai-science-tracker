@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-tyrosine-metabolism-signature-low-grade-astrocytoma",
+  "title": "Machine learning builds a ten-gene tyrosine metabolism signature in low-grade astrocytoma",
+  "summary": "From single-cell data and WGCNA hub genes, 101 machine learning algorithm combinations were evaluated and a Lasso + CoxBoost ten-gene risk model was chosen. High risk scores predicted worse 5-year overall survival, with AUC 0.80 in REMBRANDT and 0.73 in CGGA. High-risk tumours showed interferon-gamma response and EMT pathway activity and more M2 macrophage and mast cell infiltration; RAB3C knockdown in MOG-G-UVW cells increased migration, invasion and proliferation. The cohorts are public retrospective datasets and the immune findings are inferred by deconvolution.",
+  "field": "medicine",
+  "ai_technology": "Lasso + CoxBoost chosen from 101 machine learning algorithm combinations for a ten-gene prognostic signature",
+  "organization": "Zhejiang University",
+  "source_url": "https://doi.org/10.1371/journal.pone.0359523",
+  "source_type": "paper",
+  "publication_date": "2026-11-16",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Two external public cohorts (REMBRANDT, CGGA) plus in vitro RAB3C knockdown assays.",
+    "unknown": "Retrospective public data; moderate AUCs; immune interpretations are computational; full text not reviewed.",
+    "ai_role": "Machine learning combinations were screened to select the genes and model for the risk score.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1371/journal.pone.0359523%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1371/journal.pone.0359523"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-dinov2-photographic-age-gap-mice",
+  "title": "Photographs and a vision model estimate relative biological age in mice",
+  "summary": "A frozen DINOv2 vision model with ridge regression predicted age from 2,846 photographs of 1,292 mice from seven facilities, tested on unseen facilities. Absolute age transferred poorly (median absolute error 138 days), but among mice photographed together the older mouse was predicted older in 65% of pairs, above 95% for age gaps over 500 days. Mice predicted older than their age were frailer (+0.12 SD per 100 days) with shorter survival (hazard ratio 1.14 per 100 days), and G4 telomerase-deficient mice looked 151 days older than controls. Only the abstract was reviewed.",
+  "field": "biology",
+  "ai_technology": "DINOv2 self-supervised vision features with ridge regression to predict mouse age from photographs",
+  "organization": "Institute of Oncology Research; Università della Svizzera italiana",
+  "source_url": "https://doi.org/10.64898/2026.11.02.762463",
+  "source_type": "paper",
+  "publication_date": "2026-11-04",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Held-out facility testing of age predictions and association with frailty and survival.",
+    "unknown": "Whether it transfers to new settings without session-matched comparison; full text not reviewed.",
+    "ai_role": "The vision model extracted the age signal used to define the age gap.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.11.02.762463%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.11.02.762463"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

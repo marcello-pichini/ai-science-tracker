@@ -1,0 +1,34 @@
+{
+  "id": "2024-03-osteoporotic-vertebral-fracture-xray-dlr",
+  "title": "Deep learning radiomics classifies osteoporotic vertebral fractures on X-ray",
+  "summary": "The study covered 942 patients (1,076 vertebrae) at three hospitals, with fractures classed 0, 1 or 2 by the Assessment System of Thoracolumbar Osteoporotic Fracture. Data were split into training (712), internal validation (178), external validation (111) and prospective validation (75) sets. ResNet-50 deep transfer learning (pre-trained on RadImageNet and ImageNet) was fused with radiomics features by LASSO, and eight machine learning models were evaluated one-vs-rest. Performance numbers were not visible in the reviewed abstract excerpt.",
+  "field": "medicine",
+  "ai_technology": "ResNet-50 deep transfer learning fused with radiomics features and eight machine learning models",
+  "organization": "Shanghai Tenth People's Hospital; Nanjing Medical University",
+  "source_url": "https://doi.org/10.3389/fendo.2024.1370838",
+  "source_type": "paper",
+  "publication_date": "2024-03-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External (n=111) and prospective (n=75) validation sets.",
+    "unknown": "Performance values and whether the prospective set used a frozen model; full text not reviewed.",
+    "ai_role": "Classifies fracture type from X-ray images",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fendo.2024.1370838%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3389/fendo.2024.1370838"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
+  }
+}

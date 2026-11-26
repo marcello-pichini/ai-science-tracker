@@ -1,0 +1,34 @@
+{
+  "id": "2026-06-drivernet-mri-egfr-alk-nsclc-brain-metastases",
+  "title": "DriverNet predicts EGFR/ALK status in NSCLC brain metastases from clinical data and MRI",
+  "summary": "In 374 patients from three centers, ImageNet-pretrained CNNs extracted MRI features and a Transformer-based architecture fused them with clinical data. DriverNet reached AUCs of 0.967 (training), 0.947 (internal validation) and 0.962 and 0.952 in two external cohorts (54 Chinese and 96 Western patients), outperforming clinical-only and imaging-only models. Model labels were also associated with overall survival in exploratory analyses. The Western cohort was molecularly imbalanced (12.5% EGFR/ALK positive) and the authors state prospective validation is needed before clinical use.",
+  "field": "medicine",
+  "ai_technology": "Clinical and MRI multimodal deep model: ImageNet-pretrained CNN feature extraction with Transformer fusion",
+  "organization": "Chinese Academy of Medical Sciences & Peking Union Medical College; Cancer Hospital of Chinese Academy of Medical Sciences",
+  "source_url": "https://doi.org/10.3390/diagnostics16131988",
+  "source_type": "paper",
+  "publication_date": "2026-06-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Discrimination, calibration and decision-curve analysis in two independent external cohorts.",
+    "unknown": "Prospective validation and performance in larger, more balanced cohorts; full text not reviewed.",
+    "ai_role": "Predicts EGFR/ALK status noninvasively from pre-treatment MRI and clinical variables.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/diagnostics16131988%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3390/diagnostics16131988"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

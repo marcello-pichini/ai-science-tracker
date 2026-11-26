@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-prismdb-delayed-bleeding-colorectal-esd",
+  "title": "Multimodal model predicts delayed bleeding after colorectal ESD",
+  "summary": "In 3,416 patients at two hospitals, YOLOv11m-seg segmented post-ESD mucosal defects, ResNet50 produced an image score (E-Score), and this was fused with clinical features in an XGBoost model (PrismDB). Delayed bleeding occurred in 8.06% (development) and 8.31% (external) of patients. AUC was 0.804 in development and 0.788 (95% CI 0.724 to 0.850) in the external cohort of 638 patients, with 79.25% sensitivity and 97.79% negative predictive value. Low-risk classification did not exclude bleeding, calibration was not evaluated externally, and benefit of model-guided care is unproven.",
+  "field": "medicine",
+  "ai_technology": "YOLOv11m-seg segmentation, ResNet50 image score and XGBoost (PrismDB) fusion model",
+  "organization": "Soochow University; Changshu No.1 People's Hospital",
+  "source_url": "https://doi.org/10.1186/s12876-026-05418-9",
+  "source_type": "paper",
+  "publication_date": "2026-11-10",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation cohort of 638 patients after development in 2,778; AUC 0.788.",
+    "unknown": "Retrospective; external calibration untested; safety of model-guided care not established; full text not reviewed.",
+    "ai_role": "Deep networks scored endoscopic images of the wound and a boosted model combined that score with clinical data.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12876-026-05418-9%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12876-026-05418-9"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}
