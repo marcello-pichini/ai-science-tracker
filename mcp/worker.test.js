@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
+import { readFileSync } from 'node:fs'
 import { Client } from '@modelcontextprotocol/sdk/client/index.js'
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js'
 import worker, { fold, queryTerms, tokens, termMatches, loadCatalog } from './worker.js'
@@ -83,6 +84,9 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
   await client.connect(new StreamableHTTPClientTransport(endpoint, {
     fetch: (url, options) => worker.fetch(new Request(url, options)),
   }))
+
+  const registryVersion = JSON.parse(readFileSync(new URL('./server.json', import.meta.url))).version
+  assert.equal(client.getServerVersion().version, registryVersion)
 
   const { tools } = await client.listTools()
   assert.deepEqual(tools.map((tool) => tool.name).sort(), ['get_discovery', 'list_fields', 'search_discoveries'])

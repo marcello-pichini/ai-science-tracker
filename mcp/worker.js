@@ -266,6 +266,9 @@ function createServer() {
     },
     annotations: readOnly,
   }, async ({ id }) => {
+    // A warm catalog already holds the same record as the per-record API, and stays usable if the site is down.
+    const cached = catalog.entries?.find((entry) => entry.record.id === id)
+    if (cached) return toolResult({ ...cached.record, catalog_url: catalogUrl(id) })
     try {
       const response = await fetch(`${site}/api/v1/discoveries/${encodeURIComponent(id)}.json`, {
         signal: AbortSignal.timeout(8000),
