@@ -430,6 +430,9 @@ class SharePageTests(unittest.TestCase):
         self.assertTrue(text.startswith('# AI Science Tracker'))
         self.assertIn('catalog of 1 entries about scientific results', text)
         self.assertIn(g.BASE + 'data/discoveries.json', text)
+        full = (g.ROOT / 'llms-full.txt').read_text()
+        self.assertIn('All 1 active entries', full)
+        self.assertIn(self.record['source_url'], full)
 
     def test_generated_metadata_uses_canonical_dataset_and_breadcrumb_urls(self):
         g = self.generator

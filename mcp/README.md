@@ -21,3 +21,12 @@ npm run dev
 ```
 
 With a Cloudflare account authorized for the project's zone and using Workers Free, run `npm run deploy` to deploy the Worker and its custom subdomain. The Worker has no storage bindings, model calls or paid feature dependencies.
+
+## MCP Registry listing
+
+`server.json` describes this remote server for the official MCP Registry (namespace `io.github.marcello-pichini`, verified through GitHub sign-in). Bump `version` when the Worker changes, then publish from this directory:
+
+```sh
+mcp-publisher login github
+mcp-publisher publish
+```

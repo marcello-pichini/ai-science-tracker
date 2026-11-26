@@ -961,12 +961,24 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [contributors.html]({BASE}contributors.html): maintainer, contributors and how to contribute
 - [feed.xml]({BASE}feed.xml): Atom feed of discovery additions and vulnerability source checks
 - Each discovery has its own page at {BASE}share/ID.html
+- [llms-full.txt]({BASE}llms-full.txt): every entry as plain text (title, date, field, organization, summary, source)
+
+## For agents
+- MCP server (Streamable HTTP, read-only, no token): https://mcp.aisciencetracker.org/mcp with tools search_discoveries, get_discovery and list_fields
 
 ## Notes
 - Most recent catalog addition: {newest}. This is not a last-review date.
 - The collection is manual and not exhaustive; most sources are the announcing organizations' own pages.
 - Repository: https://github.com/marcello-pichini/ai-science-tracker
 ''')
+    entries = ''.join(
+        f"\n## {d['title'].strip()}\n{d['publication_date']} · {d['field']} · {d['organization'].strip()}\n"
+        f"Page: {BASE}share/{quote(d['id'])}.html\nSource: {d['source_url']}\n\n{d['summary'].strip()}\n"
+        for d in sorted(items, key=lambda d: (d['publication_date'], d['id']), reverse=True))
+    (ROOT / 'llms-full.txt').write_text(
+        f'# {SITE}: full catalog\n\n> All {len(items)} active entries, newest first. Figures are reported by the sources '
+        'and are not independently verified; cite the linked original source, not this catalog. '
+        f'Licensed CC BY 4.0 (attribute "{SITE}" with a link). Structured data: {BASE}data/discoveries.json\n' + entries)
 
 
 def write_sitemap(items, models, archived=(), vulns=()):
@@ -1030,7 +1042,11 @@ def write_sitemap(items, models, archived=(), vulns=()):
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
         + ''.join(rows) + '</urlset>\n')
-    (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n')
+    # AI crawlers are already allowed by '*'; naming them states the intent explicitly.
+    ai_bots = ('GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User',
+               'PerplexityBot', 'Perplexity-User', 'Google-Extended', 'Applebot-Extended', 'CCBot', 'meta-externalagent')
+    named = ''.join(f'User-agent: {b}\n' for b in ai_bots)
+    (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\n\n{named}Allow: /\n\nSitemap: {BASE}sitemap.xml\n')
 
 
 def write_feed(items, vulns, limit=40):

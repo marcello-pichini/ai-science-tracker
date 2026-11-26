@@ -42,7 +42,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$GITHUB_SHA"
-          git add -- index.html insights.html profile.html models.html search.html security.html model-progress.html methodology.html dataset.html it/ de/ fr/ es/ data/ scripts/public-benchmark-inputs.json share/ profiles/ og/ api/ feed.xml llms.txt sitemap.xml robots.txt
+          git add -- index.html insights.html profile.html models.html search.html security.html model-progress.html methodology.html dataset.html it/ de/ fr/ es/ data/ scripts/public-benchmark-inputs.json share/ profiles/ og/ api/ feed.xml llms.txt llms-full.txt sitemap.xml robots.txt
           if git diff --cached --quiet; then
             echo "Nothing changed."
             if [ "$GITHUB_EVENT_NAME" != workflow_dispatch ]; then exit 0; fi

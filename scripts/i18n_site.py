@@ -55,7 +55,7 @@ SITEMAP_PAGES = tuple(page for page in PAGES if page != '404.html')
 
 ASSET_PREFIXES = ('assets/', 'data/', 'share/', 'profiles/', 'api/', 'og/', 'docs/', 'schema/')
 # insights.html is generated in English only, so language editions link to the root copy.
-ASSET_FILES = {'styles.css', 'feed.xml', 'sitemap.xml', 'llms.txt', 'robots.txt', 'insights.html'}
+ASSET_FILES = {'styles.css', 'feed.xml', 'sitemap.xml', 'llms.txt', 'llms-full.txt', 'robots.txt', 'insights.html'}
 SKIP_TAGS = {'script', 'style'}
 NUMBER = re.compile(r'\d+(?:\.\d+)?')
 KEEP_LINE = re.compile(
