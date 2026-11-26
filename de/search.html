@@ -197,7 +197,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
 </div></section>
 <main><section class="sez"><div class="wrap">
 <h2>Alle Sammlungen durchsuchen</h2>
-<form id="global-search" role="search"><label for="search-query">Name, Thema, DOI oder CVE</label><div class="search-controls"><input id="search-query" name="q" type="search" placeholder="AlphaFold, Antibiotika, CVE-2026…" maxlength="300"><button type="submit">Suche</button><button type="button" id="clear-search">Löschen</button></div></form>
+<form id="global-search" role="search" toolname="show_search_results" tooldescription="Show on this page every collection (discoveries, vulnerability cases, models) matching a name, topic, DOI or CVE."><label for="search-query">Name, Thema, DOI oder CVE</label><div class="search-controls"><input id="search-query" name="q" type="search" placeholder="AlphaFold, Antibiotika, CVE-2026…" maxlength="300"><button type="submit">Suche</button><button type="button" id="clear-search">Löschen</button></div></form>
 <p class="nota">Großschreibung und Satzzeichen werden normalisiert. Alle Suchwörter müssen im Datensatz vorkommen. Treffergründe nennen die gespeicherten Felder; ein Texttreffer ist keine wissenschaftliche Zuschreibung. Keine semantische Erweiterung und keine erschlossenen Aliasse.</p>
 <p id="search-status" role="status">Sammlungen werden geladen…</p><div id="search-results"></div>
 <noscript><p>Die interaktive Suche braucht JavaScript. Durchsuchen Sie <a href="../profiles/index.html">wissenschaftliche Fachgebiete und Familien</a>, <a href="security.html">Schwachstellenfälle</a> oder die <a href="dataset.html">Datendownloads</a>.</p></noscript>
@@ -217,5 +217,6 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
 <script src="../assets/catalog-entities.js?v=0c51c8fa4441"></script>
 <script src="../assets/catalog-ui.js?v=d956be922b2c"></script>
 <script src="../assets/catalog-search.js?v=9966a91480b9"></script>
+<script src="../assets/webmcp.js?v=58763ccfbfc3" defer></script>
 </body>
 </html>

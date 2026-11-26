@@ -197,7 +197,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
 </div></section>
 <main><section class="sez"><div class="wrap">
 <h2>Cerca in tutte le raccolte</h2>
-<form id="global-search" role="search"><label for="search-query">Nome, tema, DOI o CVE</label><div class="search-controls"><input id="search-query" name="q" type="search" placeholder="AlphaFold, antibiotici, CVE-2026…" maxlength="300"><button type="submit">Cerca</button><button type="button" id="clear-search">Azzera</button></div></form>
+<form id="global-search" role="search" toolname="show_search_results" tooldescription="Show on this page every collection (discoveries, vulnerability cases, models) matching a name, topic, DOI or CVE."><label for="search-query">Nome, tema, DOI o CVE</label><div class="search-controls"><input id="search-query" name="q" type="search" placeholder="AlphaFold, antibiotici, CVE-2026…" maxlength="300"><button type="submit">Cerca</button><button type="button" id="clear-search">Azzera</button></div></form>
 <p class="nota">Maiuscole e punteggiatura sono normalizzate. Tutte le parole della query devono comparire nel record. I motivi della corrispondenza indicano i campi archiviati; una corrispondenza testuale non è un’attribuzione scientifica. Nessuna espansione semantica né alias dedotti.</p>
 <p id="search-status" role="status">Caricamento delle raccolte…</p><div id="search-results"></div>
 <noscript><p>La ricerca interattiva richiede JavaScript. Sfoglia <a href="../profiles/index.html">campi e famiglie scientifiche</a>, <a href="security.html">casi di vulnerabilità</a> o i <a href="dataset.html">download dei dati</a>.</p></noscript>
@@ -217,5 +217,6 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
 <script src="../assets/catalog-entities.js?v=0c51c8fa4441"></script>
 <script src="../assets/catalog-ui.js?v=d956be922b2c"></script>
 <script src="../assets/catalog-search.js?v=9966a91480b9"></script>
+<script src="../assets/webmcp.js?v=58763ccfbfc3" defer></script>
 </body>
 </html>

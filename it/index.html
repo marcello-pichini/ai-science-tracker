@@ -201,7 +201,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <div class="hero-copy">
     <h1 id="titolo-pagina">Scoperte scientifiche rese possibili dall’IA</h1>
     <p class="lead" id="lead"><b>5112 scoperte</b> in 12 campi e 2527 organizzazioni dal 2020. Sfoglia sotto i risultati collegati alle fonti.</p>
-    <form class="catalog-search" id="quick-search" action="/it/" method="get" role="search">
+    <form class="catalog-search" id="quick-search" action="/it/" method="get" role="search" toolname="show_discovery_results" tooldescription="Show the catalog of AI-enabled scientific discoveries on this page, filtered by English words in the title, summary, field or AI technology.">
       <label for="banner-q">Cerca scoperte</label>
       <div><input id="banner-q" name="q" type="search" placeholder="Titolo, riassunto, disciplina o tecnologia"><button type="submit">Mostra i risultati</button></div>
     </form>
@@ -317,6 +317,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
 <script src="../assets/catalog-data.js?v=ed2b5a92d5fa"></script>
 <script src="../assets/catalog-entities.js?v=0c51c8fa4441"></script>
 <script src="../assets/catalog-ui.js?v=d956be922b2c"></script>
+<script src="../assets/webmcp.js?v=58763ccfbfc3" defer></script>
 <script>
 // Object.groupBy is missing before Safari 17.4 and Chrome 117.
 Object.groupBy ??= (xs, f) => xs.reduce((o, x) => ((o[f(x)] ??= []).push(x), o), {});
