@@ -395,6 +395,10 @@ export default {
         'Content-Type': 'application/mcp-server-card+json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600',
       } })
     }
+    // Glama connector ownership proof; the claim token is public and bound to the maintainer's Glama account.
+    if (url.pathname === '/mcp/.well-known/glama.json' && request.method === 'GET') {
+      return Response.json({ $schema: 'https://glama.ai/mcp/schemas/connector.json', claim: 'glama_claim_lBy6s9_WCdOoZAWXml3f23TincQDWwgj' })
+    }
     if (url.pathname !== '/mcp') return new Response('Not found', { status: 404 })
     // Stateless server: no standalone SSE stream (GET) and no session to end (DELETE).
     if (request.method !== 'POST') return new Response('Method not allowed', { status: 405, headers: { Allow: 'POST' } })

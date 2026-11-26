@@ -84,7 +84,7 @@ GitHub Pages serves this repository's `main` branch from the root. There is no b
 
 ## Use it from an AI assistant
 
-**MCP server (any MCP client, no install, no token):** `https://mcp.aisciencetracker.org/mcp` (Streamable HTTP, read-only). Tools: `search_discoveries`, `get_discovery`, `list_fields`, `search_vulnerabilities`, `get_vulnerability`. Listed in the official [MCP Registry](https://registry.modelcontextprotocol.io/) as `io.github.marcello-pichini/ai-science-tracker`; Server Card at `https://mcp.aisciencetracker.org/mcp/server-card`. Source and search rules: [`mcp/`](mcp/README.md).
+**MCP server (any MCP client, no install, no token):** `https://mcp.aisciencetracker.org/mcp` (Streamable HTTP, read-only). Tools: `search_discoveries`, `get_discovery`, `list_fields`, `search_vulnerabilities`, `get_vulnerability`. Listed in the official [MCP Registry](https://registry.modelcontextprotocol.io/) as `io.github.marcello-pichini/ai-science-tracker` and on [Glama](https://glama.ai/mcp/connectors/io.github.marcello-pichini/ai-science-tracker); Server Card at `https://mcp.aisciencetracker.org/mcp/server-card`. Source and search rules: [`mcp/`](mcp/README.md).
 
 ```sh
 claude mcp add --transport http ai-science-tracker https://mcp.aisciencetracker.org/mcp
