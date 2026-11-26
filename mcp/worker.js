@@ -140,6 +140,7 @@ async function fetchCatalog() {
       organization: tokens(record.organization ?? ''),
       summary: tokens(record.summary ?? ''),
     },
+    links: `${record.source_url ?? ''} ${record.paper_url ?? ''}`.toLowerCase(),
   }))
   catalog = { entries, loadedAt: Date.now() }
   return entries
@@ -155,7 +156,7 @@ function createServer() {
   })
 
   server.registerTool('search_discoveries', {
-    description: 'Find scientific discoveries by words in the title, field, organization, AI technology or summary. Terms match the start of a word, ignore accents and British/American spelling, and expand common abbreviations (LLM, ML) and variants (Nasca/Nazca, Herculaneum/Ercolano). Common words such as "how" or "new" are ignored; if no record matches every term, a longer query returns the records matching most of them, flagged partial_match. Title matches rank first. Filter by year, field (see list_fields) or organization. Page with offset. Results include a stable ID, short summary, source and catalog link. Use get_discovery for evidence and limitations.',
+    description: 'Find scientific discoveries by words in the title, field, organization, AI technology or summary. Terms match the start of a word, ignore accents and British/American spelling, and expand common abbreviations (LLM, ML) and variants (Nasca/Nazca, Herculaneum/Ercolano). Use English words, or paste a DOI to find its record. Common words such as "how" or "new" are ignored; if no record matches every term, a longer query returns the records matching most of them, flagged partial_match. Title matches rank first. Filter by year, field (see list_fields) or organization. Page with offset. Results include a stable ID, short summary, source and catalog link. Use get_discovery for evidence and limitations.',
     inputSchema: {
       query: z.string().trim().min(1).max(160).optional(),
       year: z.number().int().min(2020).max(2100).optional(),
@@ -166,8 +167,10 @@ function createServer() {
     },
     annotations: readOnly,
   }, async ({ query, year, field, organization, limit, offset }) => {
-    const terms = query ? queryTerms(query) : []
-    if (query && !terms.length) return toolResult({ error: 'The query has no searchable words.' }, true)
+    // A DOI in the query is looked up in the source and paper links instead of the text.
+    const doi = query?.match(/10\.\d{4,9}\/[^\s"<>]+/)?.[0].toLowerCase().replace(/[.,;)\]]+$/, '')
+    const terms = query && !doi ? queryTerms(query) : []
+    if (query && !doi && !terms.length) return toolResult({ error: 'The query has no searchable words.' }, true)
     try {
       const entries = await loadCatalog()
       // Organization names keep every word: "New York University" must not lose "new".
@@ -183,6 +186,7 @@ function createServer() {
         const recordField = normalize(record.field ?? '')
         if (expectedField && !recordField.includes(expectedField) && !` ${expectedField} `.includes(` ${recordField} `)) continue
         if (!orgTerms.every((term) => inField(term, entry, 'organization'))) continue
+        if (doi && !entry.links.includes(doi)) continue
         let score = 0
         let matched = 0
         for (const term of terms) {

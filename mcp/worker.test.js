@@ -56,6 +56,7 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
           ...discovery,
           id: '2023-04-laboratory-example',
           title: 'Laboratory robots run catalyst trials',
+          paper_url: 'https://doi.org/10.1234/lab.5678',
           organization: 'Example Lab; Partner University',
           publication_date: '2023-04-11',
         }])
@@ -94,6 +95,10 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
   })).content[0].text)
   assert.ok(loose.partial_match)
   assert.equal(loose.results[0].id, '2023-04-laboratory-example')
+  const byDoi = JSON.parse((await client.callTool({
+    name: 'search_discoveries', arguments: { query: 'see https://doi.org/10.1234/Lab.5678.' },
+  })).content[0].text)
+  assert.deepEqual(byDoi.results.map((row) => row.id), ['2023-04-laboratory-example'])
   const symbols = await client.callTool({ name: 'search_discoveries', arguments: { query: '???' } })
   assert.equal(symbols.isError, true)
 
