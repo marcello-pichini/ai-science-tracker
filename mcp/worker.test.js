@@ -103,6 +103,7 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
 
   const registryVersion = JSON.parse(readFileSync(new URL('./server.json', import.meta.url))).version
   assert.equal(client.getServerVersion().version, registryVersion)
+  assert.equal(JSON.parse(readFileSync(new URL('../gemini-extension.json', import.meta.url))).version, registryVersion)
 
   const { tools } = await client.listTools()
   assert.deepEqual(tools.map((tool) => tool.name).sort(), ['get_discovery', 'get_vulnerability', 'list_fields', 'search_discoveries', 'search_vulnerabilities'])

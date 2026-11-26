@@ -89,6 +89,7 @@ GitHub Pages serves this repository's `main` branch from the root. There is no b
 ```sh
 claude mcp add --transport http ai-science-tracker https://mcp.aisciencetracker.org/mcp
 codex mcp add ai-science-tracker --url https://mcp.aisciencetracker.org/mcp
+gemini extensions install https://github.com/marcello-pichini/ai-science-tracker
 ```
 
 In Claude, add it from the [Connectors Directory](https://claude.ai/directory/connectors/ai-science-tracker); in ChatGPT or other clients, add it as a custom connector with the same URL.
