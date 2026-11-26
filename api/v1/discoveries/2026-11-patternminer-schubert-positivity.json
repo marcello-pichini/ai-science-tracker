@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-patternminer-schubert-positivity",
+  "title": "LLM-agent workflow reports new proofs on positivity problems in algebraic combinatorics",
+  "summary": "A preprint describes PatternMiner, in which an LLM agent generates mathematical datasets, trains small models (MLPs, small transformers, trees), interprets them and formulates conjectures that are tested against counterexamples in mathematical software, applied to five positivity problems from Stanley's survey. The paper gives proofs, labelled LLM-generated, that for every n>=5 no fixed number of retained flag dimensions suffices for projection tests of Schubert structure-constant vanishing, an equivariant positivity inequality that proves Conjectures A and B of Chen et al. on equivariant nonvanishing, a character-row evaluation formula, a restricted case of Kazhdan-Lusztig combinatorial invariance, and Schur positivity for a family of immanant coefficients, supported by finite checks such as 776,891 coefficients over 1,587 shape instances. Proofs received an internal adversarial review only; no proof-kernel or independent mathematician check is reported, one decisive construction needed human redirection, and the comparison with direct LLM attempts is not compute-matched.",
+  "field": "mathematics",
+  "ai_technology": "Unnamed LLM agent that trains and interprets small models (activation patching, probes, sparse autoencoders), proposes conjectures and attempts proofs, with counterexample searches in mathematical software.",
+  "organization": "University of Washington; Pacific Northwest National Laboratory",
+  "source_url": "https://arxiv.org/abs/2611.33966",
+  "source_type": "paper",
+  "publication_date": "2026-11-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "https://arxiv.org/pdf/2611.33966",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Proofs given in the paper with an internal adversarial review, plus finite computational checks of the stated identities and positivity claims, ablations of model interpretation and comparison with direct LLM attempts.",
+    "unknown": "No Lean or other proof-kernel verification and no independent mathematician review reported; human redirection at one decisive point; the LLM powering the agent is not named; limited to algebraic combinatorics; baselines not compute-matched; not peer reviewed.",
+    "ai_role": "An LLM agent designs experiments, trains narrow models on mathematical data, interprets them and proposes and attempts proofs of conjectures.",
+    "evidence_urls": [
+      "https://arxiv.org/abs/2611.33966",
+      "https://arxiv.org/pdf/2611.33966"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Full arXiv v1 PDF read independently (pipeline, results by problem, Appendix B theorem statements and proofs labels, finite checks, limitations); v1 of 25 Nov 2026 is the only version; catalog and archive duplicate check by arXiv id, PatternMiner and topic: none."
+  }
+}

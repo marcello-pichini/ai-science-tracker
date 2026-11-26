@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-svm-inundation-conserved-wetland-lands",
+  "title": "Satellite machine learning measures inundation across 542,850 conserved wetland sites",
+  "summary": "A Support Vector Machine classifier applied to Sentinel-2 and Dynamic World data in Google Earth Engine mapped surface-water inundation across 542,850 wetland-related Conservation Reserve Program and Wetlands Reserve Program sites from 2018 to 2024. Measurable inundation occurred on 44.20% of CRP and 76.62% of WRP lands, persisted longer on WRP and on longer-enrolled CRP lands, and tracked hydric soil distribution. Reported validation accuracy was 95.50% on a random 75/25 split of 50,000 labelled points (RF 96.18%), but samples were split at point level so spatial autocorrelation may inflate it, there was no field hydrological validation, and surface water alone does not show conservation benefit.",
+  "field": "climate",
+  "ai_technology": "Support Vector Machine (compared with Random Forest and CART) classifying land cover and water from Sentinel-2 and Dynamic World inputs.",
+  "organization": "University of Nebraska-Lincoln",
+  "source_url": "https://www.nature.com/articles/s41598-026-82320-0",
+  "source_type": "paper",
+  "publication_date": "2026-11-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective satellite classification with held-out 25% validation points, comparison of three classifiers and a qualitative visual check of inundation frequency.",
+    "unknown": "No field hydrological validation; point-level split may inflate accuracy; optical imagery misses vegetated or cloud-covered water; inundation does not establish ecosystem benefit or program causation. The same group previously mapped inundation across all CRP lands (Scientific Reports, March 2026); this study's distinct contribution is the wetland-focused CRP versus WRP comparison with hydric soils.",
+    "ai_role": "The SVM classifier learns water and land classes from Sentinel-2 bands and produces the seasonal inundation maps on which all program comparisons rest.",
+    "evidence_urls": [
+      "https://www.nature.com/articles/s41598-026-82320-0_reference.pdf"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Full article-in-press PDF read independently (abstract, methods, classifier comparison, validation, limitations); received 1 Apr, accepted 20 Nov, online 24 Nov 2026 (Crossref); no preprint found; the group's earlier all-CRP study (10.1038/s41598-026-45281-y) is not in the catalog; catalog duplicate check none."
+  }
+}
