@@ -1,0 +1,137 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AI Science Tracker static API",
+    "version": "v1",
+    "description": "Read-only JSON files: 4945 AI-enabled scientific discoveries and 1780 AI-found vulnerability cases. No authentication. Figures are reported by the linked sources; cite the original source of a claim.",
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://aisciencetracker.org"
+    }
+  ],
+  "externalDocs": {
+    "url": "https://aisciencetracker.org/dataset.html"
+  },
+  "paths": {
+    "/api/v1/index.json": {
+      "get": {
+        "summary": "API index with counts, endpoints and checksums",
+        "responses": {
+          "200": {
+            "description": "JSON document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data/discoveries.json": {
+      "get": {
+        "summary": "Every active discovery",
+        "responses": {
+          "200": {
+            "description": "JSON document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://aisciencetracker.org/schema/discoveries.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/discoveries/{id}.json": {
+      "get": {
+        "summary": "One discovery",
+        "responses": {
+          "200": {
+            "description": "JSON document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://aisciencetracker.org/schema/discoveries.schema.json#/items"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No record with this ID"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Stable record ID",
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            }
+          }
+        ]
+      }
+    },
+    "/data/vulnerabilities.json": {
+      "get": {
+        "summary": "Every AI-found vulnerability case",
+        "responses": {
+          "200": {
+            "description": "JSON document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://aisciencetracker.org/schema/vulnerabilities.schema.json"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/vulnerabilities/{id}.json": {
+      "get": {
+        "summary": "One vulnerability case",
+        "responses": {
+          "200": {
+            "description": "JSON document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "https://aisciencetracker.org/schema/vulnerabilities.schema.json#/items"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No record with this ID"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Stable record ID",
+            "schema": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

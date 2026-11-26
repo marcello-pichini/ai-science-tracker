@@ -41,6 +41,19 @@ test('search terms fold spelling, accents, abbreviations and synonyms', () => {
 
 const origin = 'https://aisciencetracker.org'
 const endpoint = new URL('https://mcp.aisciencetracker.org/mcp')
+const vulnerability = {
+  id: 'cve-2026-34197',
+  title: 'Claude-assisted discovery of an ActiveMQ code-injection flaw',
+  product: 'Apache ActiveMQ Classic',
+  ai_system: 'Claude',
+  organization: 'Horizon3.ai',
+  cves: ['CVE-2026-34197'],
+  disclosure_date: '2026-04-07',
+  remediation: 'fix documented',
+  summary: 'A remote code execution flaw.',
+  ai_role: 'First-pass source analysis.',
+  source_url: 'https://example.org/advisory',
+}
 const discovery = {
   id: '2025-04-example',
   title: 'AI-guided materials testing',
@@ -72,6 +85,9 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
         return Response.json(discovery)
       case origin + '/api/v1/discoveries/2026-10-model--fonc-2026-1.json':
         return Response.json({ ...discovery, id: '2026-10-model--fonc-2026-1' })
+      case origin + '/data/vulnerabilities.json':
+        return Response.json([vulnerability, { ...vulnerability, id: 'big-sleep-sqlite', title: 'Big Sleep finds an SQLite flaw',
+          product: 'SQLite', ai_system: 'Big Sleep', cves: [], disclosure_date: '2024-11-01' }])
       case origin + '/api/v1/discoveries/unknown.json':
         return new Response(null, { status: 404 })
       default:
@@ -89,7 +105,7 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
   assert.equal(client.getServerVersion().version, registryVersion)
 
   const { tools } = await client.listTools()
-  assert.deepEqual(tools.map((tool) => tool.name).sort(), ['get_discovery', 'list_fields', 'search_discoveries'])
+  assert.deepEqual(tools.map((tool) => tool.name).sort(), ['get_discovery', 'get_vulnerability', 'list_fields', 'search_discoveries', 'search_vulnerabilities'])
   assert.ok(tools.every((tool) => tool.annotations.readOnlyHint))
   assert.ok(tools.every((tool) => tool.title && Object.values(tool.inputSchema.properties ?? {}).every((p) => p.description)))
 
@@ -157,6 +173,15 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
   })).content[0].text)
   assert.deepEqual(page2.results.map((row) => row.id), ['2024-04-example'])
   assert.equal(page2.truncated, false)
+  const vulnSearch = async (args) => JSON.parse((await client.callTool({ name: 'search_vulnerabilities', arguments: args })).content[0].text)
+  assert.deepEqual((await vulnSearch({ query: 'see CVE-2026-34197' })).results.map((row) => row.id), ['cve-2026-34197'])
+  assert.deepEqual((await vulnSearch({ query: 'SQLite' })).results.map((row) => row.id), ['big-sleep-sqlite'])
+  assert.deepEqual((await vulnSearch({ ai_system: 'big sleep' })).results.map((row) => row.id), ['big-sleep-sqlite'])
+  assert.deepEqual((await vulnSearch({ year: 2026 })).results.map((row) => row.id), ['cve-2026-34197'])
+  const vuln = await client.callTool({ name: 'get_vulnerability', arguments: { id: 'cve-2026-34197' } })
+  assert.equal(vuln.structuredContent.ai_role, vulnerability.ai_role)
+  assert.equal(vuln.structuredContent.catalog_url, origin + '/profiles/security-cve-2026-34197.html')
+
   const traversal = await client.callTool({ name: 'get_discovery', arguments: { id: '../private' } })
   assert.equal(traversal.isError, true)
 })
@@ -169,6 +194,11 @@ test('foreign browser origins and unrelated paths cannot call the Worker', async
   assert.equal(crossOrigin.status, 403)
   const other = await worker.fetch(new Request(new URL('/admin', endpoint)))
   assert.equal(other.status, 404)
+  const card = await worker.fetch(new Request(new URL('/mcp/server-card', endpoint)))
+  assert.equal(card.headers.get('Content-Type'), 'application/mcp-server-card+json')
+  const cardBody = await card.json()
+  assert.equal(cardBody.remotes[0].url, endpoint.href)
+  assert.equal(cardBody.$schema, undefined)
   for (const method of ['GET', 'DELETE']) {
     const response = await worker.fetch(new Request(endpoint, { method }))
     assert.equal(response.status, 405)

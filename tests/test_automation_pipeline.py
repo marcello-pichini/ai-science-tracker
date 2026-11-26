@@ -140,7 +140,7 @@ class PipelineTests(unittest.TestCase):
                 'model-progress.html', 'methodology.html', 'dataset.html',
                 'it/index.html', 'de/index.html', 'fr/index.html', 'es/index.html',
                 'data/new.json', 'scripts/public-benchmark-inputs.json', 'share/new.html',
-                'profiles/new.html', 'og/new.png', 'api/new.json', 'feed.xml', 'llms.txt', 'llms-full.txt',
+                'profiles/new.html', 'og/new.png', 'api/new.json', 'feed.xml', 'llms.txt', 'llms-full.txt', '.well-known/ai-catalog.json',
                 'sitemap.xml', 'robots.txt', 'work/private.csv',
             ]
             for path in paths:

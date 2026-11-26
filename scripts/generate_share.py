@@ -964,13 +964,19 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [llms-full.txt]({BASE}llms-full.txt): every entry as plain text (title, date, field, organization, summary, source)
 
 ## For agents
-- MCP server (Streamable HTTP, read-only, no token): https://mcp.aisciencetracker.org/mcp with tools search_discoveries, get_discovery and list_fields
+- MCP server (Streamable HTTP, read-only, no token): https://mcp.aisciencetracker.org/mcp with tools search_discoveries, get_discovery, list_fields, search_vulnerabilities and get_vulnerability; Server Card at https://mcp.aisciencetracker.org/mcp/server-card, AI Catalog at {BASE}.well-known/ai-catalog.json
+- [OpenAPI description]({BASE}api/v1/openapi.json) of the static JSON API
 
 ## Notes
 - Most recent catalog addition: {newest}. This is not a last-review date.
 - The collection is manual and not exhaustive; most sources are the announcing organizations' own pages.
 - Repository: https://github.com/marcello-pichini/ai-science-tracker
 ''')
+    # AI Catalog (MCP Server Cards, SEP-2127) for domain-level discovery of the MCP server.
+    (ROOT / '.well-known').mkdir(exist_ok=True)
+    (ROOT / '.well-known/ai-catalog.json').write_text(json.dumps({'specVersion': '1.0', 'entries': [{
+        'identifier': 'urn:air:aisciencetracker.org:mcp:ai-science-tracker', 'type': 'application/mcp-server-card+json',
+        'url': 'https://mcp.aisciencetracker.org/mcp/server-card'}]}, indent=2) + '\n')
     entries = ''.join(
         f"\n## {d['title'].strip()}\n{d['publication_date']} · {d['field']} · {d['organization'].strip()}\n"
         f"Page: {BASE}share/{quote(d['id'])}.html\nSource: {d['source_url']}\n\n{d['summary'].strip()}\n"
@@ -1124,12 +1130,42 @@ def write_api(items, vulns, models=None, archived=(), manifest=None):
             'models_list': BASE + 'data/models.json', 'model_progress': BASE + 'data/model-progress.json'},
         'downloads': {'discoveries_csv': BASE + 'data/discoveries.csv', 'vulnerabilities_csv': BASE + 'data/vulnerabilities.csv'},
         'schemas': {'discoveries': BASE + 'schema/discoveries.schema.json', 'vulnerabilities': BASE + 'schema/vulnerabilities.schema.json'},
-        'documentation': BASE + 'dataset.html'}
+        'documentation': BASE + 'dataset.html', 'openapi': api + 'openapi.json'}
+    write_openapi(len(items), len(vulns))
     if manifest is not None:
         index['component_manifest'] = BASE + 'api/v1/manifest.json'
         index['snapshot_sha256'] = manifest['snapshot_sha256']
     (ROOT / 'api/v1/index.json').write_text(json.dumps(index, indent=2) + '\n')
 
+
+
+def write_openapi(discoveries, vulnerabilities):
+    """OpenAPI 3.1 description of the static, read-only JSON files, so agents and tools can call them unaided."""
+    def get(summary, schema, by_id=False):
+        op = {'summary': summary, 'responses': {'200': {'description': 'JSON document', 'content': {'application/json': {'schema': schema}}}}}
+        if by_id:
+            op['responses']['404'] = {'description': 'No record with this ID'}
+            op['parameters'] = [{'name': 'id', 'in': 'path', 'required': True, 'description': 'Stable record ID',
+                                 'schema': {'type': 'string', 'pattern': '^[a-z0-9][a-z0-9-]*$'}}]
+        return {'get': op}
+    spec = {
+        'openapi': '3.1.0',
+        'info': {'title': f'{SITE} static API', 'version': 'v1',
+                 'description': f'Read-only JSON files: {discoveries} AI-enabled scientific discoveries and {vulnerabilities} '
+                                'AI-found vulnerability cases. No authentication. Figures are reported by the linked sources; '
+                                'cite the original source of a claim.',
+                 'license': {'name': 'CC BY 4.0', 'url': 'https://creativecommons.org/licenses/by/4.0/'}},
+        'servers': [{'url': BASE.rstrip('/')}],
+        'externalDocs': {'url': BASE + 'dataset.html'},
+        'paths': {
+            '/api/v1/index.json': get('API index with counts, endpoints and checksums', {'type': 'object'}),
+            '/data/discoveries.json': get('Every active discovery', {'$ref': f'{BASE}schema/discoveries.schema.json'}),
+            '/api/v1/discoveries/{id}.json': get('One discovery', {'$ref': f'{BASE}schema/discoveries.schema.json#/items'}, True),
+            '/data/vulnerabilities.json': get('Every AI-found vulnerability case', {'$ref': f'{BASE}schema/vulnerabilities.schema.json'}),
+            '/api/v1/vulnerabilities/{id}.json': get('One vulnerability case', {'$ref': f'{BASE}schema/vulnerabilities.schema.json#/items'}, True),
+        },
+    }
+    (ROOT / 'api/v1/openapi.json').write_text(json.dumps(spec, indent=2) + '\n')
 
 
 def validate_discovery_context(records):

@@ -433,6 +433,8 @@ class SharePageTests(unittest.TestCase):
         full = (g.ROOT / 'llms-full.txt').read_text()
         self.assertIn('All 1 active entries', full)
         self.assertIn(self.record['source_url'], full)
+        catalog = json.loads((g.ROOT / '.well-known/ai-catalog.json').read_text())
+        self.assertEqual(catalog['entries'][0]['type'], 'application/mcp-server-card+json')
 
     def test_generated_metadata_uses_canonical_dataset_and_breadcrumb_urls(self):
         g = self.generator
