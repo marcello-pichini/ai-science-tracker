@@ -176,11 +176,11 @@ class SharePageTests(unittest.TestCase):
         page = (g.ROOT / 'share/long.html').read_text()
         title = __import__('re').search(r'<title>(.*?)</title>', page)[1]
         self.assertLessEqual(len(title), g.TITLE_MAX)
-        self.assertTrue(title.endswith(' · mathematics'))
+        self.assertTrue(title.endswith(' · AI in mathematics'))
         self.assertIn(f'<h1 id="titolo-pagina">{long_title}</h1>', page)
         self.assertIn(f'<meta property="og:title" content="{long_title}">', page)
         self.assertIn('<title>Latin-square imbalance bound</title>', (g.ROOT / 'share/override.html').read_text())
-        self.assertIn('<title>Short result · physics</title>', (g.ROOT / 'share/short.html').read_text())
+        self.assertIn('<title>Short result · AI in physics</title>', (g.ROOT / 'share/short.html').read_text())
 
     def test_skipping_image_rendering_preserves_existing_entry_previews(self):
         g = self.generator

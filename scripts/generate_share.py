@@ -404,7 +404,8 @@ def search_title(d):
     """Short <title> for search results; the H1, og:title and JSON-LD keep the full title."""
     if d.get('search_title'):
         return d['search_title']
-    suffix = '' if d['field'] in ('other', 'multidisciplinary') else f' · {d["field"]}'
+    # The suffix tells searchers this is an AI-discovery review, not the paper itself.
+    suffix = ' · AI discovery' if d['field'] in ('other', 'multidisciplinary') else f' · AI in {d["field"]}'
     if len(d['title']) + len(suffix) <= TITLE_MAX:
         return d['title'] + suffix
     if len(d['title']) <= TITLE_MAX:
