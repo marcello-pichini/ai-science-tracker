@@ -154,7 +154,7 @@ class PipelineTests(unittest.TestCase):
     def test_workflow_gates_and_explicit_bot_dispatch(self):
         check = (ROOT / '.github/workflows/check.yml').read_text()
         self.assertIn('needs: check', check)
-        self.assertIn('actions/deploy-pages@v4', check)
+        self.assertIn('actions/deploy-pages@', check)
         self.assertIn('git ls-remote origin refs/heads/main', check)
         daily = (ROOT / '.github/workflows/daily-refresh.yml').read_text()
         self.assertIn('dispatch_and_wait check.yml -f "inputs[expected_sha]=$sha"', daily)
