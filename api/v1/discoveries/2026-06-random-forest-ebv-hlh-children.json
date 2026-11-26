@@ -1,0 +1,34 @@
+{
+  "id": "2026-06-random-forest-ebv-hlh-children",
+  "title": "Random forest on blood counts separates EBV-associated HLH from mononucleosis in children",
+  "summary": "Using blood counts within 24 hours of admission from 4,871 children, a random forest reached AUC 0.993 internally and 0.971 (95% CI 0.949-0.992) in an external validation group of 2,023 patients from a second campus. Prevalence of EBV-HLH differed between campuses (18.29% versus 4.25%). The study is retrospective within one hospital system.",
+  "field": "medicine",
+  "ai_technology": "Random forest chosen among thirteen ML algorithms, interpreted with SHAP",
+  "organization": "Children’s Hospital of Chongqing Medical University",
+  "source_url": "https://doi.org/10.1186/s12879-026-13891-6",
+  "source_type": "paper",
+  "publication_date": "2026-06-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation on the second campus of the same hospital.",
+    "unknown": "Prospective or multi-hospital validation.",
+    "ai_role": "Distinguishes EBV-HLH from EBV-IM",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12879-026-13891-6%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12879-026-13891-6"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+  }
+}

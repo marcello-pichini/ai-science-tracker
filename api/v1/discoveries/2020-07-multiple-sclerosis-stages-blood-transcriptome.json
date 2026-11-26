@@ -1,0 +1,34 @@
+{
+  "id": "2020-07-multiple-sclerosis-stages-blood-transcriptome",
+  "title": "Machine learning infers multiple sclerosis stages from the blood transcriptome",
+  "summary": "Classifiers built on PBMC transcriptomic probes from 313 individuals separated MS from non-MS (139 probes, 94.3% sensitivity, 87.5% precision), CIS (overall accuracy 89.9%) and progressive from relapsing-remitting MS (83.3% sensitivity, 93.8% precision). Nested cross-validation in training cohorts was followed by independent validation cohorts. Public microarray data, retrospective, and some stage classifiers have suboptimal sensitivity.",
+  "field": "medicine",
+  "ai_technology": "ADAboost-FT and other machine-learning classifiers (including random forest) on PBMC transcriptomes",
+  "organization": "IRCCS Ospedale San Raffaele; IRCCS San Raffaele Roma",
+  "source_url": "https://doi.org/10.1016/j.xcrm.2020.100053",
+  "source_type": "paper",
+  "publication_date": "2020-07-21",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Nested cross-validation and independent validation cohorts.",
+    "unknown": "Clinical-grade performance in prospective use.",
+    "ai_role": "Machine-learning classifiers inferred MS state and stage from transcriptomes.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.xcrm.2020.100053%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.xcrm.2020.100053"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+  }
+}

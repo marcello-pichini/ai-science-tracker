@@ -1,0 +1,34 @@
+{
+  "id": "2025-12-paroxysmal-af-sinus-rhythm-holter-deep-learning",
+  "title": "Deep learning detects paroxysmal atrial fibrillation from sinus-rhythm Holter ECG in a prospective trial",
+  "summary": "Convolutional models were trained on 20,000 30-s sinus-rhythm Holter blocks (cross-validation sensitivity 84.2%, specificity 66.2%) and a separate set of 54 patients tuned the threshold (84.9% and 69.9%). In a prospective multicentre trial of 24 patients with AF within 7 days and 20 controls, sensitivity was 91.7% (95% CI 73.0-99.0) and specificity 65.0% (40.8-84.6). The trial is small (n=44) with modest specificity; abstract only.",
+  "field": "medicine",
+  "ai_technology": "Convolutional deep-learning classifier of 30-s sinus-rhythm ECG blocks",
+  "organization": "Mita Hospital",
+  "source_url": "https://doi.org/10.1007/s12325-025-03461-8",
+  "source_type": "paper",
+  "publication_date": "2025-12-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prospective multicentre trial (UMIN000047182) with 7-day patch monitoring as outcome reference.",
+    "unknown": "Specificity in larger groups; full text was not reviewed; full text not reviewed.",
+    "ai_role": "A convolutional network flagged patients with paroxysmal AF from sinus-rhythm ECG.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s12325-025-03461-8%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1007/s12325-025-03461-8"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

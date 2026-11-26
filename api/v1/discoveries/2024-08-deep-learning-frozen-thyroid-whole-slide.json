@@ -1,0 +1,34 @@
+{
+  "id": "2024-08-deep-learning-frozen-thyroid-whole-slide",
+  "title": "Deep learning diagnoses intraoperative frozen thyroid lesions on whole slide images",
+  "summary": "A deep learning classifier assigned frozen thyroid sections to five categories and reached test accuracy 0.9459 and AUC 0.9955 on slides from 4409 sections. It also detected 101 papillary microcarcinoma sections and was evaluated on 1388 external whole slide images. Main metrics come from six-fold cross-validation in a retrospective study; the external metrics were not reviewed.",
+  "field": "medicine",
+  "ai_technology": "Deep-learning whole slide image classifier with a two-step cancer and subtype judgment",
+  "organization": "Tsinghua Shenzhen International Graduate School",
+  "source_url": "https://doi.org/10.1186/s12885-024-12849-8",
+  "source_type": "paper",
+  "publication_date": "2024-08-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Six-fold cross-validation, 101 papillary microcarcinoma sections and an external dataset of 1388 slides.",
+    "unknown": "External-set performance and prospective use during surgery.",
+    "ai_role": "Classifies frozen thyroid lesions",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12885-024-12849-8%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12885-024-12849-8"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+  }
+}

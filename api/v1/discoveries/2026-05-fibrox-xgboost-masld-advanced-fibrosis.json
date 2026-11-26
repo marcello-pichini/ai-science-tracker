@@ -1,0 +1,34 @@
+{
+  "id": "2026-05-fibrox-xgboost-masld-advanced-fibrosis",
+  "title": "FibroX XGBoost model detects advanced fibrosis in MASLD",
+  "summary": "XGBoost trained on 1,487 NHANES 2017-2020 adults reached AUROC 0.97 versus 0.62 for FIB-4 for advanced fibrosis; in 337 biopsy-confirmed patients it had AUROC 0.84 and outperformed FIB-4. In NHANES III (4,276 participants, up to 30 years) it predicted mortality (C-statistic 0.80). Training labels came from noninvasive screening plus elastography rather than biopsy, so the 0.97 figure is optimistic.",
+  "field": "medicine",
+  "ai_technology": "XGBoost (FibroX) with SHAP explanation",
+  "organization": "Euclid University; Yale University; VA Connecticut Healthcare System",
+  "source_url": "https://doi.org/10.21037/tgh-2026-0017",
+  "source_type": "paper",
+  "publication_date": "2026-05-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External biopsy-confirmed cohort of 337 and NHANES III mortality cohort of 4,276.",
+    "unknown": "FIB-4 performance in the biopsy cohort; full text not reviewed.",
+    "ai_role": "Detects advanced fibrosis and prognosticates outcomes",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21037/tgh-2026-0017%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21037/tgh-2026-0017"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

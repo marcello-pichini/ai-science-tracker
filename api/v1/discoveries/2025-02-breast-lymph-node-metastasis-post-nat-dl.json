@@ -1,0 +1,33 @@
+{
+  "id": "2025-02-breast-lymph-node-metastasis-post-nat-dl",
+  "title": "Deep learning detects breast cancer lymph node metastases after neoadjuvant therapy",
+  "summary": "An interpretable deep learning pipeline was developed on a 1,027-slide set of post-neoadjuvant breast cancer lymph nodes with pathologist labels. On the post-treatment test cohort it reached slide-level AUROC 0.986 and 70.9% specificity at 100% sensitivity, and its patch heatmaps helped pathologists find and correct erroneous predictions. Independence of test and training sources was not confirmed.",
+  "field": "medicine",
+  "ai_technology": "Interpretable deep learning pipeline for slide-level classification and patch-level metastasis heatmaps",
+  "organization": "Department of Medical Biophysics, University of Toronto",
+  "source_url": "https://doi.org/10.1016/j.labinv.2025.104121",
+  "source_type": "paper",
+  "publication_date": "2025-02-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out post-neoadjuvant test cohort with pathologist labels and an interpretability study with pathologists.",
+    "unknown": "Independence from training source and patient-level split not confirmed; retrospective; full text not reviewed.",
+    "ai_role": "Deep learning classifier and heatmap generator for lymph node slides.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.labinv.2025.104121%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

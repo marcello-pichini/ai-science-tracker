@@ -1,0 +1,34 @@
+{
+  "id": "2026-07-xgboost-aki-off-pump-cabg",
+  "title": "Machine learning predicts acute kidney injury after off-pump coronary bypass surgery",
+  "summary": "On 938 off-pump bypass patients (210 with acute kidney injury, 22.39%), XGBoost on baseline and Tsfresh-extracted intraoperative time-series features was the best of the models tried. In external validation of 631 patients it reached AUC 0.982, accuracy 0.916 and precision 0.983; SHAP ranked cystatin C first and NT-proBNP second. The study is retrospective and the very high external AUC calls for prospective confirmation.",
+  "field": "medicine",
+  "ai_technology": "XGBoost with Tsfresh time-series feature extraction and SHAP ranking",
+  "organization": "Jiangsu Province Hospital; Nanjing Medical University",
+  "source_url": "https://doi.org/10.1016/j.jatmed.2026.06.005",
+  "source_type": "paper",
+  "publication_date": "2026-07-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective development at one hospital and external validation in 631 patients (85 with injury) at a second hospital.",
+    "unknown": "Prospective validation and effect on patient outcomes; prediction only.",
+    "ai_role": "Predicts postoperative acute kidney injury risk",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jatmed.2026.06.005%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.jatmed.2026.06.005"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2022-02-radiomic-immunoscore-gastric-cancer",
+  "title": "Radiomic ImmunoScore from CT estimates tumor microenvironment in gastric cancer",
+  "summary": "An SVM learned an immune score from CT radiomics (Radiomic ImmunoScore); it gave AUC 0.85 for the immune score in the TCGA cohort and AUC 0.72 for prognosis with HR 2.72 in the independent Nanfang cohort. A nomogram built on it outperformed TNM staging. The study is retrospective with moderate validation AUC.",
+  "field": "medicine",
+  "ai_technology": "Support vector machine on CT radiomic features",
+  "organization": "Nanfang Hospital; Southern Medical University",
+  "source_url": "https://doi.org/10.1186/s12967-022-03298-7",
+  "source_type": "paper",
+  "publication_date": "2022-02-21",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent Nanfang Hospital validation cohort.",
+    "unknown": "Prospective validation and adjuvant chemotherapy benefit.",
+    "ai_role": "Estimates the immune score from imaging",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12967-022-03298-7%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12967-022-03298-7"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+  }
+}

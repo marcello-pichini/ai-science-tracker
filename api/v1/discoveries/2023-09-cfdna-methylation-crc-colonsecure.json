@@ -1,0 +1,34 @@
+{
+  "id": "2023-09-cfdna-methylation-crc-colonsecure",
+  "title": "Machine-learning cfDNA methylation blood test for colorectal cancer screening in a high-risk population",
+  "summary": "ColonSecure combines 149 hypermethylated cfDNA markers, chosen with Boruta feature selection, in a classifier trained on 196 CRC patients and 200 controls. It detected 89 of 103 colonoscopy-confirmed cancers (sensitivity 86.4%, AUROC 0.956), above CEA, CRP and CA19-9 (45.6%, 39.8%, 25.2%), in a prospective cohort of 3493 high-risk individuals. This is a letter in a single-region high-risk population, and whether the final model was frozen before the prospective cohort is not stated.",
+  "field": "medicine",
+  "ai_technology": "Boruta feature selection and machine-learning classifiers (glmnet, RF, SVM, XGBoost) on cfDNA methylation",
+  "organization": "Chinese Academy of Medical Sciences & Peking Union Medical College; Cancer Hospital of Chinese Academy of Medical Sciences",
+  "source_url": "https://doi.org/10.1186/s12943-023-01866-z",
+  "source_type": "paper",
+  "publication_date": "2023-09-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out test set and a prospective cohort of 3493 high-risk individuals.",
+    "unknown": "Final model type and its freezing before the prospective cohort.",
+    "ai_role": "Machine learning selected markers and built the classifier.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12943-023-01866-z%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12943-023-01866-z"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+  }
+}

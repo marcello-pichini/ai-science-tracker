@@ -1,0 +1,34 @@
+{
+  "id": "2021-01-warm-cloud-autoconversion-neural-network",
+  "title": "Neural networks give new warm-rain autoconversion and accretion parameterizations",
+  "summary": "A deep feed-forward neural network trained on ARM Azores in situ cloud-probe data yielded parameterizations for autoconversion and accretion with about 15% and 5% uncertainty, outperforming existing ones. The analysis points to drizzle number concentration as a key factor for autoconversion, a variable missing from current parameterizations, and the authors say theory supports this. Testing used a held-out split from the same single campaign.",
+  "field": "climate",
+  "ai_technology": "Deep feed-forward neural network (8 hidden layers, 1024 nodes) followed by symbolic optimization",
+  "organization": "Colorado State University",
+  "source_url": "https://doi.org/10.1029/2020gl091236",
+  "source_type": "paper",
+  "publication_date": "2021-01-23",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out test split (about 4:1, 2.5 million points) from the ARM Azores field campaign.",
+    "unknown": "Performance at other sites or campaigns.",
+    "ai_role": "Predicts autoconversion and accretion rates and reveals the role of drizzle number concentration",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1029/2020gl091236%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1029/2020gl091236"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+  }
+}

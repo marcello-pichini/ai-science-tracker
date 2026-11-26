@@ -1,0 +1,34 @@
+{
+  "id": "2025-09-til-spatial-pan-gi-cancer-outcome",
+  "title": "AI-derived lymphocyte spatial patterns are prognostic across gastrointestinal cancers",
+  "summary": "Computer vision extracted 2236 pathomic features from H&E slides of more than 1700 patients from four sites, and a LASSO Cox model kept the top 9. Low-risk patients had better overall survival than high-risk patients, with hazard ratios of 2.28 in liver, 2.79 in pancreatic, 5.85 in rectal and 1.81 in gastric cancer, and 2.32 in external colorectal validation sets. The features mainly describe spatial relationships between lymphocytes and nearest cancer nuclei; the association is prognostic, not causal.",
+  "field": "medicine",
+  "ai_technology": "Computer-vision nuclei and TIL spatial-feature extraction from whole slide images with LASSO Cox feature selection",
+  "organization": "Case Western Reserve University",
+  "source_url": "https://doi.org/10.1016/j.esmoop.2025.105757",
+  "source_type": "paper",
+  "publication_date": "2025-09-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Retrospective prognostic modeling in more than 1700 patients; external validation in three colorectal cancer sets.",
+    "unknown": "Training sets were internal per cancer type and external validation covered only colorectal cancer; causal or treatment-selection value not shown.",
+    "ai_role": "Extracts pathomic features and selects prognostic ones for survival risk groups",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.esmoop.2025.105757%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.esmoop.2025.105757"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+  }
+}

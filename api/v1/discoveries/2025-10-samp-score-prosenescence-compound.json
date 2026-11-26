@@ -1,0 +1,34 @@
+{
+  "id": "2025-10-samp-score-prosenescence-compound",
+  "title": "SAMP-Score, a morphology-based classifier, identifies a pro-senescence compound",
+  "summary": "A stacked ensemble classifier scoring cell-morphology profiles called senescence induction in a high-throughput screen of senescence-marker-positive cancer cells. It selected QM5928, which induced a senescence response in MB-468, BT549 and HeLa cells; individual models exceeded 90% accuracy, and the meta-model PPV was 58.7%. Training labels came from a HeLa siRNA screen, results are in vitro, and one compound was validated.",
+  "field": "biology",
+  "ai_technology": "Stacked ensemble of logistic, lasso, elastic net, SVM, random forest, MDA and neural network models scoring cell morphology",
+  "organization": "Queen Mary University of London; Blizard Institute",
+  "source_url": "https://doi.org/10.18632/aging.206333",
+  "source_type": "paper",
+  "publication_date": "2025-10-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Dose-response confirmation of QM5928 in several cancer cell lines after the screen.",
+    "unknown": "Mechanism, in vivo activity and false-hit rate.",
+    "ai_role": "Scores compounds by cell morphology to select hits",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.18632/aging.206333%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.18632/aging.206333"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+  }
+}

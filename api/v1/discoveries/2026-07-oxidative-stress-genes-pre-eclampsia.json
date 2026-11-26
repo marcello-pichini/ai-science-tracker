@@ -1,0 +1,34 @@
+{
+  "id": "2026-07-oxidative-stress-genes-pre-eclampsia",
+  "title": "Machine learning selects CPT1A, CYGB and MRPL3 as oxidative stress-related genes in pre-eclampsia",
+  "summary": "WGCNA, LASSO and SVM-RFE on dataset GSE60438 yielded three genes (CPT1A, CYGB, MRPL3) used in a diagnostic model with an AUC of 0.930. Silencing CPT1A alleviated trophoblast dysfunction, lowered ROS and reduced apoptosis under hypoxia/reoxygenation. Results rest on a single public dataset without an independent patient cohort, and only CPT1A was tested functionally.",
+  "field": "medicine",
+  "ai_technology": "WGCNA with LASSO and SVM-RFE for feature gene selection and a diagnostic model",
+  "organization": "Union Hospital",
+  "source_url": "https://doi.org/10.7717/peerj.21572",
+  "source_type": "paper",
+  "publication_date": "2026-07-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Validation split of GSE60438 and CPT1A silencing in hypoxia/reoxygenation-treated trophoblasts.",
+    "unknown": "Clinical diagnostic use; function of CYGB and MRPL3.",
+    "ai_role": "Machine-learning algorithms selected the three feature genes.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.7717/peerj.21572%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.7717/peerj.21572"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2025-09-swi-radiomics-tertiary-lymphoid-structures-hcc",
+  "title": "Interpretable SWI radiomics model predicts tertiary lymphoid structures in hepatocellular carcinoma",
+  "summary": "In 477 retrospectively enrolled patients (290 training, 125 validation, 62 independent validation), a random forest was the best of five machine-learning classifiers on susceptibility-weighted MRI radiomics, with an independent-cohort AUC of 0.771 (95% CI 0.641-0.883), sensitivity 78.6% and specificity 67.6%. SHAP explained the model, and the predicted iTLS+ group had improved time to recurrence. The AUC is modest and centre or time independence and blinding were not confirmed.",
+  "field": "medicine",
+  "ai_technology": "Radiomics with random forest, SVM, XGBoost, logistic regression and KNN, with SHAP interpretation",
+  "organization": "Army Medical University; Southwest Hospital",
+  "source_url": "https://doi.org/10.2147/jhc.s551462",
+  "source_type": "paper",
+  "publication_date": "2025-09-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal validation (n=125) and independent validation (n=62) against a pathology reference.",
+    "unknown": "Centre and time independence of the validation cohort; full text not reviewed.",
+    "ai_role": "Machine-learning classifiers predicted iTLS from MRI radiomics.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2147/jhc.s551462%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.2147/jhc.s551462"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

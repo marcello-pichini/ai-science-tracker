@@ -171184,5 +171184,2891 @@
       "date": "2026-11-26",
       "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; affiliations not looked up. Author affiliations from OpenAlex metadata."
     }
+  },
+  {
+    "id": "2026-10-cytonet-cytology-bladder-lymph-node",
+    "title": "Multitask deep network predicts lymph node metastasis and survival from cytology images",
+    "summary": "CytoNet, a multitask network trained with self-supervised pretraining and supervised fine-tuning on cytology images, predicted lymph node metastasis (AUC 0.831-0.881) and disease-free survival (C index 0.680-0.710) in bladder cancer across cohorts. In cervical cancer it reached AUC 0.847-0.862 for metastasis and C index 0.690-0.709 for survival; in thyroid cancer AUC 0.819-0.855 for metastasis. The multicenter data covered 5273 patients (bladder 1134, cervical 598, thyroid 3541); the authors state that prospective validation is still needed.",
+    "field": "medicine",
+    "ai_technology": "CytoNet multitask deep network (self-supervised pretraining, supervised fine-tuning) on cytology images",
+    "organization": "Sun Yat-sen University; Sun Yat-sen Memorial Hospital",
+    "source_url": "https://doi.org/10.1002/advs.76577",
+    "source_type": "paper",
+    "publication_date": "2026-10-21",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Retrospective multicenter cohorts of bladder, cervical and thyroid cancer; performance reported against single-task models and radiological assessment.",
+      "unknown": "Exact internal versus external split, prospective performance and clinical utility; full text not reviewed.",
+      "ai_role": "Predicts lymph node metastasis and disease-free survival from cytology images",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/advs.76577%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1002/advs.76577"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-09-til-spatial-pan-gi-cancer-outcome",
+    "title": "AI-derived lymphocyte spatial patterns are prognostic across gastrointestinal cancers",
+    "summary": "Computer vision extracted 2236 pathomic features from H&E slides of more than 1700 patients from four sites, and a LASSO Cox model kept the top 9. Low-risk patients had better overall survival than high-risk patients, with hazard ratios of 2.28 in liver, 2.79 in pancreatic, 5.85 in rectal and 1.81 in gastric cancer, and 2.32 in external colorectal validation sets. The features mainly describe spatial relationships between lymphocytes and nearest cancer nuclei; the association is prognostic, not causal.",
+    "field": "medicine",
+    "ai_technology": "Computer-vision nuclei and TIL spatial-feature extraction from whole slide images with LASSO Cox feature selection",
+    "organization": "Case Western Reserve University",
+    "source_url": "https://doi.org/10.1016/j.esmoop.2025.105757",
+    "source_type": "paper",
+    "publication_date": "2025-09-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Retrospective prognostic modeling in more than 1700 patients; external validation in three colorectal cancer sets.",
+      "unknown": "Training sets were internal per cancer type and external validation covered only colorectal cancer; causal or treatment-selection value not shown.",
+      "ai_role": "Extracts pathomic features and selects prognostic ones for survival risk groups",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.esmoop.2025.105757%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1016/j.esmoop.2025.105757"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2023-03-deep-radiomics-sinusitis-recurrence",
+    "title": "Deep learning radiomics predicts recurrence of chronic rhinosinusitis from CT",
+    "summary": "A multitask 3D U-Net-based network segmented the sinuses and produced a deep radiomics signature of recurrence in 265 CT scans from two centers. In the 65-patient external test cohort the signature reached AUC 0.742 versus 0.496 for traditional radiomics, and the nomogram combining it with clinical factors reached AUC 0.842 versus 0.766 for the clinical model. The external cohort is small (14 recurrences) with wide confidence intervals.",
+    "field": "medicine",
+    "ai_technology": "Multitask 3D U-Net-based deep network for sinus segmentation and recurrence prediction",
+    "organization": "Shandong University; Qilu Hospital of Shandong University",
+    "source_url": "https://doi.org/10.1016/j.isci.2023.106527",
+    "source_type": "paper",
+    "publication_date": "2023-03-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Training on 200 patients from center A; independent external test on 65 patients from center B; 5-fold cross-validation mean AUC 0.755.",
+      "unknown": "Performance in larger or prospective cohorts; recurrence prediction only.",
+      "ai_role": "Segments sinuses and derives a deep radiomics signature for recurrence risk",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.isci.2023.106527%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1016/j.isci.2023.106527"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-10-helixwings-enzyme-nmnh-cofactor",
+    "title": "AI-guided screening engineers P450BM3 variants that use a biomimetic cofactor",
+    "summary": "HelixWings combined conformational dynamics and static microenvironment analysis to screen enzyme variants for use with the cheap cofactor NMNH. For P450BM3 it found a variant with 404% higher catalytic efficiency toward cytochrome c under NMNH-supported conditions, and 217% better NMNH utilization was reported for CYP116B46. The authors report 23-fold shorter screening than rational design; deep learning is one step in a pipeline with molecular dynamics and energy ranking.",
+    "field": "chemistry",
+    "ai_technology": "Interpretable CNN (ICNNMD) on molecular dynamics trajectories to identify residues driving NMNH-bound conformational change, followed by saturation mutagenesis ranked by constrained-MD energy",
+    "organization": "Shanghai Jiao Tong University",
+    "source_url": "https://doi.org/10.1016/j.isci.2026.117873",
+    "source_type": "paper",
+    "publication_date": "2026-10-26",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Experimental enzyme kinetics of the top-ranked variants and a second enzyme.",
+      "unknown": "Contribution of the learned model separate from molecular dynamics and energy ranking; the CYP116B46 figure comes from the abstract.",
+      "ai_role": "Identifies residues to mutate in a screening pipeline",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.isci.2026.117873%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1016/j.isci.2026.117873"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-07-xgboost-aki-off-pump-cabg",
+    "title": "Machine learning predicts acute kidney injury after off-pump coronary bypass surgery",
+    "summary": "On 938 off-pump bypass patients (210 with acute kidney injury, 22.39%), XGBoost on baseline and Tsfresh-extracted intraoperative time-series features was the best of the models tried. In external validation of 631 patients it reached AUC 0.982, accuracy 0.916 and precision 0.983; SHAP ranked cystatin C first and NT-proBNP second. The study is retrospective and the very high external AUC calls for prospective confirmation.",
+    "field": "medicine",
+    "ai_technology": "XGBoost with Tsfresh time-series feature extraction and SHAP ranking",
+    "organization": "Jiangsu Province Hospital; Nanjing Medical University",
+    "source_url": "https://doi.org/10.1016/j.jatmed.2026.06.005",
+    "source_type": "paper",
+    "publication_date": "2026-07-29",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Retrospective development at one hospital and external validation in 631 patients (85 with injury) at a second hospital.",
+      "unknown": "Prospective validation and effect on patient outcomes; prediction only.",
+      "ai_role": "Predicts postoperative acute kidney injury risk",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jatmed.2026.06.005%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1016/j.jatmed.2026.06.005"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-cryptosporidium-inhibitors-active-learning",
+    "title": "Active-learning virtual screen finds new Cryptosporidium parvum inhibitors",
+    "summary": "A workflow combining Thompson Sampling, a pharmacophore model and a machine learning classifier screened a subset of 51 million virtual Enamine REAL compounds. Across two campaigns, 20 of 69 tested compounds (29%) were micromolar hits and eight had confirmed activity at or below 21 uM. Testing was in vitro, the hits are analogs of one chemical series, and chemist judgment also guided selection.",
+    "field": "chemistry",
+    "ai_technology": "Thompson Sampling active-learning screen with a pharmacophore filter and a bagging classifier to select compounds",
+    "organization": "Saint Louis University",
+    "source_url": "https://doi.org/10.1021/acsinfecdis.6c00657",
+    "source_type": "paper",
+    "publication_date": "2026-11-01",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Custom-synthesized compounds tested in C. parvum HCT-8 cell assays with EC50 determination across two campaigns.",
+      "unknown": "In vivo efficacy; the publication date differs between Crossref (2026-10-30) and Europe PMC (2026-11-01).",
+      "ai_role": "Selects compounds for synthesis and testing",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1021/acsinfecdis.6c00657%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1021/acsinfecdis.6c00657"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2021-01-warm-cloud-autoconversion-neural-network",
+    "title": "Neural networks give new warm-rain autoconversion and accretion parameterizations",
+    "summary": "A deep feed-forward neural network trained on ARM Azores in situ cloud-probe data yielded parameterizations for autoconversion and accretion with about 15% and 5% uncertainty, outperforming existing ones. The analysis points to drizzle number concentration as a key factor for autoconversion, a variable missing from current parameterizations, and the authors say theory supports this. Testing used a held-out split from the same single campaign.",
+    "field": "climate",
+    "ai_technology": "Deep feed-forward neural network (8 hidden layers, 1024 nodes) followed by symbolic optimization",
+    "organization": "Colorado State University",
+    "source_url": "https://doi.org/10.1029/2020gl091236",
+    "source_type": "paper",
+    "publication_date": "2021-01-23",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Held-out test split (about 4:1, 2.5 million points) from the ARM Azores field campaign.",
+      "unknown": "Performance at other sites or campaigns.",
+      "ai_role": "Predicts autoconversion and accretion rates and reveals the role of drizzle number concentration",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1029/2020gl091236%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1029/2020gl091236"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-mantis-methylation-childhood-brain-tumor",
+    "title": "MANTIS neural network predicts survival and treatment effects in childhood brain tumors",
+    "summary": "MANTIS, a neural network on genome-wide DNA methylation data from 2,786 patients, predicts individualized 10-year survival in medulloblastoma and ependymoma with concordance indices up to 0.80 +/- 0.07, above current clinical indicators. Its treatment-effect estimates identify about 60% of average-risk medulloblastoma patients with no significant survival disadvantage (P = 0.683) on less intensive craniospinal irradiation. The medulloblastoma model was validated in three independent trial cohorts (898 patients); treatment effects derive from retrospective trial data, not randomization by the model.",
+    "field": "medicine",
+    "ai_technology": "MANTIS artificial neural network on DNA methylation and copy-number data",
+    "organization": "Broad Institute; Boston Children's Hospital; Dana-Farber Cancer Institute",
+    "source_url": "https://doi.org/10.1038/s41588-026-02815-4",
+    "source_type": "paper",
+    "publication_date": "2026-11-03",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 3
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Development on 2,786 patients with validation of the medulloblastoma model in three independent trial cohorts (SJMB03, ACNS0331, ACNS0332).",
+      "unknown": "Prospective testing of therapy personalization; ependymoma validation was not reviewed.",
+      "ai_role": "Predicts individualized survival and treatment effects",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41588-026-02815-4%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1038/s41588-026-02815-4"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2020-03-cnn-fundus-age-sex-vascular-conditions",
+    "title": "CNNs predict age and sex from fundus images in hypertension, diabetes and smoking",
+    "summary": "CNN models trained on 219,302 fundus images of healthy participants predicted age with R2 0.92 and mean absolute error 3.06 years in normal test images. Errors were similar in hypertension (3.46 years), diabetes (3.55) and smokers (2.65), but R2 was lower (0.74, 0.75 and 0.86), and sex prediction had AUC above 0.96. The authors interpret this as ageing and vascular changes having different retinal features; the data come from one archive, so this is suggestive.",
+    "field": "medicine",
+    "ai_technology": "Convolutional neural networks predicting age and sex from retinal fundus images",
+    "organization": "Seoul National University; Seoul National University Bundang Hospital; Kangdong Sacred Heart Hospital",
+    "source_url": "https://doi.org/10.1038/s41598-020-61519-9",
+    "source_type": "paper",
+    "publication_date": "2020-03-12",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Four held-out test sets: 24,366 normal, 40,659 hypertension, 14,189 diabetes and 113,510 smoker images.",
+      "unknown": "Independent-site validation; causal interpretation of ageing versus vascular change; full text not reviewed beyond a methods excerpt.",
+      "ai_role": "Predicts age and sex to compare normal ageing with vascular changes",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41598-020-61519-9%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1038/s41598-020-61519-9"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2021-08-lunit-scope-he-adjuvant-chemotherapy-breast",
+    "title": "Deep learning on H&E slides predicts recurrence risk in HR-positive breast cancer",
+    "summary": "Lunit SCOPE was trained on H&E slides from 1343 patients to predict Oncotype DX risk and recurrence. Among 363 patients who received no adjuvant therapy, 104 predicted high risk had significantly lower survival, and predicted risk correlated with proliferation-associated genes. The authors say it identifies early-stage patients likely to benefit from adjuvant chemotherapy; the study is retrospective, single-center, and a formal treatment-interaction test was not located in the material read.",
+    "field": "medicine",
+    "ai_technology": "Lunit SCOPE deep-learning histology analysis of H&E slides",
+    "organization": "Samsung Medical Center; Sungkyunkwan University",
+    "source_url": "https://doi.org/10.1038/s41598-021-96855-x",
+    "source_type": "paper",
+    "publication_date": "2021-08-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Retrospective training with 190 slides held out, a prognosis validation cohort and TCGA cohorts.",
+      "unknown": "Whether chemotherapy benefit is confirmed by an interaction test; effect sizes beyond 104 of 363 were not extracted.",
+      "ai_role": "Predicts Oncotype DX risk and recurrence from H&E images",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41598-021-96855-x%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1038/s41598-021-96855-x"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2024-06-random-forest-cvd-type2-diabetes-korea",
+    "title": "Random forest predicts 3-year cardiovascular disease in Korean type 2 diabetes",
+    "summary": "The best model, a random forest, predicted cardiovascular disease at 3 years with AUROC 0.830 (95% CI 0.818-0.842) in the discovery cohort (n = 12,809; 1,238 cases) and 0.722 (0.660-0.783) in a validation cohort of 2,019 patients from two other hospitals. Creatinine and glycated hemoglobin were the most influential factors. The data are retrospective and external discrimination is moderate.",
+    "field": "medicine",
+    "ai_technology": "Random forest chosen among several hyperparameter-tuned ML models",
+    "organization": "Kyung Hee University; Kyung Hee University Medical Center",
+    "source_url": "https://doi.org/10.1038/s41598-024-63798-y",
+    "source_type": "paper",
+    "publication_date": "2024-06-28",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Validation in a separate two-hospital cohort.",
+      "unknown": "Prospective validation; an earlier JMIR preprint was not checked.",
+      "ai_role": "Predicts 3-year cardiovascular disease",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41598-024-63798-y%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1038/s41598-024-63798-y"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-01-bile-acid-panels-acute-pancreatitis",
+    "title": "Machine learning derives bile acid panels for acute and severe acute pancreatitis",
+    "summary": "In a multicentre cohort (n = 948) with targeted quantification of 63 bile acids, random forest importance ranking and LASSO regression selected a 9-bile-acid diagnostic panel and a 13-bile-acid panel for severe disease. The diagnostic panel gave combined AUC 0.956 for pancreatitis versus controls and 0.890 versus acute cholangitis; the severe-disease panel reached AUC 0.936 in discovery and 0.918 externally. The study is observational and the external set comes from sub-centres of the same network.",
+    "field": "medicine",
+    "ai_technology": "Random forest importance ranking and LASSO regression for bile acid panel selection",
+    "organization": "Affiliated Hospital of North Sichuan Medical College; First Affiliated Hospital of Dalian Medical University",
+    "source_url": "https://doi.org/10.1038/s41746-025-02294-7",
+    "source_type": "paper",
+    "publication_date": "2026-01-29",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Discovery, internal and external validation sets in 948 participants (317 pancreatitis, 53 cholangitis, 578 controls); discovery metabolomics on 126 participants.",
+      "unknown": "Prospective clinical utility; some severe-disease combined metrics were only partly read.",
+      "ai_role": "Selects bile acid biomarker panels",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41746-025-02294-7%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1038/s41746-025-02294-7"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2022-07-carameal-flux-ml-antibiotic-combinations",
+    "title": "Flux-based machine learning predicts antibiotic combination interactions in E. coli",
+    "summary": "A random forest trained on genome-scale metabolic model flux profiles predicted antibiotic synergy (AUROC 0.83) and antagonism (AUROC 0.98) for E. coli across 57 metabolic conditions, based on experimental measurements. Flux entropy was predictive, population flux balance analysis suggested two subpopulations defined by eno, fadB and fabD, and 24 robustly synergistic combinations were nominated. The subpopulation and synergy nominations are model-derived and not all were tested; a 2021 preprint exists whose version was not compared.",
+    "field": "biology",
+    "ai_technology": "Random forest (CARAMeL) trained on genome-scale metabolic model flux profiles",
+    "organization": "University of Michigan",
+    "source_url": "https://doi.org/10.1093/pnasnexus/pgac132",
+    "source_type": "paper",
+    "publication_date": "2022-07-22",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Experimental Biolog-based growth and interaction measurements in E. coli across 57 conditions.",
+      "unknown": "Experimental confirmation of nominated combinations; the M. tuberculosis model was not reviewed.",
+      "ai_role": "Predicts drug interaction outcomes from flux profiles",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1093/pnasnexus/pgac132%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1093/pnasnexus/pgac132"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2020-12-boosted-regression-tree-groundwater-ph-glacial",
+    "title": "Boosted regression trees map groundwater pH in the glacial aquifer system",
+    "summary": "A boosted regression tree model trained on pH from 18,386 wells predicted three-dimensional pH across the glacial aquifer system, with R2 0.60 on held-out data. Carbonate content combined with long flowpaths drives alkaline conditions, and predicted pH above 7.5, linked to arsenic mobilization, is more common than pH below 6 at drinking-water depths. The authors state the model is not meant for precise local estimates; the test split is from the same compiled dataset.",
+    "field": "climate",
+    "ai_technology": "Boosted regression tree including modeled groundwater age and flowpath length as predictors",
+    "organization": "United States Geological Survey",
+    "source_url": "https://doi.org/10.1111/gwat.13063",
+    "source_type": "paper",
+    "publication_date": "2020-12-31",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Held-out testing wells from the compiled dataset, comparing boosted regression tree variants.",
+      "unknown": "Independent-region validation; spatial autocorrelation was not assessed in the excerpt read.",
+      "ai_role": "Predicts three-dimensional pH from hydrogeologic predictors",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1111/gwat.13063%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1111/gwat.13063"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2023-05-eus-ai-gist-risk-stratification",
+    "title": "Deep learning on endoscopic ultrasound images stratifies gastric GIST risk",
+    "summary": "Models built on 1320 endoscopic ultrasound images from two hospitals were tested on 656 images from external cohorts. The four-category risk model had 74.50% accuracy and 55.00% sensitivity on external tumors, and the two-category model for very low-risk GISTs reached 86.25% accuracy and 94.44% sensitivity. The study is retrospective and image-level with modest four-class sensitivity.",
+    "field": "medicine",
+    "ai_technology": "Deep-learning classifier on endoscopic ultrasound images for GIST risk category",
+    "organization": "Sun Yat-sen University; Sixth Affiliated Hospital of Sun Yat-sen University",
+    "source_url": "https://doi.org/10.1177/17562848231177156",
+    "source_type": "paper",
+    "publication_date": "2023-05-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "External validation sets from four other hospitals (656 images).",
+      "unknown": "Prospective and patient-level performance; full text lacked a detailed model description in the review.",
+      "ai_role": "Classifies gastric GIST risk from EUS images",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1177/17562848231177156%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1177/17562848231177156"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2022-12-cforest-active-latent-tuberculosis",
+    "title": "Conditional random forest separates active from latent tuberculosis infection",
+    "summary": "A cforest model on routine laboratory, T-SPOT and lymphocyte data from 892 participants (468 active, 424 latent) reached training AUC 0.995. In an independent hospital cohort of 263 participants it gave sensitivity 92.8% and specificity 89.9%. The two-center retrospective data come from China only.",
+    "field": "medicine",
+    "ai_technology": "Conditional random forest (cforest) on laboratory and T-SPOT data",
+    "organization": "Tongji Hospital; Huazhong University of Science and Technology",
+    "source_url": "https://doi.org/10.1186/s12879-022-07954-7",
+    "source_type": "paper",
+    "publication_date": "2022-12-29",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Independent validation cohort of 263 participants (125 active, 138 latent).",
+      "unknown": "Prospective and other-population validation.",
+      "ai_role": "Classifies active versus latent tuberculosis",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12879-022-07954-7%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s12879-022-07954-7"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-03-random-forest-pertussis-children-risk",
+    "title": "Random forest risk model for pertussis in children",
+    "summary": "A random forest built on features chosen by lasso regression and the Boruta algorithm, from 1085 suspected pertussis patients at 7 centers, reached validation AUC 0.98 and external validation AUC 0.97. The study is retrospective and the numbers are from the abstract-level evidence reviewed.",
+    "field": "medicine",
+    "ai_technology": "Random forest with lasso and Boruta feature selection",
+    "organization": "Kunming Children's Hospital",
+    "source_url": "https://doi.org/10.1186/s12879-025-10797-7",
+    "source_type": "paper",
+    "publication_date": "2025-03-27",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Validation and external datasets from multiple centers.",
+      "unknown": "Prospective performance; details of the external datasets.",
+      "ai_role": "Predicts pertussis risk from routine features",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12879-025-10797-7%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s12879-025-10797-7"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-06-random-forest-ebv-hlh-children",
+    "title": "Random forest on blood counts separates EBV-associated HLH from mononucleosis in children",
+    "summary": "Using blood counts within 24 hours of admission from 4,871 children, a random forest reached AUC 0.993 internally and 0.971 (95% CI 0.949-0.992) in an external validation group of 2,023 patients from a second campus. Prevalence of EBV-HLH differed between campuses (18.29% versus 4.25%). The study is retrospective within one hospital system.",
+    "field": "medicine",
+    "ai_technology": "Random forest chosen among thirteen ML algorithms, interpreted with SHAP",
+    "organization": "Children’s Hospital of Chongqing Medical University",
+    "source_url": "https://doi.org/10.1186/s12879-026-13891-6",
+    "source_type": "paper",
+    "publication_date": "2026-06-27",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "External validation on the second campus of the same hospital.",
+      "unknown": "Prospective or multi-hospital validation.",
+      "ai_role": "Distinguishes EBV-HLH from EBV-IM",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12879-026-13891-6%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s12879-026-13891-6"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2024-02-automl-dnn-asymptomatic-covid-chest-ct",
+    "title": "Automated machine learning identifies asymptomatic COVID-19 carriers on chest CT",
+    "summary": "An H2O AutoML deep neural network trained on 691 images and tuned on 306 reached AUC 0.898 on an independent Suzhou dataset of 178, with sensitivity 0.820 and specificity 0.854. The data are retrospective and the controls came from a healthy population in a different area.",
+    "field": "medicine",
+    "ai_technology": "AutoML (H2O) deep neural network on preprocessed chest CT images",
+    "organization": "First Affiliated Hospital of Soochow University",
+    "source_url": "https://doi.org/10.1186/s12880-024-01211-w",
+    "source_type": "paper",
+    "publication_date": "2024-02-27",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Independent Suzhou test dataset (n = 178).",
+      "unknown": "Prospective performance; effect of differing control populations.",
+      "ai_role": "Classifies asymptomatic carriers from CT",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12880-024-01211-w%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s12880-024-01211-w"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-09-ml-synthetic-mri-breast-mass-radiomics",
+    "title": "Machine learning on synthetic MRI radiomics plus BI-RADS classifies breast masses",
+    "summary": "In 43 lesions from 40 new patients, BI-RADS alone had AUC 0.667, a logistic regression model on synthetic MRI radiomics had AUC 0.707, and an ensemble integrating both reached AUC 0.883 (sensitivity 82.1%, specificity 86.7%). The ensemble AUC was significantly larger than the other two. The test set is small, single-center and retrospective.",
+    "field": "medicine",
+    "ai_technology": "Machine learning (logistic regression) on synthetic MRI radiomics combined with BI-RADS in an ensemble",
+    "organization": "Ehime University",
+    "source_url": "https://doi.org/10.1186/s12880-025-01930-8",
+    "source_type": "paper",
+    "publication_date": "2025-09-29",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Held-out test set of 43 lesions separate from the 199-lesion cross-validation set.",
+      "unknown": "Larger and prospective validation.",
+      "ai_role": "Classifies benign versus malignant breast masses",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12880-025-01930-8%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s12880-025-01930-8"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2024-08-deep-learning-frozen-thyroid-whole-slide",
+    "title": "Deep learning diagnoses intraoperative frozen thyroid lesions on whole slide images",
+    "summary": "A deep learning classifier assigned frozen thyroid sections to five categories and reached test accuracy 0.9459 and AUC 0.9955 on slides from 4409 sections. It also detected 101 papillary microcarcinoma sections and was evaluated on 1388 external whole slide images. Main metrics come from six-fold cross-validation in a retrospective study; the external metrics were not reviewed.",
+    "field": "medicine",
+    "ai_technology": "Deep-learning whole slide image classifier with a two-step cancer and subtype judgment",
+    "organization": "Tsinghua Shenzhen International Graduate School",
+    "source_url": "https://doi.org/10.1186/s12885-024-12849-8",
+    "source_type": "paper",
+    "publication_date": "2024-08-29",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Six-fold cross-validation, 101 papillary microcarcinoma sections and an external dataset of 1388 slides.",
+      "unknown": "External-set performance and prospective use during surgery.",
+      "ai_role": "Classifies frozen thyroid lesions",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12885-024-12849-8%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s12885-024-12849-8"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2022-02-radiomic-immunoscore-gastric-cancer",
+    "title": "Radiomic ImmunoScore from CT estimates tumor microenvironment in gastric cancer",
+    "summary": "An SVM learned an immune score from CT radiomics (Radiomic ImmunoScore); it gave AUC 0.85 for the immune score in the TCGA cohort and AUC 0.72 for prognosis with HR 2.72 in the independent Nanfang cohort. A nomogram built on it outperformed TNM staging. The study is retrospective with moderate validation AUC.",
+    "field": "medicine",
+    "ai_technology": "Support vector machine on CT radiomic features",
+    "organization": "Nanfang Hospital; Southern Medical University",
+    "source_url": "https://doi.org/10.1186/s12967-022-03298-7",
+    "source_type": "paper",
+    "publication_date": "2022-02-21",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Independent Nanfang Hospital validation cohort.",
+      "unknown": "Prospective validation and adjuvant chemotherapy benefit.",
+      "ai_role": "Estimates the immune score from imaging",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12967-022-03298-7%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s12967-022-03298-7"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-10-samp-score-prosenescence-compound",
+    "title": "SAMP-Score, a morphology-based classifier, identifies a pro-senescence compound",
+    "summary": "A stacked ensemble classifier scoring cell-morphology profiles called senescence induction in a high-throughput screen of senescence-marker-positive cancer cells. It selected QM5928, which induced a senescence response in MB-468, BT549 and HeLa cells; individual models exceeded 90% accuracy, and the meta-model PPV was 58.7%. Training labels came from a HeLa siRNA screen, results are in vitro, and one compound was validated.",
+    "field": "biology",
+    "ai_technology": "Stacked ensemble of logistic, lasso, elastic net, SVM, random forest, MDA and neural network models scoring cell morphology",
+    "organization": "Queen Mary University of London; Blizard Institute",
+    "source_url": "https://doi.org/10.18632/aging.206333",
+    "source_type": "paper",
+    "publication_date": "2025-10-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Dose-response confirmation of QM5928 in several cancer cell lines after the screen.",
+      "unknown": "Mechanism, in vivo activity and false-hit rate.",
+      "ai_role": "Scores compounds by cell morphology to select hits",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.18632/aging.206333%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.18632/aging.206333"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-03-ai-pvr-insight-proliferative-vitreoretinopathy",
+    "title": "AI-PVR Insight deep learning diagnoses proliferative vitreoretinopathy from imaging",
+    "summary": "TwinsSVT and DenseNet-121 extracted features from B-scan ultrasound, OCT and ultra-widefield images of 1,700 eyes, with MLP or SVM classifiers on fused features. PVR identification reached AUC 0.976 internally and 0.971 on a 213-eye external test set, and postoperative risk prediction AUC was above 0.827. The study is retrospective across two hospitals with no prospective or reader-impact evidence.",
+    "field": "medicine",
+    "ai_technology": "TwinsSVT and DenseNet-121 feature extractors with PCA, feature fusion and MLP or SVM classifiers",
+    "organization": "Nanchang University; Jiangxi Provincial People's Hospital",
+    "source_url": "https://doi.org/10.21037/qims-24-1644",
+    "source_type": "paper",
+    "publication_date": "2025-03-28",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Internal and independent external test sets from a second hospital.",
+      "unknown": "Prospective performance and effect on clinicians.",
+      "ai_role": "Identifies, grades and predicts postoperative PVR risk",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21037/qims-24-1644%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.21037/qims-24-1644"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-03-trans-cnn-hr-vwi-stroke-recurrence",
+    "title": "Trans-CNN predicts stroke recurrence from vessel wall MRI",
+    "summary": "ResNet50 and DenseNet169 feature extractors with Transformer attention (Trans-CNN) on culprit plaque images from 363 patients reached test AUC 0.912 (95% CI 0.839-0.969), accuracy 0.858 and sensitivity 0.880 in an external center of 109 patients. Training AUC was 0.951 in 254 patients. The test set had only 25 recurrences and the study is retrospective.",
+    "field": "medicine",
+    "ai_technology": "ResNet50 and DenseNet169 CNNs with Transformer attention ensemble (Trans-CNN) on HR-VWI",
+    "organization": "First Affiliated Hospital of Xinxiang Medical University",
+    "source_url": "https://doi.org/10.21037/qims-24-1723",
+    "source_type": "paper",
+    "publication_date": "2025-03-28",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Independent external test set from a second center.",
+      "unknown": "Prospective validation and clinical utility.",
+      "ai_role": "Predicts stroke recurrence from plaque imaging",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21037/qims-24-1723%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.21037/qims-24-1723"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2024-07-negspa-ai-hla-b27-negative-axspa",
+    "title": "NegSpA-AI deep learning aids diagnosis of HLA-B27-negative axial spondyloarthritis",
+    "summary": "A deep learning network on sacroiliac joint MRI and clinical features reached AUC 0.878 (internal, n = 72), 0.870 (external, n = 54) and 0.815 (prospective, n = 87), above a junior rheumatologist. Assistance raised junior readers' accuracy by 7.4-11.5%. Training was retrospective with small test sets and wide confidence intervals at two hospitals in China.",
+    "field": "medicine",
+    "ai_technology": "NegSpA-AI deep learning network on multi-sequence MRI and clinical features",
+    "organization": "Third Affiliated Hospital of Southern Medical University",
+    "source_url": "https://doi.org/10.21037/qims-24-729",
+    "source_type": "paper",
+    "publication_date": "2024-07-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Internal, external and prospective test sets plus a six-reader study.",
+      "unknown": "Reader-gain confidence intervals and larger validation; full text not reviewed.",
+      "ai_role": "Differentiates axSpA from non-axSpA",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21037/qims-24-729%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.21037/qims-24-729"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-05-fibrox-xgboost-masld-advanced-fibrosis",
+    "title": "FibroX XGBoost model detects advanced fibrosis in MASLD",
+    "summary": "XGBoost trained on 1,487 NHANES 2017-2020 adults reached AUROC 0.97 versus 0.62 for FIB-4 for advanced fibrosis; in 337 biopsy-confirmed patients it had AUROC 0.84 and outperformed FIB-4. In NHANES III (4,276 participants, up to 30 years) it predicted mortality (C-statistic 0.80). Training labels came from noninvasive screening plus elastography rather than biopsy, so the 0.97 figure is optimistic.",
+    "field": "medicine",
+    "ai_technology": "XGBoost (FibroX) with SHAP explanation",
+    "organization": "Euclid University; Yale University; VA Connecticut Healthcare System",
+    "source_url": "https://doi.org/10.21037/tgh-2026-0017",
+    "source_type": "paper",
+    "publication_date": "2026-05-28",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "External biopsy-confirmed cohort of 337 and NHANES III mortality cohort of 4,276.",
+      "unknown": "FIB-4 performance in the biopsy cohort; full text not reviewed.",
+      "ai_role": "Detects advanced fibrosis and prognosticates outcomes",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21037/tgh-2026-0017%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.21037/tgh-2026-0017"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2022-02-xgboost-oxygen-therapy-covid-japan",
+    "title": "XGBoost predicts need for oxygen therapy in early COVID-19 in Japan",
+    "summary": "The best of seven machine learning models, XGBoost, used routine data from 396 patients; internal c-statistic was 0.92 versus 0.69 for A-DROP. On a temporal external set of 728 patients it reached 0.88 versus 0.69. The study is retrospective across 11 hospitals in one prefecture early in the pandemic.",
+    "field": "medicine",
+    "ai_technology": "XGBoost selected among seven ML models",
+    "organization": "University of Fukui Hospital",
+    "source_url": "https://doi.org/10.3389/fmed.2022.846525",
+    "source_type": "paper",
+    "publication_date": "2022-02-23",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Temporal external validation set (n = 728) and 20% internal test set.",
+      "unknown": "Geographic validation.",
+      "ai_role": "Predicts oxygen therapy need",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fmed.2022.846525%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.3389/fmed.2022.846525"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-05-ml-multimodal-mri-vascular-cognitive-impairment",
+    "title": "Machine learning detects vascular cognitive impairment from clinical data and MRI",
+    "summary": "Five algorithms (XGBoost, SVM, logistic regression, Gaussian naive Bayes, random forest) with SHAP-based reduction gave an eight-variable model with AUC 0.956 internally and 0.919 externally in 82 participants. DTI markers along the lateral cholinergic pathway were most informative. The cohorts are retrospective, regional and cross-sectional.",
+    "field": "medicine",
+    "ai_technology": "XGBoost, SVM, logistic regression, Gaussian naive Bayes and random forest with SHAP",
+    "organization": "Zhongnan Hospital of Wuhan University",
+    "source_url": "https://doi.org/10.3389/fneur.2025.1505739",
+    "source_type": "paper",
+    "publication_date": "2025-05-29",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Independent external dataset of 82 participants.",
+      "unknown": "Longitudinal and larger external validation.",
+      "ai_role": "Detects vascular cognitive impairment",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fneur.2025.1505739%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.3389/fneur.2025.1505739"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-05-xgboost-nomogram-ptmc-central-lymph-node",
+    "title": "XGBoost-selected nomogram predicts central node metastasis in thyroid microcarcinoma",
+    "summary": "In 503 patients, XGBoost with SHAP selected five predictors (tumor-capsule distance, microcalcifications, age, BMI, tumor diameter) for a logistic nomogram with AUC 0.862, 0.836 and 0.875 on training, validation and test sets and 0.870 externally (n = 101). D2-40 staining showed higher pericapsular lymphatic density supporting tumor-capsule distance. ML is used only for feature selection and the final model is logistic regression.",
+    "field": "medicine",
+    "ai_technology": "XGBoost with SHAP feature selection feeding a logistic regression nomogram",
+    "organization": "First Affiliated Hospital of Wannan Medical College",
+    "source_url": "https://doi.org/10.3389/fonc.2026.1806758",
+    "source_type": "paper",
+    "publication_date": "2026-05-28",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "External cohort of 101 and D2-40 immunohistochemistry.",
+      "unknown": "Larger and prospective validation.",
+      "ai_role": "Selects predictors for the nomogram",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fonc.2026.1806758%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.3389/fonc.2026.1806758"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-08-mlp-nine-protein-serum-breast-cancer",
+    "title": "Multi-layer perceptron on a nine-protein serum panel detects breast cancer",
+    "summary": "A multi-layer perceptron derived cutoffs for a nine-protein serum mass spectrometry panel; in 465 samples (222 breast cancer, 243 healthy) sensitivity was 83.3%, specificity 88.1%, accuracy 85.8% and AUC 0.8526, versus 77.0% accuracy for the three-protein signature. Samples are retrospective case-control and the algorithm was fixed from a development cohort of 502.",
+    "field": "medicine",
+    "ai_technology": "Multi-layer perceptron binary classification neural network on nine serum proteins",
+    "organization": "National Cancer Center",
+    "source_url": "https://doi.org/10.3390/cancers17172832",
+    "source_type": "paper",
+    "publication_date": "2025-08-29",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Separate validation set of 465 serum samples.",
+      "unknown": "Prospective screening performance.",
+      "ai_role": "Derives classification cutoffs",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/cancers17172832%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.3390/cancers17172832"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2023-08-ml-rif-endometrial-metabolic-biomarkers",
+    "title": "Machine learning selects metabolic biomarker genes for recurrent implantation failure",
+    "summary": "LASSO, random forest and SVM-RFE selected eight genes (SRD5A1, POLR3E, PPA2, PAPSS1, PRUNE, CA12, PDE6D, RBKS) from 109 metabolism-related genes in public data (70 RIF, 99 controls), AUC 0.902, and two metabolic subtypes were proposed. RT-qPCR in 10 patients versus 10 controls and a 20 versus 20 ROC cohort (AUC 0.867) supported them. Validation cohorts are small and associations only.",
+    "field": "biology",
+    "ai_technology": "LASSO, random forest and SVM-RFE gene selection",
+    "organization": "Peking University People's Hospital",
+    "source_url": "https://doi.org/10.3390/ijms241713488",
+    "source_type": "paper",
+    "publication_date": "2023-08-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "RT-qPCR in 10 RIF and 10 control endometria and an independent 20 versus 20 cohort.",
+      "unknown": "Larger validation and mechanism.",
+      "ai_role": "Selects characteristic genes",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/ijms241713488%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.3390/ijms241713488"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2024-10-melatonin-genes-ischemic-stroke",
+    "title": "Machine learning screens melatonin-related candidate biomarker genes in ischemic stroke",
+    "summary": "Using GEO transcriptome data, SVM-RFE, random forest and LASSO screened melatonin-related candidate genes, and four key genes (ADM, PTGS2, MMP9, VCAN) were proposed as stroke biomarkers. An XGBoost model on eight genes reached an AUC of 0.806 (95% CI 0.778-0.833), with validation GEO datasets GSE58294 and GSE174574. qPCR in a rat ischemic stroke model found all four genes upregulated. Public microarray data and a rat model only; no human clinical cohort and a moderate AUC.",
+    "field": "medicine",
+    "ai_technology": "SVM-RFE, random forest and LASSO for candidate gene selection; XGBoost diagnostic model on 8 genes",
+    "organization": "Jilin University",
+    "source_url": "https://doi.org/10.3390/ijms252111620",
+    "source_type": "paper",
+    "publication_date": "2024-10-29",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Four genes in validation GEO datasets and by qPCR in blood of a rat ischemic stroke model.",
+      "unknown": "Whether the genes work as clinical biomarkers in humans; no human cohort was tested.",
+      "ai_role": "Machine-learning selectors chose candidate genes and an XGBoost model assessed their diagnostic value.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/ijms252111620%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.3390/ijms252111620"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-10-pik3c2a-pulmonary-hypertension",
+    "title": "Machine learning screening nominates PIK3C2A as an angiogenesis-related molecule in pulmonary hypertension",
+    "summary": "Logistic regression, random forest and LASSO identified four model genes (DCN, DKK1, PIK3C2A, UNC5B) among angiogenesis-related differentially expressed genes in GSE15197; the angiogenesis score reached an AUC of 0.949. PIK3C2A was downregulated and enriched in endothelial cells, and qRT-PCR confirmed its downregulation in MCT and SuHx rat lungs and pulmonary arteries. Datasets are small and public, and the rat qPCR confirms expression only.",
+    "field": "medicine",
+    "ai_technology": "Logistic regression, random forest and LASSO selecting model genes from transcriptomic data",
+    "organization": "Ningxia Medical University",
+    "source_url": "https://doi.org/10.3390/ijms27219421",
+    "source_type": "paper",
+    "publication_date": "2026-10-22",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Cross-species dataset GSE1909 and qRT-PCR of PIK3C2A in two rat pulmonary hypertension models.",
+      "unknown": "Whether PIK3C2A has a causal or diagnostic role in patients; per-gene discrimination was not independently reported.",
+      "ai_role": "Three machine-learning algorithms selected the model genes, among them PIK3C2A.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/ijms27219421%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.3390/ijms27219421"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2023-12-biomarkers-spinal-cord-injury-wgcna-ml",
+    "title": "WGCNA and machine learning screen three blood biomarker genes for spinal cord injury",
+    "summary": "LASSO logistic regression and SVM-RFE together with WGCNA selected ANO10, BST1 and ZFP36L2 from spinal cord injury expression data; all three had AUC above 0.96 in GSE151371. In peripheral blood qPCR from 10 patients and 10 controls, ANO10 and BST1 were higher and ZFP36L2 lower in spinal cord injury, with AUCs of 0.793, 0.810 and 0.870. The clinical validation cohort is very small and the public-data AUCs are likely optimistic.",
+    "field": "medicine",
+    "ai_technology": "LASSO logistic regression and SVM-RFE for biomarker gene selection",
+    "organization": "First Affiliated Hospital of Guangxi Medical University",
+    "source_url": "https://doi.org/10.4103/1673-5374.391306",
+    "source_type": "paper",
+    "publication_date": "2023-12-21",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Three genes by qPCR in peripheral blood of 10 spinal cord injury patients and 10 controls.",
+      "unknown": "Diagnostic value in larger independent cohorts.",
+      "ai_role": "LASSO and SVM-RFE selected the three candidate genes.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.4103/1673-5374.391306%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.4103/1673-5374.391306"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2024-09-sphingolipids-paclitaxel-neuropathy",
+    "title": "Machine learning and cell assays implicate sphinganine-1-phosphate in paclitaxel-induced neuropathy",
+    "summary": "Lipidomics of 255 lipid mediators in blood of 31 breast cancer patients before and after paclitaxel was analysed with supervised machine learning, which found 27 lipids that classified pre- versus post-therapy samples with a median balanced accuracy of up to 90%. The top hit, sphinganine-1-phosphate (SA1P), induced calcium transients in sensory neurons via TRPV1 and sphingosine-1-phosphate receptors and differed between patients with and without neuropathy. The cohort is small and the neuropathy link is preliminary.",
+    "field": "medicine",
+    "ai_technology": "Supervised machine-learning classifiers with feature selection on blood lipid mediators",
+    "organization": "Goethe University Frankfurt; Fraunhofer Institute for Translational Medicine and Pharmacology",
+    "source_url": "https://doi.org/10.7554/elife.91941",
+    "source_type": "paper",
+    "publication_date": "2024-09-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Held-out validation subset before feature selection; calcium imaging of SA1P in sensory neurons.",
+      "unknown": "Whether SA1P contributes to neuropathy in patients; specific algorithms were not confirmed in the reviewed material.",
+      "ai_role": "Machine-learning feature selection pointed to SA1P among 27 paclitaxel-regulated lipids.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.7554/elife.91941%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.7554/elife.91941"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-07-oxidative-stress-genes-pre-eclampsia",
+    "title": "Machine learning selects CPT1A, CYGB and MRPL3 as oxidative stress-related genes in pre-eclampsia",
+    "summary": "WGCNA, LASSO and SVM-RFE on dataset GSE60438 yielded three genes (CPT1A, CYGB, MRPL3) used in a diagnostic model with an AUC of 0.930. Silencing CPT1A alleviated trophoblast dysfunction, lowered ROS and reduced apoptosis under hypoxia/reoxygenation. Results rest on a single public dataset without an independent patient cohort, and only CPT1A was tested functionally.",
+    "field": "medicine",
+    "ai_technology": "WGCNA with LASSO and SVM-RFE for feature gene selection and a diagnostic model",
+    "organization": "Union Hospital",
+    "source_url": "https://doi.org/10.7717/peerj.21572",
+    "source_type": "paper",
+    "publication_date": "2026-07-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Validation split of GSE60438 and CPT1A silencing in hypoxia/reoxygenation-treated trophoblasts.",
+      "unknown": "Clinical diagnostic use; function of CYGB and MRPL3.",
+      "ai_role": "Machine-learning algorithms selected the three feature genes.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.7717/peerj.21572%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.7717/peerj.21572"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-09-ctcf-fxn-axis-glaucoma",
+    "title": "Machine learning identifies FXN and a CTCF-FXN axis in primary open-angle glaucoma",
+    "summary": "WGCNA with LASSO regression and SVM-RFE (discovery set GSE9963) identified the oxidative stress-related gene FXN, which was down-regulated in glaucoma samples with diagnostic value. FXN fell in an H2O2 R28 cell model, and overexpression improved cell viability and reduced apoptosis and ROS; CTCF was shown by ChIP to regulate FXN. Public datasets and a cell-line model only, and diagnostic metrics were not read.",
+    "field": "medicine",
+    "ai_technology": "LASSO regression and SVM-RFE with WGCNA for candidate gene selection",
+    "organization": "Second Affiliated Hospital of Xi'an Jiaotong University",
+    "source_url": "https://doi.org/10.1007/s00109-026-02717-2",
+    "source_type": "paper",
+    "publication_date": "2026-09-28",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Other GEO datasets as validation and in vitro oxidative stress and rescue experiments in R28 cells.",
+      "unknown": "Behaviour in patients or animal models; diagnostic metrics were not read.",
+      "ai_role": "LASSO and SVM-RFE selected FXN from candidate oxidative-stress genes.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s00109-026-02717-2%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1007/s00109-026-02717-2"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2022-12-bone-metastasis-origin-pathology-deep-learning",
+    "title": "Deep learning predicts the origin of bone metastatic cancer from H&E slides",
+    "summary": "A regional multiple-instance learning model trained on 1041 cases from eight hospitals (26,431 regions of interest) reached top-1 and top-3 accuracy of 91.35% and 97.75% within cohort and 97.44% top-3 in an external cohort. On 175 unknown-origin cases, top-1 and top-3 consistency with immunohistochemistry was 83.90% and 94.33%. Retrospective; IHC agreement is not histologic ground truth.",
+    "field": "medicine",
+    "ai_technology": "Regional multiple-instance deep learning on H&E whole-slide regions",
+    "organization": "Tsinghua Shenzhen International Graduate School",
+    "source_url": "https://doi.org/10.1016/j.ebiom.2022.104426",
+    "source_type": "paper",
+    "publication_date": "2022-12-26",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Ten-fold cross-validation, an external cohort and consistency with IHC on 175 unknown-origin cases.",
+      "unknown": "Prospective clinical benefit; split level and external cohort provenance were not read.",
+      "ai_role": "Deep learning predicted the primary site from H&E images alone.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.ebiom.2022.104426%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1016/j.ebiom.2022.104426"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2023-09-alzheimer-trajectory-deep-learning-mr",
+    "title": "Deep learning identifies Alzheimer's disease progression patterns, with Mendelian randomization",
+    "summary": "A deep learning model jointly predicted time-to-conversion and clustered subgroups along the cognitively normal to MCI to AD dementia trajectory in ADNI (1370 participants). The patterns had different progression rates, for example CN to MCI hazard ratio 3.51, and were externally validated in AIBL (233 participants); Mendelian randomization was used for causal inference. External subgroups are small, covariates were merged and imputed, and an earlier SSRN preprint (2023-07-03) was not checked, so an earlier public date is possible.",
+    "field": "medicine",
+    "ai_technology": "Deep learning model for joint time-to-conversion prediction and clustering",
+    "organization": "Zhejiang University",
+    "source_url": "https://doi.org/10.1016/j.eclinm.2023.102247",
+    "source_type": "paper",
+    "publication_date": "2023-09-28",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "ADNI (1370) design and validation, AIBL (233) external validation and Mendelian randomization.",
+      "unknown": "Clinical validity of the patterns; the earlier preprint version was not checked.",
+      "ai_role": "Deep learning clustered progression subgroups and predicted time-to-conversion.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.eclinm.2023.102247%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1016/j.eclinm.2023.102247"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2024-04-bone-metastasis-model-nsclc-serum",
+    "title": "Machine learning model for early bone metastasis diagnosis in non-small cell lung cancer",
+    "summary": "Six machine-learning models on routine serum indicators in 664 stage IV NSCLC patients were compared, and a random forest on 11 selected indicators was best. It reached an AUC of 0.98 (0.95-0.99) on internal and 0.97 (0.94-0.99) on external validation (113 patients) and also predicted bone metastasis during follow-up of 316 patients. Possible overlap between external and prospective patients and the timing of model locking were not confirmed; single-region Chinese cohorts.",
+    "field": "medicine",
+    "ai_technology": "Random forest (best of six machine-learning models) on serum indicators",
+    "organization": "Shanghai Jiao Tong University; Shanghai Sixth People's Hospital",
+    "source_url": "https://doi.org/10.1016/j.eclinm.2024.102617",
+    "source_type": "paper",
+    "publication_date": "2024-04-26",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Derivation cohort of 664, external cohort of 113 and follow-up of 316 patients for at least two years.",
+      "unknown": "Whether the model was frozen before the follow-up cohort; generalisability beyond the cohorts.",
+      "ai_role": "Machine learning built the diagnostic model from serum indicators.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.eclinm.2024.102617%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1016/j.eclinm.2024.102617"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2024-05-huntington-progression-subtypes-vader",
+    "title": "Deep clustering identifies progression subtypes in Huntington's disease",
+    "summary": "Multisymptom trajectories from Enroll-HD were aligned and clustered with VaDER (variational deep embedding with recurrence), giving two subtypes: stable (n=7122) and rapidly progressive (n=411), which correlated with CAG length and cognitive impairment. A model predicted the subtype from first-visit data, with an independent validation set of pre-manifest patients (n=372). Observational registry data; no causal claim.",
+    "field": "medicine",
+    "ai_technology": "VaDER deep clustering of aligned trajectories and a learned subtype-prediction model",
+    "organization": "Fraunhofer Institute for Algorithms and Scientific Computing",
+    "source_url": "https://doi.org/10.1007/s13167-024-00368-2",
+    "source_type": "paper",
+    "publication_date": "2024-05-28",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Independent validation set of pre-manifest patients' manifest-phase data.",
+      "unknown": "Prognostic model metrics were not read; clinical utility.",
+      "ai_role": "Deep-learning clustering defined the subtypes.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s13167-024-00368-2%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1007/s13167-024-00368-2"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2020-07-multiple-sclerosis-stages-blood-transcriptome",
+    "title": "Machine learning infers multiple sclerosis stages from the blood transcriptome",
+    "summary": "Classifiers built on PBMC transcriptomic probes from 313 individuals separated MS from non-MS (139 probes, 94.3% sensitivity, 87.5% precision), CIS (overall accuracy 89.9%) and progressive from relapsing-remitting MS (83.3% sensitivity, 93.8% precision). Nested cross-validation in training cohorts was followed by independent validation cohorts. Public microarray data, retrospective, and some stage classifiers have suboptimal sensitivity.",
+    "field": "medicine",
+    "ai_technology": "ADAboost-FT and other machine-learning classifiers (including random forest) on PBMC transcriptomes",
+    "organization": "IRCCS Ospedale San Raffaele; IRCCS San Raffaele Roma",
+    "source_url": "https://doi.org/10.1016/j.xcrm.2020.100053",
+    "source_type": "paper",
+    "publication_date": "2020-07-21",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Nested cross-validation and independent validation cohorts.",
+      "unknown": "Clinical-grade performance in prospective use.",
+      "ai_role": "Machine-learning classifiers inferred MS state and stage from transcriptomes.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.xcrm.2020.100053%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1016/j.xcrm.2020.100053"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2021-09-lunar-shadowed-regions-deep-learning",
+    "title": "Deep learning denoises LRO images of lunar permanently shadowed regions",
+    "summary": "HORUS, a two-stage deep neural network (DestripeNet and PhotonNet), post-processes LRO NAC images of permanently shadowed regions and reveals boulders and craters down to 3 m at about 1.5 m/pixel, with no evidence of surface frost or near-surface ice. It was checked on synthetic data and by cross-comparison of sunlit and shadowed regions and of multiple images. The no-ice finding is an absence of evidence at NAC resolution; an earlier preprint was not checked.",
+    "field": "astronomy",
+    "ai_technology": "HORUS two-stage deep neural network (DestripeNet and PhotonNet) for image denoising",
+    "organization": "Max Planck Institute for Solar System Research",
+    "source_url": "https://doi.org/10.1038/s41467-021-25882-z",
+    "source_type": "paper",
+    "publication_date": "2021-09-23",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Synthetic-data tests, sunlit versus shadowed cross-comparison and cross-comparison of multiple images.",
+      "unknown": "Presence of ice below the resolution limit; any earlier preprint date.",
+      "ai_role": "Deep learning removed noise and revealed shadowed terrain.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41467-021-25882-z%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1038/s41467-021-25882-z"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-01-acaca-r-loop-ccrcc",
+    "title": "Machine learning prioritises ACACA among R-loop genes in clear cell renal cell carcinoma",
+    "summary": "Linear machine-learning prognostic models over 44 R-loop-related genes in public ccRCC cohorts prioritised ACACA, whose R-loop activity was higher in advanced disease and linked with poorer outcomes. In vitro and xenograft experiments showed that ACACA promoted proliferation and migration and suppressed apoptosis, with reduced R-loop accumulation and enhanced fatty-acid metabolism. Machine learning is one of several lines of evidence and wet-lab sample sizes were not read.",
+    "field": "medicine",
+    "ai_technology": "Elastic net (best of several linear machine-learning algorithms) prognostic modelling",
+    "organization": "Affiliated Hospital of Nantong University",
+    "source_url": "https://doi.org/10.1038/s41698-026-01319-y",
+    "source_type": "paper",
+    "publication_date": "2026-01-31",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Pooled hazard ratio above 1 across public cohorts plus in vitro and xenograft experiments.",
+      "unknown": "Wet-lab sample sizes; patient-level clinical use.",
+      "ai_role": "Elastic net models ranked ACACA as the dominant R-loop-related gene.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41698-026-01319-y%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1038/s41698-026-01319-y"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-functional-connectome-cognitive-decline",
+    "title": "A machine-learning connectome separates SuperAgers from Alzheimer's disease and tracks cognitive vulnerability",
+    "summary": "A sparse SVM on resting-state fMRI connectivity defined the Alzheimer's Resilience-Vulnerability Connectome, which distinguished SuperAgers from AD (AUC 0.85, N=290) and replicated in N=143. In cognitively unimpaired adults, AD-like individuals showed faster cognitive decline, greater amyloid-beta accumulation and higher conversion risk. The AUC comes from cross-validation; observational imaging, and two GWAS loci (CLYBL, FRMD6) are exploratory.",
+    "field": "medicine",
+    "ai_technology": "Sparse support vector machine on regional functional connectivity",
+    "organization": "University of California, Los Angeles; Lehigh University",
+    "source_url": "https://doi.org/10.1126/sciadv.aed9351",
+    "source_type": "paper",
+    "publication_date": "2026-11-04",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "10-fold cross-validation in the discovery cohort (N=290), independent replication (N=143) and longitudinal outcome analyses.",
+      "unknown": "Causal relevance of the connectome and the exploratory GWAS loci.",
+      "ai_role": "The SVM classifier weights defined the connectome.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1126/sciadv.aed9351%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1126/sciadv.aed9351"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2021-09-cholangiocarcinoma-phosphoproteome-druml",
+    "title": "Machine learning ranks drugs from cholangiocarcinoma phosphoproteomes",
+    "summary": "Phosphoproteomes of 13 primary cholangiocarcinoma tumours with matched tissue and 7 cell lines (over 13,000 phosphorylation sites) were analysed with DRUML (Drug Ranking Using Machine Learning), which ranked HDAC inhibitors (belinostat, CAY10603) and PI3K inhibitors highly. The rankings were confirmed in cholangiocarcinoma cell-line models. Small cohort, proof of concept, cell lines only, and effect sizes were not read.",
+    "field": "medicine",
+    "ai_technology": "DRUML (Drug Ranking Using Machine Learning) on phosphoproteomic profiles",
+    "organization": "King's College London; Foundation for Liver Research; King's College Hospital",
+    "source_url": "https://doi.org/10.1158/0008-5472.can-21-0955",
+    "source_type": "paper",
+    "publication_date": "2021-09-22",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Computational drug rankings tested in cholangiocarcinoma cell lines.",
+      "unknown": "Effect sizes; activity in patients; full text not reviewed.",
+      "ai_role": "DRUML ranked inhibitors from patient phosphoproteomes.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1158/0008-5472.can-21-0955%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1158/0008-5472.can-21-0955"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2023-08-atherosclerosis-proteomic-atlas-signature",
+    "title": "Proteomic atlas of carotid plaques with a machine-learning prognostic protein signature",
+    "summary": "Proteomics of 219 carotid endarterectomy samples from 120 patients defined inflammation and calcification signatures, and multiobjective evolutionary feature selection feeding an SVM found a four-protein signature (CNN1, PROC, SERPH1, CSPG2/versican) predicting cardiovascular mortality, AUC 75.0% in discovery and 67.5% in 200 Athero-Express patients. Targeted proteomics validated the signatures. Validation AUC is modest, the data are observational, and machine learning is one part of the atlas.",
+    "field": "medicine",
+    "ai_technology": "Multiobjective evolutionary feature selection with a support vector machine",
+    "organization": "King's College London",
+    "source_url": "https://doi.org/10.1161/circresaha.123.322590",
+    "source_type": "paper",
+    "publication_date": "2023-08-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Independent Athero-Express cohort (200 patients) and targeted proteomics (PRM) of signatures.",
+      "unknown": "Clinical use of the signature.",
+      "ai_role": "Feature selection and SVM defined the minimal prognostic signature.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1161/circresaha.123.322590%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1161/circresaha.123.322590"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-06-leprosy-reversal-reaction-antimicrobial-genes",
+    "title": "Machine learning predicts antimicrobial proteins in leprosy reversal-reaction skin lesions",
+    "summary": "RNA-seq of paired skin biopsies from 9 leprosy patients before and at reversal reaction showed a 64-gene antimicrobial signature, and a machine-learning classifier predicting membrane-permeabilizing proteins selected 28 genes. S100A7, S100A8, CCL17 and CCL19 showed antimicrobial activity against M. leprae, with membrane damage on scanning electron microscopy. Only 9 patients; classifier name, held-out performance and effect sizes were not read.",
+    "field": "medicine",
+    "ai_technology": "Machine-learning classifier predicting membrane-permeabilizing proteins",
+    "organization": "University of California, Los Angeles",
+    "source_url": "https://doi.org/10.1172/jci190736",
+    "source_type": "paper",
+    "publication_date": "2025-06-26",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "In vitro assays in M. leprae-infected macrophages and axenic cultures, and scanning electron microscopy.",
+      "unknown": "Classifier performance; in vivo relevance; full text not reviewed.",
+      "ai_role": "A machine-learning classifier prioritised candidate antimicrobial genes.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1172/jci190736%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1172/jci190736"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2023-09-cfdna-methylation-crc-colonsecure",
+    "title": "Machine-learning cfDNA methylation blood test for colorectal cancer screening in a high-risk population",
+    "summary": "ColonSecure combines 149 hypermethylated cfDNA markers, chosen with Boruta feature selection, in a classifier trained on 196 CRC patients and 200 controls. It detected 89 of 103 colonoscopy-confirmed cancers (sensitivity 86.4%, AUROC 0.956), above CEA, CRP and CA19-9 (45.6%, 39.8%, 25.2%), in a prospective cohort of 3493 high-risk individuals. This is a letter in a single-region high-risk population, and whether the final model was frozen before the prospective cohort is not stated.",
+    "field": "medicine",
+    "ai_technology": "Boruta feature selection and machine-learning classifiers (glmnet, RF, SVM, XGBoost) on cfDNA methylation",
+    "organization": "Chinese Academy of Medical Sciences & Peking Union Medical College; Cancer Hospital of Chinese Academy of Medical Sciences",
+    "source_url": "https://doi.org/10.1186/s12943-023-01866-z",
+    "source_type": "paper",
+    "publication_date": "2023-09-28",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Held-out test set and a prospective cohort of 3493 high-risk individuals.",
+      "unknown": "Final model type and its freezing before the prospective cohort.",
+      "ai_role": "Machine learning selected markers and built the classifier.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12943-023-01866-z%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s12943-023-01866-z"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2021-11-mnp-microglia-toxicity-glutathione-citrate",
+    "title": "Integrated omics and machine learning find glutathione and citrate reduce nanoparticle toxicity in microglia",
+    "summary": "A machine-learning algorithm integrated transcriptome, proteome and metabolome data into one network and screened 19 compounds for predicted effects on silica-coated magnetic nanoparticle toxicity. Glutathione plus citrate attenuated toxicity in BV2 and primary microglia and for ten other nanoparticles, and protected hippocampus and thalamus in mice. The algorithm name and link of the combination to the model output were not fully confirmed; preclinical.",
+    "field": "biology",
+    "ai_technology": "Machine-learning algorithm integrating transcriptomic, proteomic and metabolomic networks",
+    "organization": "Ajou University",
+    "source_url": "https://doi.org/10.1186/s12989-021-00433-y",
+    "source_type": "paper",
+    "publication_date": "2021-11-25",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "In vitro microglia experiments and in vivo mouse brain experiments.",
+      "unknown": "Algorithm identity; relevance beyond mouse and cell models; full text not reviewed.",
+      "ai_role": "A machine-learning network screen predicted compounds to counter toxicity.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12989-021-00433-y%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s12989-021-00433-y"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2021-10-cfdna-fragmentomics-crc-adenoma",
+    "title": "Ensemble machine learning on cfDNA fragmentomics detects early colorectal cancer and advanced adenoma",
+    "summary": "An ensemble of five machine-learning models on five cfDNA fragmentomic features was trained on 310 participants and tested in an independent cohort of 311 (149 early CRC, 46 advanced adenoma, 116 controls). It reached an AUC of 0.988, with sensitivity of 95.7% for advanced adenoma and 98.0% for early CRC at 94.8% specificity. Letter; case-control design without a screening-population cohort.",
+    "field": "medicine",
+    "ai_technology": "Ensemble stacked model of five machine-learning models on cfDNA fragmentomic features",
+    "organization": "Shanghai Medical College of Fudan University; Fudan University; Fudan University Shanghai Cancer Center",
+    "source_url": "https://doi.org/10.1186/s13045-021-01189-w",
+    "source_type": "paper",
+    "publication_date": "2021-10-26",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Independent test cohort of 311 participants.",
+      "unknown": "Performance in a screening population; full text not reviewed.",
+      "ai_role": "The stacked machine-learning ensemble classified plasma samples.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s13045-021-01189-w%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s13045-021-01189-w"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2023-02-tissue-specific-codon-optimization-custom",
+    "title": "Machine learning on protein-per-mRNA ratios supports tissue-specific codon optimization",
+    "summary": "Protein-to-mRNA ratios of 36 human tissues from GTEx and the Human Protein Atlas were used to train per-tissue random forest models of codon preferences, revealing two tissue clusters with opposite codon patterns. These underpin CUSTOM, a codon optimizer, and genes designed with it showed tissue-optimized expression in human cell-line models. Proof of concept in cell lines; effect sizes were not read.",
+    "field": "biology",
+    "ai_technology": "Random forest models of codon enrichment per tissue, basis of the CUSTOM optimizer",
+    "organization": "Barcelona Institute of Science and Technology; Centre for Genomic Regulation",
+    "source_url": "https://doi.org/10.1186/s13059-023-02868-2",
+    "source_type": "paper",
+    "publication_date": "2023-02-24",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Expression of designed genes in human cell-line models.",
+      "unknown": "Effect sizes; performance in tissues in vivo; full text not reviewed.",
+      "ai_role": "Random forest models learned tissue-specific codon preferences.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s13059-023-02868-2%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s13059-023-02868-2"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-08-dnmt1-elk1-dgki-glioblastoma-alphafold",
+    "title": "AlphaFold-based interaction prediction guides selective DGKI demethylation in glioblastoma",
+    "summary": "AlphaFold-based protein-protein interaction prediction was combined with sequential ChIP and DNMT1 interactome data to show that a DNMT1/ELK1 complex regulates DGKI methylation. A peptide (EXD-DNMT1/ELK1) induced selective DGKI demethylation and restored temozolomide sensitivity in cellular and patient-derived xenograft models. AlphaFold is one step in an integrative approach; preclinical, with numerical results not read.",
+    "field": "medicine",
+    "ai_technology": "AlphaFold-based protein-protein interaction prediction",
+    "organization": "École Nationale Supérieure de Chimie de Montpellier; Centre National de la Recherche Scientifique; Institut des Biomolécules Max Mousseron",
+    "source_url": "https://doi.org/10.1186/s13148-025-01943-8",
+    "source_type": "paper",
+    "publication_date": "2025-08-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Cellular models and patient-derived xenografts.",
+      "unknown": "Numerical effect sizes; clinical translation; full text not reviewed.",
+      "ai_role": "AlphaFold predicted the DNMT1/ELK1 interaction used to design the peptide.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s13148-025-01943-8%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s13148-025-01943-8"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-03-in-house-synthesizable-denovo-mgll-ligands",
+    "title": "In-house synthesizability-constrained de novo design yields an MGLL-active ligand",
+    "summary": "A multi-objective generative workflow used a retrainable in-house synthesizability score and a QSAR model to design monoglyceride lipase (MGLL) ligands that can be made from about 6000 in-house building blocks. CASP success fell by only 12% when accepting routes two steps longer. Three de novo candidates were synthesised and one showed evident MGLL activity; activity values were not read.",
+    "field": "chemistry",
+    "ai_technology": "Multi-objective generative de novo design with a retrainable in-house synthesizability score and QSAR model",
+    "organization": "Leiden University; Pfizer (Germany)",
+    "source_url": "https://doi.org/10.1186/s13321-024-00910-4",
+    "source_type": "paper",
+    "publication_date": "2025-03-28",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Three candidates synthesised via CASP routes and tested in a biochemical assay.",
+      "unknown": "Activity values; only one of three candidates was active; full text not reviewed.",
+      "ai_role": "Generative design proposed the synthesizable ligands.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s13321-024-00910-4%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s13321-024-00910-4"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2021-10-camap-codon-arrangement-mhc-i-peptides",
+    "title": "A neural network shows codon arrangement influences MHC-I peptide presentation",
+    "summary": "CAMAP, an artificial neural network, predicts MHC-I associated peptide presentation from mRNA sequences flanking the peptide-coding codons, and was more accurate with original than shuffled codon sequences, independently of expression and MHC-I binding affinity. In an in vitro assay, synonymous codon changes in flanking regions significantly modulated cell-surface presentation. Accuracy figures and assay effect sizes were not read.",
+    "field": "biology",
+    "ai_technology": "CAMAP artificial neural network predicting peptide presentation from flanking codons",
+    "organization": "Institute for Research in Immunology and Cancer; Université de Montréal",
+    "source_url": "https://doi.org/10.1371/journal.pcbi.1009482",
+    "source_type": "paper",
+    "publication_date": "2021-10-22",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "In vitro presentation assay with synonymous codon variants and shuffled-codon controls.",
+      "unknown": "Accuracy figures and effect sizes; full text not reviewed.",
+      "ai_role": "The neural network indicated that codon arrangement predicts presentation.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1371/journal.pcbi.1009482%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1371/journal.pcbi.1009482"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2020-02-plasmodium-vivax-geographic-barcode",
+    "title": "Random forest selects a 71-SNP barcode for the geographic origin of Plasmodium vivax",
+    "summary": "A random forest on 433 P. vivax genomes from 17 countries selected a 71-SNP barcode that predicted geographic origin with 91.4% accuracy and correctly predicted the infection region of UK traveller isolates (132 samples, mostly from countries not used to build the barcode). It may also distinguish local transmission networks. Whether the 91.4% was cross-validated was not read, and outbreak inference is only suggestive.",
+    "field": "biology",
+    "ai_technology": "Random forest for SNP barcode selection",
+    "organization": "London School of Hygiene & Tropical Medicine",
+    "source_url": "https://doi.org/10.1371/journal.pgen.1008576",
+    "source_type": "paper",
+    "publication_date": "2020-02-13",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "132 UK traveller isolates from mostly different countries.",
+      "unknown": "Whether the accuracy was cross-validated; use in outbreak tracing.",
+      "ai_role": "A random forest selected the SNPs forming the barcode.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1371/journal.pgen.1008576%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1371/journal.pgen.1008576"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-01-ak3-hypoxia-angiogenesis-ccrcc",
+    "title": "Machine learning and WGCNA nominate AK3 as a prognostic gene in clear cell renal cell carcinoma",
+    "summary": "A comprehensive machine-learning survival-model screen (including random survival forest) with WGCNA selected hypoxia- and angiogenesis-related prognostic genes including AK3, validated for the signature in the E-MTAB-1980 cohort. AK3 was downregulated in ccRCC with poor prognosis, and its overexpression suppressed proliferation and migration via PI3K/AKT/GSK3b, reduced tumours in nude mice and increased oxaliplatin sensitivity. The choice of AK3 may be partly literature-driven, machine learning is one step, and effect sizes were not read.",
+    "field": "medicine",
+    "ai_technology": "Random survival forest, plsRcox and survival SVM combinations with WGCNA",
+    "organization": "Fuyang Normal University",
+    "source_url": "https://doi.org/10.2147/ijgm.s552108",
+    "source_type": "paper",
+    "publication_date": "2026-01-31",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "E-MTAB-1980 external cohort plus tissue, cell-line and nude-mouse experiments on AK3.",
+      "unknown": "Effect sizes; clinical benefit.",
+      "ai_role": "Machine-learning survival models screened candidate prognostic genes.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2147/ijgm.s552108%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.2147/ijgm.s552108"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-09-swi-radiomics-tertiary-lymphoid-structures-hcc",
+    "title": "Interpretable SWI radiomics model predicts tertiary lymphoid structures in hepatocellular carcinoma",
+    "summary": "In 477 retrospectively enrolled patients (290 training, 125 validation, 62 independent validation), a random forest was the best of five machine-learning classifiers on susceptibility-weighted MRI radiomics, with an independent-cohort AUC of 0.771 (95% CI 0.641-0.883), sensitivity 78.6% and specificity 67.6%. SHAP explained the model, and the predicted iTLS+ group had improved time to recurrence. The AUC is modest and centre or time independence and blinding were not confirmed.",
+    "field": "medicine",
+    "ai_technology": "Radiomics with random forest, SVM, XGBoost, logistic regression and KNN, with SHAP interpretation",
+    "organization": "Army Medical University; Southwest Hospital",
+    "source_url": "https://doi.org/10.2147/jhc.s551462",
+    "source_type": "paper",
+    "publication_date": "2025-09-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Internal validation (n=125) and independent validation (n=62) against a pathology reference.",
+      "unknown": "Centre and time independence of the validation cohort; full text not reviewed.",
+      "ai_role": "Machine-learning classifiers predicted iTLS from MRI radiomics.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.2147/jhc.s551462%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.2147/jhc.s551462"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-bone-marrow-adiposity-head-mri-genetics",
+    "title": "A neural network estimates bone marrow adiposity from head MRI and maps its genetics",
+    "summary": "An artificial neural network trained on simulated head types localized calvarial bone marrow in T1-weighted head MRI, giving an adiposity phenotype with sex-dimorphic age trajectories including a menopause effect. It showed high SNP and twin heritability and 41 genome-wide significant loci (6 sex-specific), plus genetic correlations with cognitive ability and Parkinson's disease. Test-retest of 30 individuals scanned 10 times and monozygotic twin concordance (0.91 male, 0.82 female pairs) were checked; loci were not experimentally validated and the genetics is correlational.",
+    "field": "medicine",
+    "ai_technology": "Artificial neural network localizing calvarial bone marrow in head MRI",
+    "organization": "Oslo University Hospital; University of Oslo; University of Tübingen",
+    "source_url": "https://doi.org/10.7554/elife.101499",
+    "source_type": "paper",
+    "publication_date": "2026-11-04",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Simulated-data checks, test-retest in 30 individuals and monozygotic twin concordance.",
+      "unknown": "Independent replication and functional validation of the loci.",
+      "ai_role": "The neural network localized bone marrow and measured its intensity.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.7554/elife.101499%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.7554/elife.101499"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2025-12-paroxysmal-af-sinus-rhythm-holter-deep-learning",
+    "title": "Deep learning detects paroxysmal atrial fibrillation from sinus-rhythm Holter ECG in a prospective trial",
+    "summary": "Convolutional models were trained on 20,000 30-s sinus-rhythm Holter blocks (cross-validation sensitivity 84.2%, specificity 66.2%) and a separate set of 54 patients tuned the threshold (84.9% and 69.9%). In a prospective multicentre trial of 24 patients with AF within 7 days and 20 controls, sensitivity was 91.7% (95% CI 73.0-99.0) and specificity 65.0% (40.8-84.6). The trial is small (n=44) with modest specificity; abstract only.",
+    "field": "medicine",
+    "ai_technology": "Convolutional deep-learning classifier of 30-s sinus-rhythm ECG blocks",
+    "organization": "Mita Hospital",
+    "source_url": "https://doi.org/10.1007/s12325-025-03461-8",
+    "source_type": "paper",
+    "publication_date": "2025-12-27",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 4,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Prospective multicentre trial (UMIN000047182) with 7-day patch monitoring as outcome reference.",
+      "unknown": "Specificity in larger groups; full text was not reviewed; full text not reviewed.",
+      "ai_role": "A convolutional network flagged patients with paroxysmal AF from sinus-rhythm ECG.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s12325-025-03461-8%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1007/s12325-025-03461-8"
+      ],
+      "test_type": "prospective or independent check"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-entropy-formation-ability-repo4-coatings",
+    "title": "Machine learning predicts entropy formation ability of multicomponent REPO4 environmental barrier coatings",
+    "summary": "A machine-learning model trained on DFT-computed entropy formation ability (EFA) predicted xenotime-phase stability of multicomponent rare-earth phosphates better than geometric descriptors such as mean cation radius and cation size disorder. High-EFA compositions formed single-phase xenotime when synthesised and checked by XRD, while low-EFA ones gave mixed or monazite phases. Model type, metrics and the number of synthesised compositions were not read; labels derive from DFT.",
+    "field": "materials",
+    "ai_technology": "Machine-learning model trained on DFT-computed entropy formation ability",
+    "organization": "Rensselaer Polytechnic Institute",
+    "source_url": "https://doi.org/10.1111/jace.71370",
+    "source_type": "paper",
+    "publication_date": "2026-11-03",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Held-out higher-order compositions plus synthesis and XRD of selected compositions.",
+      "unknown": "Model type, metrics and number of compositions tested; full text not reviewed.",
+      "ai_role": "The model predicted which compositions stabilise the xenotime phase.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1111/jace.71370%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1111/jace.71370"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-see-tc-circulating-tumor-cell-phenotyping",
+    "title": "SEE-TC deep learning phenotypes circulating tumor cells across 3,386 blood samples",
+    "summary": "SEE-TC (System for Enhanced Evaluation of Tumor Cells) segments and classifies circulating cells in multichannel fluorescence images, developed and evaluated on more than 8.5 million cells from 3,386 blood samples across six cancer types. Single-cell segmentation was on par with human performance, and patient-level CTC burden over time was significantly associated with worse overall survival. Abstract only; hazard ratios and the held-out split were not read, and the system is deployed commercially.",
+    "field": "medicine",
+    "ai_technology": "SEE-TC deep learning for single-cell segmentation and CTC classification",
+    "organization": "University of Wisconsin-Madison",
+    "source_url": "https://doi.org/10.1158/1078-0432.ccr-26-0754",
+    "source_type": "paper",
+    "publication_date": "2026-11-01",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Clinical validation across 3,386 samples, six cancer types and heterogeneous platforms, with survival association.",
+      "unknown": "Hazard ratios and held-out split; full text not reviewed.",
+      "ai_role": "Deep learning replaced manual CTC identification.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1158/1078-0432.ccr-26-0754%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1158/1078-0432.ccr-26-0754"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-nobiletin-colorectal-cancer-exposure-ml",
+    "title": "Exposure-oriented machine learning prioritizes nobiletin as a colorectal cancer candidate",
+    "summary": "Four machine-learning models gave a composite score to 47 exposure-related parent compounds profiled by serum UPLC-QTOF-MS/MS, and nobiletin ranked first (score 0.77). Nobiletin inhibited CT26 proliferation (24-h IC50 70.8 uM) and suppressed tumour growth in syngeneic CT26 mice without body-weight loss. Abstract only; model names, ablation and mouse numbers were not read, and only the top-ranked compound was tested.",
+    "field": "medicine",
+    "ai_technology": "Four machine-learning models producing a composite prioritization score",
+    "organization": "Nanjing University of Chinese Medicine; Suzhou Traditional Chinese Medicine Hospital",
+    "source_url": "https://doi.org/10.3389/fphar.2026.1976105",
+    "source_type": "paper",
+    "publication_date": "2026-11-12",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "In vitro proliferation and EdU assays and a syngeneic CT26 mouse tumour model.",
+      "unknown": "Model names, mouse numbers; activity of lower-ranked compounds; full text not reviewed.",
+      "ai_role": "Machine learning ranked candidate compounds.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3389/fphar.2026.1976105%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.3389/fphar.2026.1976105"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-10-alphavariant-rl-multisite-enzyme-optimization",
+    "title": "Reinforcement learning with an evolutionary prior guides multi-site enzyme optimization",
+    "summary": "AlphaVariant couples a generative evolutionary prior with iteratively updated low-N fitness models in a reinforcement-learning search of combinatorial protein sequence spaces. In Savinase design rounds it produced activity-improved variants with up to 17 mutated sites, the best reaching 7.1-fold wild-type activity in two cycles, and multi-objective variants outperformed the commercial protease Uno 100 L in biochemical and detergent washing tests. A bioRxiv preprint known from its abstract only; hit rates beyond 75.4% were not fully read.",
+    "field": "biology",
+    "ai_technology": "AlphaVariant reinforcement learning with a generative evolutionary prior and low-N fitness models",
+    "organization": "King Abdullah University of Science and Technology",
+    "source_url": "https://doi.org/10.64898/2026.10.19.760152",
+    "source_type": "paper",
+    "publication_date": "2026-10-21",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Wet-lab measurement of designed variants over successive rounds and six public fitness landscapes.",
+      "unknown": "Full hit-rate data; peer review; full text not reviewed.",
+      "ai_role": "Reinforcement learning proposed the multi-site variants.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.10.19.760152%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.64898/2026.10.19.760152"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-toxoplasma-early-infection-biomarkers-ml",
+    "title": "Machine learning on serum biomarkers predicts early Toxoplasma gondii infection in pregnant sheep",
+    "summary": "A machine-learning classifier on 27 serum biomarkers (cytokines, acute-phase proteins) yielded a four-biomarker panel (CXCL9, CXCL10, IFN-g, SAA) with accuracy above 74% for early infection in experimentally infected pregnant sheep and 100% sensitivity in natural infection. Specificity was tested on sheep infected with Neospora or Chlamydia and the panel was checked in 19 natural abortion outbreaks. Small animal cohort (22 infected, 6 controls); abstract only; preprint.",
+    "field": "biology",
+    "ai_technology": "Machine-learning classifier on serum biomarkers",
+    "organization": "Universidad Complutense de Madrid",
+    "source_url": "https://doi.org/10.64898/2026.10.28.762409",
+    "source_type": "paper",
+    "publication_date": "2026-11-04",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Experimentally infected sheep, sheep with other infections and 19 natural abortion outbreaks.",
+      "unknown": "Human relevance; full text was not reviewed; full text not reviewed.",
+      "ai_role": "A machine-learning classifier derived the four-biomarker panel.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.10.28.762409%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.64898/2026.10.28.762409"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-10-evo2-few-shot-regulatory-sequence-design",
+    "title": "Evo 2 in-context learning generates regulatory DNA enhancers from few examples",
+    "summary": "Prompting the genome language model Evo 2 with tens of examples conditioned it to generate novel, diverse regulatory DNA without additional training, and reinforcement learning with sequence-to-function rewards was also used. Designed enhancers drove cell-type-specific expression in three human cell lines, and in mouse cortex they selectively labelled layer 5 ET neurons with higher activity than existing enhancers. Preprint known from its abstract only, which gives no numbers.",
+    "field": "biology",
+    "ai_technology": "Evo 2 genomic language model with in-context learning and reinforcement learning",
+    "organization": "Arc Research Institute; Stanford University",
+    "source_url": "https://doi.org/10.64898/2026.10.28.762639",
+    "source_type": "paper",
+    "publication_date": "2026-10-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Experimental testing in three human cell lines and in vivo in mouse cortex.",
+      "unknown": "Quantitative effect sizes; peer review; full text not reviewed.",
+      "ai_role": "Evo 2 generated the enhancer sequences from few-shot prompts.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.10.28.762639%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.64898/2026.10.28.762639"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-ai-guided-antifreeze-peptide-discovery",
+    "title": "AI-guided discovery of antifreeze peptides with tandem-repeat architectures",
+    "summary": "AFPFusionLM, combining protein sequence and structure-aware representations, reached an AUROC of 0.937 and AUPRC of 0.957 on an independent reference set, and with generative sequence expansion and consensus screening of UniProt and glacier metagenomes it found novel repeat-architecture antifreeze peptide families. Several peptides showed ice recrystallization inhibition comparable to or greater than literature references and gave cryoprotection with reduced DMSO. Preprint known from its abstract only, which does not give the number of peptides tested.",
+    "field": "biology",
+    "ai_technology": "AFPFusionLM protein sequence and structure model with generative expansion and consensus screening",
+    "organization": "Tsinghua University",
+    "source_url": "https://doi.org/10.64898/2026.11.03.763275",
+    "source_type": "paper",
+    "publication_date": "2026-11-04",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Wet-lab ice recrystallization inhibition assays and cell-based cryoprotection.",
+      "unknown": "Number of peptides tested; peer review; full text not reviewed.",
+      "ai_role": "AFPFusionLM and generative screening nominated the peptides.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.11.03.763275%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.64898/2026.11.03.763275"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-cross-anatomy-lymph-node-metastasis-ct",
+    "title": "Axillary-node CT deep learning model transfers to lymph nodes from other cancers",
+    "summary": "A DenseNet-121 ensemble was trained on axillary lymph node CT images (n = 1,128 from 523 breast cancer patients) and reached an internal AUROC of 0.958. On an external set of 256 CT images it gave AUROC 0.939 for cervical, 0.796 for mediastinal, 0.814 for upper-abdominal and 0.917 for lower-abdominal nodes, depending on the perinodal margin chosen. The external set was small and the margin was tuned on it, so the figures are retrospective and exploratory.",
+    "field": "medicine",
+    "ai_technology": "DenseNet-121 ensemble (ImageNet initialization) classifying lymph node metastasis on CT",
+    "organization": "Hallym University Sacred Heart Hospital; Hallym University Chuncheon Sacred Heart Hospital; Hallym University Medical Center",
+    "source_url": "https://doi.org/10.64898/2026.11.04.764191",
+    "source_type": "paper",
+    "publication_date": "2026-11-04",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Internal AUROC and external AUROC by nodal station on 256 CT images from four anatomical regions.",
+      "unknown": "Retrospective study with a small external set; perinodal margins were tuned on the external data; bioRxiv preprint not peer reviewed; full text not reviewed.",
+      "ai_role": "DenseNet-121 ensemble trained on axillary node CT and applied to nodes from other anatomical sites.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.11.04.764191%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.64898/2026.11.04.764191"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-human-cochlea-spiral-ganglion-3d-map",
+    "title": "Deep learning produces a complete 3D spiral ganglion neuron map of a human cochlea",
+    "summary": "UNet++ models trained on manually labelled sections detected spiral ganglion neuron nuclei across all 421 consecutive sections of one adult human cochlea. Counts agreed with manual counts by three histopathologists with 97% accuracy in 191 sections, giving 27,880 neurons in a 3D map with tonotopic distribution. Counting every 10th section gave a median inferred total count accuracy of 98%. The result comes from a single cochlea.",
+    "field": "biology",
+    "ai_technology": "UNet++ nuclei detection models trained on manually labelled histology sections",
+    "organization": "Massachusetts Eye and Ear Infirmary; Harvard University",
+    "source_url": "https://doi.org/10.64898/2026.11.10.765480",
+    "source_type": "paper",
+    "publication_date": "2026-11-11",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Model counts compared with manual counts by three experienced histopathologists, plus systematic omission of sections to test every-10th-section counting.",
+      "unknown": "Single adult human cochlea; bioRxiv preprint; full text not reviewed.",
+      "ai_role": "UNet++ detection of neuron nuclei in every digitized section, enabling a complete 3D map.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.11.10.765480%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.64898/2026.11.10.765480"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-dna-swcnt-sensor-dopamine-ml",
+    "title": "Iterative machine learning evolves DNA-nanotube sensors with higher dopamine selectivity",
+    "summary": "A high-throughput platform synthesized 180 unique DNA-carbon nanotube sensors and tested 540 analyte/sensor conditions in under three days. An iterative machine learning pipeline predicted sequences for the next synthesis round, and dopamine sensitivity over interfering molecules such as ascorbic acid in complex media increased in up to 89% of the evolved sensors. The model type is not named in the abstract and an earlier arXiv version was not checked.",
+    "field": "materials",
+    "ai_technology": "Iterative machine learning pipeline predicting DNA recognition sequences for nanotube biosensors (model type not stated in the abstract)",
+    "organization": "Ruhr University Bochum",
+    "source_url": "https://doi.org/10.1002/adfm.79592",
+    "source_type": "paper",
+    "publication_date": "2026-11-13",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Rounds of ML-driven prediction followed by automated synthesis and spectroscopic testing of the sensors.",
+      "unknown": "Model type and per-round numbers not read; earlier arXiv version not checked, date is the journal first-published date; full text not reviewed.",
+      "ai_role": "Machine learning predicted DNA sequences to synthesize in each round.",
+      "evidence_urls": [
+        "https://doi.org/10.1002/adfm.79592",
+        "https://api.openalex.org/works/doi:10.1002/adfm.79592"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from the supplied source metadata (Wiley page); not found in Europe PMC. Full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-07-hemorrhagic-stroke-mortality-gbm",
+    "title": "Gradient boosting model predicts hemorrhagic stroke ICU mortality",
+    "summary": "A gradient boosting machine using oxygenation and respiratory variability features from the first 72 hours of ICU care was developed on MIMIC-IV (n = 2,262) and validated externally on eICU (n = 2,076). AUROC was 0.911 in the internal test set and 0.792 in the external cohort, with high negative but low positive predictive value externally. The authors state that recalibration and prospective validation are needed before clinical use.",
+    "field": "medicine",
+    "ai_technology": "Gradient boosting machine with LASSO and recursive feature elimination, interpreted with SHAP",
+    "organization": "Department of Neurosurgery, The Fourth Affiliated Hospital of Harbin Medical University",
+    "source_url": "https://doi.org/10.1016/j.cmpb.2026.109572",
+    "source_type": "paper",
+    "publication_date": "2026-07-29",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Internal test AUROC 0.911 and external eICU validation AUROC 0.792.",
+      "unknown": "Retrospective public ICU databases; low external positive predictive value; no prospective test; full text not reviewed.",
+      "ai_role": "GBM mortality risk model built from oxygenation and respiratory variability features.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.cmpb.2026.109572%22&resultType=core&format=json"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+    }
+  },
+  {
+    "id": "2022-10-t2wi-multitask-bladder-cancer-invasion",
+    "title": "Multi-task deep learning on T2-weighted MRI distinguishes muscle-invasive bladder cancer",
+    "summary": "A multi-task Inception V3 model using T2-weighted MRI alone was built to separate muscle-invasive from non-muscle-invasive bladder cancer. Accuracy was 0.911 in the retrospective test (390 cases), 0.923 in a prospective set of 39 cases and 0.846 in a 39-case multicenter set. The prospective and multicenter sets are small.",
+    "field": "medicine",
+    "ai_technology": "Multi-task Inception V3 convolutional network with an image reconstruction branch",
+    "organization": "Not stated in the reviewed material",
+    "source_url": "https://www.sciencedirect.com/science/article/pii/S0010482522009271",
+    "source_type": "paper",
+    "publication_date": "2022-10-25",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Retrospective test plus small prospective and multicenter test sets.",
+      "unknown": "Small prospective (39) and multicenter (39) sets; patient-level split not confirmed; no clinical benefit shown; full text not reviewed.",
+      "ai_role": "Multi-task Inception V3 model classifying muscle invasion from T2-weighted MRI.",
+      "evidence_urls": [
+        "https://www.sciencedirect.com/science/article/pii/S0010482522009271"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from the supplied source metadata (journal record). Publisher full text not accessed."
+    }
+  },
+  {
+    "id": "2021-09-3d-multitask-lung-adenocarcinoma-ln-metastasis",
+    "title": "3D multi-task deep learning predicts lymph node metastasis in T1 lung adenocarcinoma on CT",
+    "summary": "A 3D multi-scale, multi-task, multi-label network (3M-CN) was trained on 401 cases to predict lymph node metastasis and related nodule signs from CT. AUC was 0.945 in an internal test set (100 cases) and 0.948 in an external test set (53 cases), outperforming the compared methods. The external set is small and the study is retrospective.",
+    "field": "medicine",
+    "ai_technology": "3D multi-scale, multi-task, multi-label convolutional network (3M-CN)",
+    "organization": "School of Biomedical Engineering (Suzhou), University of Science and Technology of China; Suzhou Institute of Biomedical Engineering and Technology, Chinese Academy of Sciences",
+    "source_url": "https://doi.org/10.1016/j.compmedimag.2021.101987",
+    "source_type": "paper",
+    "publication_date": "2021-09-30",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Internal (100 cases) and external (53 cases) test sets with comparison to existing methods.",
+      "unknown": "Retrospective; small external set; patient-level split not confirmed; full text not reviewed.",
+      "ai_role": "3M-CN predicting lymph node metastasis from CT with auxiliary sign and segmentation tasks.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.compmedimag.2021.101987%22&resultType=core&format=json"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+    }
+  },
+  {
+    "id": "2025-02-breast-lymph-node-metastasis-post-nat-dl",
+    "title": "Deep learning detects breast cancer lymph node metastases after neoadjuvant therapy",
+    "summary": "An interpretable deep learning pipeline was developed on a 1,027-slide set of post-neoadjuvant breast cancer lymph nodes with pathologist labels. On the post-treatment test cohort it reached slide-level AUROC 0.986 and 70.9% specificity at 100% sensitivity, and its patch heatmaps helped pathologists find and correct erroneous predictions. Independence of test and training sources was not confirmed.",
+    "field": "medicine",
+    "ai_technology": "Interpretable deep learning pipeline for slide-level classification and patch-level metastasis heatmaps",
+    "organization": "Department of Medical Biophysics, University of Toronto",
+    "source_url": "https://doi.org/10.1016/j.labinv.2025.104121",
+    "source_type": "paper",
+    "publication_date": "2025-02-26",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Held-out post-neoadjuvant test cohort with pathologist labels and an interpretability study with pathologists.",
+      "unknown": "Independence from training source and patient-level split not confirmed; retrospective; full text not reviewed.",
+      "ai_role": "Deep learning classifier and heatmap generator for lymph node slides.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.labinv.2025.104121%22&resultType=core&format=json"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+    }
+  },
+  {
+    "id": "2021-08-dna-swnt-serotonin-ml-sensors",
+    "title": "Machine learning predicts DNA-nanotube sensors with strong serotonin response",
+    "summary": "CNN classifiers and SVM regression models were trained on near-infrared response data for about 100 DNA-SWNT conjugates, and an ensemble of the best of both gave the best predictions of high- and low-response sequences. Validation experiments led to five new DNA-SWNT sensors with a higher fluorescence response to serotonin than obtained previously. Training data were small and per-sequence values were not read.",
+    "field": "materials",
+    "ai_technology": "CNN classifiers and support vector machine regression ensembles predicting DNA sequence optical response",
+    "organization": "The University of Texas at El Paso",
+    "source_url": "https://doi.org/10.1101/2021.08.20.457145",
+    "source_type": "paper",
+    "publication_date": "2021-08-20",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Experimental synthesis and testing of ML-predicted DNA sequences.",
+      "unknown": "bioRxiv preprint; trained on about 100 conjugates; per-sequence response values not read; full text not reviewed.",
+      "ai_role": "CNN and SVM models predicted sequences with high serotonin response, which were then tested.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2021.08.20.457145%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1101/2021.08.20.457145"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2021-12-sars-cov-2-high-risk-variant-early-warning",
+    "title": "Protein language models flag high-risk SARS-CoV-2 variants before WHO designation",
+    "summary": "An early warning system combines spike structure modelling with protein transformer language models to rank variants for immune escape and fitness. It flagged all 16 WHO-designated variants on average more than 1.5 months before designation, selecting under 0.3% of weekly novel variants, and flagged Omicron BA.1 on the day its sequence appeared. The metrics were also checked with pseudovirus neutralisation and binding assays. First posted version is 2021-12-27; a later version (2022-09) exists, and the claim is early detection, not prevention.",
+    "field": "biology",
+    "ai_technology": "Protein transformer language models on spike sequences plus structure modelling to rank immune escape and fitness",
+    "organization": "BioNTech (Germany)",
+    "source_url": "https://doi.org/10.1101/2021.12.24.474095",
+    "source_type": "paper",
+    "publication_date": "2021-12-27",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Retrospective comparison with WHO designation dates and baseline metrics; in vitro assays checked the metrics.",
+      "unknown": "Preprint; later version 2022-09; retrospective detection, not shown to change outcomes; full text not reviewed.",
+      "ai_role": "Transformer language models and structure modelling scored variants for immune escape and fitness.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2021.12.24.474095%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1101/2021.12.24.474095"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2023-10-antibody-specificity-phage-display-ml",
+    "title": "Machine learning and biophysical modelling design antibodies with tailored specificity",
+    "summary": "The study combines high-throughput sequencing of phage display selections with machine learning and biophysical modelling to predict antibody binding profiles against multiple ligands. The model separates binding modes even for chemically very similar ligands, and the authors report experimental validation of designed antibodies with either specific high affinity or cross-specificity. Numbers were not read from the abstract.",
+    "field": "biology",
+    "ai_technology": "Machine learning and biophysical model fitted to phage display selection data to predict binding and generate antibody sequences",
+    "organization": "Centre National de la Recherche Scientifique; Université Paris Cité; Université Paris Sciences et Lettres",
+    "source_url": "https://doi.org/10.1101/2023.10.23.563570",
+    "source_type": "paper",
+    "publication_date": "2023-10-25",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Experimental testing of computationally designed antibody sequences.",
+      "unknown": "bioRxiv preprint; abstract gives no quantitative results; model details not read; full text not reviewed.",
+      "ai_role": "Learned biophysical model predicted binding profiles and generated antibody sequences.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2023.10.23.563570%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1101/2023.10.23.563570"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2024-10-chemoenzymatic-synthesis-planning-rtscore",
+    "title": "TextCNN reaction type score guides chemoenzymatic synthesis planning",
+    "summary": "RTS-CESP uses a TextCNN-based reaction type score to rank retrosynthesis routes and choose steps replaceable by enzymatic reactions. It predicted all 10 literature chemoenzymatic routes (six top-ranked) and routes for 554 of 1000 molecules, outperforming ASKCOS, and a shorter route for the drug Alclofenac was experimentally validated. Yields were not read.",
+    "field": "chemistry",
+    "ai_technology": "TextCNN reaction type score (RTscore) ranking retrosynthesis routes",
+    "organization": "University of Illinois Urbana-Champaign; Carl R. Woese Institute for Genomic Biology",
+    "source_url": "https://doi.org/10.1101/2024.10.25.620365",
+    "source_type": "paper",
+    "publication_date": "2024-10-29",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Benchmark against known routes and ASKCOS, plus experimental validation of the Alclofenac route.",
+      "unknown": "bioRxiv preprint; yields and route details not read; full text not reviewed.",
+      "ai_role": "TextCNN RTscore ranks routes and identifies steps that can be replaced by enzymes.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2024.10.25.620365%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1101/2024.10.25.620365"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-10-de-novo-helical-barrel-enzyme-redesign",
+    "title": "AlphaFold2 and ProteinMPNN redesign a de novo helical barrel enzyme",
+    "summary": "AlphaFold2-guided RosettaRemodel designed a truncated variant of the de novo six-helical barrel 6H5L whose crystal structure closely matches the design model. ProteinMPNN redesign gave a variant with a tenfold increase in soluble yield in Escherichia coli, and both variants kept the barrel fold, high thermal stability and catalytic activity. Results are from a single scaffold in a Research Square preprint.",
+    "field": "biology",
+    "ai_technology": "AlphaFold2-guided RosettaRemodel and ProteinMPNN sequence redesign",
+    "organization": "Graz University of Technology",
+    "source_url": "https://doi.org/10.21203/rs.3.rs-11197390/v1",
+    "source_type": "paper",
+    "publication_date": "2026-10-27",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Crystal structure, biochemical, biophysical and kinetic experiments on purified protein and whole-cell systems.",
+      "unknown": "Research Square preprint (v1); single scaffold; full text not reviewed.",
+      "ai_role": "AlphaFold2 guided truncation design and ProteinMPNN redesigned sequences.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-11197390/v1%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.21203/rs.3.rs-11197390/v1"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-02-llm-archival-pathology-ewing-sarcoma-nse",
+    "title": "LLM extraction from pathology archives identifies NSE as an Ewing sarcoma marker",
+    "summary": "An LLM pipeline extracted 18 immunostains from Children's Oncology Group trial reports, with 98.2% mean accuracy against clinician annotation among 928 evaluable of 931 patients. NSE positivity (164 patients) was associated with inferior overall survival (5-year 61% versus 85%; HR 2.17, 95% CI 1.17-4.05), and high ENO2 transcript expression was associated with inferior survival in two independent cohorts (HR 1.86 and 3.94). The first version (2026-02-22) already contained the extraction-based NSE finding; the external transcript evaluation is described in a later version (2026-11-16). NSE is a candidate marker that needs protein-level validation.",
+    "field": "medicine",
+    "ai_technology": "Large language model pipeline extracting immunostain results from scanned pathology reports",
+    "organization": "The University of Texas Southwestern Medical Center",
+    "source_url": "https://doi.org/10.64898/2026.02.20.707103",
+    "source_type": "paper",
+    "publication_date": "2026-02-22",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Extraction accuracy against clinician annotation, survival analysis in the archive cohort and transcript-level evaluation in two independent cohorts.",
+      "unknown": "Retrospective; preprint with version differences; protein-level validation pending; candidate marker only; full text not reviewed.",
+      "ai_role": "LLM pipeline recovered immunostain data from reports, enabling the survival screen.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.02.20.707103%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.64898/2026.02.20.707103"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-expert-perturbation-inference-cell-states",
+    "title": "ExPert infers likely causal perturbations from cell states",
+    "summary": "ExPert learns one prototype per perturbation in a latent space shared by 12 cellular contexts, trained on 8,964 perturbations and 19.5 million cells, and ranks 19,895 candidate genes per query. It more than doubled held-out-context recall over the best existing method with 1,000-fold less compute, and in alcohol-associated liver disease it implicated mRNA export, with nuclear poly(A) retention and isoform switching experimentally confirmed. Experiment sizes and held-out numbers were not read.",
+    "field": "biology",
+    "ai_technology": "ExPert latent-prototype model ranking gene perturbations from observed cell states",
+    "organization": "Northwestern University; Robert H. Lurie Comprehensive Cancer Center of Northwestern University; Technical University of Munich",
+    "source_url": "https://doi.org/10.64898/2026.11.02.762549",
+    "source_type": "paper",
+    "publication_date": "2026-11-03",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Held-out context evaluation and wet-lab confirmation of the alcohol-associated liver disease prediction.",
+      "unknown": "bioRxiv preprint (v1); experiment sizes and held-out numbers not read; method paper with an application; full text not reviewed.",
+      "ai_role": "Learned model ranks candidate perturbations from observed cell states.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.11.02.762549%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.64898/2026.11.02.762549"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2026-11-multimetallic-glucose-oxidation-electrocatalysts",
+    "title": "Closed-loop machine learning maps multimetallic glucose-oxidation catalysts",
+    "summary": "Gaussian process regression surrogates trained on measured data guided which Au-Ir-Pt-Pd-Rh-Ru nanoparticle compositions to electrodeposit and test next. Highly active compositions lay near the Au-Pt edge, while the most poisoning-resistant were central with Rh and Pd up to 20 at%, revealing an activity versus poisoning-resistance trade-off. The loop's own experiments are the validation, without separate holdout, and only alkaline glucose oxidation was studied.",
+    "field": "chemistry",
+    "ai_technology": "Gaussian process regression surrogates in closed-loop selection, with SHAP interpretation",
+    "organization": "University of Bern",
+    "source_url": "https://doi.org/10.1039/d6ey00174b",
+    "source_type": "paper",
+    "publication_date": "2026-11-05",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Model-proposed compositions synthesised by electrodeposition and measured electrochemically.",
+      "unknown": "Full numerical results; performance outside alkaline conditions.",
+      "ai_role": "Gaussian process models chose the compositions to synthesise next.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1039/d6ey00174b%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1039/d6ey00174b"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2022-04-ms-guide-prostate-cancer-biomarkers",
+    "title": "Machine learning on mass spectrometry selects prostate cancer risk biomarkers",
+    "summary": "MS-GUIDE screened 48 candidate protein markers by parallel reaction monitoring in 78 patients, and machine-learning models ranked by 50-fold bootstrapped cross-validation selected fibronectin and vitronectin. In an independent cohort of 263 patients, clinical-grade ELISAs gave a risk score about 10% better than PSA alone, PSA plus Gleason or NCCN score for biochemical recurrence. Retrospective with a modest gain; the specific algorithm was not read.",
+    "field": "medicine",
+    "ai_technology": "Machine-learning models ranking candidate protein biomarkers (50-fold bootstrapped cross-validation)",
+    "organization": "SIB Swiss Institute of Bioinformatics; ETH Zurich; Institute of Translational Medicine",
+    "source_url": "https://doi.org/10.1186/s12014-022-09349-x",
+    "source_type": "paper",
+    "publication_date": "2022-04-27",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Clinical-grade ELISAs in an independent cohort of 263 prostate cancer patients.",
+      "unknown": "Which algorithm was used; prospective benefit.",
+      "ai_role": "Machine learning prequalified candidate biomarkers.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12014-022-09349-x%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1186/s12014-022-09349-x"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+    }
+  },
+  {
+    "id": "2023-12-pseudomonas-syringae-metabolism-bcaa",
+    "title": "Metabolic modelling with machine learning links amino acids to P. syringae colonization",
+    "summary": "A 100-member ensemble of genome-scale metabolic reconstructions (iPst19) was constrained with expression data from naive and pre-immunized infected plants, and machine-learning analysis of the simulations found that branched-chain amino acid metabolism contributed to the metabolic state. Experiments showed that excess BCAAs suppressed virulence gene expression and impaired Arabidopsis leaf colonization. The machine-learning method is unnamed in the abstract and is one step of a larger modelling pipeline.",
+    "field": "biology",
+    "ai_technology": "Machine-learning analysis of ensemble genome-scale metabolic model simulations",
+    "organization": "University of Virginia",
+    "source_url": "https://doi.org/10.1371/journal.pcbi.1011651",
+    "source_type": "paper",
+    "publication_date": "2023-12-27",
+    "added_date": "2026-11-26",
+    "verification_status": "verified",
+    "paper_url": "",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Growth, gene-expression and in planta colonization experiments.",
+      "unknown": "Which machine-learning method was used; full text not reviewed.",
+      "ai_role": "Machine learning highlighted BCAA metabolism in the simulations.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1371/journal.pcbi.1011651%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1371/journal.pcbi.1011651"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-26",
+      "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+    }
   }
 ]

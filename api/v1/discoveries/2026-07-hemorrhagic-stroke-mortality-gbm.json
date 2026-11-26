@@ -1,0 +1,33 @@
+{
+  "id": "2026-07-hemorrhagic-stroke-mortality-gbm",
+  "title": "Gradient boosting model predicts hemorrhagic stroke ICU mortality",
+  "summary": "A gradient boosting machine using oxygenation and respiratory variability features from the first 72 hours of ICU care was developed on MIMIC-IV (n = 2,262) and validated externally on eICU (n = 2,076). AUROC was 0.911 in the internal test set and 0.792 in the external cohort, with high negative but low positive predictive value externally. The authors state that recalibration and prospective validation are needed before clinical use.",
+  "field": "medicine",
+  "ai_technology": "Gradient boosting machine with LASSO and recursive feature elimination, interpreted with SHAP",
+  "organization": "Department of Neurosurgery, The Fourth Affiliated Hospital of Harbin Medical University",
+  "source_url": "https://doi.org/10.1016/j.cmpb.2026.109572",
+  "source_type": "paper",
+  "publication_date": "2026-07-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal test AUROC 0.911 and external eICU validation AUROC 0.792.",
+    "unknown": "Retrospective public ICU databases; low external positive predictive value; no prospective test; full text not reviewed.",
+    "ai_role": "GBM mortality risk model built from oxygenation and respiratory variability features.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.cmpb.2026.109572%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

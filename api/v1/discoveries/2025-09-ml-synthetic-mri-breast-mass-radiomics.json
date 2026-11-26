@@ -1,0 +1,34 @@
+{
+  "id": "2025-09-ml-synthetic-mri-breast-mass-radiomics",
+  "title": "Machine learning on synthetic MRI radiomics plus BI-RADS classifies breast masses",
+  "summary": "In 43 lesions from 40 new patients, BI-RADS alone had AUC 0.667, a logistic regression model on synthetic MRI radiomics had AUC 0.707, and an ensemble integrating both reached AUC 0.883 (sensitivity 82.1%, specificity 86.7%). The ensemble AUC was significantly larger than the other two. The test set is small, single-center and retrospective.",
+  "field": "medicine",
+  "ai_technology": "Machine learning (logistic regression) on synthetic MRI radiomics combined with BI-RADS in an ensemble",
+  "organization": "Ehime University",
+  "source_url": "https://doi.org/10.1186/s12880-025-01930-8",
+  "source_type": "paper",
+  "publication_date": "2025-09-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out test set of 43 lesions separate from the 199-lesion cross-validation set.",
+    "unknown": "Larger and prospective validation.",
+    "ai_role": "Classifies benign versus malignant breast masses",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12880-025-01930-8%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12880-025-01930-8"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+  }
+}

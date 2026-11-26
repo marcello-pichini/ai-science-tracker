@@ -1,0 +1,33 @@
+{
+  "id": "2021-09-3d-multitask-lung-adenocarcinoma-ln-metastasis",
+  "title": "3D multi-task deep learning predicts lymph node metastasis in T1 lung adenocarcinoma on CT",
+  "summary": "A 3D multi-scale, multi-task, multi-label network (3M-CN) was trained on 401 cases to predict lymph node metastasis and related nodule signs from CT. AUC was 0.945 in an internal test set (100 cases) and 0.948 in an external test set (53 cases), outperforming the compared methods. The external set is small and the study is retrospective.",
+  "field": "medicine",
+  "ai_technology": "3D multi-scale, multi-task, multi-label convolutional network (3M-CN)",
+  "organization": "School of Biomedical Engineering (Suzhou), University of Science and Technology of China; Suzhou Institute of Biomedical Engineering and Technology, Chinese Academy of Sciences",
+  "source_url": "https://doi.org/10.1016/j.compmedimag.2021.101987",
+  "source_type": "paper",
+  "publication_date": "2021-09-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal (100 cases) and external (53 cases) test sets with comparison to existing methods.",
+    "unknown": "Retrospective; small external set; patient-level split not confirmed; full text not reviewed.",
+    "ai_role": "3M-CN predicting lymph node metastasis from CT with auxiliary sign and segmentation tasks.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.compmedimag.2021.101987%22&resultType=core&format=json"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and author affiliations read from Europe PMC metadata for this DOI. Publisher full text not accessed."
+  }
+}

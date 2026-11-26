@@ -1,0 +1,34 @@
+{
+  "id": "2020-12-boosted-regression-tree-groundwater-ph-glacial",
+  "title": "Boosted regression trees map groundwater pH in the glacial aquifer system",
+  "summary": "A boosted regression tree model trained on pH from 18,386 wells predicted three-dimensional pH across the glacial aquifer system, with R2 0.60 on held-out data. Carbonate content combined with long flowpaths drives alkaline conditions, and predicted pH above 7.5, linked to arsenic mobilization, is more common than pH below 6 at drinking-water depths. The authors state the model is not meant for precise local estimates; the test split is from the same compiled dataset.",
+  "field": "climate",
+  "ai_technology": "Boosted regression tree including modeled groundwater age and flowpath length as predictors",
+  "organization": "United States Geological Survey",
+  "source_url": "https://doi.org/10.1111/gwat.13063",
+  "source_type": "paper",
+  "publication_date": "2020-12-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out testing wells from the compiled dataset, comparing boosted regression tree variants.",
+    "unknown": "Independent-region validation; spatial autocorrelation was not assessed in the excerpt read.",
+    "ai_role": "Predicts three-dimensional pH from hydrogeologic predictors",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1111/gwat.13063%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1111/gwat.13063"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2024-02-automl-dnn-asymptomatic-covid-chest-ct",
+  "title": "Automated machine learning identifies asymptomatic COVID-19 carriers on chest CT",
+  "summary": "An H2O AutoML deep neural network trained on 691 images and tuned on 306 reached AUC 0.898 on an independent Suzhou dataset of 178, with sensitivity 0.820 and specificity 0.854. The data are retrospective and the controls came from a healthy population in a different area.",
+  "field": "medicine",
+  "ai_technology": "AutoML (H2O) deep neural network on preprocessed chest CT images",
+  "organization": "First Affiliated Hospital of Soochow University",
+  "source_url": "https://doi.org/10.1186/s12880-024-01211-w",
+  "source_type": "paper",
+  "publication_date": "2024-02-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent Suzhou test dataset (n = 178).",
+    "unknown": "Prospective performance; effect of differing control populations.",
+    "ai_role": "Classifies asymptomatic carriers from CT",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12880-024-01211-w%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12880-024-01211-w"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+  }
+}

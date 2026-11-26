@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-multimetallic-glucose-oxidation-electrocatalysts",
+  "title": "Closed-loop machine learning maps multimetallic glucose-oxidation catalysts",
+  "summary": "Gaussian process regression surrogates trained on measured data guided which Au-Ir-Pt-Pd-Rh-Ru nanoparticle compositions to electrodeposit and test next. Highly active compositions lay near the Au-Pt edge, while the most poisoning-resistant were central with Rh and Pd up to 20 at%, revealing an activity versus poisoning-resistance trade-off. The loop's own experiments are the validation, without separate holdout, and only alkaline glucose oxidation was studied.",
+  "field": "chemistry",
+  "ai_technology": "Gaussian process regression surrogates in closed-loop selection, with SHAP interpretation",
+  "organization": "University of Bern",
+  "source_url": "https://doi.org/10.1039/d6ey00174b",
+  "source_type": "paper",
+  "publication_date": "2026-11-05",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Model-proposed compositions synthesised by electrodeposition and measured electrochemically.",
+    "unknown": "Full numerical results; performance outside alkaline conditions.",
+    "ai_role": "Gaussian process models chose the compositions to synthesise next.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1039/d6ey00174b%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1039/d6ey00174b"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+  }
+}

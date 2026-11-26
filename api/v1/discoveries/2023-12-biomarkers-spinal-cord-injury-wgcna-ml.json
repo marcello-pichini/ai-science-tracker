@@ -1,0 +1,34 @@
+{
+  "id": "2023-12-biomarkers-spinal-cord-injury-wgcna-ml",
+  "title": "WGCNA and machine learning screen three blood biomarker genes for spinal cord injury",
+  "summary": "LASSO logistic regression and SVM-RFE together with WGCNA selected ANO10, BST1 and ZFP36L2 from spinal cord injury expression data; all three had AUC above 0.96 in GSE151371. In peripheral blood qPCR from 10 patients and 10 controls, ANO10 and BST1 were higher and ZFP36L2 lower in spinal cord injury, with AUCs of 0.793, 0.810 and 0.870. The clinical validation cohort is very small and the public-data AUCs are likely optimistic.",
+  "field": "medicine",
+  "ai_technology": "LASSO logistic regression and SVM-RFE for biomarker gene selection",
+  "organization": "First Affiliated Hospital of Guangxi Medical University",
+  "source_url": "https://doi.org/10.4103/1673-5374.391306",
+  "source_type": "paper",
+  "publication_date": "2023-12-21",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Three genes by qPCR in peripheral blood of 10 spinal cord injury patients and 10 controls.",
+    "unknown": "Diagnostic value in larger independent cohorts.",
+    "ai_role": "LASSO and SVM-RFE selected the three candidate genes.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.4103/1673-5374.391306%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.4103/1673-5374.391306"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2022-12-cforest-active-latent-tuberculosis",
+  "title": "Conditional random forest separates active from latent tuberculosis infection",
+  "summary": "A cforest model on routine laboratory, T-SPOT and lymphocyte data from 892 participants (468 active, 424 latent) reached training AUC 0.995. In an independent hospital cohort of 263 participants it gave sensitivity 92.8% and specificity 89.9%. The two-center retrospective data come from China only.",
+  "field": "medicine",
+  "ai_technology": "Conditional random forest (cforest) on laboratory and T-SPOT data",
+  "organization": "Tongji Hospital; Huazhong University of Science and Technology",
+  "source_url": "https://doi.org/10.1186/s12879-022-07954-7",
+  "source_type": "paper",
+  "publication_date": "2022-12-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent validation cohort of 263 participants (125 active, 138 latent).",
+    "unknown": "Prospective and other-population validation.",
+    "ai_role": "Classifies active versus latent tuberculosis",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1186/s12879-022-07954-7%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1186/s12879-022-07954-7"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+  }
+}

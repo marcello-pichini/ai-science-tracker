@@ -1,0 +1,34 @@
+{
+  "id": "2024-10-melatonin-genes-ischemic-stroke",
+  "title": "Machine learning screens melatonin-related candidate biomarker genes in ischemic stroke",
+  "summary": "Using GEO transcriptome data, SVM-RFE, random forest and LASSO screened melatonin-related candidate genes, and four key genes (ADM, PTGS2, MMP9, VCAN) were proposed as stroke biomarkers. An XGBoost model on eight genes reached an AUC of 0.806 (95% CI 0.778-0.833), with validation GEO datasets GSE58294 and GSE174574. qPCR in a rat ischemic stroke model found all four genes upregulated. Public microarray data and a rat model only; no human clinical cohort and a moderate AUC.",
+  "field": "medicine",
+  "ai_technology": "SVM-RFE, random forest and LASSO for candidate gene selection; XGBoost diagnostic model on 8 genes",
+  "organization": "Jilin University",
+  "source_url": "https://doi.org/10.3390/ijms252111620",
+  "source_type": "paper",
+  "publication_date": "2024-10-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Four genes in validation GEO datasets and by qPCR in blood of a rat ischemic stroke model.",
+    "unknown": "Whether the genes work as clinical biomarkers in humans; no human cohort was tested.",
+    "ai_role": "Machine-learning selectors chose candidate genes and an XGBoost model assessed their diagnostic value.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.3390/ijms252111620%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.3390/ijms252111620"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-cross-anatomy-lymph-node-metastasis-ct",
+  "title": "Axillary-node CT deep learning model transfers to lymph nodes from other cancers",
+  "summary": "A DenseNet-121 ensemble was trained on axillary lymph node CT images (n = 1,128 from 523 breast cancer patients) and reached an internal AUROC of 0.958. On an external set of 256 CT images it gave AUROC 0.939 for cervical, 0.796 for mediastinal, 0.814 for upper-abdominal and 0.917 for lower-abdominal nodes, depending on the perinodal margin chosen. The external set was small and the margin was tuned on it, so the figures are retrospective and exploratory.",
+  "field": "medicine",
+  "ai_technology": "DenseNet-121 ensemble (ImageNet initialization) classifying lymph node metastasis on CT",
+  "organization": "Hallym University Sacred Heart Hospital; Hallym University Chuncheon Sacred Heart Hospital; Hallym University Medical Center",
+  "source_url": "https://doi.org/10.64898/2026.11.04.764191",
+  "source_type": "paper",
+  "publication_date": "2026-11-04",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Internal AUROC and external AUROC by nodal station on 256 CT images from four anatomical regions.",
+    "unknown": "Retrospective study with a small external set; perinodal margins were tuned on the external data; bioRxiv preprint not peer reviewed; full text not reviewed.",
+    "ai_role": "DenseNet-121 ensemble trained on axillary node CT and applied to nodes from other anatomical sites.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.11.04.764191%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.11.04.764191"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

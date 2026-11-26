@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-expert-perturbation-inference-cell-states",
+  "title": "ExPert infers likely causal perturbations from cell states",
+  "summary": "ExPert learns one prototype per perturbation in a latent space shared by 12 cellular contexts, trained on 8,964 perturbations and 19.5 million cells, and ranks 19,895 candidate genes per query. It more than doubled held-out-context recall over the best existing method with 1,000-fold less compute, and in alcohol-associated liver disease it implicated mRNA export, with nuclear poly(A) retention and isoform switching experimentally confirmed. Experiment sizes and held-out numbers were not read.",
+  "field": "biology",
+  "ai_technology": "ExPert latent-prototype model ranking gene perturbations from observed cell states",
+  "organization": "Northwestern University; Robert H. Lurie Comprehensive Cancer Center of Northwestern University; Technical University of Munich",
+  "source_url": "https://doi.org/10.64898/2026.11.02.762549",
+  "source_type": "paper",
+  "publication_date": "2026-11-03",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Held-out context evaluation and wet-lab confirmation of the alcohol-associated liver disease prediction.",
+    "unknown": "bioRxiv preprint (v1); experiment sizes and held-out numbers not read; method paper with an application; full text not reviewed.",
+    "ai_role": "Learned model ranks candidate perturbations from observed cell states.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.11.02.762549%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.11.02.762549"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

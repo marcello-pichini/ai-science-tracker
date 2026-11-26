@@ -1,0 +1,34 @@
+{
+  "id": "2020-02-plasmodium-vivax-geographic-barcode",
+  "title": "Random forest selects a 71-SNP barcode for the geographic origin of Plasmodium vivax",
+  "summary": "A random forest on 433 P. vivax genomes from 17 countries selected a 71-SNP barcode that predicted geographic origin with 91.4% accuracy and correctly predicted the infection region of UK traveller isolates (132 samples, mostly from countries not used to build the barcode). It may also distinguish local transmission networks. Whether the 91.4% was cross-validated was not read, and outbreak inference is only suggestive.",
+  "field": "biology",
+  "ai_technology": "Random forest for SNP barcode selection",
+  "organization": "London School of Hygiene & Tropical Medicine",
+  "source_url": "https://doi.org/10.1371/journal.pgen.1008576",
+  "source_type": "paper",
+  "publication_date": "2020-02-13",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "132 UK traveller isolates from mostly different countries.",
+    "unknown": "Whether the accuracy was cross-validated; use in outbreak tracing.",
+    "ai_role": "A random forest selected the SNPs forming the barcode.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1371/journal.pgen.1008576%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1371/journal.pgen.1008576"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+  }
+}

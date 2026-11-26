@@ -1,0 +1,34 @@
+{
+  "id": "2026-02-llm-archival-pathology-ewing-sarcoma-nse",
+  "title": "LLM extraction from pathology archives identifies NSE as an Ewing sarcoma marker",
+  "summary": "An LLM pipeline extracted 18 immunostains from Children's Oncology Group trial reports, with 98.2% mean accuracy against clinician annotation among 928 evaluable of 931 patients. NSE positivity (164 patients) was associated with inferior overall survival (5-year 61% versus 85%; HR 2.17, 95% CI 1.17-4.05), and high ENO2 transcript expression was associated with inferior survival in two independent cohorts (HR 1.86 and 3.94). The first version (2026-02-22) already contained the extraction-based NSE finding; the external transcript evaluation is described in a later version (2026-11-16). NSE is a candidate marker that needs protein-level validation.",
+  "field": "medicine",
+  "ai_technology": "Large language model pipeline extracting immunostain results from scanned pathology reports",
+  "organization": "The University of Texas Southwestern Medical Center",
+  "source_url": "https://doi.org/10.64898/2026.02.20.707103",
+  "source_type": "paper",
+  "publication_date": "2026-02-22",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Extraction accuracy against clinician annotation, survival analysis in the archive cohort and transcript-level evaluation in two independent cohorts.",
+    "unknown": "Retrospective; preprint with version differences; protein-level validation pending; candidate marker only; full text not reviewed.",
+    "ai_role": "LLM pipeline recovered immunostain data from reports, enabling the survival screen.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.02.20.707103%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.02.20.707103"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

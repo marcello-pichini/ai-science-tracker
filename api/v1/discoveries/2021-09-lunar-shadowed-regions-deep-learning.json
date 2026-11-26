@@ -1,0 +1,34 @@
+{
+  "id": "2021-09-lunar-shadowed-regions-deep-learning",
+  "title": "Deep learning denoises LRO images of lunar permanently shadowed regions",
+  "summary": "HORUS, a two-stage deep neural network (DestripeNet and PhotonNet), post-processes LRO NAC images of permanently shadowed regions and reveals boulders and craters down to 3 m at about 1.5 m/pixel, with no evidence of surface frost or near-surface ice. It was checked on synthetic data and by cross-comparison of sunlit and shadowed regions and of multiple images. The no-ice finding is an absence of evidence at NAC resolution; an earlier preprint was not checked.",
+  "field": "astronomy",
+  "ai_technology": "HORUS two-stage deep neural network (DestripeNet and PhotonNet) for image denoising",
+  "organization": "Max Planck Institute for Solar System Research",
+  "source_url": "https://doi.org/10.1038/s41467-021-25882-z",
+  "source_type": "paper",
+  "publication_date": "2021-09-23",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Synthetic-data tests, sunlit versus shadowed cross-comparison and cross-comparison of multiple images.",
+    "unknown": "Presence of ice below the resolution limit; any earlier preprint date.",
+    "ai_role": "Deep learning removed noise and revealed shadowed terrain.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41467-021-25882-z%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1038/s41467-021-25882-z"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read for this DOI. Author affiliations from OpenAlex metadata."
+  }
+}

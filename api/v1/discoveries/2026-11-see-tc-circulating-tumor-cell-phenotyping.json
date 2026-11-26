@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-see-tc-circulating-tumor-cell-phenotyping",
+  "title": "SEE-TC deep learning phenotypes circulating tumor cells across 3,386 blood samples",
+  "summary": "SEE-TC (System for Enhanced Evaluation of Tumor Cells) segments and classifies circulating cells in multichannel fluorescence images, developed and evaluated on more than 8.5 million cells from 3,386 blood samples across six cancer types. Single-cell segmentation was on par with human performance, and patient-level CTC burden over time was significantly associated with worse overall survival. Abstract only; hazard ratios and the held-out split were not read, and the system is deployed commercially.",
+  "field": "medicine",
+  "ai_technology": "SEE-TC deep learning for single-cell segmentation and CTC classification",
+  "organization": "University of Wisconsin-Madison",
+  "source_url": "https://doi.org/10.1158/1078-0432.ccr-26-0754",
+  "source_type": "paper",
+  "publication_date": "2026-11-01",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Clinical validation across 3,386 samples, six cancer types and heterogeneous platforms, with survival association.",
+    "unknown": "Hazard ratios and held-out split; full text not reviewed.",
+    "ai_role": "Deep learning replaced manual CTC identification.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1158/1078-0432.ccr-26-0754%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1158/1078-0432.ccr-26-0754"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

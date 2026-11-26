@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-human-cochlea-spiral-ganglion-3d-map",
+  "title": "Deep learning produces a complete 3D spiral ganglion neuron map of a human cochlea",
+  "summary": "UNet++ models trained on manually labelled sections detected spiral ganglion neuron nuclei across all 421 consecutive sections of one adult human cochlea. Counts agreed with manual counts by three histopathologists with 97% accuracy in 191 sections, giving 27,880 neurons in a 3D map with tonotopic distribution. Counting every 10th section gave a median inferred total count accuracy of 98%. The result comes from a single cochlea.",
+  "field": "biology",
+  "ai_technology": "UNet++ nuclei detection models trained on manually labelled histology sections",
+  "organization": "Massachusetts Eye and Ear Infirmary; Harvard University",
+  "source_url": "https://doi.org/10.64898/2026.11.10.765480",
+  "source_type": "paper",
+  "publication_date": "2026-11-11",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Model counts compared with manual counts by three experienced histopathologists, plus systematic omission of sections to test every-10th-section counting.",
+    "unknown": "Single adult human cochlea; bioRxiv preprint; full text not reviewed.",
+    "ai_role": "UNet++ detection of neuron nuclei in every digitized section, enabling a complete 3D map.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.64898/2026.11.10.765480%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.64898/2026.11.10.765480"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI; no author affiliations were available there. Full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2023-03-deep-radiomics-sinusitis-recurrence",
+  "title": "Deep learning radiomics predicts recurrence of chronic rhinosinusitis from CT",
+  "summary": "A multitask 3D U-Net-based network segmented the sinuses and produced a deep radiomics signature of recurrence in 265 CT scans from two centers. In the 65-patient external test cohort the signature reached AUC 0.742 versus 0.496 for traditional radiomics, and the nomogram combining it with clinical factors reached AUC 0.842 versus 0.766 for the clinical model. The external cohort is small (14 recurrences) with wide confidence intervals.",
+  "field": "medicine",
+  "ai_technology": "Multitask 3D U-Net-based deep network for sinus segmentation and recurrence prediction",
+  "organization": "Shandong University; Qilu Hospital of Shandong University",
+  "source_url": "https://doi.org/10.1016/j.isci.2023.106527",
+  "source_type": "paper",
+  "publication_date": "2023-03-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Training on 200 patients from center A; independent external test on 65 patients from center B; 5-fold cross-validation mean AUC 0.755.",
+    "unknown": "Performance in larger or prospective cohorts; recurrence prediction only.",
+    "ai_role": "Segments sinuses and derives a deep radiomics signature for recurrence risk",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.isci.2023.106527%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.isci.2023.106527"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract and Europe PMC full-text Methods/Results excerpts read. Publisher version not otherwise accessed. Author affiliations from OpenAlex metadata."
+  }
+}
