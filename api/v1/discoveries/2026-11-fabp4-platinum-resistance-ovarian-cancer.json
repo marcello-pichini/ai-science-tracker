@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-fabp4-platinum-resistance-ovarian-cancer",
+  "title": "Machine learning prioritizes FABP4 as a platinum-resistance factor in ovarian cancer",
+  "summary": "Machine-learning algorithms (XGBoost, Lasso, random forest) applied to the GSE51373 transcriptomic set ranked FABP4 as a top platinum-resistance biomarker (AUC 0.861, 95% CI 0.782-0.940). In resistant cell lines, FABP4 was upregulated, and its knockdown suppressed proliferation and xenograft tumor growth in nude mice, raised ROS and increased cisplatin-induced apoptosis. FABP4 was associated with ferroptosis-marker changes, but the screening used one public dataset and the mechanism is associative.",
+  "field": "biology",
+  "ai_technology": "XGBoost, Lasso and random forest used to prioritize resistance-associated genes",
+  "organization": "Fourth Affiliated Hospital of Harbin Medical University",
+  "source_url": "https://doi.org/10.1016/j.tice.2026.104136",
+  "source_type": "paper",
+  "publication_date": "2026-11-10",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "FABP4 knockdown in resistant cell lines and nude mouse xenografts after computational screening.",
+    "unknown": "Validation of the screening beyond one GEO dataset; causal ferroptosis mechanism and clinical relevance; full text not reviewed.",
+    "ai_role": "Machine learning prioritized FABP4 from transcriptomic data.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.tice.2026.104136%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.tice.2026.104136"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

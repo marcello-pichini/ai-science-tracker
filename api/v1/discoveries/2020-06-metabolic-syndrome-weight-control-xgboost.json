@@ -1,0 +1,34 @@
+{
+  "id": "2020-06-metabolic-syndrome-weight-control-xgboost",
+  "title": "XGBoost model predicts 2-year metabolic syndrome risk under simulated weight targets",
+  "summary": "Using 3,447 Ansan and 3,874 Anseong participants of the Korean Genome and Epidemiology Study, models were trained on 70% of Ansan participants, internally validated on 30%, and externally validated on all 15,739 Anseong observations. XGBoost outperformed logistic regression, Gaussian naive Bayes, random forest and a deep neural network (AUC 0.879) with better calibration. The model was built into an application that simulates 2-year metabolic syndrome probability at target body weights. Whether weight-control programs improve outcomes still needs prospective study.",
+  "field": "medicine",
+  "ai_technology": "XGBoost prediction model compared with logistic regression, random forest, naive Bayes and a deep neural network",
+  "organization": "Yonsei University; Wonju Severance Christian Hospital; Yonsei University Mirae Campus",
+  "source_url": "https://doi.org/10.1038/s41598-020-67238-5",
+  "source_type": "paper",
+  "publication_date": "2020-06-19",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal validation in 30% of the Ansan cohort and external validation in the Anseong cohort.",
+    "unknown": "Whether following simulated weight targets reduces metabolic syndrome; full text not reviewed.",
+    "ai_role": "XGBoost predicted metabolic syndrome risk from baseline health and body weight.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41598-020-67238-5%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1038/s41598-020-67238-5"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

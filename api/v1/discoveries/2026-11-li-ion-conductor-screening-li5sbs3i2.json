@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-li-ion-conductor-screening-li5sbs3i2",
+  "title": "Topology-based machine-learning screening leads to amorphous Li5SbS3I2 solid electrolyte",
+  "summary": "A LightGBM model on local structure order parameters, trained on 171 Li-containing compounds, distinguished ionic conductivity with over 70% test accuracy; SHAP analysis linked quasi-linear Li migration pathways to high conductivity. It screened 3,664 unlabeled compounds for 778 candidates, narrowed by persistent-homology clustering and molecular dynamics on 72 candidates, and Li5SbS3I2 was chosen for experiments. The crystalline phase conducted 8.6e-8 S/cm, and mechanical amorphization raised this to 8.1e-5 S/cm at 25 C, with charge-discharge tests in all-solid-state batteries. The training set is small and the conductivity is moderate.",
+  "field": "materials",
+  "ai_technology": "LightGBM model on local structure order parameters with persistent-homology clustering for candidate screening",
+  "organization": "Soochow University; Institute of Science Tokyo",
+  "source_url": "https://doi.org/10.1021/jacs.6c00345",
+  "source_type": "paper",
+  "publication_date": "2026-11-01",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Li5SbS3I2 was synthesized, conductivity measured and amorphous material tested in all-solid-state cells.",
+    "unknown": "Performance of the other screened candidates and competitiveness with known electrolytes; full text not reviewed.",
+    "ai_role": "A gradient-boosting model screened thousands of compounds and nominated the tested candidate.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1021/jacs.6c00345%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1021/jacs.6c00345"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

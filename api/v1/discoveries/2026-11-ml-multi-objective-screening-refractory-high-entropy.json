@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-ml-multi-objective-screening-refractory-high-entropy",
+  "title": "Machine learning screens hardness and oxidation resistance in refractory alloys",
+  "summary": "XGBoost hardness and random forest oxidation models (held-out R2 0.79 and 0.76) screened 109,571 quinary compositions, and six alloys were fabricated for contrasting hardness-oxidation trade-offs, with measured hardness up to 780 +/- 8 HV and a lowest specific mass gain of 2.75 +/- 0.04 mg/cm2 after 1000 C for 20 h. A refined gradient boosting oxidation model (held-out R2 0.94) cut mean absolute oxidation index error from 0.46 to 0.21 on three further alloys, and the refined candidate had 661 +/- 11 HV and a mass gain of 6.20 +/- 0.01 mg/cm2.",
+  "field": "materials",
+  "ai_technology": "XGBoost, random forest and gradient boosting models with SHAP analysis",
+  "organization": "Centre National de la Recherche Scientifique; National Tsing Hua University; Institut de Chimie de la Matière Condensée de Bordeaux",
+  "source_url": "https://doi.org/10.1007/s44210-026-00087-5",
+  "source_type": "paper",
+  "publication_date": "2026-11-16",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Experimental synthesis and measurement of nine alloys chosen by model predictions.",
+    "unknown": "Few experimental candidates; initial oxidation predictions had large errors; full text not reviewed.",
+    "ai_role": "Machine learning models screened composition space and prioritized alloys for synthesis.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s44210-026-00087-5%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1007/s44210-026-00087-5"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

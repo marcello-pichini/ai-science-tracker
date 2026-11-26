@@ -1,0 +1,34 @@
+{
+  "id": "2021-10-metagenomic-neural-network-lung-biopsy",
+  "title": "Metagenomic sequencing with a neural network detects pathogens and cancer in lung biopsies",
+  "summary": "Lung biopsies from 133 patients underwent Illumina and Nanopore metagenomic sequencing. Neural networks pretrained on human reads from 2,095 sequencing results predicted cancer risk; against histology the Illumina pipeline had 83.7% sensitivity and 97.6% specificity and diagnosed 36 additional cancer patients. Pathogen detection had 77.6% sensitivity and 97.6% specificity against a composite reference standard (Nanopore 34.7% and 98.7%); the study is single-centre and the neural network applies only to the cancer call.",
+  "field": "medicine",
+  "ai_technology": "Neural networks pretrained on human-read features from metagenomic sequencing, predicting cancer risk",
+  "organization": "Peking University; Peking University People's Hospital",
+  "source_url": "https://doi.org/10.1016/j.ebiom.2021.103639",
+  "source_type": "paper",
+  "publication_date": "2021-10-23",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Illumina and Nanopore sequencing of biopsies from 133 patients compared with histology and a composite reference standard.",
+    "unknown": "Performance in other centres and the neural network's separate contribution to the pathogen results; full text not reviewed.",
+    "ai_role": "Pretrained neural networks scored cancer risk from human reads in the sequencing data.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.ebiom.2021.103639%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.ebiom.2021.103639"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

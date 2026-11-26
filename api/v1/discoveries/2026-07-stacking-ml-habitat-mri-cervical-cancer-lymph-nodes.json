@@ -1,0 +1,34 @@
+{
+  "id": "2026-07-stacking-ml-habitat-mri-cervical-cancer-lymph-nodes",
+  "title": "Stacking machine learning on habitat MRI predicts cervical cancer lymph node metastasis",
+  "summary": "In 623 early-stage cervical cancer patients (311 training, 187 internal validation, 125 external validation), a stacking ensemble of five base classifiers with an XGBoost meta-model used intratumoral and peritumoral habitat radiomics from T2, DWI and contrast-enhanced MRI plus clinicopathological variables. The best base learner reached AUC 0.845 externally and the meta-learner 0.875, significantly higher than base learners and unimodal approaches.",
+  "field": "medicine",
+  "ai_technology": "Stacking ensemble (logistic regression, XGBoost, Elastic Net, attention CNN, SVM; XGBoost meta-model) on habitat radiomics",
+  "organization": "Ningxia Medical University",
+  "source_url": "https://doi.org/10.1016/j.acra.2026.07.022",
+  "source_type": "paper",
+  "publication_date": "2026-07-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Training, internal validation and external validation cohorts (n=623 total).",
+    "unknown": "Retrospective with prospective validation described but not detailed; full text not reviewed.",
+    "ai_role": "Machine learning ensemble predicts lymph node metastasis before surgery.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.acra.2026.07.022%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.acra.2026.07.022"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

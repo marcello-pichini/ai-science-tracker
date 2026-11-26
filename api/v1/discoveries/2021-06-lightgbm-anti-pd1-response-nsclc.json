@@ -1,0 +1,34 @@
+{
+  "id": "2021-06-lightgbm-anti-pd1-response-nsclc",
+  "title": "LightGBM on clinical features predicts anti-PD-1 response in non-small-cell lung cancer",
+  "summary": "Clinical data (characteristics, mutations, laboratory findings) from 142 NSCLC patients treated with anti-PD-1 therapy were used with five algorithms, and LightGBM on 19 clinical features was selected. It reached AUC 0.788 versus 0.759 for traditional multivariate logistic regression, and was validated in an independent set of PD-1 inhibitor-treated patients. The discovery set is small and the abstract does not give the size or metrics of the validation set.",
+  "field": "medicine",
+  "ai_technology": "LightGBM gradient boosting on 19 clinical features, selected among five machine learning algorithms",
+  "organization": "Yonsei University; Yonsei Cancer Hospital",
+  "source_url": "https://doi.org/10.1016/j.ejca.2021.05.019",
+  "source_type": "paper",
+  "publication_date": "2021-06-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The selected model was validated in an independent set of PD-1 inhibitor-treated patients.",
+    "unknown": "Validation cohort size and metrics; prospective benefit; full text not reviewed.",
+    "ai_role": "Supervised machine learning combined clinical features to predict treatment response.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.ejca.2021.05.019%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.ejca.2021.05.019"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

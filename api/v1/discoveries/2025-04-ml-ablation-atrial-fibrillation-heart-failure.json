@@ -1,0 +1,34 @@
+{
+  "id": "2025-04-ml-ablation-atrial-fibrillation-heart-failure",
+  "title": "ML tool stratifies catheter ablation benefit in atrial fibrillation with heart failure",
+  "summary": "Unsupervised clustering and supervised learning on 25 clinical features from the China-AF registry (3122 patients, 31 hospitals) identified three risk clusters with composite event rates per 100 person-years of 7.7, 6.8 and 3.8. External validation used 778 patients from the CABANA trial and showed a similar pattern (adjusted HR 0.19 for ablation in the benefiting group, 95% CI 0.05-0.73). The tool was derived from observational data and the authors state that interventional trials are needed to confirm its usefulness.",
+  "field": "medicine",
+  "ai_technology": "Unsupervised clustering and supervised learning models on 25 clinical features",
+  "organization": "Capital Medical University; Beijing Anzhen Hospital",
+  "source_url": "https://doi.org/10.1016/j.eclinm.2025.103219",
+  "source_type": "paper",
+  "publication_date": "2025-04-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation in 778 patients from the CABANA randomized trial.",
+    "unknown": "Effectiveness in interventional trials and real-world practice; algorithm details; full text not reviewed.",
+    "ai_role": "Clustering and supervised models defined risk strata used to guide ablation decisions.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.eclinm.2025.103219%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.eclinm.2025.103219"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

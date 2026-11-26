@@ -1,0 +1,34 @@
+{
+  "id": "2026-01-dpathhrd-hrd-ovarian-histology",
+  "title": "dPathHRD predicts HRD status and platinum response from ovarian cancer slides",
+  "summary": "dPathHRD couples a pre-trained transformer-based pathology foundation model with attention-based multiple-instance learning to predict HRD status from H&E slides in high-grade serous ovarian cancer. AUC was 0.920 in the discovery cohort and 0.766 in the validation cohort, and HRD-like cases showed higher complete response rates and longer progression-free and recurrence-free survival across three cohorts. The authors state prospective validation is warranted.",
+  "field": "medicine",
+  "ai_technology": "Pathology foundation model with attention-based multiple-instance learning",
+  "organization": "Wenzhou Medical University",
+  "source_url": "https://doi.org/10.1007/s12539-025-00809-0",
+  "source_type": "paper",
+  "publication_date": "2026-01-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Discovery, validation and platinum-response cohorts (three cohorts in total).",
+    "unknown": "Modest validation AUC; retrospective; foundation model not named in the abstract; full text not reviewed.",
+    "ai_role": "Deep learning predicts HRD status and platinum response directly from slides.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s12539-025-00809-0%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1007/s12539-025-00809-0"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

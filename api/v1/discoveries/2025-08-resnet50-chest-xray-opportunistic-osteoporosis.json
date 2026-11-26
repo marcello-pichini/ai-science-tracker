@@ -1,0 +1,34 @@
+{
+  "id": "2025-08-resnet50-chest-xray-opportunistic-osteoporosis",
+  "title": "ResNet50 deep learning screens for osteoporosis on chest X-rays",
+  "summary": "Using chest X-rays from 1995 patients treated at Chongqing Daping Hospital (2019-2024), transfer-learned ResNet50 outperformed Inception v3 and VGG16, with internal AUCs of 0.945 and 0.957 and accuracies of 87.85% and 90.38% in two experiments. In an external dataset it reached AUC 0.904, accuracy 89%, sensitivity 90% and specificity 88.57%.",
+  "field": "medicine",
+  "ai_technology": "Transfer-learned ResNet50 (also Inception v3 and VGG16) on chest X-ray images",
+  "organization": "Army Medical University; Daping Hospital",
+  "source_url": "https://doi.org/10.1016/j.bone.2025.117618",
+  "source_type": "paper",
+  "publication_date": "2025-08-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal test sets and an external validation dataset.",
+    "unknown": "Retrospective; single-center development; external set size not stated; full text not reviewed.",
+    "ai_role": "Deep neural networks classify osteoporosis from chest X-rays opportunistically.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.bone.2025.117618%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.bone.2025.117618"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

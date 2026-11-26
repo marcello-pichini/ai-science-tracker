@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-autoencoder-predicts-cell-morphology-from-expression",
+  "title": "Adversarial autoencoder predicts cellular morphology from gene expression across donors",
+  "summary": "An adversarially aligned autoencoder trained on four perturbation datasets predicted cell morphology from gene expression and generalized without retraining to RNA-seq and cell painting profiles from 100 genetically diverse iPSC donors. Seventeen morphological features were strongly predicted, with the signal spread across many genes rather than a few. Independent CRISPR perturbations supported model-prioritized genes including TIAM1, RAB31 and ABCC5, while genetic analyses linked PDHX, SLC11A2 and MAPKAPK5 variants to morphology.",
+  "field": "biology",
+  "ai_technology": "Adversarially aligned autoencoder for cross-modal prediction of morphology from gene expression",
+  "organization": "Purdue University West Lafayette",
+  "source_url": "https://doi.org/10.1016/j.isci.2026.118207",
+  "source_type": "paper",
+  "publication_date": "2026-11-12",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent CRISPR perturbations of model-prioritized genes, and held-out donor RNA-seq and cell painting data.",
+    "unknown": "How many prioritized genes were confirmed, and the causal role of the genetic associations; full text not reviewed.",
+    "ai_role": "An autoencoder predicted cell painting features from transcriptomes and prioritized genes.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.isci.2026.118207%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.isci.2026.118207"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

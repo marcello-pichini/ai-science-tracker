@@ -1,0 +1,34 @@
+{
+  "id": "2025-07-next-day-extubation-prediction-ml",
+  "title": "Machine learning predicts next-day extubation from ICU electronic health records",
+  "summary": "Using 37 electronic health record features aggregated overnight for each ICU day, XGBoost, LightGBM, logistic regression, LSTM and RNN models were built on a single-center prospective cohort (448 patients, 3,095 ICU days). The best model, an LSTM, predicted next-day extubation with AUROC 0.870 internally and 0.870 on an external community-hospital cohort (333 patients, 2,835 ICU days). Plateau pressure and Richmond Agitation Sedation Scale score were among the most informative features, and 63.8% of predicted extubations occurred within three days of true extubation. The model has not been tested in clinical deployment, and both ICUs are in one health system.",
+  "field": "medicine",
+  "ai_technology": "LSTM and gradient-boosting models on electronic health record features to predict next-day extubation",
+  "organization": "Northwestern University",
+  "source_url": "https://doi.org/10.1038/s41598-025-12264-4",
+  "source_type": "paper",
+  "publication_date": "2025-07-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal test and external community-hospital test of next-day extubation prediction.",
+    "unknown": "Effect on care or outcomes when deployed and performance beyond one health system; full text not reviewed.",
+    "ai_role": "Machine-learning models predicted next-day extubation.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41598-025-12264-4%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1038/s41598-025-12264-4"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

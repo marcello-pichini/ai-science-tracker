@@ -1,0 +1,34 @@
+{
+  "id": "2021-05-ml-covid-like-disease-ventilation-prediction",
+  "title": "Machine learning trained on COVID-like disease predicts 48-hour ventilation in COVID-19",
+  "summary": "Logistic regression, decision tree, AdaBoost and XGBoost models were trained on patients hospitalized with pneumonia, influenza or ARDS (2008-2019) to predict invasive mechanical ventilation within 48 hours, and validated in 444 COVID-19 inpatients at two health systems. XGBoost was best; discrimination in COVID-19 was moderate, with AUC 0.77 at Stanford and 0.65 at Intermountain, and the best overall model had negative predictive value 0.97 at both sites. The study is retrospective and uses 2020 data.",
+  "field": "medicine",
+  "ai_technology": "XGBoost, AdaBoost, decision tree and logistic regression models trained on COVID-like disease cohorts",
+  "organization": "Intermountain Healthcare; Intermountain Medical Center; Stanford Medicine",
+  "source_url": "https://doi.org/10.1016/j.jbi.2021.103802",
+  "source_type": "paper",
+  "publication_date": "2021-05-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Models trained on pre-COVID respiratory failure patients were validated in hospitalized COVID-19 patients at two healthcare systems.",
+    "unknown": "Prospective performance and transfer to later COVID-19 variants and treatments; full text not reviewed.",
+    "ai_role": "Tree-based machine learning models predicted ventilation need from clinical parameters.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jbi.2021.103802%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.jbi.2021.103802"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

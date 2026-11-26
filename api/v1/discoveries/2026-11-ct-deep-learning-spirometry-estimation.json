@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-ct-deep-learning-spirometry-estimation",
+  "title": "Deep learning on lung-screening CT estimates spirometry in two external cohorts",
+  "summary": "A three-dimensional convolutional neural network trained on 10,371 low-dose CT reconstructions from 5,975 NLST participants was fused with 20 densitometry and tracheal geometry features to predict FEV1, FVC and FEV1/FVC. Applied frozen to an external screening cohort (n = 268) and COPDGene (10,302 scans), it detected abnormal spirometry with AUROC 0.898 and 0.913, and concordance correlation coefficients were 0.80-0.88. Agreement was lower with overestimation in a COPD subgroup, the reference spirometry differed (pre- versus post-bronchodilator), and prospective utility is unproven.",
+  "field": "medicine",
+  "ai_technology": "3D convolutional neural network fused with CT-derived densitometry and tracheal features, predicting FEV1, FVC and FEV1/FVC",
+  "organization": "University of Florida; D’Or Institute for Research and Education",
+  "source_url": "https://doi.org/10.1016/j.chest.2026.11.021",
+  "source_type": "paper",
+  "publication_date": "2026-11-23",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "A frozen model was evaluated on two external cohorts (n = 268 and 10,302 scans) against reference spirometry.",
+    "unknown": "Prospective clinical utility; performance across populations, since sensitivity and specificity differed at the same decision rule; full text not reviewed.",
+    "ai_role": "A 3D CNN plus quantitative CT features estimated spirometric parameters from existing chest CT.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.chest.2026.11.021%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.chest.2026.11.021"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

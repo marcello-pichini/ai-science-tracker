@@ -1,0 +1,34 @@
+{
+  "id": "2026-07-questionnaire-response-cognitive-impairment-ai",
+  "title": "Tabular foundation model flags cognitive impairment risk from questionnaire responses",
+  "summary": "Using data from 45,604 older adults in five population-based ageing cohorts, a machine-learning pipeline built on a tabular foundation model used indicators of reduced survey response quality to identify cognitive impairment risk. The model jointly trained on the United States, England, India and Mexico outperformed country-specific models, with up to a 0.12 absolute AUC gain (about 20% relative) in an external validation cohort from China. Decision-curve analyses suggest population-level prioritization benefit; this is risk screening rather than diagnosis, and absolute AUCs are not stated in the abstract.",
+  "field": "medicine",
+  "ai_technology": "Tabular foundation model on questionnaire response-quality indicators",
+  "organization": "University of Surrey",
+  "source_url": "https://doi.org/10.1038/s41467-026-76071-9",
+  "source_type": "paper",
+  "publication_date": "2026-07-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Joint training across four cohorts and external validation in a Chinese cohort.",
+    "unknown": "Absolute performance, diagnostic accuracy and prospective use; full text not reviewed.",
+    "ai_role": "A tabular foundation model predicted cognitive impairment risk from response behaviour.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41467-026-76071-9%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1038/s41467-026-76071-9"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

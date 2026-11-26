@@ -1,0 +1,34 @@
+{
+  "id": "2021-05-nlp-ct-reports-abdominal-pathology-covid",
+  "title": "NLP tracks emergency abdominal CT findings during the COVID-19 pandemic",
+  "summary": "Random forest NLP classifiers trained on 2448 annotated reports identified appendicitis, diverticulitis and bowel obstruction in 22,182 emergency department CT reports, with cross-validated accuracies of 0.97-0.99 and F1 0.86-0.91. Applied to all reports, estimated case numbers fell 43-57% in April 2020 compared with 2018-2019, then rebounded, while proportions of CT studies with these pathologies did not significantly increase.",
+  "field": "medicine",
+  "ai_technology": "Random forest natural language processing classifiers on radiology report impressions",
+  "organization": "Harvard University; Massachusetts General Hospital",
+  "source_url": "https://doi.org/10.1016/j.ajem.2021.05.057",
+  "source_type": "paper",
+  "publication_date": "2021-05-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Five-fold cross-validation of classifiers and application to all reports from one urban emergency department.",
+    "unknown": "Single health system; no external validation of the classifiers; causes of the decline are inferred; full text not reviewed.",
+    "ai_role": "NLP classifiers counted pathology from reports at scale.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.ajem.2021.05.057%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.ajem.2021.05.057"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

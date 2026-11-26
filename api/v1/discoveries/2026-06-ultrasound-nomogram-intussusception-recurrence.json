@@ -1,0 +1,34 @@
+{
+  "id": "2026-06-ultrasound-nomogram-intussusception-recurrence",
+  "title": "Ultrasound deep learning nomogram predicts early intussusception recurrence",
+  "summary": "In 1314 children from three hospitals, DeepLabv3 with ResNet101 segmented lesions on ultrasound (Dice 0.935 training, 0.862 test), and fused radiomics and deep learning features were combined with clinical variables in a nomogram. AUC was 0.892 in internal validation and 0.884 and 0.851 in the two external test sets for recurrence within 48 hours. Authors state prospective validation is needed.",
+  "field": "medicine",
+  "ai_technology": "DeepLabv3 with ResNet101 segmentation, deep learning and radiomics features with XGBoost-type classifiers",
+  "organization": "Zhujiang Hospital; Southern Medical University",
+  "source_url": "https://doi.org/10.1007/s00247-026-06696-x",
+  "source_type": "paper",
+  "publication_date": "2026-06-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal validation and two external test sets from different hospitals.",
+    "unknown": "Retrospective; no prospective validation; full text not reviewed.",
+    "ai_role": "Deep learning segmented lesions and supplied features to a recurrence risk model.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s00247-026-06696-x%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1007/s00247-026-06696-x"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

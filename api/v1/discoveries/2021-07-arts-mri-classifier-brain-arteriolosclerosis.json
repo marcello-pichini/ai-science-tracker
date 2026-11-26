@@ -1,0 +1,34 @@
+{
+  "id": "2021-07-arts-mri-classifier-brain-arteriolosclerosis",
+  "title": "MRI machine-learning classifier estimates brain arteriolosclerosis in living older adults",
+  "summary": "A machine-learning classifier using white matter hyperintensity, diffusion anisotropy and demographic features was first developed on ex-vivo MRI and autopsy pathology from 119 participants (AUC 0.78) and then translated to in-vivo MRI as ARTS. In a separate group of 79 mostly dementia-free participants ARTS had AUC 0.79, and higher scores predicted cognitive decline; replication used further cohorts of 72 and 244 participants. The AUC is modest and the pathology reference comes from autopsy.",
+  "field": "medicine",
+  "ai_technology": "Machine learning classifier on MRI-derived white matter and diffusion features",
+  "organization": "Illinois Institute of Technology",
+  "source_url": "https://doi.org/10.1016/j.nicl.2021.102768",
+  "source_type": "paper",
+  "publication_date": "2021-07-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Testing in a separate group of 79 participants against autopsy-based ground truth, with replication in two other cohorts.",
+    "unknown": "Performance in more diverse populations and clinical utility; full text not reviewed.",
+    "ai_role": "A machine learning classifier scored the likelihood of arteriolosclerosis from MRI.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.nicl.2021.102768%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.nicl.2021.102768"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

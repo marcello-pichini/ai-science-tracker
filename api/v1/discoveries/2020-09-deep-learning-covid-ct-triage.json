@@ -1,0 +1,34 @@
+{
+  "id": "2020-09-deep-learning-covid-ct-triage",
+  "title": "Deep learning triages suspected COVID-19 on chest CT and tracks lesion burden",
+  "summary": "A U-Net-based model trained on chest CT scans from 2447 patients (1647 PCR-confirmed COVID-19) segments lung opacities and flags COVID-19 imaging manifestations. In an external set of 2120 consecutive cases from three fever clinics, triage AUC was 0.953 with sensitivity 0.923 and specificity 0.851, and the AI flagged cases in a median of 0.55 minutes. For lesion-burden increase it reached sensitivity 0.962 and specificity 0.875, with high agreement with a radiologist panel (kappa 0.839). The study is retrospective and from early in the pandemic.",
+  "field": "medicine",
+  "ai_technology": "U-Net deep-learning segmentation of chest CT to triage COVID-19 and quantify lesion burden",
+  "organization": "Tongji Hospital; Huazhong University of Science and Technology",
+  "source_url": "https://doi.org/10.1016/s2589-7500(20)30199-0",
+  "source_type": "paper",
+  "publication_date": "2020-09-22",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation in 2120 cases across three fever clinics and 761 scans from a makeshift hospital, with a radiologist comparison.",
+    "unknown": "Prospective performance in routine workflow and generalization after the early pandemic period; full text not reviewed.",
+    "ai_role": "A deep-learning model segmented lesions and flagged cases on CT.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/s2589-7500(20)30199-0%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/s2589-7500(20)30199-0"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

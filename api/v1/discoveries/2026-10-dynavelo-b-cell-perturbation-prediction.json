@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-dynavelo-b-cell-perturbation-prediction",
+  "title": "DynaVelo neural ODE model predicts rescue perturbations in germinal center B cells",
+  "summary": "DynaVelo, a generative neural ordinary differential equation model, learns joint dynamics of gene expression and transcription factor motif activity from single-cell multiome data and allows in silico perturbation. It recovered murine germinal center B cell dynamics under heterozygous loss of Arid1a and Ctcf and identified Ctcf, Stat3 and Bcl6 as rescue targets for Arid1a loss. In vivo experiments in double-heterozygous mice confirmed rescue of the Arid1aHet dark-zone phenotype for all three, and multiome profiling of Arid1aHet;CtcfHet germinal centers validated the predicted shift toward wild-type dynamics. The work is in mouse germinal center B cells.",
+  "field": "biology",
+  "ai_technology": "Generative neural ordinary differential equation model of single-cell multiomic dynamics with in silico perturbation",
+  "organization": "Memorial Sloan Kettering Cancer Center",
+  "source_url": "https://doi.org/10.1038/s41587-026-03348-1",
+  "source_type": "paper",
+  "publication_date": "2026-10-21",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 3,
+    "validation": 3,
+    "novelty": 3
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In vivo double-heterozygous mouse experiments and multiome profiling tested the predicted rescue targets.",
+    "unknown": "Applicability beyond mouse germinal center B cells; full text not reviewed.",
+    "ai_role": "DynaVelo predicted loss-of-function and rescue perturbations in silico.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41587-026-03348-1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1038/s41587-026-03348-1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

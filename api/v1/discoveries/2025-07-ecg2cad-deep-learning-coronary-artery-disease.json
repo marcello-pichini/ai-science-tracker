@@ -1,0 +1,34 @@
+{
+  "id": "2025-07-ecg2cad-deep-learning-coronary-artery-disease",
+  "title": "Deep learning on electrocardiograms identifies coronary artery disease in primary care",
+  "summary": "ECG2CAD, a deep learning model trained on 764,670 ECGs from 137,199 people at Massachusetts General Hospital, detected prevalent coronary artery disease defined by diagnostic codes. AUROC was 0.782 at MGH, 0.747 at Brigham and Women's Hospital (n = 88,270) and 0.760 in UK Biobank (n = 42,147), with incremental value over age and sex and the Pooled Cohort Equations. Performance is modest, CAD labels come from diagnostic codes, and the study is retrospective.",
+  "field": "medicine",
+  "ai_technology": "ECG2CAD deep learning model on 12-lead electrocardiograms",
+  "organization": "Broad Institute; Massachusetts General Hospital; University Medical Center Hamburg-Eppendorf",
+  "source_url": "https://doi.org/10.1016/j.jacadv.2025.102041",
+  "source_type": "paper",
+  "publication_date": "2025-07-31",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Evaluation in held-out MGH data and in two external test sets, with comparison to age and sex and Pooled Cohort Equations models.",
+    "unknown": "Prospective benefit for testing or prevention; accuracy against imaging-confirmed CAD; full text not reviewed.",
+    "ai_role": "A deep learning model detected prevalent CAD from ECGs.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jacadv.2025.102041%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.jacadv.2025.102041"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

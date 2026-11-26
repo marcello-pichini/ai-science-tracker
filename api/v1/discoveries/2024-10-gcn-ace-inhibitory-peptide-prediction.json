@@ -1,0 +1,34 @@
+{
+  "id": "2024-10-gcn-ace-inhibitory-peptide-prediction",
+  "title": "Graph convolutional network predicts ACE-inhibitory peptides; two synthesized hits active",
+  "summary": "Peptides of 2-10 amino acids were represented as molecular graphs and a graph convolutional network was built to predict ACE inhibitory potential. It outperformed random forest, SVM and kNN descriptor models (accuracy 0.78) and exceeded existing methods with over 98% accuracy on an independent test set. Two predicted peptides, VAPE and AQQKEP, were synthesized and showed ACE inhibition with IC50 values of 2.25 +/- 0.11 and 3.75 +/- 0.17 uM; only two peptides were tested.",
+  "field": "biology",
+  "ai_technology": "Graph convolutional network on molecular graphs of variable-length peptides",
+  "organization": "Northeast Agricultural University; Institute of Food Science and Technology; Institute of Agro-Products Processing Science and Technology",
+  "source_url": "https://doi.org/10.1016/j.ijbiomac.2024.137060",
+  "source_type": "paper",
+  "publication_date": "2024-10-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Two high-probability peptides were chemically synthesized and tested for ACE inhibition in vitro.",
+    "unknown": "Activity of other predicted peptides, and in vivo or food-matrix effects; full text not reviewed.",
+    "ai_role": "A graph convolutional network ranked peptides by predicted ACE inhibitory activity.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.ijbiomac.2024.137060%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.ijbiomac.2024.137060"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

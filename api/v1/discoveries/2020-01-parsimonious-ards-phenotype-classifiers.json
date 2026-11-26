@@ -1,0 +1,34 @@
+{
+  "id": "2020-01-parsimonious-ards-phenotype-classifiers",
+  "title": "Machine-learning-selected variables give parsimonious classifiers for ARDS phenotypes",
+  "summary": "Random forest, bagging and LASSO selected important variables from three ARDS Network trial cohorts (n=2022), which fed nested logistic regression classifiers of the hyperinflammatory and hypoinflammatory phenotypes. Three-variable (IL-8, bicarbonate, protein C) and four-variable models reached AUC 0.94 and 0.95 in the validation set SAILS (n=715) against latent class analysis labels. The hyperinflammatory phenotype had higher day-90 mortality (39% vs 23%) in the validation set; this is a retrospective secondary analysis with latent-class labels as the reference.",
+  "field": "medicine",
+  "ai_technology": "Random forest, bootstrapped aggregating and LASSO for variable selection feeding logistic regression classifiers",
+  "organization": "University of California, San Francisco",
+  "source_url": "https://doi.org/10.1016/s2213-2600(19)30369-8",
+  "source_type": "paper",
+  "publication_date": "2020-01-13",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Validation in the SAILS cohort and prognostic checks in two external trial datasets.",
+    "unknown": "Prospective validation and real-time biomarker availability; full text not reviewed.",
+    "ai_role": "Machine-learning algorithms selected the classifier variables.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/s2213-2600(19)30369-8%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/s2213-2600(19)30369-8"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2024-03-neural-network-til-head-neck-cancer",
+  "title": "Neural network standardizes tumor-infiltrating lymphocyte scoring in head and neck cancer",
+  "summary": "A neural network classifier, NN3-17, trained in QuPath to identify tumor cells, lymphocytes, fibroblasts and other cells on H&E sections, produced three predefined TIL variables. These were tuned on 154 head and neck squamous cell cancer cases and validated in two independent cohorts totalling 234 cases, where they were independently prognostic in HPV-positive and HPV-negative cancers after adjustment for clinicopathologic factors. The study is retrospective and the abstract gives no hazard ratios.",
+  "field": "medicine",
+  "ai_technology": "NN3-17 neural network cell classifier in QuPath producing electronic TIL variables",
+  "organization": "Yale University",
+  "source_url": "https://doi.org/10.1016/j.oraloncology.2024.106750",
+  "source_type": "paper",
+  "publication_date": "2024-03-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Two independent validation cohorts (234 cases) with Cox regression adjusted for clinicopathologic factors.",
+    "unknown": "Prospective validation and routine clinical use; full text not reviewed.",
+    "ai_role": "A neural network classified cell types on H&E slides to quantify TILs.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.oraloncology.2024.106750%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.oraloncology.2024.106750"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

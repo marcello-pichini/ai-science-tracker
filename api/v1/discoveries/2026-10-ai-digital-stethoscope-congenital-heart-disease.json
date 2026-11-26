@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-ai-digital-stethoscope-congenital-heart-disease",
+  "title": "AI digital stethoscope detects congenital heart disease in a prospective study",
+  "summary": "Heart sounds from 721 subjects (382 with CHD, 339 controls) were recorded at four auscultation sites, converted to mel-spectrograms and classified by a convolutional neural network. With 301 recordings used for training and 420 for blinded temporal forward testing, the algorithm identified 222 of 233 CHD cases and 171 of 187 controls (sensitivity 95.2%, specificity 91.4%) against echocardiography. It remained effective in noisy settings and uncooperative children.",
+  "field": "medicine",
+  "ai_technology": "Convolutional neural network on mel-spectrograms of digital stethoscope recordings",
+  "organization": "Kokilaben Dhirubhai Ambani Hospital",
+  "source_url": "https://doi.org/10.1007/s00246-026-04541-4",
+  "source_type": "paper",
+  "publication_date": "2026-10-30",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Blinded forward testing on 420 recordings collected after the training period, with echocardiography as reference.",
+    "unknown": "Single center; temporal rather than external split; full text not reviewed.",
+    "ai_role": "CNN classifies congenital heart disease probability from heart sounds.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s00246-026-04541-4%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1007/s00246-026-04541-4"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

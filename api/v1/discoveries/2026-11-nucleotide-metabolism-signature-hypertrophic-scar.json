@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-nucleotide-metabolism-signature-hypertrophic-scar",
+  "title": "Machine learning and single-cell analysis nominate NCF1 and GPR34 in hypertrophic scarring",
+  "summary": "Single-cell RNA-seq analysis found macrophages with prominent nucleotide-metabolism activation in hypertrophic scar, and an Enet + svmLinear diagnostic model on public transcriptomic data reached an AUC of 0.934, with SHAP analysis picking NCF1 and GPR34 as key genes. In THP-1-derived M2 macrophages, these genes promoted TGF-beta1 secretion and fibroblast activation, and knockdown reduced alpha-smooth muscle actin and collagen I expression. Largely bioinformatic and in vitro; the AUC is probably an internal estimate.",
+  "field": "medicine",
+  "ai_technology": "Enet + svmLinear diagnostic model with SHAP feature attribution on transcriptomic data",
+  "organization": "Ningxia Medical University General Hospital",
+  "source_url": "https://doi.org/10.1093/jbcr/irag152",
+  "source_type": "paper",
+  "publication_date": "2026-11-01",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "In vitro knockdown in THP-1-derived M2 macrophages.",
+    "unknown": "Independent validation of the AUC, in vivo role and clinical use; full text not reviewed.",
+    "ai_role": "Machine-learning models built the diagnostic signature and SHAP selected the key genes.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1093/jbcr/irag152%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1093/jbcr/irag152"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

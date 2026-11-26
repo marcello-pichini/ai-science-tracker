@@ -1,0 +1,34 @@
+{
+  "id": "2023-06-plasma-proteins-ml-lung-cancer-prediction",
+  "title": "Plasma proteins and machine learning predict lung cancer up to ten years before diagnosis",
+  "summary": "Olink profiling of 2941 plasma proteins in 496 Liverpool Lung Project samples (131 cases taken 1-10 years before diagnosis) was followed by bootstrapped feature selection and four machine learning algorithms. Median AUCs were 0.76-0.90 for 1-3 year and 0.73-0.83 for 1-5 year proteins; validation in UK Biobank gave AUCs of 0.75 and 0.69, and about 0.7 up to 12 years before diagnosis. External performance is modest, the discovery cohort is small, and no wet-lab follow-up of single proteins is described.",
+  "field": "medicine",
+  "ai_technology": "Four machine learning algorithms applied to bootstrap-selected plasma protein panels for lung cancer prediction",
+  "organization": "University of Liverpool",
+  "source_url": "https://doi.org/10.1016/j.ebiom.2023.104686",
+  "source_type": "paper",
+  "publication_date": "2023-06-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Models were validated on UK Biobank data.",
+    "unknown": "Clinical utility for screening; replication of individual protein biomarkers; full text not reviewed.",
+    "ai_role": "Machine learning models predicted future lung cancer from plasma proteins.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.ebiom.2023.104686%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.ebiom.2023.104686"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

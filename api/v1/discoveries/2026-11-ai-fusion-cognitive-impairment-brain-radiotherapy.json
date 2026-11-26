@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-ai-fusion-cognitive-impairment-brain-radiotherapy",
+  "title": "Multimodal AI model predicts cognitive impairment after brain radiotherapy",
+  "summary": "A gradient-boosted ensemble with attention-based feature fusion combined dosimetric, MRI radiomic (1316 features) and clinical variables from 412 patients at two centers, training on 289 and validating on 123. It reached AUC 0.871 (95% CI 0.821-0.921), above dosimetric-only (0.714), radiomic-only (0.748) and clinical-only (0.682) models, with sensitivity 81.4% and specificity 79.6%.",
+  "field": "medicine",
+  "ai_technology": "Gradient-boosted ensemble with attention-based feature fusion on dosimetric, radiomic and clinical features",
+  "organization": "Beijing Technology and Business University",
+  "source_url": "https://doi.org/10.1016/j.apradiso.2026.113063",
+  "source_type": "paper",
+  "publication_date": "2026-11-07",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Independent validation set of 123 patients from a retrospective two-center cohort.",
+    "unknown": "Retrospective; no prospective testing; full text not reviewed.",
+    "ai_role": "Machine learning fuses dose, imaging and clinical data to predict impairment at six months.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.apradiso.2026.113063%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.apradiso.2026.113063"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

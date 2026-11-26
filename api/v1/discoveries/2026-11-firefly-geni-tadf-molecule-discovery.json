@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-firefly-geni-tadf-molecule-discovery",
+  "title": "Firefly-Geni LLM-assisted generative framework proposes TADF molecules, one synthesized",
+  "summary": "Firefly-Geni uses LLM-assisted literature data extraction, a multitask property predictor, a conditional molecular generator and quantum-chemical feedback. From 100,000 molecules generated for a singlet-triplet gap of 0.05 eV and synthetic accessibility score 2.5, it identified 100 structurally novel candidates predicted computationally to support reverse intersystem crossing. One synthesized candidate showed an experimental singlet-triplet gap of 0.019 eV and a film photoluminescence quantum yield of 84% under nitrogen, broadly consistent with predictions. Only one molecule was synthesized.",
+  "field": "chemistry",
+  "ai_technology": "LLM-assisted data extraction, multitask property prediction and conditional molecular generation with quantum-chemical feedback",
+  "organization": "Donghua University",
+  "source_url": "https://doi.org/10.1021/acscentsci.6c01736",
+  "source_type": "paper",
+  "publication_date": "2026-11-17",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "One generated candidate was synthesized and its singlet-triplet gap and film quantum yield measured.",
+    "unknown": "Experimental performance of the other 99 candidates and device-level behavior; full text not reviewed.",
+    "ai_role": "Generative and predictive models proposed the candidate molecules.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1021/acscentsci.6c01736%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1021/acscentsci.6c01736"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

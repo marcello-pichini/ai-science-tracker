@@ -1,0 +1,34 @@
+{
+  "id": "2021-05-opioid-receptor-ml-qsar-models",
+  "title": "Machine-learning models identify small-molecule opioid receptor activators and inhibitors",
+  "summary": "Four machine-learning algorithms were trained on quantitative high-throughput screening data for three opioid receptors in agonist and antagonist modes; random forest performed best, with the mu-receptor agonist model reaching AUC-ROC 0.88 and MCC 0.7. Compounds predicted active by the best models were tested in the same qHTS assays, giving experimentally confirmed hit rates from 2.3% (delta agonist) to 15.8% (mu agonist), at least a 2-fold enrichment over the original assay hit rate. Potent hits were examined further by docking; confirmation used the same assay format that produced the training data.",
+  "field": "chemistry",
+  "ai_technology": "Random forest and other machine-learning classifiers on chemical structures for virtual screening",
+  "organization": "National Institutes of Health; George Mason University; National Center for Advancing Translational Sciences",
+  "source_url": "https://doi.org/10.1021/acs.jcim.1c00439",
+  "source_type": "paper",
+  "publication_date": "2021-05-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Model-predicted active compounds were tested in the same qHTS assays that generated the training data.",
+    "unknown": "Selectivity, in vivo activity and effects beyond the screening assays; full text not reviewed.",
+    "ai_role": "Machine-learning models prioritized compounds from a large library for experimental testing.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1021/acs.jcim.1c00439%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1021/acs.jcim.1c00439"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2026-06-orbit-amd-trajectory-learning",
+  "title": "ORBIT-AMD multimodal model stages macular degeneration and predicts progression",
+  "summary": "ORBIT-AMD combines color fundus photography and optical coherence tomography with bilateral eye-graph attention, concept bottlenecks, ordinal staging and discrete-time survival prediction. Developed in UK Biobank (58,214 participants), it reached AUROC 0.984 internally and 0.975 in an external Tianjin cohort (1996 participants) for prevalent late AMD, and 0.825 and 0.767 for five-year late-AMD progression. Calibration was cohort dependent, and the authors state that prospective validation is required before clinical use.",
+  "field": "medicine",
+  "ai_technology": "Multimodal deep learning trajectory model (fundus and OCT, graph attention, concept bottleneck, survival prediction)",
+  "organization": "University of Cambridge; Tianjin Medical University Eye Hospital; Addenbrooke's Hospital",
+  "source_url": "https://doi.org/10.1002/advs.76361",
+  "source_type": "paper",
+  "publication_date": "2026-06-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal testing in UK Biobank and external validation in a Tianjin Medical University Eye Hospital cohort (3780 eyes).",
+    "unknown": "Retrospective; calibration and workload behavior differ by cohort; explanations are not causal evidence; full text not reviewed.",
+    "ai_role": "Deep learning model stages AMD and predicts late-AMD progression from paired retinal images.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/advs.76361%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1002/advs.76361"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

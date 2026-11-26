@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-coatil-tumor-lymphocyte-architecture-colon-cancer",
+  "title": "Deep learning of lymphocyte architecture on H&E slides predicts colon cancer outcome",
+  "summary": "CoATIL, a computational pathology framework, quantifies tumor-infiltrating lymphocyte spatial organization from routine H&E whole-slide images in 461 patients with microsatellite-stable or MSI-low colon adenocarcinoma. Trained on 140 patients and validated internally (n = 52) and externally in TCGA (n = 130) and a Guangdong hospital (n = 139), it was associated with progression-free survival (HR 1.32 per standard deviation, 95% CI 1.13-1.55). It was compared with a clinical model and eight foundation-model approaches; the study is retrospective and the authors state that prospective validation is warranted.",
+  "field": "medicine",
+  "ai_technology": "CoATIL computational pathology framework quantifying TIL spatial architecture from whole-slide images",
+  "organization": "Georgia Institute of Technology; Emory University; The Wallace H. Coulter Department of Biomedical Engineering",
+  "source_url": "https://doi.org/10.1016/j.ejca.2026.117810",
+  "source_type": "paper",
+  "publication_date": "2026-10-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Training in one hospital cohort with internal validation and two external validation cohorts, assessed by Kaplan-Meier and Cox regression.",
+    "unknown": "Prospective validation; prognostic value beyond established markers in larger cohorts; full text not reviewed.",
+    "ai_role": "A computational pathology framework derived lymphocyte spatial features from H&E slides.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.ejca.2026.117810%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.ejca.2026.117810"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

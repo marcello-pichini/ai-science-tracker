@@ -1,0 +1,34 @@
+{
+  "id": "2023-12-lars-deep-learning-fdg-pet-ct-lymphoma",
+  "title": "Deep learning classifies FDG-PET-CT scans of lymphoma patients across two centres",
+  "summary": "A ResNet34-based model (LARS) was trained on 16,583 FDG-PET-CT scans from 5072 lymphoma patients at Memorial Sloan Kettering to separate Deauville 1-3 from 4-5, using 80% for training and 20% for testing. In the internal test set (3325 scans) AUC was 0.949 for LARS-avg, and in an external set of 1000 scans from the Medical University of Vienna AUC was 0.953, accuracy 0.907, sensitivity 0.874 and specificity 0.949. The analysis is retrospective and the tool classifies scans rather than replacing clinical assessment.",
+  "field": "medicine",
+  "ai_technology": "ResNet34-based deep-learning classifier (LARS) on PET-CT maximum intensity projections and 3D data",
+  "organization": "Memorial Sloan Kettering Cancer Center; Chalmers University of Technology",
+  "source_url": "https://doi.org/10.1016/s2589-7500(23)00203-0",
+  "source_type": "paper",
+  "publication_date": "2023-12-21",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Internal test (3325 scans) and external test (1000 scans) of Deauville classification.",
+    "unknown": "Prospective workflow performance and effect on reader time or outcomes; full text not reviewed.",
+    "ai_role": "A deep-learning model classified scans as Deauville 1-3 or 4-5.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/s2589-7500(23)00203-0%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/s2589-7500(23)00203-0"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

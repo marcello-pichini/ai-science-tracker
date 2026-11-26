@@ -1,0 +1,34 @@
+{
+  "id": "2026-10-ct-multimodal-survival-retroperitoneal-liposarcoma",
+  "title": "CT radiomics and deep learning predict survival after liposarcoma resection",
+  "summary": "In 367 patients from two institutions, a model combining a radiomics signature, a ResNet-101 deep learning signature trained with Cox loss and clinicopathologic variables (RDCS) achieved C-indices of 0.775 in training, 0.704 internal and 0.725 in an external test cohort of 184 patients. In an exploratory external subset (n=82), C-index was 0.746 against 0.590 for the Sarculator application. The study is retrospective and in a rare tumor.",
+  "field": "medicine",
+  "ai_technology": "ImageNet-pretrained ResNet-101 with Cox partial-likelihood loss plus radiomics",
+  "organization": "Zhongshan Hospital",
+  "source_url": "https://doi.org/10.1007/s00261-026-05846-x",
+  "source_type": "paper",
+  "publication_date": "2026-10-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Training and internal validation (institution 1) and external test cohort (institution 2, n=184).",
+    "unknown": "Retrospective; rare tumor; needs prospective validation; full text not reviewed.",
+    "ai_role": "Deep learning signature from CT contributes to the survival prediction model.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s00261-026-05846-x%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1007/s00261-026-05846-x"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

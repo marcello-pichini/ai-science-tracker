@@ -1,0 +1,34 @@
+{
+  "id": "2021-02-cnn-chest-xray-elevated-wedge-pressure",
+  "title": "Deep learning on chest X-ray detects elevated pulmonary artery wedge pressure",
+  "summary": "Using 1013 consecutive patients with right-heart catheterization, a convolutional neural network was trained to identify elevated pulmonary arterial wedge pressure (above 18 mm Hg) from a chest X-ray. In the validation dataset, which the abstract calls prospective, the AUC was 0.77, similar to BNP (0.77) and an echocardiographic diastolic dysfunction algorithm (0.70) and higher than cardiothoracic ratio (0.66). Adding the model to a three-parameter model raised the AUC from 0.80 to 0.86; the AUC is modest and the validation set size is not given in the abstract.",
+  "field": "medicine",
+  "ai_technology": "Convolutional neural network on chest X-ray images identifying elevated pulmonary arterial wedge pressure",
+  "organization": "Tokushima University Hospital",
+  "source_url": "https://doi.org/10.1016/j.cjca.2021.02.007",
+  "source_type": "paper",
+  "publication_date": "2021-02-18",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "The CNN was evaluated in a validation dataset against catheter-measured wedge pressure and compared with BNP, an echo algorithm and cardiothoracic ratio.",
+    "unknown": "Size of the validation dataset and clinical benefit; single-centre generalizability; full text not reviewed.",
+    "ai_role": "A CNN classified elevated wedge pressure from chest X-rays.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.cjca.2021.02.007%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.cjca.2021.02.007"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

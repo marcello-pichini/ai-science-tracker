@@ -1,0 +1,34 @@
+{
+  "id": "2025-09-c9orf72-dna-methylation-lasso-predictor",
+  "title": "LASSO DNA methylation predictor identifies C9orf72 repeat expansion carriers",
+  "summary": "Genome-wide methylation arrays on 27 carriers and 250 non-carriers of the pathogenic C9orf72 expansion found eight hypermethylated CpG sites at the locus, and a LASSO predictor of carrier status reached 98.6% average accuracy. In an independent cohort of 1,589 bipolar disorder cases, 580 relatives and 289 controls, it flagged four carriers that repeat-primed PCR confirmed. Training included only 27 carriers and the validation found four, so precision at low prevalence is not established.",
+  "field": "biology",
+  "ai_technology": "LASSO regression on DNA methylation array data to predict repeat expansion carrier status",
+  "organization": "University of California, Los Angeles",
+  "source_url": "https://doi.org/10.1016/j.xhgg.2025.100522",
+  "source_type": "paper",
+  "publication_date": "2025-09-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Predicted carriers in an independent array cohort were confirmed by repeat-primed PCR.",
+    "unknown": "Performance with few carriers and in other cohorts and repeat loci; full text not reviewed.",
+    "ai_role": "A LASSO model predicted repeat expansion status from methylation data.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.xhgg.2025.100522%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.xhgg.2025.100522"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "2024-11-cnn-chest-radiograph-covid19",
+  "title": "Deep convolutional network detects COVID-19 pneumonia on chest radiographs",
+  "summary": "A deep convolutional neural network was trained on public radiographs (8,851 normal, 6,045 pneumonia, 200 COVID-19), with 13,586 images for training and 1510 for testing. Sensitivity was 96.8% and positive predictive value 90.9%. In external validation it identified 174 of 204 radiographs (85%) from 107 confirmed COVID-19 patients; in 50 immunocompromised leukemia patients the AI probability correlated with suggestive features. The COVID-19 training class is small and labels come from public data.",
+  "field": "medicine",
+  "ai_technology": "Deep convolutional neural network classifying chest radiographs for COVID-19 pneumonia",
+  "organization": "Tokyo Medical and Dental University; The University of Texas MD Anderson Cancer Center",
+  "source_url": "https://doi.org/10.1016/j.clml.2024.11.013",
+  "source_type": "paper",
+  "publication_date": "2024-11-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Held-out test images plus two external validations (107 confirmed COVID-19 patients, and 50 patients with leukemia).",
+    "unknown": "Clinical usefulness beyond the pandemic setting; label quality of the public training data; full text not reviewed.",
+    "ai_role": "A CNN classified chest radiographs as COVID-19 pneumonia.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.clml.2024.11.013%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.clml.2024.11.013"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

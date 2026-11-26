@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-xpresso-lung-spatial-gene-expression-histology",
+  "title": "XpressO-Lung predicts spatial gene expression from lung adenocarcinoma slides",
+  "summary": "XpressO-Lung learns links between H&E whole-slide morphology and bulk transcriptomic data to predict spatial expression of genes including NAPSA, CD8A, TTF1, KEAP1 and TP53, with AUCs of 0.64-0.92 on 200 TCGA cases. Predicted spatial patterns were compared with immunohistochemistry on an external set of clinical samples at Dartmouth Health and found concordant with observed histomorphologic features.",
+  "field": "biology",
+  "ai_technology": "Explanatory deep learning model on H&E whole-slide images (XpressO-Lung)",
+  "organization": "Dartmouth Health",
+  "source_url": "https://doi.org/10.1016/j.ajpath.2026.10.009",
+  "source_type": "paper",
+  "publication_date": "2026-11-12",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Cross-validated prediction on 200 TCGA cases and immunohistochemistry comparison on external Dartmouth samples.",
+    "unknown": "Concordance with IHC was qualitative; modest AUCs for some genes; full text not reviewed.",
+    "ai_role": "Deep learning infers spatial gene expression from tissue morphology.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.ajpath.2026.10.009%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.ajpath.2026.10.009"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

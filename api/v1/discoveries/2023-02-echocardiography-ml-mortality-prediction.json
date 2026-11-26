@@ -1,0 +1,34 @@
+{
+  "id": "2023-02-echocardiography-ml-mortality-prediction",
+  "title": "Echocardiography-based machine learning models predict 1-, 3- and 5-year mortality",
+  "summary": "A ResNet on echo videos and a CatBoost model on echo measurements were trained on 3626 patients in Taiwan (6083 echos) and validated on 595 patients in the Alberta HEART cohort in Canada (997 echos). In external validation the ResNet AUROCs were 82%, 82% and 78% for 1, 3 and 5 years, above CatBoost (78%, 73%, 75%) and better than or comparable to the MAGGIC score. Predicted risk correlated with quality-of-life scores; mortality rates differed between cohorts.",
+  "field": "medicine",
+  "ai_technology": "ResNet deep learning on echocardiography videos and CatBoost gradient boosting on echo measurements",
+  "organization": "Birla Institute of Technology and Science, Pilani - Goa Campus; Birla Institute of Technology and Science, Pilani",
+  "source_url": "https://doi.org/10.1016/j.ebiom.2023.104479",
+  "source_type": "paper",
+  "publication_date": "2023-02-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "External validation in 595 patients from a Canadian cohort, with comparison to the MAGGIC risk score.",
+    "unknown": "Prospective use for point-of-care risk stratification; effect of different baseline mortality between cohorts; full text not reviewed.",
+    "ai_role": "Deep learning and gradient boosting models predicted mortality from echocardiograms.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.ebiom.2023.104479%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.ebiom.2023.104479"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

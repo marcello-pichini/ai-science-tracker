@@ -1,0 +1,34 @@
+{
+  "id": "2022-03-lymforest-25-dlbcl-validation",
+  "title": "LymForest-25 random-forest model validated for survival prediction in DLBCL",
+  "summary": "LymForest-25 is a random-forest survival model using 25 clinical, biochemical and gene expression variables. In a UK cohort of 481 R-CHOP-treated patients with 17 of 19 transcripts available, its gene expression signature predicted mortality at 6 months and 1, 2 and 5 years more precisely than cell-of-origin plus molecular high-grade classification, including in the unclassified group. Combining it with the IPI score gave the best predictions, mainly in patients under 70, and combination with LymphGen mutation classes showed a tendency to improve. Retrospective validation of a previously published model.",
+  "field": "medicine",
+  "ai_technology": "Random-forest survival model (LymForest-25) on clinical and gene expression variables",
+  "organization": "Universidade de Santiago de Compostela; Complejo Hospitalario Universitario de Santiago; Servicio Gallego de Salud",
+  "source_url": "https://doi.org/10.1097/hs9.0000000000000706",
+  "source_type": "paper",
+  "publication_date": "2022-03-25",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Validation in an independent UK-based cohort of 481 patients.",
+    "unknown": "Prospective performance and benefit outside younger patients; full text not reviewed.",
+    "ai_role": "A random-forest survival model supplied the prognostic signature.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1097/hs9.0000000000000706%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1097/hs9.0000000000000706"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

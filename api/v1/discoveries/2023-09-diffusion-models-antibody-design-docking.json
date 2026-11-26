@@ -1,0 +1,34 @@
+{
+  "id": "2023-09-diffusion-models-antibody-design-docking",
+  "title": "Diffusion models design and optimise antibodies, with improved flavivirus binding",
+  "summary": "Two diffusion models, AbDesign for antibody sequences and structures and AbDock for paratope-epitope docking, form an optimisation pipeline. On independent test sets AbDesign reached a 2.56 A RMSD and 36.47% amino acid recovery, and AbDock a DockQ of 0.44. Optimising the flavivirus antibody 1G5.3 gave a broad-spectrum variant with improved binding to 6 of the 9 flaviviruses tested. Preprint; one antibody and binding only, not neutralisation.",
+  "field": "biology",
+  "ai_technology": "Diffusion models AbDesign and AbDock for CDR design and docking-based screening",
+  "organization": "University of Missouri",
+  "source_url": "https://doi.org/10.1101/2023.09.25.559190",
+  "source_type": "paper",
+  "publication_date": "2023-09-26",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Experimental binding of the optimised 1G5.3 antibody to nine flaviviruses.",
+    "unknown": "Neutralisation, generality to other antibodies and number of variants tested; full text not reviewed.",
+    "ai_role": "Diffusion models proposed CDR designs and screened them by docking.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1101/2023.09.25.559190%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1101/2023.09.25.559190"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed. Author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

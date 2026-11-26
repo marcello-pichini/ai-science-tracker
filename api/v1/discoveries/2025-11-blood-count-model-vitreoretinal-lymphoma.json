@@ -1,0 +1,34 @@
+{
+  "id": "2025-11-blood-count-model-vitreoretinal-lymphoma",
+  "title": "Blood-count random forest model screens for primary vitreoretinal lymphoma",
+  "summary": "In a multicentre case-control study of 255 patients with primary vitreoretinal lymphoma and 292 controls, a six-feature random forest on complete blood count data had AUC 0.85 in the discovery cohort and 0.80-0.83 across validation cohorts, above the interleukin-10/interleukin-6 ratio (0.65-0.78). In a hospital cohort of 100,526 individuals, 38 lymphomas were found among 66 high-risk individuals and 2 more among 83,610 low-risk individuals, giving sensitivity 95.0% and positive predictive value 57.6%. In a community cohort of 515,326, 13 of 22 flagged individuals had the lymphoma (PPV 59.1%). Case numbers in the large cohorts are small.",
+  "field": "medicine",
+  "ai_technology": "Six-feature random forest model on complete blood count data",
+  "organization": "Shanghai Medical College of Fudan University; Fudan University; Eye & ENT Hospital of Fudan University",
+  "source_url": "https://doi.org/10.1038/s41467-025-65693-0",
+  "source_type": "paper",
+  "publication_date": "2025-11-27",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Multicentre validation cohorts plus hospital-based and community cohorts, with confirmed diagnoses.",
+    "unknown": "Whether the large cohorts were evaluated prospectively with a frozen model, and effect on diagnosis timing; full text not reviewed.",
+    "ai_role": "A random forest classified lymphoma risk from routine blood counts.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1038/s41467-025-65693-0%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1038/s41467-025-65693-0"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}

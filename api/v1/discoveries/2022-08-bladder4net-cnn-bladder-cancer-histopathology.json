@@ -1,0 +1,34 @@
+{
+  "id": "2022-08-bladder4net-cnn-bladder-cancer-histopathology",
+  "title": "Four-classifier CNN pipeline grades bladder cancer risk from histopathology slides",
+  "summary": "Bladder4Net combines four convolutional neural network classifiers to sort whole-slide images into low-risk and high-risk bladder cancer. It was evaluated on 182 independent slides from the New Hampshire Bladder Cancer Study and 378 external TCGA slides, with weighted average F1-scores of 0.91 (95% CI 0.86-0.94) on the New Hampshire set and 0.99 (95% CI 0.97-1.00) reported for the second set. Labels are slide-level class labels and the study is retrospective.",
+  "field": "medicine",
+  "ai_technology": "Bladder4Net deep learning pipeline of four CNN classifiers on whole-slide images",
+  "organization": "Dartmouth College",
+  "source_url": "https://doi.org/10.1016/j.jpi.2022.100135",
+  "source_type": "paper",
+  "publication_date": "2022-08-28",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Evaluation on 182 independent slides and 378 external TCGA slides.",
+    "unknown": "Prognostic value for patient outcomes and prospective performance; full text not reviewed.",
+    "ai_role": "A CNN pipeline classified bladder cancer slides by risk class.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.jpi.2022.100135%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.jpi.2022.100135"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

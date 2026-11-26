@@ -1,0 +1,34 @@
+{
+  "id": "2023-06-cnn-total-body-photography-melanoma-detection",
+  "title": "2D and 3D CNNs on total body photography compared with dermatologists for melanoma",
+  "summary": "In a prospective study of 1690 melanocytic lesions in 143 high-risk patients, 2D and 3D CNN risk scores were compared with dermatologists against histopathology. The 3D-CNN had sensitivity 90.0%, specificity 64.6% and AUC 0.92, matching dermatologists' sensitivity of 90% but with lower specificity (dermatologists 92.3%); the 2D-CNN performed worse (sensitivity 70%, specificity 40%). Automated naevus counts differed from the gold standard (210 lesions versus 469 for 3D and 1324 for 2D), and excision decisions were partly guided by the CNN.",
+  "field": "medicine",
+  "ai_technology": "2D (FotoFinder) and 3D (Vectra WB360) convolutional neural network classifiers on total body photography",
+  "organization": "University Hospital of Basel",
+  "source_url": "https://doi.org/10.1016/j.ejca.2023.112954",
+  "source_type": "paper",
+  "publication_date": "2023-06-24",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 4,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Prospective real-world comparison of CNN risk scores with dermatologists and histopathology in 143 patients.",
+    "unknown": "Performance on larger numbers of melanomas, given excision partly guided by the CNN; commercial systems; full text not reviewed.",
+    "ai_role": "CNNs scored melanocytic lesions and counted naevi on total body photographs.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1016/j.ejca.2023.112954%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1016/j.ejca.2023.112954"
+    ],
+    "test_type": "prospective or independent check"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Publisher full text not accessed; author affiliations not retrieved. Author affiliations from OpenAlex metadata."
+  }
+}

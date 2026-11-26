@@ -1,0 +1,34 @@
+{
+  "id": "2025-05-maiggt-multimodal-brca-prescreening",
+  "title": "Multimodal deep learning prescreens germline BRCA1/2 from slides and health records",
+  "summary": "MAIGGT is a multi-scale Transformer-based deep learning framework that combines histopathology whole-slide image features with electronic health record phenotypes to prescreen germline BRCA1/2 mutations. Across three independent cohorts it reached AUCs of 0.925, 0.845 and 0.833 and outperformed single-modality models. Interpretability analyses linked BRCA1/2-mutated tumors to inflammatory infiltration, stromal proliferation, necrosis and nuclear heterogeneity. It is a retrospective prescreening tool, not a replacement for genetic testing.",
+  "field": "medicine",
+  "ai_technology": "Multi-scale Transformer multimodal deep learning on whole-slide images and electronic health records",
+  "organization": "Wenzhou Medical University",
+  "source_url": "https://doi.org/10.1002/advs.202502833",
+  "source_type": "paper",
+  "publication_date": "2025-05-29",
+  "added_date": "2026-11-26",
+  "verification_status": "verified",
+  "paper_url": "",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Validation in three independent cohorts, with AUCs 0.925, 0.845 and 0.833.",
+    "unknown": "Retrospective; prescreening rather than diagnostic; cohort sizes and clinical utility not stated in the abstract; full text not reviewed.",
+    "ai_role": "Transformer-based multimodal model fuses slide microenvironment features and clinical phenotypes to predict germline BRCA1/2 status.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1002/advs.202502833%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.1002/advs.202502833"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-26",
+    "scope": "Abstract read from Europe PMC metadata for this DOI. Author affiliations and publisher full text not accessed. Author affiliations from OpenAlex metadata."
+  }
+}
