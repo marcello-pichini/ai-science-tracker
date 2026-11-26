@@ -6,7 +6,9 @@ const site = 'https://aisciencetracker.org'
 const readOnly = { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false }
 
 function toolResult(value, isError = false) {
-  return { content: [{ type: 'text', text: JSON.stringify(value) }], isError }
+  const result = { content: [{ type: 'text', text: JSON.stringify(value) }], isError }
+  if (!isError) result.structuredContent = value
+  return result
 }
 
 function brief(text = '') {
@@ -54,10 +56,13 @@ function words(value) {
 // Query words that carry no topic; dropped unless the query has nothing else.
 const stopwords = new Set(('a an and are as at be by can do does for from has have how in into is it its of on or ' +
   'that the their this to was what when where which who why with about using used new study studies ' +
-  'help helps find finds found discover discovers discovered show shows').split(' '))
+  'help helps find finds found discover discovers discovered show shows ' +
+  // Every record is AI-enabled, so these words filter nothing useful and only drop records that say "ML".
+  'ai artificial intelligence').split(' '))
 
 // Query-side plural folding: the match is a word-start prefix, so "antibiotic" also finds "antibiotics".
 function singular(term) {
+  if (abbreviations.has(term.slice(0, -1)) && term.endsWith('s')) return term.slice(0, -1)
   return term.length > 4 && term.endsWith('s') && !/(ss|us|is)$/.test(term) ? term.slice(0, -1) : term
 }
 
@@ -69,6 +74,7 @@ const phrases = [
   ['ai', 'artificial intelligence'], ['nlp', 'natural language processing'],
   ['mri', 'magnetic resonance imaging'], ['ct', 'computed tomography'],
 ].map(([abbr, phrase]) => [abbr, ` ${words(phrase).map(spellFold).join(' ')} `])
+const abbreviations = new Set(phrases.map(([abbr]) => abbr))
 
 // Spelling variants and names in other languages that refer to the same thing.
 const synonymGroups = [
@@ -91,11 +97,11 @@ function tokens(value) {
   return text
 }
 
-function queryTerms(query) {
+function queryTerms(query, { dropStopwords = true } = {}) {
   let joined = ` ${words(query).map(spellFold).join(' ')} `
   for (const [abbr, phrase] of phrases) joined = joined.replaceAll(phrase, ` ${abbr} `)
   const all = [...new Set(joined.trim().split(' ').filter(Boolean).map(singular))]
-  const topical = all.filter((term) => !stopwords.has(term))
+  const topical = dropStopwords ? all.filter((term) => !stopwords.has(term)) : all
   return topical.length ? topical : all
 }
 
@@ -149,21 +155,23 @@ function createServer() {
   })
 
   server.registerTool('search_discoveries', {
-    description: 'Find scientific discoveries by words in the title, field, organization, AI technology or summary. Terms match the start of a word, ignore accents and British/American spelling, and expand common abbreviations (LLM, ML) and variants (Nasca/Nazca, Herculaneum/Ercolano). Common words such as "how" or "new" are ignored; if no record matches every term, a longer query returns the records matching most of them, flagged partial_match. Title matches rank first. Filter by year, field (see list_fields) or organization. Results include a stable ID, source and catalog link. Use get_discovery for evidence and limitations.',
+    description: 'Find scientific discoveries by words in the title, field, organization, AI technology or summary. Terms match the start of a word, ignore accents and British/American spelling, and expand common abbreviations (LLM, ML) and variants (Nasca/Nazca, Herculaneum/Ercolano). Common words such as "how" or "new" are ignored; if no record matches every term, a longer query returns the records matching most of them, flagged partial_match. Title matches rank first. Filter by year, field (see list_fields) or organization. Page with offset. Results include a stable ID, short summary, source and catalog link. Use get_discovery for evidence and limitations.',
     inputSchema: {
       query: z.string().trim().min(1).max(160).optional(),
       year: z.number().int().min(2020).max(2100).optional(),
       field: z.string().trim().min(1).max(80).optional(),
       organization: z.string().trim().min(1).max(120).optional(),
       limit: z.number().int().min(1).max(20).default(10),
+      offset: z.number().int().min(0).max(10000).default(0),
     },
     annotations: readOnly,
-  }, async ({ query, year, field, organization, limit }) => {
+  }, async ({ query, year, field, organization, limit, offset }) => {
     const terms = query ? queryTerms(query) : []
     if (query && !terms.length) return toolResult({ error: 'The query has no searchable words.' }, true)
     try {
       const entries = await loadCatalog()
-      const orgTerms = organization ? queryTerms(organization) : []
+      // Organization names keep every word: "New York University" must not lose "new".
+      const orgTerms = organization ? queryTerms(organization, { dropStopwords: false }) : []
       const expectedYear = year?.toString()
       const expectedField = field && normalize(field)
       const needed = terms.length > 2 ? Math.ceil(terms.length / 2) : terms.length
@@ -190,7 +198,7 @@ function createServer() {
       const ranked = partial ? hits : full
       // More matched terms first, then title matches; ties keep catalog order.
       ranked.sort((a, b) => b.matched - a.matched || b.score - a.score || a.index - b.index)
-      const results = ranked.slice(0, limit).map(({ record }) => ({
+      const results = ranked.slice(offset, offset + limit).map(({ record }) => ({
         id: record.id,
         title: record.title,
         field: record.field,
@@ -201,7 +209,7 @@ function createServer() {
         source_url: record.source_url,
         catalog_url: catalogUrl(record.id),
       }))
-      const answer = { results, total: ranked.length, truncated: ranked.length > limit }
+      const answer = { results, total: ranked.length, offset, truncated: ranked.length > offset + limit }
       if (partial) answer.partial_match = 'No record matched every term; results match most of them.'
       return toolResult(answer)
     } catch {
@@ -227,7 +235,8 @@ function createServer() {
 
   server.registerTool('get_discovery', {
     description: 'Retrieve a public scientific discovery by its stable ID, including its original source, summary, evidence and caveats.',
-    inputSchema: { id: z.string().min(1).max(180).regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/) },
+    // IDs are lowercase slugs; some contain "--" or end in "-". No "." or "/" can reach the URL path.
+    inputSchema: { id: z.string().trim().min(1).max(200).regex(/^[a-z0-9][a-z0-9-]*$/) },
     annotations: readOnly,
   }, async ({ id }) => {
     try {

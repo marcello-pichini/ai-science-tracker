@@ -11,7 +11,10 @@ test('search terms fold spelling, accents, abbreviations and synonyms', () => {
   assert.equal(fold('paediatric'), 'pediatric')
   assert.equal(fold('Gödel'.toLowerCase()), 'godel')
   assert.deepEqual(queryTerms('Large Language Models for chemistry'), ['llm', 'chemistry'])
-  assert.deepEqual(queryTerms('how AI helps discover new antibiotics'), ['ai', 'antibiotic'])
+  assert.deepEqual(queryTerms('how AI helps discover new antibiotics'), ['antibiotic'])
+  assert.deepEqual(queryTerms('AI'), ['ai'])
+  assert.deepEqual(queryTerms('LLMs and GNNs'), ['llm', 'gnn'])
+  assert.deepEqual(queryTerms('New York University', { dropStopwords: false }), ['new', 'york', 'university'])
   assert.deepEqual(queryTerms('the'), ['the'])
   assert.deepEqual(queryTerms('???'), [])
   assert.ok(matchesText('swell', 'Swelling of the tissue'))
@@ -57,6 +60,8 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
         }])
       case origin + '/api/v1/discoveries/' + discovery.id + '.json':
         return Response.json(discovery)
+      case origin + '/api/v1/discoveries/2026-10-model--fonc-2026-1.json':
+        return Response.json({ ...discovery, id: '2026-10-model--fonc-2026-1' })
       case origin + '/api/v1/discoveries/unknown.json':
         return new Response(null, { status: 404 })
       default:
@@ -121,6 +126,14 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
 
   const missing = await client.callTool({ name: 'get_discovery', arguments: { id: 'unknown' } })
   assert.equal(missing.isError, true)
+  const doubleHyphen = await client.callTool({ name: 'get_discovery', arguments: { id: '2026-10-model--fonc-2026-1' } })
+  assert.equal(doubleHyphen.isError, false)
+  assert.equal(doubleHyphen.structuredContent.id, '2026-10-model--fonc-2026-1')
+  const page2 = JSON.parse((await client.callTool({
+    name: 'search_discoveries', arguments: { query: 'laboratory', limit: 2, offset: 2 },
+  })).content[0].text)
+  assert.deepEqual(page2.results.map((row) => row.id), ['2024-04-example'])
+  assert.equal(page2.truncated, false)
   const traversal = await client.callTool({ name: 'get_discovery', arguments: { id: '../private' } })
   assert.equal(traversal.isError, true)
 })
