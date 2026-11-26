@@ -56,7 +56,7 @@ function words(value) {
 // Query words that carry no topic; dropped unless the query has nothing else.
 const stopwords = new Set(('a an and are as at be by can do does for from has have how in into is it its of on or ' +
   'that the their this to was were did been any all some there what when where which who why with about using used ' +
-  'new study studies ' +
+  'new recent latest study studies discoveries result results research paper papers ' +
   'help helps find finds found discover discovers discovered show shows ' +
   // Every record is AI-enabled, so these words filter nothing useful and only drop records that say "ML".
   'ai artificial intelligence').split(' '))
@@ -65,10 +65,16 @@ const stopwords = new Set(('a an and are as at be by can do does for from has ha
 // writes them joined, so "GPT-5" does not match every record containing "GPT" and the number 5.
 const compound = /\b([a-z]+)-(\d[a-z0-9]*)\b/g
 
-// Query-side plural folding: the match is a word-start prefix, so "antibiotic" also finds "antibiotics".
-function singular(term) {
-  if (abbreviations.has(term.slice(0, -1)) && term.endsWith('s')) return term.slice(0, -1)
-  return term.length > 4 && term.endsWith('s') && !/(ss|us|is)$/.test(term) ? term.slice(0, -1) : term
+// Query-side stemming: the match is a word-start prefix, so a shorter stem finds every inflection
+// ("antibiotic" finds "antibiotics", "archeolog" finds "archaeological", "decipher" finds "deciphering").
+function stem(term) {
+  if (term.endsWith('s') && abbreviations.has(term.slice(0, -1))) return term.slice(0, -1)
+  if (term.length > 5 && term.endsWith('ies')) return term.slice(0, -3)
+  if (term.length > 4 && term.endsWith('s') && !/(ss|us|is)$/.test(term)) term = term.slice(0, -1)
+  if (term.length > 6 && term.endsWith('ing')) return term.slice(0, -3)
+  if (term.length > 6 && term.endsWith('ed')) return term.slice(0, -2)
+  if (term.length > 5 && term.endsWith('y')) return term.slice(0, -1)
+  return term
 }
 
 // A phrase in a record or query also yields its abbreviation, so "LLM" and "large language model" meet.
@@ -86,7 +92,7 @@ const synonymGroups = [
   ['nasca', 'nazca'], ['herculaneum', 'ercolano'], ['vesuvius', 'vesuvio'],
   ['covid', 'covid19', 'sars', 'coronavirus'], ['cancer', 'tumor', 'oncology'],
   ['exoplanet', 'extrasolar'], ['earthquake', 'seismic', 'seismicity'],
-].map((group) => group.map(fold))
+].map((group) => group.map((word) => stem(fold(word))))
 const synonyms = new Map(synonymGroups.flatMap((group) => group.map((word) => [word, group])))
 
 // A field becomes one padded string of words (" w1 w2 ... abbr "), so a word-start match is a substring
@@ -108,7 +114,7 @@ function queryTerms(query, { dropStopwords = true } = {}) {
   for (const [abbr, phrase] of phrases) joined = joined.replaceAll(phrase, ` ${abbr} `)
   const raw = joined.trim().split(' ').filter(Boolean)
   const topical = dropStopwords ? raw.filter((term) => !stopwords.has(term)) : raw
-  return [...new Set((topical.length ? topical : raw).map(singular))]
+  return [...new Set((topical.length ? topical : raw).map(stem))]
 }
 
 // Short terms such as "ai" or "ml" must match a whole word, or "ai" would find "air".
