@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { Client } from '@modelcontextprotocol/sdk/client/index.js'
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js'
-import worker, { fold, queryTerms, tokens, termMatches } from './worker.js'
+import worker, { fold, queryTerms, tokens, termMatches, loadCatalog } from './worker.js'
 
 test('search terms fold spelling, accents, abbreviations and synonyms', () => {
   const matchesText = (term, text) => termMatches(term, tokens(text))
@@ -10,7 +10,15 @@ test('search terms fold spelling, accents, abbreviations and synonyms', () => {
   assert.equal(fold('optimisation'), 'optimization')
   assert.equal(fold('paediatric'), 'pediatric')
   assert.equal(fold('Gödel'.toLowerCase()), 'godel')
-  assert.deepEqual(queryTerms('Large Language Models for chemistry'), ['llm', 'for', 'chemistry'])
+  assert.deepEqual(queryTerms('Large Language Models for chemistry'), ['llm', 'chemistry'])
+  assert.deepEqual(queryTerms('how AI helps discover new antibiotics'), ['ai', 'antibiotic'])
+  assert.deepEqual(queryTerms('the'), ['the'])
+  assert.deepEqual(queryTerms('???'), [])
+  assert.ok(matchesText('swell', 'Swelling of the tissue'))
+  assert.ok(matchesText('promis', 'A promising compound'))
+  assert.ok(matchesText(queryTerms('modelling')[0], 'Climate modeling at scale'))
+  assert.ok(matchesText(queryTerms('modeling')[0], 'Climate modelling at scale'))
+  assert.ok(matchesText(queryTerms('optimising')[0], 'Optimizing reactors'))
   assert.ok(matchesText('nasca', 'AI finds 303 new Nazca geoglyphs'))
   assert.ok(matchesText('ercolano', 'A Herculaneum scroll read'))
   assert.ok(matchesText('llm', 'A large language model proposes catalysts'))
@@ -73,6 +81,15 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
   const { results } = JSON.parse(search.content[0].text)
   assert.deepEqual(results.map((row) => row.id), [discovery.id])
   assert.equal(results[0].source_url, discovery.source_url)
+  assert.equal(results[0].summary, discovery.summary)
+
+  const loose = JSON.parse((await client.callTool({
+    name: 'search_discoveries', arguments: { query: 'laboratory robots quantum gravity' },
+  })).content[0].text)
+  assert.ok(loose.partial_match)
+  assert.equal(loose.results[0].id, '2023-04-laboratory-example')
+  const symbols = await client.callTool({ name: 'search_discoveries', arguments: { query: '???' } })
+  assert.equal(symbols.isError, true)
 
   const search_ids = async (query) => JSON.parse((await client.callTool({
     name: 'search_discoveries', arguments: { query },
@@ -116,4 +133,23 @@ test('foreign browser origins and unrelated paths cannot call the Worker', async
   assert.equal(crossOrigin.status, 403)
   const other = await worker.fetch(new Request(new URL('/admin', endpoint)))
   assert.equal(other.status, 404)
+})
+
+test('a failed catalog refresh keeps serving the previous copy', async (t) => {
+  let calls = 0
+  t.mock.method(globalThis, 'fetch', async () => {
+    calls += 1
+    return calls === 1 ? Response.json([discovery]) : new Response(null, { status: 503 })
+  })
+  t.mock.timers.enable({ apis: ['Date'], now: 1e13 })
+  const first = await loadCatalog()
+  t.mock.timers.tick(11 * 60 * 1000)
+  assert.equal(await loadCatalog(), first)
+  assert.equal(calls, 2)
+})
+
+test('the Worker answers 429 when the rate limiter refuses a client', async () => {
+  const env = { LIMITER: { limit: async () => ({ success: false }) } }
+  const response = await worker.fetch(new Request(endpoint, { method: 'POST' }), env)
+  assert.equal(response.status, 429)
 })
