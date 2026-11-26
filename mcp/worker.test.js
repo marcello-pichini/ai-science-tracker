@@ -192,6 +192,8 @@ test('foreign browser origins and unrelated paths cannot call the Worker', async
     headers: { Origin: 'https://example.org' },
   }))
   assert.equal(crossOrigin.status, 403)
+  const home = await worker.fetch(new Request(new URL('/', endpoint)))
+  assert.match(await home.text(), /rel="icon"/)
   const other = await worker.fetch(new Request(new URL('/admin', endpoint)))
   assert.equal(other.status, 404)
   const card = await worker.fetch(new Request(new URL('/mcp/server-card', endpoint)))

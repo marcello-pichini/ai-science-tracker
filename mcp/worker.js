@@ -395,6 +395,15 @@ export default {
         'Content-Type': 'application/mcp-server-card+json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600',
       } })
     }
+    // Directories and Claude show the favicon of the server's host; reuse the site's icon.
+    if (url.pathname === '/favicon.ico' || url.pathname === '/favicon.png') {
+      const icon = await fetch(`${site}/assets/favicon.png`, { cf: { cacheTtl: 86400 } })
+      return new Response(icon.body, { status: icon.status, headers: { 'Content-Type': 'image/png', 'Cache-Control': 'public, max-age=86400' } })
+    }
+    if (url.pathname === '/' && request.method === 'GET') {
+      return new Response(`<!doctype html><title>AI Science Tracker MCP</title><link rel="icon" href="/favicon.png" type="image/png" sizes="64x64"><p>MCP endpoint: <code>${url.origin}/mcp</code>. Catalog: <a href="${site}/">${site}/</a></p>`,
+        { headers: { 'Content-Type': 'text/html; charset=utf-8' } })
+    }
     // Glama connector ownership proof; the claim token is public and bound to the maintainer's Glama account.
     if (url.pathname === '/mcp/.well-known/glama.json' && request.method === 'GET') {
       return Response.json({ $schema: 'https://glama.ai/mcp/schemas/connector.json', claim: 'glama_claim_lBy6s9_WCdOoZAWXml3f23TincQDWwgj' })
