@@ -30,7 +30,7 @@ jobs:
             exit 0
           fi
           # New-style API tokens (KGAT_...) are read from KAGGLE_API_TOKEN; legacy keys from KAGGLE_KEY
-          case "$KAGGLE_KEY" in KGAT_*) export KAGGLE_API_TOKEN="$KAGGLE_KEY"; unset KAGGLE_KEY ;; esac
+          case "$KAGGLE_KEY" in KGAT_*) export KAGGLE_API_TOKEN=$KAGGLE_KEY; unset KAGGLE_KEY ;; esac
           pip install --quiet kaggle
           mkdir -p work/kaggle
           cp data/discoveries.csv data/discoveries.json work/kaggle/

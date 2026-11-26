@@ -30,7 +30,7 @@ jobs:
         id: snapshot
         env:
           GH_TOKEN: ${{ github.token }}
-          EVENT_SHA: ${{ github.event.workflow_run.head_sha || inputs.expected_sha }}
+          EVENT_SHA: ${{ github.event.workflow_run.head_commit.id || inputs.expected_sha }}
         run: |
           python3 scripts/deployment_state.py select --require-check --require-current --output "$RUNNER_TEMP/deployment.json"
           sha=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["deployed_sha"])' "$RUNNER_TEMP/deployment.json")
