@@ -91,7 +91,7 @@ claude mcp add --transport http ai-science-tracker https://mcp.aisciencetracker.
 codex mcp add ai-science-tracker --url https://mcp.aisciencetracker.org/mcp
 ```
 
-In Claude.ai or ChatGPT, add it as a custom connector with the same URL.
+In Claude, add it from the [Connectors Directory](https://claude.ai/directory/connectors/ai-science-tracker); in ChatGPT or other clients, add it as a custom connector with the same URL.
 
 The repository ships a skill that answers "what's new in AI science?" from the catalog instead of a general web search. It is fast and cheap in tokens: the catalog data is about 5.9 MB, but the skill filters it locally and returns a typical answer of 1-12 KB (roughly 300-3,000 tokens), so research that would need many searches and page reads becomes one short call.
 
