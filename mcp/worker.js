@@ -156,14 +156,18 @@ function createServer() {
   })
 
   server.registerTool('search_discoveries', {
+    title: 'Search AI-enabled discoveries',
     description: 'Find scientific discoveries by words in the title, field, organization, AI technology or summary. Terms match the start of a word, ignore accents and British/American spelling, and expand common abbreviations (LLM, ML) and variants (Nasca/Nazca, Herculaneum/Ercolano). Use English words, or paste a DOI to find its record. Common words such as "how" or "new" are ignored; if no record matches every term, a longer query returns the records matching most of them, flagged partial_match. Title matches rank first. Filter by year, field (see list_fields) or organization. Page with offset. Results include a stable ID, short summary, source and catalog link. Use get_discovery for evidence and limitations.',
     inputSchema: {
-      query: z.string().trim().min(1).max(160).optional(),
-      year: z.number().int().min(2020).max(2100).optional(),
-      field: z.string().trim().min(1).max(80).optional(),
-      organization: z.string().trim().min(1).max(120).optional(),
-      limit: z.number().int().min(1).max(20).default(10),
-      offset: z.number().int().min(0).max(10000).default(0),
+      query: z.string().trim().min(1).max(160).optional()
+        .describe('English topic words (for example "protein structure prediction") or a DOI. Omit to list by filters only.'),
+      year: z.number().int().min(2020).max(2100).optional().describe('Publication year of the result, 2020 or later.'),
+      field: z.string().trim().min(1).max(80).optional()
+        .describe('Catalog field such as "medicine" or "materials"; list_fields gives every name.'),
+      organization: z.string().trim().min(1).max(120).optional()
+        .describe('Words from an organization name, for example "DeepMind" or "University of Toronto".'),
+      limit: z.number().int().min(1).max(20).default(10).describe('Results per page, 1 to 20.'),
+      offset: z.number().int().min(0).max(10000).default(0).describe('Number of results to skip, for the next page.'),
     },
     annotations: readOnly,
   }, async ({ query, year, field, organization, limit, offset }) => {
@@ -224,6 +228,7 @@ function createServer() {
   })
 
   server.registerTool('list_fields', {
+    title: 'List catalog fields',
     description: 'List the catalog fields (for the search_discoveries field filter) with their record counts.',
     inputSchema: {},
     annotations: readOnly,
@@ -240,9 +245,13 @@ function createServer() {
   })
 
   server.registerTool('get_discovery', {
+    title: 'Get a discovery record',
     description: 'Retrieve a public scientific discovery by its stable ID, including its original source, summary, evidence and caveats.',
     // IDs are lowercase slugs; some contain "--" or end in "-". No "." or "/" can reach the URL path.
-    inputSchema: { id: z.string().trim().min(1).max(200).regex(/^[a-z0-9][a-z0-9-]*$/) },
+    inputSchema: {
+      id: z.string().trim().min(1).max(200).regex(/^[a-z0-9][a-z0-9-]*$/)
+        .describe('Stable discovery ID as returned by search_discoveries, for example "2020-11-alphafold-casp14".'),
+    },
     annotations: readOnly,
   }, async ({ id }) => {
     try {

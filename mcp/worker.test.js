@@ -80,6 +80,7 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
   const { tools } = await client.listTools()
   assert.deepEqual(tools.map((tool) => tool.name).sort(), ['get_discovery', 'list_fields', 'search_discoveries'])
   assert.ok(tools.every((tool) => tool.annotations.readOnlyHint))
+  assert.ok(tools.every((tool) => tool.title && Object.values(tool.inputSchema.properties ?? {}).every((p) => p.description)))
 
   const search = await client.callTool({
     name: 'search_discoveries',
