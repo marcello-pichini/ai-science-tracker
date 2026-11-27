@@ -238,6 +238,8 @@ const html=fs.readFileSync('model-progress.html','utf8');assert.match(html,/<det
             graph = json.loads(re.search(r'<script id="component-datasets" type="application/ld\+json">(.*?)</script>', (root / 'dataset.html').read_text(), re.S)[1])['@graph']
             self.assertEqual(len(graph), len(json.loads((root / 'data/benchmarks/index.json').read_text())['sources']))
             self.assertEqual({row['@id']:row['license'] for row in graph}, {'https://aisciencetracker.org/' + row['path']:row['license_url'] for row in first['components'].values() if row.get('group') == 'public-benchmarks' and row.get('license_url')})
+            # Google's Dataset rich result requires a creator on every Dataset node.
+            self.assertTrue(all(row['creator']['name'] for row in graph))
             once = (root / 'dataset.html').read_bytes()
             write_component_jsonld(root, first)
             self.assertEqual(once, (root / 'dataset.html').read_bytes())
