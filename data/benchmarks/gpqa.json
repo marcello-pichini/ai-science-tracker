@@ -14,10 +14,33 @@
     "cc-by-4.0"
   ],
   "source_url": "https://epoch.ai/benchmarks/use-this-data",
-  "retrieved_on": "2026-11-24",
+  "retrieved_on": "2026-11-27",
   "schema_version": 1,
   "changes": "Selected numerical results; fields renamed and evaluation slices labeled. Original numerical scales retained. Questions, paper images, transcripts, contacts and trajectories excluded.",
   "records": [
+    {
+      "id": "e303e7043f8f8ed05c98",
+      "model": "inkling-2-mini_xhigh",
+      "metric": "Mean accuracy",
+      "value": 0.8680555555555556,
+      "unit": "fraction",
+      "direction": "Higher is better",
+      "comparison_group": "Mean accuracy",
+      "date": "2026-11-25",
+      "date_basis": "Evaluation start",
+      "source_url": "https://epoch.ai/benchmarks/gpqa-diamond",
+      "details": {
+        "Model version": "inkling-2-mini_xhigh",
+        "Organization": "Thinking Machines",
+        "stderr": "0.020018371035584865",
+        "Release date": "2026-11-20",
+        "Started at": "2026-11-25T15:22:31.000Z",
+        "Best score (across scorers)": "0.8680555555555556",
+        "id": "BprTp4gfi2vmANoqed5g9C",
+        "Log viewer": "https://logs.epoch.ai/inspect-viewer/36231d6d/viewer.html?log_file=https%3A%2F%2Flogs.epoch.ai%2Finspect_ai_logs%2FBprTp4gfi2vmANoqed5g9C.eval",
+        "Logs": "https://epoch-benchmarks-production-public.s3.us-east-2.amazonaws.com/inspect_ai_logs/BprTp4gfi2vmANoqed5g9C.eval"
+      }
+    },
     {
       "id": "1f14ef9a7b58a1cd3a3d",
       "model": "qwen4-max_xhigh",
@@ -7909,7 +7932,7 @@
     }
   ],
   "input_sha256": {
-    "epoch-zip": "9e4dbef579c1d241e73b6626358b865c243009d37e27c3235b3d11465b1aa8e3",
+    "epoch-zip": "93fb3cf022a6a710a466e4cc4bba2139902d3932d38e360f45e81832add9bad5",
     "cc-by-4.0": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
   }
 }
