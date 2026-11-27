@@ -176,7 +176,8 @@ class SharePageTests(unittest.TestCase):
         page = (g.ROOT / 'share/long.html').read_text()
         title = __import__('re').search(r'<title>(.*?)</title>', page)[1]
         self.assertLessEqual(len(title), g.TITLE_MAX)
-        self.assertTrue(title.endswith(' · AI in mathematics'))
+        # A clipped title keeps its own words; the field suffix appears only when the whole title fits.
+        self.assertTrue(title.startswith('An AI-assisted proof establishes a long') and title.endswith('…'))
         self.assertIn(f'<h1 id="titolo-pagina">{long_title}</h1>', page)
         self.assertIn(f'<meta property="og:title" content="{long_title}">', page)
         self.assertIn('<title>Latin-square imbalance bound</title>', (g.ROOT / 'share/override.html').read_text())

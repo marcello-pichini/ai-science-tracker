@@ -98,7 +98,8 @@ class GeneratedSeoTest(unittest.TestCase):
         self.assertIn('Article', types)
 
     def test_every_discovery_page_states_when_it_was_updated(self):
-        # Freshness signal for search and answer engines: JSON-LD dateModified plus the same visible date.
+        # Freshness signal for search and answer engines: JSON-LD dateModified, the same visible date and sitemap lastmod.
+        lastmod = {}
         for path in sorted((ROOT / 'share').glob('*.html')):
             text = path.read_text(encoding='utf-8')
             data = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', text, re.S).group(1))
@@ -106,6 +107,10 @@ class GeneratedSeoTest(unittest.TestCase):
             self.assertRegex(modified or '', r'^\d{4}-\d{2}-\d{2}$', path.name)
             self.assertEqual(data['mainEntity'].get('dateModified'), modified, path.name)
             self.assertIn(f'Entry updated <time datetime="{modified}">', text, path.name)
+            lastmod[path.name] = modified
+        sitemap = (ROOT / 'sitemap.xml').read_text(encoding='utf-8')
+        for name, date in re.findall(r'<loc>[^<]*/share/([^<]+)</loc><lastmod>([^<]+)</lastmod>', sitemap):
+            self.assertEqual(date, lastmod.get(name, date), name)
 
 
 if __name__ == '__main__':

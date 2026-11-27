@@ -305,8 +305,10 @@ PAGE = """<!doctype html>
 """
 
 
-CREATOR = {'@type': 'Person', 'name': 'Marcello Pichini', 'url': 'https://github.com/marcello-pichini'}
+CREATOR = {'@type': 'Person', 'name': 'Marcello Pichini', 'url': 'https://github.com/marcello-pichini',
+           'sameAs': ['https://orcid.org/0009-0007-4958-371X']}
 PUBLISHER = {'@type': 'Organization', '@id': BASE + '#organization', 'name': SITE, 'url': BASE,
+             'logo': BASE + 'assets/logo.png', 'publishingPrinciples': BASE + 'methodology.html',
              'sameAs': ['https://github.com/marcello-pichini/ai-science-tracker', 'https://doi.org/10.5281/zenodo.24217686',
                         'https://huggingface.co/datasets/marcello-pichini/ai-science-tracker',
                         'https://www.linkedin.com/company/aisciencetracker/']}
@@ -327,19 +329,38 @@ def breadcrumb(name, path):
         {'@type': 'ListItem', 'position': 2, 'name': name, 'item': BASE + path}]}
 
 
+RECORD_CHANGED = {}  # id -> date the record or its plain-language text last changed, from data/record-lastmod.json
+
+
+def track_record_changes(records, plain):
+    """Date content edits (corrections, plain texts) that carry no review date. No history means no known edit."""
+    path = ROOT / 'data/record-lastmod.json'
+    state = json.loads(path.read_text()) if path.is_file() else {}
+    today = datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+    out = {}
+    for d in records:
+        digest = hashlib.sha256(json.dumps([d, plain_text(plain, d['id'])], sort_keys=True).encode()).hexdigest()[:16]
+        known = (state.get(d['id']) or '').split(' ')
+        changed = known[1] if known[0] == digest and len(known) == 2 else (today if known[0] else '')
+        out[d['id']] = f'{digest} {changed}'.strip()
+        if changed:
+            RECORD_CHANGED[d['id']] = changed
+    path.write_text(json.dumps(out, indent=0, sort_keys=True) + '\n')
+
+
 def record_modified(d):
-    """Last catalog change we can date: addition or a recorded source/follow-up review."""
-    dates = [d.get('added_date') or d['publication_date']] + [(d.get(k) or {}).get('date') or '' for k in ('source_review', 'follow_up_review')]
+    """Last catalog change we can date: addition, a recorded source/follow-up review or a tracked content edit."""
+    dates = [d.get('added_date') or d['publication_date'], RECORD_CHANGED.get(d['id'], '')] + [(d.get(k) or {}).get('date') or '' for k in ('source_review', 'follow_up_review')]
     return max(x for x in dates if x)
 
 
-def discovery_jsonld(d):
+def discovery_jsonld(d, image='default'):
     # WebPage plus an Article for the catalog record (our summary). This is not the paper itself,
     # so it is not a ScholarlyArticle. datePublished is the source announcement date.
     url = f'{BASE}share/{d["id"]}.html'
     work = {'@type': 'Article', 'name': d['title'], 'headline': clip(d['title'], 110), 'author': CREATOR, 'publisher': PUBLISHER, 'abstract': clip(d['summary'], 300),
             'datePublished': d['publication_date'], 'dateModified': record_modified(d), 'inLanguage': 'en', 'url': url, 'keywords': d['field'],
-            'isBasedOn': d['source_url']}
+            'isBasedOn': d['source_url'], 'image': f'{BASE}og/{image}.png'}
     data = {'@context': 'https://schema.org/', '@type': 'WebPage', 'name': d['title'], 'description': clip(d['summary'], 300),
             'url': url, 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR, 'publisher': PUBLISHER,
             'dateModified': record_modified(d), 'mainEntity': work, 'isPartOf': {'@id': DATASET_ID},
@@ -414,6 +435,7 @@ which while when where also two three four five one all any per out who how what
 # Single-discovery organization pages mostly repeat their discovery page: keep them reachable but noindex.
 ORG_INDEX_MIN = 2
 PROFILE_FULL_CARDS = 100
+COLLECTION_LIST_MAX = 900
 RELATED_LIMIT = 5
 TOPIC_THRESHOLD = 0.12
 
@@ -426,9 +448,8 @@ def search_title(d, limit=TITLE_MAX):
     suffix = ' · AI discovery' if d['field'] in ('other', 'multidisciplinary') else f' · AI in {d["field"]}'
     if len(d['title']) + len(suffix) <= limit:
         return d['title'] + suffix
-    if len(d['title']) <= limit:
-        return d['title']
-    return clip(d['title'], limit - len(suffix)) + suffix
+    # Too long for the suffix: the title's own words carry more search value than the field label.
+    return clip(d['title'], limit)
 
 
 def topic_words(row):
@@ -549,7 +570,7 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
                        else '<h2 class="vis-nascosto">Discovery</h2>')
         page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(describe(d['summary'], lead=d['title'])), base=BASE,
                            path=f'share/{d["id"]}.html', img=d['id'] if has_image else 'default',
-                           imgalt=esc(f'Preview card: {d["title"]}') if has_image else DEFAULT_ALT, jsonld=discovery_jsonld(d),
+                           imgalt=esc(f'Preview card: {d["title"]}') if has_image else DEFAULT_ALT, jsonld=discovery_jsonld(d, d['id'] if has_image else 'default'),
                            h2=short + specialists, more=more, extra=related_section(d, candidates, families_by_discovery),
                            header=header, footer=footer, lead=lead, article=article)
         page = page.replace(f'<title>{esc(d["title"])} · {SITE}</title>',
@@ -657,10 +678,16 @@ def write_profile_pages(items, models, archived=()):
     def emit(name, title, lead, desc, rows, path, interactive, extra='', organization=False, label='interactive profile', before='', noindex=False, head_title=None):
         # Full cards made field/year pages exceed 9 MB; older rows keep a crawlable link to their own page.
         articles = ''.join(discovery_article(d, fam_by_discovery.get(d['id']), ui[d['id']], link_title=True) for d in rows[:PROFILE_FULL_CARDS])
-        if len(rows) > PROFILE_FULL_CARDS:
+        # Field/year lists stop growing before Googlebot's 2 MB HTML cutoff; every entry stays linked from its organization page.
+        listed = rows[PROFILE_FULL_CARDS:PROFILE_FULL_CARDS + COLLECTION_LIST_MAX] if label == 'filtered catalog' else rows[PROFILE_FULL_CARDS:]
+        if listed:
             articles += ('<h2>Earlier discoveries</h2><ul class="elenco-profili">' + ''.join(
                 f'<li><a href="share/{quote(d["id"])}.html">{esc(d["title"])}</a> ({d["publication_date"]})</li>'
-                for d in rows[PROFILE_FULL_CARDS:]) + '</ul>')
+                for d in listed) + '</ul>')
+        hidden = len(rows) - PROFILE_FULL_CARDS - len(listed)
+        if hidden > 0:
+            articles += (f'<p class="prosa">{plural(hidden, "older discovery is", "older discoveries are")} listed in the '
+                         f'<a href="{interactive}">filtered catalog</a> and on each organization profile.</p>')
         if len(desc) < DESC_MIN:
             desc += ' Each entry states the AI role, the evidence and its limits.'
         desc = clip(desc, 160)
@@ -850,7 +877,18 @@ def write_catalog_evidence(items):
                         '<th scope="col">Evidence annotated</th><th scope="col">Source checked</th></tr></thead>'
                         f'<tbody>{"".join(table)}</tbody></table></div>')
     annotated = sum(bool(d.get('evidence')) for d in items)
-    article = ('<div class="prosa"><h2>What does this catalog cover?</h2>'
+    tested = {}
+    for d in items:
+        tested[evidence_levels.level(d)] = tested.get(evidence_levels.level(d), 0) + 1
+    steps = ''.join(f'<li><strong>{esc(label)}:</strong> {tested.get((step, label), 0)} entries</li>'
+                    for step, label in sorted([*evidence_levels.LEVELS.values(), evidence_levels.NOT_REPORTED], reverse=True))
+    # Answer first: the question searchers ask about AI discoveries, answered from the records' own test categories.
+    article = ('<div class="prosa"><h2>How well tested are the AI discoveries in this catalog?</h2>'
+               f'<p>Each entry records the strongest test that its original source reports. Of {len(items)} active entries:</p>'
+               f'<ul>{steps}</ul>'
+               '<p>These levels describe what the sources report. This site does not rerun the studies, and a level does not measure '
+               'importance. <a href="methodology.html">Read how entries are selected and classified</a>.</p></div>'
+               '<div class="prosa"><h2>What does this catalog cover?</h2>'
                f'<p>Of {len(items)} active entries, {annotated} contain a structured evidence annotation '
                f'and {len(items) - annotated} do not. The tables compare the composition of the current catalog, '
                'rather than the rate of scientific progress.</p>'
@@ -944,7 +982,15 @@ def write_security_pages(items):
     listings = ''.join(f'<h2>Disclosures in {year}</h2><ul class="elenco-profili">' + ''.join(
         f'<li><a href="profiles/security-{quote(r["id"])}.html">{esc(r["title"])}</a> · '
         f'{esc(", ".join(r["cves"]) or r["product"])}</li>' for r in rows) + '</ul>' for year, rows in groups.items())
-    article = ('<div class="prosa"><h2>Read the source-attributed evidence</h2><p>Each case preserves the original finding, '
+    with_cve = sum(bool(r['cves']) for r in items)
+    per_year = ', '.join(f'{len(rows)} in {year}' for year, rows in groups.items())
+    # Answer first for "how many vulnerabilities has AI found", with the counting limits in the same paragraph.
+    article = ('<div class="prosa"><h2>How many vulnerabilities has AI found?</h2>'
+               f'<p>This catalog records {len(items)} publicly disclosed vulnerability cases whose sources attribute a role in finding '
+               f'them to an AI system; {with_cve} have CVE identifiers. By disclosure year: {per_year}. '
+               'It is a selection of public evidence, not a complete count. Where only the vendor reports the AI role, '
+               'the case records it as the vendor\'s account.</p></div>'
+               '<div class="prosa"><h2>Read the source-attributed evidence</h2><p>Each case preserves the original finding, '
                'AI and human contribution, separate disclosure and attribution dates, reported severity assessments and remediation limits. '
                'These cases are separate from scientific-discovery counts. Missing evidence does not establish absence of exploitation.</p></div>' + listings)
     write_collection_page('Vulnerabilities found by AI: source-linked cases',
@@ -1046,6 +1092,7 @@ def write_sitemap(items, models, archived=(), vulns=()):
         links.append(f'<xhtml:link rel="alternate" hreflang="x-default" href="{esc(public_url(page, "en"))}"/>')
         return ''.join(links)
 
+    records = {f'share/{quote(d["id"])}.html': d for d in [*items, *archived]}
     from indexnow import substantive
     state_path = ROOT / 'data/page-lastmod.json'
     state = json.loads(state_path.read_text()) if state_path.is_file() else {}
@@ -1062,6 +1109,8 @@ def write_sitemap(items, models, archived=(), vulns=()):
             known = state.get(url, '').split(' ')
             dates[url] = f'{digest} {known[1] if known[0] == digest and len(known) == 2 else today}'
             updated = dossier_modified_date(text) if url.endswith('-dossier.html') else None
+            if url.startswith('share/'):
+                updated = record_modified(records[url])  # same date as the page's dateModified and visible date
             lastmod = f'<lastmod>{updated or dates[url].split(" ")[1]}</lastmod>'
         targets = [public_url(url, 'en')] if url in SITEMAP_PAGES else [BASE + url]
         if url in SITEMAP_PAGES:
@@ -1571,6 +1620,7 @@ def main():
     plain = load_plain()
     validate_plain(plain)
     plain = usable_plain(plain, items)
+    track_record_changes(items + archived, plain)
     write_page_summaries(items, models)
     write_hero_pulse(items)
     write_plain_home(items, plain)
