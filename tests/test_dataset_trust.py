@@ -13,7 +13,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from dataset_manifest import build_manifest, stamp_pages, write_component_jsonld
+from dataset_manifest import build_manifest, stamp_pages, write_component_jsonld, write_discovery_list
 from validate_review_patch import validate_review_patch
 from entities import organization
 
@@ -212,9 +212,10 @@ const html=fs.readFileSync('model-progress.html','utf8');assert.match(html,/<det
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             shutil.copytree(ROOT / 'data', root / 'data')
+            write_discovery_list(root)
             first = build_manifest(root)
             self.assertEqual(first, build_manifest(root))
-            self.assertEqual(set(first['components']), {'discoveries','archived-discoveries','vulnerabilities','models','model-progress','swe-bench','citations','entity-aliases','discoveries-csv','vulnerabilities-csv','catalog-summary','benchmark-registry'} | {'benchmark-' + source['id'] for source in json.loads((root / 'data/benchmarks/index.json').read_text())['sources']})
+            self.assertEqual(set(first['components']), {'discoveries','discoveries-list','archived-discoveries','vulnerabilities','models','model-progress','swe-bench','citations','entity-aliases','discoveries-csv','vulnerabilities-csv','catalog-summary','benchmark-registry'} | {'benchmark-' + source['id'] for source in json.loads((root / 'data/benchmarks/index.json').read_text())['sources']})
             for key, component in first['components'].items():
                 raw = (root / component['path']).read_bytes()
                 self.assertEqual(component['sha256'], hashlib.sha256(raw).hexdigest())

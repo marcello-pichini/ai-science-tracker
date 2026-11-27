@@ -61,8 +61,8 @@ function page(name, hash = "", archived = [], staticPages = [], storage = new Ma
   const html = fs.readFileSync(name, 'utf8');
   vm.runInContext([...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].at(-1)[1], context);
   const run = code => vm.runInContext(code, context);
-  const dispatch = type => [...(listeners[type] || [])].forEach(x => x.fn());
-  return {run, dispatch, list, location, history, redirects, requested, get requestedComponents(){return requestedComponents;}, flushTimers:() => timers.splice(0).forEach(fn => fn()), load:(records, models = null, citations = null) => loaded({data:{vulnerabilities:records, discoveries:name === 'models.html' ? models : records, models:name === 'models.html' ? records : models, citations, 'archived-discoveries':archived, 'entity-aliases':JSON.parse(fs.readFileSync('data/entity-aliases.json','utf8'))}}), fail:() => failure(new Error("Network error"))};
+  const dispatch = (type, event) => [...(listeners[type] || [])].forEach(x => x.fn(event));
+  return {run, dispatch, list, location, history, redirects, requested, get requestedComponents(){return requestedComponents;}, flushTimers:() => timers.splice(0).forEach(fn => fn()), load:(records, models = null, citations = null) => loaded({data:{vulnerabilities:records, discoveries:name === 'models.html' ? models : records, 'discoveries-list':records, models:name === 'models.html' ? records : models, citations, 'archived-discoveries':archived, 'entity-aliases':JSON.parse(fs.readFileSync('data/entity-aliases.json','utf8'))}}), fail:() => failure(new Error("Network error"))};
 }
 const records = Array.from({length:90}, (_, i) => ({id:'d'+i, title:'Discovery '+i,
  summary:'Summary', ai_technology:'AI', field:i === 89 ? 'biology' : 'medicine',
@@ -215,6 +215,33 @@ assert.deepEqual(p.list.childNodes, original, 'Restore the original nodes and th
 assert.equal(p.list.childNodes[3].details.open, true);
 assert.equal(p.list.childNodes[4].details.open, false);
 assert.equal(p.location.href, url);
+''')
+
+    def test_print_shortcut_loads_full_evidence_before_printing(self):
+        self.run_js(r'''
+(async () => {
+  const p = page('index.html');
+  p.run('riepilogo = spettro = grafici = featured = () => {};');
+  p.load(records);
+  const full = records.map(r => ({...r, evidence:{ai_role:'Role ' + r.id, tested:'Tested', unknown:'Unknown', publication_status:'Preprint', test_type:'direct test'}}));
+  p.run('globalThis.printed = []; print = () => printed.push(document.getElementById("lista").childNodes.length); CatalogData.load = async () => ({data:{discoveries:' + JSON.stringify(full) + '}});');
+  assert.ok(!p.run('details(items[0])').includes('Role d0'), 'The list starts without evidence prose');
+  let prevented = false;
+  p.dispatch('keydown', {key:'p', ctrlKey:true, preventDefault() {prevented = true;}});
+  assert.ok(prevented, 'The shortcut waits for the full component');
+  for (let i = 0; i < 8; i++) await Promise.resolve();
+  assert.equal(p.run('printed.length'), 1, 'Print runs once after loading');
+  assert.ok(p.run('details(items[89])').includes('Role d89'), 'Every listed entry has full evidence before printing');
+  prevented = false;
+  p.dispatch('keydown', {key:'p', ctrlKey:true, preventDefault() {prevented = true;}});
+  assert.equal(prevented, false, 'Once loaded, printing proceeds normally');
+  const failing = page('index.html');
+  failing.run('riepilogo = spettro = grafici = featured = () => {};'); failing.load(records);
+  failing.run('globalThis.printed = 0; print = () => printed++; CatalogData.load = async () => { throw Error("offline"); };');
+  failing.dispatch('keydown', {key:'p', metaKey:true, preventDefault() {}});
+  for (let i = 0; i < 8; i++) await Promise.resolve();
+  assert.equal(failing.run('printed'), 1, 'A failed load still prints what is there');
+})().catch(error => {console.error(error); process.exitCode = 1;});
 ''')
 
     def test_opening_excluded_discovery_updates_query_and_survives_reload(self):
