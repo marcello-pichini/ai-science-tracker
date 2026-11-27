@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it" data-page-snapshot="93be88b5ec795cf93f924f9466fe5df61ddb9009545ff1ce254954fd8db6bd29">
+<html lang="it" data-page-snapshot="be029344de05fda022e91344dff2b784081f6d170723094db96fcb823f679ad2">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -112,7 +112,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale" content="it_IT">
-<script src="runtime.js?v=31dfec7c8afc"></script><script src="discoveries.js?v=72abb6540f28"></script>
+<script src="runtime.js?v=31e78718e841"></script><script src="discoveries.js?v=91a5b9dc03a5"></script>
 </head>
 <body>
 <header class="header">
@@ -683,6 +683,7 @@ CatalogUI.beforePrint = () => {
   if (printState) return;
   printState = { limit:limite, nodes:[...$("lista").childNodes], count:$("conta").textContent };
   limite = Infinity; lista();
+  if (slim && !items.every(s => fullRecords.has(s.id))) $("conta").textContent += " · " + tr("Some evidence details were still loading; print again to include them.");
 };
 // The keyboard shortcut waits for the full evidence, then prints; if loading fails it prints what is there.
 // A print started from the browser menu cannot wait: it prints the loaded entries and starts the load for the next print.

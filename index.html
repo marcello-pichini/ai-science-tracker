@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-page-snapshot="93be88b5ec795cf93f924f9466fe5df61ddb9009545ff1ce254954fd8db6bd29">
+<html lang="en" data-page-snapshot="be029344de05fda022e91344dff2b784081f6d170723094db96fcb823f679ad2">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -682,6 +682,7 @@ CatalogUI.beforePrint = () => {
   if (printState) return;
   printState = { limit:limite, nodes:[...$("lista").childNodes], count:$("conta").textContent };
   limite = Infinity; lista();
+  if (slim && !items.every(s => fullRecords.has(s.id))) $("conta").textContent += " · " + tr("Some evidence details were still loading; print again to include them.");
 };
 // The keyboard shortcut waits for the full evidence, then prints; if loading fails it prints what is there.
 // A print started from the browser menu cannot wait: it prints the loaded entries and starts the load for the next print.
