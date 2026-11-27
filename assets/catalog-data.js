@@ -21,7 +21,7 @@ globalThis.AST_t ||= (en, vars) => {
     return value;
   }
   function validateData(id, value) {
-    const arrays = ['discoveries', 'archived-discoveries', 'vulnerabilities'];
+    const arrays = ['discoveries', 'discoveries-list', 'archived-discoveries', 'vulnerabilities'];
     if (arrays.includes(id) && !Array.isArray(value)) throw Error('Invalid record collection');
     if (['models','model-progress'].includes(id) && !Array.isArray(value?.models)) throw Error('Invalid model collection');
     if (id === 'models' && !Array.isArray(value.families)) throw Error('Invalid model families');
@@ -88,6 +88,17 @@ globalThis.AST_t ||= (en, vars) => {
     notify('failed');
     throw error;
   }
+  // One record from the static API, bound to a validated list row by the SHA-256 prefix that row carries.
+  async function record(path, digest, options = {}) {
+    if (!/^[a-f0-9]{16,64}$/.test(digest || '')) throw Error('Invalid record digest');
+    const cryptoAPI = options.crypto || globalThis.crypto;
+    const url = new URL(path, new URL(options.root || defaultRoot)); url.searchParams.set('v', digest);
+    const response = await (options.fetch || globalThis.fetch)(url.href);
+    if (!response.ok) throw Error('Record unavailable');
+    const bytes = await response.arrayBuffer();
+    if (!hex(await cryptoAPI.subtle.digest('SHA-256', bytes)).startsWith(digest)) throw Error('Record snapshot mismatch');
+    return JSON.parse(new TextDecoder('utf-8', {fatal:true}).decode(bytes));
+  }
   function observe(target, loaded) {
     target.dataset.snapshotSha256 = loaded.snapshot;
     target.dataset.componentSha256 = JSON.stringify(loaded.hashes);
@@ -150,6 +161,6 @@ globalThis.AST_t ||= (en, vars) => {
     if (document.prerendering) return new Promise(done => document.addEventListener('prerenderingchange', () => done(start()), {once:true}));
     return start();
   }
-  globalThis.CatalogData = {load, observe, run, validateManifest};
+  globalThis.CatalogData = {load, observe, record, run, validateManifest};
   if (typeof module !== 'undefined') module.exports = globalThis.CatalogData;
 })();

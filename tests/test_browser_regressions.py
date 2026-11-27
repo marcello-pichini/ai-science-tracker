@@ -62,7 +62,7 @@ function page(name, hash = "", archived = [], staticPages = [], storage = new Ma
   vm.runInContext([...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].at(-1)[1], context);
   const run = code => vm.runInContext(code, context);
   const dispatch = type => [...(listeners[type] || [])].forEach(x => x.fn());
-  return {run, dispatch, list, location, history, redirects, requested, get requestedComponents(){return requestedComponents;}, flushTimers:() => timers.splice(0).forEach(fn => fn()), load:(records, models = null, citations = null) => loaded({data:{vulnerabilities:records, discoveries:name === 'models.html' ? models : records, models:name === 'models.html' ? records : models, citations, 'archived-discoveries':archived, 'entity-aliases':JSON.parse(fs.readFileSync('data/entity-aliases.json','utf8'))}}), fail:() => failure(new Error("Network error"))};
+  return {run, dispatch, list, location, history, redirects, requested, get requestedComponents(){return requestedComponents;}, flushTimers:() => timers.splice(0).forEach(fn => fn()), load:(records, models = null, citations = null) => loaded({data:{vulnerabilities:records, discoveries:name === 'models.html' ? models : records, 'discoveries-list':records, models:name === 'models.html' ? records : models, citations, 'archived-discoveries':archived, 'entity-aliases':JSON.parse(fs.readFileSync('data/entity-aliases.json','utf8'))}}), fail:() => failure(new Error("Network error"))};
 }
 const records = Array.from({length:90}, (_, i) => ({id:'d'+i, title:'Discovery '+i,
  summary:'Summary', ai_technology:'AI', field:i === 89 ? 'biology' : 'medicine',

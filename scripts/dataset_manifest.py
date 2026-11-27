@@ -19,6 +19,37 @@ COMPONENTS = {
 }
 
 
+# Evidence prose the home page list omits; the page fetches it per record from api/v1/discoveries/ID.json.
+LIST_OMITTED_EVIDENCE = ('ai_role', 'tested', 'unknown', 'evidence_urls')
+LIST_PATH = 'data/discoveries-list.json'
+
+
+def record_bytes(record):
+    """Exact bytes of api/v1/discoveries/ID.json as write_api in generate_share.py writes them."""
+    return (json.dumps(record, indent=2, ensure_ascii=False) + '\n').encode('utf-8')
+
+
+def discovery_list_bytes(records):
+    """Compact list rows: every field except evidence prose. A tested text equal to the summary is kept,
+    since the list labels that case; record_sha256 binds each row to its per-record API file."""
+    rows = []
+    for record in records:
+        row = {key: value for key, value in record.items() if key != 'evidence'}
+        if record.get('evidence') is not None:
+            row['evidence'] = {key: value for key, value in record['evidence'].items()
+                               if key not in LIST_OMITTED_EVIDENCE or (key == 'tested' and value == record.get('summary'))}
+        row['record_sha256'] = hashlib.sha256(record_bytes(record)).hexdigest()[:16]
+        rows.append(row)
+    return (json.dumps(rows, ensure_ascii=False, separators=(',', ':')) + '\n').encode('utf-8')
+
+
+def write_discovery_list(root):
+    root = Path(root)
+    raw = discovery_list_bytes(json.loads((root / 'data/discoveries.json').read_bytes()))
+    (root / LIST_PATH).write_bytes(raw)
+    return raw
+
+
 def canonical(value):
     return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(',', ':')).encode('utf-8')
 
@@ -111,6 +142,11 @@ def build_manifest(root):
                 'any_displayed_benchmark': sum(any(m.get('benchmarks', {}).get(b['id'], {}).get('score') is not None for b in data['benchmarks']) for m in rows), 'total': len(rows)}
         if key == 'vulnerabilities':
             components[key]['distinct_cves'] = len({cve for r in rows for cve in r['cves']})
+    raw = discovery_list_bytes(json.loads((root / 'data/discoveries.json').read_bytes()))
+    components['discoveries-list'] = dict(components['discoveries'], path=LIST_PATH, label='Scientific discoveries, list view',
+        sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw),
+        coverage='Same entries as the scientific discoveries component without the evidence prose fields ' + ', '.join(LIST_OMITTED_EVIDENCE)
+                 + '; record_sha256 is the first 16 hex digits of the SHA-256 of api/v1/discoveries/ID.json.')
     for key in ('discoveries', 'vulnerabilities'):
         path = f'data/{key}.csv'
         raw = (root / path).read_bytes()
@@ -129,6 +165,7 @@ def build_manifest(root):
 
 
 def write_manifest(root):
+    write_discovery_list(root)
     value = build_manifest(root)
     out = Path(root) / 'api/v1/manifest.json'
     out.parent.mkdir(parents=True, exist_ok=True)
