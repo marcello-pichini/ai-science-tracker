@@ -1,0 +1,29 @@
+name: Claim an open problem
+description: Take one of the open problems listed on the claims page.
+title: "Claim: "
+labels: ["claim"]
+body:
+  - type: markdown
+    attributes:
+      value: "Claims are public and need a GitHub account; do not include personal information. One problem per issue. A claim with no activity for 30 days is closed so others can take the problem. Problems: https://aisciencetracker.org/claims.html"
+  - type: input
+    id: claim
+    attributes:
+      label: Problem ID
+      description: The ID shown on the claims page, for example linear-code-record-gf8-n49.
+    validations:
+      required: true
+  - type: input
+    id: tools
+    attributes:
+      label: AI agent and model, if any
+      description: For example "Claude Code, Claude Opus 5.5" or "none".
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Plan
+      description: Which part you will try (an order, a k, an instance size) and how, so others can avoid duplicating it.
+    validations:
+      required: true

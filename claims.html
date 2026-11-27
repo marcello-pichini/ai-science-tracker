@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action https://formspree.io">
+<script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/data/*"}},{"not":{"href_matches":"/api/*"}},{"not":{"href_matches":"/og/*"}},{"not":{"href_matches":"/*.xml"}},{"not":{"href_matches":"/*.txt"}}]},"eagerness":"moderate"}]}</script><!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "04bfc0ca5b5e4460b4c8ee6bb5055925"}'></script><!-- End Cloudflare Web Analytics --><script>
+globalThis.astCleanPath = function (path) {
+  path = path || '/';
+  if (path === '/index.html') return '/';
+  var home = path.match(/^\/(it|de|fr|es)\/index\.html$/);
+  if (home) return '/' + home[1] + '/';
+  return path;
+};
+globalThis.astResolveLanguage = function (input) {
+  var SUPPORTED = {it:1, de:1, fr:1, es:1};
+  var ua = input.ua || '';
+  var bot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|googleother|google-extended|google-inspectiontool|google-read-aloud|duplexweb|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua);
+  var raw = input.path || '/';
+  var path = astCleanPath(raw);
+  var search = input.search || '';
+  var hash = input.hash || '';
+  var cleaned = path + search + hash;
+  // Crawlers are not sent to another language. They are sent from /index.html to /.
+  if (bot) return path === raw ? null : cleaned;
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return path === raw ? null : cleaned;
+  var pages = input.pages || [];
+  var saved = input.saved || '';
+  var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
+  if (!target) {
+    var list = input.languages || [];
+    for (var i = 0; i < list.length; i++) {
+      var code = String(list[i] || '').toLowerCase().split('-')[0];
+      if (code === 'en' || SUPPORTED[code]) { target = code; break; }
+    }
+  }
+  if (!target) {
+    var hint = {
+      'Europe/Rome':'it','Europe/Vatican':'it','Europe/San_Marino':'it',
+      'Europe/Berlin':'de','Europe/Busingen':'de','Europe/Vienna':'de',
+      'Europe/Paris':'fr','Europe/Monaco':'fr',
+      'Europe/Madrid':'es','Atlantic/Canary':'es','Africa/Ceuta':'es','Europe/Andorra':'es',
+      'America/Mexico_City':'es','America/Argentina/Buenos_Aires':'es','America/Bogota':'es',
+      'America/Lima':'es','America/Santiago':'es','America/Montevideo':'es','America/Asuncion':'es',
+      'America/La_Paz':'es','America/Caracas':'es','America/Guayaquil':'es'
+    };
+    if (hint[input.timezone || '']) target = hint[input.timezone];
+  }
+  if (target && target !== 'en' && SUPPORTED[target]) {
+    if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+    var file = path.split('/').pop();
+    var dir = path.slice(0, path.length - file.length);
+    if (dir !== '/') return path === raw ? null : cleaned;
+    if (!file || file === 'index.html') return '/' + target + '/' + search + hash;
+    if (pages.indexOf(file) < 0) return path === raw ? null : cleaned;
+    return '/' + target + '/' + file + search + hash;
+  }
+  return path === raw ? null : cleaned;
+};
+globalThis.astEquivalent = function (lang, path, search, hash, pages) {
+  search = search || '';
+  hash = hash || '';
+  pages = pages || [];
+  var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
+  var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
+  if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
+  var prefix = lang === 'en' ? '' : '/' + lang;
+  if (rest === '/') return prefix + '/' + search + hash;
+  var file = rest.split('/').pop();
+  var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && file === 'index.html') return prefix + '/' + search + hash;
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
+  var share = rest.match(/^\/share\/([^/]+)\.html$/);
+  if (share) return prefix + '/#discovery=' + share[1];
+  if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
+  return prefix + '/' + search;
+};
+try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
+<title>Open problems to claim · AI Science Tracker</title>
+<meta name="description" content="Open problems left by AI discoveries in the catalog, each with a public checker. Claim one on GitHub, submit a result and let the checker decide.">
+<link rel="canonical" href="https://aisciencetracker.org/claims.html">
+<meta property="og:title" content="Open problems to claim · AI Science Tracker">
+<meta property="og:description" content="Open problems left by AI discoveries in the catalog, each with a public checker. Claim one on GitHub, submit a result and let the checker decide.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://aisciencetracker.org/og/default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:title" content="Open problems to claim · AI Science Tracker">
+<meta name="twitter:description" content="Open problems left by AI discoveries in the catalog, each with a public checker. Claim one on GitHub, submit a result and let the checker decide.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://aisciencetracker.org/claims.html">
+<meta property="og:site_name" content="AI Science Tracker">
+<meta name="theme-color" content="#12367e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=bccf1265dee8"><link rel="stylesheet" href="assets/i18n.css?v=7381bc1b8ccc">
+<meta property="og:locale" content="en_GB">
+</head>
+<body>
+<header class="header">
+  <div class="wrap">
+    <a class="marchio" href="/" aria-label="AI Science Tracker, home page">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <span>AI Science Tracker</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button><p class="vis-nascosto" id="nav-label-close">Close menu</p><nav class="menu" id="site-nav" aria-label="Site sections"><a href="/">Discoveries</a><a href="models.html">Models</a><a href="security.html">Vulnerabilities</a><a href="dossiers.html">Dossiers</a><a href="insights.html">Insights</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a><a href="search.html">Search</a></nav><details class="lang" id="lang-details"><summary class="lang-toggle" aria-label="Choose language"><svg class="globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.75c2.2 2.4 3.3 5.2 3.3 8.25s-1.1 5.85-3.3 8.25c-2.2-2.4-3.3-5.2-3.3-8.25s1.1-5.85 3.3-8.25z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.2 12h15.6M5.4 8.25h13.2M5.4 15.75h13.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="lang-code">EN</span></summary><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">English</a><a href="/it/" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">Italiano</a><a href="/de/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">Français</a><a href="/es/" hreflang="es" lang="es" data-lang="es" aria-label="Español">Español</a></nav></details><script>
+globalThis.astCleanPath = function (path) {
+  path = path || '/';
+  if (path === '/index.html') return '/';
+  var home = path.match(/^\/(it|de|fr|es)\/index\.html$/);
+  if (home) return '/' + home[1] + '/';
+  return path;
+};
+globalThis.astResolveLanguage = function (input) {
+  var SUPPORTED = {it:1, de:1, fr:1, es:1};
+  var ua = input.ua || '';
+  var bot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|googleother|google-extended|google-inspectiontool|google-read-aloud|duplexweb|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua);
+  var raw = input.path || '/';
+  var path = astCleanPath(raw);
+  var search = input.search || '';
+  var hash = input.hash || '';
+  var cleaned = path + search + hash;
+  // Crawlers are not sent to another language. They are sent from /index.html to /.
+  if (bot) return path === raw ? null : cleaned;
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return path === raw ? null : cleaned;
+  var pages = input.pages || [];
+  var saved = input.saved || '';
+  var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
+  if (!target) {
+    var list = input.languages || [];
+    for (var i = 0; i < list.length; i++) {
+      var code = String(list[i] || '').toLowerCase().split('-')[0];
+      if (code === 'en' || SUPPORTED[code]) { target = code; break; }
+    }
+  }
+  if (!target) {
+    var hint = {
+      'Europe/Rome':'it','Europe/Vatican':'it','Europe/San_Marino':'it',
+      'Europe/Berlin':'de','Europe/Busingen':'de','Europe/Vienna':'de',
+      'Europe/Paris':'fr','Europe/Monaco':'fr',
+      'Europe/Madrid':'es','Atlantic/Canary':'es','Africa/Ceuta':'es','Europe/Andorra':'es',
+      'America/Mexico_City':'es','America/Argentina/Buenos_Aires':'es','America/Bogota':'es',
+      'America/Lima':'es','America/Santiago':'es','America/Montevideo':'es','America/Asuncion':'es',
+      'America/La_Paz':'es','America/Caracas':'es','America/Guayaquil':'es'
+    };
+    if (hint[input.timezone || '']) target = hint[input.timezone];
+  }
+  if (target && target !== 'en' && SUPPORTED[target]) {
+    if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+    var file = path.split('/').pop();
+    var dir = path.slice(0, path.length - file.length);
+    if (dir !== '/') return path === raw ? null : cleaned;
+    if (!file || file === 'index.html') return '/' + target + '/' + search + hash;
+    if (pages.indexOf(file) < 0) return path === raw ? null : cleaned;
+    return '/' + target + '/' + file + search + hash;
+  }
+  return path === raw ? null : cleaned;
+};
+globalThis.astEquivalent = function (lang, path, search, hash, pages) {
+  search = search || '';
+  hash = hash || '';
+  pages = pages || [];
+  var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
+  var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
+  if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
+  var prefix = lang === 'en' ? '' : '/' + lang;
+  if (rest === '/') return prefix + '/' + search + hash;
+  var file = rest.split('/').pop();
+  var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && file === 'index.html') return prefix + '/' + search + hash;
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
+  var share = rest.match(/^\/share\/([^/]+)\.html$/);
+  if (share) return prefix + '/#discovery=' + share[1];
+  if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
+  return prefix + '/' + search;
+};
+try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"];var current=(document.documentElement.lang||"en").toLowerCase();var codeEl=document.querySelector(".lang-code");if(codeEl)codeEl.textContent=current.toUpperCase();nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});var langBox=document.getElementById("lang-details");if(langBox){document.addEventListener("click",function(e){if(langBox.open&&!langBox.contains(e.target))langBox.open=false;});langBox.addEventListener("keydown",function(e){if(e.key!=="ArrowDown"&&e.key!=="ArrowUp"&&e.key!=="Escape")return;var items=[].slice.call(nav.querySelectorAll("[data-lang]"));if(e.key==="Escape"){e.preventDefault();langBox.open=false;var summary=langBox.querySelector("summary");if(summary)summary.focus();return;}if(!items.length)return;var i=items.indexOf(document.activeElement);if(i<0){items[0].focus();e.preventDefault();return;}e.preventDefault();items[(i+(e.key==="ArrowDown"?1:items.length-1))%items.length].focus();});}var navBtn=document.querySelector(".nav-toggle");var siteNav=document.getElementById("site-nav");var closeLabel=document.getElementById("nav-label-close");if(navBtn&&siteNav){var openLabel=navBtn.getAttribute("aria-label");var setOpen=function(open){navBtn.setAttribute("aria-expanded",open?"true":"false");siteNav.classList.toggle("is-open",!!open);if(closeLabel&&openLabel)navBtn.setAttribute("aria-label",open?closeLabel.textContent:openLabel);};navBtn.addEventListener("click",function(){setOpen(navBtn.getAttribute("aria-expanded")!=="true");});document.addEventListener("click",function(e){if(navBtn.getAttribute("aria-expanded")==="true"&&!siteNav.contains(e.target)&&!navBtn.contains(e.target))setOpen(false);});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&navBtn.getAttribute("aria-expanded")==="true"){setOpen(false);navBtn.focus();}});}}}catch(e){}</script>
+  </div>
+</header>
+
+<section class="banda banda-bassa" aria-labelledby="titolo-pagina">
+  <div class="wrap">
+    <h1 id="titolo-pagina">Open problems to claim</h1>
+    <p class="lead">Concrete next steps left by AI discoveries in the catalog. Anyone can take one, and a public checker decides.</p>
+  </div>
+</section>
+
+<main class="wrap prosa">
+  <section aria-labelledby="how-it-works">
+    <h2 id="how-it-works">How it works</h2>
+    <ol>
+      <li>Pick a problem below and open a claim issue on GitHub. One problem per issue. A claim lapses after 30 days without activity, so others can take it.</li>
+      <li>Work with any method and any tools. Say which AI agent and model you used, if any.</li>
+      <li>Open a pull request that adds your file under <code>claims/submissions/PROBLEM-ID/</code>. The <a href="https://github.com/marcello-pichini/ai-science-tracker/blob/main/scripts/claims/verify.py">public checker</a> runs on it and reports the result in the pull request.</li>
+      <li>A verified result beats the baseline recorded here. A maintainer then checks the literature before marking the problem solved. Credit goes to the GitHub author of the pull request.</li>
+    </ol>
+    <p>Failed attempts stay listed with their reason, so the next person does not repeat them. 4 of 4 problems are open. List updated <time datetime="2026-11-27">27 Nov 2026</time>. Data: <a href="data/claims.json">claims.json</a>.</p>
+  </section>
+  <section aria-labelledby="problems">
+    <h2 id="problems">Problems</h2>
+    <div class="pannelli">
+  <section class="pannello" id="mols-lower-bound-below-500" aria-labelledby="mols-lower-bound-below-500-title">
+    <h3 id="mols-lower-bound-below-500-title">More mutually orthogonal Latin squares for some order below 500</h3>
+    <p><span class="etich ok">Open</span> From the discovery <a href="share/2026-11-gpt-6-astra-constructs-mutually-orthogonal-latin-squares-that-improve-lower-bounds-at-33-orders.html">GPT-6 Astra constructs mutually orthogonal Latin squares that improve lower bounds at 33 orders</a>.</p>
+    <p>Construct more mutually orthogonal Latin squares (MOLS) of some order n below 500 than the best lower bound N(n) in the baseline table. The 2024 MOLS table, updated with the 33 orders improved by explicit constructions in arXiv 2611.16299, is the baseline.</p>
+    <h4>What counts</h4>
+    <p>Plain text: first line &#x27;n k&#x27;, then k squares of n rows with n symbols 0..n-1; lines starting with # are ignored. Same format as the Constructive-Codes MOLS repository.</p>
+    <p>Baseline: Best lower bound N(n) for every order 2 to 499.</p>
+    <ul><li><a href="https://doi.org/10.3390/sym16121678">Miller, Abel, Valkov and Fraser, Implementing the MOLS table for n up to 500, Symmetry 16(12):1678, Table 1</a></li><li><a href="https://arxiv.org/abs/2611.16299">Explicit constructions improving 33 orders, arXiv 2611.16299</a>, 12 Nov 2026</li></ul>
+    <p class="descr">The baseline holds explicit constructions and the 2024 table. A bound that follows from a recursive construction may already be known without appearing here, so a maintainer checks the literature before marking a claim solved.</p>
+    <h4>Attempts</h4>
+    <ul><li>No recorded attempts yet.</li></ul>
+    <p><a class="badge" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=claim.yml&amp;title=Claim%3A%20mols-lower-bound-below-500&amp;claim=mols-lower-bound-below-500">Claim this problem</a> <a href="https://github.com/marcello-pichini/ai-science-tracker/issues?q=is%3Aissue%20label%3Aclaim%20in%3Atitle%20mols-lower-bound-below-500">See current claims on GitHub</a></p>
+  </section>
+  <section class="pannello" id="best-fit-random-order-above-three-halves" aria-labelledby="best-fit-random-order-above-three-halves-title">
+    <h3 id="best-fit-random-order-above-three-halves-title">A bin packing instance where Best-Fit in random order is worse than 1.5</h3>
+    <p><span class="etich ok">Open</span> From the discovery <a href="share/2026-01-co-funsearch-bin-packing.html">Co-FunSearch finds adversarial instances raising the Best-Fit bin packing bound</a>.</p>
+    <p>Find a bin packing instance whose expected number of Best-Fit bins, with the items in uniformly random order, exceeds 1.5 times the optimum. This would raise the lower bound on the absolute random-order ratio of Best-Fit, now between 1.5 and 1.7.</p>
+    <h4>What counts</h4>
+    <p>JSON: {&quot;capacity&quot;: C, &quot;items&quot;: [integer sizes], &quot;packing&quot;: [[sizes in bin 1], ...]}. The packing certifies an upper bound on the optimum; the checker computes the exact expectation over all orders.</p>
+    <p>Baseline: Absolute random-order ratio of Best-Fit: at least 1.5, at most 1.7.</p>
+    <ul><li><a href="https://arxiv.org/abs/2601.16849">Nikoleit, Anand, Naredla and Röglin, lower bound 1.5 found with Co-FunSearch, arXiv 2601.16849</a>, 23 Jan 2026</li><li><a href="https://arxiv.org/abs/2601.16849">Dósa and Sgall (2014), upper bound 1.7 for Best-Fit, as cited in arXiv 2601.16849</a></li></ul>
+    <p class="descr">The asymptotic random-order ratio is a different and harder question. With an optimum of 2 or 4 bins the ratio cannot exceed 1.5.</p>
+    <h4>Attempts</h4>
+    <ul><li><time datetime="2026-11-25">25 Nov 2026</time>, <a href="https://github.com/marcello-pichini">@marcello-pichini</a> with Claude Code (Claude Opus 5.5): released, no improvement found. Exact evaluation by dynamic programming plus eight 10-minute local searches and structured families. Best ratios: 1.3333 with an optimum of 3 bins and 1.214 with 5. No instance exceeded 1.5.</li></ul>
+    <p><a class="badge" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=claim.yml&amp;title=Claim%3A%20best-fit-random-order-above-three-halves&amp;claim=best-fit-random-order-above-three-halves">Claim this problem</a> <a href="https://github.com/marcello-pichini/ai-science-tracker/issues?q=is%3Aissue%20label%3Aclaim%20in%3Atitle%20best-fit-random-order-above-three-halves">See current claims on GitHub</a></p>
+  </section>
+  <section class="pannello" id="linear-code-record-gf8-n49" aria-labelledby="linear-code-record-gf8-n49-title">
+    <h3 id="linear-code-record-gf8-n49-title">A record linear code of length 49 over GF(8)</h3>
+    <p><span class="etich ok">Open</span> From the discovery <a href="share/2026-03-transformer-guided-genetic-search-finds-six-new-champion-linear-error-correcting-codes-over-f8.html">Transformer-guided genetic search finds six new champion linear error-correcting codes over F₈</a>.</p>
+    <p>Find a linear [49, k] code over GF(8) whose minimum distance exceeds the best known lower bound on codetables.de for that k. Generalized toric codes over GF(8) have length 49 and gave the six champion codes in the parent discovery, but any construction counts.</p>
+    <h4>What counts</h4>
+    <p>Plain text: &#x27;q n k&#x27; then k rows of n field elements 0..7 (GF(8) as polynomials over GF(2) modulo x^3+x+1, bit i is the coefficient of x^i). The checker computes the minimum distance exactly with the Brouwer-Zimmermann algorithm.</p>
+    <p>Baseline: Best known lower and upper bounds for every k; 38 values of k are still open.</p>
+    <ul><li><a href="https://www.codetables.de/BKLC/BKLC.php?q=8&amp;n=49&amp;k=20">Grassl, Bounds on the minimum distance of linear codes (codetables.de), q=8, n=49</a>, checked 26 Nov 2026</li></ul>
+    <p class="descr">Exact verification gets slow beyond about k = 14 at this length, so a large-k submission may exceed the checker&#x27;s time limit; that is a fault, not a rejection.</p>
+    <h4>Attempts</h4>
+    <ul><li><time datetime="2026-11-26">26 Nov 2026</time>, <a href="https://github.com/marcello-pichini">@marcello-pichini</a> with Claude Code (Claude Opus 5.5): released, no improvement found. Local search over generalized toric codes for k = 3 to 14, 20 minutes per k, with exact checks of every candidate whose quick bound beat the record (93,807 across GF(8) and GF(9)). None beat the record.</li></ul>
+    <p><a class="badge" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=claim.yml&amp;title=Claim%3A%20linear-code-record-gf8-n49&amp;claim=linear-code-record-gf8-n49">Claim this problem</a> <a href="https://github.com/marcello-pichini/ai-science-tracker/issues?q=is%3Aissue%20label%3Aclaim%20in%3Atitle%20linear-code-record-gf8-n49">See current claims on GitHub</a></p>
+  </section>
+  <section class="pannello" id="linear-code-record-gf9-n64" aria-labelledby="linear-code-record-gf9-n64-title">
+    <h3 id="linear-code-record-gf9-n64-title">A record linear code of length 64 over GF(9)</h3>
+    <p><span class="etich ok">Open</span> From the discovery <a href="share/2026-03-transformer-guided-genetic-search-finds-six-new-champion-linear-error-correcting-codes-over-f8.html">Transformer-guided genetic search finds six new champion linear error-correcting codes over F₈</a>.</p>
+    <p>Find a linear [64, k] code over GF(9) whose minimum distance exceeds the best known lower bound on codetables.de for that k. Generalized toric codes over GF(9) have length 64, a field the parent discovery did not search.</p>
+    <h4>What counts</h4>
+    <p>Plain text: &#x27;q n k&#x27; then k rows of n field elements 0..8 (GF(9) element a+b*i, with i^2=-1, written as a+3b). The checker computes the minimum distance exactly with the Brouwer-Zimmermann algorithm.</p>
+    <p>Baseline: Best known lower and upper bounds for every k; 53 values of k are still open.</p>
+    <ul><li><a href="https://www.codetables.de/BKLC/BKLC.php?q=9&amp;n=64&amp;k=20">Grassl, Bounds on the minimum distance of linear codes (codetables.de), q=9, n=64</a>, checked 26 Nov 2026</li></ul>
+    <p class="descr">Exact verification gets slow beyond about k = 14 at this length, so a large-k submission may exceed the checker&#x27;s time limit; that is a fault, not a rejection.</p>
+    <h4>Attempts</h4>
+    <ul><li><time datetime="2026-11-26">26 Nov 2026</time>, <a href="https://github.com/marcello-pichini">@marcello-pichini</a> with Claude Code (Claude Opus 5.5): released, no improvement found. Local search over generalized toric codes for k = 3 to 14, 20 minutes per k, with exact checks of the candidates. None beat the record.</li></ul>
+    <p><a class="badge" href="https://github.com/marcello-pichini/ai-science-tracker/issues/new?template=claim.yml&amp;title=Claim%3A%20linear-code-record-gf9-n64&amp;claim=linear-code-record-gf9-n64">Claim this problem</a> <a href="https://github.com/marcello-pichini/ai-science-tracker/issues?q=is%3Aissue%20label%3Aclaim%20in%3Atitle%20linear-code-record-gf9-n64">See current claims on GitHub</a></p>
+  </section>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p><a href="contact.html">Contact</a></p>
+    <p><a href="search.html">Search all collections</a> · <a href="model-progress.html">Model progress and release rhythm</a> · <a href="insights.html">Insights</a> · <a href="antibiotic-dossier.html">Antibiotic evidence dossier</a></p>
+    <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
+    <p><a href="/">Back to discoveries</a> · <a href="profiles/index.html">All organizations and model families</a></p>
+    <p><a href="https://www.linkedin.com/company/aisciencetracker/" rel="me noopener">LinkedIn</a></p>
+    <p>See also: <a href="https://iamops.dev/">iamops.dev: IAM, AI agents and DevOps notes</a></p>
+    <p>Privacy: this site sets no cookies. A language choice is stored only in this browser and is not sent to a server. The site uses Cloudflare Web Analytics for aggregate visit statistics (page, referrer, browser, IP address) under legitimate interest (GDPR Art. 6(1)(f)). Cloudflare acts as our processor and may process data in the United States under the EU-US Data Privacy Framework. To object or exercise your rights, <a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new">open an issue</a>.</p>
+  </div>
+</footer>
+</body>
+</html>

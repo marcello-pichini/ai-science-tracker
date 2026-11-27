@@ -1,0 +1,81 @@
+{
+  "about": "Open problems left by discoveries in the AI Science Tracker catalog. Each has a machine-checkable target; scripts/claims/verify.py decides. Schema: docs/claims-schema.md.",
+  "updated": "2026-11-27",
+  "claims": [
+    {
+      "id": "mols-lower-bound-below-500",
+      "parent_discovery_id": "2026-11-gpt-6-astra-constructs-mutually-orthogonal-latin-squares-that-improve-lower-bounds-at-33-orders",
+      "title": "More mutually orthogonal Latin squares for some order below 500",
+      "statement": "Construct more mutually orthogonal Latin squares (MOLS) of some order n below 500 than the best lower bound N(n) in the baseline table. The 2024 MOLS table, updated with the 33 orders improved by explicit constructions in arXiv 2611.16299, is the baseline.",
+      "target": {"type": "mols-lower-bound", "baseline_file": "data/claim-baselines/mols-lower-bounds.csv", "format": "Plain text: first line 'n k', then k squares of n rows with n symbols 0..n-1; lines starting with # are ignored. Same format as the Constructive-Codes MOLS repository."},
+      "baseline": {
+        "summary": "Best lower bound N(n) for every order 2 to 499.",
+        "sources": [
+          {"label": "Miller, Abel, Valkov and Fraser, Implementing the MOLS table for n up to 500, Symmetry 16(12):1678, Table 1", "url": "https://doi.org/10.3390/sym16121678"},
+          {"label": "Explicit constructions improving 33 orders, arXiv 2611.16299", "url": "https://arxiv.org/abs/2611.16299", "date": "2026-11-12"}
+        ]
+      },
+      "caveat": "The baseline holds explicit constructions and the 2024 table. A bound that follows from a recursive construction may already be known without appearing here, so a maintainer checks the literature before marking a claim solved.",
+      "status": "open",
+      "added_date": "2026-11-27",
+      "attempts": []
+    },
+    {
+      "id": "best-fit-random-order-above-three-halves",
+      "parent_discovery_id": "2026-01-co-funsearch-bin-packing",
+      "title": "A bin packing instance where Best-Fit in random order is worse than 1.5",
+      "statement": "Find a bin packing instance whose expected number of Best-Fit bins, with the items in uniformly random order, exceeds 1.5 times the optimum. This would raise the lower bound on the absolute random-order ratio of Best-Fit, now between 1.5 and 1.7.",
+      "target": {"type": "bin-packing-random-order", "threshold": "3/2", "max_items": 30, "format": "JSON: {\"capacity\": C, \"items\": [integer sizes], \"packing\": [[sizes in bin 1], ...]}. The packing certifies an upper bound on the optimum; the checker computes the exact expectation over all orders."},
+      "baseline": {
+        "summary": "Absolute random-order ratio of Best-Fit: at least 1.5, at most 1.7.",
+        "sources": [
+          {"label": "Nikoleit, Anand, Naredla and Röglin, lower bound 1.5 found with Co-FunSearch, arXiv 2601.16849", "url": "https://arxiv.org/abs/2601.16849", "date": "2026-01-23"},
+          {"label": "Dósa and Sgall (2014), upper bound 1.7 for Best-Fit, as cited in arXiv 2601.16849", "url": "https://arxiv.org/abs/2601.16849"}
+        ]
+      },
+      "caveat": "The asymptotic random-order ratio is a different and harder question. With an optimum of 2 or 4 bins the ratio cannot exceed 1.5.",
+      "status": "open",
+      "added_date": "2026-11-27",
+      "attempts": [
+        {"handle": "marcello-pichini", "agent": "Claude Code", "model": "Claude Opus 5.5", "date": "2026-11-25", "outcome": "released", "reason": "no_improvement",
+         "summary": "Exact evaluation by dynamic programming plus eight 10-minute local searches and structured families. Best ratios: 1.3333 with an optimum of 3 bins and 1.214 with 5. No instance exceeded 1.5."}
+      ]
+    },
+    {
+      "id": "linear-code-record-gf8-n49",
+      "parent_discovery_id": "2026-03-transformer-guided-genetic-search-finds-six-new-champion-linear-error-correcting-codes-over-f8",
+      "title": "A record linear code of length 49 over GF(8)",
+      "statement": "Find a linear [49, k] code over GF(8) whose minimum distance exceeds the best known lower bound on codetables.de for that k. Generalized toric codes over GF(8) have length 49 and gave the six champion codes in the parent discovery, but any construction counts.",
+      "target": {"type": "linear-code-record", "q": 8, "n": 49, "baseline_file": "data/claim-baselines/linear-codes-q8-n49.csv", "timeout_seconds": 3000, "format": "Plain text: 'q n k' then k rows of n field elements 0..7 (GF(8) as polynomials over GF(2) modulo x^3+x+1, bit i is the coefficient of x^i). The checker computes the minimum distance exactly with the Brouwer-Zimmermann algorithm."},
+      "baseline": {
+        "summary": "Best known lower and upper bounds for every k; 38 values of k are still open.",
+        "sources": [{"label": "Grassl, Bounds on the minimum distance of linear codes (codetables.de), q=8, n=49", "url": "https://www.codetables.de/BKLC/BKLC.php?q=8&n=49&k=20", "checked": "2026-11-26"}]
+      },
+      "caveat": "Exact verification gets slow beyond about k = 14 at this length, so a large-k submission may exceed the checker's time limit; that is a fault, not a rejection.",
+      "status": "open",
+      "added_date": "2026-11-27",
+      "attempts": [
+        {"handle": "marcello-pichini", "agent": "Claude Code", "model": "Claude Opus 5.5", "date": "2026-11-26", "outcome": "released", "reason": "no_improvement",
+         "summary": "Local search over generalized toric codes for k = 3 to 14, 20 minutes per k, with exact checks of every candidate whose quick bound beat the record (93,807 across GF(8) and GF(9)). None beat the record."}
+      ]
+    },
+    {
+      "id": "linear-code-record-gf9-n64",
+      "parent_discovery_id": "2026-03-transformer-guided-genetic-search-finds-six-new-champion-linear-error-correcting-codes-over-f8",
+      "title": "A record linear code of length 64 over GF(9)",
+      "statement": "Find a linear [64, k] code over GF(9) whose minimum distance exceeds the best known lower bound on codetables.de for that k. Generalized toric codes over GF(9) have length 64, a field the parent discovery did not search.",
+      "target": {"type": "linear-code-record", "q": 9, "n": 64, "baseline_file": "data/claim-baselines/linear-codes-q9-n64.csv", "timeout_seconds": 3000, "format": "Plain text: 'q n k' then k rows of n field elements 0..8 (GF(9) element a+b*i, with i^2=-1, written as a+3b). The checker computes the minimum distance exactly with the Brouwer-Zimmermann algorithm."},
+      "baseline": {
+        "summary": "Best known lower and upper bounds for every k; 53 values of k are still open.",
+        "sources": [{"label": "Grassl, Bounds on the minimum distance of linear codes (codetables.de), q=9, n=64", "url": "https://www.codetables.de/BKLC/BKLC.php?q=9&n=64&k=20", "checked": "2026-11-26"}]
+      },
+      "caveat": "Exact verification gets slow beyond about k = 14 at this length, so a large-k submission may exceed the checker's time limit; that is a fault, not a rejection.",
+      "status": "open",
+      "added_date": "2026-11-27",
+      "attempts": [
+        {"handle": "marcello-pichini", "agent": "Claude Code", "model": "Claude Opus 5.5", "date": "2026-11-26", "outcome": "released", "reason": "no_improvement",
+         "summary": "Local search over generalized toric codes for k = 3 to 14, 20 minutes per k, with exact checks of the candidates. None beat the record."}
+      ]
+    }
+  ]
+}

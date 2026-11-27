@@ -488,6 +488,10 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
     out = ROOT / 'share'
     out.mkdir(exist_ok=True)
     header, footer = site_frame()
+    claims_by_parent = {}
+    claims_file = ROOT / 'data/claims.json'
+    for c in json.loads(claims_file.read_text())['claims'] if claims_file.exists() else []:
+        claims_by_parent.setdefault(c['parent_discovery_id'], []).append(c)
     fam_by_discovery = {}
     families_by_discovery = {}
     for f in models['families']:
@@ -536,6 +540,8 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
         if d['id'] in DOSSIER_IDS and not archived:
             topic, section = DOSSIER_IDS[d['id']]
             more += f' <a href="{topic}-dossier.html#{section}">Read the {topic} evidence dossier</a>.'
+        for c in ([] if archived else claims_by_parent.get(d['id'], [])):
+            more += f' Open problem: <a href="claims.html#{quote(c["id"])}">{esc(c["title"])}</a>.'
         if archived:
             lead = f'Archived catalog entry &middot; {lead}'
         short = '' if archived else plain_short_version(d, plain or {}, has_image)
@@ -965,6 +971,7 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [Model progress]({BASE}model-progress.html): exact model comparison, ECI, benchmark evidence and recorded release rhythm
 - [Search all collections]({BASE}search.html): literal retrieval with separate counts and match reasons
 {insights_line}- [Evidence dossiers]({BASE}dossiers.html): selected studies and public vulnerability disclosures with evidence limits
+- [Open problems to claim]({BASE}claims.html): next steps left by catalog discoveries, each decided by a public checker
 - [Antibiotic evidence dossier]({BASE}antibiotic-dossier.html): dated, source-bounded synthesis
 - [Catalog coverage and evidence]({BASE}profiles/catalog-evidence.html): reproducible composition tables, counting limits and CSV
 - [Static AI-found security cases]({BASE}profiles/security-index.html): source-attributed case pages readable without JavaScript
@@ -1018,7 +1025,7 @@ def write_sitemap(items, models, archived=(), vulns=()):
     # kept in data/page-lastmod.json; dossiers with an explicit editorial update date use that date.
     # search.html is a translated editorial page. profile.html and 404.html are noindex.
     # Localized copies exist only for translated editorial pages, not for share/ or profiles/.
-    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'search.html', 'dataset.html', 'contributors.html', 'contact.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
+    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'search.html', 'dataset.html', 'contributors.html', 'contact.html', 'claims.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
     from i18n_site import LOCALES, NEW_DOSSIER_PAGES, SITEMAP_PAGES, dossier_modified_date, public_url
 
     urls.extend(NEW_DOSSIER_PAGES)
@@ -1569,6 +1576,9 @@ def main():
     write_plain_home(items, plain)
     from generate_insights import write_insights
     write_insights(items, models, plain, root=ROOT)
+    sys.path.insert(0, str(Path(__file__).resolve().parent / 'claims'))
+    from generate_claims import build as write_claims
+    write_claims(ROOT)
     write_home_browse(items)
     if not args.no_images:
         render_cards(items + archived, args.force, args.reuse_images)

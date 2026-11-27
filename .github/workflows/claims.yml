@@ -1,0 +1,60 @@
+name: Claims
+on:
+  pull_request:
+    paths: ['claims/submissions/**']
+  schedule:
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Use the checker and baselines from the base branch
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: git checkout "$BASE" -- scripts/claims data/claims.json data/claim-baselines
+      - name: Check submissions
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -u
+          other=$(git diff --name-only "$BASE...$HEAD" | grep -v '^claims/submissions/' || true)
+          if [ -n "$other" ]; then echo "A submission pull request may only add files under claims/submissions/:"; echo "$other"; exit 1; fi
+          status=0; found=0
+          while IFS= read -r f; do
+            [ -n "$f" ] || continue
+            found=1
+            id=$(echo "$f" | cut -d/ -f3)
+            result=$(python3 scripts/claims/verify.py "$id" "$f") || status=1
+            echo "$result"
+            echo "- \`$f\`: $result" >> "$GITHUB_STEP_SUMMARY"
+          done < <(git diff --name-only --diff-filter=AM "$BASE...$HEAD" -- claims/submissions/)
+          [ "$found" = 1 ] || { echo "No submission file found."; exit 1; }
+          exit $status
+  expire:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/stale@5bef64f19d7facfb25b37b414482c7164d639639 # v9.1.0
+        with:
+          only-labels: claim
+          days-before-stale: 23
+          days-before-close: 7
+          days-before-pr-stale: -1
+          days-before-pr-close: -1
+          stale-issue-label: claim-expiring
+          stale-issue-message: "This claim has had no activity for 23 days. Comment within 7 days to keep it; otherwise it is closed and the problem is free for others."
+          close-issue-message: "Closed after 30 days without activity. The problem is open again; reopen or file a new claim to continue."
