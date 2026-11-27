@@ -1,6 +1,6 @@
 # AI Science Tracker: full catalog
 
-> All 5349 active entries, newest first. Figures are reported by the sources and are not independently verified; cite the linked original source, not this catalog. Licensed CC BY 4.0 (attribute "AI Science Tracker" with a link). Structured data: https://aisciencetracker.org/data/discoveries.json
+> All 5356 active entries, newest first. Figures are reported by the sources and are not independently verified; cite the linked original source, not this catalog. Licensed CC BY 4.0 (attribute "AI Science Tracker" with a link). Structured data: https://aisciencetracker.org/data/discoveries.json
 
 ## LLM-agent workflow reports new proofs on positivity problems in algebraic combinatorics
 2026-11-25 · mathematics · University of Washington; Pacific Northwest National Laboratory
@@ -9,6 +9,27 @@ Source: https://arxiv.org/abs/2611.33966
 
 A preprint describes PatternMiner, in which an LLM agent generates mathematical datasets, trains small models (MLPs, small transformers, trees), interprets them and formulates conjectures that are tested against counterexamples in mathematical software, applied to five positivity problems from Stanley's survey. The paper gives proofs, labelled LLM-generated, that for every n>=5 no fixed number of retained flag dimensions suffices for projection tests of Schubert structure-constant vanishing, an equivariant positivity inequality that proves Conjectures A and B of Chen et al. on equivariant nonvanishing, a character-row evaluation formula, a restricted case of Kazhdan-Lusztig combinatorial invariance, and Schur positivity for a family of immanant coefficients, supported by finite checks such as 776,891 coefficients over 1,587 shape instances. Proofs received an internal adversarial review only; no proof-kernel or independent mathematician check is reported, one decisive construction needed human redirection, and the comparison with direct LLM attempts is not compute-matched.
 
+## Machine learning prioritises KHDC4, tested as a colon cancer driver in cells and mice
+2026-11-25 · medicine · Guizhou Medical University, Affiliated Hospital of Guizhou Medical University
+Page: https://aisciencetracker.org/share/2026-11-ml-prioritised-khdc4-colon-cancer-e2f3.html
+Source: https://doi.org/10.3389/fmolb.2026.2011835
+
+Single-cell RNA-seq differential expression and univariate Cox screening on TCGA colon adenocarcinoma (428 patients) were followed by several machine learning methods (including LASSO, Boruta, random survival forests and XGBoost), whose intersection gave five prognostic genes; KHDC4 contributed across all algorithms. KHDC4 was higher in 50 paired tumour samples and linked to lymph node metastasis and stage; knockdown reduced proliferation and metastasis in HT29/HCT116 cells and in nude-mouse xenograft and liver-metastasis models (n=5 per group). RIP and fractionation suggest KHDC4 binds E2F3 mRNA and promotes its nuclear export. Limits stated by the authors: the scRNA-seq discovery used one paired patient sample, the export machinery is unresolved, antiproliferative effects may confound invasion assays, and no external prognostic cohort was used.
+
+## Machine learning selects an exploratory mitochondrial gene signature in diabetic retinopathy
+2026-11-25 · medicine · The Affiliated Hospital to Changchun University of Chinese Medicine, Changchun University of Chinese Medicine
+Page: https://aisciencetracker.org/share/2026-11-ml-mitochondrial-gene-signature-diabetic-retinopathy.html
+Source: https://doi.org/10.1016/j.curpro.2026.100191
+
+Differential expression, GSEA and WGCNA on two GEO diabetic retinopathy datasets (GSE102485, GSE60436) yielded 13 core mitochondria-related genes; LASSO regression and SVM-RFE selected a five-gene diagnostic model (CKMT1A, SLC25A27, SHMT2, ALDH1L1, CYCS) with a mean AUC of 0.89 in internal 10-fold cross-validation. All five genes changed expression in high-glucose-treated human retinal microvascular endothelial cells (RT-qPCR, western blot). The authors state the signature is only internally validated and requires independent cohorts; the cell experiment tests expression changes, not diagnostic performance.
+
+## Machine learning picks AgCuTi wetting conditions on WCu that experiments confirm
+2026-11-25 · materials · North China University of Water Resources and Electric Power
+Page: https://aisciencetracker.org/share/2026-11-ml-agcuti-wetting-wcu-process-optimization.html
+Source: https://doi.org/10.21203/rs.3.rs-11199004/v1
+
+Eight regression models were trained on 125 full-factorial wetting experiments varying temperature, titanium content and surface roughness; the best, a support vector regressor (held-out R2 0.945), screened 37,572 candidate conditions and selected 10 representative ones. Experiments at those conditions matched predicted contact angles with a mean absolute error of 0.55 degrees (R2 0.91). A second gradient-boosting model with SHAP attributed about 70% of the contribution to the three process variables, with post-wetting morphology adding correlational information. This is a non-peer-reviewed preprint from a single laboratory and a narrow design space.
+
 ## Deep learning predicts DNA damage response protein levels from routine slides
 2026-11-25 · medicine · Johns Hopkins University; Johns Hopkins School of Medicine
 Page: https://aisciencetracker.org/share/2026-11-he-histopathology-ddr-protein-prediction.html
@@ -16,12 +37,40 @@ Source: https://www.biorxiv.org/content/10.64898/2026.11.17.766760v1.full
 
 Gated attention-based multiple-instance learning on frozen pathology foundation-model tile embeddings predicted reverse-phase protein array pathway scores from 1,673 TCGA haematoxylin-and-eosin whole-slide images covering 1,527 patients with breast, endometrial, cervical and ovarian cancer and uterine carcinosarcoma. For the 11-protein DNA damage composite the out-of-fold Spearman correlation was 0.43 against 0.31 for a cancer-type-mean baseline, about 0.29-0.30 within cancer type, and at most 0.00 with shuffled targets. Cross-validation was cancer-type-stratified and site-grouped. This is a moderate retrospective association in one public cohort: there is no external validation, no clinical or treatment-response outcome, and the authors list separating the signal from proliferation as future work, noting the cell-cycle score was predicted more strongly.
 
+## Independent UK test of eight mammography AI algorithms as second reader and triage
+2026-11-25 · medicine · University of Cambridge
+Page: https://aisciencetracker.org/share/2026-11-eight-mammography-ai-algorithms-uk-screening.html
+Source: https://doi.org/10.1007/s00330-026-12997-4
+
+Eight commercial deep learning breast cancer detection algorithms from five vendors were evaluated retrospectively on 22,778 mammograms from two UK screening sites (Cambridge, Norwich; 2017) with 3-year follow-up. Standalone AUCs ranged 0.82-0.91, with one algorithm inferior to all others. Paired with the first human reader, all but one were noninferior in sensitivity to double reading (64.7-67.4% vs 67.9%) with superior specificity (97.5% vs 97.1%); low-suspicion triage ruled out 37.4-65.7% of mammograms while missing at most 1.0% of screen-detected cancers. Gains came with more arbitration, and the study is retrospective; prospective workflow effects were not measured.
+
+## Machine learning selects cell-death genes in COPD tested with an herbal formula in rats
+2026-11-25 · medicine · Chengdu University of Traditional Chinese Medicine
+Page: https://aisciencetracker.org/share/2026-11-cell-death-genes-copd-feizhangning-rats.html
+Source: https://doi.org/10.21203/rs.3.rs-11650241/v1
+
+Mendelian randomization screened 439 programmed-cell-death genes with genetic causal links to COPD; intersection with transcriptomic and co-expression analyses and several machine-learning algorithms selected five diagnostic markers (NT5E, SPP1, BLK, PLAT, LGMN). Single-cell analysis and virtual perturbation suggested a bidirectional role for LGMN. In a rat COPD model, the traditional Chinese medicine formula Feizhangning dose-dependently lowered IL-1beta, IL-6 and TNF-alpha in serum and lavage fluid and reversed the abnormal mRNA and protein expression of the five genes. This is a non-peer-reviewed preprint; docking and network pharmacology are computational, diagnostic performance and animal numbers were not reviewed, and no human test is reported.
+
 ## Machine learning forecasts acute food crises and separates predictive from causal drivers
 2026-11-25 · multidisciplinary · European Commission, Joint Research Centre; University of Valencia; Integrated Food Security Phase Classification Global Support Unit
 Page: https://aisciencetracker.org/share/2026-11-causal-ml-acute-food-crises-drivers.html
 Source: https://arxiv.org/abs/2611.34629
 
 Missing-data-resilient machine-learning pipelines, including gradient boosting and a tabular foundation model, forecast acute food crisis occurrence 3, 6 and 9 months ahead across 80 countries using monthly subnational data for 2007-2024, exceeding no-skill baselines by 15 to 50 percentage points in PR-AUC under nested cross-validation. TreeSHAP profiles fell into three recurring archetypes. Doubly robust causal estimates indicated that acute conflict events, which carried the weakest predictive signal, are primary causal drivers, while agroclimatology was the only dimension where predictive and causal importance agreed. The authors report that skill tracks crisis prevalence, that the causal effects are modest and only moderately robust to unmeasured confounding, and that they depend on an assumed causal graph; several variables were reported as non-identifiable. The work is a preprint.
+
+## Machine learning classifier on salivary-gland transcriptomes separates Sjogren disease
+2026-11-25 · medicine · Wenzhou Medical University Affiliated Yueqing Hospital; Second Affiliated Hospital of Zhejiang University
+Page: https://aisciencetracker.org/share/2026-11-catboost-salivary-transcriptome-sjogren.html
+Source: https://doi.org/10.3389/fmolb.2026.2010167
+
+Bulk RNA-seq of salivary-gland tissue from 98 primary Sjogren disease patients and 22 controls was used to compare 14 machine-learning algorithms on 193 candidate genes; CatBoost performed best, with an AUC of 0.981 on pooled external GEO tissue datasets (218 patients, 32 controls). Network analysis, not the model, prioritized LCP2, PTPRC and ZAP70, which SHAP ranked among the top features; multiplex immunohistochemistry in 5 patients and 5 controls showed higher protein expression. Blood performance was modest, specificity versus other autoimmune diseases was only preliminary, and the authors note two of the genes were reported before and that prospective multicentre validation is needed.
+
+## Machine learning prioritizes exploratory angiogenesis genes in endometriosis endometrium
+2026-11-25 · medicine · The First Affiliated Hospital of Soochow University
+Page: https://aisciencetracker.org/share/2026-11-angiogenesis-genes-endometriosis-machine-learning.html
+Source: https://doi.org/10.24976/discov.med.202638214.277
+
+Transcriptomic analysis of eutopic endometrium (GEO GSE51981) found 238 angiogenesis-related differentially expressed genes in endometriosis; LASSO and random forest, combined with WGCNA, prioritized COL6A1, ERN2 and IL34, and the selected random forest reached an AUC of 0.806 on a second dataset (GSE23339). ERN2 and IL34 differed between groups in that dataset while COL6A1 did not. The work is purely computational: the authors call the cross-dataset AUC exploratory rather than independent validation, the findings do not extend to ectopic lesions, and compound prioritization, docking and dynamics are hypothesis-generating only.
 
 ## Interpretable machine learning maps wastewater treatment conditions
 2026-11-24 · chemistry · Xinjiang Institute of Technology; Lanzhou University; Lanzhou Jiaotong University

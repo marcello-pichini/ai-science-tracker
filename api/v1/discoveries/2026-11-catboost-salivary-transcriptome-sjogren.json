@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-catboost-salivary-transcriptome-sjogren",
+  "title": "Machine learning classifier on salivary-gland transcriptomes separates Sjogren disease",
+  "summary": "Bulk RNA-seq of salivary-gland tissue from 98 primary Sjogren disease patients and 22 controls was used to compare 14 machine-learning algorithms on 193 candidate genes; CatBoost performed best, with an AUC of 0.981 on pooled external GEO tissue datasets (218 patients, 32 controls). Network analysis, not the model, prioritized LCP2, PTPRC and ZAP70, which SHAP ranked among the top features; multiplex immunohistochemistry in 5 patients and 5 controls showed higher protein expression. Blood performance was modest, specificity versus other autoimmune diseases was only preliminary, and the authors note two of the genes were reported before and that prospective multicentre validation is needed.",
+  "field": "medicine",
+  "ai_technology": "CatBoost gradient-boosted classifier, selected among 14 algorithms, with SHAP feature attribution on salivary-gland transcriptomes.",
+  "organization": "Wenzhou Medical University Affiliated Yueqing Hospital; Second Affiliated Hospital of Zhejiang University",
+  "source_url": "https://doi.org/10.3389/fmolb.2026.2010167",
+  "publication_date": "2026-11-25",
+  "relevance": {
+    "impact": 2,
+    "validation": 2,
+    "novelty": 1
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Classifier trained on an in-house cohort (98 pSD, 22 controls) and tested on pooled GEO salivary-gland datasets (218 pSD, 32 controls); mIHC on 5 pSD and 5 non-pSD tissues; exploratory treatment-response association in 65 patients.",
+    "unknown": "Prospective diagnostic value, specificity against other sicca conditions, blood-assay utility, mechanistic role; single-centre mainly Chinese training cohort.",
+    "ai_role": "The CatBoost model produced the transcriptome-based diagnostic classification; the three highlighted genes came from network analysis and were evaluated by SHAP.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2026.2010167/full"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-27",
+    "scope": "Independent review: publisher HTML full text (first ~100k of ~147k characters: cohorts, models, mIHC, limitations) read; Crossref dates and OpenAlex title search."
+  },
+  "source_type": "paper",
+  "added_date": "2026-11-27",
+  "verification_status": "verified",
+  "paper_url": ""
+}

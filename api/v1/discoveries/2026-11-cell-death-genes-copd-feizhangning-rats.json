@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-cell-death-genes-copd-feizhangning-rats",
+  "title": "Machine learning selects cell-death genes in COPD tested with an herbal formula in rats",
+  "summary": "Mendelian randomization screened 439 programmed-cell-death genes with genetic causal links to COPD; intersection with transcriptomic and co-expression analyses and several machine-learning algorithms selected five diagnostic markers (NT5E, SPP1, BLK, PLAT, LGMN). Single-cell analysis and virtual perturbation suggested a bidirectional role for LGMN. In a rat COPD model, the traditional Chinese medicine formula Feizhangning dose-dependently lowered IL-1beta, IL-6 and TNF-alpha in serum and lavage fluid and reversed the abnormal mRNA and protein expression of the five genes. This is a non-peer-reviewed preprint; docking and network pharmacology are computational, diagnostic performance and animal numbers were not reviewed, and no human test is reported.",
+  "field": "medicine",
+  "ai_technology": "Multiple machine-learning feature-selection algorithms (14 listed in the linked data deposit, with SHAP) select diagnostic genes from COPD transcriptomes.",
+  "organization": "Chengdu University of Traditional Chinese Medicine",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-11650241/v1",
+  "publication_date": "2026-11-25",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 1
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "Expression of the five ML-selected genes and inflammatory cytokines measured in a rat COPD model treated with Feizhangning.",
+    "unknown": "Which algorithm selected the final genes and its diagnostic metrics, rat group sizes, causal role of the genes, human efficacy; full text not reviewed. A data and code deposit (ScienceDB, 2026-11-03) preceded the preprint but states no results.",
+    "ai_role": "Machine-learning algorithms selected the five diagnostic genes whose expression was then measured under treatment in rats.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-11650241/v1%22&resultType=core&format=json",
+      "https://doi.org/10.57760/sciencedb.018mx"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-27",
+    "scope": "Independent review: abstract from Europe PMC, Crossref posting date, OpenAlex title search; linked ScienceDB data deposit description read. Full text not read."
+  },
+  "source_type": "paper",
+  "added_date": "2026-11-27",
+  "verification_status": "verified",
+  "paper_url": ""
+}

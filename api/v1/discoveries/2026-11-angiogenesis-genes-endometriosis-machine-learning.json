@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-angiogenesis-genes-endometriosis-machine-learning",
+  "title": "Machine learning prioritizes exploratory angiogenesis genes in endometriosis endometrium",
+  "summary": "Transcriptomic analysis of eutopic endometrium (GEO GSE51981) found 238 angiogenesis-related differentially expressed genes in endometriosis; LASSO and random forest, combined with WGCNA, prioritized COL6A1, ERN2 and IL34, and the selected random forest reached an AUC of 0.806 on a second dataset (GSE23339). ERN2 and IL34 differed between groups in that dataset while COL6A1 did not. The work is purely computational: the authors call the cross-dataset AUC exploratory rather than independent validation, the findings do not extend to ectopic lesions, and compound prioritization, docking and dynamics are hypothesis-generating only.",
+  "field": "medicine",
+  "ai_technology": "LASSO regression and random forest feature selection and classification on endometrial transcriptomes.",
+  "organization": "The First Affiliated Hospital of Soochow University",
+  "source_url": "https://doi.org/10.24976/discov.med.202638214.277",
+  "publication_date": "2026-11-25",
+  "relevance": {
+    "impact": 1,
+    "validation": 2,
+    "novelty": 1
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Genes prioritized in GSE51981 and evaluated cross-dataset in GSE23339 (random forest AUC 0.806).",
+    "unknown": "Sample sizes not stated on the page read; no qPCR, IHC or functional validation; relevance to ectopic lesions and therapy unknown.",
+    "ai_role": "LASSO and random forest selected the candidate angiogenesis genes and built the classifier.",
+    "evidence_urls": [
+      "https://www.discovmed.com/journal/DM/38/214/10.24976/Discov.Med.202638214.277"
+    ],
+    "test_type": "retrospective or benchmark"
+  },
+  "source_review": {
+    "date": "2026-11-27",
+    "scope": "Independent review: publisher article page (abstract, methods summary, results, limitations, dates) read; Crossref dates and OpenAlex title search."
+  },
+  "source_type": "paper",
+  "added_date": "2026-11-27",
+  "verification_status": "verified",
+  "paper_url": ""
+}

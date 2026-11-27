@@ -1,0 +1,34 @@
+{
+  "id": "2026-11-ml-agcuti-wetting-wcu-process-optimization",
+  "title": "Machine learning picks AgCuTi wetting conditions on WCu that experiments confirm",
+  "summary": "Eight regression models were trained on 125 full-factorial wetting experiments varying temperature, titanium content and surface roughness; the best, a support vector regressor (held-out R2 0.945), screened 37,572 candidate conditions and selected 10 representative ones. Experiments at those conditions matched predicted contact angles with a mean absolute error of 0.55 degrees (R2 0.91). A second gradient-boosting model with SHAP attributed about 70% of the contribution to the three process variables, with post-wetting morphology adding correlational information. This is a non-peer-reviewed preprint from a single laboratory and a narrow design space.",
+  "field": "materials",
+  "ai_technology": "Support vector regression and gradient boosting models with SHAP interpretation of brazing-alloy wetting experiments.",
+  "organization": "North China University of Water Resources and Electric Power",
+  "source_url": "https://doi.org/10.21203/rs.3.rs-11199004/v1",
+  "publication_date": "2026-11-25",
+  "relevance": {
+    "impact": 1,
+    "validation": 3,
+    "novelty": 1
+  },
+  "evidence": {
+    "publication_status": "Preprint",
+    "tested": "10 model-selected process conditions run experimentally; measured contact angles compared with predictions.",
+    "unknown": "Whether the selected conditions improve joint performance, reproducibility in other labs, extrapolation beyond the sampled ranges; full text not reviewed.",
+    "ai_role": "The trained regression model screened the process space and chose the conditions that were tested.",
+    "evidence_urls": [
+      "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-11199004/v1%22&resultType=core&format=json",
+      "https://api.openalex.org/works/doi:10.21203/rs.3.rs-11199004/v1"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-27",
+    "scope": "Independent review: abstract from Europe PMC, Crossref posting date, OpenAlex title search. Full text not read."
+  },
+  "source_type": "paper",
+  "added_date": "2026-11-27",
+  "verification_status": "verified",
+  "paper_url": ""
+}

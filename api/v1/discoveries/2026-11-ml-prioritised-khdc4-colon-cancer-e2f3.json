@@ -1,0 +1,33 @@
+{
+  "source_type": "paper",
+  "added_date": "2026-11-27",
+  "verification_status": "verified",
+  "paper_url": "",
+  "id": "2026-11-ml-prioritised-khdc4-colon-cancer-e2f3",
+  "title": "Machine learning prioritises KHDC4, tested as a colon cancer driver in cells and mice",
+  "summary": "Single-cell RNA-seq differential expression and univariate Cox screening on TCGA colon adenocarcinoma (428 patients) were followed by several machine learning methods (including LASSO, Boruta, random survival forests and XGBoost), whose intersection gave five prognostic genes; KHDC4 contributed across all algorithms. KHDC4 was higher in 50 paired tumour samples and linked to lymph node metastasis and stage; knockdown reduced proliferation and metastasis in HT29/HCT116 cells and in nude-mouse xenograft and liver-metastasis models (n=5 per group). RIP and fractionation suggest KHDC4 binds E2F3 mRNA and promotes its nuclear export. Limits stated by the authors: the scRNA-seq discovery used one paired patient sample, the export machinery is unresolved, antiproliferative effects may confound invasion assays, and no external prognostic cohort was used.",
+  "field": "medicine",
+  "ai_technology": "Ensemble of machine learning feature-selection and survival models (LASSO, Boruta, random forest, random survival forests, RFE, XGBoost, decision tree, logistic regression) prioritizes prognostic genes from TCGA data.",
+  "organization": "Guizhou Medical University, Affiliated Hospital of Guizhou Medical University",
+  "source_url": "https://doi.org/10.3389/fmolb.2026.2011835",
+  "publication_date": "2026-11-25",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "IHC in 50 paired colon cancer tissues; siRNA/shRNA knockdown in HT29 and HCT116 cells; subcutaneous xenograft and intrasplenic liver-metastasis models in nude mice; RIP and nucleocytoplasmic fractionation for E2F3 mRNA.",
+    "unknown": "Prognostic value not tested in an external cohort; scRNA-seq step based on one paired sample; nuclear-export mechanism unresolved; no clinical test.",
+    "ai_role": "Consensus across several machine learning algorithms selected KHDC4 as the candidate then tested experimentally.",
+    "evidence_urls": [
+      "https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2026.2011835/full"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-27",
+    "scope": "Independent review: publisher HTML full text (first ~100k of ~138k characters: Methods, Results, limitations) read; Crossref dates and OpenAlex title search for earlier versions."
+  }
+}

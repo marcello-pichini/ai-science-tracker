@@ -1,0 +1,33 @@
+{
+  "source_type": "paper",
+  "added_date": "2026-11-27",
+  "verification_status": "verified",
+  "paper_url": "",
+  "id": "2026-11-ml-mitochondrial-gene-signature-diabetic-retinopathy",
+  "title": "Machine learning selects an exploratory mitochondrial gene signature in diabetic retinopathy",
+  "summary": "Differential expression, GSEA and WGCNA on two GEO diabetic retinopathy datasets (GSE102485, GSE60436) yielded 13 core mitochondria-related genes; LASSO regression and SVM-RFE selected a five-gene diagnostic model (CKMT1A, SLC25A27, SHMT2, ALDH1L1, CYCS) with a mean AUC of 0.89 in internal 10-fold cross-validation. All five genes changed expression in high-glucose-treated human retinal microvascular endothelial cells (RT-qPCR, western blot). The authors state the signature is only internally validated and requires independent cohorts; the cell experiment tests expression changes, not diagnostic performance.",
+  "field": "medicine",
+  "ai_technology": "LASSO regression and support vector machine recursive feature elimination select the diagnostic genes from public transcriptomes.",
+  "organization": "The Affiliated Hospital to Changchun University of Chinese Medicine, Changchun University of Chinese Medicine",
+  "source_url": "https://doi.org/10.1016/j.curpro.2026.100191",
+  "publication_date": "2026-11-25",
+  "relevance": {
+    "impact": 2,
+    "validation": 3,
+    "novelty": 2
+  },
+  "evidence": {
+    "publication_status": "Peer-reviewed paper",
+    "tested": "Signature evaluated by internal 10-fold cross-validation on GEO data; expression of the five genes measured in a high-glucose human retinal endothelial cell model.",
+    "unknown": "No independent patient cohort; diagnostic performance likely optimistic; no functional knockdown or clinical test; full text not reviewed.",
+    "ai_role": "LASSO and SVM-RFE selected the five genes whose expression was then checked experimentally.",
+    "evidence_urls": [
+      "https://api.openalex.org/works/doi:10.1016/j.curpro.2026.100191"
+    ],
+    "test_type": "direct test"
+  },
+  "source_review": {
+    "date": "2026-11-27",
+    "scope": "Independent review: full abstract and affiliations from OpenAlex, Crossref dates, OpenAlex title search for earlier versions; publisher full text not accessed."
+  }
+}

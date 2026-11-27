@@ -174972,5 +174972,239 @@
       "date": "2026-11-26",
       "scope": "Abstract read from Europe PMC metadata for this DOI; affiliations not available. Publisher full text not accessed. Author affiliations from OpenAlex metadata."
     }
+  },
+  {
+    "source_type": "paper",
+    "added_date": "2026-11-27",
+    "verification_status": "verified",
+    "paper_url": "",
+    "id": "2026-11-ml-mitochondrial-gene-signature-diabetic-retinopathy",
+    "title": "Machine learning selects an exploratory mitochondrial gene signature in diabetic retinopathy",
+    "summary": "Differential expression, GSEA and WGCNA on two GEO diabetic retinopathy datasets (GSE102485, GSE60436) yielded 13 core mitochondria-related genes; LASSO regression and SVM-RFE selected a five-gene diagnostic model (CKMT1A, SLC25A27, SHMT2, ALDH1L1, CYCS) with a mean AUC of 0.89 in internal 10-fold cross-validation. All five genes changed expression in high-glucose-treated human retinal microvascular endothelial cells (RT-qPCR, western blot). The authors state the signature is only internally validated and requires independent cohorts; the cell experiment tests expression changes, not diagnostic performance.",
+    "field": "medicine",
+    "ai_technology": "LASSO regression and support vector machine recursive feature elimination select the diagnostic genes from public transcriptomes.",
+    "organization": "The Affiliated Hospital to Changchun University of Chinese Medicine, Changchun University of Chinese Medicine",
+    "source_url": "https://doi.org/10.1016/j.curpro.2026.100191",
+    "publication_date": "2026-11-25",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Signature evaluated by internal 10-fold cross-validation on GEO data; expression of the five genes measured in a high-glucose human retinal endothelial cell model.",
+      "unknown": "No independent patient cohort; diagnostic performance likely optimistic; no functional knockdown or clinical test; full text not reviewed.",
+      "ai_role": "LASSO and SVM-RFE selected the five genes whose expression was then checked experimentally.",
+      "evidence_urls": [
+        "https://api.openalex.org/works/doi:10.1016/j.curpro.2026.100191"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-27",
+      "scope": "Independent review: full abstract and affiliations from OpenAlex, Crossref dates, OpenAlex title search for earlier versions; publisher full text not accessed."
+    }
+  },
+  {
+    "source_type": "paper",
+    "added_date": "2026-11-27",
+    "verification_status": "verified",
+    "paper_url": "",
+    "id": "2026-11-ml-prioritised-khdc4-colon-cancer-e2f3",
+    "title": "Machine learning prioritises KHDC4, tested as a colon cancer driver in cells and mice",
+    "summary": "Single-cell RNA-seq differential expression and univariate Cox screening on TCGA colon adenocarcinoma (428 patients) were followed by several machine learning methods (including LASSO, Boruta, random survival forests and XGBoost), whose intersection gave five prognostic genes; KHDC4 contributed across all algorithms. KHDC4 was higher in 50 paired tumour samples and linked to lymph node metastasis and stage; knockdown reduced proliferation and metastasis in HT29/HCT116 cells and in nude-mouse xenograft and liver-metastasis models (n=5 per group). RIP and fractionation suggest KHDC4 binds E2F3 mRNA and promotes its nuclear export. Limits stated by the authors: the scRNA-seq discovery used one paired patient sample, the export machinery is unresolved, antiproliferative effects may confound invasion assays, and no external prognostic cohort was used.",
+    "field": "medicine",
+    "ai_technology": "Ensemble of machine learning feature-selection and survival models (LASSO, Boruta, random forest, random survival forests, RFE, XGBoost, decision tree, logistic regression) prioritizes prognostic genes from TCGA data.",
+    "organization": "Guizhou Medical University, Affiliated Hospital of Guizhou Medical University",
+    "source_url": "https://doi.org/10.3389/fmolb.2026.2011835",
+    "publication_date": "2026-11-25",
+    "relevance": {
+      "impact": 2,
+      "validation": 3,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "IHC in 50 paired colon cancer tissues; siRNA/shRNA knockdown in HT29 and HCT116 cells; subcutaneous xenograft and intrasplenic liver-metastasis models in nude mice; RIP and nucleocytoplasmic fractionation for E2F3 mRNA.",
+      "unknown": "Prognostic value not tested in an external cohort; scRNA-seq step based on one paired sample; nuclear-export mechanism unresolved; no clinical test.",
+      "ai_role": "Consensus across several machine learning algorithms selected KHDC4 as the candidate then tested experimentally.",
+      "evidence_urls": [
+        "https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2026.2011835/full"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-27",
+      "scope": "Independent review: publisher HTML full text (first ~100k of ~138k characters: Methods, Results, limitations) read; Crossref dates and OpenAlex title search for earlier versions."
+    }
+  },
+  {
+    "id": "2026-11-cell-death-genes-copd-feizhangning-rats",
+    "title": "Machine learning selects cell-death genes in COPD tested with an herbal formula in rats",
+    "summary": "Mendelian randomization screened 439 programmed-cell-death genes with genetic causal links to COPD; intersection with transcriptomic and co-expression analyses and several machine-learning algorithms selected five diagnostic markers (NT5E, SPP1, BLK, PLAT, LGMN). Single-cell analysis and virtual perturbation suggested a bidirectional role for LGMN. In a rat COPD model, the traditional Chinese medicine formula Feizhangning dose-dependently lowered IL-1beta, IL-6 and TNF-alpha in serum and lavage fluid and reversed the abnormal mRNA and protein expression of the five genes. This is a non-peer-reviewed preprint; docking and network pharmacology are computational, diagnostic performance and animal numbers were not reviewed, and no human test is reported.",
+    "field": "medicine",
+    "ai_technology": "Multiple machine-learning feature-selection algorithms (14 listed in the linked data deposit, with SHAP) select diagnostic genes from COPD transcriptomes.",
+    "organization": "Chengdu University of Traditional Chinese Medicine",
+    "source_url": "https://doi.org/10.21203/rs.3.rs-11650241/v1",
+    "publication_date": "2026-11-25",
+    "relevance": {
+      "impact": 1,
+      "validation": 3,
+      "novelty": 1
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "Expression of the five ML-selected genes and inflammatory cytokines measured in a rat COPD model treated with Feizhangning.",
+      "unknown": "Which algorithm selected the final genes and its diagnostic metrics, rat group sizes, causal role of the genes, human efficacy; full text not reviewed. A data and code deposit (ScienceDB, 2026-11-03) preceded the preprint but states no results.",
+      "ai_role": "Machine-learning algorithms selected the five diagnostic genes whose expression was then measured under treatment in rats.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-11650241/v1%22&resultType=core&format=json",
+        "https://doi.org/10.57760/sciencedb.018mx"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-27",
+      "scope": "Independent review: abstract from Europe PMC, Crossref posting date, OpenAlex title search; linked ScienceDB data deposit description read. Full text not read."
+    },
+    "source_type": "paper",
+    "added_date": "2026-11-27",
+    "verification_status": "verified",
+    "paper_url": ""
+  },
+  {
+    "id": "2026-11-eight-mammography-ai-algorithms-uk-screening",
+    "title": "Independent UK test of eight mammography AI algorithms as second reader and triage",
+    "summary": "Eight commercial deep learning breast cancer detection algorithms from five vendors were evaluated retrospectively on 22,778 mammograms from two UK screening sites (Cambridge, Norwich; 2017) with 3-year follow-up. Standalone AUCs ranged 0.82-0.91, with one algorithm inferior to all others. Paired with the first human reader, all but one were noninferior in sensitivity to double reading (64.7-67.4% vs 67.9%) with superior specificity (97.5% vs 97.1%); low-suspicion triage ruled out 37.4-65.7% of mammograms while missing at most 1.0% of screen-detected cancers. Gains came with more arbitration, and the study is retrospective; prospective workflow effects were not measured.",
+    "field": "medicine",
+    "ai_technology": "Commercial deep learning breast cancer detection algorithms scoring digital screening mammograms.",
+    "organization": "University of Cambridge",
+    "source_url": "https://doi.org/10.1007/s00330-026-12997-4",
+    "publication_date": "2026-11-25",
+    "relevance": {
+      "impact": 3,
+      "validation": 2,
+      "novelty": 2
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Retrospective evaluation on 22,778 UK screening mammograms with histopathology-confirmed screen-detected, interval and next-round cancers; noninferiority at a 5% margin.",
+      "unknown": "Prospective performance, effects on reader behaviour and arbitration workload in practice, generalisability beyond two 2017 UK sites; vendor-level results and full methods not reviewed (full text not accessed).",
+      "ai_role": "The deep learning algorithms produced the cancer suspicion scores whose standalone, paired-reader and triage performance is the finding.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.1007/s00330-026-12997-4%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.1007/s00330-026-12997-4"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-27",
+      "scope": "Independent review: structured abstract from Europe PMC, Crossref dates, OpenAlex affiliations. Springer full text not read."
+    },
+    "source_type": "paper",
+    "added_date": "2026-11-27",
+    "verification_status": "verified",
+    "paper_url": ""
+  },
+  {
+    "id": "2026-11-ml-agcuti-wetting-wcu-process-optimization",
+    "title": "Machine learning picks AgCuTi wetting conditions on WCu that experiments confirm",
+    "summary": "Eight regression models were trained on 125 full-factorial wetting experiments varying temperature, titanium content and surface roughness; the best, a support vector regressor (held-out R2 0.945), screened 37,572 candidate conditions and selected 10 representative ones. Experiments at those conditions matched predicted contact angles with a mean absolute error of 0.55 degrees (R2 0.91). A second gradient-boosting model with SHAP attributed about 70% of the contribution to the three process variables, with post-wetting morphology adding correlational information. This is a non-peer-reviewed preprint from a single laboratory and a narrow design space.",
+    "field": "materials",
+    "ai_technology": "Support vector regression and gradient boosting models with SHAP interpretation of brazing-alloy wetting experiments.",
+    "organization": "North China University of Water Resources and Electric Power",
+    "source_url": "https://doi.org/10.21203/rs.3.rs-11199004/v1",
+    "publication_date": "2026-11-25",
+    "relevance": {
+      "impact": 1,
+      "validation": 3,
+      "novelty": 1
+    },
+    "evidence": {
+      "publication_status": "Preprint",
+      "tested": "10 model-selected process conditions run experimentally; measured contact angles compared with predictions.",
+      "unknown": "Whether the selected conditions improve joint performance, reproducibility in other labs, extrapolation beyond the sampled ranges; full text not reviewed.",
+      "ai_role": "The trained regression model screened the process space and chose the conditions that were tested.",
+      "evidence_urls": [
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=DOI:%2210.21203/rs.3.rs-11199004/v1%22&resultType=core&format=json",
+        "https://api.openalex.org/works/doi:10.21203/rs.3.rs-11199004/v1"
+      ],
+      "test_type": "direct test"
+    },
+    "source_review": {
+      "date": "2026-11-27",
+      "scope": "Independent review: abstract from Europe PMC, Crossref posting date, OpenAlex title search. Full text not read."
+    },
+    "source_type": "paper",
+    "added_date": "2026-11-27",
+    "verification_status": "verified",
+    "paper_url": ""
+  },
+  {
+    "id": "2026-11-catboost-salivary-transcriptome-sjogren",
+    "title": "Machine learning classifier on salivary-gland transcriptomes separates Sjogren disease",
+    "summary": "Bulk RNA-seq of salivary-gland tissue from 98 primary Sjogren disease patients and 22 controls was used to compare 14 machine-learning algorithms on 193 candidate genes; CatBoost performed best, with an AUC of 0.981 on pooled external GEO tissue datasets (218 patients, 32 controls). Network analysis, not the model, prioritized LCP2, PTPRC and ZAP70, which SHAP ranked among the top features; multiplex immunohistochemistry in 5 patients and 5 controls showed higher protein expression. Blood performance was modest, specificity versus other autoimmune diseases was only preliminary, and the authors note two of the genes were reported before and that prospective multicentre validation is needed.",
+    "field": "medicine",
+    "ai_technology": "CatBoost gradient-boosted classifier, selected among 14 algorithms, with SHAP feature attribution on salivary-gland transcriptomes.",
+    "organization": "Wenzhou Medical University Affiliated Yueqing Hospital; Second Affiliated Hospital of Zhejiang University",
+    "source_url": "https://doi.org/10.3389/fmolb.2026.2010167",
+    "publication_date": "2026-11-25",
+    "relevance": {
+      "impact": 2,
+      "validation": 2,
+      "novelty": 1
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Classifier trained on an in-house cohort (98 pSD, 22 controls) and tested on pooled GEO salivary-gland datasets (218 pSD, 32 controls); mIHC on 5 pSD and 5 non-pSD tissues; exploratory treatment-response association in 65 patients.",
+      "unknown": "Prospective diagnostic value, specificity against other sicca conditions, blood-assay utility, mechanistic role; single-centre mainly Chinese training cohort.",
+      "ai_role": "The CatBoost model produced the transcriptome-based diagnostic classification; the three highlighted genes came from network analysis and were evaluated by SHAP.",
+      "evidence_urls": [
+        "https://www.frontiersin.org/journals/molecular-biosciences/articles/10.3389/fmolb.2026.2010167/full"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-27",
+      "scope": "Independent review: publisher HTML full text (first ~100k of ~147k characters: cohorts, models, mIHC, limitations) read; Crossref dates and OpenAlex title search."
+    },
+    "source_type": "paper",
+    "added_date": "2026-11-27",
+    "verification_status": "verified",
+    "paper_url": ""
+  },
+  {
+    "id": "2026-11-angiogenesis-genes-endometriosis-machine-learning",
+    "title": "Machine learning prioritizes exploratory angiogenesis genes in endometriosis endometrium",
+    "summary": "Transcriptomic analysis of eutopic endometrium (GEO GSE51981) found 238 angiogenesis-related differentially expressed genes in endometriosis; LASSO and random forest, combined with WGCNA, prioritized COL6A1, ERN2 and IL34, and the selected random forest reached an AUC of 0.806 on a second dataset (GSE23339). ERN2 and IL34 differed between groups in that dataset while COL6A1 did not. The work is purely computational: the authors call the cross-dataset AUC exploratory rather than independent validation, the findings do not extend to ectopic lesions, and compound prioritization, docking and dynamics are hypothesis-generating only.",
+    "field": "medicine",
+    "ai_technology": "LASSO regression and random forest feature selection and classification on endometrial transcriptomes.",
+    "organization": "The First Affiliated Hospital of Soochow University",
+    "source_url": "https://doi.org/10.24976/discov.med.202638214.277",
+    "publication_date": "2026-11-25",
+    "relevance": {
+      "impact": 1,
+      "validation": 2,
+      "novelty": 1
+    },
+    "evidence": {
+      "publication_status": "Peer-reviewed paper",
+      "tested": "Genes prioritized in GSE51981 and evaluated cross-dataset in GSE23339 (random forest AUC 0.806).",
+      "unknown": "Sample sizes not stated on the page read; no qPCR, IHC or functional validation; relevance to ectopic lesions and therapy unknown.",
+      "ai_role": "LASSO and random forest selected the candidate angiogenesis genes and built the classifier.",
+      "evidence_urls": [
+        "https://www.discovmed.com/journal/DM/38/214/10.24976/Discov.Med.202638214.277"
+      ],
+      "test_type": "retrospective or benchmark"
+    },
+    "source_review": {
+      "date": "2026-11-27",
+      "scope": "Independent review: publisher article page (abstract, methods summary, results, limitations, dates) read; Crossref dates and OpenAlex title search."
+    },
+    "source_type": "paper",
+    "added_date": "2026-11-27",
+    "verification_status": "verified",
+    "paper_url": ""
   }
 ]
