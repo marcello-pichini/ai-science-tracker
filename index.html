@@ -335,14 +335,26 @@ let ancora = fragment.startsWith("discovery=") ? fragment.slice(10) : fragment.s
 const orgDi = s => CatalogEntities.organization(s.organization).label;
 let archiveData = [], catalogGeneration = 0;
 // The list component (data/discoveries-list.json) omits evidence prose; an entry near the viewport fetches its full record.
-let slim = false, listSnapshot = "", fullRecords = new Map();
+let slim = false, listSnapshot = "", fullRecords = new Map(), fullCatalog = null;
+// Downloads and print need every record's evidence: load the full component once, from the list's validated snapshot.
+function loadFull() {
+  const generation = catalogGeneration;
+  fullCatalog ||= CatalogData.load(["discoveries"]).then(loaded => {
+    if (loaded.snapshot !== listSnapshot) throw Error("Data snapshot changed during loading");
+    const byId = new Map(loaded.data.discoveries.map(r => [r.id, r]));
+    if (generation === catalogGeneration) items.forEach(s => { if (byId.has(s.id)) fullRecords.set(s.id, {...byId.get(s.id), citation:s.citation}); });
+    return byId;
+  });
+  fullCatalog.catch(() => { if (generation === catalogGeneration) fullCatalog = null; }); // A later request retries.
+  return fullCatalog;
+}
 const nearView = globalThis.IntersectionObserver && new IntersectionObserver(entries => entries.forEach(e => {
   if (e.isIntersecting) { nearView.unobserve(e.target); hydrate(e.target); }
 }), { rootMargin:"600px 0px" });
 async function hydrate(node) {
   const s = items.find(x => x.id === node.dataset.id), generation = catalogGeneration;
   if (!s) return;
-  try {
+  if (!fullRecords.has(s.id)) try {
     const record = await CatalogData.record("api/v1/discoveries/" + encodeURIComponent(s.id) + ".json", s.record_sha256);
     if (generation !== catalogGeneration || record.id !== s.id) return;
     fullRecords.set(s.id, {...record, citation:s.citation});
@@ -640,7 +652,7 @@ CatalogData.run(['discoveries-list', 'models', 'citations', 'archived-discoverie
   if (!state.field) { if (perAmb.some(([v]) => v === h)) state.field = h; else if (legacy[h] && perAmb.some(([v]) => v === legacy[h])) state.field = legacy[h]; }
   const id = ancora; lista(); if (id) openFragment(id); featured();
 }, {controls:'main select, main button, #dl-json, #dl-csv', clear:() => {
-  catalogGeneration++; items = []; famDi = {}; famIds = {}; archiveData = []; fullRecords = new Map(); nearView?.disconnect();
+  catalogGeneration++; items = []; famDi = {}; famIds = {}; archiveData = []; fullRecords = new Map(); fullCatalog = null; nearView?.disconnect();
   sp = []; spSvg = null; primaVolta = true; limite = PAGE; chiaveLista = ''; printState = null;
   CatalogEntities.configure({organizations:[], systems:[]});
   nascondiTip(); tip.replaceChildren();
@@ -671,6 +683,15 @@ CatalogUI.beforePrint = () => {
   printState = { limit:limite, nodes:[...$("lista").childNodes], count:$("conta").textContent };
   limite = Infinity; lista();
 };
+// The keyboard shortcut waits for the full evidence, then prints; if loading fails it prints what is there.
+// A print started from the browser menu cannot wait: it prints the loaded entries and starts the load for the next print.
+let printLoading = false;
+addEventListener("keydown", e => {
+  if (!slim || printLoading || !(e.ctrlKey || e.metaKey) || e.altKey || e.key.toLowerCase() !== "p" || items.every(s => fullRecords.has(s.id))) return;
+  e.preventDefault(); printLoading = true;
+  loadFull().catch(() => {}).finally(() => { printLoading = false; print(); });
+}, true);
+addEventListener("beforeprint", () => { if (slim) loadFull().catch(() => {}); });
 CatalogUI.afterPrint = () => {
   if (!printState) return;
   limite = printState.limit; $("lista").replaceChildren(...printState.nodes); $("conta").textContent = printState.count;
@@ -719,11 +740,7 @@ function withFullSelection(button, done) {
   const rows = selezione();
   if (!slim) return done(rows);
   button.disabled = true;
-  CatalogData.load(["discoveries"]).then(loaded => {
-    if (loaded.snapshot !== listSnapshot) throw Error("Data snapshot changed during loading");
-    const byId = new Map(loaded.data.discoveries.map(r => [r.id, r]));
-    done(rows.map(s => byId.get(s.id)));
-  }).catch(() => alert(tr("A consistent data snapshot could not be loaded. ") + tr("Your query is preserved; retry or use the static pages and downloads.")))
+  loadFull().then(byId => done(rows.map(s => byId.get(s.id)))).catch(() => alert(tr("A consistent data snapshot could not be loaded. ") + tr("Your query is preserved; retry or use the static pages and downloads.")))
     .finally(() => { button.disabled = false; });
 }
 $("dl-json").addEventListener("click", () => withFullSelection($("dl-json"), rows => scarica("ai-science-tracker-selection.json", "application/json", JSON.stringify(rows.map(({citation, ...record}) => record), null, 2) + "\n")));
