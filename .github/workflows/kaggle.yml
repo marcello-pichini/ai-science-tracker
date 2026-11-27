@@ -1,7 +1,7 @@
 name: Kaggle dataset
 on:
   schedule:
-    - cron: '30 6 * * *'  # daily, after Daily refresh (04:30 UTC)
+    - cron: '43 6 * * *'  # daily, after Daily refresh (04:30 UTC); off-peak minute
   workflow_dispatch:
 permissions:
   contents: read

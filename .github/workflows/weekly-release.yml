@@ -32,7 +32,16 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           EVENT_SHA: ${{ github.event.workflow_run.head_commit.id || inputs.expected_sha }}
         run: |
-          python3 scripts/deployment_state.py select --require-check --require-current --output "$RUNNER_TEMP/deployment.json"
+          if ! python3 scripts/deployment_state.py select --require-check --require-current --output "$RUNNER_TEMP/deployment.json" 2> "$RUNNER_TEMP/select.err"; then
+            cat "$RUNNER_TEMP/select.err" >&2
+            # Expected race: main moved past the event commit; the newer commit's run publishes.
+            if [ -n "$EVENT_SHA" ] && [ "$EVENT_SHA" != "$(git ls-remote origin refs/heads/main | cut -f1)" ] &&
+                grep -q 'Current main has not successfully deployed' "$RUNNER_TEMP/select.err"; then
+              echo "::notice::Main moved past $EVENT_SHA before it deployed; skipping publication."
+              exit 0
+            fi
+            exit 1
+          fi
           sha=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["deployed_sha"])' "$RUNNER_TEMP/deployment.json")
           if [ -n "$EVENT_SHA" ] && [ "$EVENT_SHA" != "$sha" ]; then echo "Superseded event; skipping."; exit 0; fi
           echo "sha=$sha" >> "$GITHUB_OUTPUT"

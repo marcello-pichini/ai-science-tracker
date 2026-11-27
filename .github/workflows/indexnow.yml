@@ -20,10 +20,20 @@ jobs:
           fetch-depth: 200
       # Diff from the previously deployed commit to the one this Check run deployed, so a
       # multi-commit push or a newer main never drops pages. SHAs are only passed to git.
+      # A green Check skips its deploy job when main has moved; only deployed runs count.
       - env:
           GH_TOKEN: ${{ github.token }}
           HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
         run: |
-          base="$(gh run list --workflow Check --branch main --status success --limit 20 --json headSha -q '[.[].headSha | select(. != env.HEAD_SHA)][0] // empty' || true)"
+          deployed() { [ "$(gh run view "$1" --json jobs -q '[.jobs[] | select(.name == "deploy") | .conclusion][0] // empty')" = success ]; }
+          if ! deployed "$RUN_ID"; then
+            echo "::notice::Check run $RUN_ID did not deploy $HEAD_SHA; nothing to notify."
+            exit 0
+          fi
+          base=""
+          while read -r id sha; do
+            if [ "$sha" != "$HEAD_SHA" ] && deployed "$id"; then base="$sha"; break; fi
+          done < <(gh run list --workflow Check --branch main --status success --limit 20 --json databaseId,headSha -q '.[] | "\(.databaseId) \(.headSha)"' || true)
           if [ -z "$base" ] || ! git merge-base --is-ancestor "$base" "$HEAD_SHA" 2>/dev/null; then base="$HEAD_SHA~1"; fi
           python3 scripts/indexnow.py "$base" "$HEAD_SHA"

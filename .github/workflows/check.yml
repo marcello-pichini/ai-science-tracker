@@ -14,6 +14,8 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    outputs:
+      current: ${{ steps.main.outputs.current }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
@@ -21,7 +23,7 @@ jobs:
           python-version: '3.12'
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          node-version: '20'
+          node-version: '22'
       - name: Verify requested snapshot
         env:
           EXPECTED_SHA: ${{ inputs.expected_sha }}
@@ -35,9 +37,25 @@ jobs:
           python3 scripts/generate_share.py
           git diff --exit-code
           test -z "$(git status --porcelain)"
+      - name: MCP worker tests
+        working-directory: mcp
+        run: npm ci --omit=dev --no-audit --no-fund && npm test
+      # A newer main is an expected race: end green and leave deployment to the newer run.
+      # Gated at job level so no github-pages deployment record is created for this SHA.
+      - name: Skip deployment if main has moved
+        id: main
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+        run: |
+          main=$(git ls-remote origin refs/heads/main | cut -f1)
+          if [ "$main" = "$GITHUB_SHA" ]; then
+            echo "current=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::Main moved to $main; this superseded snapshot passed checks but is not deployed."
+            echo "current=false" >> "$GITHUB_OUTPUT"
+          fi
   deploy:
     needs: check
-    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && needs.check.outputs.current == 'true'
     runs-on: ubuntu-latest
     permissions:
       actions: read
@@ -59,6 +77,9 @@ jobs:
           mkdir -p "$RUNNER_TEMP/site"
           git archive HEAD | tar -x -C "$RUNNER_TEMP/site"
           rm -rf "$RUNNER_TEMP/site/.github" "$RUNNER_TEMP/site/tests" "$RUNNER_TEMP/site/scripts"
+          mb=$(du -sm "$RUNNER_TEMP/site" | cut -f1)
+          echo "Packaged site: ${mb} MB of the 1 GB Pages limit"
+          if [ "$mb" -gt 700 ]; then echo "::warning::Packaged site is ${mb} MB, above the 700 MB budget (Pages limit 1 GB)."; fi
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         id: pages-artifact
         with:

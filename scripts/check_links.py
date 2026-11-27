@@ -56,6 +56,8 @@ def main():
             for field in fields:
                 if record.get(field):
                     uses.setdefault(record[field], []).append(f"{name}:{record['id']}:{field}")
+            for url in (record.get('evidence') or {}).get('evidence_urls') or []:
+                uses.setdefault(url, []).append(f"{name}:{record['id']}:evidence_urls")
     with ThreadPoolExecutor(args.workers) as pool:
         codes = dict(zip(uses, pool.map(lambda url: inspect(url, lambda value: status(value, args.timeout)), uses)))
     gone = {u: c for u, c in codes.items() if c['status'] == 'gone'}
