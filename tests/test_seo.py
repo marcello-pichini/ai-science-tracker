@@ -113,6 +113,12 @@ class GeneratedSeoTest(unittest.TestCase):
         types = [json.loads(b).get('mainEntity', {}).get('@type') for b in blocks]
         self.assertIn('Article', types)
 
+    def test_discovery_summaries_carry_no_reviewer_vocabulary(self):
+        # Summaries become meta descriptions, og:description and JSON-LD abstracts; review jargon must stay internal.
+        jargon = re.compile(r'\badmit(?:s|ted)?\b|\badmission\b|\bPrimary (?:Methods|Results)\b', re.I)
+        records = json.loads((ROOT / 'data/discoveries.json').read_text(encoding='utf-8'))
+        self.assertEqual([r['id'] for r in records if jargon.search(r['summary'])], [])
+
     def test_every_discovery_page_states_when_it_was_updated(self):
         # Freshness signal for search and answer engines: JSON-LD dateModified, the same visible date and sitemap lastmod.
         lastmod = {}

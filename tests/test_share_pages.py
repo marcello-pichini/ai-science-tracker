@@ -2,6 +2,7 @@ import csv
 import importlib.util
 import json
 import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -42,6 +43,27 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('record_id=test-discovery', text)
         self.assertIn('Source checked', text)
         self.assertFalse(any(line.rstrip() != line for line in text.splitlines()))
+
+    def test_static_discovery_carries_citation_json_alternate_and_abstract_only_label(self):
+        g = self.generator
+        record = dict(self.record, verification_status='verified',
+                      source_review={'date': '2026-11-26', 'scope': 'Abstract read from Europe PMC metadata. Publisher full text not accessed.'})
+        g.write_discovery_pages([record], {'families': []}, False)
+        text = (g.ROOT / 'share/test-discovery.html').read_text()
+        self.assertIn('<link rel="alternate" type="application/json" href="https://aisciencetracker.org/api/v1/discoveries/test-discovery.json">', text)
+        self.assertIn('<b>Cite this entry:</b> A &lt;test&gt; &amp; result.', text)
+        self.assertIn('Catalog entry: AI Science Tracker, https://aisciencetracker.org/share/test-discovery.html.</p>', text)
+        self.assertIn('Source checked (abstract only)', text)
+
+    def test_abstract_only_rule_matches_between_python_and_catalog_ui(self):
+        sys.path.insert(0, str(ROOT / 'scripts'))
+        import evidence_levels
+        records = json.loads((ROOT / 'data/discoveries.json').read_text())
+        script = ("require(process.argv[1]); const rows = JSON.parse(require('fs').readFileSync(0, 'utf8'));"
+                  "process.stdout.write(JSON.stringify(rows.map(r => CatalogUI.abstractOnly(r))));")
+        result = subprocess.run(['node', '-e', script, str(ROOT / 'assets/catalog-ui.js')], input=json.dumps(records),
+                                capture_output=True, text=True, check=True)
+        self.assertEqual(json.loads(result.stdout), [evidence_levels.abstract_only(r) for r in records])
 
     def test_review_scopes_ending_in_a_period_render_one_period(self):
         published = [p.name for p in (ROOT / 'share').glob('*.html') if '..</p>' in p.read_text(encoding='utf-8')]

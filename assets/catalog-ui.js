@@ -40,8 +40,14 @@ globalThis.CatalogUI = {
       ? `<a href="${esc('https://openalex.org/works?filter=doi:' + encodeURIComponent(c.doi))}" rel="noopener">${this.t('OpenAlex work metrics')}</a>` : 'OpenAlex';
     return `<p>${this.t('Citations:')} ${band} ${this.t('of works of the same type, year and subfield')} (${source}, ${esc(c.cited_by)} ${this.t('citations')}; ${asOf}). ${this.t('Attention, not a measure of correctness; not part of the score.')}</p>`;
   },
+  // Same rule as scripts/evidence_levels.py abstract_only(): the review scope says the full text was not read and names no Methods reading.
+  abstractOnly(record) {
+    const scope = String(record.source_review?.scope || '');
+    return /\bfull[- ]?text (?:was )?not (?:accessed|read|reviewed)\b/i.test(scope) && !/\bMethods\b/.test(scope);
+  },
   sourceStatus(record) {
-    return record.verification_status === 'verified' ? this.t('Source checked') : this.t('Needs source check');
+    if (record.verification_status !== 'verified') return this.t('Needs source check');
+    return this.abstractOnly(record) ? this.t('Source checked (abstract only)') : this.t('Source checked');
   },
   sourceBadge(record) {
     return `<p class="source-status"><b>${this.t('Source check:')}</b> ${this.sourceStatus(record)}. <span>${this.t('Not independent scientific confirmation.')}</span></p>`;
@@ -97,8 +103,10 @@ globalThis.CatalogUI = {
   sourceDetails(record) {
     const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
     const checked = record.verification_status === 'verified';
-    const status = checked ? this.t('Source checked') : this.t('Needs source check');
-    const checkedSentence = checked ? this.t('The source page was checked against this entry.') : this.t('The source has not been fully checked or contains conflicting information.');
+    const status = this.sourceStatus(record);
+    const checkedSentence = !checked ? this.t('The source has not been fully checked or contains conflicting information.')
+      : this.abstractOnly(record) ? this.t('Only the abstract and bibliographic metadata were checked against this entry; the full text was not read.')
+      : this.t('The source page was checked against this entry.');
     const review = record.source_review
       ? `${this.t('Review date:')} ${esc(this.contextDate(record.source_review.date))}. ${this.t('Review scope:')} ${esc(String(record.source_review.scope).replace(/[.\s]+$/, ''))}.`
       : this.t('Review scope and date are not recorded; source checked does not establish full-text review.');
@@ -168,7 +176,7 @@ globalThis.CatalogUI = {
   // Plain catalog reference; deliberately carries no authors, DOI or publisher, which the catalog does not hold.
   reference(record, accessed) {
     const date = new Date(record.publication_date + 'T12:00:00').toLocaleDateString(this.dateLocale || 'en-GB', {day:'numeric', month:'short', year:'numeric'});
-    return `${record.title}. ${record.organization}, ${this.t('announced')} ${date}. ${this.t('Source:')} ${record.source_url}. ${this.t('Catalog entry:')} AI Science Tracker, ${this.entryUrl(record)} (${this.t('accessed')} ${accessed}).`;
+    return `${record.title}. ${record.organization}, ${this.t('announced')} ${date}. ${this.t('Source:')} ${record.source_url}. ${this.t('Catalog entry:')} AI Science Tracker, ${this.entryUrl(record)}${accessed ? ` (${this.t('accessed')} ${accessed})` : ''}.`;
   },
   csvColumns: ['id', 'title', 'summary', 'field', 'ai_technology', 'organization', 'source_url', 'source_type', 'publication_date', 'added_date', 'verification_status', 'paper_url', 'impact', 'validation', 'novelty', 'catalog_entry_url', 'publication_status', 'test_type', 'tested', 'unknown', 'ai_role', 'evidence_urls', 'source_review', 'follow_up', 'follow_up_review', 'relationships'],
   // Cells starting with = + - @ get a leading apostrophe so spreadsheets do not run them as formulas.

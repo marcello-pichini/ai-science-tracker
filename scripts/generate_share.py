@@ -182,7 +182,7 @@ def run_catalog_ui(items):
     script = ("require(process.argv[1]);"
               "const items = JSON.parse(require('fs').readFileSync(0, 'utf8'));"
               "const out = {};"
-              "for (const r of items) out[r.id] = {links: CatalogUI.sourceLinks(r), details: CatalogUI.sourceDetails(r), status: CatalogUI.sourceBadge(r), correction: CatalogUI.correctionUrl(r)};"
+              "for (const r of items) out[r.id] = {links: CatalogUI.sourceLinks(r), details: CatalogUI.sourceDetails(r), status: CatalogUI.sourceBadge(r), correction: CatalogUI.correctionUrl(r), reference: CatalogUI.reference(r)};"
               "process.stdout.write(JSON.stringify(out));")
     result = subprocess.run(['node', '-e', script, str(ROOT / 'assets/catalog-ui.js')],
                             input=json.dumps(items), capture_output=True, text=True, check=True)
@@ -280,6 +280,7 @@ PAGE = """<!doctype html>
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="__I18N_CSS__">
+<link rel="alternate" type="application/atom+xml" title="{site}" href="{base}feed.xml">
 {jsonld}
 </head>
 <body class="static-page">
@@ -315,6 +316,11 @@ PUBLISHER = {'@type': 'Organization', '@id': BASE + '#organization', 'name': SIT
 LICENSE_URL = 'https://creativecommons.org/licenses/by/4.0/'
 DATASET_ID = BASE + 'dataset.html#scientific-dataset'
 SECURITY_DATASET_ID = BASE + 'dataset.html#security-dataset'
+
+
+def json_alternate(kind, record_id):
+    """Head link to the record's static API file, so agents can fetch the structured record from its page."""
+    return f'<link rel="alternate" type="application/json" href="{BASE}api/v1/{kind}/{quote(record_id)}.json">\n'
 
 
 def jsonld(data):
@@ -570,9 +576,10 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
                        else '<h2 class="vis-nascosto">Discovery</h2>')
         page = PAGE.format(title=esc(d['title']), site=SITE, desc=esc(describe(d['summary'], lead=d['title'])), base=BASE,
                            path=f'share/{d["id"]}.html', img=d['id'] if has_image else 'default',
-                           imgalt=esc(f'Preview card: {d["title"]}') if has_image else DEFAULT_ALT, jsonld=discovery_jsonld(d, d['id'] if has_image else 'default'),
+                           imgalt=esc(f'Preview card: {d["title"]}') if has_image else DEFAULT_ALT, jsonld=('' if archived else json_alternate('discoveries', d['id'])) + discovery_jsonld(d, d['id'] if has_image else 'default'),
                            h2=short + specialists, more=more, extra=related_section(d, candidates, families_by_discovery),
-                           header=header, footer=footer, lead=lead, article=article)
+                           header=header, footer=footer, lead=lead,
+                           article=article if archived else article + f'<p><b>Cite this entry:</b> {esc(ui[d["id"]]["reference"])}</p>')
         page = page.replace(f'<title>{esc(d["title"])} · {SITE}</title>',
                             f'<title>{"Archived: " if archived else ""}{esc(titles[d["id"]])}</title>', 1)
         (out / f'{d["id"]}.html').write_text('\n'.join(line.rstrip() for line in relocate(page).splitlines()) + '\n')
@@ -840,13 +847,13 @@ def write_profile_pages(items, models, archived=()):
     return pages
 
 
-def write_collection_page(title, description, path, article, lead, more, security=False, page_type='CollectionPage', search_title=None):
+def write_collection_page(title, description, path, article, lead, more, security=False, page_type='CollectionPage', search_title=None, alternate=''):
     """Use the existing static frame for generated evidence and security collections."""
     header, footer = site_frame()
     page = PAGE.format(title=esc(title), site=SITE, desc=esc(description), base=BASE, path=path,
                        img='default', imgalt=DEFAULT_ALT, header=header, footer=footer,
                        lead=lead, article=article, more=more, extra='', h2='',
-                       jsonld=profile_jsonld(title, description, path, security=security, page_type=page_type))
+                       jsonld=alternate + profile_jsonld(title, description, path, security=security, page_type=page_type))
     if search_title:
         page = page.replace(f'<title>{esc(title)} · {SITE}</title>',
                             f'<title>{esc(search_title)} · {SITE}</title>', 1)
@@ -877,6 +884,8 @@ def write_catalog_evidence(items):
                         '<th scope="col">Evidence annotated</th><th scope="col">Source checked</th></tr></thead>'
                         f'<tbody>{"".join(table)}</tbody></table></div>')
     annotated = sum(bool(d.get('evidence')) for d in items)
+    checked = sum(d['verification_status'] == 'verified' for d in items)
+    abstract_only = sum(d['verification_status'] == 'verified' and evidence_levels.abstract_only(d) for d in items)
     tested = {}
     for d in items:
         tested[evidence_levels.level(d)] = tested.get(evidence_levels.level(d), 0) + 1
@@ -896,7 +905,9 @@ def write_catalog_evidence(items):
                'Archived discoveries, model releases and security cases are excluded. Year means the stored publication year, not the year the entry was added.</p>'
                '<p><strong>Evidence annotated</strong> means a nonempty structured evidence object is present. It does not establish that every annotation field '
                'is populated, peer review, independent replication or clinical benefit. <strong>Source checked</strong> means the catalog stores '
-               'a completed source check; it is not independent reproduction. These attributes overlap and must not be added together.</p>'
+               'a completed source check; it is not independent reproduction. These attributes overlap and must not be added together. '
+               f'Of {checked} source-checked entries, {abstract_only} were checked against the abstract and bibliographic metadata only, '
+               'because the review scope records that the full text was not read; they are labelled <strong>Source checked (abstract only)</strong>.</p>'
                '<p><strong>Interpretation:</strong> coverage and annotation effort differ by field and year. Import batches can change historical totals. '
                '<a href="methodology.html#evidence-coverage">Inspect field/year acquisition and source-review gaps</a> for finer collection coverage. '
                'A larger count does not prove a more productive field, faster AI progress, or better scientific evidence. '
@@ -947,7 +958,9 @@ def write_security_pages(items):
     for record in sorted(items, key=lambda r: (r['disclosure_date'], r['id']), reverse=True):
         path = f'profiles/security-{quote(record["id"])}.html'
         cves = record['cves']
-        search_title = f'{cves[0]} · {record["product"]} · AI attribution' if cves else None
+        # Without a CVE, a GitHub Security Lab advisory ID keeps sibling cases' clipped titles distinct.
+        advisory = cves[0] if cves else (record['id'].upper() if re.fullmatch(r'ghsl-\d{4}-\d+', record['id']) else None)
+        search_title = f'{advisory} · {record["product"]} · AI attribution' if advisory else None
         summary = record['summary']
         if cves:
             summary = f'{cves[0]} in {record["product"]} — {summary}'
@@ -977,7 +990,8 @@ def write_security_pages(items):
                               f'{esc(record["product"])} · AI involvement attributed to {esc(record["ai_system"])}',
                               f'<a href="security.html#{quote(record["id"])}">Open this case in the interactive tracker</a> · '
                               '<a href="profiles/security-index.html">Browse all static security cases</a>',
-                              security=True, page_type='WebPage', search_title=search_title)
+                              security=True, page_type='WebPage', search_title=search_title,
+                              alternate=json_alternate('vulnerabilities', record['id']))
         groups.setdefault(record['disclosure_date'][:4], []).append(record)
     listings = ''.join(f'<h2>Disclosures in {year}</h2><ul class="elenco-profili">' + ''.join(
         f'<li><a href="profiles/security-{quote(r["id"])}.html">{esc(r["title"])}</a> · '
@@ -1199,6 +1213,23 @@ def write_exports(items, vulns):
         dict(v, cves=';'.join(v['cves']), remediation_details=json.dumps(v['remediation_details'], ensure_ascii=False, separators=(',', ':')) if 'remediation_details' in v else '',
              **{key: json.dumps(v.get(key, []), ensure_ascii=False, separators=(',', ':')) for key in ('cvss', 'impacts')})
         for v in vulns])
+
+
+def stamp_dataset_jsonld(items):
+    """Keep the hand-written Dataset JSON-LD in dataset.html dated by the catalog itself: version and dateModified
+    are the API index's data_version_date / latest_discovery_addition_date, never a build timestamp."""
+    path = ROOT / 'dataset.html'
+    if not path.exists():
+        return
+    text = path.read_text()
+    date = max(d['added_date'] for d in items)
+    pattern = re.compile(r'(<script type="application/ld\+json">\n)(\{[^\n]*"@id":"' + re.escape(DATASET_ID) + r'"[^\n]*\})(\n</script>)')
+    match = pattern.search(text)
+    if not match:
+        raise ValueError('dataset.html: scientific Dataset JSON-LD not found')
+    data = json.loads(match.group(2))
+    data.update(version=date, dateModified=date)
+    path.write_text(text[:match.start(2)] + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + text[match.end(2):])
 
 
 def write_api(items, vulns, models=None, archived=(), manifest=None):
@@ -1707,6 +1738,7 @@ def main():
     write_sitemap(items, models, archived, vulns)
     write_feed(items, vulns)
     write_exports(items, vulns)
+    stamp_dataset_jsonld(items)
     manifest = write_manifest(ROOT)
     write_component_jsonld(ROOT, manifest)
     write_api(items, vulns, models, archived, manifest=manifest)
