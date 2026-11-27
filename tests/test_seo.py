@@ -97,6 +97,16 @@ class GeneratedSeoTest(unittest.TestCase):
         types = [json.loads(b).get('mainEntity', {}).get('@type') for b in blocks]
         self.assertIn('Article', types)
 
+    def test_every_discovery_page_states_when_it_was_updated(self):
+        # Freshness signal for search and answer engines: JSON-LD dateModified plus the same visible date.
+        for path in sorted((ROOT / 'share').glob('*.html')):
+            text = path.read_text(encoding='utf-8')
+            data = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', text, re.S).group(1))
+            modified = data.get('dateModified')
+            self.assertRegex(modified or '', r'^\d{4}-\d{2}-\d{2}$', path.name)
+            self.assertEqual(data['mainEntity'].get('dateModified'), modified, path.name)
+            self.assertIn(f'Entry updated <time datetime="{modified}">', text, path.name)
+
 
 if __name__ == '__main__':
     unittest.main()

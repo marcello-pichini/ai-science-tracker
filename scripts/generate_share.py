@@ -327,16 +327,22 @@ def breadcrumb(name, path):
         {'@type': 'ListItem', 'position': 2, 'name': name, 'item': BASE + path}]}
 
 
+def record_modified(d):
+    """Last catalog change we can date: addition or a recorded source/follow-up review."""
+    dates = [d.get('added_date') or d['publication_date']] + [(d.get(k) or {}).get('date') or '' for k in ('source_review', 'follow_up_review')]
+    return max(x for x in dates if x)
+
+
 def discovery_jsonld(d):
     # WebPage plus an Article for the catalog record (our summary). This is not the paper itself,
     # so it is not a ScholarlyArticle. datePublished is the source announcement date.
     url = f'{BASE}share/{d["id"]}.html'
     work = {'@type': 'Article', 'name': d['title'], 'headline': clip(d['title'], 110), 'author': CREATOR, 'publisher': PUBLISHER, 'abstract': clip(d['summary'], 300),
-            'datePublished': d['publication_date'], 'inLanguage': 'en', 'url': url, 'keywords': d['field'],
+            'datePublished': d['publication_date'], 'dateModified': record_modified(d), 'inLanguage': 'en', 'url': url, 'keywords': d['field'],
             'isBasedOn': d['source_url']}
     data = {'@context': 'https://schema.org/', '@type': 'WebPage', 'name': d['title'], 'description': clip(d['summary'], 300),
             'url': url, 'inLanguage': 'en', 'license': LICENSE_URL, 'creator': CREATOR, 'publisher': PUBLISHER,
-            'mainEntity': work, 'isPartOf': {'@id': DATASET_ID},
+            'dateModified': record_modified(d), 'mainEntity': work, 'isPartOf': {'@id': DATASET_ID},
             'breadcrumb': breadcrumb(d['title'], f'share/{d["id"]}.html'),
             'about': {'@type': 'Thing', 'name': d['title']}, 'isBasedOn': d['source_url']}
     if d['paper_url']:
@@ -515,6 +521,8 @@ def write_discovery_pages(items, models, images, archived=False, related_items=N
         more = ('<a href="/">Browse the current catalog</a>.' if archived else
                 f'<a href="/#discovery={quote(d["id"])}">Open in the full catalog</a> for filters, charts and related discoveries.')
         lead = f'{esc(d["organization"])} &middot; {esc(nice_date(d["publication_date"]))} &middot; {esc(d["field"])}'
+        modified = record_modified(d)
+        lead += f' &middot; Entry updated <time datetime="{esc(modified)}">{esc(nice_date(modified))}</time>'
         if d['field'] in fields:
             more += f' <a href="profiles/field-{slug(d["field"])}.html">Browse {esc(d["field"])} discoveries</a>.'
         year = d['publication_date'][:4]
