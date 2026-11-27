@@ -35,6 +35,74 @@
         }
       }
     },
+    "/api/v1/latest.json": {
+      "get": {
+        "summary": "The 100 most recently added discoveries, compact rows",
+        "responses": {
+          "200": {
+            "description": "JSON document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/doi-index.json": {
+      "get": {
+        "summary": "Lower-case DOI to discovery ID",
+        "responses": {
+          "200": {
+            "description": "JSON document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/fields/{field}.json": {
+      "get": {
+        "summary": "Compact rows for one field; names are listed under slices in the API index",
+        "responses": {
+          "200": {
+            "description": "JSON document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/years/{year}.json": {
+      "get": {
+        "summary": "Compact rows for one publication year",
+        "responses": {
+          "200": {
+            "description": "JSON document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/data/discoveries.json": {
       "get": {
         "summary": "Every active discovery",

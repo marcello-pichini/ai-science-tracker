@@ -45,6 +45,22 @@ class GeneratedSeoTest(unittest.TestCase):
         heavy = [f'{p.relative_to(ROOT)} {p.stat().st_size}' for p in paths if p.stat().st_size > MAX_BYTES]
         self.assertEqual(heavy, [])
 
+    def test_agent_slices_cover_the_catalog_and_stay_small(self):
+        ids = {d['id'] for d in json.loads((ROOT / 'data/discoveries.json').read_text())}
+        api = ROOT / 'api/v1'
+        self.assertEqual(len(json.loads((api / 'latest.json').read_text())['discoveries']), min(100, len(ids)))
+        self.assertLessEqual(set(json.loads((api / 'doi-index.json').read_text())['dois'].values()), ids)
+        for kind in ('fields', 'years'):
+            rows = [r['id'] for p in (api / kind).glob('*.json') for r in json.loads(p.read_text())['discoveries']]
+            self.assertEqual(sorted(rows), sorted(ids), kind)
+            self.assertEqual([p.name for p in (api / kind).glob('*.json') if p.stat().st_size > 1_000_000], [], kind)
+
+    def test_shared_translation_bundle_carries_no_catalog_data(self):
+        for lang in LOCALES:
+            self.assertLess((ROOT / lang / 'runtime.js').stat().st_size, 400_000, lang)
+            self.assertNotIn('discoveries.js', (ROOT / lang / 'contact.html').read_text(encoding='utf-8'))
+            self.assertIn('discoveries.js?v=', (ROOT / lang / 'index.html').read_text(encoding='utf-8'))
+
     def test_translated_pages_load_the_shared_runtime(self):
         for lang in LOCALES:
             self.assertTrue((ROOT / lang / 'runtime.js').is_file(), lang)

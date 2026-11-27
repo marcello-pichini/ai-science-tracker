@@ -542,7 +542,7 @@ function filterQuery() {
   const q = new URLSearchParams();
   [["status", state.status], ["test", state.test], ["publication", state.publication], ["q", state.q], ["field", state.field], ["org", state.org], ["year", state.anno], ["family", state.family], ["min", state.min || ""], ["sort", state.ord === "desc" ? "" : state.ord]]
     .forEach(([k, v]) => { if (v) q.set(k, v); });
-  return q.size ? "?" + q : "";
+  const text = String(q); return text ? "?" + text : "";
 }
 /* Filters live in the query string (?q=&field=&org=&year=&family=&min=&sort=) so any view can be shared. */
 function readFilters(fields, orgs, years, families) {

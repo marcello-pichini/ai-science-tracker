@@ -17,7 +17,36 @@
     "vulnerabilities_list": "https://aisciencetracker.org/data/vulnerabilities.json",
     "vulnerability": "https://aisciencetracker.org/api/v1/vulnerabilities/{id}.json",
     "models_list": "https://aisciencetracker.org/data/models.json",
-    "model_progress": "https://aisciencetracker.org/data/model-progress.json"
+    "model_progress": "https://aisciencetracker.org/data/model-progress.json",
+    "latest_discoveries": "https://aisciencetracker.org/api/v1/latest.json",
+    "doi_index": "https://aisciencetracker.org/api/v1/doi-index.json",
+    "discoveries_by_field": "https://aisciencetracker.org/api/v1/fields/{field}.json",
+    "discoveries_by_year": "https://aisciencetracker.org/api/v1/years/{year}.json"
+  },
+  "slices": {
+    "fields": {
+      "astronomy": 92,
+      "biology": 867,
+      "chemistry": 244,
+      "climate": 120,
+      "computer-science": 371,
+      "humanities": 41,
+      "materials": 357,
+      "mathematics": 69,
+      "medicine": 2822,
+      "multidisciplinary": 125,
+      "other": 66,
+      "physics": 182
+    },
+    "years": {
+      "2020": 359,
+      "2021": 487,
+      "2022": 505,
+      "2023": 592,
+      "2024": 712,
+      "2025": 836,
+      "2026": 1865
+    }
   },
   "downloads": {
     "discoveries_csv": "https://aisciencetracker.org/data/discoveries.csv",

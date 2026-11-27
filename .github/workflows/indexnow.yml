@@ -7,6 +7,7 @@ on:
     branches: [main]
 permissions:
   contents: read
+  actions: read
 jobs:
   notify:
     if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event != 'pull_request' && github.event.workflow_run.head_repository.full_name == github.repository
@@ -16,6 +17,13 @@ jobs:
         with:
           # Trusted ref only: never check out code named by the triggering run.
           ref: main
-          fetch-depth: 2
-      # shortcut: compares only the last commit; a multi-commit push misses earlier ones, use the push range if that matters
-      - run: python3 scripts/indexnow.py HEAD~1 HEAD
+          fetch-depth: 200
+      # Diff from the previously deployed commit to the one this Check run deployed, so a
+      # multi-commit push or a newer main never drops pages. SHAs are only passed to git.
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          base="$(gh run list --workflow Check --branch main --status success --limit 20 --json headSha -q '[.[].headSha | select(. != env.HEAD_SHA)][0] // empty' || true)"
+          if [ -z "$base" ] || ! git merge-base --is-ancestor "$base" "$HEAD_SHA" 2>/dev/null; then base="$HEAD_SHA~1"; fi
+          python3 scripts/indexnow.py "$base" "$HEAD_SHA"

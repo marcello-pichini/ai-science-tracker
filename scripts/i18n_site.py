@@ -739,11 +739,17 @@ def mark_switcher(page_html: str, lang: str) -> str:
 RUNTIME_FILE = 'runtime.js'
 
 
-def runtime_script(lang: str, messages: dict, discoveries: dict) -> str:
+DISCOVERIES_FILE = 'discoveries.js'  # translated summaries: megabytes that only the catalog home reads
+
+
+def discoveries_script(discoveries: dict) -> str:
+    return 'globalThis.AST_DISCOVERIES=' + json.dumps(discoveries, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c') + ';\n'
+
+
+def runtime_script(lang: str, messages: dict) -> str:
     root = '' if lang == 'en' else '../'
     payload = {
         'AST_MESSAGES': messages,
-        'AST_DISCOVERIES': discoveries,
     }
     raw = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     intl = LOCALE_META[lang]['intl']
@@ -761,6 +767,10 @@ def runtime_tag(lang: str, page: str, body: str) -> str:
     # 404.html resolves against a site-root <base>.
     src = f'{lang}/{RUNTIME_FILE}' if page == '404.html' else RUNTIME_FILE
     return f'<script src="{src}?v={digest}"></script>'
+
+
+def discoveries_tag(body: str) -> str:
+    return f'<script src="{DISCOVERIES_FILE}?v={hashlib.sha256(body.encode("utf-8")).hexdigest()[:12]}"></script>'
 
 
 def refresh_embedded_detection(text: str, pages: tuple[str, ...]) -> str:
@@ -893,8 +903,10 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
         dossier_table = merged | {key: values[lang] for key, values in dossier_messages.items()}
         out_dir = root / lang
         out_dir.mkdir(parents=True, exist_ok=True)
-        runtime_body = runtime_script(lang, merged, discoveries)
+        runtime_body = runtime_script(lang, merged)
         (out_dir / RUNTIME_FILE).write_text(runtime_body, encoding='utf-8')
+        discoveries_body = discoveries_script(discoveries)
+        (out_dir / DISCOVERIES_FILE).write_text(discoveries_body, encoding='utf-8')
         for page in PAGES:
             source = root / page
             if not source.exists():
@@ -920,7 +932,7 @@ def write_locale_pages(root: Path | None = None, strict: bool = True) -> None:
             text = clean_home_links(text, home_href(lang))
             text = retarget_iamops(text, lang)
             if 'dossier' not in page:
-                injection = runtime_tag(lang, page, runtime_body)
+                injection = runtime_tag(lang, page, runtime_body) + (discoveries_tag(discoveries_body) if page == 'index.html' else '')
                 text = text.replace('</head>', injection + '\n</head>', 1)
             (out_dir / page).write_text(text, encoding='utf-8')
     if problems and strict:

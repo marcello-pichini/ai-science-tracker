@@ -15,6 +15,10 @@ from zipfile import BadZipFile, ZipFile
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ('index.html', 'models.html', 'model-progress.html', 'security.html',
          'dataset.html', 'methodology.html', 'profiles/index.html')
+# Checked when present in the snapshot: other templates, one locale home and the agent-facing files.
+EXTRA_PAGES = ('search.html', 'insights.html', 'guide.html', 'dossiers.html', 'it/index.html')
+EXTRA_FILES = ('robots.txt', 'sitemap.xml', 'feed.xml', 'llms.txt', 'api/v1/index.json', 'api/v1/latest.json')
+MCP_URL = 'https://mcp.aisciencetracker.org/mcp'
 DATA = ('discoveries.json', 'vulnerabilities.json', 'models.json',
         'model-progress.json', 'swe-bench.json')
 HF_FILES = ('discoveries.json', 'discoveries.csv', 'vulnerabilities.json', 'vulnerabilities.csv')
@@ -106,6 +110,21 @@ def check_page(expected, actual, url, final_url, status, headers):
     if re.search(r'\b(?:noindex|none)\b', directives):
         return 'fail', 'Published indexable page carries a noindex directive'
     return 'pass', 'HTTP response and indexable page identity match the deployed Git snapshot'
+
+
+def check_mcp(newest_id, url=MCP_URL):
+    """The MCP server answers and already serves the newest deployed discovery."""
+    body = json.dumps({'jsonrpc': '2.0', 'id': 1, 'method': 'tools/call',
+                       'params': {'name': 'get_discovery', 'arguments': {'id': newest_id}}}).encode()
+    request = Request(url, data=body, headers={'Content-Type': 'application/json', 'Accept': 'application/json, text/event-stream',
+                                               'User-Agent': 'ai-science-tracker-monitor'})
+    with urlopen(request, timeout=30) as response:
+        text = response.read(MAX_BYTES).decode('utf-8')
+    data = next((line[5:] for line in text.splitlines() if line.startswith('data:')), text)  # plain JSON or one SSE event
+    result = json.loads(data).get('result') or {}
+    if result.get('isError') or newest_id not in json.dumps(result):
+        return 'fail', f'MCP server does not return the newest deployed discovery {newest_id} (its cache lasts 10 minutes)'
+    return 'pass', 'MCP server returns the newest deployed discovery'
 
 
 def same_data(expected, actual, filename):
@@ -290,7 +309,7 @@ def check(root, site, hf, release=None, fetcher=fetch, deployment=None, now=None
     if deployment is not None:
         record('deployment/freshness', lambda: check_freshness(deployment, now))
 
-    paths = list(PAGES)
+    paths = [*PAGES, *(page for page in EXTRA_PAGES if (root / page).is_file())]
     discoveries = json.loads((root / 'data/discoveries.json').read_text())
     if discoveries:
         paths.append(f"share/{discoveries[-1]['id']}.html")
@@ -301,7 +320,12 @@ def check(root, site, hf, release=None, fetcher=fetch, deployment=None, now=None
         if cases:
             latest = max(cases, key=lambda row: (row['disclosure_date'], row['id']))
             paths.append(f"profiles/security-{latest['id']}.html")
-    for filename in ('robots.txt', 'sitemap.xml'):
+    if fetcher is fetch and discoveries and urlsplit(site).netloc == 'aisciencetracker.org':
+        # Entries added today may still be behind the server's 10-minute cache; an older one must be there.
+        today = dt.datetime.now(dt.timezone.utc).date().isoformat()
+        settled = [row for row in discoveries if row['added_date'] < today] or discoveries
+        record('mcp/newest-discovery', lambda: check_mcp(max(settled, key=lambda row: (row['added_date'], row['id']))['id']))
+    for filename in EXTRA_FILES:
         if (root / filename).is_file():
             record('site/' + filename, lambda name=filename: compare(root / name, urljoin(site, name)))
     for path in paths:

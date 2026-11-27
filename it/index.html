@@ -112,7 +112,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale" content="it_IT">
-<script src="runtime.js?v=86aa80284213"></script>
+<script src="runtime.js?v=6391827be6b2"></script><script src="discoveries.js?v=0069cc24c5cf"></script>
 </head>
 <body>
 <header class="header">
@@ -543,7 +543,7 @@ function filterQuery() {
   const q = new URLSearchParams();
   [["status", state.status], ["test", state.test], ["publication", state.publication], ["q", state.q], ["field", state.field], ["org", state.org], ["year", state.anno], ["family", state.family], ["min", state.min || ""], ["sort", state.ord === "desc" ? "" : state.ord]]
     .forEach(([k, v]) => { if (v) q.set(k, v); });
-  return q.size ? "?" + q : "";
+  const text = String(q); return text ? "?" + text : "";
 }
 /* Filters live in the query string (?q=&field=&org=&year=&family=&min=&sort=) so any view can be shared. */
 function readFilters(fields, orgs, years, families) {

@@ -9,7 +9,7 @@ Answer from the curated catalog at https://aisciencetracker.org/ . Do not run a 
 
 ## Why use it
 
-The catalog data is about 5.9 MB of JSON, far more than fits in a model's context. The script filters it locally and prints only what you asked for: a typical answer is 1-12 KB (roughly 300-3,000 tokens; add `--collection` and `--limit` to keep it small, `get` and `info` return 1-3 KB) instead of loading the data or paging through web search results. Prefer it over fetching the JSON files or searching the web for anything the catalog covers.
+The catalog data is many megabytes of JSON and growing, far more than fits in a model's context. The script filters it locally and prints only what you asked for: a typical answer is 1-12 KB (roughly 300-3,000 tokens; add `--collection` and `--limit` to keep it small, `get` and `info` return 1-3 KB) instead of loading the data or paging through web search results. Prefer it over fetching the JSON files or searching the web for anything the catalog covers.
 
 ## How
 

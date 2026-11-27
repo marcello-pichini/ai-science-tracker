@@ -34,9 +34,10 @@ globalThis.AST_t ||= (en, vars) => {
   async function load(ids, options = {}) {
     const root = new URL(options.root || defaultRoot);
     const fetcher = options.fetch || globalThis.fetch;
-    const request = async (url, init, read) => {
+    const request = async (url, init, read, bytes = 0) => {
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 12000);
+      // Large components get more time, so a slow connection finishes instead of failing twice.
+      const timeout = setTimeout(() => controller.abort(), 12000 + bytes / 100);
       try {return await read(await fetcher(url, {...init, signal:controller.signal}));}
       finally {clearTimeout(timeout);}
     };
@@ -69,7 +70,7 @@ globalThis.AST_t ||= (en, vars) => {
           const bytes = await request(url.href, {cache: attempt ? 'reload' : 'default'}, async response => {
             if (!response.ok) throw Error('Data component unavailable');
             return response.arrayBuffer();
-          });
+          }, component.bytes);
           const digest = hex(await cryptoAPI.subtle.digest('SHA-256', bytes));
           if (bytes.byteLength !== component.bytes || digest !== component.sha256) throw Error('Data snapshot mismatch');
           const value = JSON.parse(new TextDecoder('utf-8', {fatal:true}).decode(bytes));
@@ -145,6 +146,8 @@ globalThis.AST_t ||= (en, vars) => {
         status.append(message, retry, links);
       }
     };
+    // A speculative prerender must not download megabytes of data the reader may never open.
+    if (document.prerendering) return new Promise(done => document.addEventListener('prerenderingchange', () => done(start()), {once:true}));
     return start();
   }
   globalThis.CatalogData = {load, observe, run, validateManifest};

@@ -101,7 +101,7 @@ if (typeof document !== 'undefined') {
     if (!collections) return;
     const value = query.value.trim(), params = new URLSearchParams();
     if (value) params.set('q', value);
-    history.replaceState(null, '', location.pathname + (params.size ? '?' + params : ''));
+    history.replaceState(null, '', location.pathname + (String(params) ? '?' + params : ''));
     if (!CatalogSearch.normalize(value)) {
       output.replaceChildren();
       document.getElementById('search-status').textContent = tr('Enter a query to search.') + ' ' + collections.map(g => tr('{n} {title} available', {n: g.records.length, title: g.title.toLowerCase()})).join(' · ') + '.';

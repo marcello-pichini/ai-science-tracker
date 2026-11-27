@@ -19,18 +19,28 @@ Content is licensed CC BY 4.0 (attribute "AI Science Tracker" with a link); site
 - [Vuln discoveries](https://aisciencetracker.org/security.html): publicly disclosed vulnerabilities with documented AI involvement, kept separate from the scientific count
 - [Methodology](https://aisciencetracker.org/methodology.html): what is included, how entries are verified and scored
 
+## Browse without JavaScript
+- By field: [astronomy (92)](https://aisciencetracker.org/profiles/field-astronomy.html), [biology (867)](https://aisciencetracker.org/profiles/field-biology.html), [chemistry (244)](https://aisciencetracker.org/profiles/field-chemistry.html), [climate (120)](https://aisciencetracker.org/profiles/field-climate.html), [computer science (371)](https://aisciencetracker.org/profiles/field-computer-science.html), [humanities (41)](https://aisciencetracker.org/profiles/field-humanities.html), [materials (357)](https://aisciencetracker.org/profiles/field-materials.html), [mathematics (69)](https://aisciencetracker.org/profiles/field-mathematics.html), [medicine (2822)](https://aisciencetracker.org/profiles/field-medicine.html), [multidisciplinary (125)](https://aisciencetracker.org/profiles/field-multidisciplinary.html), [other (66)](https://aisciencetracker.org/profiles/field-other.html), [physics (182)](https://aisciencetracker.org/profiles/field-physics.html)
+- By year: [2026 (1865)](https://aisciencetracker.org/profiles/year-2026.html), [2025 (836)](https://aisciencetracker.org/profiles/year-2025.html), [2024 (712)](https://aisciencetracker.org/profiles/year-2024.html), [2023 (592)](https://aisciencetracker.org/profiles/year-2023.html), [2022 (505)](https://aisciencetracker.org/profiles/year-2022.html), [2021 (487)](https://aisciencetracker.org/profiles/year-2021.html), [2020 (359)](https://aisciencetracker.org/profiles/year-2020.html)
+
+## Small JSON for agents
+- [latest.json](https://aisciencetracker.org/api/v1/latest.json): the 100 most recently added entries
+- [doi-index.json](https://aisciencetracker.org/api/v1/doi-index.json): DOI to entry ID, to check whether a paper is in the catalog
+- One file per field at https://aisciencetracker.org/api/v1/fields/FIELD.json and per publication year at https://aisciencetracker.org/api/v1/years/YEAR.json (names in the API index)
+- One full record at https://aisciencetracker.org/api/v1/discoveries/ID.json
+
 ## Data
-- [discoveries.json](https://aisciencetracker.org/data/discoveries.json): active catalog entries (schema and counting unit: docs/discovery-schema.md in the repository)
+- [discoveries.json](https://aisciencetracker.org/data/discoveries.json): active catalog entries, several megabytes ([schema and counting unit](https://aisciencetracker.org/docs/discovery-schema.md), [JSON Schema](https://aisciencetracker.org/schema/discoveries.schema.json))
 - [models.json](https://aisciencetracker.org/data/models.json): model releases and families
 - [model-progress.json](https://aisciencetracker.org/data/model-progress.json): separate Epoch capability/benchmark source entries; may overlap releases
 - [Independent benchmark directory](https://aisciencetracker.org/data/benchmarks/index.json): 11 separately licensed numerical snapshots; source-specific selections and limits
-- [vulnerabilities.json](https://aisciencetracker.org/data/vulnerabilities.json): vulnerability cases
+- [vulnerabilities.json](https://aisciencetracker.org/data/vulnerabilities.json): vulnerability cases ([schema](https://aisciencetracker.org/docs/vulnerability-schema.md), [JSON Schema](https://aisciencetracker.org/schema/vulnerabilities.schema.json))
 - [sitemap.xml](https://aisciencetracker.org/sitemap.xml): every static page
 - [dataset.html](https://aisciencetracker.org/dataset.html): downloads (JSON, CSV), schemas and the read-only static API at https://aisciencetracker.org/api/v1/index.json
 - [contributors.html](https://aisciencetracker.org/contributors.html): maintainer, contributors and how to contribute
 - [feed.xml](https://aisciencetracker.org/feed.xml): Atom feed of discovery additions and vulnerability source checks
 - Each discovery has its own page at https://aisciencetracker.org/share/ID.html
-- [llms-full.txt](https://aisciencetracker.org/llms-full.txt): every entry as plain text (title, date, field, organization, summary, source)
+- [llms-full.txt](https://aisciencetracker.org/llms-full.txt): every entry as plain text (ID, title, dates, field, organization, evidence type, summary, source), several megabytes
 
 ## For agents
 - MCP server (Streamable HTTP, read-only, no token): https://mcp.aisciencetracker.org/mcp with tools search_discoveries, get_discovery, list_fields, search_vulnerabilities and get_vulnerability; Server Card at https://mcp.aisciencetracker.org/mcp/server-card, AI Catalog at https://aisciencetracker.org/.well-known/ai-catalog.json

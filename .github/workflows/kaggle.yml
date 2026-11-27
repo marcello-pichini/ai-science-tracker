@@ -16,7 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
-          fetch-depth: 0
+          # Enough history for the 25-hour change window without cloning the whole repository.
+          fetch-depth: 100
       - name: Upload a new version when the catalog changed
         run: |
           if [ -z "$KAGGLE_USERNAME" ] || [ -z "$KAGGLE_KEY" ]; then

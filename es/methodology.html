@@ -108,7 +108,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale" content="es_ES">
-<script src="runtime.js?v=ac58898b75fd"></script>
+<script src="runtime.js?v=e60372c61424"></script>
 </head>
 <body>
 <header class="header">
@@ -376,7 +376,7 @@ function coverageByFieldYear(entries) {
 }
 </script>
 <script>
-CatalogData.run(['discoveries'], loaded => {
+const loadCoverage = () => CatalogData.run(['discoveries'], loaded => {
   const status = document.getElementById('coverage-status');
   const tr = globalThis.AST_t || (s => s);
   status.textContent = tr('Loading catalog coverage…');
@@ -404,6 +404,10 @@ CatalogData.run(['discoveries'], loaded => {
     if (!entries.length) status.textContent = tr('The loaded catalog contains no active entries.');
     document.getElementById('coverage-tables').hidden = !entries.length;
 }, {clear:() => {document.getElementById('coverage-tables').hidden = true; ['coverage-years','coverage-sources','coverage-field-years'].forEach(id => document.getElementById(id).replaceChildren());}});
+// The tables sit far down the page: download the whole catalog only when a reader reaches them.
+new IntersectionObserver((seen, observer) => {
+  if (seen.some(entry => entry.isIntersecting)) { observer.disconnect(); loadCoverage(); }
+}, {rootMargin: '600px'}).observe(document.getElementById('coverage-status'));
 </script>
 </body>
 </html>

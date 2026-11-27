@@ -1004,6 +1004,9 @@ def write_llms_txt(items, models):
     fields = len({d['field'] for d in items})
     orgs = len({lead_org(d['organization']) for d in items if canonical_organization(d['organization'])['kind'] != 'unknown affiliation'})
     newest = max(d['added_date'] for d in items)
+    by_field, by_year = Counter(d['field'] for d in items), Counter(d['publication_date'][:4] for d in items)
+    field_links = ', '.join(f'[{f} ({n})]({BASE}profiles/field-{slug(f)}.html)' for f, n in sorted(by_field.items()))
+    year_links = ', '.join(f'[{y} ({n})]({BASE}profiles/year-{y}.html)' for y, n in sorted(by_year.items(), reverse=True))
     insights_line = f'- [Insights]({BASE}insights.html): the whole catalog in plain-language charts\n' if (ROOT / 'insights.html').is_file() else ''
     (ROOT / 'llms.txt').write_text(f'''# {SITE}
 
@@ -1025,18 +1028,28 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [Vuln discoveries]({BASE}security.html): publicly disclosed vulnerabilities with documented AI involvement, kept separate from the scientific count
 - [Methodology]({BASE}methodology.html): what is included, how entries are verified and scored
 
+## Browse without JavaScript
+- By field: {field_links}
+- By year: {year_links}
+
+## Small JSON for agents
+- [latest.json]({BASE}api/v1/latest.json): the 100 most recently added entries
+- [doi-index.json]({BASE}api/v1/doi-index.json): DOI to entry ID, to check whether a paper is in the catalog
+- One file per field at {BASE}api/v1/fields/FIELD.json and per publication year at {BASE}api/v1/years/YEAR.json (names in the API index)
+- One full record at {BASE}api/v1/discoveries/ID.json
+
 ## Data
-- [discoveries.json]({BASE}data/discoveries.json): active catalog entries (schema and counting unit: docs/discovery-schema.md in the repository)
+- [discoveries.json]({BASE}data/discoveries.json): active catalog entries, several megabytes ([schema and counting unit]({BASE}docs/discovery-schema.md), [JSON Schema]({BASE}schema/discoveries.schema.json))
 - [models.json]({BASE}data/models.json): model releases and families
 - [model-progress.json]({BASE}data/model-progress.json): separate Epoch capability/benchmark source entries; may overlap releases
 - [Independent benchmark directory]({BASE}data/benchmarks/index.json): 11 separately licensed numerical snapshots; source-specific selections and limits
-- [vulnerabilities.json]({BASE}data/vulnerabilities.json): vulnerability cases
+- [vulnerabilities.json]({BASE}data/vulnerabilities.json): vulnerability cases ([schema]({BASE}docs/vulnerability-schema.md), [JSON Schema]({BASE}schema/vulnerabilities.schema.json))
 - [sitemap.xml]({BASE}sitemap.xml): every static page
 - [dataset.html]({BASE}dataset.html): downloads (JSON, CSV), schemas and the read-only static API at {BASE}api/v1/index.json
 - [contributors.html]({BASE}contributors.html): maintainer, contributors and how to contribute
 - [feed.xml]({BASE}feed.xml): Atom feed of discovery additions and vulnerability source checks
 - Each discovery has its own page at {BASE}share/ID.html
-- [llms-full.txt]({BASE}llms-full.txt): every entry as plain text (title, date, field, organization, summary, source)
+- [llms-full.txt]({BASE}llms-full.txt): every entry as plain text (ID, title, dates, field, organization, evidence type, summary, source), several megabytes
 
 ## For agents
 - MCP server (Streamable HTTP, read-only, no token): https://mcp.aisciencetracker.org/mcp with tools search_discoveries, get_discovery, list_fields, search_vulnerabilities and get_vulnerability; Server Card at https://mcp.aisciencetracker.org/mcp/server-card, AI Catalog at {BASE}.well-known/ai-catalog.json
@@ -1051,10 +1064,15 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
     (ROOT / '.well-known').mkdir(exist_ok=True)
     (ROOT / '.well-known/ai-catalog.json').write_text(json.dumps({'specVersion': '1.0', 'entries': [{
         'identifier': 'urn:air:aisciencetracker.org:mcp:ai-science-tracker', 'type': 'application/mcp-server-card+json',
-        'url': 'https://mcp.aisciencetracker.org/mcp/server-card'}]}, indent=2) + '\n')
+        'url': 'https://mcp.aisciencetracker.org/mcp/server-card'}, {
+        'identifier': 'urn:air:aisciencetracker.org:openapi:static-api', 'type': 'application/vnd.oai.openapi+json',
+        'url': BASE + 'api/v1/openapi.json'}, {
+        'identifier': 'urn:air:aisciencetracker.org:llms-txt', 'type': 'text/markdown', 'url': BASE + 'llms.txt'}]}, indent=2) + '\n')
     entries = ''.join(
         f"\n## {d['title'].strip()}\n{d['publication_date']} · {d['field']} · {d['organization'].strip()}\n"
-        f"Page: {BASE}share/{quote(d['id'])}.html\nSource: {d['source_url']}\n\n{d['summary'].strip()}\n"
+        f"ID: {d['id']} · Added: {d['added_date']}" + (f" · Evidence: {(d.get('evidence') or {}).get('test_type')}" if (d.get('evidence') or {}).get('test_type') else '') + "\n"
+        f"Page: {BASE}share/{quote(d['id'])}.html\nSource: {d['source_url']}\n"
+        + (f"Paper: {d['paper_url']}\n" if d['paper_url'] and d['paper_url'] != d['source_url'] else '') + f"\n{d['summary'].strip()}\n"
         for d in sorted(items, key=lambda d: (d['publication_date'], d['id']), reverse=True))
     (ROOT / 'llms-full.txt').write_text(
         f'# {SITE}: full catalog\n\n> All {len(items)} active entries, newest first. Figures are reported by the sources '
@@ -1116,7 +1134,7 @@ def write_sitemap(items, models, archived=(), vulns=()):
         if url in SITEMAP_PAGES:
             targets += [public_url(url, code) for code in LOCALES]
         for loc in targets:
-            if loc in seen or loc.endswith('/index.html'):
+            if loc in seen or (loc.endswith('/index.html') and url != 'profiles/index.html'):  # the directory hub's canonical keeps index.html
                 continue
             seen.add(loc)
             rows.append(f'<url><loc>{esc(loc)}</loc>{lastmod}{block}</url>\n')
@@ -1195,6 +1213,7 @@ def write_api(items, vulns, models=None, archived=(), manifest=None):
             if old.name not in current:
                 old.unlink()
     api = BASE + 'api/v1/'
+    slices = write_api_slices(items)
     index = {
         'name': SITE, 'api_version': 'v1', 'license': 'CC BY 4.0 (catalog content); Epoch AI model data keeps its own CC BY 4.0 attribution',
         'license_url': 'https://creativecommons.org/licenses/by/4.0/', 'cite': 'https://doi.org/10.5281/zenodo.24217686',
@@ -1205,7 +1224,10 @@ def write_api(items, vulns, models=None, archived=(), manifest=None):
         'endpoints': {
             'discoveries_list': BASE + 'data/discoveries.json', 'discovery': api + 'discoveries/{id}.json',
             'vulnerabilities_list': BASE + 'data/vulnerabilities.json', 'vulnerability': api + 'vulnerabilities/{id}.json',
-            'models_list': BASE + 'data/models.json', 'model_progress': BASE + 'data/model-progress.json'},
+            'models_list': BASE + 'data/models.json', 'model_progress': BASE + 'data/model-progress.json',
+            'latest_discoveries': api + 'latest.json', 'doi_index': api + 'doi-index.json',
+            'discoveries_by_field': api + 'fields/{field}.json', 'discoveries_by_year': api + 'years/{year}.json'},
+        'slices': slices,
         'downloads': {'discoveries_csv': BASE + 'data/discoveries.csv', 'vulnerabilities_csv': BASE + 'data/vulnerabilities.csv'},
         'schemas': {'discoveries': BASE + 'schema/discoveries.schema.json', 'vulnerabilities': BASE + 'schema/vulnerabilities.schema.json'},
         'documentation': BASE + 'dataset.html', 'openapi': api + 'openapi.json'}
@@ -1215,6 +1237,46 @@ def write_api(items, vulns, models=None, archived=(), manifest=None):
         index['snapshot_sha256'] = manifest['snapshot_sha256']
     (ROOT / 'api/v1/index.json').write_text(json.dumps(index, indent=2) + '\n')
 
+
+
+def write_api_slices(items):
+    """Small JSON files for agents that cannot take the multi-megabyte list: latest, by field, by year, DOI lookup."""
+    def row(d, full=False):
+        # Field and year lists stay small: the page and full record are reached from the ID.
+        short = {'id': d['id'], 'title': d['title'], 'publication_date': d['publication_date'], 'added_date': d['added_date']}
+        return short | {'field': d['field'], 'organization': d['organization'], 'source_url': d['source_url']} if full else short
+
+    def write(path, rows, about):
+        (ROOT / 'api/v1' / path).write_text(json.dumps(
+            {'about': about, 'license': LICENSE_URL, 'page': BASE + 'share/{id}.html', 'record': BASE + 'api/v1/discoveries/{id}.json',
+             'count': len(rows), 'discoveries': rows}, ensure_ascii=False, separators=(',', ':')) + '\n')
+
+    newest = sorted(items, key=lambda d: (d['publication_date'], d['id']), reverse=True)
+    latest = sorted(items, key=lambda d: (d['added_date'], d['publication_date'], d['id']), reverse=True)[:100]
+    write('latest.json', [row(d, True) for d in latest], 'The 100 most recently added entries, newest addition first.')
+    listed = {}
+    for kind, key in (('fields', lambda d: slug(d['field'])), ('years', lambda d: d['publication_date'][:4])):
+        out = ROOT / 'api/v1' / kind
+        out.mkdir(parents=True, exist_ok=True)
+        groups = {}
+        for d in newest:
+            groups.setdefault(key(d), []).append(row(d))
+        for name, rows in groups.items():
+            write(f'{kind}/{name}.json', rows, f'Entries for {kind[:-1]} {name}, newest publication first.')
+        for old in out.glob('*.json'):
+            if old.stem not in groups:
+                old.unlink()
+        listed[kind] = {name: len(rows) for name, rows in sorted(groups.items())}
+    dois = {}
+    for d in newest:  # Newest first, so setdefault keeps the newest entry when two share a DOI.
+        for url in (d['paper_url'], d['source_url']):
+            found = re.search(r'doi\.org/(10\.\d{4,9}/[^\s?#]+)', url or '', re.I)
+            if found:
+                dois.setdefault(found.group(1).lower(), d['id'])
+    (ROOT / 'api/v1/doi-index.json').write_text(json.dumps(
+        {'about': 'Lower-case DOI to entry ID, from each entry\'s source and paper links. An absent DOI is not proof that a paper is absent.',
+         'count': len(dois), 'dois': dict(sorted(dois.items()))}, separators=(',', ':')) + '\n')
+    return listed
 
 
 def write_openapi(discoveries, vulnerabilities):
@@ -1237,6 +1299,10 @@ def write_openapi(discoveries, vulnerabilities):
         'externalDocs': {'url': BASE + 'dataset.html'},
         'paths': {
             '/api/v1/index.json': get('API index with counts, endpoints and checksums', {'type': 'object'}),
+            '/api/v1/latest.json': get('The 100 most recently added discoveries, compact rows', {'type': 'object'}),
+            '/api/v1/doi-index.json': get('Lower-case DOI to discovery ID', {'type': 'object'}),
+            '/api/v1/fields/{field}.json': get('Compact rows for one field; names are listed under slices in the API index', {'type': 'object'}),
+            '/api/v1/years/{year}.json': get('Compact rows for one publication year', {'type': 'object'}),
             '/data/discoveries.json': get('Every active discovery', {'$ref': f'{BASE}schema/discoveries.schema.json'}),
             '/api/v1/discoveries/{id}.json': get('One discovery', {'$ref': f'{BASE}schema/discoveries.schema.json#/items'}, True),
             '/data/vulnerabilities.json': get('Every AI-found vulnerability case', {'$ref': f'{BASE}schema/vulnerabilities.schema.json'}),
