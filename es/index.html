@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-page-snapshot="2661bcad2b06caaaaea52f601ca59cbc916ed76c3dbe865bf6b51ef5f9b3086a">
+<html lang="es" data-page-snapshot="93be88b5ec795cf93f924f9466fe5df61ddb9009545ff1ce254954fd8db6bd29">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -112,7 +112,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale" content="es_ES">
-<script src="runtime.js?v=e60372c61424"></script><script src="discoveries.js?v=73b7b660b4ff"></script>
+<script src="runtime.js?v=684840ce3d63"></script><script src="discoveries.js?v=9b567c90524f"></script>
 </head>
 <body>
 <header class="header">
@@ -314,9 +314,9 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
   </div>
 </footer>
 
-<script src="../assets/catalog-data.js?v=ed2b5a92d5fa"></script>
+<script src="../assets/catalog-data.js?v=a735288ec4d2"></script>
 <script src="../assets/catalog-entities.js?v=0c51c8fa4441"></script>
-<script src="../assets/catalog-ui.js?v=d956be922b2c"></script>
+<script src="../assets/catalog-ui.js?v=d8f7d3caf780"></script>
 <script src="../assets/webmcp.js?v=58763ccfbfc3" defer></script>
 <script>
 // Object.groupBy is missing before Safari 17.4 and Chrome 117.
@@ -335,6 +335,38 @@ let ancora = fragment.startsWith("discovery=") ? fragment.slice(10) : fragment.s
 // Semicolons separate organizations; commas and conjunctions can belong to an institution name.
 const orgDi = s => CatalogEntities.organization(s.organization).label;
 let archiveData = [], catalogGeneration = 0;
+// The list component (data/discoveries-list.json) omits evidence prose; an entry near the viewport fetches its full record.
+let slim = false, listSnapshot = "", fullRecords = new Map(), fullCatalog = null;
+// Downloads and print need every record's evidence: load the full component once, from the list's validated snapshot.
+function loadFull() {
+  const generation = catalogGeneration;
+  fullCatalog ||= CatalogData.load(["discoveries"]).then(loaded => {
+    if (loaded.snapshot !== listSnapshot) throw Error("Data snapshot changed during loading");
+    const byId = new Map(loaded.data.discoveries.map(r => [r.id, r]));
+    if (generation === catalogGeneration) items.forEach(s => { if (byId.has(s.id)) fullRecords.set(s.id, {...byId.get(s.id), citation:s.citation}); });
+    return byId;
+  });
+  fullCatalog.catch(() => { if (generation === catalogGeneration) fullCatalog = null; }); // A later request retries.
+  return fullCatalog;
+}
+const nearView = globalThis.IntersectionObserver && new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) { nearView.unobserve(e.target); hydrate(e.target); }
+}), { rootMargin:"600px 0px" });
+async function hydrate(node) {
+  const s = items.find(x => x.id === node.dataset.id), generation = catalogGeneration;
+  if (!s) return;
+  if (!fullRecords.has(s.id)) try {
+    const record = await CatalogData.record("../api/v1/discoveries/" + encodeURIComponent(s.id) + ".json", s.record_sha256);
+    if (generation !== catalogGeneration || record.id !== s.id) return;
+    fullRecords.set(s.id, {...record, citation:s.citation});
+  } catch { return; } // The placeholder keeps its link to the entry page.
+  if (node.isConnected) node.outerHTML = CatalogUI.sourceDetails(fullRecords.get(s.id));
+}
+const observeDetails = () => { if (nearView) { nearView.disconnect(); $("lista").querySelectorAll(".voce-detail").forEach(n => nearView.observe(n)); } };
+const details = s => {
+  const full = slim ? fullRecords.get(s.id) : s;
+  return full ? CatalogUI.sourceDetails(full) : `<div class="voce-detail" data-id="${esc(s.id)}">${CatalogUI.evidenceSummary(s)}<p class="evidence-strip"><a href="../share/${encodeURIComponent(s.id)}.html">${tr("AI contribution, test and limitation: open the entry page")}</a></p></div>`;
+};
 // Relevance 20–100, capped by the evidence level; see CatalogUI.score and methodology.html.
 const punteggio = s => CatalogUI.score(s);
 const media = arr => Math.round(arr.reduce((a, s) => a + punteggio(s), 0) / arr.length);
@@ -531,7 +563,7 @@ function voce(s) {
       <span class="etich">${esc(tr(s.field))}</span>
       <span class="collegamenti">${CatalogUI.sourceLinks(s)}<button class="copia" type="button" data-id="${esc(s.id)}">${tr("Copy link")}</button> <button class="copia riferimento" type="button" data-id="${esc(s.id)}">${tr("Copy reference")}</button> <a class="correction-link" href="${esc(CatalogUI.correctionUrl(s))}" rel="noopener">${tr("Suggest a correction")}</a></span>
     </div>
-    ${CatalogUI.sourceDetails(s)}
+    ${details(s)}
   </article>`;
 }
 
@@ -593,11 +625,13 @@ function lista() {
   } else if (!printState) history.replaceState(null, "", location.pathname + filterQuery());
   document.querySelectorAll("[data-k]").forEach(b => b.setAttribute("aria-pressed", state[b.dataset.k] === b.dataset.v));
   spAggiorna();
+  if (!printState) observeDetails();
 }
 
-CatalogData.run(['discoveries', 'models', 'citations', 'archived-discoveries', 'entity-aliases'], loaded => {
+CatalogData.run(['discoveries-list', 'models', 'citations', 'archived-discoveries', 'entity-aliases'], loaded => {
   CatalogEntities.configure(loaded.data['entity-aliases']);
-  const dati = loaded.data.discoveries, modelli = loaded.data.models, citazioni = loaded.data.citations;
+  slim = true; listSnapshot = loaded.snapshot;
+  const dati = loaded.data['discoveries-list'], modelli = loaded.data.models, citazioni = loaded.data.citations;
   archiveData = loaded.data['archived-discoveries'];
   dati.forEach(s => { const cited = citazioni?.records?.[s.id]; s.citation = cited ? {...cited, checked:citazioni.checked} : undefined; });
   items = dati.sort((a, b) => b.publication_date.localeCompare(a.publication_date));
@@ -619,7 +653,7 @@ CatalogData.run(['discoveries', 'models', 'citations', 'archived-discoveries', '
   if (!state.field) { if (perAmb.some(([v]) => v === h)) state.field = h; else if (legacy[h] && perAmb.some(([v]) => v === legacy[h])) state.field = legacy[h]; }
   const id = ancora; lista(); if (id) openFragment(id); featured();
 }, {controls:'main select, main button, #dl-json, #dl-csv', clear:() => {
-  catalogGeneration++; items = []; famDi = {}; famIds = {}; archiveData = [];
+  catalogGeneration++; items = []; famDi = {}; famIds = {}; archiveData = []; fullRecords = new Map(); fullCatalog = null; nearView?.disconnect();
   sp = []; spSvg = null; primaVolta = true; limite = PAGE; chiaveLista = ''; printState = null;
   CatalogEntities.configure({organizations:[], systems:[]});
   nascondiTip(); tip.replaceChildren();
@@ -650,10 +684,19 @@ CatalogUI.beforePrint = () => {
   printState = { limit:limite, nodes:[...$("lista").childNodes], count:$("conta").textContent };
   limite = Infinity; lista();
 };
+// The keyboard shortcut waits for the full evidence, then prints; if loading fails it prints what is there.
+// A print started from the browser menu cannot wait: it prints the loaded entries and starts the load for the next print.
+let printLoading = false;
+addEventListener("keydown", e => {
+  if (!slim || printLoading || !(e.ctrlKey || e.metaKey) || e.altKey || e.key.toLowerCase() !== "p" || items.every(s => fullRecords.has(s.id))) return;
+  e.preventDefault(); printLoading = true;
+  loadFull().catch(() => {}).finally(() => { printLoading = false; print(); });
+}, true);
+addEventListener("beforeprint", () => { if (slim) loadFull().catch(() => {}); });
 CatalogUI.afterPrint = () => {
   if (!printState) return;
   limite = printState.limit; $("lista").replaceChildren(...printState.nodes); $("conta").textContent = printState.count;
-  printState = null;
+  printState = null; observeDetails();
 };
 $("lista").addEventListener("click", e => {
   if (e.target.id === "altre") { const prima = limite; limite += PAGE; lista(); CatalogUI.focusEntry(document.querySelectorAll(".voce")[prima], {block:"start"}); return; }
@@ -693,8 +736,16 @@ function selezione() {
   if (state.ord === "relevance") return out.sort((a, b) => punteggio(b) - punteggio(a) || b.publication_date.localeCompare(a.publication_date));
   return out;
 }
-$("dl-json").addEventListener("click", () => scarica("ai-science-tracker-selection.json", "application/json", JSON.stringify(selezione().map(({citation, ...record}) => record), null, 2) + "\n"));
-$("dl-csv").addEventListener("click", () => scarica("ai-science-tracker-selection.csv", "text/csv;charset=utf-8", CatalogUI.toCsv(selezione())));
+// Exports need the evidence prose the list omits, so they read the full component from the same validated snapshot.
+function withFullSelection(button, done) {
+  const rows = selezione();
+  if (!slim) return done(rows);
+  button.disabled = true;
+  loadFull().then(byId => done(rows.map(s => byId.get(s.id)))).catch(() => alert(tr("A consistent data snapshot could not be loaded. ") + tr("Your query is preserved; retry or use the static pages and downloads.")))
+    .finally(() => { button.disabled = false; });
+}
+$("dl-json").addEventListener("click", () => withFullSelection($("dl-json"), rows => scarica("ai-science-tracker-selection.json", "application/json", JSON.stringify(rows.map(({citation, ...record}) => record), null, 2) + "\n")));
+$("dl-csv").addEventListener("click", () => withFullSelection($("dl-csv"), rows => scarica("ai-science-tracker-selection.csv", "text/csv;charset=utf-8", CatalogUI.toCsv(rows))));
 $("copy-filters").addEventListener("click", e => {
   const b = e.currentTarget, done = () => { b.textContent = tr("Link copied"); setTimeout(() => { b.textContent = tr("Copy filter link"); }, 1500); };
   (navigator.clipboard ? navigator.clipboard.writeText(location.href) : Promise.reject()).then(done, () => prompt(tr("Copy this link:"), location.href));

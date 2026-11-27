@@ -115,7 +115,8 @@ class GeneratedSeoTest(unittest.TestCase):
 
     def test_discovery_summaries_carry_no_reviewer_vocabulary(self):
         # Summaries become meta descriptions, og:description and JSON-LD abstracts; review jargon must stay internal.
-        jargon = re.compile(r'\badmit(?:s|ted)?\b|\badmission\b|\bPrimary (?:Methods|Results)\b', re.I)
+        # Case-sensitive: lower-case "admission" and "admitted" are ordinary hospital vocabulary.
+        jargon = re.compile(r'\bAdmit(?:s|ted)?\b|\bAdmission (?:concerns|is)\b|\b[Tt]he admission is\b|\b[Pp]rimary (?:Methods|Results)\b(?! table)')
         records = json.loads((ROOT / 'data/discoveries.json').read_text(encoding='utf-8'))
         self.assertEqual([r['id'] for r in records if jargon.search(r['summary'])], [])
 

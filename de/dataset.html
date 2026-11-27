@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de" data-page-snapshot="2661bcad2b06caaaaea52f601ca59cbc916ed76c3dbe865bf6b51ef5f9b3086a">
+<html lang="de" data-page-snapshot="93be88b5ec795cf93f924f9466fe5df61ddb9009545ff1ce254954fd8db6bd29">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,7 +97,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <link rel="preload" href="../assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../styles.css?v=bccf1265dee8"><link rel="stylesheet" href="../assets/i18n.css?v=7381bc1b8ccc">
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker discovery catalog","description":"Source-linked AI scientific discovery records, with evidence, dates and editorial review context.","url":"https://aisciencetracker.org/dataset.html#scientific-dataset","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini","sameAs":["https://orcid.org/0009-0007-4958-371X"]},"publisher":{"@id":"https://aisciencetracker.org/#organization"},"identifier":"https://doi.org/10.5281/zenodo.24217686","sameAs":["https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"],"temporalCoverage":"2020/..","isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","keywords":["artificial intelligence","scientific discovery","AI for science"],"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://aisciencetracker.org/data/discoveries.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://aisciencetracker.org/data/discoveries.csv"}],"@id":"https://aisciencetracker.org/dataset.html#scientific-dataset"}
+{"@context":"https://schema.org/","@type":"Dataset","name":"AI Science Tracker discovery catalog","description":"Source-linked AI scientific discovery records, with evidence, dates and editorial review context.","url":"https://aisciencetracker.org/dataset.html#scientific-dataset","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini","sameAs":["https://orcid.org/0009-0007-4958-371X"]},"publisher":{"@id":"https://aisciencetracker.org/#organization"},"identifier":"https://doi.org/10.5281/zenodo.24217686","sameAs":["https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker","https://www.kaggle.com/datasets/marcellopichini/ai-science-tracker-ai-enabled-discoveries"],"temporalCoverage":"2020/..","isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","keywords":["artificial intelligence","scientific discovery","AI for science"],"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://aisciencetracker.org/data/discoveries.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://aisciencetracker.org/data/discoveries.csv"}],"@id":"https://aisciencetracker.org/dataset.html#scientific-dataset","version":"2026-11-27","dateModified":"2026-11-27"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org/","@type":"Dataset","@id":"https://aisciencetracker.org/dataset.html#security-dataset","name":"AI Science Tracker AI-found vulnerability catalog","description":"Selected publicly disclosed vulnerability cases with source-attributed AI involvement, CVE identifiers, reported severity and remediation caveats. Separate from scientific-discovery counts.","url":"https://aisciencetracker.org/dataset.html#security-dataset","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini","sameAs":["https://orcid.org/0009-0007-4958-371X"]},"publisher":{"@id":"https://aisciencetracker.org/#organization"},"license":"https://creativecommons.org/licenses/by/4.0/","isAccessibleForFree":true,"keywords":["vulnerabilities found by AI","AI attribution","CVE","remediation evidence"],"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://aisciencetracker.org/data/vulnerabilities.json"},{"@type":"DataDownload","encodingFormat":"text/csv","contentUrl":"https://aisciencetracker.org/data/vulnerabilities.csv"}]}
@@ -117,7 +117,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale" content="de_DE">
-<script src="runtime.js?v=903c74d58e83"></script>
+<script src="runtime.js?v=0a2b91345636"></script>
 </head>
 <body>
 <header class="header">
@@ -240,7 +240,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
 
       <h2 id="security-dataset">Datensatz der mit KI gefundenen Schwachstellen</h2>
       <p>Die Sicherheitssammlung erfasst öffentlich offengelegte Befunde mit von den Quellen zugeschriebener KI-Beteiligung. <a href="../profiles/security-index.html">Lesen Sie einzelne Fälle und ihre Originalevidenz ohne JavaScript</a> oder nutzen Sie die JSON- und CSV-Downloads oben. Sie verfolgt mit KI gefundene Schwachstellen, nicht eine Zählung von Schwachstellen in KI-Software. Fälle, CVEs und Quellenberichte haben verschiedene Zähleinheiten; dokumentierte Behebungen belegen keine installierten Patches und keine aktuelle Produktsicherheit.</p>
-      <p>Der <a href="https://huggingface.co/datasets/marcello-pichini/ai-science-tracker">Datensatz auf Hugging Face</a> spiegelt die veröffentlichten JSON- und CSV-Dateien zu Wissenschaft und Sicherheit. <a href="https://doi.org/10.5281/zenodo.24217686">Zenodo</a> archiviert höchstens eine GitHub-Version pro UTC-Tag. Seine Dateien können daher älter sein als die der Website und des Spiegels. Zitieren Sie die Versions-DOI der verwendeten ZIP-Datei und erfassen Sie deren <code>snapshot_sha256</code> aus <code>api/v1/manifest.json</code>. Prüfen Sie vor der Wiederverwendung die Lizenzen der ZIP-Komponenten, darunter die gesonderten Bedingungen für SWE-bench Verified und CharXiv.</p>
+      <p>Der <a href="https://huggingface.co/datasets/marcello-pichini/ai-science-tracker">Datensatz auf Hugging Face</a> spiegelt die veröffentlichten JSON- und CSV-Dateien zu Wissenschaft und Sicherheit. Eine <a href="https://www.kaggle.com/datasets/marcellopichini/ai-science-tracker-ai-enabled-discoveries">Kopie auf Kaggle</a> des Entdeckungskatalogs ist ebenfalls verfügbar. <a href="https://doi.org/10.5281/zenodo.24217686">Zenodo</a> archiviert höchstens eine GitHub-Version pro UTC-Tag. Seine Dateien können daher älter sein als die der Website und des Spiegels. Zitieren Sie die Versions-DOI der verwendeten ZIP-Datei und erfassen Sie deren <code>snapshot_sha256</code> aus <code>api/v1/manifest.json</code>. Prüfen Sie vor der Wiederverwendung die Lizenzen der ZIP-Komponenten, darunter die gesonderten Bedingungen für SWE-bench Verified und CharXiv.</p>
 
       <h2>Statische API</h2>
       <p>Es gibt keinen Server: die API ist eine Menge statischer JSON-Dateien, die mit der Website neu erzeugt werden, daher cached GitHub Pages Antworten etwa zehn Minuten und erlaubt Lesen über Ursprungsgrenzen. Gefiltert wird im Client.</p>
@@ -284,7 +284,7 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
     <p>Datenschutz: Diese Website setzt keine Cookies. Eine Sprachwahl wird nur in diesem Browser gespeichert und nicht an einen Server gesendet. Die Website nutzt Cloudflare Web Analytics für zusammengefasste Besuchsstatistiken (Seite, Referrer, Browser, IP-Adresse) auf Grundlage berechtigten Interesses (DSGVO Art. 6(1)(f)). Cloudflare handelt als Auftragsverarbeiter und kann Daten in den Vereinigten Staaten im Rahmen des EU-US Data Privacy Framework verarbeiten. Um zu widersprechen oder Ihre Rechte auszuüben, <a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new">öffnen Sie ein Issue</a>.</p>
   </div>
 </footer>
-<script src="../assets/catalog-data.js?v=ed2b5a92d5fa"></script>
+<script src="../assets/catalog-data.js?v=a735288ec4d2"></script>
 <script src="../assets/dataset.js?v=3d61a9603a85"></script>
 </body>
 </html>

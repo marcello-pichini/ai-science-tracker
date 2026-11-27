@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "scope": "Current public collection files; snapshot identity is not a review or publication timestamp.",
-  "snapshot_sha256": "2661bcad2b06caaaaea52f601ca59cbc916ed76c3dbe865bf6b51ef5f9b3086a",
+  "snapshot_sha256": "93be88b5ec795cf93f924f9466fe5df61ddb9009545ff1ce254954fd8db6bd29",
   "components": {
     "discoveries": {
       "path": "data/discoveries.json",
       "label": "Scientific discoveries",
-      "sha256": "0d56e76c69a0c7bd71763f2b38b2fb024080394bc31cb8760debbcaf5edc04d7",
-      "bytes": 11754481,
+      "sha256": "0ea29087f2df696244d17841d43f65b2b85e3dd580cd8ca4bff36cc0dca7e974",
+      "bytes": 11713189,
       "count": 5356,
       "unit": "active scientific catalog entries",
       "dates": {
@@ -212,11 +212,37 @@
       "catalog_doi": null,
       "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license."
     },
+    "discoveries-list": {
+      "path": "data/discoveries-list.json",
+      "label": "Scientific discoveries, list view",
+      "sha256": "4fe91ba9dd95f18cb9836abfc53c35363210a21ccfb4940239d6465a22facaed",
+      "bytes": 7342081,
+      "count": 5356,
+      "unit": "active scientific catalog entries",
+      "dates": {
+        "publication_dates": {
+          "first": "2020-01-01",
+          "last": "2026-11-25"
+        },
+        "addition_dates": {
+          "first": "2026-11-11",
+          "last": "2026-11-27"
+        }
+      },
+      "source_urls": [
+        "https://aisciencetracker.org/methodology.html"
+      ],
+      "license": "CC BY 4.0",
+      "coverage": "Same entries as the scientific discoveries component without the evidence prose fields ai_role, tested, unknown, evidence_urls; record_sha256 is the first 16 hex digits of the SHA-256 of api/v1/discoveries/ID.json.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
+      "catalog_doi": "https://doi.org/10.5281/zenodo.24217686",
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license."
+    },
     "discoveries-csv": {
       "path": "data/discoveries.csv",
       "label": "Scientific discoveries",
-      "sha256": "a1adac912938dc53e84baafe304847883286d0e936341c5b2aab380501720761",
-      "bytes": 9538190,
+      "sha256": "6267d6c321c6914ac466858288e7c6c2a6f4b48162778067ed1e930a70d31337",
+      "bytes": 9496922,
       "count": 5356,
       "unit": "active scientific catalog entries",
       "dates": {
