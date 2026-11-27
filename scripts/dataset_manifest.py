@@ -161,6 +161,7 @@ def write_component_jsonld(root, manifest):
             # The upstream benchmark authors created the data; this site only selects and republishes it.
             'creator': {'@type': 'Organization', 'name': component['attribution'],
                         **({'url': component['source_urls'][0]} if component.get('source_urls') else {})},
+            'publisher': {'@type': 'Organization', 'name': 'AI Science Tracker', 'url': 'https://aisciencetracker.org/'},
             'distribution': {'@type': 'DataDownload', 'encodingFormat': 'application/json', 'contentUrl': 'https://aisciencetracker.org/' + component['path']}})
     block = '<script id="component-datasets" type="application/ld+json">\n' + json.dumps({'@context': 'https://schema.org/', '@graph': datasets}, ensure_ascii=False).replace('<', '\\u003c') + '\n</script>'
     page = path.read_text(encoding='utf-8')
