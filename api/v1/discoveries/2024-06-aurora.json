@@ -1,7 +1,7 @@
 {
   "id": "2024-06-aurora",
   "title": "Aurora: a foundation model for the atmosphere",
-  "summary": "A 1.3-billion-parameter model for high-resolution weather and air-pollution forecasting: it matches or exceeds CAMS on 74% of targets and matches or beats GraphCast on 94%. The roughly 5,000-fold speedup over the IFS system is an estimate; GraphCast remains slightly better up to five days.",
+  "summary": "A 1.3-billion-parameter model for high-resolution weather and air-pollution forecasting: it matches or exceeds CAMS on 74% of targets and matches or beats GraphCast on 94%. The roughly 5,000-fold speedup over the IFS system is an estimate; GraphCast remains slightly better on specific humidity, at most pressure levels up to five days.",
   "field": "climate",
   "ai_technology": "Aurora (foundation model)",
   "organization": "Microsoft Research",
@@ -19,7 +19,7 @@
   "evidence": {
     "publication_status": "Not reported",
     "tested": "Forecasts were compared with CAMS for air pollution (Jun-Nov 2022, matched or beat 74% of targets) and with GraphCast (matched or beat 94% of targets) over 2022 evaluation periods.",
-    "unknown": "GraphCast was slightly better on specific humidity up to five days, and the page has no dedicated limitations section.",
+    "unknown": "GraphCast was slightly better on specific humidity at most pressure levels up to five days, and the page has no dedicated limitations section.",
     "ai_role": "A 1.3-billion-parameter foundation model, pretrained on over a million hours of simulations, forecasts weather and air pollution at 0.1 degrees.",
     "evidence_urls": [
       "https://www.microsoft.com/en-us/research/blog/introducing-aurora-the-first-large-scale-foundation-model-of-the-atmosphere/"
