@@ -1,6 +1,6 @@
 ---
 name: ai-science-tracker
-description: Keep the user up to date on scientific discoveries enabled by AI, AI model releases linked to them, and publicly disclosed vulnerabilities found with AI, using the AI Science Tracker catalog instead of a general web search, returning a few KB of filtered results instead of megabytes of data (fast, very few tokens). Use for "what's new in AI for science", "recent AI discoveries", "which discoveries used AlphaFold/Claude/GPT", weekly digests, or looking up a tracker entry by ID.
+description: Keep the user up to date on scientific discoveries enabled by AI, AI model releases linked to them, and known exploited or recent critical vulnerabilities from the global vulnerability dataset, using the AI Science Tracker catalog instead of a general web search, returning a few KB of filtered results instead of megabytes of data (fast, very few tokens). Use for "what's new in AI for science", "recent AI discoveries", "which discoveries used AlphaFold/Claude/GPT", weekly digests, or looking up a tracker entry by ID.
 ---
 
 # AI Science Tracker
@@ -24,10 +24,10 @@ python3 scripts/tracker.py get 2020-11-alphafold-casp14   # full record
 python3 scripts/tracker.py info                            # counts, data date, endpoints
 ```
 
-Collections: `discoveries`, `models`, `vulnerabilities`, `all` (default). "New" means: discoveries by catalog `added_date`, vulnerabilities by `checked_date`, models by release `date`.
+Collections: `discoveries`, `models`, `vulnerabilities`, `all` (default). "New" means: discoveries by catalog `added_date`, vulnerabilities (the site preview of the global vulnerability dataset) by `published`, models by release `date`.
 
 If Python or shell is unavailable, fetch these instead (do not fetch the multi-megabyte JSON files through a summarizing fetch tool):
-- What's new: https://aisciencetracker.org/feed.xml (Atom, latest discovery additions and vulnerability checks)
+- What's new: https://aisciencetracker.org/feed.xml (Atom, latest discovery additions)
 - One record: `api/v1/discoveries/{id}.json` or `api/v1/vulnerabilities/{id}.json`
 - Overview and endpoints: `api/v1/index.json`, `llms.txt`
 

@@ -1,0 +1,17 @@
+{
+  "id": "GHSA-wfqx-gjrf-g28r",
+  "title": "Crossplane: Signature verification TOCTOU allows installing unverified package content via mutable tag",
+  "published": "2026-06-19",
+  "score": 9.0,
+  "band": "critical",
+  "score_source": "GitHub Advisory Database",
+  "priority": "high",
+  "products": [
+    "go:github.com/crossplane/crossplane",
+    "go:github.com/crossplane/crossplane/v2"
+  ],
+  "classes": [
+    "cryptographic weakness",
+    "race condition"
+  ]
+}

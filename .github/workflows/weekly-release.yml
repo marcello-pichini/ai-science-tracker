@@ -84,6 +84,6 @@ jobs:
           test "$(git ls-remote origin refs/heads/main | cut -f1)" = "$(git rev-parse HEAD)"
           if [ -z "$HF_TOKEN" ]; then echo "::error::HF_TOKEN is not configured."; exit 1; fi
           pip install -q huggingface_hub
-          snapshot_date=$(git log -1 --format=%cs -- data/discoveries.csv data/discoveries.json data/vulnerabilities.csv data/vulnerabilities.json huggingface/README.md)
+          snapshot_date=$(git log -1 --format=%cs -- data/discoveries.csv data/discoveries.json data/vulnerabilities-overview.json huggingface/README.md)
           python3 scripts/build_hf_dataset.py hf-build --snapshot-date "$snapshot_date"
           python3 -c "from huggingface_hub import upload_folder; upload_folder(repo_id='marcello-pichini/ai-science-tracker', repo_type='dataset', folder_path='hf-build', commit_message='Catalog snapshot $(date -u +%Y-%m-%d)')"

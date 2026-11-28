@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "scope": "Current public collection files; snapshot identity is not a review or publication timestamp.",
-  "snapshot_sha256": "60248b585473e3be08fb9b09dea7d40a330fad16487aeaedeee87f654d5ccb4f",
+  "snapshot_sha256": "4948d59b24bfe8f2bd7eb65064170090000faa72ae598098c2d41d2273306eba",
   "components": {
     "discoveries": {
       "path": "data/discoveries.json",
@@ -55,36 +55,66 @@
       "catalog_doi": "https://doi.org/10.5281/zenodo.24217686",
       "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license."
     },
-    "vulnerabilities": {
-      "path": "data/vulnerabilities.json",
-      "label": "AI-found vulnerabilities",
-      "sha256": "47d706bae378b0de8a338d31b22569fe35d21cef1fed1ca8e6cce254a71c40c4",
-      "bytes": 4522670,
-      "count": 1780,
-      "unit": "source-attributed cases",
+    "vulnerabilities-preview": {
+      "path": "data/vulnerabilities-preview.json",
+      "label": "Global vulnerability dataset, site preview",
+      "sha256": "f9d1a3d937176bbb086f26086e2785457ee51a2d4ab951d50116cb9d8ac7fbf8",
+      "bytes": 4915001,
+      "count": 13450,
+      "unit": "vulnerabilities (known exploited, or critical and published in the last 12 months)",
       "dates": {
-        "disclosure_date": {
-          "first": "2024-10-16",
-          "last": "2026-11-24"
-        },
-        "ai_attribution_date": {
-          "first": "2024-11-01",
-          "last": "2026-11-24"
-        },
-        "checked_date": {
-          "first": "2026-11-13",
-          "last": "2026-11-26"
+        "publication_dates": {
+          "first": "2003-04-02",
+          "last": "2026-11-25"
         }
       },
       "source_urls": [
-        "https://aisciencetracker.org/security.html#t-context"
+        "https://aisciencetracker.org/security.html#t-sources"
       ],
-      "license": "CC BY 4.0",
-      "coverage": "Manual and incomplete; cases and distinct CVEs are different units.",
+      "license": "Per source, see docs/vulnerability-sources.md; derived fields CC BY 4.0",
+      "coverage": "Preview of the full dataset published on Hugging Face, Kaggle and Zenodo; absence is not safety.",
       "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
-      "catalog_doi": "https://doi.org/10.5281/zenodo.24217686",
-      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license.",
-      "distinct_cves": 1667
+      "catalog_doi": null,
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license."
+    },
+    "vulnerabilities-overview": {
+      "path": "data/vulnerabilities-overview.json",
+      "label": "Global vulnerability dataset, overview",
+      "sha256": "e20ec0624e21806b1c05321d2853a54623b859760b235b2b1bfb18d7273ae00e",
+      "bytes": 48148,
+      "count": 1,
+      "unit": "aggregate document",
+      "dates": {
+        "built_on": "2026-11-28"
+      },
+      "source_urls": [
+        "https://www.cve.org/Legal/TermsOfUse",
+        "https://www.cve.org/Legal/TermsOfUse",
+        "https://nvd.nist.gov/developers/terms-of-use",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://www.first.org/epss/",
+        "https://euvd.enisa.europa.eu/",
+        "https://github.com/github/advisory-database",
+        "https://osv.dev/",
+        "https://cwe.mitre.org/about/termsofuse.html",
+        "https://capec.mitre.org/about/termsofuse.html",
+        "https://github.com/rapid7/metasploit-framework",
+        "https://github.com/projectdiscovery/nuclei-templates",
+        "https://github.com/nomi-sec/PoC-in-GitHub",
+        "https://www.exploit-db.com/",
+        "https://cert.cyber.gouv.fr/",
+        "https://vulnerability.circl.lu/",
+        "https://vulnerability.circl.lu/",
+        "https://vulnerability.circl.lu/",
+        "https://endoflife.date/",
+        "https://github.com/FIRSTdotorg/cvss-v4-calculator",
+        "https://aisciencetracker.org/"
+      ],
+      "license": "Per source, see docs/vulnerability-sources.md; derived counts CC BY 4.0",
+      "coverage": "Counts reflect disclosure and research attention, not product safety.",
+      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
+      "catalog_doi": null,
+      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license."
     },
     "models": {
       "path": "data/models.json",
@@ -263,37 +293,6 @@
       "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
       "catalog_doi": "https://doi.org/10.5281/zenodo.24217686",
       "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license."
-    },
-    "vulnerabilities-csv": {
-      "path": "data/vulnerabilities.csv",
-      "label": "AI-found vulnerabilities",
-      "sha256": "390bdf498b80929f76fe63e89560febdfa8870168455965c2994314725ec64dd",
-      "bytes": 3564877,
-      "count": 1780,
-      "unit": "source-attributed cases",
-      "dates": {
-        "disclosure_date": {
-          "first": "2024-10-16",
-          "last": "2026-11-24"
-        },
-        "ai_attribution_date": {
-          "first": "2024-11-01",
-          "last": "2026-11-24"
-        },
-        "checked_date": {
-          "first": "2026-11-13",
-          "last": "2026-11-26"
-        }
-      },
-      "source_urls": [
-        "https://aisciencetracker.org/security.html#t-context"
-      ],
-      "license": "CC BY 4.0",
-      "coverage": "Manual and incomplete; cases and distinct CVEs are different units.",
-      "release_url": "https://github.com/marcello-pichini/ai-science-tracker/releases",
-      "catalog_doi": "https://doi.org/10.5281/zenodo.24217686",
-      "doi_note": "Catalog archive DOI; upstream sources retain their own identity and license.",
-      "distinct_cves": 1667
     },
     "catalog-summary": {
       "path": "data/catalog-summary.csv",

@@ -24,10 +24,10 @@ assert.deepEqual(s.match({Title:'A model'}, '---'), []);
 const groups = s.collections([],[],{models:[],families:[]},{models:[]});
 assert.equal(groups.length, 5);
 assert.ok(groups.every(g => g.records.length === 0));
-const cases = s.collections([], [{id:'case',title:'Case',cves:[],advisory_url:'https://vendor.example/unique-advisory'}], {models:[],families:[]}, {models:[]})[1];
+const cases = s.collections([], [{id:'CVE-2026-1',title:'Case',products:['acme:lib'],classes:['SQL injection'],advisory:'https://vendor.example/unique-advisory'}], {models:[],families:[]}, {models:[]})[1];
 assert.deepEqual(s.match(cases.records[0].fields, 'unique-advisory'), ['Sources'], 'Advisory evidence is a searchable source');
-assert.equal(cases.records[0].href, 'profiles/security-case.html');
-assert.equal(cases.records[0].explorer, 'security.html#case');
+assert.deepEqual(s.match(cases.records[0].fields, 'sql injection'), ['Weakness']);
+assert.equal(cases.records[0].href, 'security.html?q=CVE-2026-1');
 const linked = s.collections([{id:'discovery'}], [], {models:[], families:[
   {id:'active', discoveries:['discovery']}, {id:'archive-only', discoveries:['archived']}
 ]});

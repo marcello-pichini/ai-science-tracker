@@ -42,17 +42,16 @@ test('search terms fold spelling, accents, abbreviations and synonyms', () => {
 const origin = 'https://aisciencetracker.org'
 const endpoint = new URL('https://mcp.aisciencetracker.org/mcp')
 const vulnerability = {
-  id: 'cve-2026-34197',
-  title: 'Claude-assisted discovery of an ActiveMQ code-injection flaw',
-  product: 'Apache ActiveMQ Classic',
-  ai_system: 'Claude',
-  organization: 'Horizon3.ai',
-  cves: ['CVE-2026-34197'],
-  disclosure_date: '2026-04-07',
-  remediation: 'fix documented',
-  summary: 'A remote code execution flaw.',
-  ai_role: 'First-pass source analysis.',
-  source_url: 'https://example.org/advisory',
+  id: 'CVE-2026-34197',
+  title: 'ActiveMQ code injection',
+  published: '2026-04-07',
+  score: 9.8,
+  band: 'critical',
+  score_source: 'apache',
+  priority: 'act now',
+  products: ['apache:activemq'],
+  category: 'message broker',
+  classes: ['code injection'],
 }
 const discovery = {
   id: '2025-04-example',
@@ -85,9 +84,15 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
         return Response.json(discovery)
       case origin + '/api/v1/discoveries/2026-10-model--fonc-2026-1.json':
         return Response.json({ ...discovery, id: '2026-10-model--fonc-2026-1' })
-      case origin + '/data/vulnerabilities.json':
-        return Response.json([vulnerability, { ...vulnerability, id: 'big-sleep-sqlite', title: 'Big Sleep finds an SQLite flaw',
-          product: 'SQLite', ai_system: 'Big Sleep', cves: [], disclosure_date: '2024-11-01' }])
+      case origin + '/data/vulnerabilities-preview.json':
+        return Response.json([vulnerability, { ...vulnerability, id: 'GHSA-aaaa-bbbb-cccc', title: 'SQLite heap overflow',
+          products: ['sqlite:sqlite'], category: 'database', priority: 'high', published: '2025-12-01' }])
+      case 'https://cveawg.mitre.org/api/cve/CVE-2020-0001':
+        return Response.json({ cveMetadata: { cveId: 'CVE-2020-0001', state: 'PUBLISHED', datePublished: '2020-01-08', assignerShortName: 'google_android' },
+          containers: { cna: { descriptions: [{ lang: 'en', value: 'Privilege escalation in ActivityManager.' }], affected: [{ vendor: 'Google', product: 'Android' }],
+            metrics: [{ cvssV3_1: { version: '3.1', baseScore: 7.8, vectorString: 'CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H' } }], references: [{ url: 'https://source.android.com/' }] } } })
+      case 'https://cveawg.mitre.org/api/cve/CVE-1999-9999':
+        return new Response(null, { status: 404 })
       case origin + '/api/v1/discoveries/unknown.json':
         return new Response(null, { status: 404 })
       default:
@@ -176,13 +181,22 @@ test('MCP clients can search and retrieve public discoveries with provenance', a
   assert.deepEqual(page2.results.map((row) => row.id), ['2024-04-example'])
   assert.equal(page2.truncated, false)
   const vulnSearch = async (args) => JSON.parse((await client.callTool({ name: 'search_vulnerabilities', arguments: args })).content[0].text)
-  assert.deepEqual((await vulnSearch({ query: 'see CVE-2026-34197' })).results.map((row) => row.id), ['cve-2026-34197'])
-  assert.deepEqual((await vulnSearch({ query: 'SQLite' })).results.map((row) => row.id), ['big-sleep-sqlite'])
-  assert.deepEqual((await vulnSearch({ ai_system: 'big sleep' })).results.map((row) => row.id), ['big-sleep-sqlite'])
-  assert.deepEqual((await vulnSearch({ year: 2026 })).results.map((row) => row.id), ['cve-2026-34197'])
+  assert.deepEqual((await vulnSearch({ query: 'see CVE-2026-34197' })).results.map((row) => row.id), ['CVE-2026-34197'])
+  assert.deepEqual((await vulnSearch({ query: 'SQLite' })).results.map((row) => row.id), ['GHSA-aaaa-bbbb-cccc'])
+  assert.deepEqual((await vulnSearch({ category: 'Database' })).results.map((row) => row.id), ['GHSA-aaaa-bbbb-cccc'])
+  assert.deepEqual((await vulnSearch({ exploited: true })).results.map((row) => row.id), ['CVE-2026-34197'])
+  assert.deepEqual((await vulnSearch({ year: 2026 })).results.map((row) => row.id), ['CVE-2026-34197'])
   const vuln = await client.callTool({ name: 'get_vulnerability', arguments: { id: 'cve-2026-34197' } })
-  assert.equal(vuln.structuredContent.ai_role, vulnerability.ai_role)
-  assert.equal(vuln.structuredContent.catalog_url, origin + '/profiles/security-cve-2026-34197.html')
+  assert.equal(vuln.structuredContent.in_preview, true)
+  assert.equal(vuln.structuredContent.catalog_url, origin + '/security.html?q=CVE-2026-34197')
+  const live = await client.callTool({ name: 'get_vulnerability', arguments: { id: 'CVE-2020-0001' } })
+  assert.equal(live.isError, false)
+  assert.equal(live.structuredContent.in_preview, false)
+  assert.equal(live.structuredContent.cvss[0].score, 7.8)
+  assert.match(live.structuredContent.source, /CVE List/)
+  assert.match(live.structuredContent.note, /does not mean it is unaffected/)
+  const unknownCve = await client.callTool({ name: "get_vulnerability", arguments: { id: "CVE-1999-9999" } })
+  assert.equal(unknownCve.isError, true)
 
   const traversal = await client.callTool({ name: 'get_discovery', arguments: { id: '../private' } })
   assert.equal(traversal.isError, true)

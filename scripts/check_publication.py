@@ -19,9 +19,9 @@ PAGES = ('index.html', 'models.html', 'model-progress.html', 'security.html',
 EXTRA_PAGES = ('search.html', 'insights.html', 'guide.html', 'dossiers.html', 'it/index.html')
 EXTRA_FILES = ('robots.txt', 'sitemap.xml', 'feed.xml', 'llms.txt', 'api/v1/index.json', 'api/v1/latest.json')
 MCP_URL = 'https://mcp.aisciencetracker.org/mcp'
-DATA = ('discoveries.json', 'vulnerabilities.json', 'models.json',
+DATA = ('discoveries.json', 'vulnerabilities-overview.json', 'models.json',
         'model-progress.json', 'swe-bench.json')
-HF_FILES = ('discoveries.json', 'discoveries.csv', 'vulnerabilities.json', 'vulnerabilities.csv')
+HF_FILES = ('discoveries.json', 'discoveries.csv')
 MAX_BYTES = 64 * 1024 * 1024
 MAX_ARCHIVE_BYTES = 2 * 1024 * 1024 * 1024
 CHUNK_BYTES = 1024 * 1024
@@ -313,13 +313,12 @@ def check(root, site, hf, release=None, fetcher=fetch, deployment=None, now=None
     discoveries = json.loads((root / 'data/discoveries.json').read_text())
     if discoveries:
         paths.append(f"share/{discoveries[-1]['id']}.html")
-    security_index = root / 'profiles/security-index.html'
-    if security_index.is_file():
-        paths.append('profiles/security-index.html')
-        cases = json.loads((root / 'data/vulnerabilities.json').read_text())
-        if cases:
-            latest = max(cases, key=lambda row: (row['disclosure_date'], row['id']))
-            paths.append(f"profiles/security-{latest['id']}.html")
+    overview_path = root / 'data/vulnerabilities-overview.json'
+    if overview_path.is_file():
+        overview = json.loads(overview_path.read_text())
+        pages = [c for c in overview.get('categories', []) if c.get('page')] if isinstance(overview, dict) else []
+        if pages:
+            paths.append(f"profiles/vulnerabilities-{pages[0]['slug']}.html")
     if fetcher is fetch and discoveries and urlsplit(site).netloc == 'aisciencetracker.org':
         # Entries added today may still be behind the server's 10-minute cache; an older one must be there.
         today = dt.datetime.now(dt.timezone.utc).date().isoformat()

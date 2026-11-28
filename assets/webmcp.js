@@ -44,14 +44,12 @@
 
   context.registerTool({
     name: 'search_vulnerabilities',
-    description: 'Search publicly disclosed software vulnerabilities whose discovery involved AI, kept separate from the scientific catalog. Matches words in the title, product, AI system, organization, CVE IDs and summary. Returns CVEs, remediation status, source and case page.',
+    description: 'Search the preview of the global vulnerability dataset: vulnerabilities known to be exploited and critical ones published in the last 12 months. Matches words in the ID, title, products, category and weakness classes. Absence is not safety.',
     inputSchema: schema('English words or a CVE ID, for example "OpenSSL" or "CVE-2026-34197".'),
     annotations,
     execute: async ({query, limit = 10}) => {
-      const found = search(await load('vulnerabilities'), ['title', 'product', 'ai_system', 'organization', 'cves', 'summary'], query, limit);
-      return {total: found.total, results: found.results.map(r => ({id: r.id, title: r.title, product: r.product, ai_system: r.ai_system,
-        cves: r.cves, disclosure_date: r.disclosure_date, remediation: r.remediation, summary: r.summary, source_url: r.source_url,
-        catalog_url: `${site}/profiles/security-${encodeURIComponent(r.id)}.html`}))};
+      const found = search(await load('vulnerabilities-preview'), ['title', 'id', 'products', 'category', 'classes'], query, limit);
+      return {total: found.total, results: found.results.map(r => ({...r, catalog_url: `${site}/security.html?q=${encodeURIComponent(r.id)}`}))};
     }
   });
 

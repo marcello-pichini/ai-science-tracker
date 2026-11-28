@@ -89,18 +89,3 @@ for (const html of [summary, comparison]) {
         self.assertIn('Not annotated in this catalog', html)
         examples = html.split('<h3>Examples</h3>')[1]
         self.assertLess(examples.index('discovery=a'), examples.index('discovery=b'))
-
-    def test_report_group_deduplicates_case_urls_and_preserves_case_identity(self):
-        records = json.loads((ROOT / 'data/vulnerabilities.json').read_text())
-        groups = {}
-        for record in records:
-            for url in {record[key] for key in ('source_url', 'ai_source_url', 'advisory_url')}:
-                groups.setdefault(url, []).append(record)
-        largest = max(groups.values(), key=len)
-        self.assertGreater(len(largest), 1)
-        self.assertEqual(len(largest), len({r['id'] for r in largest}))
-        page = (ROOT / 'security.html').read_text()
-        self.assertIn('record.summary,record.ai_role,...record.cves', page)
-        self.assertIn('new Set(group.flatMap(r => r.cves)).size', page)
-        self.assertIn('Human involvement is only described', page)
-        self.assertIn('installed patches or current safety', page)

@@ -21,7 +21,7 @@ globalThis.AST_t ||= (en, vars) => {
     return value;
   }
   function validateData(id, value) {
-    const arrays = ['discoveries', 'discoveries-list', 'archived-discoveries', 'vulnerabilities'];
+    const arrays = ['discoveries', 'discoveries-list', 'archived-discoveries', 'vulnerabilities-preview'];
     if (arrays.includes(id) && !Array.isArray(value)) throw Error('Invalid record collection');
     if (['models','model-progress'].includes(id) && !Array.isArray(value?.models)) throw Error('Invalid model collection');
     if (id === 'models' && !Array.isArray(value.families)) throw Error('Invalid model families');
@@ -151,7 +151,7 @@ globalThis.AST_t ||= (en, vars) => {
         const retry = document.createElement('button'); retry.type = 'button'; retry.textContent = tr('Retry');
         retry.addEventListener('click', start);
         const links = document.createElement('p');
-        for (const [label, path] of [[tr('Static discovery pages'), 'profiles/index.html'], [tr('Dataset downloads'), 'dataset.html'], [tr('Scientific JSON'), 'data/discoveries.json'], [tr('Security JSON'), 'data/vulnerabilities.json']]) {
+        for (const [label, path] of [[tr('Static discovery pages'), 'profiles/index.html'], [tr('Dataset downloads'), 'dataset.html'], [tr('Scientific JSON'), 'data/discoveries.json'], [tr('Security JSON'), 'data/vulnerabilities-overview.json']]) {
           const a = document.createElement('a'); a.href = new URL(path, defaultRoot).href; a.textContent = label; links.append(a, document.createTextNode(' · '));
         }
         status.append(message, retry, links);

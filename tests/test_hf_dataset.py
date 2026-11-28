@@ -11,14 +11,18 @@ class HfDatasetTest(unittest.TestCase):
     def test_size_category(self):
         self.assertEqual(hf.size_category(999), "n<1K")
         self.assertEqual(hf.size_category(1000), "1K<n<10K")
+        self.assertEqual(hf.size_category(470581), "100K<n<1M")
 
     def test_card_has_no_placeholders(self):
         with tempfile.TemporaryDirectory() as d:
             counts = hf.build(Path(d))
             card = (Path(d) / "README.md").read_text()
-        for key in ("{discoveries}", "{vulnerabilities}", "{size}", "{date}"):
+        for key in ("{discoveries}", "{vulnerabilities}", "{size}", "{date}", "{vulnerability_sources}", "{vulnerability_source_table}"):
             self.assertNotIn(key, card)
         self.assertIn(f"| {counts['discoveries']} |", card)
+        self.assertIn(f"| {counts['vulnerabilities']:,} |", card)
+        self.assertIn("not endorsed or certified by the NVD", card)
+        self.assertIn("path: vulnerabilities/vulnerabilities_global.jsonl.gz", card)
 
     def test_snapshot_date_is_stable_and_data_are_copied_exactly(self):
         with tempfile.TemporaryDirectory() as d:

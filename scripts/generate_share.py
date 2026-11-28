@@ -930,90 +930,88 @@ def write_catalog_evidence(items):
                           '<a href="dataset.html">Dataset, licenses and citation</a> · <a href="methodology.html">Methodology</a>')
 
 
-def run_security_evidence(items):
-    """Reuse the interactive remediation and severity renderers with their source caveats."""
-    source = (ROOT / 'security.html').read_text()
-    names = ('esc', 'safeUrl', 'date', 'severities')
-    declarations = []
-    for name in names:
-        match = re.search(r'^const ' + name + r' = .*?;$', source, re.M)
-        if not match:
-            raise ValueError(f'Missing shared security declaration: {name}')
-        declarations.append(match[0])
-    for name in ('ratingSeverity', 'severity', 'consequences', 'versionParts', 'versionMatch', 'remediationPanel', 'evidence'):
-        match = re.search(r'^function ' + name + r'\(.*?^}', source, re.M | re.S)
-        if not match:
-            raise ValueError(f'Missing shared security renderer: {name}')
-        declarations.append(match[0])
-    script = '\n'.join(declarations) + ("\nconst records=JSON.parse(require('fs').readFileSync(0,'utf8'));"
-             "process.stdout.write(JSON.stringify(Object.fromEntries(records.map(r=>[r.id,{remediation:remediationPanel(r),severity:evidence(r,true)}]))));")
-    result = subprocess.run(['node', '-e', script], input=json.dumps(items), capture_output=True, text=True, check=True)
-    return json.loads(result.stdout)
+VULN_MARKERS = {name: (f'<!-- {name}:start -->', f'<!-- {name}:end -->') for name in ('vuln', 'vuln-categories', 'vuln-sources')}
 
 
-def write_security_pages(items):
-    """Full source-attributed case pages; security counts remain separate from science."""
-    rendered = run_security_evidence(items)
-    groups = {}
-    for record in sorted(items, key=lambda r: (r['disclosure_date'], r['id']), reverse=True):
-        path = f'profiles/security-{quote(record["id"])}.html'
-        cves = record['cves']
-        # Without a CVE, a GitHub Security Lab advisory ID keeps sibling cases' clipped titles distinct.
-        advisory = cves[0] if cves else (record['id'].upper() if re.fullmatch(r'ghsl-\d{4}-\d+', record['id']) else None)
-        search_title = f'{advisory} · {record["product"]} · AI attribution' if advisory else None
-        summary = record['summary']
-        if cves:
-            summary = f'{cves[0]} in {record["product"]} — {summary}'
-        description = describe(summary, lead=f'Source-attributed AI discovery report for {record["product"]}')
-        attribution = (f'AI attribution dated {nice_date(record["ai_attribution_date"])}'
-                       if record['ai_attribution_date'] else 'AI attribution date not established by the source')
-        sources = ''.join(f'<li><a href="{esc(safe_url(record[key]))}" rel="noopener">{label}</a></li>' for key, label in
-                          [('source_url', 'Original disclosure'), ('ai_source_url', 'AI attribution'), ('advisory_url', 'Advisory / fix evidence')])
-        article = (f'<article class="voce" id="{esc(record["id"])}"><h2>Finding and attribution</h2>'
-                   f'<p class="sommario">{esc(record["summary"])}</p>'
-                   f'{rendered[record["id"]]["remediation"]}'
-                   f'<p><strong>Product:</strong> {esc(record["product"])}. <strong>AI system:</strong> {esc(record["ai_system"])}. '
-                   f'<strong>Team / organization:</strong> {esc(record["organization"])}.</p>'
-                   f'<p><strong>CVE identifiers:</strong> {esc(", ".join(record["cves"]) or "Not established in the cited evidence")}.</p>'
-                   f'<p><strong>AI and human contribution (source account):</strong> {esc(record["ai_role"])}</p>'
-                   '<p>Human involvement is only described where the source account establishes it; unknown involvement does not mean none. '
-                   'Vendor confirmation of a flaw does not confirm every claim about AI contribution.</p>'
-                   f'<p><strong>Discovery context:</strong> {esc(record["classification_note"])}</p>'
-                   f'<p><strong>Remediation status:</strong> {esc(record["remediation"])}.</p>'
-                   '<p>A source-documented fix does not establish installed patches or current safety. '
-                   'Source checking does not independently reproduce the finding or establish observed exploitation.</p>'
-                   f'<p>Disclosed {nice_date(record["disclosure_date"])}. {attribution}. '
-                   f'Sources checked {nice_date(record["checked_date"])}; these are separate dates, not a live installation check.</p>'
-                   f'{rendered[record["id"]]["severity"]}<h2>Original evidence</h2><ul>{sources}</ul>'
-                   f'<p><a href="api/v1/vulnerabilities/{quote(record["id"])}.json">Download this source record (JSON)</a></p></article>')
-        write_collection_page(record['title'], description, path, article,
-                              f'{esc(record["product"])} · AI involvement attributed to {esc(record["ai_system"])}',
-                              f'<a href="security.html#{quote(record["id"])}">Open this case in the interactive tracker</a> · '
-                              '<a href="profiles/security-index.html">Browse all static security cases</a>',
-                              security=True, page_type='WebPage', search_title=search_title,
-                              alternate=json_alternate('vulnerabilities', record['id']))
-        groups.setdefault(record['disclosure_date'][:4], []).append(record)
-    listings = ''.join(f'<h2>Disclosures in {year}</h2><ul class="elenco-profili">' + ''.join(
-        f'<li><a href="profiles/security-{quote(r["id"])}.html">{esc(r["title"])}</a> · '
-        f'{esc(", ".join(r["cves"]) or r["product"])}</li>' for r in rows) + '</ul>' for year, rows in groups.items())
-    with_cve = sum(bool(r['cves']) for r in items)
-    per_year = ', '.join(f'{len(rows)} in {year}' for year, rows in groups.items())
-    # Answer first for "how many vulnerabilities has AI found", with the counting limits in the same paragraph.
-    article = ('<div class="prosa"><h2>How many vulnerabilities has AI found?</h2>'
-               f'<p>This catalog records {len(items)} publicly disclosed vulnerability cases whose sources attribute a role in finding '
-               f'them to an AI system; {with_cve} have CVE identifiers. By disclosure year: {per_year}. '
-               'It is a selection of public evidence, not a complete count. Where only the vendor reports the AI role, '
-               'the case records it as the vendor\'s account.</p></div>'
-               '<div class="prosa"><h2>Read the source-attributed evidence</h2><p>Each case preserves the original finding, '
-               'AI and human contribution, separate disclosure and attribution dates, reported severity assessments and remediation limits. '
-               'These cases are separate from scientific-discovery counts. Missing evidence does not establish absence of exploitation.</p></div>' + listings)
-    write_collection_page('Vulnerabilities found by AI: source-linked cases',
-                          'Browse publicly disclosed AI-found vulnerability cases, CVEs, original disclosures, AI attribution and documented remediation caveats without JavaScript.',
-                          'profiles/security-index.html', article, f'{len(items)} cases · selected public evidence, not a complete vulnerability inventory',
-                          '<a href="security.html">Interactive filters and charts</a> · <a href="dataset.html">Download security data</a>', security=True)
+def fill_marker(text, name, html):
+    start, end = VULN_MARKERS[name]
+    i, j = text.index(start) + len(start), text.index(end)
+    return text[:i] + '\n' + html + '\n' + text[j:]
 
 
-def write_llms_txt(items, models):
+def vulnerability_facts(t):
+    facts = [('Vulnerabilities', t['rows']), ('CVE records', t['cve']), ('Without a CVE', t['non_cve']),
+             ('Product families', t['products']), ('With public exploit code', t['public_exploit']),
+             ('In CISA KEV', t['kev']), ('Joined sources', t['sources']), ('In the preview below', t['preview'])]
+    return '<dl class="collection-facts" aria-label="Dataset size">' + ''.join(
+        f'<div><dt>{esc(k)}</dt><dd>{v:,}</dd></div>' for k, v in facts) + '</dl>'
+
+
+def sources_table(sources):
+    # Source names, terms and notices stay verbatim (English) on every language edition.
+    return ('<div class="security-table" data-i18n-skip><table><caption>Sources joined in the dataset, with their terms and required notices.</caption>'
+            '<thead><tr><th scope="col">Source</th><th scope="col">Terms</th><th scope="col">Notice</th></tr></thead><tbody>' +
+            ''.join(f'<tr><th scope="row"><a href="{esc(s["url"])}" rel="noopener">{esc(s["name"])}</a></th><td>{esc(s["licence"])}</td>'
+                    f'<td>{esc(s["notice"])}</td></tr>' for s in sources) + '</tbody></table></div>')
+
+
+def write_vulnerability_pages(overview, preview):
+    """security.html static blocks, one overview page per large product category, redirects for retired case pages."""
+    t = overview['totals']
+    page = (ROOT / 'security.html').read_text()
+    page = fill_marker(page, 'vuln', (
+        f'    <p class="lead">{t["rows"]:,} vulnerabilities joined from {t["sources"]} public sources into one record each: '
+        'CVE List, NVD, GitHub and OSV advisories, CISA KEV, ENISA EUVD, EPSS, exploits, fixes, products and weaknesses. '
+        'For anyone building with AI: every public vulnerability, in one place.</p>\n    ' + vulnerability_facts(t)))
+    pages = [c for c in overview['categories'] if c['page']]
+    page = fill_marker(page, 'vuln-categories', (
+        '    <h3>Overview by product category</h3><p class="descr">Vulnerabilities per category, one page each.</p>'
+        '<ul class="elenco-profili" data-i18n-skip>' + ''.join(  # category names are dataset values, kept in English
+            f'<li><a href="profiles/vulnerabilities-{c["slug"]}.html">{esc(c["name"][0].upper() + c["name"][1:])}</a> · '
+            f'{c["total"]:,}</li>' for c in pages) + '</ul>'))
+    page = fill_marker(page, 'vuln-sources', '    ' + sources_table(overview['sources']))
+    (ROOT / 'security.html').write_text(page)
+    by_category = {}
+    for r in preview:
+        if r.get('category'):
+            by_category.setdefault(r['category'], []).append(r)
+    for c in pages:
+        name = c['name'][0].upper() + c['name'][1:]
+        years = sorted(c['by_year'].items(), reverse=True)[:12]
+        recent = by_category.get(c['name'], [])[:25]
+        article = (
+            f'<div class="prosa"><h2>{esc(name)}: how many public vulnerabilities?</h2>'
+            f'<p>The dataset links {c["total"]:,} published vulnerabilities to products in this category; '
+            f'{c["kev"]:,} are in CISA KEV and {c["public_exploit"]:,} have public exploit code. '
+            f'Most common weakness classes: {esc(", ".join(c["top_classes"]) or "not stated by the sources")}. '
+            'Counts reflect disclosure and research attention as much as quality: they are not a safety ranking.</p></div>'
+            '<div class="security-table"><table><caption>Products in this category with the most vulnerabilities.</caption>'
+            '<thead><tr><th scope="col">Product family</th><th scope="col">Vulnerabilities</th><th scope="col">In CISA KEV</th></tr></thead><tbody>' +
+            ''.join(f'<tr><th scope="row">{esc(p["product_key"])}</th><td>{p["total"]:,}</td><td>{p["kev"]:,}</td></tr>' for p in c['top_products']) +
+            '</tbody></table></div>'
+            '<div class="security-table"><table><caption>Published vulnerabilities by year, most recent years.</caption>'
+            '<thead><tr><th scope="col">Year</th><th scope="col">Vulnerabilities</th></tr></thead><tbody>' +
+            ''.join(f'<tr><th scope="row">{esc(y)}</th><td>{n:,}</td></tr>' for y, n in years) + '</tbody></table></div>' +
+            ('<div class="prosa"><h2>Most important recent vulnerabilities</h2><ul class="elenco-profili">' + ''.join(
+                f'<li><a href="security.html?q={quote(r["id"])}">{esc(r["id"])}</a> · {esc(r.get("title") or ", ".join(r.get("products") or []))}'
+                f'{" · score " + str(r["score"]) if r.get("score") is not None else ""}</li>' for r in recent) + '</ul></div>' if recent else ''))
+        write_collection_page(f'{name} vulnerabilities', describe(
+            f'{name}: {c["total"]:,} public vulnerabilities, {c["kev"]:,} known exploited, top products, weakness classes and yearly trend '
+            'from the global vulnerability dataset.'), f'profiles/vulnerabilities-{c["slug"]}.html', article,
+            f'{c["total"]:,} vulnerabilities · from the global vulnerability dataset',
+            '<a href="security.html">Global vulnerability dataset</a> · <a href="dataset.html">Downloads and licences</a>', security=True)
+    # Retired AI-case pages (1,780 until 28 Nov 2026) point to the dataset page, never to a 404.
+    for old in json.loads((ROOT / 'data/legacy-security-redirects.json').read_text()) + ['index']:
+        target = 'security.html'
+        (ROOT / f'profiles/security-{old}.html').write_text(
+            '<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>Moved · AI Science Tracker</title>'
+            f'<meta name="robots" content="noindex"><link rel="canonical" href="{BASE}{esc(target)}">'
+            f'<meta http-equiv="refresh" content="0; url=../{esc(target)}"></head>'
+            f'<body><p>This page moved to the <a href="../{esc(target)}">global vulnerability dataset</a>.</p></body></html>\n')
+    return [f'profiles/vulnerabilities-{c["slug"]}.html' for c in pages]
+
+
+def write_llms_txt(items, models, overview):
     """llms.txt: a plain summary for language-model crawlers. Counts come from the data so it never goes stale."""
     fields = len({d['field'] for d in items})
     orgs = len({lead_org(d['organization']) for d in items if canonical_organization(d['organization'])['kind'] != 'unknown affiliation'})
@@ -1037,9 +1035,8 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [Open problems to claim]({BASE}claims.html): next steps left by catalog discoveries, each decided by a public checker
 - [Antibiotic evidence dossier]({BASE}antibiotic-dossier.html): dated, source-bounded synthesis
 - [Catalog coverage and evidence]({BASE}profiles/catalog-evidence.html): reproducible composition tables, counting limits and CSV
-- [Static AI-found security cases]({BASE}profiles/security-index.html): source-attributed case pages readable without JavaScript
 - [Models]({BASE}models.html): model releases linked to discoveries
-- [Vuln discoveries]({BASE}security.html): publicly disclosed vulnerabilities with documented AI involvement, kept separate from the scientific count
+- [Global vulnerability dataset]({BASE}security.html): the largest and most complete vulnerability dataset in the world, {overview['totals']['rows']:,} vulnerabilities joined from {overview['totals']['sources']} public sources; the site shows an overview and a preview, the full files are on Hugging Face
 - [Methodology]({BASE}methodology.html): what is included, how entries are verified and scored
 
 ## Browse without JavaScript
@@ -1057,11 +1054,11 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [models.json]({BASE}data/models.json): model releases and families
 - [model-progress.json]({BASE}data/model-progress.json): separate Epoch capability/benchmark source entries; may overlap releases
 - [Independent benchmark directory]({BASE}data/benchmarks/index.json): 11 separately licensed numerical snapshots; source-specific selections and limits
-- [vulnerabilities.json]({BASE}data/vulnerabilities.json): vulnerability cases ([schema]({BASE}docs/vulnerability-schema.md), [JSON Schema]({BASE}schema/vulnerabilities.schema.json))
+- [vulnerabilities-preview.json]({BASE}data/vulnerabilities-preview.json): {overview['totals']['preview']:,} known exploited and recent critical vulnerabilities, slim rows; [vulnerabilities-overview.json]({BASE}data/vulnerabilities-overview.json): totals, categories and sources ([fields]({BASE}docs/vulnerability-global-schema.md)); full dataset: https://huggingface.co/datasets/marcello-pichini/ai-science-tracker
 - [sitemap.xml]({BASE}sitemap.xml): every static page
 - [dataset.html]({BASE}dataset.html): downloads (JSON, CSV), schemas and the read-only static API at {BASE}api/v1/index.json
 - [contributors.html]({BASE}contributors.html): maintainer, contributors and how to contribute
-- [feed.xml]({BASE}feed.xml): Atom feed of discovery additions and vulnerability source checks
+- [feed.xml]({BASE}feed.xml): Atom feed of discovery additions
 - Each discovery has its own page at {BASE}share/ID.html
 - [llms-full.txt]({BASE}llms-full.txt): every entry as plain text (ID, title, dates, field, organization, evidence type, summary, source), several megabytes
 
@@ -1094,7 +1091,7 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
         f'Licensed CC BY 4.0 (attribute "{SITE}" with a link). Structured data: {BASE}data/discoveries.json\n' + entries)
 
 
-def write_sitemap(items, models, archived=(), vulns=()):
+def write_sitemap(items, models, archived=(), vuln_pages=()):
     org_counts = Counter(lead_org(d['organization']) for d in items)
     orgs = sorted(o for o, n in org_counts.items() if n >= ORG_INDEX_MIN)
     fams = sorted(f['id'] for f in models['families'] if f['discoveries'])
@@ -1110,8 +1107,8 @@ def write_sitemap(items, models, archived=(), vulns=()):
     if (ROOT / 'insights.html').is_file():
         urls.append('insights.html')
     urls += ['profiles/index.html']
-    urls += ['profiles/catalog-evidence.html', 'profiles/security-index.html']
-    urls += [f'profiles/security-{quote(v["id"])}.html' for v in vulns]
+    urls += ['profiles/catalog-evidence.html']
+    urls += list(vuln_pages)
     urls += [f'profiles/org-{slug(o)}.html' for o in orgs]
     urls += [f'profiles/family-{quote(f)}.html' for f in fams]
     urls += [f'profiles/field-{slug(f)}.html' for f in sorted({d['field'] for d in items})]
@@ -1165,17 +1162,13 @@ def write_sitemap(items, models, archived=(), vulns=()):
     (ROOT / 'robots.txt').write_text(f'User-agent: *\nAllow: /\n\n{named}Allow: /\n\nSitemap: {BASE}sitemap.xml\n')
 
 
-def write_feed(items, vulns, limit=40):
-    """Order discoveries by addition date and vulnerabilities by source-check date."""
+def write_feed(items, limit=40):
+    """Discovery additions, newest first."""
     rows = []
     for d in items:
         path = f'share/{quote(d["id"])}.html'
         rows.append((d['added_date'], d['publication_date'], path, path, d['title'], d['summary'],
                      f'Discovery - {d["organization"]}'))
-    for v in vulns:
-        path = f'profiles/security-{quote(v["id"])}.html'
-        rows.append((v['checked_date'], v['disclosure_date'], f'security.html#{quote(v["id"])}', path, v['title'], v['summary'],
-                     f'Vulnerability - {v["organization"]}'))
     rows = sorted(rows, reverse=True)[:limit]
     entries = ''.join(
         f'<entry><id>{esc(BASE + entry_id)}</id><title>{esc(title)}</title><link href="{esc(BASE + path)}"/>'
@@ -1191,9 +1184,6 @@ def write_feed(items, vulns, limit=40):
 
 CSV_DISCOVERY = ['id', 'title', 'summary', 'field', 'ai_technology', 'organization', 'source_url', 'source_type', 'publication_date',
                  'added_date', 'verification_status', 'paper_url', 'impact', 'validation', 'novelty', 'catalog_entry_url', 'publication_status', 'test_type', 'tested', 'unknown', 'ai_role', 'evidence_urls', 'source_review', 'follow_up', 'follow_up_review', 'relationships']
-CSV_VULN = ['id', 'title', 'product', 'ai_system', 'organization', 'disclosure_date', 'classification', 'cves', 'source_url',
-            'ai_source_url', 'advisory_url', 'remediation', 'checked_date', 'summary', 'ai_role',
-            'ai_attribution_date', 'classification_note', 'remediation_note', 'cvss', 'impacts', 'remediation_details']
 
 
 def write_csv(path, columns, rows):
@@ -1205,14 +1195,10 @@ def write_csv(path, columns, rows):
             w.writerow(["'" + cell if cell.startswith(('=', '+', '-', '@', '\t', '\r')) else cell for cell in cells])
 
 
-def write_exports(items, vulns):
+def write_exports(items):
     """Flat CSV copies of the JSON data, same columns as the in-page download. Evidence and optional histories retain their fields; nested structures are JSON cells."""
     write_csv('data/discoveries.csv', CSV_DISCOVERY, [
         dict(d, **d['relevance'], **{key: d.get('evidence', {}).get(key, '') for key in ('publication_status', 'test_type', 'tested', 'unknown', 'ai_role')}, evidence_urls=json.dumps(d.get('evidence', {}).get('evidence_urls', []), ensure_ascii=False, separators=(',', ':')), **{key: json.dumps(d.get(key), ensure_ascii=False, separators=(',', ':')) for key in ('source_review', 'follow_up', 'follow_up_review', 'relationships')}, catalog_entry_url=f'{BASE}share/{d["id"]}.html') for d in items])
-    write_csv('data/vulnerabilities.csv', CSV_VULN, [
-        dict(v, cves=';'.join(v['cves']), remediation_details=json.dumps(v['remediation_details'], ensure_ascii=False, separators=(',', ':')) if 'remediation_details' in v else '',
-             **{key: json.dumps(v.get(key, []), ensure_ascii=False, separators=(',', ':')) for key in ('cvss', 'impacts')})
-        for v in vulns])
 
 
 def stamp_dataset_jsonld(items):
@@ -1232,16 +1218,22 @@ def stamp_dataset_jsonld(items):
     path.write_text(text[:match.start(2)] + json.dumps(data, ensure_ascii=False, separators=(',', ':')) + text[match.end(2):])
 
 
-def write_api(items, vulns, models=None, archived=(), manifest=None):
-    """Read-only static API: api/v1/index.json plus one JSON file per record. The full lists stay in data/*.json."""
-    for kind, rows in (('discoveries', items), ('vulnerabilities', vulns)):
+def write_api(items, preview, overview, models=None, archived=(), manifest=None):
+    """Read-only static API: api/v1/index.json plus one JSON file per record (vulnerabilities: the site preview only;
+    the full global dataset is on Hugging Face, Kaggle and Zenodo). The full lists stay in data/*.json."""
+    for kind, rows in (('discoveries', items), ('vulnerabilities', preview)):
         out = ROOT / 'api/v1' / kind
         out.mkdir(parents=True, exist_ok=True)
         for r in rows:
             (out / f'{r["id"]}.json').write_text(json.dumps(r, indent=2, ensure_ascii=False) + '\n')
         current = {f'{r["id"]}.json' for r in rows}
+        by_case = {name.lower(): name for name in current}
         for old in out.glob('*.json'):
-            if old.name not in current:
+            if old.name in current:
+                continue
+            if old.name.lower() in by_case:  # a case-insensitive disk kept an old name's case (cve-… for CVE-…)
+                old.rename(out / by_case[old.name.lower()])
+            else:
                 old.unlink()
     api = BASE + 'api/v1/'
     slices = write_api_slices(items)
@@ -1250,19 +1242,22 @@ def write_api(items, vulns, models=None, archived=(), manifest=None):
         'license_url': 'https://creativecommons.org/licenses/by/4.0/', 'cite': 'https://doi.org/10.5281/zenodo.24217686',
         'data_version_date': max(d['added_date'] for d in items),  # Legacy alias for latest_discovery_addition_date.
         'latest_discovery_addition_date': max(d['added_date'] for d in items),
-        'catalog_sha256': hashlib.sha256(json.dumps([items, vulns, models, list(archived)], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode('utf-8')).hexdigest(),
-        'counts': {'discoveries': len(items), 'vulnerabilities': len(vulns)},
+        'catalog_sha256': hashlib.sha256(json.dumps([items, preview, models, list(archived)], ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode('utf-8')).hexdigest(),
+        'counts': {'discoveries': len(items), 'vulnerabilities_in_preview': len(preview),
+                   'vulnerabilities_in_dataset': overview['totals']['rows']},
         'endpoints': {
             'discoveries_list': BASE + 'data/discoveries.json', 'discovery': api + 'discoveries/{id}.json',
-            'vulnerabilities_list': BASE + 'data/vulnerabilities.json', 'vulnerability': api + 'vulnerabilities/{id}.json',
+            'vulnerabilities_preview': BASE + 'data/vulnerabilities-preview.json', 'vulnerability': api + 'vulnerabilities/{id}.json',
+            'vulnerabilities_overview': BASE + 'data/vulnerabilities-overview.json',
             'models_list': BASE + 'data/models.json', 'model_progress': BASE + 'data/model-progress.json',
             'latest_discoveries': api + 'latest.json', 'doi_index': api + 'doi-index.json',
             'discoveries_by_field': api + 'fields/{field}.json', 'discoveries_by_year': api + 'years/{year}.json'},
         'slices': slices,
-        'downloads': {'discoveries_csv': BASE + 'data/discoveries.csv', 'vulnerabilities_csv': BASE + 'data/vulnerabilities.csv'},
-        'schemas': {'discoveries': BASE + 'schema/discoveries.schema.json', 'vulnerabilities': BASE + 'schema/vulnerabilities.schema.json'},
+        'downloads': {'discoveries_csv': BASE + 'data/discoveries.csv',
+                      'vulnerabilities_full_dataset': 'https://huggingface.co/datasets/marcello-pichini/ai-science-tracker'},
+        'schemas': {'discoveries': BASE + 'schema/discoveries.schema.json', 'vulnerabilities': BASE + 'docs/vulnerability-global-schema.md'},
         'documentation': BASE + 'dataset.html', 'openapi': api + 'openapi.json'}
-    write_openapi(len(items), len(vulns))
+    write_openapi(len(items), len(preview), overview['totals']['rows'])
     if manifest is not None:
         index['component_manifest'] = BASE + 'api/v1/manifest.json'
         index['snapshot_sha256'] = manifest['snapshot_sha256']
@@ -1310,21 +1305,21 @@ def write_api_slices(items):
     return listed
 
 
-def write_openapi(discoveries, vulnerabilities):
+def write_openapi(discoveries, preview, dataset):
     """OpenAPI 3.1 description of the static, read-only JSON files, so agents and tools can call them unaided."""
-    def get(summary, schema, by_id=False):
+    def get(summary, schema, by_id=False, pattern='^[a-z0-9][a-z0-9-]*$'):
         op = {'summary': summary, 'responses': {'200': {'description': 'JSON document', 'content': {'application/json': {'schema': schema}}}}}
         if by_id:
             op['responses']['404'] = {'description': 'No record with this ID'}
             op['parameters'] = [{'name': 'id', 'in': 'path', 'required': True, 'description': 'Stable record ID',
-                                 'schema': {'type': 'string', 'pattern': '^[a-z0-9][a-z0-9-]*$'}}]
+                                 'schema': {'type': 'string', 'pattern': pattern}}]
         return {'get': op}
     spec = {
         'openapi': '3.1.0',
         'info': {'title': f'{SITE} static API', 'version': 'v1',
-                 'description': f'Read-only JSON files: {discoveries} AI-enabled scientific discoveries and {vulnerabilities} '
-                                'AI-found vulnerability cases. No authentication. Figures are reported by the linked sources; '
-                                'cite the original source of a claim.',
+                 'description': f'Read-only JSON files: {discoveries} AI-enabled scientific discoveries and a preview of {preview} '
+                                f'of the {dataset} vulnerabilities in the global vulnerability dataset (full files on Hugging Face). '
+                                'No authentication. Figures are reported by the linked sources; cite the original source of a claim.',
                  'license': {'name': 'CC BY 4.0', 'url': 'https://creativecommons.org/licenses/by/4.0/'}},
         'servers': [{'url': BASE.rstrip('/')}],
         'externalDocs': {'url': BASE + 'dataset.html'},
@@ -1336,8 +1331,10 @@ def write_openapi(discoveries, vulnerabilities):
             '/api/v1/years/{year}.json': get('Compact rows for one publication year', {'type': 'object'}),
             '/data/discoveries.json': get('Every active discovery', {'$ref': f'{BASE}schema/discoveries.schema.json'}),
             '/api/v1/discoveries/{id}.json': get('One discovery', {'$ref': f'{BASE}schema/discoveries.schema.json#/items'}, True),
-            '/data/vulnerabilities.json': get('Every AI-found vulnerability case', {'$ref': f'{BASE}schema/vulnerabilities.schema.json'}),
-            '/api/v1/vulnerabilities/{id}.json': get('One vulnerability case', {'$ref': f'{BASE}schema/vulnerabilities.schema.json#/items'}, True),
+            '/data/vulnerabilities-preview.json': get('Preview: known exploited and recent critical vulnerabilities, slim rows', {'type': 'array'}),
+            '/data/vulnerabilities-overview.json': get('Totals, charts, categories and sources of the global vulnerability dataset', {'type': 'object'}),
+            '/api/v1/vulnerabilities/{id}.json': get('One preview vulnerability by CVE, GHSA or other ID', {'type': 'object'}, True,
+                                                     '^[A-Za-z0-9][A-Za-z0-9:._-]*$'),
         },
     }
     (ROOT / 'api/v1/openapi.json').write_text(json.dumps(spec, indent=2) + '\n')
@@ -1394,14 +1391,16 @@ def validate_discovery_context(records):
             sources(link['source_urls'])
 
 
-def validate_inputs(items, archived, models, vulns):
+def validate_inputs(items, archived, models, preview):
     validate_discovery_context(items + archived)
     if not items:
         raise ValueError('At least one active discovery is required')
-    for rows in (items + archived, vulns):
-        ids = [r['id'] for r in rows]
-        if len(ids) != len(set(ids)) or any(not re.fullmatch(r'[a-z0-9][a-z0-9_-]*', value) for value in ids):
-            raise ValueError('Record IDs must be unique safe slugs')
+    ids = [r['id'] for r in items + archived]
+    if len(ids) != len(set(ids)) or any(not re.fullmatch(r'[a-z0-9][a-z0-9_-]*', value) for value in ids):
+        raise ValueError('Record IDs must be unique safe slugs')
+    ids = [r['id'] for r in preview]
+    if len(ids) != len(set(ids)) or any(not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9:._-]*', value) for value in ids):
+        raise ValueError('Vulnerability preview IDs must be unique and file-safe')
     for d in items + archived:
         for key in ('id', 'title', 'summary', 'field', 'ai_technology', 'organization', 'source_url', 'source_type', 'publication_date', 'added_date', 'verification_status', 'paper_url'):
             d[key]
@@ -1409,26 +1408,6 @@ def validate_inputs(items, archived, models, vulns):
             d['relevance'][key]
         for key in ('publication_date', 'added_date'):
             datetime.date.fromisoformat(d[key])
-    for v in vulns:
-        for key in CSV_VULN:
-            if key not in ('cvss', 'impacts', 'remediation_details'):
-                v[key]
-        cves = set(v['cves'])
-        if any(rating['cve'] is not None and rating['cve'] not in cves for rating in v.get('cvss', [])) or any(not set(impact['cves']) <= cves for impact in v.get('impacts', [])):
-            raise ValueError('Vulnerability evidence CVEs must belong to the case')
-        for key in ('disclosure_date', 'ai_attribution_date', 'checked_date'):
-            if key == 'ai_attribution_date' and v[key] is None:
-                continue
-            datetime.date.fromisoformat(v[key])
-        if 'remediation_details' in v:
-            detail = v['remediation_details']
-            if not str(detail['source_url']).startswith('https://'):
-                raise ValueError('Remediation details require an HTTPS source')
-            datetime.date.fromisoformat(detail['checked_date'])
-            if 'comparison' in detail:
-                comparison = detail['comparison']
-                if not re.fullmatch(r'\d{1,8}\.\d{1,8}\.\d{1,8}', comparison['upper_bound']) or not isinstance(comparison['inclusive'], bool):
-                    raise ValueError('Remediation comparison requires an explicit three-part upper bound and inclusivity')
     models['families']
     models['models']
 
@@ -1687,7 +1666,7 @@ def write_home_browse(items, latest=50):
                f'    <h3>By year</h3><p>{by_year}</p>\n'
                f'    <p>By field: {fields}.</p>\n'
                '    <p><a href="profiles/catalog-evidence.html">Compare catalog coverage and evidence by year and field</a> · '
-               '<a href="profiles/security-index.html">Browse source-linked AI-found vulnerability cases</a>.</p>\n'
+               '<a href="security.html">Explore the global vulnerability dataset</a>.</p>\n'
                f'    <h3>Newest {min(latest, len(rows))} entries</h3><ul>{newest}</ul>\n'
                f'  </div></section>\n  {BROWSE_END}')
     start, end = page.index(BROWSE_START), page.index(BROWSE_END) + len(BROWSE_END)
@@ -1712,8 +1691,9 @@ def main():
     archive_path = ROOT / 'data/archived-discoveries.json'
     archived = json.loads(archive_path.read_text()) if archive_path.exists() else []
     models = json.loads((ROOT / 'data/models.json').read_text())
-    vulns = json.loads((ROOT / 'data/vulnerabilities.json').read_text())
-    validate_inputs(items, archived, models, vulns)
+    preview = json.loads((ROOT / 'data/vulnerabilities-preview.json').read_text())
+    overview = json.loads((ROOT / 'data/vulnerabilities-overview.json').read_text())
+    validate_inputs(items, archived, models, preview)
     plain = load_plain()
     validate_plain(plain)
     plain = usable_plain(plain, items)
@@ -1733,15 +1713,15 @@ def main():
     write_discovery_pages(archived, models, not args.no_images, archived=True, related_items=items)
     write_profile_pages(items, models, archived)
     write_catalog_evidence(items)
-    write_security_pages(vulns)
-    write_llms_txt(items, models)
-    write_sitemap(items, models, archived, vulns)
-    write_feed(items, vulns)
-    write_exports(items, vulns)
+    vuln_pages = write_vulnerability_pages(overview, preview)
+    write_llms_txt(items, models, overview)
+    write_sitemap(items, models, archived, vuln_pages)
+    write_feed(items)
+    write_exports(items)
     stamp_dataset_jsonld(items)
     manifest = write_manifest(ROOT)
     write_component_jsonld(ROOT, manifest)
-    write_api(items, vulns, models, archived, manifest=manifest)
+    write_api(items, preview, overview, models, archived, manifest=manifest)
     stamp_pages(ROOT, manifest['snapshot_sha256'])
     write_locale_pages(ROOT)
     print(f'{len(items)} share pages, profile pages, sitemap.xml, feed.xml and robots.txt written')

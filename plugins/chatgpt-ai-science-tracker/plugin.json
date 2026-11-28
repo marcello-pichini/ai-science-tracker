@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "ai-science-tracker",
   "version": "1.3.0",
-  "description": "Search a curated catalog of AI-enabled scientific discoveries and AI-found vulnerabilities, each linked to its original source.",
+  "description": "Search a curated catalog of AI-enabled scientific discoveries and the global vulnerability dataset, each linked to its original source.",
   "author": {
     "name": "AI Science Tracker",
     "url": "https://aisciencetracker.org"
@@ -23,7 +23,7 @@
       "interface": {
         "displayName": "AI Science Tracker",
         "shortDescription": "Search AI science discoveries",
-        "longDescription": "AI Science Tracker is an open, curated catalog of scientific results enabled by AI since 2020, plus a separate collection of publicly disclosed software vulnerabilities whose discovery involved AI. Search by topic, DOI, year, field or organization, open any record with its original paper or announcement, evidence notes and caveats, and look up AI-found vulnerabilities by CVE ID, product or AI system. Read-only; no account needed. Data is CC BY 4.0. Figures are reported by the linked sources and are not independently verified.",
+        "longDescription": "AI Science Tracker is an open, curated catalog of scientific results enabled by AI since 2020, plus the global vulnerability dataset: every public CVE and advisory joined from its original sources. Search by topic, DOI, year, field or organization, open any record with its original paper or announcement, evidence notes and caveats, and look up vulnerabilities by CVE ID, product or category. Read-only; no account needed. Catalog data is CC BY 4.0; vulnerability fields keep their sources' terms. Figures are reported by the linked sources and are not independently verified.",
         "developerName": "AI Science Tracker",
         "category": "Education & Research",
         "capabilities": [
@@ -34,7 +34,7 @@
         "termsOfServiceURL": "https://github.com/marcello-pichini/ai-science-tracker/blob/main/LICENSE",
         "defaultPrompt": [
           "Which AI-enabled discoveries in antibiotics were published since 2023?",
-          "Was CVE-2026-34197 found with AI, and is there a fix?"
+          "Is CVE-2024-3400 known to be exploited, and is there a fix?"
         ],
         "brandColor": "#12367E",
         "composerIcon": "./assets/icon.png",

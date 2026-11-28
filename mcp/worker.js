@@ -17,7 +17,39 @@ function brief(text = '') {
 }
 
 function vulnerabilityUrl(id) {
-  return `${site}/profiles/security-${encodeURIComponent(id)}.html`
+  return `${site}/security.html?q=${encodeURIComponent(id)}`
+}
+
+// Outside the site preview, a vulnerability is read live from its public record (CVE Program or OSV.dev).
+const absenceNote = 'Absence of a product, exploit or fix in a record does not mean it is unaffected, unexploited or unpatched.'
+
+async function liveVulnerability(id) {
+  const cve = /^CVE-\d{4}-\d{4,}$/i.test(id)
+  const url = cve ? `https://cveawg.mitre.org/api/cve/${encodeURIComponent(id.toUpperCase())}`
+    : `https://api.osv.dev/v1/vulns/${encodeURIComponent(id)}`
+  const response = await fetch(url, { signal: AbortSignal.timeout(8000) })
+  if (response.status === 404) return null
+  if (!response.ok) throw new Error('Live vulnerability request failed')
+  const record = await response.json()
+  if (!cve) {
+    return { id: record.id, aliases: record.aliases ?? [], summary: record.summary ?? null, details: brief(record.details ?? ''),
+      published: record.published ?? null, modified: record.modified ?? null, severity: record.severity ?? [],
+      affected: (record.affected ?? []).slice(0, 20).map((a) => ({ package: a.package, ranges: a.ranges })),
+      references: (record.references ?? []).slice(0, 20).map((r) => r.url),
+      source: 'OSV.dev (each record keeps its original source and licence)', source_url: `https://osv.dev/vulnerability/${encodeURIComponent(record.id)}`,
+      note: absenceNote }
+  }
+  const cna = record.containers?.cna ?? {}
+  const metrics = [cna, ...(record.containers?.adp ?? [])].flatMap((c) => (c.metrics ?? []).flatMap((m) =>
+    Object.entries(m).filter(([k]) => k.startsWith('cvss')).map(([, v]) => ({
+      source: c.providerMetadata?.shortName ?? null, version: v.version, score: v.baseScore, vector: v.vectorString }))))
+  return { id: record.cveMetadata?.cveId ?? id.toUpperCase(), state: record.cveMetadata?.state ?? null,
+    published: record.cveMetadata?.datePublished ?? null, assigner: record.cveMetadata?.assignerShortName ?? null,
+    title: cna.title ?? null, description: brief((cna.descriptions ?? []).find((d) => d.lang?.startsWith('en'))?.value ?? ''),
+    cvss: metrics, affected: (cna.affected ?? []).slice(0, 20).map((a) => ({ vendor: a.vendor, product: a.product, versions: a.versions })),
+    references: (cna.references ?? []).slice(0, 20).map((r) => r.url),
+    source: 'CVE List (CVE® records © The MITRE Corporation, CVE Terms of Use)', source_url: `https://www.cve.org/CVERecord?id=${encodeURIComponent(id.toUpperCase())}`,
+    note: absenceNote }
 }
 
 function catalogUrl(id) {
@@ -128,7 +160,7 @@ function termMatches(term, text) {
   return alternatives.some((alt) => text.includes(alt.length <= 3 ? ` ${alt} ` : ` ${alt}`))
 }
 
-// The catalogs (~11 MB discoveries, ~5 MB vulnerabilities) are parsed and tokenized once per warm
+// The catalogs (~11 MB discoveries, ~5 MB vulnerability preview) are parsed and tokenized once per warm
 // isolate for 10 minutes. Concurrent requests share one download, and a failed refresh keeps serving
 // the previous copy.
 const catalogTtlMs = 10 * 60 * 1000
@@ -168,15 +200,15 @@ const loadCatalog = cachedCatalog('/data/discoveries.json', (record) => ({
   links: `${record.source_url ?? ''} ${record.paper_url ?? ''}`.toLowerCase(),
 }))
 
-const loadVulnerabilities = cachedCatalog('/data/vulnerabilities.json', (record) => ({
+const loadVulnerabilities = cachedCatalog('/data/vulnerabilities-preview.json', (record) => ({
   record,
   fields: {
     title: tokens(record.title ?? ''),
-    metadata: tokens(`${record.product ?? ''} ${record.ai_system ?? ''} ${(record.cves ?? []).join(' ')} ${record.id.replace(/-/g, ' ')}`),
-    organization: tokens(record.organization ?? ''),
-    summary: tokens(`${record.summary ?? ''} ${record.ai_role ?? ''}`),
+    metadata: tokens(`${(record.products ?? []).join(' ').replace(/:/g, ' ')} ${record.category ?? ''} ${record.id.replace(/-/g, ' ')}`),
+    organization: tokens(''),
+    summary: tokens((record.classes ?? []).join(' ')),
   },
-  cves: (record.cves ?? []).join(' ').toLowerCase(),
+  cves: record.id.toLowerCase(),
 }))
 
 // Every term must match; with no such record, a query of three or more terms falls back to the records
@@ -217,7 +249,7 @@ function inField(term, entry, key) {
 
 function createServer() {
   const server = new McpServer({ name: 'AI Science Tracker', version: registryEntry.version }, {
-    instructions: 'Search a curated, non-exhaustive catalog of scientific results enabled by AI, and a separate collection of publicly disclosed vulnerabilities found with AI. Check the original source and report evidence caveats when describing results. Catalog content is CC BY 4.0, attributed to AI Science Tracker (https://aisciencetracker.org/).',
+    instructions: 'Search a curated, non-exhaustive catalog of scientific results enabled by AI, and the global vulnerability dataset (every public CVE and advisory joined from its original sources; the tools search its preview of known exploited and recent critical vulnerabilities and read any other CVE or OSV ID live). Check the original source and report evidence caveats when describing results. Absence of a product, exploit or fix is not safety. Catalog content is CC BY 4.0, attributed to AI Science Tracker (https://aisciencetracker.org/); vulnerability fields keep their sources\' terms.',
   })
 
   server.registerTool('search_discoveries', {
@@ -316,69 +348,60 @@ function createServer() {
   })
 
   server.registerTool('search_vulnerabilities', {
-    title: 'Search AI-found vulnerabilities',
-    description: 'Find publicly disclosed software vulnerabilities whose discovery involved AI, a collection kept separate from the scientific catalog. Terms match words in the title, product, AI system, organization, CVE IDs, summary and AI role, with the same matching rules as search_discoveries. Paste a CVE ID to find its case. Filter by disclosure year or AI system. Results include the stable ID, CVEs, remediation status, source and case page. Use get_vulnerability for the AI role, CVSS, impacts and caveats.',
+    title: 'Search known exploited and recent critical vulnerabilities',
+    description: 'Search the preview of the global vulnerability dataset: every vulnerability known to be exploited (CISA KEV, ENISA EUVD or CISA SSVC) and every critical one (score 9 or more) published in the last 12 months. Terms match the title, product families, category and weakness classes; paste a CVE or GHSA ID to find it. Filter by publication year, category or exploited only. Use get_vulnerability for any CVE or OSV ID, inside or outside the preview.',
     inputSchema: {
       query: z.string().trim().min(1).max(160).optional()
-        .describe('English words (for example "OpenSSL memory corruption") or a CVE ID such as "CVE-2026-34197".'),
-      year: z.number().int().min(2000).max(2100).optional().describe('Disclosure year.'),
-      ai_system: z.string().trim().min(1).max(120).optional()
-        .describe('Words from the AI system name, for example "Big Sleep", "Claude" or "Codex".'),
+        .describe('English words (for example "Fortinet SQL injection") or an ID such as "CVE-2024-3400".'),
+      year: z.number().int().min(1999).max(2100).optional().describe('Publication year.'),
+      category: z.string().trim().min(1).max(80).optional().describe('Product category, for example "browser" or "web server".'),
+      exploited: z.boolean().optional().describe('Only vulnerabilities a public list reports as exploited.'),
       limit: z.number().int().min(1).max(20).default(10).describe('Results per page, 1 to 20.'),
-      offset: z.number().int().min(0).max(10000).default(0).describe('Number of results to skip, for the next page.'),
+      offset: z.number().int().min(0).max(20000).default(0).describe('Number of results to skip, for the next page.'),
     },
-    annotations: { ...readOnly, title: 'Search AI-found vulnerabilities' },
-  }, async ({ query, year, ai_system, limit, offset }) => {
-    const cve = query?.match(/cve-\d{4}-\d{4,}/i)?.[0].toLowerCase()
-    const terms = query && !cve ? queryTerms(query) : []
-    if (query && !cve && !terms.length) return toolResult({ error: 'The query has no searchable words.' }, true)
+    annotations: { ...readOnly, title: 'Search known exploited and recent critical vulnerabilities' },
+  }, async ({ query, year, category, exploited, limit, offset }) => {
+    const id = query?.match(/\b(cve-\d{4}-\d{4,}|ghsa(?:-[23456789cfghjmpqrvwx]{4}){3})\b/i)?.[0].toLowerCase()
+    const terms = query && !id ? queryTerms(query) : []
+    if (query && !id && !terms.length) return toolResult({ error: 'The query has no searchable words.' }, true)
     try {
       const entries = await loadVulnerabilities()
-      const systemTerms = ai_system ? queryTerms(ai_system, { dropStopwords: false }) : []
       const expectedYear = year?.toString()
+      const wantedCategory = category?.toLowerCase()
       const { ranked, partial } = rank(entries, terms, (entry) => {
-        if (expectedYear && entry.record.disclosure_date?.slice(0, 4) !== expectedYear) return false
-        if (!systemTerms.every((term) => termMatches(term, tokens(entry.record.ai_system ?? '')))) return false
-        return !cve || entry.cves.split(' ').includes(cve)
+        const r = entry.record
+        if (expectedYear && r.published?.slice(0, 4) !== expectedYear) return false
+        if (wantedCategory && (r.category ?? '').toLowerCase() !== wantedCategory) return false
+        if (exploited && r.priority !== 'act now') return false
+        return !id || entry.cves === id
       })
       return toolResult(page(ranked, partial, offset, limit, (record) => ({
-        id: record.id,
-        title: record.title,
-        product: record.product,
-        ai_system: record.ai_system,
-        organization: record.organization,
-        cves: record.cves,
-        disclosure_date: record.disclosure_date,
-        remediation: record.remediation,
-        summary: brief(record.summary),
-        source_url: record.source_url,
+        ...record,
         catalog_url: vulnerabilityUrl(record.id),
       })))
     } catch {
-      return toolResult({ error: 'The public vulnerability collection is temporarily unavailable.' }, true)
+      return toolResult({ error: 'The vulnerability preview is temporarily unavailable.' }, true)
     }
   })
 
   server.registerTool('get_vulnerability', {
-    title: 'Get a vulnerability case',
-    description: 'Retrieve an AI-found vulnerability case by its stable ID, including the AI role, sources, CVSS, impacts, remediation and source-attributed caveats.',
+    title: 'Get a vulnerability',
+    description: 'Retrieve one vulnerability by CVE, GHSA or other OSV ID. Preview vulnerabilities come from the global vulnerability dataset with score, priority, products and weakness classes; any other ID is read live from the CVE Program (CVE IDs) or OSV.dev, with its source named.',
     inputSchema: {
-      id: z.string().trim().min(1).max(200).regex(/^[a-z0-9][a-z0-9-]*$/)
-        .describe('Stable case ID as returned by search_vulnerabilities, for example "cve-2026-34197".'),
+      id: z.string().trim().min(1).max(80).regex(/^[A-Za-z0-9][A-Za-z0-9:._-]*$/)
+        .describe('A vulnerability ID such as "CVE-2024-3400" or "GHSA-jfh8-c2jp-5v3q".'),
     },
-    annotations: { ...readOnly, title: 'Get a vulnerability case' },
+    annotations: { ...readOnly, title: 'Get a vulnerability' },
   }, async ({ id }) => {
-    const cached = loadVulnerabilities.find(id)
-    if (cached) return toolResult({ ...cached, catalog_url: vulnerabilityUrl(id) })
     try {
-      const response = await fetch(`${site}/api/v1/vulnerabilities/${encodeURIComponent(id)}.json`, {
-        signal: AbortSignal.timeout(8000),
-      })
-      if (response.status === 404) return toolResult({ error: 'No public vulnerability case has this ID.' }, true)
-      if (!response.ok) throw new Error('Vulnerability request failed')
-      return toolResult({ ...(await response.json()), catalog_url: vulnerabilityUrl(id) })
+      const entries = await loadVulnerabilities().catch(() => [])
+      const cached = entries.find((entry) => entry.record.id.toLowerCase() === id.toLowerCase())?.record
+      if (cached) return toolResult({ ...cached, in_preview: true, catalog_url: vulnerabilityUrl(cached.id), note: absenceNote })
+      const live = await liveVulnerability(id)
+      if (!live) return toolResult({ error: 'No public CVE or OSV record has this ID.' }, true)
+      return toolResult({ ...live, in_preview: false })
     } catch {
-      return toolResult({ error: 'The public vulnerability case is temporarily unavailable.' }, true)
+      return toolResult({ error: 'The public vulnerability record is temporarily unavailable.' }, true)
     }
   })
 

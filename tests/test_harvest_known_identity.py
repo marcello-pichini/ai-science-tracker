@@ -8,39 +8,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 from harvest import known
 
 
-class VulnerabilityIdentityRegressionTest(unittest.TestCase):
-    def test_related_mentions_are_not_catalog_identities(self):
-        with tempfile.TemporaryDirectory() as d:
-            data = Path(d) / "data/vulnerabilities.json"
-            data.parent.mkdir()
-            data.write_text(json.dumps([{
-                "id": "cve-2026-92745", "cves": ["CVE-2026-92745"],
-                "summary": "Separate from CVE-2026-92747 and GHSA-aaaa-bbbb-cccc.",
-                "advisory_url": "https://github.com/example/project/security/advisories/GHSA-1111-2222-3333",
-                "source_url": "https://example.org/CVE-2026-92745?related=CVE-2026-94185",
-            }, {"id": "ghsa-4444-5555-6666", "cves": []}]))
-            index = known.Known(d)
-            for ident in ("CVE-2026-92745", "GHSA-1111-2222-3333", "GHSA-4444-5555-6666"):
-                self.assertTrue(index.vuln(ident), ident)
-            for ident in ("CVE-2026-92747", "GHSA-aaaa-bbbb-cccc", "CVE-2026-94185"):
-                self.assertFalse(index.vuln(ident), ident)
-
-    def test_osv_debian_wrapper_matches_catalogued_and_excluded_cves(self):
-        from harvest import vuln
-        with tempfile.TemporaryDirectory() as d:
-            data = Path(d) / "data/vulnerabilities.json"
-            data.parent.mkdir()
-            data.write_text(json.dumps([{"id": "cve-2026-92745", "cves": ["CVE-2026-92745"]}]))
-            exclusions = Path(d) / "research/vulnerability-exclusions.json"
-            exclusions.parent.mkdir()
-            exclusions.write_text(json.dumps([{"case_key": "CVE-2026-12345"}, {"case_key": "OSEC-2026-1"}, {"case_key": "local-case-42"}]))
-            index = known.Known(d)
-            self.assertTrue(index.vuln("OSEC-2026-1"))
-            self.assertTrue(index.vuln("local-case-42"))
-            for ident, expected in (("DEBIAN-CVE-2026-92745", True), ("DEBIAN-CVE-2026-12345", True), ("DEBIAN-CVE-2026-92747", False)):
-                lead = vuln.osv_entry({"id": ident, "summary": "AI-assisted discovery", "aliases": []})
-                self.assertEqual(index.vuln(*lead["ids"]), expected, ident)
-
 class PaperIdentityRegressionTest(unittest.TestCase):
     def test_secondary_evidence_is_not_a_primary_paper_identity(self):
         with tempfile.TemporaryDirectory() as d:

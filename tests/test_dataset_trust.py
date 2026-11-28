@@ -215,7 +215,7 @@ const html=fs.readFileSync('model-progress.html','utf8');assert.match(html,/<det
             write_discovery_list(root)
             first = build_manifest(root)
             self.assertEqual(first, build_manifest(root))
-            self.assertEqual(set(first['components']), {'discoveries','discoveries-list','archived-discoveries','vulnerabilities','models','model-progress','swe-bench','citations','entity-aliases','discoveries-csv','vulnerabilities-csv','catalog-summary','benchmark-registry'} | {'benchmark-' + source['id'] for source in json.loads((root / 'data/benchmarks/index.json').read_text())['sources']})
+            self.assertEqual(set(first['components']), {'discoveries','discoveries-list','archived-discoveries','vulnerabilities-preview','vulnerabilities-overview','models','model-progress','swe-bench','citations','entity-aliases','discoveries-csv','catalog-summary','benchmark-registry'} | {'benchmark-' + source['id'] for source in json.loads((root / 'data/benchmarks/index.json').read_text())['sources']})
             for key, component in first['components'].items():
                 raw = (root / component['path']).read_bytes()
                 self.assertEqual(component['sha256'], hashlib.sha256(raw).hexdigest())
@@ -274,8 +274,8 @@ assert.ok(table.innerHTML.includes('CC BY-SA 4.0'));assert.ok(table.innerHTML.in
         self.node(r'''
 const assert=require('node:assert/strict'),fs=require('node:fs'),entities=require('./assets/catalog-entities.js');
 entities.configure(JSON.parse(fs.readFileSync('data/entity-aliases.json')));
-const d=JSON.parse(fs.readFileSync('data/discoveries.json')),v=JSON.parse(fs.readFileSync('data/vulnerabilities.json'));
-const before=JSON.stringify([d,v]);
+const d=JSON.parse(fs.readFileSync('data/discoveries.json'));
+const before=JSON.stringify(d);
 assert.equal(entities.organization('MIT; Other').id,'org-mit');assert.equal(entities.organization('Massachusetts Institute of Technology').id,'org-mit');
 assert.equal(entities.organization('MIT-like Institute').id,null);
 assert.equal(entities.organization('University of California, Berkeley').label,'University of California, Berkeley');
@@ -285,9 +285,9 @@ const literal=d.filter(r=>['MIT','Massachusetts Institute of Technology'].includ
 assert.equal(d.filter(r=>entities.organization(r.organization).id==='org-mit').length,literal.length);
 assert.ok(literal.length > 0);
 const aliases=entities.map.systems.find(r=>r.id==='vendor-aisle').aliases;
-assert.ok(aliases.length > 1);assert.deepEqual(v.filter(r=>entities.system(r.ai_system).id==='vendor-aisle').map(r=>r.id),v.filter(r=>aliases.includes(r.ai_system)).map(r=>r.id));
+assert.ok(aliases.length > 1);for(const alias of aliases)assert.equal(entities.system(alias).id,'vendor-aisle');
 assert.equal(entities.system('Potential AISLE-like model').id,null);
-assert.equal(before,JSON.stringify([d,v]),'Source labels must not be rewritten');
+assert.equal(before,JSON.stringify(d),'Source labels must not be rewritten');
 ''')
         self.assertEqual(organization('MIT')['label'], 'Massachusetts Institute of Technology')
         self.assertEqual(organization('Not stated in the abstract reviewed')['kind'], 'unknown affiliation')

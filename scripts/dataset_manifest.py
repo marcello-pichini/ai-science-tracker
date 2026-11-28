@@ -10,7 +10,8 @@ RELEASES = 'https://github.com/marcello-pichini/ai-science-tracker/releases'
 COMPONENTS = {
     'discoveries': ('Scientific discoveries', 'active scientific catalog entries', 'CC BY 4.0', 'Manual and incomplete; entries can overlap or bundle findings.'),
     'archived-discoveries': ('Archived discoveries', 'historical catalog entries', 'CC BY 4.0', 'Retained historical records; excluded from active science totals.'),
-    'vulnerabilities': ('AI-found vulnerabilities', 'source-attributed cases', 'CC BY 4.0', 'Manual and incomplete; cases and distinct CVEs are different units.'),
+    'vulnerabilities-preview': ('Global vulnerability dataset, site preview', 'vulnerabilities (known exploited, or critical and published in the last 12 months)', 'Per source, see docs/vulnerability-sources.md; derived fields CC BY 4.0', 'Preview of the full dataset published on Hugging Face, Kaggle and Zenodo; absence is not safety.'),
+    'vulnerabilities-overview': ('Global vulnerability dataset, overview', 'aggregate document', 'Per source, see docs/vulnerability-sources.md; derived counts CC BY 4.0', 'Counts reflect disclosure and research attention, not product safety.'),
     'models': ('Notable model releases', 'selected Epoch model releases', 'CC BY 4.0; attribute Epoch AI', 'Selected notable releases; overlaps model-progress inventory.'),
     'model-progress': ('Model progress', 'Epoch source entries', 'CC BY 4.0; attribute Epoch AI', 'Selected source entries; missing ECI and benchmark values are not zero.'),
     'swe-bench': ('SWE-bench Verified', 'mini-SWE-agent evaluation runs', 'CC BY-NC 4.0', 'Separate configurations, not unique models; excluded from current Hugging Face catalog export. Noncommercial reuse only.'),
@@ -105,15 +106,18 @@ def build_manifest(root):
         path = f'data/{key}.json'
         raw = (root / path).read_bytes()
         data = json.loads(raw)
-        rows = data if isinstance(data, list) else data.get('models', data.get('records', []))
+        rows = data if isinstance(data, list) else data.get('models', data.get('records', [data] if key == 'vulnerabilities-overview' else []))
         count = len(data['organizations']) + len(data['systems']) if key == 'entity-aliases' else len(rows)
         dates, sources = {}, []
         if key in ('discoveries', 'archived-discoveries'):
             dates = {'publication_dates': span(rows, 'publication_date'), 'addition_dates': span(rows, 'added_date')}
             sources = ['https://aisciencetracker.org/methodology.html']
-        elif key == 'vulnerabilities':
-            dates = {k: span(rows, k) for k in ('disclosure_date', 'ai_attribution_date', 'checked_date')}
-            sources = ['https://aisciencetracker.org/security.html#t-context']
+        elif key == 'vulnerabilities-preview':
+            dates = {'publication_dates': span(rows, 'published')}
+            sources = ['https://aisciencetracker.org/security.html#t-sources']
+        elif key == 'vulnerabilities-overview':
+            dates = {'built_on': data['built']}
+            sources = [s['url'] for s in data['sources']]
         elif key == 'models':
             dates = {'generated_on': data.get('generated'), 'source_downloaded_on': data.get('source', {}).get('downloaded'), 'release_dates': span(rows, 'date')}
             sources = [data.get('source', {}).get('url') or 'https://epoch.ai/data/notable-ai-models']
@@ -132,7 +136,7 @@ def build_manifest(root):
         components[key] = {'path': path, 'label': label, 'sha256': hashlib.sha256(raw).hexdigest(), 'bytes': len(raw),
                            'count': count, 'unit': unit, 'dates': dates, 'source_urls': sources, 'license': license_name,
                            'coverage': coverage, 'release_url': RELEASES,
-                           'catalog_doi': CATALOG_DOI if key in ('discoveries','archived-discoveries','vulnerabilities') else None,
+                           'catalog_doi': CATALOG_DOI if key in ('discoveries','archived-discoveries') else None,
                            'doi_note': 'Catalog archive DOI; upstream sources retain their own identity and license.'}
         if key == 'swe-bench':
             components[key].update(license_url=data['license_url'], license_notice=data['license_notice'],
@@ -140,14 +144,12 @@ def build_manifest(root):
         if key == 'model-progress':
             components[key]['coverage_counts'] = {'eci': sum(m.get('eci') is not None for m in rows),
                 'any_displayed_benchmark': sum(any(m.get('benchmarks', {}).get(b['id'], {}).get('score') is not None for b in data['benchmarks']) for m in rows), 'total': len(rows)}
-        if key == 'vulnerabilities':
-            components[key]['distinct_cves'] = len({cve for r in rows for cve in r['cves']})
     raw = discovery_list_bytes(json.loads((root / 'data/discoveries.json').read_bytes()))
     components['discoveries-list'] = dict(components['discoveries'], path=LIST_PATH, label='Scientific discoveries, list view',
         sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw),
         coverage='Same entries as the scientific discoveries component without the evidence prose fields ' + ', '.join(LIST_OMITTED_EVIDENCE)
                  + '; record_sha256 is the first 16 hex digits of the SHA-256 of api/v1/discoveries/ID.json.')
-    for key in ('discoveries', 'vulnerabilities'):
+    for key in ('discoveries',):
         path = f'data/{key}.csv'
         raw = (root / path).read_bytes()
         components[key + '-csv'] = dict(components[key], path=path, sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw))

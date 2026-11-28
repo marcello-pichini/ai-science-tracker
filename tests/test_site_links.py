@@ -23,7 +23,7 @@ class RedirectParser(HTMLParser):
 
 
 def is_compatibility_redirect(page, seen, root):
-    if page.parent != root / 'profiles' or not page.name.startswith(('org-', 'family-')):
+    if page.parent != root / 'profiles' or not page.name.startswith(('org-', 'family-', 'security-')):
         return False
     parser = RedirectParser()
     parser.feed(page.read_text())

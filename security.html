@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-page-snapshot="60248b585473e3be08fb9b09dea7d40a330fad16487aeaedeee87f654d5ccb4f">
+<html lang="en" data-page-snapshot="4948d59b24bfe8f2bd7eb65064170090000faa72ae598098c2d41d2273306eba">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,19 +76,19 @@ globalThis.astEquivalent = function (lang, path, search, hash, pages) {
   return prefix + '/' + search;
 };
 try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
-<title>AI-Discovered Software Vulnerabilities and CVEs · AI Science Tracker</title>
-<meta name="description" content="Database of software vulnerabilities discovered with AI, including CVEs, affected products, disclosure dates, AI attribution and documented fixes.">
+<title>Global Vulnerability Dataset · AI Science Tracker</title>
+<meta name="description" content="The largest and most complete vulnerability dataset in the world: every public CVE and advisory joined from 21 sources, with products, exploits and fixes.">
 <link rel="canonical" href="https://aisciencetracker.org/security.html">
-<meta property="og:title" content="AI-Discovered Software Vulnerabilities and CVEs · AI Science Tracker">
-<meta property="og:description" content="Database of software vulnerabilities discovered with AI, including CVEs, affected products, disclosure dates, AI attribution and documented fixes.">
+<meta property="og:title" content="Global Vulnerability Dataset · AI Science Tracker">
+<meta property="og:description" content="The largest and most complete vulnerability dataset in the world: every public CVE and advisory joined from 21 sources, with products, exploits and fixes.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://aisciencetracker.org/og/default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
 <meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
-<meta name="twitter:title" content="AI-Discovered Software Vulnerabilities and CVEs · AI Science Tracker">
-<meta name="twitter:description" content="Database of software vulnerabilities discovered with AI, including CVEs, affected products, disclosure dates, AI attribution and documented fixes.">
+<meta name="twitter:title" content="Global Vulnerability Dataset · AI Science Tracker">
+<meta name="twitter:description" content="The largest and most complete vulnerability dataset in the world: every public CVE and advisory joined from 21 sources, with products, exploits and fixes.">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:url" content="https://aisciencetracker.org/security.html">
 <meta property="og:site_name" content="AI Science Tracker">
@@ -98,7 +98,7 @@ try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;v
 <link rel="alternate" type="application/atom+xml" title="AI Science Tracker: additions and source checks" href="feed.xml">
 <link rel="stylesheet" href="styles.css?v=bccf1265dee8"><link rel="stylesheet" href="assets/i18n.css?v=7381bc1b8ccc">
 <script type="application/ld+json">
-{"@context":"https://schema.org/","@type":"CollectionPage","name":"AI-discovered software vulnerabilities","description":"Database of software vulnerabilities discovered with AI, including CVEs, affected products, disclosure dates, AI attribution and documented fixes.","url":"https://aisciencetracker.org/security.html","inLanguage":"en","isPartOf":{"@id":"https://aisciencetracker.org/#website"},"about":{"@id":"https://aisciencetracker.org/dataset.html#security-dataset"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/"},{"@type":"ListItem","position":2,"name":"AI-discovered software vulnerabilities","item":"https://aisciencetracker.org/security.html"}]}}
+{"@context":"https://schema.org/","@type":"Dataset","name":"Global Vulnerability Dataset","description":"The largest and most complete vulnerability dataset in the world: every public CVE and advisory joined from 21 sources, with products, exploits and fixes.","url":"https://aisciencetracker.org/security.html","inLanguage":"en","isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by/4.0/","creator":{"@id":"https://aisciencetracker.org/#website"},"isPartOf":{"@id":"https://aisciencetracker.org/#website"},"keywords":["vulnerabilities","CVE","security advisories","CISA KEV","EPSS","exploits","CWE","software supply chain"],"distribution":[{"@type":"DataDownload","encodingFormat":"application/json","contentUrl":"https://aisciencetracker.org/data/vulnerabilities-preview.json"},{"@type":"DataDownload","encodingFormat":"application/jsonl","contentUrl":"https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"}],"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/"},{"@type":"ListItem","position":2,"name":"Global vulnerability dataset","item":"https://aisciencetracker.org/security.html"}]}}
 </script>
 <link rel="alternate" hreflang="en" href="https://aisciencetracker.org/security.html">
 <link rel="alternate" hreflang="it" href="https://aisciencetracker.org/it/security.html">
@@ -197,439 +197,198 @@ try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.htm
 
 <section class="banda banda-bassa" aria-labelledby="page-title">
   <div class="wrap">
-    <h1 id="page-title">AI-discovered software vulnerabilities</h1>
-    <p class="lead">Public software disclosures, including CVEs and zero-days, where a source establishes AI involvement. Product version numbers record a documented fix, not a browser release list.</p>
-    <p class="security-tasks"><a href="#t-disclosures">Browse cases</a> · <a href="#chart-options" id="explore-charts">Explore charts</a></p>
+    <h1 id="page-title">The largest and most complete vulnerability dataset in the world</h1>
+<!-- vuln:start -->
+    <p class="lead">470,569 vulnerabilities joined from 21 public sources into one record each: CVE List, NVD, GitHub and OSV advisories, CISA KEV, ENISA EUVD, EPSS, exploits, fixes, products and weaknesses. For anyone building with AI: every public vulnerability, in one place.</p>
+    <dl class="collection-facts" aria-label="Dataset size"><div><dt>Vulnerabilities</dt><dd>470,569</dd></div><div><dt>CVE records</dt><dd>432,460</dd></div><div><dt>Without a CVE</dt><dd>38,109</dd></div><div><dt>Product families</dt><dd>207,472</dd></div><div><dt>With public exploit code</dt><dd>41,538</dd></div><div><dt>In CISA KEV</dt><dd>1,804</dd></div><div><dt>Joined sources</dt><dd>21</dd></div><div><dt>In the preview below</dt><dd>13,450</dd></div></dl>
+<!-- vuln:end -->
+    <p class="security-tasks"><a href="#t-get">Get the dataset</a> · <a href="#t-overview">Explore the overview</a> · <a href="#t-preview">Browse the most important vulnerabilities</a></p>
   </div>
 </section>
 <main>
-  <div class="wrap"><p class="sez-sub"><a href="profiles/security-index.html">Browse all source-linked case pages</a> · <a href="dataset.html#security-dataset">Download and cite the security dataset</a>. Case pages preserve AI attribution, reported severity and remediation caveats.</p></div>
-  <noscript><div class="wrap"><p class="vuoto">Charts and filters need JavaScript. You can still <a href="profiles/security-index.html">read every case on its static page</a>, open the <a href="data/vulnerabilities.json">raw case data</a>, or read the <a href="methodology.html">methodology</a>.</p></div></noscript>
-  <section class="sez" aria-labelledby="t-reading"><div class="wrap prosa">
-    <h2 id="t-reading">Reading the evidence</h2><p class="sez-sub"><a href="vulnerabilities-dossier.html">Read how AI-assisted vulnerabilities are confirmed and fixed</a></p>
-    <details class="security-options"><summary>How to read an AI vulnerability discovery</summary>
-    <p>A case connects a publicly disclosed flaw to a source describing AI involvement. Open <strong>Source-attributed AI, human and vendor contributions</strong> on any case to see what the system did, how researchers used its output and what the cited sources establish.</p>
+  <noscript><div class="wrap"><p class="vuoto">Charts and the preview list need JavaScript. You can still download the <a href="data/vulnerabilities-overview.json">overview data</a> and the <a href="data/vulnerabilities-preview.json">preview list</a> (JSON).</p></div></noscript>
+  <section class="sez" aria-labelledby="t-get"><div class="wrap prosa">
+    <h2 id="t-get">Get the dataset</h2>
+    <p>One record per vulnerability, with every source's data kept and attributed: scores from each scorer, affected products and version ranges, fixes and patches, weaknesses and attack patterns, public exploits, exploitation signals and links to every advisory. The site lists a preview; the full files are published here.</p>
     <ul>
-      <li><strong>Follow the evidence:</strong> Original disclosure describes the finding; AI attribution documents the system's role; Advisory / fix evidence supplies the remediation context. These links can point to the same report when it covers all three.</li>
-      <li><strong>Read the dates separately:</strong> disclosure is the public report date, AI attribution is the dated account of AI involvement, and sources checked is this catalog's review date. None establishes when the flaw was introduced or first exploited. Unknown attribution dates remain explicit.</li>
-      <li><strong>Distinguish cases from identifiers:</strong> a case may group multiple CVEs, and some findings have no established CVE here. Case counts and unique CVE counts therefore measure different things.</li>
-      <li><strong>Check the remediation note:</strong> a documented fix is evidence about a cited correction or release. Use the vendor advisory to assess affected versions and upgrade guidance for your own installation.</li>
+      <li><a href="https://huggingface.co/datasets/marcello-pichini/ai-science-tracker" rel="noopener">Hugging Face</a>: JSON Lines files with the dataset viewer.</li>
+      <li><a href="https://www.kaggle.com/datasets/marcellopichini/global-vulnerability-dataset" rel="noopener">Kaggle</a>: the same files for notebooks.</li>
+      <li><a href="https://doi.org/10.5281/zenodo.24217686" rel="noopener">Zenodo</a>: citable, versioned archive with a DOI.</li>
+      <li><a href="https://mcp.aisciencetracker.org/mcp" rel="noopener">MCP server</a> for AI agents and <a href="api/v1/index.json">read-only JSON API</a> for the preview records.</li>
+      <li><a href="docs/vulnerability-global-schema.md">Field reference</a> and <a href="docs/vulnerability-sources.md">sources and reuse terms</a>.</li>
     </ul>
-    <p>Explore cases by disclosure year, discovery context or product, or search for a CVE, AI system or finding. This selected collection cannot establish which AI system discovers the most vulnerabilities: source coverage, access and reporting practices differ.</p>
-    <p><a href="#t-disclosures">Browse tracked disclosures</a> · <a href="#t-context">Read the label definitions</a> · <a href="data/vulnerabilities.csv" download>Download cases (CSV)</a> · <a href="data/vulnerabilities.json">Source records (JSON)</a></p>
-    </details>
   </div></section>
-  <section class="sez" aria-labelledby="t-numbers"><div class="wrap">
-    <h2 id="t-numbers">Catalog charts</h2>
-    <details class="security-options" id="chart-options"><summary id="chart-summary">Explore six charts and filter cases</summary>
-    <p class="sez-sub">Click a chart mark or table count to filter the list below; click again to clear that selection. Filters combine and can be shared through the page URL. Chart counts describe the full selected catalog and stay fixed while filters narrow the list. They measure published coverage, not system effectiveness or product risk.</p>
-    <div class="pannelli" id="charts"></div>
-    </details>
+  <section class="sez" aria-labelledby="t-overview"><div class="wrap">
+    <h2 id="t-overview">Overview of the whole dataset</h2>
+    <p class="sez-sub">Counts cover every published vulnerability in the dataset. Click a bar to filter the preview list below; click again to clear it. Counts reflect disclosure and research attention as much as quality: they are not a safety ranking.</p>
+    <div class="pannelli" id="charts"><p class="vuoto">Loading the overview…</p></div>
+<!-- vuln-categories:start -->
+    <h3>Overview by product category</h3><p class="descr">Vulnerabilities per category, one page each.</p><ul class="elenco-profili" data-i18n-skip><li><a href="profiles/vulnerabilities-operating-system.html">Operating system</a> · 70,496</li><li><a href="profiles/vulnerabilities-browser.html">Browser</a> · 16,484</li><li><a href="profiles/vulnerabilities-device-firmware.html">Device firmware</a> · 15,131</li><li><a href="profiles/vulnerabilities-router-and-network-device-firmware.html">Router and network device firmware</a> · 8,206</li><li><a href="profiles/vulnerabilities-cms.html">CMS</a> · 5,720</li><li><a href="profiles/vulnerabilities-collaboration.html">Collaboration</a> · 5,413</li><li><a href="profiles/vulnerabilities-erp-and-business-software.html">ERP and business software</a> · 5,020</li><li><a href="profiles/vulnerabilities-devops-and-ci.html">DevOps and CI</a> · 4,612</li><li><a href="profiles/vulnerabilities-network-operating-system.html">Network operating system</a> · 4,493</li><li><a href="profiles/vulnerabilities-media-and-image-library.html">Media and image library</a> · 4,446</li><li><a href="profiles/vulnerabilities-database.html">Database</a> · 4,364</li><li><a href="profiles/vulnerabilities-pdf-software.html">PDF software</a> · 4,272</li><li><a href="profiles/vulnerabilities-application-server.html">Application server</a> · 4,044</li><li><a href="profiles/vulnerabilities-industrial-control-and-ot-system.html">Industrial control and OT system</a> · 3,873</li><li><a href="profiles/vulnerabilities-chipset-firmware.html">Chipset firmware</a> · 3,828</li><li><a href="profiles/vulnerabilities-mobile-chipset-firmware.html">Mobile chipset firmware</a> · 3,803</li><li><a href="profiles/vulnerabilities-monitoring.html">Monitoring</a> · 3,418</li><li><a href="profiles/vulnerabilities-media-player.html">Media player</a> · 3,256</li><li><a href="profiles/vulnerabilities-network-service.html">Network service</a> · 2,992</li><li><a href="profiles/vulnerabilities-language-runtime.html">Language runtime</a> · 2,766</li><li><a href="profiles/vulnerabilities-email-client.html">Email client</a> · 2,645</li><li><a href="profiles/vulnerabilities-virtualization.html">Virtualization</a> · 2,540</li><li><a href="profiles/vulnerabilities-office-suite.html">Office suite</a> · 2,309</li><li><a href="profiles/vulnerabilities-developer-tool.html">Developer tool</a> · 2,264</li><li><a href="profiles/vulnerabilities-creative-software.html">Creative software</a> · 2,184</li><li><a href="profiles/vulnerabilities-ai-and-ml-framework.html">AI and ML framework</a> · 1,963</li><li><a href="profiles/vulnerabilities-container-platform.html">Container platform</a> · 1,758</li><li><a href="profiles/vulnerabilities-firewall-and-vpn-appliance.html">Firewall and VPN appliance</a> · 1,619</li><li><a href="profiles/vulnerabilities-identity-and-access.html">Identity and access</a> · 1,391</li><li><a href="profiles/vulnerabilities-web-framework.html">Web framework</a> · 1,036</li><li><a href="profiles/vulnerabilities-tls-and-crypto-library.html">TLS and crypto library</a> · 976</li><li><a href="profiles/vulnerabilities-web-server.html">Web server</a> · 760</li><li><a href="profiles/vulnerabilities-mail-server.html">Mail server</a> · 723</li><li><a href="profiles/vulnerabilities-storage.html">Storage</a> · 598</li><li><a href="profiles/vulnerabilities-hosting-control-panel.html">Hosting control panel</a> · 592</li><li><a href="profiles/vulnerabilities-endpoint-management-and-security.html">Endpoint management and security</a> · 542</li><li><a href="profiles/vulnerabilities-browser-engine.html">Browser engine</a> · 534</li><li><a href="profiles/vulnerabilities-nas-operating-system.html">NAS operating system</a> · 462</li><li><a href="profiles/vulnerabilities-reverse-proxy-and-load-balancer.html">Reverse proxy and load balancer</a> · 445</li><li><a href="profiles/vulnerabilities-api-management.html">API management</a> · 420</li><li><a href="profiles/vulnerabilities-gpu-driver.html">GPU driver</a> · 406</li><li><a href="profiles/vulnerabilities-medical-and-health-software.html">Medical and health software</a> · 376</li><li><a href="profiles/vulnerabilities-network-library.html">Network library</a> · 359</li><li><a href="profiles/vulnerabilities-telephony-and-uc.html">Telephony and UC</a> · 273</li><li><a href="profiles/vulnerabilities-mobile-network-core.html">Mobile network core</a> · 205</li><li><a href="profiles/vulnerabilities-system-library.html">System library</a> · 184</li><li><a href="profiles/vulnerabilities-antivirus.html">Antivirus</a> · 163</li><li><a href="profiles/vulnerabilities-printing.html">Printing</a> · 116</li></ul>
+<!-- vuln-categories:end -->
   </div></section>
-  <section class="sez" aria-labelledby="t-disclosures">
+  <section class="sez" aria-labelledby="t-preview">
     <div class="wrap">
-      <h2 id="t-disclosures" tabindex="-1">Tracked disclosures</h2>
-      <dl id="security-facts" class="collection-facts" aria-label="Security collection coverage"></dl>
-      <p class="descr">Cases and distinct CVEs are separate counting units. Coverage denominators count cases; missing assessments do not mean low severity, no effect or an installed fix. Vendor groups preserve exact AI-system labels and do not establish specific models, autonomy or independence.</p>
-      <p id="coverage" class="coverage-note" aria-live="polite">Loading disclosures…</p>
-    </div>
-    <div class="wrap">
-      <details id="my-products" class="security-options" hidden>
-        <summary>My products <span id="my-product-count"></span></summary>
-        <p class="descr">Save products in this browser. Related labels for common products are grouped here. Enter a version to compare it against a verified range.</p>
-        <form id="my-product-form" class="search-controls trend-control">
-          <select id="my-product" aria-label="Product to save" required></select>
-          <input id="my-version" aria-label="Installed version (optional)" placeholder="Installed version (optional)" maxlength="80">
-          <button type="submit">Save product</button>
-        </form>
-        <ul id="my-product-list" aria-label="Saved products"></ul>
-        <p id="my-product-status" class="descr" role="status"></p>
-      </details>
+      <h2 id="t-preview" tabindex="-1">The most important vulnerabilities</h2>
+      <p class="descr" id="preview-rule">The preview lists every vulnerability known to be exploited (CISA KEV, ENISA EUVD or CISA SSVC "active"), plus every critical one (score 9 or more) published in the last 12 months. Everything else is in the full dataset.</p>
+      <p id="coverage" class="coverage-note" aria-live="polite">Loading the preview…</p>
     </div>
     <div class="filtri"><div class="wrap">
       <div class="campi">
-        <input id="q" type="search" placeholder="Search CVE, product, AI system or finding" aria-label="Search vulnerability disclosures">
-        <select id="product" aria-label="Product"><option value="">All products</option></select>
-        <select id="context" aria-label="Discovery context"><option value="">All discovery contexts</option><option value="undisclosed">Undisclosed at discovery (source report)</option><option value="pre-release">Pre-release findings</option><option value="disclosure">Other vulnerability disclosures</option></select>
-        <select id="month" aria-label="Disclosure month"><option value="">All disclosure months</option></select>
-        <select id="ai_group" aria-label="Source-attributed system group"><option value="">All source-attributed groups</option></select>
-        <select id="ai_system" aria-label="AI system"><option value="">All AI systems</option></select>
-        <select id="remediation" aria-label="Remediation evidence"><option value="">All remediation evidence</option><option value="fix documented">Fix documented</option><option value="not established">Fix evidence not established</option></select>
-        <select id="severity" aria-label="Recorded CVSS severity"><option value="">All recorded CVSS severities</option><option>None</option><option>Low</option><option>Medium</option><option>High</option><option>Critical</option><option>Not available</option></select>
-        <select id="consequence" aria-label="Documented technical effect"><option value="">All documented effects</option><option>code execution</option><option>data disclosure</option><option>data modification</option><option>privilege escalation</option><option>denial of service</option><option>authentication bypass</option><option>other</option><option>Not available</option></select>
+        <input id="q" type="search" placeholder="Search CVE, product or weakness" aria-label="Search the preview">
+        <select id="category" aria-label="Product category"><option value="">All categories</option></select>
+        <select id="band" aria-label="Severity"><option value="">All severities</option><option value="critical">Critical</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="none">None</option><option value="unscored">Unscored</option></select>
+        <select id="priority" aria-label="Priority"><option value="">All priorities</option><option value="act now">Act now (known exploited)</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="unknown">Unknown</option></select>
+        <select id="year" aria-label="Publication year"><option value="">All years</option></select>
+        <select id="cls" aria-label="Weakness class"><option value="">All weakness classes</option></select>
         <button id="reset" type="button">Clear filters</button>
       </div>
-      <div class="riepilogo"><span id="my-product-filter" class="security-options" hidden><label><input id="only-my-products" type="checkbox"> Only my products</label></span><span id="count" aria-live="polite"></span></div>
+      <div class="riepilogo"><span id="count" aria-live="polite"></span></div>
     </div></div>
-    <div class="wrap"><div id="report-group"></div><div id="cases">Loading…</div></div>
+    <div class="wrap"><div id="cases">Loading…</div></div>
   </section>
   <section class="sez" aria-labelledby="t-context"><div class="wrap prosa">
-    <h2 id="t-context">What the labels mean</h2>
-    <p>This is a manually selected collection of public cases, separate from the scientific-discovery count. Each record covers one identifiable finding; aggregate model claims and benchmarks do not become individual vulnerabilities.</p>
-    <p><strong>Undisclosed at discovery (source report)</strong> preserves a source's account of a flaw unknown to defenders at that time. It provides zero-day context, not independent proof of exploitation. <strong>Pre-release finding</strong> means the cited source says it was caught before an official release. Other disclosures are not automatically classified as zero-days.</p>
-    <p><strong>Fix documented</strong> means a cited source records a correction or fixed release. It does not show which users installed it, whether a product is currently safe, or whether an attack occurred. Disclosure, AI-attribution and source-check dates are shown separately.</p>
-    <p>A missing CVE means no identifier is established by the cited evidence here. Findings remain attributed to the named researchers and AI systems; source checking does not independently reproduce the result. This tracker is not a live vulnerability inventory.</p>
-    <p><a href="data/vulnerabilities.json">Download the source records (JSON)</a> · <a href="methodology.html">Catalog methodology</a></p>
+    <h2 id="t-context">How to read it</h2>
+    <p><strong>Absence is not safety.</strong> A product, exploit or fix missing from a record means no joined source states it, not that the product is unaffected, unexploited or unpatched. Check the vendor advisory for your own installation.</p>
+    <p><strong>Scores stay attributed.</strong> Each record keeps every score with its source and version; the one shown here is the vendor's (CNA) first, then CISA's, then NVD's, newest CVSS version first. A score computed from a published vector is marked as computed.</p>
+    <p><strong>Priority is a heuristic.</strong> "Act now" means a public list reports exploitation (CISA KEV, ENISA EUVD or CISA SSVC); the other levels combine public exploits, EPSS, exposure and score. It is not vendor advice.</p>
+    <p><strong>Product families and categories are ours.</strong> Names from different sources are grouped into one product family and a curated category; counts per product or category measure disclosure and research attention, not quality.</p>
+    <p><a href="methodology.html">Catalog methodology</a> · <a href="docs/vulnerability-global-schema.md">Every field explained</a></p>
+    <p><a href="vulnerabilities-dossier.html">Read how AI-assisted vulnerabilities are confirmed and fixed</a></p>
+  </div></section>
+  <section class="sez" aria-labelledby="t-sources"><div class="wrap prosa">
+    <h2 id="t-sources">Sources and licences</h2>
+    <p>Each source keeps its own terms. Sources that publish no reuse terms contribute only identifiers and links. Our derived fields are CC BY 4.0, AI Science Tracker.</p>
+<!-- vuln-sources:start -->
+    <div class="security-table" data-i18n-skip><table><caption>Sources joined in the dataset, with their terms and required notices.</caption><thead><tr><th scope="col">Source</th><th scope="col">Terms</th><th scope="col">Notice</th></tr></thead><tbody><tr><th scope="row"><a href="https://www.cve.org/Legal/TermsOfUse" rel="noopener">CVE List (MITRE, CVE Program)</a></th><td>CVE Terms of Use</td><td>CVE® records © The MITRE Corporation, reproduced under the CVE Terms of Use.</td></tr><tr><th scope="row"><a href="https://www.cve.org/Legal/TermsOfUse" rel="noopener">CISA ADP (in CVE records)</a></th><td>CVE Terms of Use</td><td>SSVC decision points, CWE and affected products added to CVE records by CISA.</td></tr><tr><th scope="row"><a href="https://nvd.nist.gov/developers/terms-of-use" rel="noopener">NVD (NIST)</a></th><td>NVD terms of use</td><td>This product uses the NVD API but is not endorsed or certified by the NVD.</td></tr><tr><th scope="row"><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" rel="noopener">CISA Known Exploited Vulnerabilities</a></th><td>CC0 1.0</td><td>CISA KEV catalog, public domain dedication.</td></tr><tr><th scope="row"><a href="https://www.first.org/epss/" rel="noopener">FIRST EPSS</a></th><td>Attribution requested</td><td>EPSS scores by FIRST (first.org/epss), with the score date.</td></tr><tr><th scope="row"><a href="https://euvd.enisa.europa.eu/" rel="noopener">ENISA EU Vulnerability Database</a></th><td>ENISA legal notice</td><td>Source: ENISA, EU Vulnerability Database (euvd.enisa.europa.eu).</td></tr><tr><th scope="row"><a href="https://github.com/github/advisory-database" rel="noopener">GitHub Advisory Database (via OSV)</a></th><td>CC BY 4.0</td><td>GitHub Advisory Database, CC BY 4.0; advisory link kept on every row.</td></tr><tr><th scope="row"><a href="https://osv.dev/" rel="noopener">PyPI, PSF, Go, RustSec, OSS-Fuzz, Haskell, Julia, opam, Drupal advisories (via OSV)</a></th><td>CC BY 4.0 or CC0, per source</td><td>Each row keeps its original source name, licence and advisory link.</td></tr><tr><th scope="row"><a href="https://cwe.mitre.org/about/termsofuse.html" rel="noopener">MITRE CWE</a></th><td>CWE Terms of Use</td><td>CWE™ © The MITRE Corporation, reproduced under the CWE Terms of Use.</td></tr><tr><th scope="row"><a href="https://capec.mitre.org/about/termsofuse.html" rel="noopener">MITRE CAPEC (with its ATT&amp;CK mappings)</a></th><td>CAPEC Terms of Use</td><td>CAPEC™ © The MITRE Corporation, reproduced under the CAPEC Terms of Use.</td></tr><tr><th scope="row"><a href="https://github.com/rapid7/metasploit-framework" rel="noopener">Metasploit module metadata</a></th><td>BSD-3-Clause</td><td>Module names and links from the Metasploit Framework, BSD-3-Clause.</td></tr><tr><th scope="row"><a href="https://github.com/projectdiscovery/nuclei-templates" rel="noopener">Nuclei templates</a></th><td>MIT</td><td>Template paths and links from projectdiscovery/nuclei-templates, MIT.</td></tr><tr><th scope="row"><a href="https://github.com/nomi-sec/PoC-in-GitHub" rel="noopener">PoC-in-GitHub (nomi-sec)</a></th><td>CC0 1.0</td><td>Repository links, unverified: they may be fake or malicious.</td></tr><tr><th scope="row"><a href="https://www.exploit-db.com/" rel="noopener">Exploit-DB</a></th><td>Reference only</td><td>Exploit IDs and links only; no titles or code.</td></tr><tr><th scope="row"><a href="https://cert.cyber.gouv.fr/" rel="noopener">CERT-FR</a></th><td>Licence Ouverte 2.0</td><td>Source: CERT-FR (ANSSI), Licence Ouverte 2.0.</td></tr><tr><th scope="row"><a href="https://vulnerability.circl.lu/" rel="noopener">CIRCL GCVE (GNA-1) and sightings</a></th><td>CC BY 4.0</td><td>Source: CIRCL Vulnerability-Lookup, CC BY 4.0; sightings as counts only.</td></tr><tr><th scope="row"><a href="https://vulnerability.circl.lu/" rel="noopener">Vendor and CERT CSAF feeds (via CIRCL)</a></th><td>Reference only</td><td>Advisory IDs and links only.</td></tr><tr><th scope="row"><a href="https://vulnerability.circl.lu/" rel="noopener">JVN iPedia, CNVD, FSTEC BDU, VARIoT</a></th><td>Reference only</td><td>IDs and links only.</td></tr><tr><th scope="row"><a href="https://endoflife.date/" rel="noopener">endoflife.date</a></th><td>MIT</td><td>Product lifecycle dates from endoflife.date, MIT.</td></tr><tr><th scope="row"><a href="https://github.com/FIRSTdotorg/cvss-v4-calculator" rel="noopener">FIRST CVSS v4.0 calculator tables</a></th><td>BSD-2-Clause</td><td>CVSS v4.0 scoring tables © FIRST, Red Hat and contributors, BSD-2-Clause.</td></tr><tr><th scope="row"><a href="https://aisciencetracker.org/" rel="noopener">AI Science Tracker derived fields</a></th><td>CC BY 4.0</td><td>Product families, categories, primary severity, priority, summary and counts are ours, CC BY 4.0.</td></tr></tbody></table></div>
+<!-- vuln-sources:end -->
   </div></section>
 </main>
 <footer class="footer"><div class="wrap">
     <p><a href="contact.html">Contact</a></p>
     <p><a href="search.html">Search all collections</a> · <a href="model-progress.html">Model progress and release rhythm</a> · <a href="insights.html">Insights</a> · <a href="antibiotic-dossier.html">Antibiotic evidence dossier</a></p>
-  <p>Original disclosures and documented remediation, with AI involvement attributed to sources.</p>
+  <p>Every public vulnerability, joined from its original sources and attributed to them.</p>
   <p><a href="/">Scientific discoveries</a> · <a href="guide.html">Site guide</a></p>
   <p><a href="https://www.linkedin.com/company/aisciencetracker/" rel="me noopener">LinkedIn</a></p>
   <p>See also: <a href="https://iamops.dev/">iamops.dev: IAM, AI agents and DevOps notes</a></p>
     <p>Privacy: this site sets no cookies. A language choice is stored only in this browser and is not sent to a server. The site uses Cloudflare Web Analytics for aggregate visit statistics (page, referrer, browser, IP address) under legitimate interest (GDPR Art. 6(1)(f)). Cloudflare acts as our processor and may process data in the United States under the EU-US Data Privacy Framework. To object or exercise your rights, <a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new">open an issue</a>.</p>
 </div></footer>
-<script src="assets/catalog-data.js?v=a735288ec4d2"></script>
-<script src="assets/catalog-entities.js?v=0c51c8fa4441"></script>
-<script src="assets/catalog-ui.js?v=d8f7d3caf780"></script>
 <script>
 const $ = id => document.getElementById(id);
 const esc = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const safeUrl = value => /^https:\/\//.test(value) ? value : "#";
+const safeUrl = value => /^https?:\/\//.test(value || "") ? value : "#";
+const num = n => new Intl.NumberFormat("en-GB").format(n);
 const date = value => new Intl.DateTimeFormat("en-GB", {day:"numeric",month:"short",year:"numeric"}).format(new Date(value + "T12:00:00"));
-const labels = {undisclosed:"Undisclosed at discovery (source report)", "pre-release":"Pre-release finding", disclosure:"Vulnerability disclosure"};
-let cases = [], year = "", shown = 40;
-const productStorageKey = "ast-security-my-products";
-const myProducts = new Map();
-try {
-  for (const pair of JSON.parse(localStorage.getItem(productStorageKey) || "[]")) {
-    if (Array.isArray(pair) && typeof pair[0] === "string" && typeof pair[1] === "string") myProducts.set(pair[0], pair[1]);
-  }
-} catch { /* Browsing remains available without storage. */ }
-let report = new URLSearchParams(location.search).get('report') || '';
-const reportUrls = record => [...new Set([record.source_url, record.ai_source_url, record.advisory_url])];
-let reports = new Map();
-function reportFilterUrl(reportUrl) {
-  const url = new URL(location.href);
-  url.searchParams.set("report", reportUrl);
-  url.hash = "t-disclosures";
-  return url.pathname + url.search + url.hash;
+const filters = ["category", "band", "priority", "year", "cls"];
+const bandLabels = {critical:"Critical", high:"High", medium:"Medium", low:"Low", none:"None", unscored:"Unscored"};
+let preview = [], shown = 40;
+
+function links(id) {
+  if (id.startsWith("CVE-")) return [["CVE.org", `https://www.cve.org/CVERecord?id=${id}`], ["NVD", `https://nvd.nist.gov/vuln/detail/${id}`]];
+  if (/^(CNVD|VAR|BDU|JVNDB)/.test(id)) return [];
+  return [["OSV", `https://osv.dev/vulnerability/${encodeURIComponent(id)}`]];
 }
-function reportLinks(record) {
-  return reportUrls(record).filter(url => (reports.get(url)?.length || 0) > 1).map(url => `<p><a href="${esc(reportFilterUrl(url))}">Cases citing this report (${reports.get(url).length})</a> · <a href="${esc(safeUrl(url))}" rel="noopener">${esc(url)}</a></p>`).join('');
+function product(key) {
+  const [vendor, name] = key.split(/:(.*)/s);
+  return vendor ? `${name} (${vendor})` : name;
 }
-function clearReport() {
-  report = '';
-  const url = new URL(location.href);
-  url.searchParams.delete('report');
-  history.replaceState(null, '', url);
+function heading(r) {
+  if (r.title) return r.title;
+  if (r.description) return r.description.length >= 80 ? r.description.replace(/\s+\S*$/, "") + "…" : r.description;
+  const what = (r.classes || [])[0];
+  const where = (r.products || []).map(product)[0];
+  return [what ? what[0].toUpperCase() + what.slice(1) : "Vulnerability", where ? "in " + where : ""].join(" ").trim();
 }
-const filterIds = ["product", "context", "month", "ai_system","ai_group", "remediation", "severity", "consequence"];
-const severities = ["None", "Low", "Medium", "High", "Critical", "Not available"];
-const consequenceLabels = ["code execution", "data disclosure", "data modification", "privilege escalation", "denial of service", "authentication bypass", "other", "Not available"];
-function ratingSeverity(rating) {
-  if (rating.version === "2.0") return rating.score < 4 ? "Low" : rating.score < 7 ? "Medium" : "High";
-  return rating.score === 0 ? "None" : rating.score < 4 ? "Low" : rating.score < 7 ? "Medium" : rating.score < 9 ? "High" : "Critical";
+function rows(key, entries, interactive = true) {
+  const max = Math.max(1, ...entries.map(entry => entry[2]));
+  return `<div class="righe">` + entries.map(([value, label, n]) => {
+    const inner = `<span class="et" title="${esc(label)}">${esc(label)}</span><span class="bin"><span class="bar" style="width:${(n / max * 100).toFixed(1)}%;min-width:${n ? 3 : 0}px"></span></span><span class="val">${num(n)}</span>`;
+    return interactive
+      ? `<button class="riga" type="button" data-k="${key}" data-v="${esc(value)}" aria-pressed="false" aria-label="${esc(label)}: ${num(n)} vulnerabilities">${inner}</button>`
+      : `<div class="riga">${inner}</div>`;
+  }).join("") + `</div>`;
 }
-function severity(record) {
-  const ratings = record.cvss || [];
-  if (!ratings.length) return "Not available";
-  const highest = Math.max(...ratings.map(rating => rating.score));
-  return severities[Math.max(...ratings.filter(rating => rating.score === highest).map(rating => severities.indexOf(ratingSeverity(rating))))];
+function table(entries) {
+  return `<details><summary>View data as a table</summary><div class="security-table"><table><thead><tr><th scope="col">Label</th><th scope="col">Vulnerabilities</th></tr></thead><tbody>${entries.map(([, label, n]) => `<tr><th scope="row">${esc(label)}</th><td>${num(n)}</td></tr>`).join("")}</tbody></table></div></details>`;
 }
-function consequences(record) {
-  const values = [...new Set((record.impacts || []).flatMap(impact => impact.consequences))];
-  return values.length ? values : ["Not available"];
+function panel(title, note, key, entries, interactive = true, wide = false) {
+  return `<div class="pannello${wide ? " largo" : ""}"><h3>${esc(title)}</h3><p class="descr">${esc(note)}</p>${rows(key, entries, interactive)}${table(entries)}</div>`;
+}
+function charts(o) {
+  const years = Object.entries(o.by_year).filter(([y]) => /^\d{4}$/.test(y) && y >= "1999").map(([y, n]) => [y, y, n]);
+  const bands = ["critical", "high", "medium", "low", "none", "unscored"].map(b => [b, bandLabels[b], o.by_band[b] || 0]);
+  const priorities = ["act now", "high", "medium", "low", "unknown"].map(p => [p, p[0].toUpperCase() + p.slice(1), o.by_priority[p] || 0]);
+  const maturity = Object.entries(o.by_maturity).sort((a, b) => b[1] - a[1]).map(([m, n]) => [m, m[0].toUpperCase() + m.slice(1), n]);
+  const classes = o.top_classes.map(c => [c.name, c.name[0].toUpperCase() + c.name.slice(1), c.total]);
+  const categories = o.categories.slice(0, 15).map(c => [c.name, c.name[0].toUpperCase() + c.name.slice(1), c.total]);
+  $("charts").innerHTML =
+    panel("Published vulnerabilities by year", "Year of publication in the CVE List or the source advisory, since 1999.", "year", years.reverse(), true, true) +
+    panel("By severity", "Primary score band; unscored means no source published a score or a vector.", "band", bands) +
+    panel("By priority", "Our heuristic from exploitation, exploit, EPSS, exposure and score signals.", "priority", priorities) +
+    panel("Exploitation", "Strongest public signal per vulnerability; not shown in the preview filters.", "maturity", maturity, false) +
+    panel("Most common weakness classes", "Plain classes grouped from CWE; a vulnerability can have several.", "cls", classes) +
+    panel("Largest product categories", "Curated categories; a vulnerability counts once per category it touches.", "category", categories, true, true);
 }
 function syncUrl() {
   const url = new URL(location.href);
-  for (const id of ["q", ...filterIds]) {
+  for (const id of ["q", ...filters]) {
     if ($(id).value) url.searchParams.set(id, $(id).value); else url.searchParams.delete(id);
   }
-  if (year) url.searchParams.set("year", year); else url.searchParams.delete("year");
-  if (report) url.searchParams.set("report", report); else url.searchParams.delete("report");
   history.replaceState(null, "", url);
 }
-function mark(key, value, label, extra = "", className = "") {
-  return `<button type="button" class="security-mark ${className}" data-k="${key}" data-v="${esc(value)}" ${extra} aria-pressed="false" title="${esc(label)}">${esc(label)}</button>`;
+function render() {
+  syncUrl();
+  document.querySelectorAll("#charts [data-k]").forEach(b => b.setAttribute("aria-pressed", String($(b.dataset.k)?.value === b.dataset.v)));
+  const query = $("q").value.trim().toLowerCase().replace(/[–—]/g, "-");
+  const v = Object.fromEntries(filters.map(id => [id, $(id).value]));
+  const selected = preview.filter(r => (!v.category || r.category === v.category) && (!v.band || r.band === v.band) &&
+    (!v.priority || r.priority === v.priority) && (!v.year || (r.published || "").startsWith(v.year)) &&
+    (!v.cls || (r.classes || []).includes(v.cls)) &&
+    (!query || [r.id, r.title, ...(r.products || []), ...(r.classes || [])].join(" ").toLowerCase().includes(query)));
+  $("count").textContent = `${num(selected.length)} of ${num(preview.length)} preview vulnerabilities`;
+  $("cases").innerHTML = selected.slice(0, shown).map(r => `<article class="voce" id="${esc(r.id)}" tabindex="-1">
+    <div class="voce-meta">${r.published ? `<time datetime="${esc(r.published)}">Published ${esc(date(r.published))}</time>` : "<span>Publication date not stated by the sources</span>"}<span>${esc(r.id)}</span></div>
+    <h3>${esc(heading(r))}</h3>
+    <p class="tech"><span>Products:</span> ${(r.products || []).length ? r.products.map(p => esc(product(p))).join(", ") : "not stated by the sources"}${r.category ? ` · <span>Category:</span> ${esc(r.category)}` : ""}</p>
+    <p class="tech"><span>Score:</span> ${r.score != null ? `${esc(r.score)} (${esc(bandLabels[r.band] || r.band)}, ${esc(r.score_source)})` : "not scored by the sources"}${r.epss != null ? ` · <span>EPSS:</span> ${esc((r.epss * 100).toFixed(1))}%` : ""}${(r.classes || []).length ? ` · <span>Weakness:</span> ${r.classes.map(esc).join(", ")}` : ""}</p>
+    <div class="voce-footer">${r.priority ? `<span class="etich">Priority: ${esc(r.priority)}</span>` : ""}${r.kev_added ? `<span class="etich">In CISA KEV since ${esc(date(r.kev_added))}</span>` : ""}
+      <span class="collegamenti">${links(r.id).map(([label, url]) => `<a href="${esc(url)}" rel="noopener">${label}</a>`).join("")}${r.advisory ? `<a href="${esc(safeUrl(r.advisory))}" rel="noopener">Vendor advisory</a>` : ""}</span></div>
+  </article>`).join("") + (selected.length > shown ? `<p><button class="piu" id="more" type="button">Show 40 more of ${num(selected.length - shown)} remaining</button></p>` : "")
+    || '<p class="vuoto">No vulnerabilities in the preview match these filters. Try clearing a filter, or query the full dataset.</p>';
 }
-function severityLegend() {
-  return `<div class="security-legend">${severities.map((value, i) => mark("severity", value, value, "", "security-s" + i)).join("")}</div>`;
-}
-function versionParts(version) {
-  if (!/^v?\d{1,8}\.\d{1,8}\.\d{1,8}$/.test(version)) return null;
-  return version.replace(/^v/, "").split(".").map(Number);
-}
-function versionMatch(version, comparison) {
-  const installed = versionParts(version);
-  const limit = versionParts(comparison?.upper_bound || "");
-  if (!installed || !limit) return "Comparison unavailable. See the advisory for your release.";
-  const order = installed.map((part, i) => part - limit[i]).find(delta => delta !== 0) || 0;
-  return order < 0 || (order === 0 && comparison.inclusive) ? "Matches the advisory’s affected version range." : "Outside the advisory’s listed affected range.";
-}
-function remediationPanel(record, installed = "") {
-  const detail = record.remediation_details;
-  const range = detail?.comparison;
-  return `<div class="pannello source-details" data-evidence="remediation">
-    <p><strong>What to update</strong> · ${esc(record.product)}${detail?.scope ? ` · ${esc(detail.scope)}` : ""}</p>
-    ${range ? `<p><strong>Affected versions:</strong> ${range.inclusive ? "Through" : "Before"} ${esc(range.upper_bound)}${range.inclusive ? ", inclusive" : ""}.</p>` : "<p>Affected versions not confirmed in this summary.</p>"}
-    ${detail?.fixed_in?.length ? `<p><strong>Fixed in:</strong> ${detail.fixed_in.map(esc).join(" · ")}</p>` : ""}
-    <p><strong>${detail?.action ? "Action" : "Remediation note"}:</strong> ${esc(detail?.action || record.remediation_note)}</p>
-    ${detail?.action ? `<p>${esc(record.remediation_note)}</p>` : ""}
-    ${installed ? `<p><strong>Saved version ${esc(installed)}:</strong> ${esc(versionMatch(installed, detail?.comparison))}</p>` : ""}
-    <p><a href="${esc(safeUrl(detail?.source_url || record.advisory_url))}" rel="noopener">Advisory / fix evidence</a> · checked ${esc(date(detail?.checked_date || record.checked_date))}</p>
-  </div>`;
-}
-const trackedProductGroups = [
-  [/^(?:Mozilla )?Firefox(?=$|[ (])/i, "Firefox"],
-  [/^(?:Mozilla )?Thunderbird(?=$|[ (])/i, "Thunderbird"],
-  [/^FFmpeg(?=$|[ (])/, "FFmpeg"],
-  [/^Google Chrome(?=$|[ (])/, "Google Chrome"],
-  [/^OpenSSL(?=$|[ (])/, "OpenSSL"],
-  [/^PostgreSQL(?=$|[ (])/, "PostgreSQL"],
-  [/^(?:curl|libcurl)(?=$|[ /])/, "curl / libcurl"]
-];
-function trackedProducts(product) {
-  if (product === "Firefox and Thunderbird" || product === "Firefox; Thunderbird") return ["Firefox", "Thunderbird"];
-  return [trackedProductGroups.find(([pattern]) => pattern.test(product))?.[1] || product];
-}
-function savedVersion(record) {
-  const [product, other] = trackedProducts(record.product);
-  return other ? "" : myProducts.get(product);
-}
-function evidence(record, open = false) {
-  const ratings = record.cvss || [], impacts = record.impacts || [];
-  return `<p class="tech"><strong>Recorded CVSS:</strong> ${esc(severity(record))}${ratings.length ? " · highest recorded score " + Math.max(...ratings.map(rating => rating.score)) : " · no assessment established here"}. <strong>Documented technical effects:</strong> ${esc(consequences(record).join(", "))}.</p>
-    <details class="source-details" data-evidence="severity"${open ? " open" : ""}><summary>Severity, consequences and exploitation evidence</summary>
-    <p>Case grouping uses the highest recorded CVSS score, with its version-specific severity band. It is descriptive, not a combined or editorial risk index. All recorded assessments remain below; scores from different versions and sources may disagree. <a href="https://www.first.org/cvss/" rel="noopener">CVSS specifications</a> define version-specific scoring and severity bands.</p>
-    ${ratings.length ? `<ul>${ratings.map(rating => `<li><strong>${esc(rating.cve || "Case-level assessment")}</strong>: CVSS ${esc(rating.version)} · ${esc(rating.score)} (${esc(ratingSeverity(rating))})${rating.vector ? ` · <code>${esc(rating.vector)}</code>` : " · vector not available"}${rating.scenarios?.length ? ` · <strong>Assessment scenarios:</strong> ${rating.scenarios.map(esc).join("; ")}` : ""}. <a href="${esc(safeUrl(rating.source_url))}" rel="noopener">${esc(rating.source_name)}</a> · checked ${esc(date(rating.checked_date))}.</li>`).join("")}</ul>` : "<p>No source-backed CVSS assessment is established in this catalog.</p>"}
-    ${impacts.length ? impacts.map(impact => `<p><strong>${esc(impact.cves.length ? impact.cves.join(", ") : "Case-level evidence")}:</strong> ${esc(impact.consequences.length ? impact.consequences.join(", ") : "Technical effect not established")}.<br><strong>Prerequisites / affected scope:</strong> ${esc(impact.conditions || "Not established by the cited evidence")}.<br><strong>Exploitation evidence:</strong> ${esc(impact.exploitation || "Not established by the cited evidence")}. <a href="${esc(safeUrl(impact.source_url))}" rel="noopener">Impact source</a> · checked ${esc(date(impact.checked_date))}.</p>`).join("") : "<p>Technical effects, prerequisites and exploitation evidence are not established here. Missing evidence does not establish absence of exploitation.</p>"}
-    </details>`;
-}
-function rows(key, entries, max = Math.max(1, ...entries.map(entry => entry[2]))) {
-  return `<div class="righe">` + entries.map(([value, label, n]) => `<button class="riga" type="button" data-k="${key}" data-v="${esc(value)}" aria-pressed="false" aria-label="${esc(label)}: ${n} ${n === 1 ? "case" : "cases"}"><span class="et" title="${esc(label)}">${esc(label)}</span><span class="bin"><span class="bar" style="width:${(n / max * 100).toFixed(1)}%;min-width:${n ? 3 : 0}px"></span></span><span class="val">${n}</span></button>`).join("") + `</div>`;
-}
-function rankedRows(key, entries) {
-  const max = Math.max(1, ...entries.map(entry => entry[2]));
-  return rows(key, entries.slice(0, 10), max) + (entries.length > 10
-    ? `<details><summary>Show all ${entries.length} labels</summary>${rows(key, entries.slice(10), max)}</details>` : "");
-}
-function dataTable(key, entries) {
-  return `<details><summary>View data as a table</summary><div class="security-table"><table><thead><tr><th scope="col">Label</th><th scope="col">Cases</th></tr></thead><tbody>${entries.map(([value,label,n]) => `<tr><th scope="row">${esc(label)}</th><td>${mark(key,value,n)}</td></tr>`).join("")}</tbody></table></div></details>`;
-}
-function charts() {
-  const count = key => cases.reduce((m, record) => { const value = key(record); m[value] = (m[value] || 0) + 1; return m; }, Object.create(null));
-  const ranked = key => Object.entries(count(record => record[key])).sort((a,b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([v,n]) => [v,v,n]);
-  const contexts = Object.entries(count(record => record.classification)).sort((a, b) => b[1] - a[1]).map(([c, n]) => [c, labels[c], n]);
-  const monthly = count(record => record.disclosure_date.slice(0, 7));
-  const keys = Object.keys(monthly).sort(), months = [];
-  const currentMonth = new Date().toISOString().slice(0, 7);
-  if (keys.length) {
-    const cursor = new Date(keys[0] + "-01T12:00:00Z");
-    while (cursor.toISOString().slice(0, 7) <= keys[keys.length - 1]) {
-      const value = cursor.toISOString().slice(0, 7);
-      const label = new Intl.DateTimeFormat("en-GB", {month:"short", year:"numeric", timeZone:"UTC"}).format(cursor);
-      months.push([value, label + (value === currentMonth ? " (incomplete)" : ""), monthly[value] || 0]);
-      cursor.setUTCMonth(cursor.getUTCMonth() + 1);
-    }
-  }
-  $("month").innerHTML = '<option value="">All disclosure months</option>' + months.map(([value,label]) => `<option value="${value}">${esc(label)}</option>`).join("");
-  $("ai_system").innerHTML = '<option value="">All AI systems</option>' + Object.keys(count(record => record.ai_system)).sort().map(value => `<option>${esc(value)}</option>`).join("");
-  const maxMonth = Math.max(4, Math.ceil(Math.max(0, ...months.map(entry => entry[2])) / 4) * 4);
-  const monthlySvg = `<svg class="security-months" viewBox="0 0 960 355" role="group" aria-label="Monthly case counts stacked by recorded CVSS severity. Exact counts and month filters are in the table below.">${[0, 1, 2, 3, 4].map(step => { const n = maxMonth * step / 4, y = 260 - n / maxMonth * 230; return `<line class="griglia" x1="45" x2="945" y1="${y}" y2="${y}"/><text class="ax" x="35" y="${y + 4}" text-anchor="end">${n}</text>`; }).join("")}${months.map(([month,label,n], index) => {
-    const width = 900 / Math.max(1, months.length), x = 45 + index * width;
-    let base = 260;
-    const bars = severities.map((value, i) => {
-      const total = cases.filter(record => record.disclosure_date.startsWith(month) && severity(record) === value).length;
-      const height = total / maxMonth * 230;
-      base -= height;
-      return total ? `<rect class="security-mark security-s${i}" x="${x}" y="${base}" width="${width * .76}" height="${height}" tabindex="0" role="button" data-k="month" data-v="${month}" data-severity="${value}" aria-pressed="false" aria-label="${esc(label)} · ${value}: ${total} cases"><title>${esc(label)} · ${value}: ${total} cases</title></rect>` : "";
-    }).join("");
-    return bars + `<text class="ax" x="${x + width * .38}" y="${260 - n / maxMonth * 230 - 7}" text-anchor="middle">${n}</text><text class="ax" x="${x + width * .38}" y="285" text-anchor="end" transform="rotate(-50 ${x + width * .38} 285)">${esc(month)}${month === currentMonth ? "*" : ""}</text>`;
-  }).join("")}</svg>`;
-  const monthlyTable = `<details><summary>View monthly data and filters as a table</summary><div class="security-table"><table><caption>Monthly cases by recorded severity; counts filter month and severity together.</caption><thead><tr><th scope="col">Month</th>${severities.map(value => `<th scope="col">${value}</th>`).join("")}</tr></thead><tbody>${months.map(([month,label]) => `<tr><th scope="row">${mark("month", month, label)}</th>${severities.map(value => `<td>${mark("month", month, cases.filter(record => record.disclosure_date.startsWith(month) && severity(record) === value).length, `data-severity="${value}"`)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>${rows("month", months)}</details>`;
-  const fixes = ["fix documented", "not established"];
-  const matrix = `<div class="security-table"><table><caption>Case counts; select a cell to combine severity and remediation filters.</caption><thead><tr><th scope="col">Recorded severity</th>${fixes.map(value => `<th scope="col">${mark("remediation",value,value === "fix documented" ? "Fix documented" : "Fix evidence not established")}</th>`).join("")}</tr></thead><tbody>${severities.map(value => `<tr><th scope="row">${mark("severity", value, value)}</th>${fixes.map(fix => `<td>${mark("severity", value, cases.filter(record => severity(record) === value && record.remediation === fix).length, `data-remediation="${fix}"`)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
-  const systems = Object.entries(count(record => record.ai_system)).sort((a,b) => a[0].localeCompare(b[0]));
-  const aiRows = systems.map(([system,n]) => {
-    const assessed = cases.filter(record => record.ai_system === system && severity(record) !== "Not available").length;
-    return `<div class="security-ai-row"><p>${mark("ai_system", system, system)} · n=${n} · CVSS assessed ${assessed}/${n} (${Math.round(assessed / n * 100)}%)</p><div class="security-stack">${severities.map((value,i) => {
-      const total = cases.filter(record => record.ai_system === system && severity(record) === value).length;
-      return total ? mark("ai_system", system, `${value}: ${total}`, `data-severity="${value}" style="flex:${total}"`, "security-s" + i) : "";
-    }).join("")}</div></div>`;
-  });
-  const aiTable = `<details><summary>View AI severity data as a table</summary><div class="security-table"><table><caption>Full catalog case counts; select a count to combine AI system and severity filters.</caption><thead><tr><th scope="col">AI system / sample size</th><th scope="col">CVSS assessed</th>${severities.map(value => `<th scope="col">${value}</th>`).join("")}</tr></thead><tbody>${systems.map(([system,n]) => `<tr><th scope="row">${mark("ai_system",system,system)} · n=${n}</th><td>${cases.filter(record => record.ai_system === system && severity(record) !== "Not available").length}/${n}</td>${severities.map(value => `<td>${mark("ai_system",system,cases.filter(record => record.ai_system === system && severity(record) === value).length, `data-severity="${value}"`)}</td>`).join("")}</tr>`).join("")}</tbody></table></div></details>`;
-  $("charts").innerHTML = `<div class="pannello largo"><h3>Monthly disclosures by recorded severity</h3><p class="descr">Stacked columns count cases, including calendar gaps. The current month is incomplete (marked *). Source availability and reporting patterns affect the trend. Severity uses the highest recorded CVSS score per case, not a composite index. CVSS v2 uses Low / Medium / High; v3 and v4 also distinguish None and Critical.</p>${cases.length ? "" : '<p class="vuoto">No cases are available for these charts.</p>'}${severityLegend()}<p class="descr" id="monthly-chart-scroll">Scroll the chart horizontally on narrow screens; exact values are in the table below.</p><div class="security-table" role="region" aria-label="Monthly disclosure chart" aria-describedby="monthly-chart-scroll" tabindex="0">${monthlySvg}</div>${monthlyTable}</div>` +
-    `<div class="pannello"><h3>Recorded severity × documented remediation</h3><p class="descr">A documented fix does not establish installed patches, absence of exploitation or current safety. Missing CVSS evidence is separate from None.</p>${matrix}</div>` +
-    `<div class="pannello"><h3>Documented technical effects</h3><p class="descr">Source-described effects may be conditional; they are not evidence of observed exploitation. Categories overlap, so their counts may exceed the case total. Other includes documented memory or arithmetic defects and security-control bypasses; it does not establish unreported downstream consequences. Not available means no effect is established here, not no impact.</p>${rows("consequence", consequenceLabels.map(value => [value,value,cases.filter(record => consequences(record).includes(value)).length]))}<details><summary>View consequence data as a table</summary><table><thead><tr><th scope="col">Consequence</th><th scope="col">Cases</th></tr></thead><tbody>${consequenceLabels.map(value => `<tr><th scope="row">${esc(value)}</th><td>${mark("consequence",value,cases.filter(record => consequences(record).includes(value)).length)}</td></tr>`).join("")}</tbody></table></details></div>` +
-    `<div class="pannello largo"><h3>Severity distribution by cited AI system</h3><p class="descr">Alphabetical source labels, with case sample size (n) and CVSS coverage. Segment widths show shares within each system's catalog cases. Exact counts are available in the table and each segment's label; narrow segments may truncate the visible label. Different source coverage and overlapping or unspecified model versions prevent an effectiveness ranking. Select a label or severity segment to filter.</p>${severityLegend()}${aiRows.slice(0,10).join("")}${systems.length > 10 ? `<details><summary>Show all ${systems.length} source labels</summary>${aiRows.slice(10).join("")}</details>` : ""}${aiTable}</div>` +
-    `<div class="pannello"><h3>By product</h3><p class="descr">Ten most frequent product labels, with the remainder below. Catalog coverage is not a measure of a product's security. Each row gives its exact case count.</p>${rankedRows("product", ranked("product"))}${dataTable("product",ranked("product"))}</div>` +
-    `<div class="pannello"><h3>By discovery context</h3><p class="descr">Labels follow the cited sources; definitions are below. Each row gives its exact case count.</p>${rows("context", contexts)}${dataTable("context",contexts)}</div>`;
-}
-function activateMark(b) {
-  const fields = [[b.dataset.k, b.dataset.v], ...["severity", "remediation"].filter(key => b.dataset[key]).map(key => [key,b.dataset[key]])];
-  const selected = fields.every(([key,value]) => (key === "year" ? year : $(key).value) === value);
-  fields.forEach(([key,value]) => { if (key === "year") year = selected ? "" : value; else $(key).value = selected ? "" : value; });
-  shown = 40;
-  render();
-  $("t-disclosures").focus();
-  $("t-disclosures").scrollIntoView({block:"start"});
+function options(id, values) {
+  $(id).insertAdjacentHTML("beforeend", values.map(([value, label]) => `<option value="${esc(value)}">${esc(label)}</option>`).join(""));
 }
 $("charts").addEventListener("click", e => {
-  const b = e.target.closest("[data-k]"); if (b) activateMark(b);
-});
-$("charts").addEventListener("keydown", e => {
-  if (e.key !== "Enter" && e.key !== " ") return;
-  const b = e.target.closest("rect[data-k]"); if (!b) return;
-  e.preventDefault(); activateMark(b);
-});
-
-function render() {
-  const openDetails = new Set([...$("cases").querySelectorAll(".source-details[open]")].map(details => details.closest("article").id + ":" + (details.dataset?.evidence || "contribution")));
-  const query = $("q").value.trim().toLowerCase();
-  const cve = query.replace(/[–—]/g, "-"), exactCve = /^cve-\d{4}-\d{4,}$/.test(cve);
-  syncUrl();
-  document.querySelectorAll("#charts [data-k]").forEach(b => b.setAttribute("aria-pressed", (b.dataset.k === "year" ? year : $(b.dataset.k).value) === b.dataset.v && (!b.dataset.severity || $("severity").value === b.dataset.severity) && (!b.dataset.remediation || $("remediation").value === b.dataset.remediation)));
-  const group = reports.get(report);
-  $('report-group').innerHTML = group ? `<details class="source-details" open><summary>Cases citing this report · ${group.length} cases · ${new Set(group.flatMap(r => r.cves)).size} distinct CVEs</summary><p><a href="${esc(safeUrl(report))}" rel="noopener">${esc(report)}</a></p><p>Exact evidence-URL matches across disclosure, AI attribution and advisory links. Cases remain separate; sharing a report does not establish a common root cause, campaign or independent confirmation. Other filters narrow the list below.</p><ul>${group.map(r => `<li><a href="#${esc(r.id)}">${esc(r.id)} — ${esc(r.title)}</a></li>`).join('')}</ul></details>` : report ? '<p>No cases cite this exact report URL. Clear filters to browse all cases.</p>' : '';
-  const selected = cases.filter(record => (!$("only-my-products").checked || trackedProducts(record.product).some(product => myProducts.has(product))) &&
-    (!report || reportUrls(record).includes(report)) && (!year || record.disclosure_date.startsWith(year)) && (!$("product").value || record.product === $("product").value) &&
-    (!$("context").value || record.classification === $("context").value) &&
-    (!$("month").value || record.disclosure_date.startsWith($("month").value)) &&
-    (!$("ai_system").value || record.ai_system === $("ai_system").value) &&
-    (!$("remediation").value || record.remediation === $("remediation").value) &&
-    (!$("severity").value || severity(record) === $("severity").value) &&
-    (!$("consequence").value || consequences(record).includes($("consequence").value)) &&
-    (!$("ai_group").value || CatalogEntities.system(record.ai_system).label === $("ai_group").value) &&
-    (!query || (exactCve ? record.cves.some(value => value.toLowerCase() === cve) : [record.title,record.product,record.ai_system,record.organization,record.summary,record.ai_role,...record.cves].join(" ").toLowerCase().includes(query))));
-  $("count").textContent = `${selected.length} of ${cases.length} tracked cases${year ? ' · disclosure year: ' + year : ''}`;
-  $("cases").innerHTML = selected.slice(0, shown).map(record => `<article class="voce" id="${esc(record.id)}" tabindex="-1">
-    <div class="voce-meta"><time datetime="${esc(record.disclosure_date)}">Disclosed ${esc(date(record.disclosure_date))}</time><span>${esc(record.organization)}</span></div>
-    <h3><a href="profiles/security-${encodeURIComponent(record.id)}.html">${esc(record.title)}</a></h3>
-    <p class="sommario">${esc(record.summary)}</p>
-    ${remediationPanel(record, savedVersion(record))}
-    ${evidence(record, openDetails.has(record.id + ":severity"))}
-    <details class="source-details"${openDetails.has(record.id + ":contribution") ? " open" : ""}><summary>Source-attributed AI, human and vendor contributions</summary>
-      <p><strong>AI and human contribution (source account):</strong> ${esc(record.ai_role)}</p>
-      <p>Human involvement is only described where the source account establishes it; unknown involvement does not mean none. Vendor confirmation of a flaw does not confirm every claim about AI contribution.</p>
-      <p><strong>Discovery context:</strong> ${esc(record.classification_note)}</p>
-      <p>${record.ai_attribution_date ? `AI attribution dated ${esc(date(record.ai_attribution_date))}` : 'AI attribution date not established by the source'}. Sources checked ${esc(date(record.checked_date))}; this is not a live patch-status check.</p>
-    </details>
-    <p class="tech"><span>AI system:</span> ${esc(record.ai_system)} · <span>Product:</span> ${esc(record.product)}</p>
-    <p>${record.cves.length ? record.cves.map(esc).join(", ") : "CVE: not established in this catalog"}</p>
-    <div class="voce-footer"><span class="etich">${esc(labels[record.classification])}</span><span class="etich">${record.remediation === "not established" ? "Fix evidence not established" : esc(record.remediation)}</span><span>Source-documented fix evidence does not establish installed patches or current safety.</span>
-      <span class="collegamenti"><a href="profiles/security-${encodeURIComponent(record.id)}.html">Source-linked case page</a><a href="${esc(safeUrl(record.source_url))}" rel="noopener">Original disclosure</a><a href="${esc(safeUrl(record.ai_source_url))}" rel="noopener">AI attribution</a><a href="${esc(safeUrl(record.advisory_url))}" rel="noopener">Advisory / fix evidence</a></span></div>
-    ${reportLinks(record)}
-  </article>`).join("") + (selected.length > shown ? `<p><button class="piu" id="more" type="button">Show 40 more of ${selected.length - shown} remaining</button></p>` : "")
-    || '<p class="vuoto">No disclosures match these filters. Try clearing a filter.</p>';
-  return selected;
-}
-function focusCase(id) {
-  const target = document.getElementById(id);
-  target?.focus({preventScroll:true});
-  target?.scrollIntoView({block:"start"});
-}
-// A valid case link must remain reachable even when filters hide it.
-function openHash() {
-  let id;
-  try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
-  if (!id) return;
-  const i = cases.findIndex(record => record.id === id);
-  if (i < 0) return;
-  ["q",...filterIds].forEach(key => $(key).value = "");
-  $("only-my-products").checked = false;
-  year = "";
-  if (report && !reportUrls(cases[i]).includes(report)) clearReport();
-  const scope = report ? cases.filter(record => reportUrls(record).includes(report)) : cases;
-  shown = Math.max(shown, scope.findIndex(record => record.id === id) + 1);
-  render();
-  focusCase(id);
-}
-$("explore-charts").addEventListener("click", () => {
-  $("chart-options").open = true;
-  $("chart-summary").focus();
-});
-let printState = null;
-CatalogUI.beforePrint = () => {
-  if (printState) return;
-  printState = {nodes:[...$("cases").childNodes], shown, focus:document.activeElement};
-  shown = Infinity;
-  render();
-};
-CatalogUI.afterPrint = () => {
-  if (!printState) return;
-  $("cases").replaceChildren(...printState.nodes);
-  shown = printState.shown;
-  printState.focus?.focus({preventScroll:true});
-  printState = null;
-};
-addEventListener("hashchange", openHash);
-function renderMyProducts() {
-  $("my-product-count").textContent = myProducts.size ? `(${myProducts.size})` : "";
-  $("my-product-filter").hidden = !myProducts.size;
-  if (!myProducts.size) $("only-my-products").checked = false;
-  $("my-product-list").innerHTML = [...myProducts].map(([product, version]) =>
-    `<li>${esc(product)}${version ? ` · ${esc(version)}` : ""} · <button class="piu" type="button" data-remove-product="${esc(product)}" aria-label="Remove ${esc(product)}">Remove</button></li>`).join("");
-}
-function saveMyProducts(message) {
-  try { localStorage.setItem(productStorageKey, JSON.stringify([...myProducts])); }
-  catch { message += " Browser storage is unavailable. Changes apply to this page only."; }
-  $("my-product-status").textContent = message;
-  renderMyProducts();
+  const b = e.target.closest("button[data-k]");
+  if (!b || !$(b.dataset.k)) return;
+  $(b.dataset.k).value = $(b.dataset.k).value === b.dataset.v ? "" : b.dataset.v;
   shown = 40;
   render();
-}
-$("my-product").addEventListener("change", () => {
-  $("my-version").value = myProducts.get($("my-product").value) || "";
+  $("t-preview").focus();
+  $("t-preview").scrollIntoView({block:"start"});
 });
-$("my-product-form").addEventListener("submit", event => {
-  event.preventDefault();
-  const product = $("my-product").value;
-  if (!product) return;
-  myProducts.set(product, $("my-version").value.trim());
-  $("only-my-products").checked = true;
-  saveMyProducts(`${product} saved.`);
-});
-$("my-product-list").addEventListener("click", event => {
-  const product = event.target.closest("[data-remove-product]")?.dataset.removeProduct;
-  if (!myProducts.delete(product)) return;
-  if ($("my-product").value === product) $("my-version").value = "";
-  saveMyProducts(`${product} removed.`);
-  $("my-product").focus();
-});
-$("only-my-products").addEventListener("change", () => { shown = 40; render(); });
-CatalogData.run(['vulnerabilities', 'entity-aliases'], loaded => {
-  CatalogEntities.configure(loaded.data['entity-aliases']);
-  const records = loaded.data.vulnerabilities;
-  if (!Array.isArray(records)) throw new Error("Invalid disclosure data");
-  reports = new Map();
-  records.forEach(record => reportUrls(record).forEach(url => {
-    if (!reports.has(url)) reports.set(url, []);
-    reports.get(url).push(record);
-  }));
-  cases = records.sort((a,b) => b.disclosure_date.localeCompare(a.disclosure_date));
-  const products = [...new Set(cases.map(record => record.product))].sort();
-  $("product").innerHTML = '<option value="">All products</option>' + products.map(product => `<option>${esc(product)}</option>`).join("");
-  const saveableProducts = [...new Set(products.flatMap(trackedProducts))].sort();
-  $("my-product").innerHTML = '<option value="">Choose a product</option>' + saveableProducts.map(product => `<option>${esc(product)}</option>`).join("");
-  const groups = [...new Set(cases.map(record => CatalogEntities.system(record.ai_system).label))].sort();
-  $('ai_group').innerHTML = '<option value="">All source-attributed groups</option>' + groups.map(group => `<option value="${esc(group)}">${esc(group)} · ${cases.filter(record => CatalogEntities.system(record.ai_system).label === group).length} cases</option>`).join('');
-  const cves = new Set(cases.flatMap(record => record.cves));
-  const scoreCount = cases.filter(record => (record.cvss || []).length).length;
-  const effectCount = cases.filter(record => (record.impacts || []).some(impact => impact.consequences.length)).length;
-  $('security-facts').innerHTML = [['Cases', cases.length], ['Named CVEs', cves.size], ['Cases with CVSS', `${scoreCount} / ${cases.length}`], ['Cases with documented effects', `${effectCount} / ${cases.length}`]].map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('');
-  $("coverage").textContent = `${cases.length} selected cases, ${cves.size} named CVEs, ${products.length} products. Manual and non-exhaustive; case counts are not totals of every vulnerability reported by each model.`;
-  charts();
+$("cases").addEventListener("click", e => { if (e.target.id === "more") { shown += 40; render(); } });
+for (const id of ["q", ...filters]) $(id).addEventListener(id === "q" ? "input" : "change", () => { shown = 40; render(); });
+$("reset").addEventListener("click", () => { ["q", ...filters].forEach(id => $(id).value = ""); shown = 40; render(); });
+
+fetch("data/vulnerabilities-overview.json").then(r => r.json()).then(o => {
+  charts(o);
+  options("category", o.categories.map(c => [c.name, c.name]));
+  options("cls", o.top_classes.map(c => [c.name, c.name]));
+  options("year", Object.keys(o.by_year).filter(y => /^\d{4}$/.test(y)).sort().reverse().map(y => [y, y]));
+  return fetch("data/vulnerabilities-preview.json");
+}).then(r => r.json()).then(data => {
+  preview = data;
   const params = new URLSearchParams(location.search);
-  ["q",...filterIds].forEach(id => { if (params.has(id)) $(id).value = params.get(id); });
-  year = /^\d{4}$/.test(params.get("year") || "") ? params.get("year") : "";
-  $("coverage").textContent += ` CVSS assessments: ${cases.filter(record => (record.cvss || []).length).length}/${cases.length} cases; documented technical effects: ${cases.filter(record => (record.impacts || []).some(impact => impact.consequences.length)).length}/${cases.length} cases (${cases.filter(record => consequences(record).length === 1 && consequences(record)[0] === "other").length} with only other documented effects). Impact-source review recorded: ${cases.filter(record => (record.impacts || []).length).length}/${cases.length} cases. Missing coverage is explicit and is not evidence of low severity or no impact.`;
+  for (const id of ["q", ...filters]) if (params.get(id)) $(id).value = params.get(id);
+  $("coverage").textContent = `${num(data.length)} vulnerabilities in the preview.`;
   render();
-  openHash();
-  renderMyProducts();
-  $("my-products").hidden = false;
-}, {clear:() => { cases = []; reports = new Map(); printState = null; shown = 40; ['product','month','ai_system','ai_group','my-product'].forEach(id => $(id).replaceChildren()); $('my-products').hidden = true; $('my-product-filter').hidden = true; $('cases').replaceChildren(); $('charts').replaceChildren(); $('security-facts').replaceChildren(); $('report-group').replaceChildren(); $('count').textContent = ''; $('coverage').textContent = 'No validated snapshot loaded.'; }});
-["q",...filterIds].forEach(id => $(id).addEventListener("input",()=>{shown=40;render();}));
-$("cases").addEventListener("click", e => {
-  if (e.target.id !== "more") return;
-  const firstAdded = shown;
-  shown += 40;
-  const selected = render();
-  if (selected[firstAdded]) focusCase(selected[firstAdded].id);
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (id && document.getElementById(id)) document.getElementById(id).focus();
+}).catch(() => {
+  $("coverage").textContent = "The data could not be loaded. Download it from the links above.";
+  $("cases").textContent = "";
 });
-$("reset").addEventListener("click",()=>{["q",...filterIds].forEach(id=>$(id).value="");$("only-my-products").checked=false;year="";clearReport();shown=40;render();});
 </script>
 </body>
 </html>

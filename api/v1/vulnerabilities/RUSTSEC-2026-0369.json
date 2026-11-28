@@ -1,0 +1,12 @@
+{
+  "id": "RUSTSEC-2026-0369",
+  "title": "ZipStreamReader::extract() and ZipArchive::extract() apply Unix permissions through symlinks without confining the target",
+  "published": "2026-10-10",
+  "score": 9.1,
+  "band": "critical",
+  "score_source": "RustSec",
+  "priority": "high",
+  "products": [
+    "crates:zip"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "GHSA-g53w-w6mj-hrpp",
+  "title": "MCP Gateway: Authority-injection and JWT/session bypass via the unauthenticated router hair-pin \"router-key\" / \"mcp-init-host\" path",
+  "published": "2026-05-19",
+  "score": 9.3,
+  "band": "critical",
+  "score_source": "GitHub Advisory Database",
+  "priority": "high",
+  "products": [
+    "go:github.com/kuadrant/mcp-gateway"
+  ],
+  "classes": [
+    "authentication bypass",
+    "missing or incorrect authorization"
+  ]
+}

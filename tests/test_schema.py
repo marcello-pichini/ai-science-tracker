@@ -51,39 +51,6 @@ class SchemaTests(unittest.TestCase):
     def test_discoveries_match_schema(self):
         self.check('discoveries')
 
-    def test_vulnerabilities_match_schema(self):
-        self.check('vulnerabilities')
-
-    def test_unknown_attribution_date_does_not_allow_other_missing_dates(self):
-        schema = json.loads((ROOT / 'schema/vulnerabilities.schema.json').read_text())
-        record = dict(json.loads((ROOT / 'data/vulnerabilities.json').read_text())[0], ai_attribution_date=None)
-        self.assertEqual(errors([record], schema), [])
-        record['disclosure_date'] = None
-        self.assertTrue(errors([record], schema))
-        record['disclosure_date'] = '2026-01-01'
-        record['ai_attribution_date'] = 'unknown'
-        self.assertTrue(errors([record], schema))
-
-    def test_vulnerability_evidence_accepts_zero_and_rejects_invalid_scores(self):
-        schema = json.loads((ROOT / 'schema/vulnerabilities.schema.json').read_text())
-        record = dict(json.loads((ROOT / 'data/vulnerabilities.json').read_text())[0])
-        rating = {'cve': None, 'version': '3.1', 'score': 0, 'vector': None,
-                  'source_url': 'https://example.org/advisory', 'source_name': 'Vendor', 'checked_date': '2026-01-01',
-                  'scenarios': ['Without Clientless VPN']}
-        impact = {'cves': ['CVE-2026-1234'], 'consequences': ['code execution', 'data disclosure'],
-                  'conditions': 'Requires access', 'exploitation': 'Not established',
-                  'source_url': 'https://example.org/advisory', 'checked_date': '2026-01-01'}
-        record.update(cvss=[rating, dict(rating, cve='CVE-2026-1234', score=9.8)], impacts=[impact])
-        self.assertEqual(errors([record], schema), [])
-        for field, value in [('score', -0.1), ('score', 10.1), ('version', '5.0'), ('source_url', 'http://example.org')]:
-            record['cvss'][0] = dict(rating, **{field: value})
-            self.assertTrue(errors([record], schema), (field, value))
-        record['cvss'][0] = dict(rating, scenarios=[''])
-        self.assertTrue(errors([record], schema))
-        record['cvss'][0] = rating
-        impact['consequences'] = ['invented']
-        self.assertTrue(errors([record], schema))
-
     def test_archived_discoveries_match_schema_and_are_not_active(self):
         schema = json.loads((ROOT / 'schema/discoveries.schema.json').read_text())
         archived = json.loads((ROOT / 'data/archived-discoveries.json').read_text())

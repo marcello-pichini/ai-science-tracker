@@ -49,12 +49,12 @@ def abstract_only(record):
 
 def catalog_metrics(root):
     discoveries = json.loads((root / 'data/discoveries.json').read_text())
-    vulnerabilities = json.loads((root / 'data/vulnerabilities.json').read_text())
+    overview = json.loads((root / 'data/vulnerabilities-overview.json').read_text())
     verified = [r for r in discoveries if r.get('verification_status') == 'verified']
     return {'discoveries': len(discoveries), 'discoveries_verified': len(verified),
             'discoveries_needs_verification': sum(r.get('verification_status') == 'needs verification' for r in discoveries),
             'verified_abstract_only': sum(map(abstract_only, verified)),
-            'vulnerabilities': len(vulnerabilities)}
+            'vulnerabilities': overview['totals']['rows']}
 
 
 def huggingface(fetch):

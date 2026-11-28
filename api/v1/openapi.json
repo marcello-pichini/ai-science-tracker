@@ -3,7 +3,7 @@
   "info": {
     "title": "AI Science Tracker static API",
     "version": "v1",
-    "description": "Read-only JSON files: 5356 AI-enabled scientific discoveries and 1780 AI-found vulnerability cases. No authentication. Figures are reported by the linked sources; cite the original source of a claim.",
+    "description": "Read-only JSON files: 5356 AI-enabled scientific discoveries and a preview of 13450 of the 470569 vulnerabilities in the global vulnerability dataset (full files on Hugging Face). No authentication. Figures are reported by the linked sources; cite the original source of a claim.",
     "license": {
       "name": "CC BY 4.0",
       "url": "https://creativecommons.org/licenses/by/4.0/"
@@ -152,16 +152,33 @@
         ]
       }
     },
-    "/data/vulnerabilities.json": {
+    "/data/vulnerabilities-preview.json": {
       "get": {
-        "summary": "Every AI-found vulnerability case",
+        "summary": "Preview: known exploited and recent critical vulnerabilities, slim rows",
         "responses": {
           "200": {
             "description": "JSON document",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://aisciencetracker.org/schema/vulnerabilities.schema.json"
+                  "type": "array"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/data/vulnerabilities-overview.json": {
+      "get": {
+        "summary": "Totals, charts, categories and sources of the global vulnerability dataset",
+        "responses": {
+          "200": {
+            "description": "JSON document",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
                 }
               }
             }
@@ -171,14 +188,14 @@
     },
     "/api/v1/vulnerabilities/{id}.json": {
       "get": {
-        "summary": "One vulnerability case",
+        "summary": "One preview vulnerability by CVE, GHSA or other ID",
         "responses": {
           "200": {
             "description": "JSON document",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "https://aisciencetracker.org/schema/vulnerabilities.schema.json#/items"
+                  "type": "object"
                 }
               }
             }
@@ -195,7 +212,7 @@
             "description": "Stable record ID",
             "schema": {
               "type": "string",
-              "pattern": "^[a-z0-9][a-z0-9-]*$"
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9:._-]*$"
             }
           }
         ]

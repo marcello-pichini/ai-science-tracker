@@ -531,63 +531,6 @@ p.run('grafici = originalCharts; grafici();');
 assert.ok(!p.run('$("charts").innerHTML').includes('NaN'));
 ''')
 
-    def test_security_retry_replaces_products_and_clears_report_cache(self):
-        self.run_js(r'''
-const p = page('security.html', '?product=Retained&q=needle');
-const entry = product => ({id:product,product,ai_system:'System',disclosure_date:'2026-11-01',cves:[],source_url:'https://example.org/report'});
-p.run('charts = () => {}; render = () => {throw Error("late security failure");};');
-assert.throws(() => p.load([entry('Removed')]), /late security/);
-p.fail();
-assert.equal(p.run('reports.size'), 0);
-assert.equal(p.run('$("product").innerHTML'), '');
-p.run('render = () => {}; openHash = () => {};');
-p.load([entry('Retained')]); p.load([entry('Retained')]);
-const options = p.run('$("product").innerHTML');
-assert.equal((options.match(/<option>Retained/g) || []).length, 1);
-assert.ok(!options.includes('Removed'));
-assert.equal(p.run('$("product").value'), 'Retained');
-assert.equal(p.run('$("q").value'), 'needle');
-''')
-
-    def test_security_remediation_shows_verified_ranges_and_preserves_unknowns(self):
-        self.run_js(r'''
-const storage = new Map();
-const p = page('security.html', '', [], [], storage);
-const vulnerabilities = JSON.parse(fs.readFileSync('data/vulnerabilities.json','utf8'));
-const openWebUI = vulnerabilities.find(record => record.id === 'ghsl-2026-002');
-const firefox = vulnerabilities.find(record => record.id === 'cve-2026-2796');
-const mozillaFirefox = vulnerabilities.find(record => record.id === 'cve-2026-2797');
-const sqlite = vulnerabilities.find(record => record.id === 'cve-2025-6965');
-p.run('charts = () => {};');
-p.load([openWebUI, firefox, mozillaFirefox, sqlite]);
-p.run('$("my-product").value = "Open WebUI"; $("my-version").value = "v0.8.5"; $("my-product-form").handlers.submit({preventDefault(){}});');
-assert.deepEqual(JSON.parse(storage.get('ast-security-my-products')), [['Open WebUI', 'v0.8.5']]);
-const reopened = page('security.html', '', [], [], storage);
-assert.equal(reopened.run('myProducts.get("Open WebUI")'), 'v0.8.5');
-let html = p.run('$("cases").innerHTML');
-assert.match(html, /What to update.*Open WebUI/);
-assert.match(html, /Matches the advisory’s affected version range/);
-assert.doesNotMatch(html, /Firefox/);
-p.run('myProducts.set("Open WebUI", "0.8.10"); render();');
-assert.match(p.run('$("cases").innerHTML'), /Outside the advisory’s listed affected range/);
-p.run('myProducts.set("Open WebUI", "0.8.6-rc1"); render();');
-assert.match(p.run('$("cases").innerHTML'), /Comparison unavailable/);
-p.run('myProducts.set("Firefox", "147.0.0"); render();');
-html = p.run('$("cases").innerHTML');
-assert.match(html, /Affected versions not confirmed in this summary/);
-assert.match(html, /Fixed in:<\/strong> Firefox 148/);
-assert.match(html, /Saved version 147\.0\.0:<\/strong> Comparison unavailable/);
-assert.match(html, /id="cve-2026-2797"/, 'Firefox watchlist includes a Mozilla Firefox product label');
-assert.doesNotMatch(html, /id="cve-2025-6965"/);
-assert.match(p.run('versionMatch("3.50.1", {upper_bound:"3.50.2", inclusive:false})'), /^Matches/);
-assert.match(p.run('versionMatch("3.50.2", {upper_bound:"3.50.2", inclusive:false})'), /^Outside/);
-p.run('$("reset").handlers.click();');
-assert.equal(p.run('$("only-my-products").checked'), false);
-assert.equal(p.run('myProducts.has("Open WebUI")'), true);
-p.run('$("my-product-list").handlers.click({target:{closest:()=>({dataset:{removeProduct:"Open WebUI"}})}});');
-assert.deepEqual(JSON.parse(storage.get('ast-security-my-products')), [['Firefox', '147.0.0']]);
-''')
-
     def test_models_snapshot_without_download_date_still_renders(self):
         self.run_js(r'''
 for (const downloaded of [undefined, '2026-11-13']) {

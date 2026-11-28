@@ -14,9 +14,8 @@ Content is licensed CC BY 4.0 (attribute "AI Science Tracker" with a link); site
 - [Open problems to claim](https://aisciencetracker.org/claims.html): next steps left by catalog discoveries, each decided by a public checker
 - [Antibiotic evidence dossier](https://aisciencetracker.org/antibiotic-dossier.html): dated, source-bounded synthesis
 - [Catalog coverage and evidence](https://aisciencetracker.org/profiles/catalog-evidence.html): reproducible composition tables, counting limits and CSV
-- [Static AI-found security cases](https://aisciencetracker.org/profiles/security-index.html): source-attributed case pages readable without JavaScript
 - [Models](https://aisciencetracker.org/models.html): model releases linked to discoveries
-- [Vuln discoveries](https://aisciencetracker.org/security.html): publicly disclosed vulnerabilities with documented AI involvement, kept separate from the scientific count
+- [Global vulnerability dataset](https://aisciencetracker.org/security.html): the largest and most complete vulnerability dataset in the world, 470,569 vulnerabilities joined from 21 public sources; the site shows an overview and a preview, the full files are on Hugging Face
 - [Methodology](https://aisciencetracker.org/methodology.html): what is included, how entries are verified and scored
 
 ## Browse without JavaScript
@@ -34,11 +33,11 @@ Content is licensed CC BY 4.0 (attribute "AI Science Tracker" with a link); site
 - [models.json](https://aisciencetracker.org/data/models.json): model releases and families
 - [model-progress.json](https://aisciencetracker.org/data/model-progress.json): separate Epoch capability/benchmark source entries; may overlap releases
 - [Independent benchmark directory](https://aisciencetracker.org/data/benchmarks/index.json): 11 separately licensed numerical snapshots; source-specific selections and limits
-- [vulnerabilities.json](https://aisciencetracker.org/data/vulnerabilities.json): vulnerability cases ([schema](https://aisciencetracker.org/docs/vulnerability-schema.md), [JSON Schema](https://aisciencetracker.org/schema/vulnerabilities.schema.json))
+- [vulnerabilities-preview.json](https://aisciencetracker.org/data/vulnerabilities-preview.json): 13,450 known exploited and recent critical vulnerabilities, slim rows; [vulnerabilities-overview.json](https://aisciencetracker.org/data/vulnerabilities-overview.json): totals, categories and sources ([fields](https://aisciencetracker.org/docs/vulnerability-global-schema.md)); full dataset: https://huggingface.co/datasets/marcello-pichini/ai-science-tracker
 - [sitemap.xml](https://aisciencetracker.org/sitemap.xml): every static page
 - [dataset.html](https://aisciencetracker.org/dataset.html): downloads (JSON, CSV), schemas and the read-only static API at https://aisciencetracker.org/api/v1/index.json
 - [contributors.html](https://aisciencetracker.org/contributors.html): maintainer, contributors and how to contribute
-- [feed.xml](https://aisciencetracker.org/feed.xml): Atom feed of discovery additions and vulnerability source checks
+- [feed.xml](https://aisciencetracker.org/feed.xml): Atom feed of discovery additions
 - Each discovery has its own page at https://aisciencetracker.org/share/ID.html
 - [llms-full.txt](https://aisciencetracker.org/llms-full.txt): every entry as plain text (ID, title, dates, field, organization, evidence type, summary, source), several megabytes
 

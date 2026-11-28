@@ -6,16 +6,18 @@
   "cite": "https://doi.org/10.5281/zenodo.24217686",
   "data_version_date": "2026-11-27",
   "latest_discovery_addition_date": "2026-11-27",
-  "catalog_sha256": "69a7989a3d1f9df1711f5918b82b2c495c19a0710667344769c54e328c901119",
+  "catalog_sha256": "6c30d8717a628b4f0d4a9b3e15e6c6a2600ba872b38dd25fa895d5622b057060",
   "counts": {
     "discoveries": 5356,
-    "vulnerabilities": 1780
+    "vulnerabilities_in_preview": 13450,
+    "vulnerabilities_in_dataset": 470569
   },
   "endpoints": {
     "discoveries_list": "https://aisciencetracker.org/data/discoveries.json",
     "discovery": "https://aisciencetracker.org/api/v1/discoveries/{id}.json",
-    "vulnerabilities_list": "https://aisciencetracker.org/data/vulnerabilities.json",
+    "vulnerabilities_preview": "https://aisciencetracker.org/data/vulnerabilities-preview.json",
     "vulnerability": "https://aisciencetracker.org/api/v1/vulnerabilities/{id}.json",
+    "vulnerabilities_overview": "https://aisciencetracker.org/data/vulnerabilities-overview.json",
     "models_list": "https://aisciencetracker.org/data/models.json",
     "model_progress": "https://aisciencetracker.org/data/model-progress.json",
     "latest_discoveries": "https://aisciencetracker.org/api/v1/latest.json",
@@ -50,14 +52,14 @@
   },
   "downloads": {
     "discoveries_csv": "https://aisciencetracker.org/data/discoveries.csv",
-    "vulnerabilities_csv": "https://aisciencetracker.org/data/vulnerabilities.csv"
+    "vulnerabilities_full_dataset": "https://huggingface.co/datasets/marcello-pichini/ai-science-tracker"
   },
   "schemas": {
     "discoveries": "https://aisciencetracker.org/schema/discoveries.schema.json",
-    "vulnerabilities": "https://aisciencetracker.org/schema/vulnerabilities.schema.json"
+    "vulnerabilities": "https://aisciencetracker.org/docs/vulnerability-global-schema.md"
   },
   "documentation": "https://aisciencetracker.org/dataset.html",
   "openapi": "https://aisciencetracker.org/api/v1/openapi.json",
   "component_manifest": "https://aisciencetracker.org/api/v1/manifest.json",
-  "snapshot_sha256": "60248b585473e3be08fb9b09dea7d40a330fad16487aeaedeee87f654d5ccb4f"
+  "snapshot_sha256": "4948d59b24bfe8f2bd7eb65064170090000faa72ae598098c2d41d2273306eba"
 }

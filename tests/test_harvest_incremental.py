@@ -7,7 +7,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from harvest import disc, state, run_disc, run_vuln
+from harvest import disc, state, run_disc
 
 
 def row(key):
@@ -91,34 +91,6 @@ class IncrementalTest(unittest.TestCase):
             self.assertEqual(len(list(disc.arxiv('2026-01-01', '2026-01-02', report=report))), 800)
         self.assertEqual(report['status'], 'complete')
 
-    def test_vuln_failure_still_runs_other_source(self):
-        def bad(*args, **kwargs):
-            yield row('retrieved')
-            raise RuntimeError('upstream')
-        def good(known, report, checkpoint, budget=None):
-            yield row('mozilla')
-            report['status'] = 'complete'
-        with tempfile.TemporaryDirectory() as directory, patch.object(run_vuln, 'incremental_delta', bad), patch.object(run_vuln, 'complete_mozilla', good):
-            out = Path(directory) / 'v.jsonl'
-            self.assertEqual(run_vuln.main(['--sources', 'cvelist_delta,mozilla', '--out', str(out)]), 1)
-            self.assertEqual({json.loads(line)['key'] for line in out.read_text().splitlines()}, {'retrieved', 'mozilla'})
-
-    def test_delta_resumes_failed_record_and_checks_retention(self):
-        class Known:
-            def vuln(self, ident):
-                return False
-        report = {'ids': ['CVE-2026-1', 'CVE-2026-2']}
-        rec = {'cveMetadata': {'cveId': 'CVE-2026-1'}, 'containers': {'cna': {'credits': [{'value': 'Claude'}]}}}
-        with patch.object(run_vuln.fetch, 'get_json', side_effect=[rec, RuntimeError('failed')]):
-            gen = run_vuln.incremental_delta('a', 'b', Known(), report, lambda: None)
-            self.assertEqual(next(gen)['key'], 'CVE-2026-1')
-            with self.assertRaises(RuntimeError):
-                list(gen)
-        self.assertEqual(report['cursor'], 1)
-        with patch.object(run_vuln.fetch, 'get_json', return_value=[]):
-            with self.assertRaisesRegex(RuntimeError, 'backfill'):
-                list(run_vuln.incremental_delta('a', 'b', Known(), {}, lambda: None))
-
     def test_portable_bundle_resumes_in_different_directory(self):
         import shutil
         seen = []
@@ -152,18 +124,3 @@ class IncrementalTest(unittest.TestCase):
             self.assertEqual(rows[0]['key'], 'retained')
             self.assertIn(state.job_key(out, ['mock']), state.load(cp)['jobs'])
             self.assertNotIn(str(out.resolve()), state.load(cp)['jobs'])
-
-    def test_current_snapshot_metadata_does_not_claim_window_watermark(self):
-        import functools
-        with tempfile.TemporaryDirectory() as directory, patch.object(run_vuln.vuln, 'OSV_ECOSYSTEMS', []), patch.object(run_vuln.vuln, 'iter_mozilla', return_value=iter([row('historical')])):
-            out, cp = Path(directory) / 'leads.jsonl', Path(directory) / 'state.json'
-            adapters = {'osv': functools.partial(run_vuln.incremental_osv, None),
-                        'mozilla': functools.partial(run_vuln.complete_mozilla, None)}
-            rows, report = state.collect_sources(adapters, {'from': '2026-11-01', 'to': '2026-11-02'}, out, cp)
-            self.assertEqual(report['status'], 'complete')
-            self.assertEqual(rows[0]['key'], 'historical')
-            for source in report['sources'].values():
-                self.assertEqual(source['scan_mode'], 'current_snapshot')
-                self.assertFalse(source['date_filter_applied'])
-                self.assertTrue(source['date_basis'])
-                self.assertNotIn('completed_window', source)

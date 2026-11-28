@@ -65,11 +65,10 @@ globalThis.CatalogSearch = {
         DOI:citations.records?.[r.id]?.doi, 'Model family':(familyNames.get(r.id) || []).join(' · '),
         Sources:[r.source_url, r.paper_url, ...(r.evidence?.evidence_urls || [])].join(' '),
         'AI contribution':r.evidence?.ai_role, 'Test and limits':[r.evidence?.tested, r.evidence?.unknown].join(' ')}}));
-    const cases = vulnerabilities.map(r => ({id:r.id, title:r.title, href:site('profiles/security-' + encodeURIComponent(r.id) + '.html'),
-      explorer:'security.html#' + encodeURIComponent(r.id),
-      fields:{Title:r.title, Identifier:[r.id,...r.cves].join(' '), Summary:r.summary, Product:r.product,
-        'AI system':r.ai_system, 'Source-attributed vendor group':globalThis.CatalogEntities?.system(r.ai_system).label, 'AI contribution':r.ai_role, Organization:r.organization,
-        Sources:[r.source_url,r.ai_source_url,r.advisory_url,...(r.evidence_urls || [])].join(' ')}}));
+    // Vulnerabilities: the site preview of the global dataset (known exploited and recent critical).
+    const cases = vulnerabilities.map(r => ({id:r.id, title:r.title || r.id, href:'security.html?q=' + encodeURIComponent(r.id),
+      explorer:null, fields:{Title:r.title, Identifier:r.id, Product:(r.products || []).join(' '), Category:r.category,
+        Weakness:(r.classes || []).join(' '), Sources:r.advisory}}));
     const releases = models.models.map((r, i) => ({id:String(i), title:r.name,
       href:'models.html?q=' + encodeURIComponent(r.name), fields:{Name:r.name, Organization:r.organization, Family:r.family, Domain:r.domain, Source:r.link}}));
     const activeIds = new Set(discoveries.map(r => r.id));
@@ -117,9 +116,9 @@ if (typeof document !== 'undefined') {
   query.value = new URLSearchParams(location.search).get('q') || '';
   document.getElementById('global-search').addEventListener('submit', e => {e.preventDefault(); render();});
   document.getElementById('clear-search').addEventListener('click', () => {query.value = ''; render(); query.focus();});
-  CatalogData.run(['discoveries','vulnerabilities','models','model-progress','entity-aliases','citations'], loaded => {
+  CatalogData.run(['discoveries','vulnerabilities-preview','models','model-progress','entity-aliases','citations'], loaded => {
     CatalogEntities.configure(loaded.data['entity-aliases']);
-    collections = CatalogSearch.collections(loaded.data.discoveries, loaded.data.vulnerabilities, loaded.data.models,
+    collections = CatalogSearch.collections(loaded.data.discoveries, loaded.data['vulnerabilities-preview'], loaded.data.models,
       loaded.data['model-progress'], loaded.data.citations);
     render();
   }, {clear:() => {collections = null; output.replaceChildren();}, controls:'#global-search button, #clear-search'});

@@ -44,9 +44,9 @@ class TrackerSkillTest(unittest.TestCase):
         return code, out.getvalue()
 
     def test_search_finds_vulnerability_by_cve(self):
-        code, out = self.run_cli("search", "CVE-2025-37899", "--collection", "vulnerabilities")
+        code, out = self.run_cli("search", "CVE-2002-0367", "--collection", "vulnerabilities")
         self.assertEqual(code, 0)
-        self.assertIn("security.html#cve-2025-37899", out)
+        self.assertIn("security.html?q=CVE-2002-0367", out)
 
     def test_new_filters_by_date_for_every_collection(self):
         code, out = self.run_cli("new", "--since", "2999-01-01")
@@ -55,7 +55,7 @@ class TrackerSkillTest(unittest.TestCase):
             self.assertIn(f"## {name}: 0 since 2999-01-01", out)
 
     def test_get_returns_record_or_error(self):
-        self.assertEqual(self.run_cli("get", "cve-2025-37899")[0], 0)
+        self.assertEqual(self.run_cli("get", "CVE-2002-0367")[0], 0)
         self.assertEqual(self.run_cli("get", "no-such-id")[0], 1)
 
 

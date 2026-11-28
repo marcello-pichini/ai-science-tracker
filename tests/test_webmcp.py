@@ -19,7 +19,7 @@ const discoveries = [
   {id: 'a', title: 'Antibiotic design', summary: 'x', field: 'biology', publication_date: '2025-08-14',
    paper_url: 'https://doi.org/10.1234/abc', source_url: 'https://example.org/a'},
   {id: 'b', title: 'Protein folding', summary: 'antibiotic mentioned', field: 'biology', publication_date: '2020-11-30'}];
-const vulns = [{id: 'cve-2026-1', title: 'Flaw', cves: ['CVE-2026-1111'], product: 'Lib'}];
+const vulns = [{id: 'CVE-2026-1111', title: 'Flaw', products: ['acme:lib'], classes: ['SQL injection']}];
 globalThis.fetch = async url => new Response(JSON.stringify(String(url).includes('vulnerabilities') ? vulns : discoveries));
 require('./assets/webmcp.js');
 (async () => {
@@ -31,6 +31,7 @@ require('./assets/webmcp.js');
   assert.deepEqual((await tools.search_discoveries.execute({query: 'antibiotic', year: 2020})).results.map(r => r.id), ['b']);
   assert.deepEqual((await tools.search_discoveries.execute({query: '10.1234/abc'})).results.map(r => r.id), ['a']);
   assert.equal((await tools.search_vulnerabilities.execute({query: 'cve-2026-1111'})).total, 1);
+  assert.equal((await tools.search_vulnerabilities.execute({query: 'sql injection lib'})).results[0].catalog_url, 'https://example.org/security.html?q=CVE-2026-1111');
 })().catch(e => { console.error(e); process.exit(1); });
 """], cwd=ROOT, capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stderr)

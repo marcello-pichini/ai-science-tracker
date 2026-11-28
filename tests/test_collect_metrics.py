@@ -28,7 +28,7 @@ class CollectMetricsTest(unittest.TestCase):
             {'verification_status': 'needs verification', 'source_review': {'scope': ABSTRACT}},
         ]
         (self.root / 'data/discoveries.json').write_text(json.dumps(records))
-        (self.root / 'data/vulnerabilities.json').write_text(json.dumps([{}, {}]))
+        (self.root / 'data/vulnerabilities-overview.json').write_text(json.dumps({'totals': {'rows': 2}}))
         self.today = datetime.date(2026, 11, 27)
 
     def fake(self, url, token=None):

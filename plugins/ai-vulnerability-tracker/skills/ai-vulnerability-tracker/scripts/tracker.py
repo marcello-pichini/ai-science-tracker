@@ -6,7 +6,8 @@
   tracker.py get ID
   tracker.py info
 
-C is discoveries, models, vulnerabilities or all (default).
+C is discoveries, models, vulnerabilities or all (default). Vulnerabilities are the site preview of the
+global vulnerability dataset (known exploited, or critical and published in the last 12 months).
 """
 import argparse
 import datetime as dt
@@ -21,11 +22,11 @@ BASE = os.environ.get("AI_SCIENCE_TRACKER_BASE",
                       "https://aisciencetracker.org").rstrip("/")
 COLLECTIONS = ("discoveries", "models", "vulnerabilities")
 # Date that means "new to the reader" per collection, and the fields searched.
-DATE_FIELD = {"discoveries": "added_date", "models": "date", "vulnerabilities": "checked_date"}
+DATE_FIELD = {"discoveries": "added_date", "models": "date", "vulnerabilities": "published"}
 TEXT_FIELDS = {
     "discoveries": ("id", "title", "summary", "field", "ai_technology", "organization"),
     "models": ("name", "organization", "domain", "family"),
-    "vulnerabilities": ("id", "title", "product", "ai_system", "organization", "summary", "cves"),
+    "vulnerabilities": ("id", "title", "products", "category", "classes"),
 }
 
 
@@ -36,7 +37,7 @@ def fetch(path):
 
 
 def records(name):
-    data = fetch(f"data/{name}.json")
+    data = fetch(f"data/{'vulnerabilities-preview' if name == 'vulnerabilities' else name}.json")
     return data["models"] if name == "models" else data
 
 
@@ -44,7 +45,7 @@ def link(name, r):
     if name == "discoveries":
         return f"{BASE}/share/{r['id']}.html"
     if name == "vulnerabilities":
-        return f"{BASE}/security.html#{urllib.parse.quote(r['id'])}"
+        return f"{BASE}/security.html?q={urllib.parse.quote(r['id'])}"
     return r.get("link") or f"{BASE}/models.html"
 
 
@@ -54,10 +55,10 @@ def line(name, r):
     when = r.get(DATE_FIELD[name]) or "?"
     org = r.get("organization") or "?"
     if name == "vulnerabilities":
-        cves = ",".join(r.get("cves") or []) or "no CVE"
-        return (f"[vulnerability] checked {when}, disclosed {r.get('disclosure_date') or '?'}: {r['title']} "
-                f"({org}; {r.get('product') or '?'}; AI: {r.get('ai_system') or '?'}; {cves}; "
-                f"fix: {r.get('remediation') or '?'}) {link(name, r)}")
+        score = f"score {r['score']} ({r.get('score_source') or '?'})" if r.get("score") is not None else "unscored"
+        return (f"[vulnerability] published {when}: {r['id']} {r.get('title') or ''} "
+                f"({', '.join(r.get('products') or []) or 'products not stated'}; {score}; "
+                f"priority: {r.get('priority') or '?'}{'; in CISA KEV' if r.get('kev_added') else ''}) {link(name, r)}")
     return f"[discovery] {when} {r['title']} ({org}) {link(name, r)}"
 
 

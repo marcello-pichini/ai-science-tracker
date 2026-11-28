@@ -14,6 +14,29 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
 
 
+OVERVIEW = {'built': '2026-11-27', 'preview_since': '2025-11-27',
+            'totals': {'rows': 10, 'cve': 9, 'published_cve': 8, 'rejected_cve': 1, 'non_cve': 1, 'products': 4, 'kev': 1,
+                       'public_exploit': 2, 'malicious_packages': 0, 'preview': 1, 'sources': 1},
+            'by_year': {'2026': 9}, 'by_band': {'critical': 1}, 'by_priority': {'act now': 1}, 'by_maturity': {'none known': 9},
+            'top_classes': [{'name': 'SQL injection', 'total': 3}],
+            'categories': [{'name': 'web server', 'slug': 'web-server', 'total': 25, 'kev': 1, 'public_exploit': 2,
+                            'by_year': {'2026': 25}, 'top_classes': ['SQL injection'], 'page': True,
+                            'top_products': [{'product_key': 'acme:<server>', 'total': 25, 'kev': 1}]},
+                           {'name': 'tiny', 'slug': 'tiny', 'total': 2, 'kev': 0, 'public_exploit': 0, 'by_year': {}, 'top_classes': [],
+                            'page': False, 'top_products': []}],
+            'sources': [{'name': 'NVD (NIST)', 'licence': 'NVD terms of use', 'url': 'https://nvd.nist.gov/',
+                         'notice': 'This product uses the NVD API but is not endorsed or certified by the NVD.'}]}
+PREVIEW = [{'id': 'CVE-2026-0001', 'title': 'Flaw <x>', 'published': '2026-11-01', 'score': 9.8, 'band': 'critical',
+            'score_source': 'NVD', 'priority': 'act now', 'products': ['acme:<server>'], 'category': 'web server'}]
+
+
+def write_vulnerability_inputs(root, legacy=None):
+    (root / 'data').mkdir(exist_ok=True)
+    (root / 'data/vulnerabilities-overview.json').write_text(json.dumps(OVERVIEW))
+    (root / 'data/vulnerabilities-preview.json').write_text(json.dumps(PREVIEW))
+    (root / 'data/legacy-security-redirects.json').write_text(json.dumps(legacy or []))
+
+
 class SharePageTests(unittest.TestCase):
     def setUp(self):
         spec = importlib.util.spec_from_file_location('generate_share', ROOT / 'scripts/generate_share.py')
@@ -116,45 +139,41 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('Archived discoveries, model releases and security cases are excluded', page)
         self.assertIn('href="../data/catalog-summary.csv"', page)
 
-    def test_security_static_pages_preserve_evidence_and_separate_dataset_identity(self):
+    def test_vulnerability_pages_fill_the_overview_categories_and_redirects(self):
         g = self.generator
-        record = dict(json.loads((ROOT / 'data/vulnerabilities.json').read_text())[0], id='test-case',
-                      title='A <test> case', ai_attribution_date=None,
-                      cvss=[{'cve': None, 'version': '3.1', 'score': 0, 'vector': None,
-                             'scenarios': ['Only with <condition>'], 'source_url': 'https://example.org/score',
-                             'source_name': 'Assessor', 'checked_date': '2026-11-18'}],
-                      impacts=[{'cves': [], 'consequences': [], 'conditions': 'Technical effect unresolved',
-                                'exploitation': 'Not established', 'source_url': 'https://example.org/impact',
-                                'checked_date': '2026-11-18'}])
-        g.write_security_pages([record])
-        page = (g.ROOT / 'profiles/security-test-case.html').read_text()
-        for text in ('A &lt;test&gt; case', 'AI attribution date not established by the source',
-                     'Only with &lt;condition&gt;', 'Technical effect not established',
-                     'CVSS 3.1 · 0', 'installed patches or current safety', 'Human involvement is only described'):
+        write_vulnerability_inputs(g.ROOT, ['old-case'])
+        pages = g.write_vulnerability_pages(OVERVIEW, PREVIEW)
+        self.assertEqual(pages, ['profiles/vulnerabilities-web-server.html'])
+        security = (g.ROOT / 'security.html').read_text()
+        self.assertIn('10 vulnerabilities joined from 1 public sources', security)
+        self.assertIn('href="profiles/vulnerabilities-web-server.html"', security)
+        self.assertNotIn('vulnerabilities-tiny.html', security)
+        self.assertIn('not endorsed or certified by the NVD', security)
+        g.write_vulnerability_pages(OVERVIEW, PREVIEW)  # markers stay in place: a rerun is idempotent
+        self.assertEqual(security, (g.ROOT / 'security.html').read_text())
+        page = (g.ROOT / 'profiles/vulnerabilities-web-server.html').read_text()
+        for text in ('acme:&lt;server&gt;', 'Flaw &lt;x&gt;', 'not a safety ranking', 'href="../security.html?q=CVE-2026-0001"'):
             self.assertIn(text, page)
-        self.assertIn('href="../security.html#test-case"', page)
-        self.assertIn('href="../api/v1/vulnerabilities/test-case.json"', page)
-        metadata = json.loads(__import__('re').search(r'<script type="application/ld\+json">(.*?)</script>', page, __import__('re').S)[1])
-        self.assertEqual(metadata['@type'], 'WebPage')
-        self.assertEqual(metadata['isPartOf']['@id'], g.BASE + 'dataset.html#security-dataset')
-        self.assertNotIn('dateModified', metadata)
-        directory = (g.ROOT / 'profiles/security-index.html').read_text()
-        self.assertIn('href="../profiles/security-test-case.html"', directory)
-        g.write_sitemap([self.record], {'families': []}, vulns=[record])
-        self.assertIn(g.BASE + 'profiles/security-test-case.html', (g.ROOT / 'sitemap.xml').read_text())
+        stub = (g.ROOT / 'profiles/security-old-case.html').read_text()
+        self.assertIn('content="noindex"', stub)
+        self.assertIn('content="0; url=../security.html"', stub)
+        self.assertIn(f'rel="canonical" href="{g.BASE}security.html"', stub)
+        self.assertTrue((g.ROOT / 'profiles/security-index.html').exists())
+        g.write_sitemap([self.record], {'families': []}, vuln_pages=pages)
+        sitemap = (g.ROOT / 'sitemap.xml').read_text()
+        self.assertIn(g.BASE + 'profiles/vulnerabilities-web-server.html', sitemap)
+        self.assertNotIn('profiles/security-', sitemap)
 
     def test_feed_lists_newest_records_with_catalog_dates(self):
         g = self.generator
-        vuln = {'id': 'v1', 'title': 'V & flaw', 'summary': 's', 'organization': 'Org', 'checked_date': '2999-01-01', 'disclosure_date': '2998-01-01'}
-        g.write_feed([self.record], [vuln], limit=5)
+        g.write_feed([dict(self.record, id='newer', title='N & result', added_date='2999-01-01'), self.record], limit=5)
         root = ET.fromstring((g.ROOT / 'feed.xml').read_text())
         ns = {'a': 'http://www.w3.org/2005/Atom'}
         entries = root.findall('a:entry', ns)
         self.assertEqual(root.find('a:title', ns).text, 'AI Science Tracker: additions and source checks')
         self.assertEqual(len(entries), 2)
-        self.assertEqual(entries[0].find('a:title', ns).text, 'V & flaw')
-        self.assertEqual(entries[0].find('a:id', ns).text, g.BASE + 'security.html#v1')
-        self.assertEqual(entries[0].find('a:link', ns).get('href'), g.BASE + 'profiles/security-v1.html')
+        self.assertEqual(entries[0].find('a:title', ns).text, 'N & result')
+        self.assertEqual(entries[0].find('a:link', ns).get('href'), g.BASE + 'share/newer.html')
         self.assertTrue(entries[0].find('a:updated', ns).text.startswith('2999-01-01'))
         self.assertEqual(root.find('a:updated', ns).text, '2999-01-01T00:00:00Z')
 
@@ -216,46 +235,35 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('og/test-discovery.png', page.read_text())
         self.assertNotIn('og/default.png', page.read_text())
 
-    def test_exports_preserve_vulnerability_caveats_and_neutralize_formulas(self):
+    def test_exports_neutralize_formulas_and_api_serves_the_preview(self):
         g = self.generator
         (g.ROOT / 'data').mkdir()
-        vuln = json.loads((ROOT / 'data/vulnerabilities.json').read_text())[0]
-        vuln.update(title='=formula', classification_note='+caveat', remediation_note='@scope',
-                    cvss=[{'cve': None, 'score': 0, 'scenarios': ['Without Clientless VPN']}, {'cve': 'CVE-2026-1234', 'score': 9.8}],
-                    impacts=[{'consequences': ['code execution', 'data disclosure'], 'conditions': 'Access required'}],
-                    remediation_details={'source_url': vuln['advisory_url'], 'checked_date': vuln['checked_date'], 'fixed_in': ['1.2.3']})
-        g.write_exports([dict(self.record, summary='\tformula')], [vuln])
-        with (g.ROOT / 'data/vulnerabilities.csv').open(newline='') as f:
-            row = next(csv.DictReader(f))
-        self.assertEqual(row['title'], "'=formula")
-        self.assertEqual(row['classification_note'], "'+caveat")
-        self.assertEqual(row['remediation_note'], "'@scope")
-        self.assertEqual(row['ai_attribution_date'], vuln['ai_attribution_date'])
-        self.assertEqual(json.loads(row['cvss']), vuln['cvss'])
-        self.assertEqual(json.loads(row['impacts']), vuln['impacts'])
-        self.assertEqual(json.loads(row['remediation_details']), vuln['remediation_details'])
-        g.write_api([self.record], [vuln])
-        self.assertEqual(json.loads((g.ROOT / 'api/v1/vulnerabilities' / (vuln['id'] + '.json')).read_text()), vuln)
+        g.write_exports([dict(self.record, summary='\tformula')])
+        self.assertFalse((g.ROOT / 'data/vulnerabilities.csv').exists())
+        g.write_api([self.record], PREVIEW, OVERVIEW)
+        self.assertEqual(json.loads((g.ROOT / 'api/v1/vulnerabilities/CVE-2026-0001.json').read_text()), PREVIEW[0])
+        index = json.loads((g.ROOT / 'api/v1/index.json').read_text())
+        self.assertEqual((index['counts']['vulnerabilities_in_preview'], index['counts']['vulnerabilities_in_dataset']), (1, 10))
         with (g.ROOT / 'data/discoveries.csv').open(newline='') as f:
             self.assertEqual(next(csv.DictReader(f))['summary'], "'\tformula")
 
     def test_api_fingerprint_changes_with_edits_and_preserves_old_files_on_write_failure(self):
         g = self.generator
-        g.write_api([self.record], [], {'models': []}, [])
+        g.write_api([self.record], [], OVERVIEW, {'models': []}, [])
         index_path = g.ROOT / 'api/v1/index.json'
         before = json.loads(index_path.read_text())
         self.assertEqual(before['data_version_date'], before['latest_discovery_addition_date'])
-        g.write_api([dict(self.record, summary='corrected')], [], {'models': []}, [])
+        g.write_api([dict(self.record, summary='corrected')], [], OVERVIEW, {'models': []}, [])
         after = json.loads(index_path.read_text())
         self.assertNotEqual(before['catalog_sha256'], after['catalog_sha256'])
         self.assertEqual(before['data_version_date'], after['data_version_date'])
-        g.write_api([self.record], [], {'models': []}, [dict(self.record, id='archived')])
+        g.write_api([self.record], [], OVERVIEW, {'models': []}, [dict(self.record, id='archived')])
         self.assertNotEqual(before['catalog_sha256'], json.loads(index_path.read_text())['catalog_sha256'])
         old = g.ROOT / 'api/v1/discoveries/old.json'
         old.write_text('{}')
         with patch.object(Path, 'write_text', side_effect=OSError('disk full')):
             with self.assertRaises(OSError):
-                g.write_api([self.record], [])
+                g.write_api([self.record], [], OVERVIEW)
         self.assertTrue(old.exists())
 
     def test_card_hashes_detect_content_and_styles_changes(self):
@@ -371,26 +379,23 @@ class SharePageTests(unittest.TestCase):
         self.assertIn('href="index.html"', (g.ROOT / 'profiles/org-former-lab.html').read_text())
         self.assertIn('href="index.html"', (g.ROOT / 'profiles/family-boltz.html').read_text())
 
-    def test_optional_vulnerability_evidence_references_case_cves(self):
+    def test_vulnerability_preview_ids_must_be_unique_and_file_safe(self):
         g = self.generator
-        vuln = json.loads((ROOT / 'data/vulnerabilities.json').read_text())[0]
-        g.validate_inputs([self.record], [], {'families': [], 'models': []}, [vuln])
-        vuln.update(cves=['CVE-2026-1234'], cvss=[{'cve': None}, {'cve': 'CVE-2026-1234'}],
-                    impacts=[{'cves': ['CVE-2026-1234']}])
-        g.validate_inputs([self.record], [], {'families': [], 'models': []}, [vuln])
-        for field, invalid in [('cvss', [{'cve': 'CVE-2026-9999'}]), ('impacts', [{'cves': ['CVE-2026-9999']}])]:
-            bad = dict(vuln, **{field: invalid})
-            with self.assertRaisesRegex(ValueError, 'CVEs must belong'):
-                g.validate_inputs([self.record], [], {'families': [], 'models': []}, [bad])
+        models = {'families': [], 'models': []}
+        g.validate_inputs([self.record], [], models, PREVIEW + [{'id': 'BDU:2026-1'}])
+        for bad in (PREVIEW + PREVIEW, [{'id': '../x'}], [{'id': 'a/b'}]):
+            with self.assertRaisesRegex(ValueError, 'preview IDs'):
+                g.validate_inputs([self.record], [], models, bad)
 
     def test_invalid_input_is_rejected_before_writing_outputs(self):
         g = self.generator
         (g.ROOT / 'data').mkdir()
-        for name, value in [('discoveries', [self.record]), ('models', {'families': [], 'models': []}),
-                            ('vulnerabilities', [{'id': 'invalid'}])]:
+        write_vulnerability_inputs(g.ROOT)
+        (g.ROOT / 'data/vulnerabilities-preview.json').write_text(json.dumps([{'id': '../invalid'}]))
+        for name, value in [('discoveries', [self.record]), ('models', {'families': [], 'models': []})]:
             (g.ROOT / f'data/{name}.json').write_text(json.dumps(value))
         with patch('sys.argv', ['generate_share.py', '--no-images']):
-            with self.assertRaises(KeyError):
+            with self.assertRaises(ValueError):
                 g.main()
         self.assertFalse((g.ROOT / 'share').exists())
 
@@ -407,8 +412,9 @@ class SharePageTests(unittest.TestCase):
         archived = dict(self.record, id='archived', organization='Former Lab; Partner', summary='Archived: outside the catalog scope.')
         (g.ROOT / 'data').mkdir()
         for name, value in [('discoveries', [self.record]), ('archived-discoveries', [archived]),
-                            ('models', {'families': [], 'models': []}), ('vulnerabilities', [])]:
+                            ('models', {'families': [], 'models': []})]:
             (g.ROOT / f'data/{name}.json').write_text(json.dumps(value))
+        write_vulnerability_inputs(g.ROOT)
         shutil.copytree(ROOT / 'data/benchmarks', g.ROOT / 'data/benchmarks')
         for component in ('model-progress', 'swe-bench', 'citations', 'entity-aliases'):
             shutil.copyfile(ROOT / f'data/{component}.json', g.ROOT / f'data/{component}.json')
@@ -448,7 +454,7 @@ class SharePageTests(unittest.TestCase):
 
     def test_llms_txt_counts_come_from_the_data(self):
         g = self.generator
-        g.write_llms_txt([self.record], {'families': []})
+        g.write_llms_txt([self.record], {'families': []}, OVERVIEW)
         text = (g.ROOT / 'llms.txt').read_text()
         self.assertTrue(text.startswith('# AI Science Tracker'))
         self.assertIn('catalog of 1 entries about scientific results', text)
