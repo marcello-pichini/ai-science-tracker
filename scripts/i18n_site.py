@@ -331,9 +331,13 @@ def refresh_chrome(text: str, switcher: str) -> str:
         nav = match.group(0).replace('>Vuln discoveries</a>', '>Vulnerabilities</a>', 1)
         if 'href="insights.html"' not in nav:
             nav = re.sub(r'(<a href="dossiers\.html"[^>]*>Dossiers</a>)', r'\1<a href="insights.html">Insights</a>', nav, count=1)
-        if 'open-problems.html"' not in nav:
-            nav = re.sub(r'(<a href="((?:\.\./)*)insights\.html"[^>]*>[^<]*</a>)',
-                         lambda m: m.group(1) + f'<a href="{m.group(2)}open-problems.html">Open problems</a>', nav, count=1)
+        # Open problems is the second section: move an existing link (keeping its label) or add one.
+        link = re.search(r'<a href="(?:\.\./)*open-problems\.html"[^>]*>[^<]*</a>', nav)
+        prefix = re.search(r'<a href="((?:\.\./)*)insights\.html"', nav)
+        if link or prefix:
+            anchor = link.group(0) if link else f'<a href="{prefix.group(1)}open-problems.html">Open problems</a>'
+            nav = nav.replace(anchor, '', 1) if link else nav
+            nav = re.sub(r'(<nav[^>]*>\s*<a [^>]*>[^<]*</a>)', lambda m: m.group(1) + anchor, nav, count=1)
         return nav.replace(
             '<nav class="menu" aria-label="Site sections">',
             '<nav class="menu" id="site-nav" aria-label="Site sections">', 1)

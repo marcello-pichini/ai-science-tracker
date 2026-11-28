@@ -78,8 +78,8 @@ class DesignTests(unittest.TestCase):
                 menu = re.search(r'<nav class="menu".*?</nav>', text, re.S).group()
                 self.assertLess(menu.index('href="security.html"'), menu.index('href="dossiers.html"'))
                 self.assertLess(menu.index('href="dossiers.html"'), menu.index('href="insights.html"'))
-                self.assertLess(menu.index('href="insights.html"'), menu.index('href="open-problems.html"'))
-                self.assertLess(menu.index('href="open-problems.html"'), menu.index('href="methodology.html"'))
+                self.assertLess(menu.index('href="/"'), menu.index('href="open-problems.html"'))
+                self.assertLess(menu.index('href="open-problems.html"'), menu.index('href="models.html"'))
                 self.assertIn('href="/"', menu)
                 for nav in ('models.html', 'methodology.html', 'guide.html', 'security.html'):
                     self.assertIn(f'href="{nav}"', text)
