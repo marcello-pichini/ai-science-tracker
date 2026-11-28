@@ -11,8 +11,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
-FIELDS = {'discoveries': ('source_url', 'paper_url'),
-          'vulnerabilities': ('source_url', 'ai_source_url', 'advisory_url')}
+FIELDS = {'discoveries': ('source_url', 'paper_url')}
 
 
 def status(url, timeout=10):
