@@ -54,8 +54,8 @@ PAGES = SHARED_PAGES + NEW_DOSSIER_PAGES
 SITEMAP_PAGES = tuple(page for page in PAGES if page != '404.html')
 
 ASSET_PREFIXES = ('assets/', 'data/', 'share/', 'profiles/', 'api/', 'og/', 'docs/', 'schema/')
-# insights.html is generated in English only, so language editions link to the root copy.
-ASSET_FILES = {'styles.css', 'feed.xml', 'sitemap.xml', 'llms.txt', 'llms-full.txt', 'robots.txt', 'insights.html'}
+# insights.html and open-problems.html are generated in English only, so language editions link to the root copy.
+ASSET_FILES = {'styles.css', 'feed.xml', 'sitemap.xml', 'llms.txt', 'llms-full.txt', 'robots.txt', 'insights.html', 'open-problems.html'}
 SKIP_TAGS = {'script', 'style'}
 NUMBER = re.compile(r'\d+(?:\.\d+)?')
 KEEP_LINE = re.compile(
@@ -331,6 +331,9 @@ def refresh_chrome(text: str, switcher: str) -> str:
         nav = match.group(0).replace('>Vuln discoveries</a>', '>Vulnerabilities</a>', 1)
         if 'href="insights.html"' not in nav:
             nav = re.sub(r'(<a href="dossiers\.html"[^>]*>Dossiers</a>)', r'\1<a href="insights.html">Insights</a>', nav, count=1)
+        if 'open-problems.html"' not in nav:
+            nav = re.sub(r'(<a href="((?:\.\./)*)insights\.html"[^>]*>[^<]*</a>)',
+                         lambda m: m.group(1) + f'<a href="{m.group(2)}open-problems.html">Open problems</a>', nav, count=1)
         return nav.replace(
             '<nav class="menu" aria-label="Site sections">',
             '<nav class="menu" id="site-nav" aria-label="Site sections">', 1)

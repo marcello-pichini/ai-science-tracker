@@ -6,7 +6,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGES = [ROOT / n for n in ('index.html', 'models.html', 'methodology.html', 'profile.html', 'guide.html', 'security.html', 'dataset.html', 'contributors.html', 'model-progress.html', 'search.html', 'antibiotic-dossier.html', 'dossiers.html', 'alphafold-dossier.html', 'materials-dossier.html', 'mathematics-dossier.html', 'seismology-dossier.html', 'astronomy-dossier.html', 'floods-dossier.html', 'vulnerabilities-dossier.html', 'model-releases-dossier.html', 'contact.html', 'insights.html', 'claims.html')]
+PAGES = [ROOT / n for n in ('index.html', 'models.html', 'methodology.html', 'profile.html', 'guide.html', 'security.html', 'dataset.html', 'contributors.html', 'model-progress.html', 'search.html', 'antibiotic-dossier.html', 'dossiers.html', 'alphafold-dossier.html', 'materials-dossier.html', 'mathematics-dossier.html', 'seismology-dossier.html', 'astronomy-dossier.html', 'floods-dossier.html', 'vulnerabilities-dossier.html', 'model-releases-dossier.html', 'contact.html', 'insights.html', 'claims.html', 'open-problems.html')]
 COLOR = re.compile(r'#[0-9a-fA-F]{3,8}\b|rgba?\(')
 
 
@@ -78,7 +78,8 @@ class DesignTests(unittest.TestCase):
                 menu = re.search(r'<nav class="menu".*?</nav>', text, re.S).group()
                 self.assertLess(menu.index('href="security.html"'), menu.index('href="dossiers.html"'))
                 self.assertLess(menu.index('href="dossiers.html"'), menu.index('href="insights.html"'))
-                self.assertLess(menu.index('href="insights.html"'), menu.index('href="methodology.html"'))
+                self.assertLess(menu.index('href="insights.html"'), menu.index('href="open-problems.html"'))
+                self.assertLess(menu.index('href="open-problems.html"'), menu.index('href="methodology.html"'))
                 self.assertIn('href="/"', menu)
                 for nav in ('models.html', 'methodology.html', 'guide.html', 'security.html'):
                     self.assertIn(f'href="{nav}"', text)

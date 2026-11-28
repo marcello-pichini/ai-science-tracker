@@ -136,7 +136,7 @@ class PipelineTests(unittest.TestCase):
             root = Path(directory)
             subprocess.run(['git', 'init', '-q', str(root)], check=True)
             paths = [
-                'index.html', 'insights.html', 'profile.html', 'models.html', 'search.html', 'security.html',
+                'index.html', 'insights.html', 'open-problems.html', 'profile.html', 'models.html', 'search.html', 'security.html',
                 'model-progress.html', 'methodology.html', 'dataset.html',
                 'it/index.html', 'de/index.html', 'fr/index.html', 'es/index.html',
                 'data/new.json', 'scripts/public-benchmark-inputs.json', 'share/new.html',

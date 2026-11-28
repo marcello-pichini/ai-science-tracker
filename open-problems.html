@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'self'; form-action https://formspree.io">
+<script type="speculationrules">{"prerender":[{"where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":"/data/*"}},{"not":{"href_matches":"/api/*"}},{"not":{"href_matches":"/og/*"}},{"not":{"href_matches":"/*.xml"}},{"not":{"href_matches":"/*.txt"}}]},"eagerness":"moderate"}]}</script><!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "04bfc0ca5b5e4460b4c8ee6bb5055925"}'></script><!-- End Cloudflare Web Analytics --><script>
+globalThis.astCleanPath = function (path) {
+  path = path || '/';
+  if (path === '/index.html') return '/';
+  var home = path.match(/^\/(it|de|fr|es)\/index\.html$/);
+  if (home) return '/' + home[1] + '/';
+  return path;
+};
+globalThis.astResolveLanguage = function (input) {
+  var SUPPORTED = {it:1, de:1, fr:1, es:1};
+  var ua = input.ua || '';
+  var bot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|googleother|google-extended|google-inspectiontool|google-read-aloud|duplexweb|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua);
+  var raw = input.path || '/';
+  var path = astCleanPath(raw);
+  var search = input.search || '';
+  var hash = input.hash || '';
+  var cleaned = path + search + hash;
+  // Crawlers are not sent to another language. They are sent from /index.html to /.
+  if (bot) return path === raw ? null : cleaned;
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return path === raw ? null : cleaned;
+  var pages = input.pages || [];
+  var saved = input.saved || '';
+  var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
+  if (!target) {
+    var list = input.languages || [];
+    for (var i = 0; i < list.length; i++) {
+      var code = String(list[i] || '').toLowerCase().split('-')[0];
+      if (code === 'en' || SUPPORTED[code]) { target = code; break; }
+    }
+  }
+  if (!target) {
+    var hint = {
+      'Europe/Rome':'it','Europe/Vatican':'it','Europe/San_Marino':'it',
+      'Europe/Berlin':'de','Europe/Busingen':'de','Europe/Vienna':'de',
+      'Europe/Paris':'fr','Europe/Monaco':'fr',
+      'Europe/Madrid':'es','Atlantic/Canary':'es','Africa/Ceuta':'es','Europe/Andorra':'es',
+      'America/Mexico_City':'es','America/Argentina/Buenos_Aires':'es','America/Bogota':'es',
+      'America/Lima':'es','America/Santiago':'es','America/Montevideo':'es','America/Asuncion':'es',
+      'America/La_Paz':'es','America/Caracas':'es','America/Guayaquil':'es'
+    };
+    if (hint[input.timezone || '']) target = hint[input.timezone];
+  }
+  if (target && target !== 'en' && SUPPORTED[target]) {
+    if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+    var file = path.split('/').pop();
+    var dir = path.slice(0, path.length - file.length);
+    if (dir !== '/') return path === raw ? null : cleaned;
+    if (!file || file === 'index.html') return '/' + target + '/' + search + hash;
+    if (pages.indexOf(file) < 0) return path === raw ? null : cleaned;
+    return '/' + target + '/' + file + search + hash;
+  }
+  return path === raw ? null : cleaned;
+};
+globalThis.astEquivalent = function (lang, path, search, hash, pages) {
+  search = search || '';
+  hash = hash || '';
+  pages = pages || [];
+  var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
+  var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
+  if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
+  var prefix = lang === 'en' ? '' : '/' + lang;
+  if (rest === '/') return prefix + '/' + search + hash;
+  var file = rest.split('/').pop();
+  var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && file === 'index.html') return prefix + '/' + search + hash;
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
+  var share = rest.match(/^\/share\/([^/]+)\.html$/);
+  if (share) return prefix + '/#discovery=' + share[1];
+  if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
+  return prefix + '/' + search;
+};
+try{document.documentElement.classList.add("js");}catch(e){}try{var saved=null;var storageOk=true;try{saved=localStorage.getItem("ast-lang");}catch(e){storageOk=false;}if(storageOk){var tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||"";}catch(e){}var dest=astResolveLanguage({ua:navigator.userAgent||"",languages:navigator.languages&&navigator.languages.length?Array.prototype.slice.call(navigator.languages):[navigator.language||""],timezone:tz,path:location.pathname,search:location.search||"",hash:location.hash||"",saved:saved||"",pages:["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"]});if(dest)location.replace(dest);}}catch(e){}</script>
+<title>Open math problems solved by AI agents · AI Science Tracker</title>
+<meta name="description" content="Open math problems settled, formalized or refuted by AI agents on Left to Solve and the public P vs NP attempt, tracked every 3 hours from their Lean checkers.">
+<link rel="canonical" href="https://aisciencetracker.org/open-problems.html">
+<meta property="og:title" content="Open math problems solved by AI agents · AI Science Tracker">
+<meta property="og:description" content="Open math problems settled, formalized or refuted by AI agents on Left to Solve and the public P vs NP attempt, tracked every 3 hours from their Lean checkers.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://aisciencetracker.org/og/default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:image:alt" content="Preview card: AI Science Tracker, scientific discoveries enabled by AI, tracked from official announcements since 2020.">
+<meta name="twitter:title" content="Open math problems solved by AI agents · AI Science Tracker">
+<meta name="twitter:description" content="Open math problems settled, formalized or refuted by AI agents on Left to Solve and the public P vs NP attempt, tracked every 3 hours from their Lean checkers.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://aisciencetracker.org/open-problems.html">
+<meta property="og:site_name" content="AI Science Tracker">
+<meta name="theme-color" content="#12367e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2312367e'/%3E%3Cpath d='M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4' stroke='%23f2f6ff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=bccf1265dee8"><link rel="stylesheet" href="assets/i18n.css?v=d75d337c615d">
+<meta property="og:locale" content="en_GB">
+<link rel="alternate" type="application/json" href="https://aisciencetracker.org/data/open-problems.json">
+<script type="application/ld+json">
+{"@context":"https://schema.org/","@type":"CollectionPage","name":"Open math problems solved by AI agents","description":"Open math problems settled, formalized or refuted by AI agents on Left to Solve and the public P vs NP attempt, tracked every 3 hours from their Lean checkers.","url":"https://aisciencetracker.org/open-problems.html","inLanguage":"en","dateModified":"2026-11-28","creator":{"@type":"Person","name":"Marcello Pichini","url":"https://github.com/marcello-pichini","sameAs":["https://orcid.org/0009-0007-4958-371X"]},"publisher":{"@type":"Organization","@id":"https://aisciencetracker.org/#organization","name":"AI Science Tracker","url":"https://aisciencetracker.org/","logo":"https://aisciencetracker.org/assets/logo.png","publishingPrinciples":"https://aisciencetracker.org/methodology.html","sameAs":["https://github.com/marcello-pichini/ai-science-tracker","https://doi.org/10.5281/zenodo.24217686","https://huggingface.co/datasets/marcello-pichini/ai-science-tracker","https://www.linkedin.com/company/aisciencetracker/"]},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"AI Science Tracker","item":"https://aisciencetracker.org/"},{"@type":"ListItem","position":2,"name":"Open math problems solved by AI agents","item":"https://aisciencetracker.org/open-problems.html"}]},"isBasedOn":["https://lefttosolve.com","https://pequalnp.com"],"about":[{"@type":"Thing","name":"Open problems in mathematics"},{"@type":"Thing","name":"P versus NP problem"}]}
+</script>
+</head>
+<body>
+<header class="header">
+  <div class="wrap">
+    <a class="marchio" href="/" aria-label="AI Science Tracker, home page">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#f2f6ff"/><path d="M8 24v-6M12 24v-11M16 24v-15M20 24v-8M24 24v-4" stroke="#12367e" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <span>AI Science Tracker</span>
+    </a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button><p class="vis-nascosto" id="nav-label-close">Close menu</p><nav class="menu" id="site-nav" aria-label="Site sections"><a href="/">Discoveries</a><a href="models.html">Models</a><a href="security.html">Vulnerabilities</a><a href="dossiers.html">Dossiers</a><a href="insights.html">Insights</a><a href="open-problems.html" aria-current="page">Open problems</a><a href="methodology.html">Methodology</a><a href="guide.html">Guide</a><a href="search.html">Search</a></nav><details class="lang" id="lang-details"><summary class="lang-toggle" aria-label="Choose language"><svg class="globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.25" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 3.75c2.2 2.4 3.3 5.2 3.3 8.25s-1.1 5.85-3.3 8.25c-2.2-2.4-3.3-5.2-3.3-8.25s1.1-5.85 3.3-8.25z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.2 12h15.6M5.4 8.25h13.2M5.4 15.75h13.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="lang-code">EN</span></summary><nav class="menu" id="lang-switch" data-i18n-skip aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang="en" aria-label="English" aria-current="true">English</a><a href="/it/" hreflang="it" lang="it" data-lang="it" aria-label="Italiano">Italiano</a><a href="/de/" hreflang="de" lang="de" data-lang="de" aria-label="Deutsch">Deutsch</a><a href="/fr/" hreflang="fr" lang="fr" data-lang="fr" aria-label="Français">Français</a><a href="/es/" hreflang="es" lang="es" data-lang="es" aria-label="Español">Español</a></nav></details><script>
+globalThis.astCleanPath = function (path) {
+  path = path || '/';
+  if (path === '/index.html') return '/';
+  var home = path.match(/^\/(it|de|fr|es)\/index\.html$/);
+  if (home) return '/' + home[1] + '/';
+  return path;
+};
+globalThis.astResolveLanguage = function (input) {
+  var SUPPORTED = {it:1, de:1, fr:1, es:1};
+  var ua = input.ua || '';
+  var bot = /bot|crawl|spider|slurp|bingpreview|facebookexternalhit|embedly|quora|pinterest|redditbot|applebot|linkedinbot|whatsapp|telegrambot|googlebot|googleother|google-extended|google-inspectiontool|google-read-aloud|duplexweb|adsbot|mediapartners|baiduspider|yandex|duckduckbot|semrush|ahrefs|petalbot|bytespider|gptbot|claudebot|amazonbot|ccbot|ia_archiver|facebookcatalog/i.test(ua);
+  var raw = input.path || '/';
+  var path = astCleanPath(raw);
+  var search = input.search || '';
+  var hash = input.hash || '';
+  var cleaned = path + search + hash;
+  // Crawlers are not sent to another language. They are sent from /index.html to /.
+  if (bot) return path === raw ? null : cleaned;
+  if (/^\/(it|de|fr|es)(\/|$)/.test(path)) return path === raw ? null : cleaned;
+  var pages = input.pages || [];
+  var saved = input.saved || '';
+  var target = (saved === 'en' || SUPPORTED[saved]) ? saved : '';
+  if (!target) {
+    var list = input.languages || [];
+    for (var i = 0; i < list.length; i++) {
+      var code = String(list[i] || '').toLowerCase().split('-')[0];
+      if (code === 'en' || SUPPORTED[code]) { target = code; break; }
+    }
+  }
+  if (!target) {
+    var hint = {
+      'Europe/Rome':'it','Europe/Vatican':'it','Europe/San_Marino':'it',
+      'Europe/Berlin':'de','Europe/Busingen':'de','Europe/Vienna':'de',
+      'Europe/Paris':'fr','Europe/Monaco':'fr',
+      'Europe/Madrid':'es','Atlantic/Canary':'es','Africa/Ceuta':'es','Europe/Andorra':'es',
+      'America/Mexico_City':'es','America/Argentina/Buenos_Aires':'es','America/Bogota':'es',
+      'America/Lima':'es','America/Santiago':'es','America/Montevideo':'es','America/Asuncion':'es',
+      'America/La_Paz':'es','America/Caracas':'es','America/Guayaquil':'es'
+    };
+    if (hint[input.timezone || '']) target = hint[input.timezone];
+  }
+  if (target && target !== 'en' && SUPPORTED[target]) {
+    if (path === '/' || path === '') return '/' + target + '/' + search + hash;
+    var file = path.split('/').pop();
+    var dir = path.slice(0, path.length - file.length);
+    if (dir !== '/') return path === raw ? null : cleaned;
+    if (!file || file === 'index.html') return '/' + target + '/' + search + hash;
+    if (pages.indexOf(file) < 0) return path === raw ? null : cleaned;
+    return '/' + target + '/' + file + search + hash;
+  }
+  return path === raw ? null : cleaned;
+};
+globalThis.astEquivalent = function (lang, path, search, hash, pages) {
+  search = search || '';
+  hash = hash || '';
+  pages = pages || [];
+  var prefixed = String(path || '/').match(/^\/(it|de|fr|es)(?=\/|$)/);
+  var rest = prefixed ? path.slice(prefixed[0].length) : (path || '/');
+  if (rest === '' || rest === '/' || rest === '/index.html') rest = '/';
+  var prefix = lang === 'en' ? '' : '/' + lang;
+  if (rest === '/') return prefix + '/' + search + hash;
+  var file = rest.split('/').pop();
+  var dir = rest.slice(0, rest.length - file.length);
+  if ((dir === '/' || dir === '') && file === 'index.html') return prefix + '/' + search + hash;
+  if ((dir === '/' || dir === '') && pages.indexOf(file) >= 0) return prefix + '/' + file + search + hash;
+  var share = rest.match(/^\/share\/([^/]+)\.html$/);
+  if (share) return prefix + '/#discovery=' + share[1];
+  if (file === 'profile.html') return prefix + '/profile.html' + search + hash;
+  return prefix + '/' + search;
+};
+try{var nav=document.getElementById("lang-switch");if(nav){var pages=["index.html", "models.html", "security.html", "dossiers.html", "methodology.html", "guide.html", "search.html", "dataset.html", "contributors.html", "contact.html", "model-progress.html", "profile.html", "alphafold-dossier.html", "antibiotic-dossier.html", "404.html"];var current=(document.documentElement.lang||"en").toLowerCase();var codeEl=document.querySelector(".lang-code");if(codeEl)codeEl.textContent=current.toUpperCase();nav.querySelectorAll("[data-lang]").forEach(function(a){var lang=a.getAttribute("data-lang");a.href=astEquivalent(lang,location.pathname,location.search,location.hash,pages);if(lang===current)a.setAttribute("aria-current","true");else a.removeAttribute("aria-current");a.addEventListener("click",function(){try{localStorage.setItem("ast-lang",lang);}catch(e){}});});var langBox=document.getElementById("lang-details");if(langBox){document.addEventListener("click",function(e){if(langBox.open&&!langBox.contains(e.target))langBox.open=false;});langBox.addEventListener("keydown",function(e){if(e.key!=="ArrowDown"&&e.key!=="ArrowUp"&&e.key!=="Escape")return;var items=[].slice.call(nav.querySelectorAll("[data-lang]"));if(e.key==="Escape"){e.preventDefault();langBox.open=false;var summary=langBox.querySelector("summary");if(summary)summary.focus();return;}if(!items.length)return;var i=items.indexOf(document.activeElement);if(i<0){items[0].focus();e.preventDefault();return;}e.preventDefault();items[(i+(e.key==="ArrowDown"?1:items.length-1))%items.length].focus();});}var navBtn=document.querySelector(".nav-toggle");var siteNav=document.getElementById("site-nav");var closeLabel=document.getElementById("nav-label-close");if(navBtn&&siteNav){var openLabel=navBtn.getAttribute("aria-label");var setOpen=function(open){navBtn.setAttribute("aria-expanded",open?"true":"false");siteNav.classList.toggle("is-open",!!open);if(closeLabel&&openLabel)navBtn.setAttribute("aria-label",open?closeLabel.textContent:openLabel);};navBtn.addEventListener("click",function(){setOpen(navBtn.getAttribute("aria-expanded")!=="true");});document.addEventListener("click",function(e){if(navBtn.getAttribute("aria-expanded")==="true"&&!siteNav.contains(e.target)&&!navBtn.contains(e.target))setOpen(false);});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&navBtn.getAttribute("aria-expanded")==="true"){setOpen(false);navBtn.focus();}});}}}catch(e){}</script>
+  </div>
+</header>
+
+<section class="banda banda-bassa" aria-labelledby="titolo-pagina">
+  <div class="wrap">
+    <h1 id="titolo-pagina">Open problems attacked by AI agents</h1>
+    <p class="lead">A continuous record of open problems settled, formalized or refuted by AI agents on <a href="https://lefttosolve.com">Left to Solve</a> and the public <a href="https://pequalnp.com">P vs NP</a> attempt. A Lean proof checker, not a person, decides each result.</p>
+  </div>
+</section>
+
+<main class="wrap prosa">
+  <section aria-labelledby="the-sites">
+    <h2 id="the-sites">What the two sites do</h2>
+    <div class="pannelli">
+      <section class="pannello" aria-labelledby="about-lts">
+        <h3 id="about-lts"><a href="https://lefttosolve.com">Left to Solve</a></h3>
+        <p class="descr">A public catalog of open math problems for AI agents.</p>
+        <p>It lists 57,245 open problems, from Erdős problems and OEIS conjectures to the Millennium Prize list; 8,592 are stated exactly in Lean 4, most from Google DeepMind's formal-conjectures. Anyone can point an AI coding agent at a problem. The agent works on the owner's machine and sends a proof or a disproof as a GitHub pull request.</p>
+        <p>The Lean kernel decides: a proof counts only with no gaps and no extra axioms. Credit goes to the GitHub author, with the agent and model they declare. A proof of an open problem counts as solved only after the site checks that the formal statement says what the original problem says.</p>
+      </section>
+      <section class="pannello" aria-labelledby="about-pnp">
+        <h3 id="about-pnp"><a href="https://pequalnp.com">P = NP ?</a></h3>
+        <p class="descr">A public attempt on one problem: P versus NP.</p>
+        <p>Since <time datetime="2026-11-22">22 Nov 2026</time> a fleet of AI agents has split the attack into small units of work, each one exact statement in Lean 4, grouped in research programs such as circuit lower bounds, proof complexity and meta-complexity. Outside contributors can connect their own agents.</p>
+        <p>A statement counts only when the Lean checker accepts its proof; a checked counterexample marks it refuted. The proofs are public in <a href="https://github.com/open-goat/pequalnp-proofs">open-goat/pequalnp-proofs</a>. Checked statements are steps, not a solution: P versus NP is still open.</p>
+      </section>
+    </div>
+  </section>
+
+  <section aria-labelledby="standing">
+    <h2 id="standing">Where things stand</h2>
+    <p>Last checked <time datetime="2026-11-28T16:09Z">28 Nov 2026, 16:09 UTC</time>, every 3 hours, from each site's public data. Data: <a href="data/open-problems.json">open-problems.json</a>.</p>
+    <div class="pannelli">
+      <section class="pannello" aria-labelledby="op-lts">
+        <h3 id="op-lts"><a href="https://lefttosolve.com">Left to Solve</a></h3>
+        <p class="descr">Open math problems stated in Lean 4, from Erdős problems, the OEIS and the Millennium list.</p>
+        <table class="tab-mini"><tbody><tr><th scope="row">Open problems stated in Lean</th><td>8,592</td></tr><tr><th scope="row">Open problems without a Lean statement yet</th><td>48,653</td></tr><tr><th scope="row">Open problems solved</th><td>1,326</td></tr><tr><th scope="row">Known results formalized</th><td>4,013</td></tr><tr><th scope="row">Proofs whose statement is being verified</th><td>1,046</td></tr><tr><th scope="row">Proofs of misstated versions</th><td>367</td></tr></tbody></table>
+      </section>
+      <section class="pannello" aria-labelledby="op-pnp">
+        <h3 id="op-pnp"><a href="https://pequalnp.com">P = NP ?</a></h3>
+        <p class="descr">P versus NP is still open. Agents split the attack into Lean statements (lemmas) since <time datetime="2026-11-22">22 Nov 2026</time>.</p>
+        <table class="tab-mini"><tbody><tr><th scope="row">Statements proposed</th><td>53,469</td></tr><tr><th scope="row">Checked by Lean</th><td>27,104</td></tr><tr><th scope="row">Refuted</th><td>17,731</td></tr><tr><th scope="row">Open conjectures</th><td>8,136</td></tr><tr><th scope="row">In work now</th><td>3</td></tr><tr><th scope="row">Agent sessions</th><td>9,430</td></tr></tbody></table>
+      </section>
+    </div>
+  </section>
+
+  <section aria-labelledby="by-day">
+    <h2 id="by-day">Day by day</h2>
+    <p>Results accepted on Left to Solve each day, by outcome as classified at the last check: a proof whose statement is being verified later moves to solved or misstated.</p>
+    <div class="tabella-scorre"><table class="tab-mini"><thead><tr><th scope="col">Date</th><th scope="col">Open problem solved</th><th scope="col">Statement being verified</th><th scope="col">Known result formalized</th><th scope="col">Misstated version</th><th scope="col">Exercise</th></tr></thead><tbody><tr><th scope="row"><time datetime="2026-11-28">28 Nov 2026</time></th><td>1,100</td><td>1,046</td><td>2,057</td><td>321</td><td>0</td></tr><tr><th scope="row"><time datetime="2026-11-27">27 Nov 2026</time></th><td>226</td><td>0</td><td>1,540</td><td>46</td><td>1</td></tr><tr><th scope="row"><time datetime="2026-11-26">26 Nov 2026</time></th><td>0</td><td>0</td><td>416</td><td>0</td><td>81</td></tr></tbody></table></div>
+    <h3>Totals at each check</h3>
+    <p>The last check of each day, so the record continues even when a source changes its own pages.</p>
+    <div class="tabella-scorre"><table class="tab-mini"><thead><tr><th scope="col">Date</th><th scope="col">Open (Left to Solve)</th><th scope="col">Open problems solved</th><th scope="col">Known formalized</th><th scope="col">P vs NP checked</th><th scope="col">P vs NP refuted</th></tr></thead><tbody><tr><th scope="row"><time datetime="2026-11-28">28 Nov 2026</time></th><td>8,592</td><td>1,326</td><td>4,013</td><td>27,104</td><td>17,731</td></tr></tbody></table></div>
+  </section>
+
+  <section aria-labelledby="pnp-programs">
+    <h2 id="pnp-programs">P versus NP, by program</h2>
+    <table class="tab-mini"><thead><tr><th scope="col">Program</th><th scope="col">Checked</th><th scope="col">Open conjectures</th><th scope="col">Refuted</th></tr></thead><tbody><tr><th scope="row">Library of known results</th><td>1,269</td><td>114</td><td>2</td></tr><tr><th scope="row">Geometric complexity theory</th><td>203</td><td>68</td><td>23</td></tr><tr><th scope="row">Circuit lower bounds via algorithms</th><td>84</td><td>23</td><td>2</td></tr><tr><th scope="row">Proof complexity</th><td>346</td><td>75</td><td>40</td></tr><tr><th scope="row">Meta-complexity</th><td>25,202</td><td>7,854</td><td>17,661</td></tr><tr><th scope="row">P = NP algorithm search</th><td>0</td><td>2</td><td>3</td></tr></tbody></table>
+    <h3>Papers written up from checked statements</h3>
+    <ul><li><a href="https://github.com/brilliant-hq/pequalnp-proofs/blob/main/notes/note-1-edge-function-exact-size.md">Note 1: the exact circuit size of the edge function</a>, published <time datetime="2026-11-23">23 Nov 2026</time></li></ul>
+  </section>
+
+  <section aria-labelledby="results">
+    <h2 id="results">All results on Left to Solve</h2>
+    <p>Each accepted pull request, newest first, as the site credits it: the GitHub author of the pull request, with the agent and model they declared. Steps of larger reductions are left out. </p>
+    <ul>
+      <li><strong>Open problem solved</strong>: nobody had a proof before; Lean accepted a proof or a disproof, and the site checked that the formal statement matches the problem.</li>
+      <li><strong>Statement being verified</strong>: Lean accepted the proof, but the formal statement is still being checked against the original problem.</li>
+      <li><strong>Known result formalized</strong>: a result already settled in the literature, now proved in Lean.</li>
+      <li><strong>Misstated version</strong>: the proof is correct for what was written, but the statement did not say what the problem says; the problem is not solved.</li>
+      <li><strong>Exercise</strong>: a warm-up task.</li>
+    </ul>
+    <p>Some entries are special cases of a larger problem, which may still be open; the note on each entry says so.</p>
+    <div class="filtri" id="op-filters" hidden>
+      <div class="campi">
+        <input type="search" id="op-q" aria-label="Search results" placeholder="Search title, problem or handle">
+        <select id="op-outcome" aria-label="Outcome"><option value="">All outcomes</option><option value="open">Open problem solved</option><option value="pending">Statement being verified</option><option value="known">Known result formalized</option><option value="misstated">Misstated version</option><option value="warmup">Exercise</option></select>
+        <select id="op-model" aria-label="Model family"><option value="">All models</option><option value="claude">Claude</option><option value="gpt">GPT</option><option value="gemini">Gemini</option><option value="grok">Grok</option><option value="deepseek">DeepSeek</option><option value="other">Other models</option><option value="none">Model not declared</option></select>
+        <button type="button" id="op-reset">Reset</button>
+      </div>
+    </div>
+    <p id="op-count" aria-live="polite">Newest open problems solved.</p>
+    <ul id="op-results"><li><a href="https://lefttosolve.com/p/opg-atomicity-of-the-poset-of-multifuncoids-0">Atomicity of the poset of multifuncoids</a> <span class="etich ok">Open problem solved</span> Disproof, <time datetime="2026-11-28">28 Nov 2026</time>, @dk8827 with codex (gpt-6.2-sol) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/14553">pull request</a>.</li><li><a href="https://lefttosolve.com/p/opg-a-funcoid-related-to-directed-topological-spaces">A funcoid related to directed topological spaces</a> <span class="etich ok">Open problem solved</span> Disproof, <time datetime="2026-11-28">28 Nov 2026</time>, @KoaOkano with codex (GPT-6) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/14318">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a394666">A394666: a(n) = n! mod (2*n - 1).</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @agchua with claude-code (claude-fable-5-2 with claude-opus-5-5 subagents) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/10478">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a391613">A391613: Number of ways to write n as x^2 + y + z with x &gt;= 1 and y &gt;= z &gt;= 1 such that lcm(x^2,y,z) is a square.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @eitan654 with antigravity (Gemini 4 Neon (High)) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/17869">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a391216">A391216: a(n) is the least k for which omega(k)*omega(k + 1) = n where omega = A001221.</a> <span class="etich ok">Open problem solved</span> Disproof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/22573">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a390815">A390815: Denominators &gt; 1 of ratio n!/sigma(n), where n! = factorial of n (A000142) and sigma(n) = sum of divisors of n (A000203).</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @Salofe with claude-code · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/13074">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a390208">A390208: Number of integer partitions of n with parts colored by {0, 1, 2} such that the sum of colors is congruent to 1 (mod 3).</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @AShahver with codex (gpt-6.2-sol) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/15952">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a389591">A389591: Sum of the divisors r of n such that r is not greater than twice the adjacent previous divisor of n.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @agchua with claude-code (claude-fable-5-2 with claude-opus-5-5 subagents) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/19239">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a387957">A387957: Number of integer partitions of n with parts colored by {0, 1, 2, 3} such that the sum of colors is congruent to 1 (mod 4).</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @AShahver with codex (gpt-6.2-sol) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/16187">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a387064">A387064: Total number of entries in rows 0 to n of Pascal&#x27;s triangle multiple of n.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @Git-Tim1 with codex (gpt-6.2-astra) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/11179">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a384539">A384539: Zeroless positive integers k for which for every pair of nonempty substrings that concatenate to give k one substring divides the </a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @grp06 with codex · <a href="https://github.com/lefttosolve2/open-math-agents/pull/18489">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a382437">A382437: a(n) = a(n-1)^2 + 4 * a(n-1), with a(0) = 2.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @Solfanbtc with antigravity (gemini-4-neon-high) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/11141">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a377112">A377112: a(n) = coefficient of sqrt(6) in the expansion of (2 + sqrt(2) + sqrt(3))^n.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/15543">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a374365">A374365: Numbers m such that abs(Sum_{k=1..m} [k|m]*A008683(k)*(-1)^(2*k/5)) = 0.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @agchua with claude-code (claude-fable-5-2 with claude-opus-5-5 subagents) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/19316">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a374192">A374192: Number of iterations required to reach 1 or 10 in a modified Collatz trajectory where x -&gt; x/2 if x is even, x -&gt; x+1 if x is odd </a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @anthill24 with antigravity (gemini-4-neon) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/12677">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a372561">A372561: Array read by upward antidiagonals: A(n, k) = A265745(A372560(n, k)) for n &gt; 1, k &gt;= 1.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @KoaOkano with codex (gpt-6) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/19800">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a371898">A371898: Triangle read by rows: T(n, k) = n * k * (T(n-1, k-1) + T(n-1, k)) for k &gt; 0 with initial values T(n, 0) = 1 and T(i, j) = 0 for j</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @agchua with claude-code (claude-fable-5-2 with claude-opus-5-5 subagents) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/20566">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a365965">A365965: Numbers k such that A139315(k) = 0 but k is not in A138511.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @agchua with claude-code (claude-fable-5-2 with claude-opus-5-5 subagents) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/19007">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a364919">A364919: a(0) = 1; a(n) is the smallest number m not already in the sequence such that rad(m) divides A019565(n).</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/17695">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a364114">A364114: a(n) = [x^n] 1/(1 - x) * Legendre_P(n, (1 + x)/(1 - x))^3 for n &gt;= 0.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @coracle-us with antigravity (Gemini 4 Neon) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/21300">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a355007">A355007: Triangle read by rows. T(n, k) = n^k * |Stirling1(n, k)|.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jagong-cmu with claude-code (claude-opus-5-5) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/19363">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a353138">A353138: Sum of (the number of digits in n to the power (each digit in n)).</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @Genbox with claude-code (claude-opus-5-5) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/12849">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a350878">A350878: Integers m that divide the sum of values d*p &lt; m, where d is a divisor of m, p is a prime, and d*p does not divide m.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @agchua with claude-code (claude-fable-5-2 with claude-opus-5-5 subagents) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/16799">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a346807">A346807: Numbers that are the sum of ten squares in eight or more ways.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/16209">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a346310">A346310: Positions of words in A076478 such that #0&#x27;s - #1&#x27;s is even.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jagong-cmu with claude-code (claude-opus-5-5) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/19377">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a345503">A345503: Numbers that are the sum of nine squares in six or more ways.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/15880">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a345493">A345493: Numbers that are the sum of eight squares in six or more ways.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/16520">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a345487">A345487: Numbers that are the sum of seven squares in ten or more ways.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/17397">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a345486">A345486: Numbers that are the sum of seven squares in nine or more ways.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/17391">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a345484">A345484: Numbers that are the sum of seven squares in seven or more ways.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/17067">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a345483">A345483: Numbers that are the sum of seven squares in six or more ways.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/16637">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a345482">A345482: Numbers that are the sum of seven squares in five or more ways.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/16572">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a345211">A345211: Numbers with the same number of odd / even, refactorable divisors.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/13277">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a345096">A345096: a(n) = Sum{k=1..n} Sum{i=1..k} k^(1 - ceiling(n/k^i) + floor(n/k^i)).</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @KoaOkano with codex (gpt-6) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/10621">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a340862">A340862: Number of times the number n turns up in pseudo-Fibonacci sequences starting with [k, 1] (with k &gt;= 1), excluding the starting ter</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @agchua with claude-code (claude-fable-5-2 with claude-opus-5-5 subagents) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/22053">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a339532">A339532: Numbers b &gt; 1 such that the smallest three primes, i.e., 2, 3 and 5 are base-b Wieferich primes.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/13408">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a337868">A337868: Number of distinct residues of x^r (mod n), x=0..n-1, r=2, ..., n.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/13380">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a336279">A336279: a(n) = Sum_{k=1..n} mu(k)*k^5.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @treybeathard-jpg with antigravity (gemini-4-neon-xhigh) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/18180">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a336278">A336278: a(n) = Sum_{k=1..n} mu(k)*k^4.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @treybeathard-jpg with antigravity (gemini-4-neon-xhigh) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/18133">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a336277">A336277: a(n) = Sum_{k=1..n} mu(k)*k^3.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @treybeathard-jpg with antigravity (gemini-4-neon-xhigh) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/18098">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a336276">A336276: a(n) = Sum_{k=1..n} mu(k)*k^2.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @treybeathard-jpg with antigravity (gemini-4-neon-xhigh) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/18054">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a333794">A333794: a(1) = 1, for n &gt; 1, a(n) = n + a(n-A052126(n)).</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/13274">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a332446">A332446: Numbers k for which A087808(sigma(k)) is equal to A087808(2*k).</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/15349">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a330910">A330910: a(n-5) is the number of nonempty subsets of {1,2,...,n} such that the difference of successive elements is at least 5.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/15556">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a330904">A330904: Numbers m such that the number of 1&#x27;s in the binary expansion of m equals the sum of the balanced ternary trits of m.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @anthill24 with antigravity (gemini-4-neon) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/12697">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a330408">A330408: Table of A(n,k) read by antidiagonals, where A(1,k)=k; A(n,k) is the least multiple of n &gt;= A(n-1,k).</a> <span class="etich ok">Open problem solved</span> Disproof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/13363">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a327978">A327978: Numbers whose arithmetic derivative (A003415) is a primorial number (A002110) &gt; 1.</a> <span class="etich ok">Open problem solved</span> Disproof, <time datetime="2026-11-28">28 Nov 2026</time>, @rpinho with codex (gpt-6.2-sol) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/11148">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a326781">A326781: No position of a 1 in the reversed binary expansion of n is a power of 2.</a> <span class="etich ok">Open problem solved</span> Disproof, <time datetime="2026-11-28">28 Nov 2026</time>, @jleguina with claude-code (claude-fable-5-2) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/13241">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a321612">A321612: Numbers k such that all k - t are triangular numbers where t is a triangular number in range k/2 &lt;= t &lt; k.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @Sai-yr with codex (gpt-6.2-astra) · <a href="https://github.com/GuillaumeBAUD-coder/open-math-agents/pull/7031">pull request</a>.</li><li><a href="https://lefttosolve.com/p/oeis-a321334">A321334: n such that all n - s are squarefree numbers where s is a squarefree number in range n/2 &lt;= s &lt; n.</a> <span class="etich ok">Open problem solved</span> Proof, <time datetime="2026-11-28">28 Nov 2026</time>, @Krgrocon with codex (gpt-6.2-astra) · <a href="https://github.com/lefttosolve2/open-math-agents/pull/26899">pull request</a>.</li></ul>
+    <p><button type="button" class="badge" id="op-more" hidden>Show more</button></p>
+  </section>
+
+  <section aria-labelledby="sources">
+    <h2 id="sources">Sources and limits</h2>
+    <p>Counts and results are copied from <a href="https://lefttosolve.com/api/solved">lefttosolve.com</a> and <a href="https://pequalnp.com">pequalnp.com</a> (proofs in <a href="https://github.com/lefttosolve2/open-math-agents">lefttosolve2/open-math-agents</a> and <a href="https://github.com/open-goat/pequalnp-proofs">open-goat/pequalnp-proofs</a>). We do not check the proofs ourselves. A Lean proof shows that a formal statement holds; it does not show that the statement matches the original problem, which is why some are later marked misstated. These results are tracked apart from the discovery catalog and do not change its counts.</p>
+  </section>
+</main>
+<script>
+(() => {
+  const OUT = {"open": "Open problem solved", "pending": "Statement being verified", "known": "Known result formalized", "misstated": "Misstated version", "warmup": "Exercise"}, list = document.getElementById("op-results"), more = document.getElementById("op-more"),
+    count = document.getElementById("op-count"), q = document.getElementById("op-q"),
+    o = document.getElementById("op-outcome"), m = document.getElementById("op-model"), step = 100;
+  let all = [], shown = [], limit = step;
+  // Declared models are free text upstream, so the filter groups them by family name.
+  const FAMILY = {claude: /claude|opus|sonnet|haiku|fable|mythos/i, gpt: /gpt|openai|astra|sol/i, gemini: /gemini/i,
+    grok: /grok/i, deepseek: /deepseek/i};
+  const UNDECLARED = /^(unknown|undisclosed|unspecified|default|not reported.*)$/i;
+  const inFamily = (r, f) => f === "none" ? UNDECLARED.test(r.model)
+    : f === "other" ? !UNDECLARED.test(r.model) && !Object.values(FAMILY).some(x => x.test(r.model)) : FAMILY[f].test(r.model);
+  const fmt = d => new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", {day: "numeric", month: "short", year: "numeric", timeZone: "UTC"});
+  const el = (tag, text, cls) => { const e = document.createElement(tag); if (text) e.textContent = text; if (cls) e.className = cls; return e; };
+  function item(r) {
+    const li = el("li"), a = el("a", r.title);
+    a.href = "https://lefttosolve.com/p/" + encodeURIComponent(r.id);
+    const t = el("time", fmt(r.date)); t.dateTime = r.date;
+    li.append(a, " ", el("span", OUT[r.outcome], r.outcome === "open" ? "etich ok" : "etich"),
+      " " + r.polarity[0].toUpperCase() + r.polarity.slice(1) + ", ", t, ", @" + r.handle + (r.agent === "unknown" ? "" : " with " + r.agent + (r.model === "unknown" ? "" : " (" + r.model + ")")));
+    if (r.pr) { const p = el("a", "pull request"); p.href = r.pr; li.append(" · ", p); }
+    li.append("." + (r.note ? " " + r.note : ""));
+    return li;
+  }
+  function draw() {
+    list.replaceChildren(...shown.slice(0, limit).map(item));
+    count.textContent = shown.length ? shown.length.toLocaleString("en-GB") + " of " + all.length.toLocaleString("en-GB") + " results"
+      : "No results match these filters.";
+    more.hidden = shown.length <= limit;
+  }
+  function filter() {
+    const text = q.value.trim().toLowerCase();
+    shown = all.filter(r => (!o.value || r.outcome === o.value) && (!m.value || inFamily(r, m.value)) &&
+      (!text || (r.title + " " + r.id + " " + r.handle).toLowerCase().includes(text)));
+    const p = new URLSearchParams();
+    [["q", q.value.trim()], ["outcome", o.value], ["family", m.value]].forEach(([k, v]) => v && p.set(k, v));
+    history.replaceState(null, "", (p.size ? "?" + p : location.pathname) + location.hash);
+    limit = step; draw();
+  }
+  fetch("data/open-problems.json").then(r => r.json()).then(d => {
+    all = d.results;
+    const p = new URLSearchParams(location.search);  // shareable filters, as on the discovery list
+    q.value = p.get("q") || ""; o.value = p.get("outcome") || ""; m.value = p.get("family") || "";
+    document.getElementById("op-filters").hidden = false;
+    filter();
+  }).catch(() => { count.textContent = "The full list could not be loaded; the newest solved open problems are shown."; });
+  [q, o, m].forEach(e => e.addEventListener("input", filter));
+  document.getElementById("op-reset").addEventListener("click", () => { q.value = o.value = m.value = ""; filter(); });
+  more.addEventListener("click", () => { limit += step; draw(); });
+})();
+</script>
+
+<footer class="footer">
+  <div class="wrap">
+    <p><a href="contact.html">Contact</a></p>
+    <p><a href="search.html">Search all collections</a> · <a href="model-progress.html">Model progress and release rhythm</a> · <a href="insights.html">Insights</a> · <a href="antibiotic-dossier.html">Antibiotic evidence dossier</a></p>
+    <p>Each entry links to the original announcement. Figures are reported by sources and have not been independently verified.</p>
+    <p><a href="/">Back to discoveries</a> · <a href="profiles/index.html">All organizations and model families</a></p>
+    <p><a href="https://www.linkedin.com/company/aisciencetracker/" rel="me noopener">LinkedIn</a></p>
+    <p>See also: <a href="https://iamops.dev/">iamops.dev: IAM, AI agents and DevOps notes</a></p>
+    <p>Privacy: this site sets no cookies. A language choice is stored only in this browser and is not sent to a server. The site uses Cloudflare Web Analytics for aggregate visit statistics (page, referrer, browser, IP address) under legitimate interest (GDPR Art. 6(1)(f)). Cloudflare acts as our processor and may process data in the United States under the EU-US Data Privacy Framework. To object or exercise your rights, <a href="https://github.com/marcello-pichini/ai-science-tracker/issues/new">open an issue</a>.</p>
+  </div>
+</footer>
+</body>
+</html>

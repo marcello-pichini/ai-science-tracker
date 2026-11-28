@@ -1,0 +1,33 @@
+name: Open problems refresh
+on:
+  schedule:
+    - cron: '15 */3 * * *'  # every 3 hours
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency:
+  group: daily-refresh  # shared with the daily refresh so the two never push at once
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Fetch Left to Solve and P = NP ? and rebuild the page
+        run: python3 scripts/open_problems.py --fetch
+      - name: Commit, push and deploy if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add -- open-problems.html data/open-problems.json
+          if git diff --cached --quiet; then echo "Nothing changed."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Open problems refresh"
+          git push origin HEAD:main
+          # A push made with GITHUB_TOKEN starts no workflow, so ask Check to validate and deploy this commit.
+          gh workflow run check.yml --ref main -f expected_sha="$(git rev-parse HEAD)"

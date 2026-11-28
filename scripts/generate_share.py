@@ -1033,6 +1033,7 @@ Content is licensed CC BY 4.0 (attribute "{SITE}" with a link); site code is MIT
 - [Search all collections]({BASE}search.html): literal retrieval with separate counts and match reasons
 {insights_line}- [Evidence dossiers]({BASE}dossiers.html): selected studies and public vulnerability disclosures with evidence limits
 - [Open problems to claim]({BASE}claims.html): next steps left by catalog discoveries, each decided by a public checker
+- [Open problems attacked by AI agents]({BASE}open-problems.html): daily record of results from Left to Solve and the public P vs NP attempt
 - [Antibiotic evidence dossier]({BASE}antibiotic-dossier.html): dated, source-bounded synthesis
 - [Catalog coverage and evidence]({BASE}profiles/catalog-evidence.html): reproducible composition tables, counting limits and CSV
 - [Models]({BASE}models.html): model releases linked to discoveries
@@ -1100,7 +1101,7 @@ def write_sitemap(items, models, archived=(), vuln_pages=()):
     # kept in data/page-lastmod.json; dossiers with an explicit editorial update date use that date.
     # search.html is a translated editorial page. profile.html and 404.html are noindex.
     # Localized copies exist only for translated editorial pages, not for share/ or profiles/.
-    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'search.html', 'dataset.html', 'contributors.html', 'contact.html', 'claims.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
+    urls = ['index.html', 'models.html', 'methodology.html', 'guide.html', 'security.html', 'search.html', 'dataset.html', 'contributors.html', 'contact.html', 'claims.html', 'open-problems.html', 'model-progress.html', 'dossiers.html', 'alphafold-dossier.html', 'antibiotic-dossier.html']
     from i18n_site import LOCALES, NEW_DOSSIER_PAGES, SITEMAP_PAGES, dossier_modified_date, public_url
 
     urls.extend(NEW_DOSSIER_PAGES)
@@ -1706,6 +1707,8 @@ def main():
     sys.path.insert(0, str(Path(__file__).resolve().parent / 'claims'))
     from generate_claims import build as write_claims
     write_claims(ROOT)
+    from open_problems import build as write_open_problems
+    write_open_problems(ROOT)
     write_home_browse(items)
     if not args.no_images:
         render_cards(items + archived, args.force, args.reuse_images)

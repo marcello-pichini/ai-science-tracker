@@ -75,7 +75,7 @@ def build(root=ROOT):
       <li>Open a pull request that adds your file under <code>claims/submissions/PROBLEM-ID/</code>. The <a href="{REPO}/blob/main/scripts/claims/verify.py">public checker</a> runs on it and reports the result in the pull request.</li>
       <li>A verified result beats the baseline recorded here. A maintainer then checks the literature before marking the problem solved. Credit goes to the GitHub author of the pull request.</li>
     </ol>
-    <p>Failed attempts stay listed with their reason, so the next person does not repeat them. {n_open} of {len(data["claims"])} problems are open. List updated <time datetime="{data["updated"]}">{nice(data["updated"])}</time>. Data: <a href="data/claims.json">claims.json</a>.</p>
+    <p>Failed attempts stay listed with their reason, so the next person does not repeat them. {n_open} of {len(data["claims"])} problems are open. List updated <time datetime="{data["updated"]}">{nice(data["updated"])}</time>. Data: <a href="data/claims.json">claims.json</a>. Results of AI agents on other open problem trackers are in <a href="open-problems.html">Open problems attacked by AI agents</a>.</p>
   </section>
   <section aria-labelledby="problems">
     <h2 id="problems">Problems</h2>

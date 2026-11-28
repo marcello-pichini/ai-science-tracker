@@ -51,6 +51,11 @@
   .marchio { font-size:.8125rem; gap:6px; }
   .lang-toggle { padding-inline:8px; }
 }
+/* Nine sections fit one row at 1280 px only with tighter pills. */
+@media (min-width:981px) and (max-width:1439px) {
+  .menu { gap:2px; }
+  .menu a { padding:8px; }
+}
 
 /* Homepage: copy on the left, a living-catalog card in the space beside it. */
 .hero {
