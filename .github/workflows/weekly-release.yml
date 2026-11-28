@@ -23,7 +23,7 @@ jobs:
     if: github.ref == 'refs/heads/main' && (github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_repository.full_name == github.repository && github.event.workflow_run.event != 'pull_request'))
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: main
       - name: Select verified successful Pages deployment
@@ -45,7 +45,7 @@ jobs:
           sha=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["deployed_sha"])' "$RUNNER_TEMP/deployment.json")
           if [ -n "$EVENT_SHA" ] && [ "$EVENT_SHA" != "$sha" ]; then echo "Superseded event; skipping."; exit 0; fi
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         id: checkout
         if: steps.snapshot.outputs.sha != ''
         with:
